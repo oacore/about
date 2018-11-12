@@ -5,6 +5,8 @@ pipelines:
     dev:
       - step:
           name: Next.js Build
+          caches:
+            - node
           script:
             - yarn install
             - yarn export
