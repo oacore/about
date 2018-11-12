@@ -27,21 +27,20 @@ class SearchForm extends React.Component {
     )
   }
 
-  renderSearchComponent() {
-    return this.state.toggleAdvancedSearch
-      ? <AdvancedSearchForm />
-      : <SimpleSearchForm />
-  }
-
   render() {
     const { toggleAdvancedSearch } = this.state
+    if (toggleAdvancedSearch) return (
+      <React.Fragment>
+        {this.renderButton()}
+        <AdvancedSearchForm />
+      </React.Fragment>
+    )
 
     return (
-      <React.Fragment>
-        {toggleAdvancedSearch && this.renderButton()}
-        {this.renderSearchComponent()}
-        {!toggleAdvancedSearch && this.renderButton()}
-      </React.Fragment>
+      <div className="col-md-6 mx-auto">
+        <SimpleSearchForm />
+        {this.renderButton()}
+      </div>
     )
   }
 }

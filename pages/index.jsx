@@ -1,11 +1,10 @@
 import React from 'react'
-import { Layout } from '../components'
-import Search from '../components/search'
+import { Layout, Welcome } from '../components'
 
 
 const IndexPage = () => (
   <Layout container>
-    <Search placeholder="Search over 100,000,000 articles" />
+    <Welcome />
   </Layout>
 )
 
