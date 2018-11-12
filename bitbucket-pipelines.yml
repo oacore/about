@@ -1,0 +1,15 @@
+image: node:10
+
+pipelines:
+  branches:
+    dev:
+      - step:
+          name: Next.js Build
+          script:
+            - yarn install
+            - yarn export
+      - step:
+          name: Deployment to Pages
+          deployment: production
+          script:
+            - echo "Deployment"
