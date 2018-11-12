@@ -2,7 +2,7 @@ image: node:10
 
 pipelines:
   branches:
-    dev:
+    master:
       - step:
           name: Next.js Build
           caches:
