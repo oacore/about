@@ -7,6 +7,7 @@ import {
   Nav,
   NavItem,
   NavLink,
+  Badge,
 } from 'reactstrap'
 import NextLink from 'next/link'
 
@@ -37,13 +38,19 @@ class Header extends React.Component {
 
   render() {
     return (
-      <Navbar color="dark" dark expand="md" className="mb-3">
+      <Navbar color="light" light expand="md" className="mb-3">
         <NextLink href="/">
-          <NavbarBrand>CORE</NavbarBrand>
+          <NavbarBrand>
+            CORE&nbsp;
+            <Badge color="secondary" className="text-uppercase">
+              beta
+            </Badge>
+          </NavbarBrand>
         </NextLink>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
+            <Link href="/services">Services</Link>
             <Link href="/about">About</Link>
           </Nav>
         </Collapse>
