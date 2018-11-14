@@ -1,12 +1,12 @@
 import React from 'react'
+import Logo from './logo'
 import SearchForm from './search'
 
-import logoPath from './images/core-logo.png'
 
 const Hero = ({ children, includeSearch = true }) => (
   <React.Fragment>
     <div className="mx-auto col-md-6">
-      <img src={logoPath} alt="CORE" className="d-block mx-auto" />
+      <Logo />
       <p className="lead text-center">{children}</p>
     </div>
 
