@@ -1,13 +1,5 @@
 import React from 'react'
-import {
-  Nav,
-  NavItem,
-  NavLink,
-  Fade,
-  Row,
-  Col,
-} from 'reactstrap'
-
+import { Nav, NavItem, NavLink, Fade, Row, Col } from 'reactstrap'
 
 const Feature = ({ children, isActive }) => (
   <Fade in={isActive} hidden={!isActive}>
@@ -20,53 +12,55 @@ class FeaturesSection extends React.Component {
     super(props)
 
     this.state = {
-      activePane: null
+      activePaneId: null,
     }
   }
 
   static getDerivedStateFromProps({ children }, state) {
-    if (state.activePane !== null) return state
+    if (state.activePaneId !== null) return state
 
     let firstPane = null
-    React.Children.forEach(children, (child) => {
+    React.Children.forEach(children, child => {
       if (!firstPane && child.type === Feature) firstPane = child
     })
 
     return {
       ...state,
-      activePane: firstPane.props.id,
+      activePaneId: firstPane.props.id,
     }
   }
 
   toggleTab(tabId) {
-    this.setState({ activePane: tabId })
+    this.setState({ activePaneId: tabId })
   }
 
   render() {
-    const { activePane: activePaneId } = this.state
+    const { activePaneId } = this.state
 
     const beforeTabs = []
     const afterTabs = []
     const tabs = []
 
     // Filter features to 3 lists
-    React.Children.forEach(this.props.children, (child) => {
+    React.Children.forEach(this.props.children, child => {
       if (child.type === Feature) tabs.push(child)
-      else (tabs.length == 0 ? beforeTabs : afterTabs).push(child)
+      else (tabs.length === 0 ? beforeTabs : afterTabs).push(child)
     })
 
-    const tabPanes = tabs.map(tab => React.cloneElement(tab, {
-      isActive: activePaneId === tab.props.id,
-    }))
+    const tabPanes = tabs.map(tab =>
+      React.cloneElement(tab, {
+        isActive: activePaneId === tab.props.id,
+      })
+    )
 
-    const tabPills = tabPanes.map((tab) => {
+    const tabPills = tabPanes.map(tab => {
       const { forTitle, id } = tab.props
       return (
         <NavItem key={id}>
           <NavLink
             active={id === activePaneId}
             href={`#${id}`}
-            onClick={this.toggleTab.bind(this, id)}
+            onClick={() => this.toggleTab(id)}
           >
             CORE for <b>{forTitle}</b>
           </NavLink>
@@ -79,12 +73,9 @@ class FeaturesSection extends React.Component {
         {beforeTabs}
         <Row>
           <Col xs="12" md="3">
-            <Nav
-              vertical
-              pills
-              role="tablist"
-              aria-orientation="vertical"
-            >{tabPills}</Nav>
+            <Nav vertical pills role="tablist" aria-orientation="vertical">
+              {tabPills}
+            </Nav>
           </Col>
           <Col xs="12" md="9">
             <div className="tab-content">{tabPanes}</div>
@@ -96,8 +87,4 @@ class FeaturesSection extends React.Component {
   }
 }
 
-
-export {
-  FeaturesSection as Features,
-  Feature,
-}
+export { FeaturesSection as Features, Feature }

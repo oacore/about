@@ -1,17 +1,25 @@
 image: node:10
 
+definitions:
+  steps:
+    - step: &lint
+        name: Lint
+        caches:
+          - node
+        script:
+          - yarn install
+          - yarn lint
+
 pipelines:
+  default:
+    - step: *lint
   branches:
     master:
+      - step: *lint
       - step:
-          name: Next.js Build
+          name: Next.js build
           caches:
             - node
           script:
             - yarn install
             - yarn export
-      - step:
-          name: Deployment to Pages
-          deployment: production
-          script:
-            - echo "Deployment"

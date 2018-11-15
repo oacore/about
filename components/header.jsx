@@ -11,7 +11,6 @@ import {
 } from 'reactstrap'
 import NextLink from 'next/link'
 
-
 const Link = ({ href, children }) => (
   <NavItem>
     <NextLink href={href}>
@@ -22,21 +21,22 @@ const Link = ({ href, children }) => (
 
 class Header extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
-      isOpen: false
+      isOpen: false,
     }
     this.toggle = this.toggle.bind(this)
   }
 
   toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    })
+    this.setState(({ isOpen }) => ({
+      isOpen: !isOpen,
+    }))
   }
 
   render() {
+    const { isOpen } = this.state
     return (
       <Navbar color="light" light expand="md" className="mb-3">
         <NextLink href="/">
@@ -48,7 +48,7 @@ class Header extends React.Component {
           </NavbarBrand>
         </NextLink>
         <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={this.state.isOpen} navbar>
+        <Collapse isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <Link href="/services">Services</Link>
             <Link href="/about">About</Link>
@@ -58,6 +58,5 @@ class Header extends React.Component {
     )
   }
 }
-
 
 export default Header

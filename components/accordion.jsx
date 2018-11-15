@@ -1,12 +1,15 @@
 import React from 'react'
-import { Button, Card, CardHeader, CardBody, Collapse } from 'reactstrap'
-
+import { Card, CardHeader, CardBody, Collapse } from 'reactstrap'
 
 // TODO: Optimize performance of onToggle if possible
 // TODO: Develope markup according to the design
 const AccordionItem = ({ id, title, children, isOpen, onToggle }) => (
   <Card id={id}>
-    <CardHeader onClick={() => { onToggle(id) }}>
+    <CardHeader
+      onClick={() => {
+        onToggle(id)
+      }}
+    >
       {title}
     </CardHeader>
     <Collapse isOpen={isOpen}>
@@ -42,17 +45,11 @@ class Accordion extends React.Component {
       })
     )
 
-    return (
-      <div className="accordion">{accordionItems}</div>
-    )
+    return <div className="accordion">{accordionItems}</div>
   }
 }
 
 Accordion.Item = AccordionItem
 
-
 export default Accordion
-export {
-  Accordion,
-  AccordionItem,
-}
+export { Accordion, AccordionItem }

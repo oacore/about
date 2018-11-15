@@ -7,10 +7,9 @@ import Footer from './footer'
 const Layout = ({ children, container = false }) => (
   <React.Fragment>
     <Header />
-    {container ? (<Container>{children}</Container>) : children}
+    {container ? <Container>{children}</Container> : children}
     <Footer />
   </React.Fragment>
 )
-
 
 export default Layout

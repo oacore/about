@@ -1,7 +1,9 @@
 import React from 'react'
 
-
-const Footer = () => null
-
+const Footer = () => (
+  <footer>
+    © Knowledge Media Institute. Open University, {new Date().getYear()}
+  </footer>
+)
 
 export default Footer

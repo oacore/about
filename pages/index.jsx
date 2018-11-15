@@ -1,15 +1,13 @@
 import React from 'react'
 import { Layout, Hero } from '../components'
 
-
 const IndexPage = () => (
   <Layout container>
     <Hero>
-      Seamless access to the world's biggest collection
-      of open access research papers
+      Seamless access to the worldʼs biggest collection of open access research
+      papers
     </Hero>
   </Layout>
 )
-
 
 export default IndexPage

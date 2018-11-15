@@ -1,8 +1,7 @@
 import React from 'react'
 import { Button, InputGroup, InputGroupAddon, Input } from 'reactstrap'
 
-
-const SearchField = ({ placeholder, size = "" }) => (
+const SearchField = ({ placeholder, size = '' }) => (
   <InputGroup size={size}>
     <Input placeholder={placeholder} />
     <InputGroupAddon addonType="append">
@@ -19,6 +18,5 @@ const SearchForm = ({ action, method, onSubmit }) => (
     />
   </form>
 )
-
 
 export default SearchForm

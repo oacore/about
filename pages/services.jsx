@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Layout, Accordion } from '../components'
 import { Features, Feature } from '../components/features'
 
-
 // TODO: Provide sections
 const ServicesPage = () => (
   <Layout container>
@@ -21,42 +20,39 @@ const ServicesPage = () => (
     {/* Key messages */}
 
     <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi
-      laborum illum animi quis iusto cumque id quam nulla incidunt tenetur eos
-      est iure vero voluptas, vel alias esse sed odio.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi laborum
+      illum animi quis iusto cumque id quam nulla incidunt tenetur eos est iure
+      vero voluptas, vel alias esse sed odio.
     </p>
     <p>
-      Sapiente, nesciunt dignissimos incidunt et, earum perspiciatis optio
-      at voluptate, similique tempora vel magni atque excepturi eveniet.
-      Asperiores quae quas sapiente numquam maxime quaerat sunt, recusandae
-      dolorem ex culpa cumque.
+      Sapiente, nesciunt dignissimos incidunt et, earum perspiciatis optio at
+      voluptate, similique tempora vel magni atque excepturi eveniet. Asperiores
+      quae quas sapiente numquam maxime quaerat sunt, recusandae dolorem ex
+      culpa cumque.
     </p>
 
     <Accordion>
       <Accordion.Item id="fisrtItem" title="Hello">
-        Anim pariatur cliche reprehenderit,
-        enim eiusmod high life accusamus terry richardson ad squid. Nihil
-        anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident.
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+        labore wes anderson cred nesciunt sapiente ea proident.
       </Accordion.Item>
       <Accordion.Item id="secondItem" title="Hello">
-        Anim pariatur cliche reprehenderit,
-        enim eiusmod high life accusamus terry richardson ad squid. Nihil
-        anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident.
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+        labore wes anderson cred nesciunt sapiente ea proident.
       </Accordion.Item>
       <Accordion.Item id="thirdItem" title="Hello">
-        Anim pariatur cliche reprehenderit,
-        enim eiusmod high life accusamus terry richardson ad squid. Nihil
-        anim keffiyeh helvetica, craft beer labore wes anderson cred
-        nesciunt sapiente ea proident.
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
+        labore wes anderson cred nesciunt sapiente ea proident.
       </Accordion.Item>
     </Accordion>
-    <Link href="#">Looking for documentation?</Link>
+    <Link href="/services/docs">Looking for documentation?</Link>
 
     <Features>
       <h2>Looking for more features?</h2>
-      <p>We've designed premium packages that enable great functionality</p>
+      <p>Weʼve designed premium packages that enable great functionality</p>
 
       <Feature id="feature-for-institutions" forTitle="institutions">
         <h4>Premium feature for CORE member:</h4>
@@ -76,12 +72,11 @@ const ServicesPage = () => (
       </Feature>
 
       <p>
-        Can't find a package that fits your needs?
-        <a href="#">Get in touch bespoke extended access to CORE</a>
+        Canʼt find a package that fits your needs?
+        <a href="/contact">Get in touch bespoke extended access to CORE</a>
       </p>
     </Features>
   </Layout>
 )
-
 
 export default ServicesPage
