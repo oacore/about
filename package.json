@@ -35,19 +35,9 @@
   "scripts": {
     "lint": "eslint \"**/*.{js,jsx}\"",
     "format": "eslint --fix \"**/*.{js,jsx}\"",
-
     "dev": "next",
     "build": "next build",
     "export": "next build && next export -o public",
     "start": "next start"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": ["yarn format", "git add"],
-    "*.{scss,css}": ["prettier --write", "git add"]
   }
 }
