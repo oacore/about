@@ -17,6 +17,7 @@ rules:
   curly: [error, multi-or-nest]
   eqeqeq: [error, smart]
   no-plusplus: [error, { allowForLoopAfterthoughts: true }]
+  no-param-reassign: [error, { props: false }]
   max-len: [error, {
     code: 80,
     tabWidth: 2,
@@ -30,5 +31,8 @@ rules:
   new-parens: off
   prettier/prettier: error
   react/destructuring-assignment: off
-  react/prop-types: [error, { skipUndeclared: true }]
+  react/prop-types: [error, {
+    skipUndeclared: true,
+    ignore: [class, className, id, children],
+  }]
 

@@ -3,39 +3,35 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-
 //
 // Color system
 //
 
-$nearly-black:  #2a3840;
-$light-gray:    #e9eaeb;
-$dark-blue:     #005f96;
-$light-blue:    rgba($dark-blue, 7%);
-$orange:        #e08639;
-$dark-orange:   #b75400;
-$brown:         #763600;
-$green:         #28a745;
+$nearly-black: #2a3840;
+$light-gray: #e9eaeb;
+$dark-blue: #005f96;
+$light-blue: rgba($dark-blue, 7%);
+$orange: #e08639;
+$dark-orange: #b75400;
+$brown: #763600;
+$green: #28a745;
 
-$primary:       $dark-orange;
-
+$primary: $dark-orange;
 
 
 // Options
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-shadows:            true;
-
+$enable-shadows: true;
 
 
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns:                12;
-$grid-gutter-width:           32px;
-
+$grid-columns: 12;
+$grid-gutter-width: 32px;
 
 
 // Fonts
@@ -48,3 +44,8 @@ $font-family-sans-serif:
   "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 // stylelint-enable value-keyword-case
+
+
+// Cards
+
+$card-border-radius: 0;
