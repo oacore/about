@@ -1,0 +1,58 @@
+name: CORE
+description: >
+  CORE is a service provided by the Knowledge Media Institute,
+  based at The Open University, United Kingdom.
+navigation:
+  - title: Services
+    path: /
+    sections:
+      - title: Access to data
+        path: /services/access-to-data
+        children:
+          - title: API
+            path: /services/access-to-data/api
+          - title: Dataset
+            path: /services/access-to-data/dataset
+          - title: SDK
+            path: /services/access-to-data/sdk
+      - title: Content discovery
+        path: /services/content-discovery
+        children:
+          - title: CORE recommender
+            path: /services/content-discovery/recommender
+          - title: CORE connector
+            path: /services/content-discovery/connector
+      - title: Managing content
+        path: /services/managing-content
+        children:
+          - title: Repository dashboard
+            path: /services/managing-content/repository-dashboard
+          - title: Analitycs dashboard
+            path: /services/managing-content/analitycs-dashboard
+      - title: Support
+        path: /services/support
+        children:
+          - title: CORE Helpdesk
+            path: /services/support/helpdesk
+  - title: About
+    path: /about
+    children:
+      - title: About CORE
+        path: /about/core
+      - title: Blog
+        path: http://blog.core.ac.uk
+      - title: Contact us
+        path: /about/contact
+footer:
+  - title: Blog
+    path: http://blog.core.ac.uk
+  - title: Contact us
+    path: /about/contact
+  - title: Privary notice
+    path: /privacy
+  - title: Browse
+    path: /browse
+  - title: Cookies
+    path: /privacy/cookies
+  - title: About CORE
+    path: /about/core
