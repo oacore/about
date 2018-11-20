@@ -1,6 +1,6 @@
 - title: Services
   path: /
-  children:
+  sections:
     - title: Access to data
       path: /services/access-to-data
       children:

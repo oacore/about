@@ -11,6 +11,7 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
+  DropdownItem,
 } from 'reactstrap'
 import NextLink from 'next/link'
 import { bind } from 'decko'
@@ -33,37 +34,61 @@ class Header extends React.Component {
     }))
   }
 
-  static renderMenu({ title, path, children }, level = 0) {
+  static renderMenu({ title, path, children, sections }, level = 0) {
+    // Menu for top level: dropdown or regular item
     if (level === 0) {
       return (
         <Nav className="ml-auto" navbar>
-          {children.map(node =>
-            node.children ? (
-              Header.renderMenu(node, level + 1)
-            ) : (
-              <NavItem key={node.path}>
-                <NextLink href={node.path}>
-                  <NavLink>{node.title}</NavLink>
-                </NextLink>
-              </NavItem>
-            )
-          )}
+          {children.map(node => Header.renderMenu(node, level + 1))}
         </Nav>
       )
     }
 
-    return children ? (
-      <UncontrolledDropdown nav={level === 1} inNavbar key={path}>
-        <DropdownToggle nav caret>
-          {title}
-        </DropdownToggle>
-        <DropdownMenu right>
-          {children.map(node => Header.renderMenu(node, level + 1))}
-        </DropdownMenu>
-      </UncontrolledDropdown>
+    // Sectioned dropdown menu if sections are present
+    if (sections) {
+      return (
+        <UncontrolledDropdown nav={level === 1} inNavbar key={title}>
+          <DropdownToggle nav caret>
+            {title}
+          </DropdownToggle>
+          <DropdownMenu right>
+            {sections.map(section => (
+              <React.Fragment>
+                <DropdownItem header>{title}</DropdownItem>
+                {section.children.map(node =>
+                  Header.renderMenu(node, level + 2)
+                )}
+              </React.Fragment>
+            ))}
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      )
+    }
+
+    // Regular dropdown for regular children
+    if (children) {
+      return (
+        <UncontrolledDropdown nav={level === 1} inNavbar key={title}>
+          <DropdownToggle nav caret>
+            {title}
+          </DropdownToggle>
+          <DropdownMenu right>
+            {children.map(node => Header.renderMenu(node, level + 1))}
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      )
+    }
+
+    // NavItem-s for first leafs and DropdownItems-s for final leafs
+    return level === 1 ? (
+      <NavItem key={path}>
+        <NextLink href={path}>
+          <NavLink>{title}</NavLink>
+        </NextLink>
+      </NavItem>
     ) : (
       <NextLink href={path} key={path}>
-        <NavLink>{title}</NavLink>
+        <DropdownItem>{title}</DropdownItem>
       </NextLink>
     )
   }
