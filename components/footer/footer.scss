@@ -1,0 +1,10 @@
+@import "../bootstrap/bootstrap";
+
+.footer {
+  background: $light-gray;
+}
+
+.footer-highlights {
+  padding: map-get($spacers, 3) 0;
+  background: lighten($light-gray, 5%);
+}

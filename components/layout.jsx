@@ -14,13 +14,13 @@ const Layout = ({ children, container = false }) => (
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <title>{config.title}</title>
+      <title>{config.name}</title>
       <meta name="description" content={config.description} />
     </Head>
 
     <Header siteMap={config.navigation} />
     {container ? <Container>{children}</Container> : children}
-    <Footer />
+    <Footer links={config.footer} />
   </React.Fragment>
 )
 
