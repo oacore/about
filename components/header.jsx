@@ -54,7 +54,9 @@ class Header extends React.Component {
           <DropdownMenu right>
             {sections.map(section => (
               <React.Fragment>
-                <DropdownItem header>{title}</DropdownItem>
+                <DropdownItem header key={section.title}>
+                  {section.title}
+                </DropdownItem>
                 {section.children.map(node =>
                   Header.renderMenu(node, level + 2)
                 )}
