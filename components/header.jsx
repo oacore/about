@@ -100,7 +100,7 @@ class Header extends React.Component {
     const { isOpen } = this.state
 
     return (
-      <Navbar color="light" light expand="md" className="mb-3">
+      <Navbar color="light" light expand="md">
         {logo && (
           <NextLink href="/">
             <NavbarBrand>
