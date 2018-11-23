@@ -1,22 +1,10 @@
 @import "../bootstrap/core";
 
 $hero-padding-vertical: map-get($spacers, 5);
+$hero-background: url("../images/backgrounds/brandi-redd-122054-unsplash.jpg");
 
 .hero {
   padding-top: $hero-padding-vertical;
   padding-bottom: $hero-padding-vertical;
-  background: $white no-repeat center / cover;
-}
-
-.hero-accent-1 {
-  background-image: url("../images/backgrounds/debby-hudson-557741-unsplash.jpg");
-}
-
-.hero-accent-2 {
-  background-image: url("../images/backgrounds/joanna-kosinska-129039-unsplash.jpg");
-  background-position: top;
-}
-
-.hero-accent-3 {
-  background-image: url("../images/backgrounds/rawpixel-558599-unsplash.jpg");
+  background: $white $hero-background no-repeat top center / cover;
 }
