@@ -16,7 +16,9 @@ import {
 import NextLink from 'next/link'
 import { bind } from 'decko'
 
-import Logo from './logo'
+import Logo from '../logo'
+
+import './header.scss'
 
 class Header extends React.Component {
   constructor(props) {
@@ -100,7 +102,7 @@ class Header extends React.Component {
     const { isOpen } = this.state
 
     return (
-      <Navbar color="light" light expand="md">
+      <Navbar color="light" light expand="md" className="header">
         {logo && (
           <NextLink href="/">
             <NavbarBrand>
