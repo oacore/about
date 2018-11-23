@@ -1,0 +1,13 @@
+@import "../components/bootstrap/core";
+
+$home-background: url("../images/brandi-redd-122054-unsplash.jpg");
+
+.home {
+  background: $white $home-background no-repeat top center / 100% auto;
+}
+
+.home-key-features {
+  padding-top: map-get($spacers, 5);
+  padding-bottom: map-get($spacers, 5);
+  background: linear-gradient(to top, $body-bg 50%, transparent);
+}
