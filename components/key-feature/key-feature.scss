@@ -1,0 +1,31 @@
+@import "../bootstrap/core";
+
+.key-feature {
+  display: block;
+  margin: 0 0 $spacer;
+  text-align: center;
+}
+
+.key-feature-icon {
+  display: block;
+  margin: 0 auto $spacer;
+  width: 30%;
+  height: auto;
+}
+
+.key-feature-list {
+  list-style: none;
+  margin: 0 0 (-$spacer);
+  padding: 0;
+
+  @include media-breakpoint-up("sm") {
+    display: flex;
+    margin-left: $grid-gutter-width / -2;
+    margin-right: $grid-gutter-width / -2;
+
+    > .key-feature {
+      padding-left: $grid-gutter-width / 2;
+      padding-right: $grid-gutter-width / 2;
+    }
+  }
+}
