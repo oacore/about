@@ -45,6 +45,11 @@ $font-family-sans-serif:
   "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 // stylelint-enable value-keyword-case
 
+$font-size-base:              1rem;
+
+$blockquote-font-size:        $font-size-base;
+$blockquote-padding-left:     3.5 * $font-size-base;
+
 
 // Cards
 
