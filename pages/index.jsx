@@ -2,7 +2,13 @@ import React from 'react'
 import { Container } from 'reactstrap'
 import NextLink from 'next/link'
 
-import { Layout, Hero, KeyFeature, KeyFeatureList } from '../components'
+import {
+  Layout,
+  Hero,
+  KeyFeature,
+  KeyFeatureList,
+  Switcher,
+} from '../components'
 
 import apiIcon from '../images/api.svg'
 import globeIcon from '../images/globe.svg'
@@ -19,6 +25,8 @@ const Link = ({ children, ...args }) => (
 /* eslint-enable jsx-a11y/anchor-is-valid */
 
 class IndexPage extends React.Component {
+  // TODO: Avoid this hack
+  // TODO: Override Document class
   componentDidMount() {
     document.body.classList.add('home')
   }
@@ -57,6 +65,33 @@ class IndexPage extends React.Component {
             </KeyFeatureList>
           </Container>
         </div>
+
+        <Container className="py-5">
+          <h2 className="text-center">Partner projects</h2>
+          <p className="mt-3 text-center">
+            Organizations from around the world have worked with us
+          </p>
+          <Switcher className="home-switcher">
+            <Switcher.Item id="lorem-company" title="Lorem company">
+              <blockquote className="blockquote">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                posuere erat a ante.
+                <footer className="blockquote-footer">
+                  Someone famous in Source Title
+                </footer>
+              </blockquote>
+            </Switcher.Item>
+            <Switcher.Item id="ipsum-company" title="Ipsum company" active>
+              <blockquote className="blockquote">
+                Ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                posuere erat a ante.
+                <footer className="blockquote-footer">
+                  Someone famous in Source Title
+                </footer>
+              </blockquote>
+            </Switcher.Item>
+          </Switcher>
+        </Container>
       </Layout>
     )
   }

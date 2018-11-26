@@ -11,3 +11,20 @@ $home-background: url("../images/brandi-redd-122054-unsplash.jpg");
   padding-bottom: map-get($spacers, 5);
   background: linear-gradient(to top, $body-bg 50%, transparent);
 }
+
+.home-switcher {
+  padding: map-get($spacers, 5) 0;
+  // background: #f2f4ef;
+
+  .switcher-item {
+    padding: map-get($spacers, 5) 0;
+  }
+
+  .blockquote {
+    margin: 0 auto;
+
+    @include media-breakpoint-up("sm") {
+      width: 50%;
+    }
+  }
+}
