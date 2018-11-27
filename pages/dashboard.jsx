@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { Layout, Accordion } from '../components'
 import { Features, Feature } from '../components/features'
 
-// TODO: Provide sections
-const ServicesPage = () => (
+const DashboardPage = () => (
   <Layout container>
     <h1>CORE Repository Dashboard</h1>
 
@@ -79,4 +78,4 @@ const ServicesPage = () => (
   </Layout>
 )
 
-export default ServicesPage
+export default DashboardPage
