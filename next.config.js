@@ -4,10 +4,16 @@ const withImages = require('next-images')
 
 const nextConfig = {
   webpack: config => {
-    config.module.rules.push({
-      test: /\.ya?ml$/,
-      use: ['json-loader', 'yaml-loader'],
-    })
+    config.module.rules.push(
+      {
+        test: /\.ya?ml$/,
+        use: ['json-loader', 'yaml-loader'],
+      },
+      {
+        test: /\.md$/,
+        use: ['raw-loader'],
+      }
+    )
 
     return config
   },
