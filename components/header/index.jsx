@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {
+  Container,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -21,12 +22,8 @@ import Logo from '../logo'
 import './header.scss'
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      isOpen: false,
-    }
+  state = {
+    isOpen: false,
   }
 
   @bind
@@ -50,19 +47,17 @@ class Header extends React.Component {
     if (sections) {
       return (
         <UncontrolledDropdown nav={level === 1} inNavbar key={title}>
-          <DropdownToggle nav caret>
-            {title}
-          </DropdownToggle>
-          <DropdownMenu right>
+          <DropdownToggle nav>{title}</DropdownToggle>
+          <DropdownMenu right style={{ width: 500 }}>
             {sections.map(section => (
-              <React.Fragment>
+              <div className="dropdown-section">
                 <DropdownItem header key={section.title}>
                   {section.title}
                 </DropdownItem>
                 {section.children.map(node =>
                   Header.renderMenu(node, level + 2)
                 )}
-              </React.Fragment>
+              </div>
             ))}
           </DropdownMenu>
         </UncontrolledDropdown>
@@ -73,9 +68,7 @@ class Header extends React.Component {
     if (children) {
       return (
         <UncontrolledDropdown nav={level === 1} inNavbar key={title}>
-          <DropdownToggle nav caret>
-            {title}
-          </DropdownToggle>
+          <DropdownToggle nav>{title}</DropdownToggle>
           <DropdownMenu right>
             {children.map(node => Header.renderMenu(node, level + 1))}
           </DropdownMenu>
@@ -103,17 +96,19 @@ class Header extends React.Component {
 
     return (
       <Navbar color="light" light expand="md" className="header">
-        {logo && (
-          <Link href="/">
-            <NavbarBrand>
-              <Logo textOnly />
-            </NavbarBrand>
-          </Link>
-        )}
-        <NavbarToggler onClick={this.toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          {Header.renderMenu({ children: siteMap })}
-        </Collapse>
+        <Container>
+          {logo && (
+            <Link href="/">
+              <NavbarBrand href="/">
+                <Logo display="icon" />
+              </NavbarBrand>
+            </Link>
+          )}
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={isOpen} navbar>
+            {Header.renderMenu({ children: siteMap })}
+          </Collapse>
+        </Container>
       </Navbar>
     )
   }

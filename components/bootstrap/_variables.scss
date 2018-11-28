@@ -17,6 +17,7 @@ $brown: #763600;
 $green: #28a745;
 
 $primary: $dark-orange;
+$primary-dark: darken($dark-orange, 15%);
 
 
 // Options
@@ -54,3 +55,14 @@ $blockquote-padding-left:     3.5 * $font-size-base;
 // Cards
 
 $card-border-radius: 0;
+
+
+// Navbar
+
+$navbar-dropdown-border-color:      $light-blue;
+$navbar-dropdown-border-radius:     0;
+
+// TODO: Fix link color
+$navbar-light-color:                $nearly-black;
+$navbar-light-hover-color:          $primary; // $link-color;
+$navbar-light-active-color:         $primary-dark; // $link-hover-color;
