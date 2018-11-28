@@ -1,0 +1,21 @@
+@import "../bootstrap/core";
+
+$section-padding-y: map-get($spacers, 4) !default;
+$article-padding-y: map-get($spacers, 5) !default;
+
+.content {
+}
+
+.section {
+  padding-top: $section-padding-y;
+  padding-bottom: $section-padding-y;
+}
+
+.article {
+  padding-top: $article-padding-y;
+  padding-bottom: $article-padding-y;
+
+  & > .section:last-child {
+    padding-bottom: 0;
+  }
+}

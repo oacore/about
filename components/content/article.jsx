@@ -60,12 +60,14 @@ class Article extends Component {
   }
 
   render() {
-    const { nav, tag: Tag, container, ...args } = this.props
+    const { nav, className, tag: Tag, container, ...args } = this.props
     const { header, content, navItems } = this.state
     const inner = [header, nav && <ArticleNav items={navItems} />, content]
 
     return (
-      <Tag {...args}>{container ? <Container>{inner}</Container> : inner}</Tag>
+      <Tag className={`article ${className || ''}`} {...args}>
+        {container ? <Container>{inner}</Container> : inner}
+      </Tag>
     )
   }
 }
