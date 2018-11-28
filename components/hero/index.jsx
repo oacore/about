@@ -9,7 +9,7 @@ const Hero = ({ children, includeSearch = true }) => (
   <div className="hero">
     <Container>
       <div className="mx-auto col-md-6">
-        <Logo />
+        <Logo className="d-block mx-auto" />
         <p className="lead text-center">{children}</p>
       </div>
 

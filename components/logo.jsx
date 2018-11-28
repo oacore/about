@@ -1,14 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 // NOTE: Import all logo-images here
+// TODO: Import pure logo symbol
 // TODO: Use SVG
 import logoPath from './images/core-logo.png'
 
-// TODO: Add more configuration
-const Logo = ({ textOnly }) => {
-  if (textOnly) return 'CORE'
+const Logo = ({ display = 'full', className, ...args }) => {
+  const finalClassName = `logo logo-${display} ${className || ''}`
 
-  return <img src={logoPath} alt="CORE" className="d-block mx-auto" />
+  if (display === 'text') return <span className={finalClassName}>CORE</span>
+
+  return <img src={logoPath} alt="CORE" className={finalClassName} {...args} />
+}
+
+Logo.propTypes = {
+  display: PropTypes.oneOf(['full', 'icon', 'text']),
+}
+
+Logo.defaultProps = {
+  display: 'full',
 }
 
 export default Logo
