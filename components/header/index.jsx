@@ -13,8 +13,8 @@ import {
   DropdownMenu,
   DropdownItem,
 } from 'reactstrap'
-import NextLink from 'next/link'
 import { bind } from 'decko'
+import Link from '../link'
 
 import Logo from '../logo'
 
@@ -86,14 +86,14 @@ class Header extends React.Component {
     // NavItem-s for first leafs and DropdownItems-s for final leafs
     return level === 1 ? (
       <NavItem key={path}>
-        <NextLink href={path}>
+        <Link href={path}>
           <NavLink>{title}</NavLink>
-        </NextLink>
+        </Link>
       </NavItem>
     ) : (
-      <NextLink href={path} key={path}>
+      <Link href={path} key={path}>
         <DropdownItem>{title}</DropdownItem>
-      </NextLink>
+      </Link>
     )
   }
 
@@ -104,11 +104,11 @@ class Header extends React.Component {
     return (
       <Navbar color="light" light expand="md" className="header">
         {logo && (
-          <NextLink href="/">
+          <Link href="/">
             <NavbarBrand>
               <Logo textOnly />
             </NavbarBrand>
-          </NextLink>
+          </Link>
         )}
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={isOpen} navbar>
