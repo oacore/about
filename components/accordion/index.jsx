@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bind } from 'decko'
 
@@ -8,13 +8,17 @@ import './accordion.scss'
 
 // TODO: Make it semantic
 // TODO: Add support of item open from the first render
-class Accordion extends React.Component {
-  constructor(props) {
-    super(props)
+class Accordion extends Component {
+  static propTypes = {
+    tag: PropTypes.node,
+  }
 
-    this.state = {
-      activeItemId: null,
-    }
+  static defaultProps = {
+    tag: 'div',
+  }
+
+  state = {
+    activeItemId: null,
   }
 
   @bind
@@ -36,14 +40,6 @@ class Accordion extends React.Component {
 
     return <Tag className="accordion">{items}</Tag>
   }
-}
-
-Accordion.propTypes = {
-  tag: PropTypes.node,
-}
-
-Accordion.defaultProps = {
-  tag: 'div',
 }
 
 Accordion.Item = AccordionItem

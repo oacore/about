@@ -5,10 +5,22 @@ import { bind } from 'decko'
 
 import './accordion.scss'
 
-// TODO: Develope markup according to the design
+// TODO: Develop markup according to the design
 class AccordionItem extends React.Component {
+  static propTypes = {
+    title: PropTypes.string.isRequired,
+    isOpen: PropTypes.bool,
+    onToggle: PropTypes.func,
+  }
+
+  static defaultProps = {
+    isOpen: false,
+    onToggle: () => {},
+  }
+
   @bind
-  toggle() {
+  toggle(event) {
+    event.preventDefault()
     const { id, onToggle: handleToggle } = this.props
     handleToggle(id)
   }
@@ -34,17 +46,6 @@ class AccordionItem extends React.Component {
       </Card>
     )
   }
-}
-
-AccordionItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  isOpen: PropTypes.bool,
-  onToggle: PropTypes.func,
-}
-
-AccordionItem.defaultProps = {
-  isOpen: false,
-  onToggle: () => {},
 }
 
 export default AccordionItem
