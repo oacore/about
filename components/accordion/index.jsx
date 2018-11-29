@@ -21,6 +21,30 @@ class Accordion extends Component {
     activeItemId: null,
   }
 
+  static getDerivedStateFromProps({ children }, state) {
+    if (state.activeItemId) return state
+
+    let activeItemId = null
+    React.Children.forEach(children, ({ props: { id, isOpen } }) => {
+      if (isOpen) activeItemId = id
+    })
+
+    return {
+      ...state,
+      activeItemId,
+    }
+  }
+
+  componentDidMount() {
+    let activeItemId = ''
+
+    React.Children.forEach(this.props.children, ({ props: { id } }) => {
+      if (window.location.hash === `#${id}`) activeItemId = id
+    })
+
+    if (activeItemId) this.setState({ activeItemId })
+  }
+
   @bind
   toggleItem(itemId) {
     this.setState(({ activeItemId }) => ({
