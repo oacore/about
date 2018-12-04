@@ -1,0 +1,75 @@
+title: About Core
+mission:
+  title: Our mission
+  short: |
+    CORE’s mission is to aggregate all open access research outputs
+    from repositories and journals worldwide and make them available to
+    the public. In this way CORE facilitates free unrestricted access
+    to research for all.
+  full:
+    caption: Read about our mission
+    content: |
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type
+      specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in
+      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+      and more recently with desktop publishing software like Aldus PageMaker
+      including versions of Lorem Ipsum.
+
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+      when an unknown printer took a galley of type and scrambled it to make a type
+      specimen book. It has survived not only five centuries, but also the leap into
+      electronic typesetting, remaining essentially unchanged. It was popularised in
+      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+      and more recently with desktop publishing software like Aldus PageMaker
+      including versions of Lorem Ipsum.
+blog:
+  title: Recent blog posts
+  content: |
+    * [Increasing the Speed of Harvesting with On Demand Resource Dumps](https://blog.core.ac.uk/2018/03/17/increasing-the-speed-of-harvesting-with-on-demand-resource-dumps/)
+    * [CORE’s Open Access content has reached the Moon! (or how about them stats 2017 edition)](https://blog.core.ac.uk/2017/12/21/cores-open-access-content-has-reached-the-moon-or-how-about-them-stats-2017-edition/)
+    * [CORE enhances library discovery services](https://blog.core.ac.uk/2017/12/18/core-enhances-library-discovery-services/)
+    * [CORE visits Ethiopia and participates in an Open Science training session](https://blog.core.ac.uk/2017/11/14/core-visits-ethiopia-and-participates-in-an-open-science-training-session/)
+    * [Implementing the CORE Recommender in Strathprints: a “whitehat” improvement to promote user interaction](https://blog.core.ac.uk/2017/10/31/implementing-the-core-recommender-in-strathprints-a-whitehat-improvement-to-promote-user-interaction/)
+
+howitworks:
+  title: How it works
+  harvesting:
+    title: Harvesting data
+    content: |
+      CORE aggregates ('harvests') research papers from data providers from all over the world including institutional repositories, subject-repositories and journal publishers.
+
+      This allows us to offer search, text mining and analytical capabilities over not only metadata, but also the full-text (extracted from PDFs*) of the research papers making CORE a unique service in the research community.
+
+      CORE currently contains 77,354,561 open access articles, from over 6000 journals, collected from over 2,536 repositories around the world.
+  services:
+    title: The services we offer
+    content: |
+      Our unique dataset allows us to offer a number of services for a range of audiences.
+
+      Our  [Repository dashboard](http://www.google.com)   enables repository managers to improve the harvesting processes and aids in the management and quality of repository content.
+
+      The  [Core recommender](http://www.google.com)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
+
+      Our [datasets and APIs](http://www.google.com)  eneble machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
+contacts:
+  title: Contact us
+  address:
+    caption: "Mailing address:"
+    name: Petr Knoth
+    org: Knowledge Media institute, The Open University
+    city: Milton Keynes
+    country: United Kingdom
+resources:
+  title: Resources
+  promotionmaterials:
+    title: Promotional material (logos, posters, etc)
+    content: |
+      Lorem ipsum Promotional material (logos, posters, etc)
+  researchoutputs:
+    title: Research outputs by CORE
+    content: |
+      Lorem ipsum Research outputs by CORE
