@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col } from 'reactstrap'
-import Link from 'next/link'
+import Link from '../link'
 
 import './footer.scss'
-
-/* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Footer = ({ links }) => (
   <footer className="footer">
@@ -15,10 +13,8 @@ const Footer = ({ links }) => (
           <h4>Useful links</h4>
           <Row>
             {links.map(({ title, path }) => (
-              <Col xs="12" md="4" key={path}>
-                <Link href={path}>
-                  <a>{title}</a>
-                </Link>
+              <Col xs="12" md="4" key={`${title} @ ${path}`}>
+                <Link href={path}>{title}</Link>
               </Col>
             ))}
           </Row>

@@ -9,12 +9,12 @@ applications making use of this content. To support these activities, CORE is
 providing a free API.
 
 If you use CORE in your work, we kindly request you to cite one of our
-[publications](./_core_about_research_outputs).
+[publications](research-outputs).
 
 ### Documentation
 
 The documentation, along with live examples can be found
-[here](./al_swagger_ui_home).
+[here](al-swagger-ui-home).
 
 You can also view some practical examples using the CORE API in this [TDM
 course](https://www.fosteropenscience.eu/node/2263).
@@ -34,19 +34,19 @@ We expect the API can be used, for example, to:
 
 ### Where to start
 
-Please register [here](./apikeys_register) to receive an API key and start
-testing the [live examples](./al_swagger_ui_home).
+Please register [here](apikeys-register) to receive an API key and start
+testing the [live examples](al-swagger-ui-home).
 
 A good starting point to start coding with our API is to follow the iPython
 notebook available [on Github](https://github.com/oacore/or2016-api-demo).
 
-In collaboration with [rOpenSci](https://ropensci.org/) you can find
-[here](https://github.com/ropenscilabs/cored) an R client for the CORE API.
+In collaboration with [rOpenSci](https://ropensci.org) you can find
+[here](https://github.com/ropenscilabs/cored) an _R_ client for the CORE API.
 
 ### Quota
 
 We apply a quota to the API to allow fair access and a high response time to
-our services. Please [get in touch](./_core_contact) if you require accessing
+our services. Please [get in touch](contact) if you require accessing
 our API at a faster rate.   The quota for each method are listed in the
 following tables:
 
@@ -87,7 +87,7 @@ following tables:
 | `/repositories/search`                | batch   | 2 requests  per 10 seconds |
 | `/repositories/search/{query}`        | single  | 5 requests  per 10 seconds |
 
-In case you require different limits please [contact us](./_core_contact).
+In case you require different limits please [contact us](contact).
 
 ### CORE data as Linked Open Data (LOD)
 

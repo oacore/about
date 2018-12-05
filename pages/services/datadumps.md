@@ -7,7 +7,7 @@ while the latter is something we recommend to those who would like to analyse
 the CORE dataset and/or apply some computationally intensive batch processes.
 
 If you use CORE in your work, we kindly request you to cite one of our
-[publications](path_core_about_research_outputs).
+[publications](research-outputs).
 
 ### Available datasets:
 
@@ -20,7 +20,7 @@ rows in a csv with the following format:
 
 \[CORE ID\], \[MAG ID\]
 
-[Register for Access]()  
+[Register for Access](join)
 
 **Dataset 2018-03-01**  
 [Register for Access]()
@@ -190,8 +190,7 @@ The CORE dataset provides access to both the enriched metadata as well as the fu
 
 The structure of the metadata file is depicted in the 
 [diagram](https://blog.core.ac.uk/files/data_schema_v0.2.png) 
-and an example
-of a metadata item in the data set is as follows:
+and an example of a metadata item in the data set is as follows:
 
                     
 

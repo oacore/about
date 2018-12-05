@@ -1,5 +1,16 @@
 import React, { Fragment } from 'react'
 import Markdown from 'react-markdown'
+import Link from '../link'
+
+/* eslint-disable jsx-a11y/anchor-is-valid */
+
+// We pass additional link because Markdown component does not render
+// pure text but renders own TextRenderer componet instead
+const MarkdownLink = ({ href, title, children }) => (
+  <Link href={href}>
+    <a title={title}>{children}</a>
+  </Link>
+)
 
 const markdownConfig = {
   escapeHtml: false,
@@ -12,6 +23,9 @@ const markdownConfig = {
     table: ({ children }) => (
       <table className="table table-hover">{children}</table>
     ),
+
+    link: MarkdownLink,
+    linkReference: MarkdownLink,
   },
 }
 

@@ -1,0 +1,190 @@
+home: /
+
+about: /about
+ambassadors: /about/ambassadors
+faq: /about/faq
+mission: /about/mission
+team: /about/team
+internships: /about/internships
+research-outputs:
+  pattern: /about/researchoutputs
+  controller: CoreWebBundle:ResearchOutputs:index
+contact: /contact
+
+services: /services
+services-fast: /services/fastsync
+services-labs-oadiscovery: /services/labs/discovery
+services-plugin: /services/plugin
+services-mobile: /services/mobile
+api:
+  pattern: /services/api
+  defaults:
+    controller: CoreWebBundle:ApiDoc:apiDocIntro
+    template: CoreWebBundle:Services:api.html.twig
+    maxAge: 86400
+    sharedMaxAge: 86400
+    private: false
+services-sparqlendpoint: /services/sparqlendpoint
+services-getdatadump-form:
+  path: /dataset/getdatadump
+  controller: CoreWebBundle:DataDumpRequest:dataDumpForm
+services-getdatadump-verify-submit:
+  path: /dataset/complete
+  controller: CoreWebBundle:DataDumpRequest:verifySubmit
+  requirements:
+    method: post
+services-dataset-dynamic-render:
+  path: /dataset/render/{showDownloadLink}
+  controller: CoreWebBundle:DataSet:renderDynamicDataSets
+  requirements:
+    method: get
+
+data-providers: /data-providers
+
+repositories:
+  pattern:  /repositories
+  controller: CoreWebBundle:Repositories:list
+repositories-datatable:
+  pattern:  /repositories/datatable
+  controller: CoreWebBundle:Repositories:datatable
+repository-page:
+  pattern: /repository/{repositoryId}
+  controller: CoreWebBundle:Repositories:display
+journals:
+  pattern:  /journals
+  controller: CoreWebBundle:Journals:list
+journals-datatable:
+  pattern:  /journals/datatable
+  controller: CoreWebBundle:Journals:datatable
+journal-page:
+  pattern:  /journal/{issn}
+  controller: CoreWebBundle:Journals:display
+intro-datadumps-redirect:
+  path: /intro/data-dumps
+  defaults:
+    controller: FrameworkBundle:Redirect:urlRedirect
+    path: /services#dataset
+    permanent: true
+
+join: /join
+recommendations: /recommendations
+join-eligible: /join/eligible
+join-submit:
+  pattern: /join/submit
+  controller: CoreWebBundle:Join:submit
+join-submit-complete: /join/submit/complete
+join-guidelines: /join/guidelines
+corerecommendations: /corerecommendations
+
+providers-id:
+  pattern:  /providers/{repoId}
+  defaults: { -controller: CoreWebBundle:Providers:getProviderWithoutName }
+  requirements:
+    repoId: '\d+'
+providers-id-name:
+  pattern:  /providers/{repoId}/{repoName}
+  defaults: { -controller: CoreWebBundle:Providers:getProviderWithName }
+  requirements:
+    repoId: '\d+'
+    repoName: .*
+
+display:
+  pattern:  /display/{id}
+  controller: CoreWebBundle:Article:display
+display-tab:
+  pattern:  /display/{id}/tab/{tab}
+  controller: CoreWebBundle:Article:display
+display-form:
+  pattern:  /article-update/{id}
+  controller: CoreWebBundle:ArticleForm:ArticleForm
+display-form-complete:
+  path: /display/{id}/requestsent
+  controller: CoreWebBundle:ArticleForm:completed
+repository-statistics:
+  pattern:  /repository/statistics/{repoId}
+  controller: CoreWebBundle:RepoInfo:GetStatistics
+  requirements:
+    repoId: \d+
+repository-info:
+  pattern:  /repository/info/{repoId}
+  controller: CoreWebBundle:RepoInfo:GetInfo
+  requirements:
+    repoId: \d+
+  methods:  [GET]
+
+image:
+  pattern: /image/{id}/{size}
+  controller: CoreWebBundle:Image:getImage
+  requirements:
+    id: \d+
+    size: (small|medium|large)
+
+download-redirect-pdf:
+  pattern: /download/files/{repositoryId}/{articleId}.{extension}
+  defaults:
+    controller: FrameworkBundle:Redirect:redirect
+    route: download-pdf
+    permanent: true
+
+download-pdf:
+  pattern: /download/pdf/{articleId}.{extension}
+  controller: CoreWebBundle:Download:download
+  requirements:
+    articleId: \d+
+    extension: pdf
+
+sitemapxml: /sitemap.xml
+sitemapxml-index: /sitemap.xml/{index}
+
+repositories-location: /repositories/locations
+
+api-doc-generate:
+  pattern: /api-v2/doc
+  controller: CoreWebBundle:Swagger:generate
+api-doc-generate-resource:
+  pattern: /api-v2/doc/{resource}
+  controller: CoreWebBundle:Swagger:generateResource
+
+CoreCommonBundle-apikeys:
+  resource: CoreWebBundle/Resources/config/apikeys.yml
+  prefix:   /api-keys
+CoreCommonBundle-recommenders:
+  resource: CoreWebBundle/Resources/config/recommenders.yml
+  prefix:   /recommender
+
+browse-repositories:
+  pattern: /browse/repositories
+  controller: CoreWebBundle:Browse:browseRepositories
+browse-repository:
+  pattern: /browse/repository/{repo-id}
+  controller: CoreWebBundle:Browse:browseRepository
+browse-repository-by-page:
+  pattern: /browse/repository/{repo-id}/page/{page}
+  controller: CoreWebBundle:Browse:browseRepositoryByPage
+browse-latest:
+  pattern: /browse/latest
+  controller: CoreWebBundle:Browse:browseLatest
+browse-by-day:
+  pattern: /browse/day/{day}
+  controller: CoreWebBundle:Browse:browseByFullDay
+browse-by-day-page:
+  pattern: /browse/day/{day}/page/{page}
+  controller: CoreWebBundle:Browse:browseByFullDayPage
+browse:
+  pattern: /browse
+  controller: CoreWebBundle:Browse:browse
+browse-year:
+  pattern: /browse/{year}
+  controller: CoreWebBundle:Browse:browse
+browse-year-month:
+  pattern: /browse/{year}/{month}
+  controller: CoreWebBundle:Browse:browseByMonth
+browse-year-month-day:
+  pattern: /browse/{year}/{month}/{day}
+  controller: CoreWebBundle:Browse:browseByDay
+browse-year-month-day-repo:
+  pattern: /browse/{year}/{month}/{day}/repository/{repoId}
+browse-year-month-day-repo-page:
+  pattern: /browse/{year}/{month}/{day}/repository/{repoId}/page/{page}
+
+blog: https://blog.core.ac.uk

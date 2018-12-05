@@ -12,8 +12,7 @@ repositories that are related to:
 * a metadata record a full-text item in pdf any piece of text any
 * combination of the above
 
-The CORE Recommender is deployed in [various 
-locations](path('_core_about_endorsements'#recomUsedIn),
+The CORE Recommender is deployed in [various locations](endorsements#locations),
 such as on the CORE Portal and in institutional repositories and journals.
 
 Uniqueness of the CORE Recommender:
@@ -22,13 +21,13 @@ Uniqueness of the CORE Recommender:
 * recommendations solely on abstracts or metadata. We ensure that the
 * recommended articles are available open access. We provide our
 * recommendation service for free. We provide it using a machine accessible
-* interface ([API](#api)).
+* interface ([API](api)).
 
-Find out more about the CORE Recommender
-[here](https://blog.core.ac.uk/2016/10/04/core-recommender/). To install the
-recommender visit our [registration page](path'recommenders_register').
+Find out more about the CORE Recommender [here][recommender-blog-post].
+To install the recommender visit our [registration page](recommenders/register).
 
-For those with access to the [CORE Repositories
-Dashboard](path'_core_services_main'#dashboard): the Recommender installation
-guidelines and an installation key can be found in the Dashboard. Log into the
-Dashboard and then choose the tab "Get the recommender".
+For those with access to the [CORE Repositories Dashboard](services#dashboard):
+the Recommender installation guidelines and an installation key can be found in
+the Dashboard. Log into the Dashboard and then choose the tab "Get the recommender".
+
+[recommender-blog-post]: https://blog.core.ac.uk/2016/10/04/core-recommender/
