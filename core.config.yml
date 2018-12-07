@@ -48,7 +48,7 @@ footer:
     path: http://blog.core.ac.uk
   - title: Contact us
     path: /about/contact
-  - title: Privary notice
+  - title: Privacy notice
     path: /privacy
   - title: Browse
     path: /browse
