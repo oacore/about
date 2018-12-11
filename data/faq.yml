@@ -2,12 +2,12 @@ title: FAQs
 sections:
   - title: Join CORE
     items:
-      - slug: faq-01-01
+      - slug: am-i-harvested
         question: Is my repository, journal or archive harvested by CORE?
         answer: |
           If you wonder whether your repository, journal or archive is harvested
           by CORE, check our data providers [list](path___core_repositories).
-      - slug: faq-01-02
+      - slug: how-to-register
         question: |
           How do I register my repository, journal or archive with CORE?
         answer: |
@@ -18,7 +18,7 @@ sections:
           some authoritative registry, you don't need to do anything.
           If your repository, journal or archive has not been registered
           yet get in [touch](path___core_contact).
-      - slug: faq-01-03
+      - slug: where-are-repos-located
         question: Where are the repositories that CORE harvests located?
         answer: |
           CORE is an international service and it harvests repositories from
@@ -26,27 +26,27 @@ sections:
           a map and can be accessed [here](path___core_menu_providers).
   - title: "Aggregation: general"
     items:
-      - slug: faq-02-01
+      - slug: how-often-we-harvest
         question: How often does CORE harvest the repositories?
         answer: |
           CORE does not harvest all the repositories that exist in our database
           with the same frequency. If you have a question regarding a specific
           repository do get in [touch with us](path___core_contact).
-      - slug: faq-02-02
+      - slug: types-of-scientific-outputs-provided
         question: |
           What types of scientific outputs does CORE provide?
         answer: |
           CORE harvests all metadata records in a repository, but it is in
           position to harvest full-text records in PDF only. We are working
           though to include other file types, such as HTML webpages, images etc.
-      - slug: faq-02-03
+      - slug: harvesting-of-not-open-access
         question: |
           My repository has plenty of metadata records, but not all of them
           have an open access full-text. Can it be harvested by CORE?
         answer: |
           Yes it can, provided that the repository offers its content as
           [Open Access](path___core_about_main).
-      - slug: faq-02-04
+      - slug: papers-updating
         question: |
           There is a mistake in my article, can you upload a new version?
         answer: |
@@ -54,7 +54,7 @@ sections:
           records. You can upload the new record into your institutional
           repository/journal and CORE will synchronise it at the next
           scheduled re-harvesting.
-      - slug: faq-02-05
+      - slug: core-vs-google-scholar
         question: |
           How is CORE different from Google Scholar?
         answer: |
@@ -77,7 +77,7 @@ sections:
             managers, and offers services designed for them, such as the
             [CORE API](path___core_services_main#api) and
             [Datasets](path___core_services_main#dataset).
-      - slug: faq-02-06
+      - slug: no-download-button
         question: |
           There isn’t a “Download” button in the CORE display page,
           how can I access the full-text?
