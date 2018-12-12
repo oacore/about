@@ -384,13 +384,6 @@ sections:
           incomplete, you should contact the repository of origin. To improve
           the CORE recommendations, you can use the feedback button, with which you
           can remove any undesirable articles.
-      - slug: how-big-is-your-data-in-sheer-disk-space
-        question: |
-          How big is your data in sheer disk space?
-        answer: |
-          CORE has around 15 terabytes (Tb) of raw textual data (metadata, pdfs,
-          processed pdfs text), 1.5Tb of indexed data (each replica)
-          and 1.5Tb of database data.
   - title: General information about CORE
     items:
       - slug: high-resolution-logo-CORE
