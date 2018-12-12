@@ -6,11 +6,14 @@ import Link from '../link'
 
 // We pass additional link because Markdown component does not render
 // pure text but renders own TextRenderer componet instead
-const MarkdownLink = ({ href, title, children }) => (
-  <Link href={href}>
-    <a title={title}>{children}</a>
-  </Link>
-)
+const MarkdownLink = ({ href, title, children }) => {
+  const [pathname, hash] = href.split('#')
+  return (
+    <Link href={{ pathname, hash: hash && `#${hash}` }}>
+      <a title={title}>{children}</a>
+    </Link>
+  )
+}
 
 const markdownConfig = {
   escapeHtml: false,

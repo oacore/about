@@ -5,7 +5,7 @@ import Router from '../router'
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Link = ({ href, children, ...restProps }) => {
-  let pathname = (href && href.pathname) || href
+  let pathname = href && href.pathname != null ? href.pathname : href
   // FIXME: Temporarely skip block routes
   // TODO: Configure dynamic routing via NextJS config
   pathname = Router.resolve(pathname)
