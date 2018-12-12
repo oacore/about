@@ -1,6 +1,7 @@
 home: /
 
 about: /about
+about/core: /about/core
 ambassadors: /about/ambassadors
 faq: /about/faq
 mission: /about/mission
@@ -10,12 +11,17 @@ research-outputs:
   pattern: /about/researchoutputs
   controller: CoreWebBundle:ResearchOutputs:index
 contact: /contact
+cookies: /privacy/cookies
 
-services: /services
-services-fast: /services/fastsync
-services-labs-oadiscovery: /services/labs/discovery
-services-plugin: /services/plugin
-services-mobile: /services/mobile
+support: /services/support
+
+services:
+  pattern: /services
+  children:
+    fast: ./fastsync
+    labs-oadiscovery: ./labs/discovery
+    plugin: ./plugin
+    mobile: ./mobile
 api:
   pattern: /services/api
   defaults:
@@ -26,15 +32,15 @@ api:
     private: false
 services-sparqlendpoint: /services/sparqlendpoint
 services-getdatadump-form:
-  path: /dataset/getdatadump
+  pattern: /dataset/getdatadump
   controller: CoreWebBundle:DataDumpRequest:dataDumpForm
 services-getdatadump-verify-submit:
-  path: /dataset/complete
+  pattern: /dataset/complete
   controller: CoreWebBundle:DataDumpRequest:verifySubmit
   requirements:
     method: post
 services-dataset-dynamic-render:
-  path: /dataset/render/{showDownloadLink}
+  pattern: /dataset/render/{showDownloadLink}
   controller: CoreWebBundle:DataSet:renderDynamicDataSets
   requirements:
     method: get
@@ -60,20 +66,22 @@ journal-page:
   pattern:  /journal/{issn}
   controller: CoreWebBundle:Journals:display
 intro-datadumps-redirect:
-  path: /intro/data-dumps
+  pattern: /intro/data-dumps
   defaults:
     controller: FrameworkBundle:Redirect:urlRedirect
     path: /services#dataset
     permanent: true
 
-join: /join
 recommendations: /recommendations
-join-eligible: /join/eligible
-join-submit:
-  pattern: /join/submit
-  controller: CoreWebBundle:Join:submit
-join-submit-complete: /join/submit/complete
-join-guidelines: /join/guidelines
+join:
+  pattern: /join
+  children:
+    eligible: ./eligible
+    submit:
+      pattern: ./submit
+      controller: CoreWebBundle:Join:submit
+    submit-complete: ./submit/complete
+    guidelines: ./guidelines
 corerecommendations: /corerecommendations
 
 providers-id:
@@ -98,7 +106,7 @@ display-form:
   pattern:  /article-update/{id}
   controller: CoreWebBundle:ArticleForm:ArticleForm
 display-form-complete:
-  path: /display/{id}/requestsent
+  pattern: /display/{id}/requestsent
   controller: CoreWebBundle:ArticleForm:completed
 repository-statistics:
   pattern:  /repository/statistics/{repoId}
@@ -145,12 +153,12 @@ api-doc-generate-resource:
   pattern: /api-v2/doc/{resource}
   controller: CoreWebBundle:Swagger:generateResource
 
-CoreCommonBundle-apikeys:
-  resource: CoreWebBundle/Resources/config/apikeys.yml
-  prefix:   /api-keys
-CoreCommonBundle-recommenders:
-  resource: CoreWebBundle/Resources/config/recommenders.yml
-  prefix:   /recommender
+# CoreCommonBundle-apikeys:
+#   resource: CoreWebBundle/Resources/config/apikeys.yml
+#   prefix:   /api-keys
+# CoreCommonBundle-recommenders:
+#   resource: CoreWebBundle/Resources/config/recommenders.yml
+#   prefix:   /recommender
 
 browse-repositories:
   pattern: /browse/repositories

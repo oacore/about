@@ -4,7 +4,7 @@ description: >
   based at The Open University, United Kingdom.
 navigation:
   - title: Services
-    path: services
+    path: ~services
     sections:
       - title: Access to data
         path: /services/access-to-data
@@ -30,29 +30,29 @@ navigation:
           - title: Analitycs dashboard
             path: /services/managing-content/analitycs-dashboard
       - title: Support
-        path: /services/support
+        path: ~support
         children:
           - title: CORE Helpdesk
             path: /services/support/helpdesk
   - title: About
-    path: about
+    path: ~about
     children:
       - title: About CORE
-        path: /about/core
+        path: ~about/core
       - title: Blog
-        path: http://blog.core.ac.uk
+        path: ~blog
       - title: Contact us
-        path: contact
+        path: ~contact
 footer:
   - title: Blog
-    path: blog
+    path: ~blog
   - title: Contact us
-    path: contact
+    path: ~contact
   - title: Privacy notice
-    path: privacy
+    path: ~privacy
   - title: Browse
-    path: browse
+    path: ~browse
   - title: Cookies
-    path: /privacy/cookies
+    path: ~cookies
   - title: About CORE
-    path: /about/core
+    path: ~about/core
