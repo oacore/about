@@ -6,8 +6,7 @@ import AccordionItem from './item'
 
 import './accordion.scss'
 
-// TODO: Make it semantic
-// TODO: Add support of item open from the first render
+// TODO: Make it semantic: provide aria-* attributes
 class Accordion extends Component {
   static propTypes = {
     tag: PropTypes.node,

@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Card, CardHeader, CardBody, CardLink, Collapse } from 'reactstrap'
 import { bind } from 'decko'
 
 import './accordion.scss'
 
-// TODO: Develop markup according to the design
-class AccordionItem extends React.Component {
+class AccordionItem extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,
     isOpen: PropTypes.bool,
@@ -26,9 +25,9 @@ class AccordionItem extends React.Component {
   }
 
   render() {
-    const { id, title, children, isOpen } = this.props
+    const { id, title, children, isOpen, className } = this.props
     return (
-      <Card id={id} className="accordion-item" tag="section">
+      <Card id={id} className={`accordion-item ${className}`} tag="section">
         <CardHeader className="accordion-header">
           <h4 className="accordion-title">
             <CardLink
