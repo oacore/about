@@ -10,9 +10,9 @@ import {
   Switcher,
 } from '../components'
 
-import apiIcon from '../images/api.svg'
-import globeIcon from '../images/globe.svg'
-import hallIcon from '../images/hall.svg'
+import apiIcon from '../static/images/api.svg'
+import globeIcon from '../static/images/globe.svg'
+import hallIcon from '../static/images/hall.svg'
 
 import './index.scss'
 
