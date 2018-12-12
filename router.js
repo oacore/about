@@ -23,7 +23,14 @@ mapped.forEach(item => routesMap.set(...item))
 
 class Router {
   static resolve(pathname) {
-    if (pathname.charAt(0) !== '~') return pathname
+    if (pathname.charAt() !== '~') return pathname
+
+    // Special keys
+    // TODO: Try to implement smart route lookup instead this hack
+    if (pathname.match(/^~static/))
+      return pathname.replace(/^~static/, '/static')
+    if (pathname.match(/^~images/))
+      return pathname.replace(/^~images/, '/static/images')
 
     const key = pathname.substr(1)
 
