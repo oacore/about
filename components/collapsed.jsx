@@ -12,6 +12,11 @@ class Collapsed extends Component {
     }
   }
 
+  componentDidMount() {
+    if (window.location.hash.substr(1) === this.props.id)
+      this.setState({ isOpen: true })
+  }
+
   @bind
   toggle() {
     this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
