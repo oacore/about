@@ -24,20 +24,20 @@ sections:
           CORE is an international service and harvests repositories from
           various locations around the world. This information is displayed in
           a map and can be accessed [here](path___core_menu_providers).
-     - slug: I-would-like-to-include-them-in-CORE
-       question: | 
-          I am an author of scientific papers and I would like to include them in CORE.  
-       answer: | 
+      - slug: I-would-like-to-include-them-in-CORE
+        question: |
+          I am an author of scientific papers and I would like to include them in CORE.
+        answer: |
           CORE is a harvesting service and is not similar to research networking sites,
           e.g. ResearchGate or Academia.edu, where authors can deposit papers,
-          so please do not email us the full text of your papers. If you have deposited  
+          so please do not email us the full text of your papers. If you have deposited
           your articles in a repository [let us](path___core_contact) know
           the name of the repository. There are chances that we it
-          already and if we don't we could start harvesting it. 
+          already and if we don't we could start harvesting it.
   - title: "Aggregation: general"
     items:
       - slug: how-often-does-CORE-harvest-the-repositories
-        question: | 
+        question: |
           How often does CORE harvest the repositories?
         answer: |
           CORE does not harvest all the repositories that exist in our database
@@ -47,10 +47,10 @@ sections:
         question: |
           When will the harvesting process of my repository be completed?
         answer: |
-          Depending on the size of the repository and the existing traffic 
+          Depending on the size of the repository and the existing traffic
           in CORE's servers, the harvesting can last from a couple of hours
           to a couple of weeks. If we experience any technical issues
-          during that period, we will get in touch. 
+          during that period, we will get in touch.
       - slug: what-types-of-scientific-outputs-does-CORE-provide
         question: |
           What types of scientific outputs does CORE provide?
@@ -67,13 +67,13 @@ sections:
           [Open Access](path___core_about_main).
       - slug:  my-repository-contains-a-much-higher-number-of-records-than-CORE
         question: |
-            My repository contains a much higher number of records than CORE. 
-        What can I do? 
+            My repository contains a much higher number of records than CORE.
+            What can I do?
         answer: |
-            Log in to the CORE Repository Dashboard (path___core_services_main#dashboard) 
+            Log in to the CORE Repository Dashboard (path___core_services_main#dashboard)
             and look under the issues tab. Examine whether CORE has the correct oai base
             url of your repository or if there are any technical issues listed there.
-            If there are no technical issues or you do not have an account for the CORE 
+            If there are no technical issues or you do not have an account for the CORE
             Repository Dashboard [contact us](path___core_contact).
       - slug: can-I-upload-a-new-version
         question: |
@@ -114,41 +114,41 @@ sections:
             [Datasets](path___core_services_main#dataset).
       - slug: there-is-no-download-button
         question: |
-          I do not see the “Download” button in the CORE display page. 
+          I do not see the “Download” button in the CORE display page.
           How can I access the full text?
         answer: |
           CORE harvests content that is available open access elsewhere,
           i.e. repositories and open access journals. When the “Download”
           button is missing, it means that the full text is not available
           from the hosting service, CORE does not have it and displays only the metadata of
-          this record. If you need to access the full text we recommend 
+          this record. If you need to access the full text we recommend
           that you contact the content provider listed in the CORE
-          metadata display page, at the section "Provided by". 
-     - slug: metadata-in-the-CORE-display-page-are-wrong
-       question: | 
+          metadata display page, at the section "Provided by".
+      - slug: metadata-in-the-CORE-display-page-are-wrong
+        question: |
           The metadata in the CORE display page are wrong. How can I have them corrected?
-       answer: |
+        answer: |
           CORE does not create the metadata, but rather harvests
           them from its content providers. If the metadata are wrong
           then contact the repository or journal where you had originally
-          deposited or published your content. 
-     - slug: can-CORE-offer-any-statistics-about-the-content-it-harvests
-       question: |
+          deposited or published your content.
+      - slug: can-CORE-offer-any-statistics-about-the-content-it-harvests
+        question: |
           Can CORE offer any statistics about the content it harvests?
-       answer: |
-           CORE can offer repository or journal full text download statistics per month via the 
-           [CORE Repository Dashboard](path___core_services_main#dashboard) but is not in position 
-           to offer single item downloads yet. If you do not have access to the 
-           Dashboard [contact us](path___core_contact).
+        answer: |
+          CORE can offer repository or journal full text download statistics per month via the
+          [CORE Repository Dashboard](path___core_services_main#dashboard) but is not in position
+          to offer single item downloads yet. If you do not have access to the
+          Dashboard [contact us](path___core_contact).
       - slug: are-the-research-papers-offered-by-CORE-peer-reviewed
         question: |
-            Are the research papers offered by CORE peer-reviewed? 
+          Are the research papers offered by CORE peer-reviewed?
         answer: |
-            Yes it does. CORE harvests content from repositories and journals. The first 
-            do not perform peer review of the deposited content but the latter
-            do. In some occassions the content deposited in a repository is already
-            published in a journal and is peer-reviewed. In addition, repositories may contain  
-            grey literature and these resources are not peer-reviewed. 
+          Yes it does. CORE harvests content from repositories and journals. The first
+          do not perform peer review of the deposited content but the latter
+          do. In some occassions the content deposited in a repository is already
+          published in a journal and is peer-reviewed. In addition, repositories may contain
+          grey literature and these resources are not peer-reviewed.
   - title: 'Aggregation: technical'
     items:
       - slug: what-are-the-technical-requirements-for-being-aggregated
@@ -164,19 +164,19 @@ sections:
         question: |
           What is my journal's oai base url?
         answer: |
-          A journal's oai base url looks similar to this http://journaldomain.com/cgi/oai2 
-          or http://journaldomain.com/oai/request. A journal's webpage looks similar 
+          A journal's oai base url looks similar to this http://journaldomain.com/cgi/oai2
+          or http://journaldomain.com/oai/request. A journal's webpage looks similar
           to this http://journaldomain.com and CORE
-          cannot harvest the journal's content via its webpage url. If you 
+          cannot harvest the journal's content via its webpage url. If you
           are not sure whether your journal has an oai base url do contact
-          the team that provides technical support to your journal. 
+          the team that provides technical support to your journal.
       - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
         question: |
           How difficult is it to satisfy the CORE harvesting recommendations?
         answer: |
           We would expect that harvesting could take from one hour to a couple of
-          days for a typical repository. In some repository systems, 
-          such as EPrints, most of these recommendations are followed by default. 
+          days for a typical repository. In some repository systems,
+          such as EPrints, most of these recommendations are followed by default.
           You can find more details [here](path___core_recommendations).
       - slug: which-metadata-formats-does-CORE-support
         question: |
@@ -207,12 +207,12 @@ sections:
           article.
       - slug: can-CORE-stop-caching-PDFs-from-my-repository
         question: |
-          Can CORE stop caching the PDFs from my repository? 
+          Can CORE stop caching the PDFs from my repository?
         answer: |
-          CORE can change the way it treats your repository's content. The resources 
-          will be indexed and made discoverable via the CORE Search, but the PDFs 
-          will not be downloadble directry from the CORE Reader, a link will be 
-          provided only to the repository of origin. If you are interested in 
+          CORE can change the way it treats your repository's content. The resources
+          will be indexed and made discoverable via the CORE Search, but the PDFs
+          will not be downloadble directry from the CORE Reader, a link will be
+          provided only to the repository of origin. If you are interested in
           that option [contact](path___core_contact) us.
       - slug:  how-can-my-repository-opt-out-from-being-harvested-by-CORE
         question: |
@@ -237,7 +237,7 @@ sections:
         answer: |
           CORE aggregates content from repositories registered in
           [OpenDOAR](http://www.opendoar.org/about.html), journals registered
-          in [DOAJ](http://www.doaj.org/) or those content providers that requested 
+          in [DOAJ](http://www.doaj.org/) or those content providers that requested
           their content to be aggregated. This means that all the content sources aggregated
           by CORE must be open access as this is a requirement for the
           providers to be included in these registries. According to the
@@ -277,24 +277,25 @@ sections:
           How do I notify CORE to take down full text content?
         answer: |
           If full text content appears in CORE but not in the
-          hosting service your repository manager can take it down via the 
-          [CORE Repository Dashboard](path___core_services_main#dashboard) 
-          anytime without notifying us. If the hosting service does not have 
+          hosting service your repository manager can take it down via the
+          [CORE Repository Dashboard](path___core_services_main#dashboard)
+          anytime without notifying us. If the hosting service does not have
           access to the Dashboard visit [this page](path___core_display_form).
       - slug: full-text-has-been-removed-but-metadata-still-visible
         question: |
-           The full text has been removed, but the metadata is still visible in CORE
+          The full text has been removed, but the metadata is still visible
+          in CORE
         answer: |
-           It is a CORE policy to remove only the full text and not
-           the metadata. 
-     - slug: 
+          It is a CORE policy to remove only the full text and not
+          the metadata.
+      - slug: why-metadata-is-still-visible
         question: |
-            I have removed an item from my repository, but the metadata are still
-            visible in CORE
+          I have removed an item from my repository, but the metadata are still
+          visible in CORE
         answer: |
-            In order for the metadata to be removed from CORE they need to be
-            marked as "deleted/removed" in the repository. If the metadata are
-            marked as "restricted" CORE will still display it.      
+          In order for the metadata to be removed from CORE they need to be
+          marked as "deleted/removed" in the repository. If the metadata are
+          marked as "restricted" CORE will still display it.
   - title: CORE services
     items:
       - slug: how-do-I-register-for-an-API-key
@@ -355,8 +356,8 @@ sections:
         question: |
           How often is the CORE dataset updated?
         answer: |
-          We aim to generate a new public dataset at least once a year. 
-          If you need a more recent dataset, please [get in touch](path___core_contact) 
+          We aim to generate a new public dataset at least once a year.
+          If you need a more recent dataset, please [get in touch](path___core_contact)
           with us as we might be able to arrange it.
       - slug: how-can-I-download-the-CORE-Recommender
         question: |
@@ -369,11 +370,11 @@ sections:
           Otherwise, visit our recommender
           [registration page](path__recommenders_register),
           where you will also find the installation instructions. Repository
-          managers are highly recommended to use the CORE Repositories 
-          Dashboard. 
-      - slug: I-am-not-pleased-with-the-similar-papers 
+          managers are highly recommended to use the CORE Repositories
+          Dashboard.
+      - slug: I-am-not-pleased-with-the-similar-papers
         question: |
-          When I look at the papers I have authored, I am not pleased with the 
+          When I look at the papers I have authored, I am not pleased with the
           similar papers suggested by the CORE Recommender. How can I change that?
         answer: |
           The CORE recommender uses the popular [content-based filtering
