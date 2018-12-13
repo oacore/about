@@ -1,4 +1,4 @@
-image: node:10
+image: node:11-alpine
 
 definitions:
   steps:
@@ -7,8 +7,8 @@ definitions:
         caches:
           - node
         script:
-          - yarn install
-          - yarn lint
+          - npm install
+          - npm run lint
 
 pipelines:
   default:
@@ -21,5 +21,5 @@ pipelines:
           caches:
             - node
           script:
-            - yarn install
-            - yarn export
+            - npm install
+            - NODE_ENV=production npm run export
