@@ -1,0 +1,49 @@
+title: CORE
+hero: |
+  Seamless access to the worldʼs biggest collection of open access
+  research papers
+key-features:
+- title: Worldwide data
+  description: |
+    We aggregate and enrich open access research papers from around the world
+
+    [Read about our data](~services/data)
+  picture: /static/images/globe.svg
+- title: Unique APIs
+  description: |
+    We provide seamless access to content and data, through our
+    unique [APIs](~api)
+
+    **Perfect for [text mining](~api)!**
+  picture: /static/images/api.svg
+- title: Powerful Services
+  description: |
+    We create powerful [services](~services) for researchers, universities,
+    and industry
+  picture: /static/images/hall.svg
+join:
+  title: Join CORE
+  lead: |
+    Whether to access data, use powerful tools or get your content harvested,
+    join for free today
+  action: Join CORE for free
+  note: |
+    CORE is not-for-profit service delivered by the
+    [Open University](https://open.ac.uk) and [Jisk](https://www.jisc.ac.uk)
+endorsements:
+  title: Who else is using CORE?
+  enterprise:
+    title: Enterprise customers using CORE technologies
+    description: |
+      We are proud to provide great scalable services for enterprise business
+    limit: 5
+  academic:
+    title: Academic institutions using CORE
+    description: |
+      Our content and data is used by hundreds of academic institutions
+      every day
+    limit: 5
+partnerProjects:
+  title: Partner projects
+  description: |
+    Organizations from around the world have worked with us

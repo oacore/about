@@ -1,0 +1,44 @@
+title: What Others Have to Say
+testimonials:
+- picture: partners/mooc-logo.png
+  quote: |
+    With millions of research papers available across thousands of different systems, CORE provides an invaluable service helping researchers to save time and effort. CORE’s mission to make all this content available for text and data mining is critical for future avenues of research, and a major part of advancing open science."
+  author: Jon Tennant, Rogue Paleontologist and Founder of the Open Science MOOC
+
+- picture: partners/OpenAIREplus-logo.png
+  quote: |
+    The OpenAIRE infrastructure has recently started a collaboration with the CORE Team led by Petr Knoth in order to include in the OpenAIRE metadata and file aggregation chain the resources made available via the ResourceSync connector realised at the CORE Team Lab. To this aim, the OpenAIRE team is testing the CORE ResourceSync Connector code with the intention of integrating it in its production system before the end of 2017.
+  author: Dr. Paolo Manghi, Institute of Information Science and Technologies (CNR), Technical Manager at OpenAIRE
+
+- picture: partners/OpenAIREplus-logo.png
+  quote: CORE’s help has been invaluable as we have been tracking the transition to open access, and the growth in repositories and their contents. It is indeed a core resource for all those with any interest in open access and its development.
+  author: Michael Jubb, Consultant working for Universities UK’s Open Access Co-ordination Group.
+
+- picture: testimonials/HEFCE-logo.png
+  quote: |
+    Aggregation plays an increasingly essential role in maximising the long-term benefits of open access, helping to turn the promise of a 'research commons' into a reality. The aggregation services that CORE provides therefore make a very valuable contribution to the evolving open access environment in the UK."
+  author: Ben Johnson, HEFCE Research Policy Adviser
+
+- picture: testimonials/LeedsBeckett-logo.svg.png
+  quote: |
+    As an Open Access advocate, CORE is an invaluable tool to demonstrate the potential of OA and when I show it to academic staff I can literally see the “penny drop” as they suddenly realise that potential for themselves. CORE also provides an opportunity to carry the discussion of OA beyond free to read to the immense potential of text mining, for example."
+  author: Nick Sheppard, Repository Developer at Leeds Beckett University
+
+- picture: testimonials/OpenAccessButtonLogo.svg.png
+  quote: |
+    CORE has supported the Open Access Button in connecting researchers and the public with the research they need. CORE facilitates access to the results of millions of research papers, a crucial function in the Open Access movement."
+  author: Joe Mcarthur and David Carroll, Founders of the Open Access Button
+
+- picture: institutions/the-open-uni-logo.png
+  quote: |
+    CORE’s role in providing a unified search of repository content is a great tool for the researcher and extends the reach of the locally held content in our institutional repository, Open Research Online."
+  author: Nicola Dowson, Library Services Manager at Open University
+
+- quote: |
+    One of the criticisms of repositories, particularly institutional repositories, has always been that while they are providing a great service they are doing so in a dispersed fashion across many repositories. CORE is providing a valuable service in support of repositories by aggregating the content repositories hold and curate individually and by providing additional end user services, such as the portal and mobile app, to an impressive collection of open access scholarly material."
+  author: Yvonne Budden, Chair of the United Kingdom Council of Research Repositories (UKCoRR)
+
+- picture: companies/research-logo.png
+  quote: |
+    The CORE team understand data mining. As an independent company, we had no obvious access to big, diverse scholarly data - a killer in our drive to develop classification algorithms. The CORE repository, available in bulk, was a breakthrough. Now our algorithms outperform even those from huge publishers."
+  author: William Cullerne Bown, CEO ResearchResearch.com

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Container } from 'reactstrap'
-import NextLink from 'next/link'
 
 import {
   Layout,
@@ -8,21 +7,31 @@ import {
   KeyFeature,
   KeyFeatureList,
   Switcher,
+  Content,
+  Section,
 } from '../components'
 
-import apiIcon from '../static/images/api.svg'
-import globeIcon from '../static/images/globe.svg'
-import hallIcon from '../static/images/hall.svg'
+import page from '../data/home.yml'
+import { testimonials } from '../data/endorsements.yml'
 
 import './index.scss'
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
-const Link = ({ children, ...args }) => (
-  <NextLink {...args}>
-    <a>{children}</a>
-  </NextLink>
+const TestimonialsSwitcher = ({ limit, ...restProps }) => (
+  <Switcher {...restProps}>
+    {testimonials.slice(0, limit).map(({ quote, author }, i) => {
+      const id = `quote-${i}`
+      const title = /^([\w\s.]+),/.exec(author)[1] || author
+      return (
+        <Switcher.Item id={id} title={title} key={author}>
+          <blockquote className="blockquote">
+            <Content markdown>{quote}</Content>
+            <footer className="blockquote-footer">{author}</footer>
+          </blockquote>
+        </Switcher.Item>
+      )
+    })}
+  </Switcher>
 )
-/* eslint-enable jsx-a11y/anchor-is-valid */
 
 class IndexPage extends React.Component {
   // TODO: Avoid this hack
@@ -38,60 +47,52 @@ class IndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <Hero>
-          Seamless access to the worldʼs biggest collection of open access
-          research papers
-        </Hero>
+        <Hero>{page.hero}</Hero>
 
         <div className="home-key-features">
           <Container>
             <KeyFeatureList>
-              <KeyFeature title="Worldwide data" icon={globeIcon}>
-                We aggregate and enrich open access research papers from around
-                the world
-                <br />
-                <Link href="/services/data">Read about our data</Link>
-              </KeyFeature>
-              <KeyFeature title="Unique APIs" icon={apiIcon}>
-                We provide seamless access to content and data, through our
-                unique&nbsp;<Link href="/services/api">APIs</Link>
-                <br />
-                <Link href="/services/api">Perfect for text mining!</Link>
-              </KeyFeature>
-              <KeyFeature title="Powerful Services" icon={hallIcon}>
-                We create powerful <Link href="/services">services</Link> for
-                researchers, universities, and industry
-              </KeyFeature>
+              {page.keyFeatures.map(({ title, description, picture }) => (
+                <KeyFeature title={title} icon={picture}>
+                  <Content markdown>{description}</Content>
+                </KeyFeature>
+              ))}
             </KeyFeatureList>
           </Container>
         </div>
 
-        <Container className="py-5">
-          <h2 className="text-center">Partner projects</h2>
-          <p className="mt-3 text-center">
-            Organizations from around the world have worked with us
-          </p>
-          <Switcher className="home-switcher">
-            <Switcher.Item id="lorem-company" title="Lorem company">
-              <blockquote className="blockquote">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante.
-                <footer className="blockquote-footer">
-                  Someone famous in Source Title
-                </footer>
-              </blockquote>
-            </Switcher.Item>
-            <Switcher.Item id="ipsum-company" title="Ipsum company" active>
-              <blockquote className="blockquote">
-                Ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                posuere erat a ante.
-                <footer className="blockquote-footer">
-                  Someone famous in Source Title
-                </footer>
-              </blockquote>
-            </Switcher.Item>
-          </Switcher>
-        </Container>
+        <Section id="endorsements" container>
+          <Container>
+            <h2>{page.endorsements.title}</h2>
+          </Container>
+
+          <Section id="enterprise">
+            <Container>
+              <h3>{page.endorsements.enterprise.title}</h3>
+              <p>{page.endorsements.enterprise.description}</p>
+              <TestimonialsSwitcher
+                limit={page.endorsements.enterprise.limit}
+              />
+            </Container>
+          </Section>
+
+          <Section id="academic-institutions">
+            <Container>
+              <h3>{page.endorsements.academic.title}</h3>
+              <p>{page.endorsements.academic.description}</p>
+              <TestimonialsSwitcher
+                limit={page.endorsements.enterprise.limit}
+              />
+            </Container>
+          </Section>
+        </Section>
+
+        <Section id="partner-projects">
+          <Container>
+            <h2>{page.partnerProjects.title}</h2>
+            <TestimonialsSwitcher />
+          </Container>
+        </Section>
       </Layout>
     )
   }
