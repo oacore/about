@@ -162,7 +162,7 @@ const AboutPage = () => (
               ))}
             </Collapsed>
             <Collapsed id="past-members" title="Past members of the CORE team">
-              {teamData['past-members'].map(({ name, job }) => (
+              {teamData.pastMembers.map(({ name, job }) => (
                 <p key={`${name}, ${job}`}>
                   {name}, {job}
                 </p>
