@@ -1,0 +1,6 @@
+env:
+  node: true
+  browser: false
+
+rules:
+  import/no-extraneous-dependencies: [error, { devDependencies: true }]

@@ -7,6 +7,16 @@ const nextConfig = {
     config.module.rules.push(
       {
         test: /\.ya?ml$/,
+        include: [path.resolve(__dirname, 'data')],
+        use: [
+          'json-loader',
+          path.resolve('webpack/data-loader.js'),
+          'yaml-loader',
+        ],
+      },
+      {
+        test: /\.ya?ml$/,
+        exclude: [path.resolve(__dirname, 'data')],
         use: ['json-loader', 'yaml-loader'],
       },
       {
