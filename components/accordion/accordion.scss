@@ -12,10 +12,6 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
     border: solid $card-border-color;
     border-width: $card-border-width 0;
   }
-
-  .card:not(:last-of-type) {
-    margin-bottom: map-get($spacers, 2);
-  }
 }
 
 .accordion-item {
@@ -31,6 +27,10 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
 
   .card-body {
     padding-left: $accordion-spacer-left;
+  }
+
+  + .accordion-item {
+    margin-top: map-get($spacers, 2);
   }
 }
 
