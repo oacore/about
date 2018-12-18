@@ -1,0 +1,47 @@
+@import "../../components/bootstrap/core";
+
+$hightlight-section-padding-y: 4 * $spacer;
+
+.highlight-section {
+  // TODO: Discuss spacer on left and right sides
+  padding-top: $hightlight-section-padding-y;
+  padding-bottom: $hightlight-section-padding-y;
+
+  @include media-breakpoint-up("md") {
+    // TODO: Discuss that hack with the designer
+    padding-left: 4 * $spacer;
+    padding-right: 4 * $spacer;
+  }
+
+  .row {
+    align-items: center;
+  }
+
+  &:nth-child(odd) .row {
+    flex-direction: row-reverse;
+  }
+
+  @include media-breakpoint-down("sm") {
+    .row > :not(:last-child) {
+      margin-bottom: $spacer;
+    }
+  }
+}
+
+.highlight-section-picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.highlight-section-link {
+  text-align: center;
+
+  a {
+    color: #307daa;
+
+    @include hover-focus {
+      color: #0175aa;
+    }
+  }
+}
