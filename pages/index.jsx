@@ -22,7 +22,12 @@ const TestimonialsSwitcher = ({ limit, ...restProps }) => (
       const id = `quote-${i}`
       const title = /^([\w\s.]+),/.exec(author)[1] || author
       return (
-        <Switcher.Item id={id} title={title} key={author}>
+        <Switcher.Item
+          id={id}
+          title={title}
+          key={author}
+          className="home-switcher"
+        >
           <blockquote className="blockquote">
             <Content markdown>{quote}</Content>
             <footer className="blockquote-footer">{author}</footer>
@@ -49,7 +54,7 @@ class IndexPage extends React.Component {
       <Layout>
         <Hero>{page.hero}</Hero>
 
-        <div className="home-key-features">
+        <Section tag="div">
           <Container>
             <KeyFeatureList>
               {page.keyFeatures.map(({ title, description, picture }) => (
@@ -59,7 +64,7 @@ class IndexPage extends React.Component {
               ))}
             </KeyFeatureList>
           </Container>
-        </div>
+        </Section>
 
         <Section id="endorsements" container>
           <Container>
