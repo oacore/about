@@ -8,16 +8,25 @@
 //
 
 $nearly-black: #2a3840;
-$light-gray: #e9eaeb;
-$dark-blue: #005f96;
-$light-blue: rgba($dark-blue, 7%);
+$light-grey: lighten(desaturate(adjust-hue($nearly-black, 8), 15.99), 70.98);
+
 $orange: #e08639;
-$dark-orange: #b75400;
+$orange-dark: darken(saturate($orange, 27.07), 19.22);
+$orange-darker: darken($orange-dark, 12.75);
+
+$blue: #005f96;
+$blue-light: lighten(desaturate($blue, 59.26), 65.29);
+$blue-dark: darken($blue, 8%);
+$blue-darker: darken($blue-dark, 8%);
+
+$beige: #f1f4ef;
+$beige-dark: darken(desaturate(adjust-hue($beige, -10), 0.57), 2.35);
+
 $brown: #763600;
 $green: #28a745;
 
-$primary: $dark-orange;
-$primary-dark: darken($dark-orange, 15%);
+$primary: $orange-dark;
+$primary-dark: $orange-darker;
 
 
 // Options
@@ -68,7 +77,7 @@ $card-border-radius: 0;
 
 // Navbar
 
-$navbar-dropdown-border-color:      $light-blue;
+$navbar-dropdown-border-color:      $blue-light;
 $navbar-dropdown-border-radius:     0;
 
 // TODO: Fix link color
