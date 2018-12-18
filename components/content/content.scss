@@ -1,7 +1,8 @@
 @import "../bootstrap/core";
 
-$section-padding-y: map-get($spacers, 4) !default;
-$article-padding-y: map-get($spacers, 5) !default;
+$article-padding-y: 6 * $spacer;
+$section-padding-y: 4 * $spacer;
+$section-sm-padding-y: 2 * $spacer;
 
 .content {
 }
@@ -9,6 +10,16 @@ $article-padding-y: map-get($spacers, 5) !default;
 .section {
   padding-top: $section-padding-y;
   padding-bottom: $section-padding-y;
+
+  > .section {
+    padding-top: $section-sm-padding-y;
+    padding-bottom: $section-sm-padding-y;
+
+    &:last-child {
+      padding-bottom: $section-padding-y;
+      margin-bottom: -$section-padding-y;
+    }
+  }
 }
 
 .article {
@@ -16,6 +27,7 @@ $article-padding-y: map-get($spacers, 5) !default;
   padding-bottom: $article-padding-y;
 
   & > .section:last-child {
-    padding-bottom: 0;
+    padding-bottom: $article-padding-y;
+    margin-bottom: -$article-padding-y;
   }
 }
