@@ -54,11 +54,12 @@ class IndexPage extends React.Component {
       <Layout>
         <Hero>{page.hero}</Hero>
 
-        <Section tag="div">
+        <Section>
           <Container>
+            <h2 className="sr-only">{page.features.title}</h2>
             <KeyFeatureList>
-              {page.keyFeatures.map(({ title, description, picture }) => (
-                <KeyFeature title={title} icon={picture}>
+              {page.features.children.map(({ title, description, picture }) => (
+                <KeyFeature title={title} icon={picture} key={title}>
                   <Content markdown>{description}</Content>
                 </KeyFeature>
               ))}
@@ -66,6 +67,7 @@ class IndexPage extends React.Component {
           </Container>
         </Section>
 
+        <h1 className="sr-only">{page.title}</h1>
         <Section id="endorsements" container>
           <Container>
             <h2>{page.endorsements.title}</h2>
