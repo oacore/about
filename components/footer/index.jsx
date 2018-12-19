@@ -10,7 +10,7 @@ const Footer = ({ links }) => (
     <Container>
       <div className="footer-highlights">
         <Col xs="12" md={{ size: 6, offset: 1 }} className="p-0">
-          <h4>Useful links</h4>
+          <p className="h4">Useful links</p>
           <Row>
             {links.map(({ title, path }) => (
               <Col xs="12" md="4" key={`${title} @ ${path}`}>
