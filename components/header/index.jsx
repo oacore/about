@@ -43,15 +43,17 @@ class Header extends React.Component {
       )
     }
 
+    const key = path ? `${title} (${path})` : title
+
     // Sectioned dropdown menu if sections are present
     if (sections) {
       return (
-        <UncontrolledDropdown nav={level === 1} inNavbar key={title}>
+        <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
           <DropdownToggle nav>{title}</DropdownToggle>
-          <DropdownMenu right style={{ width: 500 }}>
+          <DropdownMenu right style={{ width: 480 }}>
             {sections.map(section => (
-              <div className="dropdown-section">
-                <DropdownItem header key={section.title}>
+              <div className="dropdown-section" key={section.title}>
+                <DropdownItem header tag="p">
                   {section.title}
                 </DropdownItem>
                 {section.children.map(node =>
@@ -67,7 +69,7 @@ class Header extends React.Component {
     // Regular dropdown for regular children
     if (children) {
       return (
-        <UncontrolledDropdown nav={level === 1} inNavbar key={title}>
+        <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
           <DropdownToggle nav>{title}</DropdownToggle>
           <DropdownMenu right>
             {children.map(node => Header.renderMenu(node, level + 1))}
@@ -78,13 +80,13 @@ class Header extends React.Component {
 
     // NavItem-s for first leafs and DropdownItems-s for final leafs
     return level === 1 ? (
-      <NavItem key={path}>
+      <NavItem key={key}>
         <Link href={path}>
           <NavLink>{title}</NavLink>
         </Link>
       </NavItem>
     ) : (
-      <Link href={path} key={path}>
+      <Link href={path} key={key} passHref>
         <DropdownItem>{title}</DropdownItem>
       </Link>
     )
@@ -95,7 +97,7 @@ class Header extends React.Component {
     const { isOpen } = this.state
 
     return (
-      <Navbar color="light" light expand="md" className="header">
+      <Navbar color="light" light expand="md" className="header" tag="header">
         <Container>
           {logo && (
             <Link href="/">
