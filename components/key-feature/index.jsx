@@ -6,17 +6,17 @@ const KeyFeature = ({
   title,
   children,
   icon,
-  className,
+  className = '',
   tag: Tag = 'div',
   ...args
-}) => (
-  <Tag className={`key-feature ${className}`} {...args}>
+} = {}) => (
+  <Tag className={`key-feature ${className || ''}`} {...args}>
     <img className="key-feature-icon" src={icon} alt={title} />
-    <p className="key-feature-text">{children}</p>
+    <div className="key-feature-text">{children}</div>
   </Tag>
 )
 
-const KeyFeatureList = ({ children, className }) => {
+const KeyFeatureList = ({ children, className = '' } = {}) => {
   const items = React.Children.map(children, child => {
     if (child.type !== KeyFeature) return null
 
