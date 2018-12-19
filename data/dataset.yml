@@ -10,7 +10,7 @@ sections:
   link:
     caption: Learn more about the and nature of our dataset
     url: https://www.google.com
-  image: static/images/dataset-1.svg
+  image: /static/images/dataset-1.svg
 - title: |
     The collection includes  **[9999999]**  articles, and **[9999999]** metadata records
   content: |
@@ -18,7 +18,7 @@ sections:
   link:
     caption: How do we compare with other services?
     url: https://www.google.com
-  image: static/images/dataset-2.svg
+  image: /static/images/dataset-2.svg
 - title: |
     We`re truly global, aggregating from **[1234]** repositories, in **[1234]** countries
   content: |
@@ -26,7 +26,7 @@ sections:
   link:
     caption: Learn about how we `harvest` data or become a provider
     url: https://www.google.com
-  image: static/images/map.png
+  image: /static/images/map.png
 - title: |
     You can access the data for free, and do exciting and powerful things with it
   content: |
@@ -35,4 +35,4 @@ sections:
   link:
     caption: Call to action TBD
     url: https://www.google.com
-  image: static/images/dataset-3.svg
+  image: /static/images/dataset-3.svg
