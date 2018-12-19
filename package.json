@@ -40,8 +40,8 @@
     "yaml-loader": "^0.5.0"
   },
   "scripts": {
-    "lint": "eslint \"**/*.{js,jsx}\"",
-    "format": "eslint --fix \"**/*.{js,jsx}\"",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.jsx .",
+    "format": "eslint --ignore-path .gitignore --ext .js,.jsx --fix .",
     "dev": "next",
     "build": "next build",
     "export": "next build && next export -o public",
