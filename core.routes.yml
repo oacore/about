@@ -1,35 +1,46 @@
 home: /
 
-about: /about
-about/core: /about/core
-ambassadors: /about/ambassadors
-faq: /about/faq
-mission: /about/mission
-team: /about/team
-internships: /about/internships
+about:
+  pattern: /about
+  children:
+    privacy: ./privacy
+    mission: ./mission
+    team: ./team
+    internships: ./internships
+    ambassadors: ./ambassadors
+mission: ~about/mission
+team: ~about/team
+internships: ~about/internships
+faq: /faq
 research-outputs:
-  pattern: /about/researchoutputs
+  pattern: /about/research-outputs
   controller: CoreWebBundle:ResearchOutputs:index
 contact: /contact
-cookies: /privacy/cookies
-
-support: /services/support
+privacy: ~about/privacy
+cookies: ~privacy#cookies
 
 services:
   pattern: /services
   children:
+    api: ./api
+    dataset: ./dataset
+    sdk: ./sdk
+    recommender: ./recommender
+    connector: ./connector
+    dashboard: ./dashboard
+
     fast: ./fastsync
     labs-oadiscovery: ./labs/discovery
     plugin: ./plugin
     mobile: ./mobile
-api:
-  pattern: /services/api
-  defaults:
-    controller: CoreWebBundle:ApiDoc:apiDocIntro
-    template: CoreWebBundle:Services:api.html.twig
-    maxAge: 86400
-    sharedMaxAge: 86400
-    private: false
+    discovery: ./content-discovery
+api: ~services/api
+dashboard: ~services/dashboard
+recommender: ~services/recommender
+connector: ~services/connector
+
+support: /services/support
+
 services-sparqlendpoint: /services/sparqlendpoint
 services-getdatadump-form:
   pattern: /dataset/getdatadump
@@ -196,3 +207,7 @@ browse-year-month-day-repo-page:
   pattern: /browse/{year}/{month}/{day}/repository/{repoId}/page/{page}
 
 blog: https://blog.core.ac.uk
+
+static: /static
+images: /static/images
+documents: /static/documents

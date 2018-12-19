@@ -1,4 +1,6 @@
-## Dashboard
+---
+title: Dashboard
+---
 
 In an effort to improve the quality and transparency of the harvesting process
 of the open access content and create a two way collaboration between the CORE

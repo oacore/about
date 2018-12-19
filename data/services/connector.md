@@ -1,4 +1,6 @@
-## Publisher connector
+---
+title: CORE Publisher connector
+---
 
 The **CORE Publisher Connector** is a software providing seamless access to
 Gold and Hybrid Gold Open Access articles aggregated from non-standard systems

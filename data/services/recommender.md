@@ -1,6 +1,8 @@
-## CORE Recommender
+---
+title: CORE Recommender
+---
 
-#### The new version of the CORE recommender has now been released.
+**The new version of the CORE recommender has now been released.**
 
 The recommender is a plugin that can be installed in repositories and journal
 systems to suggest similar articles. Its purpose is to support users in
@@ -21,7 +23,7 @@ Uniqueness of the CORE Recommender:
 * recommendations solely on abstracts or metadata. We ensure that the
 * recommended articles are available open access. We provide our
 * recommendation service for free. We provide it using a machine accessible
-* interface ([API](api)).
+* interface ([API](~api)).
 
 Find out more about the CORE Recommender [here][recommender-blog-post].
 To install the recommender visit our [registration page](recommenders/register).

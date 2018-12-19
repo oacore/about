@@ -7,38 +7,38 @@ navigation:
     path: ~services
     sections:
       - title: Access to data
-        path: /services/access-to-data
+        path: ~services#access-to-data
         children:
           - title: API
-            path: /services/access-to-data/api
+            path: ~services/api
           - title: Dataset
-            path: /services/access-to-data/dataset
+            path: ~services/dataset
           - title: SDK
-            path: /services/access-to-data/sdk
+            path: ~services/sdk
       - title: Content discovery
-        path: /services/content-discovery
+        path: ~services/discovery
         children:
           - title: CORE recommender
-            path: /services/content-discovery/recommender
+            path: ~services/recommender
           - title: CORE connector
-            path: /services/content-discovery/connector
+            path: ~services/connector
       - title: Managing content
-        path: /services/managing-content
+        path: ~services#managing-content
         children:
           - title: Repository dashboard
-            path: /services/managing-content/repository-dashboard
+            path: ~services/repository-dashboard
           - title: Analitycs dashboard
-            path: /services/managing-content/analitycs-dashboard
+            path: ~services/analitycs-dashboard
       - title: Support
         path: ~support
         children:
-          - title: CORE Helpdesk
-            path: /services/support/helpdesk
+          - title: FAQs
+            path: ~faq
   - title: About
     path: ~about
     children:
       - title: About CORE
-        path: ~about/core
+        path: ~about
       - title: Blog
         path: ~blog
       - title: Contact us
@@ -55,4 +55,4 @@ footer:
   - title: Cookies
     path: ~cookies
   - title: About CORE
-    path: ~about/core
+    path: ~about

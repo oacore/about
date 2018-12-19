@@ -1,4 +1,6 @@
-## CORE Dataset
+---
+title: CORE Dataset
+---
 
 The data aggregated from repositories by the CORE system can be accessed in
 two ways, through the CORE API or by downloading the data to your computer.
@@ -7,7 +9,7 @@ while the latter is something we recommend to those who would like to analyse
 the CORE dataset and/or apply some computationally intensive batch processes.
 
 If you use CORE in your work, we kindly request you to cite one of our
-[publications](research-outputs).
+[publications](~research-outputs).
 
 ### Available datasets:
 
@@ -20,7 +22,7 @@ rows in a csv with the following format:
 
 \[CORE ID\], \[MAG ID\]
 
-[Register for Access](join)
+[Register for Access](~join)
 
 **Dataset 2018-03-01**  
 [Register for Access]()

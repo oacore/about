@@ -1,0 +1,54 @@
+title: Services
+lorem: &lorem |
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+  explicabo illum est magnam atque, quos dolorum repellat aut temporibus
+  accusantium quo perferendis quaerat maiores neque. Ipsam enim
+  iste nemo vel.
+
+  Modi quos pariatur reprehenderit laborum cum soluta voluptatem odio
+  neque harum facere facilis impedit aut illum, incidunt excepturi
+  doloribus sint vel quibusdam maxime ad, cupiditate a! Rem nobis,
+  necessitatibus hic!
+sections:
+- id: access-to-data
+  title: Access to data
+  sections:
+  - id: api
+    title: API
+    description: *lorem
+    action:
+      caption: Learn more about API
+      url: ~api
+  - id: datasets
+    title: Datasets
+    description: *lorem
+    action:
+      caption: Read more about datasets
+      url: ~datasets
+  - id: sdk
+    title: SDK
+    description: *lorem
+- id: content-discovery
+  title: Content discovery
+  sections:
+  - id: recommender
+    title: CORE Recommender
+    description: *lorem
+  - id: connector
+    title: CORE Connector
+    description: *lorem
+- id: managing-content
+  title: Managing content
+  sections:
+  - id: repository-dashboard
+    title: Repository dashboard
+    description: *lorem
+    action:
+      caption: Go to Repository dashboard
+      url: ~repository-dashboard
+  - id: analytics-dashboard
+    title: Analytics dashboard
+    description: *lorem
+    action:
+      caption: Go to Analytics dashboard
+      url: ~analytics-dashboard

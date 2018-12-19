@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { Layout, Accordion } from '../components'
-import { Features, Feature } from '../components/features'
+import { Layout, Accordion } from '../../components'
+import { Features, Feature } from '../../components/features'
 
 const DashboardPage = () => (
   <Layout container>

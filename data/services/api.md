@@ -1,5 +1,6 @@
-## CORE API
-
+---
+title: CORE API
+---
 ![CORE API image](images/api-core.png)
 
 CORE harvests, maintains, enriches and makes available metadata and full-text
