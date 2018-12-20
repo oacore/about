@@ -32,7 +32,7 @@ const nextConfig = {
       },
       {
         test: /\.md$/,
-        use: ['raw-loader'],
+        use: ['json-loader', 'yaml-frontmatter-loader'],
       }
     )
 
