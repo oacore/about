@@ -11,13 +11,24 @@ const nextConfig = {
         use: [
           'json-loader',
           path.resolve('webpack/data-loader.js'),
-          'yaml-loader',
+          {
+            loader: 'yaml-import-loader',
+            options: {
+              output: 'json',
+              importRawKeyword: 'file',
+            },
+          },
         ],
       },
       {
         test: /\.ya?ml$/,
         exclude: [path.resolve(__dirname, 'data')],
-        use: ['json-loader', 'yaml-loader'],
+        use: {
+          loader: 'yaml-import-loader',
+          options: {
+            importNested: false,
+          },
+        },
       },
       {
         test: /\.md$/,
