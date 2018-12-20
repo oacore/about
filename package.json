@@ -26,6 +26,7 @@
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4",
     "decko": "^1.2.0",
+    "fuse.js": "^3.3.0",
     "json-loader": "^0.5.7",
     "next": "^7.0.2",
     "next-images": "^1.0.1",
