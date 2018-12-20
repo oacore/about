@@ -1,39 +1,31 @@
 import React from 'react'
-import { Alert, Button } from 'reactstrap'
+import { Button } from 'reactstrap'
 import { Article, Content, Section } from 'components'
 import Link from 'components/link'
+import RepositoryMap from 'components/repositories-map'
+import RepositoryBrowser from 'components/repositories-browser'
 
-import reposData from 'data/repos.yml'
-
-const RepositoryMap = () => (
-  <img className="d-block w-100 mb-3" src="/static/images/map.png" alt="" />
-)
-const RepositoryBrowser = () => (
-  <Alert color="secondary">Repository filter goes here...</Alert>
-)
+import repositoriesData from 'data/data-providers.yml'
 
 const DataProvidersPage = () => (
   <Article container>
-    <h1 className="mb-5">{reposData.title}</h1>
-    <Content markdown>{reposData.content}</Content>
-
-    <Section id="repositories" className="explore-repositories">
-      <h2>{reposData.explore}</h2>
-      <RepositoryBrowser />
-    </Section>
-
-    <Section id="map">
-      <h2>{reposData.map}</h2>
-      <RepositoryMap />
-    </Section>
+    <h1 className="mb-5">{repositoriesData.title}</h1>
+    <Content markdown>{repositoriesData.content}</Content>
 
     <div className="text-center">
       <Link href="~home" passHref>
         <Button color="primary" tag="a">
-          {reposData.become}
+          {repositoriesData.become}
         </Button>
       </Link>
     </div>
+
+    <Section id="map">
+      <h2>{repositoriesData.map}</h2>
+      <RepositoryMap />
+    </Section>
+
+    <RepositoryBrowser endpoint="https://core.ac.uk/repositories/locations" />
   </Article>
 )
 
