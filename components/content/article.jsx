@@ -8,7 +8,7 @@ const ArticleNav = ({ items }) => (
   <Nav>
     {items.map(({ text, href }) => (
       <NavItem>
-        <NavLink href={`#${href}`}>{text}</NavLink>
+        <NavLink href={href}>{text}</NavLink>
       </NavItem>
     ))}
   </Nav>
@@ -34,18 +34,17 @@ class Article extends Component {
   }
 
   static getDerivedStateFromProps({ children }, state) {
-    const navItems = React.Children.map(
-      children,
-      ({ type, props: { caption, id } }) => {
-        if (type !== Section || !id) return null
+    const navItems = React.Children.map(children, child => {
+      if (!child || child.type !== Section || !child.props.id) return null
 
-        return { text: caption, href: id }
-      }
-    )
+      const { caption, id } = child.props
+      return { text: caption, href: `#${id}` }
+    })
 
     const header = []
     const content = []
     React.Children.forEach(children, child => {
+      if (!child) return
       if (typeof child.type == 'string' && child.type.match(/header|h[1-6]/))
         header.push(child)
       else content.push(child)
