@@ -3,7 +3,6 @@ home: /
 about:
   pattern: /about
   children:
-    privacy: ./privacy
     mission: ./mission
     team: ./team
     internships: ./internships
@@ -16,7 +15,7 @@ research-outputs:
   pattern: /about/research-outputs
   controller: CoreWebBundle:ResearchOutputs:index
 contact: /contact
-privacy: ~about/privacy
+privacy: /privacy
 cookies: ~privacy#cookies
 
 services:
