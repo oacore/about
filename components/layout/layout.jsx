@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Container } from 'reactstrap'
 import Head from 'next/head'
 
-import Header from './header'
-import Footer from './footer'
+import Header from '../header'
+import Footer from '../footer'
 
-import config from '../core.config.yml'
+import './layout.scss'
+
+// TODO: Move it to center configuration point
+import config from '../../core.config.yml'
 
 const Layout = ({ children, container = false }) => (
-  <React.Fragment>
+  <Fragment>
     <Head>
       <meta
         name="viewport"
@@ -18,10 +21,10 @@ const Layout = ({ children, container = false }) => (
       <meta name="description" content={config.description} />
     </Head>
 
-    <Header siteMap={config.navigation} />
+    <Header className="page-header" siteMap={config.navigation} />
     {container ? <Container>{children}</Container> : children}
-    <Footer links={config.footer} />
-  </React.Fragment>
+    <Footer className="page-footer" links={config.footer} />
+  </Fragment>
 )
 
 export default Layout
