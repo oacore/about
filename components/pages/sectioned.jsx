@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../layout'
 import { Article } from '../content'
 import { DescriptionSection } from '../sections'
 
@@ -10,15 +9,13 @@ const SectionedPage = ({
   content = null,
   sections = [],
 }) => (
-  <Layout>
-    <Article nav container>
-      <h1>{title}</h1>
-      {children || content || description}
-      {sections.map(({ id, ...restProps }) => (
-        <DescriptionSection key={id} id={id} {...restProps} />
-      ))}
-    </Article>
-  </Layout>
+  <Article nav container>
+    <h1>{title}</h1>
+    {children || content || description}
+    {sections.map(({ id, ...restProps }) => (
+      <DescriptionSection key={id} id={id} {...restProps} />
+    ))}
+  </Article>
 )
 
 SectionedPage.create = props => () => <SectionedPage {...props} />

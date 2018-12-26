@@ -1,10 +1,10 @@
 import React from 'react'
 import Link from 'next/link'
-import { Layout, Accordion } from '../../components'
+import { Article, Accordion } from '../../components'
 import { Features, Feature } from '../../components/features'
 
 const DashboardPage = () => (
-  <Layout container>
+  <Article container>
     <h1>CORE Repository Dashboard</h1>
 
     <figure>
@@ -75,7 +75,7 @@ const DashboardPage = () => (
         <a href="/contact">Get in touch bespoke extended access to CORE</a>
       </p>
     </Features>
-  </Layout>
+  </Article>
 )
 
 export default DashboardPage

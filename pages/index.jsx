@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 import { Container } from 'reactstrap'
 
 import {
-  Layout,
   Hero,
   KeyFeature,
   KeyFeatureList,
@@ -38,7 +37,7 @@ const TestimonialsSwitcher = ({ limit, ...restProps }) => (
   </Switcher>
 )
 
-class IndexPage extends React.Component {
+class IndexPage extends Component {
   // TODO: Avoid this hack
   // TODO: Override Document class
   componentDidMount() {
@@ -51,7 +50,7 @@ class IndexPage extends React.Component {
 
   render() {
     return (
-      <Layout>
+      <Fragment>
         <Hero>{page.hero}</Hero>
 
         <Section>
@@ -100,7 +99,7 @@ class IndexPage extends React.Component {
             <TestimonialsSwitcher />
           </Container>
         </Section>
-      </Layout>
+      </Fragment>
     )
   }
 }

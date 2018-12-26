@@ -1,6 +1,6 @@
 import React from 'react'
 import { Alert, Button } from 'reactstrap'
-import { Article, Content, Layout, Section } from '../components'
+import { Article, Content, Section } from '../components'
 import Link from '../components/link'
 
 import reposData from '../data/repos.yml'
@@ -13,30 +13,28 @@ const RepositoryBrowser = () => (
 )
 
 const DataProvidersPage = () => (
-  <Layout>
-    <Article container>
-      <h1 className="mb-5">{reposData.title}</h1>
-      <Content markdown>{reposData.content}</Content>
+  <Article container>
+    <h1 className="mb-5">{reposData.title}</h1>
+    <Content markdown>{reposData.content}</Content>
 
-      <Section id="repositories" className="explore-repositories">
-        <h2>{reposData.explore}</h2>
-        <RepositoryBrowser />
-      </Section>
+    <Section id="repositories" className="explore-repositories">
+      <h2>{reposData.explore}</h2>
+      <RepositoryBrowser />
+    </Section>
 
-      <Section id="map">
-        <h2>{reposData.map}</h2>
-        <RepositoryMap />
-      </Section>
+    <Section id="map">
+      <h2>{reposData.map}</h2>
+      <RepositoryMap />
+    </Section>
 
-      <div className="text-center">
-        <Link href="~home" passHref>
-          <Button color="primary" tag="a">
-            {reposData.become}
-          </Button>
-        </Link>
-      </div>
-    </Article>
-  </Layout>
+    <div className="text-center">
+      <Link href="~home" passHref>
+        <Button color="primary" tag="a">
+          {reposData.become}
+        </Button>
+      </Link>
+    </div>
+  </Article>
 )
 
 export default DataProvidersPage
