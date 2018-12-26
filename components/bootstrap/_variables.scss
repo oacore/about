@@ -70,6 +70,11 @@ $blockquote-font-size:        $font-size-base;
 $blockquote-padding-left:     3.5 * $font-size-base;
 
 
+// Page
+
+$page-bg: linear-gradient(transparent, white 75vh, white calc(100% - 75vh), transparent 100%), url("../images/paper-background.jpg");
+
+
 // Cards
 
 $card-border-radius: 0;
