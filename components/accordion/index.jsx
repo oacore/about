@@ -10,10 +10,12 @@ import './accordion.scss'
 class Accordion extends Component {
   static propTypes = {
     tag: PropTypes.node,
+    onToggle: PropTypes.func,
   }
 
   static defaultProps = {
     tag: 'div',
+    onToggle: () => {},
   }
 
   state = {
@@ -46,9 +48,14 @@ class Accordion extends Component {
 
   @bind
   toggleItem(itemId) {
-    this.setState(({ activeItemId }) => ({
-      activeItemId: activeItemId === itemId ? null : itemId,
-    }))
+    this.setState(
+      ({ activeItemId }) => ({
+        activeItemId: activeItemId === itemId ? null : itemId,
+      }),
+      () => {
+        this.props.onToggle(this.state.activeItemId)
+      }
+    )
   }
 
   render() {
