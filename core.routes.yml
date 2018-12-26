@@ -26,7 +26,8 @@ services:
     sdk: ./sdk
     recommender: ./recommender
     connector: ./connector
-    dashboard: ./dashboard
+    repository-dashboard: ./repository-dashboard
+    analytics-dashboard: ./analytics-dashboard
 
     fast: ./fastsync
     labs-oadiscovery: ./labs/discovery
@@ -34,7 +35,6 @@ services:
     mobile: ./mobile
     discovery: ./content-discovery
 api: ~services/api
-dashboard: ~services/dashboard
 recommender: ~services/recommender
 connector: ~services/connector
 

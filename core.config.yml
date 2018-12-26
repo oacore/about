@@ -27,8 +27,8 @@ navigation:
         children:
           - title: Repository dashboard
             path: ~services/repository-dashboard
-          - title: Analitycs dashboard
-            path: ~services/analitycs-dashboard
+          - title: Analytics dashboard
+            path: ~services/analytics-dashboard
       - title: Support
         path: ~support
         children:

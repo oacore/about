@@ -363,7 +363,7 @@ sections:
           How can I download the CORE Recommender?
         answer: |
           If you have access to the CORE Repositories Dashboard, log into the
-          [Dashboard](~services/dashboard) and you will get the
+          [Dashboard](~services/repository-dashboard) and you will get the
           instructions on how to download the
           [CORE Recommender](~services/recommender).
           Otherwise, visit our recommender
