@@ -93,11 +93,17 @@ class Header extends React.Component {
   }
 
   render() {
-    const { logo, siteMap } = this.props
+    const { logo, siteMap, className = '' } = this.props
     const { isOpen } = this.state
 
     return (
-      <Navbar color="light" light expand="md" className="header" tag="header">
+      <Navbar
+        light
+        color="light"
+        expand="md"
+        className={`header ${className}`}
+        tag="header"
+      >
         <Container>
           {logo && (
             <Link href="/">

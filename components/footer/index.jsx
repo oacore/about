@@ -5,8 +5,8 @@ import Link from '../link'
 
 import './footer.scss'
 
-const Footer = ({ links }) => (
-  <footer className="footer">
+const Footer = ({ links, className = '' }) => (
+  <footer className={`footer ${className}`}>
     <Container>
       <div className="footer-highlights">
         <Col xs="12" md={{ size: 6, offset: 1 }} className="p-0">
