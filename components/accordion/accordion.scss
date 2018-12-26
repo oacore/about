@@ -43,8 +43,9 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
 .accordion-link {
   display: inline-block;
 
-  &::before {
-    content: $chevron-icon;
+  &::before,
+  &::after {
+    content: "";
     position: absolute;
     top: ((2 * $card-spacer-y + $font-size-base) - $accordion-icon-size) / 2;
     left: 0;
@@ -55,5 +56,16 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
     width: $font-size-base;
     height: $font-size-base;
     background-color: $primary;
+    transform: rotate(180deg);
+  }
+
+  &::after {
+    content: $chevron-icon;
+    background: transparent;
+    transition: 0.35s;
+
+    .accordion-item.active > .accordion-header & {
+      transform: none;
+    }
   }
 }

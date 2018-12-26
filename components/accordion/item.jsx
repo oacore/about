@@ -25,9 +25,13 @@ class AccordionItem extends Component {
   }
 
   render() {
-    const { id, title, children, isOpen, className } = this.props
+    const { id, title, children, isOpen, className = '' } = this.props
     return (
-      <Card id={id} className={`accordion-item ${className}`} tag="section">
+      <Card
+        id={id}
+        className={`accordion-item ${isOpen ? 'active' : ''} ${className}`}
+        tag="section"
+      >
         <CardHeader className="accordion-header">
           <h4 className="accordion-title">
             <CardLink
