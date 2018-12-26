@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { Container } from 'reactstrap'
 
 import {
@@ -37,71 +37,53 @@ const TestimonialsSwitcher = ({ limit, ...restProps }) => (
   </Switcher>
 )
 
-class IndexPage extends Component {
-  // TODO: Avoid this hack
-  // TODO: Override Document class
-  componentDidMount() {
-    document.body.classList.add('home')
-  }
+const IndexPage = () => (
+  <Fragment>
+    <Hero>{page.hero}</Hero>
 
-  componentWillUnmount() {
-    document.body.classList.remove('home')
-  }
+    <Section>
+      <Container>
+        <h2 className="sr-only">{page.features.title}</h2>
+        <KeyFeatureList>
+          {page.features.children.map(({ title, description, picture }) => (
+            <KeyFeature title={title} icon={picture} key={title}>
+              <Content markdown>{description}</Content>
+            </KeyFeature>
+          ))}
+        </KeyFeatureList>
+      </Container>
+    </Section>
 
-  render() {
-    return (
-      <Fragment>
-        <Hero>{page.hero}</Hero>
+    <h1 className="sr-only">{page.title}</h1>
+    <Section id="endorsements" container>
+      <Container>
+        <h2>{page.endorsements.title}</h2>
+      </Container>
 
-        <Section>
-          <Container>
-            <h2 className="sr-only">{page.features.title}</h2>
-            <KeyFeatureList>
-              {page.features.children.map(({ title, description, picture }) => (
-                <KeyFeature title={title} icon={picture} key={title}>
-                  <Content markdown>{description}</Content>
-                </KeyFeature>
-              ))}
-            </KeyFeatureList>
-          </Container>
-        </Section>
+      <Section id="enterprise">
+        <Container>
+          <h3>{page.endorsements.enterprise.title}</h3>
+          <p>{page.endorsements.enterprise.description}</p>
+          <TestimonialsSwitcher limit={page.endorsements.enterprise.limit} />
+        </Container>
+      </Section>
 
-        <h1 className="sr-only">{page.title}</h1>
-        <Section id="endorsements" container>
-          <Container>
-            <h2>{page.endorsements.title}</h2>
-          </Container>
+      <Section id="academic-institutions">
+        <Container>
+          <h3>{page.endorsements.academic.title}</h3>
+          <p>{page.endorsements.academic.description}</p>
+          <TestimonialsSwitcher limit={page.endorsements.enterprise.limit} />
+        </Container>
+      </Section>
+    </Section>
 
-          <Section id="enterprise">
-            <Container>
-              <h3>{page.endorsements.enterprise.title}</h3>
-              <p>{page.endorsements.enterprise.description}</p>
-              <TestimonialsSwitcher
-                limit={page.endorsements.enterprise.limit}
-              />
-            </Container>
-          </Section>
-
-          <Section id="academic-institutions">
-            <Container>
-              <h3>{page.endorsements.academic.title}</h3>
-              <p>{page.endorsements.academic.description}</p>
-              <TestimonialsSwitcher
-                limit={page.endorsements.enterprise.limit}
-              />
-            </Container>
-          </Section>
-        </Section>
-
-        <Section id="partner-projects">
-          <Container>
-            <h2>{page.partnerProjects.title}</h2>
-            <TestimonialsSwitcher />
-          </Container>
-        </Section>
-      </Fragment>
-    )
-  }
-}
+    <Section id="partner-projects">
+      <Container>
+        <h2>{page.partnerProjects.title}</h2>
+        <TestimonialsSwitcher />
+      </Container>
+    </Section>
+  </Fragment>
+)
 
 export default IndexPage

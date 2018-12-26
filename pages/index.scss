@@ -1,11 +1,5 @@
 @import "../components/bootstrap/core";
 
-$home-background: url("../static/images/brandi-redd-122054-unsplash.jpg");
-
-.home {
-  background: $white $home-background no-repeat top center / 100% auto;
-}
-
 .home-switcher {
   padding: map-get($spacers, 5) 0;
   // background: #f2f4ef;
