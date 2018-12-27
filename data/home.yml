@@ -39,13 +39,15 @@ endorsements:
     description: |
       We are proud to provide great scalable services for enterprise business
     limit: 5
+    more: Read more about how CORE is used in industry
   academic:
     title: Academic institutions using CORE
     description: |
       Our content and data is used by hundreds of academic institutions
       every day
     limit: 5
-partnerProjects:
+    more: Read more...
+partner-projects:
   title: Partner projects
   description: |
     Organizations from around the world have worked with us

@@ -7,9 +7,11 @@ about:
     team: ./team
     internships: ./internships
     ambassadors: ./ambassadors
+    endorsements: ./endorsements
 mission: ~about/mission
 team: ~about/team
 internships: ~about/internships
+endorsements: ~about/endorsements
 faq: /faq
 research-outputs:
   pattern: /about/research-outputs

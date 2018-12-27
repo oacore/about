@@ -1,5 +1,6 @@
-import React, { Fragment } from 'react'
-import { Container } from 'reactstrap'
+import React, { Fragment, Component } from 'react'
+import { Container, Button } from 'reactstrap'
+import { bind } from 'decko'
 
 import {
   Hero,
@@ -9,33 +10,72 @@ import {
   Content,
   Section,
 } from 'components'
+import Link from 'components/link'
 
 import page from 'data/home.yml'
 import { testimonials } from 'data/endorsements.yml'
 
 import './index.scss'
 
-const TestimonialsSwitcher = ({ limit, ...restProps }) => (
+const TestimonialsSwitcher = ({ items, limit, ...restProps }) => (
   <Switcher {...restProps}>
-    {testimonials.slice(0, limit).map(({ quote, author }, i) => {
-      const id = `quote-${i}`
-      const title = /^([\w\s.]+),/.exec(author)[1] || author
-      return (
+    {items
+      .slice(0, limit)
+      .filter(({ organization }) => organization)
+      .map(({ id, content, author, organization }) => (
         <Switcher.Item
           id={id}
-          title={title}
-          key={author}
+          title={organization.name}
+          picture={`/static/images/logos/${organization.logo}`}
+          key={organization.name}
           className="home-switcher"
         >
           <blockquote className="blockquote">
-            <Content markdown>{quote}</Content>
-            <footer className="blockquote-footer">{author}</footer>
+            <Content markdown>{content}</Content>
+            <footer className="blockquote-footer">
+              {author.name}, {author.position}
+            </footer>
           </blockquote>
         </Switcher.Item>
-      )
-    })}
+      ))}
   </Switcher>
 )
+
+class TestimonialsSection extends Component {
+  state = { itemHash: '' }
+
+  @bind
+  handleItemChange(id) {
+    this.setState({ itemHash: id ? `#${id}` : '' })
+  }
+
+  render() {
+    const { id, title, description, items, limit, more } = this.props
+    const { itemHash } = this.state
+    return (
+      <Section id={id}>
+        <Container>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <TestimonialsSwitcher
+            items={items}
+            limit={limit}
+            onChange={this.handleItemChange}
+          />
+          {more && (
+            <div className="mt-3 text-center">
+              <Link href={`~endorsements${itemHash}`} passHref>
+                <Button color="primary" outline>
+                  {more}
+                </Button>
+              </Link>
+            </div>
+          )}
+        </Container>
+      </Section>
+    )
+  }
+}
 
 const IndexPage = () => (
   <Fragment>
@@ -57,30 +97,32 @@ const IndexPage = () => (
     <h1 className="sr-only">{page.title}</h1>
     <Section id="endorsements" container>
       <Container>
-        <h2>{page.endorsements.title}</h2>
+        <h2 className="text-center">{page.endorsements.title}</h2>
       </Container>
 
-      <Section id="enterprise">
-        <Container>
-          <h3>{page.endorsements.enterprise.title}</h3>
-          <p>{page.endorsements.enterprise.description}</p>
-          <TestimonialsSwitcher limit={page.endorsements.enterprise.limit} />
-        </Container>
-      </Section>
+      <TestimonialsSection
+        id="enterprise"
+        title={page.endorsements.enterprise.title}
+        description={page.endorsements.enterprise.description}
+        items={testimonials}
+        limit={page.endorsements.enterprise.limit}
+        more={page.endorsements.enterprise.more}
+      />
 
-      <Section id="academic-institutions">
-        <Container>
-          <h3>{page.endorsements.academic.title}</h3>
-          <p>{page.endorsements.academic.description}</p>
-          <TestimonialsSwitcher limit={page.endorsements.enterprise.limit} />
-        </Container>
-      </Section>
+      <TestimonialsSection
+        id="academic-institutions"
+        title={page.endorsements.academic.title}
+        description={page.endorsements.academic.description}
+        items={testimonials}
+        limit={page.endorsements.enterprise.limit}
+        more={page.endorsements.academic.more}
+      />
     </Section>
 
     <Section id="partner-projects">
       <Container>
-        <h2>{page.partnerProjects.title}</h2>
-        <TestimonialsSwitcher />
+        <h2 className="text-center">{page.partnerProjects.title}</h2>
+        <TestimonialsSwitcher items={testimonials} />
       </Container>
     </Section>
   </Fragment>
