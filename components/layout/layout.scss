@@ -17,19 +17,18 @@ body {
   flex: 1;
 
   > * {
-    flex: 1;
+    flex: 1 1 auto;
   }
 }
 
 .page-header,
 .page-footer {
-  flex: unset;
+  flex: 0 0 auto;
 }
 
 // Styling
 $page-bg: transparent !default;
 
 .page {
-  background: $body-bg top center repeat-y / 100% auto;
-  background-image: $page-bg;
+  background: $page-bg top center repeat-y / 100% auto;
 }
