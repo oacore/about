@@ -1,9 +1,9 @@
 import React from 'react'
 import { Alert, Button } from 'reactstrap'
-import { Article, Content, Section } from '../components'
-import Link from '../components/link'
+import { Article, Content, Section } from 'components'
+import Link from 'components/link'
 
-import reposData from '../data/repos.yml'
+import reposData from 'data/repos.yml'
 
 const RepositoryMap = () => (
   <img className="d-block w-100 mb-3" src="/static/images/map.png" alt="" />

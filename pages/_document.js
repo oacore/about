@@ -1,1 +1,1 @@
-export { Document as default } from '../components/layout'
+export { Document as default } from 'components/layout'

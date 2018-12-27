@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { Article, Accordion } from '../../components'
-import { Features, Feature } from '../../components/features'
+import { Article, Accordion } from 'components'
+import { Features, Feature } from 'components/features'
 
 const DashboardPage = () => (
   <Article container>

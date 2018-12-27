@@ -8,10 +8,10 @@ import {
   Switcher,
   Content,
   Section,
-} from '../components'
+} from 'components'
 
-import page from '../data/home.yml'
-import { testimonials } from '../data/endorsements.yml'
+import page from 'data/home.yml'
+import { testimonials } from 'data/endorsements.yml'
 
 import './index.scss'
 

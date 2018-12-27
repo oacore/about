@@ -1,7 +1,7 @@
 import React from 'react'
-import { Article, Section, Accordion, Content } from '../components'
+import { Article, Section, Accordion, Content } from 'components'
 
-import faqData from '../data/faq.yml'
+import faqData from 'data/faq.yml'
 
 const itemToURL = id => {
   const url = new URL(window.location)

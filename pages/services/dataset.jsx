@@ -1,9 +1,9 @@
 import React from 'react'
-import { Article, Content } from '../../components'
-import HighlightSection from '../../components/highlight-section'
-import Link from '../../components/link'
+import { Article, Content } from 'components'
+import HighlightSection from 'components/highlight-section'
+import Link from 'components/link'
 
-import datasetData from '../../data/dataset.yml'
+import datasetData from 'data/dataset.yml'
 
 // TODO: Fix temporal text-center class usage
 const DataSetPage = () => (
