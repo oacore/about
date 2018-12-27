@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
-import { bind } from 'decko'
 
 import './switcher.scss'
 
@@ -24,12 +23,15 @@ class Switcher extends React.Component {
   static propTypes = {
     tag: PropTypes.node,
     itemTag: PropTypes.node,
+    actionEvent: PropTypes.oneOf(['click', 'hover']),
+    onChange: PropTypes.func,
   }
 
   static defaultProps = {
     tag: 'div',
     itemTag: 'div',
-    className: '',
+    actionEvent: 'hover',
+    onChange: () => {},
   }
 
   state = {
@@ -51,13 +53,18 @@ class Switcher extends React.Component {
     }
   }
 
-  @bind
   activateItem(id) {
-    this.setState({ activeItemId: id })
+    this.setState({ activeItemId: id }, () => this.props.onChange(id))
   }
 
   render() {
-    const { tag: Tag, itemTag, className, children } = this.props
+    const {
+      tag: Tag,
+      itemTag,
+      children,
+      className = '',
+      actionEvent,
+    } = this.props
     const { activeItemId } = this.state
 
     const items = React.Children.map(children, item => {
@@ -67,23 +74,29 @@ class Switcher extends React.Component {
       return React.cloneElement(item, {
         tag: itemTag,
         active: item.props.id === activeItemId,
-        key: item.id,
+        key: item.key || item.id,
       })
     })
 
     const buttons = items.map(item => {
-      const { id, title, icon } = item.props
+      const { id, title, picture } = item.props
+
+      const onActivate = this.activateItem.bind(this, id)
+      const eventListeners =
+        actionEvent === 'click'
+          ? { onClick: onActivate }
+          : { onMouseOver: onActivate, onFocus: onActivate }
 
       return (
         <Button
-          outline
-          color="secondary"
+          color="link"
           type="button"
+          className="switcher-button"
           active={id === activeItemId}
-          onClick={() => this.activateItem(id)}
           key={id}
+          {...eventListeners}
         >
-          {icon ? <img src={icon} alt={title} /> : title}
+          {picture ? <img src={picture} alt={title} /> : title}
         </Button>
       )
     })
