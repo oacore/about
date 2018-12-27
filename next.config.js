@@ -4,6 +4,11 @@ const withImages = require('next-images')
 
 const nextConfig = {
   webpack: config => {
+    Object.assign(config.resolve.alias, {
+      components: path.resolve(__dirname, 'components'),
+      data: path.resolve(__dirname, 'data'),
+    })
+
     config.module.rules.push(
       {
         test: /\.ya?ml$/,

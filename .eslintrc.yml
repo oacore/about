@@ -36,3 +36,10 @@ rules:
     ignore: [class, className, id, children],
   }]
 
+settings:
+  import/resolver:
+    alias:
+      map:
+        - ['components', './components']
+        - ['data', './data']
+      extensions: ['.js', '.jsx', '.json']
