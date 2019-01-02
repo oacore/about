@@ -18,7 +18,7 @@ import { testimonials } from 'data/endorsements.yml'
 import './index.scss'
 
 const TestimonialsSwitcher = ({ items, limit, ...restProps }) => (
-  <Switcher {...restProps}>
+  <Switcher interval={10000} {...restProps}>
     {items
       .slice(0, limit)
       .filter(({ organization }) => organization)
@@ -27,7 +27,7 @@ const TestimonialsSwitcher = ({ items, limit, ...restProps }) => (
           id={id}
           title={organization.name}
           picture={`/static/images/logos/${organization.logo}`}
-          key={organization.name}
+          key={id}
           className="home-switcher"
         >
           <blockquote className="blockquote">
