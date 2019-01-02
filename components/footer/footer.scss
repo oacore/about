@@ -1,10 +1,57 @@
 @import "../bootstrap/core";
 
 .footer {
-  background: #ededee; // $light-gray;
+  background: $beige-dark;
 }
 
 .footer-highlights {
-  padding: map-get($spacers, 3) 0;
-  background: #f3f3f3; // lighten($light-gray, 5%);
+  padding: $spacer 0;
+  background: $beige;
+}
+
+.footer-cite-info {
+  padding: $card-spacer-x;
+  background: $beige-dark;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-partners {
+  display: flex;
+  flex-wrap: wrap;
+  padding: $spacer / 2 0;
+  margin: 0 -0.5 * $spacer;
+
+  p {
+    padding: $spacer / 2;
+    flex: 0 0 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    @include hover-focus {
+      color: $link-hover-color;
+    }
+  }
+
+  @include media-breakpoint-up("md") {
+    width: 30%;
+  }
+}
+
+.footer-partners-logo {
+  display: block;
+
+  img {
+    display: block;
+    height: 6rem;
+  }
+
+  + .footer-partners-logo {
+    margin-left: $spacer;
+  }
 }
