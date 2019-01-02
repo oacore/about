@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
+import { bind } from 'decko'
 
 import './switcher.scss'
 
@@ -24,6 +25,7 @@ class Switcher extends React.Component {
     tag: PropTypes.node,
     itemTag: PropTypes.node,
     actionEvent: PropTypes.oneOf(['click', 'hover']),
+    interval: PropTypes.number,
     onChange: PropTypes.func,
   }
 
@@ -31,6 +33,7 @@ class Switcher extends React.Component {
     tag: 'div',
     itemTag: 'div',
     actionEvent: 'hover',
+    interval: 0,
     onChange: () => {},
   }
 
@@ -53,8 +56,41 @@ class Switcher extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.start()
+  }
+
+  componentWillUnmount() {
+    this.stop()
+  }
+
+  start() {
+    const { interval } = this.props
+    if (interval > 0)
+      this.timeoutId = setTimeout(this.activateNextItem, interval)
+  }
+
+  stop() {
+    if (this.timeoutId > 0) window.clearTimeout(this.timeoutId)
+  }
+
   activateItem(id) {
-    this.setState({ activeItemId: id }, () => this.props.onChange(id))
+    this.stop()
+    this.setState({ activeItemId: id }, () => {
+      this.props.onChange(id)
+      this.start()
+    })
+  }
+
+  @bind
+  activateNextItem() {
+    const { children } = this.props
+    const { activeItemId } = this.state
+    const itemIds = React.Children.map(children, ({ props }) => props.id)
+    const activeItemIndex = itemIds.indexOf(activeItemId)
+    const nextItemId = itemIds[(activeItemIndex + 1) % itemIds.length]
+
+    this.activateItem(nextItemId)
   }
 
   render() {
@@ -74,7 +110,7 @@ class Switcher extends React.Component {
       return React.cloneElement(item, {
         tag: itemTag,
         active: item.props.id === activeItemId,
-        key: item.key || item.id,
+        // key: item.key || item.props.id,
       })
     })
 
