@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Container, Nav, NavItem, NavLink } from 'reactstrap'
+import { Nav, NavItem, NavLink } from 'reactstrap'
 
 import Section from './section'
 
@@ -14,7 +14,7 @@ const ArticleNav = ({ items }) => (
   </Nav>
 )
 
-class Article extends Component {
+class Article extends Section {
   static propTypes = {
     tag: PropTypes.node,
     nav: PropTypes.bool,
@@ -24,7 +24,7 @@ class Article extends Component {
   static defaultProps = {
     tag: 'article',
     nav: false,
-    container: false,
+    container: true,
   }
 
   state = {
@@ -35,7 +35,8 @@ class Article extends Component {
 
   static getDerivedStateFromProps({ children }, state) {
     const navItems = React.Children.map(children, child => {
-      if (!child || child.type !== Section || !child.props.id) return null
+      if (child == null || !Section.isSection(child.type) || !child.props.id)
+        return null
 
       const { caption, id } = child.props
       return { text: caption, href: `#${id}` }
@@ -58,14 +59,37 @@ class Article extends Component {
     }
   }
 
-  render() {
-    const { nav, className, tag: Tag, container, ...args } = this.props
-    const { header, content, navItems } = this.state
-    const inner = [header, nav && <ArticleNav items={navItems} />, content]
+  renderHeader() {
+    const { nav, container } = this.props
+    const { header, navItems } = this.state
+
+    if (header.length === 0 && (!nav || navItems.length === 0)) return null
+
+    const Container = Section.getContainerComponent(container)
 
     return (
-      <Tag className={`article ${className || ''}`} {...args}>
-        {container ? <Container>{inner}</Container> : inner}
+      <Container>
+        {header}
+        {nav && <ArticleNav items={navItems} />}
+      </Container>
+    )
+  }
+
+  renderContent() {
+    const { container } = this.props
+    const { content } = this.state
+    const Container = Section.getContainerComponent(container)
+
+    return Section.containerize(content, Container)
+  }
+
+  render() {
+    const { nav, className, tag: Tag, container, ...restProps } = this.props
+
+    return (
+      <Tag className={`article ${className || ''}`} {...restProps}>
+        {this.renderHeader()}
+        {this.renderContent()}
       </Tag>
     )
   }
