@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Col, Button, FormGroup, Label, Input } from 'reactstrap'
+import { Row, Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
 const Field = ({ id, label, name, type, value, placeholder, onChange }) => (
   <FormGroup>
@@ -16,26 +16,46 @@ const Field = ({ id, label, name, type, value, placeholder, onChange }) => (
 )
 
 const AdvancedSearchForm = ({ action, method, onSubmit }) => (
-  <form action={action} method={method} onSubmit={onSubmit}>
+  <Form action={action} method={method} onSubmit={onSubmit}>
     <Row>
       <Col xs="12" md="6" className="mb-3">
         <Field label="all of the words" name="all" />
         <Field label="exact phrase" name="exact" />
         <Field label="at least one of the words" name="one" />
         <Field label="without the words" name="without" />
-        <p className="mb-0">Place on a page selection</p>
+        <FormGroup>
+          <Label for="select">find those words</Label>
+          <Input type="select" name="select" id="select">
+            <option value="anywhere" selected>
+              anywhere in the article
+            </option>
+            <option value="title">in the title</option>
+            <option value="title-abstract">in the title and abstract</option>
+          </Input>
+        </FormGroup>
       </Col>
       <Col xs="12" md="6" className="mb-3">
         <Field label="Author" name="author" />
         <Field label="Publisher" name="publisher" />
         <Field label="Repository" name="repository" />
         <Field label="DOI" name="doi" />
-        <p className="mb-0">Year range</p>
+        <FormGroup>
+          <Label for="year">Year</Label>
+          <div className="d-flex justify-content-between align-items-baseline">
+            <span>
+              <Field id="year" name="year-from" type="number" />
+            </span>
+            <span>—</span>
+            <span>
+              <Field name="year-to" type="number" />
+            </span>
+          </div>
+        </FormGroup>
       </Col>
     </Row>
 
     <Button color="primary">Search</Button>
-  </form>
+  </Form>
 )
 
 export default AdvancedSearchForm
