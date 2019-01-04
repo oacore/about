@@ -20,6 +20,7 @@ import Link from '../link'
 import Logo from '../logo'
 
 import './header.scss'
+import SearchNavbar from '../search-navbar'
 
 class Header extends React.Component {
   state = {
@@ -110,6 +111,7 @@ class Header extends React.Component {
               <Logo tag={NavbarBrand} />
             </Link>
           )}
+          <SearchNavbar />
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {Header.renderMenu({ children: siteMap })}
