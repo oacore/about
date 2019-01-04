@@ -31,3 +31,8 @@ $section-sm-padding-y: 2 * $spacer;
     margin-bottom: -$article-padding-y;
   }
 }
+
+.article-nav {
+  margin-left: -$nav-link-padding-x;
+  margin-right: -$nav-link-padding-x;
+}

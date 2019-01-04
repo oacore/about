@@ -5,7 +5,7 @@ import { Container, Nav, NavItem, NavLink } from 'reactstrap'
 import Section from './section'
 
 const ArticleNav = ({ items }) => (
-  <Nav>
+  <Nav className="article-nav">
     {items.map(({ text, href }) => (
       <NavItem>
         <NavLink href={href}>{text}</NavLink>
