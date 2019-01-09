@@ -9,23 +9,25 @@ mission:
   full:
     caption: Read about our mission
     content: |
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type
-      specimen book. It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. It was popularised in
-      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more recently with desktop publishing software like Aldus PageMaker
-      including versions of Lorem Ipsum.
-
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-      when an unknown printer took a galley of type and scrambled it to make a type
-      specimen book. It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. It was popularised in
-      the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-      and more recently with desktop publishing software like Aldus PageMaker
-      including versions of Lorem Ipsum.
+      CORE:
+      * supports the right of citizens and general public to access the results of research towards which they contributed by paying taxes,
+      * facilitates access to open access content for all by offering services to general public, academic institutions, libraries, software 
+      developers, researchers, etc.,
+      * provides support to both content consumers and content providers by working with digital libraries, institutional and subject 
+      repositories and journals,
+      * enriches the research content using state-of-the-art technology and provides access to it through a set of services including search, 
+      API and analytical tools,
+      * contributes to a cultural change by promoting open access, a fast growing movement.
+      CORE harvests openly accessible content available according to the definition:
+      
+      > By 'open access' to this literature, we mean its free availability on the public internet, permitting any users to read, 
+      download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing, 
+      pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other
+      than those inseparable from gaining access to the internet itself. The only constraint on reproduction and distribution, 
+      and the only role for copyright in this domain, should be to give authors control over the integrity of their work and 
+      the right to be properly acknowledged and cited.
+      
+      *Part of the BOAI declaration from http://www.budapestopenaccessinitiative.org/*
 blog:
   title: Recent blog posts
   content: |
@@ -40,9 +42,9 @@ howitworks:
   harvesting:
     title: Harvesting data
     content: |
-      CORE aggregates ('harvests') research papers from data providers from all over the world including institutional repositories, subject-repositories and journal publishers.
+      CORE aggregates ('harvests') research papers from data providers from all over the world including institutional and subject repositories, open access and hybrid journal publishers.
 
-      This allows us to offer search, text mining and analytical capabilities over not only metadata, but also the full-text (extracted from PDFs*) of the research papers making CORE a unique service in the research community.
+      This allows us to offer search, text mining and analytical capabilities over not only metadata, but also the full text (extracted from PDFs) of the research papers, making CORE a unique service in the research community.
 
       CORE currently contains 77,354,561 open access articles, from over 6000 journals, collected from over 2,536 repositories around the world.
   services:
@@ -50,11 +52,11 @@ howitworks:
     content: |
       Our unique dataset allows us to offer a number of services for a range of audiences.
 
-      Our  [Repository dashboard](http://www.google.com)   enables repository managers to improve the harvesting processes and aids in the management and quality of repository content.
+      Our  [CORE Repository Dashboard](http://www.google.com)   enables repository managers to improve the harvesting processes and aids in the management and quality of repository content.
 
-      The  [Core recommender](http://www.google.com)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
+      The  [Core Recommender](http://www.google.com)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
 
-      Our [datasets and APIs](http://www.google.com)  eneble machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
+      Our [CORE API and Datasets](http://www.google.com)  enable machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
 contacts:
   title: Contact us
   address:
