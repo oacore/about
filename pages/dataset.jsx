@@ -7,7 +7,7 @@ import datasetData from 'data/dataset.yml'
 
 // TODO: Fix temporal text-center class usage
 const DataSetPage = () => (
-  <Article container>
+  <Article>
     <div className="text-center">
       <h1>{datasetData.title}</h1>
       <Content markdown>{datasetData.subtitle}</Content>

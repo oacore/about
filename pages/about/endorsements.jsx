@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container } from 'reactstrap'
 import { Article } from 'components/content'
 import EndorsementsSection from 'components/sections/endorsements'
 import { title, sections } from 'data/endorsements.yml'
@@ -14,9 +13,7 @@ const extractTestimonials = organizations =>
 
 const EndorsementsPage = () => (
   <Article title={title}>
-    <Container>
-      <h1>{title}</h1>
-    </Container>
+    <h1>{title}</h1>
 
     {Object.entries(sections).map(
       ([key, { testimonials, organizations, ...section }]) => (

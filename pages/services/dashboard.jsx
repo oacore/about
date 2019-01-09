@@ -4,7 +4,7 @@ import { Article, Accordion } from 'components'
 import { Features, Feature } from 'components/features'
 
 const DashboardPage = () => (
-  <Article container>
+  <Article>
     <h1>CORE Repository Dashboard</h1>
 
     <figure>

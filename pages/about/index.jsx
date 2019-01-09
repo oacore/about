@@ -8,7 +8,7 @@ import teamData from 'data/team.yml'
 import mapImage from '../../images/map.png'
 
 const AboutPage = () => (
-  <Article container nav tag="main">
+  <Article nav tag="main">
     <h1>{aboutData.title}</h1>
 
     <Section id="our-mission" caption="Our mission" tag="div">

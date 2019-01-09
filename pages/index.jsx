@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Container, Button } from 'reactstrap'
+import React from 'react'
+import { Button } from 'reactstrap'
 import { bind } from 'decko'
 
 import {
@@ -46,7 +46,7 @@ const TestimonialsSwitcher = ({ items, limit, ...restProps }) => (
   </Switcher>
 )
 
-class TestimonialsSection extends Component {
+class TestimonialsSection extends Section {
   state = { itemHash: '' }
 
   @bind
@@ -59,24 +59,22 @@ class TestimonialsSection extends Component {
     const { itemHash } = this.state
     return (
       <Section id={id}>
-        <Container>
-          <h3>{title}</h3>
-          <p>{description}</p>
-          <TestimonialsSwitcher
-            items={items}
-            limit={limit}
-            onChange={this.handleItemChange}
-          />
-          {more && (
-            <div className="mt-3 text-center">
-              <Link href={`~endorsements${itemHash}`} passHref>
-                <Button color="primary" outline>
-                  {more}
-                </Button>
-              </Link>
-            </div>
-          )}
-        </Container>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <TestimonialsSwitcher
+          items={items}
+          limit={limit}
+          onChange={this.handleItemChange}
+        />
+        {more && (
+          <div className="mt-3 text-center">
+            <Link href={`~endorsements${itemHash}`} passHref>
+              <Button color="primary" outline>
+                {more}
+              </Button>
+            </Link>
+          </div>
+        )}
       </Section>
     )
   }
@@ -86,31 +84,25 @@ const IndexPage = () => (
   <Article tag="main">
     <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
       <Section tag="div">
-        <Container className="hero-search-container">
-          <SearchForm placeholder="Search over 100,000,000 articles" />
-        </Container>
+        <SearchForm placeholder="Search over 100,000,000 articles" />
       </Section>
     </Hero>
 
     <Section className="pb-section-lg">
-      <Container>
-        <h2 className="sr-only">{page.features.title}</h2>
-        <KeyFeatureList>
-          {page.features.children.map(({ title, description, picture }) => (
-            <KeyFeature title={title} icon={picture} key={title}>
-              <Content markdown>{description}</Content>
-            </KeyFeature>
-          ))}
-        </KeyFeatureList>
-      </Container>
+      <h2 className="sr-only">{page.features.title}</h2>
+      <KeyFeatureList>
+        {page.features.children.map(({ title, description, picture }) => (
+          <KeyFeature title={title} icon={picture} key={title}>
+            <Content markdown>{description}</Content>
+          </KeyFeature>
+        ))}
+      </KeyFeatureList>
     </Section>
 
     <JoinSection id="join-us" {...page.join} />
 
     <Section id="endorsements" className="home-endorsements-section">
-      <Container>
-        <h2 className="text-center">{page.endorsements.title}</h2>
-      </Container>
+      <h2 className="text-center">{page.endorsements.title}</h2>
 
       <TestimonialsSection
         id="enterprise-companies"
@@ -137,12 +129,10 @@ const IndexPage = () => (
     </Section>
 
     <Section id="partner-projects">
-      <Container>
-        <h2 className="text-center">{page.partnerProjects.title}</h2>
-        <TestimonialsSwitcher
-          items={extractTestimonials(pageSections.partners.organizations.items)}
-        />
-      </Container>
+      <h2 className="text-center">{page.partnerProjects.title}</h2>
+      <TestimonialsSwitcher
+        items={extractTestimonials(pageSections.partners.organizations.items)}
+      />
     </Section>
   </Article>
 )

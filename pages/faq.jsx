@@ -36,11 +36,13 @@ const FAQsSection = ({
 }
 
 const FAQsPage = () => (
-  <Article container>
+  <Article nav>
     <h1>{faqData.title}</h1>
     {faqData.sections.map(section => (
       <FAQsSection key={section.title} {...section} />
     ))}
+    <p>Something to test</p>
+    <p>Something else to test</p>
   </Article>
 )
 
