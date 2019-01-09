@@ -1,7 +1,7 @@
 title: Services
 lorem: &lorem |
   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-  explicabo illum est magnam atque, quos dolorum repellat aut temporibus
+  explicabo illum es magnam atque, quos dolorum repellat aut temporibus
   accusantium quo perferendis quaerat maiores neque. Ipsam enim
   iste nemo vel.
 
@@ -15,34 +15,48 @@ sections:
   sections:
   - id: api
     title: API
-    description: *lorem
+    description: CORE harvests, maintains, enriches and makes available metadata and full-text content (typically a PDF) 
+    from many Open Access journals and repositories. This makes it a useful access point for those who would like to develop 
+    applications making use of this content. To support these activities, CORE is providing a free API.
+    
     action:
       caption: Learn more about API
       url: ~api
+      
   - id: datasets
     title: Datasets
-    description: *lorem
+    description: The data aggregated from repositories by the CORE system can be accessed in two ways, 
+    through the CORE API or by downloading the data to your computer. The former option is practical if you want to build 
+    a service on top of CORE while the latter is something we recommend to those who would like to analyse the CORE dataset 
+    and/or apply some computationally intensive batch processes.
+    
     action:
       caption: Read more about datasets
       url: ~datasets
+      
   - id: sdk
     title: SDK
     description: *lorem
+    
 - id: content-discovery
   title: Content discovery
   sections:
   - id: recommender
     title: CORE Recommender
-    description: *lorem
+    description: The recommender is a plugin that can be installed in repositories and journal systems to suggest 
+    similar articles. Its purpose is to support users in finding articles relevant to what they read.
   - id: connector
     title: CORE Connector
-    description: *lorem
+    description: The CORE Publisher Connector is a software providing seamless access to Gold and Hybrid Gold Open Access 
+    articles aggregated from non-standard systems of major publishers.
 - id: managing-content
   title: Managing content
   sections:
   - id: repository-dashboard
     title: Repository dashboard
-    description: *lorem
+    description: In an effort to improve the quality and transparency of the harvesting process of the open access content 
+    and create a two way collaboration between the CORE project and the providers of this content, CORE has introduced 
+    the Repositories Dashboard.
     action:
       caption: Go to Repository dashboard
       url: ~repository-dashboard
