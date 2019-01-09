@@ -1,0 +1,24 @@
+@import "~components/bootstrap/core";
+
+.contact-card {
+  margin-top: -1 * $card-spacer-y;
+  padding-top: $card-spacer-y;
+  border: 0;
+  transition: $transition-base;
+
+  &.active {
+    background: $beige;
+  }
+
+  .card-body {
+    margin-top: $spacer;
+  }
+}
+
+.contact-card-toggle {
+  align-self: flex-start;
+
+  &:disabled {
+    border-color: transparent;
+  }
+}

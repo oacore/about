@@ -1,11 +1,66 @@
-import React from 'react'
-import { Row, Col, Button } from 'reactstrap'
+import React, { Component } from 'react'
+import { Collapse, Row, Col, Button, Card, CardBody } from 'reactstrap'
+import { bind } from 'decko'
 import { Article, Content, Section, Collapsed } from 'components'
 import TeamMember from 'components/team-member'
+import ContactForm from 'components/contact-form'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 
 import mapImage from '../../images/map.png'
+
+import './about.scss'
+
+class ContactFormCard extends Component {
+  state = {
+    isOpen: false,
+  }
+
+  @bind
+  toggle() {
+    this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
+  }
+
+  @bind
+  process(event) {
+    event.preventDefault()
+    setTimeout(this.toggle, 500)
+  }
+
+  render() {
+    const { isOpen } = this.state
+    const { className = '', tag, ...restProps } = this.props
+
+    return (
+      <Card
+        className={`contact-card ${isOpen ? 'active' : ''} ${className}`}
+        tag={tag}
+      >
+        <Button
+          type="button"
+          color="primary"
+          outline
+          className="contact-card-toggle"
+          active={isOpen}
+          disabled={isOpen}
+          onClick={this.toggle}
+        >
+          &#9993; Send us a message
+        </Button>
+        <Collapse isOpen={isOpen}>
+          <CardBody>
+            <ContactForm
+              action="/contact"
+              onSubmit={this.process}
+              onCancel={this.toggle}
+              {...restProps}
+            />
+          </CardBody>
+        </Collapse>
+      </Card>
+    )
+  }
+}
 
 const AboutPage = () => (
   <Article nav tag="main">
@@ -91,14 +146,8 @@ const AboutPage = () => (
       <Row>
         <Col md="9">
           <h2>{aboutData.contacts.title}</h2>
-          <Row>
-            <Col xs="6">
-              <Button color="primary" className="btn-send" outline>
-                &nbsp; Send us a message
-              </Button>
-            </Col>
-          </Row>
-          <Row>
+          <ContactFormCard />
+          <Row className="py-3">
             <Col md="4" className="font-weight-bold">
               {aboutData.contacts.address.caption}
             </Col>
