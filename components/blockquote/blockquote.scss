@@ -1,0 +1,43 @@
+@import "../bootstrap/core";
+
+$blockquote-avatar-size: 8rem !default;
+$blockquote-padding-left: 3.5 * $font-size-base !default;
+$blockquote-avatar-vertical-fix: -1rem;
+
+.blockquote {
+  position: relative;
+  padding-left: $blockquote-padding-left;
+
+  &::before {
+    content: "\201c"; // quotation mark
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: -0.24em 0 0 -0.08em;
+    font: italic 5rem/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    opacity: 0.5;
+    user-select: none;
+  }
+}
+
+.blockquote-avatar {
+  padding-right: $blockquote-avatar-size + $spacer;
+  min-height: $blockquote-avatar-size + $blockquote-avatar-vertical-fix;
+}
+
+.blockquote-footer {
+  text-align: right;
+}
+
+.blockquote-author-avatar {
+  position: absolute;
+  top: $blockquote-avatar-vertical-fix;
+  right: 0;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid $blue-light;
+  width: $blockquote-avatar-size;
+  height: $blockquote-avatar-size;
+  object-fit: cover;
+  object-position: center;
+}
