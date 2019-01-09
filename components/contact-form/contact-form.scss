@@ -1,0 +1,15 @@
+@import "../bootstrap/core";
+
+.contact-form {
+  background-color: $gray-100;
+  position: relative;
+  padding: 1em;
+  border: 1px solid $gray-200;
+  margin: 1.5rem 0 0;
+}
+
+.contact-form-message {
+  width: 100%;
+  height: auto;
+  min-height: 8rem;
+}
