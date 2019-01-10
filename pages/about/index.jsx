@@ -5,6 +5,7 @@ import { Article, Content, Section, Collapsed, Button } from 'components'
 import Link from 'components/link'
 import TeamMember from 'components/team-member'
 import ContactForm from 'components/contact-form'
+import Blog from 'components/blog'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 
@@ -81,7 +82,7 @@ const AboutPage = () => (
 
     <Section id="our-mission" caption="Our mission" tag="div">
       <Row>
-        <Col xs="12" sm="6" md="7" lg="9" tag="section">
+        <Col xs="12" sm="6" md="7" lg="8" tag="section">
           <h2>{aboutData.mission.title}</h2>
 
           <Video
@@ -97,11 +98,11 @@ const AboutPage = () => (
           </Collapsed>
         </Col>
 
-        <Col xs="12" sm="6" md="5" lg="3" className="mt-3 mt-sm-0" tag="aside">
-          <h4>{aboutData.blog.title}</h4>
-          <Content markdown>{aboutData.blog.content}</Content>
+        <Col xs="12" sm="6" md="5" lg="4" className="mt-3 mt-sm-0" tag="aside">
+          <h4 className="mt-md-3">{aboutData.blog.title}</h4>
+          <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
           <div className="text-center">
-            <Button color="primary" outline>
+            <Button href="~blog" className="mt-3" color="primary" outline>
               {aboutData.blog.visitButton}
             </Button>
           </div>
