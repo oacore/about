@@ -1,68 +1,94 @@
 title: Services
-lorem: &lorem |
-  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-  explicabo illum es magnam atque, quos dolorum repellat aut temporibus
-  accusantium quo perferendis quaerat maiores neque. Ipsam enim
-  iste nemo vel.
 
-  Modi quos pariatur reprehenderit laborum cum soluta voluptatem odio
-  neque harum facere facilis impedit aut illum, incidunt excepturi
-  doloribus sint vel quibusdam maxime ad, cupiditate a! Rem nobis,
-  necessitatibus hic!
 sections:
-- id: access-to-data
+-
+  id: access-to-data
   title: Access to data
   sections:
-  - id: api
+  -
+    id: api
     title: API
-    description: CORE harvests, maintains, enriches and makes available metadata and full-text content (typically a PDF) 
-    from many Open Access journals and repositories. This makes it a useful access point for those who would like to develop 
-    applications making use of this content. To support these activities, CORE is providing a free API.
-    
+    description: |
+      CORE harvests, maintains, enriches and makes available metadata and
+      full-text content (typically a PDF) from many Open Access journals and
+      repositories. This makes it a useful access point for those who would
+      like to develop applications making use of this content. To support these
+      activities, CORE is providing a free API.
     action:
       caption: Learn more about API
       url: ~api
-      
-  - id: datasets
+  -
+    id: datasets
     title: Datasets
-    description: The data aggregated from repositories by the CORE system can be accessed in two ways, 
-    through the CORE API or by downloading the data to your computer. The former option is practical if you want to build 
-    a service on top of CORE while the latter is something we recommend to those who would like to analyse the CORE dataset 
-    and/or apply some computationally intensive batch processes.
-    
+    description: |
+      The data aggregated from repositories by the CORE system can be accessed
+      in two ways, through the CORE API or by downloading the data to your
+      computer. The former option is practical if you want to build a service
+      on top of CORE while the latter is something we recommend to those who
+      would like to analyse the CORE dataset and/or apply some computationally
+      intensive batch processes.
     action:
       caption: Read more about datasets
       url: ~datasets
-      
-  - id: sdk
+  -
+    id: sdk
     title: SDK
-    description: *lorem
-    
-- id: content-discovery
+    description: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+      explicabo illum es magnam atque, quos dolorum repellat aut temporibus
+      accusantium quo perferendis quaerat maiores neque. Ipsam enim
+      iste nemo vel.
+
+      Modi quos pariatur reprehenderit laborum cum soluta voluptatem odio
+      neque harum facere facilis impedit aut illum, incidunt excepturi
+      doloribus sint vel quibusdam maxime ad, cupiditate a! Rem nobis,
+      necessitatibus hic!
+-
+  id: content-discovery
   title: Content discovery
   sections:
-  - id: recommender
+  -
+    id: recommender
     title: CORE Recommender
-    description: The recommender is a plugin that can be installed in repositories and journal systems to suggest 
-    similar articles. Its purpose is to support users in finding articles relevant to what they read.
-  - id: connector
+    description: |
+      The recommender is a plugin that can be installed in repositories and
+      journal systems to suggest similar articles. Its purpose is to support
+      users in finding articles relevant to what they read.
+  -
+    id: connector
     title: CORE Connector
-    description: The CORE Publisher Connector is a software providing seamless access to Gold and Hybrid Gold Open Access 
-    articles aggregated from non-standard systems of major publishers.
-- id: managing-content
+    description: |
+      The CORE Publisher Connector is a software providing seamless access
+      to Gold and Hybrid Gold Open Access articles aggregated from
+      non-standard systems of major publishers.
+-
+  id: managing-content
   title: Managing content
   sections:
-  - id: repository-dashboard
+  -
+    id: repository-dashboard
     title: Repository dashboard
-    description: In an effort to improve the quality and transparency of the harvesting process of the open access content 
-    and create a two way collaboration between the CORE project and the providers of this content, CORE has introduced 
-    the Repositories Dashboard.
+    description: |
+      In an effort to improve the quality and transparency of the harvesting
+      process of the open access content and create a two way collaboration
+      between the CORE project and the providers of this content, CORE has
+      introduced the Repositories Dashboard.
     action:
       caption: Go to Repository dashboard
       url: ~repository-dashboard
-  - id: analytics-dashboard
+  -
+    id: analytics-dashboard
     title: Analytics dashboard
-    description: *lorem
+    description: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
+      explicabo illum es magnam atque, quos dolorum repellat aut temporibus
+      accusantium quo perferendis quaerat maiores neque. Ipsam enim
+      iste nemo vel.
+
+      Modi quos pariatur reprehenderit laborum cum soluta voluptatem odio
+      neque harum facere facilis impedit aut illum, incidunt excepturi
+      doloribus sint vel quibusdam maxime ad, cupiditate a! Rem nobis,
+      necessitatibus hic!
     action:
       caption: Go to Analytics dashboard
       url: ~analytics-dashboard
