@@ -1,0 +1,5 @@
+@import "../bootstrap/core";
+
+.testimonials-section {
+  @include section-skew-left($blue-light);
+}

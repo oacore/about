@@ -1,0 +1,72 @@
+import React from 'react'
+import { Container, Row, Col, Button } from 'reactstrap'
+import { Section, Content } from '../content'
+import LogosCarousel from '../logos-carousel'
+import TestimonialsCarousel from '../testimonials-carousel'
+import Link from '../link'
+
+import './endorsements.scss'
+
+const TestimonialsSection = ({
+  title,
+  items,
+  level = 2,
+  className = '',
+  ...restProps
+}) => {
+  const Heading = `h${level}`
+  return (
+    <Section className={`testimonials-section ${className}`} {...restProps}>
+      <Container>
+        <Heading>{title}</Heading>
+        <TestimonialsCarousel items={items} />
+      </Container>
+    </Section>
+  )
+}
+
+const EndorsementsSection = ({
+  id,
+  title,
+  description,
+  action,
+  organizations,
+  testimonials,
+  level = 2,
+  ...restProps
+}) => {
+  const Heading = `h${level}`
+  return (
+    <Section id={id} {...restProps}>
+      <Container>
+        <Heading>{title}</Heading>
+        <Row>
+          <Col sm="9">
+            <Content markdown>{description}</Content>
+            <p className="font-weight-bold">{action.title}</p>
+            <Link href={action.url} passHref>
+              <Button color="primary">{action.name}</Button>
+            </Link>
+          </Col>
+          <Col sm="3">
+            <LogosCarousel items={organizations} />
+          </Col>
+        </Row>
+      </Container>
+
+      <TestimonialsSection
+        title={testimonials.title}
+        items={testimonials.items.map(item => ({
+          ...item,
+          author: {
+            ...item.author,
+            picture: 'https://placehold.it/200x200',
+          },
+        }))}
+        level={level + 1}
+      />
+    </Section>
+  )
+}
+
+export default EndorsementsSection
