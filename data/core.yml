@@ -13,8 +13,6 @@ navigation:
             path: ~services/api
           - title: Dataset
             path: ~services/dataset
-          - title: SDK
-            path: ~services/sdk
       - title: Content discovery
         path: ~services/discovery
         children:

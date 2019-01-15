@@ -30,19 +30,6 @@ sections:
     action:
       caption: Read more about datasets
       url: ~datasets
-  -
-    id: sdk
-    title: SDK
-    description: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-      explicabo illum es magnam atque, quos dolorum repellat aut temporibus
-      accusantium quo perferendis quaerat maiores neque. Ipsam enim
-      iste nemo vel.
-
-      Modi quos pariatur reprehenderit laborum cum soluta voluptatem odio
-      neque harum facere facilis impedit aut illum, incidunt excepturi
-      doloribus sint vel quibusdam maxime ad, cupiditate a! Rem nobis,
-      necessitatibus hic!
 -
   id: content-discovery
   title: Content discovery
