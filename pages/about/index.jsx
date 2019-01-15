@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Button } from 'reactstrap'
 import { Article, Content, Section, Collapsed } from 'components'
+import TeamMember from 'components/team-member'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 
@@ -151,18 +152,30 @@ const AboutPage = () => (
             title="Current members of the CORE team"
             open
           >
-            {teamData.members.map(({ name, job }) => (
-              <p key={`${name}, ${job}`}>
-                {name}, {job}
-              </p>
-            ))}
+            <ul className="list-unstyled">
+              {teamData.members.map(({ name, role, picture }) => (
+                <TeamMember
+                  key={`${name}, ${role}`}
+                  name={name}
+                  role={role}
+                  picture={picture ? `/static/images/team/${picture}` : null}
+                  tag="li"
+                />
+              ))}
+            </ul>
           </Collapsed>
           <Collapsed id="past-members" title="Past members of the CORE team">
-            {teamData.pastMembers.map(({ name, job }) => (
-              <p key={`${name}, ${job}`}>
-                {name}, {job}
-              </p>
-            ))}
+            <ul className="list-unstyled">
+              {teamData.pastMembers.map(({ name, role, picture }) => (
+                <TeamMember
+                  key={`${name}, ${role}`}
+                  name={name}
+                  role={role}
+                  picture={picture ? `/static/images/team/${picture}` : null}
+                  tag="li"
+                />
+              ))}
+            </ul>
           </Collapsed>
         </Col>
       </Row>

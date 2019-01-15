@@ -1,49 +1,95 @@
 title: The team
 members:
-  - name: David Pride
-    job: PhD student
-    description: |
-       I recently completed my MSc in Computer Science at The University of Hertfordshire. I joined the team at KMi as a PhD research student with Dr. Petr Knoth and Professor Zdenek Zdrahal as my supervisors. My thesis will expand on the original work on Semantometrics completed by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics, natural language processing and text mining.
-  - name: Drahomira Herrmannova
-    job: PhD student & Data Analyst
-    description: |
-       Works with the rest of the team on both front- and back-end development. Enjoys maintaining and improving CORE as it provides her with useful data for her PhD. Dreams of turning CORE into a hub for Semantometric research. Book lover and sports enthusiast in her spare time.
-  - name: Lucas Anastasiou
-    job: Lead Developer
-    description: |
-       While not on his computer coding, he enjoys playing chess, scratching his guitar and dreams of climbing Alpe d'Huez or Col de la Madone with his bike. {% endblock %}
-  - name: Matteo Cancellieri
-    job: Developer and Continuous Integration secret lover
-    description: |
-       Works on improving and and maintaining CORE services, especially in the frontend side. Once he was a Super Mario plumber.
-  - name: Nancy Pontika
-    job: Communications
-    description: |
-       A communications guru in the 'dominated by developers' CORE team. Her job is to liaise with the data providers and the technical group. As an open access advocate she hopes that one day there will be no access barriers to scientific literature. In her spare time she likes to swim, read and travel.
-  - name: Petr Knoth
-    job: Founder; Product & Team Leader
-    description: |
-       Started by developing the first CORE prototype in 2010 out of sheer frustration over the difficulty of text-mining open access papers. Responsible for leading the team, development & research effort, funding and product strategy. Believes in free unrestricted access to research for all. Excited by the opportunities of machine access to research papers to extract and create new knowledge. Green tea lover & retired ice skater.
-  - name: Samuel Pearce
-    job: Developer and Data & Harvesting Expert
-    description:
-  - name: Zdenek Zdrahal
-    job: Deputy Product & Team Leader
-    description:
-  - name: Jozef Harag
-    job: Frontend developer
-    description: |
-       Currently pursuing his bachelor degree in computer science. Python and Javascript lover. Helps with bringing a new design at the CORE website.
-  - name: Bikash Gyawali
-    job: Research Associate
-    description: |
-       A computational linguist and researcher working on building a better recommender service for the CORE platform. Firmly believes in the motto "Work hard, play hard".
+-
+  name: David Pride
+  role: PhD student
+  picture: david-pride.jpg
+  description: |
+    I recently completed my MSc in Computer Science at The University of
+    Hertfordshire. I joined the team at KMi as a PhD research student
+    with Dr. Petr Knoth and Professor Zdenek Zdrahal as my supervisors.
+    My thesis will expand on the original work on Semantometrics completed
+    by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
+    natural language processing and text mining.
+-
+  name: Drahomira Herrmannova
+  role: PhD student & Data Analyst
+  picture: drahomira-herrmannova.jpg
+  description: |
+    Works with the rest of the team on both front- and back-end development.
+    Enjoys maintaining and improving CORE as it provides her with useful data
+    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
+    Book lover and sports enthusiast in her spare time.
+-
+  name: Lucas Anastasiou
+  role: Lead Developer
+  picture: lucas-anastasiou.jpg
+  description: |
+    While not on his computer coding, he enjoys playing chess, scratching his
+    guitar and dreams of climbing Alpe d'Huez or Col de la Madone
+    with his bike.
+-
+  name: Matteo Cancellieri
+  role: Developer and Continuous Integration secret lover
+  picture: matteo-cancellieri.jpg
+  description: |
+    Works on improving and and maintaining CORE services, especially in the
+    frontend side. Once he was a Super Mario plumber.
+-
+  name: Nancy Pontika
+  role: Communications
+  picture: nancy-pontika.jpg
+  description: |
+    A communications guru in the 'dominated by developers' CORE team.
+    Her job is to liaise with the data providers and the technical group.
+    As an open access advocate she hopes that one day there will be no access
+    barriers to scientific literature. In her spare time she likes to swim,
+    read and travel.
+-
+  name: Petr Knoth
+  role: Founder; Product & Team Leader
+  picture: petr-knoth.jpg
+  description: |
+    Started by developing the first CORE prototype in 2010 out of sheer
+    frustration over the difficulty of text-mining open access papers.
+    Responsible for leading the team, development & research effort, funding
+    and product strategy. Believes in free unrestricted access to research
+    for all. Excited by the opportunities of machine access to research
+    papers to extract and create new knowledge. Green tea lover & retired
+    ice skater.
+-
+  name: Samuel Pearce
+  role: Developer and Data & Harvesting Expert
+  picture: samuel-pearce.jpg
+  description:
+-
+  name: Zdenek Zdrahal
+  role: Deputy Product & Team Leader
+  picture: zdenek-zdrahal.jpg
+  description:
+-
+  name: Jozef Harag
+  role: Frontend developer
+  description: |
+    Currently pursuing his bachelor degree in computer science.
+    Python and Javascript lover. Helps with bringing a new design
+    at the CORE website.
+-
+  name: Bikash Gyawali
+  role: Research Associate
+  picture: bikash-gyawali.jpg
+  description: |
+    A computational linguist and researcher working on building a better
+    recommender service for the CORE platform. Firmly believes in the motto
+    "Work hard, play hard".
 past-members:
-  - name: Tom
-    job: PhD student
-    description: |
-       Lorem ipsum.
-  - name: Jerry
-    job: PhD student
-    description: |
-      Lorem ipsum.
+-
+  name: Tom
+  role: PhD student
+  description: |
+    Lorem ipsum.
+-
+  name: Jerry
+  role: PhD student
+  description: |
+    Lorem ipsum.
