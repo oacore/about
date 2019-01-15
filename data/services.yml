@@ -15,11 +15,11 @@ sections:
       like to develop applications making use of this content. To support these
       activities, CORE is providing a free API.
     action:
-      caption: Learn more about API
-      url: ~api
+      caption: Learn more about CORE API
+      url: ~services/api
   -
-    id: datasets
-    title: Datasets
+    id: dataset
+    title: Dataset
     description: |
       The data aggregated from repositories by the CORE system can be accessed
       in two ways, through the CORE API or by downloading the data to your
@@ -28,8 +28,8 @@ sections:
       would like to analyse the CORE dataset and/or apply some computationally
       intensive batch processes.
     action:
-      caption: Read more about datasets
-      url: ~datasets
+      caption: Learn more about CORE Dataset
+      url: ~services/dataset
 -
   id: content-discovery
   title: Content discovery
@@ -41,6 +41,9 @@ sections:
       The recommender is a plugin that can be installed in repositories and
       journal systems to suggest similar articles. Its purpose is to support
       users in finding articles relevant to what they read.
+    action:
+      caption: Learn more about CORE Recommender
+      url: ~services/recommender
   -
     id: connector
     title: CORE Connector
@@ -48,6 +51,9 @@ sections:
       The CORE Publisher Connector is a software providing seamless access
       to Gold and Hybrid Gold Open Access articles aggregated from
       non-standard systems of major publishers.
+    action:
+      caption: Learn more about CORE Connector
+      url: ~services/connector
 -
   id: managing-content
   title: Managing content
@@ -61,5 +67,5 @@ sections:
       between the CORE project and the providers of this content, CORE has
       introduced the Repositories Dashboard.
     action:
-      caption: Go to Repository dashboard
-      url: ~repository-dashboard
+      caption: Lern more about CORE Repository dashboard
+      url: ~services/repository-dashboard

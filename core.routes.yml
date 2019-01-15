@@ -8,14 +8,12 @@ about:
     internships: ./internships
     ambassadors: ./ambassadors
     endorsements: ./endorsements
-mission: ~about/mission
-team: ~about/team
-internships: ~about/internships
-endorsements: ~about/endorsements
+mission: ~about#mission
+team: ~about#team
+internships: ~about#internships
+endorsements: ~about#endorsements
 faq: /faq
-research-outputs:
-  pattern: /about/research-outputs
-  controller: CoreWebBundle:ResearchOutputs:index
+research-outputs: ~about#research-outputs
 contact: /contact
 privacy: /privacy
 cookies: ~privacy#cookies
@@ -36,9 +34,6 @@ services:
     plugin: ./plugin
     mobile: ./mobile
     discovery: ./content-discovery
-api: ~services/api
-recommender: ~services/recommender
-connector: ~services/connector
 
 support: /services/support
 
