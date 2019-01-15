@@ -1,5 +1,5 @@
 ---
-title: Dashboard
+title: Repository dashboard
 ---
 
 In an effort to improve the quality and transparency of the harvesting process

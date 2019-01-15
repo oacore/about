@@ -63,19 +63,3 @@ sections:
     action:
       caption: Go to Repository dashboard
       url: ~repository-dashboard
-  -
-    id: analytics-dashboard
-    title: Analytics dashboard
-    description: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-      explicabo illum es magnam atque, quos dolorum repellat aut temporibus
-      accusantium quo perferendis quaerat maiores neque. Ipsam enim
-      iste nemo vel.
-
-      Modi quos pariatur reprehenderit laborum cum soluta voluptatem odio
-      neque harum facere facilis impedit aut illum, incidunt excepturi
-      doloribus sint vel quibusdam maxime ad, cupiditate a! Rem nobis,
-      necessitatibus hic!
-    action:
-      caption: Go to Analytics dashboard
-      url: ~analytics-dashboard
