@@ -1,9 +1,6 @@
 ---
 title: CORE Recommender
 ---
-
-**The new version of the CORE recommender has now been released.**
-
 The recommender is a plugin that can be installed in repositories and journal
 systems to suggest similar articles. Its purpose is to support users in
 finding articles relevant to what they read.
