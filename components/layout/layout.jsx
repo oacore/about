@@ -7,23 +7,27 @@ import Footer from '../footer'
 
 import './layout.scss'
 
-// TODO: Move it to center configuration point
-import config from '../../core.config.yml'
-
-const Layout = ({ children, container = false }) => (
+const Layout = ({
+  title,
+  description,
+  navigation,
+  footer,
+  children,
+  container = false,
+}) => (
   <Fragment>
     <Head>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
       />
-      <title>{config.name}</title>
-      <meta name="description" content={config.description} />
+      <title>{title}</title>
+      <meta name="description" content={description} />
     </Head>
 
-    <Header className="page-header" siteMap={config.navigation} />
+    <Header className="page-header" siteMap={navigation} />
     {container ? <Container>{children}</Container> : children}
-    <Footer className="page-footer" {...config.footer} />
+    <Footer className="page-footer" {...footer} />
   </Fragment>
 )
 
