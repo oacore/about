@@ -44,15 +44,23 @@ navigation:
       - title: Contact us
         path: ~contact
 footer:
-  - title: Blog
-    path: ~blog
-  - title: Contact us
-    path: ~contact
-  - title: Privacy notice
-    path: ~privacy
-  - title: Browse
-    path: ~browse
-  - title: Cookies
-    path: ~cookies
-  - title: About CORE
-    path: ~about
+  usefulLinks:
+    - title: Blog
+      path: ~blog
+    - title: Contact us
+      path: ~contact
+    - title: Privacy notice
+      path: ~privacy
+    - title: Browse
+      path: ~browse
+    - title: Cookies
+      path: ~cookies
+    - title: About CORE
+      path: ~about
+  researchOutputs: |
+    See our [research outputs](~research-outputs) and
+    [learn how to cite our work](~research-outputs).
+  partners: |
+    CORE is a not-for-profit service delivered by
+    the [Open University](https://www.open.ac.uk)
+    and [Jisc](https://www.jisc.ac.uk).

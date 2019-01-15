@@ -23,7 +23,7 @@ const Layout = ({ children, container = false }) => (
 
     <Header className="page-header" siteMap={config.navigation} />
     {container ? <Container>{children}</Container> : children}
-    <Footer className="page-footer" links={config.footer} />
+    <Footer className="page-footer" {...config.footer} />
   </Fragment>
 )
 

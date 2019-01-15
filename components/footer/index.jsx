@@ -6,22 +6,14 @@ import Link from '../link'
 
 import './footer.scss'
 
-const footer = {
-  researchOutputs: `See our [research outputs](~research-outputs) and
-    [learn how to cite our work](~research-outputs)`,
-  partners: `CORE is a not-for-profit service delivered by
-    the [Open University](https://www.open.ac.uk)
-    and [Jisc](https://www.jisc.ac.uk)`,
-}
-
-const Footer = ({ links, className = '' }) => (
+const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
   <footer className={`footer ${className}`}>
     <Container>
       <Row className="footer-highlights">
         <Col xs="12" md={{ size: 6, offset: 1 }} className="p-0" tag="aside">
           <h4>Useful links</h4>
           <Row>
-            {links.map(({ title, path }) => (
+            {usefulLinks.map(({ title, path }) => (
               <Col xs="12" md="4" key={`${title} @ ${path}`}>
                 <Link href={path}>{title}</Link>
               </Col>
@@ -31,7 +23,7 @@ const Footer = ({ links, className = '' }) => (
         <Col xs="12" md="4">
           <aside className="footer-cite-info">
             <h6>Writing about CORE?</h6>
-            <Content markdown>{footer.researchOutputs}</Content>
+            <Content markdown>{researchOutputs}</Content>
           </aside>
         </Col>
       </Row>
@@ -53,19 +45,21 @@ const Footer = ({ links, className = '' }) => (
         >
           <img src="/static/images/logos/jisc.svg" alt="Jisc" />
         </a>
-        <Content markdown>{footer.partners}</Content>
+        <Content markdown>{partners}</Content>
       </div>
     </Container>
   </footer>
 )
 
 Footer.propTypes = {
-  links: PropTypes.arrayOf(
+  usefulLinks: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       path: PropTypes.string.isRequired,
     })
   ).isRequired,
+  researchOutputs: PropTypes.string.isRequired,
+  partners: PropTypes.string.isRequired,
 }
 
 export default Footer
