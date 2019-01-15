@@ -9,14 +9,14 @@ features:
     description: |
       We aggregate and enrich open access research papers from around the world
 
-      [Read about our data](~services/data)
+      [Read about our data](~dataset)
     picture: /static/images/globe.svg
   - title: Unique APIs
     description: |
       We provide seamless access to content and data, through our
-      unique [APIs](~api)
+      unique [APIs](~services/api)
 
-      **Perfect for [text mining](~api)!**
+      **Perfect for [text mining](~dataset)!**
     picture: /static/images/api.svg
   - title: Powerful Services
     description: |
