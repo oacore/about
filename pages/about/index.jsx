@@ -1,11 +1,10 @@
 import React from 'react'
 import { Row, Col, Button } from 'reactstrap'
-import { Article, Content, Section, Collapsed } from '../../components'
+import { Article, Content, Section, Collapsed } from 'components'
+import aboutData from 'data/about.yml'
+import teamData from 'data/team.yml'
 
 import mapImage from '../../images/map.png'
-
-import aboutData from '../../data/about.yml'
-import teamData from '../../data/team.yml'
 
 const AboutPage = () => (
   <Article container nav tag="main">
