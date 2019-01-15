@@ -20,4 +20,4 @@ notion of a resource in the protocol and share more than one representation,
 i.e. each record contains both metadata and full text.
 
 You can access the content offered by the publisher connector in [CORE's
-ResourceSync endpoint](http://publisher-connector.core.ac.uk/resourcesync/)
+ResourceSync endpoint](http://publisher-connector.core.ac.uk/resourcesync/).
