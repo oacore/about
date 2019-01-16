@@ -10,6 +10,7 @@ import {
   Content,
   Section,
 } from 'components'
+import { JoinSection } from 'components/sections'
 import Link from 'components/link'
 
 import page from 'data/home.yml'
@@ -79,6 +80,8 @@ class TestimonialsSection extends Component {
 
 const IndexPage = () => (
   <Fragment>
+    <h1 className="sr-only">{page.title}</h1>
+
     <Hero>{page.hero}</Hero>
 
     <Section>
@@ -94,7 +97,8 @@ const IndexPage = () => (
       </Container>
     </Section>
 
-    <h1 className="sr-only">{page.title}</h1>
+    <JoinSection id="join-us" {...page.join} />
+
     <Section id="endorsements" container>
       <Container>
         <h2 className="text-center">{page.endorsements.title}</h2>
