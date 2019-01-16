@@ -33,7 +33,14 @@ const markdownConfig = {
 }
 
 const Content = ({ children, markdown = false }) => {
-  if (markdown) return <Markdown {...markdownConfig}>{children}</Markdown>
+  if (markdown) {
+    return (
+      <Markdown className="content" {...markdownConfig}>
+        {children}
+      </Markdown>
+    )
+  }
+
   return <Fragment>{children}</Fragment>
 }
 
