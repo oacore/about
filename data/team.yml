@@ -45,6 +45,9 @@ members:
     papers to extract and create new knowledge. Green tea lover & retired
     ice skater.
 -
+  name: Sergei Misak
+  role: Software Developer
+-
   name: Samuel Pearce
   role: Developer and Data & Harvesting Expert
   picture: samuel-pearce.jpg
@@ -69,6 +72,9 @@ members:
     My thesis will expand on the original work on Semantometrics completed
     by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
     natural language processing and text mining.
+-
+  name: Viktor Yakubiv
+  role: Software Developer
 -
   name: Zdenek Zdrahal
   role: Deputy Product & Team Leader
