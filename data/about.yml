@@ -83,58 +83,58 @@ resources:
     content: |
       ##### CORE vision and mission
 
-      Knoth, P. and Zdrahal, Z. (2012) CORE: [Three Access Levels to Underpin Open Access](http://oro.open.ac.uk/35755/), D-Lib Magazine, 18, 11/12, Corporation for National Research Initiatives.
+      Knoth, P. and Zdrahal, Z. (2012) CORE: [Three Access Levels to Underpin Open Access](http://oro.open.ac.uk/35755/), *D-Lib Magazine*, 18, 11/12, Corporation for National Research Initiatives.
 
-      - *Sets the vision for creating the CORE service, developing global-wide content aggregation of all open access research literature (on top of OAI-PMH protocol for metadata harvesting and other protocols). It sets the mission to develop the three access levels (access at the granularity of papers; analytical access; access to raw data) via CORE.*
+      *Sets the vision for creating the CORE service, developing global-wide content aggregation of all open access research literature (on top of OAI-PMH protocol for metadata harvesting and other protocols). It sets the mission to develop the three access levels (access at the granularity of papers; analytical access; access to raw data) via CORE.*
 
 
       ##### CORE Aggregation approaches and infrastructure
 
-      Knoth, P. (2013). [From Open Access Metadata to Open Access Content: Two Principles for Increased Visibility of Open Access Content](http://oro.open.ac.uk/37824/). Open Repositories 2013, Charlottetown, Prince Edward Island, Canada.
+      Knoth, P. (2013). [From Open Access Metadata to Open Access Content: Two Principles for Increased Visibility of Open Access Content](http://oro.open.ac.uk/37824/). *Open Repositories 2013*, Charlottetown, Prince Edward Island, Canada.
 
-      - *This paper describes the two principles that should be followed to ensure that content can be properly harvested from repositories. This paper could be of great interest to repository managers.*
+      *This paper describes the two principles that should be followed to ensure that content can be properly harvested from repositories. This paper could be of great interest to repository managers.*
 
-      Knoth, P. (2013) [CORE: Aggregation Use Cases for Open Access](http://oro.open.ac.uk/37823/) Demo at Joint Conference on Digital Libraries (JCDL 2013), Indianapolis, Indiana, United States.
+      Knoth, P. (2013) [CORE: Aggregation Use Cases for Open Access](http://oro.open.ac.uk/37823/) Demo at *Joint Conference on Digital Libraries* (JCDL 2013), Indianapolis, Indiana, United States.
 
-      - *This paper describes the use cases that must be supported by open access aggregators, it establishes the CORE use case and demonstrates the benefits of open access content aggregators.*
+      *This paper describes the use cases that must be supported by open access aggregators, it establishes the CORE use case and demonstrates the benefits of open access content aggregators.*
 
-      Knoth, P. and Pontika, N. (2016). [Aggregating Research Papers from Publishers' Systems to Support Text and Data Mining: Deliberate Lack of Interoperability or Not?](http://oro.open.ac.uk/46870/), Workshop: INTEROP2016 at 10th Language Resources and Evaluation Conference.
+      Knoth, P. and Pontika, N. (2016). [Aggregating Research Papers from Publishers' Systems to Support Text and Data Mining: Deliberate Lack of Interoperability or Not?](http://oro.open.ac.uk/46870/), Workshop: *INTEROP2016 at 10th Language Resources and Evaluation Conference*.
 
-      - *This paper describes the technical challenges relating to machine interfaces, the interoperability issues on obtaining open access content and the complications of achieving a harmonisation across repositories’ and publishers’ systems.*
+      *This paper describes the technical challenges relating to machine interfaces, the interoperability issues on obtaining open access content and the complications of achieving a harmonisation across repositories’ and publishers’ systems.*
 
-      Knoth, P. and Zdrahal, Z. (2011) [CORE: Connecting Repositories in the Open Access Domain](http://oro.open.ac.uk/32560/). CERN workshop on Innovations in Scholarly Communication (OAI7), Geneva, Switzerland.
+      Knoth, P. and Zdrahal, Z. (2011) [CORE: Connecting Repositories in the Open Access Domain](http://oro.open.ac.uk/32560/). *CERN workshop on Innovations in Scholarly Communication* (OAI7), Geneva, Switzerland.
 
-      Knoth, P., Robotka, V. and Zdrahal, Z. (2011). [Connecting Repositories in the Open Access Domain using Text Mining and Semantic Data](http://oro.open.ac.uk/32180/). International Conference on Theory and Practice of Digital Libraries 2011 (TPDL 2011), Berlin, Germany.
+      Knoth, P., Robotka, V. and Zdrahal, Z. (2011). [Connecting Repositories in the Open Access Domain using Text Mining and Semantic Data](http://oro.open.ac.uk/32180/). *International Conference on Theory and Practice of Digital Libraries 2011* (TPDL 2011), Berlin, Germany.
 
-      - *This paper describes the CORE system in its early stages with a focus on the original idea of the CORE recommender.*
+      *This paper describes the CORE system in its early stages with a focus on the original idea of the CORE recommender.*
 
 
       ##### CORE Recommender
 
-      Petr Knoth, Lucas Anastasiou, Aristotelis Charalampous, Matteo Cancellieri, Samuel Pearce, Nancy Pontika, Vaclav Bayer (2017). [Towards effective research recommender systems for repositories](http://oro.open.ac.uk/49366/). Open Repositories 2017.
+      Petr Knoth, Lucas Anastasiou, Aristotelis Charalampous, Matteo Cancellieri, Samuel Pearce, Nancy Pontika, Vaclav Bayer (2017). [Towards effective research recommender systems for repositories](http://oro.open.ac.uk/49366/), *Open Repositories 2017*.
 
-      In this paper, we argue why and how the integration of recommender systems for research can enhance the functionality and user experience in repositories.
+      *In this paper, we argue why and how the integration of recommender systems for research can enhance the functionality and user experience in repositories.*
 
-      Knoth, P., Novotny, J. and Zdrahal, Z. (2010). [Automatic generation of inter-passage links based on semantic similarity](http://oro.open.ac.uk/22933). The 23rd International Conference on Computational Linguistics (COLING 2010), Beijing, China.
+      Knoth, P., Novotny, J. and Zdrahal, Z. (2010). [Automatic generation of inter-passage links based on semantic similarity](http://oro.open.ac.uk/22933). *23rd International Conference on Computational Linguistics (COLING 2010)*, Beijing, China.
 
-      This paper describes the algorithm that was used in the original version of the CORE recommender.*
+      *This paper describes the algorithm that was used in the original version of the CORE recommender.*
 
 
       ##### CORE Repositories Dashboard
 
-      Pontika, N., Knoth, P., Cancellieri, M. and Pearce, S. (2016). [Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories](http://oro.open.ac.uk/45935/). LIBER Quarterly, 25, 4.
+      Pontika, N., Knoth, P., Cancellieri, M. and Pearce, S. (2016). [Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories](http://oro.open.ac.uk/45935/). *LIBER Quarterly*, 25, 4.
 
-      This paper presents the CORE Repositories Dashboard, a tool designed primarily for repository managers. It describes how the Dashboard improves the quality of the harvested papers, advances the collaboration between the repository managers and CORE, enables a straightforward management of their collections and enhances the transparency of the harvested content.*
+      *This paper presents the CORE Repositories Dashboard, a tool designed primarily for repository managers. It describes how the Dashboard improves the quality of the harvested papers, advances the collaboration between the repository managers and CORE, enables a straightforward management of their collections and enhances the transparency of the harvested content.*
 
       ##### CORE and Download Statistics
 
-      Pearce, S. and Pontika, N. (2016). [Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard](http://oro.open.ac.uk/47805/). Poster. Open Repositories 2016 (OR2016).
+      Pearce, S. and Pontika, N. (2016). [Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard](http://oro.open.ac.uk/47805/). Poster, *Open Repositories 2016 (OR2016)*.
 
-      This poster presents the integration of the IRUS-UK service with the CORE Repositories Dashboard tool, which enables repository managers access reliable download statistics of the full-text papers harvested by CORE.*
+      *This poster presents the integration of the IRUS-UK service with the CORE Repositories Dashboard tool, which enables repository managers access reliable download statistics of the full-text papers harvested by CORE.*
 
-      Knoth, P., Anastasiou, L. and Pearce, S. (2014). [My repository is being aggregated: a blessing or a curse?](http://oro.open.ac.uk/41678/), Open Repositories 2014 (OR 2014), Helsinki, Finland.
+      Knoth, P., Anastasiou, L. and Pearce, S. (2014). [My repository is being aggregated: a blessing or a curse?](http://oro.open.ac.uk/41678/), *Open Repositories 2014 (OR 2014)*, Helsinki, Finland.
 
-      This paper describes the collaboration between aggregators and repositories in terms of sharing download usage statistics.*
+      *This paper describes the collaboration between aggregators and repositories in terms of sharing download usage statistics.*
 
 
 
