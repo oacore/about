@@ -1,10 +1,12 @@
 @import "../bootstrap/core";
 
-$hero-padding-vertical: map-get($spacers, 5);
-$hero-background: url("../images/backgrounds/brandi-redd-122054-unsplash.jpg");
+.hero-logo {
+  display: block;
+  margin: 0 auto;
+  font-size: $h1-font-size;
+}
 
-.hero {
-  padding-top: $hero-padding-vertical;
-  padding-bottom: $hero-padding-vertical;
-  // background: $white $hero-background no-repeat top center / cover;
+.hero-text {
+  font-size: $lead-font-size;
+  text-align: center;
 }
