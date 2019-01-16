@@ -25,13 +25,14 @@ course](https://www.fosteropenscience.eu/node/2263).
 We expect the API can be used, for example, to:
 
 - Perform text mining to enrich metadata of Open Access publications or to
-- even perform different kinds of semantic analysis of publications.
+  even perform different kinds of semantic analysis of publications.
 - Semantically annotate (by means of crowdsourcing, collaborative sharing or
-- natural language processing) the publications to drive the emergence of
-- nano-publications in certain research fields. Link publications to research
-- data. Carry out impact and citation analysis in the Open Access domain. Many
-- other services that need quick and easy access to the content of research
-- publications, etc.
+  natural language processing) the publications to drive the emergence of
+  nano-publications in certain research fields.
+- Link publications to research data.
+- Carry out impact and citation analysis in the Open Access domain. Many
+  other services that need quick and easy access to the content of research
+  publications, etc.
 
 ## Where to start
 
