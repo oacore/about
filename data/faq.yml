@@ -1,6 +1,6 @@
 title: FAQs
 sections:
-  - title: Join CORE
+  - title: Joining CORE
     items:
       - slug: is-my-repository-or-journal-harvested-by-CORE
         question: Is my repository or journal harvested by CORE?
@@ -26,275 +26,280 @@ sections:
           a map and can be accessed [here](~providers).
       - slug: I-would-like-to-include-them-in-CORE
         question: |
-          I am an author of scientific papers and I would like to include them in CORE.
+          I am an author of scientific papers and I would like to include
+          them in CORE.
         answer: |
-          CORE is a harvesting service and is not similar to research networking sites,
-          e.g. ResearchGate or Academia.edu, where authors can deposit papers,
-          so please do not email us the full text of your papers. If you have deposited
-          your articles in a repository [let us](~contact) know
-          the name of the repository. There are chances that we it
-          already and if we don't we could start harvesting it.
-  - title: "Aggregation: general"
-    items:
-      - slug: how-often-does-CORE-harvest-the-repositories
-        question: |
-          How often does CORE harvest the repositories?
-        answer: |
-          CORE does not harvest all the repositories that exist in our database
-          with the same frequency. If you have a question regarding a specific
-          repository do get in [touch with us](~contact).
-      - slug: when-will-the-harvesting-process-of-my-repository-be-completed
-        question: |
-          When will the harvesting process of my repository be completed?
-        answer: |
-          Depending on the size of the repository and the existing traffic
-          in CORE's servers, the harvesting can last from a couple of hours
-          to a couple of weeks. If we experience any technical issues
-          during that period, we will get in touch.
-      - slug: what-types-of-scientific-outputs-does-CORE-provide
-        question: |
-          What types of scientific outputs does CORE provide?
-        answer: |
-          CORE harvests all metadata records in a repository, but it is in
-          position to harvest full text records in PDF only. We are working
-          though to include other file types, such as HTML webpages, images etc.
-      - slug: can-my-repository-be-harvested-by-CORE
-        question: |
-          My repository has plenty of metadata records, but not all of them
-          have an open access full text. Can my repository be harvested by CORE?
-        answer: |
-          Yes it can, provided that the repository offers its content as
-          [Open Access](path___core_about_main).
-      - slug:  my-repository-contains-a-much-higher-number-of-records-than-CORE
-        question: |
-            My repository contains a much higher number of records than CORE.
-            What can I do?
-        answer: |
-            Log in to the CORE Repository Dashboard (~services#dashboard)
-            and look under the issues tab. Examine whether CORE has the correct oai base
-            url of your repository or if there are any technical issues listed there.
-            If there are no technical issues or you do not have an account for the CORE
-            Repository Dashboard [contact us](~contact).
-      - slug: can-I-upload-a-new-version
-        question: |
-          There is a mistake in my article, can I upload a new version?
-        answer: |
-          CORE works at the level of repositories and cannot update specific
-          records. You can upload the new record into your institutional
-          repository or journal and CORE will synchronise it at the next
-          scheduled re-harvesting.
-      - slug: there-are-many-new-records-in-my-repository
-        question: |
-          There are many new records in my repository. Do I need to notify CORE?
-        answer: |
-          No, CORE follows an automated re-harvesting process and your repository
-          will be re-harvested at the next automated re-harvesting.
-      - slug: core-vs-google-scholar
-        question: |
-          How is CORE different from Google Scholar?
-        answer: |
-          Google Scholar is a search engine containing scholarly research papers but
-          it is not designed to aggregate repository and journal systems.
-          More specifically:
-          - Google Scholar crawls and indexes research papers that can be
-            found on the web and links to the original source, while CORE
-            harvests and caches the full text.
-          - Google Scholar limits its access only at the
-            [granularity level](http://www.dlib.org/dlib/november12/knoth/11knoth.html),
-            i.e. its search engine, whereas CORE is in position to extend access
-            to raw data and, apart from the CORE search engine.
-          - Google Scholar offers both closed access and open access resources,
-            while CORE offers open access resources only, enabling immediate
-            access to full text.
-          - The audience is different. Even though CORE has a search engine
-            where users can retrieve scientific literature, it focuses also
-            on other types of research stakeholders, such as text miners and repository
-            managers, and offers services designed for them, such as the
-            [CORE API](~api) and [Datasets](~dataset).
-      - slug: there-is-no-download-button
-        question: |
-          I do not see the “Download” button in the CORE display page.
-          How can I access the full text?
-        answer: |
-          CORE harvests content that is available open access elsewhere,
-          i.e. repositories and open access journals. When the “Download”
-          button is missing, it means that the full text is not available
-          from the hosting service, CORE does not have it and displays only the metadata of
-          this record. If you need to access the full text we recommend
-          that you contact the content provider listed in the CORE
-          metadata display page, at the section "Provided by".
-      - slug: metadata-in-the-CORE-display-page-are-wrong
-        question: |
-          The metadata in the CORE display page are wrong. How can I have them corrected?
-        answer: |
-          CORE does not create the metadata, but rather harvests
-          them from its content providers. If the metadata are wrong
-          then contact the repository or journal where you had originally
-          deposited or published your content.
-      - slug: can-CORE-offer-any-statistics-about-the-content-it-harvests
-        question: |
-          Can CORE offer any statistics about the content it harvests?
-        answer: |
-          CORE can offer repository or journal full text download statistics per month via the
-          [CORE Repository Dashboard](~services#dashboard) but is not in position
-          to offer single item downloads yet. If you do not have access to the
-          Dashboard [contact us](~contact).
-      - slug: are-the-research-papers-offered-by-CORE-peer-reviewed
-        question: |
-          Are the research papers offered by CORE peer-reviewed?
-        answer: |
-          Yes it does. CORE harvests content from repositories and journals. The first
-          do not perform peer review of the deposited content but the latter
-          do. In some occassions the content deposited in a repository is already
-          published in a journal and is peer-reviewed. In addition, repositories may contain
-          grey literature and these resources are not peer-reviewed.
-  - title: 'Aggregation: technical'
-    items:
-      - slug: what-are-the-technical-requirements-for-being-aggregated
-        question: |
-          What are the technical requirements for being aggregated?
-        answer: |
-          In order to realise the data transfer and regular data updates of
-          CORE and your system, CORE uses a variety of protocols to ingest
-          the content. The easiest way to get your content integrated with CORE
-          is the [OAI-PMH protocol](https://www.openarchives.org/pmh/).
-          If you wish to join CORE get in [touch](~contact).
-      - slug: what-is-my-journal-oai-base-url
-        question: |
-          What is my journal's oai base url?
-        answer: |
-          A journal's oai base url looks similar to this http://journaldomain.com/cgi/oai2
-          or http://journaldomain.com/oai/request. A journal's webpage looks similar
-          to this http://journaldomain.com and CORE
-          cannot harvest the journal's content via its webpage url. If you
-          are not sure whether your journal has an oai base url do contact
-          the team that provides technical support to your journal.
-      - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
-        question: |
-          How difficult is it to satisfy the CORE harvesting recommendations?
-        answer: |
-          We would expect that harvesting could take from one hour to a couple of
-          days for a typical repository. In some repository systems,
-          such as EPrints, most of these recommendations are followed by default.
-          You can find more details [here](~recommendations).
-      - slug: which-metadata-formats-does-CORE-support
-        question: |
-          Which metadata formats does CORE support?
-        answer: |
-          We mainly support oai\_dc, the mainstream metadata format used in the
-          [OAI-PMH Protocol](http://www.openarchives.org/OAI/openarchivesprotocol.html),
-          utilising the [Dublin Core](http://dublincore.org/documents/dcmi-terms/)
-          vocabulary, a popular vocabulary for bibliographic data.
-          We also support [RIOXX](http://rioxx.net/), a richer metadata
-          protocol, used mostly by the UK repositories.
-      - slug: can-CORE-just-index-our-content-but-not-store-it-on-its-servers
-        question: |
-          Can CORE just index our content, but not store it on its servers?
-        answer: |
-          To provide its service, it is essential for CORE to be able to store
-          a cached copy of the harvested content. This is needed to verify open
-          access sources, offer analytical services, support text and data mining,
-          recommendation tools, etc. By cashing a copy of the harvested
-          resource, CORE is not different from many commercial and
-          non-commercial, academic and non-academic, search engines including
-          [Google](http://www.google.com/) or
-          [CiteSeerX](http://citeseerx.ist.psu.edu/index).
-          The primary difference from such systems is that CORE caches only
-          copies of open access content. More information on the benefits of
-          this approach is available in the “[CORE: Three Access Levels to
-          Underpin Open Access](http://www.dlib.org/dlib/november12/knoth/11knoth.html)”
-          article.
-      - slug: can-CORE-stop-caching-PDFs-from-my-repository
-        question: |
-          Can CORE stop caching the PDFs from my repository?
-        answer: |
-          CORE can change the way it treats your repository's content. The resources
-          will be indexed and made discoverable via the CORE Search, but the PDFs
-          will not be downloadble directry from the CORE Reader, a link will be
-          provided only to the repository of origin. If you are interested in
-          that option [contact](~contact) us.
-      - slug:  how-can-my-repository-opt-out-from-being-harvested-by-CORE
-        question: |
-          How can my repository opt out from being harvested by CORE?
-        answer: |
-          CORE uses information from various registries, such as
-          [OpenDOAR](http://opendoar.org/), to include new repositories,
-          journals and archives into CORE. If the circumstances have changed in
-          your repository, you can restrict harvesting and crawling activities
-          by modifying your rules in your “robots.txt” file by using the
-          [Standard for Robots Exclusion](http://www.robotstxt.org/orig.html).
-          This will also guarantee the content cannot be cached by search
-          engines and harvesting systems. In addition, you could withdraw your
-          repository from all open access registries lists; when this takes
-          place, please [notify us](~contact).
-
-  - title: "Aggregation: removing full text or metadata"
-    items:
-      - slug: how-does-CORE-ensure-that-the-harvested-content-is-Open-Access
-        question: |
-          How does CORE ensure that the harvested content is Open Access?
-        answer: |
-          CORE aggregates content from repositories registered in
-          [OpenDOAR](http://www.opendoar.org/about.html), journals registered
-          in [DOAJ](http://www.doaj.org/) or those content providers that requested
-          their content to be aggregated. This means that all the content sources aggregated
-          by CORE must be open access as this is a requirement for the
-          providers to be included in these registries. According to the
-          official [BOAI definition of open
-          access](http://www.opensocietyfoundations.org/openaccess/boai-10-recommendations),
-          CORE is allowed to, _"distribute, search, or link to the full texts
-          of articles, crawl them for indexing, pass them as data to software,
-          or use them for any other lawful purpose, without financial, legal,
-          or technical barriers other than those inseparable from gaining access
-          to the Internet itself. The only constraint on reproduction and
-          distribution, and the only role for copyright in this domain is to
-          give authors control over the integrity of their work and the right
-          to be properly acknowledged and cited."_
-      - slug: CORE-harvests-copyrighted-material-from-my-repository
-        question: |
-          CORE harvests copyrighted material from my repository
-        answer: |
-          CORE’s system is fully automated and relies on data made available in
-          a machine readable form. If your repository hosts full text with a
-          restrictive license that prohibits harvesting, this needs to be
-          properly communicated in a machine readable form. All non open access
-          items should be blocked in the robots.txt file. If this information
-          is provided in the metadata for each record and CORE exposes the
-          full text, please get in [touch with us](~contact).
-      - slug: full-text-record-is-deleted-from-my-repository
-        question: |
-          A full text record is deleted from my repository, but is still available in CORE
-        answer: |
-          CORE’s system is fully automated and relies on data made available
-          in a machine readable form. Our system understands that the
-          full text of a record was removed only when the record is marked
-          as deleted in the metadata of your repository. See [here]
-          (#how-do-I-notify-CORE-to-take-down-full-text-content)
-          how to take down full text from CORE.
-      - slug: how-do-I-notify-CORE-to-take-down-full-text-content
-        question: |
-          How do I notify CORE to take down full text content?
-        answer: |
-          If full text content appears in CORE but not in the
-          hosting service your repository manager can take it down via the
-          [CORE Repository Dashboard](~services#dashboard)
-          anytime without notifying us. If the hosting service does not have
-          access to the Dashboard visit [this page](path___core_display_form).
-      - slug: full-text-has-been-removed-but-metadata-still-visible
-        question: |
-          The full text has been removed, but the metadata is still visible
-          in CORE
-        answer: |
-          It is a CORE policy to remove only the full text and not
-          the metadata.
-      - slug: why-metadata-is-still-visible
-        question: |
-          I have removed an item from my repository, but the metadata are still
-          visible in CORE
-        answer: |
-          In order for the metadata to be removed from CORE they need to be
-          marked as "deleted/removed" in the repository. If the metadata are
-          marked as "restricted" CORE will still display it.
+          CORE is a harvesting service and is not similar to research
+          networking sites, e.g. ResearchGate or Academia.edu, where authors
+          can deposit papers, so please do not email us the full text of your
+          papers. If you have deposited your articles in a repository
+          [let us](~contact) know the name of the repository.
+          There are chances that we it already and if we don't we could
+          start harvesting it.
+  - title: Aggregation
+    sections:
+    - title: General
+      items:
+        - slug: how-often-does-CORE-harvest-the-repositories
+          question: |
+            How often does CORE harvest the repositories?
+          answer: |
+            CORE does not harvest all the repositories that exist in our database
+            with the same frequency. If you have a question regarding a specific
+            repository do get in [touch with us](~contact).
+        - slug: when-will-the-harvesting-process-of-my-repository-be-completed
+          question: |
+            When will the harvesting process of my repository be completed?
+          answer: |
+            Depending on the size of the repository and the existing traffic
+            in CORE's servers, the harvesting can last from a couple of hours
+            to a couple of weeks. If we experience any technical issues
+            during that period, we will get in touch.
+        - slug: what-types-of-scientific-outputs-does-CORE-provide
+          question: |
+            What types of scientific outputs does CORE provide?
+          answer: |
+            CORE harvests all metadata records in a repository, but it is in
+            position to harvest full text records in PDF only. We are working
+            though to include other file types, such as HTML webpages, images etc.
+        - slug: can-my-repository-be-harvested-by-CORE
+          question: |
+            My repository has plenty of metadata records, but not all of them
+            have an open access full text. Can my repository be harvested by CORE?
+          answer: |
+            Yes it can, provided that the repository offers its content as
+            [Open Access](path___core_about_main).
+        - slug:  my-repository-contains-a-much-higher-number-of-records-than-CORE
+          question: |
+              My repository contains a much higher number of records than CORE.
+              What can I do?
+          answer: |
+              Log in to the CORE Repository Dashboard (~services#dashboard)
+              and look under the issues tab. Examine whether CORE has the correct oai base
+              url of your repository or if there are any technical issues listed there.
+              If there are no technical issues or you do not have an account for the CORE
+              Repository Dashboard [contact us](~contact).
+        - slug: can-I-upload-a-new-version
+          question: |
+            There is a mistake in my article, can I upload a new version?
+          answer: |
+            CORE works at the level of repositories and cannot update specific
+            records. You can upload the new record into your institutional
+            repository or journal and CORE will synchronise it at the next
+            scheduled re-harvesting.
+        - slug: there-are-many-new-records-in-my-repository
+          question: |
+            There are many new records in my repository. Do I need to notify CORE?
+          answer: |
+            No, CORE follows an automated re-harvesting process and your repository
+            will be re-harvested at the next automated re-harvesting.
+        - slug: core-vs-google-scholar
+          question: |
+            How is CORE different from Google Scholar?
+          answer: |
+            Google Scholar is a search engine containing scholarly research papers but
+            it is not designed to aggregate repository and journal systems.
+            More specifically:
+            - Google Scholar crawls and indexes research papers that can be
+              found on the web and links to the original source, while CORE
+              harvests and caches the full text.
+            - Google Scholar limits its access only at the
+              [granularity level](http://www.dlib.org/dlib/november12/knoth/11knoth.html),
+              i.e. its search engine, whereas CORE is in position to extend access
+              to raw data and, apart from the CORE search engine.
+            - Google Scholar offers both closed access and open access resources,
+              while CORE offers open access resources only, enabling immediate
+              access to full text.
+            - The audience is different. Even though CORE has a search engine
+              where users can retrieve scientific literature, it focuses also
+              on other types of research stakeholders, such as text miners and repository
+              managers, and offers services designed for them, such as the
+              [CORE API](~api) and [Datasets](~dataset).
+        - slug: there-is-no-download-button
+          question: |
+            I do not see the “Download” button in the CORE display page.
+            How can I access the full text?
+          answer: |
+            CORE harvests content that is available open access elsewhere,
+            i.e. repositories and open access journals. When the “Download”
+            button is missing, it means that the full text is not available
+            from the hosting service, CORE does not have it and displays only the metadata of
+            this record. If you need to access the full text we recommend
+            that you contact the content provider listed in the CORE
+            metadata display page, at the section "Provided by".
+        - slug: metadata-in-the-CORE-display-page-are-wrong
+          question: |
+            The metadata in the CORE display page are wrong. How can I have them corrected?
+          answer: |
+            CORE does not create the metadata, but rather harvests
+            them from its content providers. If the metadata are wrong
+            then contact the repository or journal where you had originally
+            deposited or published your content.
+        - slug: can-CORE-offer-any-statistics-about-the-content-it-harvests
+          question: |
+            Can CORE offer any statistics about the content it harvests?
+          answer: |
+            CORE can offer repository or journal full text download statistics per month via the
+            [CORE Repository Dashboard](~services#dashboard) but is not in position
+            to offer single item downloads yet. If you do not have access to the
+            Dashboard [contact us](~contact).
+        - slug: are-the-research-papers-offered-by-CORE-peer-reviewed
+          question: |
+            Are the research papers offered by CORE peer-reviewed?
+          answer: |
+            Yes it does. CORE harvests content from repositories and journals. The first
+            do not perform peer review of the deposited content but the latter
+            do. In some occassions the content deposited in a repository is already
+            published in a journal and is peer-reviewed. In addition, repositories may contain
+            grey literature and these resources are not peer-reviewed.
+    - title: Technical
+      items:
+        - slug: what-are-the-technical-requirements-for-being-aggregated
+          question: |
+            What are the technical requirements for being aggregated?
+          answer: |
+            In order to realise the data transfer and regular data updates of
+            CORE and your system, CORE uses a variety of protocols to ingest
+            the content. The easiest way to get your content integrated with CORE
+            is the [OAI-PMH protocol](https://www.openarchives.org/pmh/).
+            If you wish to join CORE get in [touch](~contact).
+        - slug: what-is-my-journal-oai-base-url
+          question: |
+            What is my journal's oai base url?
+          answer: |
+            A journal's oai base url looks similar to this http://journaldomain.com/cgi/oai2
+            or http://journaldomain.com/oai/request. A journal's webpage looks similar
+            to this http://journaldomain.com and CORE
+            cannot harvest the journal's content via its webpage url. If you
+            are not sure whether your journal has an oai base url do contact
+            the team that provides technical support to your journal.
+        - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
+          question: |
+            How difficult is it to satisfy the CORE harvesting recommendations?
+          answer: |
+            We would expect that harvesting could take from one hour to a couple of
+            days for a typical repository. In some repository systems,
+            such as EPrints, most of these recommendations are followed by default.
+            You can find more details [here](~recommendations).
+        - slug: which-metadata-formats-does-CORE-support
+          question: |
+            Which metadata formats does CORE support?
+          answer: |
+            We mainly support oai\_dc, the mainstream metadata format used in the
+            [OAI-PMH Protocol](http://www.openarchives.org/OAI/openarchivesprotocol.html),
+            utilising the [Dublin Core](http://dublincore.org/documents/dcmi-terms/)
+            vocabulary, a popular vocabulary for bibliographic data.
+            We also support [RIOXX](http://rioxx.net/), a richer metadata
+            protocol, used mostly by the UK repositories.
+        - slug: can-CORE-just-index-our-content-but-not-store-it-on-its-servers
+          question: |
+            Can CORE just index our content, but not store it on its servers?
+          answer: |
+            To provide its service, it is essential for CORE to be able to store
+            a cached copy of the harvested content. This is needed to verify open
+            access sources, offer analytical services, support text and data mining,
+            recommendation tools, etc. By cashing a copy of the harvested
+            resource, CORE is not different from many commercial and
+            non-commercial, academic and non-academic, search engines including
+            [Google](http://www.google.com/) or
+            [CiteSeerX](http://citeseerx.ist.psu.edu/index).
+            The primary difference from such systems is that CORE caches only
+            copies of open access content. More information on the benefits of
+            this approach is available in the “[CORE: Three Access Levels to
+            Underpin Open Access](http://www.dlib.org/dlib/november12/knoth/11knoth.html)”
+            article.
+        - slug: can-CORE-stop-caching-PDFs-from-my-repository
+          question: |
+            Can CORE stop caching the PDFs from my repository?
+          answer: |
+            CORE can change the way it treats your repository's content. The resources
+            will be indexed and made discoverable via the CORE Search, but the PDFs
+            will not be downloadble directry from the CORE Reader, a link will be
+            provided only to the repository of origin. If you are interested in
+            that option [contact](~contact) us.
+        - slug:  how-can-my-repository-opt-out-from-being-harvested-by-CORE
+          question: |
+            How can my repository opt out from being harvested by CORE?
+          answer: |
+            CORE uses information from various registries, such as
+            [OpenDOAR](http://opendoar.org/), to include new repositories,
+            journals and archives into CORE. If the circumstances have changed in
+            your repository, you can restrict harvesting and crawling activities
+            by modifying your rules in your “robots.txt” file by using the
+            [Standard for Robots Exclusion](http://www.robotstxt.org/orig.html).
+            This will also guarantee the content cannot be cached by search
+            engines and harvesting systems. In addition, you could withdraw your
+            repository from all open access registries lists; when this takes
+            place, please [notify us](~contact).
+    - title: Removing full text or metadata
+      items:
+        - slug: how-does-CORE-ensure-that-the-harvested-content-is-Open-Access
+          question: |
+            How does CORE ensure that the harvested content is Open Access?
+          answer: |
+            CORE aggregates content from repositories registered in
+            [OpenDOAR](http://www.opendoar.org/about.html), journals registered
+            in [DOAJ](http://www.doaj.org/) or those content providers that
+            requested their content to be aggregated. This means that all the
+            content sources aggregated by CORE must be open access as this is a
+            requirement for the providers to be included in these registries.
+            According to the official [BOAI definition of open
+            access](http://www.opensocietyfoundations.org/openaccess/boai-10-recommendations),
+            CORE is allowed to, _"distribute, search, or link to the full
+            texts of articles, crawl them for indexing, pass them as data
+            to software, or use them for any other lawful purpose, without
+            financial, legal, or technical barriers other than those
+            inseparable from gaining access to the Internet itself. The only
+            constraint on reproduction and distribution, and the only role for
+            copyright in this domain is to give authors control over the
+            integrity of their work and the right to be properly acknowledged
+            and cited."_
+        - slug: CORE-harvests-copyrighted-material-from-my-repository
+          question: |
+            CORE harvests copyrighted material from my repository
+          answer: |
+            CORE’s system is fully automated and relies on data made available
+            in a machine readable form. If your repository hosts full text with
+            a restrictive license that prohibits harvesting, this needs to be
+            properly communicated in a machine readable form. All non open
+            access items should be blocked in the robots.txt file. If this
+            information is provided in the metadata for each record and CORE
+            exposes the full text, please get in [touch with us](~contact).
+        - slug: full-text-record-is-deleted-from-my-repository
+          question: |
+            A full text record is deleted from my repository, but is still
+            available in CORE
+          answer: |
+            CORE’s system is fully automated and relies on data made available
+            in a machine readable form. Our system understands that the
+            full text of a record was removed only when the record is marked
+            as deleted in the metadata of your repository. See [here]
+            (#how-do-I-notify-CORE-to-take-down-full-text-content)
+            how to take down full text from CORE.
+        - slug: how-do-I-notify-CORE-to-take-down-full-text-content
+          question: |
+            How do I notify CORE to take down full text content?
+          answer: |
+            If full text content appears in CORE but not in the
+            hosting service your repository manager can take it down via the
+            [CORE Repository Dashboard](~services#dashboard)
+            anytime without notifying us. If the hosting service does not have
+            access to the Dashboard visit [this page](~dashboard).
+        - slug: full-text-has-been-removed-but-metadata-still-visible
+          question: |
+            The full text has been removed, but the metadata is still visible
+            in CORE
+          answer: |
+            It is a CORE policy to remove only the full text and not
+            the metadata.
+        - slug: why-metadata-is-still-visible
+          question: |
+            I have removed an item from my repository, but the metadata are
+            still visible in CORE
+          answer: |
+            In order for the metadata to be removed from CORE they need to be
+            marked as "deleted/removed" in the repository. If the metadata are
+            marked as "restricted" CORE will still display it.
   - title: CORE services
     items:
       - slug: how-do-I-register-for-an-API-key
@@ -374,7 +379,8 @@ sections:
       - slug: I-am-not-pleased-with-the-similar-papers
         question: |
           When I look at the papers I have authored, I am not pleased with the
-          similar papers suggested by the CORE Recommender. How can I change that?
+          similar papers suggested by the CORE Recommender.
+          How can I change that?
         answer: |
           The CORE recommender uses the popular [content-based filtering
           system](https://blog.core.ac.uk/2016/10/04/core-recommender/).
@@ -382,8 +388,8 @@ sections:
           quality are highly impacted by the metadata information supplied by
           the repository of origin. If that information is incorrect or
           incomplete, you should contact the repository of origin. To improve
-          the CORE recommendations, you can use the feedback button, with which you
-          can remove any undesirable articles.
+          the CORE recommendations, you can use the feedback button, with
+          which you can remove any undesirable articles.
   - title: General information about CORE
     items:
       - slug: high-resolution-logo-CORE
