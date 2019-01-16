@@ -12,7 +12,7 @@ providing a free API.
 If you use CORE in your work, we kindly request you to cite one of our
 [publications](research-outputs).
 
-### Documentation
+## Documentation
 
 The documentation, along with live examples can be found
 [here](al-swagger-ui-home).
@@ -20,7 +20,7 @@ The documentation, along with live examples can be found
 You can also view some practical examples using the CORE API in this [TDM
 course](https://www.fosteropenscience.eu/node/2263).
 
-### Expected use
+## Expected use
 
 We expect the API can be used, for example, to:
 
@@ -33,7 +33,7 @@ We expect the API can be used, for example, to:
 - other services that need quick and easy access to the content of research
 - publications, etc.
 
-### Where to start
+## Where to start
 
 Please register [here](apikeys-register) to receive an API key and start
 testing the [live examples](al-swagger-ui-home).
@@ -44,21 +44,21 @@ notebook available [on Github](https://github.com/oacore/or2016-api-demo).
 In collaboration with [rOpenSci](https://ropensci.org) you can find
 [here](https://github.com/ropenscilabs/cored) an _R_ client for the CORE API.
 
-### Quota
+## Quota
 
 We apply a quota to the API to allow fair access and a high response time to
 our services. Please [get in touch](contact) if you require accessing
 our API at a faster rate.   The quota for each method are listed in the
 following tables:
 
-#### Global methods
+### Global methods
 
 | Method                                | Type    |  Limit                     |
 |------------------------------------------------------------------------------|
 | `/search`                             | batch   |  1 request  per 10 seconds |
 | `/search/{query}`                     | single  |  5 requests per 10 seconds |
 
-#### Article methods
+### Article methods
 
 | Method                                | Type    | Limit                      |
 |------------------------------------------------------------------------------|
@@ -70,7 +70,7 @@ following tables:
 | `/articles/search/{query}`            | single  | 10 requests per 10 seconds |
 | `/articles/similar`                   | single  | 10 requests per 10 seconds |
 
-#### Journal methods
+### Journal methods
 
 | Method                                | Type    |  Limit                     |
 |------------------------------------------------------------------------------|
@@ -79,7 +79,7 @@ following tables:
 | `/journals/search`                    | batch   |  2 requests per 10 seconds |
 | `/journals/search/{query}`            | single  |  5 requests per 10 seconds |
 
-#### Repository methods
+### Repository methods
 
 | Method                                | Type    |  Limit                     |
 |------------------------------------------------------------------------------|
@@ -90,7 +90,7 @@ following tables:
 
 In case you require different limits please [contact us](contact).
 
-### CORE data as Linked Open Data (LOD)
+## CORE data as Linked Open Data (LOD)
 
 Apart from the CORE API, CORE also provides data as LOD for enthusiasts. The
 documentation is available at the [datahub](https://datahub.io/dataset/core).

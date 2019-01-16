@@ -6,9 +6,9 @@ The data aggregated from repositories by the CORE system can be accessed in two 
 
 If you use CORE in your work, we kindly request you to cite one of our [publications](~research_outputs).
 
-### Available datasets:
+## Available datasets
 
-#### 2018 onwards:
+### 2018 onwards
 
 **Dataset 2018-03-01**
 
@@ -21,7 +21,7 @@ With full text dataset (beta) (330 GB) - 123M metadata items, 85.6M items with a
 **Note:**  
 For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB (full text) of free space on disk. It is possible to extract each repository individually. Please read the section ["Structure of the dumps"](#dump-structure) below for more information.
 
-#### 2017:
+### 2017
 
 **Dataset 2017-11-01**  
 
@@ -33,7 +33,7 @@ With full text dataset (beta) (157.38 GB) - 8 million items
 
 Beta notice: while in beta, we cannot guarantee completeness or integrity of the dataset and we appreciate any feedback on the format or data of the dataset. We are aware of an issue where the statistics in the repository object are incorrect or incomplete. We do not use these fields internally and plan on removing them in future releases.  
 
-#### Older versions (pre-2017):
+### Older versions (pre-2017)
 
 These datasets conform to the dataset structure described below as 'Pre-2017'
 
@@ -61,9 +61,9 @@ These datasets conform to the dataset structure described below as 'Pre-2017'
     Metadata dataset (181 MB)  
     Metadata dataset as RDF (835 MB)  
 
-### Structure of the dumps
+## Structure of the dumps
 
-#### 2018 onwards
+### 2018 onwards
 
 The downloadable tar file contains XZ compressed files of Article Metadata. The XZ compressed file is a file named \[repositoryID\].json.xz. Once decompressed, each line in the text file contains the metadata for 1 article in JSON.
 
@@ -108,7 +108,7 @@ The dump structure has changed to following format:
 }
 ```
 
-#### 2017
+### 2017
 
 An example of a metadata item in the data set is as follows. The full record will have more fields available and all fields in its entirety. New lines and truncated values are only for this example.
 
@@ -157,7 +157,7 @@ An example of a metadata item in the data set is as follows. The full record wil
 
                     
 
-#### Pre-2017          
+### Pre-2017          
 
 The CORE dataset provides access to both the enriched metadata as well as the full-texts. The data dump consists of two files, the metadata file and the content file. Both files are compressed using tar and gzip.
 
@@ -213,7 +213,7 @@ of a metadata item in the data set is as follows:
 }
 ```
 
-### Disclaimer
+## Disclaimer
 
 This dataset has been created from information that was publicly available on 
 the Internet. Every effort has been made to ensure this dataset contains 
