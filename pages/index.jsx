@@ -14,7 +14,9 @@ import { JoinSection } from 'components/sections'
 import Link from 'components/link'
 
 import page from 'data/home.yml'
-import { testimonials } from 'data/endorsements.yml'
+import { sections as pageSections } from 'data/endorsements.yml'
+
+import { extractTestimonials } from './about/endorsements'
 
 import './index.scss'
 
@@ -105,10 +107,12 @@ const IndexPage = () => (
       </Container>
 
       <TestimonialsSection
-        id="enterprise"
+        id="enterprise-companies"
         title={page.endorsements.enterprise.title}
         description={page.endorsements.enterprise.description}
-        items={testimonials}
+        items={extractTestimonials(
+          pageSections.enterpriseCompanies.organizations.items
+        )}
         limit={page.endorsements.enterprise.limit}
         more={page.endorsements.enterprise.more}
       />
@@ -118,7 +122,9 @@ const IndexPage = () => (
         className="home-academic-institutions-section"
         title={page.endorsements.academic.title}
         description={page.endorsements.academic.description}
-        items={testimonials}
+        items={extractTestimonials(
+          pageSections.academicInstitutions.organizations.items
+        )}
         limit={page.endorsements.enterprise.limit}
         more={page.endorsements.academic.more}
       />
@@ -127,7 +133,9 @@ const IndexPage = () => (
     <Section id="partner-projects">
       <Container>
         <h2 className="text-center">{page.partnerProjects.title}</h2>
-        <TestimonialsSwitcher items={testimonials} />
+        <TestimonialsSwitcher
+          items={extractTestimonials(pageSections.partners.organizations.items)}
+        />
       </Container>
     </Section>
   </Fragment>

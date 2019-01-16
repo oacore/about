@@ -1,20 +1,223 @@
 title: What Others Have to Say
 
+testimonials:
+- &jon-tennant
+  id: jon-tennant
+  content: |
+    With millions of research papers available across thousands of different
+    systems, CORE provides an invaluable service helping researchers to save
+    time and effort. CORE’s mission to make all this content available for text
+    and data mining is critical for future avenues of research, and a major
+    part of advancing open science.
+  author:
+    name: Jon Tennant
+    role: Rogue Paleontologist and Founder of the Open Science MOOC
+- &paolo-manghi
+  id: paolo-manghi
+  content: |
+    The OpenAIRE infrastructure has recently started a collaboration with
+    the CORE Team led by Petr Knoth in order to include in the OpenAIRE
+    metadata and file aggregation chain the resources made available via
+    the ResourceSync connector realised at the CORE Team Lab. To this aim,
+    the OpenAIRE team is testing the CORE ResourceSync Connector code with
+    the intention of integrating it in its production system before
+    the end of 2017.
+  author:
+    name: Dr. Paolo Manghi
+    role: >
+      Institute of Information Science and Technologies (CNR),
+      Technical Manager at OpenAIRE
+- &michael-jubb
+  id: michael-jubb
+  content: |
+    CORE’s help has been invaluable as we have been tracking the transition
+    to open access, and the growth in repositories and their contents.
+    It is indeed a core resource for all those with any interest in open
+    access and its development.
+  author:
+    name: Michael Jubb
+    role: Consultant working for Universities UK’s Open Access Co-ordination Group
+- &ben-johnson
+  id: ben-johnson
+  content: |
+    Aggregation plays an increasingly essential role in maximising the
+    long-term benefits of open access, helping to turn the promise of a
+    'research commons' into a reality. The aggregation services that CORE
+    provides therefore make a very valuable contribution to the evolving
+    open access environment in the UK.
+  author:
+    name: Ben Johnson
+    role: HEFCE Research Policy Adviser
+- &nick-sheppard
+  id: nick-sheppard
+  content: |
+    As an Open Access advocate, CORE is an invaluable tool to demonstrate
+    the potential of OA and when I show it to academic staff I can literally
+    see the “penny drop” as they suddenly realise that potential for themselves.
+    CORE also provides an opportunity to carry the discussion of OA beyond free
+    to read to the immense potential of text mining, for example.
+  author:
+    name: Nick Sheppard
+    role: Repository Developer at Leeds Beckett University
+- &joe-mcarthur-and-david-carroll
+  id: joe-mcarthur-and-david-carroll
+  content: |
+    CORE has supported the Open Access Button in connecting researchers and
+    the public with the research they need. CORE facilitates access
+    to the results of millions of research papers, a crucial function
+    in the Open Access movement.
+  author:
+    name: Joe Mcarthur and David Carroll
+    role: Founders of the Open Access Button
+- &nicola-dowson
+  id: nicola-dowson
+  content: |
+    CORE’s role in providing a unified search of repository content
+    is a great tool for the researcher and extends the reach of the locally
+    held content in our institutional repository, Open Research Online.
+  author:
+    name: Nicola Dowson
+    role: Library Services Manager at Open University
+- &yvonne-budden
+  id: yvonne-budden
+  content: |
+    One of the criticisms of repositories, particularly institutional
+    repositories, has always been that while they are providing a great
+    service they are doing so in a dispersed fashion across many repositories.
+    CORE is providing a valuable service in support of repositories
+    by aggregating the content repositories hold and curate individually
+    and by providing additional end user services, such as the portal
+    and mobile app, to an impressive collection of open access
+    scholarly material.
+  author:
+    name: Yvonne Budden
+    role: >
+      Chair of the United Kingdom Council of Research Repositories (UKCoRR)
+- &william-cullerne-bown
+  id: william-cullerne-bown
+  content: |
+    The CORE team understand data mining. As an independent company, we had
+    no obvious access to big, diverse scholarly data – a killer in our drive
+    to develop classification algorithms. The CORE repository, available
+    in bulk, was a breakthrough. Now our algorithms outperform even those
+    from huge publishers.
+  author:
+    name: William Cullerne Bown
+    role: CEO ResearchResearch.com
+- &viktor-botev
+  id: viktor-botev
+  content: |
+    We are integrating CORE API into our product, [IRIS](https://the.iris.ai),
+    because so far it is the open access portal that covers almost all open
+    access content, provides easy to integrate API and has a powerful search
+    querying engine. We want to make open access articles more easily
+    accessible and more useful to researchers and the open public and
+    we see CORE API as a way to speed that up.
+  author:
+    name: Viktor Botev
+    role: CTO, Iris AI AS
+  api: true
+- &peter-raeth
+  id: peter-raeth
+  content: |
+    It is a component in my [meta-search
+    engine](http://informationanthology.net/Open-Access-Search.html).
+  author:
+    name: Peter Raeth
+    role: Senior Research Engineer
+  api: true
+- &sourish-dasgupta
+  id: sourish-dasgupta
+  content: |
+    We use CORE API for our startup called [Rygbee](http://www.rygbee.com).
+    It's an online "idea guide" that enables users to ideate and enrich their
+    ideas by suggesting them with the relevant human and material resources.
+    One such resource is research articles and one of the data source is CORE.
+  author:
+    name: Sourish Dasgupta
+    role: Assistant Professor, DA-IICT
+  api: true
+- &scott-chamberlain
+  id: scott-chamberlain
+  content: |
+    I maintain an [R package](https://github.com/ropenscilabs/cored)
+    to interact with the CORE API to give R users easy access to CORE data.
+  author:
+    name: Scott Chamberlain
+    role: Developer, rOpenSci
+  api: true
+- &david-walters
+  id: david-walters
+  content: |
+    Checking publication IDs and titles to establish the true scope of green
+    open access at my institution. Possibly will be using CORE as part
+    of my UG research project next year (studying with the Open University).
+  author:
+    name: David Walters
+    role: Open Access Officer, Brunel University
+  api: true
+- &colin-goldberg
+  id: colin-goldberg
+  content: |
+    Testing available APIs in the development of my new product -
+    a rule engine, [Ritc](http://www.ritc.io/), that can consume any defined,
+    accessible API via a Swagger definition (in most cases).
+    Ritc is a platform on which real-time - or near real-time
+    services (applications) can be built using rules.
+  author:
+    name: Colin Goldberg
+    role: President, MacMicro Inc.
+  api: true
+- &andrea-ciapetti
+  id: andrea-ciapetti
+  content: |
+    We have used mainly the Search API (http://core.ac.uk/api/search/⟨search_criteria⟩)
+    to collect technical papers related to specific projects,
+    using the project title and description to perform meaningful.searches.
+    We are now using a complete export in JSON format (of several GBs)
+    in order to import as many technical papers as possible to make theme
+    available in our semantic search engine.
+  author:
+    name: Andrea Ciapetti
+    role: Innovation Engineering SRL
+  api: true
+- &balasubramanian-thiagarajan
+  id: balasubramanian-thiagarajan
+  content: |
+    I have incorporated it into my EPrints repository
+    [www.rhinology.in](http://www.rhinology.in/)
+  author:
+    name: Balasubramanian Thiagarajan
+    role: Otolaryngology Online
+  api: true
+- &alan-stiltes
+  id: alan-stiltes
+  content: |
+    At the Open Research Online Repository we use the API to display similar
+    documents recommendations on items in ORO.
+  author:
+    name: Alan Stiltes
+    role: Digital Repository Developer, The Open University
+  api: true
+
 organizations:
 - &mooc
   id: mooc
   name: Open Science MOOC
   logo: mooc.png
+  testimonial: *jon-tennant
 - &ropensci
   id: ropensci
   name: Ropensci
   url: https://ropensci.org
   logo: ropensci.svg
+  testimonial: *scott-chamberlain
 - &research
   id: research-research
   name: ResearchResearch
   url: http://www.researchresearch.com/
   logo: research.svg
+  testimonial: *william-cullerne-bown
 - &wheesbee
   id: wheesbee
   name: Wheesbee
@@ -25,6 +228,7 @@ organizations:
   name: IRIS AI
   url: https://the.iris.ai
   logo: iris-ai.png
+  testimonial: *viktor-botev
 - &rygbee
   id: rygbee
   name: Rygbee
@@ -32,12 +236,14 @@ organizations:
   # the company cnanged their website url to https://raxter.io/
   # logo: companies/rygbee-logo.jpg
   logo: raxter.svg
+  testimonial: *sourish-dasgupta
 - &ritc
   id: ritc
   name: Ritc
   url: http://www.macmicro.com
   # logo: companies/ritc-logo.png
   logo: macmicro.png # ???
+  testimonial: *colin-goldberg
 - &4science
   id: 4science
   name: 4Science
@@ -57,336 +263,232 @@ organizations:
   id: openaire
   name: OpenAIRE
   logo: openaire-horizontal.png
+  testimonial: *paolo-manghi
 - &oacg
   id: oacg
   name: Open Access Co-ordination Group
   logo: universities-uk.svg
+  testimonial: *michael-jubb
 - &hefce
   id: hefce
   name: HEFCE
   logo: hefce.png
+  testimonial: *ben-johnson
 - &lbu
   id: lbu
   name: Leeds Beckett University
   logo: lbu.png
+  testimonial: *nick-sheppard
 - &oab
   id: oab
   name: Open Access Button
   logo: oab.png
+  testimonial: *joe-mcarthur-and-david-carroll
 - &ou
   id: ou
   name: Open University
   logo: ou.png
+  testimonial: *nicola-dowson
 - &ukcorr
   id: ukcorr
   name: UKCoRR
   logo: ukcorr.svg
+  testimonial: *yvonne-budden
 - &brunel
   id: brunel
   name: Brunel University
   logo: brunel.png
+  testimonial: *david-walters
 - &macmicro
   id: macmicro
   name: MacMicro Inc.
   logo: macmicro.png
+  testimonial: *colin-goldberg
 # recom-used-in:
--
+- &clok
   name: CLoK
   description: University of Central Lancashire
   url: https://clok.uclan.ac.uk
   logo: institutions/uclan_logo_250x150.png
--
+- &gloucestershire
   name: Research Repository
   description: University of Gloucestershire
   url: http://eprints.glos.ac.uk
   logo: institutions/gloucestershire-logo_1181x396.jpg
--
+- &uwl
   name: UWL Repository
   description: University of West London
   url: http://repository.uwl.ac.ukeprints/
   logo: institutions/westlondon.jpg
--
+- &iiasa
   name: International Institute for Applied Systems Analysis
   url: https://pure.iiasa.ac.at/
   logo: institutions/IIASALogo-min.png
--
+- &middlesex
   name: Middlesex University Research Repository
   description: University of Middlesex
   url: http://eprints.mdx.ac.uk
   logo: institutions/MiddlesexLogo-min.png
--
+- &nulan
   name: NULAN Argentina
   url: http://nulan.mdp.edu.ar/
   logo: institutions/nulansitelogo-min.png
--
+- &wr-leeds
   name: White Rose Research Online
   description: University of Leeds
   url: http://eprints.whiterose.ac.uk
   logo: institutions/WR_Leeds_908x360.png
--
+- &strathprints
   name: 'Strathprints: The University of Strathclyde Institutional Repository'
   description: The University of Strathclyde
   url: http://strathprints.strath.ac.uk
   logo: institutions/StrathclydeUniversity.png
--
+- &wr-york
   name: White Rose Research Online
   description: University of York
   url: http://eprints.whiterose.ac.uk
   logo: institutions/WR_York_500x225.png
--
+- &ray
   name: RaY - Research at York St.John
   description: York St John University
   url: https://ray.yorksj.ac.uk
   logo: institutions/York_St_John_University_logo.svg.png
--
+- &wr-sheffield
   name: White Rose Research Online
   description: University of Sheffield
   url: http://eprints.whiterose.ac.uk
   logo: institutions/University_of_Sheffield-logo.png
--
+- &oro
   name: Open Research Online
   description: The Open University
   url: http://oro.open.ac.uk
   logo: institutions/the-open-uni-logo.png
--
+- &apollo
   name: Apollo
   description: University of Cambridge
   url: https://www.repository.cam.ac.uk
   logo: institutions/cambridge.png
--
+- &lshtm
   name: LSHTM Research Online
   description: London School of Hygiene and Tropical Medicine
   url: http://researchonline.lshtm.ac.uk
   logo: institutions/hygiene.png
--
+- &trieste
   name: Università degli studi di Trieste
   url: https://www.units.it/
   logo: institutions/trieste.png
--
+- &zurich
   name: University of Zurich
   url: http://www.uzh.ch/en.html
   logo: institutions/zurich.png
--
+- &stmarys
   name: Open Research Archive
   description: St Mary's University, Twickenham
   url: https://research.stmarys.ac.uk
   logo: institutions/stMarys.png
--
+- &huddersfield
   name: University of Huddersfield Repository
   url: http://eprints.hud.ac.uk
   logo: institutions/huddersfield.gif
 
-testimonials:
--
-  id: jon-tennant
-  content: |
-    With millions of research papers available across thousands of different
-    systems, CORE provides an invaluable service helping researchers to save
-    time and effort. CORE’s mission to make all this content available for text
-    and data mining is critical for future avenues of research, and a major
-    part of advancing open science.
-  author:
-    name: Jon Tennant
-    position: Rogue Paleontologist and Founder of the Open Science MOOC
-  organization: *mooc
--
-  id: paolo-manghi
-  content: |
-    The OpenAIRE infrastructure has recently started a collaboration with
-    the CORE Team led by Petr Knoth in order to include in the OpenAIRE
-    metadata and file aggregation chain the resources made available via
-    the ResourceSync connector realised at the CORE Team Lab. To this aim,
-    the OpenAIRE team is testing the CORE ResourceSync Connector code with
-    the intention of integrating it in its production system before
-    the end of 2017.
-  author:
-    name: Dr. Paolo Manghi
-    position: >
-      Institute of Information Science and Technologies (CNR),
-      Technical Manager at OpenAIRE
-  organization: *openaire
--
-  id: michael-jubb
-  content: |
-    CORE’s help has been invaluable as we have been tracking the transition
-    to open access, and the growth in repositories and their contents.
-    It is indeed a core resource for all those with any interest in open
-    access and its development.
-  author:
-    name: Michael Jubb
-    position: Consultant working for Universities UK’s Open Access Co-ordination Group
-  organization: *oacg
--
-  id: ben-johnson
-  content: |
-    Aggregation plays an increasingly essential role in maximising the
-    long-term benefits of open access, helping to turn the promise of a
-    'research commons' into a reality. The aggregation services that CORE
-    provides therefore make a very valuable contribution to the evolving
-    open access environment in the UK.
-  author:
-    name: Ben Johnson
-    position: HEFCE Research Policy Adviser
-  organization: *hefce
--
-  id: nick-sheppard
-  content: |
-    As an Open Access advocate, CORE is an invaluable tool to demonstrate
-    the potential of OA and when I show it to academic staff I can literally
-    see the “penny drop” as they suddenly realise that potential for themselves.
-    CORE also provides an opportunity to carry the discussion of OA beyond free
-    to read to the immense potential of text mining, for example.
-  author:
-    name: Nick Sheppard
-    position: Repository Developer at Leeds Beckett University
-  organization: *lbu
--
-  id: joe-mcarthur-and-david-carroll
-  content: |
-    CORE has supported the Open Access Button in connecting researchers and
-    the public with the research they need. CORE facilitates access
-    to the results of millions of research papers, a crucial function
-    in the Open Access movement.
-  author:
-    name: Joe Mcarthur and David Carroll
-    position: Founders of the Open Access Button
-  organization: *oab
--
-  id: nicola-dowson
-  content: |
-    CORE’s role in providing a unified search of repository content
-    is a great tool for the researcher and extends the reach of the locally
-    held content in our institutional repository, Open Research Online.
-  author:
-    name: Nicola Dowson
-    position: Library Services Manager at Open University
-  organization: *ou
--
-  id: yvonne-budden
-  content: |
-    One of the criticisms of repositories, particularly institutional
-    repositories, has always been that while they are providing a great
-    service they are doing so in a dispersed fashion across many repositories.
-    CORE is providing a valuable service in support of repositories
-    by aggregating the content repositories hold and curate individually
-    and by providing additional end user services, such as the portal
-    and mobile app, to an impressive collection of open access
-    scholarly material.
-  author:
-    name: Yvonne Budden
-    position: >
-      Chair of the United Kingdom Council of Research Repositories (UKCoRR)
-  organization: *ukcorr
--
-  id: william-cullerne-bown
-  content: |
-    The CORE team understand data mining. As an independent company, we had
-    no obvious access to big, diverse scholarly data – a killer in our drive
-    to develop classification algorithms. The CORE repository, available
-    in bulk, was a breakthrough. Now our algorithms outperform even those
-    from huge publishers.
-  author:
-    name: William Cullerne Bown
-    position: CEO ResearchResearch.com
-  organization: *research
--
-  id: viktor-botev
-  content: |
-    We are integrating CORE API into our product, [IRIS](https://the.iris.ai),
-    because so far it is the open access portal that covers almost all open
-    access content, provides easy to integrate API and has a powerful search
-    querying engine. We want to make open access articles more easily
-    accessible and more useful to researchers and the open public and
-    we see CORE API as a way to speed that up.
-  author:
-    name: Viktor Botev
-    position: CTO, Iris AI AS
-  organization: *iris-ai
-  api: true
--
-  id: peter-raeth
-  content: |
-    It is a component in my [meta-search
-    engine](http://informationanthology.net/Open-Access-Search.html).
-  author:
-    name: Peter Raeth
-    position: Senior Research Engineer
-  api: true
--
-  id: sourish-dasgupta
-  content: |
-    We use CORE API for our startup called [Rygbee](http://www.rygbee.com).
-    It's an online "idea guide" that enables users to ideate and enrich their
-    ideas by suggesting them with the relevant human and material resources.
-    One such resource is research articles and one of the data source is CORE.
-  author:
-    name: Sourish Dasgupta
-    position: Assistant Professor, DA-IICT
-  organization: *rygbee
-  api: true
--
-  id: scott-chamberlain
-  content: |
-    I maintain an [R package](https://github.com/ropenscilabs/cored)
-    to interact with the CORE API to give R users easy access to CORE data.
-  author:
-    name: Scott Chamberlain
-    position: Developer, rOpenSci
-  organization: *ropensci
-  api: true
--
-  id: david-walters
-  content: |
-    Checking publication IDs and titles to establish the true scope of green
-    open access at my institution. Possibly will be using CORE as part
-    of my UG research project next year (studying with the Open University).
-  author:
-    name: David Walters
-    position: Open Access Officer, Brunel University
-  organization: *brunel
-  api: true
--
-  id: colin-goldberg
-  content: |
-    Testing available APIs in the development of my new product -
-    a rule engine, [Ritc](http://www.ritc.io/), that can consume any defined,
-    accessible API via a Swagger definition (in most cases).
-    Ritc is a platform on which real-time - or near real-time
-    services (applications) can be built using rules.
-  author:
-    name: Colin Goldberg
-    position: President, MacMicro Inc.
-  organization: *macmicro
-  api: true
--
-  id: andrea-ciapetti
-  content: |
-    We have used mainly the Search API (http://core.ac.uk/api/search/⟨search_criteria⟩)
-    to collect technical papers related to specific projects,
-    using the project title and description to perform meaningful.searches.
-    We are now using a complete export in JSON format (of several GBs)
-    in order to import as many technical papers as possible to make theme
-    available in our semantic search engine.
-  author:
-    name: Andrea Ciapetti
-    position: Innovation Engineering SRL
-  api: true
--
-  id: balasubramanian-thiagarajan
-  content: |
-    I have incorporated it into my EPrints repository
-    [www.rhinology.in](http://www.rhinology.in/)
-  author:
-    name: Balasubramanian Thiagarajan
-    position: Otolaryngology Online
-  api: true
--
-  id: alan-stiltes
-  content: |
-    At the Open Research Online Repository we use the API to display similar
-    documents recommendations on items in ORO."
-  author:
-    name: Alan Stiltes
-    position: Digital Repository Developer, The Open University
-  organization: *ou
-  api: true
+sections:
+  enterprise-companies:
+    id: enterprise-companies
+    title: Enterprise companies
+    description: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
+    action:
+      title: Interested in CORE to support your business?
+      name: Sign in for free
+      url: ~join
+    organizations:
+      title: Companies who work with us
+      items:
+        - *ropensci
+        - *research
+        - *wheesbee
+        - *iris-ai
+        - *rygbee
+        - *ritc
+        - *4science
+        - *unsilo
+        - *naver
+        - *macmicro
+    testimonials:
+      title: What companies say about us
+  academic-institutions:
+    id: academic-institutions
+    title: Institutions using CORE
+    description: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
+    action:
+      title: Interested in CORE at your institution?
+      name: Sign in for free
+      url: ~join
+    organizations:
+      title: Institutions who work with us
+      items:
+        - *lbu
+        - *ou
+        - *brunel
+        - *clok
+        - *gloucestershire
+        - *uwl
+        - *iiasa
+        - *middlesex
+        - *nulan
+        - *wr-leeds
+        - *strathprints
+        - *wr-york
+        - *ray
+        - *wr-sheffield
+        - *oro
+        - *apollo
+        - *lshtm
+        - *trieste
+        - *zurich
+        - *stmarys
+        - *huddersfield
+    testimonials:
+      title: What institutions say about us
+  partners:
+    id: partner-projects
+    title: Partner projects
+    description: |
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+      officia deserunt mollit anim id est laborum.
+    action:
+      title: Interested in becoming a partner?
+      name: Get it touch today
+      url: ~contact
+    organizations:
+      title: Our partners
+      items:
+        - *mooc
+        - *openaire
+        - *oacg
+        - *hefce
+        - *oab
+    testimonials:
+      title: What partners say about us
+  # testimonials:
+  #   organizations:
+  #     title: Others who work with us
+  #       - *ukcorr
