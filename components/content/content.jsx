@@ -32,10 +32,10 @@ const markdownConfig = {
   },
 }
 
-const Content = ({ children, markdown = false }) => {
+const Content = ({ children, className = '', markdown = false }) => {
   if (markdown) {
     return (
-      <Markdown className="content" {...markdownConfig}>
+      <Markdown className={`content ${className}`} {...markdownConfig}>
         {children}
       </Markdown>
     )
