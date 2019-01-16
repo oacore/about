@@ -45,6 +45,16 @@ $enable-shadows: true;
 $spacer: 1.5rem;
 
 
+// Links
+//
+// Style anchor elements.
+
+$link-color:                $primary;
+$link-decoration:           none;
+$link-hover-color:          $primary;
+$link-hover-decoration:     underline;
+
+
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.
@@ -57,7 +67,7 @@ $grid-gutter-width: 32px;
 //
 // Font, line-height, and color for body text, headings, and more.
 
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 
 // stylelint-disable value-keyword-case
 $font-family-sans-serif:
@@ -87,7 +97,7 @@ $headings-font-weight:        $font-weight-bold;
 $headings-line-height:        1.2;
 
 $lead-font-size:              ($font-size-base * 1.5);
-$lead-font-weight:            $font-weight-normal;
+$lead-font-weight:            $font-weight-light;
 
 $small-font-size:             80%;
 
