@@ -1,26 +1,6 @@
 title: The team
 members:
 -
-  name: David Pride
-  role: PhD student
-  picture: david-pride.jpg
-  description: |
-    I recently completed my MSc in Computer Science at The University of
-    Hertfordshire. I joined the team at KMi as a PhD research student
-    with Dr. Petr Knoth and Professor Zdenek Zdrahal as my supervisors.
-    My thesis will expand on the original work on Semantometrics completed
-    by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
-    natural language processing and text mining.
--
-  name: Drahomira Herrmannova
-  role: PhD student & Data Analyst
-  picture: drahomira-herrmannova.jpg
-  description: |
-    Works with the rest of the team on both front- and back-end development.
-    Enjoys maintaining and improving CORE as it provides her with useful data
-    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
-    Book lover and sports enthusiast in her spare time.
--
   name: Lucas Anastasiou
   role: Lead Developer
   picture: lucas-anastasiou.jpg
@@ -36,15 +16,22 @@ members:
     Works on improving and and maintaining CORE services, especially in the
     frontend side. Once he was a Super Mario plumber.
 -
-  name: Nancy Pontika
-  role: Communications
-  picture: nancy-pontika.jpg
+  name: Bikash Gyawali
+  role: Research Associate
+  picture: bikash-gyawali.jpg
   description: |
-    A communications guru in the 'dominated by developers' CORE team.
-    Her job is to liaise with the data providers and the technical group.
-    As an open access advocate she hopes that one day there will be no access
-    barriers to scientific literature. In her spare time she likes to swim,
-    read and travel.
+    A computational linguist and researcher working on building a better
+    recommender service for the CORE platform. Firmly believes in the motto
+    "Work hard, play hard".
+-
+  name: Drahomira Herrmannova
+  role: Data Analyst
+  picture: drahomira-herrmannova.jpg
+  description: |
+    Works with the rest of the team on both front- and back-end development.
+    Enjoys maintaining and improving CORE as it provides her with useful data
+    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
+    Book lover and sports enthusiast in her spare time.
 -
   name: Petr Knoth
   role: Founder; Product & Team Leader
@@ -61,35 +48,60 @@ members:
   name: Samuel Pearce
   role: Developer and Data & Harvesting Expert
   picture: samuel-pearce.jpg
-  description:
+-
+  name: Nancy Pontika
+  role: Open Access Specialist & Communications
+  picture: nancy-pontika.jpg
+  description: |
+    A communications guru in the 'dominated by developers' CORE team.
+    Her job is to liaise with the data providers and the technical group.
+    As an open access advocate she hopes that one day there will be no access
+    barriers to scientific literature. In her spare time she likes to swim,
+    read and travel.
+-
+  name: David Pride
+  role: PhD student
+  picture: david-pride.jpg
+  description: |
+    I recently completed my MSc in Computer Science at The University of
+    Hertfordshire. I joined the team at KMi as a PhD research student
+    with Dr. Petr Knoth and Professor Zdenek Zdrahal as my supervisors.
+    My thesis will expand on the original work on Semantometrics completed
+    by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
+    natural language processing and text mining.
 -
   name: Zdenek Zdrahal
   role: Deputy Product & Team Leader
   picture: zdenek-zdrahal.jpg
-  description:
--
-  name: Jozef Harag
-  role: Frontend developer
-  description: |
-    Currently pursuing his bachelor degree in computer science.
-    Python and Javascript lover. Helps with bringing a new design
-    at the CORE website.
--
-  name: Bikash Gyawali
-  role: Research Associate
-  picture: bikash-gyawali.jpg
-  description: |
-    A computational linguist and researcher working on building a better
-    recommender service for the CORE platform. Firmly believes in the motto
-    "Work hard, play hard".
+
 past-members:
 -
-  name: Tom
+  name: Josef Harag
   role: PhD student
-  description: |
-    Lorem ipsum.
 -
-  name: Jerry
+  name: Giorgio Basile
   role: PhD student
-  description: |
-    Lorem ipsum.
+-
+  name: Aristotelis Charalampous
+  role: PhD student
+-
+  name: Dominika Koroncziova
+  role: PhD student
+-
+  name: Gabriela Pavel
+  role: PhD student
+-
+  name: Ian Tindle
+  role: PhD student
+-
+  name: Jakub Novotny
+  role: PhD student
+-
+  name: Magdalena Krygielova
+  role: PhD student
+-
+  name: Tomas Korec
+  role: PhD student
+-
+  name: Vojtech Robotka
+  role: PhD student
