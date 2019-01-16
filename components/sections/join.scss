@@ -1,0 +1,36 @@
+@import "../bootstrap/core";
+
+.join-section {
+  background: $nearly-black url("../images/blue-lights-bg.jpg") no-repeat center /
+    cover;
+  color: $light;
+  text-align: center;
+}
+
+.join-section-lead {
+  font-size: $lead-font-size;
+  font-weight: $lead-font-weight;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 60ch;
+}
+
+.join-section-note {
+  position: relative;
+  top: 3 * $spacer; //$section-padding-y;
+  margin-top: -1em;
+  font-size: $font-size-sm;
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+
+    @include hover-focus {
+      color: $link-hover-color;
+    }
+  }
+}
+
+.join-core-button {
+  @include button-outline-variant($light, $light, $primary, $primary-dark);
+}

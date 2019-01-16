@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export { default as DescriptionSection } from './description'
+export { default as JoinSection } from './join'
