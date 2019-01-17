@@ -11,10 +11,10 @@ about:
 mission: ~about#mission
 team: ~about#team
 internships: ~about#internships
-endorsements: ~about#endorsements
+endorsements: ~about/endorsements
 faq: /faq
 research-outputs: ~about#research-outputs
-contact: /contact
+contact: ~about#contact
 privacy: /privacy
 cookies: ~privacy#cookies
 
