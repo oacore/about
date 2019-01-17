@@ -5,6 +5,12 @@ $section-padding-y: 3 * $spacer;
 $section-sm-padding-y: 2 * $spacer;
 
 .content {
+  margin-bottom: $spacer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   h2,
   .h2 {
     margin-top: 2 * $section-padding-y;
@@ -18,6 +24,10 @@ $section-sm-padding-y: 2 * $spacer;
   h4,
   .h4 {
     margin-top: 2 * $spacer;
+  }
+
+  :last-child {
+    margin-bottom: 0;
   }
 }
 
