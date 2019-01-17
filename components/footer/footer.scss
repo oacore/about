@@ -9,6 +9,20 @@
   background: $beige;
 }
 
+.footer-highlights-list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0 0 -1 * map-get($spacers, 2);
+
+  li {
+    display: block;
+    width: 30%;
+    flex-grow: 1;
+    margin-bottom: map-get($spacers, 2);
+  }
+}
+
 .footer-cite-info {
   padding: $card-spacer-x;
   background: $beige-dark;

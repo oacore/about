@@ -40,20 +40,20 @@ navigation:
       - title: Contact us
         path: ~contact
 footer:
-  usefulLinks:
+  useful-links:
     - title: Blog
       path: ~blog
-    - title: Contact us
-      path: ~contact
-    - title: Privacy notice
-      path: ~privacy
-    - title: Browse
-      path: ~browse
-    - title: Cookies
-      path: ~cookies
+    - title: Services
+      path: ~services
     - title: About CORE
       path: ~about
-  researchOutputs: |
+    - title: Contact us
+      path: ~contact
+    - title: Cookies
+      path: ~cookies
+    - title: Privacy notice
+      path: ~privacy
+  research-outputs: |
     See our [research outputs](~research-outputs) and
     [learn how to cite our work](~research-outputs).
   partners: |
