@@ -1,0 +1,122 @@
+title: Cookies
+
+description-title: What are these?
+
+cookies:
+  essential:
+    default: true
+    required: true
+    title: Essential cookies
+    description: |
+      **Required** to make the site work, and to save the options you make here
+  analytics:
+    default: false
+    title: Analytics
+    description: |
+      Lets us (anonymously) track site usage, so that we can measure
+      performance and make improvements
+
+settings:
+  title: Your cookie settings
+  popup-title: We use cookies
+  save-caption: Save
+  accept-caption: Accept & Close
+  read-more-caption: Read more
+  explanation-caption: What are these?
+
+cookies-policy:
+  title: How we use cookies
+  content: |
+    We use cookies for several purposes on this website – we’ve listed each of
+    them below with more details about why we use them and how long they’ll
+    last.
+  sections:
+  -
+    title: Essential cookies (cookie settings)
+    content: |
+      We use essential cookies to store your personal preferences. It's required
+      to save the cookie settings.
+
+      **NB:** Cookie guidance wording adapted from [gov.uk](http://www.gov.uk/help/cookies),
+      shared under the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/).
+    list-title: Google Analytics cookies
+    list:
+      -
+        name: cookies_accepted
+        purpose: |
+          This helps us to know your cookies preferences and do not show pop-up
+          window on each visit to website
+        expires: 1 year
+      -
+        name: analytics_allowed
+        purpose: |
+          This helps us to know you preferences in analytics and tracking
+          user behaviour
+        expires: 1 year
+  -
+    title: Measuring website usage (Google Analytics)
+    content: |
+      We use Google Analytics to collect information about how people use our
+      site, and rough demographics as to what groups of people are using our
+      site. We do this to make sure it’s meeting your needs and to understand
+      how we could improve it. You can [opt out of Google Analytics
+      tracking](http://tools.google.com/dlpage/gaoptout/).
+
+      Google Analytics stores information about:
+
+      * the pages you visit
+      * how long you spend on each page
+      * how you got to the site
+      * what you click on while you're here
+      * your broad demographic profile (age range, gender, interests)
+
+      Google Analytics does not have access to the personal information you
+      provide us (eg your name) so it doesn’t know who you are.
+    list-title: Google Analytics cookies
+    list:
+      -
+        name: _ga
+        purpose: |
+          This helps us count how many people visit the site by tracking if
+          you've visited before
+        expires: 2 years
+      -
+        name: _utma
+        purpose: |
+          Like `_ga`, this lets us know if you’ve visited before, so we can
+          count how many of our visitors are new to the site or to a certain
+          page
+        expires: 2 years
+      -
+        name: _utmb
+        purpose: |
+          This works with _utmc to calculate the average length of time you
+          spend on the site
+        expires: 30 minutes
+      -
+        name: _utmc
+        purpose: |
+          This works with _utmb to calculate when you close your browser
+        expires: when you close your browser
+      -
+        name: _utmz
+        purpose: |
+          This tells us how you reached the site (like from another website
+          or a search engine)
+        expires: 6 months
+      -
+        name: _gat_UA-376728-1
+        purpose: |
+          This is used by Google Analytics to ensure its work doesn't have
+          a big impact on the site's performance
+        expires: 1 day
+
+privacy-notice:
+  title: Privacy notice
+  content: |
+    [Read our privacy notice](~privacy)
+
+cookie-list-captions:
+  name: Name
+  purpose: Purpose
+  expires: Expires
