@@ -157,6 +157,16 @@ $page-bg: linear-gradient(#fff0, #ffff 85vh, #ffff calc(100% - 85vh), #fff0),
           url("../images/paper-background.jpg") repeat-y 50% 0 / 100% auto;
 
 
+// Forms
+
+$custom-control-indicator-box-shadow:           0 0 0 .2rem rgba($light-grey, .25);
+$custom-control-indicator-focus-border-color:   $light-grey;
+$custom-control-indicator-checked-color:        $green;
+$custom-control-indicator-checked-bg:           $green;
+$custom-control-indicator-checked-disabled-bg:  rgba($green, .5);
+$custom-control-indicator-focus-box-shadow:     0 0 0 .2rem rgba($green, .25);
+$custom-control-indicator-active-color:         $green;
+$custom-control-indicator-active-bg:            $green;
 
 // Cards
 
@@ -180,6 +190,7 @@ $navbar-light-hover-color:          $link-color;
 $navbar-light-active-color:         $link-hover-color;
 
 $navbar-light-brand-color:          $navbar-light-color;
+
 
 // Sections
 
