@@ -1,0 +1,96 @@
+@import "../bootstrap/core";
+
+$logos-carousel-image-padding-x: $spacer / 2 !default;
+$logos-carousel-image-padding-y: $spacer / 2 !default;
+$logos-carousel-spacer-x: $card-spacer-x;
+$logos-carousel-spacer-y: $card-spacer-y;
+$logos-carousel-gutter: $grid-gutter-width;
+
+.logos-carousel {
+  margin-left: $logos-carousel-gutter / -2;
+  margin-right: $logos-carousel-gutter / -2;
+}
+
+.logos-carousel-item {
+  padding: 0 $logos-carousel-gutter / 2;
+}
+
+.logos-carousel-figure {
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0 0 50%;
+  width: 100%;
+  height: 0;
+  border: 1px solid $gray-400;
+  border-radius: $border-radius;
+  transition: 250ms;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: $logos-carousel-spacer-y $logos-carousel-spacer-x;
+    box-sizing: border-box;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  & + & {
+    margin-top: $logos-carousel-spacer-y;
+  }
+
+  a:hover,
+  a:focus {
+    border-color: $primary;
+  }
+
+  a:focus {
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba($primary, 0.5);
+    } @else {
+      box-shadow: 0 0 0 $btn-focus-width rgba($primary, 0.5);
+    }
+  }
+}
+
+//
+// Left/right controls for nav
+//
+
+.logos-carousel-control-prev,
+.logos-carousel-control-next {
+  width: $logos-carousel-gutter;
+  opacity: 1;
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    opacity: $carousel-control-opacity;
+  }
+
+  @include hover-focus {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      opacity: 1;
+    }
+  }
+}
+
+.logos-carousel-control-prev {
+  background: linear-gradient(to left, rgba($white, 0), $white 50%);
+
+  @include media-breakpoint-up("sm") {
+    left: $logos-carousel-gutter / -2;
+  }
+}
+
+.logos-carousel-control-next {
+  background: linear-gradient(to right, rgba($white, 0), $white 50%);
+
+  @include media-breakpoint-up("sm") {
+    right: $logos-carousel-gutter / -2;
+  }
+}
