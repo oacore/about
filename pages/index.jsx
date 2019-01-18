@@ -99,7 +99,7 @@ const IndexPage = () => (
 
     <JoinSection id="join-us" {...page.join} />
 
-    <Section id="endorsements" container>
+    <Section id="endorsements" className="home-endorsements-section">
       <Container>
         <h2 className="text-center">{page.endorsements.title}</h2>
       </Container>
@@ -115,6 +115,7 @@ const IndexPage = () => (
 
       <TestimonialsSection
         id="academic-institutions"
+        className="home-academic-institutions-section"
         title={page.endorsements.academic.title}
         description={page.endorsements.academic.description}
         items={testimonials}
