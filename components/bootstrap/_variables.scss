@@ -104,6 +104,7 @@ $small-font-size:             80%;
 
 $blockquote-font-size:        $font-size-base * 1.125;
 $blockquote-padding-left:     3.5 * $font-size-base;
+$blockquote-avatar-vertical-fix:    -1rem;
 
 $mark-padding:                .2em;
 $mark-bg:                     $green;
@@ -133,6 +134,7 @@ $navbar-dropdown-border-radius:     0;
 $navbar-light-color:                $nearly-black;
 $navbar-light-hover-color:          $primary; // $link-color;
 $navbar-light-active-color:         $primary-dark; // $link-hover-color;
+
 
 // Sections
 

@@ -1,0 +1,105 @@
+@import "../bootstrap/core";
+
+$testimonials-carousel-image-padding-x: $spacer / 2 !default;
+$testimonials-carousel-image-padding-y: $spacer / 2 !default;
+$testimonials-carousel-spacer-x: $card-spacer-x !default;
+$testimonials-carousel-spacer-y: $card-spacer-y !default;
+$testimonials-carousel-gutter: $grid-gutter-width !default;
+
+.testimonials-carousel {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .carousel-inner {
+    width: 100%;
+  }
+}
+
+.testimonials-carousel-item {
+  .blockquote {
+    margin-top: -1 * $blockquote-avatar-vertical-fix;
+  }
+}
+
+//
+// Left/right controls for nav
+//
+
+.testimonials-carousel-control-prev,
+.testimonials-carousel-control-next {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  color: $body-color;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: $carousel-control-color;
+  @include transition($carousel-control-transition);
+
+  // Hover/focus state
+  @include hover-focus {
+    color: $carousel-control-color;
+    text-decoration: none;
+    outline: 0;
+    opacity: $carousel-control-hover-opacity;
+  }
+
+  span {
+    display: block;
+  }
+}
+.testimonials-carousel-control-prev {
+  padding-left: 1.5rem;
+  text-align: left;
+}
+.testimonials-carousel-control-next {
+  padding-right: 1.5rem;
+  text-align: right;
+}
+
+.testimonials-carousel-control-prev-caption::before,
+.testimonials-carousel-control-next-caption::after {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background: transparent no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.testimonials-carousel-control-prev-caption::before {
+  margin-left: -1.5rem;
+  margin-right: 0.5rem;
+  background-image: $carousel-control-prev-icon-bg;
+}
+
+.testimonials-carousel-control-next-caption::after {
+  background-image: $carousel-control-next-icon-bg;
+  margin-left: 0.5rem;
+  margin-right: -1.5rem;
+}
+
+.testimonials-carousel-contol-text {
+  color: $gray-600;
+}
+
+.testimonials-carousel-control-prev,
+.testimonials-carousel-control-next {
+  @include hover-focus {
+    .testimonials-carousel-contol-text {
+      color: $body-color;
+    }
+  }
+}
+
+.testimonials-carousel-control-group {
+  max-width: 60ch;
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
