@@ -119,6 +119,11 @@ $page-bg: linear-gradient(#fff0, #ffff 75vh, #ffff calc(100% - 75vh), #fff0 100%
 $card-border-radius: 0;
 
 
+// Carousel
+
+$carousel-control-color:            $primary;
+
+
 // Navbar
 
 $navbar-dropdown-border-color:      $blue-light;
@@ -128,7 +133,6 @@ $navbar-dropdown-border-radius:     0;
 $navbar-light-color:                $nearly-black;
 $navbar-light-hover-color:          $primary; // $link-color;
 $navbar-light-active-color:         $primary-dark; // $link-hover-color;
-
 
 // Sections
 
