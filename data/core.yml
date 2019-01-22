@@ -22,6 +22,8 @@ navigation:
             path: ~services/recommender
           - title: CORE connector
             path: ~services/connector
+          - title: Discovery
+            path: ~services/discovery
       - title: Managing content
         path: ~services#managing-content
         children:

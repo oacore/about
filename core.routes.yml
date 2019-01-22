@@ -29,12 +29,12 @@ services:
     repository-dashboard: ./repository-dashboard
     analytics-dashboard: ./analytics-dashboard
     fast-sync: ./fast-sync
+    discovery: ./discovery
 
     fast: ./fastsync
     labs-oadiscovery: ./labs/discovery
     plugin: ./plugin
     mobile: ./mobile
-    discovery: ./content-discovery
 
 support: /services/support
 

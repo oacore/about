@@ -63,6 +63,17 @@ sections:
     action:
       caption: Learn more about CORE Connector
       url: ~services/connector
+  -
+    id: discovery
+    title: CORE Discovery
+    description: |
+      CORE Discovery is a new service assists users in finding freely accessible
+      copies of research papers that behind a paywall. CORE Discovery currently
+      provides access to millions of full text open access papers from within
+      CORE and other data providers.
+    action:
+      caption: Learn more about CORE Discovery
+      url: ~services/discovery
 -
   id: managing-content
   title: Managing content
