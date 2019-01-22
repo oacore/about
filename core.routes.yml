@@ -28,6 +28,7 @@ services:
     connector: ./connector
     repository-dashboard: ./repository-dashboard
     analytics-dashboard: ./analytics-dashboard
+    fast-sync: ./fast-sync
 
     fast: ./fastsync
     labs-oadiscovery: ./labs/discovery

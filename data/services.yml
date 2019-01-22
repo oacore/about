@@ -30,6 +30,15 @@ sections:
     action:
       caption: Learn more about CORE Dataset
       url: ~services/dataset
+  -
+    id: fast-sync
+    title: Fast Sync Dump
+    description: |
+      The CORE FastSync dump implements the approach of the _ResourceSync
+      Framework Resource Dump_ standard.
+    action:
+      caption: Learn more about CORE Fast Sync Dump
+      url: ~services/fast-sync
 -
   id: content-discovery
   title: Content discovery
