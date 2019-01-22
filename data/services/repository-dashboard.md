@@ -1,5 +1,5 @@
 ---
-title: Repository dashboard
+title: CORE Repository Dashboard
 ---
 
 In an effort to improve the quality and transparency of the harvesting process

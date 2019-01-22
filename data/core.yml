@@ -18,9 +18,9 @@ navigation:
       - title: Content discovery
         path: ~services/discovery
         children:
-          - title: CORE recommender
+          - title: Recommender
             path: ~services/recommender
-          - title: CORE connector
+          - title: Connector
             path: ~services/connector
           - title: Discovery
             path: ~services/discovery

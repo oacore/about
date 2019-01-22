@@ -1,5 +1,5 @@
 ---
-title: CORE Publisher connector
+title: CORE Publisher Connector
 ---
 
 The **CORE Publisher Connector** is a software providing seamless access to
