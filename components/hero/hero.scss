@@ -1,12 +1,34 @@
 @import "../bootstrap/core";
 
-.hero-logo {
-  display: block;
-  margin: 0 auto;
-  font-size: $h1-font-size;
+.hero {
+  padding-top: $article-spacer;
+
+  // Reduce space from parent section
+
+  .section > &:first-child {
+    margin-top: -1 * $section-spacer;
+  }
+
+  .section-sm > &:first-child {
+    margin-top: -1 * $section-sm-spacer;
+  }
+
+  .section-lg > &:first-child {
+    margin-top: -1 * $section-lg-spacer;
+  }
+
+  .article > &:first-child {
+    margin-top: -1 * $article-spacer;
+  }
 }
 
-.hero-text {
+.hero-logo {
+  display: block;
+  font-size: $h1-font-size;
+  text-align: center;
+}
+
+.hero-tagline {
   font-size: $lead-font-size;
   text-align: center;
 }

@@ -1,6 +1,7 @@
 title: CORE – Aggregating the world’s open access research papers
-hero: |
-  The world’s largest collection of open access research papers
+hero:
+  headline: CORE
+  tagline: The world’s largest collection of open access research papers
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   children:

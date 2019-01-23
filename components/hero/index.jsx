@@ -1,26 +1,24 @@
 import React from 'react'
 import { Container } from 'reactstrap'
 import Logo from '../logo'
-import SearchForm from '../search'
 import { Section } from '../content'
 
 import './hero.scss'
 
 const Hero = ({
   children,
+  title = 'CORE',
+  tagline = '',
   className = '',
   tag = 'div',
-  includeSearch = true,
+  ...restProps
 }) => (
-  <Section className={`hero ${className}`} tag={tag}>
+  <Section className={`hero ${className}`} tag={tag} {...restProps}>
     <Container>
-      <Logo className="hero-logo" />
-      <p className="hero-text">{children}</p>
-
-      {includeSearch && (
-        <SearchForm placeholder="Search over 100,000,000 articles" />
-      )}
+      <Logo text={title} className="hero-logo" tag="h1" />
+      {tagline && <p className="hero-tagline">{tagline}</p>}
     </Container>
+    {children}
   </Section>
 )
 

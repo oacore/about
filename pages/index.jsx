@@ -1,4 +1,4 @@
-import React, { Fragment, Component } from 'react'
+import React, { Component } from 'react'
 import { Container, Button } from 'reactstrap'
 import { bind } from 'decko'
 
@@ -9,8 +9,10 @@ import {
   Switcher,
   Content,
   Section,
+  Article,
 } from 'components'
 import { JoinSection } from 'components/sections'
+import SearchForm from 'components/search'
 import Link from 'components/link'
 
 import page from 'data/home.yml'
@@ -81,12 +83,16 @@ class TestimonialsSection extends Component {
 }
 
 const IndexPage = () => (
-  <Fragment>
-    <h1 className="sr-only">{page.title}</h1>
+  <Article tag="main">
+    <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
+      <Section tag="div">
+        <Container className="hero-search-container">
+          <SearchForm placeholder="Search over 100,000,000 articles" />
+        </Container>
+      </Section>
+    </Hero>
 
-    <Hero>{page.hero}</Hero>
-
-    <Section>
+    <Section className="pb-section-lg">
       <Container>
         <h2 className="sr-only">{page.features.title}</h2>
         <KeyFeatureList>
@@ -138,7 +144,7 @@ const IndexPage = () => (
         />
       </Container>
     </Section>
-  </Fragment>
+  </Article>
 )
 
 export default IndexPage
