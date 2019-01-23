@@ -33,7 +33,7 @@ rules:
   react/destructuring-assignment: off
   react/prop-types: [error, {
     skipUndeclared: true,
-    ignore: [class, className, id, children],
+    ignore: [class, className, id, children, tag],
   }]
 
 settings:
