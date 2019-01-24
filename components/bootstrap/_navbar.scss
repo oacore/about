@@ -9,20 +9,6 @@ $navbar-dropdown-border-width: $dropdown-border-width !default;
 
 $chevron-icon: url("../icons/chevron-top.svg");
 
-// Navbar brand
-//
-// Used for brand, project, or site names.
-
-.navbar-brand > img {
-  position: relative;
-  top: $navbar-brand-vertical-fix;
-  display: inline-block;
-  margin-top: -$navbar-brand-padding-y;
-  margin-bottom: -$navbar-brand-padding-y;
-  width: auto;
-  height: $navbar-brand-height;
-}
-
 // Navbar nav
 //
 // Custom navbar navigation (doesn't require `.nav`, but does make use of `.nav-link`).

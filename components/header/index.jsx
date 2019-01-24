@@ -106,10 +106,8 @@ class Header extends React.Component {
       >
         <Container>
           {logo && (
-            <Link href="/">
-              <NavbarBrand href="/">
-                <Logo display="icon" />
-              </NavbarBrand>
+            <Link href="/" passHref>
+              <Logo tag={NavbarBrand} />
             </Link>
           )}
           <NavbarToggler onClick={this.toggle} />

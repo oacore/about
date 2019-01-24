@@ -145,10 +145,11 @@ $carousel-control-color:            $primary;
 $navbar-dropdown-border-color:      $blue-light;
 $navbar-dropdown-border-radius:     0;
 
-// TODO: Fix link color
 $navbar-light-color:                $nearly-black;
-$navbar-light-hover-color:          $primary; // $link-color;
-$navbar-light-active-color:         $primary-dark; // $link-hover-color;
+$navbar-light-hover-color:          $link-color;
+$navbar-light-active-color:         $link-hover-color;
+
+$navbar-light-brand-color:          $navbar-light-color;
 
 
 // Sections
