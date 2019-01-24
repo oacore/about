@@ -44,6 +44,21 @@ $enable-shadows: true;
 
 $spacer: 1.5rem;
 
+// Sections
+
+$section-sm-spacer: 2 * $spacer;
+$section-md-spacer: 3 * $spacer;
+$section-lg-spacer: 6 * $spacer;
+$section-spacer: $section-md-spacer;
+$article-spacer: $section-lg-spacer;
+
+$spacers: (
+  section-sm: $section-sm-spacer,
+  section-md: $section-md-spacer,
+  section-lg: $section-lg-spacer,
+  section: $section-spacer
+);
+
 
 // Links
 //

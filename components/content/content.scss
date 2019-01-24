@@ -1,8 +1,10 @@
 @import "../bootstrap/core";
 
-$article-padding-y: 8 * $spacer;
-$section-padding-y: 3 * $spacer;
-$section-sm-padding-y: 2 * $spacer;
+$section-sm-spacer: 2 * $spacer !default;
+$section-md-spacer: 4 * $spacer !default;
+$section-lg-spacer: 8 * $spacer !default;
+$section-spacer: $section-md-spacer !default;
+$article-spacer: $section-lg-spacer !default;
 
 .content {
   margin-bottom: $spacer;
@@ -13,12 +15,12 @@ $section-sm-padding-y: 2 * $spacer;
 
   h2,
   .h2 {
-    margin-top: 2 * $section-padding-y;
+    margin-top: 2 * $section-spacer;
   }
 
   h3,
   .h3 {
-    margin-top: 2 * $section-sm-padding-y;
+    margin-top: 2 * $section-sm-spacer;
   }
 
   h4,
@@ -32,27 +34,47 @@ $section-sm-padding-y: 2 * $spacer;
 }
 
 .section {
-  padding-top: $section-padding-y;
-  padding-bottom: $section-padding-y;
+  padding-top: $section-spacer;
+  padding-bottom: $section-spacer;
 
   > .section {
-    padding-top: $section-sm-padding-y;
-    padding-bottom: $section-sm-padding-y;
+    padding-top: $section-sm-spacer;
+    padding-bottom: $section-sm-spacer;
 
     &:last-child {
-      padding-bottom: $section-padding-y;
-      margin-bottom: -$section-padding-y;
+      padding-bottom: $section-spacer;
+      margin-bottom: -$section-spacer;
     }
   }
 }
 
+.section-sm {
+  padding-top: $section-sm-spacer;
+  padding-bottom: $section-sm-spacer;
+
+  > .section:last-child {
+    padding-bottom: $section-sm-spacer;
+    margin-bottom: -$section-sm-spacer;
+  }
+}
+
+.section-lg {
+  padding-top: $section-lg-spacer;
+  padding-bottom: $section-lg-spacer;
+
+  > .section:last-child {
+    padding-bottom: $section-lg-spacer;
+    margin-bottom: -$section-lg-spacer;
+  }
+}
+
 .article {
-  padding-top: $article-padding-y;
-  padding-bottom: $article-padding-y;
+  padding-top: $article-spacer;
+  padding-bottom: $article-spacer;
 
   & > .section:last-child {
-    padding-bottom: $article-padding-y;
-    margin-bottom: -$article-padding-y;
+    padding-bottom: $article-spacer;
+    margin-bottom: -$article-spacer;
   }
 }
 
