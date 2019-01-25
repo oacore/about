@@ -62,6 +62,19 @@ class ContactFormCard extends Component {
   }
 }
 
+
+const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
+  <Tag className={`embed-responsive embed-responsive-16by9 ${className}`}>
+    <iframe
+      className="embed-responsive-object"
+      src={src}
+      title={title}
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+      allowFullScreen
+    />
+  </Tag>
+)
+
 const AboutPage = () => (
   <Article nav tag="main">
     <h1>{aboutData.title}</h1>
@@ -70,6 +83,13 @@ const AboutPage = () => (
       <Row>
         <Col xs="12" sm="6" md="7" lg="9" tag="section">
           <h2>{aboutData.mission.title}</h2>
+
+          <Video
+            src={aboutData.video.src}
+            title={aboutData.video.title}
+            tag="p"
+          />
+
           <Content markdown>{aboutData.mission.short}</Content>
 
           <Collapsed id="full-mission" title={aboutData.mission.full.caption}>
