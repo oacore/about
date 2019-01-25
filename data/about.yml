@@ -46,8 +46,8 @@ blog:
     * [CORE enhances library discovery services](https://blog.core.ac.uk/2017/12/18/core-enhances-library-discovery-services/)
     * [CORE visits Ethiopia and participates in an Open Science training session](https://blog.core.ac.uk/2017/11/14/core-visits-ethiopia-and-participates-in-an-open-science-training-session/)
     * [Implementing the CORE Recommender in Strathprints: a “whitehat” improvement to promote user interaction](https://blog.core.ac.uk/2017/10/31/implementing-the-core-recommender-in-strathprints-a-whitehat-improvement-to-promote-user-interaction/)
-
-howitworks:
+  visit-button: Visit the blog
+how-it-works:
   title: How it works
   harvesting:
     title: Harvesting data
@@ -67,6 +67,7 @@ howitworks:
       The  [Core Recommender](http://www.google.com)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
 
       Our [CORE API and Datasets](http://www.google.com)  enable machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
+  join-button: Join CORE today for free
 contacts:
   title: Contact us
   address:

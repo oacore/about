@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Collapse, Row, Col, Button, Card, CardBody } from 'reactstrap'
 import { bind } from 'decko'
 import { Article, Content, Section, Collapsed } from 'components'
+import Link from 'components/link'
 import TeamMember from 'components/team-member'
 import ContactForm from 'components/contact-form'
 import aboutData from 'data/about.yml'
@@ -102,7 +103,7 @@ const AboutPage = () => (
           <Content markdown>{aboutData.blog.content}</Content>
           <div className="text-center">
             <Button color="primary" outline>
-              Visit the blog
+              {aboutData.blog.visitButton}
             </Button>
           </div>
         </Col>
@@ -110,13 +111,13 @@ const AboutPage = () => (
     </Section>
 
     <Section id="how-it-works" caption="How it works">
-      <h2>{aboutData.howitworks.title}</h2>
+      <h2>{aboutData.howItWorks.title}</h2>
       <Section>
-        <h3>{aboutData.howitworks.harvesting.title}</h3>
+        <h3>{aboutData.howItWorks.harvesting.title}</h3>
         <Row>
           <Col xs="12" md="6">
             <Content markdown>
-              {aboutData.howitworks.harvesting.content}
+              {aboutData.howItWorks.harvesting.content}
             </Content>
           </Col>
 
@@ -143,8 +144,8 @@ const AboutPage = () => (
       <Section>
         <Row>
           <Col md="9">
-            <h3>{aboutData.howitworks.services.title}</h3>
-            <Content markdown>{aboutData.howitworks.services.content}</Content>
+            <h3>{aboutData.howItWorks.services.title}</h3>
+            <Content markdown>{aboutData.howItWorks.services.content}</Content>
 
             <Row className="align-items-center mt-3">
               <Col xs="6" className="text-right">
@@ -154,7 +155,11 @@ const AboutPage = () => (
               </Col>
 
               <Col xs="6">
-                <Button color="primary">Join CORE today for free</Button>
+                <Link href="~join" passHref>
+                  <Button color="primary">
+                    {aboutData.howItWorks.joinButton}
+                  </Button>
+                </Link>
               </Col>
             </Row>
           </Col>
