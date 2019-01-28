@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Button } from 'reactstrap'
+import { Row, Col, Button } from 'reactstrap'
 import { Section, Content } from '../content'
 import LogosCarousel from '../logos-carousel'
 import TestimonialsCarousel from '../testimonials-carousel'
@@ -17,10 +17,8 @@ const TestimonialsSection = ({
   const Heading = `h${level}`
   return (
     <Section className={`testimonials-section ${className}`} {...restProps}>
-      <Container>
-        <Heading>{title}</Heading>
-        <TestimonialsCarousel items={items} />
-      </Container>
+      <Heading>{title}</Heading>
+      <TestimonialsCarousel items={items} />
     </Section>
   )
 }
@@ -38,21 +36,20 @@ const EndorsementsSection = ({
   const Heading = `h${level}`
   return (
     <Section id={id} {...restProps}>
-      <Container>
-        <Heading>{title}</Heading>
-        <Row>
-          <Col sm="9">
-            <Content markdown>{description}</Content>
-            <p className="font-weight-bold">{action.title}</p>
-            <Link href={action.url} passHref>
-              <Button color="primary">{action.name}</Button>
-            </Link>
-          </Col>
-          <Col sm="3">
-            <LogosCarousel items={organizations} />
-          </Col>
-        </Row>
-      </Container>
+      <Heading>{title}</Heading>
+
+      <Row>
+        <Col sm="9">
+          <Content markdown>{description}</Content>
+          <p className="font-weight-bold">{action.title}</p>
+          <Link href={action.url} passHref>
+            <Button color="primary">{action.name}</Button>
+          </Link>
+        </Col>
+        <Col sm="3">
+          <LogosCarousel items={organizations} />
+        </Col>
+      </Row>
 
       <TestimonialsSection
         title={testimonials.title}

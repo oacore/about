@@ -12,7 +12,7 @@ class ErrorPage extends Component {
 
   render() {
     return (
-      <Article container>
+      <Article>
         <h1>Uh-oh</h1>
         <p>The page you were looking for could not be found.</p>
         <p>To help you find what you are looking for, why not</p>

@@ -9,7 +9,7 @@ const SectionedPage = ({
   content = null,
   sections = [],
 }) => (
-  <Article nav container>
+  <Article nav>
     <h1>{title}</h1>
     {children || content || description}
     {sections.map(({ id, ...restProps }) => (

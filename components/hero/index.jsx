@@ -1,11 +1,10 @@
 import React from 'react'
-import { Container } from 'reactstrap'
 import Logo from '../logo'
 import { Section } from '../content'
 
 import './hero.scss'
 
-const Hero = ({
+const HeroSection = ({
   children,
   title = 'CORE',
   tagline = '',
@@ -14,12 +13,10 @@ const Hero = ({
   ...restProps
 }) => (
   <Section className={`hero ${className}`} tag={tag} {...restProps}>
-    <Container>
-      <Logo text={title} className="hero-logo" tag="h1" />
-      {tagline && <p className="hero-tagline">{tagline}</p>}
-    </Container>
+    <Logo text={title} className="hero-logo" tag="h1" />
+    {tagline && <p className="hero-tagline">{tagline}</p>}
     {children}
   </Section>
 )
 
-export default Hero
+export default HeroSection

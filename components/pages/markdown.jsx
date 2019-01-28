@@ -2,7 +2,7 @@ import React from 'react'
 import { Article, Content } from '../content'
 
 const MarkdownPage = ({ title, content, children }) => (
-  <Article container>
+  <Article>
     <h1>{title}</h1>
     <Content markdown>{children || content}</Content>
   </Article>
