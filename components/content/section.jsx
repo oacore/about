@@ -40,32 +40,37 @@ class Section extends Component {
 
     let containerPull = []
     const containered = children.reduce((resultPull, child, i) => {
+      const childKey =
+        child.key ||
+        child.props.id ||
+        `${child.type.name || child.type.toString()}-${i}`
+
       if (Section.isSection(child.type)) {
         if (containerPull.length > 0) {
           // eslint-disable-next-line react/no-array-index-key
-          resultPull.push(<Container key={i}>{containerPull}</Container>)
+          resultPull.push(
+            <Container key={containerPull.map(({ type }) => type).join(',')}>
+              {containerPull}
+            </Container>
+          )
           containerPull = []
         }
 
         resultPull.push(
-          React.cloneElement(child, {
-            container: Container,
-            key: child.key || child.props.id || i,
-          })
+          React.cloneElement(child, { key: childKey, container: Container })
         )
-      } else {
-        containerPull.push(
-          React.cloneElement(child, {
-            key: child.key || child.props.id || i,
-          })
-        )
-      }
+      } else containerPull.push(React.cloneElement(child, { key: childKey }))
 
       return resultPull
     }, [])
 
-    if (containerPull.length)
-      containered.push(<Container>{containerPull}</Container>)
+    if (containerPull.length) {
+      containered.push(
+        <Container key={containerPull.map(({ type }) => type).join(',')}>
+          {containerPull}
+        </Container>
+      )
+    }
 
     return containered
   }
