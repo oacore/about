@@ -7,7 +7,7 @@ import Section from './section'
 const ArticleNav = ({ items }) => (
   <Nav className="article-nav">
     {items.map(({ text, href }) => (
-      <NavItem>
+      <NavItem key={href}>
         <NavLink href={href}>{text}</NavLink>
       </NavItem>
     ))}
@@ -48,7 +48,7 @@ class Article extends Section {
       if (!child) return
       if (typeof child.type == 'string' && child.type.match(/header|h[1-6]/))
         header.push(child)
-      else content.push(child)
+      else content.push(React.cloneElement(child, { caption: undefined }))
     })
 
     return {
