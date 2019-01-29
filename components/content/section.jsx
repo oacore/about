@@ -2,28 +2,45 @@ import React, { Fragment, Component } from 'react'
 import { Container as BootstrapContainer } from 'reactstrap'
 
 class Section extends Component {
-  /** Checks is component Section-like
-   *
-   * Section-like element must contain 'Section' in the name.
-   *
-   * The way to check is so stupid because of performance.
-   * The function is called dozens of times over each page. So it's better to
-   * have a convention than have a complex method to check component
-   * by instancing or composition.
-   *
-   * Considered other ways to check:
-   * - try to create an instance of child.type (TestComponent parameter)
-   *   and check it to be instance of Section
-   * - try to get first child of a component and check it's instance to
-   *   be Section-like too
-   * Again, it's thrown away because of performance and complexity.
-   *
-   * KISS
-   */
-  static isSection(TestComponent) {
+  static isInheritedSection(TestComponent) {
     if (typeof TestComponent != 'function') return false
-    if (TestComponent.name != null)
-      return TestComponent.name.includes('Section')
+
+    if (TestComponent === Section) return true
+
+    for (
+      let prototype = Object.getPrototypeOf(TestComponent);
+      prototype;
+      prototype = Object.getPrototypeOf(prototype)
+    )
+      if (prototype === Section) return true
+
+    return false
+  }
+
+  static isSectionLike(component) {
+    if (!React.isValidElement(component)) return false
+    if (typeof component.type != 'function') return false
+
+    if (Section.isInheritedSection(component.type)) return true
+
+    if (React.isValidElement(component.props.children))
+      return Section.isSectionLike(component.props.children)
+
+    let child
+    try {
+      child = component.type(component.props)
+    } catch (ignored) {
+      // eslint-disable-next-line new-cap
+      child = new component.type(component.props)
+    }
+
+    return Section.isSectionLike(child)
+  }
+
+  static isSection(component) {
+    if (typeof component == 'function')
+      return Section.isInheritedSection(component)
+    if (typeof component == 'object') return Section.isSectionLike(component)
     return false
   }
 
@@ -34,7 +51,6 @@ class Section extends Component {
     return containerProp
   }
 
-  // TODO: Fix react-warning-keys
   static containerize(children, containerProp) {
     const Container = Section.getContainerComponent(containerProp)
 
@@ -45,7 +61,7 @@ class Section extends Component {
         child.props.id ||
         `${child.type.name || child.type.toString()}-${i}`
 
-      if (Section.isSection(child.type)) {
+      if (Section.isSectionLike(child)) {
         if (containerPull.length > 0) {
           // eslint-disable-next-line react/no-array-index-key
           resultPull.push(
