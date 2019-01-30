@@ -55,10 +55,18 @@ class TestimonialsSection extends Section {
   }
 
   render() {
-    const { id, title, description, items, limit, more } = this.props
+    const {
+      id,
+      title,
+      description,
+      items,
+      limit,
+      more,
+      ...restProps
+    } = this.props
     const { itemHash } = this.state
     return (
-      <Section id={id}>
+      <Section id={id} {...restProps}>
         <h3>{title}</h3>
         <p>{description}</p>
         <TestimonialsSwitcher
