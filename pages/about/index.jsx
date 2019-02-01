@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import { Collapse, Row, Col, Button, Card, CardBody } from 'reactstrap'
+import { Collapse, Row, Col, Card, CardBody } from 'reactstrap'
 import { bind } from 'decko'
-import { Article, Content, Section, Collapsed } from 'components'
+import { Article, Content, Section, Collapsed, Button } from 'components'
 import Link from 'components/link'
 import TeamMember from 'components/team-member'
 import ContactForm from 'components/contact-form'
@@ -137,9 +137,9 @@ const AboutPage = () => (
 
         <Row className="align-items-center mt-3">
           <Col xs="6" className="text-right">
-            <a href="https://www.google.com/">
+            <Button href="~data-providers">
               See the full list of data providers
-            </a>
+            </Button>
           </Col>
 
           <Col xs="6">
