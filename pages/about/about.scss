@@ -1,5 +1,13 @@
 @import "~components/bootstrap/core";
 
+.about-services-section {
+  @include section-skew-left($blue-light);
+}
+
+.about-endorsements-section {
+  @include section-skew-left($blue-light);
+}
+
 .contact-card {
   margin-top: -1 * $card-spacer-y;
   padding-top: $card-spacer-y;

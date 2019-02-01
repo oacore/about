@@ -63,7 +63,6 @@ class ContactFormCard extends Component {
   }
 }
 
-
 const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
   <Tag className={`embed-responsive embed-responsive-16by9 ${className}`}>
     <iframe
@@ -110,6 +109,16 @@ const AboutPage = () => (
       </Row>
     </Section>
 
+    <Section className="about-endorsements-section" id="endorsements">
+      <h2>{aboutData.endorsements.title}</h2>
+      <Content markdown>{aboutData.endorsements.content}</Content>
+      <Link href="~about/endorsements" passHref>
+        <Button color="primary" outline>
+          {aboutData.endorsements.action}
+        </Button>
+      </Link>
+    </Section>
+
     <Section id="how-it-works" caption="How it works">
       <h2>{aboutData.howItWorks.title}</h2>
       <Section>
@@ -141,7 +150,7 @@ const AboutPage = () => (
         </Row>
       </Section>
 
-      <Section>
+      <Section className="about-services-section" id="section">
         <Row>
           <Col md="9">
             <h3>{aboutData.howItWorks.services.title}</h3>

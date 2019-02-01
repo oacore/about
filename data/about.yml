@@ -47,6 +47,10 @@ blog:
     * [CORE visits Ethiopia and participates in an Open Science training session](https://blog.core.ac.uk/2017/11/14/core-visits-ethiopia-and-participates-in-an-open-science-training-session/)
     * [Implementing the CORE Recommender in Strathprints: a “whitehat” improvement to promote user interaction](https://blog.core.ac.uk/2017/10/31/implementing-the-core-recommender-in-strathprints-a-whitehat-improvement-to-promote-user-interaction/)
   visit-button: Visit the blog
+endorsements:
+  title: Who's Is Using CORE?
+  content: Our data and tools power innovation **around the world**
+  action: Find out more
 how-it-works:
   title: How it works
   harvesting:
