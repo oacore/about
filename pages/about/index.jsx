@@ -148,11 +148,11 @@ const AboutPage = () => (
           <h2>{aboutData.contacts.title}</h2>
           <ContactFormCard />
           <Row className="py-3">
-            <Col md="4" className="font-weight-bold">
+            <Col md="3" className="font-weight-bold">
               {aboutData.contacts.address.caption}
             </Col>
 
-            <Col md="8">
+            <Col md="9">
               <address>
                 {aboutData.contacts.address.name}
                 <br />
