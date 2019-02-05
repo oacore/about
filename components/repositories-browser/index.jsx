@@ -15,7 +15,10 @@ class RepositoryBrowser extends Component {
   static pageSize = 50
 
   static fetchRepositories(url) {
-    return fetch(url).then(res => res.json())
+    return fetch(url).then(res => {
+      if (res.ok) return res.json()
+      throw new Error(`Error loading repositories from ${url}`)
+    })
   }
 
   state = {
@@ -67,15 +70,8 @@ class RepositoryBrowser extends Component {
       (currentPage + 1) * pageSize
     )
 
-    if (isFetching) {
-      return (
-        <Spinner
-          color="primary"
-          className="d-block mx-auto"
-          style={{ width: '3rem', height: '3rem' }}
-        />
-      )
-    }
+    if (isFetching)
+      return <Spinner color="primary" className="d-block mx-auto" />
 
     const maxQueryLength = this.repositories.options.maxPatternLength
     const itemsCount = this.repositories.list.length
