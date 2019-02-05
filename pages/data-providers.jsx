@@ -2,10 +2,12 @@ import React from 'react'
 import { Button } from 'reactstrap'
 import { Article, Content, Section } from 'components'
 import Link from 'components/link'
-import RepositoryMap from 'components/repositories-map'
+import RepositoriesMap from 'components/repositories-map'
 import RepositoryBrowser from 'components/repositories-browser'
 
 import repositoriesData from 'data/data-providers.yml'
+
+const repositoriesUrl = 'https://core.ac.uk/repositories/locations'
 
 const DataProvidersPage = () => (
   <Article container>
@@ -13,7 +15,7 @@ const DataProvidersPage = () => (
     <Content markdown>{repositoriesData.content}</Content>
 
     <div className="text-center">
-      <Link href="~home" passHref>
+      <Link href="~about#contact" passHref>
         <Button color="primary" tag="a">
           {repositoriesData.become}
         </Button>
@@ -22,11 +24,12 @@ const DataProvidersPage = () => (
 
     <Section id="map">
       <h2>{repositoriesData.map}</h2>
-      <RepositoryMap />
+      <RepositoriesMap endpoint={repositoriesUrl} />
     </Section>
 
-    <RepositoryBrowser endpoint="https://core.ac.uk/repositories/locations" />
+    <RepositoryBrowser endpoint={repositoriesUrl} />
   </Article>
 )
 
 export default DataProvidersPage
+export { repositoriesUrl }

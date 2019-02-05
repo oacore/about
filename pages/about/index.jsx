@@ -5,11 +5,12 @@ import { Article, Content, Section, Collapsed, Button } from 'components'
 import Link from 'components/link'
 import TeamMember from 'components/team-member'
 import ContactForm from 'components/contact-form'
+import RepositoriesMap from 'components/repositories-map'
 import Blog from 'components/blog'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 
-import mapImage from '../../images/map.png'
+import { repositoriesUrl } from '../data-providers'
 
 import './about.scss'
 
@@ -132,7 +133,7 @@ const AboutPage = () => (
           </Col>
 
           <Col xs="12" md="6">
-            <img src={mapImage} alt="Map" className="w-100 m-auto" />
+            <RepositoriesMap endpoint={repositoriesUrl} />
           </Col>
         </Row>
 
