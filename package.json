@@ -23,11 +23,14 @@
     "prettier": "^1.15.2"
   },
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4",
     "decko": "^1.2.0",
     "fuse.js": "^3.3.0",
     "json-loader": "^0.5.7",
+    "leaflet": "^1.4.0",
+    "leaflet.markercluster": "^1.4.1",
     "next": "^7.0.2",
     "next-images": "^1.0.1",
     "node-sass": "^4.10.0",
@@ -36,6 +39,7 @@
     "raw-loader": "^0.5.1",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-leaflet": "^2.2.0",
     "react-markdown": "^4.0.3",
     "reactstrap": "^7",
     "url": "^0.11.0",

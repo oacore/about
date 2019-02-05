@@ -1,0 +1,45 @@
+@import "../bootstrap/core";
+
+.repositories-map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 50%;
+
+  @media (orientation: portrait) {
+    padding-bottom: 100%;
+  }
+}
+
+.repositories-map-loading::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba($black, 0.25);
+  pointer-events: none;
+}
+
+.repositories-map-spinner {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  display: block;
+  margin: ($spinner-height / -2) 0 0 ($spinner-width / -2);
+  pointer-events: none;
+}
+
+.repositories-map-inner {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
