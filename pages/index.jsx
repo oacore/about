@@ -22,8 +22,9 @@ import { extractTestimonials } from './about/endorsements'
 
 import './index.scss'
 
-const TestimonialsSwitcher = ({ items, limit, ...restProps }) => (
-  <Switcher interval={10000} {...restProps}>
+const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
+  <Switcher interval={10000} className="home-switcher" {...restProps}>
+    {text && <Switcher.Content>{text}</Switcher.Content>}
     {items
       .slice(0, limit)
       .filter(({ organization }) => organization)
@@ -33,12 +34,11 @@ const TestimonialsSwitcher = ({ items, limit, ...restProps }) => (
           title={organization.name}
           picture={`/static/images/logos/${organization.logo}`}
           key={id}
-          className="home-switcher"
         >
           <blockquote className="blockquote">
             <Content markdown>{content}</Content>
             <footer className="blockquote-footer">
-              {author.name}, {author.position}
+              {author.name}, {author.role}
             </footer>
           </blockquote>
         </Switcher.Item>
@@ -68,11 +68,11 @@ class TestimonialsSection extends Section {
     return (
       <Section id={id} {...restProps}>
         <h3>{title}</h3>
-        <p>{description}</p>
         <TestimonialsSwitcher
           items={items}
           limit={limit}
           onChange={this.handleItemChange}
+          text={<Content markdown>{description}</Content>}
         />
         {more && (
           <div className="mt-3 text-center">

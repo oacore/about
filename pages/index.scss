@@ -1,19 +1,14 @@
 @import "~components/bootstrap/core";
 
 .home-switcher {
-  padding: map-get($spacers, 5) 0;
-  // background: #f2f4ef;
-
   .switcher-item {
-    padding: map-get($spacers, 5) 0;
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 5);
   }
 
   .blockquote {
     margin: 0 auto;
-
-    @include media-breakpoint-up("sm") {
-      width: 50%;
-    }
+    max-width: 60ch;
   }
 }
 

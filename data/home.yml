@@ -38,6 +38,10 @@ endorsements:
     title: Enterprise customers using CORE technologies
     description: |
       We are proud to provide great scalable services for enterprise business
+
+      - 3 bullet points if needed
+      - 3 bullet points if needed
+      - 3 bullet points if needed
     limit: 5
     more: Read more about how CORE is used in industry
   academic:
@@ -45,6 +49,10 @@ endorsements:
     description: |
       Our content and data is used by hundreds of academic institutions
       every day
+
+      - 3 bullet points if needed
+      - 3 bullet points if needed
+      - 3 bullet points if needed
     limit: 5
     more: Read more...
 partner-projects:
