@@ -66,11 +66,11 @@ how-it-works:
     content: |
       Our unique dataset allows us to offer a number of services for a range of audiences.
 
-      Our  [CORE Repository Dashboard](http://www.google.com)   enables repository managers to improve the harvesting processes and aids in the management and quality of repository content.
+      Our  [CORE Repository Dashboard](~services/repository-dashboard)   enables repository managers to improve the harvesting processes and aids in the management and quality of repository content.
 
-      The  [Core Recommender](http://www.google.com)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
+      The  [Core Recommender](~services/recommender)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
 
-      Our [CORE API and Datasets](http://www.google.com)  enable machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
+      Our [CORE API and Datasets](~services/api)  enable machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
   join-button: Join CORE today for free
 contacts:
   title: Contact us

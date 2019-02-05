@@ -158,7 +158,7 @@ const AboutPage = () => (
 
             <Row className="align-items-center mt-3">
               <Col xs="6" className="text-right">
-                <a className="btn btn-link" href="https://www.google.com/">
+                <a className="btn btn-link" href="~services">
                   Explore our services
                 </a>
               </Col>
