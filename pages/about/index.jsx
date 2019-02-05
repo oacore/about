@@ -203,27 +203,8 @@ const AboutPage = () => (
     </Section>
 
     <Section id="resources" caption="Resources">
-      <Row>
-        <Col md="9">
-          <h2>{aboutData.resources.title}</h2>
-          <Collapsed
-            id="promotion-materials"
-            title={aboutData.resources.promotionmaterials.title}
-          >
-            <Content markdown>
-              {aboutData.resources.promotionmaterials.content}
-            </Content>
-          </Collapsed>
-          <Collapsed
-            id="researchoutputs"
-            title={aboutData.resources.researchoutputs.title}
-          >
-            <Content markdown>
-              {aboutData.resources.researchoutputs.content}
-            </Content>
-          </Collapsed>
-        </Col>
-      </Row>
+      <h2>{aboutData.resources.title}</h2>
+      <Content markdown>{aboutData.resources.content}</Content>
     </Section>
 
     <Section id="team" caption="The team">
