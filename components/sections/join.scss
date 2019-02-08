@@ -17,9 +17,11 @@
 
 .join-section-note {
   position: relative;
-  top: 3 * $spacer; //$section-padding-y;
+  top: $section-spacer;
   margin-top: -1em;
+  margin-bottom: 1em * ($line-height-base - 1);
   font-size: $font-size-sm;
+  line-height: 1;
 
   a {
     color: inherit;
@@ -33,4 +35,8 @@
 
 .join-core-button {
   @include button-outline-variant($light, $light, $primary, $primary-dark);
+
+  border-color: $primary;
+  background: $light;
+  color: $primary;
 }
