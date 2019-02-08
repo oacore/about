@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import { bind } from 'decko'
@@ -10,49 +10,92 @@ const SwitcherItem = ({
   active = false,
   className = '',
   tag: Tag = 'div',
-  ...args
+  ...restProps
 }) => (
   <Tag
     className={`switcher-item ${active ? 'active' : ''} ${className}`}
-    {...args}
+    tabIndex={active ? undefined : -1}
+    {...restProps}
   >
     {children}
   </Tag>
 )
 
-class Switcher extends React.Component {
+const SwitcherContent = ({ children, tag: Tag = 'div', ...restProps }) => (
+  <Tag className="switcher-content" {...restProps}>
+    {children}
+  </Tag>
+)
+
+/* eslint-disable jsx-a11y/mouse-events-have-key-events */
+
+class Switcher extends Component {
   static propTypes = {
     tag: PropTypes.node,
-    itemTag: PropTypes.node,
     actionEvent: PropTypes.oneOf(['click', 'hover']),
     interval: PropTypes.number,
     onChange: PropTypes.func,
+    onMouseOver: PropTypes.func,
+    onMouseLeave: PropTypes.func,
+    pauseOnMouseOver: PropTypes.bool,
   }
 
   static defaultProps = {
     tag: 'div',
-    itemTag: 'div',
     actionEvent: 'hover',
     interval: 0,
     onChange: () => {},
+    onMouseOver: () => {},
+    onMouseLeave: () => {},
+    pauseOnMouseOver: true,
   }
 
   state = {
-    activeItemId: null,
+    items: [],
+    activeItemIndex: 0,
+    content: null,
+    pause: false,
   }
 
   static getDerivedStateFromProps({ children }, state) {
-    if (state.activeItemId) return state
+    const items = []
+    let content = null
 
-    let activeItemId = ''
-    React.Children.forEach(children, ({ props: { id, active } }) => {
-      if (!activeItemId) activeItemId = id
-      if (active) activeItemId = id
+    React.Children.forEach(children, child => {
+      if (child == null) return
+
+      // Extracting SwitcherContent
+      if (child.type === SwitcherContent) {
+        if (content) {
+          throw new Error(
+            'Switcher should have no more than one SwithcerContent'
+          )
+        }
+        content = child
+        return
+      }
+
+      // Extracting SwitcherItems
+      if (child.type === SwitcherItem) {
+        items.push(child)
+        return
+      }
+
+      throw new Error(
+        "Switcher's children must be instances of SwitcherItem or SwitcherContent"
+      )
     })
 
+    let { activeItemIndex } = state
+    if (items.length !== state.items.length) {
+      activeItemIndex = items.findIndex(({ props }) => props.active)
+      if (activeItemIndex < 0) activeItemIndex = 0
+    }
+
     return {
-      ...state,
-      activeItemId,
+      items,
+      activeItemIndex,
+      content,
     }
   }
 
@@ -65,59 +108,65 @@ class Switcher extends React.Component {
   }
 
   start() {
+    if (this.state.pause) return
+
     const { interval } = this.props
     if (interval > 0)
       this.timeoutId = setTimeout(this.activateNextItem, interval)
   }
 
   stop() {
-    if (this.timeoutId > 0) window.clearTimeout(this.timeoutId)
+    if (this.timeoutId > 0) clearTimeout(this.timeoutId)
   }
 
-  activateItem(id) {
+  @bind
+  play() {
+    this.setState({ pause: false }, this.start)
+  }
+
+  @bind
+  pause() {
+    this.setState({ pause: true }, this.stop)
+  }
+
+  activateItem(index) {
     this.stop()
-    this.setState({ activeItemId: id }, () => {
-      this.props.onChange(id)
+    this.setState({ activeItemIndex: index }, () => {
+      this.props.onChange(this.state.items[index].props.id)
       this.start()
     })
   }
 
   @bind
   activateNextItem() {
-    const { children } = this.props
-    const { activeItemId } = this.state
-    const itemIds = React.Children.map(children, ({ props }) => props.id)
-    const activeItemIndex = itemIds.indexOf(activeItemId)
-    const nextItemId = itemIds[(activeItemIndex + 1) % itemIds.length]
+    const { items, activeItemIndex } = this.state
+    const nextItem = (activeItemIndex + 1) % items.length
 
-    this.activateItem(nextItemId)
+    this.activateItem(nextItem)
+  }
+
+  @bind
+  handleMouseOver() {
+    if (this.props.pauseOnMouseOver) this.pause()
+  }
+
+  @bind
+  handleMouseLeave() {
+    if (this.props.pauseOnMouseOver) this.play()
+  }
+
+  handleChange(index) {
+    this.activateItem(index)
   }
 
   render() {
-    const {
-      tag: Tag,
-      itemTag,
-      children,
-      className = '',
-      actionEvent,
-    } = this.props
-    const { activeItemId } = this.state
+    const { tag: Tag, className = '', actionEvent } = this.props
+    const { content, items, activeItemIndex } = this.state
 
-    const items = React.Children.map(children, item => {
-      if (item.type !== SwitcherItem)
-        throw new Error('Switcher items should be instances of SwitcherItem')
-
-      return React.cloneElement(item, {
-        tag: itemTag,
-        active: item.props.id === activeItemId,
-        // key: item.key || item.props.id,
-      })
-    })
-
-    const buttons = items.map(item => {
+    const buttons = items.map((item, i) => {
       const { id, title, picture } = item.props
 
-      const onActivate = this.activateItem.bind(this, id)
+      const onActivate = this.handleChange.bind(this, i)
       const eventListeners =
         actionEvent === 'click'
           ? { onClick: onActivate }
@@ -128,7 +177,8 @@ class Switcher extends React.Component {
           color="link"
           type="button"
           className="switcher-button"
-          active={id === activeItemId}
+          active={i === activeItemIndex}
+          value={i}
           key={id}
           {...eventListeners}
         >
@@ -138,8 +188,17 @@ class Switcher extends React.Component {
     })
 
     return (
-      <Tag className={`switcher ${className}`}>
-        <div className="switcher-item-list">{items}</div>
+      <Tag
+        className={`switcher ${className}`}
+        onMouseOver={this.handleMouseOver}
+        onMouseLeave={this.handleMouseLeave}
+      >
+        {content}
+        <div className="switcher-item-list">
+          {items.map((item, i) =>
+            React.cloneElement(item, { active: i === activeItemIndex })
+          )}
+        </div>
         <div className="switcher-controllers">{buttons}</div>
       </Tag>
     )
@@ -147,6 +206,7 @@ class Switcher extends React.Component {
 }
 
 Switcher.Item = SwitcherItem
+Switcher.Content = SwitcherContent
 
 export default Switcher
 export { SwitcherItem }

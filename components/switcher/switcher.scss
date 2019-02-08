@@ -1,15 +1,26 @@
 @import "../bootstrap/core";
 
 .switcher {
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: ($grid-gutter-width / -2);
+  margin-right: ($grid-gutter-width / -2);
+
+  > * {
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
 }
 
 .switcher-item {
+  margin-right: -100%;
+  margin-bottom: $spacer;
   width: 100%;
   flex: 0 0 100%;
   order: 1;
   opacity: 0;
   transition: 500ms;
+  scroll-snap-align: start;
 
   &.active {
     order: 0;
@@ -19,9 +30,24 @@
 
 .switcher-item-list {
   display: flex;
+  width: 100%;
+}
+
+.switcher-content {
+  width: 100%;
+  margin-bottom: $spacer;
+
+  @include media-breakpoint-up("md") {
+    width: 25%;
+
+    & + .switcher-item-list {
+      width: 75%;
+    }
+  }
 }
 
 .switcher-controllers {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
