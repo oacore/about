@@ -60,23 +60,47 @@ const ServicesPage = () => (
 
                   {/* <Col md="7" lg="8"> */}
                   <Col sm="6">
+                    <div className="mb-5">
+                      <Content
+                        markdown
+                        id={subsections.description}
+                        key={subsections.description}
+                      >
+                        {subsections.description}
+                      </Content>
+
+                      <Link href={subsections.action.url} passHref>
+                        <Button
+                          outline
+                          id={subsections.action.caption}
+                          key={subsections.action.caption}
+                        >
+                          {subsections.action.caption}
+                        </Button>
+                      </Link>
+                    </div>
                     <Content
                       markdown
-                      id={subsections.description}
-                      key={subsections.description}
+                      className="h5"
+                      id={subsections.tabletitle}
+                      key={subsections.tabletitle}
                     >
-                      {subsections.description}
+                      {subsections.tabletitle}
                     </Content>
-
-                    <Link href={subsections.action.url} passHref>
-                      <Button
-                        outline
-                        id={subsections.action.caption}
-                        key={subsections.action.caption}
-                      >
-                        {subsections.action.caption}
-                      </Button>
-                    </Link>
+                    <Content
+                      markdown
+                      id={subsections.tablecontent}
+                      key={subsections.tablecontent}
+                    >
+                      {subsections.tablecontent}
+                    </Content>
+                    <Button
+                      markdown
+                      id={subsections.tablecaption}
+                      key={subsections.ttablecaption}
+                    >
+                      {subsections.tablecaption}
+                    </Button>
                   </Col>
                 </Row>
               </div>
