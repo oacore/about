@@ -12,14 +12,15 @@ $services-section-padding-y: 4 * $spacer;
   }
 
   .row {
-    //align-items: center;
-    //justify-content: center;
-    //background-color: #bbe0ff;
   }
 
   &:nth-child(odd) .row {
-    flex-direction: row-reverse;
-    background-color: #fff9c4;
+    //flex-direction: row-reverse;
+    //background-color: #fff9c4;
+
+    .service-row-reverse {
+      flex-direction: row-reverse;
+    }
   }
 
   @include media-breakpoint-down("sm") {
@@ -44,16 +45,11 @@ $services-section-padding-y: 4 * $spacer;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  text-align: center;
   height: 100px;
   margin: auto;
 }
 
 .services-screenshot {
-  //height: 200px;
-  //width: auto;
-  //max-width: 300px;
-  //display: block;
   width: 100%;
   height: auto;
 }

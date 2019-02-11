@@ -24,9 +24,10 @@ const ServicesPage = () => (
             </h2>
 
             {sections.sections.map(subsections => (
-              <div>
-                <Row>
-                  <Col xs="6">
+              <div className="my-5">
+                <Row className="my-3">
+                  {/* <Col xs="4" md="5" lg="4"> */}
+                  <Col xs="4" sm="6">
                     <img
                       className="services-logo"
                       src={subsections.logo}
@@ -34,7 +35,8 @@ const ServicesPage = () => (
                     />
                   </Col>
 
-                  <Col xs="6">
+                  {/* <Col xs="8"  md="7" lg="8"> */}
+                  <Col xs="8" sm="6">
                     <Content
                       className="h3 services-logo-text"
                       markdown
@@ -46,8 +48,9 @@ const ServicesPage = () => (
                   </Col>
                 </Row>
 
-                <Row>
-                  <Col md="5" lg="4">
+                <Row className="service-row-reverse">
+                  {/* <Col md="5" lg="4"> */}
+                  <Col sm="6">
                     <img
                       className="services-screenshot w-100"
                       src={subsections.screenshot}
@@ -55,7 +58,8 @@ const ServicesPage = () => (
                     />
                   </Col>
 
-                  <Col md="7" lg="8">
+                  {/* <Col md="7" lg="8"> */}
+                  <Col sm="6">
                     <Content
                       markdown
                       id={subsections.description}
