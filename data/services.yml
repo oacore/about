@@ -17,6 +17,8 @@ sections:
     action:
       caption: Learn more about CORE API
       url: ~services/api
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png
   -
     id: dataset
     title: Dataset
@@ -30,6 +32,8 @@ sections:
     action:
       caption: Learn more about CORE Dataset
       url: ~services/dataset
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png
   -
     id: fast-sync
     title: Fast Sync Dump
@@ -39,6 +43,8 @@ sections:
     action:
       caption: Learn more about CORE Fast Sync Dump
       url: ~services/fast-sync
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png
 -
   id: content-discovery
   title: Content discovery
@@ -53,6 +59,8 @@ sections:
     action:
       caption: Learn more about CORE Recommender
       url: ~services/recommender
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png
   -
     id: connector
     title: CORE Connector
@@ -63,6 +71,8 @@ sections:
     action:
       caption: Learn more about CORE Connector
       url: ~services/connector
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png
   -
     id: discovery
     title: CORE Discovery
@@ -74,6 +84,8 @@ sections:
     action:
       caption: Learn more about CORE Discovery
       url: ~services/discovery
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png
 -
   id: managing-content
   title: Managing content
@@ -89,3 +101,5 @@ sections:
     action:
       caption: Lern more about CORE Repository dashboard
       url: ~services/repository-dashboard
+    logo: /static/images/logos/jisc.svg
+    screenshot: /static/images/map.png

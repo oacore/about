@@ -1,0 +1,56 @@
+@import "~components/bootstrap/core";
+
+.service-section {
+}
+
+.service-section-title {
+  align-items: center;
+  text-align: center;
+
+  @include media-breakpoint-up("sm") {
+    text-align: left;
+  }
+}
+
+.service-section-logo {
+  img {
+    border-radius: 50%;
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+  }
+
+  @include media-breakpoint-up("sm") {
+    text-align: right;
+
+    .service-section:nth-child(odd) & {
+      width: auto !important;
+      flex-basis: auto !important;
+    }
+  }
+}
+
+.service-section-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.service-section-content {
+  .service-section:nth-child(odd) & {
+    flex-direction: row-reverse;
+  }
+}
+
+.service-section-footer {
+  text-align: center;
+  margin: map-get($spacers, 1) / -2;
+
+  @include media-breakpoint-up("sm") {
+    text-align: left;
+  }
+
+  .btn {
+    margin: map-get($spacers, 1) / 2;
+  }
+}
