@@ -1,11 +1,10 @@
 @import "~components/bootstrap/core";
 
 .service-section {
-  &:nth-child(odd) {
-    .row {
-      flex-direction: row-reverse;
-    }
-  }
+}
+
+.service-section-title {
+  align-items: center;
 }
 
 .service-section-logo {
@@ -19,7 +18,8 @@
   }
 
   .service-section:nth-child(odd) & {
-    text-align: left;
+    width: auto !important;
+    flex-basis: auto !important;
   }
 }
 
@@ -27,4 +27,10 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+.service-section-content {
+  .service-section:nth-child(odd) & {
+    flex-direction: row-reverse;
+  }
 }

@@ -22,7 +22,7 @@ const ServicesPage = () => (
             id={subsections.id}
             className="service-section"
           >
-            <Row tag="h2">
+            <Row className="service-section-title" tag="h2">
               <Col sm="6" md="4" tag="span" className="service-section-logo">
                 <img
                   src={subsections.logo}
@@ -35,7 +35,7 @@ const ServicesPage = () => (
               </Col>
             </Row>
 
-            <Row>
+            <Row className="service-section-content">
               <Col sm="6" md="4">
                 <figure>
                   <img
