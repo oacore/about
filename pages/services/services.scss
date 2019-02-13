@@ -20,13 +20,13 @@
     height: auto;
   }
 
-  .service-section:nth-child(odd) & {
-    width: auto !important;
-    flex-basis: auto !important;
-  }
-
   @include media-breakpoint-up("sm") {
     text-align: right;
+
+    .service-section:nth-child(odd) & {
+      width: auto !important;
+      flex-basis: auto !important;
+    }
   }
 }
 
