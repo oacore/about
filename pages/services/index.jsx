@@ -79,28 +79,6 @@ const ServicesPage = () => (
                         </Button>
                       </Link>
                     </div>
-                    <Content
-                      markdown
-                      className="h5"
-                      id={subsections.tabletitle}
-                      key={subsections.tabletitle}
-                    >
-                      {subsections.tabletitle}
-                    </Content>
-                    <Content
-                      markdown
-                      id={subsections.tablecontent}
-                      key={subsections.tablecontent}
-                    >
-                      {subsections.tablecontent}
-                    </Content>
-                    <Button
-                      markdown
-                      id={subsections.tablecaption}
-                      key={subsections.ttablecaption}
-                    >
-                      {subsections.tablecaption}
-                    </Button>
                   </Col>
                 </Row>
               </div>

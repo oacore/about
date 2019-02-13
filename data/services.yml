@@ -18,15 +18,6 @@ sections:
       caption: Learn more about CORE API
       url: ~services/api
       join: ~services/api
-    tabletitle:  What you get
-    tablecontent: |
-      | Title |  Option |
-      |----------|:-------------:|
-      | Some feature |  &#x2713 |
-      | Some other feature |    &#10003;  |
-      | Yet another feature | &#x2715; |
-      | Guaranted 3 working days response, most requests will be dealt within 24 hours | &#10006; |
-    tablecaption:  Join CORE now for free
     logo: /static/images/logos/jisc.svg
     screenshot: /static/images/map.png
   -
