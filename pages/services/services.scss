@@ -1,55 +1,30 @@
 @import "~components/bootstrap/core";
 
-$services-section-padding-y: 4 * $spacer;
-
-.services-section {
-  padding-top: $services-section-padding-y;
-  padding-bottom: $services-section-padding-y;
-
-  @include media-breakpoint-up("md") {
-    padding-left: 4 * $spacer;
-    padding-right: 4 * $spacer;
-  }
-
-  .row {
-  }
-
-  &:nth-child(odd) .row {
-    //flex-direction: row-reverse;
-    //background-color: #fff9c4;
-
-    .service-row-reverse {
+.service-section {
+  &:nth-child(odd) {
+    .row {
       flex-direction: row-reverse;
     }
   }
+}
 
-  @include media-breakpoint-down("sm") {
-    .row > :not(:last-child) {
-      margin-bottom: $spacer;
-    }
+.service-section-logo {
+  text-align: right;
+
+  img {
+    border-radius: 50%;
+    max-width: 100px;
+    width: 100%;
+    height: auto;
+  }
+
+  .service-section:nth-child(odd) & {
+    text-align: left;
   }
 }
 
-.services-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  max-width: 100px;
-  width: 100%;
-  height: auto;
-  margin-left: auto;
-}
-
-.services-logo-text {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 100px;
-  margin: auto;
-}
-
-.services-screenshot {
+.service-section-screenshot {
+  display: block;
   width: 100%;
   height: auto;
 }
