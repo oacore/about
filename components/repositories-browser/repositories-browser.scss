@@ -1,3 +1,13 @@
+@import "../bootstrap/core";
+
 .number-column {
   width: 3rem !important;
+}
+
+.data-providers-card {
+  transition: background-color 0.25s;
+  &:hover,
+  &:focus-within {
+    background-color: $gray-100;
+  }
 }

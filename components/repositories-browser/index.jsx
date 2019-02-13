@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
-import { Table, Spinner } from 'reactstrap'
+import {
+  Card,
+  CardTitle,
+  CardText,
+  Row,
+  Col,
+  Spinner,
+  // Button,
+} from 'reactstrap'
 import { bind } from 'decko'
 import Fuse from 'fuse.js'
+import Link from '../link'
 import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
 
@@ -16,10 +25,11 @@ class RepositoryBrowser extends Component {
     keys: ['name'],
   }
 
-  static pageSize = 50
+  static pageSize = 12
 
   static fetchRepositories(url) {
     return fetch(url).then(res => {
+      console.log(url)
       if (res.ok) return res.json()
       throw new Error(`Error loading repositories from ${url}`)
     })
@@ -92,27 +102,43 @@ class RepositoryBrowser extends Component {
           onChange={this.filter}
         />
         <p>
-          Showing <b>{items.length}</b> repositories from {itemsCount}{' '}
+          Showing <b>{items.length}</b> repositories from {itemsCount}
           repositories in total:
         </p>
-        <Table striped>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Repository</th>
-            </tr>
-          </thead>
-          <tbody>
-            {page.map((item, index) => (
-              <tr>
-                <th scope="row" className="number-column">
-                  {currentPage * pageSize + index + 1}
-                </th>
-                <td>{item.name}</td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
+
+        <Row className="mb-4">
+          {page.map(item => (
+            <Col sm="12" lg="6" className="mb-2 d-flex align-items-stretch">
+              <Card body className="data-providers-card">
+                <CardTitle>
+                  <Link href={`~search?repository=${item.id}`}>
+                    {item.name || 'Unnamed repository'}
+                  </Link>
+                </CardTitle>
+
+                <CardText className="font-italic">
+                  {item.repositoryLocation &&
+                    item.repositoryLocation.countryName}
+                </CardText>
+
+                {/* TODO: activate for CORE links in future */}
+                {/* <Button */}
+                {/* href={item.urlHomepage} */}
+                {/* target="_blank" */}
+                {/* rel="noopener noreferrer" */}
+                {/* color="primary" */}
+                {/* outline */}
+                {/* > */}
+                {/* Repo Link */}
+                {/* <span role="img" aria-label="Link"> */}
+                {/* &nbsp; &#x1F517; */}
+                {/* </span> */}
+                {/* </Button> */}
+              </Card>
+            </Col>
+          ))}
+        </Row>
+
         <Pagination
           current={currentPage}
           total={pageCount}
