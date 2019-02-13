@@ -53,6 +53,9 @@ const ServicesPage = () => (
                   <Button color="primary" outline href={service.action.url}>
                     {service.action.caption}
                   </Button>
+                  <Button color="primary" href={`~join?service=${service.id}`}>
+                    Join CORE for free
+                  </Button>
                 </footer>
               </Col>
             </Row>
