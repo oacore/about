@@ -5,11 +5,14 @@
 
 .service-section-title {
   align-items: center;
+  text-align: center;
+
+  @include media-breakpoint-up("sm") {
+    text-align: left;
+  }
 }
 
 .service-section-logo {
-  text-align: right;
-
   img {
     border-radius: 50%;
     max-width: 100px;
@@ -20,6 +23,10 @@
   .service-section:nth-child(odd) & {
     width: auto !important;
     flex-basis: auto !important;
+  }
+
+  @include media-breakpoint-up("sm") {
+    text-align: right;
   }
 }
 
