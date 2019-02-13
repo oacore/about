@@ -9,6 +9,10 @@ import './repositories-browser.scss'
 
 class RepositoryBrowser extends Component {
   static searchOptions = {
+    threshold: 0.2,
+    location: 10,
+    distance: 300,
+    maxPatternLength: 100,
     keys: ['name'],
   }
 
