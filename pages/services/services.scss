@@ -41,3 +41,11 @@
     flex-direction: row-reverse;
   }
 }
+
+.service-section-footer {
+  text-align: center;
+
+  @include media-breakpoint-up("sm") {
+    text-align: left;
+  }
+}

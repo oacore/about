@@ -1,7 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 import { Article, Content, Section, Button } from 'components'
-import Link from 'components/link'
 import servicesData from 'data/services.yml'
 
 import './services.scss'
@@ -47,25 +46,19 @@ const ServicesPage = () => (
               </Col>
 
               <Col sm="6" md="8">
-                <div className="mb-5">
-                  <Content
-                    markdown
-                    id={subsections.description}
-                    key={subsections.description}
-                  >
-                    {subsections.description}
-                  </Content>
+                <Content
+                  markdown
+                  id={subsections.description}
+                  key={subsections.description}
+                >
+                  {subsections.description}
+                </Content>
 
-                  <Link href={subsections.action.url} passHref>
-                    <Button
-                      outline
-                      id={subsections.action.caption}
-                      key={subsections.action.caption}
-                    >
-                      {subsections.action.caption}
-                    </Button>
-                  </Link>
-                </div>
+                <footer className="service-section-footer">
+                  <Button color="primary" outline href={subsections.action.url}>
+                    {subsections.action.caption}
+                  </Button>
+                </footer>
               </Col>
             </Row>
           </Section>
