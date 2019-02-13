@@ -27,7 +27,10 @@ const DataProvidersPage = () => (
       <RepositoriesMap endpoint={repositoriesUrl} />
     </Section>
 
-    <RepositoryBrowser endpoint={repositoriesUrl} />
+    <Section id="list">
+      <h2>{repositoriesData.filter}</h2>
+      <RepositoryBrowser endpoint={repositoriesUrl} />
+    </Section>
   </Article>
 )
 
