@@ -9,28 +9,23 @@ const ServicesPage = () => (
   <Article nav>
     <h1>{servicesData.title}</h1>
 
-    {servicesData.sections.map(sections => (
-      <Section id={sections.id} caption={sections.title}>
-        <h2 id={sections.id} className="text-center">
-          {sections.title}
-        </h2>
+    {servicesData.sections.map(servicesGroup => (
+      <Section
+        key={servicesGroup.id}
+        id={servicesGroup.id}
+        caption={servicesGroup.title}
+      >
+        <h2 className="text-center">{servicesGroup.title}</h2>
 
-        {sections.sections.map(subsections => (
-          <Section
-            key={subsections.id}
-            id={subsections.id}
-            className="service-section"
-          >
+        {servicesGroup.sections.map(service => (
+          <Section key={service.id} id={service.id} className="service-section">
             <Row className="service-section-title" tag="h3">
               <Col sm="6" md="4" tag="span" className="service-section-logo">
-                <img
-                  src={subsections.logo}
-                  alt={`${subsections.title}'s logo`}
-                />
+                <img src={service.logo} alt={`${service.title}'s logo`} />
               </Col>
 
               <Col sm="6" md="8" tag="span">
-                {subsections.title}
+                {service.title}
               </Col>
             </Row>
 
@@ -39,8 +34,8 @@ const ServicesPage = () => (
                 <figure>
                   <img
                     className="service-section-screenshot"
-                    src={subsections.screenshot}
-                    alt={`${subsections.title}'s screenshot`}
+                    src={service.screenshot}
+                    alt={`${service.title}'s screenshot`}
                   />
                 </figure>
               </Col>
@@ -48,15 +43,15 @@ const ServicesPage = () => (
               <Col sm="6" md="8">
                 <Content
                   markdown
-                  id={subsections.description}
-                  key={subsections.description}
+                  id={service.description}
+                  key={service.description}
                 >
-                  {subsections.description}
+                  {service.description}
                 </Content>
 
                 <footer className="service-section-footer">
-                  <Button color="primary" outline href={subsections.action.url}>
-                    {subsections.action.caption}
+                  <Button color="primary" outline href={service.action.url}>
+                    {service.action.caption}
                   </Button>
                 </footer>
               </Col>
