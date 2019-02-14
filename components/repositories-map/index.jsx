@@ -55,22 +55,25 @@ class RepositoriesMap extends Component {
     })
 
     repositories
-      .map(repo => {
-        const latitude = Number.parseFloat(repo.latitude) || null
-        const longitude = Number.parseFloat(repo.longitude) || null
-        return {
-          ...repo,
-          latitude,
-          longitude,
-        }
-      })
-      .filter(({ latitude, longitude, name }) => latitude && longitude && name)
+      .filter(
+        ({ name, repositoryLocation }) =>
+          repositoryLocation != null &&
+          repositoryLocation.latitude != null &&
+          repositoryLocation.longitude != null &&
+          name
+      )
       .slice(0, 2600)
-      .forEach(({ latitude, longitude, name }) => {
-        const marker = L.marker(new L.LatLng(latitude, longitude), {
-          title: name,
-          icon: markerIcon,
-        })
+      .forEach(({ name, repositoryLocation }) => {
+        const marker = L.marker(
+          new L.LatLng(
+            repositoryLocation.latitude,
+            repositoryLocation.longitude
+          ),
+          {
+            title: name,
+            icon: markerIcon,
+          }
+        )
         marker.bindPopup(name)
         markers.addLayer(marker)
       })

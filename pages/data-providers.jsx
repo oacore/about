@@ -7,7 +7,7 @@ import RepositoryBrowser from 'components/repositories-browser'
 
 import repositoriesData from 'data/data-providers.yml'
 
-const repositoriesUrl = 'https://core.ac.uk/repositories/locations'
+const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
 
 const DataProvidersPage = () => (
   <Article container>
