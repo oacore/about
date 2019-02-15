@@ -38,7 +38,8 @@ const ServicePage = ({
           icon={feature.picture}
           key={feature.title}
         >
-          <Content markdown>{feature.title}</Content>
+          <h4>{feature.title}</h4>
+          <Content markdown>{feature.description}</Content>
         </KeyFeature>
       ))}
     </KeyFeatureList>
@@ -66,8 +67,8 @@ const ServicePage = ({
       </div>
     </Section>
 
-    <Section caption="You might also be interested in" id="related-services">
-      <h2>You might also be interested in</h2>
+    <Section caption="You might be also interested in" id="related-services">
+      <h2>You might be also interested in</h2>
       <KeyFeatureList className="pt-5">
         {relatedServices.map(service => (
           <KeyFeature
@@ -75,7 +76,8 @@ const ServicePage = ({
             icon={service.picture}
             key={service.title}
           >
-            <Content markdown>{service.title}</Content>
+            <h4>{service.title}</h4>
+            <Content markdown>{service.description}</Content>
           </KeyFeature>
         ))}
       </KeyFeatureList>
