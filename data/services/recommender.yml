@@ -1,0 +1,62 @@
+title: CORE Recommender
+tagline: Short value proposition about this long
+screenshot:
+  source: /static/images/screenshot.png
+  caption: |
+    Description of screenshot, which may a [link](~home).
+
+features:
+-
+  title: Key message 1
+  picture: /static/images/logo.png
+  description: |
+
+-
+  title: Key message 2
+  picture: /static/images/logo.png
+  description: |
+
+-
+  title: Key message 3
+  picture: /static/images/logo.png
+  description: |
+
+
+description: |
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+  when an unknown printer took a galley of type and scrambled it to make a type
+  specimen book. It has survived not only five centuries, but also the leap into
+  electronic typesetting, remaining essentially unchanged. It was popularised in
+  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
+  and more recently with desktop publishing software like Aldus PageMaker
+  including versions of Lorem Ipsum.
+
+  [Looking for documentation?](~home)
+
+testimonial:
+  content: |
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since
+    the 1500s, when an unknown printer took a galley of type and scrambled
+    it to make a type specimen book.
+  author:
+    name: Author
+    role: Role at Company
+    picture: /static/images/logo.png
+
+related-services:
+-
+  title: Service 1
+  picture: /static/images/logo.png
+  description: |
+    Lorem Ipsum is simply dummy text
+-
+  title: Service 2
+  picture: /static/images/logo.png
+  description: |
+    Lorem Ipsum is simply dummy text
+-
+  title: Service 3
+  picture: /static/images/logo.png
+  description: |
+    Lorem Ipsum is simply dummy text
