@@ -4,6 +4,7 @@ import { Article, Content, Section, Button } from 'components'
 import servicesData from 'data/services.yml'
 
 import './services.scss'
+import Testimonial from '../../components/testimonial'
 
 const ServicesPage = () => (
   <Article nav className="services-page">
@@ -13,6 +14,13 @@ const ServicesPage = () => (
       </span>
       powerful services
     </h1>
+
+    <Testimonial
+      className="my-5"
+      content={servicesData.testimonial.content}
+      author={servicesData.testimonial.author}
+    />
+
     {servicesData.sections.map(servicesGroup => (
       <Section
         key={servicesGroup.id}
