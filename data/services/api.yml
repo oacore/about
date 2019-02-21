@@ -1,5 +1,5 @@
 title: CORE API
-tagline: Short value proposition about this long
+tagline: Develop thousands of new applications with the CORE API
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -10,38 +10,45 @@ features:
   title: Key message 1
   picture: /static/images/logo.png
   description: |
+    Perform text mining to enrich metadata of Open Access publications.
 
 -
   title: Key message 2
   picture: /static/images/logo.png
   description: |
+    Carry out impact and citation analysis of the Open Access domain.
 
 -
   title: Key message 3
   picture: /static/images/logo.png
   description: |
+    Semantically annotate Open Access publications and link publications to research data.
 
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  CORE harvests, maintains, enriches and makes available metadata and full-text content (typically a PDF)
+  from many Open Access journals and repositories. This makes it a useful access point for those who would like
+  to develop applications making use of this content. To support these activities, CORE is providing a free API.
+
+  If you use CORE in your work, we kindly request you to cite one of our publications.
+
+title: Where to start?
+description: |
+  Please register here to receive an API key and start testing the live examples.
+  A good starting point to start coding with our API is to follow the iPython notebook available on Github.
+  In collaboration with rOpenSci you can find here an R client for the CORE API.
 
   [Looking for documentation?](~home)
 
 testimonial:
   content: |
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since
-    the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book.
+    We are integrating CORE API into our product, IRIS, because so far it is the open access portal that
+    covers almost all open access content, provides easy to integrate API and has a powerful search
+    querying engine. We want to make open access articles more easily accessible and more useful to
+    researchers and the open public and we see CORE API as a way to speed that up.
   author:
-    name: Author
-    role: Role at Company
+    name: Viktor Botev
+    role: CTO, Iris AI AS
     picture: /static/images/logo.png
 
 related-services:
@@ -49,14 +56,14 @@ related-services:
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Dataset
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE FastSync
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Discovery
