@@ -3,7 +3,7 @@ import { Row, Col } from 'reactstrap'
 import { Article, Content, Section, Button } from 'components/index'
 import freeData from 'data/free-package-page.yml'
 
-import './free-package.scss'
+import './free.scss'
 
 const ServicesPage = () => (
   <Article nav>
