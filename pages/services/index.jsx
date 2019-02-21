@@ -6,9 +6,13 @@ import servicesData from 'data/services.yml'
 import './services.scss'
 
 const ServicesPage = () => (
-  <Article nav>
-    <h1>{servicesData.title}</h1>
-
+  <Article nav className="services-page">
+    <h1 className="services-page-title">
+      <span className="services-page-title-small">
+        Join for <b>free</b> today, to use our
+      </span>
+      powerful services
+    </h1>
     {servicesData.sections.map(servicesGroup => (
       <Section
         key={servicesGroup.id}
