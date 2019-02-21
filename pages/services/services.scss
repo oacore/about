@@ -69,3 +69,19 @@
 .services-page .article-nav {
   justify-content: center;
 }
+
+.sign-up-section {
+  padding: 2em 3em;
+  background: $beige;
+
+  text-align: center;
+  margin: map-get($spacers, 1) / -2;
+
+  @include media-breakpoint-up("sm") {
+    text-align: left;
+  }
+
+  .btn {
+    margin: map-get($spacers, 1) / 2;
+  }
+}
