@@ -1,5 +1,5 @@
 title: CORE FastSync
-tagline: Short value proposition about this long
+tagline: Stay synced with CORE and never miss a new research output
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -49,14 +49,14 @@ related-services:
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE API
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Dataset
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Discovery
