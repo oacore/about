@@ -1,8 +1,8 @@
 title: CORE Discovery
 
-tagline: Short value proposition about this long
+tagline: Discover millions of open access versions when hitting a paywall
 screenshot:
-  source: /static/images/screenshot.png
+  source: /static/images/space.jpg
   caption: |
     Description of screenshot, which may a [link](~home).
 
@@ -11,26 +11,37 @@ features:
   title: Key message 1
   picture: /static/images/logo.png
   description: |
-
+    Improve your bibliographical search by accessing millions of research outputs
 -
   title: Key message 2
   picture: /static/images/logo.png
   description: |
-
+    Overcome publishers' paywalls by discovering the outputs open access version
 -
   title: Key message 3
   picture: /static/images/logo.png
   description: |
-
+    Easy to install and manage browser extension
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  CORE Discovery is a new service assists users in finding freely
+  accessible copies of research papers that behind a paywall.
+  It currently provides access to millions of full text open access
+  papers from within CORE and other data providers.
+
+  The service processes and validates information from a number
+  of large third party scholarly data sources to build and maintain
+  a database of links pointing to freely available copies. It also
+  relies on information harvested by CORE from thousands of repositories
+  and journals, meaning that CORE discovery maximises the coverage and
+  accuracy of the Discovery service.
+
+  CORE Discovery has a preference in displaying first the
+  open access content originating from our approved content providers
+  and seeks alternative routes only when a free version is not available
+  from them.
+
+
 
   [Looking for documentation?](~home)
 
@@ -50,14 +61,14 @@ related-services:
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    A browser extension operating in XXX browsers
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    Access to millions of versions of open access research outputs
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    ?????
