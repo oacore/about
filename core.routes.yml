@@ -55,6 +55,8 @@ services-dataset-dynamic-render:
 
 data-providers: /data-providers
 
+free-package: /free-package
+
 repositories:
   pattern:  /repositories
   controller: CoreWebBundle:Repositories:list
