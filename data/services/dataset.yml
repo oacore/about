@@ -1,5 +1,5 @@
 title: CORE Dataset
-tagline: Short value proposition about this long
+tagline: Gain instant access to millions of research outputs 
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -10,26 +10,29 @@ features:
   title: Key message 1
   picture: /static/images/logo.png
   description: |
+    Get immediate access to CORE's scalable research outputs collection
 
 -
   title: Key message 2
   picture: /static/images/logo.png
   description: |
+    Work offline with millions of preprocessed data collections. 
 
 -
   title: Key message 3
   picture: /static/images/logo.png
   description: |
+    Benefit by working effectively with large amounts of data. 
 
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  The data aggregated from repositories by the CORE system can be accessed in two ways, 
+  through the CORE API or by downloading the data to your computer. The former option 
+  is practical if you want to build a service on top of CORE while the latter is something 
+  we recommend to those who would like to analyse the CORE dataset and/or apply some 
+  computationally intensive batch processes.
+ 
+  If you use CORE in your work, we kindly request you to cite one of our publications.
 
   [Looking for documentation?](~home)
 
@@ -44,19 +47,32 @@ testimonial:
     role: Role at Company
     picture: /static/images/logo.png
 
+disclaimer: 
+  content: | 
+    This dataset has been created from information that was publicly available on the Internet. 
+    Every effort has been made to ensure this dataset contains open access content only. 
+    We have included content only from repositories and journals that are listed in registries 
+    where the condition for inclusion is the provision of content under an open access compatible 
+    license. However, as metadata are often inconsistent, license information is often not machine 
+    readable and, from time to time, repositories leak information that is not open access, 
+    we cannot take any responsibility for the license of the content in the dataset. It is 
+    therefore up to the user of this dataset to ensure that the way in which they use the 
+    dataset does not breach copyright. The dataset is in no way intended for the purposes of 
+    reading the original publications, but for machine processing only.
+
 related-services:
 -
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE API
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE FastSync
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Discovery
