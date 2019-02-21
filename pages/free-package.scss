@@ -1,9 +1,9 @@
 @import "~components/bootstrap/core";
 
-.service-section {
+.free-section {
 }
 
-.service-section-title {
+.free-section-title {
   align-items: center;
   text-align: center;
 
@@ -12,7 +12,7 @@
   }
 }
 
-.service-section-logo {
+.free-section-logo {
   img {
     border-radius: 50%;
     max-width: 100px;
@@ -23,26 +23,26 @@
   @include media-breakpoint-up("sm") {
     text-align: right;
 
-    .service-section:nth-child(odd) & {
+    .free-section:nth-child(odd) & {
       width: auto !important;
       flex-basis: auto !important;
     }
   }
 }
 
-.service-section-screenshot {
+.free-section-screenshot {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.service-section-content {
-  .service-section:nth-child(odd) & {
+.free-section-content {
+  .free-section:nth-child(odd) & {
     flex-direction: row-reverse;
   }
 }
 
-.service-section-footer {
+.free-section-footer {
   text-align: center;
   margin: map-get($spacers, 1) / -2;
 
