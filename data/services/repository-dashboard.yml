@@ -1,5 +1,5 @@
 title: CORE Repository dashboard
-tagline: Short value proposition about this long
+tagline: Manage fast and easy your collection in CORE
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -10,26 +10,33 @@ features:
   title: Key message 1
   picture: /static/images/logo.png
   description: |
+    Take down full text documents from your repository in CORE
 
 -
   title: Key message 2
   picture: /static/images/logo.png
   description: |
-
+    Update metadata records with a single button click
 -
   title: Key message 3
   picture: /static/images/logo.png
   description: |
-
+    Access your collection's download statistics and harvesting process
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  Access the dashboard now. To register, please send us an email.
+
+  In an effort to improve the quality and transparency of the harvesting process
+  of the open access content and create a two way collaboration between the CORE
+  project and the providers of this content, CORE is introducing the
+  Repositories Dashboard.
+
+  The aim of the Dashboard is to provide an online interface for repository
+  providers and offer, through this online interface, valuable information to
+  content providers.
+
+  If you use CORE in your work, we kindly request you to cite one of our p
+  ublications.
 
   [Looking for documentation?](~home)
 
@@ -49,14 +56,14 @@ related-services:
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Recommender
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Discovery
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Search
