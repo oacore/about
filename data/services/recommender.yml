@@ -1,5 +1,5 @@
 title: CORE Recommender
-tagline: Short value proposition about this long
+tagline: Enrich your content by suggesting millions of research papers
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -10,26 +10,32 @@ features:
   title: Key message 1
   picture: /static/images/logo.png
   description: |
-
+    Support users in finding articles relevant to their needs
 -
   title: Key message 2
   picture: /static/images/logo.png
   description: |
-
+    Increase the time users spend on your site by offering millions of content to them
 -
   title: Key message 3
   picture: /static/images/logo.png
   description: |
-
+    Easy installation to all repository, journal and web interfaces
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  The recommender is a plugin that can be installed in repositories and 
+  journal systems to suggest similar articles. Its purpose is to support 
+  users in finding articles relevant to what they read.
+ 
+  Uniqueness of the CORE Recommender:
+  Our methods rely on the availability of full-texts. 
+  We don’t base our recommendations solely on abstracts 
+  or metadata. We ensure that the recommended articles are available 
+  open access. We provide our recommendation service for free, by using 
+  a machine accessible interface (API).
+  
+  If you use CORE in your work, we kindly request you to cite one of our publications.
+
 
   [Looking for documentation?](~home)
 
@@ -49,14 +55,14 @@ related-services:
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Discovery
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Search
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE API
