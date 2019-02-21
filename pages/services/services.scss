@@ -54,3 +54,18 @@
     margin: map-get($spacers, 1) / 2;
   }
 }
+
+.services-page-title {
+  font-style: italic;
+  font-weight: $font-weight-bold;
+  text-align: center;
+}
+
+.services-page-title-small {
+  display: block;
+  font-size: 0.4em;
+}
+
+.services-page .article-nav {
+  justify-content: center;
+}
