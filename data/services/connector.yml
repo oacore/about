@@ -1,5 +1,5 @@
 title: CORE Publisher connector
-tagline: Short value proposition about this long
+tagline: Gain access to the open access content from publishers' systems
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -10,26 +10,40 @@ features:
   title: Key message 1
   picture: /static/images/logo.png
   description: |
-
+    Access Gold and Hybrid Gold Open Access articles from major publishers
 -
   title: Key message 2
   picture: /static/images/logo.png
   description: |
-
+    Improve the way you work by accessing non-standard publisher systems
 -
   title: Key message 3
   picture: /static/images/logo.png
   description: |
-
+    Be among the first to tkae advantage of the ResourceSync capabilities
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  The CORE Publisher Connector is a software providing seamless access to
+  Gold and Hybrid Gold Open Access articles aggregated from non-standard
+  systems of major publishers. CORE now harvests from several publishers
+  using the Publisher connector engine, which offers a unique way of accessing
+  scientific content from scholarly publishers. Data is exposed via the
+  ResourceSync protocol.
+
+  ResourceSync is a protocol that overcomes the limitations of the OAI-PMH
+  protocol; goes further than just metadata exchange, enables sharing of
+  any kind of resource and offers advanced synchronization mechanisms over
+  the web.
+
+  CORE is one of the first to deploy ResourceSync for distributing large
+  amounts of scholarly literature that scales to millions of items and
+  is capable of real-time updates. In our deployment of ResourceSync,
+  we utilise the generic notion of a resource in the protocol and share
+  more than one representation, i.e. each record contains both metadata and
+  full text.
+
+  If you use CORE in your work, we kindly request you to cite one of
+  our publications.
 
   [Looking for documentation?](~home)
 
@@ -49,14 +63,14 @@ related-services:
   title: Service 1
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE FastSync
 -
   title: Service 2
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE API
 -
   title: Service 3
   picture: /static/images/logo.png
   description: |
-    Lorem Ipsum is simply dummy text
+    CORE Dataset
