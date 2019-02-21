@@ -12,6 +12,18 @@ testimonial:
     picture: /static/images/logo.png
 
 
+signup:
+  title: Sign up
+  content: |
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since
+    the 1500s, when an unknown printer took a galley of type and scrambled
+    it to make a type specimen book.
+  action:
+    caption: Or get in touch with any queries
+    url: ~services/api
+
+
 sections:
 -
   id: access-to-raw-data
