@@ -1,7 +1,6 @@
 import React from 'react'
-import { Article, Content } from 'components'
+import { Article, Button, Content } from 'components'
 import HighlightSection from 'components/highlight-section'
-import Link from 'components/link'
 
 import datasetData from 'data/dataset.yml'
 
@@ -14,14 +13,20 @@ const DataSetPage = () => (
     </div>
 
     {datasetData.sections.map(({ title, content, link, image }) => (
-      <HighlightSection image={image} key={title}>
+      <HighlightSection image={image} action={link.url} key={title}>
         <h3>
           <Content markdown>{title}</Content>
         </h3>
         <Content markdown>{content}</Content>
-        <p className="highlight-section-link">
-          <Link href={link.url}>{link.caption}</Link>
-        </p>
+        <Button
+          outline
+          href={link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          color="primary"
+        >
+          {link.caption}
+        </Button>
       </HighlightSection>
     ))}
   </Article>

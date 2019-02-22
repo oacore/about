@@ -1,6 +1,6 @@
 title: Data, data, data
 subtitle: |
-  Our dataset is *huge*, *global*, and [*very useful*](www.google.com).
+  Our dataset is *huge*, *global*, and [*widely used*](~about/endorsements).
 
 sections:
 - title: |
@@ -9,7 +9,7 @@ sections:
     That`s over 15 terabytes (Tb) of raw textual data.
   link:
     caption: Learn more about the and nature of our dataset
-    url: https://www.google.com
+    url: ~services/dataset
   image: /static/images/dataset-1.svg
 - title: |
     The collection includes  **[9999999]**  articles, and **[9999999]** metadata records
@@ -17,7 +17,7 @@ sections:
     It's the biggest collection of open access records, making it an unparalleled research tool
   link:
     caption: How do we compare with other services?
-    url: https://www.google.com
+    url: https://scholarlycommunications.jiscinvolve.org/wp/files/2018/06/HowCOREcomparesMay2018-2.pdf
   image: /static/images/dataset-2.svg
 - title: |
     We`re truly global, aggregating from **[1234]** repositories, in **[1234]** countries
@@ -25,8 +25,8 @@ sections:
     And we`re used by every country in the world
   link:
     caption: Learn about how we `harvest` data or become a provider
-    url: https://www.google.com
-  image: /static/images/map.png
+    url: ~data-providers
+  image: /static/images/data-providers.png
 - title: |
     You can access the data for free, and do exciting and powerful things with it
   content: |
@@ -34,5 +34,5 @@ sections:
     are built to support TDM (text and data mining)
   link:
     caption: Call to action TBD
-    url: https://www.google.com
+    url: ~services/api
   image: /static/images/dataset-3.svg
