@@ -15,9 +15,6 @@ const SignUp = () => (
       <Row>
         <Col sm="8">{signupData.content}</Col>
         <Col sm="4">
-          <Button color="primary" href={`~join?service=${signupData.id}`}>
-            Join CORE for free
-          </Button>
           <Button color="primary" outline href={signupData.action.url}>
             {signupData.action.caption}
           </Button>
