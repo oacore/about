@@ -14,13 +14,11 @@ const DataProvidersPage = () => (
     <h1 className="mb-5">{repositoriesData.title}</h1>
     <Content markdown>{repositoriesData.content}</Content>
 
-    <div className="text-center">
-      <Link href="~about#contact" passHref>
-        <Button color="primary" tag="a">
-          {repositoriesData.become}
-        </Button>
-      </Link>
-    </div>
+    <Link href="~about#contact" passHref>
+      <Button color="primary" tag="a">
+        {repositoriesData.become}
+      </Button>
+    </Link>
 
     <Section id="map">
       <h2>{repositoriesData.map}</h2>
