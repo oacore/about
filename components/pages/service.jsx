@@ -3,6 +3,7 @@ import { Article, Content, Section } from '../content'
 import { Button } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
 import Testimonial from '../testimonial'
+import SignUp from '../sign-up'
 
 import './service.scss'
 
@@ -82,6 +83,7 @@ const ServicePage = ({
         ))}
       </KeyFeatureList>
     </Section>
+    <SignUp />
   </Article>
 )
 

@@ -5,5 +5,5 @@ content: |
   the 1500s, when an unknown printer took a galley of type and scrambled
   it to make a type specimen book.
 action:
-  caption: Or get in touch with any queries
-  url: ~services/api
+  caption: Join CORE for free
+  url: ~join?service=
