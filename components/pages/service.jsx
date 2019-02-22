@@ -1,6 +1,5 @@
 import React from 'react'
 import { Article, Content, Section } from '../content'
-import { Button } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
 import Testimonial from '../testimonial'
 import SignUp from '../sign-up'
@@ -15,7 +14,6 @@ const ServicePage = ({
   relatedServices,
   description,
   testimonial,
-  freePackage,
 }) => (
   <Article nav>
     <h1>{title}</h1>
@@ -50,23 +48,6 @@ const ServicePage = ({
     </div>
 
     <Testimonial {...testimonial} />
-
-    <Section caption={freePackage.title} id="#what-is-included">
-      <h2>{freePackage.title}</h2>
-      <Content markdown>{freePackage.description}</Content>
-      <div className="text-center">
-        <Button color="primary" outline href={freePackage.actions.primary.url}>
-          {freePackage.actions.primary.caption}
-        </Button>
-        <Button
-          color="primary"
-          href={freePackage.actions.secondary.url}
-          className="ml-2"
-        >
-          {freePackage.actions.secondary.caption}
-        </Button>
-      </div>
-    </Section>
 
     <Section caption="You might be also interested in" id="related-services">
       <h2>You might be also interested in</h2>
