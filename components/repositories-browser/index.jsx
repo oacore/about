@@ -87,7 +87,7 @@ class RepositoryBrowser extends Component {
           id="repositories-filter"
           className="mb-3"
           label="Filter by"
-          placeholder="e.g. CORE"
+          placeholder="repository name or country"
           value={filterQuery}
           maxLength={maxQueryLength}
           onChange={this.filter}
