@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button } from 'reactstrap'
-import { bind } from 'decko'
 
 import {
   Hero,
@@ -46,47 +45,33 @@ const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
   </Switcher>
 )
 
-class TestimonialsSection extends Section {
-  state = { itemHash: '' }
-
-  @bind
-  handleItemChange(id) {
-    this.setState({ itemHash: id ? `#${id}` : '' })
-  }
-
-  render() {
-    const {
-      id,
-      title,
-      description,
-      items,
-      limit,
-      more,
-      ...restProps
-    } = this.props
-    const { itemHash } = this.state
-    return (
-      <Section id={id} {...restProps}>
-        <h3>{title}</h3>
-        <TestimonialsSwitcher
-          items={items}
-          limit={limit}
-          onChange={this.handleItemChange}
-          text={<Content markdown>{description}</Content>}
-        />
-        {more && (
-          <div className="mt-3 text-center">
-            <Link href={`~endorsements${itemHash}`} passHref>
-              <Button color="primary" outline>
-                {more}
-              </Button>
-            </Link>
-          </div>
-        )}
-      </Section>
-    )
-  }
-}
+const TestimonialsSection = ({
+  id,
+  title,
+  description,
+  items,
+  limit,
+  more,
+  ...restProps
+}) => (
+  <Section id={id} {...restProps}>
+    <h3>{title}</h3>
+    <TestimonialsSwitcher
+      items={items}
+      limit={limit}
+      text={<Content markdown>{description}</Content>}
+    />
+    {more && (
+      <div className="mt-3 text-center">
+        <Link href="~endorsements" passHref>
+          <Button color="primary" outline>
+            {more}
+          </Button>
+        </Link>
+      </div>
+    )}
+  </Section>
+)
 
 const IndexPage = () => (
   <Article tag="main">
