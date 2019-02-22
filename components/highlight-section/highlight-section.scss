@@ -33,15 +33,3 @@ $hightlight-section-padding-y: 4 * $spacer;
   width: 100%;
   height: auto;
 }
-
-.highlight-section-link {
-  text-align: center;
-
-  a {
-    color: #307daa;
-
-    @include hover-focus {
-      color: #0175aa;
-    }
-  }
-}
