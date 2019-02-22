@@ -21,13 +21,13 @@ const ServicePage = ({
     <h1>{title}</h1>
     <p className="service-page-tagline">{tagline}</p>
 
-    <figure>
+    <figure className="text-center">
       <img
         className="img-fluid"
         src={screenshot.source}
         alt={`${title}'s screenshot`}
       />
-      <figcaption className="text-center">
+      <figcaption>
         <Content markdown>{screenshot.caption}</Content>
       </figcaption>
     </figure>
