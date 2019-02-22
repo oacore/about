@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 import { Article, Content, Section, Button } from 'components'
 import servicesData from 'data/services.yml'
 import Testimonial from '../../components/testimonial'
 
 import './services.scss'
+import SignUp from '../../components/sign-up'
 
 const ServicesPage = () => (
   <Article nav className="services-page">
@@ -73,29 +74,7 @@ const ServicesPage = () => (
       </Section>
     ))}
 
-    <Container>
-      <Section className="sign-up-section">
-        <h2>{servicesData.signup.title}</h2>
-        <Row>
-          <Col sm="8">{servicesData.signup.content}</Col>
-          <Col sm="4">
-            <Button
-              color="primary"
-              href={`~join?service=${servicesData.signup.id}`}
-            >
-              Join CORE for free
-            </Button>
-            <Button
-              color="primary"
-              outline
-              href={servicesData.signup.action.url}
-            >
-              {servicesData.signup.action.caption}
-            </Button>
-          </Col>
-        </Row>
-      </Section>
-    </Container>
+    <SignUp />
   </Article>
 )
 
