@@ -19,7 +19,7 @@ const JoinSection = ({
     <Content className="join-section-lead" markdown>
       {lead}
     </Content>
-    <Link href="~join" passHref>
+    <Link href="~services" passHref>
       <Button className="join-core-button" size="lg">
         {action}
       </Button>
