@@ -6,7 +6,7 @@ navigation:
   - title: Services
     path: ~services
     sections:
-      - title: Access to data
+      - title: Access to raw data
         path: ~services#access-to-data
         children:
           - title: API
