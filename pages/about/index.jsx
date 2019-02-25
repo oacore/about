@@ -138,35 +138,34 @@ const AboutPage = () => (
     </Section>
 
     <Section id="team" caption="The team">
-      <Row>
-        <Col md="9">
-          <h2>{teamData.title}</h2>
-          <Collapsed
-            id="current-members"
-            title="Current members of the CORE team"
-            open
+      <h2>{teamData.title}</h2>
+      <Row className="list-unstyled" tag="ul">
+        {teamData.members.map(member => (
+          <Col
+            className="d-flex flex-column"
+            sm="6"
+            md="4"
+            lg="3"
+            tag="li"
+            key={member.name}
           >
-            <ul className="list-unstyled">
-              {teamData.members.map(({ name, role, picture }) => (
-                <TeamMember
-                  key={`${name}, ${role}`}
-                  name={name}
-                  role={role}
-                  picture={picture ? `/static/images/team/${picture}` : null}
-                  tag="li"
-                />
-              ))}
-            </ul>
-          </Collapsed>
-          <Collapsed id="past-members" title="Past members of the CORE team">
-            <ul className="list-comma-separated">
-              {teamData.pastMembers.map(name => (
-                <li key={name}>{name}</li>
-              ))}
-            </ul>
-          </Collapsed>
-        </Col>
+            <TeamMember
+              className="mb-3"
+              name={member.name}
+              role={member.role}
+              description={member.description}
+              picture={`/static/images/team/${member.picture}`}
+            />
+          </Col>
+        ))}
       </Row>
+
+      <h3 className="mt-5">Past team members</h3>
+      <ul className="list-comma-separated">
+        {teamData.pastMembers.map(name => (
+          <li key={name}>{name}</li>
+        ))}
+      </ul>
     </Section>
 
     <Section id="contact" caption="Contact us">
