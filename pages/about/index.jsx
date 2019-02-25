@@ -1,69 +1,17 @@
-import React, { Component } from 'react'
-import { Collapse, Row, Col, Card, CardBody } from 'reactstrap'
-import { bind } from 'decko'
+import React from 'react'
+import { Row, Col } from 'reactstrap'
 import { Article, Content, Section, Collapsed, Button } from 'components'
 import Link from 'components/link'
 import TeamMember from 'components/team-member'
-import ContactForm from 'components/contact-form'
 import RepositoriesMap from 'components/repositories-map'
 import Blog from 'components/blog'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
+import contactData from 'data/contact.md'
 
 import { repositoriesUrl } from '../data-providers'
 
 import './about.scss'
-
-class ContactFormCard extends Component {
-  state = {
-    isOpen: false,
-  }
-
-  @bind
-  toggle() {
-    this.setState(({ isOpen }) => ({ isOpen: !isOpen }))
-  }
-
-  @bind
-  process(event) {
-    event.preventDefault()
-    setTimeout(this.toggle, 500)
-  }
-
-  render() {
-    const { isOpen } = this.state
-    const { className = '', tag, ...restProps } = this.props
-
-    return (
-      <Card
-        className={`contact-card ${isOpen ? 'active' : ''} ${className}`}
-        tag={tag}
-      >
-        <Button
-          type="button"
-          color="primary"
-          outline
-          className="contact-card-toggle"
-          active={isOpen}
-          disabled={isOpen}
-          onClick={this.toggle}
-        >
-          &#9993; Send us a message
-        </Button>
-        <Collapse isOpen={isOpen}>
-          <CardBody>
-            <ContactForm
-              action="/contact"
-              onSubmit={this.process}
-              onCancel={this.toggle}
-              {...restProps}
-            />
-          </CardBody>
-        </Collapse>
-      </Card>
-    )
-  }
-}
 
 const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
   <Tag className={`embed-responsive embed-responsive-16by9 ${className}`}>
@@ -178,32 +126,6 @@ const AboutPage = () => (
       </Section>
     </Section>
 
-    <Section id="contact" caption="Contact us">
-      <Row>
-        <Col md="9">
-          <h2>{aboutData.contacts.title}</h2>
-          <ContactFormCard />
-          <Row className="py-3">
-            <Col md="3" className="font-weight-bold">
-              {aboutData.contacts.address.caption}
-            </Col>
-
-            <Col md="9">
-              <address>
-                {aboutData.contacts.address.name}
-                <br />
-                {aboutData.contacts.address.org}
-                <br />
-                {aboutData.contacts.address.city}
-                <br />
-                {aboutData.contacts.address.country}
-              </address>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Section>
-
     <Section id="resources" caption="Resources">
       <h2>{aboutData.resources.title}</h2>
       <Content markdown>{aboutData.resources.content}</Content>
@@ -245,6 +167,11 @@ const AboutPage = () => (
           </Collapsed>
         </Col>
       </Row>
+    </Section>
+
+    <Section id="contact" caption="Contact us">
+      <h2>{contactData.attributes.title}</h2>
+      <Content markdown>{contactData.body}</Content>
     </Section>
   </Article>
 )
