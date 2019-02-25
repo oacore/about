@@ -13,7 +13,7 @@ navigation:
             path: ~services/api
           - title: Dataset
             path: ~services/dataset
-          - title: Fast Sync Dump
+          - title: FastSync
             path: ~services/fast-sync
       - title: Content discovery
         path: ~services/discovery

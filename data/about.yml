@@ -48,7 +48,7 @@ blog:
     * [Implementing the CORE Recommender in Strathprints: a “whitehat” improvement to promote user interaction](https://blog.core.ac.uk/2017/10/31/implementing-the-core-recommender-in-strathprints-a-whitehat-improvement-to-promote-user-interaction/)
   visit-button: Visit the blog
 endorsements:
-  title: Who's Is Using CORE?
+  title: Who's is using CORE?
   content: Our data and tools power innovation **around the world**
   action: Find out more
 how-it-works:
@@ -81,6 +81,6 @@ contacts:
     city: Milton Keynes
     country: United Kingdom
 resources:
-  title: Resources and Promotional Materials
+  title: Resources and promotional materials
   content: |
     Lorem ipsum Promotional material (logos, posters, etc)

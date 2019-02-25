@@ -1,4 +1,4 @@
-title: CORE Services
+title: Services
 
 sections:
 -
@@ -36,7 +36,7 @@ sections:
     screenshot: /static/images/map.png
   -
     id: fast-sync
-    title: Fast Sync Dump
+    title: FastSync
     description: |
       The CORE FastSync dump implements the approach of the _ResourceSync
       Framework Resource Dump_ standard.
@@ -51,7 +51,7 @@ sections:
   sections:
   -
     id: recommender
-    title: CORE Recommender
+    title: Recommender
     description: |
       The recommender is a plugin that can be installed in repositories and
       journal systems to suggest similar articles. Its purpose is to support
@@ -63,7 +63,7 @@ sections:
     screenshot: /static/images/map.png
   -
     id: connector
-    title: CORE Connector
+    title: Connector
     description: |
       The CORE Publisher Connector is a software providing seamless access
       to Gold and Hybrid Gold Open Access articles aggregated from
@@ -75,7 +75,7 @@ sections:
     screenshot: /static/images/map.png
   -
     id: discovery
-    title: CORE Discovery
+    title: Discovery
     description: |
       CORE Discovery is a new service assists users in finding freely accessible
       copies of research papers that behind a paywall. CORE Discovery currently
