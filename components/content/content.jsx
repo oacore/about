@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import Markdown from 'react-markdown'
+import Markdown from 'react-markdown/with-html'
 import Link from '../link'
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
