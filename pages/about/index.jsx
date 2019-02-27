@@ -153,15 +153,9 @@ const AboutPage = () => (
             </ul>
           </Collapsed>
           <Collapsed id="past-members" title="Past members of the CORE team">
-            <ul className="list-unstyled">
-              {teamData.pastMembers.map(({ name, role, picture }) => (
-                <TeamMember
-                  key={`${name}, ${role}`}
-                  name={name}
-                  role={role}
-                  picture={picture ? `/static/images/team/${picture}` : null}
-                  tag="li"
-                />
+            <ul className="list-comma-separated">
+              {teamData.pastMembers.map(({ name }) => (
+                <li key={name}>{name}</li>
               ))}
             </ul>
           </Collapsed>
