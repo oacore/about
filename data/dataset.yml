@@ -4,35 +4,42 @@ subtitle: |
 
 sections:
 - title: |
-    CORE is a collection of **[131,142,244]** articles (and&nbsp;counting)
+    CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;articles
+    (and&nbsp;counting)
   content: |
-    That`s over 15 terabytes (Tb) of raw textual data.
+    That's over 15 terabytes (Tb) of raw textual data.
   link:
     caption: Learn more about the and nature of our dataset
     url: ~services/dataset
   image: /static/images/dataset-1.svg
 - title: |
-    The collection includes  **[9999999]**  articles, and **[9999999]** metadata records
+    The collection includes
+    <mark>{{fullTextCount}}</mark>&nbsp;‘full-text’ articles,
+    and <mark>{{totalArticlesCount}}</mark>&nbsp;metadata records
   content: |
-    It's the biggest collection of open access records, making it an unparalleled research tool
+    It's the biggest collection of open access records,
+    making it an unparalleled research tool
   link:
     caption: How do we compare with other services?
     url: https://scholarlycommunications.jiscinvolve.org/wp/files/2018/06/HowCOREcomparesMay2018-2.pdf
   image: /static/images/dataset-2.svg
 - title: |
-    We`re truly global, aggregating from **[1234]** repositories, in **[1234]** countries
+    We`re truly global, aggregating from
+    <mark>{{repositoriesCount}}</mark>&nbsp;repositories,
+    in <mark>{{countriesCount}}</mark>&nbsp;countries
   content: |
     And we`re used by every country in the world
   link:
-    caption: Learn about how we `harvest` data or become a provider
-    url: ~data-providers
+    caption: Learn about how we 'harvest' data or become a provider
+    url: ~about#how-it-works
   image: /static/images/data-providers.png
 - title: |
-    You can access the data for free, and do exciting and powerful things with it
+    You can access the data for free, and do exciting and powerful
+    things with it
   content: |
-    Our APIs and datasets are perfect for building exciting research and services with, and
-    are built to support TDM (text and data mining)
+    Our APIs and datasets are perfect for building exciting research and
+    services with, and are built to support TDM (text and data mining)
   link:
-    caption: Call to action TBD
+    caption: Learn more about our APIs
     url: ~services/api
   image: /static/images/dataset-3.svg

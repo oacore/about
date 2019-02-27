@@ -8,6 +8,7 @@ import Blog from 'components/blog'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 import contactData from 'data/contact.md'
+import { patchStats } from 'components/utils'
 
 import { repositoriesUrl } from '../data-providers'
 
@@ -76,7 +77,10 @@ const AboutPage = () => (
         <Row>
           <Col xs="12" md="6">
             <Content markdown>
-              {aboutData.howItWorks.harvesting.content}
+              {patchStats(
+                aboutData.howItWorks.harvesting.content,
+                aboutData.statistics
+              )}
             </Content>
           </Col>
 

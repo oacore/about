@@ -7,9 +7,9 @@ content: |
   the full-text of the research papers making CORE a unique service in the research
   community.
 
-  CORE currently contains `132,925,510` open access articles, from over
-  [tons of thousands journals](www.google.com), collected from over `3,657`
-  [repositories](www.google.com) around the world.
+  CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
+  from over tons of thousands journals, collected from over
+  {{repositoriesCount}}&nbsp;repositories around the world.
 explore: Explore all repositories
 become: Become a data provider
 map: Our global reach

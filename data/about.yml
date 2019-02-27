@@ -60,7 +60,7 @@ how-it-works:
 
       This allows us to offer search, text mining and analytical capabilities over not only metadata, but also the full text (extracted from PDFs) of the research papers, making CORE a unique service in the research community.
 
-      CORE currently contains 77,354,561 open access articles, from over 6000 journals, collected from over 2,536 repositories around the world.
+      CORE currently contains {{totalArticlesCount}}&nbsp;open access articles, from over tons of thousands journals, collected from over {{repositoriesCount}}&nbsp;repositories around the world.
   services:
     title: The services we offer
     content: |

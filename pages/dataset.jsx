@@ -1,6 +1,7 @@
 import React from 'react'
 import { Article, Button, Content } from 'components'
 import HighlightSection from 'components/highlight-section'
+import { patchStats } from 'components/utils'
 
 import datasetData from 'data/dataset.yml'
 
@@ -15,9 +16,13 @@ const DataSetPage = () => (
     {datasetData.sections.map(({ title, content, link, image }) => (
       <HighlightSection image={image} action={link.url} key={title}>
         <h3>
-          <Content markdown>{title}</Content>
+          <Content markdown>
+            {patchStats(title, datasetData.statistics)}
+          </Content>
         </h3>
-        <Content markdown>{content}</Content>
+        <Content markdown>
+          {patchStats(content, datasetData.statistics)}
+        </Content>
         <Button
           outline
           href={link.url}

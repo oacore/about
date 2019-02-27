@@ -13,6 +13,7 @@ import {
 import { JoinSection } from 'components/sections'
 import SearchForm from 'components/search'
 import Link from 'components/link'
+import { patchStats } from 'components/utils'
 
 import page from 'data/home.yml'
 import { sections as pageSections } from 'data/endorsements.yml'
@@ -77,7 +78,9 @@ const IndexPage = () => (
   <Article tag="main">
     <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
       <Section tag="div">
-        <SearchForm placeholder="Search over 100,000,000 articles" />
+        <SearchForm
+          placeholder={patchStats(page.searchPlaceholder, page.statistics)}
+        />
       </Section>
     </Hero>
 
