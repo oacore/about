@@ -10,12 +10,9 @@ const SearchField = ({ placeholder, size = '' }) => (
   </InputGroup>
 )
 
-const SearchForm = ({ action, method, onSubmit }) => (
+const SearchForm = ({ action, method, onSubmit, ...fieldProps }) => (
   <form action={action} method={method} onSubmit={onSubmit}>
-    <SearchField
-      placeholder="Search over 100,000,000 academic papers"
-      size="lg"
-    />
+    <SearchField size="lg" {...fieldProps} />
   </form>
 )
 
