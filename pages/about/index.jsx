@@ -59,7 +59,7 @@ const AboutPage = () => (
       </Row>
     </Section>
 
-    <Section className="about-endorsements-section" id="endorsements">
+    <Section className="about-endorsements-section">
       <h2>{aboutData.endorsements.title}</h2>
       <Content markdown>{aboutData.endorsements.content}</Content>
       <Link href="~about/endorsements" passHref>
