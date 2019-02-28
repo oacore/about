@@ -34,7 +34,7 @@ members:
     Book lover and sports enthusiast in her spare time.
 -
   name: Petr Knoth
-  role: Founder; Product & Team Leader
+  role: Founder, Product & Team Leader
   picture: petr-knoth.jpg
   description: |
     Started by developing the first CORE prototype in 2010 out of sheer
@@ -48,10 +48,14 @@ members:
   name: Sergei Misak
   role: Software Developer
   picture: sm.svg
+  description: |
+    No Description
 -
   name: Samuel Pearce
   role: Developer and Data & Harvesting Expert
   picture: samuel-pearce.jpg
+  description: |
+    No Description
 -
   name: Nancy Pontika
   role: Open Access Specialist & Communications
@@ -76,10 +80,15 @@ members:
 -
   name: Viktor Yakubiv
   role: Software Developer
+  picture: team.png
+  description: |
+    No Description
 -
   name: Zdenek Zdrahal
   role: Deputy Product & Team Leader
   picture: zdenek-zdrahal.jpg
+  description: |
+    No Description
 
 past-members:
 -

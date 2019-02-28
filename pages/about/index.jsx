@@ -2,7 +2,7 @@ import React from 'react'
 import { Row, Col } from 'reactstrap'
 import { Article, Content, Section, Collapsed, Button } from 'components'
 import Link from 'components/link'
-import TeamMember from 'components/team-member'
+import TeamPlayers from 'components/team-players'
 import RepositoriesMap from 'components/repositories-map'
 import Blog from 'components/blog'
 import aboutData from 'data/about.yml'
@@ -139,17 +139,22 @@ const AboutPage = () => (
             title="Current members of the CORE team"
             open
           >
-            <ul className="list-unstyled">
-              {teamData.members.map(({ name, role, picture }) => (
-                <TeamMember
+            <Row>
+              {teamData.members.map(({ name, role, picture, description }) => (
+                <Col
+                  className="d-flex align-items-stretch"
+                  lg="6"
                   key={`${name}, ${role}`}
-                  name={name}
-                  role={role}
-                  picture={picture ? `/static/images/team/${picture}` : null}
-                  tag="li"
-                />
+                >
+                  <TeamPlayers
+                    name={name}
+                    role={role}
+                    description={description}
+                    picture={picture ? `/static/images/team/${picture}` : null}
+                  />
+                </Col>
               ))}
-            </ul>
+            </Row>
           </Collapsed>
           <Collapsed id="past-members" title="Past members of the CORE team">
             <ul className="list-comma-separated">
