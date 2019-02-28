@@ -59,13 +59,11 @@ const AboutPage = () => (
       </Row>
     </Section>
 
-    <Section className="about-endorsements-section">
+    <Section className="about-endorsements-section text-center">
       <h2>{aboutData.endorsements.title}</h2>
       <Content markdown>{aboutData.endorsements.content}</Content>
       <Link href="~about/endorsements" passHref>
-        <Button color="primary" outline>
-          {aboutData.endorsements.action}
-        </Button>
+        <Button color="primary">{aboutData.endorsements.action}</Button>
       </Link>
     </Section>
 
