@@ -6,6 +6,7 @@
 
 .about-endorsements-section {
   @include section-skew-left($blue-light);
+  text-align: center;
 }
 
 .contact-card {
