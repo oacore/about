@@ -6,6 +6,12 @@
 
 .about-endorsements-section {
   @include section-skew-left($blue-light);
+
+  img {
+    width: auto;
+    height: 100px;
+    margin-bottom: $spacer;
+  }
 }
 
 .contact-card {

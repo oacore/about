@@ -50,6 +50,7 @@ blog:
 endorsements:
   title: Who's using CORE?
   content: Our data and tools power innovation **around the world**
+  picture: /static/images/hall.svg
   action: Find out more
 how-it-works:
   title: How it works
