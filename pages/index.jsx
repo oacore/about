@@ -63,7 +63,7 @@ const TestimonialsSection = ({
     />
     {more && (
       <div className="mt-3 text-center">
-        <Link href="~endorsements" passHref>
+        <Link href="~endorsements#enterprise-companies" passHref>
           <Button color="primary" outline>
             {more}
           </Button>
