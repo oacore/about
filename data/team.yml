@@ -1,40 +1,8 @@
 title: The team
 members:
 -
-  name: Lucas Anastasiou
-  role: Lead Developer
-  picture: lucas-anastasiou.jpg
-  description: |
-    While not on his computer coding, he enjoys playing chess, scratching his
-    guitar and dreams of climbing Alpe d'Huez or Col de la Madone
-    with his bike.
--
-  name: Matteo Cancellieri
-  role: Developer and Continuous Integration secret lover
-  picture: matteo-cancellieri.jpg
-  description: |
-    Works on improving and and maintaining CORE services, especially in the
-    frontend side. Once he was a Super Mario plumber.
--
-  name: Bikash Gyawali
-  role: Research Associate
-  picture: bikash-gyawali.jpg
-  description: |
-    A computational linguist and researcher working on building a better
-    recommender service for the CORE platform. Firmly believes in the motto
-    "Work hard, play hard".
--
-  name: Drahomira Herrmannova
-  role: Data Analyst
-  picture: drahomira-herrmannova.jpg
-  description: |
-    Works with the rest of the team on both front- and back-end development.
-    Enjoys maintaining and improving CORE as it provides her with useful data
-    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
-    Book lover and sports enthusiast in her spare time.
--
   name: Petr Knoth
-  role: Founder; Product & Team Leader
+  role: Founder; Product, Reasearch and Team Leader
   picture: petr-knoth.jpg
   description: |
     Started by developing the first CORE prototype in 2010 out of sheer
@@ -42,16 +10,27 @@ members:
     Responsible for leading the team, development & research effort, funding
     and product strategy. Believes in free unrestricted access to research
     for all. Excited by the opportunities of machine access to research
-    papers to extract and create new knowledge. Green tea lover & retired
-    ice skater.
+    papers to extract and create new knowledge. 
 -
-  name: Sergei Misak
-  role: Software Developer
-  picture: sm.svg
+  name: Matteo Cancellieri
+  role: Senior Developer
+  picture: matteo-cancellieri.jpg
+  description: |
+    Works on improving and and maintaining CORE services. He is a detail knowledge base of all CORE services. Has been developing for CORE for several years and Continuous Integration secret lover. Once he was a Super Mario plumber.
+-
+  name: Lucas Anastasiou
+  role: Senior Developer
+  picture: lucas-anastasiou.jpg
+  description: |
+    Works on improving and and maintaining CORE services. Elasticsearch guru. While not on his computer coding, he enjoys playing chess, scratching his
+    guitar and dreams of climbing Alpe d'Huez or Col de la Madone
+    with his bike.
 -
   name: Samuel Pearce
-  role: Developer and Data & Harvesting Expert
+  role: Developer and Infrastructure Specialist
   picture: samuel-pearce.jpg
+  description: |
+    Main responsible for CORE's impressive high availability infrastructure.  
 -
   name: Nancy Pontika
   role: Open Access Specialist & Communications
@@ -63,6 +42,33 @@ members:
     barriers to scientific literature. In her spare time she likes to swim,
     read and travel.
 -
+  name: Drahomira Herrmannova
+  role: Data Analyst & Researcher
+  picture: drahomira-herrmannova.jpg
+  description: |
+    Works with the rest of the team on both front- and back-end development.
+    Enjoys maintaining and improving CORE as it provides her with useful data
+    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
+    Book lover and sports enthusiast in her spare time.
+-
+  name: Bikash Gyawali
+  role: Data Analyst & Researcher
+  picture: bikash-gyawali.jpg
+  description: |
+    A computational linguist and researcher working on building a better
+    recommender service for the CORE platform. Firmly believes in the motto
+    "Work hard, play hard".
+-
+  name: Sergei Misak
+  role: Frontend Developer
+  description: |
+    Developing CORE front-end services. 
+-
+  name: Viktor Yakubiv
+  role: Senior Front-end developer
+  description: |
+    Leading COREE front-end development. 
+-
   name: David Pride
   role: PhD student
   picture: david-pride.jpg
@@ -73,9 +79,6 @@ members:
     My thesis will expand on the original work on Semantometrics completed
     by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
     natural language processing and text mining.
--
-  name: Viktor Yakubiv
-  role: Software Developer
 -
   name: Zdenek Zdrahal
   role: Deputy Product & Team Leader
