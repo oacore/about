@@ -69,8 +69,6 @@ class TestimonialsCarousel extends Component {
   render() {
     const { items, className = '', ...restProps } = this.props
     const { activeIndex } = this.state
-    const nextItem = items[this.normalizeIndex(activeIndex + 1)]
-    const prevItem = items[this.normalizeIndex(activeIndex - 1)]
 
     const slides = items.map(item => (
       <CarouselItem
@@ -97,17 +95,13 @@ class TestimonialsCarousel extends Component {
             direction="prev"
             directionText="Previous"
             onClick={this.previous}
-          >
-            {prevItem.author.name}
-          </TestimonialsCarouselControl>
+          />
           <TestimonialsCarouselControl
             className="testimonials-carousel-control-next"
             direction="next"
             directionText="Next"
             onClick={this.next}
-          >
-            {nextItem.author.name}
-          </TestimonialsCarouselControl>
+          />
         </div>
       </Carousel>
     )
