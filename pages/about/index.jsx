@@ -104,22 +104,11 @@ const AboutPage = () => (
           <Col md="9">
             <h3>{aboutData.howItWorks.services.title}</h3>
             <Content markdown>{aboutData.howItWorks.services.content}</Content>
-
-            <Row className="align-items-center mt-3">
-              <Col xs="6" className="text-right">
-                <a className="btn btn-link" href="~services">
-                  Explore our services
-                </a>
-              </Col>
-
-              <Col xs="6">
-                <Link href="~join" passHref>
-                  <Button color="primary">
-                    {aboutData.howItWorks.joinButton}
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
+            <Link href="~services" passHref>
+              <Button color="primary" outline>
+                Explore our services
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Section>
