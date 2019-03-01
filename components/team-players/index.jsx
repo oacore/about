@@ -34,7 +34,7 @@ const TeamPlayers = ({
             <CardTitle className="h4">{name}</CardTitle>
             <CardSubtitle className="team-card-role">{role}</CardSubtitle>
           </CardBody>
-          <Button color="primary" outline className="py-3">
+          <Button color="primary" outline className="py-2">
             Details
           </Button>
         </Card>
