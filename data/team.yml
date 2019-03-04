@@ -10,7 +10,7 @@ members:
     Responsible for leading the team, development & research effort, funding
     and product strategy. Believes in free unrestricted access to research
     for all. Excited by the opportunities of machine access to research
-    papers to extract and create new knowledge. 
+    papers to extract and create new knowledge.
 -
   name: Matteo Cancellieri
   role: Senior Developer
@@ -30,7 +30,7 @@ members:
   role: Developer and Infrastructure Specialist
   picture: samuel-pearce.jpg
   description: |
-    Main responsible for CORE's impressive high availability infrastructure.  
+    Main responsible for CORE's impressive high availability infrastructure.
 -
   name: Nancy Pontika
   role: Open Access Specialist & Communications
@@ -62,12 +62,13 @@ members:
   name: Sergei Misak
   role: Frontend Developer
   description: |
-    Developing CORE front-end services. 
+    Developing CORE front-end services.
 -
   name: Viktor Yakubiv
   role: Senior Front-end developer
+  picture: viktor-yakubiv.jpg
   description: |
-    Leading COREE front-end development. 
+    Leading COREE front-end development.
 -
   name: David Pride
   role: PhD student
