@@ -28,24 +28,23 @@ mission:
       * contributes to a cultural change by promoting open access, a fast
         growing movement.
 
-      CORE harvests openly accessible content available according to the definition:
+      CORE harvests openly accessible content available according to the
+      definition:
 
-      > By 'open access' to this literature, we mean its free availability on the public internet, permitting any users to read,
-      download, copy, distribute, print, search, or link to the full texts of these articles, crawl them for indexing,
-      pass them as data to software, or use them for any other lawful purpose, without financial, legal, or technical barriers other
-      than those inseparable from gaining access to the internet itself. The only constraint on reproduction and distribution,
-      and the only role for copyright in this domain, should be to give authors control over the integrity of their work and
-      the right to be properly acknowledged and cited.
+      > By 'open access' to this literature, we mean its free availability on
+      > the public internet, permitting any users to read, download, copy,
+      > distribute, print, search, or link to the full texts of these articles,
+      > crawl them for indexing, pass them as data to software, or use them
+      > for any other lawful purpose, without financial, legal, or technical
+      > barriers other than those inseparable from gaining access to the
+      > internet itself. The only constraint on reproduction and distribution,
+      > and the only role for copyright in this domain, should be to give
+      > authors control over the integrity of their work and the right to be
+      > properly acknowledged and cited.
       >
       > *Part of the [BOAI declaration](http://www.budapestopenaccessinitiative.org)*
 blog:
   title: Recent blog posts
-  content: |
-    * [Increasing the Speed of Harvesting with On Demand Resource Dumps](https://blog.core.ac.uk/2018/03/17/increasing-the-speed-of-harvesting-with-on-demand-resource-dumps/)
-    * [CORE’s Open Access content has reached the Moon! (or how about them stats 2017 edition)](https://blog.core.ac.uk/2017/12/21/cores-open-access-content-has-reached-the-moon-or-how-about-them-stats-2017-edition/)
-    * [CORE enhances library discovery services](https://blog.core.ac.uk/2017/12/18/core-enhances-library-discovery-services/)
-    * [CORE visits Ethiopia and participates in an Open Science training session](https://blog.core.ac.uk/2017/11/14/core-visits-ethiopia-and-participates-in-an-open-science-training-session/)
-    * [Implementing the CORE Recommender in Strathprints: a “whitehat” improvement to promote user interaction](https://blog.core.ac.uk/2017/10/31/implementing-the-core-recommender-in-strathprints-a-whitehat-improvement-to-promote-user-interaction/)
   visit-button: Visit the blog
 endorsements:
   title: Who's using CORE?
@@ -56,21 +55,36 @@ how-it-works:
   harvesting:
     title: Harvesting data
     content: |
-      CORE aggregates ('harvests') research papers from data providers from all over the world including institutional and subject repositories, open access and hybrid journal publishers.
+      CORE aggregates ('harvests') research papers from data providers from all
+      over the world including institutional and subject repositories, open
+      access and hybrid journal publishers.
 
-      This allows us to offer search, text mining and analytical capabilities over not only metadata, but also the full text (extracted from PDFs) of the research papers, making CORE a unique service in the research community.
+      This allows us to offer search, text mining and analytical capabilities
+      over not only metadata, but also the full text (extracted from PDFs)
+      of the research papers, making CORE a unique service in the research
+      community.
 
-      CORE currently contains {{totalArticlesCount}}&nbsp;open access articles, from over tons of thousands journals, collected from over {{repositoriesCount}}&nbsp;repositories around the world.
+      CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
+      from over tons of thousands journals, collected from over
+      {{repositoriesCount}}&nbsp;repositories around the world.
   services:
     title: The services we offer
     content: |
-      Our unique dataset allows us to offer a number of services for a range of audiences.
+      Our unique dataset allows us to offer a number of services for a
+      range of audiences.
 
-      Our  [CORE Repository Dashboard](~services/repository-dashboard)   enables repository managers to improve the harvesting processes and aids in the management and quality of repository content.
+      Our  [CORE Repository Dashboard](~services/repository-dashboard)
+      enables repository managers to improve the harvesting processes
+      and aids in the management and quality of repository content.
 
-      The  [Core Recommender](~services/recommender)  is a plugin that uses our vast collection of data to enable users of search systems to discover content relevant to their needs.
+      The  [Core Recommender](~services/recommender)  is a plugin that uses
+      our vast collection of data to enable users of search systems to discover
+      content relevant to their needs.
 
-      Our [CORE API and Datasets](~services/api)  enable machine access to our collection, enabling exciting kinds of analysis, as well as services to be built that make use of the data, greatly widening the potential impact of open access research.
+      Our [CORE API and Datasets](~services/api)  enable machine access
+      to our collection, enabling exciting kinds of analysis, as well
+      as services to be built that make use of the data, greatly widening
+      the potential impact of open access research.
   join-button: Join CORE today for free
 contacts:
   title: Contact us
