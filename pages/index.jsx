@@ -120,7 +120,6 @@ const IndexPage = () => (
           pageSections.academicInstitutions.organizations.items
         )}
         limit={page.endorsements.enterprise.limit}
-        // more={page.endorsements.academic.more}
       />
       <div className="mt-3 text-center">
         <Link href="~endorsements#academic-institutions" passHref>
