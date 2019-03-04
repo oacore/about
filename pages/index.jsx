@@ -64,7 +64,7 @@ const TestimonialsSection = ({
     />
     {more && (
       <div className="mt-3 text-center">
-        <Link href="~endorsements" passHref>
+        <Link href="~endorsements#enterprise-companies" passHref>
           <Button color="primary" outline>
             {more}
           </Button>
@@ -120,8 +120,15 @@ const IndexPage = () => (
           pageSections.academicInstitutions.organizations.items
         )}
         limit={page.endorsements.enterprise.limit}
-        more={page.endorsements.academic.more}
+        // more={page.endorsements.academic.more}
       />
+      <div className="mt-3 text-center">
+        <Link href="~endorsements#academic-institutions" passHref>
+          <Button color="primary" outline>
+            {page.endorsements.academic.more}
+          </Button>
+        </Link>
+      </div>
     </Section>
 
     <Section id="partner-projects">
