@@ -61,7 +61,9 @@ const AboutPage = () => (
     </Section>
 
     <Section className="about-endorsements-section" id="endorsements">
-      <h2>{aboutData.endorsements.title}</h2>
+      <h2 className="about-endorsements-section-title">
+        {aboutData.endorsements.title}
+      </h2>
       <Content markdown>{aboutData.endorsements.content}</Content>
       <Link href="~about/endorsements" passHref>
         <Button color="primary" outline>
