@@ -60,15 +60,15 @@ members:
     "Work hard, play hard".
 -
   name: Sergei Misak
-  role: Frontend Developer
+  role: Front-End Developer
   description: |
     Developing CORE front-end services.
 -
   name: Viktor Yakubiv
-  role: Senior Front-end developer
+  role: Senior Front-End Developer
   picture: viktor-yakubiv.jpg
   description: |
-    Leading COREE front-end development.
+    Leading CORE front-end development.
 -
   name: David Pride
   role: PhD student
