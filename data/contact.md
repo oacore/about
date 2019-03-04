@@ -17,8 +17,8 @@ title: Contact us
   Dr. Petr Knoth
   Knowledge Media institute, The Open University
   Walton Hall, Milton Keynes, MK7 6AA, BUCKS, United Kingdom
-  [petr (dot) knoth (at) open (dot) ac (dot) uk](ppppp-fix-this-ppp@open.ac.uk)
+  [petr (dot) knoth (at) open (dot) ac (dot) uk](mailto:ppppp-fix-this-ppp@open.ac.uk)
 
-* For all other enquiries email us at [the team (at) core ( dot ) ac ( dot )uk](theteam@c%6Fre.ac.u%6B).
+* For all other enquiries email us at [the team (at) core ( dot ) ac ( dot )uk](mailto:theteam@c%6Fre.ac.u%6B).
   A member of our team will reply as soon as possible (please note that questions that fall into the
   above categories will not be answered on this email)
