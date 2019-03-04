@@ -7,6 +7,22 @@
 .about-endorsements-section {
   @include section-skew-left($blue-light);
   text-align: center;
+
+  &::before {
+    $icon-size: 4rem;
+
+    content: "";
+    position: relative;
+    top: -1 * $spacer;
+    display: block;
+    width: 2 * $icon-size + $spacer;
+    height: $icon-size;
+    margin: auto;
+    background: url("../../static/images/icons/university.svg") no-repeat 0 50%,
+      url("../../static/images/icons/factory.svg") no-repeat 100% 50%;
+    color: red;
+    background-size: auto 100%;
+  }
 }
 
 .contact-card {
