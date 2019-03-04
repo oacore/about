@@ -60,7 +60,8 @@ const AboutPage = () => (
     </Section>
 
     <Section className="about-endorsements-section text-center">
-      <img src={aboutData.endorsements.picture} alt="icon" />
+      <img src={aboutData.endorsements.picture1} alt="icon" />
+      <img src={aboutData.endorsements.picture2} alt="icon" />
       <h2>{aboutData.endorsements.title}</h2>
       <Content markdown>{aboutData.endorsements.content}</Content>
       <Link href="~about/endorsements" passHref>
