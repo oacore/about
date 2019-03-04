@@ -160,7 +160,7 @@ const AboutPage = () => (
           </Collapsed>
           <Collapsed id="past-members" title="Past members of the CORE team">
             <ul className="list-comma-separated">
-              {teamData.pastMembers.map(({ name }) => (
+              {teamData.pastMembers.map(name => (
                 <li key={name}>{name}</li>
               ))}
             </ul>

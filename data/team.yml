@@ -86,33 +86,13 @@ members:
   picture: zdenek-zdrahal.jpg
 
 past-members:
--
-  name: Josef Harag
-  role: PhD student
--
-  name: Giorgio Basile
-  role: PhD student
--
-  name: Aristotelis Charalampous
-  role: PhD student
--
-  name: Dominika Koroncziova
-  role: PhD student
--
-  name: Gabriela Pavel
-  role: PhD student
--
-  name: Ian Tindle
-  role: PhD student
--
-  name: Jakub Novotny
-  role: PhD student
--
-  name: Magdalena Krygielova
-  role: PhD student
--
-  name: Tomas Korec
-  role: PhD student
--
-  name: Vojtech Robotka
-  role: PhD student
+- Josef Harag
+- Giorgio Basile
+- Aristotelis Charalampous
+- Dominika Koroncziova
+- Gabriela Pavel
+- Ian Tindle
+- Jakub Novotny
+- Magdalena Krygielova
+- Tomas Korec
+- Vojtech Robotka
