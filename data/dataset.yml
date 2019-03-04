@@ -26,7 +26,7 @@ sections:
   link:
     caption: Learn about how we `harvest` data or become a provider
     url: ~data-providers
-  image: /static/images/data-europe-map.png
+  image: /static/images/data-providers.png
 - title: |
     You can access the data for free, and do exciting and powerful things with it
   content: |
