@@ -26,7 +26,7 @@ features:
 
 
 description: |
-  CORE harvests, maintains, enriches and makes available metadata and full-text content (typically a PDF)
+  CORE harvests, maintains, enriches and makes available metadata and full-text content typically a PDF
   from many Open Access journals and repositories. This makes it a useful access point for those who would like
   to develop applications making use of this content. To support these activities, CORE is providing a free API.
 
@@ -42,7 +42,7 @@ description: |
 
 testimonial:
   content: |
-    We are integrating CORE API into our product, IRIS, because so far it is the open access portal that
+    We are integrating CORE API into our product, [IRIS quote], because so far it is the open access portal that
     covers almost all open access content, provides easy to integrate API and has a powerful search
     querying engine. We want to make open access articles more easily accessible and more useful to
     researchers and the open public and we see CORE API as a way to speed that up.
