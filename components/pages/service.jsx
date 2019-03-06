@@ -1,93 +1,119 @@
 import React from 'react'
-import { Markdown } from 'components'
-import { Article, Section } from '../content'
-import { Button } from '../elements'
+import Collapsed from '../collapsed'
+import { Article, Section, Content } from '../content'
+import Markdown from '../markdown'
+import { Button, Link } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
 import Testimonial from '../testimonial'
 
 import './service.scss'
 
 const ServicePage = ({
+  id,
   title,
   tagline,
-  screenshot,
   features,
-  relatedServices,
   description,
-  testimonial,
-  freePackage,
+  whatIsIncluded,
+  screenshot, // @optional
+  additional, // @optional
+  testimonial, // @optional
+  documentation, // @optional
+  relatedServices,
 }) => (
-  <Article nav>
+  <Article className="service-page" nav>
     <h1>{title}</h1>
     <p className="service-page-tagline">{tagline}</p>
 
-    <figure>
-      <img
-        className="img-fluid"
-        src={screenshot.source}
-        alt={`${title}'s screenshot`}
-      />
-      <figcaption className="text-center">
-        <Markdown>{screenshot.caption}</Markdown>
-      </figcaption>
-    </figure>
+    {screenshot && (
+      <figure className="service-page-screenshot">
+        <img src={screenshot.source} alt={`${title}'s screenshot`} />
+        <figcaption>
+          <Markdown>{screenshot.caption}</Markdown>
+        </figcaption>
+      </figure>
+    )}
 
-    <KeyFeatureList className="pt-5">
+    <KeyFeatureList className="service-page-features">
       {features.map(feature => (
         <KeyFeature
           title={feature.title}
           icon={feature.picture}
           key={feature.title}
         >
-          <h4>{feature.title}</h4>
           <Markdown>{feature.description}</Markdown>
         </KeyFeature>
       ))}
     </KeyFeatureList>
 
-    <div className="service-page-content">
+    <Content className="service-page-content">
       <Markdown>{description}</Markdown>
-    </div>
 
-    <Testimonial {...testimonial} />
+      {documentation && (
+        <p>
+          <Link href={/documentation/ + id}>
+            {typeof documentation == 'string'
+              ? documentation
+              : 'Looking for documentation?'}
+          </Link>
+        </p>
+      )}
 
-    <Section caption={freePackage.title} id="#what-is-included">
-      <h2>{freePackage.title}</h2>
-      <Markdown>{freePackage.description}</Markdown>
-      <div className="text-center">
-        <Button color="primary" outline href={freePackage.actions.primary.url}>
-          {freePackage.actions.primary.caption}
-        </Button>
-        <Button
-          color="primary"
-          href={freePackage.actions.secondary.url}
-          className="ml-2"
-        >
-          {freePackage.actions.secondary.caption}
-        </Button>
-      </div>
-    </Section>
+      {additional && (
+        <Collapsed id={`${id}-details`} title={additional.title}>
+          <Markdown>{additional.content}</Markdown>
+        </Collapsed>
+      )}
+    </Content>
 
-    <Section caption="You might be also interested in" id="related-services">
-      <h2>You might be also interested in</h2>
-      <KeyFeatureList className="pt-5">
-        {relatedServices.map(service => (
-          <KeyFeature
-            title={service.title}
-            icon={service.picture}
-            key={service.title}
-          >
-            <h4>{service.title}</h4>
-            <Markdown>{service.description}</Markdown>
-          </KeyFeature>
-        ))}
-      </KeyFeatureList>
-    </Section>
+    {testimonial && (
+      <Testimonial className="service-page-testimonial" {...testimonial} />
+    )}
+
+    {whatIsIncluded && (
+      <Section caption={whatIsIncluded.title} id="#what-is-included">
+        <h2>{whatIsIncluded.title}</h2>
+        <Content>
+          <Markdown>{whatIsIncluded.content}</Markdown>
+          <div>
+            <Button
+              color="primary"
+              outline
+              href={whatIsIncluded.actions.primary.url}
+            >
+              {whatIsIncluded.actions.primary.caption}
+            </Button>
+            <Button
+              color="primary"
+              href={whatIsIncluded.actions.secondary.url}
+              className="ml-2"
+            >
+              {whatIsIncluded.actions.secondary.caption}
+            </Button>
+          </div>
+        </Content>
+      </Section>
+    )}
+
+    {relatedServices && relatedServices.length && (
+      <Section caption="You might also be interested in" id="related-services">
+        <h2>You might also be interested in</h2>
+        <KeyFeatureList>
+          {relatedServices.map(service => (
+            <KeyFeature
+              title={service.title}
+              icon={service.picture}
+              key={service.title}
+            >
+              <Markdown>{service.title}</Markdown>
+            </KeyFeature>
+          ))}
+        </KeyFeatureList>
+      </Section>
+    )}
   </Article>
 )
 
-ServicePage.create = (pageContext, packageContext) => () => (
-  <ServicePage freePackage={packageContext} {...pageContext} />
-)
+ServicePage.create = pageContext => () => <ServicePage {...pageContext} />
 
 export default ServicePage

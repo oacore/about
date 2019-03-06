@@ -48,7 +48,6 @@ const ServicesPage = () => (
                 >
                   {service.description}
                 </Content>
-
                 <footer className="service-section-footer">
                   <Button color="primary" outline href={service.action.url}>
                     {service.action.caption}
