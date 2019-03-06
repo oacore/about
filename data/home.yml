@@ -38,11 +38,11 @@ endorsements:
   enterprise:
     title: Enterprise customers using CORE technologies
     description: |
-      We are proud to provide great scalable services for enterprise business
+      We are proud to provide data services for enterprise customers:
 
-      - 3 bullet points if needed
-      - 3 bullet points if needed
-      - 3 bullet points if needed
+      - Fast and reliable machine access to the world's largest text collection of scientific papers, more than 100x bigger than Wikipedia! 
+      - Text and data mine full texts of papers from across thousands of data providers. 
+      - Interact with CORE data in real-time, download the whole dataset or keep always in sync.
     limit: 5
     more: Read more about how CORE is used in industry
   academic:
