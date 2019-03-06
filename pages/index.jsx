@@ -79,7 +79,10 @@ const IndexPage = () => (
     <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
       <Section tag="div">
         <SearchForm
+          action="/search"
+          name="q"
           placeholder={patchStats(page.searchPlaceholder, page.statistics)}
+          autofocus
         />
       </Section>
     </Hero>
