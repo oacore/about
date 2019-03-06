@@ -48,12 +48,11 @@ endorsements:
   academic:
     title: Academic institutions using CORE
     description: |
-      Our content and data is used by hundreds of academic institutions
-      every day
+      Our services are used and trusted by hundreds of academic institutions
 
-      - 3 bullet points if needed
-      - 3 bullet points if needed
-      - 3 bullet points if needed
+      - Helping more than 10 million monthly active users to find freely available copies of scientific papers
+      - Increasing the visibility of content in repositories and journals
+      - Tools and scholarly analytics for institutions    
     limit: 5
     more: Read more...
 partner-projects:
