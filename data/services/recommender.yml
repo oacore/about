@@ -1,5 +1,8 @@
+id: recommender
+
 title: CORE Recommender
 tagline: Enrich your content by suggesting millions of research papers
+
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -8,61 +11,76 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Support users in finding articles relevant to their needs
 -
   title: Key message 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    Increase the time users spend on your site by offering millions of content to them
+    Increase the time users spend on your site by offering millions
+    of content to them
 -
   title: Key message 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Easy installation to all repository, journal and web interfaces
 
 description: |
-  The recommender is a plugin that can be installed in repositories and 
-  journal systems to suggest similar articles. Its purpose is to support 
+  The recommender is a plugin that can be installed in repositories and
+  journal systems to suggest similar articles. Its purpose is to support
   users in finding articles relevant to what they read.
- 
+
   Uniqueness of the CORE Recommender:
-  Our methods rely on the availability of full-texts. 
-  We don’t base our recommendations solely on abstracts 
-  or metadata. We ensure that the recommended articles are available 
-  open access. We provide our recommendation service for free, by using 
-  a machine accessible interface (API).
-  
-  If you use CORE in your work, we kindly request you to cite one of our publications.
+  * Our methods rely on the availability of full-texts.
+  * We don’t base our recommendations solely on abstracts
+    or metadata.
+  * We ensure that the recommended articles are available
+    open access. We provide our recommendation service for free, by using
+    a machine accessible interface (API).
 
+  If you use CORE in your work, we kindly request you to cite one
+  of [our publications](~research-outputs).
 
-  [Looking for documentation?](~home)
+documentation: true
 
-testimonial:
+additional:
+  title: Where to start
   content: |
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since
-    the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book.
-  author:
-    name: Author
-    role: Role at Company
-    picture: /static/images/logo.png
+    Find out more about the CORE Recommender in our
+    [blog post](https://blog.core.ac.uk/2016/10/04/core-recommender/).
+
+    For those with access to the CORE Repositories Dashboard:
+    the Recommender installation guidelines and an installation key can
+    be found in the Dashboard. Log into the Dashboard and then choose the
+    tab _Get the recommender_.
+
+    Otherwise, visit our registration page to gain access to the Recommender.
+
+what-is-included:
+  title:  What’s included
+  content: |
+    Our free membership provides you with:
+    * Recommendations of full text items in Open Access repositories,
+      journals or webpages.
+    * Recommendations based on metadata records or full text items
+      in pdf or both.
+    * A user feedback system that improves the recommendation accuracy.
+  actions:
+    primary:
+      url: ~join
+      caption: Sign up
+    secondary:
+      url: ~packages/free
+      caption: Read more about our free package
 
 related-services:
 -
-  title: Service 1
-  picture: /static/images/logo.png
-  description: |
-    CORE Discovery
+  title: CORE Discovery
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 2
-  picture: /static/images/logo.png
-  description: |
-    CORE Search
+  title: CORE Search
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 3
-  picture: /static/images/logo.png
-  description: |
-    CORE API
+  title: CORE API
+  picture: /static/images/icons/powerful-chip.svg

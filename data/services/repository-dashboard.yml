@@ -1,3 +1,4 @@
+id: repository-dashboard
 title: CORE Repository dashboard
 tagline: Manage fast and easy your collection in CORE
 screenshot:
@@ -8,23 +9,24 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Take down full text documents from your repository in CORE
 
 -
   title: Key message 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Update metadata records with a single button click
 -
   title: Key message 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Access your collection's download statistics and harvesting process
 
 description: |
-  Access the dashboard now. To register, please send us an email.
+  [Access the dashboard now](~home).
+  To register, please [send us an email](~contact).
 
   In an effort to improve the quality and transparency of the harvesting process
   of the open access content and create a two way collaboration between the CORE
@@ -38,32 +40,36 @@ description: |
   If you use CORE in your work, we kindly request you to cite one of our p
   ublications.
 
-  [Looking for documentation?](~home)
-
-testimonial:
+additional:
+  title: Universities using the Repository Dashboard
   content: |
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since
-    the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book.
-  author:
-    name: Author
-    role: Role at Company
-    picture: /static/images/logo.png
+    _To be done_
+
+what-is-included:
+  title:  What’s included
+  content: |
+    Our free membership provides you with:
+    * Access to the content harvested from the repository.
+    * Enabling its management, by requesting metadata updates or
+      managing take-down requests.
+    * Access to all detected technical issues and suggestions for improving
+      the efficiency of harvesting and the quality of metadata.
+    * Statistics regarding the repository content.
+  actions:
+    primary:
+      url: ~join
+      caption: Sign up
+    secondary:
+      url: ~packages/free
+      caption: Read more about our free package
 
 related-services:
 -
-  title: Service 1
-  picture: /static/images/logo.png
-  description: |
-    CORE Recommender
+  title: CORE Recommender
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 2
-  picture: /static/images/logo.png
-  description: |
-    CORE Discovery
+  title: CORE Discovery
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 3
-  picture: /static/images/logo.png
-  description: |
-    CORE Search
+  title: CORE Search
+  picture: /static/images/icons/powerful-chip.svg

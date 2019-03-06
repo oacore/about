@@ -1,3 +1,4 @@
+id: discovery
 title: CORE Discovery
 
 tagline: Discover millions of open access versions when hitting a paywall
@@ -9,17 +10,19 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    Improve your bibliographical search by accessing millions of research outputs
+    Improve your bibliographical search by accessing millions
+    of research outputs
 -
   title: Key message 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    Overcome publishers' paywalls by discovering the outputs open access version
+    Overcome publishers' paywalls by discovering the outputs
+    open access version
 -
   title: Key message 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Easy to install and manage browser extension
 
@@ -41,34 +44,40 @@ description: |
   and seeks alternative routes only when a free version is not available
   from them.
 
+documentation: false
 
-
-  [Looking for documentation?](~home)
-
-testimonial:
+additional:
+  title: Where to start
   content: |
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since
-    the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book.
-  author:
-    name: Author
-    role: Role at Company
-    picture: /static/images/logo.png
+    It’s free to install CORE Discovery in your browser.
+
+what-is-included:
+  title: What is included Discovery
+  content: |
+    Our free membership provides you with:
+    * A browser extension operating in XXX browsers
+    * Access to millions of versions of open access research outputs
+  actions:
+    primary:
+      url: ~join
+      caption: Sign up
+    secondary:
+      url: ~packages/free
+      caption: Read more about our free package
 
 related-services:
 -
   title: Service 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     A browser extension operating in XXX browsers
 -
   title: Service 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Access to millions of versions of open access research outputs
 -
   title: Service 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    ?????
+    CORE

@@ -1,5 +1,8 @@
+id: api
+
 title: CORE API
 tagline: Develop thousands of new applications with the CORE API
+
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -8,62 +11,84 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Perform text mining to enrich metadata of Open Access publications.
 
 -
   title: Key message 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Carry out impact and citation analysis of the Open Access domain.
 
 -
   title: Key message 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    Semantically annotate Open Access publications and link publications to research data.
+    Semantically annotate Open Access publications and link publications
+    to research data.
 
 
 description: |
-  CORE harvests, maintains, enriches and makes available metadata and full-text content (typically a PDF)
-  from many Open Access journals and repositories. This makes it a useful access point for those who would like
-  to develop applications making use of this content. To support these activities, CORE is providing a free API.
+  CORE harvests, maintains, enriches and makes available metadata
+  and full-text content (typically a PDF) from many Open Access journals
+  and repositories. This makes it a useful access point for those
+  who would like to develop applications making use of this content.
+  To support these activities, CORE is providing a free API.
 
-  If you use CORE in your work, we kindly request you to cite one of our publications.
+  If you use CORE in your work, we kindly request you to cite one
+  of our publications.
 
-title: Where to start?
-description: |
-  Please register here to receive an API key and start testing the live examples.
-  A good starting point to start coding with our API is to follow the iPython notebook available on Github.
-  In collaboration with rOpenSci you can find here an R client for the CORE API.
+additional:
+  title: Where to start?
+  content: |
+    Please register here to receive an API key and start testing the
+    live examples. A good starting point to start coding with our API is to
+    follow the iPython notebook available on Github. In collaboration with
+    rOpenSci you can find here an R client for the CORE API.
 
-  [Looking for documentation?](~home)
+documentation: true
 
 testimonial:
   content: |
-    We are integrating CORE API into our product, IRIS, because so far it is the open access portal that
-    covers almost all open access content, provides easy to integrate API and has a powerful search
-    querying engine. We want to make open access articles more easily accessible and more useful to
-    researchers and the open public and we see CORE API as a way to speed that up.
+    We are integrating CORE API into our product, IRIS, because so far it
+    is the open access portal that covers almost all open access content,
+    provides easy to integrate API and has a powerful search querying engine.
+    We want to make open access articles more easily accessible and more useful
+    to researchers and the open public and we see CORE API as a way
+    to speed that up.
   author:
     name: Viktor Botev
     role: CTO, Iris AI AS
-    picture: /static/images/logo.png
+    picture: /static/images/icons/powerful-chip.svg
+
+what-is-included:
+  title: What’s included
+  content: |
+    Our free membership provides you with:
+
+    * Machine access on CORE’s whole corpus of Open Access research
+      outputs.
+    * Detailed documentation [hyperlink to documentation](/documentation/)
+      on how to use the CORE API.
+    * One batch request or five single requests per 10 seconds. Need a
+      faster rate? Contact us [link](~about/#contact).
+  actions:
+    primary:
+      url: ~join
+      caption: Sign up
+    secondary:
+      url: ~packages/free
+      caption: Read more about our free package
+
 
 related-services:
 -
-  title: Service 1
-  picture: /static/images/logo.png
-  description: |
-    CORE Dataset
+  title: CORE Dataset
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 2
-  picture: /static/images/logo.png
-  description: |
-    CORE FastSync
+  title: CORE FastSync
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 3
-  picture: /static/images/logo.png
-  description: |
-    CORE Discovery
+  title: CORE Discovery
+  picture: /static/images/icons/powerful-chip.svg

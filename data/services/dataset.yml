@@ -1,5 +1,6 @@
+id: dataset
 title: CORE Dataset
-tagline: Gain instant access to millions of research outputs 
+tagline: Gain instant access to millions of research outputs
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -8,71 +9,161 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Get immediate access to CORE's scalable research outputs collection
 
 -
   title: Key message 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    Work offline with millions of preprocessed data collections. 
+    Work offline with millions of preprocessed data collections.
 
 -
   title: Key message 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
-    Benefit by working effectively with large amounts of data. 
+    Benefit by working effectively with large amounts of data.
 
 
 description: |
-  The data aggregated from repositories by the CORE system can be accessed in two ways, 
-  through the CORE API or by downloading the data to your computer. The former option 
-  is practical if you want to build a service on top of CORE while the latter is something 
-  we recommend to those who would like to analyse the CORE dataset and/or apply some 
-  computationally intensive batch processes.
- 
-  If you use CORE in your work, we kindly request you to cite one of our publications.
+  The data aggregated from repositories by the CORE system can be accessed in
+  two ways, through the CORE API or by downloading the data to your computer.
+  The former option is practical if you want to build a service on top of CORE
+  while the latter is something we recommend to those who would like to analyse
+  the CORE dataset and/or apply some computationally intensive batch processes.
 
-  [Looking for documentation?](~home)
+  If you use CORE in your work, we kindly request you to
+  [cite one of our publications](~research-outputs).
 
-testimonial:
+documentation: true
+
+additional:
+  title: Available Datasets by year
   content: |
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since
-    the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book.
-  author:
-    name: Author
-    role: Role at Company
-    picture: /static/images/logo.png
+    ### 2018 onwards
 
-disclaimer: 
-  content: | 
-    This dataset has been created from information that was publicly available on the Internet. 
-    Every effort has been made to ensure this dataset contains open access content only. 
-    We have included content only from repositories and journals that are listed in registries 
-    where the condition for inclusion is the provision of content under an open access compatible 
-    license. However, as metadata are often inconsistent, license information is often not machine 
-    readable and, from time to time, repositories leak information that is not open access, 
-    we cannot take any responsibility for the license of the content in the dataset. It is 
-    therefore up to the user of this dataset to ensure that the way in which they use the 
-    dataset does not breach copyright. The dataset is in no way intended for the purposes of 
-    reading the original publications, but for machine processing only.
+    **Dataset 2018-03-01**
+
+    [Register for Access](~join#dataset)
+
+    Metadata only dataset (beta) (127 GB) - 123M metadata items,
+    85.6M items with abstract
+
+    With full text dataset (beta) (330 GB) - 123M metadata items,
+    85.6M items with abstract, 9.8M items with fulltext
+
+    **Note:**
+    For extracting all repositories, you will need up to 509 GB (metadata)
+    or 1.3 TB (full text) of free space on disk. It is possible to extract
+    each repository individually. Please read the section
+    ["Structure of the dumps"](#dump-structure) below for more information.
+
+    ### 2017
+
+    **Dataset 2017-11-01**
+
+    [Register for Access](~join#dataset)
+
+    Metadata only dataset (beta) (22.65 GB) - 64 million items
+
+    With full text dataset (beta) (157.38 GB) - 8 million items
+
+    Beta notice: while in beta, we cannot guarantee completeness
+    or integrity of the dataset and we appreciate any feedback on the
+    format or data of the dataset. We are aware of an issue where
+    the statistics in the repository object are incorrect or incomplete.
+    We do not use these fields internally and plan on removing them
+    in future releases.
+
+    ### Older versions (pre-2017)
+
+    These datasets conform to the dataset structure described
+    below as 'Pre-2017'
+
+    *   **Dataset 2016-10**
+
+        [Register for Access](~join#dataset).
+
+        Metadata dataset (9.0 GB) - (23.9 million items)
+
+        Content dataset (102 GB) - (4 million items)
+
+    *   **Dataset 2015-09**
+
+        [Register for Access](~join#dataset)
+
+        Metadata dataset (4.5 GB)
+
+        Content dataset (30.5 GB)
+
+    *   **Dataset 2014-06-13** _(used for dataset track of
+        [DL2014](https://wosp.core.ac.uk/dl2014/#dataset))_
+
+        [Register for Access](~join#dataset)
+
+        Metadata dataset (3.7 GB)
+
+        Content dataset (24 GB)
+
+    *   **Dataset 2013-12-15**
+
+        [Register for Access](~join#dataset)
+
+        Metadata dataset (1.7 GB)
+
+    *   **Dataset 2013-04-12**
+
+        [Register for Access](~join#dataset)
+
+        Metadata dataset (181 MB)
+
+        Metadata dataset as RDF (835 MB)
+
+what-is-included:
+  title:  What’s included
+  content: |
+    Our free membership provides you with:
+
+    * Scalable machine access on CORE’s whole corpus of Open Access research
+      outputs.
+    * Access a dataset with a mapping of both Microsoft Academic Graph and
+      CORE based on a DOI.
+    * Detailed documentation [documentation](~documentation/dataset)
+      on how to download the CORE dataset and how data is organised.
+  actions:
+    primary:
+      url: ~join
+      caption: Sign up
+    secondary:
+      url: ~packages/free
+      caption: Read more about our free package
+
+custom:
+- id: disclaimer
+  title: Disclaimer
+  content: |
+    This dataset has been created from information that was publicly available
+    on the Internet. Every effort has been made to ensure this dataset contains
+    open access content only. We have included content only from repositories
+    and journals that are listed in registries where the condition for
+    inclusion is the provision of content under an open access compatible
+    license. However, as metadata are often inconsistent, license information
+    is often not machine readable and, from time to time, repositories leak
+    information that is not open access, we cannot take any responsibility
+    for the license of the content in the dataset. It is therefore up to
+    the user of this dataset to ensure that the way in which they use the
+    dataset does not breach copyright. The dataset is in no way intended
+    for the purposes of reading the original publications, but for machine
+    processing only.
 
 related-services:
 -
-  title: Service 1
-  picture: /static/images/logo.png
-  description: |
-    CORE API
+  title: CORE API
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 2
-  picture: /static/images/logo.png
-  description: |
-    CORE FastSync
+  title: CORE FastSync
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 3
-  picture: /static/images/logo.png
-  description: |
-    CORE Discovery
+  title: CORE Discovery
+  picture: /static/images/icons/powerful-chip.svg

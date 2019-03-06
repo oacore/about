@@ -1,5 +1,7 @@
+id: connector
 title: CORE Publisher connector
 tagline: Gain access to the open access content from publishers' systems
+
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -8,17 +10,17 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Access Gold and Hybrid Gold Open Access articles from major publishers
 -
   title: Key message 2
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Improve the way you work by accessing non-standard publisher systems
 -
   title: Key message 3
-  picture: /static/images/logo.png
+  picture: /static/images/icons/powerful-chip.svg
   description: |
     Be among the first to tkae advantage of the ResourceSync capabilities
 
@@ -45,32 +47,33 @@ description: |
   If you use CORE in your work, we kindly request you to cite one of
   our publications.
 
-  [Looking for documentation?](~home)
+documentation: true
 
-testimonial:
+additional:
+  title: Where to start
   content: |
-    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-    Lorem Ipsum has been the industry's standard dummy text ever since
-    the 1500s, when an unknown printer took a galley of type and scrambled
-    it to make a type specimen book.
-  author:
-    name: Author
-    role: Role at Company
-    picture: /static/images/logo.png
+    You can access the content offered by the publisher connector in
+    CORE's [ResourceSync endpoint](http://publisher-connector.core.ac.uk/resourcesync/)
+
+what-is-included:
+  title:  What’s included
+  content: |
+    _Empty in the document._
+  actions:
+    primary:
+      url: ~join
+      caption: Sign up
+    secondary:
+      url: ~packages/free
+      caption: Read more about our free package
 
 related-services:
 -
-  title: Service 1
-  picture: /static/images/logo.png
-  description: |
-    CORE FastSync
+  title: CORE FastSync
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 2
-  picture: /static/images/logo.png
-  description: |
-    CORE API
+  title: CORE API
+  picture: /static/images/icons/powerful-chip.svg
 -
-  title: Service 3
-  picture: /static/images/logo.png
-  description: |
-    CORE Dataset
+  title: CORE Dataset
+  picture: /static/images/icons/powerful-chip.svg

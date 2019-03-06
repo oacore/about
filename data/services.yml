@@ -17,8 +17,8 @@ sections:
     action:
       caption: Learn more about CORE API
       url: ~services/api
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
+    logo: /static/images/icons/powerful-chip.svg
+    screenshot: /static/images/screenshot.png
   -
     id: dataset
     title: Dataset
@@ -32,8 +32,8 @@ sections:
     action:
       caption: Learn more about CORE Dataset
       url: ~services/dataset
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
+    logo: /static/images/icons/powerful-chip.svg
+    screenshot: /static/images/screenshot.png
   -
     id: fast-sync
     title: FastSync
@@ -43,8 +43,8 @@ sections:
     action:
       caption: Learn more about CORE Fast Sync Dump
       url: ~services/fast-sync
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
+    logo: /static/images/icons/powerful-chip.svg
+    screenshot: /static/images/screenshot.png
 -
   id: content-discovery
   title: Content discovery
@@ -59,8 +59,8 @@ sections:
     action:
       caption: Learn more about CORE Recommender
       url: ~services/recommender
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
+    logo: /static/images/icons/powerful-chip.svg
+    screenshot: /static/images/screenshot.png
   -
     id: discovery
     title: Discovery
@@ -72,8 +72,8 @@ sections:
     action:
       caption: Learn more about CORE Discovery
       url: ~services/discovery
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
+    logo: /static/images/icons/powerful-chip.svg
+    screenshot: /static/images/screenshot.png
 -
   id: managing-content
   title: Managing content
@@ -89,5 +89,5 @@ sections:
     action:
       caption: Lern more about CORE Repository dashboard
       url: ~services/repository-dashboard
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
+    logo: /static/images/icons/powerful-chip.svg
+    screenshot: /static/images/screenshot.png
