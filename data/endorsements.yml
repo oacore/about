@@ -396,13 +396,20 @@ sections:
     id: enterprise-companies
     title: Enterprise companies
     description: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-      officia deserunt mollit anim id est laborum.
+      The [CORE services](~services) have different applications and are aimed
+      to a wide variety of stakeholders. Many companies, projects and
+      institutions use the CORE services in order to:
+
+      - Enrich their existing collections with millions of open access
+        research outputs by accessing CORE’s raw data via the
+        [CORE API](~services/api) and [Dataset](~services/dataset).
+      - Manage content and advance aggregation processes with the
+        [CORE Repository Dashboard](~services/repository-dashboard)
+      - Offer millions of open access research outputs to their users by
+        installing the [CORE Recommender](~services/recommender) and
+        [CORE Discovery](~services/discovery) in their systems.
+      - Programmatically access open access content from publishers systems
+        with the use of the [CORE Connector](~services/connector)
     action:
       title: Interested in CORE to support your business?
       name: Sign in for free
