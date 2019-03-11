@@ -1,4 +1,4 @@
 import { DocumentationPage } from 'components/pages'
-import page from 'data/documentation/connector.yml'
+import page from 'data/documentation/connector.md'
 
 export default DocumentationPage.create(page)
