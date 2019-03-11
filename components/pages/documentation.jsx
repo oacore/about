@@ -1,20 +1,15 @@
 import React from 'react'
 import { Article, Content } from '../content'
 
-const DocumentationPage = ({ title, content }) => (
-  <Article nav>
-    <h1>Documentation</h1>
-    <h2>
-      <Content markdown>{title}</Content>
-    </h2>
-    <p>
-      <Content markdown>{content}</Content>
-    </p>
+const DocumentationPage = ({ title, content, children }) => (
+  <Article>
+    <h1>{title}</h1>
+    <Content markdown>{children || content}</Content>
   </Article>
 )
 
-DocumentationPage.create = (pageContext, packageContext) => () => (
-  <DocumentationPage freePackage={packageContext} {...pageContext} />
+DocumentationPage.create = (attributes, body) => () => (
+  <DocumentationPage {...attributes}>{body}</DocumentationPage>
 )
 
 export default DocumentationPage
