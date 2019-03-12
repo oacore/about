@@ -1,13 +1,32 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { Article, Content, Section, Button } from 'components'
+import { Page, Content, Section, Button } from 'components'
+import Testimonial from 'components/testimonial'
 import servicesData from 'data/services.yml'
 
 import './services.scss'
 
 const ServicesPage = () => (
-  <Article nav>
-    <h1>{servicesData.title}</h1>
+  <Page
+    title={servicesData.title}
+    description={servicesData.description}
+    keywords={servicesData.keywords}
+    nav
+  >
+    <h1 className="services-page-title">
+      <span className="services-page-title-small">
+        {servicesData.headline[0]}
+      </span>
+      {servicesData.headline[1]}
+    </h1>
+
+    {servicesData.testimonial && (
+      <Testimonial
+        className="my-5"
+        content={servicesData.testimonial.content}
+        author={servicesData.testimonial.author}
+      />
+    )}
 
     {servicesData.sections.map(servicesGroup => (
       <Section
@@ -59,7 +78,7 @@ const ServicesPage = () => (
         ))}
       </Section>
     ))}
-  </Article>
+  </Page>
 )
 
 export default ServicesPage
