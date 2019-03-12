@@ -1,7 +1,14 @@
 import React from 'react'
 import NextApp, { Container as NextContainer } from 'next/app'
 import Layout from 'components/layout'
+import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
+
+const searchConfig = {
+  action: '/search',
+  name: 'q',
+  placeholder: patchStats(config.searchPlaceholder, config.statistics),
+}
 
 class App extends NextApp {
   static async getInitialProps({ Component, ctx }) {
@@ -23,6 +30,7 @@ class App extends NextApp {
           description={config.description}
           navigation={config.navigation}
           footer={config.footer}
+          searchConfig={searchConfig}
         >
           <Component {...pageProps} />
         </Layout>

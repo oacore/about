@@ -12,6 +12,7 @@ const Layout = ({
   description,
   navigation,
   footer,
+  searchConfig,
   children,
   container = false,
 }) => (
@@ -25,7 +26,11 @@ const Layout = ({
       <meta name="description" content={description} />
     </Head>
 
-    <Header className="page-header" siteMap={navigation} />
+    <Header
+      className="page-header"
+      siteMap={navigation}
+      searchFormProps={searchConfig}
+    />
     {container ? <Container>{children}</Container> : children}
     <Footer className="page-footer" {...footer} />
   </Fragment>
