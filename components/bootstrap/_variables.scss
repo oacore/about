@@ -127,10 +127,9 @@ $mark-bg:                     $green;
 
 // Page
 
-//$page-bg: linear-gradient(#fff0, #ffff 75vh, #ffff calc(100% - 25vh), #fff0 100%), url("../images/paper-background.jpg");
-$page-bg: url("../images/paper-background.jpg") fixed repeat-x;
-          //url("../images/paper-background.jpg") repeat-y top center,
-          //linear-gradient(#fff0, #f56e83 75vh, #92ff73 calc(100% - 25vh), #fff0 100%) no-repeat  left,
+$page-bg:
+  linear-gradient(#fff0, #ffff 85vh, #ffff calc(100% - 100vh), #fff0 90%),
+  url("../images/paper-background.jpg") fixed repeat-x;
 
 
 
