@@ -6,15 +6,10 @@ body {
   height: 100%;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-}
-
 .page {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  height: 100%;
 
   > * {
     flex: 1 1 auto;
@@ -30,5 +25,6 @@ body {
 $page-bg: transparent !default;
 
 .page {
-  background: $page-bg top center repeat-y / 100% auto;
+  //background: $page-bg top center repeat-y / 100% auto;
+  background: $page-bg;
 }
