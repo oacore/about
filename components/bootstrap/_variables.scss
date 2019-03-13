@@ -129,7 +129,7 @@ $mark-bg:                     $green;
 
 $page-bg:
   linear-gradient(#fff0, #ffff 85vh, #ffff calc(100% - 100vh), #fff0 90%),
-  url("../images/paper-background.jpg") repeat-y;
+  url("../images/paper-background.jpg") repeat-y 100%;
 
 
 
