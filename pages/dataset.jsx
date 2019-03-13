@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article, Button, Content } from 'components'
+import { Article, Button, Markdown } from 'components'
 import HighlightSection from 'components/highlight-section'
 import { patchStats } from 'components/utils'
 
@@ -10,19 +10,15 @@ const DataSetPage = () => (
   <Article>
     <div className="text-center">
       <h1>{datasetData.title}</h1>
-      <Content markdown>{datasetData.subtitle}</Content>
+      <Markdown>{datasetData.subtitle}</Markdown>
     </div>
 
     {datasetData.sections.map(({ title, content, link, image }) => (
       <HighlightSection image={image} action={link.url} key={title}>
         <h3>
-          <Content markdown>
-            {patchStats(title, datasetData.statistics)}
-          </Content>
+          <Markdown>{patchStats(title, datasetData.statistics)}</Markdown>
         </h3>
-        <Content markdown>
-          {patchStats(content, datasetData.statistics)}
-        </Content>
+        <Markdown>{patchStats(content, datasetData.statistics)}</Markdown>
         <Button
           outline
           href={link.url}

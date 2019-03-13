@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article, Section, Accordion, Content } from 'components'
+import { Article, Section, Accordion, Markdown } from 'components'
 
 import faqData from 'data/faq.yml'
 
@@ -24,7 +24,7 @@ const FAQsSection = ({
       <Accordion onToggle={itemToURL}>
         {items.map(({ slug, question, answer }) => (
           <Accordion.Item id={slug} title={question} key={slug}>
-            <Content markdown>{answer}</Content>
+            <Markdown>{answer}</Markdown>
           </Accordion.Item>
         ))}
       </Accordion>

@@ -6,7 +6,7 @@ import {
   KeyFeature,
   KeyFeatureList,
   Switcher,
-  Content,
+  Markdown,
   Section,
   Article,
 } from 'components'
@@ -36,7 +36,7 @@ const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
           key={id}
         >
           <blockquote className="blockquote">
-            <Content markdown>{content}</Content>
+            <Markdown>{content}</Markdown>
             <footer className="blockquote-footer">
               {author.name}, {author.role}
             </footer>
@@ -60,7 +60,7 @@ const TestimonialsSection = ({
     <TestimonialsSwitcher
       items={items}
       limit={limit}
-      text={<Content markdown>{description}</Content>}
+      text={<Markdown>{description}</Markdown>}
     />
     {more && (
       <div className="mt-3 text-center">
@@ -92,7 +92,7 @@ const IndexPage = () => (
       <KeyFeatureList>
         {page.features.children.map(({ title, description, picture }) => (
           <KeyFeature title={title} icon={picture} key={title}>
-            <Content markdown>{description}</Content>
+            <Markdown>{description}</Markdown>
           </KeyFeature>
         ))}
       </KeyFeatureList>
