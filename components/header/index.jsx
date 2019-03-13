@@ -20,6 +20,7 @@ import Link from '../link'
 import Logo from '../logo'
 
 import './header.scss'
+import SearchNavbar from '../search-navbar'
 
 class Header extends React.Component {
   state = {
@@ -93,7 +94,7 @@ class Header extends React.Component {
   }
 
   render() {
-    const { logo, siteMap, className = '' } = this.props
+    const { logo, siteMap, className = '', searchFormProps } = this.props
     const { isOpen } = this.state
 
     return (
@@ -110,6 +111,7 @@ class Header extends React.Component {
               <Logo tag={NavbarBrand} />
             </Link>
           )}
+          <SearchNavbar {...searchFormProps} />
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {Header.renderMenu({ children: siteMap })}
@@ -132,6 +134,8 @@ LinkType.children = PropTypes.arrayOf(LinkTypeShape)
 Header.propTypes = {
   logo: PropTypes.bool,
   siteMap: PropTypes.arrayOf(LinkTypeShape).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  searchFormProps: PropTypes.object.isRequired,
 }
 
 Header.defaultProps = {

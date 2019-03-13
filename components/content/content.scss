@@ -1,5 +1,6 @@
 @import "../bootstrap/core";
 
+$content-max-width: 80ch;
 $section-sm-spacer: 2 * $spacer !default;
 $section-md-spacer: 4 * $spacer !default;
 $section-lg-spacer: 8 * $spacer !default;
@@ -7,6 +8,7 @@ $section-spacer: $section-md-spacer !default;
 $article-spacer: $section-lg-spacer !default;
 
 .content {
+  max-width: $content-max-width;
   margin-bottom: $spacer;
 
   &:last-child {

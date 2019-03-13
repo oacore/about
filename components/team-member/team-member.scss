@@ -1,43 +1,33 @@
 @import "../bootstrap/core";
 
 .team-member {
-  align-items: center;
-  margin-bottom: $spacer;
-
-  @include media-breakpoint-down("xs") {
-    text-align: center;
-  }
-}
-
-.team-member-name {
-  margin-top: map-get($spacers, 1);
-}
-
-.team-member-role {
-  margin: 0;
+  flex: 1;
 }
 
 .team-member-picture {
   position: relative;
-  display: block;
-  margin: 0;
   width: 100%;
-  padding-bottom: 100%;
-  filter: grayscalse(100%);
-  border: 1px solid $gray-400;
-  border-radius: 50%;
+  height: 0;
+  padding: 0 0 100%;
   background: url("./man.svg") no-repeat center / 70% auto;
 
   img {
     position: absolute;
+    z-index: 0;
     top: 0;
     left: 0;
     display: block;
-    box-sizing: border-box;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
     object-fit: cover;
     object-position: top center;
   }
+}
+
+.team-member-name {
+}
+
+.team-member-role {
+  font-style: italic;
+  margin-bottom: $card-spacer-y;
 }

@@ -1,47 +1,29 @@
-import React, { Fragment } from 'react'
-import Markdown from 'react-markdown/with-html'
-import Link from '../link'
+import React from 'react'
+import Markdown from '../markdown'
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
+const Content = ({
+  children,
+  className = '',
+  tag: Tag = 'div',
+  // @deprecated All usages must be replaced to Markdown component
+  markdown = false,
+  ...restProps
+}) => {
+  const classNames = `content ${className}`
 
-// We pass additional link because Markdown component does not render
-// pure text but renders own TextRenderer componet instead
-const MarkdownLink = ({ href, title, children }) => {
-  const [pathname, hash] = href.split('#')
-  return (
-    <Link href={{ pathname, hash: hash && `#${hash}` }}>
-      <a title={title}>{children}</a>
-    </Link>
-  )
-}
-
-const markdownConfig = {
-  escapeHtml: false,
-
-  renderers: {
-    blockquote: ({ children }) => (
-      <blockquote className="blockquote">{children}</blockquote>
-    ),
-
-    table: ({ children }) => (
-      <table className="table table-hover">{children}</table>
-    ),
-
-    link: MarkdownLink,
-    linkReference: MarkdownLink,
-  },
-}
-
-const Content = ({ children, className = '', markdown = false }) => {
   if (markdown) {
     return (
-      <Markdown className={`content ${className}`} {...markdownConfig}>
+      <Markdown tag={Tag} className={classNames} {...restProps}>
         {children}
       </Markdown>
     )
   }
 
-  return <Fragment>{children}</Fragment>
+  return (
+    <Tag className={classNames} {...restProps}>
+      {children}
+    </Tag>
+  )
 }
 
 export default Content
