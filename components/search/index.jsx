@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from 'reactstrap'
+import { Content } from '../content'
 import { SimpleSearchForm, AdvancedSearchForm } from './forms'
 
 class SearchForm extends React.Component {
@@ -44,10 +45,10 @@ class SearchForm extends React.Component {
     }
 
     return (
-      <div className="col-md-6 mx-auto">
+      <Content className="mx-auto">
         <SimpleSearchForm {...formProps} />
         {this.renderButton()}
-      </div>
+      </Content>
     )
   }
 }
