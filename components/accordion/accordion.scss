@@ -38,6 +38,7 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
 
 .accordion-title {
   // override h*-element styles
+  margin-top: 0 !important;
   margin-bottom: 0 !important;
   font-size: $accordion-title-size !important;
   font-weight: $accordion-title-weight !important;
