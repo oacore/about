@@ -62,18 +62,6 @@ sections:
     logo: /static/images/logos/jisc.svg
     screenshot: /static/images/map.png
   -
-    id: connector
-    title: Connector
-    description: |
-      The CORE Publisher Connector is a software providing seamless access
-      to Gold and Hybrid Gold Open Access articles aggregated from
-      non-standard systems of major publishers.
-    action:
-      caption: Learn more about CORE Connector
-      url: ~services/connector
-    logo: /static/images/logos/jisc.svg
-    screenshot: /static/images/map.png
-  -
     id: discovery
     title: Discovery
     description: |

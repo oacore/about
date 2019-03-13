@@ -20,8 +20,6 @@ navigation:
         children:
           - title: Recommender
             path: ~services/recommender
-          - title: Connector
-            path: ~services/connector
           - title: Discovery
             path: ~services/discovery
       - title: Managing content
