@@ -51,6 +51,7 @@ $section-md-spacer: 3 * $spacer;
 $section-lg-spacer: 6 * $spacer;
 $section-spacer: $section-md-spacer;
 $article-spacer: $section-lg-spacer;
+$content-max-width: 80ch;
 
 $spacers: (
   section-sm: $section-sm-spacer,
