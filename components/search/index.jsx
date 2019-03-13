@@ -18,6 +18,10 @@ class SearchForm extends React.Component {
   }
 
   renderButton() {
+    return null
+
+    // TODO: turn on Advanced search form
+    // eslint-disable-next-line no-unreachable
     const { toggleAdvancedSearch } = this.state
     const caption = toggleAdvancedSearch ? 'Simple search' : 'Advanced search'
     return (
