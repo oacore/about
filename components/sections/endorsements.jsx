@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col, Button } from 'reactstrap'
-import { Section, Content } from '../content'
+import Markdown from '../markdown'
+import { Section } from '../content'
 import LogosCarousel from '../logos-carousel'
 import TestimonialsCarousel from '../testimonials-carousel'
 import Link from '../link'
@@ -40,7 +41,7 @@ const EndorsementsSection = ({
 
       <Row>
         <Col sm="9">
-          <Content markdown>{description}</Content>
+          <Markdown>{description}</Markdown>
           <p className="font-weight-bold">{action.title}</p>
           <Link href={action.url} passHref>
             <Button color="primary">{action.name}</Button>

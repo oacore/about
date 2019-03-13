@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'reactstrap'
-import { Section, Content } from '../content'
+import { Section } from '../content'
+import Markdown from '../markdown'
 import Link from '../link'
 
 const renderSections = (sections, Component) =>
@@ -27,7 +28,7 @@ const DescriptionSection = ({
   )
 
   const bodyComponent = children || (
-    <Content markdown>{content || description}</Content>
+    <Markdown>{content || description}</Markdown>
   )
 
   return (

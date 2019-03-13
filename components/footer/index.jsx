@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col } from 'reactstrap'
-import { Content } from '../content'
+import Markdown from '../markdown'
 import Link from '../link'
 
 import './footer.scss'
@@ -23,7 +23,7 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
         <Col xs="12" md="4">
           <aside className="footer-cite-info">
             <h6>Writing about CORE?</h6>
-            <Content markdown>{researchOutputs}</Content>
+            <Markdown>{researchOutputs}</Markdown>
           </aside>
         </Col>
       </Row>
@@ -45,7 +45,7 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
         >
           <img src="/static/images/logos/jisc.svg" alt="Jisc" />
         </a>
-        <Content markdown>{partners}</Content>
+        <Markdown>{partners}</Markdown>
       </div>
     </Container>
   </footer>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from 'reactstrap'
-import { Content, Section } from '../content'
+import Markdown from '../markdown'
+import { Section } from '../content'
 import Link from '../link'
 
 import './join.scss'
@@ -16,16 +17,14 @@ const JoinSection = ({
 }) => (
   <Section id={id} className={`join-section ${className}`} {...restProps}>
     <h2>{title}</h2>
-    <Content className="join-section-lead" markdown>
-      {lead}
-    </Content>
+    <Markdown className="join-section-lead">{lead}</Markdown>
     <Link href="~services" passHref>
       <Button className="join-core-button" size="lg">
         {action}
       </Button>
     </Link>
     <footer className="join-section-note">
-      <Content markdown>{note}</Content>
+      <Markdown>{note}</Markdown>
     </footer>
   </Section>
 )

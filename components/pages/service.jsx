@@ -1,5 +1,6 @@
 import React from 'react'
-import { Article, Content, Section } from '../content'
+import { Markdown } from 'components'
+import { Article, Section } from '../content'
 import { Button } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
 import Testimonial from '../testimonial'
@@ -27,7 +28,7 @@ const ServicePage = ({
         alt={`${title}'s screenshot`}
       />
       <figcaption className="text-center">
-        <Content markdown>{screenshot.caption}</Content>
+        <Markdown>{screenshot.caption}</Markdown>
       </figcaption>
     </figure>
 
@@ -39,20 +40,20 @@ const ServicePage = ({
           key={feature.title}
         >
           <h4>{feature.title}</h4>
-          <Content markdown>{feature.description}</Content>
+          <Markdown>{feature.description}</Markdown>
         </KeyFeature>
       ))}
     </KeyFeatureList>
 
     <div className="service-page-content">
-      <Content markdown>{description}</Content>
+      <Markdown>{description}</Markdown>
     </div>
 
     <Testimonial {...testimonial} />
 
     <Section caption={freePackage.title} id="#what-is-included">
       <h2>{freePackage.title}</h2>
-      <Content markdown>{freePackage.description}</Content>
+      <Markdown>{freePackage.description}</Markdown>
       <div className="text-center">
         <Button color="primary" outline href={freePackage.actions.primary.url}>
           {freePackage.actions.primary.caption}
@@ -77,7 +78,7 @@ const ServicePage = ({
             key={service.title}
           >
             <h4>{service.title}</h4>
-            <Content markdown>{service.description}</Content>
+            <Markdown>{service.description}</Markdown>
           </KeyFeature>
         ))}
       </KeyFeatureList>

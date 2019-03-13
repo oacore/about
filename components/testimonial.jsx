@@ -1,10 +1,10 @@
 import React from 'react'
 import Blockquote from './blockquote'
-import { Content } from './content'
+import Markdown from './markdown'
 
 const Testimonial = ({ id, content, author, ...restProps }) => (
   <Blockquote id={id} avatar {...restProps}>
-    <Content markdown>{content}</Content>
+    <Markdown>{content}</Markdown>
     <Blockquote.Author {...author} />
   </Blockquote>
 )
