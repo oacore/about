@@ -17,6 +17,11 @@
 }
 
 .service-section {
+  .article > &:not(:last-child) {
+    border-bottom: $spacer;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' style='stroke:%23005f96; stroke-width:3; opacity: .1;'%3E%3Cline x1='10' y1='15' x2='290' y2='5' /%3E%3C/svg%3E")
+      no-repeat 50% 100% / auto $spacer;
+  }
 }
 
 .service-section-title {

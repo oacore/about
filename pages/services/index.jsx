@@ -33,6 +33,7 @@ const ServicesPage = () => (
         key={servicesGroup.id}
         id={servicesGroup.id}
         caption={servicesGroup.title}
+        className="service-section"
       >
         <h2 className="text-center">{servicesGroup.title}</h2>
 
