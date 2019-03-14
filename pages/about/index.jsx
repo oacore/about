@@ -1,6 +1,13 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { Article, Content, Section, Collapsed, Button } from 'components'
+import {
+  Article,
+  Content,
+  Section,
+  Collapsed,
+  Button,
+  Markdown,
+} from 'components'
 import Link from 'components/link'
 import TeamMember from 'components/team-member'
 import RepositoriesMap from 'components/repositories-map'
@@ -40,11 +47,10 @@ const AboutPage = () => (
             title={aboutData.video.title}
             tag="p"
           />
-
-          <Content markdown>{aboutData.mission.short}</Content>
+          <Markdown>{aboutData.mission.short}</Markdown>
 
           <Collapsed id="full-mission" title={aboutData.mission.full.caption}>
-            <Content markdown>{aboutData.mission.full.content}</Content>
+            <Markdown>{aboutData.mission.full.content}</Markdown>
           </Collapsed>
         </Col>
 
@@ -64,7 +70,7 @@ const AboutPage = () => (
       <h2 className="about-endorsements-section-title">
         {aboutData.endorsements.title}
       </h2>
-      <Content markdown>{aboutData.endorsements.content}</Content>
+      <Markdown>{aboutData.endorsements.content}</Markdown>
       <Link href="~about/endorsements" passHref>
         <Button color="primary" outline>
           {aboutData.endorsements.action}
@@ -78,12 +84,12 @@ const AboutPage = () => (
         <h3>{aboutData.howItWorks.harvesting.title}</h3>
         <Row>
           <Col xs="12" md="6">
-            <Content markdown>
+            <Markdown>
               {patchStats(
                 aboutData.howItWorks.harvesting.content,
                 aboutData.statistics
               )}
-            </Content>
+            </Markdown>
           </Col>
 
           <Col xs="12" md="6">
@@ -110,23 +116,11 @@ const AboutPage = () => (
         <Row>
           <Col md="9">
             <h3>{aboutData.howItWorks.services.title}</h3>
-            <Content markdown>{aboutData.howItWorks.services.content}</Content>
+            <Markdown>{aboutData.howItWorks.services.content}</Markdown>
 
-            <Row className="align-items-center mt-3">
-              <Col xs="6" className="text-right">
-                <a className="btn btn-link" href="~services">
-                  Explore our services
-                </a>
-              </Col>
-
-              <Col xs="6">
-                <Link href="~join" passHref>
-                  <Button color="primary">
-                    {aboutData.howItWorks.joinButton}
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
+            <Link href="~services" passHref>
+              <Button color="primary">Explore our services</Button>
+            </Link>
           </Col>
         </Row>
       </Section>
@@ -134,7 +128,9 @@ const AboutPage = () => (
 
     <Section id="resources" caption="Resources">
       <h2>{aboutData.resources.title}</h2>
-      <Content markdown>{aboutData.resources.content}</Content>
+      <Content>
+        <Markdown>{aboutData.resources.content}</Markdown>
+      </Content>
     </Section>
 
     <Section id="team" caption="The team">
@@ -162,15 +158,19 @@ const AboutPage = () => (
 
       <h3 className="mt-5">Past team members</h3>
       <ul className="list-comma-separated">
-        {teamData.pastMembers.map(name => (
-          <li key={name}>{name}</li>
-        ))}
+        <Content>
+          {teamData.pastMembers.map(name => (
+            <li key={name}>{name}</li>
+          ))}
+        </Content>
       </ul>
     </Section>
 
     <Section id="contact" caption="Contact us">
       <h2>{contactData.attributes.title}</h2>
-      <Content markdown>{contactData.body}</Content>
+      <Content>
+        <Markdown>{contactData.body}</Markdown>
+      </Content>
     </Section>
   </Article>
 )
