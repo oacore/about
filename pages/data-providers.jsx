@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from 'reactstrap'
-import { Article, Section, Markdown } from 'components'
+import { Article, Section, Markdown, Content } from 'components'
 import Link from 'components/link'
 import RepositoriesMap from 'components/repositories-map'
 import RepositoryBrowser from 'components/repositories-browser'
@@ -13,9 +13,11 @@ const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
 const DataProvidersPage = () => (
   <Article container>
     <h1 className="mb-5">{repositoriesData.title}</h1>
-    <Markdown>
-      {patchStats(repositoriesData.content, repositoriesData.statistics)}
-    </Markdown>
+    <Content>
+      <Markdown>
+        {patchStats(repositoriesData.content, repositoriesData.statistics)}
+      </Markdown>
+    </Content>
 
     <Link href="~about#contact" passHref>
       <Button color="primary" tag="a">
