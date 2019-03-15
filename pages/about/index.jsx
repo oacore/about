@@ -18,7 +18,7 @@ import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 import contactData from 'data/contact.md'
 
-import { repositoriesUrl } from '../data-providers'
+import { repositoriesUrl } from '../data/providers'
 
 import './about.scss'
 

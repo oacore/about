@@ -55,7 +55,8 @@ services-dataset-dynamic-render:
   requirements:
     method: get
 
-data-providers: /data-providers
+data: /data
+data-providers: /data/providers
 
 repositories:
   pattern:  /repositories
