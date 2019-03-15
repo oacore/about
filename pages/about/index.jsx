@@ -99,15 +99,17 @@ const AboutPage = () => (
 
         <Row className="align-items-center mt-3">
           <Col xs="6" className="text-right">
-            <Button href="~data-providers">
+            <Link href="~data-providers">
               See the full list of data providers
-            </Button>
+            </Link>
           </Col>
 
           <Col xs="6">
-            <Button color="primary" outline>
-              Become a data provider
-            </Button>
+            <Link href="#contact" passHref>
+              <Button color="primary" outline>
+                Contact us
+              </Button>
+            </Link>
           </Col>
         </Row>
       </Section>
@@ -157,13 +159,13 @@ const AboutPage = () => (
       </Row>
 
       <h3 className="mt-5">Past team members</h3>
-      <ul className="list-comma-separated">
-        <Content>
+      <Content>
+        <ul className="list-comma-separated">
           {teamData.pastMembers.map(name => (
             <li key={name}>{name}</li>
           ))}
-        </Content>
-      </ul>
+        </ul>
+      </Content>
     </Section>
 
     <Section id="contact" caption="Contact us">
