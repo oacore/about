@@ -23,6 +23,7 @@
   scroll-snap-align: start;
 
   &.active {
+    z-index: 1;
     order: 0;
     opacity: 1;
   }
