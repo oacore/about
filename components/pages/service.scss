@@ -75,29 +75,36 @@
   img {
     display: block;
     width: 100%;
-    margin: $spacer auto;
   }
 
   figcaption {
+    padding-top: $card-spacer-y;
     text-align: center;
+
+    > :last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
-.service-page-features {
+.service-page-section {
   padding-top: $section-sm-spacer;
   padding-bottom: $section-sm-spacer;
 }
 
+.service-page-features {
+  @extend .service-page-section;
+  margin-bottom: -1 * $spacer;
+}
+
 .service-page-content {
-  margin-bottom: $section-sm-spacer;
-  margin-left: auto;
+  @extend .service-page-section;
+  margin-bottom: 0;
   max-width: $content-max-width;
 }
 
 .service-page-testimonial {
-  max-width: 75%; // 9/12 columns
-  max-width: calc(
-    #{$content-max-width} + #{$blockquote-padding-left + $blockquote-avatar-size +
-      $spacer}
-  );
+  margin-top: $section-sm-spacer;
+  margin-bottom: $section-sm-spacer;
+  margin-left: auto;
 }

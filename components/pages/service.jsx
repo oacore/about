@@ -67,7 +67,10 @@ const ServicePage = ({
     </Content>
 
     {testimonial && (
-      <Testimonial className="service-page-testimonial" {...testimonial} />
+      <Testimonial
+        className="service-page-testimonial content"
+        {...testimonial}
+      />
     )}
 
     {whatIsIncluded && (
