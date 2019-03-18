@@ -15,6 +15,12 @@ $article-spacer: $section-lg-spacer !default;
     margin-bottom: 0;
   }
 
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  /* Spacing as a sections */
+
   h2,
   .h2 {
     margin-top: 2 * $section-spacer;
@@ -30,8 +36,15 @@ $article-spacer: $section-lg-spacer !default;
     margin-top: 2 * $spacer;
   }
 
-  > :last-child {
-    margin-bottom: 0;
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4 {
+    &:first-child {
+      margin-top: 0;
+    }
   }
 }
 
