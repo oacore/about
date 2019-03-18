@@ -157,10 +157,10 @@ custom:
 related-services:
 -
   title: CORE API
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/api.svg
 -
   title: CORE FastSync
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/fastsync.svg
 -
   title: CORE Discovery
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/discovery.svg

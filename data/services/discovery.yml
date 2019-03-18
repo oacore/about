@@ -64,17 +64,17 @@ what-is-included:
 
 related-services:
 -
-  title: Service 1
-  picture: /static/images/icons/powerful-chip.svg
+  title: CORE API
+  picture: /static/images/services/api.svg
   description: |
     A browser extension operating in XXX browsers
 -
-  title: Service 2
-  picture: /static/images/icons/powerful-chip.svg
+  title: CORE Dataset
+  picture: /static/images/services/dataset.svg
   description: |
     Access to millions of versions of open access research outputs
 -
-  title: Service 3
-  picture: /static/images/icons/powerful-chip.svg
+  title: CORE FastSync
+  picture: /static/images/services/fastsync.svg
   description: |
     CORE

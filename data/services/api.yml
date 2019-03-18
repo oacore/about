@@ -85,10 +85,10 @@ what-is-included:
 related-services:
 -
   title: CORE Dataset
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/dataset.svg
 -
   title: CORE FastSync
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/fastsync.svg
 -
   title: CORE Discovery
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/discovery.svg

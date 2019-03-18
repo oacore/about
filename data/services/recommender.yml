@@ -82,10 +82,10 @@ what-is-included:
 related-services:
 -
   title: CORE Discovery
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/discovery.svg
 -
   title: CORE Search
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/search.svg
 -
   title: CORE API
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/services/api.svg

@@ -17,7 +17,7 @@ sections:
     action:
       caption: Learn more about CORE API
       url: ~services/api
-    logo: /static/images/icons/powerful-chip.svg
+    logo: /static/images/services/api.svg
     screenshot: /static/images/screenshot.png
   -
     id: dataset
@@ -32,7 +32,7 @@ sections:
     action:
       caption: Learn more about CORE Dataset
       url: ~services/dataset
-    logo: /static/images/icons/powerful-chip.svg
+    logo: /static/images/services/dataset.svg
     screenshot: /static/images/screenshot.png
   -
     id: fast-sync
@@ -43,7 +43,7 @@ sections:
     action:
       caption: Learn more about CORE Fast Sync Dump
       url: ~services/fast-sync
-    logo: /static/images/icons/powerful-chip.svg
+    logo: /static/images/services/fastsync.svg
     screenshot: /static/images/screenshot.png
 -
   id: content-discovery
@@ -59,7 +59,7 @@ sections:
     action:
       caption: Learn more about CORE Recommender
       url: ~services/recommender
-    logo: /static/images/icons/powerful-chip.svg
+    logo: /static/images/services/recommender.svg
     screenshot: /static/images/screenshot.png
   -
     id: discovery
@@ -72,7 +72,7 @@ sections:
     action:
       caption: Learn more about CORE Discovery
       url: ~services/discovery
-    logo: /static/images/icons/powerful-chip.svg
+    logo: /static/images/services/discovery.svg
     screenshot: /static/images/screenshot.png
 -
   id: managing-content
@@ -89,5 +89,5 @@ sections:
     action:
       caption: Lern more about CORE Repository dashboard
       url: ~services/repository-dashboard
-    logo: /static/images/icons/powerful-chip.svg
+    logo: /static/images/services/repository-dashboard.svg
     screenshot: /static/images/screenshot.png
