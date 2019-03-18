@@ -46,6 +46,23 @@ $article-spacer: $section-lg-spacer !default;
       margin-top: 0;
     }
   }
+
+  &.blockquote {
+    $blockquote-text-max-width: $content-max-width * $font-size-base /
+      $blockquote-font-size;
+
+    max-width: 75%; // 9/12 columns fallback
+    max-width: calc(
+      #{$blockquote-text-max-width} + #{$blockquote-padding-left}
+    );
+
+    &.blockquote-avatar {
+      max-width: calc(
+        #{$blockquote-text-max-width} + #{$blockquote-padding-left + $blockquote-avatar-size +
+          $spacer}
+      );
+    }
+  }
 }
 
 .section {
