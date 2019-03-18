@@ -5,21 +5,25 @@
 }
 
 .footer-highlights {
-  padding: $spacer 0;
+  padding-top: $spacer;
   background: $beige;
+
+  > * {
+    margin-bottom: $spacer;
+  }
 }
 
 .footer-highlights-list {
   display: flex;
   flex-flow: row wrap;
   padding: 0;
-  margin: 0 0 -1 * map-get($spacers, 2);
+  margin: 0 ($grid-gutter-width / -2) (-1 * $spacer);
 
   li {
     display: block;
-    width: 30%;
+    width: 25%;
     flex-grow: 1;
-    margin-bottom: map-get($spacers, 2);
+    margin: 0 ($grid-gutter-width / 2) $spacer;
   }
 }
 

@@ -10,17 +10,17 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
   <footer className={`footer ${className}`}>
     <Container>
       <Row className="footer-highlights">
-        <Col xs="12" md={{ size: 6, offset: 1 }} className="p-0" tag="aside">
+        <Col md={{ size: 6, offset: 1 }} tag="aside">
           <h4>Useful links</h4>
           <ul className="footer-highlights-list">
             {usefulLinks.map(({ title, path }) => (
-              <li xs="12" md="4" key={`${title} @ ${path}`}>
+              <li key={`${title} @ ${path}`}>
                 <Link href={path}>{title}</Link>
               </li>
             ))}
           </ul>
         </Col>
-        <Col xs="12" md="4">
+        <Col md="4">
           <aside className="footer-cite-info">
             <h6>Writing about CORE?</h6>
             <Markdown>{researchOutputs}</Markdown>
