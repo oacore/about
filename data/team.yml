@@ -5,12 +5,9 @@ members:
   role: Founder & Head of CORE
   picture: petr-knoth.jpg
   description: |
-    Started by developing the first CORE prototype in 2010 out of sheer
-    frustration over the difficulty of text-mining open access papers.
-    Responsible for leading the team, development & research effort, funding
-    and product strategy. Believes in free unrestricted access to research
-    for all. Excited by the opportunities of machine access to research
-    papers to extract and create new knowledge.
+    Responsible for leading the team, development & research effort, funding and product strategy.
+    Believes in free unrestricted access to research for all. Developed the first CORE prototype in 2010. Excited by 
+    improving machine access to scientific literature to support text and data analysis. 
 -
   name: Matteo Cancellieri
   role: Senior Developer
@@ -81,10 +78,7 @@ members:
     My thesis will expand on the original work on Semantometrics completed
     by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
     natural language processing and text mining.
--
-  name: Zdenek Zdrahal
-  role: Deputy Product & Team Leader
-  picture: zdenek-zdrahal.jpg
+
 
 past-members:
 - Josef Harag
@@ -97,3 +91,4 @@ past-members:
 - Magdalena Krygielova
 - Tomas Korec
 - Vojtech Robotka
+- Zdenek Zdrahal
