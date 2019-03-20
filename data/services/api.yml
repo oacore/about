@@ -1,7 +1,7 @@
 id: api
 
 title: CORE API
-tagline: Develop thousands of new applications with the CORE API
+tagline: Develop new applications with the CORE API
 
 screenshot:
   source: /static/images/screenshot.png
@@ -13,66 +13,64 @@ features:
   title: Key message 1
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Perform text mining to enrich metadata of Open Access publications.
-
+    Real-time machine access to the world's largest collection of open
+    access scientific papers
 -
   title: Key message 2
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Carry out impact and citation analysis of the Open Access domain.
-
+    Harmonised access to data from across the network of all CORE providers
 -
   title: Key message 3
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Semantically annotate Open Access publications and link publications
-    to research data.
-
+    Direct machine access to full texts of research papers
 
 description: |
   CORE harvests, maintains, enriches and makes available metadata
-  and full-text content (typically a PDF) from many Open Access journals
+  and full text content - typically a PDF - from many open access journals
   and repositories. This makes it a useful access point for those
   who would like to develop applications making use of this content.
   To support these activities, CORE is providing a free API.
 
-  If you use CORE in your work, we kindly request you to cite one
-  of our publications.
+  If you use CORE in your work, we kindly request you to [cite one
+  of our publications](~research-outputs).
 
 additional:
   title: Where to start?
   content: |
-    Please register here to receive an API key and start testing the
-    live examples. A good starting point to start coding with our API is to
-    follow the iPython notebook available on Github. In collaboration with
-    rOpenSci you can find here an R client for the CORE API.
+    Please [register to receive an API key](/api-keys/register)
+    and start testing the [live examples](/documentation/api).
 
-documentation: true
+    A good starting point to start coding with our API is to
+    follow the iPython notebook available on [Github](https://github.com/oacore/or2016-api-demo).
+    In collaboration with [rOpenSci](https://ropensci.org/) you can find [here](https://github.com/ropensci/rcoreoa)
+    an R client for the CORE API.
 
 testimonial:
   content: |
-    We are integrating CORE API into our product, IRIS, because so far it
+    We are integrating the CORE API into our product, IRIS, because so far it
     is the open access portal that covers almost all open access content,
     provides easy to integrate API and has a powerful search querying engine.
     We want to make open access articles more easily accessible and more useful
-    to researchers and the open public and we see CORE API as a way
+    to researchers and the open public and we see the CORE API as a way
     to speed that up.
   author:
     name: Viktor Botev
     role: CTO, Iris AI AS
-    picture: /static/images/icons/powerful-chip.svg
+    picture: /static/images/people/botev.jpg
 
 what-is-included:
   title: What’s included
   content: |
     Our free membership provides you with:
 
-    * Machine access on CORE’s whole corpus of Open Access research
+    * Machine access on CORE’s whole corpus of open access research
       outputs.
-    * Detailed documentation [hyperlink to documentation](/documentation/)
-      on how to use the CORE API.
+    * Detailed [documentation](/documentation/api)
+      on how to use the CORE API with live examples.
     * One batch request or five single requests per 10 seconds. Need a
-      faster rate? Contact us [link](~about/#contact).
+      faster rate? [Contact us](~about/#contact).
   actions:
     primary:
       url: /api-keys/register
@@ -80,7 +78,6 @@ what-is-included:
     secondary:
       url: /documentation/api
       caption: Read documentation
-
 
 related-services:
 -
