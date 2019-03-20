@@ -1,7 +1,7 @@
 id: fast-sync
 
 title: CORE FastSync
-tagline: Stay synced with CORE and never miss a new research output
+tagline: Keep your data in sync with CORE and never miss a new research output
 
 screenshot:
   source: /static/images/screenshot.png
@@ -13,31 +13,52 @@ features:
   title: Key message 1
   picture: /static/images/icons/powerful-chip.svg
   description: |
-
+    An enterprise solution to keep your data in sync with research content
+    from around the world
 -
   title: Key message 2
   picture: /static/images/icons/powerful-chip.svg
   description: |
-
+     Spend less time collecting data and more on solving problems
 -
   title: Key message 3
   picture: /static/images/icons/powerful-chip.svg
   description: |
-
+    Fast and incremental updates as soon as they become available.
+    No usage restrictions
 
 description: |
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type
-  specimen book. It has survived not only five centuries, but also the leap into
-  electronic typesetting, remaining essentially unchanged. It was popularised in
-  the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-  and more recently with desktop publishing software like Aldus PageMaker
-  including versions of Lorem Ipsum.
+  A premium service useful for fast enterprise incremental access to all of
+  CORE data. FastSync implements the ResourceSync protocol and assists data
+  consumers with the synchronisation of the most recent content available in CORE.
+  If you are interested to adopt the service [contact us](~about/#contact).
+
+
+testimonial:
+  content: |
+    By integrating with CORE, we have significantly increased the number of
+    research papers in the Naver Academic indexes. In fact, CORE is Naver’s largest
+    provider of full text content. CORE’s data are now synchronised with Naver
+    using CORE FastSync, reducing the amount of effort that would be needed
+    to collect these data in traditional ways.
+  author:
+    name: Kim Sejin
+    role: Content Manager, Naver Academic Service
+    picture: /static/images/people/sejin.png
+
 
 what-is-included:
   title:  What’s included
   content: |
-    _To be done_
+    Our membership provides you with:
+    * Synchronised access to CORE's recently added content.
+    * Access to a FastSync dump containing content from all our data providers.
+    * Technical support for the implementation of the service.
+
+  actions:
+    primary:
+      url: ~join
+      caption: Contact us for a quote
 
 related-services:
 -
