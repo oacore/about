@@ -39,7 +39,7 @@ cookies-policy:
 
       **NB:** Cookie guidance wording adapted from [gov.uk](http://www.gov.uk/help/cookies),
       shared under the [Open Government License](http://www.nationalarchives.gov.uk/doc/open-government-licence/).
-    list-title: Google Analytics cookies
+    list-title: Our essential cookies
     list:
       -
         name: cookies_accepted
