@@ -11,11 +11,13 @@ import {
   TeamMember,
   Collapsed,
   RepositoriesMap,
+  ServiceGroups,
 } from 'components'
 import { patchStats } from 'components/utils'
 
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
+import servicesData from 'data/services.yml'
 import contactData from 'data/contact.md'
 
 import { repositoriesUrl } from '../data/providers'
@@ -113,33 +115,16 @@ const AboutPage = () => (
           </Col>
         </Row>
       </Section>
+    </Section>
 
-      <Section className="about-services-section" id="section">
-        <Row>
-          <Col md="9">
-            <h3>{aboutData.howItWorks.services.title}</h3>
-            <Content>
-              <Markdown>{aboutData.howItWorks.services.content}</Markdown>
-            </Content>
+    <Section className="about-services-section text-center" id="section">
+      <h2>{aboutData.howItWorks.services.title}</h2>
 
-            <Row className="align-items-center mt-3">
-              <Col xs="6" className="text-right">
-                <a className="btn btn-link" href="~services">
-                  Explore our services
-                </a>
-              </Col>
+      <ServiceGroups items={servicesData.sections} className="text-left" />
 
-              <Col xs="6">
-                <Link href="~join" passHref>
-                  <Button color="primary">
-                    {aboutData.howItWorks.joinButton}
-                  </Button>
-                </Link>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Section>
+      <Button color="primary" outline href="~services">
+        Explore our services
+      </Button>
     </Section>
 
     <Section id="resources" caption="Resources">
