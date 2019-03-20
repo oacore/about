@@ -1,8 +1,7 @@
 id: recommender
 
 title: CORE Recommender
-tagline: Enrich your content by suggesting millions of research papers
-
+tagline: A leading research papers recommendation solution
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -13,28 +12,28 @@ features:
   title: Key message 1
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Support users in finding articles relevant to their needs
+    Make your repository content more discoverable from across the global
+    network of CORE data providers
 -
   title: Key message 2
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Increase the time users spend on your site by offering millions
-    of content to them
+    Support users in finding articles relevant to their interests
 -
   title: Key message 3
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Easy installation to all repository, journal and web interfaces
+    Easy installation to all repositories, journals and web interfaces
 
 description: |
-  The recommender is a plugin that can be installed in repositories and
-  journal systems to suggest similar articles. Its purpose is to support
+  The recommender is a plugin that can be installed in repositories,
+  journal systems and web interfaces to suggest similar articles. Its purpose is to support
   users in finding articles relevant to what they read.
 
   Uniqueness of the CORE Recommender:
-  * Our methods rely on the availability of full-texts.
-  * We don’t base our recommendations solely on abstracts
-    or metadata.
+  * Our methods rely on the availability of full texts.
+  * We do not base our recommendations solely on abstracts
+    or metadata but on full text.
   * We ensure that the recommended articles are available
     open access. We provide our recommendation service for free, by using
     a machine accessible interface (API).
@@ -42,42 +41,42 @@ description: |
   If you use CORE in your work, we kindly request you to cite one
   of [our publications](~research-outputs).
 
-documentation: true
+additional:
+  title: Who is using it
+  content: |
+    The following institutions use the CORE Recommender.
+
 
 additional:
   title: Where to start
   content: |
-    Find out more about the CORE Recommender in our
-    [blog post](https://blog.core.ac.uk/2016/10/04/core-recommender/).
-
-    For those with access to the CORE Repositories Dashboard:
+    For those with access to the [CORE Repository Dashboard](~services/repository-dashboard) -
     the Recommender installation guidelines and an installation key can
-    be found in the Dashboard. Log into the Dashboard and then choose the
+    be accessed via the Dashboard. Log into the Dashboard and then choose the
     tab _Get the recommender_.
 
-    Otherwise, visit our registration page to gain access to the Recommender.
+    Otherwise, visit our [registration page](https://core.ac.uk/recommender/register)
+    to gain access to the Recommender.
+
+    Find out more about the CORE Recommender in our
+    [blog post](https://blog.core.ac.uk/2016/10/04/core-recommender/).
 
 what-is-included:
   title:  What’s included
   content: |
     Our free membership provides you with:
-    * Recommendations of full text items in Open Access repositories,
+    * Recommendations of full text items in open access repositories,
       journals or webpages.
     * Recommendations based on metadata records or full text items
-      in pdf or both.
+      or both.
     * A user feedback system that improves the recommendation accuracy.
-
-    For those with access to the [CORE Repositories Dashboard](~services/repository-dashboard):
-    the Recommender installation guidelines and an installation key can be found
-    in the Dashboard. Log into the Dashboard and then choose the tab
-    _Get the recommender_.
   actions:
     primary:
       url: https://dashboard.core.ac.uk/login
-      caption: Access Repository dashboard
+      caption: Install via Repository Dashboard
     secondary:
-      url: ~contact
-      caption: Contact us to learn more
+      url: https://core.ac.uk/recommender/register
+      caption: Install via registration page
 
 related-services:
 -
@@ -87,5 +86,5 @@ related-services:
   title: CORE Search
   picture: /static/images/services/search.svg
 -
-  title: CORE API
-  picture: /static/images/services/api.svg
+  title: CORE Repository Dashboard
+  picture: /static/images/services/repository-dashboard.svg
