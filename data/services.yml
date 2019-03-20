@@ -8,6 +8,7 @@ sections:
   -
     id: api
     title: API
+    short-description: Direct access to CORE data
     description: |
       CORE harvests, maintains, enriches and makes available metadata and
       full-text content (typically a PDF) from many Open Access journals and
@@ -22,6 +23,7 @@ sections:
   -
     id: dataset
     title: Dataset
+    short-description: Download data in bulk
     description: |
       The data aggregated from repositories by the CORE system can be accessed
       in two ways, through the CORE API or by downloading the data to your
@@ -37,6 +39,7 @@ sections:
   -
     id: fast-sync
     title: FastSync
+    short-description: Update data in fastest way
     description: |
       The CORE FastSync dump implements the approach of the _ResourceSync
       Framework Resource Dump_ standard.
@@ -52,6 +55,7 @@ sections:
   -
     id: recommender
     title: Recommender
+    short-description: Get related content from the whole CORE internet
     description: |
       The recommender is a plugin that can be installed in repositories and
       journal systems to suggest similar articles. Its purpose is to support
@@ -64,6 +68,7 @@ sections:
   -
     id: discovery
     title: Discovery
+    short-description: Drop the paywall of the open access papers
     description: |
       CORE Discovery is a new service assists users in finding freely accessible
       copies of research papers that behind a paywall. CORE Discovery currently
@@ -81,6 +86,7 @@ sections:
   -
     id: repository-dashboard
     title: Repository dashboard
+    short-description: Monitor research impact
     description: |
       In an effort to improve the quality and transparency of the harvesting
       process of the open access content and create a two way collaboration
