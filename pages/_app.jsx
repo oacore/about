@@ -10,7 +10,7 @@ import {
   isCookiesAccepted,
   getCookiesContext,
   handleCookiesUpdate,
-} from './_cookies'
+} from './cookies'
 
 const searchConfig = {
   action: '/search',
