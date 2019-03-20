@@ -1,6 +1,6 @@
 id: repository-dashboard
-title: CORE Repository dashboard
-tagline: Manage fast and easy your collection in CORE
+title: CORE Repository Dashboard
+tagline: Manage your repository outputs and ensure they are visible to the world
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -11,8 +11,7 @@ features:
   title: Key message 1
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Take down full text documents from your repository in CORE
-
+    Access your collection's download statistics and harvesting process
 -
   title: Key message 2
   picture: /static/images/icons/powerful-chip.svg
@@ -22,28 +21,63 @@ features:
   title: Key message 3
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Access your collection's download statistics and harvesting process
+    Manage access to documents from your repository in CORE
 
 description: |
-  [Access the dashboard now](~home).
-  To register, please [send us an email](~contact).
-
   In an effort to improve the quality and transparency of the harvesting process
   of the open access content and create a two way collaboration between the CORE
-  project and the providers of this content, CORE is introducing the
-  Repositories Dashboard.
+  project and the providers of this content, CORE has implemented the
+  Repositories Dashboard. The aim of the Dashboard is to provide an online interface
+  for repository providers and offer valuable information to content providers.
 
-  The aim of the Dashboard is to provide an online interface for repository
-  providers and offer, through this online interface, valuable information to
-  content providers.
+  [Access the dashboard now](https://dashboard.core.ac.uk/login).
+  To register, [send us an email](~about/#contact).
 
-  If you use CORE in your work, we kindly request you to cite one of our p
-  ublications.
+  If you use CORE in your work, we kindly request you to [cite one
+  of our publications](~research-outputs).
 
 additional:
-  title: Universities using the Repository Dashboard
+  title: Institutions using the Repository Dashboard
   content: |
-    _To be done_
+    Here are some of the insitutions using the CORE Repository Dashboard
+    around the world.
+
+    **Australia**
+    University of Adelaide
+    University of Canberra
+
+    **Belgium**
+    University of Li&egrave;ge
+    University of Louvain
+
+    **Netherlands**
+    Utrecth University
+    TU Delft University
+
+    **United Kingdom**
+    Cambridge University
+    University of Leeds
+    University of Sheffield
+    University of York
+    London School of Economics
+    Imperial College London
+    Strathclyde University
+
+    **United States**
+    Columbia University
+    Harvard University
+
+testimonial:
+  content: |
+    The CORE Repository Dashboard provides an excellent level of
+    feedback and control over what gets harvested, aggregated and exposed.
+    It also provides intelligence on harvesting errors which may need
+    troubleshooting, thereby ensuring optimum repository health for text mining
+    as well as discovery of repository content.
+  author:
+    name: George MacGregor
+    role: Institutional Repository Manager, University of Strathclyde
+    picture: /static/images/people/macgregor.png
 
 what-is-included:
   title:  What’s included
@@ -66,10 +100,10 @@ what-is-included:
 related-services:
 -
   title: CORE Recommender
-  picture: /static/images/services/recommender.svg
+  picture: /static/images/icons/recommender.svg
 -
   title: CORE Discovery
-  picture: /static/images/services/discovery.svg
+  picture: /static/images/icons/discovery.svg
 -
   title: CORE Search
-  picture: /static/images/services/search.svg
+  picture: /static/images/icons/search.svg
