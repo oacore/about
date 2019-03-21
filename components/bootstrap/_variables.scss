@@ -11,7 +11,7 @@ $nearly-black: #2a3840;
 $light-grey: lighten(desaturate(adjust-hue($nearly-black, 8), 15.99), 70.98);
 
 $orange: #e08639;
-$orange-dark: darken(saturate($orange, 27.07), 19.22);
+$orange-dark: #b75400;
 $orange-darker: darken($orange-dark, 12.75);
 
 $blue: #005f96;
