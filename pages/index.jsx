@@ -81,7 +81,7 @@ const IndexPage = () => (
           action="/search"
           name="q"
           placeholder={patchStats(page.searchPlaceholder, page.statistics)}
-          autofocus
+          autoFocus
         />
       </Section>
     </Hero>
