@@ -43,8 +43,8 @@ class PostsList extends Component {
 
     return (
       <ListGroup tag="div">
-        {posts.slice(0, limit).map(({ id, title, link, pubDate }) => (
-          <ListGroupItem key={id}>
+        {posts.slice(0, limit).map(({ title, link, pubDate }) => (
+          <ListGroupItem key={link}>
             <a href={link} className="d-block">
               {title}
             </a>
