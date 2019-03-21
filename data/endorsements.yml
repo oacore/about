@@ -12,6 +12,7 @@ testimonials:
   author:
     name: Jon Tennant
     role: Rogue Paleontologist and Founder of the Open Science MOOC
+    picture: /static/images/people/tennant.png
 - &paolo-manghi
   id: paolo-manghi
   content: |
@@ -27,6 +28,7 @@ testimonials:
     role: >
       Institute of Information Science and Technologies (CNR),
       Technical Manager at OpenAIRE
+    picture: /static/images/people/
 - &michael-jubb
   id: michael-jubb
   content: |
@@ -48,6 +50,7 @@ testimonials:
   author:
     name: Ben Johnson
     role: HEFCE Research Policy Adviser
+    picture: /static/images/people/johnson.jpg
 - &nick-sheppard
   id: nick-sheppard
   content: |
@@ -59,6 +62,7 @@ testimonials:
   author:
     name: Nick Sheppard
     role: Repository Developer at Leeds Beckett University
+    picture: /static/images/people/sheppard.jpg
 - &joe-mcarthur-and-david-carroll
   id: joe-mcarthur-and-david-carroll
   content: |
@@ -69,6 +73,7 @@ testimonials:
   author:
     name: Joe Mcarthur and David Carroll
     role: Founders of the Open Access Button
+    picture: /static/images/people/joe.jpg
 - &nicola-dowson
   id: nicola-dowson
   content: |
@@ -116,6 +121,7 @@ testimonials:
   author:
     name: Viktor Botev
     role: CTO, Iris AI AS
+    picture: /static/images/people/botev.jpg
   api: true
 - &peter-raeth
   id: peter-raeth
@@ -145,6 +151,7 @@ testimonials:
   author:
     name: Scott Chamberlain
     role: Developer, rOpenSci
+    picture: /static/images/people/scottchamberlain.jpg
   api: true
 - &david-walters
   id: david-walters
@@ -201,11 +208,7 @@ testimonials:
   api: true
 
 organizations:
-- &mooc
-  id: mooc
-  name: Open Science MOOC
-  logo: mooc.png
-  testimonial: *jon-tennant
+# companies
 - &ropensci
   id: ropensci
   name: Ropensci
@@ -223,6 +226,11 @@ organizations:
   name: Wheesbee
   url: https://www.wheesbee.eu/wheesbee-web/
   logo: wheesbee.png
+- &scilit
+  id: scilit
+  name: Scilit
+  url: https://www.scilit.net/
+  logo: scilit.png
 - &iris-ai
   id: iris-ai
   name: IRIS AI
@@ -254,142 +262,191 @@ organizations:
   name: Unsilo
   url: https://site.unsilo.com/site/
   logo: unsilo.png
+- &intoolab
+  id: intoolab
+  name: Intoolab
+  url: http://www.intoolab.com/
+  logo: intoolab.png
 - &naver
   id: naver
   name: Naver
   url: https://www.naver.com
   logo: naver.svg
-- &openaire
-  id: openaire
-  name: OpenAIRE
-  logo: openaire-horizontal.png
-  testimonial: *paolo-manghi
-- &oacg
-  id: oacg
-  name: Open Access Co-ordination Group
-  logo: universities-uk.svg
-  testimonial: *michael-jubb
-- &hefce
-  id: hefce
-  name: HEFCE
-  logo: hefce.png
-  testimonial: *ben-johnson
-- &lbu
-  id: lbu
-  name: Leeds Beckett University
-  logo: lbu.png
-  testimonial: *nick-sheppard
-- &oab
-  id: oab
-  name: Open Access Button
-  logo: oab.png
-  testimonial: *joe-mcarthur-and-david-carroll
-- &ou
-  id: ou
-  name: Open University
-  logo: ou.png
-  testimonial: *nicola-dowson
-- &ukcorr
-  id: ukcorr
-  name: UKCoRR
-  logo: ukcorr.svg
-  testimonial: *yvonne-budden
-- &brunel
-  id: brunel
-  name: Brunel University
-  logo: brunel.png
-  testimonial: *david-walters
 - &macmicro
   id: macmicro
   name: MacMicro Inc.
   logo: macmicro.png
   testimonial: *colin-goldberg
+# project partners
+- &mooc
+  id: mooc
+  name: Open Science MOOC
+  logo: mooc.png
+  testimonial: *jon-tennant
+- &ukcorr
+  id: ukcorr
+  name: UKCoRR
+  logo: ukcorr.png
+  testimonial: *yvonne-budden
+- &oab
+  id: oab
+  name: Open Access Button
+  logo: oabutton.png
+  testimonial: *joe-mcarthur-and-david-carroll
+- &hefce
+  id: hefce
+  name: HEFCE
+  logo: hefce.png
+  testimonial: *ben-johnson
+- &oacg
+  id: oacg
+  name: Open Access Co-ordination Group
+  logo: universities-uk.svg
+  testimonial: *michael-jubb
+- &openaire
+  id: openaire
+  name: OpenAIRE
+  logo: openaire-horizontal.png
+  testimonial: *paolo-manghi
+- &bl
+  id: britishlibrary
+  name: British Library
+  logo: bl.png
+- &coar
+  id: coar
+  name: COAR
+  logo: coar.png
+- &irus
+  id: irus
+  name: IRUS
+  logo: irus.png
+- &opendoar
+  id: opendoar
+  name: OpenDOAR
+  logo: opendoar.png
+- &orcid
+  id: orcid
+  name: ORCID
+  logo: orcid.png
+- &rioxx
+  id: rioxx
+  name: rioxx
+  logo: rioxx.jpeg
+- &foster
+  id: foster
+  name: FOSTER
+  logo: foster.png
+- &okm
+  id: okm
+  name: Open Knowledge Maps
+  logo: okm.png
+- &doaj
+  id: doaj
+  name: DOAJ
+  logo: doaj.jpg
+  
+# institutions
+- &lbu
+  id: lbu
+  name: Leeds Beckett University
+  logo: lbu.png
+  testimonial: *nick-sheppard
+- &brunel
+  id: brunel
+  name: Brunel University
+  logo: brunel.png
+  testimonial: *david-walters
+- &ou
+  id: ou
+  name: Open University
+  logo: ou.png
+  testimonial: *nicola-dowson
 # recom-used-in:
 - &clok
   name: CLoK
   description: University of Central Lancashire
   url: https://clok.uclan.ac.uk
-  logo: institutions/uclan_logo_250x150.png
+  logo: uclan.png
 - &gloucestershire
   name: Research Repository
   description: University of Gloucestershire
   url: http://eprints.glos.ac.uk
-  logo: institutions/gloucestershire-logo_1181x396.jpg
+  logo: gloucester.jpg
 - &uwl
   name: UWL Repository
   description: University of West London
   url: http://repository.uwl.ac.ukeprints/
-  logo: institutions/westlondon.jpg
+  logo: uwl.jpg
 - &iiasa
   name: International Institute for Applied Systems Analysis
   url: https://pure.iiasa.ac.at/
-  logo: institutions/IIASALogo-min.png
+  logo: iiasa.jpg
 - &middlesex
   name: Middlesex University Research Repository
   description: University of Middlesex
   url: http://eprints.mdx.ac.uk
-  logo: institutions/MiddlesexLogo-min.png
+  logo: middlesex.png
 - &nulan
   name: NULAN Argentina
   url: http://nulan.mdp.edu.ar/
-  logo: institutions/nulansitelogo-min.png
+  logo: nulan.svg
 - &wr-leeds
   name: White Rose Research Online
   description: University of Leeds
   url: http://eprints.whiterose.ac.uk
-  logo: institutions/WR_Leeds_908x360.png
+  logo: leeds.png
 - &strathprints
   name: 'Strathprints: The University of Strathclyde Institutional Repository'
   description: The University of Strathclyde
   url: http://strathprints.strath.ac.uk
-  logo: institutions/StrathclydeUniversity.png
+  logo: strathclyde.png
 - &wr-york
   name: White Rose Research Online
   description: University of York
   url: http://eprints.whiterose.ac.uk
-  logo: institutions/WR_York_500x225.png
+  logo: york.png
 - &ray
   name: RaY - Research at York St.John
   description: York St John University
   url: https://ray.yorksj.ac.uk
-  logo: institutions/York_St_John_University_logo.svg.png
+  logo: stjohn.png
 - &wr-sheffield
   name: White Rose Research Online
   description: University of Sheffield
   url: http://eprints.whiterose.ac.uk
-  logo: institutions/University_of_Sheffield-logo.png
+  logo: sheffield.png
 - &oro
   name: Open Research Online
   description: The Open University
   url: http://oro.open.ac.uk
-  logo: institutions/the-open-uni-logo.png
+  logo: ou.png
 - &apollo
   name: Apollo
   description: University of Cambridge
   url: https://www.repository.cam.ac.uk
-  logo: institutions/cambridge.png
+  logo: cambridge.jpg
 - &lshtm
   name: LSHTM Research Online
   description: London School of Hygiene and Tropical Medicine
   url: http://researchonline.lshtm.ac.uk
-  logo: institutions/hygiene.png
+  logo: lshtm.jpg
 - &trieste
   name: Università degli studi di Trieste
   url: https://www.units.it/
-  logo: institutions/trieste.png
+  logo: trieste.jpg
 - &zurich
   name: University of Zurich
   url: http://www.uzh.ch/en.html
-  logo: institutions/zurich.png
+  logo: zurich.png
 - &stmarys
   name: Open Research Archive
   description: St Mary's University, Twickenham
   url: https://research.stmarys.ac.uk
-  logo: institutions/stMarys.png
+  logo: saintmary.jpg
 - &huddersfield
   name: University of Huddersfield Repository
   url: http://eprints.hud.ac.uk
-  logo: institutions/huddersfield.gif
+  logo: huddersfield.png
 
 sections:
   enterprise-companies:
@@ -397,19 +454,8 @@ sections:
     title: Enterprise companies
     description: |
       The [CORE services](~services) have different applications and are aimed
-      to a wide variety of stakeholders. Many companies, projects and
-      institutions use the CORE services in order to:
-
-      - Enrich their existing collections with millions of open access
-        research outputs by accessing CORE’s raw data via the
-        [CORE API](~services/api) and [Dataset](~services/dataset).
-      - Manage content and advance aggregation processes with the
-        [CORE Repository Dashboard](~services/repository-dashboard)
-      - Offer millions of open access research outputs to their users by
-        installing the [CORE Recommender](~services/recommender) and
-        [CORE Discovery](~services/discovery) in their systems.
-      - Programmatically access open access content from publishers systems
-        with the use of the [CORE Connector](~services/connector)
+      to a wide variety of stakeholders. Many enterprise companies use CORE to build search engines of research content,   
+      detect plagiarism and develop repository services.
     action:
       title: Interested in CORE to support your business?
       name: Sign in for free
@@ -427,19 +473,17 @@ sections:
         - *unsilo
         - *naver
         - *macmicro
+        - *scilit
+        - *intoolab
     testimonials:
       title: What companies say about us
   academic-institutions:
     id: academic-institutions
     title: Institutions using CORE
     description: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-      officia deserunt mollit anim id est laborum.
+      Institutions use CORE in a variety of cases, for example to discover open access 
+      content, manage their repository content in CORE and offer recommendations of 
+      similar research outputs searched by their users. 
     action:
       title: Interested in CORE at your institution?
       name: Sign in for free
@@ -474,13 +518,9 @@ sections:
     id: partner-projects
     title: Partner projects
     description: |
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-      officia deserunt mollit anim id est laborum.
+      CORE has created exciting partnerships with open access infrastructure and 
+      innovative open science projects. With these collaborations CORE has extended 
+      and empowered both its own and partnering project tools.   
     action:
       title: Interested in becoming a partner?
       name: Get it touch today
@@ -493,6 +533,15 @@ sections:
         - *oacg
         - *hefce
         - *oab
+        - *doaj
+        - *okm
+        - *foster
+        - *rioxx
+        - *orcid
+        - *opendoar
+        - *irus
+        - *coar
+        - *bl
     testimonials:
       title: What partners say about us
   # testimonials:
