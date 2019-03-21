@@ -8,12 +8,13 @@ about:
     internships: ./internships
     ambassadors: ./ambassadors
     endorsements: ./endorsements
+    research-outputs: './research-outputs'
 mission: ~about#mission
 team: ~about#team
 internships: ~about#internships
 endorsements: ~about/endorsements
 faq: /faq
-research-outputs: ~about#research-outputs
+research-outputs: ~about/research-outputs
 contact: ~about#contact
 privacy: /privacy
 cookies: /cookies
