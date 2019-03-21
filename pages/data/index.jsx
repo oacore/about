@@ -18,13 +18,7 @@ const DataSetPage = () => (
           <Markdown>{patchStats(title, datasetData.statistics)}</Markdown>
         </h3>
         <Markdown>{patchStats(content, datasetData.statistics)}</Markdown>
-        <Button
-          outline
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          color="primary"
-        >
+        <Button outline href={link.url} color="primary">
           {link.caption}
         </Button>
       </HighlightSection>
