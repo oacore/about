@@ -61,6 +61,11 @@ const flatRoutesTree = (node, [parentKey = '', parentPath = '/'] = []) => {
     items.push(route)
   })
 
+  items.sort(
+    ([, leftPath], [, rightPath]) =>
+      rightPath.split('/').slice(1).length - leftPath.split('/').slice().length
+  )
+
   return items
 }
 
