@@ -55,6 +55,8 @@ class App extends NextApp {
           navigation={config.navigation}
           footer={config.footer}
           searchConfig={searchConfig}
+          showSearch={router.route !== '/'}
+          activeRoute={router.route}
         >
           <Component {...pageProps} />
         </Layout>
