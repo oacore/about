@@ -43,8 +43,6 @@ const FAQsPage = () => (
     {faqData.sections.map(section => (
       <FAQsSection key={section.title} {...section} />
     ))}
-    <p>Something to test</p>
-    <p>Something else to test</p>
   </Article>
 )
 
