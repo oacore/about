@@ -22,7 +22,7 @@ const Cookies = () => (
     method="post"
     title={cookieSettingsContext.popupTitle}
     items={getCookiesContext()}
-    descriptionTitle={cookieSettingsContext.explanationCaption}
+    itemDescriptionTitle={cookieSettingsContext.explanationCaption}
     onSubmit={handleCookiesUpdate}
     submitCaption={cookieSettingsContext.acceptCaption}
     optionalActions={

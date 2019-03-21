@@ -66,8 +66,9 @@ const CookiesPage = () => (
         <CookiesForm
           id="cookies-page-form"
           title={pageContext.settings.title}
-          submitCaption={pageContext.settings.saveCaption}
           items={getCookiesContext()}
+          itemDescriptionTitle={pageContext.settings.explanationCaption}
+          submitCaption={pageContext.settings.saveCaption}
           onSubmit={handleCookiesUpdate}
         />
       </Content>
