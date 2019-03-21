@@ -78,22 +78,28 @@ const ServicePage = ({
         <h2>{whatIsIncluded.title}</h2>
         <Content>
           <Markdown>{whatIsIncluded.content}</Markdown>
-          <div>
-            <Button
-              color="primary"
-              outline
-              href={whatIsIncluded.actions.primary.url}
-            >
-              {whatIsIncluded.actions.primary.caption}
-            </Button>
-            <Button
-              color="primary"
-              href={whatIsIncluded.actions.secondary.url}
-              className="ml-2"
-            >
-              {whatIsIncluded.actions.secondary.caption}
-            </Button>
-          </div>
+          {whatIsIncluded.actions && (
+            <div>
+              {whatIsIncluded.actions.primary && (
+                <Button
+                  color="primary"
+                  href={whatIsIncluded.actions.primary.url}
+                >
+                  {whatIsIncluded.actions.primary.caption}
+                </Button>
+              )}
+              {whatIsIncluded.actions.secondary && (
+                <Button
+                  color="primary"
+                  outline
+                  href={whatIsIncluded.actions.secondary.url}
+                  className="ml-2"
+                >
+                  {whatIsIncluded.actions.secondary.caption}
+                </Button>
+              )}
+            </div>
+          )}
         </Content>
       </Section>
     )}
