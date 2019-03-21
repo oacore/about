@@ -1,6 +1,5 @@
 import React from 'react'
-import { Article, Button, Markdown } from 'components'
-import HighlightSection from 'components/highlight-section'
+import { Article, Button, Markdown, HighlightSection } from 'components'
 import { patchStats } from 'components/utils'
 
 import datasetData from 'data/dataset.yml'

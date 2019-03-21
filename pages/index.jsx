@@ -1,7 +1,7 @@
 import React from 'react'
-import { Button } from 'reactstrap'
-
 import {
+  Button,
+  Link,
   Hero,
   KeyFeature,
   KeyFeatureList,
@@ -9,10 +9,9 @@ import {
   Markdown,
   Section,
   Article,
+  Search as SearchForm,
 } from 'components'
 import { JoinSection } from 'components/sections'
-import SearchForm from 'components/search'
-import Link from 'components/link'
 import { patchStats } from 'components/utils'
 
 import page from 'data/home.yml'

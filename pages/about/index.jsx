@@ -1,14 +1,21 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { Article, Content, Section, Collapsed, Button } from 'components'
-import Link from 'components/link'
-import TeamMember from 'components/team-member'
-import RepositoriesMap from 'components/repositories-map'
-import Blog from 'components/blog'
+import {
+  Link,
+  Button,
+  Blog,
+  Article,
+  Content,
+  Section,
+  TeamMember,
+  Collapsed,
+  RepositoriesMap,
+} from 'components'
+import { patchStats } from 'components/utils'
+
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 import contactData from 'data/contact.md'
-import { patchStats } from 'components/utils'
 
 import { repositoriesUrl } from '../data-providers'
 

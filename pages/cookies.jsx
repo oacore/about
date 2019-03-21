@@ -1,7 +1,6 @@
 import React from 'react'
 import { Table } from 'reactstrap'
-import { Article, Content, Section, Markdown } from 'components'
-import { CookiesForm } from 'components/cookies'
+import { Article, Content, Section, Markdown, CookiesForm } from 'components'
 
 import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
 

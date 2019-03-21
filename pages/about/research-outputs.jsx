@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, CardBody, CardFooter } from 'reactstrap'
-import { Article, Section } from 'components'
-import Link from 'components/link'
+import { Article, Section, Link } from 'components'
 import page from 'data/research-outputs.yml'
 
 const ResearchOutputsSection = ({ id, title, papers }) => (

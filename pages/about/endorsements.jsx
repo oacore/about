@@ -1,6 +1,6 @@
 import React from 'react'
-import { Article } from 'components/content'
-import EndorsementsSection from 'components/sections/endorsements'
+import { Article } from 'components'
+import { EndorsementsSection } from 'components/sections'
 import { title, sections } from 'data/endorsements.yml'
 
 const extractTestimonials = organizations =>

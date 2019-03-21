@@ -1,9 +1,14 @@
 import React from 'react'
-import { Button } from 'reactstrap'
-import { Article, Section, Markdown, Content } from 'components'
-import Link from 'components/link'
-import RepositoriesMap from 'components/repositories-map'
-import RepositoryBrowser from 'components/repositories-browser'
+import {
+  Button,
+  Link,
+  Article,
+  Section,
+  Markdown,
+  Content,
+  RepositoriesMap,
+  RepositoriesBrowser,
+} from 'components'
 import { patchStats } from 'components/utils'
 
 import repositoriesData from 'data/data-providers.yml'
@@ -32,7 +37,7 @@ const DataProvidersPage = () => (
 
     <Section id="list">
       <h2>{repositoriesData.filter}</h2>
-      <RepositoryBrowser endpoint={repositoriesUrl} />
+      <RepositoriesBrowser endpoint={repositoriesUrl} />
     </Section>
   </Article>
 )
