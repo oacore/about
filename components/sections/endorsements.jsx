@@ -6,8 +6,6 @@ import LogosCarousel from '../logos-carousel'
 import TestimonialsCarousel from '../testimonials-carousel'
 import Link from '../link'
 
-import './endorsements.scss'
-
 const TestimonialsSection = ({
   title,
   items,

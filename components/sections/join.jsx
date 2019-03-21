@@ -4,8 +4,6 @@ import Markdown from '../markdown'
 import { Section } from '../content'
 import Link from '../link'
 
-import './join.scss'
-
 const JoinSection = ({
   id,
   title,

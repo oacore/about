@@ -4,8 +4,6 @@ import { Container, Row, Col } from 'reactstrap'
 import Markdown from '../markdown'
 import Link from '../link'
 
-import './footer.scss'
-
 const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
   <footer className={`footer ${className}`}>
     <Container>

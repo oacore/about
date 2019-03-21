@@ -1,7 +1,6 @@
 import React from 'react'
 
 import logoPath from './core-symbol.svg'
-import './logo.scss'
 
 const Logo = ({
   text = 'CORE',

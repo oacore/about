@@ -19,7 +19,6 @@ import Link from '../link'
 
 import Logo from '../logo'
 
-import './header.scss'
 import SearchNavbar from '../search-navbar'
 
 class Header extends React.Component {

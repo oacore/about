@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import { bind } from 'decko'
 
-import './switcher.scss'
-
 const SwitcherItem = ({
   children,
   active = false,

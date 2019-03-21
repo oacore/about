@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
 
-import './blockquote.scss'
-
 const BlockquoteFooter = ({
   children,
   className = '',

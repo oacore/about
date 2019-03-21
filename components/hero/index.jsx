@@ -2,8 +2,6 @@ import React from 'react'
 import Logo from '../logo'
 import { Section } from '../content'
 
-import './hero.scss'
-
 const HeroSection = ({
   children,
   title = 'CORE',

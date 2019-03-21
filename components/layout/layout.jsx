@@ -5,8 +5,6 @@ import Head from 'next/head'
 import Header from '../header'
 import Footer from '../footer'
 
-import './layout.scss'
-
 const Layout = ({
   title,
   description,

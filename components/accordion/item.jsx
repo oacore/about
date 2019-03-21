@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { Card, CardHeader, CardBody, CardLink, Collapse } from 'reactstrap'
 import { bind } from 'decko'
 
-import './accordion.scss'
-
 class AccordionItem extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,

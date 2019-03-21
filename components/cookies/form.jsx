@@ -2,7 +2,6 @@ import React from 'react'
 import { CustomInput, Form, FormGroup, Card, CardTitle } from 'reactstrap'
 import { Button } from '../elements'
 import Markdown from '../markdown'
-import './cookies.scss'
 
 const CookiesForm = ({
   title,

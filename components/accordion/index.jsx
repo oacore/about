@@ -4,8 +4,6 @@ import { bind } from 'decko'
 
 import AccordionItem from './item'
 
-import './accordion.scss'
-
 // TODO: Make it semantic: provide aria-* attributes
 class Accordion extends Component {
   static propTypes = {

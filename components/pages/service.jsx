@@ -6,8 +6,6 @@ import { Button, Link } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
 import Testimonial from '../testimonial'
 
-import './service.scss'
-
 const ServicePage = ({
   id,
   title,
