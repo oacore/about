@@ -17,6 +17,7 @@ research-outputs: ~about#research-outputs
 contact: ~about#contact
 privacy: /privacy
 cookies: /cookies
+browse: /browse
 
 services:
   pattern: /services
