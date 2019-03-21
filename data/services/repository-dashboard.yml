@@ -57,11 +57,11 @@ what-is-included:
     * Statistics regarding the repository content.
   actions:
     primary:
-      url: ~join
-      caption: Sign up
+      url: ~contact
+      caption: Contact us to register
     secondary:
-      url: ~packages/free
-      caption: Read more about our free package
+      url: https://dashboard.core.ac.uk/login
+      caption: Log in now
 
 related-services:
 -

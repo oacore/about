@@ -61,11 +61,11 @@ what-is-included:
     _Empty in the document._
   actions:
     primary:
-      url: ~join
-      caption: Sign up
+      url: http://publisher-connector.core.ac.uk/resourcesync/
+      caption: Access to CORE's ResourceSync
     secondary:
-      url: ~packages/free
-      caption: Read more about our free package
+      url: ~contact
+      caption: Contact us to learn more
 
 related-services:
 -

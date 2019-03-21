@@ -59,11 +59,8 @@ what-is-included:
     * Access to millions of versions of open access research outputs
   actions:
     primary:
-      url: ~join
-      caption: Sign up
-    secondary:
-      url: ~packages/free
-      caption: Read more about our free package
+      url: https://chrome.google.com/webstore
+      caption: Install from Chrome Web Store
 
 related-services:
 -

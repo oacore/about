@@ -75,11 +75,11 @@ what-is-included:
       faster rate? Contact us [link](~about/#contact).
   actions:
     primary:
-      url: ~join
-      caption: Sign up
+      url: /api-keys/register
+      caption: Apply for a key
     secondary:
-      url: ~packages/free
-      caption: Read more about our free package
+      url: /documentation/api
+      caption: Read documentation
 
 
 related-services:

@@ -38,13 +38,6 @@ what-is-included:
   title:  What’s included
   content: |
     _To be done_
-  actions:
-    primary:
-      url: ~join
-      caption: Sign up
-    secondary:
-      url: ~packages/free
-      caption: Read more about our free package
 
 related-services:
 -
