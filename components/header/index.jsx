@@ -33,12 +33,16 @@ class Header extends React.Component {
     }))
   }
 
-  static renderMenu({ title, path, children, sections }, level = 0) {
+  static renderMenu(
+    { title, path, children, sections },
+    activePath,
+    level = 0
+  ) {
     // Menu for top level: dropdown or regular item
     if (level === 0) {
       return (
         <Nav className="ml-auto" navbar>
-          {children.map(node => Header.renderMenu(node, level + 1))}
+          {children.map(node => Header.renderMenu(node, activePath, level + 1))}
         </Nav>
       )
     }
@@ -57,7 +61,7 @@ class Header extends React.Component {
                   {section.title}
                 </DropdownItem>
                 {section.children.map(node =>
-                  Header.renderMenu(node, level + 2)
+                  Header.renderMenu(node, activePath, level + 2)
                 )}
               </div>
             ))}
@@ -72,7 +76,9 @@ class Header extends React.Component {
         <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
           <DropdownToggle nav>{title}</DropdownToggle>
           <DropdownMenu right>
-            {children.map(node => Header.renderMenu(node, level + 1))}
+            {children.map(node =>
+              Header.renderMenu(node, activePath, level + 1)
+            )}
           </DropdownMenu>
         </UncontrolledDropdown>
       )
@@ -93,7 +99,14 @@ class Header extends React.Component {
   }
 
   render() {
-    const { logo, siteMap, className = '', searchFormProps } = this.props
+    const {
+      logo,
+      siteMap,
+      className = '',
+      searchFormProps,
+      showSearch,
+      activeRoute,
+    } = this.props
     const { isOpen } = this.state
 
     return (
@@ -110,10 +123,10 @@ class Header extends React.Component {
               <Logo tag={NavbarBrand} />
             </Link>
           )}
-          <SearchNavbar {...searchFormProps} />
+          {showSearch && <SearchNavbar {...searchFormProps} />}
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
-            {Header.renderMenu({ children: siteMap })}
+            {Header.renderMenu({ children: siteMap }, activeRoute)}
           </Collapse>
         </Container>
       </Navbar>
@@ -135,10 +148,13 @@ Header.propTypes = {
   siteMap: PropTypes.arrayOf(LinkTypeShape).isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   searchFormProps: PropTypes.object.isRequired,
+  showSearch: PropTypes.bool,
+  activeRoute: PropTypes.string.isRequired,
 }
 
 Header.defaultProps = {
   logo: true,
+  showSearch: true,
 }
 
 export default Header

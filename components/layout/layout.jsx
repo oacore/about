@@ -11,6 +11,8 @@ const Layout = ({
   navigation,
   footer,
   searchConfig,
+  showSearch,
+  activeRoute,
   children,
   container = false,
 }) => (
@@ -28,6 +30,8 @@ const Layout = ({
       className="page-header"
       siteMap={navigation}
       searchFormProps={searchConfig}
+      showSearch={showSearch}
+      activeRoute={activeRoute}
     />
     {container ? <Container>{children}</Container> : children}
     <Footer className="page-footer" {...footer} />
