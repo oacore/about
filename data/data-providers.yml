@@ -1,10 +1,10 @@
 title: Data providers
 content: |
-  CORE aggregates research papers form data providers from all over the world
-  including institutional repositories, subject-repositories and journal publishers.
-  This process, which is called [harvesting](www.google.com), allows us to offer
-  search, text-mining and analytical capabilities over not only metadata, but also
-  the full-text of the research papers making CORE a unique service in the research
+  CORE aggregates research papers from data providers all over the world
+  including institutional and subject repositories and journal publishers.
+  This process, which is also called [harvesting](www.google.com), allows us to offer
+  search, text mining and analytical capabilities over not only metadata, but also
+  the full text of the research papers making CORE a unique service in the research
   community.
 
   CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
