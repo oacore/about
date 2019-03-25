@@ -2,11 +2,7 @@
 title: CORE Dataset
 ---
 
-The data aggregated from repositories by the CORE system can be accessed in two ways, through the CORE API or by downloading the data to your computer. The former option is practical if you want to build a service on top of CORE while the latter is something we recommend to those who would like to analyse the CORE dataset and/or apply some computationally intensive batch processes.
-
-If you use CORE in your work, we kindly request you to cite one of our [publications](~research_outputs).
-
-## Available datasets
+## Available datasets by year
 
 ### 2018 onwards
 
@@ -61,7 +57,7 @@ These datasets conform to the dataset structure described below as 'Pre-2017'
     Metadata dataset (181 MB)  
     Metadata dataset as RDF (835 MB)  
 
-## Structure of the dumps
+## Structure of datasets
 
 ### 2018 onwards
 
