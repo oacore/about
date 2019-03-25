@@ -1,7 +1,7 @@
 id: discovery
 title: CORE Discovery
 
-tagline: Discover millions of open access versions when hitting a paywall
+tagline: One-click access to free copies of research papers whenever you hit the paywall
 screenshot:
   source: /static/images/space.jpg
   caption: |
@@ -12,37 +12,39 @@ features:
   title: Key message 1
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Improve your bibliographical search by accessing millions
-    of research outputs
+    Overcome publishers' paywalls by discovering open access versions of papers
 -
   title: Key message 2
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Overcome publishers' paywalls by discovering the outputs
-    open access version
+    Backed by the world's largest dataset of open access full texts
 -
   title: Key message 3
   picture: /static/images/icons/powerful-chip.svg
   description: |
-    Easy to install and manage browser extension
+    Easy to install browser extension with over 10 million monthly active users
 
 description: |
-  CORE Discovery is a new service assists users in finding freely
-  accessible copies of research papers that behind a paywall.
-  It currently provides access to millions of full text open access
-  papers from within CORE and other data providers.
+  CORE Discovery helps users to discover freely accessible copies of research
+  papers that are behind a paywall on the publisher's site. It is backed
+  by our [huge dataset](~dataset) of millions of full text open access
+  papers as well as content from widely used external services beyond CORE.
 
-  The service processes and validates information from a number
-  of large third party scholarly data sources to build and maintain
-  a database of links pointing to freely available copies. It also
-  relies on information harvested by CORE from thousands of repositories
-  and journals, meaning that CORE discovery maximises the coverage and
-  accuracy of the Discovery service.
+  Our service processes information from a wide number of authoritative
+  scholarly data sources to discover, download and validate information
+  about free availability of articles wherever they are located on the web.
+  In this way, we are curating a vast database of freely available copies
+  of articles. CORE Discovery has a preference for displaying first the open
+  access content, originating from our approved content providers, and seeks
+  alternative routes, providing access to free versions, only if they
+  are not available from them.
 
-  CORE Discovery has a preference in displaying first the
-  open access content originating from our approved content providers
-  and seeks alternative routes only when a free version is not available
-  from them.
+  With CORE Discovery, you can be confident to benefit from the highest
+  coverage of freely available copies of articles anywhere on the planet.
+  So try it, it's free.
+
+  CORE Discovery can also be integrated into third party systems using our
+  CORE Discovery API.
 
 documentation: false
 
@@ -51,12 +53,17 @@ additional:
   content: |
     It’s free to install CORE Discovery in your browser.
 
+    If you are interested in the integration of your systems with the
+    CORE Discovery API, please [contact us](~about#contact).
+
 what-is-included:
   title: What is included Discovery
   content: |
     Our free membership provides you with:
-    * A browser extension operating in XXX browsers
-    * Access to millions of versions of open access research outputs
+    * A browser extension operating in XXX browsers.
+    * Automatic discovery of alternative open access versions of research papers.
+    * Easy access to millions of open access research papers.
+
   actions:
     primary:
       url: https://chrome.google.com/webstore
@@ -64,17 +71,11 @@ what-is-included:
 
 related-services:
 -
-  title: CORE API
-  picture: /static/images/services/api.svg
-  description: |
-    A browser extension operating in XXX browsers
--
-  title: CORE Dataset
-  picture: /static/images/services/dataset.svg
-  description: |
-    Access to millions of versions of open access research outputs
+  title: CORE Recommender
+  picture: /static/images/services/recommender.svg
 -
   title: CORE FastSync
   picture: /static/images/services/fastsync.svg
-  description: |
-    CORE
+-
+  title: CORE API
+  picture: /static/images/services/api.svg
