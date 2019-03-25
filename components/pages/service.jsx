@@ -26,9 +26,11 @@ const ServicePage = ({
     {screenshot && (
       <figure className="service-page-screenshot">
         <img src={screenshot.source} alt={`${title}'s screenshot`} />
-        <figcaption>
-          <Markdown>{screenshot.caption}</Markdown>
-        </figcaption>
+        {screenshot.caption && (
+          <figcaption>
+            <Markdown>{screenshot.caption}</Markdown>
+          </figcaption>
+        )}
       </figure>
     )}
 
