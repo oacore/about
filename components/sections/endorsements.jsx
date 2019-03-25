@@ -52,13 +52,7 @@ const EndorsementsSection = ({
 
       <TestimonialsSection
         title={testimonials.title}
-        items={testimonials.items.map(item => ({
-          ...item,
-          author: {
-            ...item.author,
-            picture: 'https://placehold.it/200x200',
-          },
-        }))}
+        items={testimonials.items}
         level={level + 1}
       />
     </Section>
