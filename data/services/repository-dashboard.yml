@@ -110,13 +110,13 @@ what-is-included:
 related-services:
 -
   title: CORE Recommender
-  picture: /static/images/icons/recommender.svg
+  picture: /static/images/services/recommender.svg
   url: ~services/recommender
 -
   title: CORE Discovery
-  picture: /static/images/icons/discovery.svg
+  picture: /static/images/services/discovery.svg
   url: ~services/discovery
 -
   title: CORE Search
-  picture: /static/images/icons/search.svg
+  picture: /static/images/services/search.svg
   url: ~services/search
