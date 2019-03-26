@@ -67,16 +67,9 @@ what-is-included:
       CORE based on a DOI.
     * Detailed [documentation](/documentation/dataset)
       on how to download the CORE dataset and how data is organised.
-  actions:
-    primary:
-      url: ~join
-      caption: Sign up
 
-custom:
--
-  id: disclaimer
-  title: Disclaimer
-  content: |
+    ### Disclaimer
+
     This dataset has been created from information that was publicly available
     on the Internet. Every effort has been made to ensure this dataset contains
     open access content only. We have included content only from repositories
@@ -90,6 +83,10 @@ custom:
     dataset does not breach copyright. The dataset is in no way intended
     for the purposes of reading the original publications, but for machine
     processing only.
+  actions:
+    primary:
+      url: /dataset/getdatadump
+      caption: Sign up
 
 related-services:
 -
