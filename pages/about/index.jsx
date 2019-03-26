@@ -106,19 +106,15 @@ const AboutPage = () => (
           </Col>
         </Row>
 
-        <Row className="align-items-center mt-3">
-          <Col xs="6" className="text-right">
-            <Button href="~data-providers">
-              See the full list of data providers
-            </Button>
-          </Col>
+        <div className="text-center">
+          <Button color="link" href="~data-providers">
+            {aboutData.howItWorks.harvesting.actions.secondary}
+          </Button>
 
-          <Col xs="6">
-            <Button color="primary" outline>
-              Become a data provider
-            </Button>
-          </Col>
-        </Row>
+          <Button color="primary" outline href="~contact">
+            {aboutData.howItWorks.harvesting.actions.primary}
+          </Button>
+        </div>
       </Section>
     </Section>
 

@@ -76,6 +76,9 @@ how-it-works:
       CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
       from over tons of thousands journals, collected from over
       {{repositoriesCount}}&nbsp;repositories around the world.
+    actions:
+      primary: Become a data provider
+      secondary: See the full list of data providers
   services:
     title: The services we offer
     content: |
