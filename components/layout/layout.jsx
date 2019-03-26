@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Container } from 'reactstrap'
-import Head from 'next/head'
 
+import Head from './head'
 import Header from '../header'
 import Footer from '../footer'
 
@@ -17,14 +17,7 @@ const Layout = ({
   container = false,
 }) => (
   <Fragment>
-    <Head>
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
-      <title>{title}</title>
-      <meta name="description" content={description} />
-    </Head>
+    <Head title={title} description={description} />
 
     <Header
       className="page-header"
