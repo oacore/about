@@ -19,6 +19,7 @@ contact: ~about#contact
 privacy: /privacy
 cookies: /cookies
 browse: /browse
+search: /search
 
 services:
   pattern: /services
