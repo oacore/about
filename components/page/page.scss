@@ -1,0 +1,28 @@
+@import "../bootstrap/core";
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    flex: 1 1 auto;
+  }
+}
+
+.page-header,
+.page-footer {
+  flex: 0 0 auto;
+}
+
+// Styling
+$page-bg: transparent !default;
+
+.page {
+  background: $page-bg;
+}

@@ -1,7 +1,7 @@
 // Central importing of all the CSS
 import './bootstrap/bootstrap.scss'
 
-import './layout/layout.scss'
+import './page/page.scss'
 import './content/content.scss'
 
 import './footer/footer.scss'
@@ -36,6 +36,7 @@ export { default as Markdown } from './markdown'
 // Layout
 export * from './content'
 export { default as Layout } from './layout'
+export { default as Page } from './page'
 
 // More complex layout
 export { default as Header } from './header'
