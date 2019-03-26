@@ -1,6 +1,7 @@
 import React from 'react'
 import Collapsed from '../collapsed'
-import { Article, Section, Content } from '../content'
+import Page from '../page'
+import { Section, Content } from '../content'
 import Markdown from '../markdown'
 import { Button, Link } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
@@ -12,6 +13,7 @@ const ServicePage = ({
   tagline,
   features,
   description,
+  keywords,
   whatIsIncluded,
   screenshot, // @optional
   additional, // @optional
@@ -19,7 +21,13 @@ const ServicePage = ({
   documentation, // @optional
   relatedServices,
 }) => (
-  <Article className="service-page" nav>
+  <Page
+    title={title}
+    description={description}
+    keywords={keywords}
+    className="service-page"
+    nav
+  >
     <h1>{title}</h1>
     <p className="service-page-tagline">{tagline}</p>
 
@@ -120,7 +128,7 @@ const ServicePage = ({
         </KeyFeatureList>
       </Section>
     )}
-  </Article>
+  </Page>
 )
 
 ServicePage.create = pageContext => () => <ServicePage {...pageContext} />
