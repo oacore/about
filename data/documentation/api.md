@@ -1,5 +1,5 @@
 ---
-title: CORE API
+title: CORE API documentation
 ---
 ![CORE API image](images/api-core.png)
 

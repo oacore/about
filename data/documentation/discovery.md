@@ -1,5 +1,5 @@
 ---
-title: CORE Discovery
+title: CORE Discovery documentation
 ---
 
 CORE Discovery is a new service assists users in finding freely accessible 

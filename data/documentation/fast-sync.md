@@ -1,5 +1,5 @@
 ---
-title: CORE FastSync
+title: CORE FastSync documentation
 ---
 
 The CORE FastSync dump implements the approach of the [ResourceSync Framework 
