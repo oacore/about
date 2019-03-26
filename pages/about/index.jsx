@@ -124,7 +124,7 @@ const AboutPage = () => (
       <ServiceGroups items={servicesData.sections} className="text-left" />
 
       <Button color="primary" outline href="~services">
-        Explore our services
+        {aboutData.howItWorks.services.actions.secondary}
       </Button>
     </Section>
 

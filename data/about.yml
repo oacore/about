@@ -97,7 +97,9 @@ how-it-works:
       to our collection, enabling exciting kinds of analysis, as well
       as services to be built that make use of the data, greatly widening
       the potential impact of open access research.
-  join-button: Join CORE today for free
+    actions:
+      primary: Join CORE today for free
+      secondary: Explore our services
 
 contacts:
   title: Contact us
