@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardBody, CardFooter } from 'reactstrap'
-import { Article, Section, Link } from 'components'
+import { Page, Section, Link } from 'components'
 import page from 'data/research-outputs.yml'
 
 const ResearchOutputsSection = ({ id, title, papers }) => (
@@ -25,7 +25,12 @@ const ResearchOutputsSection = ({ id, title, papers }) => (
 )
 
 const ResearchOutputsPage = () => (
-  <Article nav tag="main">
+  <Page
+    title={page.title}
+    description={page.description}
+    keywords={page.keywords}
+    nav
+  >
     <h1>{page.title}</h1>
     {page.sections.map(section => (
       <ResearchOutputsSection
@@ -36,7 +41,7 @@ const ResearchOutputsPage = () => (
         papers={section.papers}
       />
     ))}
-  </Article>
+  </Page>
 )
 
 export default ResearchOutputsPage

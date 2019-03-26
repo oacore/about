@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Button,
   Link,
-  Article,
+  Page,
   Section,
   Markdown,
   Content,
@@ -16,7 +16,11 @@ import repositoriesData from 'data/data-providers.yml'
 const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
 
 const DataProvidersPage = () => (
-  <Article container>
+  <Page
+    title={repositoriesData.title}
+    description={repositoriesData.description}
+    keywords={repositoriesData.keywords}
+  >
     <h1 className="mb-5">{repositoriesData.title}</h1>
     <Content>
       <Markdown>
@@ -39,7 +43,7 @@ const DataProvidersPage = () => (
       <h2>{repositoriesData.filter}</h2>
       <RepositoriesBrowser endpoint={repositoriesUrl} />
     </Section>
-  </Article>
+  </Page>
 )
 
 export default DataProvidersPage

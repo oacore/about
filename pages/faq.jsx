@@ -1,5 +1,5 @@
 import React from 'react'
-import { Article, Section, Accordion, Markdown, Content } from 'components'
+import { Page, Section, Accordion, Markdown, Content } from 'components'
 
 import faqData from 'data/faq.yml'
 
@@ -38,12 +38,17 @@ const FAQsSection = ({
 }
 
 const FAQsPage = () => (
-  <Article nav>
+  <Page
+    title={faqData.title}
+    description={faqData.description}
+    keywords={faqData.keywords}
+    nav
+  >
     <h1>{faqData.title}</h1>
     {faqData.sections.map(section => (
       <FAQsSection key={section.title} {...section} />
     ))}
-  </Article>
+  </Page>
 )
 
 export default FAQsPage

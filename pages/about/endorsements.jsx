@@ -1,7 +1,7 @@
 import React from 'react'
-import { Article } from 'components'
+import { Page } from 'components'
 import { EndorsementsSection } from 'components/sections'
-import { title, sections } from 'data/endorsements.yml'
+import { title, description, keywords, sections } from 'data/endorsements.yml'
 
 const extractTestimonials = organizations =>
   organizations
@@ -12,7 +12,7 @@ const extractTestimonials = organizations =>
     }))
 
 const EndorsementsPage = () => (
-  <Article title={title}>
+  <Page title={title} description={description} keywords={keywords}>
     <h1>{title}</h1>
 
     {Object.entries(sections).map(
@@ -28,7 +28,7 @@ const EndorsementsPage = () => (
         />
       )
     )}
-  </Article>
+  </Page>
 )
 
 export default EndorsementsPage

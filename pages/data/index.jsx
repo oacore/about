@@ -1,12 +1,16 @@
 import React from 'react'
-import { Article, Button, Markdown, HighlightSection } from 'components'
+import { Page, Button, Markdown, HighlightSection } from 'components'
 import { patchStats } from 'components/utils'
 
 import datasetData from 'data/dataset.yml'
 
 // TODO: Fix temporal text-center class usage
-const DataSetPage = () => (
-  <Article>
+const DataPage = () => (
+  <Page
+    title={datasetData.title}
+    description={datasetData.description}
+    keywords={datasetData.keywords}
+  >
     <div className="text-center">
       <h1>{datasetData.title}</h1>
       <Markdown>{datasetData.subtitle}</Markdown>
@@ -23,6 +27,6 @@ const DataSetPage = () => (
         </Button>
       </HighlightSection>
     ))}
-  </Article>
+  </Page>
 )
-export default DataSetPage
+export default DataPage

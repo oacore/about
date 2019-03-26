@@ -4,7 +4,7 @@ import {
   Link,
   Button,
   Blog,
-  Article,
+  Page,
   Content,
   Markdown,
   Section,
@@ -37,7 +37,12 @@ const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
 )
 
 const AboutPage = () => (
-  <Article nav tag="main">
+  <Page
+    title={aboutData.title}
+    description={aboutData.description}
+    keywords={aboutData.keywords}
+    nav
+  >
     <h1>{aboutData.title}</h1>
 
     <Section id="our-mission" caption="Our mission" tag="div">
@@ -171,7 +176,7 @@ const AboutPage = () => (
         <Markdown>{contactData.body}</Markdown>
       </Content>
     </Section>
-  </Article>
+  </Page>
 )
 
 export default AboutPage

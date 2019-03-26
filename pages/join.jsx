@@ -1,11 +1,11 @@
 import React from 'react'
-import { Article } from 'components'
-import { title } from 'data/join.yml'
+import { Page } from 'components'
+import { title, description, keywords } from 'data/join.yml'
 
 const JoinPage = () => (
-  <Article tag="main">
+  <Page title={title} description={description} keywords={keywords}>
     <h1>{title}</h1>
-  </Article>
+  </Page>
 )
 
 export default JoinPage

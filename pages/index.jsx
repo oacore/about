@@ -7,8 +7,8 @@ import {
   KeyFeatureList,
   Switcher,
   Markdown,
+  Page,
   Section,
-  Article,
   Search as SearchForm,
 } from 'components'
 import { JoinSection } from 'components/sections'
@@ -74,7 +74,11 @@ const TestimonialsSection = ({
 )
 
 const IndexPage = () => (
-  <Article tag="main">
+  <Page
+    title={page.title}
+    description={page.description}
+    keywords={page.keywords}
+  >
     <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
       <Section tag="div">
         <SearchForm
@@ -132,7 +136,7 @@ const IndexPage = () => (
         items={extractTestimonials(pageSections.partners.organizations.items)}
       />
     </Section>
-  </Article>
+  </Page>
 )
 
 export default IndexPage

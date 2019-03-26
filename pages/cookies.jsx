@@ -1,6 +1,6 @@
 import React from 'react'
 import { Table } from 'reactstrap'
-import { Article, Content, Section, Markdown, CookiesForm } from 'components'
+import { Page, Content, Section, Markdown, CookiesForm } from 'components'
 
 import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
 
@@ -58,7 +58,13 @@ const CookiesTable = ({ caption, items }) => (
 )
 
 const CookiesPage = () => (
-  <Article className="cookies-page" nav tag="main">
+  <Page
+    title={pageContext.title}
+    description={pageContext.description}
+    keywords={pageContext.keywords}
+    className="cookies-page"
+    nav
+  >
     <h1>{pageContext.title}</h1>
 
     <Section id="cookie-page" caption="Your cookie settings">
@@ -96,7 +102,7 @@ const CookiesPage = () => (
         <Markdown>{pageContext.privacyNotice.content}</Markdown>
       </Content>
     </Section>
-  </Article>
+  </Page>
 )
 
 export default CookiesPage
