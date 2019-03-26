@@ -2,7 +2,7 @@ import React from 'react'
 import { Page, Button, Markdown, HighlightSection } from 'components'
 import { patchStats } from 'components/utils'
 
-import datasetData from 'data/dataset.yml'
+import datasetData from 'data/data.yml'
 
 // TODO: Fix temporal text-center class usage
 const DataPage = () => (
@@ -12,8 +12,8 @@ const DataPage = () => (
     keywords={datasetData.keywords}
   >
     <div className="text-center">
-      <h1>{datasetData.title}</h1>
-      <Markdown>{datasetData.subtitle}</Markdown>
+      <h1>{datasetData.headline}</h1>
+      <Markdown>{datasetData.tagline}</Markdown>
     </div>
 
     {datasetData.sections.map(({ title, content, link, image }) => (
