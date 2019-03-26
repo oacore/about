@@ -99,10 +99,14 @@ class RepositoryBrowser extends Component {
 
         <Row className="mb-4">
           {page.map(item => (
-            <Col lg="6" className="mb-3 d-flex align-items-stretch">
+            <Col
+              lg="6"
+              className="mb-3 d-flex align-items-stretch"
+              key={item.id}
+            >
               <Card body className="data-providers-card">
                 <CardTitle>
-                  <Link href={`~search?repository=${item.id}`}>
+                  <Link href={`~search?q=repositoryId:${item.id}`}>
                     {item.name || 'Unnamed repository'}
                   </Link>
                 </CardTitle>
