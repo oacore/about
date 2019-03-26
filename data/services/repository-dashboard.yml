@@ -1,6 +1,15 @@
 id: repository-dashboard
+
 title: CORE Repository Dashboard
 tagline: Manage your repository outputs and ensure they are visible to the world
+description:
+  In an effort to improve the quality and transparency of the harvesting
+  process of the open access content and create a two way collaboration
+  between the CORE project and the providers of this content, CORE has
+  implemented the Repositories Dashboard. The aim of the Dashboard is to
+  provide an online  interface for repository providers and offer valuable
+  information  to content providers.
+
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -23,12 +32,13 @@ features:
   description: |
     Manage access to documents from your repository in CORE
 
-description: |
-  In an effort to improve the quality and transparency of the harvesting process
-  of the open access content and create a two way collaboration between the CORE
-  project and the providers of this content, CORE has implemented the
-  Repositories Dashboard. The aim of the Dashboard is to provide an online interface
-  for repository providers and offer valuable information to content providers.
+main: |
+  In an effort to improve the quality and transparency of the harvesting
+  process of the open access content and create a two way collaboration
+  between the CORE project and the providers of this content, CORE has
+  implemented the Repositories Dashboard. The aim of the Dashboard is to
+  provide an online  interface for repository providers and offer valuable
+  information  to content providers.
 
   [Access the dashboard now](https://dashboard.core.ac.uk/login).
   To register, [send us an email](~about/#contact).

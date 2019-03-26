@@ -2,6 +2,11 @@ id: fast-sync
 
 title: CORE FastSync
 tagline: Keep your data in sync with CORE and never miss a new research output
+description: |
+  A premium service useful for fast enterprise incremental access to all of
+  CORE data. FastSync implements the ResourceSync protocol and assists data
+  consumers with the synchronisation of the most recent content available
+  in CORE.
 
 screenshot:
   source: /static/images/screenshot.png
@@ -27,12 +32,11 @@ features:
     Fast and incremental updates as soon as they become available.
     No usage restrictions
 
-description: |
+main: |
   A premium service useful for fast enterprise incremental access to all of
   CORE data. FastSync implements the ResourceSync protocol and assists data
   consumers with the synchronisation of the most recent content available in CORE.
   If you are interested to adopt the service [contact us](~about/#contact).
-
 
 testimonial:
   content: |

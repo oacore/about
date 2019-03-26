@@ -1,6 +1,14 @@
 id: dataset
+
 title: CORE Dataset
 tagline: Download millions of research outputs for text and data analysis
+description: |
+  The data aggregated from repositories by CORE can be accessed in
+  two ways, through the CORE API or by downloading the data to your computer.
+  The former option is practical if you want to build a service on top of CORE
+  while the latter is something we recommend to those who would like to analyse
+  the CORE dataset and/or apply some computationally intensive batch processes.
+
 screenshot:
   source: /static/images/screenshot.png
 
@@ -22,7 +30,7 @@ features:
     World's largest full text collection of scientific papers
     for machine processing
 
-description: |
+main: |
   The data aggregated from repositories by CORE can be accessed in
   two ways, through the CORE API or by downloading the data to your computer.
   The former option is practical if you want to build a service on top of CORE

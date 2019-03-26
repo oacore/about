@@ -1,7 +1,13 @@
 id: discovery
-title: CORE Discovery
 
+title: CORE Discovery
 tagline: One-click access to free copies of research papers whenever you hit the paywall
+description: |
+  CORE Discovery helps users to discover freely accessible copies of research
+  papers that are behind a paywall on the publisher's site. It is backed
+  by our huge dataset of millions of full text open access papers as well as
+  content from widely used external services beyond CORE.
+
 screenshot:
   source: /static/images/space.jpg
   caption: |

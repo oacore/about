@@ -2,6 +2,12 @@ id: recommender
 
 title: CORE Recommender
 tagline: A leading research papers recommendation solution
+description: |
+  The recommender is a plugin that can be installed in repositories,
+  journal systems and web interfaces to suggest similar articles.
+  Its purpose is to support users in finding articles relevant
+  to what they read.
+
 screenshot:
   source: /static/images/screenshot.png
   caption: |
@@ -25,10 +31,11 @@ features:
   description: |
     Easy installation to all repositories, journals and web interfaces
 
-description: |
+main: |
   The recommender is a plugin that can be installed in repositories,
-  journal systems and web interfaces to suggest similar articles. Its purpose is to support
-  users in finding articles relevant to what they read.
+  journal systems and web interfaces to suggest similar articles.
+  Its purpose is to support users in finding articles relevant
+  to what they read.
 
   Uniqueness of the CORE Recommender:
   * Our methods rely on the availability of full texts.

@@ -2,6 +2,12 @@ id: api
 
 title: CORE API
 tagline: Develop new applications with the CORE API
+description: |
+  CORE harvests, maintains, enriches and makes available metadata
+  and full text content - typically a PDF - from many open access journals
+  and repositories. This makes it a useful access point for those
+  who would like to develop applications making use of this content.
+  To support these activities, CORE is providing a free API.
 
 screenshot:
   source: /static/images/screenshot.png
@@ -26,7 +32,7 @@ features:
   description: |
     Direct machine access to full texts of research papers
 
-description: |
+main: |
   CORE harvests, maintains, enriches and makes available metadata
   and full text content - typically a PDF - from many open access journals
   and repositories. This makes it a useful access point for those
