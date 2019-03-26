@@ -26,7 +26,7 @@ const CookiesForm = ({
         name,
         { default: defaultValue, value, required, title: label, description },
       ]) => (
-        <FormGroup>
+        <FormGroup key={name}>
           <CustomInput
             id={`${id}-${name}`}
             name={name}
