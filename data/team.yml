@@ -6,8 +6,8 @@ members:
   picture: petr-knoth.jpg
   description: |
     Responsible for leading the team, development & research effort, funding and product strategy.
-    Believes in free unrestricted access to research for all. Developed the first CORE prototype in 2010. Excited by 
-    improving machine access to scientific literature to support text and data analysis. 
+    Believes in free unrestricted access to research for all. Developed the first CORE prototype in 2010. Excited by
+    improving machine access to scientific literature to support text and data analysis.
 -
   name: Matteo Cancellieri
   role: Senior Developer
@@ -67,6 +67,21 @@ members:
   picture: viktor-yakubiv.jpg
   description: |
     Leading CORE front-end development.
+-
+  name: Maria Tarasiuk
+  role: Software Developer
+  description: |
+    Software services and infrastrucutre developer.
+-
+  name: Svetlana Rumyanceva
+  role: Project Manager
+  picture: svetlana-rumyanceva.jpg
+  description: |
+    Hard-working and responsible person who helps us to provide high quality
+    software services and deliver best resulst as quick as possible.
+    Believes that smooth communication and motivation is the basis of efficient
+    teamwork and successful projects. Passionate about networking,
+    achieving great results and acquiring new knowledge.
 -
   name: David Pride
   role: PhD student
