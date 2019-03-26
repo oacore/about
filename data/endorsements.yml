@@ -1,4 +1,9 @@
 title: What others have to say
+description: |
+  The CORE services have different applications and are aimed
+  to a wide variety of stakeholders. Many enterprise companies use CORE
+  to build search engines of research content, detect plagiarism
+  and develop repository services.
 
 testimonials:
 - &jon-tennant
@@ -344,7 +349,7 @@ organizations:
   id: doaj
   name: DOAJ
   logo: doaj.jpg
-  
+
 # institutions
 - &lbu
   id: lbu
@@ -454,7 +459,7 @@ sections:
     title: Enterprise companies
     description: |
       The [CORE services](~services) have different applications and are aimed
-      to a wide variety of stakeholders. Many enterprise companies use CORE to build search engines of research content,   
+      to a wide variety of stakeholders. Many enterprise companies use CORE to build search engines of research content,
       detect plagiarism and develop repository services.
     action:
       title: Interested in CORE to support your business?
@@ -481,9 +486,9 @@ sections:
     id: academic-institutions
     title: Institutions using CORE
     description: |
-      Institutions use CORE in a variety of cases, for example to discover open access 
-      content, manage their repository content in CORE and offer recommendations of 
-      similar research outputs searched by their users. 
+      Institutions use CORE in a variety of cases, for example to discover open access
+      content, manage their repository content in CORE and offer recommendations of
+      similar research outputs searched by their users.
     action:
       title: Interested in CORE at your institution?
       name: Sign in for free
@@ -518,9 +523,9 @@ sections:
     id: partner-projects
     title: Partner projects
     description: |
-      CORE has created exciting partnerships with open access infrastructure and 
-      innovative open science projects. With these collaborations CORE has extended 
-      and empowered both its own and partnering project tools.   
+      CORE has created exciting partnerships with open access infrastructure and
+      innovative open science projects. With these collaborations CORE has extended
+      and empowered both its own and partnering project tools.
     action:
       title: Interested in becoming a partner?
       name: Get it touch today

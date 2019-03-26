@@ -1,7 +1,13 @@
 title: About CORE
+description: |
+  CORE aggregates (harvests) research papers from data providers from all
+  over the world including institutional and subject repositories, open
+  access and hybrid journal publishers.
+
 video:
   src: https://www.youtube.com/embed/-gFYNg_8ySQ
   title: Introducing CORE
+
 mission:
   title: Our mission
   short: |
@@ -43,13 +49,16 @@ mission:
       > properly acknowledged and cited.
       >
       > *Part of the [BOAI declaration](http://www.budapestopenaccessinitiative.org)*
+
 blog:
   title: Recent blog posts
   visit-button: Visit the blog
+
 endorsements:
   title: Who's using CORE?
   content: Our data and tools power innovation **around the world**
   action: Find out more
+
 how-it-works:
   title: How it works
   harvesting:
@@ -86,6 +95,7 @@ how-it-works:
       as services to be built that make use of the data, greatly widening
       the potential impact of open access research.
   join-button: Join CORE today for free
+
 contacts:
   title: Contact us
   address:
@@ -94,6 +104,7 @@ contacts:
     org: Knowledge Media institute, The Open University
     city: Milton Keynes
     country: United Kingdom
+
 resources:
   title: Resources and promotional materials
   content: |
