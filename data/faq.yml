@@ -9,7 +9,7 @@ sections:
         question: Is my repository or journal harvested by CORE?
         answer: |
           To check whether your repository or journal is harvested
-          by CORE, go to our data providers [list](path___core_repositories).
+          by CORE, go to our data providers [list](/data/providers).
       - slug: how-do-I-register-my-repository-or-journal-with-CORE?
         question: |
           How do I register my repository or journal with CORE?
@@ -20,13 +20,13 @@ sections:
           If your repository or journal is already registered with
           some authoritative registry, you don't need to do anything.
           If your repository or journal has not been registered
-          yet get in [touch](~contact).
+          yet get in [touch](~about/#contact).
       - slug: where-are-the-repositories-harvested-by-CORE-located
         question: Where are the repositories harvested by CORE located?
         answer: |
           CORE is an international service and harvests repositories from
           various locations around the world. This information is displayed in
-          a map and can be accessed [here](~providers).
+          a map and can be accessed [here](/data/providers).
       - slug: I-would-like-to-include-them-in-CORE
         question: |
           I am an author of scientific papers and I would like to include
@@ -36,7 +36,7 @@ sections:
           networking sites, e.g. ResearchGate or Academia.edu, where authors
           can deposit papers, so please do not email us the full text of your
           papers. If you have deposited your articles in a repository
-          [let us](~contact) know the name of the repository.
+          [let us](~about/#contact) know the name of the repository.
           There are chances that we it already and if we don't we could
           start harvesting it.
   - title: Aggregation
@@ -49,7 +49,7 @@ sections:
           answer: |
             CORE does not harvest all the repositories that exist in our database
             with the same frequency. If you have a question regarding a specific
-            repository do get in [touch with us](~contact).
+            repository do get in [touch](~about/#contact) with us.
         - slug: when-will-the-harvesting-process-of-my-repository-be-completed
           question: |
             When will the harvesting process of my repository be completed?
@@ -71,17 +71,17 @@ sections:
             have an open access full text. Can my repository be harvested by CORE?
           answer: |
             Yes it can, provided that the repository offers its content as
-            [Open Access](path___core_about_main).
+            [Open Access](~about/#our-mission).
         - slug:  my-repository-contains-a-much-higher-number-of-records-than-CORE
           question: |
               My repository contains a much higher number of records than CORE.
               What can I do?
           answer: |
-              Log in to the CORE Repository Dashboard (~services#dashboard)
+              Log in to the [CORE Repository Dashboard](~services/repository-dashboard)
               and look under the issues tab. Examine whether CORE has the correct oai base
               url of your repository or if there are any technical issues listed there.
               If there are no technical issues or you do not have an account for the CORE
-              Repository Dashboard [contact us](~contact).
+              Repository Dashboard [contact us](~about/#contact).
         - slug: can-I-upload-a-new-version
           question: |
             There is a mistake in my article, can I upload a new version?
@@ -117,7 +117,7 @@ sections:
               where users can retrieve scientific literature, it focuses also
               on other types of research stakeholders, such as text miners and repository
               managers, and offers services designed for them, such as the
-              [CORE API](~api) and [Datasets](~dataset).
+              [CORE API](~services/api) and [Dataset](~services/dataset).
         - slug: there-is-no-download-button
           question: |
             I do not see the “Download” button in the CORE display page.
@@ -143,9 +143,9 @@ sections:
             Can CORE offer any statistics about the content it harvests?
           answer: |
             CORE can offer repository or journal full text download statistics per month via the
-            [CORE Repository Dashboard](~services#dashboard) but is not in position
+            [CORE Repository Dashboard](~services/repository-dashboard) but is not in position
             to offer single item downloads yet. If you do not have access to the
-            Dashboard [contact us](~contact).
+            Dashboard [contact us](~about/#contact).
         - slug: are-the-research-papers-offered-by-CORE-peer-reviewed
           question: |
             Are the research papers offered by CORE peer-reviewed?
@@ -165,7 +165,7 @@ sections:
             CORE and your system, CORE uses a variety of protocols to ingest
             the content. The easiest way to get your content integrated with CORE
             is the [OAI-PMH protocol](https://www.openarchives.org/pmh/).
-            If you wish to join CORE get in [touch](~contact).
+            If you wish to join CORE get in [touch](~about/#contact).
         - slug: what-is-my-journal-oai-base-url
           question: |
             What is my journal's oai base url?
@@ -183,7 +183,7 @@ sections:
             We would expect that harvesting could take from one hour to a couple of
             days for a typical repository. In some repository systems,
             such as EPrints, most of these recommendations are followed by default.
-            You can find more details [here](~recommendations).
+            You can find more details [here](~about#how-it-works).
         - slug: which-metadata-formats-does-CORE-support
           question: |
             Which metadata formats does CORE support?
@@ -204,8 +204,7 @@ sections:
             recommendation tools, etc. By cashing a copy of the harvested
             resource, CORE is not different from many commercial and
             non-commercial, academic and non-academic, search engines including
-            [Google](http://www.google.com/) or
-            [CiteSeerX](http://citeseerx.ist.psu.edu/index).
+            Google or CiteSeerX.
             The primary difference from such systems is that CORE caches only
             copies of open access content. More information on the benefits of
             this approach is available in the “[CORE: Three Access Levels to
@@ -219,7 +218,7 @@ sections:
             will be indexed and made discoverable via the CORE Search, but the PDFs
             will not be downloadble directry from the CORE Reader, a link will be
             provided only to the repository of origin. If you are interested in
-            that option [contact](~contact) us.
+            that option [contact](~about/#contact) us.
         - slug:  how-can-my-repository-opt-out-from-being-harvested-by-CORE
           question: |
             How can my repository opt out from being harvested by CORE?
@@ -233,7 +232,7 @@ sections:
             This will also guarantee the content cannot be cached by search
             engines and harvesting systems. In addition, you could withdraw your
             repository from all open access registries lists; when this takes
-            place, please [notify us](~contact).
+            place, please [notify us](~about/#contact).
     - title: Removing full text or metadata
       items:
         - slug: how-does-CORE-ensure-that-the-harvested-content-is-Open-Access
@@ -267,7 +266,7 @@ sections:
             properly communicated in a machine readable form. All non open
             access items should be blocked in the robots.txt file. If this
             information is provided in the metadata for each record and CORE
-            exposes the full text, please get in [touch with us](~contact).
+            exposes the full text, please get in [touch](~about/#contact) with us.
         - slug: full-text-record-is-deleted-from-my-repository
           question: |
             A full text record is deleted from my repository, but is still
@@ -285,9 +284,9 @@ sections:
           answer: |
             If full text content appears in CORE but not in the
             hosting service your repository manager can take it down via the
-            [CORE Repository Dashboard](~services#dashboard)
+            [CORE Repository Dashboard](~services/repository-dashboard)
             anytime without notifying us. If the hosting service does not have
-            access to the Dashboard visit [this page](~dashboard).
+            access to the Dashboard visit [this page](~services/repository-dashboard).
         - slug: full-text-has-been-removed-but-metadata-still-visible
           question: |
             The full text has been removed, but the metadata is still visible
@@ -310,7 +309,7 @@ sections:
           How do I register for an API key?
         answer: |
           To register a new key to access the CORE API interface please use
-          the form provided [here](path__apikeys_register).
+          the form provided [here](https://core.ac.uk/api-keys/register).
       - slug: can-I-use-the-CORE-API-in-a-project
         question: |
           Can I use the CORE API in a project?
@@ -318,18 +317,18 @@ sections:
           If you plan to use the CORE API we kindly ask the following:
           - attribute CORE by including in your website
             [this snippet](#powered-by-CORE-snippet),
-          - send us [an email](~contact) with a brief summary on
+          - send us [an email](~about/#contact) with a brief summary on
             how you are using the CORE API,
           - grant us permission to present this summary to our funders and/or
             display it on our website,
           - allow us to list your company’s name, url and logo on our
-            [website](~endorsements)
+            [website](~endorsements).
       - slug: does-CORE-offer-a-higher-download-quota-of-the-CORE-API
         question: |
           Does CORE offer a higher download quota of the CORE API?
         answer: |
           Yes, this is possible but there is usually a cost associated with it.
-          Please [email us](~contact) the name of your
+          Please [email us](~about/#contact) the name of your
           company or organisation, business entity, the number of requests you
           estimate to send and how often you will send them and we will get
           back to your with a quote.
@@ -364,18 +363,18 @@ sections:
           How often is the CORE dataset updated?
         answer: |
           We aim to generate a new public dataset at least once a year.
-          If you need a more recent dataset, please [get in touch](~contact)
+          If you need a more recent dataset, please [get in touch](~about/#contact)
           with us as we might be able to arrange it.
       - slug: how-can-I-download-the-CORE-Recommender
         question: |
           How can I download the CORE Recommender?
         answer: |
           If you have access to the CORE Repositories Dashboard, log into the
-          [Dashboard](~services/repository-dashboard) and you will get the
+          [CORE Repository Dashboard](~services/repository-dashboard) and you will get the
           instructions on how to download the
           [CORE Recommender](~services/recommender).
           Otherwise, visit our recommender
-          [registration page](~recommenders/register),
+          [registration page](https://core.ac.uk/recommender/register),
           where you will also find the installation instructions. Repository
           managers are highly recommended to use the CORE Repositories
           Dashboard.
@@ -405,13 +404,13 @@ sections:
         question: |
           Where can I find CORE’s brochure?
         answer: |
-          You can find CORE’s brochure [here](images/CORE-leaflet-2017-V3.pdf).
+          You can find CORE’s brochure [here](/static/resources/core-leaflet-2017-v3.pdf).
       - slug: CORE-leaflet
         question: |
-          Where can I find CORE’s leaflet?
+          Where can I find CORE’s flyer?
         answer: |
-          You can find CORE’s leaflet
-          [here](https://core.ac.uk/images/CORE-flyer-updated-july2017.pdf)
+          You can find CORE’s flyer
+          [here](/static/resources/core-flyer-updated-july2017.pdf).
       - slug: harvested-by-CORE-snippet
         question: |
           How can I embed the “harvested by CORE” snippet on my website?
@@ -432,4 +431,4 @@ sections:
         question: |
           Do you need to cite CORE?
         answer: |
-          Visit our [research page](~research-outputs).
+          Visit our [research page](~about/research-outputs).
