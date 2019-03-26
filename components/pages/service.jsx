@@ -13,6 +13,7 @@ const ServicePage = ({
   tagline,
   features,
   description,
+  main,
   keywords,
   whatIsIncluded,
   screenshot, // @optional
@@ -55,7 +56,7 @@ const ServicePage = ({
     </KeyFeatureList>
 
     <Content className="service-page-content">
-      <Markdown>{description}</Markdown>
+      <Markdown>{main}</Markdown>
 
       {documentation && (
         <p>
