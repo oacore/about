@@ -33,7 +33,7 @@ testimonials:
     role: >
       Institute of Information Science and Technologies (CNR),
       Technical Manager at OpenAIRE
-    picture: /static/images/people/
+    picture: /static/images/people/manghi.jpeg
 - &michael-jubb
   id: michael-jubb
   content: |
@@ -67,7 +67,7 @@ testimonials:
   author:
     name: Nick Sheppard
     role: Repository Developer at Leeds Beckett University
-    picture: /static/images/people/sheppard.jpg
+    picture: /static/images/people/sheppard.png
 - &joe-mcarthur-and-david-carroll
   id: joe-mcarthur-and-david-carroll
   content: |
@@ -88,6 +88,7 @@ testimonials:
   author:
     name: Nicola Dowson
     role: Library Services Manager at Open University
+    picture: /static/images/people/dowson.jpeg
 - &yvonne-budden
   id: yvonne-budden
   content: |
@@ -129,25 +130,25 @@ testimonials:
     picture: /static/images/people/botev.jpg
   api: true
 - &peter-raeth
-  id: peter-raeth
-  content: |
-    It is a component in my [meta-search
-    engine](http://informationanthology.net/Open-Access-Search.html).
-  author:
-    name: Peter Raeth
-    role: Senior Research Engineer
-  api: true
+   id: peter-raeth
+   content: |
+     It is a component in my [meta-search
+     engine](http://informationanthology.net/Open-Access-Search.html).
+   author:
+     name: Peter Raeth
+     role: Senior Research Engineer
+   api: true
 - &sourish-dasgupta
-  id: sourish-dasgupta
-  content: |
-    We use CORE API for our startup called [Rygbee](http://www.rygbee.com).
-    It's an online "idea guide" that enables users to ideate and enrich their
-    ideas by suggesting them with the relevant human and material resources.
-    One such resource is research articles and one of the data source is CORE.
-  author:
-    name: Sourish Dasgupta
-    role: Assistant Professor, DA-IICT
-  api: true
+   id: sourish-dasgupta
+   content: |
+     We use CORE API for our startup called [Rygbee](http://www.rygbee.com).
+     It's an online "idea guide" that enables users to ideate and enrich their
+     ideas by suggesting them with the relevant human and material resources.
+     One such resource is research articles and one of the data source is CORE.
+   author:
+     name: Sourish Dasgupta
+     role: Assistant Professor, DA-IICT
+   api: true
 - &scott-chamberlain
   id: scott-chamberlain
   content: |
@@ -167,41 +168,42 @@ testimonials:
   author:
     name: David Walters
     role: Open Access Officer, Brunel University
+    picture: /static/images/people/walters.jpg
   api: true
 - &colin-goldberg
-  id: colin-goldberg
-  content: |
-    Testing available APIs in the development of my new product -
-    a rule engine, [Ritc](http://www.ritc.io/), that can consume any defined,
-    accessible API via a Swagger definition (in most cases).
-    Ritc is a platform on which real-time - or near real-time
-    services (applications) can be built using rules.
-  author:
-    name: Colin Goldberg
-    role: President, MacMicro Inc.
-  api: true
+   id: colin-goldberg
+   content: |
+     Testing available APIs in the development of my new product -
+     a rule engine, [Ritc](http://www.ritc.io/), that can consume any defined,
+     accessible API via a Swagger definition (in most cases).
+     Ritc is a platform on which real-time - or near real-time
+     services (applications) can be built using rules.
+   author:
+     name: Colin Goldberg
+     role: President, MacMicro Inc.
+   api: true
 - &andrea-ciapetti
-  id: andrea-ciapetti
-  content: |
-    We have used mainly the Search API (http://core.ac.uk/api/search/⟨search_criteria⟩)
-    to collect technical papers related to specific projects,
-    using the project title and description to perform meaningful.searches.
-    We are now using a complete export in JSON format (of several GBs)
-    in order to import as many technical papers as possible to make theme
-    available in our semantic search engine.
-  author:
-    name: Andrea Ciapetti
-    role: Innovation Engineering SRL
-  api: true
+   id: andrea-ciapetti
+   content: |
+     We have used mainly the Search API (http://core.ac.uk/api/search/⟨search_criteria⟩)
+     to collect technical papers related to specific projects,
+     using the project title and description to perform meaningful.searches.
+     We are now using a complete export in JSON format (of several GBs)
+     in order to import as many technical papers as possible to make theme
+     available in our semantic search engine.
+   author:
+     name: Andrea Ciapetti
+     role: Innovation Engineering SRL
+   api: true
 - &balasubramanian-thiagarajan
-  id: balasubramanian-thiagarajan
-  content: |
-    I have incorporated it into my EPrints repository
-    [www.rhinology.in](http://www.rhinology.in/)
-  author:
-    name: Balasubramanian Thiagarajan
-    role: Otolaryngology Online
-  api: true
+   id: balasubramanian-thiagarajan
+   content: |
+     I have incorporated it into my EPrints repository
+     [www.rhinology.in](http://www.rhinology.in/)
+   author:
+     name: Balasubramanian Thiagarajan
+     role: Otolaryngology Online
+   api: true
 - &alan-stiltes
   id: alan-stiltes
   content: |
@@ -211,7 +213,6 @@ testimonials:
     name: Alan Stiltes
     role: Digital Repository Developer, The Open University
   api: true
-
 organizations:
 # companies
 - &ropensci
@@ -249,14 +250,14 @@ organizations:
   # the company cnanged their website url to https://raxter.io/
   # logo: companies/rygbee-logo.jpg
   logo: raxter.svg
-  testimonial: *sourish-dasgupta
+  # testimonial: *sourish-dasgupta
 - &ritc
   id: ritc
   name: Ritc
   url: http://www.macmicro.com
   # logo: companies/ritc-logo.png
   logo: macmicro.png # ???
-  testimonial: *colin-goldberg
+  # testimonial: *colin-goldberg
 - &4science
   id: 4science
   name: 4Science
@@ -281,7 +282,7 @@ organizations:
   id: macmicro
   name: MacMicro Inc.
   logo: macmicro.png
-  testimonial: *colin-goldberg
+  # testimonial: *colin-goldberg
 # project partners
 - &mooc
   id: mooc
@@ -307,7 +308,7 @@ organizations:
   id: oacg
   name: Open Access Co-ordination Group
   logo: universities-uk.svg
-  testimonial: *michael-jubb
+  # testimonial: *michael-jubb
 - &openaire
   id: openaire
   name: OpenAIRE
@@ -381,7 +382,7 @@ organizations:
   name: UWL Repository
   description: University of West London
   url: http://repository.uwl.ac.ukeprints/
-  logo: uwl.jpg
+  logo: uwl.jpeg
 - &iiasa
   name: International Institute for Applied Systems Analysis
   url: https://pure.iiasa.ac.at/
@@ -438,7 +439,7 @@ organizations:
 - &trieste
   name: Università degli studi di Trieste
   url: https://www.units.it/
-  logo: trieste.jpg
+  logo: trieste.png
 - &zurich
   name: University of Zurich
   url: http://www.uzh.ch/en.html
