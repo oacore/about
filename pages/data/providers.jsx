@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Button,
-  Link,
   Page,
   Section,
   Markdown,
@@ -20,26 +19,25 @@ const DataProvidersPage = () => (
     title={repositoriesData.title}
     description={repositoriesData.description}
     keywords={repositoriesData.keywords}
+    nav
   >
-    <h1 className="mb-5">{repositoriesData.title}</h1>
-    <Content>
+    <h1 className="page-title">{repositoriesData.title}</h1>
+    <Content className="section">
       <Markdown>
         {patchStats(repositoriesData.content, repositoriesData.statistics)}
       </Markdown>
-    </Content>
 
-    <Link href="~about#contact" passHref>
-      <Button color="primary" tag="a">
+      <Button color="primary" href="~contact">
         {repositoriesData.become}
       </Button>
-    </Link>
+    </Content>
 
-    <Section id="map">
+    <Section id="map" caption={repositoriesData.map}>
       <h2>{repositoriesData.map}</h2>
       <RepositoriesMap endpoint={repositoriesUrl} />
     </Section>
 
-    <Section id="list">
+    <Section id="list" caption={repositoriesData.filter}>
       <h2>{repositoriesData.filter}</h2>
       <RepositoriesBrowser endpoint={repositoriesUrl} />
     </Section>
