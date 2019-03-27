@@ -121,6 +121,7 @@ const ServicePage = ({
             <KeyFeature
               title={service.title}
               icon={service.picture}
+              href={service.url}
               key={service.title}
             >
               <Markdown>{service.title}</Markdown>
