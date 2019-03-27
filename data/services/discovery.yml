@@ -79,9 +79,12 @@ related-services:
 -
   title: CORE Recommender
   picture: /static/images/services/recommender.svg
+  url: ~services/recommender
 -
   title: CORE FastSync
   picture: /static/images/services/fastsync.svg
+  url: ~services/fastsync
 -
   title: CORE API
   picture: /static/images/services/api.svg
+  url: ~services/api

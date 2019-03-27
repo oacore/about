@@ -79,9 +79,12 @@ related-services:
 -
   title: CORE FastSync
   picture: /static/images/services/fastsync.svg
+  url: ~services/fastsync
 -
   title: CORE API
   picture: /static/images/services/api.svg
+  url: ~services/api
 -
   title: CORE Dataset
   picture: /static/images/services/dataset.svg
+  url: ~services/dataset

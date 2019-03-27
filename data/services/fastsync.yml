@@ -68,9 +68,12 @@ related-services:
 -
   title: CORE API
   picture: /static/images/services/api.svg
+  url: ~services/api
 -
   title: CORE Dataset
   picture: /static/images/services/dataset.svg
+  url: ~services/dataset
 -
   title: CORE Discovery
   picture: /static/images/services/discovery.svg
+  url: ~services/discovery

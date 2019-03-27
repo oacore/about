@@ -111,9 +111,12 @@ related-services:
 -
   title: CORE Recommender
   picture: /static/images/icons/recommender.svg
+  url: ~services/recommender
 -
   title: CORE Discovery
   picture: /static/images/icons/discovery.svg
+  url: ~services/discovery
 -
   title: CORE Search
   picture: /static/images/icons/search.svg
+  url: ~services/search

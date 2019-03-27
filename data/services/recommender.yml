@@ -89,9 +89,12 @@ related-services:
 -
   title: CORE Discovery
   picture: /static/images/services/discovery.svg
+  url: ~services/discovery
 -
   title: CORE Search
   picture: /static/images/services/search.svg
+  url: ~services/search
 -
   title: CORE Repository Dashboard
   picture: /static/images/services/repository-dashboard.svg
+  url: ~services/repository-dashboard

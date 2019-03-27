@@ -92,9 +92,12 @@ related-services:
 -
   title: CORE API
   picture: /static/images/services/api.svg
+  url: ~services/api
 -
   title: CORE FastSync
   picture: /static/images/services/fastsync.svg
+  url: ~services/fastsync
 -
   title: CORE Discovery
   picture: /static/images/services/discovery.svg
+  url: ~services/discovery

@@ -89,9 +89,12 @@ related-services:
 -
   title: CORE Dataset
   picture: /static/images/services/dataset.svg
+  url: ~services/dataset
 -
   title: CORE FastSync
   picture: /static/images/services/fastsync.svg
+  url: ~services/fastsync
 -
   title: CORE Discovery
   picture: /static/images/services/discovery.svg
+  url: ~services/discovery
