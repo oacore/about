@@ -47,7 +47,7 @@ const AboutPage = () => (
 
     <Section id="our-mission" caption="Our mission" tag="div">
       <Row>
-        <Col xs="12" sm="6" md="7" lg="8" tag="section">
+        <Col xs="12" md="7" lg="8" tag="section">
           <h2>{aboutData.mission.title}</h2>
 
           <Video
@@ -63,7 +63,13 @@ const AboutPage = () => (
           </Collapsed>
         </Col>
 
-        <Col xs="12" sm="6" md="5" lg="4" className="mt-3 mt-sm-0" tag="aside">
+        <Col
+          xs="12"
+          md="5"
+          lg="4"
+          className="d-none d-md-block mt-3 mt-sm-0"
+          tag="aside"
+        >
           <h4 className="mt-md-3">{aboutData.blog.title}</h4>
           <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
           <div className="text-center">
