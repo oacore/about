@@ -3,6 +3,7 @@
 $blockquote-avatar-size: 8rem !default;
 $blockquote-padding-left: 3.5 * $font-size-base !default;
 $blockquote-avatar-vertical-fix: -1rem;
+$blockquote-enable-avatar-placeholders: false;
 
 .blockquote {
   position: relative;
@@ -24,6 +25,14 @@ $blockquote-avatar-vertical-fix: -1rem;
   @include media-breakpoint-up("md") {
     padding-right: $blockquote-avatar-size + $spacer;
     min-height: $blockquote-avatar-size + $blockquote-avatar-vertical-fix;
+  }
+
+  @if ($blockquote-enable-avatar-placeholders) {
+    > .blockquote-footer::before {
+      @extend .blockquote-author-avatar;
+      content: "";
+      background: url("man.svg") no-repeat center / 100% 100%;
+    }
   }
 }
 
