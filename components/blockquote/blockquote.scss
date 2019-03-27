@@ -21,8 +21,10 @@ $blockquote-avatar-vertical-fix: -1rem;
 }
 
 .blockquote-avatar {
-  padding-right: $blockquote-avatar-size + $spacer;
-  min-height: $blockquote-avatar-size + $blockquote-avatar-vertical-fix;
+  @include media-breakpoint-up("md") {
+    padding-right: $blockquote-avatar-size + $spacer;
+    min-height: $blockquote-avatar-size + $blockquote-avatar-vertical-fix;
+  }
 }
 
 .blockquote-footer {
@@ -33,11 +35,15 @@ $blockquote-avatar-vertical-fix: -1rem;
   position: absolute;
   top: $blockquote-avatar-vertical-fix;
   right: 0;
-  display: block;
+  display: none;
   border-radius: 50%;
   border: 2px solid $blue-light;
   width: $blockquote-avatar-size;
   height: $blockquote-avatar-size;
   object-fit: cover;
   object-position: center;
+
+  @include media-breakpoint-up("md") {
+    display: block;
+  }
 }
