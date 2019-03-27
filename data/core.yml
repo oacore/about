@@ -14,7 +14,7 @@ navigation:
           - title: Dataset
             path: ~services/dataset
           - title: FastSync
-            path: ~services/fast-sync
+            path: ~services/fastsync
       - title: Content discovery
         path: ~services/discovery
         children:

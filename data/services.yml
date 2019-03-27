@@ -44,7 +44,7 @@ sections:
     logo: /static/images/services/dataset.svg
     screenshot: /static/images/screenshot.png
   -
-    id: fast-sync
+    id: fastsync
     title: FastSync
     short-description: Update data in fastest way
     description: |
@@ -54,7 +54,7 @@ sections:
       recent content available in CORE.
     action:
       caption: Learn more about the CORE FastSync
-      url: ~services/fast-sync
+      url: ~services/fastsync
     logo: /static/images/services/fastsync.svg
     screenshot: /static/images/screenshot.png
 -
