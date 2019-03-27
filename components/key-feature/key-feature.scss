@@ -13,6 +13,8 @@
   margin: 0 auto $spacer;
   width: 30%;
   height: auto;
+  transform-origin: 50% 100%;
+  transition: transform 3s;
 }
 
 .key-feature-list {
@@ -35,5 +37,23 @@
 .key-feature-text {
   > :last-child {
     margin-bottom: 0;
+  }
+}
+
+.key-feature-link {
+  display: block;
+  margin-top: -1 * $card-spacer-x;
+  margin-bottom: -1 * $card-spacer-x;
+  padding: $card-spacer-x;
+  background: transparent;
+  transition: background-color 0.2s;
+
+  &:hover,
+  &:focus {
+    background: $gray-200;
+
+    .key-feature-icon {
+      transform: scale(1.1);
+    }
   }
 }
