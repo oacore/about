@@ -72,8 +72,7 @@ what-is-included:
 
   actions:
     primary:
-      url: https://chrome.google.com/webstore
-      caption: Install from Chrome Web Store
+      caption: Coming soon...
 
 related-services:
 -
