@@ -92,7 +92,8 @@ const ServicePage = ({
               {whatIsIncluded.actions.primary && (
                 <Button
                   color="primary"
-                  href={whatIsIncluded.actions.primary.url}
+                  href={whatIsIncluded.actions.primary.url || '#'}
+                  disabled={!whatIsIncluded.actions.primary.url}
                 >
                   {whatIsIncluded.actions.primary.caption}
                 </Button>
@@ -101,7 +102,8 @@ const ServicePage = ({
                 <Button
                   color="primary"
                   outline
-                  href={whatIsIncluded.actions.secondary.url}
+                  href={whatIsIncluded.actions.secondary.url || '#'}
+                  disabled={!whatIsIncluded.actions.secondary.url}
                   className="ml-2"
                 >
                   {whatIsIncluded.actions.secondary.caption}
