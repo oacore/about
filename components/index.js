@@ -31,6 +31,7 @@ import './cookies/cookies.scss'
 
 // Base
 export * from './elements'
+export { default as ButtonToolbar } from './button-toolbar'
 export { default as Markdown } from './markdown'
 
 // Layout
