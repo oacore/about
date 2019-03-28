@@ -15,6 +15,15 @@ const MarkdownLink = ({ href, title, children }) => {
   )
 }
 
+const MarkdownImage = ({ src, alt, className = '', ...restProps }) => (
+  <img
+    className={`img-fluid ${className}`}
+    src={src}
+    alt={alt}
+    {...restProps}
+  />
+)
+
 const markdownConfig = {
   escapeHtml: false,
 
@@ -26,6 +35,8 @@ const markdownConfig = {
     table: ({ children }) => (
       <table className="table table-hover">{children}</table>
     ),
+
+    image: MarkdownImage,
 
     link: MarkdownLink,
     linkReference: MarkdownLink,
