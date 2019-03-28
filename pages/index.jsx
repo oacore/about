@@ -1,7 +1,6 @@
 import React from 'react'
 import {
   Button,
-  Link,
   Hero,
   KeyFeature,
   KeyFeatureList,
@@ -63,11 +62,9 @@ const TestimonialsSection = ({
     />
     {more && (
       <div className="mt-3 text-center">
-        <Link href={`~endorsements#${id}`} passHref>
-          <Button color="primary" outline>
-            {more}
-          </Button>
-        </Link>
+        <Button color="primary" outline href={`~endorsements#${id}`}>
+          {more}
+        </Button>
       </div>
     )}
   </Section>

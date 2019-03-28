@@ -1,8 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 import {
-  Link,
   Button,
+  ButtonToolbar,
   Blog,
   Page,
   Content,
@@ -72,11 +72,11 @@ const AboutPage = () => (
         >
           <h4 className="mt-md-3">{aboutData.blog.title}</h4>
           <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
-          <div className="text-center">
+          <ButtonToolbar align="center">
             <Button href="~blog" className="mt-3" color="primary" outline>
               {aboutData.blog.visitButton}
             </Button>
-          </div>
+          </ButtonToolbar>
         </Col>
       </Row>
     </Section>
@@ -86,18 +86,16 @@ const AboutPage = () => (
         {aboutData.endorsements.title}
       </h2>
       <Markdown>{aboutData.endorsements.content}</Markdown>
-      <Link href="~about/endorsements" passHref>
-        <Button color="primary" outline>
-          {aboutData.endorsements.action}
-        </Button>
-      </Link>
+      <Button color="primary" outline href="~about/endorsements">
+        {aboutData.endorsements.action}
+      </Button>
     </Section>
 
     <Section id="how-it-works" caption="How it works">
       <h2>{aboutData.howItWorks.title}</h2>
       <Section>
         <h3>{aboutData.howItWorks.harvesting.title}</h3>
-        <Row>
+        <Row className="mb-3">
           <Col xs="12" md="6">
             <Markdown>
               {patchStats(
@@ -112,15 +110,15 @@ const AboutPage = () => (
           </Col>
         </Row>
 
-        <div className="text-center">
-          <Button color="link" href="~data-providers">
-            {aboutData.howItWorks.harvesting.actions.secondary}
-          </Button>
-
+        <ButtonToolbar align="center" className="flex-row-reverse">
           <Button color="primary" outline href="~contact">
             {aboutData.howItWorks.harvesting.actions.primary}
           </Button>
-        </div>
+
+          <Button color="link" href="~data-providers">
+            {aboutData.howItWorks.harvesting.actions.secondary}
+          </Button>
+        </ButtonToolbar>
       </Section>
     </Section>
 
