@@ -54,7 +54,9 @@ additional:
 
     [Documentation and access to previous datasets](/documentation/dataset).
 
-    Orange Register button here.
+    <a href="#what-is-included" class="btn btn-primary">
+      Register for access
+    </a>
 
 what-is-included:
   title:  What’s included
