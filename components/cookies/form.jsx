@@ -1,6 +1,7 @@
 import React from 'react'
 import { CustomInput, Form, FormGroup, Card, CardTitle } from 'reactstrap'
 import { Button } from '../elements'
+import ButtonToolbar from '../button-toolbar'
 import Markdown from '../markdown'
 
 const CookiesForm = ({
@@ -42,10 +43,10 @@ const CookiesForm = ({
         </FormGroup>
       )
     )}
-    <div className="cookies-form-actions">
+    <ButtonToolbar className="cookies-form-actions">
       <Button color="primary">{submitCaption}</Button>
       {optionalActions}
-    </div>
+    </ButtonToolbar>
   </Card>
 )
 

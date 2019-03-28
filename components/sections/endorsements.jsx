@@ -1,10 +1,10 @@
 import React from 'react'
-import { Row, Col, Button } from 'reactstrap'
+import { Row, Col } from 'reactstrap'
 import Markdown from '../markdown'
+import { Button } from '../elements'
 import { Section } from '../content'
 import LogosCarousel from '../logos-carousel'
 import TestimonialsCarousel from '../testimonials-carousel'
-import Link from '../link'
 
 const TestimonialsSection = ({
   title,
@@ -41,9 +41,9 @@ const EndorsementsSection = ({
         <Col sm="9">
           <Markdown>{description}</Markdown>
           <p className="font-weight-bold">{action.title}</p>
-          <Link href={action.url} passHref>
-            <Button color="primary">{action.name}</Button>
-          </Link>
+          <Button color="primary" href={action.url}>
+            {action.name}
+          </Button>
         </Col>
         <Col sm="3">
           <LogosCarousel items={organizations} />

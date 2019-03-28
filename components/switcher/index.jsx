@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Button } from 'reactstrap'
 import { bind } from 'decko'
+import { Button } from '../elements'
 
 const SwitcherItem = ({
   children,

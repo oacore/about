@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Button } from 'reactstrap'
-import { Article } from './content'
-import Link from './link'
+import Page from './page'
+import ButtonToolbar from './button-toolbar'
+import { Content } from './content'
+import { Button } from './elements'
 
 class ErrorPage extends Component {
   static getInitialProps({ res, err }) {
@@ -12,22 +13,22 @@ class ErrorPage extends Component {
 
   render() {
     return (
-      <Article>
+      <Page title="Page is not found">
         <h1>Uh-oh</h1>
-        <p>The page you were looking for could not be found.</p>
-        <p>To help you find what you are looking for, why not</p>
-        <p>
-          <Link href="~home" passHref>
-            <Button color="primary">Go back to the homepage</Button>
-          </Link>
+        <Content>
+          <p>The page you were looking for could not be found.</p>
+          <p>To help you find what you are looking for, why not</p>
+        </Content>
+        <ButtonToolbar>
+          <Button color="primary" href="~home">
+            Go back to the homepage
+          </Button>
           {' or '}
-          <Link href="~contact" passHref>
-            <Button color="primary" outline>
-              Contact us
-            </Button>
-          </Link>
-        </p>
-      </Article>
+          <Button color="primary" outline href="~contact">
+            Contact us
+          </Button>
+        </ButtonToolbar>
+      </Page>
     )
   }
 }

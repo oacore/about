@@ -1,6 +1,7 @@
 import React from 'react'
 import Collapsed from '../collapsed'
 import Page from '../page'
+import ButtonToolbar from '../button-toolbar'
 import { Section, Content } from '../content'
 import Markdown from '../markdown'
 import { Button, Link } from '../elements'
@@ -88,7 +89,7 @@ const ServicePage = ({
         <Content>
           <Markdown>{whatIsIncluded.content}</Markdown>
           {whatIsIncluded.actions && (
-            <div>
+            <ButtonToolbar>
               {whatIsIncluded.actions.primary && (
                 <Button
                   color="primary"
@@ -104,12 +105,11 @@ const ServicePage = ({
                   outline
                   href={whatIsIncluded.actions.secondary.url || '#'}
                   disabled={!whatIsIncluded.actions.secondary.url}
-                  className="ml-2"
                 >
                   {whatIsIncluded.actions.secondary.caption}
                 </Button>
               )}
-            </div>
+            </ButtonToolbar>
           )}
         </Content>
       </Section>
