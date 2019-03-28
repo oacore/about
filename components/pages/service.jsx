@@ -84,7 +84,7 @@ const ServicePage = ({
     )}
 
     {whatIsIncluded && (
-      <Section caption={whatIsIncluded.title} id="#what-is-included">
+      <Section caption={whatIsIncluded.title} id="what-is-included">
         <h2>{whatIsIncluded.title}</h2>
         <Content>
           <Markdown>{whatIsIncluded.content}</Markdown>
