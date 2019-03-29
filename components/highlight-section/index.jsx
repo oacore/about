@@ -3,8 +3,6 @@ import { Row, Col } from 'reactstrap'
 import { Section } from '../content'
 import Link from '../link'
 
-import './highlight-section.scss'
-
 const HighlightSection = ({ image, action, children }) => (
   <Section className="highlight-section">
     <Row>

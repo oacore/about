@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Carousel, CarouselItem, CarouselControl } from 'reactstrap'
 import { bind } from 'decko'
 
-import './logos-carousel.scss'
-
 const LogosCarouselItem = ({
   src,
   alt,

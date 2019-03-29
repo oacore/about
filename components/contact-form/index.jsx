@@ -1,8 +1,6 @@
 import React from 'react'
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
-import './contact-form.scss'
-
 const defaultSubjects = [
   { value: 'join-core', label: 'Joining CORE' },
   { value: 'article-update', label: 'Article updates/removals' },

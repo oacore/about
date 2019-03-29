@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react'
 import { Link } from '../elements'
 
-import './key-feature.scss'
-
 const KeyFeature = ({
   title,
   children,

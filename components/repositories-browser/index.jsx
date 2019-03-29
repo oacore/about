@@ -6,8 +6,6 @@ import Link from '../link'
 import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
 
-import './repositories-browser.scss'
-
 class RepositoryBrowser extends Component {
   static searchOptions = {
     threshold: 0.2,

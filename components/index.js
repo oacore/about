@@ -18,6 +18,9 @@ import './service-group-card/service-group-card.scss'
 import './service-groups/service-groups.scss'
 
 import './repositories-browser/repositories-browser.scss'
+import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 import './repositories-map/repositories-map.scss'
 
 import './highlight-section/highlight-section.scss'
@@ -28,6 +31,11 @@ import './logos-carousel/logos-carousel.scss'
 import './testimonials-carousel/testimonials-carousel.scss'
 
 import './cookies/cookies.scss'
+
+import './sections/endorsements.scss'
+import './sections/join.scss'
+
+import './pages/service.scss'
 
 // Base
 export * from './elements'

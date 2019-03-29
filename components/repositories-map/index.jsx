@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
 import { Spinner } from 'reactstrap'
-import 'leaflet/dist/leaflet.css'
-import 'leaflet.markercluster/dist/MarkerCluster.css'
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 import { bind } from 'decko'
 import RepositoriesBrowser from '../repositories-browser'
-import './repositories-map.scss'
 import markerUrl from './marker.svg'
 
 class RepositoriesMap extends Component {

@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { Button } from 'reactstrap'
 import { bind } from 'decko'
 
-import './alphabet-filter.scss'
-
 class AlphabetFilter extends Component {
   static alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
