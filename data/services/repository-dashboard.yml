@@ -11,9 +11,9 @@ description:
   information  to content providers.
 
 screenshot:
-  source: /static/images/screenshot.png
+  source: /static/images/screenshots/repository-dashboard.png
   caption: |
-    Description of screenshot, which may a [link](~home).
+
 
 features:
 -
@@ -52,30 +52,30 @@ additional:
     Here are some of the insitutions using the CORE Repository Dashboard
     around the world.
 
-    **Australia**  
-    University of Adelaide  
-    University of Canberra  
+    **Australia**
+    University of Adelaide
+    University of Canberra
 
-    **Belgium**  
-    University of Li&egrave;ge  
-    University of Louvain  
+    **Belgium**
+    University of Li&egrave;ge
+    University of Louvain
 
-    **Netherlands**  
-    Utrecth University  
-    TU Delft University  
+    **Netherlands**
+    Utrecth University
+    TU Delft University
 
-    **United Kingdom**  
-    Cambridge University  
-    University of Leeds  
-    University of Sheffield  
-    University of York  
-    London School of Economics  
-    Imperial College London  
-    Strathclyde University  
+    **United Kingdom**
+    Cambridge University
+    University of Leeds
+    University of Sheffield
+    University of York
+    London School of Economics
+    Imperial College London
+    Strathclyde University
 
-    **United States**  
-    Columbia University  
-    Harvard University  
+    **United States**
+    Columbia University
+    Harvard University
 
 testimonial:
   content: |

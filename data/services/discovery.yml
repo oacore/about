@@ -9,9 +9,9 @@ description: |
   content from widely used external services beyond CORE.
 
 screenshot:
-  source: /static/images/space.jpg
+  source: /static/images/screenshots/discovery.png
   caption: |
-    Description of screenshot, which may a [link](~home).
+
 
 features:
 -
