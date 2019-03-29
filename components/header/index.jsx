@@ -27,7 +27,9 @@ class Header extends React.Component {
   }
 
   @bind
-  toggle() {
+  toggle(event) {
+    event.preventDefault()
+
     this.setState(({ isOpen }) => ({
       isOpen: !isOpen,
     }))
