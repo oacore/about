@@ -103,7 +103,7 @@ sections:
       Dashboard. The aim of the Dashboard is to provide an online interface for
       repository providers and offer valuable information to content providers.
     action:
-      caption: Lern more about the CORE Repository dashboard
+      caption: Learn more about the CORE Repository dashboard
       url: ~services/repository-dashboard
     logo: /static/images/services/repository-dashboard.svg
     screenshot: /static/images/screenshots/repository-dashboard.png
