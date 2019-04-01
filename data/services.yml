@@ -26,7 +26,7 @@ sections:
       caption: Learn more about the CORE API
       url: ~services/api
     logo: /static/images/services/api.svg
-    screenshot: /static/images/screenshot.png
+    screenshot: /static/images/screenshots/api.png
   -
     id: dataset
     title: Dataset
@@ -42,7 +42,7 @@ sections:
       caption: Learn more about the CORE Dataset
       url: ~services/dataset
     logo: /static/images/services/dataset.svg
-    screenshot: /static/images/screenshot.png
+    screenshot: /static/images/screenshots/dataset.png
   -
     id: fastsync
     title: FastSync
@@ -56,7 +56,7 @@ sections:
       caption: Learn more about the CORE FastSync
       url: ~services/fastsync
     logo: /static/images/services/fastsync.svg
-    screenshot: /static/images/screenshot.png
+    screenshot: /static/images/screenshots/fastsync.png
 -
   id: content-discovery
   title: Content discovery
@@ -73,7 +73,7 @@ sections:
       caption: Learn more about the CORE Recommender
       url: ~services/recommender
     logo: /static/images/services/recommender.svg
-    screenshot: /static/images/screenshot.png
+    screenshot: /static/images/screenshots/recommender.png
   -
     id: discovery
     title: Discovery
@@ -87,7 +87,7 @@ sections:
       caption: Learn more about the CORE Discovery
       url: ~services/discovery
     logo: /static/images/services/discovery.svg
-    screenshot: /static/images/screenshot.png
+    screenshot: /static/images/screenshots/discovery.png
 -
   id: managing-content
   title: Managing content
@@ -106,4 +106,4 @@ sections:
       caption: Lern more about the CORE Repository dashboard
       url: ~services/repository-dashboard
     logo: /static/images/services/repository-dashboard.svg
-    screenshot: /static/images/screenshot.png
+    screenshot: /static/images/screenshots/repository-dashboard.png
