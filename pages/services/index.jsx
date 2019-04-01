@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { Page, Content, Section, Button } from 'components'
+import { Page, Content, Section, Button, Link } from 'components'
 import Testimonial from 'components/testimonial'
 import servicesData from 'data/services.yml'
 
@@ -41,7 +41,11 @@ const ServicesPage = () => (
           <Section key={service.id} id={service.id} className="service-section">
             <Row className="service-section-title" tag="h3">
               <Col sm="6" md="4" tag="span" className="service-section-logo">
-                <img src={service.logo} alt={`${service.title}'s logo`} />
+                <Link href={service.action.url} passHref>
+                  <a href={service.action.url} title={service.action.caption}>
+                    <img src={service.logo} alt={`${service.title}'s logo`} />
+                  </a>
+                </Link>
               </Col>
 
               <Col sm="6" md="8" tag="span">
@@ -52,11 +56,15 @@ const ServicesPage = () => (
             <Row className="service-section-content">
               <Col sm="6" md="4">
                 <figure>
-                  <img
-                    className="service-section-screenshot"
-                    src={service.screenshot}
-                    alt={`${service.title}'s screenshot`}
-                  />
+                  <Link href={service.action.url} passHref>
+                    <a href={service.action.url} title={service.action.caption}>
+                      <img
+                        className="service-section-screenshot"
+                        src={service.screenshot}
+                        alt={`${service.title}'s screenshot`}
+                      />
+                    </a>
+                  </Link>
                 </figure>
               </Col>
 
