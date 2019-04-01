@@ -60,6 +60,26 @@
   }
 }
 
+.service-page-title {
+  text-align: center;
+
+  @include media-breakpoint-up("md") {
+    text-align: left;
+  }
+
+  + .article-nav {
+    justify-content: center;
+
+    @include media-breakpoint-up("md") {
+      justify-content: flex-start;
+    }
+  }
+}
+
+.service-page-heading {
+  @extend .service-page-title;
+}
+
 .service-page-tagline {
   @include font-size($lead-font-size);
   font-weight: $headings-font-weight;

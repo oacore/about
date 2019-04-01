@@ -30,7 +30,7 @@ const ServicePage = ({
     className="service-page"
     nav
   >
-    <h1>{title}</h1>
+    <h1 className="service-page-title">{title}</h1>
     <p className="service-page-tagline">{tagline}</p>
 
     {screenshot && (
@@ -117,7 +117,9 @@ const ServicePage = ({
 
     {relatedServices && relatedServices.length && (
       <Section caption="You might also be interested in" id="related-services">
-        <h2>You might also be interested in</h2>
+        <h2 className="service-page-heading">
+          You might also be interested in
+        </h2>
         <KeyFeatureList>
           {relatedServices.map(service => (
             <KeyFeature
