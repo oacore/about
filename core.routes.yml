@@ -9,7 +9,7 @@ about:
     ambassadors: ./ambassadors
     endorsements: ./endorsements
     research-outputs: './research-outputs'
-mission: ~about#mission
+mission: ~about#our-mission
 team: ~about#team
 internships: ~about#internships
 endorsements: ~about/endorsements
