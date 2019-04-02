@@ -11,7 +11,7 @@ description: |
   ResourceSync protocol.
 
 screenshot:
-  source: /static/images/screenshot.png
+  source: /static/images/screenshots/connector.png
   caption: |
     Description of screenshot, which may a [link](~home).
 

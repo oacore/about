@@ -10,9 +10,9 @@ description: |
   To support these activities, CORE is providing a free API.
 
 screenshot:
-  source: /static/images/screenshot.png
+  source: /static/images/screenshots/api.png
   caption: |
-    Description of screenshot, which may a [link](~home).
+
 
 features:
 -

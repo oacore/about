@@ -9,9 +9,9 @@ description: |
   in CORE.
 
 screenshot:
-  source: /static/images/screenshot.png
+  source: /static/images/screenshots/fastsync.png
   caption: |
-    Description of screenshot, which may a [link](~home).
+    
 
 features:
 -
@@ -61,7 +61,7 @@ what-is-included:
 
   actions:
     primary:
-      url: ~join
+      url: ~contact
       caption: Contact us for a quote
 
 related-services:

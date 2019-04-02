@@ -10,7 +10,7 @@ description: |
   the CORE dataset and/or apply some computationally intensive batch processes.
 
 screenshot:
-  source: /static/images/screenshot.png
+  source: /static/images/screenshots/dataset.png
 
 features:
 -
