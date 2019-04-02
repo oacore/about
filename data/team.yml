@@ -9,19 +9,44 @@ members:
     Believes in free unrestricted access to research for all. Developed the first CORE prototype in 2010. Excited by
     improving machine access to scientific literature to support text and data analysis.
 -
-  name: Matteo Cancellieri
-  role: Senior Developer
-  picture: matteo-cancellieri.jpg
-  description: |
-    Works on improving and and maintaining CORE services. He is a detail knowledge base of all CORE services. Has been developing for CORE for several years and Continuous Integration secret lover. Once he was a Super Mario plumber.
--
   name: Lucas Anastasiou
   role: Senior Developer
   picture: lucas-anastasiou.jpg
   description: |
     Works on improving and and maintaining CORE services. Elasticsearch guru. While not on his computer coding, he enjoys playing chess, scratching his
     guitar and dreams of climbing Alpe d'Huez or Col de la Madone
-    with his bike.
+    with his bike.  
+-
+  name: Matteo Cancellieri
+  role: Senior Developer
+  picture: matteo-cancellieri.jpg
+  description: |
+    Works on improving and and maintaining CORE services. He is a detail knowledge base of 
+    all CORE services. Has been developing for CORE for several years and Continuous Integration secret lover.
+    Once he was a Super Mario plumber.
+-
+  name: Bikash Gyawali
+  role: Data Analyst & Researcher
+  picture: bikash-gyawali.jpg
+  description: |
+    A computational linguist and researcher working on building a better
+    recommender service for the CORE platform. Firmly believes in the motto
+    "Work hard, play hard".
+-
+  name: Drahomira Herrmannova
+  role: Data Analyst & Researcher
+  picture: drahomira-herrmannova.jpg
+  description: |
+    Works with the rest of the team on both front- and back-end development.
+    Enjoys maintaining and improving CORE as it provides her with useful data
+    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
+    Book lover and sports enthusiast in her spare time.
+-
+  name: Sergei Misak
+  role: Front-End Developer
+  picture: sm.png
+  description: |
+    Developing CORE front-end services.
 -
   name: Samuel Pearce
   role: Developer and Infrastructure Specialist
@@ -39,39 +64,16 @@ members:
     barriers to scientific literature. In her spare time she likes to swim,
     read and travel.
 -
-  name: Drahomira Herrmannova
-  role: Data Analyst & Researcher
-  picture: drahomira-herrmannova.jpg
+  name: David Pride
+  role: PhD student
+  picture: david-pride.jpg
   description: |
-    Works with the rest of the team on both front- and back-end development.
-    Enjoys maintaining and improving CORE as it provides her with useful data
-    for her PhD. Dreams of turning CORE into a hub for Semantometric research.
-    Book lover and sports enthusiast in her spare time.
--
-  name: Bikash Gyawali
-  role: Data Analyst & Researcher
-  picture: bikash-gyawali.jpg
-  description: |
-    A computational linguist and researcher working on building a better
-    recommender service for the CORE platform. Firmly believes in the motto
-    "Work hard, play hard".
--
-  name: Sergei Misak
-  role: Front-End Developer
-  picture: sm.png
-  description: |
-    Developing CORE front-end services.
--
-  name: Viktor Yakubiv
-  role: Senior Front-End Developer
-  picture: viktor-yakubiv.jpg
-  description: |
-    Leading CORE front-end development.
--
-  name: Maria Tarasiuk
-  role: Software Developer
-  description: |
-    Software services and infrastrucutre developer.
+    I recently completed my MSc in Computer Science at The University of
+    Hertfordshire. I joined the team at KMi as a PhD research student
+    with Dr. Petr Knoth and Professor Zdenek Zdrahal as my supervisors.
+    My thesis will expand on the original work on Semantometrics completed
+    by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
+    natural language processing and text mining.
 -
   name: Svetlana Rumyanceva
   role: Project Manager
@@ -83,17 +85,16 @@ members:
     teamwork and successful projects. Passionate about networking,
     achieving great results and acquiring new knowledge.
 -
-  name: David Pride
-  role: PhD student
-  picture: david-pride.jpg
+  name: Maria Tarasiuk
+  role: Software Developer
   description: |
-    I recently completed my MSc in Computer Science at The University of
-    Hertfordshire. I joined the team at KMi as a PhD research student
-    with Dr. Petr Knoth and Professor Zdenek Zdrahal as my supervisors.
-    My thesis will expand on the original work on Semantometrics completed
-    by Dr Knoth and Dasha Herrmannova. My areas of interest include semantics,
-    natural language processing and text mining.
-
+    Software services and infrastrucutre developer.
+-
+  name: Viktor Yakubiv
+  role: Senior Front-End Developer
+  picture: viktor-yakubiv.jpg
+  description: |
+    Leading CORE front-end development.
 
 past-members:
 - Josef Harag
