@@ -1,5 +1,7 @@
 @import "../bootstrap/core";
 
+$footer-partners-breakpoint: "sm";
+
 .footer {
   background: $beige-dark;
 }
@@ -39,13 +41,9 @@
 .footer-partners {
   display: flex;
   flex-wrap: wrap;
-  padding: $spacer / 2 0;
-  margin: 0 -0.5 * $spacer;
-
-  p {
-    padding: $spacer / 2;
-    flex: 0 0 100%;
-  }
+  align-items: flex-start;
+  padding: ($spacer / 2) ($grid-gutter-width / 2);
+  margin: 0 ($grid-gutter-width / -2);
 
   a {
     color: inherit;
@@ -55,21 +53,52 @@
       color: $link-hover-color;
     }
   }
+}
 
-  @include media-breakpoint-up("md") {
-    width: 30%;
-  }
+.footer-partners-item {
+  display: block;
+  margin: 0;
+  padding: ($spacer / 2) ($grid-gutter-width / 2);
 }
 
 .footer-partners-logo {
   display: block;
+  flex: 1;
+
+  @include media-breakpoint-up($footer-partners-breakpoint) {
+    height: 4 * $spacer;
+    flex: 0 !important; // to override id's property
+  }
 
   img {
     display: block;
-    height: 6rem;
+    width: 100%;
+    height: auto;
+
+    @include media-breakpoint-up($footer-partners-breakpoint) {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.footer-partners-text {
+  width: 100%;
+  flex-grow: 2;
+
+  @include media-breakpoint-up($footer-partners-breakpoint) {
+    max-width: 16rem;
   }
 
-  + .footer-partners-logo {
-    margin-left: $spacer;
+  :last-child {
+    margin-bottom: 0;
   }
+}
+
+#footer-logo-jisc {
+  flex-grow: 0.68;
+}
+
+#footer-logo-ou {
+  flex-grow: 1;
 }

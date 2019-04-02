@@ -28,7 +28,8 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
 
       <div className="footer-partners">
         <a
-          className="footer-partners-logo"
+          id="footer-logo-ou"
+          className="footer-partners-item footer-partners-logo"
           href="https://www.open.ac.uk"
           target="_blank"
           rel="noopener noreferrer"
@@ -36,14 +37,17 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
           <img src="/static/images/logos/ou.png" alt="The Open University" />
         </a>
         <a
-          className="footer-partners-logo"
+          id="footer-logo-jisc"
+          className="footer-partners-item footer-partners-logo"
           href="https://www.jisc.ac.uk"
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src="/static/images/logos/jisc.svg" alt="Jisc" />
         </a>
-        <Markdown>{partners}</Markdown>
+        <Markdown className="footer-partners-item footer-partners-text">
+          {partners}
+        </Markdown>
       </div>
     </Container>
   </footer>
