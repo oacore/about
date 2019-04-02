@@ -16,17 +16,17 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/paywall-2.png
   description: |
     Overcome publishers' paywalls by discovering open access versions of papers
 -
   title: Key message 2
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/oa-3.png
   description: |
     Backed by the world's largest dataset of open access full texts
 -
   title: Key message 3
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/extension.png
   description: |
     Easy to install browser extension with over 10 million monthly active users
 

@@ -18,17 +18,17 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/statistics.png
   description: |
     Access your collection's download statistics and harvesting process
 -
   title: Key message 2
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/update.png
   description: |
     Update metadata records with a single button click
 -
   title: Key message 3
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/manage.png
   description: |
     Manage access to documents from your repository in CORE
 

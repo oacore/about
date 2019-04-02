@@ -16,18 +16,18 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/discoverable.png
   description: |
     Make your repository content more discoverable from across the global
     network of CORE data providers
 -
   title: Key message 2
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/finding.png
   description: |
     Support users in finding articles relevant to their interests
 -
   title: Key message 3
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/installation.png
   description: |
     Easy installation to all repositories, journals and web interfaces
 

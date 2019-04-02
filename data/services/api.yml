@@ -17,18 +17,18 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/api.png
   description: |
     Real-time machine access to the world's largest collection of open
     access scientific papers
 -
   title: Key message 2
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/data.png
   description: |
     Harmonised access to data from across the network of all CORE providers
 -
   title: Key message 3
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/machine.png
   description: |
     Direct machine access to full texts of research papers
 

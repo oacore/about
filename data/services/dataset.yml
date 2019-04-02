@@ -15,17 +15,17 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/big-data-3.png
   description: |
     Download all CORE data for big data processing
 -
   title: Key message 2
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/analyse.png
   description: |
     Prototype, analyse and mine your data in your infrastructure
 -
   title: Key message 3
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /static/images/icons/processing.png
   description: |
     World's largest full text collection of scientific papers
     for machine processing
