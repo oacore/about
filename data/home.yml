@@ -40,10 +40,10 @@ endorsements:
   enterprise:
     title: Enterprise customers using CORE technologies
     description: |
-      We are proud to provide data services for enterprise customers:
-      - Fast and reliable machine access to CORE's data.
-      - Text and data mine full texts from across thousands of data providers.
-      - Interact with CORE data in real-time or keep always in sync.
+      Enterprise data services:
+      - Fast and reliable machine access to data.
+      - Text and data mine full texts from across many data providers.
+      - Stay in sync or interact with CORE in real time.
     limit: 5
     more: Read more about how CORE is used in industry
   academic:
