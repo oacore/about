@@ -55,6 +55,8 @@ footer:
       path: ~cookies
     - title: Privacy notice
       path: ~privacy
+    - title: Accessibility
+      path: ~accessibility
   research-outputs: |
     Discover our [research outputs](~research-outputs) and cite our work.
   partners: |
