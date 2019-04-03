@@ -309,7 +309,7 @@ sections:
           How do I register for an API key?
         answer: |
           To register a new key to access the CORE API interface please use
-          the form provided [here](https://core.ac.uk/api-keys/register).
+          the form provided [here](/api-keys/register).
       - slug: can-I-use-the-CORE-API-in-a-project
         question: |
           Can I use the CORE API in a project?
@@ -374,7 +374,7 @@ sections:
           instructions on how to download the
           [CORE Recommender](~services/recommender).
           Otherwise, visit our recommender
-          [registration page](https://core.ac.uk/recommender/register),
+          [registration page](/recommender/register),
           where you will also find the installation instructions. Repository
           managers are highly recommended to use the CORE Repositories
           Dashboard.
@@ -398,7 +398,7 @@ sections:
         question: |
           I need a high resolution logo of CORE. Where can I find it?
         answer: |
-          [Download](https://core.ac.uk/resources/corelogo\_hires.png)
+          [Download](/static/resources/core-logo.png)
           a high resolution logo of CORE.
       - slug: CORE-brochure
         question: |
@@ -415,7 +415,7 @@ sections:
         question: |
           How can I embed the “harvested by CORE” snippet on my website?
         answer: |
-          ![harvested-by-core](https://core.ac.uk/images/harvested-by-core-orange.png)
+          ![harvested-by-core](/images/harvested-by-core-orange.png)
           ```
           <img src="https://core.ac.uk/images/harvested-by-core-orange.png">
           ```
@@ -423,7 +423,7 @@ sections:
         question: |
           How can I embed the “powered by CORE” snippet on my website?
         answer: |
-          ![powered-by-core](https://core.ac.uk/images/powered-by-core-orange.png)
+          ![powered-by-core](/images/powered-by-core-orange.png)
           ```
           <img src="https://core.ac.uk/images/powered-by-core-orange.png">
           ```
