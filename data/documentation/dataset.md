@@ -8,20 +8,20 @@ title: CORE Dataset
 
 **Dataset 2018-03-01**
 
-[Register for Access](~join#dataset)
+[Register for Access](/dataset/getdatadump)
 
 Metadata only dataset (beta) (127 GB) - 123M metadata items, 85.6M items with abstract
 
 With full text dataset (beta) (330 GB) - 123M metadata items, 85.6M items with abstract, 9.8M items with fulltext
 
 **Note:**  
-For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB (full text) of free space on disk. It is possible to extract each repository individually. Please read the section ["Structure of the dumps"](#dump-structure) below for more information.
+For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB (full text) of free space on disk. It is possible to extract each repository individually. Please read the section "Structure of datasets" below for more information.
 
 ### 2017
 
 **Dataset 2017-11-01**  
 
-[Register for Access](~join#dataset)
+[Register for Access](/dataset/getdatadump)
 
 Metadata only dataset (beta) (22.65 GB) - 64 million items
 
@@ -34,26 +34,26 @@ Beta notice: while in beta, we cannot guarantee completeness or integrity of the
 These datasets conform to the dataset structure described below as 'Pre-2017'
 
 *   **Dataset 2016-10**  
-    [Register for Access](~join#dataset).  
+    [Register for Access](/dataset/getdatadump).  
     Metadata dataset (9.0 GB) - (23.9 million items)  
     Content dataset (102 GB) - (4 million items)  
 
 *   **Dataset 2015-09**  
-    [Register for Access](~join#dataset)  
+    [Register for Access](/dataset/getdatadump)  
     Metadata dataset (4.5 GB)  
     Content dataset (30.5 GB)  
 
 *   **Dataset 2014-06-13** _(used for dataset track of [DL2014](https://wosp.core.ac.uk/dl2014/#dataset))_  
-    [Register for Access](~join#dataset)  
+    [Register for Access](/dataset/getdatadump)  
     Metadata dataset (3.7 GB)  
     Content dataset (24 GB)  
 
 *   **Dataset 2013-12-15**  
-    [Register for Access](~join#dataset)  
+    [Register for Access](/dataset/getdatadump)  
     Metadata dataset (1.7 GB)  
 
 *   **Dataset 2013-04-12**  
-    [Register for Access](~join#dataset)  
+    [Register for Access](/dataset/getdatadump)  
     Metadata dataset (181 MB)  
     Metadata dataset as RDF (835 MB)  
 
@@ -157,10 +157,7 @@ An example of a metadata item in the data set is as follows. The full record wil
 
 The CORE dataset provides access to both the enriched metadata as well as the full-texts. The data dump consists of two files, the metadata file and the content file. Both files are compressed using tar and gzip.
 
-The structure of the metadata file is depicted in the 
-[diagram](https://blog.core.ac.uk/files/data_schema_v0.2.png) 
-and an example
-of a metadata item in the data set is as follows:
+An example of a metadata item in the data set is as follows:
 
 ```json
 {
