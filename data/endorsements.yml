@@ -1,4 +1,4 @@
-title: What others have to say
+title: What others say about us
 description: |
   The CORE services have different applications and are aimed
   to a wide variety of stakeholders. Many enterprise companies use CORE
@@ -54,7 +54,7 @@ testimonials:
     open access environment in the UK.
   author:
     name: Ben Johnson
-    role: HEFCE Research Policy Adviser
+    role: Research Policy Adviser
     picture: /static/images/people/johnson.jpg
 - &nick-sheppard
   id: nick-sheppard
@@ -129,6 +129,19 @@ testimonials:
     role: CTO, Iris AI AS
     picture: /static/images/people/botev.jpg
   api: true
+- &kim-sejin
+  id: kim-sejin
+  content: |
+    By integrating with CORE, we have significantly increased the number of
+    research papers in the Naver Academic indexes. In fact, CORE is Naver’s largest
+    provider of full text content. CORE’s data are now synchronised with Naver
+    using CORE FastSync, reducing the amount of effort that would be needed
+    to collect these data in traditional ways.
+  author:
+    name: Kim Sejin
+    role: Content Manager, Naver Academic Service
+    picture: /static/images/people/sejin.png
+
 - &peter-raeth
    id: peter-raeth
    content: |
@@ -215,18 +228,30 @@ testimonials:
   api: true
 organizations:
 # companies
-- &ropensci
-  id: ropensci
-  name: Ropensci
-  url: https://ropensci.org
-  logo: ropensci.svg
-  testimonial: *scott-chamberlain
+- &naver
+  id: naver
+  name: Naver
+  url: https://www.naver.com
+  logo: naver.svg
+  testimonial: *kim-sejin
+- &iris-ai
+  id: iris-ai
+  name: IRIS AI
+  url: https://the.iris.ai
+  logo: iris-ai.png
+  testimonial: *viktor-botev
 - &research
   id: research-research
   name: ResearchResearch
   url: http://www.researchresearch.com/
   logo: research.svg
   testimonial: *william-cullerne-bown
+- &ropensci
+  id: ropensci
+  name: Ropensci
+  url: https://ropensci.org
+  logo: ropensci.svg
+  #testimonial: *scott-chamberlain
 - &wheesbee
   id: wheesbee
   name: Wheesbee
@@ -237,12 +262,6 @@ organizations:
   name: Scilit
   url: https://www.scilit.net/
   logo: scilit.png
-- &iris-ai
-  id: iris-ai
-  name: IRIS AI
-  url: https://the.iris.ai
-  logo: iris-ai.png
-  testimonial: *viktor-botev
 - &rygbee
   id: rygbee
   name: Rygbee
@@ -273,11 +292,16 @@ organizations:
   name: Intoolab
   url: http://www.intoolab.com/
   logo: intoolab.png
-- &naver
-  id: naver
-  name: Naver
-  url: https://www.naver.com
-  logo: naver.svg
+- &turnitin
+  id: turnitin
+  name: Turnitin
+  url: https://www.turnitin.com/
+  logo: turnitin.jpg
+- &ontochem
+  id: ontochem
+  name: Ontochem
+  url: https://www.ontochem.de/
+  logo: ontochem.png
 - &macmicro
   id: macmicro
   name: MacMicro Inc.
@@ -299,10 +323,10 @@ organizations:
   name: Open Access Button
   logo: oabutton.png
   testimonial: *joe-mcarthur-and-david-carroll
-- &hefce
-  id: hefce
-  name: HEFCE
-  logo: hefce.png
+- &research-england
+  id: research-england
+  name: Research England
+  logo: research-england.png
   testimonial: *ben-johnson
 - &oacg
   id: oacg
@@ -457,18 +481,25 @@ organizations:
 sections:
   enterprise-companies:
     id: enterprise-companies
-    title: Enterprise companies
+    title: Companies using CORE
     description: |
-      The [CORE services](~services) have different applications and are aimed
-      to a wide variety of stakeholders. Many enterprise companies use CORE to build search engines of research content,
-      detect plagiarism and develop repository services.
+      [CORE data services](~services) power innovative applications delivered
+      by independent businesses, many of which utilise cutting edge artificial
+      intelligence and text and data mining techniques. The range
+      of applications in which CORE is used includes use cases as divers
+      as fact checking and detection of misinformation, analysing research
+      trends, plagiarism detection, research impact evaluation, finding
+      experts, academic search engines and literature based discovery.
     action:
-      title: Interested in CORE to support your business?
-      name: Sign in for free
+      title: Interested in how can CORE support your business?
+      name: Get in touch
       url: ~join
     organizations:
       title: Companies who work with us
       items:
+        - *naver
+        - *turnitin
+        - *ontochem
         - *ropensci
         - *research
         - *wheesbee
@@ -477,26 +508,28 @@ sections:
         - *ritc
         - *4science
         - *unsilo
-        - *naver
         - *macmicro
         - *scilit
         - *intoolab
+        - *iris-ai
     testimonials:
       title: What companies say about us
   academic-institutions:
     id: academic-institutions
     title: Institutions using CORE
     description: |
-      Institutions use CORE in a variety of cases, for example to discover open access
-      content, manage their repository content in CORE and offer recommendations of
-      similar research outputs searched by their users.
+      Institutions use CORE in a variety of cases, for example to [discover open access
+      content](~services/discovery), [manage their repository content](~services/discovery) in CORE and offer [recommendations](~services/recommender) of
+      relevant research outputs searched by their users.
     action:
-      title: Interested in CORE at your institution?
-      name: Sign in for free
+      title: Interested in using CORE at your institution?
+      name: Sign in to our services for free
       url: ~join
     organizations:
       title: Institutions who work with us
       items:
+        - *apollo
+        - *zurich
         - *lbu
         - *ou
         - *brunel
@@ -515,9 +548,10 @@ sections:
         - *apollo
         - *lshtm
         - *trieste
-        - *zurich
         - *stmarys
         - *huddersfield
+        - *wr-leeds
+        - *strathprints
     testimonials:
       title: What institutions say about us
   partners:
@@ -525,8 +559,8 @@ sections:
     title: Partner projects
     description: |
       CORE has created exciting partnerships with open access infrastructure and
-      innovative open science projects. With these collaborations CORE has extended
-      and empowered both its own and partnering project tools.
+      innovative open science projects. With these collaborations CORE has been extending
+      and empowering both its own and partnering project tools.
     action:
       title: Interested in becoming a partner?
       name: Get it touch today
@@ -537,7 +571,7 @@ sections:
         - *mooc
         - *openaire
         - *oacg
-        - *hefce
+        - *research-england
         - *oab
         - *doaj
         - *okm
