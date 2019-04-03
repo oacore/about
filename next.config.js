@@ -5,6 +5,14 @@ const withImages = require('next-images')
 
 const nextConfig = {
   webpack: config => {
+    const originalEntry = config.entry
+    config.entry = async () => {
+      const entries = await originalEntry()
+      if (entries['main.js']) entries['main.js'].unshift('./polyfills')
+
+      return entries
+    }
+
     Object.assign(config.resolve.alias, {
       components: path.resolve(__dirname, 'components'),
       data: path.resolve(__dirname, 'data'),
