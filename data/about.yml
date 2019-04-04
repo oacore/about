@@ -64,39 +64,20 @@ how-it-works:
   harvesting:
     title: Harvesting data
     content: |
-      CORE aggregates ('harvests') research papers from data providers from all
+      CORE harvests research papers from data providers from all
       over the world including institutional and subject repositories, open
       access and hybrid journal publishers.
 
-      This allows us to offer search, text mining and analytical capabilities
-      over not only metadata, but also the full text - extracted from PDFs -
-      of the research papers, making CORE a unique service in the research
-      community.
-
       CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
-      from over tons of thousands journals, collected from over
-      {{repositoriesCount}}&nbsp;repositories around the world.
+      from thousands and over tens of thousands of journals, collected from 
+      {{repositoriesCount}}&nbsp; data providers around the world.
     actions:
       primary: Become a data provider
       secondary: See the full list of data providers
   services:
     title: The services we offer
     content: |
-      Our unique dataset allows us to offer a number of services for a
-      range of audiences.
-
-      Our  [CORE Repository Dashboard](~services/repository-dashboard)
-      enables repository managers to improve the harvesting processes
-      and aids in the management and quality of repository content.
-
-      The  [Core Recommender](~services/recommender)  is a plugin that uses
-      our vast collection of data to enable users of search systems to discover
-      content relevant to their needs.
-
-      Our [CORE API and Datasets](~services/api)  enable machine access
-      to our collection, enabling exciting kinds of analysis, as well
-      as services to be built that make use of the data, greatly widening
-      the potential impact of open access research.
+    
     actions:
       primary: Join CORE today for free
       secondary: Explore our services
