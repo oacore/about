@@ -3,11 +3,7 @@ id: api
 title: CORE API
 tagline: Develop new applications with the CORE API
 description: |
-  CORE harvests, maintains, enriches and makes available metadata
-  and full text content - typically a PDF - from many open access journals
-  and repositories. This makes it a useful access point for those
-  who would like to develop applications making use of this content.
-  To support these activities, CORE is providing a free API.
+  
 
 screenshot:
   source: /static/images/screenshots/api.png
@@ -19,13 +15,12 @@ features:
   title: Key message 1
   picture: /static/images/icons/api.png
   description: |
-    Real-time machine access to the world's largest collection of open
-    access scientific papers
+    Free real-time machine access to the world's largest collection of open access papers
 -
   title: Key message 2
   picture: /static/images/icons/data.png
   description: |
-    Harmonised access to data from across the network of all CORE providers
+    Harmonised access to data from across the network of CORE providers
 -
   title: Key message 3
   picture: /static/images/icons/machine.png
@@ -33,11 +28,7 @@ features:
     Direct machine access to full texts of research papers
 
 main: |
-  CORE harvests, maintains, enriches and makes available metadata
-  and full text content - typically a PDF - from many open access journals
-  and repositories. This makes it a useful access point for those
-  who would like to develop applications making use of this content.
-  To support these activities, CORE is providing a free API.
+  CORE collects, processess, harmonises and enriches [large quantities](~data) of metadata and full texts of research papers from many [data providers](~about/#how-it-works). On top of this continuously growing collection, we provide a truly unique API offerring real-time machine access to both metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content. 
 
   If you use CORE in your work, we kindly request you to [cite one
   of our publications](~research-outputs).
@@ -51,7 +42,7 @@ additional:
     A good starting point to start coding with our API is to
     follow the iPython notebook available on [Github](https://github.com/oacore/or2016-api-demo).
     In collaboration with [rOpenSci](https://ropensci.org/) you can find [here](https://github.com/ropensci/rcoreoa)
-    an R client for the CORE API.
+    an R client for the CORE API. All our SDKs are available [here](https://github.com/oacore).
 
 testimonial:
   content: |
@@ -69,18 +60,16 @@ testimonial:
 what-is-included:
   title: What’s included
   content: |
-    Our free membership provides you with:
+    The API is free to use for non-commercial purposes. If you want to use the CORE API in commercial applications, 
+    please [contact](~about/#contact) us. Our free membership provides you with:
 
-    * Machine access on CORE’s whole corpus of open access research
-      outputs.
-    * Detailed [documentation](/documentation/api)
-      on how to use the CORE API with live examples.
-    * One batch request or five single requests per 10 seconds. Need a
-      faster rate? [Contact us](~about/#contact).
+    * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts. 
+    * Detailed [documentation](/documentation/api) on how to use the CORE API with live examples and wrappers to common programming languages. 
+    * One batch request or five single requests per 10 seconds. Need a faster rate? [Contact us](~about/#contact).
   actions:
     primary:
       url: /api-keys/register
-      caption: Apply for a key
+      caption: Apply for a free API key
     secondary:
       url: /documentation/api
       caption: Read documentation
