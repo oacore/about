@@ -3,12 +3,7 @@ id: dataset
 title: CORE Dataset
 tagline: Download millions of research outputs for text and data analysis
 description: |
-  The data aggregated from repositories by CORE can be accessed in
-  two ways, through the CORE API or by downloading the data to your computer.
-  The former option is practical if you want to build a service on top of CORE
-  while the latter is something we recommend to those who would like to analyse
-  the CORE dataset and/or apply some computationally intensive batch processes.
-
+  
 screenshot:
   source: /static/images/screenshots/dataset.png
 
@@ -31,11 +26,7 @@ features:
     for machine processing
 
 main: |
-  The data aggregated from repositories by CORE can be accessed in
-  two ways, through the CORE API or by downloading the data to your computer.
-  The former option is practical if you want to build a service on top of CORE
-  while the latter is something we recommend to those who would like to analyse
-  the CORE dataset and/or apply some computationally intensive batch processes.
+  CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](~data/providers/). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
 
   If you use CORE in your work, we kindly request you to
   [cite one of our publications](~research-outputs).
@@ -43,7 +34,7 @@ main: |
 additional:
   title: Available datasets
   content: |
-
+    
     **Dataset 2018-03-01**
 
     Metadata only dataset (beta) (127 GB) - 123M metadata items,
@@ -52,24 +43,20 @@ additional:
     With full text dataset (beta) (330 GB) - 123M metadata items,
     85.6M items with abstract, 9.8M items with fulltext.
 
-    [Documentation and access to previous datasets](/documentation/dataset).
-
-    <a href="#what-is-included" class="btn btn-primary">
-      Register for access
-    </a>
+    [Documentation and access to previous datasets](~documentation/dataset).
 
 what-is-included:
   title:  What’s included
   content: |
-    Our free membership provides you with:
+    The dataset is free to use for non-commercial purposes. If you want to use the dataset for 
+    commercial purposes, including consultancies and commercial analysis, please [contact](~about/#contact) us. 
+    The dataset provides you with:
 
-    * Scalable machine access on CORE’s whole corpus of open access research
-      outputs.
-    * Access a dataset with a mapping of both Microsoft Academic Graph and
-      CORE based on a DOI.
-    * Detailed [documentation](/documentation/dataset)
-      on how to download the CORE dataset and how data is organised.
-
+    * The entire CORE's corpus of both metadata and full texts in a machine processable format.
+    * Mappings of the CORE articles to entities in the Micrsoft Academic Graph (MAG), enabling to access 
+      CORE fulltexts and use additional entities from MAG where available. 
+    * Detailed [documentation](~documentation/dataset) on how to download the CORE dataset and how data is organised.
+    
     ### Disclaimer
 
     This dataset has been created from information that was publicly available
@@ -85,11 +72,12 @@ what-is-included:
     dataset does not breach copyright. The dataset is in no way intended
     for the purposes of reading the original publications, but for machine
     processing only.
+    
   actions:
     primary:
       url: /dataset/getdatadump
-      caption: Sign up
-
+      caption: Register for free access
+  
 related-services:
 -
   title: CORE API
