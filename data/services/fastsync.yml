@@ -3,15 +3,11 @@ id: fastsync
 title: CORE FastSync
 tagline: Keep your data in sync with CORE and never miss a new research output
 description: |
-  A premium service useful for fast enterprise incremental access to all of
-  CORE data. FastSync implements the ResourceSync protocol and assists data
-  consumers with the synchronisation of the most recent content available
-  in CORE.
+  asdads
 
 screenshot:
   source: /static/images/screenshots/fastsync.png
-  caption: |
-    
+  caption: |    
 
 features:
 -
@@ -33,10 +29,15 @@ features:
     No usage restrictions
 
 main: |
-  A premium service useful for fast enterprise incremental access to all of
-  CORE data. FastSync implements the ResourceSync protocol and assists data
-  consumers with the synchronisation of the most recent content available in CORE.
-  If you are interested to adopt the service [contact us](~about/#contact).
+  Enables you to keep an always up to date copy of all CORE data in your infrastructure, new content can be transferred as soon as it becomes available in CORE. It provides fast, incremental and enterprise data synchronisation using a single API. FastSync is our premium service for both commercial and non-commercial purposes. Ideal for all types of businesses, from start-ups to large enterprises.   
+
+additional:
+  title: Where to start?
+  content: |
+    FastSync implements an improved version of the [ResourceSync protocol](http://www.openarchives.org/rs/toc). 
+    We provide our customers with a data client they can install on their servers. 
+    Customers can run this client as often as they desire, receiveing incremental updates from CORE. 
+    We also provide technical support for this service, so you can be confident that you can rely on it.   
 
 testimonial:
   content: |
@@ -55,9 +56,11 @@ what-is-included:
   title:  What’s included
   content: |
     Our membership provides you with:
-    * Synchronised access to CORE's recently added content.
-    * Access to a FastSync dump containing content from all our data providers.
-    * Technical support for the implementation of the service.
+    * Ability to keep in sync with CORE at all times, receiving updates as frequently as desired.  
+    * Access to the FastSync service, an initial data dump and a client for incremental updates. 
+    * Technical support for the duration of the service.
+  
+    If you are interested in more information about CORE FastSync or would like to subscribe contact us.   
 
   actions:
     primary:
