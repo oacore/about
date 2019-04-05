@@ -12,12 +12,12 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/paywall-2.png
+  picture: /static/images/icons/paywall.png
   description: |
     Overcome publishers' paywalls by discovering open access versions of papers
 -
   title: Key message 2
-  picture: /static/images/icons/oa-3.png
+  picture: /static/images/icons/oa.png
   description: |
     Backed by the world's largest dataset of open access full texts
 -
@@ -27,8 +27,8 @@ features:
     Easy to install browser extension with over 10 million monthly active users
 
 main: |
-  This service is coming to you soon... 
-  
+  This service is coming to you soon...
+
   CORE Discovery helps users to discover freely accessible copies of research
   papers that are behind a paywall on the publisher's site. It is backed
   by our [huge dataset](~dataset) of millions of full text open access
