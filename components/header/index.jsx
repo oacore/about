@@ -55,11 +55,7 @@ class Header extends React.Component {
     if (sections) {
       return (
         <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
-          <Link href={path} passHref>
-            <DropdownToggle nav tag="a">
-              {title}
-            </DropdownToggle>
-          </Link>
+          <DropdownToggle nav>{title}</DropdownToggle>
           <DropdownMenu right style={{ width: 480 }}>
             {sections.map(section => (
               <div className="dropdown-section" key={section.title}>
@@ -80,11 +76,7 @@ class Header extends React.Component {
     if (children) {
       return (
         <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
-          <Link href={path} passHref>
-            <DropdownToggle nav tag="a">
-              {title}
-            </DropdownToggle>
-          </Link>
+          <DropdownToggle nav>{title}</DropdownToggle>
           <DropdownMenu right>
             {children.map(node =>
               Header.renderMenu(node, activePath, level + 1)
@@ -97,7 +89,7 @@ class Header extends React.Component {
     // NavItem-s for first leafs and DropdownItems-s for final leafs
     return level === 1 ? (
       <NavItem key={key}>
-        <Link href={path} passHref>
+        <Link href={path}>
           <NavLink>{title}</NavLink>
         </Link>
       </NavItem>
