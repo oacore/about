@@ -2,7 +2,7 @@
 title: Contact us
 ---
 
-* To join CORE, check our [join guidelines](/join).
+* To join CORE, check our [join guidelines](~faq#joining-core).
 
 * For article updates/removals, please submit your request 
 [here](/article-update).
