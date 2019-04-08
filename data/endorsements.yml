@@ -493,7 +493,7 @@ sections:
     action:
       title: Interested in how can CORE support your business?
       name: Get in touch
-      url: ~join
+      url: ~contact
     organizations:
       title: Companies who work with us
       items:
@@ -524,7 +524,7 @@ sections:
     action:
       title: Interested in using CORE at your institution?
       name: Sign in to our services for free
-      url: ~join
+      url: ~services#content-discovery
     organizations:
       title: Institutions who work with us
       items:
