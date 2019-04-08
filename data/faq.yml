@@ -3,7 +3,8 @@ description: |
   Frequently asked questions about CORE
 
 sections:
-  - title: Joining CORE as data provider
+  - id: joining-core
+    title: Joining CORE as data provider
     items:
       - slug: is-my-repository-or-journal-harvested-by-CORE
         question: Is my repository or journal harvested by CORE?
@@ -39,9 +40,11 @@ sections:
           [let us](~contact) know the name of the repository.
           There are chances that we it already and if we don't we could
           start harvesting it.
-  - title: Aggregation
+  - id: aggregation
+    title: Aggregation
     sections:
-    - title: General
+    - id: general-aggregation
+      title: General
       items:
         - slug: how-often-does-CORE-harvest-the-repositories
           question: |
@@ -155,7 +158,8 @@ sections:
             do. In some occassions the content deposited in a repository is already
             published in a journal and is peer-reviewed. In addition, repositories may contain
             grey literature and these resources are not peer-reviewed.
-    - title: Technical
+    - id: technical-aggregation
+      title: Technical
       items:
         - slug: what-are-the-technical-requirements-for-being-aggregated
           question: |
@@ -233,7 +237,8 @@ sections:
             engines and harvesting systems. In addition, you could withdraw your
             repository from all open access registries lists; when this takes
             place, please [notify us](~contact).
-    - title: Removing full text or metadata
+    - id: removing-full-text-or-metadata
+      title: Removing full text or metadata
       items:
         - slug: how-does-CORE-ensure-that-the-harvested-content-is-Open-Access
           question: |
@@ -302,7 +307,8 @@ sections:
             In order for the metadata to be removed from CORE they need to be
             marked as "deleted/removed" in the repository. If the metadata are
             marked as "restricted" CORE will still display it.
-  - title: CORE services
+  - id: services
+    title: CORE services
     items:
       - slug: how-do-I-register-for-an-API-key
         question: |
@@ -392,7 +398,8 @@ sections:
           incomplete, you should contact the repository of origin. To improve
           the CORE recommendations, you can use the feedback button, with
           which you can remove any undesirable articles.
-  - title: General information about CORE
+  - id: about
+    title: General information about CORE
     items:
       - slug: high-resolution-logo-CORE
         question: |
