@@ -89,13 +89,15 @@ members:
   role: Software Developer
   picture: maria-tarasiuk.jpg
   description: |
-    Software services and infrastrucutre developer.
+    Software services and infrastrucutre developer. Keeping and continuously improving our backend systems.
 -
   name: Viktor Yakubiv
   role: Senior Front-End Developer
   picture: viktor-yakubiv.jpg
   description: |
-    Leading CORE front-end development.
+    An expert in Web Development who believes that functional and accessible UI
+    is the key of success of the product. Leads front-end development
+    and maintains CORE's design system.
 
 past-members:
 - Josef Harag
