@@ -13,7 +13,7 @@ cookies:
     description: |
       **Required** to make the site work, and to save the options you make here
   analytics:
-    default: false
+    default: true
     title: Analytics
     description: |
       Lets us (anonymously) track site usage, so that we can measure

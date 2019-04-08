@@ -54,26 +54,32 @@ class CookiesManager {
 
 const cookiesManager = new CookiesManager({
   essential: ['cookies_accepted', true],
-  analytics: ['analytics_allowed', false],
+  analytics: ['analytics_allowed', true],
 })
 
-const handleCookiesChange = configDiff => {
+const toggleAnalytics = enabled => {
   const analyticsSrc = '/static/js/ga.js'
+  if (enabled) {
+    const script = document.createElement('script')
+    script.src = analyticsSrc
+    document.body.append(script)
+  } else {
+    const selector = `script[src="${analyticsSrc}"]`
+    const script = document.body.querySelector(selector)
+    if (script) script.remove()
+  }
+}
+
+const handleCookiesChange = configDiff => {
+  // Enable analytics by default
+  if (configDiff.essential == null) toggleAnalytics(true)
 
   Object.entries(configDiff).forEach(([key, value]) => {
     switch (key) {
       case 'essential':
         break
       case 'analytics':
-        if (value) {
-          const script = document.createElement('script')
-          script.src = analyticsSrc
-          document.body.append(script)
-        } else {
-          const selector = `script[src="${analyticsSrc}"]`
-          const script = document.body.querySelector(selector)
-          if (script) script.remove()
-        }
+        toggleAnalytics(value)
         break
       default:
     }
