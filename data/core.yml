@@ -63,4 +63,4 @@ footer:
     CORE is a not-for-profit service delivered by
     [The Open University](https://www.open.ac.uk)
     and [Jisc](https://www.jisc.ac.uk).
-search-placeholder: Search over {{totalArticlesCount}} around the world
+search-placeholder: Search {{totalArticlesCount}} papers around the world
