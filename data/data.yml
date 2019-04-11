@@ -30,12 +30,12 @@ sections:
   image: /static/images/dataset-2.svg
 - title: |
     We're truly global, aggregating from
-    <mark>{{repositoriesCount}}</mark>&nbsp;repositories,
+    <mark>{{repositoriesCount}}</mark>&nbsp;data providers,
     in <mark>{{countriesCount}}</mark>&nbsp;countries
   content: |
     And we're used by every country in the world.
   link:
-    caption: Learn about how we harvest data or become a provider
+    caption: Learn about how we harvest data or become a data provider
     url: ~about#how-it-works
   image: /static/images/data-providers.png
 - title: |
