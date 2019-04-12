@@ -90,10 +90,14 @@ class RepositoryBrowser extends Component {
           maxLength={maxQueryLength}
           onChange={this.filter}
         />
-        <p>
-          Showing <b>{items.length}</b> repositories from {itemsCount}
-          repositories in total:
-        </p>
+        {filterQuery ? (
+          <p>
+            Showing <b>{items.length}</b>&nbsp;repositories from {itemsCount}
+            &nbsp;repositories in total:
+          </p>
+        ) : (
+          <p>Showing {itemsCount}&nbsp;repositories:</p>
+        )}
 
         <Row className="mb-4">
           {page.map(item => (
