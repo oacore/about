@@ -21,7 +21,7 @@ import { extractTestimonials } from './about/endorsements'
 import './index.scss'
 
 const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
-  <Switcher interval={10000} className="home-switcher" {...restProps}>
+  <Switcher className="home-switcher" {...restProps}>
     {text && <Switcher.Content>{text}</Switcher.Content>}
     {items
       .slice(0, limit)
