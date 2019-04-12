@@ -17,7 +17,7 @@ const TestimonialsSection = ({
   return (
     <Section className={`testimonials-section ${className}`} {...restProps}>
       <Heading>{title}</Heading>
-      <TestimonialsCarousel items={items} />
+      <TestimonialsCarousel items={items} ride={false} />
     </Section>
   )
 }
@@ -46,7 +46,7 @@ const EndorsementsSection = ({
           </Button>
         </Col>
         <Col sm="3">
-          <LogosCarousel items={organizations} />
+          <LogosCarousel items={organizations} ride={false} />
         </Col>
       </Row>
 
