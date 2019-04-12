@@ -38,4 +38,4 @@ notify you by email of any changes to this privacy notice.
 If you have any questions regarding our use of your data or for any other
 reason, please [contact us](~contact)
 
-[ou-privacy]: http://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/website-privacy-ou
+[ou-privacy]: https://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/website-privacy-ou
