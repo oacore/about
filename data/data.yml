@@ -42,8 +42,7 @@ sections:
     You can access the data for free, and do exciting and powerful
     things with it
   content: |
-    Our APIs and datasets are perfect for building exciting research and
-    services and are built to support text and data mining.
+    Our APIs and datasets are perfect for doing text and data mining research and building innovative services. 
   link:
     caption: Learn more about machine access to our data
     url: ~services#access-to-raw-data
