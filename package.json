@@ -13,6 +13,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
+    "broken-link-checker": "^0.7.8",
     "camelize": "^1.0.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
@@ -58,6 +59,10 @@
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --ext .js,.jsx .",
     "format": "eslint --ignore-path .gitignore --ext .js,.jsx --fix .",
+    "test-dev": "blc http://localhost:3000 -ro --exclude='/browse' --exclude='/search' --exclude='/static' --exclude='/article-update' --exclude='/api-keys' --exclude='/documentation/api' --exclude='/dataset/getdatadump' --exclude='/recommender/register' --exclude='/images/harvested-by-core-orange.png' --exclude='/images/powered-by-core-orange.png'",
+    "test-local": "yarn test-local --exclude-external",
+    "test-staging": "blc https://${CORE_STAGING_AREA}core.ac.uk -ro --exclude='/browse' --exclude='/search' --exclude='/static'",
+    "test": "yarn test-dev",
     "dev": "next",
     "build": "next build",
     "export": "next build && next export -o public",
