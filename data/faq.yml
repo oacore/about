@@ -245,8 +245,8 @@ sections:
             How does CORE ensure that the harvested content is Open Access?
           answer: |
             CORE aggregates content from repositories registered in
-            [OpenDOAR](http://www.opendoar.org/about.html), journals registered
-            in [DOAJ](http://www.doaj.org/) or those content providers that
+            [OpenDOAR](http://www.opendoar.org), journals registered
+            in [DOAJ](http://www.doaj.org) or those content providers that
             requested their content to be aggregated. This means that all the
             content sources aggregated by CORE must be open access as this is a
             requirement for the providers to be included in these registries.
