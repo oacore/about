@@ -56,6 +56,8 @@ const nextConfig = {
   sassLoaderOptions: {
     includePaths: [path.resolve(__dirname, 'node_modules')],
   },
+
+  target: 'serverless',
 }
 
 module.exports = withImages(withSass(withCss(nextConfig)))
