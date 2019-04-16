@@ -4,6 +4,7 @@ import { Container } from 'reactstrap'
 import Head from './head'
 import Header from '../header'
 import Footer from '../footer'
+import SkipToContent from '../skip-to-content'
 
 const Layout = ({
   title,
@@ -18,7 +19,7 @@ const Layout = ({
 }) => (
   <Fragment>
     <Head title={title} description={description} />
-
+    <SkipToContent path="#content" caption="Skip to main content" />
     <Header
       className="page-header"
       siteMap={navigation}
@@ -26,6 +27,7 @@ const Layout = ({
       showSearch={showSearch}
       activeRoute={activeRoute}
     />
+    <div id="content" />
     {container ? <Container>{children}</Container> : children}
     <Footer className="page-footer" {...footer} />
   </Fragment>
