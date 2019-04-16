@@ -1,0 +1,22 @@
+@import "../bootstrap/core";
+
+$citation-control-height: 8 * $spacer;
+
+.citation-tab {
+  padding: $card-spacer-y 0;
+  min-height: $citation-control-height;
+}
+
+.citation-tab-error,
+.citation-tab-form-group {
+  width: 100%;
+}
+
+.citation-tab-control {
+  min-height: $citation-control-height;
+}
+
+.citation-tab-spinner {
+  display: block;
+  margin: 0 auto;
+}
