@@ -1,47 +1,119 @@
-import React from 'react'
-import { Card, CardBody, CardFooter } from 'reactstrap'
-import { Page, Section, Link } from 'components'
+import React, { Component } from 'react'
+import { Card, CardHeader, CardBody } from 'reactstrap'
+import { Page, Section, Button, Reference, Content } from 'components'
+import CitationsModal from 'components/citations-modal'
+import { bind } from 'decko'
+
 import page from 'data/research-outputs.yml'
 
-const ResearchOutputsSection = ({ id, title, papers }) => (
-  <Section id={id}>
+const ResearchPaperCard = ({
+  id,
+  type,
+  title,
+  author,
+  year,
+  booktitle,
+  editor,
+  journal,
+  volume,
+  number,
+  description,
+  url,
+  onCite,
+  ...cardProps
+}) => (
+  <Card {...cardProps}>
+    <CardHeader>
+      <Reference
+        className="mb-0"
+        author={author}
+        title={title}
+        url={url}
+        year={year}
+        booktitle={booktitle}
+        editor={editor}
+        journal={journal}
+        volume={volume}
+        number={number}
+      />
+    </CardHeader>
+    <CardBody>
+      <Content tag="p">{description}</Content>
+      {onCite && (
+        <Button outline onClick={onCite}>
+          Cite
+        </Button>
+      )}
+    </CardBody>
+  </Card>
+)
+
+const ResearchOutputsSection = ({
+  id,
+  title,
+  papers,
+  onPaperCite,
+  ...restProps
+}) => (
+  <Section id={id} {...restProps}>
     <h2>{title}</h2>
-    {papers.map(paper => (
-      <Card key={paper.id} className="mb-3">
-        <CardBody>
-          <p className="mb-0">
-            {Array.isArray(paper.author)
-              ? paper.author.join(', ')
-              : paper.author}
-          </p>
-          <h5 className="mb-0">
-            <Link href={paper.url}>{paper.title}</Link>
-          </h5>
-        </CardBody>
-        {paper.description && <CardFooter>{paper.description}</CardFooter>}
-      </Card>
-    ))}
+    <Content>
+      {papers.map(paper => (
+        <ResearchPaperCard
+          key={paper.id}
+          className="mb-3"
+          onCite={paper.citations && (event => onPaperCite(event, paper))}
+          {...paper}
+        />
+      ))}
+    </Content>
   </Section>
 )
 
-const ResearchOutputsPage = () => (
-  <Page
-    title={page.title}
-    description={page.description}
-    keywords={page.keywords}
-    nav
-  >
-    <h1>{page.title}</h1>
-    {page.sections.map(section => (
-      <ResearchOutputsSection
-        key={section.id}
-        id={section.id}
-        caption={section.title}
-        title={section.title}
-        papers={section.papers}
-      />
-    ))}
-  </Page>
-)
+class ResearchOutputsPage extends Component {
+  state = {
+    isCitationsModalOpen: false,
+    activePaper: null,
+  }
+
+  @bind
+  toggleCitationsModal(event, paper) {
+    this.setState(({ isCitationsModalOpen, activePaper }) => ({
+      isCitationsModalOpen: !isCitationsModalOpen,
+      activePaper: paper || activePaper,
+    }))
+  }
+
+  render() {
+    const { isCitationsModalOpen, activePaper } = this.state
+
+    return (
+      <Page
+        title={page.title}
+        description={page.description}
+        keywords={page.keywords}
+        nav
+      >
+        <h1>{page.title}</h1>
+        {page.sections.map(section => (
+          <ResearchOutputsSection
+            key={section.id}
+            id={section.id}
+            caption={section.title}
+            title={section.title}
+            papers={section.papers}
+            onPaperCite={this.toggleCitationsModal}
+          />
+        ))}
+        <CitationsModal
+          id={`${(activePaper && activePaper.id) || 'unknown'}-citaions-modal`}
+          isOpen={isCitationsModalOpen}
+          onToggle={this.toggleCitationsModal}
+          citations={(activePaper && activePaper.citations) || {}}
+        />
+      </Page>
+    )
+  }
+}
 
 export default ResearchOutputsPage
