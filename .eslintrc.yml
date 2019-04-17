@@ -29,6 +29,7 @@ rules:
     ignoreRegExpLiterals: true,
   }]
   new-parens: off
+  jsx-a11y/label-has-for: off
   prettier/prettier: error
   react/destructuring-assignment: off
   react/prop-types: [error, {
