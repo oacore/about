@@ -7,8 +7,7 @@ Resource Dump standard](http://www.openarchives.org/rs/1.1/resourcesync#Resource
 The FastSync dump can be downloaded at the following url:  
 [`https://core.ac.uk/dumps/resync_dump.tar.xz`](https://core.ac.uk/dumps/resync_dump.tar.xz)
        
-Note that this is an extremely large file (&tilde;200GB) and appropriate tools
-are necessary for download it. 
+Note that this is an extremely large file (&tilde;200GB) and appropriate tools are necessary for downloading it.
 
 1.  To validate a  download compare it with the MD5 Checksum by running:
 
@@ -30,7 +29,7 @@ are necessary for download it.
        
 4.  The previous steps will extract the big archive in multiple smaller files.
     Each archive contains all the resources for a specific CORE data provider
-    and a list of CORE’s data providers can be found here. 
+    and a list of CORE’s data providers can be found [here](/data/providers). 
 
     The following command extracts every single archive in the
     appropriate folder. 
