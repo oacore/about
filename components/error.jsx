@@ -23,7 +23,6 @@ class ErrorPage extends Component {
           <Button color="primary" href="~home">
             Go back to the homepage
           </Button>
-          {' or '}
           <Button color="primary" outline href="~contact">
             Contact us
           </Button>
