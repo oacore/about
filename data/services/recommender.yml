@@ -13,18 +13,18 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/discoverable.png
+  picture: /static/images/icons/discoverable.svg
   description: |
     Make your repository content more discoverable from across the global
     network of CORE data providers
 -
   title: Key message 2
-  picture: /static/images/icons/finding.png
+  picture: /static/images/icons/finding.svg
   description: |
     Support users in finding articles relevant to their interests
 -
   title: Key message 3
-  picture: /static/images/icons/installation.png
+  picture: /static/images/icons/installation.svg
   description: |
     Easy installation to all repositories, journals and web interfaces
 

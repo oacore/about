@@ -13,17 +13,17 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/statistics.png
+  picture: /static/images/icons/statistics.svg
   description: |
     Access your collection's download statistics and harvesting status 
 -
   title: Key message 2
-  picture: /static/images/icons/update.png
+  picture: /static/images/icons/update.svg
   description: |
     Update metadata records with a single button click
 -
   title: Key message 3
-  picture: /static/images/icons/manage.png
+  picture: /static/images/icons/manage.svg
   description: |
     Manage access to documents from your repository in CORE
 

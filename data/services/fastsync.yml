@@ -12,18 +12,18 @@ screenshot:
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/sync.png
+  picture: /static/images/icons/sync.svg
   description: |
     An enterprise solution to keep your data in sync with research content
     from around the world
 -
   title: Key message 2
-  picture: /static/images/icons/solving.png
+  picture: /static/images/icons/solving.svg
   description: |
      Spend less time collecting data and more on solving problems
 -
   title: Key message 3
-  picture: /static/images/icons/fast.png
+  picture: /static/images/icons/fast.svg
   description: |
     Fast and incremental updates as soon as they become available.
     No usage restrictions

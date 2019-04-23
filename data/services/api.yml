@@ -3,32 +3,32 @@ id: api
 title: CORE API
 tagline: Develop new applications with the CORE API
 description: |
-  
+
 
 screenshot:
-  source: /static/images/screenshots/api.png
+  source: /static/images/screenshots/api.svg
   caption: |
 
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/api.png
+  picture: /static/images/icons/api.svg
   description: |
     Free real-time machine access to the world's largest collection of open access papers
 -
   title: Key message 2
-  picture: /static/images/icons/data.png
+  picture: /static/images/icons/data.svg
   description: |
     Harmonised access to data from across the network of CORE providers
 -
   title: Key message 3
-  picture: /static/images/icons/machine.png
+  picture: /static/images/icons/machine.svg
   description: |
     Direct machine access to full texts of research papers
 
 main: |
-  CORE collects, processess, harmonises and enriches [large quantities](~data) of metadata and full texts of research papers from many [data providers](~about/#how-it-works). On top of this continuously growing collection, we provide a truly unique API offerring real-time machine access to both metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content. 
+  CORE collects, processess, harmonises and enriches [large quantities](~data) of metadata and full texts of research papers from many [data providers](~about/#how-it-works). On top of this continuously growing collection, we provide a truly unique API offerring real-time machine access to both metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
 
   If you use CORE in your work, we kindly request you to [cite one
   of our publications](~research-outputs).
@@ -60,11 +60,11 @@ testimonial:
 what-is-included:
   title: What’s included
   content: |
-    The API is free to use for non-commercial purposes. If you want to use the CORE API in commercial applications, 
+    The API is free to use for non-commercial purposes. If you want to use the CORE API in commercial applications,
     please [contact](~about/#contact) us. Our free membership provides you with:
 
-    * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts. 
-    * Detailed [documentation](/documentation/api) on how to use the CORE API with live examples and wrappers to common programming languages. 
+    * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
+    * Detailed [documentation](/documentation/api) on how to use the CORE API with live examples and wrappers to common programming languages.
     * One batch request or five single requests per 10 seconds. Need a faster rate? [Contact us](~about/#contact).
   actions:
     primary:
