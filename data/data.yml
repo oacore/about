@@ -22,7 +22,7 @@ sections:
     <mark>{{fullTextCount}}</mark>&nbsp;‘full-text’ articles,
     and <mark>{{totalArticlesCount}}</mark>&nbsp;metadata records
   content: |
-    It's the biggest collection of open access records,
+    It's the biggest collection of open access full texts,
     making it an unparalleled research tool.
   link:
     caption: How do we compare with other services?
