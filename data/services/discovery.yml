@@ -19,15 +19,14 @@ features:
   title: Key message 2
   picture: /static/images/icons/oa-3.svg
   description: |
-    Backed by the world's largest dataset of open access full texts
+    Backed by the world's largest dataset of open access full texts with over 10 million monthly active users
 -
   title: Key message 3
   picture: /static/images/icons/extension.svg
   description: |
-    Easy to install browser extension with over 10 million monthly active users
+    Easy to install browser extension and seamless repository integration
 
 main: |
-  This service is coming to you soon...
 
   CORE Discovery helps users to discover freely accessible copies of research
   papers that are behind a paywall on the publisher's site. It is backed
@@ -70,7 +69,7 @@ what-is-included:
 
   actions:
     primary:
-      caption: Coming soon...
+      caption: Coming soon ...
 
 related-services:
 -
