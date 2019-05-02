@@ -109,7 +109,7 @@ class RepositoryBrowser extends Component {
               <Card body className="data-providers-card">
                 <CardTitle>
                   <Link href={`~search?q=repositories.id:${item.id}`}>
-                    {item.name || 'Unnamed repository'}
+                    {item.name || 'No name repository'}
                   </Link>
                 </CardTitle>
 
