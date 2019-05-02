@@ -18,10 +18,14 @@ class RepositoryBrowser extends Component {
   static pageSize = 10
 
   static fetchRepositories(url) {
-    return fetch(url).then(res => {
-      if (res.ok) return res.json()
-      throw new Error(`Error loading repositories from ${url}`)
-    })
+    return fetch(url)
+      .then(res => {
+        if (res.ok) return res.json()
+        throw new Error(`Error loading repositories from ${url}`)
+      })
+      .then(repositories =>
+        repositories.filter(({ name }) => name && name !== 'name')
+      )
   }
 
   state = {
