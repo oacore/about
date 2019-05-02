@@ -34,7 +34,7 @@ class RepositoryBrowser extends Component {
   async componentDidMount() {
     const { endpoint } = this.props
     const repositories = await RepositoryBrowser.fetchRepositories(endpoint)
-    repositories.sort((a, b) => a.name.localeCompare(b.name))
+    repositories.sort((a, b) => (a.name || '').localeCompare(b.name || ''))
     this.repositories = new Fuse(repositories, RepositoryBrowser.searchOptions)
     this.setState({
       items: this.repositories.list.slice(),
