@@ -64,7 +64,10 @@ const Reference = ({
     ),
   ]
     .filter(item => item)
-    .flatMap((item, i, array) => (i === array.length - 1 ? item : [item, '. ']))
+    .reduce((result, item, i, array) => {
+      result.push(...(i === array.length - 1 ? [item] : [item, '. ']))
+      return result
+    }, [])
 
   return (
     <Tag className={`reference ${className}`} {...restProps}>
