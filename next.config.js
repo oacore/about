@@ -57,7 +57,7 @@ const nextConfig = {
     includePaths: [path.resolve(__dirname, 'node_modules')],
   },
 
-  target: process.env.NODE_ENV === 'production' ? 'server' : 'serverless',
+  target: process.env.NEXT_TARGET || 'serverless',
 }
 
 module.exports = withImages(withSass(withCss(nextConfig)))
