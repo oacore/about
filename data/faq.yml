@@ -40,6 +40,16 @@ sections:
           [let us](~contact) know the name of the repository.
           There are chances that we it already and if we don't we could
           start harvesting it.
+      - slug: core-harvests-from-doaj
+        question: |
+          CORE harvests from DOAJ but I cannot find my journal which is already
+          registered in DOAJ.
+        answer: |
+          CORE harvests DOAJ as a single entry, which means that each journal title
+          does not appear separately in CORE. If you wish to have a separate entry for
+          your journal in CORE, do [send us](~contact) the journal's oai base url and we will create
+          a new entry. 
+     
   - id: aggregation
     title: Aggregation
     sections:
