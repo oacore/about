@@ -6,6 +6,18 @@ description: |
   and develop repository services.
 
 testimonials:
+- &kuansan-wang
+  id: kuansan-wang
+  content: |
+    Microsoft partnered with CORE to link documents in the Microsoft
+    Academic Graph with open access articles in CORE, as the datasets
+    complement each other. The outcome is the world’s largest scholarly
+    graph with both bibliographic information, including citations,
+    and full texts of academic papers for machine processing.
+  author:
+    name: Kuansan Wang
+    role: Managing Director, MSR Outreach Academic Services
+    picture: /static/images/people/kuansanwang.jpg
 - &jon-tennant
   id: jon-tennant
   content: |
@@ -308,6 +320,11 @@ organizations:
   logo: macmicro.png
   # testimonial: *colin-goldberg
 # project partners
+- &microsoft
+  id: microsoft
+  name: Microsoft
+  logo: microsoft.svg
+  testimonial: *kuansan-wang
 - &mooc
   id: mooc
   name: Open Science MOOC
@@ -568,6 +585,7 @@ sections:
     organizations:
       title: Our partners
       items:
+        - *microsoft
         - *mooc
         - *openaire
         - *oacg
