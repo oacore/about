@@ -8,7 +8,7 @@ import {
   Content,
   Markdown,
   Section,
-  TeamMember,
+  TeamPlayers,
   Collapsed,
   RepositoriesMap,
   ServiceGroups,
@@ -140,21 +140,21 @@ const AboutPage = () => (
     <Section id="team" caption="The team">
       <h2>{teamData.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {teamData.members.map(member => (
+        {teamData.members.map(({ name, role, picture, description }) => (
           <Col
-            className="d-flex flex-column"
-            sm="6"
-            md="4"
-            lg="3"
+            className="d-flex align-items-center justify-content-center"
+            xl="12"
+            sm="12"
+            md="6"
+            lg="4"
             tag="li"
-            key={member.name}
+            key={`${name}, ${role}`}
           >
-            <TeamMember
-              className="mb-3"
-              name={member.name}
-              role={member.role}
-              description={member.description}
-              picture={`/static/images/team/${member.picture}`}
+            <TeamPlayers
+              name={name}
+              role={role}
+              description={description}
+              picture={picture ? `/static/images/team/${picture}` : null}
             />
           </Col>
         ))}

@@ -66,6 +66,7 @@ export { default as Search } from './search'
 export { default as ServiceGroupCard } from './service-group-card'
 export { default as ServiceGroups } from './service-groups'
 export { default as TeamMember } from './team-member'
+export { default as TeamPlayers } from './team-players'
 export { default as Testimonial } from './testimonial'
 
 // Complex elements

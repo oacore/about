@@ -1,0 +1,85 @@
+@import "../bootstrap/core";
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+  transform: rotateY(0deg);
+  border-radius: 0.25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+  transform: rotateY(180deg);
+}
+
+.image-flip-touch {
+  transform: rotateY(0deg);
+  border-radius: 0.25rem;
+}
+
+.mainflip {
+  transition: 0.25s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.frontside {
+  position: relative;
+  transform: rotateY(0deg);
+  z-index: 2;
+  margin-bottom: $spacer;
+}
+
+.backside {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $white;
+  transform: rotateY(-180deg);
+  box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+  backface-visibility: hidden;
+  transition: 0.25s;
+  transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+  height: 460px;
+  width: 300px;
+}
+
+.backside .card a {
+  color: $primary;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+  color: $primary;
+}
+
+.team-card-image {
+  min-width: 280px;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 100%;
+
+  @media (orientation: portrait) {
+    padding-bottom: 100%;
+  }
+
+  img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
