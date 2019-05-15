@@ -70,6 +70,9 @@ what-is-included:
   actions:
     primary:
       caption: Coming soon ...
+    secondary:
+      url: /services/register
+      caption: Register CORE Discovery
 
 related-services:
 -
