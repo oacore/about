@@ -2,7 +2,8 @@ import React from 'react'
 import { Page, Markdown, Content } from 'components'
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 
-import registerData from 'data/services/register.yml'
+import registerData from '../../data/services/register.yml'
+import countriesData from '../../data/countries.yml'
 
 const RegisterDiscovery = () => (
   <Page
@@ -52,12 +53,11 @@ const RegisterDiscovery = () => (
         </Label>
         <Col sm={10}>
           <Input type="select" name="select" id="discoveryCountry">
-            <option>United Kingdom (UK)</option>
-            <option>Czechia</option>
-            <option>Italy</option>
-            <option>Cyprus</option>
-            <option>Ukraine</option>
-            <option>United States of America (USA)</option>
+            {countriesData.countries.map(({ title }) => (
+              <option key={title}>
+                <Markdown>{title}</Markdown>
+              </option>
+            ))}
             <option> other</option>
           </Input>
         </Col>
