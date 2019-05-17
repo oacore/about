@@ -1,6 +1,7 @@
 language: node_js
 node_js: 11
 before_script:
+  - export NEXT_TARGET=server
   - yarn build
   - yarn start &
 script:
