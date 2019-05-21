@@ -44,6 +44,7 @@ testimonials:
   author:
     name: Michael Jubb
     role: Consultant working for Universities UK’s Open Access Co-ordination Group
+    picture: /static/images/icons/user-unknown1.svg
 - &ben-johnson
   id: ben-johnson
   content: |
@@ -104,6 +105,7 @@ testimonials:
     name: Yvonne Budden
     role: >
       Chair of the United Kingdom Council of Research Repositories (UKCoRR)
+    picture: /static/images/icons/user-unknown1.svg
 - &william-cullerne-bown
   id: william-cullerne-bown
   content: |
@@ -115,6 +117,7 @@ testimonials:
   author:
     name: William Cullerne Bown
     role: CEO ResearchResearch.com
+    picture: /static/images/icons/user-unknown2.svg
 - &viktor-botev
   id: viktor-botev
   content: |
@@ -150,6 +153,7 @@ testimonials:
    author:
      name: Peter Raeth
      role: Senior Research Engineer
+     picture: /static/images/icons/user-unknown1.svg
    api: true
 - &sourish-dasgupta
    id: sourish-dasgupta
@@ -161,6 +165,7 @@ testimonials:
    author:
      name: Sourish Dasgupta
      role: Assistant Professor, DA-IICT
+     picture: /static/images/icons/user-unknown2.svg
    api: true
 - &scott-chamberlain
   id: scott-chamberlain
@@ -194,6 +199,7 @@ testimonials:
    author:
      name: Colin Goldberg
      role: President, MacMicro Inc.
+     picture: /static/images/icons/user-unknown1.svg
    api: true
 - &andrea-ciapetti
    id: andrea-ciapetti
@@ -207,6 +213,7 @@ testimonials:
    author:
      name: Andrea Ciapetti
      role: Innovation Engineering SRL
+     picture: /static/images/icons/user-unknown2.svg
    api: true
 - &balasubramanian-thiagarajan
    id: balasubramanian-thiagarajan
@@ -216,6 +223,7 @@ testimonials:
    author:
      name: Balasubramanian Thiagarajan
      role: Otolaryngology Online
+     picture: /static/images/icons/user-unknown1.svg
    api: true
 - &alan-stiltes
   id: alan-stiltes
@@ -225,6 +233,7 @@ testimonials:
   author:
     name: Alan Stiltes
     role: Digital Repository Developer, The Open University
+    picture: /static/images/icons/user-unknown2.svg
   api: true
 organizations:
 # companies
