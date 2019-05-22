@@ -54,7 +54,7 @@ const EndorsementPage = () => (
 
     {endorsementData.testimonials.map(testimonial => (
       <div className="m-md-5">
-        <Testimonial key={testimonial.title} {...testimonial} />
+        <Testimonial key={testimonial.id} {...testimonial} />
         <span>Tag: </span>
         <Badge olor="primary" className="m-1" pill>
           {testimonial.author.tag}
