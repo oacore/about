@@ -30,24 +30,24 @@ const EndorsementPage = () => (
       </FormGroup>
     </Form>
 
-    <div className="justify-content-center mx-5">
+    <div className="justify-content-center mx-5 mb-3">
       <span>(or) Filter by: </span>
-      <Button outline color="primary">
+      <Button outline color="primary" className="m-1">
         all
-      </Button>{' '}
-      <Button outline color="primary">
+      </Button>
+      <Button outline color="primary" className="m-1">
         academic institutions
       </Button>{' '}
-      <Button outline color="primary">
+      <Button outline color="primary" className="m-1">
         partners
       </Button>{' '}
-      <Button outline color="primary">
+      <Button outline color="primary" className="m-1">
         info
       </Button>{' '}
-      <Button outline color="primary">
+      <Button outline color="primary" className="m-1">
         companies
       </Button>{' '}
-      <Button outline color="primary">
+      <Button outline color="primary" className="m-1">
         etc.
       </Button>
     </div>
