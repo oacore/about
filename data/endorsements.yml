@@ -47,7 +47,6 @@ testimonials:
     name: Michael Jubb
     role: Consultant working for Universities UK’s Open Access Co-ordination Group
     tag: other
-    picture: /static/images/icons/user-unknown1.svg
 - &ben-johnson
   id: ben-johnson
   content: |
@@ -113,7 +112,6 @@ testimonials:
     role: >
       Chair of the United Kingdom Council of Research Repositories (UKCoRR)
     tag: other
-    picture: /static/images/icons/user-unknown1.svg
 - &william-cullerne-bown
   id: william-cullerne-bown
   content: |
@@ -126,7 +124,6 @@ testimonials:
     name: William Cullerne Bown
     role: CEO ResearchResearch.com
     tag: other
-    picture: /static/images/icons/user-unknown2.svg
 - &viktor-botev
   id: viktor-botev
   content: |
@@ -165,7 +162,6 @@ testimonials:
      name: Peter Raeth
      role: Senior Research Engineer
      tag: other
-     picture: /static/images/icons/user-unknown1.svg
    api: true
 - &sourish-dasgupta
    id: sourish-dasgupta
@@ -178,7 +174,6 @@ testimonials:
      name: Sourish Dasgupta
      role: Assistant Professor, DA-IICT
      tag: other
-     picture: /static/images/icons/user-unknown2.svg
    api: true
 - &scott-chamberlain
   id: scott-chamberlain
@@ -215,7 +210,6 @@ testimonials:
      name: Colin Goldberg
      role: President, MacMicro Inc.
      tag: other
-     picture: /static/images/icons/user-unknown1.svg
    api: true
 - &andrea-ciapetti
    id: andrea-ciapetti
@@ -230,7 +224,6 @@ testimonials:
      name: Andrea Ciapetti
      role: Innovation Engineering SRL
      tag: other
-     picture: /static/images/icons/user-unknown2.svg
    api: true
 - &balasubramanian-thiagarajan
    id: balasubramanian-thiagarajan
@@ -241,7 +234,6 @@ testimonials:
      name: Balasubramanian Thiagarajan
      role: Otolaryngology Online
      tag: other
-     picture: /static/images/icons/user-unknown1.svg
    api: true
 - &alan-stiltes
   id: alan-stiltes
@@ -252,7 +244,6 @@ testimonials:
     name: Alan Stiltes
     role: Digital Repository Developer, The Open University
     tag: other
-    picture: /static/images/icons/user-unknown2.svg
   api: true
 organizations:
 # companies
