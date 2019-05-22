@@ -25,7 +25,7 @@ const EndorsementPage = () => (
           <option>academic institutions</option>
           <option>partners</option>
           <option>companies</option>
-          <option>etc.</option>
+          <option>other</option>
         </Input>
       </FormGroup>
     </Form>
@@ -37,27 +37,30 @@ const EndorsementPage = () => (
       </Button>
       <Button outline color="primary" className="m-1">
         academic institutions
-      </Button>{' '}
+      </Button>
       <Button outline color="primary" className="m-1">
         partners
-      </Button>{' '}
+      </Button>
       <Button outline color="primary" className="m-1">
         info
-      </Button>{' '}
+      </Button>
       <Button outline color="primary" className="m-1">
         companies
-      </Button>{' '}
+      </Button>
       <Button outline color="primary" className="m-1">
-        etc.
+        other
       </Button>
     </div>
 
     {endorsementData.testimonials.map(testimonial => (
-      <Testimonial
-        className="m-md-5"
-        key={testimonial.title}
-        {...testimonial}
-      />
+      <div className="m-md-5">
+        <Testimonial key={testimonial.title} {...testimonial} />
+
+        <span>Tag: </span>
+        <Button outline color="primary" className="m-1">
+          {testimonial.author.tag}
+        </Button>
+      </div>
     ))}
   </Page>
 )
