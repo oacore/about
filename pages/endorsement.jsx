@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Input, Form, FormGroup, Label } from 'reactstrap'
+import { Badge, Button, Input, Form, FormGroup, Label } from 'reactstrap'
 import { Page, Testimonial } from 'components'
 import endorsementData from 'data/endorsements.yml'
 
@@ -55,11 +55,18 @@ const EndorsementPage = () => (
     {endorsementData.testimonials.map(testimonial => (
       <div className="m-md-5">
         <Testimonial key={testimonial.title} {...testimonial} />
-
         <span>Tag: </span>
-        <Button outline color="primary" className="m-1">
+        <Badge olor="primary" className="m-1" pill>
           {testimonial.author.tag}
-        </Button>
+        </Badge>
+        (or)
+        <Badge color="primary" className="m-1">
+          {testimonial.author.tag}
+        </Badge>
+        (or)
+        <Badge color="secondary" className="m-1">
+          {testimonial.author.tag}
+        </Badge>
       </div>
     ))}
   </Page>
