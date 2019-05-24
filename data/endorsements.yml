@@ -18,6 +18,9 @@ testimonials:
     name: Kuansan Wang
     role: Managing Director, MSR Outreach Academic Services
     picture: /static/images/people/kuansanwang.jpg
+  tags:
+  - info
+  - all
 - &jon-tennant
   id: jon-tennant
   content: |
@@ -30,6 +33,9 @@ testimonials:
     name: Jon Tennant
     role: Rogue Paleontologist and Founder of the Open Science MOOC
     picture: /static/images/people/tennant.png
+  tags:
+  - other
+  - all
 - &paolo-manghi
   id: paolo-manghi
   content: |
@@ -46,6 +52,9 @@ testimonials:
       Institute of Information Science and Technologies (CNR),
       Technical Manager at OpenAIRE
     picture: /static/images/people/manghi.jpeg
+  tags:
+  - partners
+  - all
 - &michael-jubb
   id: michael-jubb
   content: |
@@ -56,6 +65,9 @@ testimonials:
   author:
     name: Michael Jubb
     role: Consultant working for Universities UK’s Open Access Co-ordination Group
+  tags:
+  - partners
+  - all
 - &ben-johnson
   id: ben-johnson
   content: |
@@ -68,6 +80,9 @@ testimonials:
     name: Ben Johnson
     role: Research Policy Adviser
     picture: /static/images/people/johnson.jpg
+  tags:
+  - partners
+  - all
 - &nick-sheppard
   id: nick-sheppard
   content: |
@@ -80,6 +95,9 @@ testimonials:
     name: Nick Sheppard
     role: Repository Developer at Leeds Beckett University
     picture: /static/images/people/sheppard.png
+  tags:
+  - partners
+  - all
 - &joe-mcarthur-and-david-carroll
   id: joe-mcarthur-and-david-carroll
   content: |
@@ -91,6 +109,9 @@ testimonials:
     name: Joe Mcarthur and David Carroll
     role: Founders of the Open Access Button
     picture: /static/images/people/joe.jpg
+  tags:
+  - partners
+  - all
 - &nicola-dowson
   id: nicola-dowson
   content: |
@@ -101,6 +122,9 @@ testimonials:
     name: Nicola Dowson
     role: Library Services Manager at Open University
     picture: /static/images/people/dowson.jpeg
+  tags:
+  - partners
+  - all
 - &yvonne-budden
   id: yvonne-budden
   content: |
@@ -116,6 +140,9 @@ testimonials:
     name: Yvonne Budden
     role: >
       Chair of the United Kingdom Council of Research Repositories (UKCoRR)
+  tags:
+  - partners
+  - all
 - &william-cullerne-bown
   id: william-cullerne-bown
   content: |
@@ -127,6 +154,9 @@ testimonials:
   author:
     name: William Cullerne Bown
     role: CEO ResearchResearch.com
+  tags:
+  - partners
+  - all
 - &viktor-botev
   id: viktor-botev
   content: |
@@ -140,6 +170,9 @@ testimonials:
     name: Viktor Botev
     role: CTO, Iris AI AS
     picture: /static/images/people/botev.jpg
+  tags:
+  - partners
+  - all
   api: true
 - &kim-sejin
   id: kim-sejin
@@ -153,7 +186,9 @@ testimonials:
     name: Kim Sejin
     role: Content Manager, Naver Academic Service
     picture: /static/images/people/sejin.png
-
+  tags:
+  - partners
+  - all
 - &peter-raeth
    id: peter-raeth
    content: |
@@ -162,6 +197,9 @@ testimonials:
    author:
      name: Peter Raeth
      role: Senior Research Engineer
+   tags:
+   - partners
+   - all
    api: true
 - &sourish-dasgupta
    id: sourish-dasgupta
@@ -173,6 +211,9 @@ testimonials:
    author:
      name: Sourish Dasgupta
      role: Assistant Professor, DA-IICT
+   tags:
+   - partners
+   - all
    api: true
 - &scott-chamberlain
   id: scott-chamberlain
@@ -183,6 +224,9 @@ testimonials:
     name: Scott Chamberlain
     role: Developer, rOpenSci
     picture: /static/images/people/scottchamberlain.jpg
+  tags:
+  - partners
+  - all
   api: true
 - &david-walters
   id: david-walters
@@ -194,6 +238,9 @@ testimonials:
     name: David Walters
     role: Open Access Officer, Brunel University
     picture: /static/images/people/walters.jpg
+  tags:
+  - academic
+  - all
   api: true
 - &colin-goldberg
    id: colin-goldberg
@@ -206,6 +253,9 @@ testimonials:
    author:
      name: Colin Goldberg
      role: President, MacMicro Inc.
+   tags:
+   - other
+   - all
    api: true
 - &andrea-ciapetti
    id: andrea-ciapetti
@@ -219,6 +269,9 @@ testimonials:
    author:
      name: Andrea Ciapetti
      role: Innovation Engineering SRL
+   tags:
+   - companies
+   - all
    api: true
 - &balasubramanian-thiagarajan
    id: balasubramanian-thiagarajan
@@ -228,6 +281,9 @@ testimonials:
    author:
      name: Balasubramanian Thiagarajan
      role: Otolaryngology Online
+   tags:
+   - info
+   - all
    api: true
 - &alan-stiltes
   id: alan-stiltes
@@ -237,6 +293,9 @@ testimonials:
   author:
     name: Alan Stiltes
     role: Digital Repository Developer, The Open University
+  tags:
+  - partners
+  - all
   api: true
 organizations:
 # companies

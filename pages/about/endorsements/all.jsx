@@ -16,7 +16,12 @@ const EndorsementPage = () => (
     <EndorsementsFilter />
 
     {endorsementData.testimonials.map(testimonial => (
-      <Testimonial key={testimonial.id} className="m-md-5" {...testimonial} />
+      <div>
+        <Testimonial key={testimonial.id} className="m-md-5" {...testimonial} />
+        {testimonial.tags.map(tag => (
+          <span className="m-2">{tag}</span>
+        ))}
+      </div>
     ))}
   </Page>
 )
