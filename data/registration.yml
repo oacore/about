@@ -1,0 +1,37 @@
+title: CORE Discovery Registration
+
+cases:
+  installed:
+    title: Thank you for installing CORE Discovery
+  verified:
+    title: Thank you! You are verified now
+    message: |
+      Thank you for verifying your email. Let's stay in tuch.
+
+      Enjoy using CORE Discovery.
+
+form:
+  name:
+    label: Full name
+    placeholder: John Appleseed
+  email:
+    label: E-mail
+    placeholder: john@example.com
+    help: |
+      We won’t give your email address to third parties
+      and will not send you emails you do not want
+  country:
+    label: Country
+    placeholder: Please, select one
+  institution:
+    label: Institution
+    placeholder: Open University
+  interests:
+    label: Interests
+    placeholder: core, research
+  subscribe:
+    label: Subscribe for updates about CORE
+    help: |
+      I would like to get news about CORE and Open Science
+  submit:
+    label: Register
