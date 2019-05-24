@@ -1,6 +1,7 @@
 import React from 'react'
 import { Page, Testimonial } from 'components/index'
 import endorsementData from 'data/endorsements.yml'
+import EndorsementsFilter from '../../../components/endorsements-filter'
 
 const EndorsementPage = () => (
   <Page
@@ -11,6 +12,8 @@ const EndorsementPage = () => (
     nav
   >
     <h1>{endorsementData.title}</h1>
+
+    <EndorsementsFilter />
 
     {endorsementData.testimonials.map(testimonial => (
       <Testimonial key={testimonial.id} className="m-md-5" {...testimonial} />
