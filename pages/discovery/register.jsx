@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Page, Content, Button } from 'components'
 import { Form, FormGroup, FormText, Label, Input } from 'reactstrap'
 import { bind } from 'decko'
+import Router from 'next/router'
 
 import countries from 'data/countries.yml'
 import context from 'data/registration.yml'
@@ -106,7 +107,7 @@ class RegisterPage extends Component {
       this.setState(
         { status: 'done' },
         () => {
-          console.log('done')
+          Router.push('/discovery/verify')
         },
         1000
       )

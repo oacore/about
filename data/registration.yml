@@ -1,11 +1,18 @@
 title: CORE Discovery Registration
 
 cases:
-  installed:
+  extension-installed:
     title: Thank you for installing CORE Discovery
-  verified:
-    title: Thank you! You are verified now
-    message: |
+  user-registered:
+    title: Thank you for joining CORE!
+    content: |
+      We have sent you an email to verify your address.
+
+      Please click on the link in email or copy the verification code
+      and paste it into the form below.
+  user-verified:
+    title: Thank you for completing registration!
+    content: |
       Thank you for verifying your email. Let's stay in tuch.
 
       Enjoy using CORE Discovery.
