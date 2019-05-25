@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Page, Content, Button } from 'components'
+import { Page, Content, Markdown, Button } from 'components'
 import { Form, FormGroup, FormText, Label, Input } from 'reactstrap'
 
 import context from 'data/registration.yml'
@@ -62,7 +62,29 @@ class VerifyPage extends Component {
   static async getInitialProps({ req }) {
     const params = new URL(`${req.headers.host}${req.url}`).searchParams
     const hash = params.get('hash')
-    return { hash }
+
+    if (hash) {
+      try {
+        const apiUrl = 'https://api.core.ac.uk/internal/discovery/verify'
+        const result = fetch(apiUrl).then(res => {
+          if (res.ok) throw new Error('Error connecting to API')
+          return res.json()
+        })
+        return {
+          ...context.cases.userRegistered,
+          ...result,
+        }
+      } catch (error) {
+        return {
+          ...context.cases.apiError,
+          error: true,
+        }
+      }
+    }
+
+    return {
+      ...context.cases.userRegistered,
+    }
   }
 
   static verify(hash) {
@@ -88,13 +110,15 @@ class VerifyPage extends Component {
   }
 
   render() {
-    const { hash } = this.props
-    const { title, description, keywords } = context.cases.userRegistered
+    const { title, description, keywords, content, hash, verified } = this.props
     return (
       <Page title={title} description={description} keywords={keywords}>
         <h1>{title}</h1>
 
-        <Content>{!hash && <VerifyForm />}</Content>
+        <Content>
+          <Markdown>{content}</Markdown>
+          {!hash && !verified && <VerifyForm />}
+        </Content>
       </Page>
     )
   }

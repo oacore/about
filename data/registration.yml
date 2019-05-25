@@ -16,6 +16,15 @@ cases:
       Thank you for verifying your email. Let's stay in tuch.
 
       Enjoy using CORE Discovery.
+  verification-error:
+    title: Something went wrong...
+    content: |
+      Error verification your email. You might be already verified or tocken
+      has been expired.
+  api-error:
+    title: Something went wrong...
+    content: |
+      Sorry, we have error connecting to our API. Please, try again later
 
 form:
   name:
@@ -40,5 +49,8 @@ form:
     label: Subscribe for updates about CORE
     help: |
       I would like to get news about CORE and Open Science
+  verify:
+    label: Verification code
+    placeholder: e.g. 5a828ca5302b19ae8c7a66149f3e1e98
   submit:
     label: Register
