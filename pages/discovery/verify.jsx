@@ -75,8 +75,10 @@ class VerifyPage extends Component {
           ...result,
         }
       } catch (error) {
+        console.log(error)
         return {
           ...context.cases.apiError,
+          hash,
           error: true,
         }
       }
