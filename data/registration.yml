@@ -3,23 +3,29 @@ title: CORE Discovery Registration
 cases:
   extension-installed:
     title: Thank you for installing CORE Discovery
+    content: |
+      We are happy you are starting to use CORE Discovery. We are sure
+      our button will be helpful in overall research internet.
+
+      Also, we would like to stay in touch. Please fill up a little form
+      below.
   user-registered:
-    title: Thank you for joining CORE!
+    title: Thank you for joining CORE! Only one more step left...
     content: |
       We have sent you an email to verify your address.
 
       Please click on the link in email or copy the verification code
       and paste it into the form below.
-  user-verified:
+  registration-complete:
     title: Thank you for completing registration!
     content: |
-      Thank you for verifying your email. Let's stay in tuch.
+      Thank you for registering and verifying your email!
 
-      Enjoy using CORE Discovery.
+      Enjoy using CORE Discovery!
   verification-error:
     title: Something went wrong...
     content: |
-      Error verification your email. You might be already verified or tocken
+      Error verification your email. You might be already verified or token
       has been expired.
   api-error:
     title: Something went wrong...

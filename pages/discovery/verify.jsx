@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Page, Content, Markdown, Button } from 'components'
 import { Form, FormGroup, FormText, Label, Input } from 'reactstrap'
+import Router from 'next/router'
+import { bind } from 'decko'
 
 import context from 'data/registration.yml'
 
@@ -91,35 +93,59 @@ class VerifyPage extends Component {
 
   static verify(hash) {
     console.log(hash)
-    return Promise.resolve()
+    return Promise.resolve({ emailVerified: true })
+  }
+
+  state = {
+    ...context.cases.userRegistered,
   }
 
   componentDidMount() {
     const { hash } = this.props
-    if (hash) VerifyPage.verify(hash).then(this.handleVerificationResponse)
+    if (hash) this.processVerification(hash)
   }
 
+  processVerification(hash) {
+    this.setState({ status: 'pending' })
+    VerifyPage.verify(hash)
+      .then(({ emailVerified }) => {
+        if (emailVerified) Router.push('/discovery/complete')
+      })
+      .catch(() => {
+        this.setState({
+          ...context.cases.apiError,
+          status: 'error',
+        })
+        // this.setState(context.cases.verificationError)
+      })
+  }
+
+  @bind
   handleVerificationSubmit(event) {
     event.preventDefault()
 
     const data = new FormData(event.target)
     const hash = data.get('hash')
-    VerifyPage.verify(hash).then(this.handleVerificationResponse)
-  }
-
-  handleVerificationResponse(...args) {
-    console.log(this, args)
+    this.processVerification(hash)
   }
 
   render() {
-    const { title, description, keywords, content, hash, verified } = this.props
+    const { hash } = this.props
+    const { title, description, keywords, content } = this.state
+    const { status: formStatus } = this.state
     return (
       <Page title={title} description={description} keywords={keywords}>
         <h1>{title}</h1>
 
         <Content>
           <Markdown>{content}</Markdown>
-          {!hash && !verified && <VerifyForm />}
+          {!['success', 'error'].includes(formStatus) && (
+            <VerifyForm
+              hash={hash}
+              status={formStatus}
+              onSubmit={this.handleVerificationSubmit}
+            />
+          )}
         </Content>
       </Page>
     )
