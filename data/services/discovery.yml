@@ -19,7 +19,7 @@ features:
   title: Key message 2
   picture: /static/images/icons/oa-3.svg
   description: |
-    Backed by the world's largest dataset of open access full texts with over 10 million monthly active users
+    Backed by the world's largest dataset of open access full texts with over millions of monthly active users
 -
   title: Key message 3
   picture: /static/images/icons/extension.svg
@@ -28,10 +28,16 @@ features:
 
 main: |
 
-  CORE Discovery helps users to discover freely accessible copies of research
-  papers that are behind a paywall on the publisher's site. It is backed
-  by our [huge dataset](~data) of millions of full text open access
-  papers as well as content from widely used external services beyond CORE.
+  CORE Discovery helps users to discover freely accessible copies of research papers. It is backed by our [huge dataset](~data) of millions of full text open access papers as well as content from widely used external services beyond CORE. CORE Discovery reduces the time it takes to access full texts of research papers and the frustration associated with hitting a paywall on the publisher's site.  With CORE Discovery, you can be confident to benefit from the highest
+  coverage of freely available copies of articles anywhere on the planet.
+  So try it, it's free. 
+  
+  The tool is available as:   
+  * A Browser extension for researchers and anyone interested in reading scientific documents
+  * A Plugin for repositories, enriching metadata only pages in repositories with links to freely available copies of the paper
+  * An API for developers and third party services
+
+  ### How it works?
 
   Our service processes information from a wide number of authoritative
   scholarly data sources to discover, download and validate information
@@ -41,14 +47,7 @@ main: |
   access content, originating from our approved content providers, and seeks
   alternative routes, providing access to free versions, only if they
   are not available from them.
-
-  With CORE Discovery, you can be confident to benefit from the highest
-  coverage of freely available copies of articles anywhere on the planet.
-  So try it, it's free.
-
-  CORE Discovery can also be integrated into third party systems using our
-  CORE Discovery API.
-
+ 
 documentation: false
 
 additional:
@@ -60,13 +59,14 @@ additional:
     CORE Discovery API, please [contact us](~about#contact).
 
 what-is-included:
-  title: What is included Discovery
+  title: What is included 
   content: |
-    Our free membership provides you with:
-    * An easy to install browser extension.
-    * Automatic discovery of alternative open access versions of research papers.
-    * Easy access to millions of open access research papers.
-
+    Our free CORE Discovery service provides you with:
+      * *Highest coverage of freely available content.* Our tests have shown CORE Discovery finding more free content than any other discovery system. 
+      * *Free service for researchers by researchers.* CORE Discovery is the only free content discovery extension developed by researchers for researchers. There is no major publisher or enterprise controlling and profiting from your usage data. 
+      * *Best grip on open repository content.* Due to CORE being a leader in harvesting open access literature, CORE Discovery has the best grip on open content from open repositories as opposed to other services that disproportionately focus only on content indexed in major commercial databases.  
+      * *Repository integration and discovering documents without a DOI.* The only service offering seamless and free integration into repositories. CORE Discovery is also the only discovery system that can locate scientific content even for items with an unknown DOI or which do not have a DOI. 
+  
   actions:
     primary:
       caption: Coming soon ...
