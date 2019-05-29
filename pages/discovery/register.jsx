@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Page, Content, Button } from 'components'
 import { Form, FormGroup, FormText, Label, Input } from 'reactstrap'
 import { bind } from 'decko'
-import Router from 'next/router'
+// import Router from 'next/router'
 
 import countries from 'data/countries.yml'
 import context from 'data/registration.yml'
@@ -102,20 +102,44 @@ class RegisterPage extends Component {
 
   @bind
   async submitRegistration(event) {
-    this.setState({ status: 'pending' })
-    setTimeout(() => {
-      this.setState(
-        { status: 'done' },
-        () => {
-          Router.push('/discovery/verify')
-        },
-        1000
-      )
-    }, 1000)
-
-    console.log(event)
     event.preventDefault()
+
+    fetch('https://api.core.ac.uk/internal/discovery/register', {
+      body: JSON.stringify({
+        person: 'Test',
+        institution: 'The Open University',
+        email: 'test@open.ac.uk',
+        country: 'GB',
+        interests: 'Cats',
+        allow_marketing: 'true',
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    })
+      .then(console.log)
+      .catch(console.log)
+
+    console.log('submitRegistration() ')
+    this.setState({ status: 'error' })
   }
+
+  // async submitRegistration(event) {
+  //   this.setState({ status: 'pending' })
+  //   setTimeout(() => {
+  //     this.setState(
+  //       { status: 'done' },
+  //       () => {
+  //         Router.push('/discovery/verify')
+  //       },
+  //       1000
+  //     )
+  //   }, 1000)
+  //
+  //   console.log(event)
+  //   event.preventDefault()
+  // }
 
   render() {
     const { status } = this.state
