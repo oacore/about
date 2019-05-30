@@ -28,14 +28,18 @@ features:
 
 main: |
 
-  CORE Discovery helps users to discover freely accessible copies of research papers. It is backed by our [huge dataset](~data) of millions of full text open access papers as well as content from widely used external services beyond CORE. CORE Discovery reduces the time it takes to access full texts of research papers and the frustration associated with hitting a paywall on the publisher's site.  With CORE Discovery, you can be confident to benefit from the highest
+  CORE Discovery helps users to discover freely accessible copies of research papers. It is backed by our 
+  [huge dataset](~data) of millions of full text open access papers as well as content from widely used 
+  external services beyond CORE. Discovery reduces the time it takes to access full texts of 
+  research papers and the frustration associated with hitting a paywall on the publisher's site.  
+  With CORE Discovery, you can be confident to benefit from the highest
   coverage of freely available copies of articles anywhere on the planet.
   So try it, it's free. 
   
   The tool is available as:   
-  * A Browser extension for researchers and anyone interested in reading scientific documents
-  * A Plugin for repositories, enriching metadata only pages in repositories with links to freely available copies of the paper
-  * An API for developers and third party services
+  * Browser extension for researchers and anyone interested in reading scientific documents
+  * Plugin for repositories, enriching metadata only pages in repositories with links to freely available copies of the paper
+  * API for developers and third party services
 
   ### How it works?
 
