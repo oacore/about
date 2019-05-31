@@ -59,6 +59,9 @@ additional:
   title: Where to start
   content: |
     It’s free to install CORE Discovery in your browser.
+    The extension is currently pending approval on the Chrome Web Store.
+    Meanwhile, below you can find the instructions on how to manually
+    install the extension.
 
     1.  Click on [Get browser extension](http://core.ac.uk/exports/discovery/core-discovery.zip)
         button. A zipped file will be downloaded and will be located at your downloads folder.
@@ -68,12 +71,12 @@ additional:
         or copy the link and paste it on the url bar.
         You will see similar page to the following one.
 
-        ![Successful installation of the extention](/static/images/help/discovery/extensions.png)
+        ![Successful installation of the extension](/static/images/help/discovery/extensions.png)
 
     3.  On the top right hand side switch the button to the __Developer Mode__.
         A new menu will appear "Load unpacked", "Pack Extension", "Update".
 
-        ![Successful installation of the extention](/static/images/help/discovery/developer-mode.png)
+        ![Successful installation of the extension](/static/images/help/discovery/developer-mode.png)
 
     4.  Click on the __Load unpacked__ and browse in your computer’s downloads
         folder to find the CORE Discovery extension you downloaded on _Step 1_.
@@ -84,7 +87,7 @@ additional:
 
     5.  The new extension should appear in the Chrome Extensions page.
 
-        ![Successful installation of the extention](/static/images/help/discovery/success.png)
+        ![Successful installation of the extension](/static/images/help/discovery/success.png)
 
     If you are interested in the integration of your systems with the
     CORE Discovery API, please [contact us](~about#contact).
