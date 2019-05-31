@@ -67,8 +67,8 @@ additional:
         button. A zipped file will be downloaded and will be located at your downloads folder.
         Unzip it and follow next septs.
 
-    2.  Open Google Chrome and go to [chrome://extensions][chrome://extensions]
-        or copy the link and paste it on the URL bar.
+    2.  Open Google Chrome. Copy and paste the following link to the URL bar:
+        `chrome://extensions`.
         You will see a similar page to the screenshot below.
 
         ![Successful installation of the extension](/static/images/help/discovery/extensions.png)
