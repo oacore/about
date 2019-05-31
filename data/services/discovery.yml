@@ -67,9 +67,9 @@ additional:
         button. A zipped file will be downloaded and will be located at your downloads folder.
         Unzip it and follow next septs.
 
-    2.  Open Google Chrome and go to [chrome://extension][chrome://extension]
-        or copy the link and paste it on the url bar.
-        You will see similar page to the following one.
+    2.  Open Google Chrome and go to [chrome://extensions][chrome://extensions]
+        or copy the link and paste it on the URL bar.
+        You will see a similar page to the screenshot below.
 
         ![Successful installation of the extension](/static/images/help/discovery/extensions.png)
 
@@ -80,6 +80,7 @@ additional:
 
     4.  Click on the __Load unpacked__ and browse in your computer’s downloads
         folder to find the CORE Discovery extension you downloaded on _Step 1_.
+        Make sure you have unzipped the file.
 
         ![Click button "Load unpacked"](/static/images/help/discovery/load-extension.png)
 
@@ -89,8 +90,8 @@ additional:
 
         ![Successful installation of the extension](/static/images/help/discovery/success.png)
 
-    If you are interested in the integration of your systems with the
-    CORE Discovery API, please [contact us](~about#contact).
+    If you are interested in the integration of the CORE Discovery API in your
+    repository, website or application please [contact us](~about#contact).
 
 what-is-included:
   title: What is included
