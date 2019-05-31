@@ -62,14 +62,29 @@ additional:
 
     1.  Click on [Get browser extension](http://core.ac.uk/exports/discovery/core-discovery.zip)
         button. A zipped file will be downloaded and will be located at your downloads folder.
-    2.  Open Google Chrome browser and go to
-        [chrome://extension][chrome://extension]
+        Unzip it and follow next septs.
+
+    2.  Open Google Chrome and go to [chrome://extension][chrome://extension]
         or copy the link and paste it on the url bar.
-    4.  On the top right hand side switch the button to the _Developer Mode_.
-        A new menu will appear _Load unpacked_, _Pack Extension_, _Update_.
-    5.  Click on the _Load unpacked_ and browse in your computer’s downloads
+        You will see similar page to the following one.
+
+        ![Successful installation of the extention](/static/images/help/discovery/extensions.png)
+
+    3.  On the top right hand side switch the button to the __Developer Mode__.
+        A new menu will appear "Load unpacked", "Pack Extension", "Update".
+
+        ![Successful installation of the extention](/static/images/help/discovery/developer-mode.png)
+
+    4.  Click on the __Load unpacked__ and browse in your computer’s downloads
         folder to find the CORE Discovery extension you downloaded on _Step 1_.
-    6.  The new extension should appear in the Chrome Extensions page.
+
+        ![Click button "Load unpacked"](/static/images/help/discovery/load-extension.png)
+
+        ![Browse your downloads and select discovery](/static/images/help/discovery/browse.png)
+
+    5.  The new extension should appear in the Chrome Extensions page.
+
+        ![Successful installation of the extention](/static/images/help/discovery/success.png)
 
     If you are interested in the integration of your systems with the
     CORE Discovery API, please [contact us](~about#contact).
