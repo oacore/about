@@ -8,10 +8,15 @@ headline:
   - Learn more about our
   - powerful services
 
+
 sections:
 -
   id: access-to-raw-data
   title: Access to raw data
+  video:
+    src: https://www.youtube.com/embed/nf7IZIzBo5U
+    title: CORE access to raw data
+
   sections:
   -
     id: api
@@ -49,6 +54,10 @@ sections:
 -
   id: content-discovery
   title: Content discovery
+  video:
+    src: https://www.youtube.com/embed/kp4cvk7aJjs
+    title: CORE content discovery
+
   sections:
   -
     id: recommender
