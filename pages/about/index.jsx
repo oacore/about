@@ -12,6 +12,7 @@ import {
   Collapsed,
   RepositoriesMap,
   ServiceGroups,
+  Video,
 } from 'components'
 import { patchStats } from 'components/utils'
 
@@ -23,18 +24,6 @@ import contactData from 'data/contact.md'
 import { repositoriesUrl } from '../data/providers'
 
 import './about.scss'
-
-const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
-  <Tag className={`embed-responsive embed-responsive-16by9 ${className}`}>
-    <iframe
-      className="embed-responsive-object"
-      src={src}
-      title={title}
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
-      allowFullScreen
-    />
-  </Tag>
-)
 
 const AboutPage = () => (
   <Page

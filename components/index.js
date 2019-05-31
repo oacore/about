@@ -67,6 +67,7 @@ export { default as ServiceGroupCard } from './service-group-card'
 export { default as ServiceGroups } from './service-groups'
 export { default as TeamMember } from './team-member'
 export { default as Testimonial } from './testimonial'
+export { default as Video } from './video'
 
 // Complex elements
 export { default as Accordion } from './accordion'
