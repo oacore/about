@@ -59,36 +59,8 @@ additional:
   title: Where to start
   content: |
     It’s free to install CORE Discovery in your browser.
-    The extension is currently pending approval on the Chrome Web Store.
-    Meanwhile, below you can find the instructions on how to manually
-    install the extension.
-
-    1.  Click on [Get browser extension](http://core.ac.uk/exports/discovery/core-discovery.zip)
-        button. A zipped file will be downloaded and will be located at your downloads folder.
-        Unzip it and follow next septs.
-
-    2.  Open Google Chrome. Copy and paste the following link to the URL bar:
-        `chrome://extensions`.
-        You will see a similar page to the screenshot below.
-
-        ![Successful installation of the extension](/static/images/help/discovery/extensions.png)
-
-    3.  On the top right hand side switch the button to the __Developer Mode__.
-        A new menu will appear "Load unpacked", "Pack Extension", "Update".
-
-        ![Successful installation of the extension](/static/images/help/discovery/developer-mode.png)
-
-    4.  Click on the __Load unpacked__ and browse in your computer’s downloads
-        folder to find the CORE Discovery extension you downloaded on _Step 1_.
-        Make sure you have unzipped the file.
-
-        ![Click button "Load unpacked"](/static/images/help/discovery/load-extension.png)
-
-        ![Browse your downloads and select discovery](/static/images/help/discovery/browse.png)
-
-    5.  The new extension should appear in the Chrome Extensions page.
-
-        ![Successful installation of the extension](/static/images/help/discovery/success.png)
+    Using Google Chrome or Chromium, open the [extension page on Web Store](https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh)
+    and click on the “Add to Chrome” button to install the extension.
 
     If you are interested in the integration of the CORE Discovery API in your
     repository, website or application please [contact us](~about#contact).
@@ -118,8 +90,8 @@ what-is-included:
 
   actions:
     primary:
-      caption: Get browser exension
-      url: http://core.ac.uk/exports/discovery/core-discovery.zip
+      caption: Get browser exension (beta)
+      url: https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh
     secondary:
       caption: Contact us to get repository plugin
       url: ~contact
