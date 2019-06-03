@@ -37,10 +37,11 @@ main: |
   the highest coverage of freely available copies of articles anywhere on the
   planet. So try it, it's free.
 
-  The tool is available as: * Browser extension for researchers and anyone
-  interested in reading scientific documents * Plugin for repositories,
-  enriching metadata only pages in repositories with links to freely available
-  copies of the paper * API for developers and third party services
+  The tool is available as:
+  * Browser extension for researchers and anyoneinterested in reading scientific documents
+  * Plugin for repositories, enriching metadata only pages in repositories with links to freely available
+  copies of the paper
+  * API for developers and third party services
 
   ### How it works?
 
@@ -70,23 +71,23 @@ what-is-included:
   content: |
     Our free CORE Discovery service provides you with:
 
-      * **Highest coverage of freely available content.**
-        Our tests have shown CORE Discovery finding more free content
-        than any other discovery system.
-      * **Free service for researchers by researchers.**
-        CORE Discovery is the only free content discovery extension developed
-        by researchers for researchers. There is no major publisher
-        or enterprise controlling and profiting from your usage data.
-      * **Best grip on open repository content.**
-        Due to CORE being a leader in harvesting open access literature,
-        CORE Discovery has the best grip on open content from open repositories
-        as opposed to other services that disproportionately focus only
-        on content indexed in major commercial databases.
-      * **Repository integration and discovering documents without a DOI.**
-        The only service offering seamless and free integration
-        into repositories. CORE Discovery is also the only discovery system
-        that can locate scientific content even for items with
-        an unknown DOI or which do not have a DOI.
+    * **Highest coverage of freely available content.**
+      Our tests have shown CORE Discovery finding more free content
+      than any other discovery system.
+    * **Free service for researchers by researchers.**
+      CORE Discovery is the only free content discovery extension developed
+      by researchers for researchers. There is no major publisher
+      or enterprise controlling and profiting from your usage data.
+    * **Best grip on open repository content.**
+      Due to CORE being a leader in harvesting open access literature,
+      CORE Discovery has the best grip on open content from open repositories
+      as opposed to other services that disproportionately focus only
+      on content indexed in major commercial databases.
+    * **Repository integration and discovering documents without a DOI.**
+      The only service offering seamless and free integration
+      into repositories. CORE Discovery is also the only discovery system
+      that can locate scientific content even for items with
+      an unknown DOI or which do not have a DOI.
 
   actions:
     primary:
