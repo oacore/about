@@ -106,9 +106,9 @@ class RegisterPage extends Component {
 
     fetch('https://api.core.ac.uk/internal/discovery/register', {
       body: JSON.stringify({
-        person: 'Test',
-        institution: 'The Open University',
-        email: 'test@open.ac.uk',
+        person: 'Test John',
+        institution: 'Test verification',
+        email: 'etnr@alaki.ga',
         country: 'GB',
         interests: 'Cats',
         allow_marketing: 'true',
@@ -118,8 +118,16 @@ class RegisterPage extends Component {
       },
       method: 'POST',
     })
-      .then(console.log)
-      .catch(console.log)
+      .catch(() => {
+        console.log('Fail zone')
+      })
+      .then(res => {
+        if (res.ok) {
+          res.json().then(json => {
+            console.log(JSON.stringify(json, null, 2))
+          })
+        } else console.log('error', res)
+      })
 
     console.log('submitRegistration() ')
     this.setState({ status: 'error' })
