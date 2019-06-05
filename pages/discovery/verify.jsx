@@ -36,6 +36,7 @@ const VerifyForm = ({
   id = 'registration-form',
   action,
   method = 'post',
+  value,
   status,
   disabled,
   ...restProps
@@ -51,6 +52,7 @@ const VerifyForm = ({
       <FormField
         id={createId('hash')}
         name="hash"
+        defaultValue={value}
         {...context.form.verify}
         required
       />
@@ -69,7 +71,7 @@ class VerifyPage extends Component {
       try {
         const apiUrl = 'https://api.core.ac.uk/internal/discovery/verify'
         const result = fetch(apiUrl).then(res => {
-          if (res.ok) throw new Error('Error connecting to API')
+          if (!res.ok) throw new Error('Error connecting to API')
           return res.json()
         })
         return {

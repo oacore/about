@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Page, Content, Button } from 'components'
 import { Form, FormGroup, FormText, Label, Input } from 'reactstrap'
 import { bind } from 'decko'
-// import Router from 'next/router'
+import Router from 'next/router'
 
 import countries from 'data/countries.yml'
 import context from 'data/registration.yml'
@@ -63,8 +63,10 @@ const RegistrationFrom = ({
         required
       />
       <FormField
-        id={createId('country')}
+        id={createId('countryCode')}
         type="select"
+        // TODO: rename on backend name="country" to name="countryCode"
+        // name="countryCode"
         name="country"
         label={context.form.country.label}
         defaultValue=""
@@ -78,8 +80,8 @@ const RegistrationFrom = ({
         ))}
       </FormField>
       <FormField
-        id={createId('institution')}
-        name="institution"
+        id={createId('affiliation')}
+        name="affiliation"
         {...context.form.institution}
         required
       />
@@ -88,7 +90,13 @@ const RegistrationFrom = ({
         name="interests"
         {...context.form.interests}
       />
-      <FormField type="checkbox" {...context.form.subscribe} defaultChecked />
+      <FormField
+        id={createId('subscribed')}
+        type="checkbox"
+        name="subscribed"
+        {...context.form.subscribe}
+        defaultChecked
+      />
 
       <Button>Register</Button>
     </Form>
@@ -104,33 +112,29 @@ class RegisterPage extends Component {
   async submitRegistration(event) {
     event.preventDefault()
 
+    const formData = new FormData(event.target)
+    const data = Object.fromEntries(formData.entries())
+
     fetch('https://api.core.ac.uk/internal/discovery/register', {
-      body: JSON.stringify({
-        person: 'Test John',
-        institution: 'Test verification',
-        email: 'etnr@alaki.ga',
-        country: 'GB',
-        interests: 'Cats',
-        allow_marketing: 'true',
-      }),
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      method: 'POST',
+      body: JSON.stringify(data),
     })
-      .catch(() => {
-        console.log('Fail zone')
-      })
       .then(res => {
-        if (res.ok) {
-          res.json().then(json => {
-            console.log(JSON.stringify(json, null, 2))
-          })
-        } else console.log('error', res)
+        if (res.ok) return res
+        throw new Error('Result is bad')
       })
-
-    console.log('submitRegistration() ')
-    this.setState({ status: 'error' })
+      .then(res => res.json())
+      .then(account => {
+        const { id, emailVerified } = account
+        console.log(account, id)
+        Router.push(emailVerified ? '/discovery/verify' : '/discovery/complete')
+      })
+      .catch(() => {
+        this.setState(context.cases.apiError)
+      })
   }
 
   // async submitRegistration(event) {
