@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Page, Content, Button } from 'components'
-import { Form, FormGroup, FormText, Label, Input } from 'reactstrap'
+import { Form, FormGroup, FormText, Label, Input, Alert } from 'reactstrap'
 import { bind } from 'decko'
 import Router from 'next/router'
 
@@ -76,7 +76,9 @@ const RegistrationFrom = ({
           {context.form.country.placeholder}
         </option>
         {countries.countries.map(({ code, name }) => (
-          <option key={code}>{name}</option>
+          <option key={code} value={code}>
+            {name}
+          </option>
         ))}
       </FormField>
       <FormField
@@ -98,7 +100,7 @@ const RegistrationFrom = ({
         defaultChecked
       />
 
-      <Button>Register</Button>
+      <Button disabled={status === 'pending'}>Register</Button>
     </Form>
   )
 }
@@ -106,15 +108,18 @@ const RegistrationFrom = ({
 class RegisterPage extends Component {
   state = {
     status: 'none',
+    error: '',
   }
 
   @bind
   async submitRegistration(event) {
     event.preventDefault()
 
+    this.setState({ status: 'pending' })
+
     const formData = new FormData(event.target)
     const data = Object.fromEntries(formData.entries())
-
+    console.log(data)
     fetch('https://api.core.ac.uk/internal/discovery/register', {
       method: 'POST',
       headers: {
@@ -124,37 +129,29 @@ class RegisterPage extends Component {
     })
       .then(res => {
         if (res.ok) return res
-        throw new Error('Result is bad')
+        throw new Error(
+          'Oops! An Error Occurred. Please contact our support: support@core.ac.co.uk'
+        )
       })
       .then(res => res.json())
+      .then(result => {
+        if (result.violations) throw new Error(result.title)
+        return result
+      })
       .then(account => {
         const { id, emailVerified } = account
         console.log(account, id)
-        Router.push(emailVerified ? '/discovery/verify' : '/discovery/complete')
+        Router.push(emailVerified ? '/discovery/complete' : '/discovery/verify')
       })
-      .catch(() => {
-        this.setState(context.cases.apiError)
+      .catch(error => {
+        this.setState({ status: 'error', error: error.message })
+        console.log(error)
+        // this.setState(context.cases.apiError)
       })
   }
 
-  // async submitRegistration(event) {
-  //   this.setState({ status: 'pending' })
-  //   setTimeout(() => {
-  //     this.setState(
-  //       { status: 'done' },
-  //       () => {
-  //         Router.push('/discovery/verify')
-  //       },
-  //       1000
-  //     )
-  //   }, 1000)
-  //
-  //   console.log(event)
-  //   event.preventDefault()
-  // }
-
   render() {
-    const { status } = this.state
+    const { status, error } = this.state
     return (
       <Page
         title={context.title}
@@ -165,6 +162,8 @@ class RegisterPage extends Component {
         <p>{context.tagline}</p>
 
         <Content>
+          {error && <Alert color="primary"> {error} </Alert>}
+
           <RegistrationFrom
             status={status}
             onSubmit={this.submitRegistration}
