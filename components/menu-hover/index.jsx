@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-  Dropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
+  UncontrolledDropdown,
 } from 'reactstrap'
 import './menu-hover.scss'
 
@@ -35,28 +35,33 @@ class MenuHover extends React.Component {
 
   render() {
     return (
-      <div>
-        <Dropdown
-          className="menu-hover d-inline-block"
-          onMouseOver={this.onMouseEnter}
-          onFocus={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
-          isOpen={this.state.dropdownOpen}
-          toggle={this.toggle}
-        >
-          <a href="/home">Dropdown</a>
-          <DropdownToggle nav style={{ display: 'inline' }}>
-            &#9660; &#9650;
-          </DropdownToggle>
-          <DropdownMenu>
-            <DropdownItem header>Header</DropdownItem>
-            <DropdownItem disabled>Action</DropdownItem>
-            <DropdownItem>Another Action</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>Another Action</DropdownItem>
-          </DropdownMenu>
-        </Dropdown>
-      </div>
+      <UncontrolledDropdown
+        inNavbar
+        nav
+        className="menu-hover"
+        onMouseOver={this.onMouseEnter}
+        onFocus={this.onMouseEnter}
+        onMouseLeave={this.onMouseLeave}
+        isOpen={this.state.dropdownOpen}
+        toggle={this.toggle}
+      >
+        <a href="/home" style={{ display: 'inline' }}>
+          {' '}
+          Dropdown{' '}
+        </a>
+        <DropdownToggle nav style={{ display: 'inline' }}>
+          {' '}
+          &#9660; &#9650;
+        </DropdownToggle>
+
+        <DropdownMenu right>
+          <DropdownItem header>Header</DropdownItem>
+          <DropdownItem disabled>Action</DropdownItem>
+          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Another Action</DropdownItem>
+        </DropdownMenu>
+      </UncontrolledDropdown>
     )
   }
 }

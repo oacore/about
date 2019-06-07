@@ -130,7 +130,9 @@ class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {Header.renderMenu({ children: siteMap }, activeRoute)}
-            <MenuHover />
+            <Nav className="ml-auto" navbar>
+              <MenuHover />
+            </Nav>
           </Collapse>
         </Container>
       </Navbar>
