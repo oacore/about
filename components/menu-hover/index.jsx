@@ -35,26 +35,28 @@ class MenuHover extends React.Component {
 
   render() {
     return (
-      <Dropdown
-        className="menu-hover d-inline-block"
-        onMouseOver={this.onMouseEnter}
-        onFocus={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        isOpen={this.state.dropdownOpen}
-        toggle={this.toggle}
-      >
-        <a href="/home">
-          Dropdown
-          <DropdownToggle nav caret style={{ display: 'inline' }} />
-        </a>
-        <DropdownMenu>
-          <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Another Action</DropdownItem>
-        </DropdownMenu>
-      </Dropdown>
+      <div>
+        <Dropdown
+          className="menu-hover d-inline-block"
+          onMouseOver={this.onMouseEnter}
+          onFocus={this.onMouseEnter}
+          onMouseLeave={this.onMouseLeave}
+          isOpen={this.state.dropdownOpen}
+          toggle={this.toggle}
+        >
+          <a href="/home">Dropdown</a>
+          <DropdownToggle nav style={{ display: 'inline' }}>
+            &#9660; &#9650;
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem disabled>Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </div>
     )
   }
 }
