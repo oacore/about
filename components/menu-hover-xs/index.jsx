@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  DropdownToggle,
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
@@ -7,7 +8,7 @@ import {
 } from 'reactstrap'
 import { bind } from 'decko'
 
-class MenuHover extends React.Component {
+class MenuHoverXs extends React.Component {
   state = {
     isOpen: false,
   }
@@ -35,22 +36,22 @@ class MenuHover extends React.Component {
     const { isOpen } = this.state
 
     return (
-      <Nav className="ml-auto d-none d-md-block" navbar>
+      <Nav className="ml-auto d-md-none" navbar>
         <UncontrolledDropdown
           inNavbar
           nav
           className="menu-hover"
-          onMouseOver={this.onMouseEnter}
-          onFocus={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
           isOpen={isOpen}
           toggle={this.toggle}
         >
-          <a className="p-1" href="/home" nav>
-            MenuHover
-          </a>
-          {/* <DropdownToggle nav /> */}
-
+          <div className="d-flex">
+            <a className="nav-link d-flex mr-auto" href="/home" nav>
+              MenuHoverXs
+            </a>
+            <div className="d-flex">
+              <DropdownToggle nav>&#9660; &#9650;</DropdownToggle>
+            </div>
+          </div>
           <DropdownMenu right>
             <DropdownItem header>Header</DropdownItem>
             <DropdownItem disabled>Action</DropdownItem>
@@ -64,4 +65,4 @@ class MenuHover extends React.Component {
   }
 }
 
-export default MenuHover
+export default MenuHoverXs
