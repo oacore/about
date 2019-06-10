@@ -4,64 +4,66 @@ import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
+  Nav,
 } from 'reactstrap'
 import './menu-hover.scss'
+import { bind } from 'decko'
 
 class MenuHover extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.toggle = this.toggle.bind(this)
-    this.onMouseEnter = this.onMouseEnter.bind(this)
-    this.onMouseLeave = this.onMouseLeave.bind(this)
-    this.state = {
-      dropdownOpen: false,
-    }
+  state = {
+    isOpen: false,
   }
 
+  @bind
   onMouseEnter() {
-    this.setState({ dropdownOpen: true })
+    this.setState({ isOpen: true })
   }
 
+  @bind
   onMouseLeave() {
-    this.setState({ dropdownOpen: false })
+    this.setState({ isOpen: false })
   }
 
-  toggle() {
-    this.setState(prevState => ({
-      dropdownOpen: !prevState.dropdownOpen,
+  @bind
+  toggle(event) {
+    event.preventDefault()
+
+    this.setState(({ isOpen }) => ({
+      isOpen: !isOpen,
     }))
   }
 
   render() {
-    return (
-      <UncontrolledDropdown
-        inNavbar
-        nav
-        className="menu-hover"
-        onMouseOver={this.onMouseEnter}
-        onFocus={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
-        isOpen={this.state.dropdownOpen}
-        toggle={this.toggle}
-      >
-        <a href="/home" style={{ display: 'inline' }}>
-          {' '}
-          Dropdown{' '}
-        </a>
-        <DropdownToggle nav style={{ display: 'inline' }}>
-          {' '}
-          &#9660; &#9650;
-        </DropdownToggle>
+    const { isOpen } = this.state
 
-        <DropdownMenu right>
-          <DropdownItem header>Header</DropdownItem>
-          <DropdownItem disabled>Action</DropdownItem>
-          <DropdownItem>Another Action</DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>Another Action</DropdownItem>
-        </DropdownMenu>
-      </UncontrolledDropdown>
+    return (
+      <Nav className="ml-auto" navbar>
+        <UncontrolledDropdown
+          inNavbar
+          nav
+          className="menu-hover"
+          onMouseOver={this.onMouseEnter}
+          onFocus={this.onMouseEnter}
+          onMouseLeave={this.onMouseLeave}
+          isOpen={isOpen}
+          toggle={this.toggle}
+        >
+          <a href="/home" style={{ display: 'inline' }}>
+            Dropdown
+          </a>
+          &nbsp;
+          <DropdownToggle nav style={{ display: 'inline' }}>
+            &#9660; &#9650;
+          </DropdownToggle>
+          <DropdownMenu right>
+            <DropdownItem header>Header</DropdownItem>
+            <DropdownItem disabled>Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem divider />
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
+      </Nav>
     )
   }
 }
