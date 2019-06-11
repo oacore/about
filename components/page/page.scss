@@ -1,4 +1,14 @@
 @import "../bootstrap/core";
+@import "../bootstrap/variables";
+
+$page-background: linear-gradient(
+    #fff0,
+    #ffff 85vh,
+    #ffff calc(100% - 85vh),
+    #fff0
+  ),
+  url("paper-background.jpg") !default;
+$page-background-breakpoint: md !default;
 
 html,
 body {
@@ -24,5 +34,11 @@ body {
 $page-bg: transparent !default;
 
 .page {
-  background: $page-bg;
+  background: repeat-y 50% 0;
+  background-size: map-get($grid-breakpoints, $page-background-breakpoint) auto;
+  background-image: $page-background;
+
+  @include media-breakpoint-up($page-background-breakpoint) {
+    background-size: 100% auto;
+  }
 }

@@ -149,12 +149,6 @@ $mark-padding:                .2em;
 $mark-bg:                     $green;
 
 
-// Page
-
-$page-bg: linear-gradient(#fff0, #ffff 85vh, #ffff calc(100% - 85vh), #fff0),
-          url("../images/paper-background.jpg") repeat-y 50% 0 / 100% auto;
-
-
 // Forms
 
 $custom-control-indicator-box-shadow:           0 0 0 .2rem rgba($light-grey, .25);
