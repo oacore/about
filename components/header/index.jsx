@@ -20,6 +20,7 @@ import Link from '../link'
 import Logo from '../logo'
 
 import SearchNavbar from '../search-navbar'
+import MenuHoverXs from '../menu-hover-xs'
 import MenuHover from '../menu-hover'
 
 class Header extends React.Component {
@@ -130,6 +131,7 @@ class Header extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={isOpen} navbar>
             {Header.renderMenu({ children: siteMap }, activeRoute)}
+            <MenuHoverXs />
             <MenuHover />
           </Collapse>
         </Container>

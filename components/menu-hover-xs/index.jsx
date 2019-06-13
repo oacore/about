@@ -8,6 +8,8 @@ import {
 } from 'reactstrap'
 import { bind } from 'decko'
 
+import './menu-hover-xs.scss'
+
 class MenuHoverXs extends React.Component {
   state = {
     isOpen: false,
@@ -46,10 +48,20 @@ class MenuHoverXs extends React.Component {
         >
           <div className="d-flex">
             <a className="nav-link d-flex mr-auto" href="/home" nav>
-              MenuHoverXs
+              MenuHoverXs component
             </a>
+            <img
+              className="menu-angle"
+              src="/static/images/icons/angle-down.svg"
+              alt="angle down"
+            />
+            <img
+              className="menu-angle"
+              src="/static/images/icons/angle-up.svg"
+              alt="angle up"
+            />
             <div className="d-flex">
-              <DropdownToggle nav>&#9660; &#9650;</DropdownToggle>
+              <DropdownToggle nav>xxx</DropdownToggle>
             </div>
           </div>
           <DropdownMenu right>

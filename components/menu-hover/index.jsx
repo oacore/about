@@ -49,7 +49,7 @@ class MenuHover extends React.Component {
           >
             <div className="d-flex">
               <a className="nav-link d-flex mr-auto" href="/home" nav>
-                MenuHoverXs
+                MenuHover component (Xs size)
               </a>
               <div className="d-flex">
                 <DropdownToggle nav>&#9660; &#9650;</DropdownToggle>
