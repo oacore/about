@@ -2,9 +2,12 @@ import React from 'react'
 import {
   DropdownMenu,
   DropdownItem,
+  DropdownToggle,
   UncontrolledDropdown,
   Nav,
 } from 'reactstrap'
+import withSizes from 'react-sizes'
+
 import { bind } from 'decko'
 
 class MenuHover extends React.Component {
@@ -33,13 +36,42 @@ class MenuHover extends React.Component {
 
   render() {
     const { isOpen } = this.state
+    const { isMobile } = this.props
+
+    if (isMobile) {
+      return (
+        <Nav navbar>
+          <UncontrolledDropdown
+            inNavbar
+            nav
+            isOpen={isOpen}
+            toggle={this.toggle}
+          >
+            <div className="d-flex">
+              <a className="nav-link d-flex mr-auto" href="/home" nav>
+                MenuHoverXs
+              </a>
+              <div className="d-flex">
+                <DropdownToggle nav>&#9660; &#9650;</DropdownToggle>
+              </div>
+            </div>
+            <DropdownMenu right>
+              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem disabled>Action</DropdownItem>
+              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Another Action</DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        </Nav>
+      )
+    }
 
     return (
-      <Nav className="ml-auto d-none d-md-block" navbar>
+      <Nav navbar>
         <UncontrolledDropdown
           inNavbar
           nav
-          className="menu-hover"
           onMouseOver={this.onMouseEnter}
           onFocus={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
@@ -47,7 +79,7 @@ class MenuHover extends React.Component {
           toggle={this.toggle}
         >
           <a className="p-1" href="/home" nav>
-            MenuHover
+            MenuHoverLg
           </a>
           {/* <DropdownToggle nav /> */}
 
@@ -64,4 +96,8 @@ class MenuHover extends React.Component {
   }
 }
 
-export default MenuHover
+const mapSizesToProps = ({ width }) => ({
+  isMobile: width < 768,
+})
+
+export default withSizes(mapSizesToProps)(MenuHover)

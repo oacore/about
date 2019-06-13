@@ -51,6 +51,7 @@
     "react-dom": "^16.6.1",
     "react-leaflet": "^2.2.0",
     "react-markdown": "^4.0.3",
+    "react-sizes": "^2.0.0",
     "reactstrap": "^7",
     "url": "^0.11.0",
     "yaml-frontmatter-loader": "^0.1.0",

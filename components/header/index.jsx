@@ -21,7 +21,6 @@ import Logo from '../logo'
 
 import SearchNavbar from '../search-navbar'
 import MenuHover from '../menu-hover'
-import MenuHoverXs from '../menu-hover-xs'
 
 class Header extends React.Component {
   state = {
@@ -132,9 +131,6 @@ class Header extends React.Component {
           <Collapse isOpen={isOpen} navbar>
             {Header.renderMenu({ children: siteMap }, activeRoute)}
             <MenuHover />
-            <MenuHover />
-            <MenuHoverXs />
-            <MenuHoverXs />
           </Collapse>
         </Container>
       </Navbar>
