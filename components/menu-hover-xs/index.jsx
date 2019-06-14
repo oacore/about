@@ -50,18 +50,26 @@ class MenuHoverXs extends React.Component {
             <a className="nav-link d-flex mr-auto" href="/home" nav>
               MenuHoverXs component
             </a>
-            <img
-              className="menu-angle"
-              src="/static/images/icons/angle-down.svg"
-              alt="angle down"
-            />
-            <img
-              className="menu-angle"
-              src="/static/images/icons/angle-up.svg"
-              alt="angle up"
-            />
             <div className="d-flex">
-              <DropdownToggle nav>xxx</DropdownToggle>
+              <DropdownToggle nav>
+                {!isOpen ? (
+                  <span
+                    style={{
+                      background:
+                        'url(/static/images/icons/angle-down.svg) no-repeat',
+                      padding: '10px 20px',
+                    }}
+                  />
+                ) : (
+                  <span
+                    style={{
+                      background:
+                        'url(/static/images/icons/angle-up.svg) no-repeat',
+                      padding: '10px 20px',
+                    }}
+                  />
+                )}
+              </DropdownToggle>
             </div>
           </div>
           <DropdownMenu right>

@@ -52,7 +52,25 @@ class MenuHover extends React.Component {
                 MenuHover component (Xs size)
               </a>
               <div className="d-flex">
-                <DropdownToggle nav>&#9660; &#9650;</DropdownToggle>
+                <DropdownToggle nav>
+                  {!isOpen ? (
+                    <span
+                      style={{
+                        background:
+                          'url(/static/images/icons/angle-down.svg) no-repeat',
+                        padding: '10px 20px',
+                      }}
+                    />
+                  ) : (
+                    <span
+                      style={{
+                        background:
+                          'url(/static/images/icons/angle-up.svg) no-repeat',
+                        padding: '10px 20px',
+                      }}
+                    />
+                  )}
+                </DropdownToggle>
               </div>
             </div>
             <DropdownMenu right>
