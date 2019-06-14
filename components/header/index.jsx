@@ -128,7 +128,28 @@ class Header extends React.Component {
             </Link>
           )}
           {showSearch && <SearchNavbar {...searchFormProps} />}
-          <NavbarToggler onClick={this.toggle} />
+          <NavbarToggler onClick={this.toggle}>
+            <span>Menu</span>
+            {!isOpen ? (
+              <span
+                style={{
+                  background:
+                    'url(/static/images/icons/angle-down-gray.svg) no-repeat',
+                  padding: '0 10px',
+                  margin: 'auto auto auto 10px',
+                }}
+              />
+            ) : (
+              <span
+                style={{
+                  background:
+                    'url(/static/images/icons/angle-up-gray.svg) no-repeat',
+                  padding: '0 10px',
+                  margin: 'auto auto auto 10px',
+                }}
+              />
+            )}
+          </NavbarToggler>
           <Collapse isOpen={isOpen} navbar>
             {Header.renderMenu({ children: siteMap }, activeRoute)}
             <MenuHoverXs />
