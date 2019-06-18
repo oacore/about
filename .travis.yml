@@ -6,4 +6,4 @@ before_script:
   - yarn start &
 script:
   - yarn lint
-  - yarn test-dev
+  - yarn test-local
