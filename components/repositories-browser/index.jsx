@@ -12,7 +12,7 @@ class RepositoryBrowser extends Component {
     location: 10,
     distance: 300,
     maxPatternLength: 100,
-    keys: ['name'],
+    keys: ['name', 'repositoryLocation.countryName'],
   }
 
   static pageSize = 10
