@@ -122,7 +122,7 @@ const AboutPage = () => (
       </Section>
     </Section>
 
-    <Section className="about-services-section text-center" id="section">
+    <Section className="about-services-section text-center" id="services">
       <h2>{aboutData.howItWorks.services.title}</h2>
 
       <ServiceGroups items={servicesData.sections} className="text-left" />
