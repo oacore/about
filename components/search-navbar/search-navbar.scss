@@ -69,7 +69,7 @@
         .navbar-search-form {
           min-width: 0.75 * $content-max-width;
           max-width: $content-max-width;
-          transition: flex-grow 0.2s;
+          transition: flex 0.2s;
 
           & ~ .navbar-collapse {
             flex-grow: 0;
