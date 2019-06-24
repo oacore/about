@@ -5,4 +5,9 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-11307192-6', 'auto');
+ga('require', 'linkid', {
+  'cookieName': '_ela',
+  'duration': 45,
+  'levels': 5
+});
 ga('send', 'pageview');
