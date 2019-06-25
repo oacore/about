@@ -9,7 +9,6 @@ import {
   Nav,
   NavItem,
   NavLink,
-  UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem,
@@ -20,6 +19,7 @@ import Link from '../link'
 import Logo from '../logo'
 
 import SearchNavbar from '../search-navbar'
+import NavDropdown from '../nav-dropdown'
 
 class Header extends React.Component {
   state = {
@@ -54,9 +54,21 @@ class Header extends React.Component {
     // Sectioned dropdown menu if sections are present
     if (sections) {
       return (
-        <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
-          <DropdownToggle nav>{title}</DropdownToggle>
-          <DropdownMenu right style={{ width: 480 }}>
+        <NavDropdown nav={level === 1} inNavbar key={key}>
+          <div className="nav-link-group">
+            <Link href={path} passHref>
+              <NavLink>{title}</NavLink>
+            </Link>
+            <DropdownToggle
+              className="dropdown-toggle"
+              tag="button"
+              type="button"
+              nav
+            >
+              Toggle {title} menu
+            </DropdownToggle>
+          </div>
+          <DropdownMenu className="dropdown-menu-wide" right>
             {sections.map(section => (
               <div className="dropdown-section" key={section.title}>
                 <DropdownItem header tag="p">
@@ -68,21 +80,33 @@ class Header extends React.Component {
               </div>
             ))}
           </DropdownMenu>
-        </UncontrolledDropdown>
+        </NavDropdown>
       )
     }
 
     // Regular dropdown for regular children
     if (children) {
       return (
-        <UncontrolledDropdown nav={level === 1} inNavbar key={key}>
-          <DropdownToggle nav>{title}</DropdownToggle>
+        <NavDropdown nav={level === 1} inNavbar key={key}>
+          <div className="nav-link-group">
+            <Link href={path} passHref>
+              <NavLink>{title}</NavLink>
+            </Link>
+            <DropdownToggle
+              className="dropdown-toggle"
+              tag="button"
+              type="button"
+              nav
+            >
+              Toggle {title} menu
+            </DropdownToggle>
+          </div>
           <DropdownMenu right>
             {children.map(node =>
               Header.renderMenu(node, activePath, level + 1)
             )}
           </DropdownMenu>
-        </UncontrolledDropdown>
+        </NavDropdown>
       )
     }
 
