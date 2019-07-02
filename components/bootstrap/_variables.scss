@@ -7,6 +7,8 @@
 // Color system
 //
 
+$white: #fff !default;
+
 $nearly-black: #2a3840;
 $light-grey: lighten(desaturate(adjust-hue($nearly-black, 8), 15.99), 70.98);
 
@@ -182,6 +184,15 @@ $navbar-light-hover-color:          $link-color;
 $navbar-light-active-color:         $link-hover-color;
 
 $navbar-light-brand-color:          $navbar-light-color;
+
+
+// Dropdowns
+//
+// Dropdown menu container and contents.
+
+$dropdown-link-color:               $link-color;
+$dropdown-link-hover-color:         $link-color;
+$dropdown-link-active-color:        $white;
 
 
 // Sections
