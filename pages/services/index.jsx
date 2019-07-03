@@ -49,6 +49,7 @@ const ServicesPage = () => (
           <Section className="service-section-video" tag="div">
             <Content className="mx-auto" tag="figure">
               <Video
+                className="mb-3"
                 src={servicesGroup.video.src}
                 title={servicesGroup.video.title}
               />
