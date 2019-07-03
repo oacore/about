@@ -18,7 +18,7 @@ sections:
     title: CORE access to raw data
     description: >
       Why we need raw data access to research papers
-      and how CORE provides it.
+      and how CORE provides it
 
   sections:
   -
@@ -62,7 +62,7 @@ sections:
     title: CORE content discovery
     description: >
       How we aid the discovery of research papers
-      and help manage repository content.
+      and help manage repository content
 
   sections:
   -
