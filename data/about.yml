@@ -55,7 +55,7 @@ blog:
   visit-button: Visit the blog
 
 endorsements:
-  title: Who's using CORE?
+  title: Who is using CORE?
   content: Our data and tools power innovation **around the world**
   action: Find out more
 
@@ -71,6 +71,11 @@ how-it-works:
       CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
       from thousands and over tens of thousands of journals, collected from
       {{repositoriesCount}}&nbsp; data providers around the world.
+
+      CORE will supply data for the UK REF 2021 Open Access Policy Audit
+      to Research England. We provide [advice and support](~ref-audit)
+      to UK HEIs with exposing their outputs data to CORE.
+
     actions:
       primary: Become a data provider
       secondary: See the full list of data providers

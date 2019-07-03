@@ -30,13 +30,13 @@ The policy applies to research outputs satisfying the following two criteria:
 * Outputs published in a journal or in conference proceedings with an ISSN number.  
 * Outputs accepted for publication after 1 April 2016.  
 
-The policy stipulates that to be eligible for submission to REF 2021, these outputs must be deposited 
-a repository (institutional, subject, or a repository service) within a specified timeframe. 
-More specifically:  
-* Outputs accepted for publication from 1 April 2016 to 31 March 2018 must be deposited no later 
-than three months after the **date of publication**.
-* Outputs accepted for publication from 1 April 2018 to 31 December 2020 must be deposited no later 
-than three months after the **date of acceptance**.  
+The policy stipulates that to be eligible for submission to REF 2021, these
+outputs must be deposited in  a repository (institutional, subject, or a
+repository service) within a specified timeframe.  More specifically:  
+* Outputs accepted for publication from 1 April 2016 to 31 March 2018 must be
+  deposited no later  than three months after the **date of publication**.
+* Outputs accepted for publication from 1 April 2018 to 31 December 2020 must be
+  deposited no later  than three months after the **date of acceptance**.  
 
 For more details of the policy please see [REF Guidance on Submissions](https://www.ref.ac.uk/media/1092/ref-2019_01-guidance-on-submissions.pdf), 
 paragraphs [233 to 255](https://www.ref.ac.uk/media/1092/ref-2019_01-guidance-on-submissions.pdf#REF_Guidance%20on%20Submissions.indd%3A223%3A62).
@@ -51,16 +51,16 @@ other things, the Audit Guidance specifies that CORE data will be used in the
 audit. More specifically, it states:
 
 > 40. We will undertake verification of the dates that outputs became publicly
-> available, particularl where they were published early in the REF period or
+> available, particularly where they were published early in the REF period or
 > are marked as 'pending' publication (for example, by obtaining a letter from
 > the publisher). This will include checking the publication year against the
 > Crossref database and against Jisc CORE. 
-> ---
+
 > 46. We will assess each HEIs'
 > overall compliance with the REF 2021 open access policy by… iv. Using Jisc
 > CORE, comparing the **datePublished** and **depositedDate** and identifying
 > where the number of days between the two dates is greater than 92.  
-> ---
+
 > 49. Where there is insufficient evidence to demonstrate a robust and
 > well-managed process for open access, we will identify a set of outputs from
 > each submission made by the HEI, and request further information to verify
@@ -79,14 +79,14 @@ audit. More specifically, it states:
 
 The following points list recommendations we make to institutional repositories
 to ensure their data is well  represented in CORE. While these recommendations
-are not mandated by Research England, implementing them will  both improve the
+are not mandated by Research England, implementing them will both improve the
 quality of the data held by CORE to support the REF Audit as well as increase
-the discoverability  and visibility of the institutions’ research outputs.  
+the discoverability and visibility of the institutions’ research outputs.  
 
 1. **Make sure that your institutional repository/ies are registered in CORE**: 
 We are constantly working towards CORE harvesting all repositories available.
 However, as repositories sometimes  change their web locations, platforms or
-some institutions introduce multiple repositories, we advice institutions  to
+some institutions introduce multiple repositories, we advise institutions  to
 check that their repositories are registered and listed on the CORE’s data
 [providers page](~data-providers). 
 
@@ -95,7 +95,7 @@ of the [RIOXX metadata application](http://www.rioxx.net/) profile was to help
 institutions achieve compliance with the  REF 2021 Open Access Policy. As of
 June 2019, more than 70 UK HEIs already support RIOXX. The application profile 
 directly supports some of the metadata fields that are important for the audit,
-such as *rioxxterms:publication_date*.  Adopting RIOXX greatly assist CORE in
+such as *rioxxterms:publication_date*.  Adopting RIOXX greatly assists CORE in
 acquiring key data for the  outputs. The below recommendations detail which 
 information should be shared in the metadata and how this information should be
 exposed in RIOXX. We further provide  an example RIOXX metadata record with all
@@ -115,7 +115,7 @@ the  *rioxxterms:version_of_record* field.
 4. **Release deposit dates publicly, so that they are harvestable by CORE**:  At
 present, record deposit dates are not explicitly exposed by repositories in both
 RIOXX nor standard Dublin Core (DC).  We are working with the RIOXX team to
-encourage explicit sharing of this information in a machine readable form and
+encourage explicit sharing of this information in a machine-readable form and
 will  update this guidance once a solution is agreed. In the meantime, and as
 repositories store the deposit date in their  databases, we encourage
 repositories to expose the deposit date on each of the research output’s web
@@ -134,7 +134,7 @@ was accepted for publication should be  shared in the RIOXX
 6. **Ensure that all records to be submitted to REF have a full text linked
 directly from the dc:identifier**:  According to the RIOXX standard, the
 *dc:identifier* field **must** contain an HTTP URI which is a link directly 
-pointing to the described resource, i.e. to the MS Word, PDF or other version of
+pointing to the described resource, i.e. to the MS Word, PDF or another version of
 the manuscript. This field should  be populated for all records your institution
 is planning to submit to the REF and should appear exactly once in the  record,
 so that the availability of the output in the repository can be automatically
@@ -151,7 +151,7 @@ repository by default. To check its operation there are freely available
 [validators](http://validator.oaipmh.com/)  that ensure the correct response of
 the endpoint. However, the validator does not fully ensure that the data from 
 the repository could be harvested without issues, which could be a potential
-problem especially for larger repositories.  Any repository can register freely
+problem, especially for larger repositories.  Any repository can register freely
 for the [CORE Repository Dashboard](~services/repository-dashboard/)  account
 which enables the repository to check its harvesting status.  
 
@@ -250,7 +250,12 @@ way of improving it, such as to make the data we collect more accurate.
 CORE Repository Dashboard already provides useful information to check that your
 repository is being properly  harvested. Additionally, we are planning further
 improvements to the CORE Repository Dashboard in 2020 to provide  support for
-HEIs participating in the REF. CORE will establish and maintain a FAQ section
-for the purposes of the  audit. However, if you have any further questions,
-please [contact](~contact)  the CORE team for support and we will be happy to
-help.
+HEIs participating in the REF. We also offer a free 
+[CORE Discovery](~services/discovery) repository plugin which can help you
+discover Open Access full text versions of articles for those metadata records
+in your repository which do not have  full text manuscript attached.
+
+To answer further questions, we have also established and maintain an [FAQ
+section](~faq#ref-audit) for the purposes of the  audit. However, if you have
+any further questions, please [contact](~contact) the CORE team for support and
+we will be happy to help.

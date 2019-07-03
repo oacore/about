@@ -48,8 +48,8 @@ sections:
           CORE harvests DOAJ as a single entry, which means that each journal title
           does not appear separately in CORE. If you wish to have a separate entry for
           your journal in CORE, do [send us](~contact) the journal's oai base url and we will create
-          a new entry. 
-     
+          a new entry.
+
   - id: aggregation
     title: Aggregation
     sections:
@@ -449,3 +449,84 @@ sections:
           Do you need to cite CORE?
         answer: |
           Visit our [research page](~research-outputs).
+
+  - id: ref-audit
+    title: CORE guidance on REF2021 Audit
+    items:
+      - slug: how-do-I-ensure-that-my-repository-deposit-date-matches
+        question: |
+          How do I ensure that my repository's deposit date matches CORE’s
+          deposit date?
+        answer: |
+          CORE captures data as explained in the [CORE
+          recommendations](/ref-audit). By following our recommendations CORE
+          should have the same deposit dates as the repository.
+      - slug: metadata-record-with-a-full-text-PDF-does-not-appear-in-CORE
+        question: |
+          A metadata record with a full text PDF does not appear in CORE from my
+          own repository but it has been harvested from another repository. What
+          if the record was not deposited on time at the other repository. Will
+          this have an impact with regards to the REF2021 compliance?
+        answer: |
+          CORE can identify deposits of the same articles from across
+          repositories. By doing so, an output deposited late in repository A
+          could be technically compliant provided that it was deposited within
+          the timeframe at repository B, i.e. the earliest deposit date
+          irrespective of the repository could be used. However, for the time
+          being, CORE agreed to supply the data to Research England and it will
+          be up the discretion of Research England to interpret the data. We
+          understand that the motivation is to mark outputs as non-compliant
+          only in cases where there is clear evidence that they are truly
+          non-compliant.
+      - slug: CORE-harvests-full-text-PDFs-only
+        question: |
+          CORE harvests full text PDFs only. Does this mean that outputs with
+          full text in other formats, e.g. word documents or text files, will
+          not be considered as REF2021 compliant outputs?
+        answer: |
+          CORE harvests both metadata and full texts, currently only in PDF
+          format but we will include support for other formats in the future.
+          While the presence of the full text is preferred, CORE has all
+          information necessary to support the REF2021 audit as long as the
+          metadata of your outputs are in CORE. To minimise the possibility of
+          some of your outputs not being captured by CORE, please follow the
+          [CORE recommendations](/ref-audit).
+      - slug: when-I-log-into-the-CORE-Repository-Dashboard
+        question: |
+          When I log into the CORE Repository Dashboard in the “Content” tab I
+          see a date. Is this date the deposit date that CORE has for the
+          output?
+        answer: |
+          CORE captures data as explained in the [CORE
+          recommendations](/ref-audit). By following our recommendations CORE
+          should have the same deposit date as the repository. The date that you
+          see in the in the [CORE Repositories
+          Dashboard](~services/repository-dashboard) is the date the document
+          was last seen in your repository and imported into CORE. We are
+          currently considering the development of a further technical support
+          to allow institutions to see the deposit dates CORE holds for their
+          outputs.
+      - slug: can-I-have-my-repository-deposit-dates
+        question: |
+          Can I have my repository's deposit dates from CORE in a CSV file?
+        answer: |
+          We are currently discussing the level of support that CORE will be
+          able to provide to repositories with Research England. We will provide
+          more details about it as soon as we can.
+      - slug: date-that-a-metadata-record-was-created-may-not-be-the-same
+        question: |
+          The date that a metadata record was created may not be the same with
+          the date that the full text record was attached to a metadata record.
+          How does CORE know the date that the full text was attached?
+        answer: |
+          CORE captures data as explained in the
+          [CORE recommendations](/ref-audit).
+      - slug: how-does-CORE-know-that-the-version-of-the-deposited-full-text
+        question: |
+          How does CORE know that the version of the deposited full text is the
+          correct and compliant version?
+        answer: |
+          The validation that the deposited full text is the first compliant
+          version is currently not in the scope of CORE's support for the
+          REF2021 Audit. Research England might use other alternative methods to
+          check this.
