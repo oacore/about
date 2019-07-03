@@ -1,6 +1,14 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
-import { Page, Content, Section, Button, Link, Video } from 'components'
+import {
+  Page,
+  Content,
+  Markdown,
+  Section,
+  Button,
+  Link,
+  Video,
+} from 'components'
 import Testimonial from 'components/testimonial'
 import servicesData from 'data/services.yml'
 
@@ -39,12 +47,14 @@ const ServicesPage = () => (
 
         {servicesGroup.video && (
           <Section className="service-section-video" tag="div">
-            <Content className="mx-auto">
+            <Content className="mx-auto" tag="figure">
               <Video
                 src={servicesGroup.video.src}
                 title={servicesGroup.video.title}
-                tag="p"
               />
+              <Content tag="figcaption">
+                <Markdown>{servicesGroup.video.description}</Markdown>
+              </Content>
             </Content>
           </Section>
         )}

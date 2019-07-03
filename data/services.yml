@@ -16,6 +16,7 @@ sections:
   video:
     src: https://www.youtube.com/embed/nf7IZIzBo5U
     title: CORE access to raw data
+    description: Access to raw data explained
 
   sections:
   -
@@ -57,6 +58,7 @@ sections:
   video:
     src: https://www.youtube.com/embed/kp4cvk7aJjs
     title: CORE content discovery
+    description: Content discovery explained
 
   sections:
   -
