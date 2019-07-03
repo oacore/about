@@ -16,6 +16,9 @@ sections:
   video:
     src: https://www.youtube.com/embed/nf7IZIzBo5U
     title: CORE access to raw data
+    description: >
+      Why we need raw data access to research papers
+      and how CORE provides it
 
   sections:
   -
@@ -57,6 +60,9 @@ sections:
   video:
     src: https://www.youtube.com/embed/kp4cvk7aJjs
     title: CORE content discovery
+    description: >
+      How we aid the discovery of research papers
+      and help manage repository content
 
   sections:
   -
