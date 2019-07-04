@@ -56,11 +56,13 @@ audit. More specifically, it states:
 > the publisher). This will include checking the publication year against the
 > Crossref database and against Jisc CORE. 
 
+<!-- Markdown blockquote divider -->
 > 46. We will assess each HEIs'
 > overall compliance with the REF 2021 open access policy by… iv. Using Jisc
 > CORE, comparing the **datePublished** and **depositedDate** and identifying
 > where the number of days between the two dates is greater than 92.  
 
+<!-- Markdown blockquote divider -->
 > 49. Where there is insufficient evidence to demonstrate a robust and
 > well-managed process for open access, we will identify a set of outputs from
 > each submission made by the HEI, and request further information to verify
