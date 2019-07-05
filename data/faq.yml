@@ -421,7 +421,8 @@ sections:
         question: |
           Where can I find CORE’s brochure?
         answer: |
-          You can find CORE’s brochure [here](/static/resources/core-leaflet-2017-v3.pdf).
+          You can find the most recent CORE brochure in
+          [our resources list](~about#resources).
       - slug: CORE-leaflet
         question: |
           Where can I find CORE’s flyer?
