@@ -1,5 +1,5 @@
 ---
-title: &#91;DRAFT&#93; CORE support for UK HEIs in the REF 2021 Open Access Audit
+title: "[DRAFT] CORE support for UK HEIs in the REF 2021 Open Access Audit"
 ---
 
 In June 2019, Research England released [REF Audit Guidance](https://www.ref.ac.uk/media/1164/ref-2019_04-audit-guidance.pdf) 
