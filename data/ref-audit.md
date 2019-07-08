@@ -231,12 +231,7 @@ These include:
     record, as the deposit date. Subsequent changes to the Datestamp, which
     could be due to the record’s updates, will not affect the deposit date.
     Due to the frequent harvesting, this provides a close estimation of the
-    deposit date. In cases where the harvesting of the repository by CORE is
-    not that frequent, due to reasons such as late inclusion in CORE or
-    malfunctioning of the repository endpoint, the deposit date obtained
-    through this method will never be an earlier date than the date of the
-    first compliant deposit, hence not having a negative impact on the
-    outcome of the audit.
+    deposit date.
 
 This describes the method we use to collect data from repositories that
 currently do not support RIOXX. We might update this method if we identify a
