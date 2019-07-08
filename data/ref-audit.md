@@ -39,7 +39,6 @@ repository service) within a specified timeframe. More specifically:
 For more details of the policy please see [REF Guidance on Submissions](https://www.ref.ac.uk/media/1092/ref-2019_01-guidance-on-submissions.pdf), 
 paragraphs [233 to 255](https://www.ref.ac.uk/media/1092/ref-2019_01-guidance-on-submissions.pdf#REF_Guidance%20on%20Submissions.indd%3A223%3A62).
 
-
 <h2 id="core-audit">What the guidance says about the use of CORE in the audit</h2>
 
 In June 2019, Research England released [REF Audit
@@ -95,8 +94,7 @@ of the [RIOXX metadata application](http://www.rioxx.net/) profile was to help
 institutions achieve compliance with the REF 2021 Open Access Policy. As of
 June 2019, more than 70 UK HEIs already support RIOXX. The application profile 
 directly supports some of the metadata fields that are important for the audit,
-such as *rioxxterms:publication_date*. Adopting RIOXX greatly assists CORE in
-acquiring key data for the outputs. The below recommendations detail which 
+such as *rioxxterms:publication_date*. While CORE can capture the data also from repositories not supporting RIOXX, supporting RIOXX  greatly reduces the complexity of the algorithm through which CORE acquires the data. The below recommendations detail which 
 information should be shared in the metadata and how this information should be
 exposed in RIOXX. We further provide an example RIOXX metadata record with all
 information needed for the REF Audit correctly set.
