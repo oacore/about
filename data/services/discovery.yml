@@ -38,9 +38,10 @@ main: |
   planet. So try it, it's free.
 
   The tool is available as:
-  * Browser extension for researchers and anyoneinterested in reading scientific documents
-  * Plugin for repositories, enriching metadata only pages in repositories with links to freely available
-  copies of the paper
+  * Browser extension for researchers and anyoneinterested in reading
+    scientific documents
+  * Plugin for repositories, enriching metadata only pages in repositories
+    with links to freely available copies of the paper
   * API for developers and third party services
 
   ### How it works?
@@ -62,6 +63,9 @@ additional:
     It’s free to install CORE Discovery in your browser.
     Using Google Chrome or Chromium, open the [extension page on Web Store](https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh)
     and click on the “Add to Chrome” button to install the extension.
+
+    To install the CORE Discovery repository plugin,
+    [follow these instructions](/documentation/discovery/plugin).
 
     If you are interested in the integration of the CORE Discovery API in your
     repository, website or application please [contact us](~about#contact).
@@ -91,11 +95,11 @@ what-is-included:
 
   actions:
     primary:
-      caption: Get browser exension (beta)
+      caption: Get browser extension
       url: https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh
     secondary:
-      caption: Contact us to get repository plugin
-      url: ~contact
+      caption: Get repository plugin
+      url: /documentation/discovery/plugin
 
 related-services:
 -

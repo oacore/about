@@ -17,8 +17,13 @@ CORE Discovery has a preference in displaying first the open access content
 originating from our approved content providers and seeks alternative routes 
 only when a free version is not available from them.
 
-## Instructions to installation
+## Installation instructions
 
-It’s free to Install CORE Discovery in your browser.
+Both the CORE Discovery browser extension and the repository plugin are
+free to install:
 
-[Get CORE Discovery](https://chrome.google.com/webstore/category/extensions)
+* Install the CORE Discovery extension to your browser via the
+  [Chrome webstore](https://discovery.core.ac.uk/download).
+
+* Integrate the CORE Discovery repository plugin by 
+  [following these instructions](/documentation/discovery/plugin).

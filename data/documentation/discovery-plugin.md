@@ -2,8 +2,12 @@
 title: CORE Discovery repository plugin documentation
 ---
 
-Thank you for registering for the CORE&nbsp;Discovery repository plugin.
-To install the&nbsp;plugin to your repository follow the instructions below.
+To install the CORE Discovery plugin to your repository you first need to have 
+an account with the [CORE Repository Dashboard](~services/repository-dashboard/). 
+To register with the Dashboard [send us an email](~contact). 
+
+When you get the plugin ID from the "Get Discovery" tab in the 
+CORE Repository Dashboard you can move on with the instructions below.
 
 <section class="section" id="eprints">
 <h2>EPrints repositories</h2>
