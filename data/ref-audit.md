@@ -16,8 +16,9 @@ with regards to exposing data to CORE through their repositories. In this docume
 1. [Key REF 2021 Open Access Policy sections relevant to CORE](#oa-policy)  
 2. [What the guidance says about the use of CORE in the audit](#core-audit)  
 3. [Recommendations for exposing research outputs’ metadata to CORE in support of the audit](#recommendations)  
-4. [How will CORE collect the information?](#collect-info)  
-5. [How can CORE help you with making sure your repository is represented well?](#repo-representation)  
+4. [Why the audit should be supported by an aggregation?](#reasons)  
+5. [How will CORE collect the information?](#collect-info)  
+6. [How can CORE help you with making sure your repository is represented well?](#repo-representation)  
 
 <h2 id="oa-policy">Key REF 2021 Open Access Policy sections relevant to CORE</h2>
 
@@ -68,8 +69,6 @@ audit. More specifically, it states:
 > Jisc CORE, or a combination of the two. We will select outputs that have been
 > returned as compliant with the policy, and/or outputs that have been returned
 > with exceptions.
-
-
 
 <h2 id="recommendations">
   Recommendations for exposing research outputs’ metadata 
@@ -192,6 +191,18 @@ Below is an example of a RIOXX record with all recommended fields populated:
 &lt;/rioxx&gt;
 </pre>
 
+<h2 id="reasons">Why the audit should be supported by an aggregation?</h2>
+
+
+1. **Individual HEIs have a local and incomplete view of compliance:** An output deposited late to a repository maintained by one institution can still be compliant due to a timely deposit at another repository. Research collaborations are international, i.e. the first compliant deposit can be to an overseas repository and this could also include non-institutional subject repositories, such as arXiv. While a few institutions are involved in cross-institutional checking for possible external deposit, this practice requires human labour and is limited only to cooperating institutions. Aggregators have a global and more complete view over the data and can provide technology that will effectively support institutions in better understanding which outputs are compliant and which are not even prior to the REF submission.  
+
+2. **Open Access uptake monitoring:** A key intention of the REF 2021 OA Policy is to increase the proportion of OA outputs and decrease the time lag between acceptance and deposit. As a significant proportion of web transactions for accessing research papers is to recent papers, if research becomes available earlier in repositories than on publisher platforms and is, in addition, available without a paywall, this will a) significantly increase the importance of the repository infrastructure, b) accelerate research dissemination by making the scholarly communication process more efficient and c) provide better value to citizens. Citing Lord Kelvin's “If you cannot measure it, you can not improve it,” it is crucial, for any policy, that its uptake can be monitored and improvements measured at any time. By capturing this information at an aggregation level, we are enabling precisely that. For example, delivering deposit dates to Research England only at the time of REF submission would not allow such monitoring as it would for only a subsample of content in repositories and only at one point in time. It is is crucial to realise that the importance of the REF 2021 OA policy goes far beyond REF. The practice of depositing early should prevail beyond the REF submission date in 2020 and we should be able to monitor our journey to not just open access but also to fast open access. In the future, similar policies (e.g. due to Plan S) will require similar monitoring. 
+
+3. **Audit transparency:** Exposing deposit dates and other important information in a machine readable format in support of the audit through repositories ensures transparency of the audited data. Everyone can check the data that not only gets submitted but also that is about to get submitted, ensuring good preparation leading to no surprises. Overall, transparency is a key to good research practices and open science. It also often leads to more attention resulting in improvement of processes and better quality data. 
+
+4. **Efficiency:** Collecting data for the audit through an aggregation is by far the most efficient method of assembling the data. Where systems are already in place, it does not require any manual work or action. Any work likely to be conducted improves the repository infrastructure for beyond REF 2021 resulting in a positive change across the sector. As it is expected that similar audits might need to be carried out in the future, it is sensible to automate this process now. 
+
+5. **Verifiability:** Assembling data at an aggregation level offers verifiability of the declared data. While this hasn’t been implemented so far, it will be possible to test both the presence and machine availability of the full text, which is key to many use cases, including text and data mining. Exposing data, such as deposit dates, will also be seen as a positive development by publishers. From the perspective of CORE, our intention to test these points is motivated purely by our strive to feedback any issues back to repositories and support them in creating a better and more interoperable repository infrastructure, which we all deserve. 
 
 <h2 id="collect-info">How will CORE collect the information?</h2>
 
