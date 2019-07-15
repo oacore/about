@@ -28,7 +28,7 @@ You can install the&nbsp;plugin by copying and pasting the following snippet.
 
 ```html
 <script 
-  src="https://core.ac.uk/oadiscovery/core-discovery.js?template=eprints&id=XXXXX" 
+  src="https://discovery.core.ac.uk/plugin.js?template=eprints&id=XXXXX" 
   async
 ></script>
 ```
@@ -72,7 +72,7 @@ ID.
 
 ```html
 <script 
-  src="https://core.ac.uk/oadiscovery/core-discovery.js?id=XXXXX" 
+  src="https://discovery.core.ac.uk/plugin.js?id=XXXXX" 
   async
 ></script>
 ```
