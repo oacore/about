@@ -25,11 +25,14 @@ CORE Repository Dashboard you can move on with the instructions below.
 </p>
 
 You can install the&nbsp;plugin by copying and pasting the following snippet.
+Please note that due to the way that the EPrints template engine works,
+the script URL contains escaped HTML entities.
 
 ```html
-<script 
-  src="https://discovery.core.ac.uk/plugin.js?template=eprints&id=XXXXX" 
-  async
+<script
+  type="text/javascript"
+  src="https://discovery.core.ac.uk/plugin.js?template=eprints&amp;id=XXXXX" 
+  async="async"
 ></script>
 ```
 
