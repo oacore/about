@@ -3,7 +3,7 @@ id: repository-dashboard
 title: CORE Repository Dashboard
 tagline: Manage your repository outputs and ensure they are visible to the world
 description:
-  The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.      
+  The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.
 
 screenshot:
   source: /static/images/screenshots/repository-dashboard.png
@@ -15,7 +15,7 @@ features:
   title: Key message 1
   picture: /static/images/icons/statistics.svg
   description: |
-    Access your collection's download statistics and harvesting status 
+    Access your collection's download statistics and harvesting status
 -
   title: Key message 2
   picture: /static/images/icons/update.svg
@@ -28,7 +28,7 @@ features:
     Manage access to documents from your repository in CORE
 
 main: |
-  The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.      
+  The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.
 
   [Access the dashboard now](https://dashboard.core.ac.uk/login).
   To register, [send us an email](~about/#contact).
@@ -75,7 +75,7 @@ testimonial:
     troubleshooting, thereby ensuring optimum repository health for text mining
     as well as discovery of repository content.
   author:
-    name: George MacGregor
+    name: George Macgregor
     role: Institutional Repository Manager, University of Strathclyde
     picture: /static/images/people/macgregor.png
 
