@@ -391,6 +391,10 @@ organizations:
   id: doaj
   name: DOAJ
   logo: doaj.jpg
+- &metadata2020
+  id: metadata2020
+  name: Metadata2020
+  logo: metadata2020.svg
 
 # institutions
 - &lbu
@@ -590,14 +594,17 @@ sections:
         - *openaire
         - *oacg
         - *research-england
+        - *metadata2020
         - *oab
         - *doaj
         - *okm
+        - *microsoft
         - *foster
-        - *rioxx
         - *orcid
+        - *rioxx
         - *opendoar
         - *irus
+        - *metadata2020
         - *coar
         - *bl
     testimonials:
