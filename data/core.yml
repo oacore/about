@@ -27,18 +27,17 @@ navigation:
         children:
           - title: Repository dashboard
             path: ~services/repository-dashboard
-      - title: Support
-        path: ~support
-        children:
-          - title: FAQs
-            path: ~faq
   - title: About
     path: ~about
     children:
-      - title: About CORE
-        path: ~about
+      - title: Our mission
+        path: ~about#mission
+      - title: Team
+        path: ~about#team
       - title: Blog
         path: ~blog
+      - title: FAQs
+        path: ~faq
       - title: Contact us
         path: ~contact
 footer:
