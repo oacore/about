@@ -149,6 +149,10 @@ const AboutPage = () => (
         ))}
       </Row>
 
+      <Content>
+        <Markdown>{teamData.ambassadorsNotice}</Markdown>
+      </Content>
+
       <h3 className="mt-5">Past team members</h3>
       <Content>
         <ul className="list-comma-separated">

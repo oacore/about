@@ -15,13 +15,13 @@ members:
   description: |
     Works on improving and and maintaining CORE services. Elasticsearch guru. While not on his computer coding, he enjoys playing chess, scratching his
     guitar and dreams of climbing Alpe d'Huez or Col de la Madone
-    with his bike.  
+    with his bike.
 -
   name: Matteo Cancellieri
   role: Senior Developer
   picture: matteo-cancellieri.jpg
   description: |
-    Works on improving and and maintaining CORE services. He is a detail knowledge base of 
+    Works on improving and and maintaining CORE services. He is a detail knowledge base of
     all CORE services. Has been developing for CORE for several years and Continuous Integration secret lover.
     Once he was a Super Mario plumber.
 -
@@ -105,3 +105,8 @@ past-members:
 - Tomas Korec
 - Vojtech Robotka
 - Zdenek Zdrahal
+
+ambassadors-notice: >
+  CORE supports an [ambassadors network](~about/ambassadors) around the world.
+  Please [get in touch](~contact) if you are interesting in joining
+  CORE as an ambassador.
