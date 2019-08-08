@@ -42,6 +42,13 @@ members:
     for her PhD. Dreams of turning CORE into a hub for Semantometric research.
     Book lover and sports enthusiast in her spare time.
 -
+  name: Alexander Huba
+  role: Software Developer
+  picture: alexander-huba.png
+  description: |
+    Helps to design and create robust code applying industry best practices to the backend components of CORE.
+    In his spare time, loves playing guitar, swimming and reading.
+-
   name: Sergei Misak
   role: Front-End Developer
   picture: sm.png
