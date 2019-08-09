@@ -10,15 +10,24 @@ import {
 
 import './team-member.scss'
 
-const TeamMember = ({ className = '', name, role, picture, description }) => (
-  <Card className={`team-member ${className}`}>
+const TeamMember = ({
+  className = '',
+  children,
+  name,
+  role,
+  picture,
+  description,
+  ...restProps
+}) => (
+  <Card className={`team-member ${className}`} {...restProps}>
     <div className="team-member-picture">
       {picture && <CardImg src={picture} alt={`${name}'s photo`} />}
     </div>
     <CardBody>
       <CardTitle className="h5 team-member-name">{name}</CardTitle>
-      <CardSubtitle className="team-member-role">{role}</CardSubtitle>
-      <CardText>{description}</CardText>
+      {role && <CardSubtitle className="team-member-role">{role}</CardSubtitle>}
+      {description && <CardText>{description}</CardText>}
+      {children}
     </CardBody>
   </Card>
 )
