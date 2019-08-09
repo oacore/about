@@ -1,0 +1,37 @@
+resources:
+  title: Outreach materials
+
+  resources:
+
+    - id: logo
+      name: Logo
+      type: png
+      url: /static/resources/core-logo.png
+      picture: logo.png
+    -
+      id: brochure
+      name: Brochure
+      type: pdf
+      url: /static/resources/core-leaflet-2019.pdf
+      picture: brochure.png
+    -
+      id: business-card
+      name: Business card
+      type: pdf
+      url: /static/resources/core-business-card.pdf
+      picture: bcard.png
+    -
+      id: promo-text
+      name: Adaptable promo text
+      type: gdoc
+      url: https://docs.google.com/document/d/1O-A3BrX9JYWcWxtbbo9BgukkmrIptFBgCIZsKaC4a5c/edit?usp=sharing
+    -
+      id: general-presentation
+      name: General presentation
+      type: gslides
+      url: https://drive.google.com/file/d/0B3M8WbWcGihpTTlTQURRWXpjQlk/view
+    -
+      id: services-presentation
+      name: Services presentation
+      type: gslides
+      url: https://drive.google.com/file/d/1XTtRo2nSaCReGZLgw-aAcb1DkcOi1WIN/view
