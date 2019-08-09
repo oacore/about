@@ -68,6 +68,7 @@ export { default as ServiceGroups } from './service-groups'
 export { default as TeamMember } from './team-member'
 export { default as Testimonial } from './testimonial'
 export { default as Video } from './video'
+export * from './maps'
 
 // Complex elements
 export { default as Accordion } from './accordion'
