@@ -1,0 +1,42 @@
+@import "../../bootstrap/core";
+
+$image-pin-size: 3rem !default;
+
+.image-pin {
+  position: absolute;
+  width: $image-pin-size;
+  height: $image-pin-size;
+  padding: 4px;
+  margin: (-1 * $image-pin-size) 0 0 ($image-pin-size / -2);
+  border-radius: 50%;
+  background: $primary;
+  transform-origin: bottom;
+  transition: transform 0.25s;
+
+  &:hover,
+  &:focus {
+    z-index: 10;
+    transform: scale(1.5);
+  }
+}
+
+.image-pin:after {
+  content: "";
+  position: absolute;
+  bottom: -10px / 1.44;
+  left: $image-pin-size / 2;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  margin-left: -10px;
+  border-color: #b75400 transparent;
+  display: block;
+  width: 0;
+}
+
+.image-pin img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  background: $white;
+}
