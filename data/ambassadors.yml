@@ -1,0 +1,108 @@
+title: Ambassadors
+description: |
+  Spreading knowledge around the world
+content: |
+    While the adoption of open access, open data, open science and text mining
+    practices are growing, CORE is proud to follow these developments and grow
+    as a service. We are looking for enthusiastic organisations and individuals
+    to volunteer as ambassadors to spread the word about CORE’s
+    [mission](~about#mission) and [services](~services).
+
+    Become a CORE ambassador to enhance CORE’s efforts in advancing open access
+    and supporting text-mining in your area by:
+
+    * Presenting CORE to research stakeholders (students,
+      librarians and researchers).
+    * Posting CORE news on blogs and social media.
+    * Sharing information about CORE to listservers (especially local).
+    * Presenting CORE during events and conferences.
+    * Updating the CORE Team with the community’s feedback.
+
+    CORE will offer support to ambassadors on a regular basis by:
+
+    * Building a correspondence with ambassadors via emails and/or phone.
+    * Organising skype calls every two months.
+    * Offering a dedicated area where the ambassadors’ presentations can be stored
+      and retrieved.
+    * Acknowledging an ambassador’s name and affiliated organisation
+      on the CORE website.
+    * Shipping promotional material (whenever funding permits it).
+
+    In addition, the CORE ambassadors will be the first to have access
+    to new CORE services.
+
+
+
+ambassadors:
+  title: Our ambassadors
+  members:
+    -
+      id: barbora-rebikova
+      name: Barbora Rebikova
+      role:
+      organization:
+      location:
+        latitude: 50
+        longitude: 15
+      country: Czech Republik
+      picture: barbora.png
+    -
+      id: david-walters
+      name: David Walters
+      role: Open Access Officer
+      organization: Brunel University London
+      location:
+        latitude: 56
+        longitude: -3
+      country: United Kingdom
+      picture: walters.png
+    -
+      id: george-macgregor
+      name: George Macgregor
+      role: Institutional Repository Co-ordinator
+      organization: University of Strathclyde
+      location:
+        latitude: 56
+        longitude: -3
+      country: United Kingdom
+      picture: macgregor.png
+    -
+      id: gloria-kadyamatiba
+      name: Gloria Kadyamatimba
+      role: Lecturer
+      organization: Centre for Languages and Communication Studies,
+        Institute of Lifelong learning and Development Studies, Chinhoyi University of Technology
+      location:
+        latitude: -19.0154381
+        longitude: 29.1548576
+      country: Zimbabwe
+      picture: gloria.png
+    -
+      id: ibrahim-yaseen
+      name: Ibrahim Yaseen
+      role: Research Center Coordinator
+      organization: Medical Analysis Department, Tishk International University (TIU)
+      location:
+        latitude: 32.59
+        longitude: 44
+      country: Iraq
+    -
+      id: milica-sevkusic
+      name: Milica Sevkusic
+      role:
+      organization: Institute Technickih nauka SANU
+      location:
+        latitude: 44.8
+        longitude: 20
+      country: Serbia
+      picture: milica.jpg
+    -
+      id: nick-sheppard
+      name: Nick Sheppard
+      role: Research Data Management Advisor
+      organization: Leeds University
+      location:
+        latitude: 54
+        longitude: 0
+      country: United Kingdom
+      picture: sheppard.png
