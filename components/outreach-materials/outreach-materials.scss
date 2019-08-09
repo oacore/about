@@ -1,0 +1,30 @@
+@import "../bootstrap/core";
+
+.outreach-materials {
+  flex: 1;
+}
+
+.outreach-materials-picture {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 70%;
+  background: url("./document.svg") no-repeat center / 70% auto;
+
+  img {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+.outreach-materials-role {
+  font-style: italic;
+  margin-bottom: $card-spacer-y;
+}
