@@ -1,0 +1,62 @@
+@import "../../bootstrap/core";
+
+$pin-size: 3rem !default;
+$pin-pointer-size: $pin-size / 4 !default;
+$pin-color: $primary !default;
+$pin-bg: $body-bg !default;
+
+.pin {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $pin-size;
+  height: $pin-size;
+  // move pin origin to the bottom center angle
+  margin: (-1 * ($pin-size + $pin-pointer-size / 1.44)) 0 0 ($pin-size / -2);
+  border: 4px solid $pin-color;
+  border-radius: 50%;
+  background: $pin-bg;
+  color: $pin-color;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.15),
+    inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  line-height: 1;
+  transform-origin: bottom;
+  transition: transform 150ms;
+  user-select: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: $pin-pointer-size / -1.44;
+    left: 50%;
+    display: block;
+    margin-bottom: -4px;
+    margin-left: -1 * $pin-pointer-size;
+    border: $pin-pointer-size solid transparent;
+    border-top-color: $pin-color;
+    border-bottom: 0;
+  }
+
+  &:hover,
+  &:focus {
+    z-index: 10;
+    transform: scale(1.1);
+  }
+
+  &:link,
+  &:visited,
+  &:hover,
+  &:focus {
+    // force reassign anchor element styles
+    color: $pin-color !important;
+    text-decoration: none !important;
+  }
+}
+
+.pin img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}

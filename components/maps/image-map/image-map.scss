@@ -1,0 +1,12 @@
+@import "../../bootstrap/core";
+
+.image-map {
+  $width: 100%;
+
+  position: relative;
+  display: block;
+  padding: 0 0 (1001 / 2000 * $width);
+  width: $width;
+  height: 0;
+  background: transparent url("image-map/map.svg") no-repeat 50% 50% / 100% auto;
+}
