@@ -12,6 +12,7 @@ import {
 
 import './about.scss'
 import CoreAmbassadors from '../../components/core-ambassadors'
+import OutreachMaterials from '../../components/outreach-materials'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
@@ -33,7 +34,27 @@ const AmbassadorsPage = () => (
       id="outreach-materials"
     >
       <h2>{outreachMaterials.title}</h2>
-      <Markdown>{outreachMaterials.content}</Markdown>
+      <Row className="list-unstyled" tag="ul">
+        {outreachMaterials.materials.map(material => (
+          <Col
+            className="d-flex flex-column"
+            sm="6"
+            md="4"
+            lg="3"
+            tag="li"
+            key={material.name}
+          >
+            {/* eslint-disable-next-line react/jsx-no-undef */}
+            <OutreachMaterials
+              className="mb-3"
+              name={material.name}
+              button={material.button}
+              link={material.link}
+              picture={`/static/images/ambassadors/${material.picture}`}
+            />
+          </Col>
+        ))}
+      </Row>
     </Section>
 
     <Section
