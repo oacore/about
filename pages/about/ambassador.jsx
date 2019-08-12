@@ -1,5 +1,5 @@
 import React from 'react'
-import { Media } from 'reactstrap'
+import { Col, Media, Row } from 'reactstrap'
 import { Markdown, Page, Section } from 'components'
 import {
   title,
@@ -11,6 +11,7 @@ import {
 } from 'data/ambassador.yml'
 
 import './about.scss'
+import CoreAmbassadors from '../../components/core-ambassadors'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
@@ -40,7 +41,29 @@ const AmbassadorsPage = () => (
       id="core-ambassadors"
     >
       <h2>{coreAmbassadors.title}</h2>
-      <Markdown>{coreAmbassadors.content}</Markdown>
+      <Row className="list-unstyled" tag="ul">
+        {coreAmbassadors.members.map(member => (
+          <Col
+            className="d-flex flex-column"
+            sm="6"
+            md="4"
+            lg="3"
+            tag="li"
+            key={member.name}
+          >
+            <CoreAmbassadors
+              className="mb-3"
+              name={member.name}
+              role={member.role}
+              country={member.country}
+              description={member.description}
+              button={member.button}
+              link={member.link}
+              picture={`/static/images/ambassadors/${member.picture}`}
+            />
+          </Col>
+        ))}
+      </Row>
     </Section>
   </Page>
 )

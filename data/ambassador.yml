@@ -63,36 +63,105 @@ outreachMaterials:
 
 coreAmbassadors:
   title: CORE Ambassadors
-  content: |
+  members:
+    -
+      name: Sejin Kim
+      role: Content Manager, Naver Academic Service
+      country: United Kingdom
+      picture:
+      description:
 
-    * __Sejin Kim__,
-      Content Manager, Naver Academic Service
-    * __George Macgregor__,
-      Institutional Repository Co-ordinator, University of Strathclyde
-    * __David Walters__,
-      Open Access Officer, Brunel University London
-    * __Alice Gibson__,
-      Interim Research Publications Manager, London School of Hygiene
-      and Tropical Medicine
-    * __Alice Fodor__,
-      Research Publications Officer, London School of Hygiene and Tropical Medicine
-    * __John Heyderman__,
-      Library Assistant, London School of Hygiene and Tropical Medicine
-    * __Florence Graham__,
-      Library Assistant, London School of Hygiene and Tropical Medicine
-    * __Michelangelo Paganopoulos__,
-      Library Assistant, London School of Hygiene and Tropical Medicine
-    * __Alex Bimpeh-Segu__,
-      Research Publications Officer, London School of Hygiene and Tropical Medicine
-    * __Nick Sheppard__,
-      Research Data Management Advisor, Leeds University
-    * __Zaituni Kaijage__,
-      Open Access Tanzania, University of Dar es Salaam
-    * __Benjamin Folitse__,
-      Information Specialist, CSIR-INSTI, Open Access Ghana, Ghana
-    * __Gloria Kadyamatimba__,
-      Lecturer, Centre for Languages and Communication Studies,
-      Open Access Zimbabwe, Zimbabwe
 
-    Are you interested in becoming one of the CORE ambassadors?
-    [Do drop us a line](/contact).
+    -
+      name: George Macgregor
+      role: Institutional Repository Co-ordinator, University of Strathclyde
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: David Walters
+      role: Open Access Officer, Brunel University London
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Alice Gibson
+      role: Interim Research Publications Manager, London School of Hygiene
+        and Tropical Medicine
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Alice Fodor
+      role: Research Publications Officer, London School of Hygiene and Tropical Medicine
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: John Heyderman
+      role: Library Assistant, London School of Hygiene and Tropical Medicine
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Florence Graham
+      role: Library Assistant, London School of Hygiene and Tropical Medicine
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Michelangelo Paganopoulos
+      role: Library Assistant, London School of Hygiene and Tropical Medicine
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Alex Bimpeh-Segu
+      role: Research Publications Officer, London School of Hygiene and Tropical Medicine
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Nick Sheppard
+      role: Research Data Management Advisor, Leeds University
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Zaituni Kaijage
+      role: Open Access Tanzania, University of Dar es Salaam
+      country: United Kingdom
+      picture:
+      description:
+
+    -
+      name: Benjamin Folitse
+      role: Information Specialist, CSIR-INSTI, Open Access Ghana
+      country: Ghana
+      picture:
+      description:
+
+    -
+      name: Gloria Kadyamatimba
+      role: Lecturer, Centre for Languages and Communication Studies,
+        Open Access Zimbabwe
+      country: Zimbabwe
+      picture:
+      description:
+
+    -
+      name: You?
+      role:
+      picture: who.png
+      button: Contact us
+      link: /about#contact
+
