@@ -6,15 +6,13 @@ import {
   CardLink,
   CardTitle,
   Col,
-  Media,
   Row,
 } from 'reactstrap'
-import { Markdown, Page, Section } from 'components'
+import { Page, Section } from 'components'
 import {
   title,
   description,
   keywords,
-  atlas,
   outreachMaterials,
   coreAmbassadors,
 } from 'data/ambassador.yml'
@@ -24,6 +22,15 @@ import './about.scss'
 import OutreachMaterials from '../../components/outreach-materials'
 import TeamMember from '../../components/team-member'
 
+const WorldMap = ({ children }) => <div className="map">{children}</div>
+
+const Pin = ({ latitude, longitude }) => {
+  const x = 48.8 + (parseFloat(longitude) / 360) * 100
+  const y = 53 + (parseFloat(latitude) / 180) * 100
+
+  return <div className="pin" style={{ top: `${y}%`, left: `${x}%` }} />
+}
+
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
     <h1 className="ambassadors-page-title">
@@ -31,11 +38,9 @@ const AmbassadorsPage = () => (
       <span className="ambassadors-page-title-small">{description}</span>
     </h1>
 
-    <Section className="atlas-ambassadors-section" id="atlas">
-      <Media class="img-fluid" src={atlas.pin} alt={atlas.altpin} />
-      <Media class="img-fluid" src={atlas.picture} alt={atlas.alt} />
-      <Markdown>{atlas.content}</Markdown>
-    </Section>
+    <WorldMap>
+      <Pin latitude="-50.40" longitude="30.25" />
+    </WorldMap>
 
     <Section
       className="outreach-materials-ambassadors-section"
