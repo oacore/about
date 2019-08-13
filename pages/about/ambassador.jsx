@@ -1,5 +1,14 @@
 import React from 'react'
-import { Col, Media, Row } from 'reactstrap'
+import {
+  Card,
+  CardBody,
+  CardImg,
+  CardLink,
+  CardTitle,
+  Col,
+  Media,
+  Row,
+} from 'reactstrap'
 import { Markdown, Page, Section } from 'components'
 import {
   title,
@@ -11,8 +20,9 @@ import {
 } from 'data/ambassador.yml'
 
 import './about.scss'
-import CoreAmbassadors from '../../components/core-ambassadors'
+
 import OutreachMaterials from '../../components/outreach-materials'
+import TeamMember from '../../components/team-member'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
@@ -72,18 +82,32 @@ const AmbassadorsPage = () => (
             tag="li"
             key={member.name}
           >
-            <CoreAmbassadors
+            {/* eslint-disable-next-line react/jsx-no-undef */}
+            <TeamMember
               className="mb-3"
               name={member.name}
               role={member.role}
               country={member.country}
               description={member.description}
-              button={member.button}
-              link={member.link}
               picture={`/static/images/ambassadors/${member.picture}`}
             />
           </Col>
         ))}
+        <Col className="d-flex flex-column" sm="6" md="4" lg="3" tag="li">
+          <Card className="ambassador-new-member mb-3">
+            <div className="ambassador-new-member-picture">
+              <CardImg src="/static/images/ambassadors/you.png" alt="you" />
+            </div>
+            <CardBody>
+              <CardTitle className="h5 ambassador-you-member-name">
+                You?
+              </CardTitle>
+              <CardLink className="btn btn-primary w-100" href="/about#contact">
+                Contact us
+              </CardLink>
+            </CardBody>
+          </Card>
+        </Col>
       </Row>
     </Section>
   </Page>

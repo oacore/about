@@ -97,101 +97,80 @@ coreAmbassadors:
     -
       name: Sejin Kim
       role: Content Manager, Naver Academic Service
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
 
     -
       name: George Macgregor
       role: Institutional Repository Co-ordinator, University of Strathclyde
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: David Walters
       role: Open Access Officer, Brunel University London
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Alice Gibson
       role: Interim Research Publications Manager, London School of Hygiene
         and Tropical Medicine
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Alice Fodor
       role: Research Publications Officer, London School of Hygiene and Tropical Medicine
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: John Heyderman
       role: Library Assistant, London School of Hygiene and Tropical Medicine
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Florence Graham
       role: Library Assistant, London School of Hygiene and Tropical Medicine
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Michelangelo Paganopoulos
       role: Library Assistant, London School of Hygiene and Tropical Medicine
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Alex Bimpeh-Segu
       role: Research Publications Officer, London School of Hygiene and Tropical Medicine
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Nick Sheppard
       role: Research Data Management Advisor, Leeds University
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Zaituni Kaijage
       role: Open Access Tanzania, University of Dar es Salaam
-      country: United Kingdom
-      picture:
-      description:
+      picture: you.png
+      description: United Kingdom
 
     -
       name: Benjamin Folitse
       role: Information Specialist, CSIR-INSTI, Open Access Ghana
-      country: Ghana
-      picture:
-      description:
+      picture: you.png
+      description: Ghana
 
     -
       name: Gloria Kadyamatimba
       role: Lecturer, Centre for Languages and Communication Studies,
         Open Access Zimbabwe
-      country: Zimbabwe
-      picture:
-      description:
-
-    -
-      name: You?
-      role:
-      picture: who.png
-      button: Contact us
-      link: /about#contact
-
+      picture: you.png
+      description: Zimbabwe
