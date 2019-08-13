@@ -30,12 +30,9 @@ const AmbassadorsPage = () => (
       {title}
       <span className="ambassadors-page-title-small">{description}</span>
     </h1>
-    <br />
-    <Media class="img-fluid" src={atlas.picture} alt={atlas.alt} />
 
     <Section className="atlas-ambassadors-section" id="atlas">
-      <h2>{atlas.title}</h2>
-
+      <Media class="img-fluid" src={atlas.picture} alt={atlas.alt} />
       <Markdown>{atlas.content}</Markdown>
     </Section>
 

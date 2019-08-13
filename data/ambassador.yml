@@ -4,7 +4,7 @@ description: |
 
 
 atlas:
-  picture: /static/images/screenshots/ambassadors-atlas.png
+  picture: /static/images/ambassadors/world-map.svg
   alt: Picture of world atlas
   title:
   content: |
