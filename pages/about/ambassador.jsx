@@ -32,6 +32,7 @@ const AmbassadorsPage = () => (
     </h1>
 
     <Section className="atlas-ambassadors-section" id="atlas">
+      <Media class="img-fluid" src={atlas.pin} alt={atlas.altpin} />
       <Media class="img-fluid" src={atlas.picture} alt={atlas.alt} />
       <Markdown>{atlas.content}</Markdown>
     </Section>

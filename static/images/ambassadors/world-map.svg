@@ -36,7 +36,7 @@ THE SOFTWARE.
   xmlns="http://www.w3.org/2000/svg"
   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-  enable_background="new 0 0 2000 1001"
+  enable_background="new 0 0 1000 600"
   height="600px"
   pretty_print="False"
   style="stroke-linejoin: round; stroke:#000; fill: none;"
@@ -78,9 +78,9 @@ THE SOFTWARE.
     <views
       id="views10">
       <view
-        h="1001"
+        h="600"
         padding="0"
-        w="2000"
+        w="1000"
         id="view12">
         <proj
           flip="auto"
