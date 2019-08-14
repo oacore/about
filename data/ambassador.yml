@@ -101,6 +101,8 @@ coreAmbassadors:
       role: Content Manager, Naver Academic Service
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
 
     -
@@ -108,12 +110,16 @@ coreAmbassadors:
       role: Institutional Repository Co-ordinator, University of Strathclyde
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: David Walters
       role: Open Access Officer, Brunel University London
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Alice Gibson
@@ -121,54 +127,72 @@ coreAmbassadors:
         and Tropical Medicine
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Alice Fodor
       role: Research Publications Officer, London School of Hygiene and Tropical Medicine
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: John Heyderman
       role: Library Assistant, London School of Hygiene and Tropical Medicine
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Florence Graham
       role: Library Assistant, London School of Hygiene and Tropical Medicine
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Michelangelo Paganopoulos
       role: Library Assistant, London School of Hygiene and Tropical Medicine
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Alex Bimpeh-Segu
       role: Research Publications Officer, London School of Hygiene and Tropical Medicine
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Nick Sheppard
       role: Research Data Management Advisor, Leeds University
       picture: you.png
       description: United Kingdom
+      latitude: 55.38
+      longitude: 3.44
 
     -
       name: Zaituni Kaijage
       role: Open Access Tanzania, University of Dar es Salaam
       picture: you.png
-      description: United Kingdom
+      description: London
+      latitude: 51.51
+      longitude: 0.13
 
     -
       name: Benjamin Folitse
       role: Information Specialist, CSIR-INSTI, Open Access Ghana
       picture: you.png
       description: Ghana
+      latitude: 7.95
+      longitude: 1.02
 
     -
       name: Gloria Kadyamatimba
@@ -176,3 +200,5 @@ coreAmbassadors:
         Open Access Zimbabwe
       picture: you.png
       description: Zimbabwe
+      latitude: -19.01
+      longitude: 29.15

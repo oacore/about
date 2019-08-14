@@ -24,13 +24,13 @@ import TeamMember from '../../components/team-member'
 
 const WorldMap = ({ children }) => <div className="map">{children}</div>
 
-const Pin = ({ latitude, longitude, image }) => {
+const Pin = ({ latitude, longitude, picture }) => {
   const x = 48.8 + (parseFloat(longitude) / 360) * 100
-  const y = 53 + (parseFloat(latitude) / 180) * 100
+  const y = 56 + (parseFloat(latitude) / 180) * -100
 
   return (
     <div className="pin" style={{ top: `${y}%`, left: `${x}%` }}>
-      <img src={image} alt="pin image2" />
+      <img src={picture} alt="pin" />
     </div>
   )
 }
@@ -43,11 +43,13 @@ const AmbassadorsPage = () => (
     </h1>
 
     <WorldMap>
-      <Pin
-        latitude="-50.40"
-        longitude="30.25"
-        image="http://placekitten.com/90/90"
-      />
+      {coreAmbassadors.members.map(member => (
+        <Pin
+          picture={`/static/images/ambassadors/${member.picture}`}
+          latitude={member.latitude}
+          longitude={member.longitude}
+        />
+      ))}
     </WorldMap>
 
     <Section
