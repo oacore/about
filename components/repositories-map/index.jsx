@@ -58,7 +58,6 @@ class RepositoriesMap extends Component {
           repositoryLocation.longitude != null &&
           name
       )
-      .slice(0, 2600)
       .forEach(({ name, repositoryLocation }) => {
         const marker = L.marker(
           new L.LatLng(
