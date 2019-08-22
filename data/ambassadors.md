@@ -92,4 +92,4 @@ some downloadable materials.
   Open Access Zimbabwe, Zimbabwe
 
 Are you interested in becoming one of the CORE ambassadors?
-[Do drop us a line](/contact).
+[Do drop us a line](~contact).
