@@ -1,15 +1,7 @@
 title: Ambassadors <^new^>
 description: |
   Spreading knowledge around the world
-
-
-atlas:
-  picture: /static/images/ambassadors/world-map.svg
-  alt: Picture of world atlas
-  pin: /static/images/ambassadors/map-pin.svg
-  altpin: pin
-  title:
-  content: |
+content: |
     While the adoption of open access, open data, open science and text mining
     practices are growing, CORE is proud to follow these developments and grow
     as a service. We are looking for enthusiastic organisations and individuals

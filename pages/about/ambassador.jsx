@@ -8,10 +8,11 @@ import {
   Col,
   Row,
 } from 'reactstrap'
-import { Page, Section } from 'components'
+import { Content, Markdown, Page, Section } from 'components'
 import {
   title,
   description,
+  content,
   keywords,
   outreachMaterials,
   coreAmbassadors,
@@ -41,6 +42,16 @@ const AmbassadorsPage = () => (
         />
       ))}
     </WorldMap>
+
+    <Section id="ambassadors-description">
+      <Row>
+        <Col>
+          <Content>
+            <Markdown>{content}</Markdown>
+          </Content>
+        </Col>
+      </Row>
+    </Section>
 
     <Section
       className="outreach-materials-ambassadors-section"
