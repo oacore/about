@@ -59,22 +59,22 @@ const AmbassadorsPage = () => (
     >
       <h2>{outreachMaterials.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {outreachMaterials.materials.map(material => (
+        {outreachMaterials.resources.map(resource => (
           <Col
             className="d-flex flex-column"
             sm="6"
             md="4"
             lg="3"
             tag="li"
-            key={material.name}
+            key={resource.name}
           >
             {/* eslint-disable-next-line react/jsx-no-undef */}
             <OutreachMaterials
               className="mb-3"
-              name={material.name}
-              button={material.button}
-              link={material.link}
-              picture={`/static/images/ambassadors/${material.picture}`}
+              name={resource.name}
+              button={`Open ${resource.type}`}
+              picture={`/static/images/resources/${resource.picture}`}
+              link={resource.url}
             />
           </Col>
         ))}
