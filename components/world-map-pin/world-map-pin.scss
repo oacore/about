@@ -1,0 +1,59 @@
+@import "../bootstrap/core";
+
+$pin-size: 3rem;
+
+@keyframes bounce {
+  0,
+  60%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  30% {
+    transform: translate(0, -10px);
+  }
+
+  80% {
+    transform: translate(0, -5px);
+  }
+}
+
+.pin {
+  $size: $pin-size;
+
+  position: absolute;
+  cursor: pointer;
+  width: $size;
+  height: $size;
+  padding: 4px;
+  margin: (-1 * $size) 0 0 ($size / -2);
+  border-radius: 50%;
+  background: $primary;
+
+  &:hover {
+    animation-duration: 0.25s;
+    animation-fill-mode: both;
+    animation-name: bounce;
+    transform-origin: center bottom;
+  }
+}
+
+.pin:after {
+  content: "";
+  position: absolute;
+  bottom: -10px / 1.44;
+  left: $pin-size / 2;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  margin-left: -10px;
+  border-color: #b75400 transparent;
+  display: block;
+  width: 0;
+}
+
+.pin img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

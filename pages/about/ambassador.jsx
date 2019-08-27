@@ -22,18 +22,8 @@ import './about.scss'
 import OutreachMaterials from '../../components/outreach-materials'
 import TeamMember from '../../components/team-member'
 
-const WorldMap = ({ children }) => <div className="map">{children}</div>
-
-const Pin = ({ latitude, longitude, picture }) => {
-  const x = 48.8 + (parseFloat(longitude) / 360) * 100
-  const y = 56 + (parseFloat(latitude) / 180) * -100
-
-  return (
-    <div className="pin" style={{ top: `${y}%`, left: `${x}%` }}>
-      <img src={picture} alt="pin" />
-    </div>
-  )
-}
+import WorldMap from '../../components/world-map'
+import Pin from '../../components/world-map-pin'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
