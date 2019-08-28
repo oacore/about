@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import {
   Card,
   CardBody,
@@ -37,8 +37,8 @@ const AmbassadorsPage = () => (
       {coreAmbassadors.members.map(member => (
         <Pin
           picture={`/static/images/ambassadors/${member.picture}`}
-          latitude={member.latitude}
-          longitude={member.longitude}
+          latitude={member.location.latitude}
+          longitude={member.location.longitude}
         />
       ))}
     </WorldMap>
@@ -68,7 +68,6 @@ const AmbassadorsPage = () => (
             tag="li"
             key={resource.name}
           >
-            {/* eslint-disable-next-line react/jsx-no-undef */}
             <OutreachMaterials
               className="mb-3"
               name={resource.name}
@@ -96,13 +95,17 @@ const AmbassadorsPage = () => (
             tag="li"
             key={member.name}
           >
-            {/* eslint-disable-next-line react/jsx-no-undef */}
             <TeamMember
+              id={member.id}
               className="mb-3"
               name={member.name}
-              role={member.role}
-              country={member.country}
-              description={member.description}
+              role={
+                <Fragment>
+                  {member.role}, {member.organization}
+                  <br />
+                  {member.country}
+                </Fragment>
+              }
               picture={`/static/images/ambassadors/${member.picture}`}
             />
           </Col>

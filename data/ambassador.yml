@@ -95,108 +95,158 @@ coreAmbassadors:
   title: CORE Ambassadors
   members:
     -
+      id: sejin-kim
       name: Sejin Kim
-      role: Content Manager, Naver Academic Service
+      role: Content Manager
+      organization: Naver Academic Service
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
 
 
     -
+      id: george-macgregor
       name: George Macgregor
-      role: Institutional Repository Co-ordinator, University of Strathclyde
+      role: Institutional Repository Co-ordinator
+      organization: University of Strathclyde
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: david-walters
       name: David Walters
-      role: Open Access Officer, Brunel University London
+      role: Open Access Officer
+      organization: Brunel University London
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: alice-gibson
       name: Alice Gibson
-      role: Interim Research Publications Manager, London School of Hygiene
+      role: Interim Research Publications Manager
         and Tropical Medicine
+      organization: London School of Hygiene
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: alice-fodor
       name: Alice Fodor
-      role: Research Publications Officer, London School of Hygiene and Tropical Medicine
+      role: Research Publications Officer
+      organization: London School of Hygiene and Tropical Medicine
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: john-heyderman
       name: John Heyderman
-      role: Library Assistant, London School of Hygiene and Tropical Medicine
+      role: Library Assistant
+      organization: London School of Hygiene and Tropical Medicine
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: florence-graham
       name: Florence Graham
-      role: Library Assistant, London School of Hygiene and Tropical Medicine
+      role: Library Assistant
+      organization: London School of Hygiene and Tropical Medicine
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: michelangelo-paganopolos
       name: Michelangelo Paganopoulos
-      role: Library Assistant, London School of Hygiene and Tropical Medicine
+      role: Library Assistant
+      organization: London School of Hygiene and Tropical Medicine
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: alex-bimpeh-segu
       name: Alex Bimpeh-Segu
-      role: Research Publications Officer, London School of Hygiene and Tropical Medicine
+      role: Research Publications Officer
+      organization: London School of Hygiene and Tropical Medicine
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: nick-sheppard
       name: Nick Sheppard
-      role: Research Data Management Advisor, Leeds University
+      role: Research Data Management Advisor
+      organization: Leeds University
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: United Kingdom
-      latitude: 55.38
-      longitude: 3.44
+
 
     -
+      id: zaituni-kaijage
       name: Zaituni Kaijage
-      role: Open Access Tanzania, University of Dar es Salaam
+      role: Open Access Tanzania
+      organization: University of Dar es Salaam
+      location:
+        latitude: 55.38
+        longitude: 3.44
+      country: United Kingdom
       picture: you.png
-      description: London
-      latitude: 51.51
-      longitude: 0.13
+
 
     -
+      id: benjamin-folitse
       name: Benjamin Folitse
-      role: Information Specialist, CSIR-INSTI, Open Access Ghana
+      role: Information Specialist
+      organization: CSIR-INSTI, Open Access Ghana
+      location:
+        latitude: 7.95
+        longitude: 1.02
+      country: Ghana
       picture: you.png
-      description: Ghana
-      latitude: 7.95
-      longitude: 1.02
 
     -
+      id: gloria-kadyamatiba
       name: Gloria Kadyamatimba
-      role: Lecturer, Centre for Languages and Communication Studies,
+      role: Lecturer
+      organization: Centre for Languages and Communication Studies,
         Open Access Zimbabwe
+      location:
+         latitude: -19.01
+         longitude: 29.15
+      country: Zimbabwe
       picture: you.png
-      description: Zimbabwe
-      latitude: -19.01
-      longitude: 29.15
+

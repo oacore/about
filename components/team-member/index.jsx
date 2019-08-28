@@ -10,8 +10,15 @@ import {
 
 import './team-member.scss'
 
-const TeamMember = ({ className = '', name, role, picture, description }) => (
-  <Card className={`team-member ${className}`}>
+const TeamMember = ({
+  className = '',
+  name,
+  role,
+  picture,
+  description,
+  ...restProps
+}) => (
+  <Card className={`team-member ${className}`} {...restProps}>
     <div className="team-member-picture">
       <CardImg src={picture} alt={`${name}'s photo`} />
     </div>
