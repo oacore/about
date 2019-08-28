@@ -20,8 +20,9 @@ const OutreachMaterials = ({
   description,
   button,
   link,
+  ...restProps
 }) => (
-  <Card className={`outreach-materials ${className}`}>
+  <Card className={`outreach-materials ${className}`} {...restProps}>
     <div className="outreach-materials-picture">
       <CardImg src={picture} alt={`${name}'s photo`} />
     </div>

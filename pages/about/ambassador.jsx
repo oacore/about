@@ -20,11 +20,11 @@ import {
 
 import './about.scss'
 
-import OutreachMaterials from '../../components/outreach-materials'
-import TeamMember from '../../components/team-member'
+import OutreachMaterials from 'components/outreach-materials'
+import TeamMember from 'components/team-member'
 
-import WorldMap from '../../components/world-map'
-import Pin from '../../components/world-map-pin'
+import WorldMap from 'components/world-map'
+import Pin from 'components/world-map-pin'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
@@ -53,20 +53,17 @@ const AmbassadorsPage = () => (
       </Row>
     </Section>
 
-    <Section
-      className="outreach-materials-ambassadors-section"
-      id="outreach-materials"
-    >
+    <Section className="outreach-materials-section" id="outreach-materials">
       <h2>{outreachMaterials.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {outreachMaterials.resources.map(resource => (
           <Col
+            id={resource.id}
             className="d-flex flex-column"
             sm="6"
             md="4"
             lg="3"
             tag="li"
-            key={resource.name}
           >
             <OutreachMaterials
               className="mb-3"
@@ -80,10 +77,7 @@ const AmbassadorsPage = () => (
       </Row>
     </Section>
 
-    <Section
-      className="core-ambassadors-ambassadors-section"
-      id="core-ambassadors"
-    >
+    <Section className="ambassadors-section" id="core-ambassadors">
       <h2>{coreAmbassadors.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {coreAmbassadors.members.map(member => (
