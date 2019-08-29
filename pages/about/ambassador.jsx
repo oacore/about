@@ -1,14 +1,6 @@
 import React, { Fragment } from 'react'
-import {
-  Card,
-  CardBody,
-  CardImg,
-  CardLink,
-  CardTitle,
-  Col,
-  Row,
-} from 'reactstrap'
-import { Content, Markdown, Page, Section } from 'components'
+import { Col, Row } from 'reactstrap'
+import { Content, Markdown, Page, Section, Button } from 'components'
 import {
   title,
   description,
@@ -79,6 +71,7 @@ const AmbassadorsPage = () => (
 
     <Section className="ambassadors-section" id="core-ambassadors">
       <h2>{coreAmbassadors.title}</h2>
+
       <Row className="list-unstyled" tag="ul">
         {coreAmbassadors.members.map(member => (
           <Col
@@ -104,20 +97,15 @@ const AmbassadorsPage = () => (
             />
           </Col>
         ))}
+
         <Col className="d-flex flex-column" sm="6" md="4" lg="3" tag="li">
-          <Card className="ambassador-new-member mb-3">
-            <div className="ambassador-new-member-picture">
-              <CardImg src="/static/images/ambassadors/you.png" alt="you" />
-            </div>
-            <CardBody>
-              <CardTitle className="h5 ambassador-you-member-name">
-                You?
-              </CardTitle>
-              <CardLink className="btn btn-primary w-100" href="/about#contact">
-                Contact us
-              </CardLink>
-            </CardBody>
-          </Card>
+          <TeamMember
+            name="You?"
+            picture="/static/images/ambassadors/you.png"
+            className="mb-3"
+          >
+            <Button>Contact us</Button>
+          </TeamMember>
         </Col>
       </Row>
     </Section>

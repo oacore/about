@@ -12,6 +12,7 @@ import './team-member.scss'
 
 const TeamMember = ({
   className = '',
+  children,
   name,
   role,
   picture,
@@ -24,8 +25,9 @@ const TeamMember = ({
     </div>
     <CardBody>
       <CardTitle className="h5 team-member-name">{name}</CardTitle>
-      <CardSubtitle className="team-member-role">{role}</CardSubtitle>
-      <CardText>{description}</CardText>
+      {role && <CardSubtitle className="team-member-role">{role}</CardSubtitle>}
+      {description && <CardText>{description}</CardText>}
+      {children}
     </CardBody>
   </Card>
 )
