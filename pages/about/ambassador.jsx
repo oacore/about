@@ -1,22 +1,26 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Col, Row } from 'reactstrap'
-import { Content, Markdown, Page, Section, Button } from 'components'
+import {
+  Content,
+  Markdown,
+  Page,
+  Section,
+  Button,
+  OutreachMaterials,
+  TeamMember,
+  WorldMap,
+  Pin,
+} from 'components'
 import {
   title,
   description,
   content,
   keywords,
-  outreachMaterials,
-  coreAmbassadors,
+  ambassadors,
 } from 'data/ambassador.yml'
+import { resources } from 'data/resources.yml'
 
 import './about.scss'
-
-import OutreachMaterials from 'components/outreach-materials'
-import TeamMember from 'components/team-member'
-
-import WorldMap from 'components/world-map'
-import Pin from 'components/world-map-pin'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
@@ -26,7 +30,7 @@ const AmbassadorsPage = () => (
     </h1>
 
     <WorldMap>
-      {coreAmbassadors.members.map(member => (
+      {ambassadors.members.map(member => (
         <Pin
           picture={`/static/images/ambassadors/${member.picture}`}
           latitude={member.location.latitude}
@@ -46,9 +50,9 @@ const AmbassadorsPage = () => (
     </Section>
 
     <Section className="outreach-materials-section" id="outreach-materials">
-      <h2>{outreachMaterials.title}</h2>
+      <h2>{resources.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {outreachMaterials.resources.map(resource => (
+        {resources.resources.map(resource => (
           <Col
             id={resource.id}
             className="d-flex flex-column"
@@ -70,10 +74,10 @@ const AmbassadorsPage = () => (
     </Section>
 
     <Section className="ambassadors-section" id="core-ambassadors">
-      <h2>{coreAmbassadors.title}</h2>
+      <h2>{ambassadors.title}</h2>
 
       <Row className="list-unstyled" tag="ul">
-        {coreAmbassadors.members.map(member => (
+        {ambassadors.members.map(member => (
           <Col
             className="d-flex flex-column"
             sm="6"
@@ -86,13 +90,7 @@ const AmbassadorsPage = () => (
               id={member.id}
               className="mb-3"
               name={member.name}
-              role={
-                <Fragment>
-                  {member.role}, {member.organization}
-                  <br />
-                  {member.country}
-                </Fragment>
-              }
+              role={member.role}
               picture={`/static/images/ambassadors/${member.picture}`}
             />
           </Col>
@@ -104,7 +102,9 @@ const AmbassadorsPage = () => (
             picture="/static/images/ambassadors/you.png"
             className="mb-3"
           >
-            <Button>Contact us</Button>
+            <Button block href="~contact">
+              Contact us
+            </Button>
           </TeamMember>
         </Col>
       </Row>
