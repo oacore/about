@@ -42,9 +42,9 @@ ambassadors:
       role: Content Manager
       organization: Naver Academic Service
       location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+        latitude: 35.91
+        longitude: 127.77
+      country: South Korea
       picture: you.png
 
 
@@ -54,9 +54,9 @@ ambassadors:
       role: Institutional Repository Co-ordinator
       organization: University of Strathclyde
       location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+        latitude: 56.49
+        longitude: 4.20
+      country: Scotland
       picture: you.png
 
 
@@ -163,9 +163,9 @@ ambassadors:
       role: Open Access Tanzania
       organization: University of Dar es Salaam
       location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+        latitude: -6.37
+        longitude: 34.89
+      country: Tanzania
       picture: you.png
 
 
