@@ -10,16 +10,31 @@ const Pin = ({
   tag: Tag = 'div',
   ...restProps
 }) => {
-  const mapWidth = 65 // percents for full imaginary map
-  const mapHeight = 113 // percents for full imaginary map
-  const x = 49 + (parseFloat(longitude) / 360) * mapWidth
-  const y = mapHeight / 2 + (parseFloat(latitude) / 180) * (-1 * mapHeight)
-  // const x = 48.8 + (parseFloat(longitude) / 360) * 100
-  // const y = 56 + (parseFloat(latitude) / 180) * -100
+  // The map coefficients are adapted to the SVG-map image from:
+  // https://simplemaps.com/resources/svg-world
+  // with a little experimental data modification
+  const mapCenterX = 48.75
+  const mapCenterY = 55.6
+  // const mapCenterX = 48.25
+  // const mapCenterY = 56.6
+  const mapSizeModifierX = 120 / (2 * Math.PI) // percents from radians
+  const mapSizeModifierY = -110 / Math.PI // percents from radians
+
+  const latDeg = parseFloat(latitude)
+  const lonDeg = parseFloat(longitude)
+
+  // The map projection is calculated from Kavrayskiy VII projection
+  // See more: https://en.wikipedia.org/wiki/Kavrayskiy_VII_projection
+  const x =
+    mapCenterX +
+    ((lonDeg * Math.PI) / 120) *
+      Math.sqrt(1 / 3 - (latDeg / 180) ** 2) *
+      mapSizeModifierX
+  const y = mapCenterY + ((latDeg * Math.PI) / 180) * mapSizeModifierY
 
   return (
     <Tag
-      className="pin"
+      className="world-map-pin"
       style={{ ...style, top: `${y}%`, left: `${x}%` }}
       {...restProps}
     >
