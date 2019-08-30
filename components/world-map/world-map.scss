@@ -5,9 +5,11 @@
 
   position: relative;
   display: block;
+  //padding: 0 0 (4000 / 7000 * $width);
   padding: 0 0 (1001 / 2000 * $width);
   width: $width;
   height: 0;
   background: transparent url("/static/images/ambassadors/world-map.svg")
-    no-repeat 20% 0 / 110% 90%;
+    no-repeat 50% 50% / 100% auto;
+  outline: 1px solid red;
 }

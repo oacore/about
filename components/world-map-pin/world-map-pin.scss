@@ -29,12 +29,15 @@ $pin-size: 3rem;
   margin: (-1 * $size) 0 0 ($size / -2);
   border-radius: 50%;
   background: $primary;
+  opacity: 0.25;
 
   &:hover {
     animation-duration: 0.25s;
     animation-fill-mode: both;
     animation-name: bounce;
     transform-origin: center bottom;
+    animation: none;
+    opacity: 1;
   }
 }
 

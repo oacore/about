@@ -35,6 +35,9 @@ const AmbassadorsPage = () => (
           picture={`/static/images/ambassadors/${member.picture}`}
           latitude={member.location.latitude}
           longitude={member.location.longitude}
+          href={`#${member.id}`}
+          title={`${member.name}, ${member.country}`}
+          tag="a"
         />
       ))}
     </WorldMap>

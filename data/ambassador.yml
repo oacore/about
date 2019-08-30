@@ -36,30 +36,34 @@ content: |
 ambassadors:
   title: CORE Ambassadors
   members:
-    -
-      id: sejin-kim
-      name: Sejin Kim
-      role: Content Manager
-      organization: Naver Academic Service
-      location:
-        latitude: 35.91
-        longitude: 127.77
-      country: South Korea
-      picture: you.png
-
-
-    -
-      id: george-macgregor
-      name: George Macgregor
-      role: Institutional Repository Co-ordinator
-      organization: University of Strathclyde
-      location:
-        latitude: 56.49
-        longitude: 4.20
-      country: Scotland
-      picture: you.png
-
-
+#    -
+#      id: sejin-kim
+#      name: Sejin Kim
+#      role: Content Manager
+#      organization: Naver Academic Service
+#      location:
+##        latitude: 35.91
+##        longitude: 127.77
+#        latitude: -71.58
+#        longitude: -94.57
+#      country: South Korea
+#      picture: you.png
+#
+#
+#    -
+#      id: george-macgregor
+#      name: George Macgregor
+#      role: Institutional Repository Co-ordinator
+#      organization: University of Strathclyde
+#      location:
+##        latitude: 56.49
+##        longitude: 4.20
+#        latitude: 53.56
+#        longitude: -71.20
+#      country: Scotland
+#      picture: you.png
+#
+#
     -
       id: david-walters
       name: David Walters
@@ -67,128 +71,167 @@ ambassadors:
       organization: Brunel University London
       location:
         latitude: 55.38
-        longitude: 3.44
+        longitude: 0 # 3.44
       country: United Kingdom
       picture: you.png
-
-
+#
+#
+#    -
+#      id: alice-gibson
+#      name: Alice Gibson
+#      role: Interim Research Publications Manager
+#        and Tropical Medicine
+#      organization: London School of Hygiene
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: alice-fodor
+#      name: Alice Fodor
+#      role: Research Publications Officer
+#      organization: London School of Hygiene and Tropical Medicine
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: john-heyderman
+#      name: John Heyderman
+#      role: Library Assistant
+#      organization: London School of Hygiene and Tropical Medicine
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: florence-graham
+#      name: Florence Graham
+#      role: Library Assistant
+#      organization: London School of Hygiene and Tropical Medicine
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: michelangelo-paganopolos
+#      name: Michelangelo Paganopoulos
+#      role: Library Assistant
+#      organization: London School of Hygiene and Tropical Medicine
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: alex-bimpeh-segu
+#      name: Alex Bimpeh-Segu
+#      role: Research Publications Officer
+#      organization: London School of Hygiene and Tropical Medicine
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: nick-sheppard
+#      name: Nick Sheppard
+#      role: Research Data Management Advisor
+#      organization: Leeds University
+#      location:
+#        latitude: 55.38
+#        longitude: 3.44
+#      country: United Kingdom
+#      picture: you.png
+#
+#
+#    -
+#      id: zaituni-kaijage
+#      name: Zaituni Kaijage
+#      role: Open Access Tanzania
+#      organization: University of Dar es Salaam
+#      location:
+#        latitude: -6.37
+#        longitude: 34.89
+#      country: Tanzania
+#      picture: you.png
+#
+#
+#    -
+#      id: benjamin-folitse
+#      name: Benjamin Folitse
+#      role: Information Specialist
+#      organization: CSIR-INSTI, Open Access Ghana
+#      location:
+#        latitude: 7.95
+#        longitude: 1.02
+#      country: Ghana
+#      picture: you.png
+#
+#    -
+#      id: gloria-kadyamatiba
+#      name: Gloria Kadyamatimba
+#      role: Lecturer
+#      organization: Centre for Languages and Communication Studies,
+#        Open Access Zimbabwe
+#      location:
+#         latitude: -19.01
+#         longitude: 29.15
+#      country: Zimbabwe
+#      picture: you.png
     -
-      id: alice-gibson
-      name: Alice Gibson
-      role: Interim Research Publications Manager
-        and Tropical Medicine
-      organization: London School of Hygiene
-      location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+      id: xxx
+      name: latitude 0
+      role: longitude 0
       picture: you.png
-
-
+      location:
+        latitude: 0
+        longitude: 0
     -
-      id: alice-fodor
-      name: Alice Fodor
-      role: Research Publications Officer
-      organization: London School of Hygiene and Tropical Medicine
-      location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+      id: xxx
+      name: latitude -34.833222
+      role: longitude 20
       picture: you.png
-
-
+      location:
+        latitude: -34.833222
+        longitude: 20
     -
-      id: john-heyderman
-      name: John Heyderman
-      role: Library Assistant
-      organization: London School of Hygiene and Tropical Medicine
-      location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+      id: xxx
+      name: latitude 77.733333
+      role: longitude 104.25
       picture: you.png
-
-
+      location:
+        latitude: 77.733333
+        longitude: 104.25
     -
-      id: florence-graham
-      name: Florence Graham
-      role: Library Assistant
-      organization: London School of Hygiene and Tropical Medicine
-      location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+      id: xxx
+      name: latitude 14.744722
+      role: longitude -17.520278
       picture: you.png
-
-
+      location:
+        latitude: 14.744722
+        longitude: -17.520278
     -
-      id: michelangelo-paganopolos
-      name: Michelangelo Paganopoulos
-      role: Library Assistant
-      organization: London School of Hygiene and Tropical Medicine
-      location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
+      id: xxx
+      name: latitude 66.079167
+      role: longitude -169.651944
       picture: you.png
-
-
-    -
-      id: alex-bimpeh-segu
-      name: Alex Bimpeh-Segu
-      role: Research Publications Officer
-      organization: London School of Hygiene and Tropical Medicine
       location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
-      picture: you.png
-
-
-    -
-      id: nick-sheppard
-      name: Nick Sheppard
-      role: Research Data Management Advisor
-      organization: Leeds University
-      location:
-        latitude: 55.38
-        longitude: 3.44
-      country: United Kingdom
-      picture: you.png
-
-
-    -
-      id: zaituni-kaijage
-      name: Zaituni Kaijage
-      role: Open Access Tanzania
-      organization: University of Dar es Salaam
-      location:
-        latitude: -6.37
-        longitude: 34.89
-      country: Tanzania
-      picture: you.png
-
-
-    -
-      id: benjamin-folitse
-      name: Benjamin Folitse
-      role: Information Specialist
-      organization: CSIR-INSTI, Open Access Ghana
-      location:
-        latitude: 7.95
-        longitude: 1.02
-      country: Ghana
-      picture: you.png
-
-    -
-      id: gloria-kadyamatiba
-      name: Gloria Kadyamatimba
-      role: Lecturer
-      organization: Centre for Languages and Communication Studies,
-        Open Access Zimbabwe
-      location:
-         latitude: -19.01
-         longitude: 29.15
-      country: Zimbabwe
-      picture: you.png
-
+        latitude: 66.079167
+        longitude: -169.651944
