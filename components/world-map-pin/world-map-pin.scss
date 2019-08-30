@@ -2,19 +2,12 @@
 
 $pin-size: 3rem;
 
-@keyframes bounce {
-  0,
-  60%,
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
   100% {
-    transform: translate(0, 0);
-  }
-
-  30% {
-    transform: translate(0, -10px);
-  }
-
-  80% {
-    transform: translate(0, -5px);
+    transform: scale(2);
   }
 }
 
@@ -33,7 +26,7 @@ $pin-size: 3rem;
   &:hover {
     animation-duration: 0.25s;
     animation-fill-mode: both;
-    animation-name: bounce;
+    animation-name: zoom;
     transform-origin: center bottom;
   }
 }
