@@ -2,14 +2,14 @@
 
 $pin-size: 3rem;
 
-@keyframes zoom {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(2);
-  }
-}
+//@keyframes zoom {
+//  0% {
+//    transform: scale(1);
+//  }
+//  100% {
+//    transform: scale(2);
+//  }
+//}
 
 .world-map-pin {
   $size: $pin-size;
@@ -22,12 +22,11 @@ $pin-size: 3rem;
   margin: (-1 * $size) 0 0 ($size / -2);
   border-radius: 50%;
   background: $primary;
+  transition: transform 0.25s;
 
-  &:hover {
-    animation-duration: 0.25s;
-    animation-fill-mode: both;
-    animation-name: zoom;
-    transform-origin: center bottom;
+  &:hover,
+  &:focus {
+    transform: scale(1.5);
   }
 }
 
