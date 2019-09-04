@@ -15,6 +15,7 @@ $image-pin-size: 3rem !default;
 
   &:hover,
   &:focus {
+    z-index: 10;
     transform: scale(1.5);
   }
 }
@@ -37,4 +38,5 @@ $image-pin-size: 3rem !default;
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  background: $white;
 }
