@@ -13,7 +13,7 @@ import './team-member.scss'
 const TeamMember = ({ className = '', name, role, picture, description }) => (
   <Card className={`team-member ${className}`}>
     <div className="team-member-picture">
-      <CardImg src={picture} alt={`${name}'s photo`} />
+      {picture && <CardImg src={picture} alt={`${name}'s photo`} />}
     </div>
     <CardBody>
       <CardTitle className="h5 team-member-name">{name}</CardTitle>
