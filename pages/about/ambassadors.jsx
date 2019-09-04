@@ -34,7 +34,11 @@ const AmbassadorsPage = () => (
         <ImagePin
           latitude={member.location.latitude}
           longitude={member.location.longitude}
-          src={`/static/images/ambassadors/${member.picture}`}
+          src={
+            member.picture
+              ? `/static/images/people/${member.picture}`
+              : '/static/images/unknown.svg'
+          }
           alt={`${member.name}, ${member.country}`}
           href={`#${member.id}`}
           title={`${member.name}, ${member.country}`}
@@ -95,7 +99,9 @@ const AmbassadorsPage = () => (
               className="mb-3"
               name={member.name}
               role={member.role}
-              picture={`/static/images/ambassadors/${member.picture}`}
+              picture={
+                member.picture && `/static/images/people/${member.picture}`
+              }
             />
           </Col>
         ))}
@@ -103,7 +109,7 @@ const AmbassadorsPage = () => (
         <Col className="d-flex flex-column" sm="6" md="4" lg="3" tag="li">
           <TeamMember
             name="You?"
-            picture="/static/images/ambassadors/you.png"
+            picture="/static/images/unknown-question-mark.svg"
             className="mb-3"
           >
             <Button block href="~contact">

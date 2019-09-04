@@ -45,7 +45,6 @@ ambassadors:
         latitude: 37
         longitude: 126
       country: South Korea
-      picture: you.png
     -
       id: george-macgregor
       name: George Macgregor
@@ -55,7 +54,7 @@ ambassadors:
         latitude: 56
         longitude: -3
       country: United Kingdom
-      picture: you.png
+      picture: macgregor.png
     -
       id: david-walters
       name: David Walters
@@ -65,7 +64,6 @@ ambassadors:
         latitude: 55.3780518
         longitude: 0.4359729
       country: United Kingdom
-      picture: you.png
     -
       id: alice-gibson
       name: Alice Gibson
@@ -76,7 +74,6 @@ ambassadors:
         latitude: 54.0
         longitude: -3.4359729
       country: United Kingdom
-      picture: you.png
     -
       id: alice-fodor
       name: Alice Fodor
@@ -86,7 +83,6 @@ ambassadors:
         latitude: 53
         longitude: -2
       country: United Kingdom
-      picture: you.png
     -
       id: john-heyderman
       name: John Heyderman
@@ -96,7 +92,6 @@ ambassadors:
         latitude: 53
         longitude: -1
       country: United Kingdom
-      picture: you.png
     -
       id: florence-graham
       name: Florence Graham
@@ -106,7 +101,6 @@ ambassadors:
         latitude: 54
         longitude: 1
       country: United Kingdom
-      picture: you.png
     -
       id: michelangelo-paganopolos
       name: Michelangelo Paganopoulos
@@ -116,7 +110,6 @@ ambassadors:
         latitude: 54
         longitude: 2
       country: United Kingdom
-      picture: you.png
     -
       id: alex-bimpeh-segu
       name: Alex Bimpeh-Segu
@@ -126,7 +119,6 @@ ambassadors:
         latitude: 53
         longitude: -1.44
       country: United Kingdom
-      picture: you.png
     -
       id: nick-sheppard
       name: Nick Sheppard
@@ -136,7 +128,7 @@ ambassadors:
         latitude: 54
         longitude: 0
       country: United Kingdom
-      picture: you.png
+      picture: sheppard-full.png
     -
       id: zaituni-kaijage
       name: Zaituni Kaijage
@@ -146,7 +138,6 @@ ambassadors:
         latitude: -6
         longitude: 37
       country: Tanzania
-      picture: you.png
     -
       id: benjamin-folitse
       name: Benjamin Folitse
@@ -156,7 +147,6 @@ ambassadors:
         latitude: 7.946527
         longitude: -1.023194
       country: Ghana
-      picture: you.png
     -
       id: gloria-kadyamatiba
       name: Gloria Kadyamatimba
@@ -167,4 +157,4 @@ ambassadors:
          latitude: -19.0154381
          longitude: 29.1548576
       country: Zimbabwe
-      picture: you.png
+      picture: gloria.png
