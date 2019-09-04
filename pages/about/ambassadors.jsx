@@ -17,7 +17,7 @@ import {
   content,
   keywords,
   ambassadors,
-} from 'data/ambassador.yml'
+} from 'data/ambassadors.yml'
 import { resources } from 'data/resources.yml'
 
 import './about.scss'
