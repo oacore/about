@@ -317,7 +317,9 @@ sections:
             in CORE
           answer: |
             It is a CORE policy to remove only the full text and not
-            the metadata.
+            the metadata. Only in limited cases - e.g. when a publication 
+            did not happen - it is possible that the metadata can be removed. 
+            In that case,[email us](~contact).
         - slug: why-metadata-is-still-visible
           question: |
             I have removed an item from my repository, but the metadata are
