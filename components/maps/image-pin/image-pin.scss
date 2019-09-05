@@ -1,40 +1,30 @@
-@import "../bootstrap/core";
+@import "../../bootstrap/core";
 
-$pin-size: 3rem;
+$image-pin-size: 3rem !default;
 
-//@keyframes zoom {
-//  0% {
-//    transform: scale(1);
-//  }
-//  100% {
-//    transform: scale(2);
-//  }
-//}
-
-.world-map-pin {
-  $size: $pin-size;
-
+.image-pin {
   position: absolute;
-  cursor: pointer;
-  width: $size;
-  height: $size;
+  width: $image-pin-size;
+  height: $image-pin-size;
   padding: 4px;
-  margin: (-1 * $size) 0 0 ($size / -2);
+  margin: (-1 * $image-pin-size) 0 0 ($image-pin-size / -2);
   border-radius: 50%;
   background: $primary;
+  transform-origin: bottom;
   transition: transform 0.25s;
 
   &:hover,
   &:focus {
+    z-index: 10;
     transform: scale(1.5);
   }
 }
 
-.world-map-pin:after {
+.image-pin:after {
   content: "";
   position: absolute;
   bottom: -10px / 1.44;
-  left: $pin-size / 2;
+  left: $image-pin-size / 2;
   border-width: 10px 10px 0;
   border-style: solid;
   margin-left: -10px;
@@ -43,9 +33,10 @@ $pin-size: 3rem;
   width: 0;
 }
 
-.world-map-pin img {
+.image-pin img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
+  background: $white;
 }

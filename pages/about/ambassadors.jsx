@@ -8,8 +8,8 @@ import {
   Button,
   OutreachMaterials,
   TeamMember,
-  WorldMap,
-  Pin,
+  ImageMap,
+  ImagePin,
 } from 'components'
 import {
   title,
@@ -29,18 +29,19 @@ const AmbassadorsPage = () => (
       <span className="ambassadors-page-title-small">{description}</span>
     </h1>
 
-    <WorldMap>
+    <ImageMap>
       {ambassadors.members.map(member => (
-        <Pin
-          picture={`/static/images/ambassadors/${member.picture}`}
+        <ImagePin
           latitude={member.location.latitude}
           longitude={member.location.longitude}
+          src={`/static/images/ambassadors/${member.picture}`}
+          alt={`${member.name}, ${member.country}`}
           href={`#${member.id}`}
           title={`${member.name}, ${member.country}`}
           tag="a"
         />
       ))}
-    </WorldMap>
+    </ImageMap>
 
     <Section id="ambassadors-description">
       <Row>
