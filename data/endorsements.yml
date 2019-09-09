@@ -476,11 +476,6 @@ organizations:
   description: University of Cambridge
   url: https://www.repository.cam.ac.uk
   logo: cambridge.jpg
-- &lshtm
-  name: LSHTM Research Online
-  description: London School of Hygiene and Tropical Medicine
-  url: http://researchonline.lshtm.ac.uk
-  logo: lshtm.jpg
 - &trieste
   name: Università degli studi di Trieste
   url: https://www.units.it/
@@ -489,15 +484,54 @@ organizations:
   name: University of Zurich
   url: http://www.uzh.ch/en.html
   logo: zurich.png
-- &stmarys
-  name: Open Research Archive
-  description: St Mary's University, Twickenham
-  url: https://research.stmarys.ac.uk
-  logo: saintmary.jpg
 - &huddersfield
   name: University of Huddersfield Repository
   url: http://eprints.hud.ac.uk
   logo: huddersfield.png
+- &ljmu
+  name: Liverpool John Moore's University
+  url: https://www.ljmu.ac.uk
+  logo: ljmu.svg
+- &aston
+  name: Aston University
+  url: https://www2.aston.ac.uk
+  logo: aston-university.svg
+- &concordia
+  name: Concordia University, Montreal
+  url: https://www.concordia.ca
+  logo: concordia-university.png
+- &salford
+  name: University of Salford
+  url: https://www.salford.ac.uk
+  logo: university-of-salford.png
+- &regensburg
+  name: Universitat Regensburg
+  url: https://www.uni-regensburg.de
+  logo: university-of-regensburg.svg
+- &urfu
+  name: URFU University
+  url: https://urfu.ru/en
+  logo: urfu.svg
+- &city
+  name: City University of London
+  url: https://urfu.ru/en
+  logo: university-of-london.svg
+- &rsvpu
+  name: Russian State of Vocational Pedagogical University
+  url: http://en.rsvpu.ru
+  logo: rsvpu.png
+- &victoria
+  name: Victoria University Melbourne Australia
+  url: https://www.vu.edu.au
+  logo: victoria-university-melbourne.svg
+- &ricerca
+  name: RICERCA United Universities FVG
+  url: https://ricerca.unityfvg.it/
+  logo: ricerca.png
+- &asu
+  name: AIN SHAMS Scholar
+  url: http://www.asu.edu.eg
+  logo: ain-shams.png
 
 sections:
   enterprise-companies:
@@ -517,7 +551,7 @@ sections:
       url: ~contact
     organizations:
       title: Companies who work with us
-      items:
+      items: # the count must be a multiple of 3
         - *naver
         - *turnitin
         - *ontochem
@@ -548,7 +582,19 @@ sections:
       url: ~services#content-discovery
     organizations:
       title: Institutions who work with us
-      items:
+      items: # the count must be a multiple of 3
+        - *foster
+        - *ljmu
+        - *aston
+        - *concordia
+        - *salford
+        - *regensburg
+        - *urfu
+        - *city
+        - *rsvpu
+        - *victoria
+        - *ricerca
+        - *asu
         - *apollo
         - *zurich
         - *lbu
@@ -567,12 +613,12 @@ sections:
         - *wr-sheffield
         - *oro
         - *apollo
-        - *lshtm
         - *trieste
-        - *stmarys
         - *huddersfield
+        - *brunel
         - *wr-leeds
         - *strathprints
+        - *ou
     testimonials:
       title: What institutions say about us
   partners:
@@ -588,7 +634,7 @@ sections:
       url: ~contact
     organizations:
       title: Our partners
-      items:
+      items: # the count must be a multiple of 3
         - *microsoft
         - *mooc
         - *openaire
