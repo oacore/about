@@ -465,6 +465,18 @@ sections:
   - id: ref-audit
     title: CORE guidance on REF2021 Audit
     items:
+      - slug: deposit-dates-be-provided-by-aggregators
+        question: |
+          Why should deposit dates be provided by aggregators and not by 
+          single institutions?
+        answer: |
+          Due to cross university collaborations some outputs that could be 
+          considered non-compliant due to a late deposit may be compliant 
+          due to a deposit that was made within the policy timeframe at 
+          another institution or subject repository. Individual institutions 
+          could benefit as they might not be fully aware of all compliant 
+          outputs and might consider some of their outputs non-compliant, 
+          while in fact they are compliant. 
       - slug: how-do-I-ensure-that-my-repository-deposit-date-matches
         question: |
           How do I ensure that my repository's deposit date matches CORE’s
@@ -518,6 +530,16 @@ sections:
           currently considering the development of a further technical support
           to allow institutions to see the deposit dates CORE holds for their
           outputs.
+      - slug: how-can-I-see-the-deposit-date-from-my-repository
+        question: |
+          How can I see the deposit date from my repository's REF-able outputs
+          in CORE?
+        answer: |
+          The [CORE Repositories
+          Dashboard](~services/repository-dashboard)does not currently provide information 
+          about the deposit date. While we would like to expose this information 
+          to HEIs, this is currently being discussed with RE and it is subject to 
+          resources being made available for development. 
       - slug: can-I-have-my-repository-deposit-dates
         question: |
           Can I have my repository's deposit dates from CORE in a CSV file?
