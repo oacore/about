@@ -10,24 +10,10 @@ resources:
       picture: brochure.png
 
     -
-      id: flyer
-      name: Flyer
+      id: business-card
+      name: Business card
       type: pdf
-      url: /static/resources/core-flyer-updated-july2017.pdf
-      picture: flyer.png
-
-    -
-      id: business-card-front
-      name: Business card (front)
-      type: jpg
-      url: /static/resources/core-card-front.jpg
-      picture: bcard.png
-
-    -
-      id: business-card-back
-      name: Business card (back)
-      type: jpg
-      url: /static/resources/core-card-back.jpg
+      url: /static/resources/core-business-card.pdf
       picture: bcard.png
 
     -
