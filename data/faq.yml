@@ -168,6 +168,20 @@ sections:
             do. In some occassions the content deposited in a repository is already
             published in a journal and is peer-reviewed. In addition, repositories may contain
             grey literature and these resources are not peer-reviewed.
+        - slug: how-is-the-record-count-in-OpenDOAR-estimated-by-CORE
+          question: |
+            How is the record count in OpenDOAR estimated by CORE?
+          answer: |
+            CORE has created definitions with regards to the statistics it provided to OpenDOAR.
+
+            **Metadata:** The total number of metadata records with a unique OAI identifier provided 
+            by the repository as this appears in the application profile which CORE harvest - 
+            if CORE harvests from the RIOXX endpoint, CORE will provide RIOXX counts instead of Dublin Core counts.
+
+            **Full text:** Count of metadata records - as above - with a least one attachment 
+            provided by the repository being a pdf file, which a) is publicly downloadable 
+            (no-login required or output is not under embargo, etc.) and b) the full text is machine readable, 
+            i.e. it has an extractable text not via OCR.
     - id: technical-aggregation
       title: Technical
       items:
