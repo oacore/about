@@ -2,11 +2,17 @@ resources:
   title: Outreach materials
 
   resources:
+
+    - id: logo
+      name: Logo
+      type: png
+      url: /static/resources/core-logo.png
+      picture: logo.png
     -
       id: brochure
       name: Brochure
       type: pdf
-      url: /static/resources/core-leaflets-2019.pdf
+      url: /static/resources/core-leaflet-2019.pdf
       picture: brochure.png
 
     -
@@ -16,12 +22,6 @@ resources:
       url: /static/resources/core-business-card.pdf
       picture: bcard.png
 
-    -
-      id: logo
-      name: Logo
-      type: png
-      url: /static/resources/core-logo.png
-      picture: logo.png
 
     -
       id: promo-text

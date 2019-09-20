@@ -70,9 +70,10 @@ const AmbassadorsPage = () => (
             tag="li"
           >
             <OutreachMaterials
+              id={resource.id}
               className="mb-3"
               name={resource.name}
-              button={`Open ${resource.type}`}
+              format={resource.type}
               picture={`/static/images/resources/${resource.picture}`}
               link={resource.url}
             />
