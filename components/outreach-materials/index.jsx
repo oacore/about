@@ -35,8 +35,9 @@ const OutreachMaterials = ({
 }) => (
   <Card id={id} className={`outreach-materials ${className}`} {...restProps}>
     <div className="outreach-materials-picture">
-      <CardImg src={picture} alt={`${name}'s photo`} />
+      {picture && <CardImg src={picture} alt={`${name}'s image`} />}
     </div>
+
     <CardBody>
       <CardTitle className="p outreach-materials-name">{name}</CardTitle>
       <CardSubtitle className="outreach-materials-role">{role}</CardSubtitle>

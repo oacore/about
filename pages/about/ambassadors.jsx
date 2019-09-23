@@ -74,7 +74,10 @@ const AmbassadorsPage = () => (
               className="mb-3"
               name={resource.name}
               format={resource.type}
-              picture={`/static/images/resources/${resource.picture}`}
+              picture={
+                resource.picture &&
+                `/static/images/resources/${resource.picture}`
+              }
               link={resource.url}
             />
           </Col>

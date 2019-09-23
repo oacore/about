@@ -14,31 +14,24 @@ resources:
       type: pdf
       url: /static/resources/core-leaflet-2019.pdf
       picture: brochure.png
-
     -
       id: business-card
       name: Business card
       type: pdf
       url: /static/resources/core-business-card.pdf
       picture: bcard.png
-
-
     -
       id: promo-text
       name: Adaptable promo text
       type: gdoc
       url: https://docs.google.com/document/d/1O-A3BrX9JYWcWxtbbo9BgukkmrIptFBgCIZsKaC4a5c/edit?usp=sharing
-      picture: flyer.png
-
     -
       id: general-presentation
       name: General presentation
       type: pptx
       url: https://drive.google.com/file/d/0B3M8WbWcGihpTTlTQURRWXpjQlk/view
-      picture: flyer.png
     -
       id: services-presentation
       name: Services presentation
       type: pptx
       url: https://drive.google.com/file/d/1XTtRo2nSaCReGZLgw-aAcb1DkcOi1WIN/view
-      picture: flyer.png
