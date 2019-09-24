@@ -45,14 +45,17 @@ ambassadors:
         latitude: 50
         longitude: 15
       country: Czech Republik
-    - id: benjamin-folitse
-      name: Benjamin Folitse
-      role: Information Specialist
-      organization: CSIR-INSTI, Open Access Ghana
+      picture: barbora.png
+    -
+      id: david-walters
+      name: David Walters
+      role: Open Access Officer
+      organization: Brunel University London
       location:
-        latitude: 7.946527
-        longitude: -1.023194
-      country: Ghana
+        latitude: 56
+        longitude: -3
+      country: United Kingdom
+      picture: walters.png
     -
       id: george-macgregor
       name: George Macgregor
@@ -103,12 +106,3 @@ ambassadors:
         longitude: 0
       country: United Kingdom
       picture: sheppard.png
-    -
-      id: zaituni-kaijage
-      name: Zaituni Kaijage
-      role: Open Access Tanzania
-      organization: University of Dar es Salaam
-      location:
-        latitude: -6
-        longitude: 37
-      country: Tanzania
