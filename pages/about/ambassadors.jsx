@@ -102,7 +102,7 @@ const AmbassadorsPage = () => (
               id={member.id}
               className="mb-3"
               name={member.name}
-              role={member.role}
+              role={member.country}
               picture={
                 member.picture && `/static/images/people/${member.picture}`
               }
