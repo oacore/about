@@ -41,7 +41,7 @@
     "leaflet.markercluster": "^1.4.1",
     "markdown-it": "^8.4.2",
     "next": "^8.1.0",
-    "next-images": "^1.0.1",
+    "next-images": "^1.2.0",
     "node-fetch": "^2.3.0",
     "node-sass": "^4.10.0",
     "open-iconic": "^1.1.1",
