@@ -48,7 +48,7 @@ it wherever you wish the CORE&nbsp;Discovery to appear.
 ```
 
 You can take a glimpse of the&nbsp;plugin at  [Open Research
-Online](http://oro.open.ac.uk/54889/), The Open University (or see an example
+Online](http://oro.open.ac.uk/56725/), The Open University (or see an example
 below). The&nbsp;plugin will look similar on your repository.
 
 <div class="card card-body mb-3">
