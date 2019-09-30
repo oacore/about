@@ -10,6 +10,7 @@ import {
   TeamMember,
   ImageMap,
   ImagePin,
+  NumberPin,
 } from 'components'
 import {
   title,
@@ -17,6 +18,7 @@ import {
   content,
   keywords,
   ambassadors,
+  regions,
 } from 'data/ambassadors.yml'
 import { resources } from 'data/resources.yml'
 
@@ -30,22 +32,44 @@ const AmbassadorsPage = () => (
       <p className="text-center lead">{description}</p>
 
       <ImageMap>
-        {ambassadors.members.map(member => (
-          <ImagePin
-            key={member.id}
-            latitude={member.location.latitude}
-            longitude={member.location.longitude}
-            src={
-              member.picture
-                ? `/static/images/people/${member.picture}`
-                : '/static/images/unknown.svg'
-            }
-            alt={`${member.name}, ${member.country}`}
-            href={`#${member.id}`}
-            title={`${member.name}, ${member.country}`}
-            tag="a"
-          />
-        ))}
+        {regions
+          .map(region => ({
+            ...region,
+            quantity: ambassadors.members.filter(
+              member => member.region === region.id
+            ).length,
+          }))
+          .map(({ id, location, name, quantity }) => (
+            <NumberPin
+              key={id}
+              latitude={location.latitude}
+              longitude={location.longitude}
+              href="#people"
+              title={`${name}, ${quantity} people`}
+              tag="a"
+            >
+              {quantity}
+            </NumberPin>
+          ))}
+
+        {ambassadors.members
+          .filter(member => member.region == null)
+          .map(member => (
+            <ImagePin
+              key={member.id}
+              latitude={member.location.latitude}
+              longitude={member.location.longitude}
+              src={
+                member.picture
+                  ? `/static/images/people/${member.picture}`
+                  : '/static/images/unknown.svg'
+              }
+              alt={`${member.name}, ${member.country}`}
+              href={`#${member.id}`}
+              title={`${member.name}, ${member.country}`}
+              tag="a"
+            />
+          ))}
       </ImageMap>
     </header>
 
@@ -87,7 +111,7 @@ const AmbassadorsPage = () => (
       </Row>
     </Section>
 
-    <Section className="ambassadors-section" id="core-ambassadors">
+    <Section className="ambassadors-section" id="people">
       <h2>{ambassadors.title}</h2>
 
       <Row className="list-unstyled" tag="ul">

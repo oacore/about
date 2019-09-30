@@ -2,34 +2,34 @@ title: Ambassadors
 description: |
   Spreading knowledge around the world
 content: |
-    While the adoption of open access, open data, open science and text mining
-    practices are growing, CORE is proud to follow these developments and grow
-    as a service. We are looking for enthusiastic organisations and individuals
-    to volunteer as ambassadors to spread the word about CORE’s
-    [mission](~about#mission) and [services](~services).
+  While the adoption of open access, open data, open science and text mining
+  practices are growing, CORE is proud to follow these developments and grow
+  as a service. We are looking for enthusiastic organizations and individuals
+  to volunteer as ambassadors to spread the word about CORE’s
+  [mission](~about#mission) and [services](~services).
 
-    Become a CORE ambassador to enhance CORE’s efforts in advancing open access
-    and supporting text-mining in your area by:
+  Become a CORE ambassador to enhance CORE’s efforts in advancing open access
+  and supporting text-mining in your area by:
 
-    * Presenting CORE to research stakeholders (students,
-      librarians and researchers).
-    * Posting CORE news on blogs and social media.
-    * Sharing information about CORE to listservers (especially local).
-    * Presenting CORE during events and conferences.
-    * Updating the CORE Team with the community’s feedback.
+  * Presenting CORE to research stakeholders (students,
+    librarians and researchers).
+  * Posting CORE news on blogs and social media.
+  * Sharing information about CORE to listservers (especially local).
+  * Presenting CORE during events and conferences.
+  * Updating the CORE Team with the community’s feedback.
 
-    CORE will offer support to ambassadors on a regular basis by:
+  CORE will offer support to ambassadors on a regular basis by:
 
-    * Building a correspondence with ambassadors via emails and/or phone.
-    * Organising skype calls every two months.
-    * Offering a dedicated area where the ambassadors’ presentations can be stored
-      and retrieved.
-    * Acknowledging an ambassador’s name and affiliated organisation
-      on the CORE website.
-    * Shipping promotional material (whenever funding permits it).
+  * Building a correspondence with ambassadors via emails and/or phone.
+  * Organizing Skype calls every two months.
+  * Offering a dedicated area where the ambassadors’ presentations can be stored
+    and retrieved.
+  * Acknowledging an ambassador’s name and affiliated organization
+    on the CORE website.
+  * Shipping promotional material (whenever funding permits it).
 
-    In addition, the CORE ambassadors will be the first to have access
-    to new CORE services.
+  In addition, the CORE ambassadors will be the first to have access
+  to new CORE services.
 
 
 
@@ -45,6 +45,7 @@ ambassadors:
         latitude: 50
         longitude: 15
       country: Czech Republik
+      region: eu
       picture: barbora.png
     -
       id: david-walters
@@ -55,6 +56,7 @@ ambassadors:
         latitude: 56
         longitude: -3
       country: United Kingdom
+      region: uk
       picture: walters.png
     -
       id: george-macgregor
@@ -65,6 +67,7 @@ ambassadors:
         latitude: 56
         longitude: -3
       country: United Kingdom
+      region: uk
       picture: macgregor.png
     -
       id: gloria-kadyamatiba
@@ -95,6 +98,7 @@ ambassadors:
         latitude: 44.8
         longitude: 20
       country: Serbia
+      region: eu
       picture: milica.jpg
     -
       id: nick-sheppard
@@ -105,4 +109,20 @@ ambassadors:
         latitude: 54
         longitude: 0
       country: United Kingdom
+      region: uk
       picture: sheppard.png
+
+regions:
+  -
+    id: eu
+    name: Europe
+    location:
+      latitude: 70
+      longitude: 11
+  -
+    id: uk
+    name: United Kingdom
+    location:
+      latitude: 71
+      longitude: -14
+
