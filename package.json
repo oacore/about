@@ -48,7 +48,7 @@
     "prop-types": "^15.6.2",
     "raw-loader": "^0.5.1",
     "react": "^16.6.1",
-    "react-dom": "^16.6.1",
+    "react-dom": "^16.10.2",
     "react-leaflet": "^2.2.0",
     "react-markdown": "^4.0.3",
     "reactstrap": "^7",
