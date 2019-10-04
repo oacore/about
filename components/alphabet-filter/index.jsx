@@ -4,8 +4,6 @@ import { Button } from 'reactstrap'
 import { bind } from 'decko'
 
 class AlphabetFilter extends Component {
-  static alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-
   static propTypes = {
     alphabet: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
     value: PropTypes.string,
@@ -16,6 +14,8 @@ class AlphabetFilter extends Component {
     value: '',
     onChange: () => {},
   }
+
+  static alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
   @bind
   handleClick(event) {

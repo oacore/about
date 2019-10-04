@@ -36,6 +36,8 @@ rules:
     skipUndeclared: true,
     ignore: [class, className, id, children, tag],
   }]
+  react/jsx-no-useless-fragment: error
+  no-console: ["error", { allow: ["warn", "error"] }]
 
 settings:
   import/resolver:

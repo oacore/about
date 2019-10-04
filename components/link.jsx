@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import NextLink from 'next/link'
 import Router from '../router'
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Link = ({ href, children, ...restProps }) => {
-  if (href == null) return <Fragment>{children}</Fragment>
+  if (href == null) return children
 
   let pathname = href && href.pathname != null ? href.pathname : href
   // FIXME: Temporarely skip block routes
