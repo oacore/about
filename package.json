@@ -10,7 +10,7 @@
     "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-decorators": "^7.1.6",
     "@babel/polyfill": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "broken-link-checker": "^0.7.8",
