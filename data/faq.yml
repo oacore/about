@@ -60,8 +60,24 @@ sections:
           question: |
             How often does CORE harvest the repositories?
           answer: |
-            CORE does not harvest all the repositories that exist in our database
-            with the same frequency. If you have a question regarding a specific
+            CORE does not harvest all the repositories that exist in our
+            database with the same frequency. Repositories are harvested
+            as frequently as our HW infrastructure allows.
+            The specific time of harvesting for a repository is determined
+            by the CORE Scheduler. The CORE Scheduler is a software component
+            that ensures that our harvesting cluster of machines is close to
+            fully utilised 24/7 for 365 days every year. As soon as some
+            resource is freed, the CORE Scheduler decides which repository
+            needs to be harvested based on several criteria. These criteria
+            include, but are not limited to, the previous time of the repository
+            being harvested, the size of the repository,
+            the location of the repository, the repository's harvesting
+            performance and information about potential previous harvesting
+            errors. We review the functionality of the scheduler on a regular
+            basis to ensure that its decisions on what to harvest next maximise
+            the number of ingested documents over a unit of time.
+
+            If you have a question regarding a specific
             repository do get in [touch](~contact) with us.
         - slug: when-will-the-harvesting-process-of-my-repository-be-completed
           question: |
@@ -174,13 +190,13 @@ sections:
           answer: |
             CORE has created definitions with regards to the statistics it provided to OpenDOAR.
 
-            **Metadata:** The total number of metadata records with a unique OAI identifier provided 
-            by the repository as this appears in the application profile which CORE harvest - 
+            **Metadata:** The total number of metadata records with a unique OAI identifier provided
+            by the repository as this appears in the application profile which CORE harvest -
             if CORE harvests from the RIOXX endpoint, CORE will provide RIOXX counts instead of Dublin Core counts.
 
-            **Full text:** Count of metadata records - as above - with a least one attachment 
-            provided by the repository being a pdf file, which a) is publicly downloadable 
-            (no-login required or output is not under embargo, etc.) and b) the full text is machine readable, 
+            **Full text:** Count of metadata records - as above - with a least one attachment
+            provided by the repository being a pdf file, which a) is publicly downloadable
+            (no-login required or output is not under embargo, etc.) and b) the full text is machine readable,
             i.e. it has an extractable text not via OCR.
     - id: technical-aggregation
       title: Technical
@@ -298,13 +314,13 @@ sections:
             exposes the full text, please get in [touch](~contact) with us.
         - slug: retrieve-license-information
           question: |
-            How can I retrieve the license information (CC-BY, CC-BY-NC, etc.) 
-            from the harvested outputs? 
+            How can I retrieve the license information (CC-BY, CC-BY-NC, etc.)
+            from the harvested outputs?
           answer: |
-            An output's license is not consistently exposed by content providers in a 
+            An output's license is not consistently exposed by content providers in a
             machine readable form. In some circumstances it may be possible to extract
-            this from the "fulltextUrls" field in the [CORE API](~services/api). However, this is 
-            subject to the license the data offered by the data provider. 
+            this from the "fulltextUrls" field in the [CORE API](~services/api). However, this is
+            subject to the license the data offered by the data provider.
         - slug: full-text-record-is-deleted-from-my-repository
           question: |
             A full text record is deleted from my repository, but is still
@@ -331,8 +347,8 @@ sections:
             in CORE
           answer: |
             It is a CORE policy to remove only the full text and not
-            the metadata. Only in limited cases - e.g. when a publication 
-            did not happen - it is possible that the metadata can be removed. 
+            the metadata. Only in limited cases - e.g. when a publication
+            did not happen - it is possible that the metadata can be removed.
             In that case,[email us](~contact).
         - slug: why-metadata-is-still-visible
           question: |
@@ -481,16 +497,16 @@ sections:
     items:
       - slug: deposit-dates-be-provided-by-aggregators
         question: |
-          Why should deposit dates be provided by aggregators and not by 
+          Why should deposit dates be provided by aggregators and not by
           single institutions?
         answer: |
-          Due to cross university collaborations some outputs that could be 
-          considered non-compliant due to a late deposit may be compliant 
-          due to a deposit that was made within the policy timeframe at 
-          another institution or subject repository. Individual institutions 
-          could benefit as they might not be fully aware of all compliant 
-          outputs and might consider some of their outputs non-compliant, 
-          while in fact they are compliant. 
+          Due to cross university collaborations some outputs that could be
+          considered non-compliant due to a late deposit may be compliant
+          due to a deposit that was made within the policy timeframe at
+          another institution or subject repository. Individual institutions
+          could benefit as they might not be fully aware of all compliant
+          outputs and might consider some of their outputs non-compliant,
+          while in fact they are compliant.
       - slug: how-do-I-ensure-that-my-repository-deposit-date-matches
         question: |
           How do I ensure that my repository's deposit date matches CORE’s
@@ -550,10 +566,10 @@ sections:
           in CORE?
         answer: |
           The [CORE Repositories
-          Dashboard](~services/repository-dashboard)does not currently provide information 
-          about the deposit date. While we would like to expose this information 
-          to HEIs, this is currently being discussed with RE and it is subject to 
-          resources being made available for development. 
+          Dashboard](~services/repository-dashboard)does not currently provide information
+          about the deposit date. While we would like to expose this information
+          to HEIs, this is currently being discussed with RE and it is subject to
+          resources being made available for development.
       - slug: can-I-have-my-repository-deposit-dates
         question: |
           Can I have my repository's deposit dates from CORE in a CSV file?
