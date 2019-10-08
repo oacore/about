@@ -12,7 +12,7 @@
     "@babel/polyfill": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.3",
     "broken-link-checker": "^0.7.8",
     "camelize": "^1.0.0",
     "eslint": "^5.9.0",
