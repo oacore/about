@@ -16,27 +16,27 @@ $image-pin-size: 3rem !default;
   &:hover,
   &:focus {
     z-index: 10;
-    transform: scale(1.5);
+    transform: scale(1.1);
   }
-}
 
-.image-pin:after {
-  content: "";
-  position: absolute;
-  bottom: -10px / 1.44;
-  left: $image-pin-size / 2;
-  border-width: 10px 10px 0;
-  border-style: solid;
-  margin-left: -10px;
-  border-color: #b75400 transparent;
-  display: block;
-  width: 0;
-}
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px / 1.44;
+    left: $image-pin-size / 2;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    margin-left: -10px;
+    border-color: #b75400 transparent;
+    display: block;
+    width: 0;
+  }
 
-.image-pin img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  background: $white;
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: $white;
+  }
 }
