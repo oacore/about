@@ -2,6 +2,11 @@
 
 .team-member {
   flex: 1;
+
+  &:target {
+    border-color: $primary;
+    box-shadow: 0 0 0 4px rgba($primary, 0.5);
+  }
 }
 
 .team-member-picture {
