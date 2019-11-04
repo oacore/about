@@ -17,6 +17,14 @@ members:
     guitar and dreams of climbing Alpe d'Huez or Col de la Madone
     with his bike.
 -
+  name: Valeriy Budko
+  role: Full Stack Developer
+  picture: valeriy-budko.jpg
+  description: |
+    PHP and JavaScript developer. Performs code optimization and implementation of continuous
+    integration. In his spare time, he upgrades a long-range quadrocopter to monitor
+    environmental conditions.
+-
   name: Matteo Cancellieri
   role: Senior Developer
   picture: matteo-cancellieri.jpg
@@ -33,6 +41,13 @@ members:
     recommender service for the CORE platform. Firmly believes in the motto
     "Work hard, play hard".
 -
+  name: Jozef Harag
+  role: Full Stack Developer
+  picture: jozef-harag.jpg
+  description: |
+    A lover of new technologies. He enjoys writing clean and reusable code in both Javascript & Python.
+    At CORE he mostly works on the Reader and the Analytics Dashboard.
+-
   name: Drahomira Herrmannova
   role: Data Analyst & Researcher
   picture: drahomira-herrmannova.jpg
@@ -48,6 +63,14 @@ members:
   description: |
     Helps to design and create robust code applying industry best practices to the backend components of CORE.
     In his spare time, loves playing guitar, swimming and reading.
+-
+  name: Catherine Kuliavets
+  role: Personal & Team Administrative Assistant
+  picture: catherine-kuliavets.jpg
+  description: |
+    Responsible for acting as the first point of contact for a range of tasks and common queries.
+    Manages diaries and meetings,  helps with organising events and conferences; collects information
+    from external sources; liaises with staff, suppliers and clients.
 -
   name: Sergei Misak
   role: Front-End Developer
