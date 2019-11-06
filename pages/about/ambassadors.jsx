@@ -20,7 +20,7 @@ import {
   ambassadors,
   regions,
 } from 'data/ambassadors.yml'
-import { resources } from 'data/resources.yml'
+import resourcesData from 'data/resources.yml'
 
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
@@ -82,9 +82,9 @@ const AmbassadorsPage = () => (
     </Section>
 
     <Section className="outreach-materials-section" id="outreach-materials">
-      <h2>{resources.title}</h2>
+      <h2>{resourcesData.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {resources.resources.map(resource => (
+        {resourcesData.resources.map(resource => (
           <Col
             key={resource.id}
             className="d-flex flex-column"
