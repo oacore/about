@@ -1,5 +1,7 @@
 @import "~components/bootstrap/core";
 
+$skew-section-icon-size: 4rem;
+
 .about-services-section {
   @include section-skew-left($blue-light);
 }
@@ -9,7 +11,7 @@
   text-align: center;
 
   &::before {
-    $icon-size: 4rem;
+    $icon-size: $skew-section-icon-size;
 
     content: "";
     position: relative;
@@ -20,13 +22,32 @@
     margin: auto;
     background: url("../../static/images/icons/university.svg") no-repeat 0 50%,
       url("../../static/images/icons/factory.svg") no-repeat 100% 50%;
-    color: red;
     background-size: auto 100%;
   }
 }
 
 .about-endorsements-section-title {
   font-style: italic;
+}
+
+.about-ambassadors-section {
+  @include section-skew-left($blue-light);
+  text-align: center;
+
+  &::before {
+    $icon-size: $skew-section-icon-size;
+
+    content: "";
+    position: relative;
+    top: -1 * $spacer;
+    display: block;
+    width: $icon-size;
+    height: $icon-size;
+    margin: auto;
+    /* Icon made by Freepik (https://www.flaticon.com/authors/freepik) */
+    background: url("../../static/images/icons/group.svg") no-repeat center /
+      contain;
+  }
 }
 
 .contact-card {

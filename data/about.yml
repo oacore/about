@@ -96,13 +96,15 @@ contacts:
     city: Milton Keynes
     country: United Kingdom
 
+ambassadors:
+  title: Our ambassadors
+  body: |
+    We are supported by our global network of ambassadors.
+    CORE supports an ambassadors network around the world
+  action: Find out more
+
 resources:
   title: Resources and promotional materials
   content: |
-    * [CORE brochure](/static/resources/core-leaflet-2019.pdf)
-      <small>(PDF document)</small>
-    * CORE business card ([front](/static/resources/core-card-front.jpg),
-      [back](/static/resources/core-card-back.jpg))
-      <small>(JPEG images)</small>
-    * [CORE logo](/static/resources/core-logo.png)
-      <small>(PNG image)</small>
+    You can find more resources at the
+    [ambassadors page](~about/ambassadors#resources).

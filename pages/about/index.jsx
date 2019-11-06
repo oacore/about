@@ -10,6 +10,7 @@ import {
   Section,
   TeamMember,
   Collapsed,
+  OutreachMaterials,
   RepositoriesMap,
   ServiceGroups,
   Video,
@@ -19,6 +20,7 @@ import { patchStats } from 'components/utils'
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 import servicesData from 'data/services.yml'
+import { resources } from 'data/resources.yml'
 import contactData from 'data/contact.md'
 
 import { repositoriesUrl } from '../data/providers'
@@ -121,11 +123,6 @@ const AboutPage = () => (
       </Button>
     </Section>
 
-    <Section id="resources" caption="Resources">
-      <h2>{aboutData.resources.title}</h2>
-      <Markdown>{aboutData.resources.content}</Markdown>
-    </Section>
-
     <Section id="team" caption="The team">
       <h2>{teamData.title}</h2>
       <Row className="list-unstyled" tag="ul">
@@ -149,10 +146,6 @@ const AboutPage = () => (
         ))}
       </Row>
 
-      <Content>
-        <Markdown>{teamData.ambassadorsNotice}</Markdown>
-      </Content>
-
       <h3 className="mt-5">Past team members</h3>
       <Content>
         <ul className="list-comma-separated">
@@ -163,9 +156,50 @@ const AboutPage = () => (
       </Content>
     </Section>
 
+    <Section
+      id="ambassadors"
+      className="about-ambassadors-section"
+      caption="Ambassadors"
+    >
+      <h2>{aboutData.ambassadors.title}</h2>
+      <Markdown>{aboutData.ambassadors.body}</Markdown>
+      <Button color="primary" outline href="~about/ambassadors">
+        {aboutData.ambassadors.action}
+      </Button>
+    </Section>
+
+    <Section id="resources" caption="Resources">
+      <h2>{aboutData.resources.title}</h2>
+      <Row className="list-unstyled" tag="ul">
+        {resources.slice(0, 2).map(resource => (
+          <Col
+            key={resource.id}
+            className="d-flex flex-column"
+            sm="6"
+            md="4"
+            lg="3"
+            tag="li"
+          >
+            <OutreachMaterials
+              id={resource.id}
+              className="mb-3"
+              name={resource.name}
+              format={resource.type}
+              picture={
+                resource.picture &&
+                `/static/images/resources/${resource.picture}`
+              }
+              link={resource.url}
+            />
+          </Col>
+        ))}
+      </Row>
+      <Markdown>{aboutData.resources.content}</Markdown>
+    </Section>
+
     <Section id="contact" caption="Contact us">
       <h2>{contactData.attributes.title}</h2>
-      <Content>
+      <Content class="mx-auto">
         <Markdown>{contactData.body}</Markdown>
       </Content>
     </Section>
