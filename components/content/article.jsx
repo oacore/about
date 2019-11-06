@@ -35,7 +35,7 @@ class Article extends Section {
 
   static getDerivedStateFromProps({ children }, state) {
     const navItems = React.Children.map(children, child => {
-      if (child == null || !Section.isSection(child.type)) return null
+      if (child == null || !Section.isSection(child)) return null
       const { caption, id } = child.props
       if (!caption || !id) return null
       return { text: caption, href: `#${id}` }
