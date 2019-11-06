@@ -99,7 +99,7 @@ class ResearchOutputsPage extends Component {
           <ResearchOutputsSection
             key={section.id}
             id={section.id}
-            caption={section.title}
+            caption={section.caption || section.title}
             title={section.title}
             papers={section.papers}
             onPaperCite={this.toggleCitationsModal}

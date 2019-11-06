@@ -2,7 +2,8 @@ title: Research outputs by CORE
 sections:
 -
   id: our-vision
-  title: CORE Vision and Mission
+  title: CORE vision and mission
+  caption: Vision and mission
   papers:
   -
     id: oro35755
@@ -66,7 +67,8 @@ sections:
         }
 -
   id: aggregation-approaches-and-infrastructure
-  title: CORE Aggregation Approaches and Infrastructure
+  title: CORE aggregation approaches and infrastructure
+  caption: Aggregation approaches and infrastructure
   papers:
   -
     type: inproceedings
@@ -336,6 +338,7 @@ sections:
 -
   id: recommender
   title: CORE Recommender
+  caption: CORE Recommender
   papers:
   -
     type: inproceedings
@@ -444,7 +447,8 @@ sections:
         }
 -
   id: repositories-dashboard
-  title: CORE Repositories Dashboard
+  title: CORE repositories dashboard
+  caption: Repositories dashboard
   papers:
   -
     type: article
@@ -510,7 +514,8 @@ sections:
         }
 -
   id: download-statistics
-  title: CORE and Download Statistics
+  title: CORE and download statistics
+  caption: Download statistics
   papers:
   -
     type: misc
