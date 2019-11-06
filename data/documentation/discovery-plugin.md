@@ -125,6 +125,30 @@ do not recommend to customise styles based on our class names like
 from build to build.
 </section>
 
+<section class="section" id="i18n">
+<h2>Internationalization</h2>
+
+The plugin supports internationalization via the `lang` HTML attribute. 
+It tries to detect desired plugin language by checking the `lang` attribute
+locally in the `<div id="core-discovery-root">` tag
+and globally in the `<html>` tag.
+
+We recommend to add a `lang` attribute into the `<html>` tag.
+However, if you want to change the language of CORE&nbsp;Discovery locally,
+add the attribute to `<div id="core-discovery-root">`, like in the example
+below.
+
+```html
+<div id="core-discovery-root" lang="en"></div>
+```
+
+English is the default language of the plugin. If you add the `lang` attribute
+but the plugin will be in English, please
+[contact us](mailto:thet&#101;&#97;m&#64;c&#111;re&#46;&#97;c&#46;&#117;k)
+and we will sort it out.
+
+</section>
+
 <section class="section" id="blacklisting">
 <h2>How to blacklist a resource</h2>
 
