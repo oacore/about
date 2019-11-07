@@ -30,7 +30,7 @@ navigation:
   - title: About
     path: ~about
     children:
-      - title: Our mission
+      - title: Mission
         path: ~about#mission
       - title: Team
         path: ~about#team

@@ -1,5 +1,6 @@
 ---
-title: Contact us
+title: Contacts
+short-title: Contacts
 ---
 
 * To **join CORE**, check our [join guidelines](~faq#joining-core).

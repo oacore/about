@@ -36,7 +36,7 @@ const AboutPage = () => (
   >
     <h1>{aboutData.title}</h1>
 
-    <Section id="our-mission" caption="Our mission" tag="div">
+    <Section id="our-mission" caption={aboutData.mission.shortTitle} tag="div">
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
           <h2>{aboutData.mission.title}</h2>
@@ -123,7 +123,7 @@ const AboutPage = () => (
       </Button>
     </Section>
 
-    <Section id="team" caption="The team">
+    <Section id="team" caption={teamData.shortTitle}>
       <h2>{teamData.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {teamData.members.map(member => (
@@ -159,7 +159,7 @@ const AboutPage = () => (
     <Section
       id="ambassadors"
       className="about-ambassadors-section"
-      caption="Ambassadors"
+      caption={aboutData.ambassadors.shortTitle}
     >
       <h2>{aboutData.ambassadors.title}</h2>
       <Markdown>{aboutData.ambassadors.body}</Markdown>
@@ -168,7 +168,7 @@ const AboutPage = () => (
       </Button>
     </Section>
 
-    <Section id="resources" caption="Resources">
+    <Section id="resources" caption={aboutData.resources.shortTitle}>
       <h2>{aboutData.resources.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {resources.slice(0, 2).map(resource => (
@@ -197,7 +197,7 @@ const AboutPage = () => (
       <Markdown>{aboutData.resources.content}</Markdown>
     </Section>
 
-    <Section id="contact" caption="Contact us">
+    <Section id="contact" caption={contactData.attributes.title}>
       <h2>{contactData.attributes.title}</h2>
       <Content class="mx-auto">
         <Markdown>{contactData.body}</Markdown>
