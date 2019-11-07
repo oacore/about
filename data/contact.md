@@ -2,23 +2,25 @@
 title: Contact us
 ---
 
-* To join CORE, check our [join guidelines](~faq#joining-core).
+* To **join CORE**, check our [join guidelines](~faq#joining-core).
 
-* For article updates/removals, please submit your request 
-[here](/article-update).
+* For **article updates/removals**, please submit your request through
+  [the form](/article-update).
 
-* To register for an API key go to our [key register page](/api-keys/register).
-  Make sure you have covered all the relevant [information](~services/api) 
-  about the API available on our website.
+* To **register for an API key** go to our 
+  [key register page](/api-keys/register). Make sure you have covered 
+  all the relevant [information](~services/api) about the API available
+  on our website.
 
-* If you have general questions or enquiries about CORE, you will probably 
+* If you have **general questions** or enquiries about CORE, you will probably 
   find an answer in our [FAQs](~faq).
 
-* To discuss project and research collaborations or if you represent an industry partner interested
-  in using CORE in your work, please contact:
+* To discuss project and **research collaborations** or if you
+  represent an industry partner interested in using CORE in your work,
+  please contact:
 
   <address>
-    <b>Dr. Petr Knoth</b><br>
+    Dr. Petr Knoth<br>
     Knowledge Media institute, The Open University<br>
     Walton Hall, Milton Keynes, MK7 6AA, BUCKS, United Kingdom<br>
     <a href="&#109ail&#116;&#111;&#58;pe&#116;r&#46;kno&#116;h&#64;ope&#110;&#46;&#97;&#99;&#46;uk">
