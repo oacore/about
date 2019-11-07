@@ -1,0 +1,42 @@
+title: Contacts
+short-title: Contacts
+
+cases:
+- slug: join
+  purpose: Join CORE
+  description: |
+    Check our [join guidelines](~faq#joining-core).
+- slug: take-down
+  purpose: Update or remove article
+  description: |
+    Please submit your request on [the article update page](/article-update).
+- slug: api-key
+  purpose: Get an API key
+  description: |
+    Go to our [key register page](/api-keys/register).
+    Make sure you have covered all the relevant [information](~services/api)
+    about the API available on our website.
+- slug: collaboration
+  purpose: Research collaborations, partnership
+  description: |
+    To discuss project and research collaborations or if you
+    represent an industry partner interested in using CORE in your work,
+    please contact:
+
+    <address>
+      <b>Dr. Petr Knoth</b><br>
+      Knowledge Media institute, The Open University<br>
+      Walton Hall, Milton Keynes, MK7 6AA, BUCKS, United Kingdom<br>
+      <a href="&#109ail&#116;&#111;&#58;pe&#116;r&#46;kno&#116;h&#64;ope&#110;&#46;&#97;&#99;&#46;uk">
+        petr (dot) knoth (at) open (dot) ac (dot) uk
+      </a>
+    </address>
+
+outro: |
+  For any other question or enquiry about CORE you will probably
+  find an answer in our [FAQs](~faq).
+
+  However, if you did not, [email us](mailto:thet&#101;&#97;m&#64;c&#111;re&#46;&#97;c&#46;&#117;k).
+  A team member will reply as soon as possible – please note that
+  questions that fall into the above categories will not be answered
+  on this email.

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 import {
+  Accordion,
   Button,
   ButtonToolbar,
   Blog,
@@ -21,7 +22,7 @@ import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
-import contactData from 'data/contact.md'
+import contactData from 'data/contacts.yml'
 
 import { repositoriesUrl } from '../data/providers'
 
@@ -197,10 +198,19 @@ const AboutPage = () => (
       <Markdown>{aboutData.resources.content}</Markdown>
     </Section>
 
-    <Section id="contact" caption={contactData.attributes.title}>
-      <h2>{contactData.attributes.title}</h2>
-      <Content class="mx-auto">
-        <Markdown>{contactData.body}</Markdown>
+    <Section id="contact" caption={contactData.title}>
+      <h2>{contactData.shortTitle}</h2>
+
+      <Content>
+        <Accordion className="mb-3">
+          {contactData.cases.map(({ slug, purpose, description }) => (
+            <Accordion.Item id={slug} title={purpose} key={slug}>
+              <Markdown>{description}</Markdown>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+
+        <Markdown>{contactData.outro}</Markdown>
       </Content>
     </Section>
   </Page>
