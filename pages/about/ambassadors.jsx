@@ -81,7 +81,7 @@ const AmbassadorsPage = () => (
       </Row>
     </Section>
 
-    <Section className="outreach-materials-section" id="outreach-materials">
+    <Section className="outreach-materials-section" id="resources">
       <h2>{resourcesData.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {resourcesData.resources.map(resource => (
