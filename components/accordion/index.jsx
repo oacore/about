@@ -7,11 +7,13 @@ import AccordionItem from './item'
 // TODO: Make it semantic: provide aria-* attributes
 class Accordion extends Component {
   static propTypes = {
+    className: PropTypes.string,
     tag: PropTypes.node,
     onToggle: PropTypes.func,
   }
 
   static defaultProps = {
+    className: '',
     tag: 'div',
     onToggle: () => {},
   }
@@ -57,7 +59,7 @@ class Accordion extends Component {
   }
 
   render() {
-    const { tag: Tag, children } = this.props
+    const { className, tag: Tag, children } = this.props
 
     const items = React.Children.map(children, item =>
       React.cloneElement(item, {
@@ -66,7 +68,7 @@ class Accordion extends Component {
       })
     )
 
-    return <Tag className="accordion">{items}</Tag>
+    return <Tag className={`accordion ${className}`}>{items}</Tag>
   }
 }
 
