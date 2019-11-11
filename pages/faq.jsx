@@ -46,7 +46,7 @@ const FAQsPage = () => (
   >
     <h1>{faqData.title}</h1>
     {faqData.sections.map(section => (
-      <FAQsSection key={section.title} {...section} />
+      <FAQsSection key={section.id} {...section} />
     ))}
   </Page>
 )

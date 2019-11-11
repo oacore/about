@@ -5,6 +5,7 @@ description: |
 sections:
   - id: joining-core
     title: Joining CORE as data provider
+    caption: Joining CORE
     items:
       - slug: is-my-repository-or-journal-harvested-by-CORE
         question: Is my repository or journal harvested by CORE?
@@ -52,6 +53,7 @@ sections:
 
   - id: aggregation
     title: Aggregation
+    caption: Aggregation
     sections:
     - id: general-aggregation
       title: General
@@ -360,6 +362,7 @@ sections:
             marked as "restricted" CORE will still display it.
   - id: services
     title: CORE services
+    caption: Services
     items:
       - slug: how-do-I-register-for-an-API-key
         question: |
@@ -451,6 +454,7 @@ sections:
           which you can remove any undesirable articles.
   - id: about
     title: General information about CORE
+    caption: General information
     items:
       - slug: high-resolution-logo-CORE
         question: |
@@ -494,6 +498,7 @@ sections:
 
   - id: ref-audit
     title: CORE guidance on REF2021 Audit
+    caption: REF2021 Audit
     items:
       - slug: deposit-dates-be-provided-by-aggregators
         question: |
