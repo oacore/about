@@ -532,6 +532,22 @@ organizations:
   name: AIN SHAMS Scholar
   url: http://www.asu.edu.eg
   logo: ain-shams.png
+- &hsu
+  name: Helmut Schmidt University in Hamburg
+  url: https://www.hsu-hh.de/en/
+  logo: hsu.png
+- &dspace
+  name: DuraSpace
+  url: https://duraspace.org/
+  logo: dspace.png
+- &uol
+  name: University of Liverpool
+  url: https://www.liverpool.ac.uk/
+  logo: uol.svg
+- &nslg
+  name: National Scientific Library - Georgia
+  url: http://www.sciencelib.ge/en/
+  logo: nslg.png
 
 sections:
   enterprise-companies:
@@ -583,42 +599,42 @@ sections:
     organizations:
       title: Institutions who work with us
       items: # the count must be a multiple of 3
+        - *ou
         - *foster
-        - *ljmu
+        - *apollo
         - *aston
-        - *concordia
-        - *salford
-        - *regensburg
-        - *urfu
-        - *city
-        - *rsvpu
-        - *victoria
-        - *ricerca
         - *asu
-        - *apollo
-        - *zurich
-        - *lbu
-        - *ou
         - *brunel
+        - *city
         - *clok
+        - *concordia
+        - *dspace
+        - *foster
         - *gloucestershire
-        - *uwl
-        - *iiasa
-        - *middlesex
-        - *nulan
-        - *wr-leeds
-        - *strathprints
-        - *wr-york
-        - *ray
-        - *wr-sheffield
-        - *oro
-        - *apollo
-        - *trieste
+        - *hsu
         - *huddersfield
-        - *brunel
-        - *wr-leeds
+        - *iiasa
+        - *lbu
+        - *ljmu
+        - *middlesex
+        - *nslg
+        - *nulan
+        - *oro
+        - *ray
+        - *regensburg
+        - *ricerca
+        - *rsvpu
+        - *salford
         - *strathprints
-        - *ou
+        - *trieste
+        - *uol
+        - *urfu
+        - *uwl
+        - *victoria
+        - *wr-leeds
+        - *wr-sheffield
+        - *wr-york
+        - *zurich
     testimonials:
       title: What institutions say about us
   partners:
