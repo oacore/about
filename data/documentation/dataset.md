@@ -6,6 +6,12 @@ title: CORE Dataset
 
 ### 2018 onwards
 
+**CORE-MAG Mapping 2019-04-01**
+
+[Register for Access](/dataset/getdatadump)
+
+CORE Dataset to Microsoft Academic Graph (MAG) mapping (80MB compressed, 173 MB in total) - 8.9M items
+
 **Dataset 2018-03-01**
 
 [Register for Access](/dataset/getdatadump)
