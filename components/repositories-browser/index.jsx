@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Card, CardTitle, CardText, Row, Col, Spinner } from 'reactstrap'
 import { bind } from 'decko'
 import Fuse from 'fuse.js'
@@ -104,26 +104,47 @@ class RepositoryBrowser extends Component {
         )}
 
         <Row className="mb-4">
-          {page.map(item => (
-            <Col
-              lg="6"
-              className="mb-3 d-flex align-items-stretch"
-              key={item.id}
-            >
-              <Card body className="data-providers-card">
-                <CardTitle>
-                  <Link href={`~search?q=repositories.id:${item.id}`}>
-                    {item.name || 'No name repository'}
-                  </Link>
-                </CardTitle>
+          {page.map(item => {
+            const additionalMeta = []
+            if (item.repositoryLocation && item.repositoryLocation.countryName)
+              additionalMeta.push(item.repositoryLocation.countryName)
 
-                <CardText className="font-italic">
-                  {item.repositoryLocation &&
-                    item.repositoryLocation.countryName}
-                </CardText>
-              </Card>
-            </Col>
-          ))}
+            if (item.urlHomepage) {
+              additionalMeta.push(
+                <a
+                  href={item.urlHomepage}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.urlHomepage.replace(/(https?):\/\//i, '')}
+                </a>
+              )
+            }
+
+            return (
+              <Col
+                lg="6"
+                className="mb-3 d-flex align-items-stretch"
+                key={item.id}
+              >
+                <Card body className="data-providers-card">
+                  <CardTitle>
+                    <Link href={`~search?q=repositories.id:${item.id}`}>
+                      {item.name || 'No name repository'}
+                    </Link>
+                  </CardTitle>
+                  <CardText className="font-italic">
+                    {additionalMeta.map((element, i) => (
+                      <Fragment>
+                        {element}
+                        {i < additionalMeta.length - 1 && ', '}
+                      </Fragment>
+                    ))}
+                  </CardText>
+                </Card>
+              </Col>
+            )
+          })}
         </Row>
 
         <Pagination
