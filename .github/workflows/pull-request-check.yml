@@ -15,6 +15,9 @@ jobs:
       - name: yarn install, build, and test
         run: |
           yarn install
-          yarn run build
-          yarn run lint
-
+          yarn build
+          yarn lint
+          yarn test-local
+          yarn start &
+        env:
+          NEXT_TARGET: server
