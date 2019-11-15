@@ -13,19 +13,19 @@ features:
       We aggregate and enrich open access research papers from around the world
 
       [Read about our data](~data)
-    picture: /static/images/globe.svg
+    picture: /images/globe.svg
   - title: Unique APIs
     description: |
       We provide seamless access to content and data, through our
       unique [APIs](~services#access-to-raw-data)
 
       **Perfect for [text mining](~about/endorsements#enterprise-companies)!**
-    picture: /static/images/api.svg
+    picture: /images/api.svg
   - title: Powerful Services
     description: |
       We create powerful [services](~services) for researchers, universities,
       and industry
-    picture: /static/images/hall.svg
+    picture: /images/hall.svg
 join:
   title: Join CORE
   lead: |

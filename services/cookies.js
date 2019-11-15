@@ -58,7 +58,7 @@ const cookiesManager = new CookiesManager({
 })
 
 const toggleAnalytics = enabled => {
-  const analyticsSrc = '/static/js/ga.js'
+  const analyticsSrc = '/js/ga.js'
   if (enabled) {
     const script = document.createElement('script')
     script.src = analyticsSrc

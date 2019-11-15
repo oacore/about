@@ -5,24 +5,24 @@ tagline: One-click access to free copies of research papers whenever you hit the
 description: |
 
 screenshot:
-  source: /static/images/screenshots/discovery.svg
+  source: /images/screenshots/discovery.svg
   caption: |
 
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/paywall-2.svg
+  picture: /images/icons/paywall-2.svg
   description: |
     Overcome publishers' paywalls by discovering open access versions of papers
 -
   title: Key message 2
-  picture: /static/images/icons/oa-3.svg
+  picture: /images/icons/oa-3.svg
   description: |
     Backed by the world's largest dataset of open access full texts with over millions of monthly active users
 -
   title: Key message 3
-  picture: /static/images/icons/extension.svg
+  picture: /images/icons/extension.svg
   description: |
     Easy to install browser extension and seamless repository integration
 
@@ -104,13 +104,13 @@ what-is-included:
 related-services:
 -
   title: CORE Recommender
-  picture: /static/images/services/recommender.svg
+  picture: /images/services/recommender.svg
   url: ~services/recommender
 -
   title: CORE FastSync
-  picture: /static/images/services/fastsync.svg
+  picture: /images/services/fastsync.svg
   url: ~services/fastsync
 -
   title: CORE API
-  picture: /static/images/services/api.svg
+  picture: /images/services/api.svg
   url: ~services/api

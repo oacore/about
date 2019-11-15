@@ -211,6 +211,6 @@ browse-year-month-day-repo-page:
 
 blog: https://blog.core.ac.uk
 
-static: /static
-images: /static/images
-documents: /static/documents
+static: /
+images: /images
+documents: /documents

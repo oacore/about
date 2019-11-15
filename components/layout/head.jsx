@@ -17,9 +17,9 @@ const Head = ({ title, description, keywords, children, ...restProps }) => (
       />
     )}
 
-    <link rel="shortcut icon" href="/static/favicon/favicon-32px.png" />
-    <link rel="icon" href="/static/favicon/favicon-128px.png" />
-    <link rel="icon" href="/static/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/public/favicon/favicon-32px.png" />
+    <link rel="icon" href="/public/favicon/favicon-128px.png" />
+    <link rel="icon" href="/public/favicon/favicon.svg" />
 
     {children}
   </NextHead>

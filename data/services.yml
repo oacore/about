@@ -30,8 +30,8 @@ sections:
     action:
       caption: Learn more about the CORE API
       url: ~services/api
-    logo: /static/images/services/api.svg
-    screenshot: /static/images/screenshots/api.png
+    logo: /images/services/api.svg
+    screenshot: /images/screenshots/api.png
   -
     id: dataset
     title: Dataset
@@ -41,8 +41,8 @@ sections:
     action:
       caption: Learn more about the CORE Dataset
       url: ~services/dataset
-    logo: /static/images/services/dataset.svg
-    screenshot: /static/images/screenshots/dataset.png
+    logo: /images/services/dataset.svg
+    screenshot: /images/screenshots/dataset.png
   -
     id: fastsync
     title: FastSync
@@ -52,8 +52,8 @@ sections:
     action:
       caption: Learn more about the CORE FastSync
       url: ~services/fastsync
-    logo: /static/images/services/fastsync.svg
-    screenshot: /static/images/screenshots/fastsync.png
+    logo: /images/services/fastsync.svg
+    screenshot: /images/screenshots/fastsync.png
 -
   id: content-discovery
   title: Content discovery
@@ -74,8 +74,8 @@ sections:
     action:
       caption: Learn more about the CORE Recommender
       url: ~services/recommender
-    logo: /static/images/services/recommender.svg
-    screenshot: /static/images/screenshots/recommender.png
+    logo: /images/services/recommender.svg
+    screenshot: /images/screenshots/recommender.png
   -
     id: discovery
     title: Discovery
@@ -85,8 +85,8 @@ sections:
     action:
       caption: Learn more about the CORE Discovery
       url: ~services/discovery
-    logo: /static/images/services/discovery.svg
-    screenshot: /static/images/screenshots/discovery.png
+    logo: /images/services/discovery.svg
+    screenshot: /images/screenshots/discovery.png
 -
   id: managing-content
   title: Managing content
@@ -100,5 +100,5 @@ sections:
     action:
       caption: Learn more about the CORE Repository Dashboard
       url: ~services/repository-dashboard
-    logo: /static/images/services/repository-dashboard.svg
-    screenshot: /static/images/screenshots/repository-dashboard.png
+    logo: /images/services/repository-dashboard.svg
+    screenshot: /images/screenshots/repository-dashboard.png

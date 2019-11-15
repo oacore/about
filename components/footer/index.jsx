@@ -34,7 +34,7 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/static/images/logos/ou.png" alt="The Open University" />
+          <img src="/images/logos/ou.png" alt="The Open University" />
         </a>
         <a
           id="footer-logo-jisc"
@@ -43,7 +43,7 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/static/images/logos/jisc.svg" alt="Jisc" />
+          <img src="/images/logos/jisc.svg" alt="Jisc" />
         </a>
         <Markdown className="footer-partners-item footer-partners-text">
           {partners}
