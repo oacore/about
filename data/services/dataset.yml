@@ -3,24 +3,24 @@ id: dataset
 title: CORE Dataset
 tagline: Download millions of research outputs for text and data analysis
 description: |
-  
+
 screenshot:
-  source: /static/images/screenshots/dataset.png
+  source: /images/screenshots/dataset.png
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/big-data-4.svg
+  picture: /images/icons/big-data-4.svg
   description: |
     Download all CORE data for big data processing
 -
   title: Key message 2
-  picture: /static/images/icons/analyse.svg
+  picture: /images/icons/analyse.svg
   description: |
     Prototype, analyse and mine your data in your infrastructure
 -
   title: Key message 3
-  picture: /static/images/icons/processing.svg
+  picture: /images/icons/processing.svg
   description: |
     World's largest full text collection of scientific papers
     for machine processing
@@ -34,7 +34,7 @@ main: |
 additional:
   title: Available datasets
   content: |
-    
+
     **Dataset 2018-03-01**
 
     Metadata only dataset (beta) (127 GB) - 123M metadata items,
@@ -48,15 +48,15 @@ additional:
 what-is-included:
   title:  What’s included
   content: |
-    The dataset is free to use for non-commercial purposes. If you want to use the dataset for 
-    commercial purposes, including consultancies and commercial analysis, please [contact](~about/#contact) us. 
+    The dataset is free to use for non-commercial purposes. If you want to use the dataset for
+    commercial purposes, including consultancies and commercial analysis, please [contact](~about/#contact) us.
     The dataset provides you with:
 
     * The entire CORE's corpus of both metadata and full texts in a machine processable format.
-    * Mappings of the CORE articles to entities in the Micrsoft Academic Graph (MAG), enabling to access 
-      CORE fulltexts and use additional entities from MAG where available. 
+    * Mappings of the CORE articles to entities in the Micrsoft Academic Graph (MAG), enabling to access
+      CORE fulltexts and use additional entities from MAG where available.
     * Detailed [documentation](~documentation/dataset) on how to download the CORE dataset and how data is organised.
-    
+
     ### Disclaimer
 
     This dataset has been created from information that was publicly available
@@ -72,22 +72,22 @@ what-is-included:
     dataset does not breach copyright. The dataset is in no way intended
     for the purposes of reading the original publications, but for machine
     processing only.
-    
+
   actions:
     primary:
       url: /dataset/getdatadump
       caption: Register for free access
-  
+
 related-services:
 -
   title: CORE API
-  picture: /static/images/services/api.svg
+  picture: /images/services/api.svg
   url: ~services/api
 -
   title: CORE FastSync
-  picture: /static/images/services/fastsync.svg
+  picture: /images/services/fastsync.svg
   url: ~services/fastsync
 -
   title: CORE Discovery
-  picture: /static/images/services/discovery.svg
+  picture: /images/services/discovery.svg
   url: ~services/discovery

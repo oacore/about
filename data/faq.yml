@@ -460,7 +460,7 @@ sections:
         question: |
           I need a high resolution logo of CORE. Where can I find it?
         answer: |
-          [Download](/static/resources/core-logo.png)
+          [Download](/resources/core-logo.png)
           a high resolution logo of CORE.
       - slug: CORE-brochure
         question: |
@@ -473,7 +473,7 @@ sections:
           Where can I find CORE’s flyer?
         answer: |
           You can find CORE’s flyer
-          [here](/static/resources/core-flyer-updated-july2017.pdf).
+          [here](/resources/core-flyer-updated-july2017.pdf).
       - slug: harvested-by-CORE-snippet
         question: |
           How can I embed the “harvested by CORE” snippet on my website?

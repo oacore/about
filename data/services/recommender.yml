@@ -6,25 +6,25 @@ description: |
   The recommender is a plugin for repositories, journal systems and web interfaces that provides suggestions on relevant articles to the one currently dispolayed. Its purpose is to support users in discovering articles of interest from across the network of open access repositories. We have validated that all recommended articles are free to read and can be accessed without a paywall. Thus, the CORE Recommender increases the visibility of open access content. Being open should pay off!
 
 screenshot:
-  source: /static/images/screenshots/recommender.png
+  source: /images/screenshots/recommender.png
   caption: |
 
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/discoverable.svg
+  picture: /images/icons/discoverable.svg
   description: |
     Make your repository content more discoverable from across the global
     network of CORE data providers
 -
   title: Key message 2
-  picture: /static/images/icons/finding.svg
+  picture: /images/icons/finding.svg
   description: |
     Support users in finding articles relevant to their interests
 -
   title: Key message 3
-  picture: /static/images/icons/installation.svg
+  picture: /images/icons/installation.svg
   description: |
     Easy installation to all repositories, journals and web interfaces
 
@@ -72,7 +72,7 @@ testimonial:
   author:
     name: Arthur Smith
     role: Deputy Manager of Scholarly Communication (Open Access), Cambridge University
-    picture: /static/images/people/smith.jpg
+    picture: /images/people/smith.jpg
 
 what-is-included:
   title:  What’s included
@@ -94,13 +94,13 @@ what-is-included:
 related-services:
 -
   title: CORE Discovery
-  picture: /static/images/services/discovery.svg
+  picture: /images/services/discovery.svg
   url: ~services/discovery
 -
   title: CORE Search
-  picture: /static/images/services/search.svg
+  picture: /images/services/search.svg
   url: ~services/search
 -
   title: CORE Repository Dashboard
-  picture: /static/images/services/repository-dashboard.svg
+  picture: /images/services/repository-dashboard.svg
   url: ~services/repository-dashboard

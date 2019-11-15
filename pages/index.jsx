@@ -30,7 +30,7 @@ const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
         <Switcher.Item
           id={id}
           title={organization.name}
-          picture={`/static/images/logos/${organization.logo}`}
+          picture={`/images/logos/${organization.logo}`}
           key={id}
         >
           <blockquote className="blockquote">

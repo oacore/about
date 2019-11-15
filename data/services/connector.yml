@@ -11,24 +11,24 @@ description: |
   ResourceSync protocol.
 
 screenshot:
-  source: /static/images/screenshots/connector.png
+  source: /images/screenshots/connector.png
   caption: |
     Description of screenshot, which may a [link](~home).
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /images/icons/powerful-chip.svg
   description: |
     Access Gold and Hybrid Gold Open Access articles from major publishers
 -
   title: Key message 2
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /images/icons/powerful-chip.svg
   description: |
     Improve the way you work by accessing non-standard publisher systems
 -
   title: Key message 3
-  picture: /static/images/icons/powerful-chip.svg
+  picture: /images/icons/powerful-chip.svg
   description: |
     Be among the first to tkae advantage of the ResourceSync capabilities
 
@@ -78,13 +78,13 @@ what-is-included:
 related-services:
 -
   title: CORE FastSync
-  picture: /static/images/services/fastsync.svg
+  picture: /images/services/fastsync.svg
   url: ~services/fastsync
 -
   title: CORE API
-  picture: /static/images/services/api.svg
+  picture: /images/services/api.svg
   url: ~services/api
 -
   title: CORE Dataset
-  picture: /static/images/services/dataset.svg
+  picture: /images/services/dataset.svg
   url: ~services/dataset

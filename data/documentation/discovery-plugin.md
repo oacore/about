@@ -55,7 +55,7 @@ below). The&nbsp;plugin will look similar on your repository.
   <a href="http://oro.open.ac.uk/54889/" title="Open example in ORO">
     <img
       class="img-fluid"
-      src="/static/images/discovery/oro-repository-plugin.png"
+      src="/public/images/discovery/oro-repository-plugin.png"
       alt="CORE Discovery repository plugin at Open Research Online"
     >
   </a>

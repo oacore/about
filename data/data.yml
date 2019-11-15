@@ -20,7 +20,7 @@ sections:
   link:
     caption: How we compare to other services?
     url: https://scholarlycommunications.jiscinvolve.org/wp/files/2018/06/HowCOREcomparesMay2018-2.pdf
-  image: /static/images/library.svg
+  image: /images/library.svg
 - title: |
     CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable
     research papers
@@ -31,7 +31,7 @@ sections:
   link:
     caption: Learn more about the nature of our dataset
     url: ~services#access-to-raw-data
-  image: /static/images/cluster.svg
+  image: /images/cluster.svg
 - title: |
     We're truly global, aggregating from
     <mark>{{repositoriesCount}}</mark>&nbsp;data providers,
@@ -41,7 +41,7 @@ sections:
   link:
     caption: Learn about how we harvest data or become a data provider
     url: ~about#how-it-works
-  image: /static/images/data-providers.png
+  image: /images/data-providers.png
 - title: |
     You can access the data for free, and do exciting and powerful
     things with it
@@ -50,4 +50,4 @@ sections:
   link:
     caption: Learn more about machine access to our data
     url: ~services#access-to-raw-data
-  image: /static/images/coding.svg
+  image: /images/coding.svg

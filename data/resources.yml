@@ -3,19 +3,19 @@ resources:
 - id: logo
   name: Logo
   type: png
-  url: /static/resources/core-logo.png
+  url: /resources/core-logo.png
   picture: logo.png
 -
   id: brochure
   name: Brochure
   type: pdf
-  url: /static/resources/core-leaflet-2019.pdf
+  url: /resources/core-leaflet-2019.pdf
   picture: brochure.png
 -
   id: business-card
   name: Business card
   type: pdf
-  url: /static/resources/core-business-card.pdf
+  url: /resources/core-business-card.pdf
   picture: bcard.png
 -
   id: promo-text
