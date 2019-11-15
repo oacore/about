@@ -5,3 +5,4 @@ overrides:
   - files: '*.scss'
     options:
       singleQuote: false
+endOfLine: 'lf'

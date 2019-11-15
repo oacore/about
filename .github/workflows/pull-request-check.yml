@@ -17,7 +17,5 @@ jobs:
           yarn install
           yarn build
           yarn lint
-          yarn test-local
-          yarn start &
         env:
           NEXT_TARGET: server
