@@ -7,16 +7,6 @@ import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
 
 class RepositoryBrowser extends Component {
-  static searchOptions = {
-    threshold: 0.2,
-    location: 10,
-    distance: 300,
-    maxPatternLength: 100,
-    keys: ['name', 'repositoryLocation.countryName'],
-  }
-
-  static pageSize = 10
-
   static fetchRepositories(url) {
     return fetch(url)
       .then(res => {
@@ -45,6 +35,16 @@ class RepositoryBrowser extends Component {
       isFetching: false,
     })
   }
+
+  static searchOptions = {
+    threshold: 0.2,
+    location: 10,
+    distance: 300,
+    maxPatternLength: 100,
+    keys: ['name', 'repositoryLocation.countryName'],
+  }
+
+  static pageSize = 10
 
   @bind
   filter(event) {

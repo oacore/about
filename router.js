@@ -33,7 +33,7 @@ class Router {
     if (process.env.NODE_ENV === 'development') {
       const match = pattern.join('/')
       if (match.length < url.pathname.length)
-        console.log(`Partial match: ${href} -> ${match}`)
+        console.warn(`Partial match: ${href} -> ${match}`)
     }
 
     url.pathname = routesMap.get(pattern.join('/'))

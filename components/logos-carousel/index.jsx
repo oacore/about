@@ -22,8 +22,6 @@ const spliceChunks = (array, chunkSize) => {
 }
 
 class LogosCarousel extends Component {
-  static itemsPerSlide = 3
-
   state = {
     activeIndex: 0,
     itemChunks: [],
@@ -49,6 +47,8 @@ class LogosCarousel extends Component {
   onExited() {
     this.animating = false
   }
+
+  static itemsPerSlide = 3
 
   @bind
   goToIndex(newIndex) {
