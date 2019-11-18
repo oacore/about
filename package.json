@@ -25,7 +25,7 @@
     "eslint-plugin-react": "^7.16.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.4.3",
-    "prettier": "^1.15.2"
+    "prettier": "^1.19.1"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
