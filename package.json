@@ -39,7 +39,7 @@
     "json-loader": "^0.5.7",
     "leaflet": "^1.4.0",
     "leaflet.markercluster": "^1.4.1",
-    "markdown-it": "^8.4.2",
+    "markdown-it": "^10.0.0",
     "next": "^8.1.0",
     "next-images": "^1.2.0",
     "node-fetch": "^2.3.0",
