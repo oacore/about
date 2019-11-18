@@ -187,8 +187,7 @@ const AboutPage = () => (
               name={resource.name}
               format={resource.type}
               picture={
-                resource.picture &&
-                `/images/resources/${resource.picture}`
+                resource.picture && `/images/resources/${resource.picture}`
               }
               link={resource.url}
             />

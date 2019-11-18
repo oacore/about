@@ -99,8 +99,7 @@ const AmbassadorsPage = () => (
               name={resource.name}
               format={resource.type}
               picture={
-                resource.picture &&
-                `/images/resources/${resource.picture}`
+                resource.picture && `/images/resources/${resource.picture}`
               }
               link={resource.url}
             />
@@ -127,9 +126,7 @@ const AmbassadorsPage = () => (
               className="mb-3"
               name={member.name}
               role={member.country}
-              picture={
-                member.picture && `/images/people/${member.picture}`
-              }
+              picture={member.picture && `/images/people/${member.picture}`}
             />
           </Col>
         ))}
