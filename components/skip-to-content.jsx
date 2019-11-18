@@ -7,7 +7,6 @@ const SkipToContent = ({ path, caption }) => (
       <a
         className="btn btn-outline-primary sr-only sr-only-focusable p-1 my-1"
         href={path}
-        passHref
       >
         {caption}
       </a>

@@ -1,27 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import NextDocument, { Head, NextScript } from 'next/document'
-
-/* eslint-disable */
-class Main extends Component {
-  static contextTypes = {
-    _documentProps: PropTypes.any,
-  }
-
-  render() {
-    const { html } = this.context._documentProps
-    const { className = '', ...restProps } = this.props
-    return (
-      <div
-        id="__next"
-        className={`page ${className}`}
-        dangerouslySetInnerHTML={{ __html: html }}
-        {...restProps}
-      />
-    )
-  }
-}
-/* eslint-enable */
+import React from 'react'
+import NextDocument, { Head, Main, NextScript } from 'next/document'
 
 class Document extends NextDocument {
   static async getInitialProps(ctx) {
@@ -43,4 +21,3 @@ class Document extends NextDocument {
 }
 
 export default Document
-export { Main }
