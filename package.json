@@ -65,7 +65,7 @@
     "test": "yarn test-dev",
     "dev": "next",
     "build": "next build",
-    "export": "NEXT_TARGET=server next build && NEXT_TARGET=server next export -o dist",
+    "export": "NEXT_TARGET=server next build && NEXT_TARGET=server next export",
     "start": "next start"
   }
 }
