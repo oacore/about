@@ -58,6 +58,7 @@ const nextConfig = {
   },
 
   target: process.env.NEXT_TARGET || 'serverless',
+  exportTrailingSlash: true,
 }
 
 module.exports = withImages(withSass(withCss(nextConfig)))
