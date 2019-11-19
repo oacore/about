@@ -59,8 +59,8 @@ const AmbassadorsPage = () => (
               longitude={member.location.longitude}
               src={
                 member.picture
-                  ? `/static/images/people/${member.picture}`
-                  : '/static/images/unknown.svg'
+                  ? `/images/people/${member.picture}`
+                  : '/images/unknown.svg'
               }
               alt={`${member.name}'s photo`}
               title={`${member.name}, ${member.country}`}
@@ -99,8 +99,7 @@ const AmbassadorsPage = () => (
               name={resource.name}
               format={resource.type}
               picture={
-                resource.picture &&
-                `/static/images/resources/${resource.picture}`
+                resource.picture && `/images/resources/${resource.picture}`
               }
               link={resource.url}
             />
@@ -127,9 +126,7 @@ const AmbassadorsPage = () => (
               className="mb-3"
               name={member.name}
               role={member.country}
-              picture={
-                member.picture && `/static/images/people/${member.picture}`
-              }
+              picture={member.picture && `/images/people/${member.picture}`}
             />
           </Col>
         ))}
@@ -137,7 +134,7 @@ const AmbassadorsPage = () => (
         <Col className="d-flex flex-column" sm="6" md="4" lg="3" tag="li">
           <TeamMember
             name="You?"
-            picture="/static/images/unknown-question-mark.svg"
+            picture="/images/unknown-question-mark.svg"
             className="mb-3"
           >
             <Button block href="~contact">

@@ -141,7 +141,7 @@ const AboutPage = () => (
               name={member.name}
               role={member.role}
               description={member.description}
-              picture={`/static/images/team/${member.picture}`}
+              picture={`/images/team/${member.picture}`}
             />
           </Col>
         ))}
@@ -187,8 +187,7 @@ const AboutPage = () => (
               name={resource.name}
               format={resource.type}
               picture={
-                resource.picture &&
-                `/static/images/resources/${resource.picture}`
+                resource.picture && `/images/resources/${resource.picture}`
               }
               link={resource.url}
             />

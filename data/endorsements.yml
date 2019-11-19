@@ -17,7 +17,7 @@ testimonials:
   author:
     name: Kuansan Wang
     role: Managing Director, MSR Outreach Academic Services
-    picture: /static/images/people/kuansanwang.jpg
+    picture: /images/people/kuansanwang.jpg
 - &jon-tennant
   id: jon-tennant
   content: |
@@ -29,7 +29,7 @@ testimonials:
   author:
     name: Jon Tennant
     role: Rogue Paleontologist and Founder of the Open Science MOOC
-    picture: /static/images/people/tennant.png
+    picture: /images/people/tennant.png
 - &paolo-manghi
   id: paolo-manghi
   content: |
@@ -45,7 +45,7 @@ testimonials:
     role: >
       Institute of Information Science and Technologies (CNR),
       Technical Manager at OpenAIRE
-    picture: /static/images/people/manghi.jpeg
+    picture: /images/people/manghi.jpeg
 - &michael-jubb
   id: michael-jubb
   content: |
@@ -67,7 +67,7 @@ testimonials:
   author:
     name: Ben Johnson
     role: Research Policy Adviser
-    picture: /static/images/people/johnson.jpg
+    picture: /images/people/johnson.jpg
 - &nick-sheppard
   id: nick-sheppard
   content: |
@@ -79,7 +79,7 @@ testimonials:
   author:
     name: Nick Sheppard
     role: Repository Developer at Leeds Beckett University
-    picture: /static/images/people/sheppard.png
+    picture: /images/people/sheppard.png
 - &joe-mcarthur-and-david-carroll
   id: joe-mcarthur-and-david-carroll
   content: |
@@ -90,7 +90,7 @@ testimonials:
   author:
     name: Joe Mcarthur and David Carroll
     role: Founders of the Open Access Button
-    picture: /static/images/people/joe.jpg
+    picture: /images/people/joe.jpg
 - &nicola-dowson
   id: nicola-dowson
   content: |
@@ -100,7 +100,7 @@ testimonials:
   author:
     name: Nicola Dowson
     role: Library Services Manager at Open University
-    picture: /static/images/people/dowson.jpeg
+    picture: /images/people/dowson.jpeg
 - &yvonne-budden
   id: yvonne-budden
   content: |
@@ -139,7 +139,7 @@ testimonials:
   author:
     name: Viktor Botev
     role: CTO, Iris AI AS
-    picture: /static/images/people/botev.jpg
+    picture: /images/people/botev.jpg
   api: true
 - &kim-sejin
   id: kim-sejin
@@ -152,7 +152,7 @@ testimonials:
   author:
     name: Kim Sejin
     role: Content Manager, Naver Academic Service
-    picture: /static/images/people/sejin.png
+    picture: /images/people/sejin.png
 
 - &peter-raeth
    id: peter-raeth
@@ -182,7 +182,7 @@ testimonials:
   author:
     name: Scott Chamberlain
     role: Developer, rOpenSci
-    picture: /static/images/people/scottchamberlain.jpg
+    picture: /images/people/scottchamberlain.jpg
   api: true
 - &david-walters
   id: david-walters
@@ -193,7 +193,7 @@ testimonials:
   author:
     name: David Walters
     role: Open Access Officer, Brunel University
-    picture: /static/images/people/walters.jpg
+    picture: /images/people/walters.jpg
   api: true
 - &colin-goldberg
    id: colin-goldberg

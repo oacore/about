@@ -82,7 +82,7 @@ class LogosCarousel extends Component {
           const item = (
             <LogosCarouselItem
               key={name}
-              src={`/static/images/logos/${logo}`}
+              src={`/images/logos/${logo}`}
               alt={name}
             />
           )

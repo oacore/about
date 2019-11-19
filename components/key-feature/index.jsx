@@ -13,17 +13,12 @@ const KeyFeature = ({
   const WrapperTag = Tag || href ? Fragment : 'div'
   const ContentTag = Tag !== 'a' && href ? 'a' : Fragment
 
-  const contentProps = {
-    className: 'key-feature-link',
-  }
-
-  if (WrapperTag === Fragment) {
-    Object.assign(
-      contentProps,
-      { className: `key-feature ${className} ${contentProps.className}` },
-      restProps
-    )
-  }
+  const contentProps =
+    ContentTag !== Fragment
+      ? {
+          className: 'key-feature-link',
+        }
+      : restProps
 
   return (
     <WrapperTag className={`key-feature ${className}`} {...restProps}>

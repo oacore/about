@@ -20,8 +20,8 @@ $skew-section-icon-size: 4rem;
     width: 2 * $icon-size + $spacer;
     height: $icon-size;
     margin: auto;
-    background: url("../../static/images/icons/university.svg") no-repeat 0 50%,
-      url("../../static/images/icons/factory.svg") no-repeat 100% 50%;
+    background: url("/images/icons/university.svg") no-repeat 0 50%,
+      url("/images/icons/factory.svg") no-repeat 100% 50%;
     background-size: auto 100%;
   }
 }
@@ -45,7 +45,7 @@ $skew-section-icon-size: 4rem;
     height: $icon-size;
     margin: auto;
     /* Icon made by Freepik (https://www.flaticon.com/authors/freepik) */
-    background: url("../../static/images/icons/group.svg") no-repeat center /
+    background: url("/images/icons/group.svg") no-repeat center /
       contain;
   }
 }

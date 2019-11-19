@@ -1,5 +1,5 @@
 import React from 'react'
-import NextApp, { Container as NextContainer } from 'next/app'
+import NextApp from 'next/app'
 import { Button, Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
@@ -47,7 +47,7 @@ class App extends NextApp {
     const { Component, pageProps, router } = this.props
 
     return (
-      <NextContainer>
+      <>
         {router.route !== '/cookies' && !isCookiesAccepted() && <Cookies />}
         <Layout
           title={config.name}
@@ -60,7 +60,7 @@ class App extends NextApp {
         >
           <Component {...pageProps} />
         </Layout>
-      </NextContainer>
+      </>
     )
   }
 }

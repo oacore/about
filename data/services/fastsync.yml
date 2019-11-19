@@ -6,24 +6,24 @@ description: |
   asdads
 
 screenshot:
-  source: /static/images/screenshots/fastsync.png
+  source: /images/screenshots/fastsync.png
   caption: |
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/sync.svg
+  picture: /images/icons/sync.svg
   description: |
     An enterprise solution to keep your data in sync with research content
     from around the world
 -
   title: Key message 2
-  picture: /static/images/icons/solving.svg
+  picture: /images/icons/solving.svg
   description: |
      Spend less time collecting data and more on solving problems
 -
   title: Key message 3
-  picture: /static/images/icons/fast.svg
+  picture: /images/icons/fast.svg
   description: |
     Fast and incremental updates as soon as they become available.
     No usage restrictions
@@ -49,7 +49,7 @@ testimonial:
   author:
     name: Kim Sejin
     role: Content Manager, Naver Academic Service
-    picture: /static/images/people/sejin.png
+    picture: /images/people/sejin.png
 
 
 what-is-included:
@@ -70,13 +70,13 @@ what-is-included:
 related-services:
 -
   title: CORE API
-  picture: /static/images/services/api.svg
+  picture: /images/services/api.svg
   url: ~services/api
 -
   title: CORE Dataset
-  picture: /static/images/services/dataset.svg
+  picture: /images/services/dataset.svg
   url: ~services/dataset
 -
   title: CORE Discovery
-  picture: /static/images/services/discovery.svg
+  picture: /images/services/discovery.svg
   url: ~services/discovery

@@ -6,24 +6,24 @@ description:
   The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.
 
 screenshot:
-  source: /static/images/screenshots/repository-dashboard.png
+  source: /images/screenshots/repository-dashboard.png
   caption: |
 
 
 features:
 -
   title: Key message 1
-  picture: /static/images/icons/statistics.svg
+  picture: /images/icons/statistics.svg
   description: |
     Access your collection's download statistics and harvesting status
 -
   title: Key message 2
-  picture: /static/images/icons/update.svg
+  picture: /images/icons/update.svg
   description: |
     Update metadata records with a single button click
 -
   title: Key message 3
-  picture: /static/images/icons/manage.svg
+  picture: /images/icons/manage.svg
   description: |
     Manage access to documents from your repository in CORE
 
@@ -77,7 +77,7 @@ testimonial:
   author:
     name: George Macgregor
     role: Institutional Repository Manager, University of Strathclyde
-    picture: /static/images/people/macgregor.png
+    picture: /images/people/macgregor.png
 
 what-is-included:
   title:  What’s included
@@ -100,13 +100,13 @@ what-is-included:
 related-services:
 -
   title: CORE Recommender
-  picture: /static/images/services/recommender.svg
+  picture: /images/services/recommender.svg
   url: ~services/recommender
 -
   title: CORE Discovery
-  picture: /static/images/services/discovery.svg
+  picture: /images/services/discovery.svg
   url: ~services/discovery
 -
   title: CORE Search
-  picture: /static/images/services/search.svg
+  picture: /images/services/search.svg
   url: ~services/search
