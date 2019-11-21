@@ -3,7 +3,9 @@ id: fastsync
 title: CORE FastSync
 tagline: Keep your data in sync with CORE and never miss a new research output
 description: |
-  asdads
+  CORE FastSync is an enterprise solution that enables you to keep an always
+  up to date copy of all CORE data in your infrastructure. New content can be
+  transferred as soon as it becomes available in CORE.
 
 screenshot:
   source: /images/screenshots/fastsync.png
@@ -29,7 +31,12 @@ features:
     No usage restrictions
 
 main: |
-  Enables you to keep an always up to date copy of all CORE data in your infrastructure, new content can be transferred as soon as it becomes available in CORE. It provides fast, incremental and enterprise data synchronisation using a single API. FastSync is our premium service for both commercial and non-commercial purposes. Ideal for all types of businesses, from start-ups to large enterprises.
+  Enables you to keep an always up to date copy of all CORE data in your
+  infrastructure, new content can be transferred as soon as it becomes
+  available in CORE. It provides fast, incremental and enterprise data
+  synchronisation using a single API. FastSync is our premium service for both
+  commercial and non-commercial purposes. Ideal for all types of businesses,
+  from start-ups to large enterprises.
 
 additional:
   title: Where to start?
