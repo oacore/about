@@ -16,7 +16,7 @@ jobs:
 
       - name: git rebase
         run: |
-          git rebase master
+          git rebase origin/master
 
       - name: Push changes
         uses: ad-m/github-push-action@master
