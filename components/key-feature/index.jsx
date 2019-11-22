@@ -16,7 +16,8 @@ const KeyFeature = ({
   const contentProps =
     ContentTag !== Fragment
       ? {
-          className: 'key-feature-link',
+          className: `key-feature ${className} key-feature-link`,
+          ...restProps,
         }
       : restProps
 
