@@ -1,0 +1,36 @@
+name: Rebase content branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: content
+
+      - name: git rebase
+        run: |
+          git rebase master
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
+
+      - name: Send Slack notification if rebase failed
+        if: failure()
+        uses: rtCamp/action-slack-notify@master
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_FE_ALERTS_WEB_HOOK }}
+          SLACK_COLOR: '#8B0000'
+          SLACK_ICON: 'https://avatars0.githubusercontent.com/u/20046234'
+          SLACK_MESSAGE: 'Git rebase of content branch in next repo failed. Please investigate and fix it.'
+          SLACK_TITLE: Rebase failed
+          SLACK_USERNAME: 'oa-bot'
