@@ -195,6 +195,22 @@ testimonials:
     role: Open Access Officer, Brunel University
     picture: /images/people/walters.jpg
   api: true
+- &alberto-cabezas
+  id: alberto-cabezas
+  content: |
+    We strongly believe on collaborative initiatives. This service provided
+    by CORE will strengthen the visibility of Latin American scientific production
+    by contributing to one of the main open access collection in the world and,
+    at the same time, together we will provide value-added services to open access
+    content for regional repositories. In fact,  now our users will find similar
+    content in global CORE collection,  that is open,  sustaining ecosystem without
+    “paywalls”.  We think that the integration of the recommender service is the
+    first step for new collaborations to bring value add services to our users.
+  author:
+    name: Alberto Cabezas
+    role: Executive Secretary, LA Referencia
+    picture: /images/people/alberto.jpg
+  api: true
 - &colin-goldberg
    id: colin-goldberg
    content: |
@@ -402,6 +418,11 @@ organizations:
   name: Leeds Beckett University
   logo: lbu.png
   testimonial: *nick-sheppard
+- &lbu
+  id: laref
+  name: LA Referencia
+  logo: laref.png
+  testimonial: *alberto-cabezas
 - &brunel
   id: brunel
   name: Brunel University
