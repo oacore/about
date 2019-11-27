@@ -318,6 +318,11 @@ organizations:
   id: macmicro
   name: MacMicro Inc.
   logo: macmicro.png
+- &laref
+  id: laref
+  name: LA Referencia
+  url: http://www.lareferencia.info/en/
+  logo: laref.png
   # testimonial: *colin-goldberg
 # project partners
 - &microsoft
@@ -568,21 +573,21 @@ sections:
     organizations:
       title: Companies who work with us
       items: # the count must be a multiple of 3
-        - *naver
-        - *turnitin
-        - *ontochem
-        - *ropensci
-        - *research
-        - *wheesbee
-        - *iris-ai
-        - *rygbee
-        - *ritc
         - *4science
-        - *unsilo
-        - *macmicro
-        - *scilit
         - *intoolab
         - *iris-ai
+        - *laref
+        - *macmicro
+        - *naver
+        - *ontochem
+        - *research
+        - *ritc
+        - *ropensci
+        - *rygbee
+        - *scilit
+        - *turnitin
+        - *unsilo
+        - *wheesbee
     testimonials:
       title: What companies say about us
   academic-institutions:
