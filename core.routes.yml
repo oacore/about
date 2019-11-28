@@ -160,55 +160,6 @@ sitemapxml-index: /sitemap.xml/{index}
 
 repositories-location: /repositories/locations
 
-api-doc-generate:
-  pattern: /api-v2/doc
-  controller: CoreWebBundle:Swagger:generate
-api-doc-generate-resource:
-  pattern: /api-v2/doc/{resource}
-  controller: CoreWebBundle:Swagger:generateResource
-
-# CoreCommonBundle-apikeys:
-#   resource: CoreWebBundle/Resources/config/apikeys.yml
-#   prefix:   /api-keys
-# CoreCommonBundle-recommenders:
-#   resource: CoreWebBundle/Resources/config/recommenders.yml
-#   prefix:   /recommender
-
-browse-repositories:
-  pattern: /browse/repositories
-  controller: CoreWebBundle:Browse:browseRepositories
-browse-repository:
-  pattern: /browse/repository/{repo-id}
-  controller: CoreWebBundle:Browse:browseRepository
-browse-repository-by-page:
-  pattern: /browse/repository/{repo-id}/page/{page}
-  controller: CoreWebBundle:Browse:browseRepositoryByPage
-browse-latest:
-  pattern: /browse/latest
-  controller: CoreWebBundle:Browse:browseLatest
-browse-by-day:
-  pattern: /browse/day/{day}
-  controller: CoreWebBundle:Browse:browseByFullDay
-browse-by-day-page:
-  pattern: /browse/day/{day}/page/{page}
-  controller: CoreWebBundle:Browse:browseByFullDayPage
-browse:
-  pattern: /browse
-  controller: CoreWebBundle:Browse:browse
-browse-year:
-  pattern: /browse/{year}
-  controller: CoreWebBundle:Browse:browse
-browse-year-month:
-  pattern: /browse/{year}/{month}
-  controller: CoreWebBundle:Browse:browseByMonth
-browse-year-month-day:
-  pattern: /browse/{year}/{month}/{day}
-  controller: CoreWebBundle:Browse:browseByDay
-browse-year-month-day-repo:
-  pattern: /browse/{year}/{month}/{day}/repository/{repoId}
-browse-year-month-day-repo-page:
-  pattern: /browse/{year}/{month}/{day}/repository/{repoId}/page/{page}
-
 blog: https://blog.core.ac.uk
 
 static: /
