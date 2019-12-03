@@ -8,7 +8,7 @@ const CookiesForm = ({
   title,
   items,
   className = '',
-  id = 'cookies-popup',
+  id = 'cookies-form',
   itemDescriptionTitle = 'What are these?',
   submitCaption = 'Apply',
   optionalActions = null,
@@ -21,7 +21,7 @@ const CookiesForm = ({
     tag={Form}
     {...formProps}
   >
-    <CardTitle className="cookies-popup-title" tag="h4">
+    <CardTitle className="cookies-form-title" tag="h4">
       {title}
     </CardTitle>
     {Object.entries(items).map(

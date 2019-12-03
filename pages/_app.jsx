@@ -1,6 +1,6 @@
 import React from 'react'
 import NextApp from 'next/app'
-import { Button, Layout, CookiesPopup } from 'components'
+import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
 import { settings as cookieSettingsContext } from 'data/cookies.yml'
@@ -22,14 +22,8 @@ const Cookies = () => (
     method="post"
     title={cookieSettingsContext.popupTitle}
     items={getCookiesContext()}
-    itemDescriptionTitle={cookieSettingsContext.explanationCaption}
     onSubmit={handleCookiesUpdate}
     submitCaption={cookieSettingsContext.acceptCaption}
-    optionalActions={
-      <Button color="link" href="~cookies">
-        {cookieSettingsContext.readMoreCaption}
-      </Button>
-    }
   />
 )
 

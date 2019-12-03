@@ -9,6 +9,9 @@
   }
 }
 
+.cookies-form-title {
+}
+
 .cookies-form-details {
   margin-left: $custom-switch-width + $custom-control-gutter;
 
@@ -19,7 +22,7 @@
 
 @keyframes slide-in-up {
   from {
-    transform: translateY(100%);
+    transform: translateY(200%);
   }
 
   to {
@@ -31,13 +34,19 @@
   position: fixed;
   right: 0;
   bottom: 0;
+  display: flex;
+  align-items: flex-start;
+  padding: 1rem;
   width: 100%;
   z-index: $zindex-fixed;
-  box-shadow: 0 2px 4px rgba($black, 0.25);
+  background: $beige-dark;
+  box-shadow: 0 1px 2px rgba($black, 0.15), 0 4px 8px rgba($black, 0.25);
   animation: 0.25s 3s both slide-in-up;
 
   @include media-breakpoint-up("sm") {
+    bottom: 1rem;
     max-width: $content-max-width / 2;
+    border-radius: $border-radius;
   }
 
   @each $breakpoint, $container-max-width in $container-max-widths {
@@ -45,4 +54,59 @@
       right: calc((100% - #{$container-max-width}) / 2);
     }
   }
+}
+
+.cookies-popup-body {
+  flex: 1 1 auto;
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.cookies-popup-title {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cookies-popup-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: $grid-gutter-width / 2;
+  padding: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 50%;
+  background: rgba($black, 0.05);
+
+  @include hover-focus {
+    background: rgba($black, 0.1);
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active {
+    background: rgba($black, 0.1);
+
+    &:focus {
+      background: rgba($black, 0.1);
+    }
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent no-repeat center / contain;
+  }
+}
+
+.cookies-popup-button-settings::before {
+  background-image: url("settings.svg");
+}
+
+.cookies-popup-button-accept::before {
+  background-image: url("check.svg");
 }
