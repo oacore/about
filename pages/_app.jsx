@@ -4,6 +4,8 @@ import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
 import { settings as cookieSettingsContext } from 'data/cookies.yml'
+import Router from 'next/router'
+import withGA from 'next-ga'
 import {
   isCookiesAccepted,
   getCookiesContext,
@@ -59,4 +61,4 @@ class App extends NextApp {
   }
 }
 
-export default App
+export default withGA('UA-11307192-6', Router)(App)
