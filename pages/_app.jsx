@@ -61,4 +61,4 @@ class App extends NextApp {
   }
 }
 
-export default withGA('UA-11307192-6', Router)(App)
+export default withGA('UA-153989412-1', Router)(App)
