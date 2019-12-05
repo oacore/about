@@ -18,6 +18,8 @@ const searchConfig = {
   placeholder: patchStats(config.searchPlaceholder, config.statistics),
 }
 
+const cookieApply = false
+
 const Cookies = () => (
   <CookiesPopup
     action="/cookies"
@@ -61,4 +63,4 @@ class App extends NextApp {
   }
 }
 
-export default withGA('UA-153989412-1', Router)(App)
+export default cookieApply ? withGA('UA-153989412-1', Router)(App) : App
