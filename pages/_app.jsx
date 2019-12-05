@@ -18,7 +18,7 @@ const searchConfig = {
   placeholder: patchStats(config.searchPlaceholder, config.statistics),
 }
 
-const cookieApply = false
+const cookieApply = true
 
 const Cookies = () => (
   <CookiesPopup
