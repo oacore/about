@@ -6,7 +6,7 @@ class CookiesManager {
     this.eventListeners = new Map()
   }
 
-  get(name, defaultValue) {
+  get(name) {
     if (name == null) {
       const result = {}
       Object.keys(this.config).forEach(key => {
@@ -17,17 +17,14 @@ class CookiesManager {
 
     if (!(name in this.config)) return undefined
 
-    const [actualName, initialValue] = this.config[name]
-    const value = Cookies.getJSON(actualName)
-    const fallbackValue =
-      typeof defaultValue != 'undefined' ? defaultValue : initialValue
-    return typeof value == 'undefined' ? fallbackValue : value
+    const actualName = this.config[name]
+    return Cookies.getJSON(actualName)
   }
 
   set(name, value, options) {
     if (!(name in this.config)) return
 
-    const [actualName] = this.config[name]
+    const actualName = this.config[name]
     const actualOptions = {
       expires: 365,
       ...options,
@@ -53,8 +50,8 @@ class CookiesManager {
 }
 
 const cookiesManager = new CookiesManager({
-  essential: ['cookies_accepted', true],
-  analytics: ['analytics_allowed', true],
+  essential: 'cookies_accepted',
+  analytics: 'analytics_allowed',
 })
 
 const toggleAnalytics = enabled => {

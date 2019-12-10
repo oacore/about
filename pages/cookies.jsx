@@ -6,7 +6,7 @@ import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
 
 import { cookies } from '../services'
 
-export const isCookiesAccepted = () => cookies.get('essential', null) !== null
+export const isCookiesAccepted = () => cookies.get('essential') != null
 
 export const getCookiesContext = () =>
   Object.entries(cookies.get()).reduce((cookieItems, [key, value]) => {
@@ -24,9 +24,11 @@ export const handleCookiesUpdate = event => {
   const cookiesUpdate = new FormData(event.target)
   Object.entries(cookieItems).forEach(
     ([cookieName, { default: defaultValue }]) => {
-      let value = typeof defaultValue == 'undefined' ? false : defaultValue
-      if (cookiesUpdate.has(cookieName))
-        value = cookiesUpdate.get(cookieName) === 'on'
+      const fallbackValue =
+        typeof defaultValue == 'undefined' ? false : defaultValue
+      const value = cookiesUpdate.has(cookieName)
+        ? cookiesUpdate.get(cookieName) === 'on'
+        : fallbackValue
 
       cookies.set(cookieName, value)
     }
