@@ -12,10 +12,12 @@ const CookiesForm = ({
   itemDescriptionTitle = 'What are these?',
   submitCaption = 'Apply',
   optionalActions = null,
+  method = 'post',
   ...formProps
 }) => (
   <Card
     className={`card-body cookies-form ${className}`}
+    method={method}
     tag={Form}
     {...formProps}
   >
