@@ -18,8 +18,6 @@ const searchConfig = {
   placeholder: patchStats(config.searchPlaceholder, config.statistics),
 }
 
-const cookieApply = true
-
 const Cookies = () => (
   <CookiesPopup
     action="/cookies"
@@ -63,4 +61,14 @@ class App extends NextApp {
   }
 }
 
-export default cookieApply ? withGA('UA-153989412-1', Router)(App) : App
+const isAnalyticsEnabled = () => {
+  const { value, default: defaultValue } = getCookiesContext().analytics
+  return value != null ? value : defaultValue
+}
+
+const gaCode =
+  process.env.NODE_ENV === 'production' &&
+  isAnalyticsEnabled() &&
+  process.env.GA_CODE
+
+export default gaCode ? withGA(gaCode, Router)(App) : App

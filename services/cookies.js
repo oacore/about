@@ -54,29 +54,12 @@ const cookiesManager = new CookiesManager({
   analytics: 'analytics_allowed',
 })
 
-const toggleAnalytics = enabled => {
-  const analyticsSrc = '/js/ga.js'
-  if (enabled) {
-    const script = document.createElement('script')
-    script.src = analyticsSrc
-    document.body.append(script)
-  } else {
-    const selector = `script[src="${analyticsSrc}"]`
-    const script = document.body.querySelector(selector)
-    if (script) script.remove()
-  }
-}
-
 const handleCookiesChange = configDiff => {
-  // Enable analytics by default
-  if (configDiff.essential == null) toggleAnalytics(true)
-
-  Object.entries(configDiff).forEach(([key, value]) => {
+  Object.entries(configDiff).forEach(([key]) => {
     switch (key) {
       case 'essential':
         break
       case 'analytics':
-        toggleAnalytics(value)
         break
       default:
     }
