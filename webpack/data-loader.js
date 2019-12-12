@@ -31,6 +31,8 @@ const fetchStats = url => {
 }
 
 const saveCachedStats = (cacheFilePath, statisticsData) => {
+  if (!cacheFilePath) throw new Error('Cache path cannot be empty')
+
   return fsPromises.writeFile(cacheFilePath, statisticsData)
 }
 
@@ -54,7 +56,13 @@ const retrieveStats = async (url, catchFilePath) => {
   } catch (cacheError) {
     try {
       const stats = await fetchStats(url)
-      saveCachedStats(catchFilePath, JSON.stringify(stats))
+
+      try {
+        saveCachedStats(catchFilePath, JSON.stringify(stats))
+      } catch (cannotWriteFile) {
+        // ignore
+      }
+
       return stats
     } catch (fetchError) {
       return loadCachedStats(defaultStatsPath, { ignoreModified: true })
