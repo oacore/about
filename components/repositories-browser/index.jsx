@@ -11,7 +11,7 @@ class RepositoryBrowser extends Component {
     return fetch(url)
       .then(res => {
         if (res.ok) return res.json()
-        throw new Error(`Error loading repositories from ${url}`)
+        throw new Error(`Error loading data providers from ${url}`)
       })
       .then(repositories =>
         repositories.filter(({ name }) => name && name !== 'name')
@@ -89,18 +89,18 @@ class RepositoryBrowser extends Component {
           id="repositories-filter"
           className="mb-3"
           label="Filter by"
-          placeholder="repository name or country"
+          placeholder="data provider name or country"
           value={filterQuery}
           maxLength={maxQueryLength}
           onChange={this.filter}
         />
         {filterQuery ? (
           <p>
-            Showing <b>{items.length}</b>&nbsp;repositories from {itemsCount}
-            &nbsp;repositories in total:
+            Showing <b>{items.length}</b>&nbsp;data providers from {itemsCount}
+            &nbsp;data providers in total:
           </p>
         ) : (
-          <p>Showing {itemsCount}&nbsp;repositories:</p>
+          <p>Showing {itemsCount}&nbsp;data providers:</p>
         )}
 
         <Row className="mb-4">
