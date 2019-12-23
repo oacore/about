@@ -4,6 +4,8 @@ import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
 import { settings as cookieSettingsContext } from 'data/cookies.yml'
+import Router from 'next/router'
+import withGA from 'next-ga'
 import {
   isCookiesAccepted,
   getCookiesContext,
@@ -59,4 +61,14 @@ class App extends NextApp {
   }
 }
 
-export default App
+const isAnalyticsEnabled = () => {
+  const { value, default: defaultValue } = getCookiesContext().analytics
+  return value != null ? value : defaultValue
+}
+
+const gaCode =
+  process.env.NODE_ENV === 'production' &&
+  isAnalyticsEnabled() &&
+  process.env.GA_CODE
+
+export default gaCode ? withGA(gaCode, Router)(App) : App
