@@ -35,7 +35,7 @@
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4",
-    "core-js": "^3.4.2",
+    "core-js": "^3.6.1",
     "decko": "^1.2.0",
     "formdata-polyfill": "^3.0.19",
     "fuse.js": "^3.4.6",
