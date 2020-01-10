@@ -114,6 +114,343 @@ ambassadors:
       region: uk
       picture: sheppard.png
 
+    -
+      id: shaharima-parvin
+      name: Shaharima Parvin
+      role: Assistant Librarian
+      organization: East West University
+      location:
+        latitude: 23.684994
+        longitude: 90.356331
+      country: Bangladesh
+
+    -
+      id: maya-sianko
+      name: Maya Sianko
+      role: Deputy Director
+      organization: Belarusian State University Fundamental Library
+      location:
+        latitude: 53.709808
+        longitude: 27.953388
+      country: Belarus
+      region: eu
+
+    -
+      id: tlhalefo-metlhaleng
+      name: Tlhalefo Metlhaleng
+      role: Assistant Librarian
+      organization: Botswana University of Agriculture and Natural Resources
+      location:
+        latitude: -22.328474
+        longitude: 24.684866
+      country: Botswana
+
+    -
+      id:
+      name: omar-aboshady
+      role: Senior Research and Teaching Assistant
+      organization: Menoufia University
+      location:
+        latitude: 26.820553
+        longitude: 30.802498
+      country: Egypt
+
+    -
+      id: gezae-haile-weldemichael
+      name: Gezae Haile Weldemichael
+      role: University Library Director
+      organization: Mekelle University
+      location:
+        latitude: 9.033140
+        longitude: 38.750080
+      country: Ethiopia
+
+    -
+      id: mayank-trivedi
+      name: Mayank Trivedi
+      role: University Librarian
+      organization: The Maharaja Sayajirao University of Baroda
+      location:
+        latitude: 20.593683
+        longitude: 78.962883
+      country: India
+      region: in
+    -
+      id: shamprasad-pujar
+      name: Shamprasad Pujar
+      role: Chief Librarian
+      organization: Indira Gandhi Institute of Development Research
+      location:
+        latitude: 20.593683
+        longitude: 78.962883
+      country: India
+      region: in
+    -
+      id: sarika-jain
+      name: Sarika Jain
+      role: Associate Professor
+      organization: Amity University Uttar Pradesh
+      location:
+        latitude: 20.593683
+        longitude: 78.962883
+      country: India
+      region: in
+
+    -
+      id: md-sohail
+      name: Md Sohail
+      role: Reference Librarian
+      organization: Nazarbayev University
+      location:
+        latitude: 48.019573
+        longitude: 66.923683
+      country: Kazakhstan
+
+    -
+      id: joel-nakitare
+      name: Joel Nakitare
+      role: Deputy University Librarian
+      organization: Rongo University
+      location:
+        latitude: -0.023559
+        longitude: 37.906193
+      country: Kenya
+    -
+      id: james-simotwo
+      name: James Simotwo
+      role: Assistant Librarian
+      organization: Mount Kenya University
+      location:
+        latitude: -0.023559
+        longitude: 37.906193
+      country: Kenya
+      region: ke
+    -
+      id: arnold-mwanzu
+      name: Arnold Mwanzu
+      role: Librarian
+      organization: International Center of Insect Physiology and Ecology
+      location:
+        latitude: -0.023559
+        longitude: 37.906193
+      country: Kenya
+      region: ke
+    -
+      id: thomas-bello
+      name: Thomas Bello
+      role: Senior Assistant Librarian
+      organization: University of Malawi, Kamuzu College of Nursing
+      location:
+        latitude: -13.254308
+        longitude: 34.301525
+      country: Malawi
+
+    -
+      id: souleymane-sogoba
+      name: Souleymane Sogoba
+      role: Arciviste-Documentaliste
+      organization: Government
+      location:
+        latitude: 17.570692
+        longitude: -3.996166
+      country: Mali
+
+    -
+      id: patrick-mccrudden
+      name: Patrick Mccrudden
+      role: Dean for Academic Quality
+      organization: Miba University
+      location:
+        latitude: 21.916222
+        longitude: 95.955971
+      country: Myanmar
+
+    -
+      id: sharad-babu-shrestha
+      name: Sharad Babu Shrestha
+      role: President-Executive Director
+      organization:  HOPE - Himalayan Organisation for People and Environment
+      location:
+        latitude: 28.394857
+        longitude: 84.124008
+      country: Nepal
+
+    -
+      id: shakil-ahmad
+      name: Shakil Ahmad
+      role: Lecturer cum Librarian
+      organization: Deanship of Library Affairs, Imam Abdulrahman Bin Faisal University
+      location:
+        latitude: 23.885942
+        longitude: 45.079163
+      country: Saudi Arabia
+
+    -
+      id: niklas-zimmer
+      name: Niklas Zimmer
+      role: Manager of Digital Library Services
+      organization: University of Cape Town
+      location:
+        latitude: -30.559483
+        longitude: 22.937506
+      country: South Africa
+
+    -
+      id: abdelaziz-omer
+      name: Abdelaziz Omer
+      role: Librarian
+      organization: Library and Information Science, Social Sciences
+      location:
+        latitude: 12.862807
+        longitude: 30.217636
+      country: Sudan
+
+    -
+      id: wulystan-pius-mtega
+      name: Wulystan Pius Mtega
+      role: Senior Librarian
+      organization: Sokoine University of Agriculture
+      location:
+        latitude: -6.369028
+        longitude: 34.888821
+      country: Tanzania
+      region: tz
+    -
+      id: lugis-john
+      name: Lugis John
+      role: Assistant Librarian Trainee
+      organization: The Mwalimu Nyerer Memorial Academy
+      location:
+        latitude: -6.369028
+        longitude: 34.888821
+      country: Tanzania
+      region: tz
+    -
+      id: evance-michael
+      name: Evance Michael
+      role: Librarian
+      organization: Library and information studies
+      location:
+        latitude: -6.369028
+        longitude: 34.888821
+      country: Tanzania
+      region: tz
+    -
+      id: albogast-musabila
+      name: Albogast Musabila
+      role: Director - Library
+      organization: University
+      location:
+        latitude: -6.369028
+        longitude: 34.888821
+      country: Tanzania
+      region: tz
+    -
+      id: kiapi-k-freddie
+      name: Kiapi K. Freddie
+      role: Executive Director
+      organization: Civil Society -Commonwealth Association-Uganda
+      location:
+        latitude: -6.369028
+        longitude: 34.888821
+      country: Tanzania
+      region: tz
+
+    -
+      id: muriel-swijghuisen-reigersberg
+      name: Muriel Swijghuisen Reigersberg
+      role: Research Impact and Knowledge Exchange Senior Manager
+      organization: The Open University
+      location:
+        latitude: 55.378052
+        longitude: -3.435973
+      country: United Kingdom
+      region: uk
+
+    -
+      id: serhii-nazarovets
+      name: Serhii Nazarovets
+      role: Deputy Director for Research
+      organization: State Scientific and Technical Library of Ukraine
+      location:
+        latitude: 48.379433
+        longitude: 31.165581
+      country: Ukraine
+      region: eu
+
+    -
+      id: pailet-chewe
+      name: Pailet Chewe
+      role: Librarian
+      organization: University of Zambia
+      location:
+        latitude: -13.133897
+        longitude: 27.849333
+      country: Zambia
+
+    -
+      id: ephraim-makeke
+      name: Ephraim Makeke
+      role: Research Support Librarian
+      organization: Midlands State University
+      location:
+        latitude: -19.015438
+        longitude: 29.154858
+      country: Zimbabwe
+      region: zw
+    -
+      id: phillip-ndhlovu
+      name: Phillip Ndhlovu
+      role: Institutional Repository Librarian
+      organization: National University of Science and Technology
+      location:
+        latitude: -19.015438
+        longitude: 29.154858
+      country: Zimbabwe
+      region: zw
+    -
+      id: Josiline Chigwada
+      name: Josiline Chigwada
+      role: Sub Librarian - Information Services
+      organization: Bindura University of Science Education
+      location:
+        latitude: -19.015438
+        longitude: 29.154858
+      country: Zimbabwe
+      region: zw
+    -
+      id: comfort-maeresera
+      name: Comfort Maeresera
+      role: Systems Librarian
+      organization: Harare Institute of Technology
+      location:
+        latitude: -19.015438
+        longitude: 29.154858
+      country: Zimbabwe
+      region: zw
+
+    -
+      id: mayank-trivedi
+      name: Mayank Trivedi
+      role: University Librarian
+      organization: The Maharaja Sayajirao University of Baroda
+      location:
+        latitude: 20.593683
+        longitude: 78.962883
+      country: India
+      region: in
+
+    -
+      id: wanyenda-chilimo
+      name: Wanyenda Chilimo
+      role: University Librarian
+      organization: Technical University of Mombasa, Kenya
+      location:
+        latitude: -0.023559
+        longitude: 37.906193
+      country: Kenya
+      region: ke
+
 regions:
   -
     id: eu
@@ -122,9 +459,32 @@ regions:
       latitude: 54.5260
       longitude: 15.2551
   -
+    id: in
+    name: India
+    location:
+      latitude: 20.593683
+      longitude: 78.962883
+  -
+    id: ke
+    name: Kenya
+    location:
+      latitude: -0.023559
+      longitude: 37.906193
+  -
+    id: tz
+    name: Tanzania
+    location:
+      latitude: -6.369028
+      longitude: 34.888821
+  -
     id: uk
     name: United Kingdom
     location:
       latitude: 55.3781
       longitude: -3.4360
-
+  -
+    id: zw
+    name: Zimbabwe
+    location:
+      latitude: -19.015438
+      longitude: 29.154858
