@@ -30,6 +30,24 @@ const AmbassadorsPage = () => (
       <p className="text-center lead">{description}</p>
 
       <ImageMap>
+        {ambassadors.members
+          .filter(member => member.region == null)
+          .map(member => (
+            <ImagePin
+              key={member.id}
+              latitude={member.location.latitude}
+              longitude={member.location.longitude}
+              src={
+                member.picture
+                  ? `/images/people/${member.picture}`
+                  : '/images/unknown.svg'
+              }
+              alt={`${member.name}'s photo`}
+              title={`${member.name}, ${member.country}`}
+              tag="a"
+              href={`#${member.id}`}
+            />
+          ))}
         {regions
           .map(region => ({
             ...region,
@@ -47,25 +65,6 @@ const AmbassadorsPage = () => (
               title={`${region.name}, ${region.quantity} people`}
               tag="a"
               href="#people"
-            />
-          ))}
-
-        {ambassadors.members
-          .filter(member => member.region == null)
-          .map(member => (
-            <ImagePin
-              key={member.id}
-              latitude={member.location.latitude}
-              longitude={member.location.longitude}
-              src={
-                member.picture
-                  ? `/images/people/${member.picture}`
-                  : '/images/unknown.svg'
-              }
-              alt={`${member.name}'s photo`}
-              title={`${member.name}, ${member.country}`}
-              tag="a"
-              href={`#${member.id}`}
             />
           ))}
       </ImageMap>
