@@ -18,10 +18,11 @@ resources:
   url: /resources/core-business-card.pdf
   picture: bcard.png
 -
-  id: promo-text
+  id: adaptable-promo-text
   name: Adaptable promo text
-  type: gdoc
-  url: https://docs.google.com/document/d/1O-A3BrX9JYWcWxtbbo9BgukkmrIptFBgCIZsKaC4a5c/edit?usp=sharing
+  type: pdf
+  url: /resources/core-adaptable-promo-text.pdf
+  picture: adaptable-promo-text.png
 -
   id: general-presentation
   name: General presentation
