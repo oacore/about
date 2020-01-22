@@ -30,7 +30,10 @@ class RepositoriesMap extends Component {
     this.map = L.map(this.mapContainer, {
       center: centerPosition,
       zoom: 3,
-      maxBounds: [[-90, -180], [90, 180]],
+      maxBounds: [
+        [-90, -180],
+        [90, 180],
+      ],
       layers: [coverLayer],
     })
 
