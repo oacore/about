@@ -141,6 +141,18 @@ testimonials:
     role: CTO, Iris AI AS
     picture: /images/people/botev.jpg
   api: true
+
+- &claus-wolf
+  id: claus-wolf
+  content: |
+    The spirit of a common goal enables me to incorporate the key services
+    relating to OA Discovery in a single application. The latest inclusion
+    of CORE Recommender enhancing the user experience further, when no OA
+    copy of the desired document is available (yet).
+  author:
+    name: Claus Wolf
+    picture: /images/people/claus-wolf.png
+
 - &kim-sejin
   id: kim-sejin
   content: |
@@ -606,6 +618,8 @@ sections:
         - *iris-ai
     testimonials:
       title: What companies say about us
+      items:
+        - *claus-wolf
   academic-institutions:
     id: academic-institutions
     title: Institutions using CORE
