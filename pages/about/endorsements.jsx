@@ -25,7 +25,10 @@ const EndorsementsPage = () => (
           organizations={organizations.items}
           testimonials={{
             title: testimonials.title,
-            items: extractTestimonials(organizations.items),
+            items: [
+              ...extractTestimonials(organizations.items),
+              ...(testimonials.items || []),
+            ],
           }}
           {...section}
         />
