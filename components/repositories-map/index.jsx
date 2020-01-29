@@ -11,7 +11,6 @@ class RepositoriesMap extends Component {
     isLoading: true,
   }
 
-  // TODO: Dynamic import needs to be tested in old browsers
   async componentDidMount() {
     const L = await import('leaflet')
     const { MarkerClusterGroup } = await import('leaflet.markercluster')
@@ -35,6 +34,7 @@ class RepositoriesMap extends Component {
         [90, 180],
       ],
       layers: [coverLayer],
+      scrollWheelZoom: false,
     })
 
     const { endpoint } = this.props
