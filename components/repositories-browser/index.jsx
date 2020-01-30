@@ -94,13 +94,23 @@ class RepositoryBrowser extends Component {
           maxLength={maxQueryLength}
           onChange={this.filter}
         />
-        {filterQuery ? (
+        {items.length > 0 ? (
           <p>
-            Showing <b>{items.length}</b>&nbsp;data providers from {itemsCount}
-            &nbsp;data providers in total:
+            Showing <b>{items.length}</b>&nbsp;data providers
+            {filterQuery && (
+              <> from {itemsCount}&nbsp;data providers in total</>
+            )}
+            :
           </p>
         ) : (
-          <p>Showing {itemsCount}&nbsp;data providers:</p>
+          <p>
+            No repository matching your criteria. If your repository is missing,
+            you can{' '}
+            <a href="https://core.ac.uk/about/#contact">
+              register a new repository
+            </a>
+            .
+          </p>
         )}
 
         <Row className="mb-4">
@@ -147,11 +157,13 @@ class RepositoryBrowser extends Component {
           })}
         </Row>
 
-        <Pagination
-          current={currentPage}
-          total={pageCount}
-          onPaginate={this.paginate}
-        />
+        {items.length > 0 && (
+          <Pagination
+            current={currentPage}
+            total={pageCount}
+            onPaginate={this.paginate}
+          />
+        )}
       </Tag>
     )
   }
