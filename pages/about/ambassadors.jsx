@@ -22,6 +22,13 @@ import {
 } from 'data/ambassadors.yml'
 import resourcesData from 'data/resources.yml'
 
+ambassadors.members.sort((a, b) => {
+  const country = a.country.localeCompare(b.country)
+  if (country != null) return country
+
+  return a.name.localeCompare(b.name)
+})
+
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
     <header>
