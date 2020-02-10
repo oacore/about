@@ -268,6 +268,7 @@ ambassadors:
         longitude: -3.435973
       country: United Kingdom
       region: uk
+      picture: muriel-swijghuisen-reigersberg.jpg
     -
       id: nick-sheppard
       name: Nick Sheppard
@@ -434,6 +435,17 @@ ambassadors:
       country: Tanzania
       region: tz
       picture: wulystan-pius-mtega.png
+    -
+      id: faheem-ahmad
+      name: Faheem Ahmad
+      role: Library Incharge
+      organization: Indian Grain Storage Mangement and Research Institute
+      location:
+        latitude: 28.7400572
+        longitude: 77.7690149
+      country: India
+      region: in
+      picture: faheem-ahmad.jpg
 
 regions:
   -
