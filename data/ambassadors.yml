@@ -226,6 +226,7 @@ ambassadors:
         longitude: 27.953388
       country: Belarus
       region: eu
+      picture: maya-senko.jpg
     -
       id: mayank-trivedi
       name: Mayank Trivedi
@@ -326,6 +327,7 @@ ambassadors:
         longitude: 29.154858
       country: Zimbabwe
       region: zw
+      picture: phillip-ndhlovu.jpg
     -
       id: sarika-jain
       name: Sarika Jain
@@ -377,6 +379,7 @@ ambassadors:
         longitude: 78.962883
       country: India
       region: in
+      picture: shamprasad-pujar.jpg
     -
       id: sharad-babu-shrestha
       name: Sharad Babu Shrestha
@@ -446,6 +449,16 @@ ambassadors:
       country: India
       region: in
       picture: faheem-ahmad.jpg
+    -
+      id: tanveer-haider-naqvi
+      name: Tanveer Haider Naqvi
+      role: Deputy University Librarian
+      organization: Fiji National University
+      location:
+        latitude: -18.16
+        longitude: 172.45 # -6 degrees corrected according to the map
+      country: Fiji
+      picture: tanveer-haider-naqvi.jpg
 
 regions:
   -
