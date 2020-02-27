@@ -205,7 +205,6 @@ ambassadors:
         latitude: 0.489693
         longitude: 32.712521
       country: Uganda
-      region: ug
     -
       id: lugis-john
       name: Lugis John
@@ -497,9 +496,3 @@ regions:
     location:
       latitude: -19.015438
       longitude: 29.154858
-  -
-    id: ug
-    name: Uganda
-    location:
-      latitude: 0.489693
-      longitude: 32.712521
