@@ -73,12 +73,6 @@ members:
     Manages diaries and meetings,  helps with organising events and conferences; collects information
     from external sources; liaises with staff, suppliers and clients.
 -
-  name: Sergei Misak
-  role: Front-End Developer
-  picture: sm.png
-  description: |
-    Developing CORE front-end services and making sure they are kept in good shape.
--
   name: Samuel Pearce
   role: Developer and Infrastructure Specialist
   picture: samuel-pearce.jpg
@@ -132,6 +126,7 @@ past-members:
 - Ian Tindle
 - Jakub Novotny
 - Magdalena Krygielova
+- Sergei Misak
 - Tomas Korec
 - Vojtech Robotka
 - Zdenek Zdrahal
