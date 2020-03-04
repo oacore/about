@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
+
 import { Section } from '../content'
 import Link from '../link'
 

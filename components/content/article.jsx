@@ -15,18 +15,6 @@ const ArticleNav = ({ items }) => (
 )
 
 class Article extends Section {
-  static propTypes = {
-    tag: PropTypes.node,
-    nav: PropTypes.bool,
-    container: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    tag: 'article',
-    nav: false,
-    container: true,
-  }
-
   state = {
     header: null,
     content: null,
@@ -93,5 +81,14 @@ class Article extends Section {
     )
   }
 }
-
+Article.propTypes = {
+  tag: PropTypes.node,
+  nav: PropTypes.bool,
+  container: PropTypes.bool,
+}
+Article.defaultProps = {
+  tag: 'article',
+  nav: false,
+  container: true,
+}
 export default Article

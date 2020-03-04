@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bind } from 'decko'
+
 import { Button } from '../elements'
 
 const SwitcherItem = ({
@@ -28,26 +29,6 @@ const SwitcherContent = ({ children, tag: Tag = 'div', ...restProps }) => (
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
 
 class Switcher extends Component {
-  static propTypes = {
-    tag: PropTypes.node,
-    actionEvent: PropTypes.oneOf(['click', 'hover']),
-    interval: PropTypes.number,
-    onChange: PropTypes.func,
-    onMouseOver: PropTypes.func,
-    onMouseLeave: PropTypes.func,
-    pauseOnMouseOver: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    tag: 'div',
-    actionEvent: 'hover',
-    interval: 0,
-    onChange: () => {},
-    onMouseOver: () => {},
-    onMouseLeave: () => {},
-    pauseOnMouseOver: true,
-  }
-
   state = {
     items: [],
     activeItemIndex: 0,
@@ -106,7 +87,8 @@ class Switcher extends Component {
   }
 
   start() {
-    if (this.state.pause) return
+    const { pause } = this.state
+    if (pause) return
 
     const { interval } = this.props
     if (interval > 0)
@@ -128,9 +110,11 @@ class Switcher extends Component {
   }
 
   activateItem(index) {
+    const { items } = this.state
+    const { onChange } = this.props
     this.stop()
     this.setState({ activeItemIndex: index }, () => {
-      this.props.onChange(this.state.items[index].props.id)
+      onChange(items[index].props.id)
       this.start()
     })
   }
@@ -145,12 +129,14 @@ class Switcher extends Component {
 
   @bind
   handleMouseOver() {
-    if (this.props.pauseOnMouseOver) this.pause()
+    const { pauseOnMouseOver } = this.props
+    if (pauseOnMouseOver) this.pause()
   }
 
   @bind
   handleMouseLeave() {
-    if (this.props.pauseOnMouseOver) this.play()
+    const { pauseOnMouseOver } = this.props
+    if (pauseOnMouseOver) this.play()
   }
 
   handleChange(index) {
@@ -205,6 +191,25 @@ class Switcher extends Component {
 
 Switcher.Item = SwitcherItem
 Switcher.Content = SwitcherContent
-
+Switcher.propTypes = {
+  active: PropTypes.bool,
+  tag: PropTypes.node,
+  actionEvent: PropTypes.oneOf(['click', 'hover']),
+  interval: PropTypes.number,
+  onChange: PropTypes.func,
+  onMouseOver: PropTypes.func,
+  onMouseLeave: PropTypes.func,
+  pauseOnMouseOver: PropTypes.bool,
+}
+Switcher.defaultProps = {
+  active: false,
+  tag: 'div',
+  actionEvent: 'hover',
+  interval: 0,
+  onChange: () => {},
+  onMouseOver: () => {},
+  onMouseLeave: () => {},
+  pauseOnMouseOver: true,
+}
 export default Switcher
 export { SwitcherItem }

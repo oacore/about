@@ -4,23 +4,13 @@ import { Button } from 'reactstrap'
 import { bind } from 'decko'
 
 class AlphabetFilter extends Component {
-  static propTypes = {
-    alphabet: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
-    value: PropTypes.string,
-    onChange: PropTypes.func,
-  }
-
-  static defaultProps = {
-    value: '',
-    onChange: () => {},
-  }
-
   static alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
   @bind
   handleClick(event) {
     event.preventDefault()
-    this.props.onChange(event.target.value)
+    const { onChange } = this.props
+    onChange(event.target.value)
   }
 
   render() {
@@ -59,5 +49,13 @@ class AlphabetFilter extends Component {
 }
 
 AlphabetFilter.defaultProps.alphabet = AlphabetFilter.alphabet
-
+AlphabetFilter.propTypes = {
+  alphabet: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+}
+AlphabetFilter.defaultProps = {
+  value: '',
+  onChange: () => {},
+}
 export default AlphabetFilter

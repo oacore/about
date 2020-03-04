@@ -8,12 +8,8 @@ const Feature = ({ children, isActive }) => (
 )
 
 class FeaturesSection extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      activePaneId: null,
-    }
+  state = {
+    activePaneId: null,
   }
 
   static getDerivedStateFromProps({ children }, state) {
@@ -42,7 +38,8 @@ class FeaturesSection extends React.Component {
     const tabs = []
 
     // Filter features to 3 lists
-    React.Children.forEach(this.props.children, child => {
+    const { children } = this.props
+    React.Children.forEach(children, child => {
       if (child.type === Feature) tabs.push(child)
       else (tabs.length === 0 ? beforeTabs : afterTabs).push(child)
     })

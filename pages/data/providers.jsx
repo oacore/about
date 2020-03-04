@@ -1,4 +1,5 @@
 import React from 'react'
+
 import {
   Button,
   Page,
@@ -9,7 +10,6 @@ import {
   RepositoriesBrowser,
 } from 'components'
 import { patchStats } from 'components/utils'
-
 import repositoriesData from 'data/data-providers.yml'
 
 const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'

@@ -15,9 +15,9 @@ const BlockquoteCite = ({ name, role, tag: Tag = BlockquoteFooter }) => (
   <Tag>
     <cite className="blockquote-author-name">{name}</cite>
     {role && (
-      <Fragment>
+      <>
         , <cite className="blockquote-author-role">{role}</cite>
-      </Fragment>
+      </>
     )}
   </Tag>
 )

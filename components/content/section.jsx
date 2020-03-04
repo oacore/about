@@ -63,7 +63,6 @@ class Section extends Component {
 
       if (Section.isSectionLike(child)) {
         if (containerPull.length > 0) {
-          // eslint-disable-next-line react/no-array-index-key
           resultPull.push(
             <Container key={containerPull.map(({ type }) => type).join(',')}>
               {containerPull}

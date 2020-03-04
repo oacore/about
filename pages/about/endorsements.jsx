@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { Page } from 'components'
 import { EndorsementsSection } from 'components/sections'
 import { title, description, keywords, sections } from 'data/endorsements.yml'

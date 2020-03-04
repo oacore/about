@@ -7,14 +7,16 @@ class Collapsed extends Component {
   constructor(props) {
     super(props)
 
+    const { open } = this.props
+    // eslint-disable-next-line react/state-in-constructor
     this.state = {
-      isOpen: !!this.props.open,
+      isOpen: !!open,
     }
   }
 
   componentDidMount() {
-    if (window.location.hash.substr(1) === this.props.id)
-      this.setState({ isOpen: true })
+    const { id } = this.props
+    if (window.location.hash.substr(1) === id) this.setState({ isOpen: true })
   }
 
   @bind

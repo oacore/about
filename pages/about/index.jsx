@@ -1,5 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
+
+import { repositoriesUrl } from '../data/providers'
+
 import {
   Accordion,
   Button,
@@ -17,14 +20,11 @@ import {
   Video,
 } from 'components'
 import { patchStats } from 'components/utils'
-
 import aboutData from 'data/about.yml'
 import teamData from 'data/team.yml'
 import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
-
-import { repositoriesUrl } from '../data/providers'
 
 import './about.scss'
 

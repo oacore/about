@@ -1,8 +1,5 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Button, InputGroup, InputGroupAddon, Input } from 'reactstrap'
-
-// Stupid rule does not understand it
-/* eslint-disable jsx-a11y/label-has-for */
 
 const SearchField = ({
   size = '',
@@ -10,7 +7,7 @@ const SearchField = ({
   label = 'Search in CORE',
   ...fieldProps
 }) => (
-  <Fragment>
+  <>
     <label className="sr-only" htmlFor={id}>
       {label}
     </label>
@@ -20,7 +17,7 @@ const SearchField = ({
         <Button color="primary">Search</Button>
       </InputGroupAddon>
     </InputGroup>
-  </Fragment>
+  </>
 )
 
 const SearchForm = ({

@@ -1,7 +1,7 @@
 import React from 'react'
+
 import { Page, Button, Markdown, HighlightSection } from 'components'
 import { patchStats } from 'components/utils'
-
 import datasetData from 'data/data.yml'
 
 // TODO: Fix temporal text-center class usage

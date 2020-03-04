@@ -1,6 +1,6 @@
 import React from 'react'
-import { Page, Section, Accordion, Markdown, Content } from 'components'
 
+import { Page, Section, Accordion, Markdown, Content } from 'components'
 import faqData from 'data/faq.yml'
 
 const itemToURL = id => {

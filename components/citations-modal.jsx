@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Modal, ModalHeader, ModalBody } from 'reactstrap'
 import { bind } from 'decko'
+
 import { Button } from './elements'
 import ButtonToolbar from './button-toolbar'
 import { CitationTab, CitationTabManager } from './citation-tabs'
@@ -26,7 +27,8 @@ class CitationsModal extends Component {
     controlElement.focus()
     controlElement.select()
     document.execCommand('copy')
-    if (this.props.onCite) this.props.onCite(controlElement.value)
+    const { onCite } = this.props
+    if (onCite) onCite(controlElement.value)
   }
 
   render() {

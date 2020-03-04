@@ -1,4 +1,7 @@
 import React from 'react'
+
+import { extractTestimonials } from './about/endorsements'
+
 import {
   Button,
   Hero,
@@ -12,11 +15,8 @@ import {
 } from 'components'
 import { JoinSection } from 'components/sections'
 import { patchStats } from 'components/utils'
-
 import page from 'data/home.yml'
 import { sections as pageSections } from 'data/endorsements.yml'
-
-import { extractTestimonials } from './about/endorsements'
 
 import './index.scss'
 

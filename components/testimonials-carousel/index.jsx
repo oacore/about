@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Carousel, CarouselItem } from 'reactstrap'
 import { bind } from 'decko'
+
 import Testimonial from '../testimonial'
 
 import './testimonials-carousel.scss'
@@ -58,12 +59,14 @@ class TestimonialsCarousel extends Component {
 
   @bind
   next() {
-    this.goToIndex(this.state.activeIndex + 1)
+    const { activeIndex } = this.state
+    this.goToIndex(activeIndex + 1)
   }
 
   @bind
   previous() {
-    this.goToIndex(this.state.activeIndex - 1)
+    const { activeIndex } = this.state
+    this.goToIndex(activeIndex - 1)
   }
 
   render() {

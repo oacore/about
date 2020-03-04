@@ -60,12 +60,14 @@ class LogosCarousel extends Component {
 
   @bind
   next() {
-    this.goToIndex(this.state.activeIndex + 1)
+    const { activeIndex } = this.state
+    this.goToIndex(activeIndex + 1)
   }
 
   @bind
   previous() {
-    this.goToIndex(this.state.activeIndex - 1)
+    const { activeIndex } = this.state
+    this.goToIndex(activeIndex - 1)
   }
 
   render() {

@@ -1,14 +1,16 @@
 import React from 'react'
 import { Button } from 'reactstrap'
+
 import { Content } from '../content'
 import { SimpleSearchForm, AdvancedSearchForm } from './forms'
 
 class SearchForm extends React.Component {
+  state = {
+    toggleAdvancedSearch: false,
+  }
+
   constructor(props) {
     super(props)
-    this.state = {
-      toggleAdvancedSearch: false,
-    }
     this.toggleSearchComponent = this.toggleSearchComponent.bind(this)
   }
 
@@ -37,10 +39,10 @@ class SearchForm extends React.Component {
     const { toggleAdvancedSearch } = this.state
     if (toggleAdvancedSearch) {
       return (
-        <React.Fragment>
+        <>
           {this.renderButton()}
           <AdvancedSearchForm {...formProps} />
-        </React.Fragment>
+        </>
       )
     }
 

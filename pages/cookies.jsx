@@ -1,10 +1,10 @@
 import React from 'react'
 import { Table } from 'reactstrap'
-import { Page, Content, Section, Markdown, CookiesForm } from 'components'
-
-import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
 
 import { cookies } from '../services'
+
+import { Page, Content, Section, Markdown, CookiesForm } from 'components'
+import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
 
 export const isCookiesAccepted = () => cookies.get('essential') != null
 
