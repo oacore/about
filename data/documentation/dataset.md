@@ -6,6 +6,12 @@ title: CORE Dataset
 
 ### 2018 onwards
 
+**Deduplication Dataset 2020**
+
+[Register for Access](/dataset/getdatadump)
+
+Dataset created for Deduplication of Scholarly Documents using Locality Sensitive Hashing and Word Embeddings (LREC 2020) (62 MB compressed, 204 MB in total)
+
 **CORE-MAG Mapping 2019-04-01**
 
 [Register for Access](/dataset/getdatadump)
