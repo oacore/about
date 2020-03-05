@@ -81,14 +81,17 @@ class Article extends Section {
     )
   }
 }
+
 Article.propTypes = {
   tag: PropTypes.node,
   nav: PropTypes.bool,
   container: PropTypes.bool,
 }
+
 Article.defaultProps = {
   tag: 'article',
   nav: false,
   container: true,
 }
+
 export default Article

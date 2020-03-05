@@ -191,6 +191,7 @@ class Switcher extends Component {
 
 Switcher.Item = SwitcherItem
 Switcher.Content = SwitcherContent
+
 Switcher.propTypes = {
   active: PropTypes.bool,
   tag: PropTypes.node,
@@ -201,6 +202,7 @@ Switcher.propTypes = {
   onMouseLeave: PropTypes.func,
   pauseOnMouseOver: PropTypes.bool,
 }
+
 Switcher.defaultProps = {
   active: false,
   tag: 'div',
@@ -211,5 +213,6 @@ Switcher.defaultProps = {
   onMouseLeave: () => {},
   pauseOnMouseOver: true,
 }
+
 export default Switcher
 export { SwitcherItem }

@@ -65,15 +65,18 @@ class Accordion extends Component {
 }
 
 Accordion.Item = AccordionItem
+
 Accordion.propTypes = {
   className: PropTypes.string,
   tag: PropTypes.node,
   onToggle: PropTypes.func,
 }
+
 Accordion.defaultProps = {
   className: '',
   tag: 'div',
   onToggle: () => {},
 }
+
 export default Accordion
 export { Accordion, AccordionItem }

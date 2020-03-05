@@ -48,14 +48,15 @@ class AlphabetFilter extends Component {
   }
 }
 
-AlphabetFilter.defaultProps.alphabet = AlphabetFilter.alphabet
 AlphabetFilter.propTypes = {
   alphabet: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   value: PropTypes.string,
   onChange: PropTypes.func,
 }
+
 AlphabetFilter.defaultProps = {
   value: '',
   onChange: () => {},
+  alphabet: AlphabetFilter.alphabet,
 }
 export default AlphabetFilter

@@ -42,8 +42,10 @@ AccordionItem.propTypes = {
   isOpen: PropTypes.bool,
   onToggle: PropTypes.func,
 }
+
 AccordionItem.defaultProps = {
   isOpen: false,
   onToggle: () => {},
 }
+
 export default AccordionItem
