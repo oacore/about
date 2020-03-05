@@ -1,16 +1,18 @@
 import React from 'react'
 import NextApp from 'next/app'
-import { Layout, CookiesPopup } from 'components'
-import { patchStats } from 'components/utils'
-import config from 'data/core.yml'
-import { settings as cookieSettingsContext } from 'data/cookies.yml'
 import Router from 'next/router'
 import withGA from 'next-ga'
+
 import {
   isCookiesAccepted,
   getCookiesContext,
   handleCookiesUpdate,
 } from './cookies'
+
+import { Layout, CookiesPopup } from 'components'
+import { patchStats } from 'components/utils'
+import config from 'data/core.yml'
+import { settings as cookieSettingsContext } from 'data/cookies.yml'
 
 const searchConfig = {
   action: '/search',

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Container } from 'reactstrap'
 
 import Head from './head'
@@ -17,7 +17,7 @@ const Layout = ({
   children,
   container = false,
 }) => (
-  <Fragment>
+  <>
     <Head title={title} description={description} />
     <SkipToContent path="#content" caption="Skip to main content" />
     <Header
@@ -30,7 +30,7 @@ const Layout = ({
     <div id="content" />
     {container ? <Container>{children}</Container> : children}
     <Footer className="page-footer" {...footer} />
-  </Fragment>
+  </>
 )
 
 export default Layout

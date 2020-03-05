@@ -6,9 +6,11 @@ CORE static website on React and Next.js
 ## Installation & Preview
 
 The project requires [__Node.js__][node-download] and
-[__Yarn__][yarn-install] package manager.
+[__NPM__][npm-install] package manager.
 
-As soon as everything is set up, run:
+
+After cloning this repository  you will need to generate Github Token with package read permission [here][github-token] in order to download our @oacore packages from Github NPM registry.
+
 
 ```sh
 yarn install  # to install all dependencies
@@ -19,9 +21,9 @@ Open [localhost:3000](http://localhost:3000) to preview.
 
 __Well done!__
 
+[github-token]: https://github.com/settings/tokens
 [node-download]: https://nodejs.org/en/download/
-[yarn-install]: https://yarnpkg.com/lang/en/docs/install/
-
+[npm-install]: https://www.npmjs.com/get-npm
 
 ## Thanks ❤️
 

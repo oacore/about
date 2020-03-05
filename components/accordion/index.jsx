@@ -6,18 +6,6 @@ import AccordionItem from './item'
 
 // TODO: Make it semantic: provide aria-* attributes
 class Accordion extends Component {
-  static propTypes = {
-    className: PropTypes.string,
-    tag: PropTypes.node,
-    onToggle: PropTypes.func,
-  }
-
-  static defaultProps = {
-    className: '',
-    tag: 'div',
-    onToggle: () => {},
-  }
-
   state = {
     activeItemId: null,
   }
@@ -39,7 +27,8 @@ class Accordion extends Component {
   componentDidMount() {
     let activeItemId = ''
 
-    React.Children.forEach(this.props.children, ({ props: { id } }) => {
+    const { children } = this.props
+    React.Children.forEach(children, ({ props: { id } }) => {
       if (window.location.hash === `#${id}`) activeItemId = id
     })
 
@@ -53,7 +42,9 @@ class Accordion extends Component {
         activeItemId: activeItemId === itemId ? null : itemId,
       }),
       () => {
-        this.props.onToggle(this.state.activeItemId)
+        const { onToggle } = this.props
+        const { activeItemId } = this.state
+        onToggle(activeItemId)
       }
     )
   }
@@ -61,9 +52,10 @@ class Accordion extends Component {
   render() {
     const { className, tag: Tag, children } = this.props
 
+    const { activeItemId } = this.state
     const items = React.Children.map(children, item =>
       React.cloneElement(item, {
-        isOpen: item.props.id === this.state.activeItemId,
+        isOpen: item.props.id === activeItemId,
         onToggle: this.toggleItem,
       })
     )
@@ -73,6 +65,18 @@ class Accordion extends Component {
 }
 
 Accordion.Item = AccordionItem
+
+Accordion.propTypes = {
+  className: PropTypes.string,
+  tag: PropTypes.node,
+  onToggle: PropTypes.func,
+}
+
+Accordion.defaultProps = {
+  className: '',
+  tag: 'div',
+  onToggle: () => {},
+}
 
 export default Accordion
 export { Accordion, AccordionItem }

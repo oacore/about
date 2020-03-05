@@ -1,7 +1,8 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Card, CardTitle, CardText, Row, Col, Spinner } from 'reactstrap'
 import { bind } from 'decko'
 import Fuse from 'fuse.js'
+
 import Link from '../link'
 import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
@@ -145,10 +146,10 @@ class RepositoryBrowser extends Component {
                   </CardTitle>
                   <CardText className="font-italic">
                     {additionalMeta.map((element, i) => (
-                      <Fragment>
+                      <>
                         {element}
                         {i < additionalMeta.length - 1 && ', '}
-                      </Fragment>
+                      </>
                     ))}
                   </CardText>
                 </Card>

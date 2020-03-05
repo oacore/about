@@ -9,7 +9,8 @@ class CitationTextLoader extends Component {
   }
 
   componentDidMount() {
-    if (this.state.citationText == null) {
+    const { citationText } = this.state
+    if (citationText == null) {
       this.setState({ isLoading: true })
       this.fetchCitation()
     }
@@ -30,7 +31,7 @@ class CitationTextLoader extends Component {
             isLoading: false,
           },
           () => {
-            if (onLoad) onLoad(this.state.citationText)
+            if (onLoad) onLoad(citationText)
           }
         )
       )
@@ -41,7 +42,8 @@ class CitationTextLoader extends Component {
             isLoading: false,
           },
           () => {
-            if (onError) onError(this.state.errorText)
+            const { errorText } = this.state
+            if (onError) onError(errorText)
           }
         )
       )

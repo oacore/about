@@ -1,6 +1,7 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { Nav, NavItem, NavLink, TabContent } from 'reactstrap'
 import { bind } from 'decko'
+
 import CitationTab from './tab'
 
 class CitationTabManager extends Component {
@@ -51,7 +52,9 @@ class CitationTabManager extends Component {
         activeTabId: event.target.hash.slice(1),
       },
       () => {
-        if (this.props.onToggle) this.props.onToggle(this.state.activeTabId)
+        const { activeTabId } = this.state
+        const { onToggle } = this.props
+        if (onToggle) onToggle(activeTabId)
       }
     )
   }
@@ -60,7 +63,7 @@ class CitationTabManager extends Component {
     const { children } = this.props
     const { activeTabId, navItems } = this.state
     return (
-      <Fragment>
+      <>
         <Nav tabs>
           {navItems.map(({ id, name }) => (
             <NavItem key={id}>
@@ -81,7 +84,7 @@ class CitationTabManager extends Component {
             })
           )}
         </TabContent>
-      </Fragment>
+      </>
     )
   }
 }

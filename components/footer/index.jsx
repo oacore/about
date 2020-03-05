@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col } from 'reactstrap'
+
 import Markdown from '../markdown'
 import Link from '../link'
 

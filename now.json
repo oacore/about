@@ -2,5 +2,10 @@
   "version": 2,
   "name": "next",
   "public": true,
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "build": {
+    "env": {
+      "NPM_TOKEN": "@npm_token"
+    }
+  }
 }

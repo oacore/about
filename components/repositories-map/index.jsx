@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Spinner } from 'reactstrap'
 import { bind } from 'decko'
+
 import RepositoriesBrowser from '../repositories-browser'
 import markerUrl from './marker.svg'
 

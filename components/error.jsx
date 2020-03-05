@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import Page from './page'
 import ButtonToolbar from './button-toolbar'
 import { Content } from './content'
@@ -11,6 +12,7 @@ class ErrorPage extends Component {
     return { statusCode }
   }
 
+  // eslint-disable-next-line class-methods-use-this
   render() {
     return (
       <Page title="Page is not found">

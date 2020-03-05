@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Pin from './generic'
 
 const ImagePin = ({ src, alt, className = '', ...restProps }) => (

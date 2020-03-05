@@ -4,17 +4,6 @@ import { Card, CardHeader, CardBody, CardLink, Collapse } from 'reactstrap'
 import { bind } from 'decko'
 
 class AccordionItem extends Component {
-  static propTypes = {
-    title: PropTypes.string.isRequired,
-    isOpen: PropTypes.bool,
-    onToggle: PropTypes.func,
-  }
-
-  static defaultProps = {
-    isOpen: false,
-    onToggle: () => {},
-  }
-
   @bind
   toggle(event) {
     event.preventDefault()
@@ -47,6 +36,16 @@ class AccordionItem extends Component {
       </Card>
     )
   }
+}
+AccordionItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool,
+  onToggle: PropTypes.func,
+}
+
+AccordionItem.defaultProps = {
+  isOpen: false,
+  onToggle: () => {},
 }
 
 export default AccordionItem

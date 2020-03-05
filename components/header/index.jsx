@@ -14,10 +14,9 @@ import {
   DropdownItem,
 } from 'reactstrap'
 import { bind } from 'decko'
+
 import Link from '../link'
-
 import Logo from '../logo'
-
 import SearchNavbar from '../search-navbar'
 import NavDropdown from '../nav-dropdown'
 

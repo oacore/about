@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Pin from './generic'
 
 const NumberPin = ({ value, name, className = '', ...restProps }) => (

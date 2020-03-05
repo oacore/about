@@ -1,4 +1,5 @@
 import React from 'react'
+
 import Collapsed from '../collapsed'
 import Page from '../page'
 import ButtonToolbar from '../button-toolbar'

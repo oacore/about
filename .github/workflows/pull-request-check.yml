@@ -7,15 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1.4.0
         with:
           node-version: '12.x'
 
       - name: yarn install, build, and test
         run: |
-          yarn install
-          yarn build
-          yarn lint
+          npm ci
+          npm run build
+          npm run lint
         env:
+          NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_TARGET: server

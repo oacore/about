@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Card, CardHeader, CardBody } from 'reactstrap'
-import { Page, Section, Button, Reference, Content } from 'components'
-import CitationsModal from 'components/citations-modal'
 import { bind } from 'decko'
 
+import { Page, Section, Button, Reference, Content } from 'components'
+import CitationsModal from 'components/citations-modal'
 import page from 'data/research-outputs.yml'
 
 const ResearchPaperCard = ({
