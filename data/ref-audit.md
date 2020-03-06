@@ -253,7 +253,7 @@ When on rare occassions the collected data might be incomplete, it will be up to
 </h2>
 
 CORE Repository Dashboard already provides useful information to check that your
-repository is being properly harvested. Additionally, we are currently discussing the possibility of further improvements to the CORE Repository Dashboard to be released in the first quarter of 2020, ideally coinciding with the planned launch of the REF submission systems, to provide support for HEIs participating in the REF. We also offer a free 
+repository is being properly harvested. Additionally, we have released a brand new version of the CORE Repository Dashboard, from which the deposit dates can be retrieved and we will release it soon. We also offer a free 
 [CORE Discovery](~services/discovery) repository plugin which can help repositories discover Open Access full text versions of articles for metadata records in repositories which do not have a full text manuscript attached.
 
 To answer further questions, we have also established and maintain an [FAQ
