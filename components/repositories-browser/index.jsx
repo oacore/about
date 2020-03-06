@@ -7,6 +7,9 @@ import Link from '../link'
 import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
 
+const normalize = string =>
+  string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
 class RepositoryBrowser extends Component {
   static fetchRepositories(url) {
     return fetch(url)
@@ -15,7 +18,12 @@ class RepositoryBrowser extends Component {
         throw new Error(`Error loading data providers from ${url}`)
       })
       .then(repositories =>
-        repositories.filter(({ name }) => name && name !== 'name')
+        repositories
+          .filter(({ name }) => name && name !== 'name')
+          .map(element => ({
+            ...element,
+            normalizedName: normalize(element.name),
+          }))
       )
   }
 
@@ -38,11 +46,12 @@ class RepositoryBrowser extends Component {
   }
 
   static searchOptions = {
-    threshold: 0.2,
-    location: 10,
-    distance: 300,
-    maxPatternLength: 100,
-    keys: ['name', 'repositoryLocation.countryName', 'urlHomepage'],
+    shouldSort: true,
+    location: 0,
+    treshold: 0.1,
+    distance: 200,
+    maxPatternLength: 50,
+    keys: ['normalizedName', 'repositoryLocation.countryName', 'urlHomepage'],
   }
 
   static pageSize = 10
@@ -51,7 +60,7 @@ class RepositoryBrowser extends Component {
   filter(event) {
     const filterQuery = event.target.value
     const items = filterQuery
-      ? this.repositories.search(filterQuery)
+      ? this.repositories.search(normalize(filterQuery))
       : this.repositories.list.slice()
     this.setState({
       items,
