@@ -39,7 +39,7 @@ resources:
   id: adaptable-promo-text-uk
   name: Adaptable promo text (Ukrainian)
   type: pdf
-  url: /resources/core-adaptable-promo-text-ukainian.pdf
+  url: /resources/core-adaptable-promo-text-ukrainian.pdf
   picture: adaptable-promo-text.png
 -
   id: general-presentation
