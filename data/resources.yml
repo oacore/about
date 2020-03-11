@@ -18,10 +18,28 @@ resources:
   url: /resources/core-business-card.pdf
   picture: bcard.png
 -
-  id: adaptable-promo-text
+  id: adaptable-promo-text-en
   name: Adaptable promo text
   type: pdf
   url: /resources/core-adaptable-promo-text.pdf
+  picture: adaptable-promo-text.png
+-
+  id: adaptable-promo-text-gu
+  name: Adaptable promo text
+  type: pdf
+  url: /resources/core-adaptable-promo-text.pdf
+  picture: adaptable-promo-text.png
+-
+  id: adaptable-promo-text-ru
+  name: Adaptable promo text
+  type: pdf
+  url: /resources/core-adaptable-promo-text.pdf
+  picture: adaptable-promo-text.png
+-
+  id: adaptable-promo-text-uk
+  name: Adaptable promo text (Ukrainian)
+  type: pdf
+  url: /resources/core-adaptable-promo-text-uk.pdf
   picture: adaptable-promo-text.png
 -
   id: general-presentation
