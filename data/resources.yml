@@ -19,27 +19,27 @@ resources:
   picture: bcard.png
 -
   id: adaptable-promo-text-en
-  name: Adaptable promo text
+  name: Adaptable promo text (English)
   type: pdf
   url: /resources/core-adaptable-promo-text.pdf
   picture: adaptable-promo-text.png
 -
   id: adaptable-promo-text-gu
-  name: Adaptable promo text
+  name: Adaptable promo text (Gujarati)
   type: pdf
-  url: /resources/core-adaptable-promo-text.pdf
+  url: /resources/core-adaptable-promo-text-gujarati.pdf
   picture: adaptable-promo-text.png
 -
   id: adaptable-promo-text-ru
-  name: Adaptable promo text
+  name: Adaptable promo text (Russian)
   type: pdf
-  url: /resources/core-adaptable-promo-text.pdf
+  url: /resources/core-adaptable-promo-text-russian.pdf
   picture: adaptable-promo-text.png
 -
   id: adaptable-promo-text-uk
   name: Adaptable promo text (Ukrainian)
   type: pdf
-  url: /resources/core-adaptable-promo-text-uk.pdf
+  url: /resources/core-adaptable-promo-text-ukainian.pdf
   picture: adaptable-promo-text.png
 -
   id: general-presentation
