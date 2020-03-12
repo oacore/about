@@ -36,6 +36,18 @@ resources:
   url: /resources/core-adaptable-promo-text-russian.pdf
   picture: adaptable-promo-text.png
 -
+  id: adaptable-promo-text-sr-cyr
+  name: Adaptable promo text (Serbian Cyrillic)
+  type: pdf
+  url: /resources/core-adaptable-promo-text-serbian-cyrillic.pdf
+  picture: adaptable-promo-text.png
+-
+  id: adaptable-promo-text-sr-lat
+  name: Adaptable promo text (Serbian Latin)
+  type: pdf
+  url: /resources/core-adaptable-promo-text-serbian-latin.pdf
+  picture: adaptable-promo-text.png
+-
   id: adaptable-promo-text-uk
   name: Adaptable promo text (Ukrainian)
   type: pdf
