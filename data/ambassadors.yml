@@ -458,6 +458,16 @@ ambassadors:
         longitude: 172.45 # -6 degrees corrected according to the map
       country: Fiji
       picture: tanveer-haider-naqvi.jpg
+    -
+      id: rawia-awadallah
+      name: Rawia Awadallah
+      role: Assistant Professor of Computer Science
+      organization: The Islamic University of Gaza
+      location:
+        latitude: 31.5144026
+        longitude: 34.4393177
+      country: Palestine
+      picture: rawia-awadallah.jpg
 
 regions:
   -
