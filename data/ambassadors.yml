@@ -309,13 +309,14 @@ ambassadors:
       country: Zambia
     -
       id: patrick-mccrudden
-      name: Patrick Mccrudden
+      name: Patrick McCrudden
       role: Dean for Academic Quality
       organization: Miba University
       location:
         latitude: 21.916222
         longitude: 95.955971
       country: Myanmar
+      picture: patrick-mccrudden.jpg
     -
       id: phillip-ndhlovu
       name: Phillip Ndhlovu
