@@ -18,10 +18,22 @@ resources:
   url: /resources/core-business-card.pdf
   picture: bcard.png
 -
+  id: adaptable-promo-text-ar
+  name: Adaptable promo text (Arabic)
+  type: pdf
+  url: /resources/core-adaptable-promo-text-arabic.pdf
+  picture: adaptable-promo-text.png
+-
   id: adaptable-promo-text-en
   name: Adaptable promo text (English)
   type: pdf
   url: /resources/core-adaptable-promo-text.pdf
+  picture: adaptable-promo-text.png
+-
+  id: adaptable-promo-text-gr
+  name: Adaptable promo text (Greek)
+  type: pdf
+  url: /resources/core-adaptable-promo-text-greek.pdf
   picture: adaptable-promo-text.png
 -
   id: adaptable-promo-text-gu
