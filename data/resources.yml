@@ -18,53 +18,35 @@ resources:
   url: /resources/core-business-card.pdf
   picture: bcard.png
 -
-  id: adaptable-promo-text-ar
-  name: Adaptable promo text (Arabic)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-arabic.pdf
-  picture: adaptable-promo-text.png
--
   id: adaptable-promo-text-en
-  name: Adaptable promo text (English)
+  name: Adaptable promo text
   type: pdf
-  url: /resources/core-adaptable-promo-text.pdf
   picture: adaptable-promo-text.png
--
-  id: adaptable-promo-text-gr
-  name: Adaptable promo text (Greek)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-greek.pdf
-  picture: adaptable-promo-text.png
--
-  id: adaptable-promo-text-gu
-  name: Adaptable promo text (Gujarati)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-gujarati.pdf
-  picture: adaptable-promo-text.png
--
-  id: adaptable-promo-text-ru
-  name: Adaptable promo text (Russian)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-russian.pdf
-  picture: adaptable-promo-text.png
--
-  id: adaptable-promo-text-sr-cyr
-  name: Adaptable promo text (Serbian Cyrillic)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-serbian-cyrillic.pdf
-  picture: adaptable-promo-text.png
--
-  id: adaptable-promo-text-sr-lat
-  name: Adaptable promo text (Serbian Latin)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-serbian-latin.pdf
-  picture: adaptable-promo-text.png
--
-  id: adaptable-promo-text-uk
-  name: Adaptable promo text (Ukrainian)
-  type: pdf
-  url: /resources/core-adaptable-promo-text-ukrainian.pdf
-  picture: adaptable-promo-text.png
+  url:
+    -
+      title: English
+      value: /resources/core-adaptable-promo-text.pdf
+    -
+      title: Arabic
+      value: /resources/core-adaptable-promo-text-arabic.pdf
+    -
+      title: Greek
+      value: /resources/core-adaptable-promo-text-greek.pdf
+    -
+      title: Gujarati
+      value: /resources/core-adaptable-promo-text-gujarati.pdf
+    -
+      title: Russian
+      value: /resources/core-adaptable-promo-text-russian.pdf
+    -
+      title: Serbian (Cyrillic)
+      value: /resources/core-adaptable-promo-text-serbian-cyrillic.pdf
+    -
+      title: Serbian (Latin)
+      value: /resources/core-adaptable-promo-text-serbian-latin.pdf
+    -
+      title: Ukrainian
+      value: /resources/core-adaptable-promo-text-ukrainian.pdf
 -
   id: general-presentation
   name: General presentation
