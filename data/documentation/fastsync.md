@@ -7,7 +7,7 @@ Resource Dump standard](http://www.openarchives.org/rs/1.1/resourcesync#Resource
 The FastSync dump can be downloaded at the following url:
 [`https://core.ac.uk/dumps/resync_dump.tar.xz`](https://core.ac.uk/dumps/resync_dump.tar.xz)
 
-Note that this is an extremely large file (&tilde;210GB) and appropriate tools are necessary for downloading it.
+Note that this is an extremely large file (&Tilde;322GB) and appropriate tools are necessary for downloading it.
 
 1.  To validate a  download compare it with the MD5 Checksum by running:
 
@@ -18,7 +18,7 @@ Note that this is an extremely large file (&tilde;210GB) and appropriate tools a
 2.  Test  that the output hash is the same as the following:
 
     ```txt
-    1a6573948ee04b95388ee6f0efc53dd9
+    7b69993c2f4e0afa9ef49ef4ef4a5a9a
     ```
 
 3.  Perform the extraction by running:
@@ -90,7 +90,8 @@ This is a sample data structure from the Fast Sync Dump
     "documentType": {
       "type": "RESEARCH|THESIS|PRESENTATION",
       "confidence": CONFIDENCE
-    }
+    },
+    "citationCount": COUNT
   },
   "contributors": [CONTRIBUTORS],
   "datePublished": "DATE OR YEAR",
@@ -110,6 +111,7 @@ This is a sample data structure from the Fast Sync Dump
   "year": PUBLICATION YEAR,
   "topics": ["TOPIC1","TOPIC2" ],
   "subjects": ["SUBJECT1", "SUBJECT2"],
+  "issn": "ISSN-IDENTIFIER",
   "fullText": "FULL TEXT"
 }
 ```
@@ -125,6 +127,7 @@ This is a sample data structure from the Fast Sync Dump
 | enrichments |  This sub-object contains enrichments to the data harvested from the data provider. |
 | enrichments.references |  A list of references (other documents) discovered by CORE. |
 | enrichments.documentType |  The type of the document. We use a machine learning algorithm to discover the document type, the type has also a confidence associated.  |
+| enrichments.citationCount |  The count of papers citing the paper. This information is extracted via [Microsoft Academic Graph](https://www.microsoft.com/en-us/research/project/microsoft-academic-graph/). |
 | contributors |  Matches the `dc.contributors` tag in the Dublin Core metadata format. |
 | datePublished |  Date of when the document has been published. If the data is not available from the original data provider, CORE will try to discover this using other data sources. |
 | abstract |  The abstract of the document |
@@ -139,6 +142,7 @@ This is a sample data structure from the Fast Sync Dump
 | year |  Based on the different dates available for the record, this field contains the year on which this document has been published. It uses only year because data quality is variable and many document don't have detailed informations. |
 | topics |  Coming from `dc.topic`.|
 | subjects |  Coming from `dc.subject` |
+| issn |  The issn of the journal where the article was published on. This information is extracted from the [Crossref](https://crossref.org) data. |
 | fullText |  The text extracted from the hosted full text. |
 
 
