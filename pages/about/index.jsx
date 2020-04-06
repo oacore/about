@@ -172,7 +172,7 @@ const AboutPage = () => (
     <Section id="resources" caption={aboutData.resources.shortTitle}>
       <h2>{aboutData.resources.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {resources.slice(0, 2).map(resource => (
+        {resources.slice(0, 3).map(resource => (
           <Col
             key={resource.id}
             className="d-flex flex-column"
