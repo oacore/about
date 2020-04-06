@@ -1,7 +1,16 @@
-@import "../bootstrap/core";
+@import '../bootstrap/core';
 
-.outreach-materials {
+.outreach-materials-card {
   flex: 1;
+}
+
+.outreach-materials-card-body {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-weight: bold;
+  }
 }
 
 .outreach-materials-picture {
@@ -9,7 +18,7 @@
   width: 100%;
   height: 0;
   padding: 0 0 70%;
-  background: url("./document.svg") no-repeat center / 70% auto;
+  background: url('./document.svg') no-repeat center / 70% auto;
 
   img {
     position: absolute;
@@ -24,7 +33,7 @@
   }
 }
 
-.outreach-materials-role {
-  font-style: italic;
-  margin-bottom: $card-spacer-y;
+.outreach-materials-link {
+  margin-top: auto;
+  width: 100%;
 }
