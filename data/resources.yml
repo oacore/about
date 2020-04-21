@@ -12,7 +12,7 @@ resources:
   url: /resources/core-leaflet-2019.pdf
   picture: brochure.png
 -
-  id: adaptable-promo-text-en
+  id: adaptable-promo-text
   name: Adaptable promo text (7 languages)
   type: pdf
   picture: adaptable-promo-text.png
@@ -25,6 +25,9 @@ resources:
       -
         title: Arabic
         value: /resources/core-adaptable-promo-text-arabic.pdf
+      -
+        title: Bangla
+        value: /resources/core-adaptable-promo-text-bangla.pdf
       -
         title: Greek
         value: /resources/core-adaptable-promo-text-greek.pdf
