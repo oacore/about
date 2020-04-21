@@ -13,11 +13,12 @@ resources:
   picture: brochure.png
 -
   id: adaptable-promo-text
-  name: Adaptable promo text (7 languages)
+  name: Adaptable promo text
   type: pdf
   picture: adaptable-promo-text.png
   url:
     label: Select the language
+    item-name: languages
     options:
       -
         title: English

@@ -111,19 +111,23 @@ const OutreachMaterials = ({
       </div>
 
       <CardBody className="outreach-materials-card-body">
-        <CardTitle className="outreach-materials-name">{name}</CardTitle>
-        {attachementType === 'single' ? (
-          <ResourceLink
-            id={`${id}-resource`}
-            className="outreach-materials-link"
-            href={link}
-            format={format}
-          />
-        ) : (
+        <CardTitle className="outreach-materials-name">
+          {name}
+          {attachementType === 'multi' &&
+            ` (${link.options.length} ${link.itemName})`}
+        </CardTitle>
+        {attachementType === 'multi' ? (
           <ResourceLinkSelector
             id={`${id}-resource`}
             options={link.options}
             label={link.label}
+            format={format}
+          />
+        ) : (
+          <ResourceLink
+            id={`${id}-resource`}
+            className="outreach-materials-link"
+            href={link}
             format={format}
           />
         )}
