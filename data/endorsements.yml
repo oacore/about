@@ -581,6 +581,22 @@ organizations:
   name: National Scientific Library - Georgia
   url: http://www.sciencelib.ge/en/
   logo: nslg.png
+- &chichester
+  name: University of Chichester
+  url: https://www.chi.ac.uk
+  logo: chichester.png
+- &ihs-vienna
+  name: Institute for Advanced Studies
+  url: https://www.ihs.ac.at
+  logo: ihs-vienna.png
+- &stirling
+  name: University of Stirling
+  url: https://www.stir.ac.uk
+  logo: stirling.png
+- &tsu
+  name: Ivane Javakhishvili Tbilisi State University
+  url: https://www.tsu.ge
+  logo: tsu.png
 
 sections:
   enterprise-companies:
@@ -635,18 +651,20 @@ sections:
       title: Institutions who work with us
       items: # the count must be a multiple of 3
         - *ou
-        - *foster
         - *apollo
         - *aston
         - *asu
         - *brunel
+        - *chichester
         - *city
         - *clok
         - *concordia
         - *dspace
+        - *foster
         - *gloucestershire
         - *hsu
         - *huddersfield
+        - *ihs-vienna
         - *iiasa
         - *laref
         - *lbu
@@ -660,8 +678,10 @@ sections:
         - *ricerca
         - *rsvpu
         - *salford
+        - *stirling
         - *strathprints
         - *trieste
+        - *tsu
         - *uol
         - *urfu
         - *uwl
