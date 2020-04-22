@@ -616,9 +616,9 @@ sections:
       url: ~contact
     organizations:
       title: Companies who work with us
-      items: # the count must be a multiple of 3
-        - *naver
+      items:
         - *turnitin
+        - *naver
         - *ontochem
         - *ropensci
         - *research
@@ -631,7 +631,6 @@ sections:
         - *macmicro
         - *scilit
         - *intoolab
-        - *iris-ai
     testimonials:
       title: What companies say about us
       items:
@@ -649,47 +648,47 @@ sections:
       url: ~services#content-discovery
     organizations:
       title: Institutions who work with us
-      items: # the count must be a multiple of 3
-        - *ou
-        - *apollo
-        - *aston
-        - *asu
-        - *brunel
-        - *chichester
-        - *city
-        - *clok
-        - *concordia
-        - *dspace
-        - *foster
-        - *gloucestershire
-        - *hsu
-        - *huddersfield
-        - *ihs-vienna
-        - *iiasa
-        - *laref
-        - *lbu
-        - *ljmu
-        - *middlesex
-        - *nslg
-        - *nulan
-        - *oro
-        - *ray
-        - *regensburg
-        - *ricerca
-        - *rsvpu
-        - *salford
-        - *stirling
-        - *strathprints
-        - *trieste
-        - *tsu
-        - *uol
-        - *urfu
-        - *uwl
-        - *victoria
-        - *wr-leeds
-        - *wr-sheffield
-        - *wr-york
-        - *zurich
+      items:
+          - *ou
+          - *apollo
+          - *aston
+          - *asu
+          - *brunel
+          - *chichester
+          - *city
+          - *clok
+          - *concordia
+          - *dspace
+          - *foster
+          - *gloucestershire
+          - *hsu
+          - *huddersfield
+          - *ihs-vienna
+          - *iiasa
+          - *laref
+          - *lbu
+          - *ljmu
+          - *middlesex
+          - *nslg
+          - *nulan
+          - *oro
+          - *ray
+          - *regensburg
+          - *ricerca
+          - *rsvpu
+          - *salford
+          - *stirling
+          - *strathprints
+          - *trieste
+          - *tsu
+          - *uol
+          - *urfu
+          - *uwl
+          - *victoria
+          - *wr-leeds
+          - *wr-sheffield
+          - *wr-york
+          - *zurich
     testimonials:
       title: What institutions say about us
   partners:
@@ -705,7 +704,7 @@ sections:
       url: ~contact
     organizations:
       title: Our partners
-      items: # the count must be a multiple of 3
+      items:
         - *microsoft
         - *mooc
         - *openaire
@@ -715,13 +714,11 @@ sections:
         - *oab
         - *doaj
         - *okm
-        - *microsoft
         - *foster
         - *orcid
         - *rioxx
         - *opendoar
         - *irus
-        - *metadata2020
         - *coar
         - *bl
     testimonials:

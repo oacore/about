@@ -28,9 +28,24 @@ class LogosCarousel extends Component {
   }
 
   static getDerivedStateFromProps({ items }, state) {
-    const itemChunks = spliceChunks(items, LogosCarousel.itemsPerSlide)
-    if (itemChunks[itemChunks.length - 1].length < LogosCarousel.itemsPerSlide)
-      itemChunks.pop()
+    const missingCount =
+      LogosCarousel.itemsPerSlide - (items.length % LogosCarousel.itemsPerSlide)
+
+    let insertedCount = 0
+    let insertPosition = Math.floor(items.length / 2)
+    const itemsToRender = items.map((_, i) => {
+      if (missingCount - insertedCount > 0 && i === insertPosition) {
+        const item = items[insertedCount]
+        insertedCount += 1
+        insertPosition += Math.floor((items.length - insertPosition) / 2)
+        return item
+      }
+
+      return items[i - insertedCount]
+    })
+    if (missingCount) itemsToRender.push(...items.slice(-missingCount))
+
+    const itemChunks = spliceChunks(itemsToRender, LogosCarousel.itemsPerSlide)
 
     return {
       ...state,
