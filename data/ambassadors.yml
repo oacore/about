@@ -59,6 +59,16 @@ ambassadors:
       region: tz
       picture: albogast-musabila.jpg
     -
+      id: alexander-efimov
+      name: Alexander Efimov
+      role: Deputy of Head, Office of Information and Analytical Support
+      organization: Ural Federal University
+      location:
+        latitude: 56.8403246
+        longitude: 60.6138365
+      country: Russia
+      picture: alexander-efimov.jpg
+    -
       id: arnold-mwanzu
       name: Arnold Mwanzu
       role: Librarian
