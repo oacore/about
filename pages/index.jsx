@@ -12,6 +12,7 @@ import {
   Page,
   Section,
   Search as SearchForm,
+  Content,
 } from 'components'
 import { JoinSection } from 'components/sections'
 import { patchStats } from 'components/utils'
@@ -70,6 +71,10 @@ const TestimonialsSection = ({
   </Section>
 )
 
+const SearchIntro = ({ children }) => (
+  <Content className="mx-auto alert alert-secondary">{children}</Content>
+)
+
 const IndexPage = () => (
   <Page
     title={page.title}
@@ -83,7 +88,9 @@ const IndexPage = () => (
           name="q"
           placeholder={patchStats(page.searchPlaceholder, page.statistics)}
         />
-        <SearchForm.Suggestions options={page.searchSuggestions} />
+        <SearchIntro>
+          <Markdown>{page.covid19Notice}</Markdown>
+        </SearchIntro>
       </Section>
     </Hero>
 
