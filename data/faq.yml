@@ -452,6 +452,13 @@ sections:
           incomplete, you should contact the repository of origin. To improve
           the CORE recommendations, you can use the feedback button, with
           which you can remove any undesirable articles.
+      - slug: Does-CORE-provide-a-list-of-PDFs-in-a-specific-language
+        question: |
+          Does CORE provide a list of PDFs in a specific language?
+        answer: |
+          Unfortunately CORE does not provide any language specific datasets
+          at the moment. Users can use the CORE API to download individual
+          PDFs.
   - id: about
     title: General information about CORE
     caption: General information
