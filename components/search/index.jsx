@@ -3,6 +3,7 @@ import { Button } from 'reactstrap'
 
 import { Content } from '../content'
 import { SimpleSearchForm, AdvancedSearchForm } from './forms'
+import Suggestions from './suggestions'
 
 class SearchForm extends React.Component {
   state = {
@@ -13,6 +14,8 @@ class SearchForm extends React.Component {
     super(props)
     this.toggleSearchComponent = this.toggleSearchComponent.bind(this)
   }
+
+  static Suggestions = Suggestions
 
   toggleSearchComponent() {
     this.setState(state => ({
