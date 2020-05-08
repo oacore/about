@@ -83,6 +83,7 @@ const IndexPage = () => (
           name="q"
           placeholder={patchStats(page.searchPlaceholder, page.statistics)}
         />
+        <SearchForm.Suggestions options={page.searchSuggestions} />
       </Section>
     </Hero>
 
