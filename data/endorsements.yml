@@ -165,6 +165,15 @@ testimonials:
     name: Kim Sejin
     role: Content Manager, Naver Academic Service
     picture: /images/people/sejin.png
+    
+- &johan-tilstra
+  id: johan-tilstra
+  content: |
+    With the integration of the CORE service into Lean Library, we’re expanding the coverage of open access articles significantly. We’re enthusiastic about working with the CORE team, and even more about continuing to simplify library services for all Lean Library users.
+  author:
+    name: Johan Tilstra
+    role: Founder of Lean Library
+    picture: /images/people/Johan.png
 
 - &peter-raeth
    id: peter-raeth
@@ -274,6 +283,12 @@ organizations:
   url: https://www.naver.com
   logo: naver.svg
   testimonial: *kim-sejin
+- &lean-library
+  id: lean-library
+  name: Lean Library
+  url: https://www.leanlibrary.com/
+  logo: leanlibrary.png
+  testimonial: *johan-tilstra
 - &iris-ai
   id: iris-ai
   name: IRIS AI
@@ -714,6 +729,7 @@ sections:
         - *oab
         - *doaj
         - *okm
+        - *lean-library        
         - *foster
         - *orcid
         - *rioxx
