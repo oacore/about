@@ -479,6 +479,124 @@ ambassadors:
         longitude: 34.4393177
       country: Palestine
       picture: rawia-awadallah.jpg
+    -
+      id: r-sakthivel
+      name: R Sakthivel
+      role: Library and information Science
+      organization: Bharathidasan University in India
+      location:
+        # wrong location, MUST be changed, added to prevent build failing
+        latitude: 28.5426238
+        longitude: 77.1830602
+      country: India
+    -
+      id: ta-kumar
+      name: T Ananth Kumar
+      role: Assistant Professor
+      organization: IFET College of Engineering
+      location:
+        latitude: 11.920728
+        longitude: 79.6107506
+      country: India
+      region: in
+    -
+      id: shambulinga-b-ali
+      name: Shambulinga B Jali
+      role: Chief Librarian
+      organization: CMR University
+      location:
+        latitude: 13.0684148
+        longitude: 77.5787986
+      country: India
+      region: in
+    -
+      id: k-venugopal
+      name: K Venugopal
+      role: Assistant Professor
+      organization: Vivekanandha college of arts and sciences for women
+      location:
+        latitude: 11.4566825
+        longitude: 77.7860735
+      country: India
+      region: in
+    -
+      id: munfar-kappil
+      name: Munfar Kappil
+      role: Librarian
+      organization: NAM College Kallikandy
+      location:
+        latitude: 11.7490791
+        longitude: 75.6353176
+      country: India
+      region: in
+    -
+      id: balraju-vattikulla
+      name: Balraju Vattikulla
+      role: Library Assistant
+      organization: URSC/ISRO
+      location:
+        latitude: 12.9601126
+        longitude: 77.6527941
+      country: India
+      region: in
+    -
+      id: piyush-mani-maurya
+      name: Piyush Mani Maurya
+      role: Lecturer
+      organization: Zeal Institute
+      location:
+        latitude: 18.448984
+        longitude: 71.5838811
+      country: India
+      region: in
+    -
+      id: veerabhadra-swamy-pulletikurthi
+      name: Veerabhadra Swamy Pulletikurthi
+      role: Professor
+      organization: Department of Management Studies
+      location:
+        latitude: 28.5426238
+        longitude: 77.1830602
+      country: India
+      region: in
+    -
+      id: laureano-felipe-gómez-dueñas
+      name: Laureano Felipe Gómez Dueñas
+      role: Librarian
+      organization: MetaBiblioteca
+      location:
+        latitude: 4.6763005
+        longitude: 74.1219638
+      country: Colombia
+    -
+      id: abhilab-gupta
+      name: Abhilab Gupta
+      role: Student
+      organization: University of Jammu
+      location:
+        latitude: 32.712024
+        longitude: 74.8239048
+      country: India
+      region: in
+    -
+      id: kuldeep-pawar
+      name: Kuldeep Pawar
+      role: Librarian
+      organization: Arihant College of Arts, Commerce & Science, Pune, Maharashtra
+      location:
+        latitude: 18.506557
+        longitude: 73.8786333
+      country: India
+      region: in
+    -
+      id: yong-li
+      name: Yong Li
+      role: Associate Research Fellow
+      organization: Hebei Academy of Social Sciences in China
+      location:
+        latitude: 39.2475201
+        longitude: 112.1756084
+      country: China
 
 regions:
   -
