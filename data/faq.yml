@@ -256,15 +256,6 @@ sections:
             this approach is available in the “[CORE: Three Access Levels to
             Underpin Open Access](http://www.dlib.org/dlib/november12/knoth/11knoth.html)”
             article.
-        - slug: can-CORE-stop-caching-PDFs-from-my-repository
-          question: |
-            Can CORE stop caching the PDFs from my repository?
-          answer: |
-            CORE can change the way it treats your repository's content. The resources
-            will be indexed and made discoverable via the CORE Search, but the PDFs
-            will not be downloadble directry from the CORE Reader, a link will be
-            provided only to the repository of origin. If you are interested in
-            that option [contact](~contact) us.
         - slug:  how-can-my-repository-opt-out-from-being-harvested-by-CORE
           question: |
             How can my repository opt out from being harvested by CORE?
