@@ -165,7 +165,7 @@ testimonials:
     name: Kim Sejin
     role: Content Manager, Naver Academic Service
     picture: /images/people/sejin.png
-    
+
 - &johan-tilstra
   id: johan-tilstra
   content: |
@@ -572,6 +572,22 @@ organizations:
   name: Victoria University Melbourne Australia
   url: https://www.vu.edu.au
   logo: victoria-university-melbourne.svg
+- &bolton
+  name: University of Bolton
+  url: http://ubir.bolton.ac.uk/
+  logo: bolton.gif
+- &nora
+  name: NORA
+  url: https://www.openrepository.ru/
+  logo: nora.png
+- &kcut
+  name: Ktisis Cyprus University of Technology
+  url: https://ktisis.cut.ac.cy/
+  logo: cyprus-university-of-technology.jpg
+- &bcu
+  name: Birmingham City University
+  url: https://www.open-access.bcu.ac.uk/
+  logo: birmingham.png
 - &ricerca
   name: RICERCA United Universities FVG
   url: https://ricerca.unityfvg.it/
@@ -729,7 +745,7 @@ sections:
         - *oab
         - *doaj
         - *okm
-        - *lean-library        
+        - *lean-library
         - *foster
         - *orcid
         - *rioxx
