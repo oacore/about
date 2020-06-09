@@ -299,6 +299,7 @@ ambassadors:
         latitude: -30.559483
         longitude: 22.937506
       country: South Africa
+      picture: niklas-zimmer.jpg
     -
       id: omar-aboshady
       name: Omar Aaboshady
@@ -437,6 +438,7 @@ ambassadors:
         longitude: 37.906193
       country: Kenya
       region: ke
+      picture: wanyenda-chilimo.jpg
     -
       id: wulystan-pius-mtega
       name: Wulystan Pius Mtega
@@ -499,6 +501,7 @@ ambassadors:
         longitude: 79.6107506
       country: India
       region: in
+      picture: ananthkumar.jpg
     -
       id: shambulinga-b-ali
       name: Shambulinga B Jali
@@ -539,6 +542,7 @@ ambassadors:
         longitude: 77.6527941
       country: India
       region: in
+      picture: balraju-vattikulla.jpg
     -
       id: piyush-mani-maurya
       name: Piyush Mani Maurya
@@ -559,6 +563,7 @@ ambassadors:
         longitude: 77.1830602
       country: India
       region: in
+      picture: veerabhadra-swamy.jpg
     -
       id: laureano-felipe-gómez-dueñas
       name: Laureano Felipe Gómez Dueñas
@@ -568,6 +573,7 @@ ambassadors:
         latitude: 4.6763005
         longitude: 74.1219638
       country: Colombia
+      picture: gomez.png
     -
       id: abhilab-gupta
       name: Abhilab Gupta
@@ -588,6 +594,7 @@ ambassadors:
         longitude: 73.8786333
       country: India
       region: in
+      picture: kuldeep-pawar.jpg
     -
       id: yong-li
       name: Yong Li
