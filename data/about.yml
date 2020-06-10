@@ -68,9 +68,9 @@ how-it-works:
   harvesting:
     title: Harvesting data
     content: |
-      CORE harvests research papers from data providers from all
-      over the world including institutional and subject repositories, open
-      access and hybrid journal publishers.
+      CORE [harvests](~advantages-of-being-harvested) research papers from
+      data providers from all over the world including institutional and
+      subject repositories, open access and hybrid journal publishers.
 
       CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
       from thousands and over tens of thousands of journals, collected from
