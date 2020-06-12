@@ -440,6 +440,16 @@ ambassadors:
       region: ke
       picture: wanyenda-chilimo.jpg
     -
+      id: andrija-sagic
+      name: Andrija Sagić
+      role: Head of Digital Development Department
+      organization: “Milutin Bojić” Library
+      location:
+        latitude: 44.8122636
+        longitude: 20.4690989
+      country: Serbia
+      picture: andrija-sagic.jpg
+    -
       id: wulystan-pius-mtega
       name: Wulystan Pius Mtega
       role: Senior Librarian
