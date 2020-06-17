@@ -30,7 +30,7 @@ features:
 main: |
   The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.
 
-  [Access the dashboard now](https://dashboard.core.ac.uk/login).
+  [Access the dashboard now](https://dashboard.core.ac.uk/).
   To register, [send us an email](~about/#contact).
 
   If you use CORE in your work, we kindly request you to [cite one
