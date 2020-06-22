@@ -302,7 +302,7 @@ ambassadors:
       picture: niklas-zimmer.jpg
     -
       id: omar-aboshady
-      name: Omar Aaboshady
+      name: Omar Aboshady
       role: Senior Research and Teaching Assistant
       organization: Menoufia University
       location:
@@ -462,7 +462,7 @@ ambassadors:
       picture: wulystan-pius-mtega.png
     -
       id: faheem-ahmad
-      name: Faheem Ahmad
+      name: Faeem Ahmad
       role: Library Incharge
       organization: Indian Grain Storage Mangement and Research Institute
       location:
@@ -493,7 +493,7 @@ ambassadors:
       picture: rawia-awadallah.jpg
     -
       id: r-sakthivel
-      name: R Sakthivel
+      name: R. Sakthivel
       role: Library and information Science
       organization: Bharathidasan University in India
       location:
@@ -503,7 +503,7 @@ ambassadors:
       country: India
     -
       id: ta-kumar
-      name: T Ananth Kumar
+      name: T. Ananth Kumar
       role: Assistant Professor
       organization: IFET College of Engineering
       location:
@@ -514,7 +514,7 @@ ambassadors:
       picture: ananthkumar.jpg
     -
       id: shambulinga-b-ali
-      name: Shambulinga B Jali
+      name: Shambulinga B. Jali
       role: Chief Librarian
       organization: CMR University
       location:
@@ -524,7 +524,7 @@ ambassadors:
       region: in
     -
       id: k-venugopal
-      name: K Venugopal
+      name: K. Venugopal
       role: Assistant Professor
       organization: Vivekanandha college of arts and sciences for women
       location:
@@ -615,6 +615,33 @@ ambassadors:
         latitude: 39.2475201
         longitude: 112.1756084
       country: China
+    -
+      id: sergio-santamarina
+      name: Sergio Santamarina
+      role: Librarian
+      organization: Universidad Nacional de José C Paz
+      location:
+        latitude: -34.520883
+        longitude: -58.7478279
+      country: Argentina
+    -
+      id: sydney
+      name: Sydney
+      role: Librarian
+      organization: Nuhimbili University of Health and Allied Sciences
+      location:
+        latitude: -6.807861
+        longitude: 39.2710713
+      country: Tanzania
+    -
+      id: jagadish-aryal
+      name: Jagadish Aryal
+      role: Librarian
+      organization: Social Science Baha
+      location:
+        latitude: 27.706083
+        longitude: 85.3370732
+      country: Nepal
 
 regions:
   -
