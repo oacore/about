@@ -1,0 +1,161 @@
+id: repository-edition
+
+title: CORE Repository Edition
+tagline: Premium subscription package with tailored support
+description:
+  The CORE Repository Edition offers an improved discoverability of a
+  repository’s content with tools specifically engineered to support
+  compliance with the REF 2021 open access policy and dedicated technical
+  support. CORE Repository Edition offers a suite of powerful tools and
+  guaranteed support for repositories, libraries and their content managers.
+
+features:
+-
+  title: Discoverability
+  picture: /images/icons/search.svg
+  description: |
+    Increased discoverability
+-
+  title: Functionality
+  picture: /images/icons/mechanism.svg
+  description: |
+    Enhanced functionality
+-
+  title: Support
+  picture: /images/icons/support.svg
+  description: |
+    Guaranteed support levels
+
+main: |
+  CORE Repository Edition offers a suite of powerful tools and guaranteed
+  support for libraries, repositories and their content managers in the
+  following three areas:
+
+  * **Discoverability** – increased discoverability of the institution's
+    research outputs via search engines, library discovery systems,
+    third-party repositories, PubMed, Microsoft Academic Search and other
+    data providers.
+  * **Functionality** –  enhanced functionality for repositories and research
+    content management, including REF article-level open access compliance
+    assessment, repository data enrichment and validation.
+  * **Support** –  Guaranteed support in the area of issue tracking, funder
+    reporting and interoperability management of repository data.
+
+  [Gain access](mailto:%73%61l%65s%40%63o%72%65%2ea%63%2eu%6b)
+  to CORE Repository Edition now.
+
+additional:
+  title: Details
+  content: |
+    #### Discoverability
+
+    By integrating with CORE, a repository can make their content far more
+    visible than as a standalone institution. This is achieved by CORE
+    exposing the content via [CORE Search](~services/search), [CORE
+    Discovery](~services/discovery) browser extension, [CORE
+    Recommender](~services/recommender) and [many other](~services) widely
+    used scholarly infrastructure services including PubMed and Microsoft
+    Academic.
+
+    On average a repository’s membership in CORE [increases total overall
+    downloads of content][increase-blog-post] by an average of 15% and up to
+    32.5% for repositories following interoperability guidelines. All
+    downloads from CORE are monitored and attributable back to the originating
+    repository which means that the HEI remains in full control of its usage
+    data.
+
+    Subscription to CORE Repository Edition means that a repository has a
+    guaranteed re-harvesting rate of a maximum of 14 days to ensure rapid
+    discoverability of new content.
+
+    [increase-blog-post]: https://scholarlycommunications.jiscinvolve.org/wp/2020/03/19/being-an-enabling-infrastructure-core-makes-open-access-more-visible-and-reusable/
+
+    #### Functionality
+
+    CORE Repository Edition comes with full access to an enhanced [CORE
+    Repository Dashboard](~services/repository-dashboard).
+
+    Research England announced they will be using CORE data in the [REF 2021
+    OA Audit](~ref-audit). CORE provides to subscribing UK HEIs tools to
+    prepare their REF submission and avoid submitting non-compliant outputs.
+
+    * REF 2021 OA deposit compliance information for hosted content.
+    * Cross-repository REF 2021 compliance matching.
+
+    Additionally, [CORE enriches repository’s data][enrich-paper] by
+    triangulating with Microsoft Academic Graph, Crossref and others to gather
+    missing identifiers and improve the quality and accuracy of existing data
+    in repositories.  More specifically, the enhanced CORE Repository
+    Dashboard offers DOI data enrichment for repositories.
+
+    Finally, CORE provides a powerful range of add-on tools for repositories
+    that enhance the control of content for repository managers and improve
+    the end-user experience. These repository plugins include:
+
+    * [Discovery](~services/discovery) – automatically guide users to Open
+      Access versions of content where this content is not hosted by the
+      repository itself.
+    * [Recommender](~services/recommender) – greatly enhances a repository's
+      own search functionality.
+
+    [enrich-paper]: https://scholarlycommunications.jiscinvolve.org/wp/2020/02/24/core-raises-repository-data-quality-by-consolidating-information-from-external-datasets/
+
+    #### Support
+
+    Subscription to CORE Repository Edition comes with guaranteed customer
+    support services. Initial help is provided to ensure interoperability of
+    the repository with CORE and other services. This includes data schemas,
+    such as RIOXX, developed for UK funders to link funded projects with
+    research outputs. While continuous monitoring, issue detection and
+    tracking tools are provided in the [CORE Repository
+    Dashboard](~services/repository-dashboard), CORE Repository Edition users
+    can rely on dedicated technical support.
+
+    Additional support is also offered to enable repositories to gain maximum
+    exposure for their content.
+
+    Support services are provided with an average response time of **1 business
+    day**.
+
+    In addition to all the listed benefits, you will become part of the CORE
+    network of institutions and receive recognition of your institution
+    supporting open access. If you agree, the logo of your institution will be
+    placed in the public list of CORE supporters.
+
+what-is-included:
+  title:  What’s included
+  content: |
+    Our CORE Repository Edition provides you with:
+
+    * Access to the percentage of papers that are non-compliant,
+      e.g. outputs that were deposited 90 days or more after publication
+      according to REF 2021 Open Access Policy
+    * Enhanced technical support
+    * Ability to download all repository’s deposit dates as a CSV
+    * Access to an extended deposit time lag chart
+    * Browsing of article deposit dates
+    * Access to a cross-repository compliance matching tool
+
+    To gain access to CORE Repository Edition contact us using the button below.
+
+  actions:
+    primary:
+      url: mailto:%73%61l%65s%40%63o%72%65%2ea%63%2eu%6b
+      caption: Request CORE Repository Edition
+    secondary:
+      url: https://dashboard.core.ac.uk
+      caption: Log in
+
+related-services:
+-
+  title: CORE Repository Dashboard
+  picture: /images/services/repository-dashboard.svg
+  url: ~services/repository-dashboard
+-
+  title: CORE Recommender
+  picture: /images/services/recommender.svg
+  url: ~services/recommender
+-
+  title: CORE Discovery
+  picture: /images/services/discovery.svg
+  url: ~services/discovery

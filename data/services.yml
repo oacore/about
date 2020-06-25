@@ -96,9 +96,26 @@ sections:
     title: Repository Dashboard
     short-description: Monitor the harvesting of your repository
     description: |
-      The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs.
+      The Repository Dashboard is a free service for our data providers. It
+      provides an online interface offering valuable technical information and
+      statistics to content providers. It is the tool you need to check that
+      your repository is configured correctly to provide maximum visibility to
+      your research outputs.
     action:
       caption: Learn more about the CORE Repository Dashboard
       url: ~services/repository-dashboard
     logo: /images/services/repository-dashboard.svg
-    screenshot: /images/screenshots/repository-dashboard.png
+    screenshot: /images/screenshots/dashboard-overview.png
+  -
+    id: repository-edition
+    title: Repository Edition
+    short-description: Monitor the harvesting of your repository
+    description: |
+      Subscription to CORE Repository Edition comes with guaranteed support
+      levels to enable repositories to gain maximum exposure for their content
+      and help ensure compliance with Open Access policies. Also provided is
+      access to an enhanced version of the Repository Dashboard.
+    action:
+      caption: Learn more about the CORE Repository Edition
+      url: ~services/repository-edition
+    logo: /images/services/repository-edition.svg

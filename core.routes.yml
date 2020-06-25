@@ -31,6 +31,7 @@ services:
     recommender: ./recommender
     connector: ./connector
     repository-dashboard: ./repository-dashboard
+    repository-edition: ./repository-edition
     analytics-dashboard: ./analytics-dashboard
     fast-sync: ./fastsync
     fastsync: ./fastsync

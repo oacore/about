@@ -19,7 +19,7 @@ with regards to exposing data to CORE through their repositories. In this docume
 4. [Why the audit should be supported by an aggregation?](#reasons)  
 5. [How will CORE collect the information?](#collect-info)  
 6. [How can CORE help you with making sure your repository is represented well?](#repo-representation)  
-7. [Subscribe to the new CORE Repository Dashboard Premium Edition](#dashboard-premium)
+7. [Subscribe to CORE Repository Edition](#repository-edition)
 
 <h2 id="oa-policy">Key REF 2021 Open Access Policy sections relevant to CORE</h2>
 
@@ -262,13 +262,14 @@ section](~faq#ref-audit) for the purposes of the audit. If you have
 any further questions, please [contact](~contact) the CORE team for support and
 we will be happy to help.
 
-<h2 id="dashboard-premium">
-  Subscribe to the new CORE Repository Dashboard Premium Edition
+<h2 id="repository-edition">
+  Subscribe to CORE Repository Edition
 </h2>
 
-The new CORE Repository Dashboard Premium Edition launches on the 1st April
-to a select number of U.K. Higher Education Institutes. This new edition
-contains both new tools for data enrichments and also tools to enable
+The new CORE Repository Edition has now been launched. This
+new edition contains both new tools for data enrichments and to enable
 repositories to help ensure compliance with the REF2021 Open Access Policy. 
-
-For further details or to subscribe contact us via email at [&#101;&#110;&#116;&#101;&#114;&#112;&#114;&#105;&#115;&#101;&#064;&#099;&#111;&#114;&#101;&#046;&#097;&#099;&#046;&#117;&#107;](mailto:&#101;&#110;&#116;&#101;&#114;&#112;&#114;&#105;&#115;&#101;&#064;&#099;&#111;&#114;&#101;&#046;&#097;&#099;&#046;&#117;&#107;).
+ 
+Visit the CORE Repository Edition service for further
+details. To subscribe contact us via email at
+[&#115;&#97;&#108;&#101;&#115;&#64;&#99;&#111;&#114;&#101;&#46;&#97;&#99;&#46;&#117;&#107;](mailto:%73%61l%65s%40%63o%72%65%2ea%63%2eu%6b).

@@ -27,6 +27,8 @@ navigation:
         children:
           - title: Repository dashboard
             path: ~services/repository-dashboard
+          - title: Repository edition
+            path: ~services/repository-edition
   - title: About
     path: ~about
     children:

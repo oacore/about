@@ -3,34 +3,53 @@ id: repository-dashboard
 title: CORE Repository Dashboard
 tagline: Manage your repository outputs and ensure they are visible to the world
 description:
-  The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.
+  The Repository Dashboard is a free service for our data providers. It
+  provides an online interface offering valuable technical information and
+  statistics to content providers. It is the tool you need to check that your
+  repository is configured correctly to provide maximum visibility to your
+  research outputs. The Repository Dashboard has been created in an effort to
+  improve the quality and transparency of the harvesting process of open
+  access content and to create a two way collaboration between the CORE
+  project and our data providers.
 
 screenshot:
-  source: /images/screenshots/repository-dashboard.png
-  caption: |
-
+  source: /images/screenshots/dashboard-overview.png
+  caption: CORE Repository Dashboard home page
 
 features:
 -
   title: Key message 1
-  picture: /images/icons/statistics.svg
+  picture: /images/icons/manage.svg
   description: |
-    Access your collection's download statistics and harvesting status
+    Manage access to documents from your repository in CORE
 -
   title: Key message 2
   picture: /images/icons/update.svg
   description: |
-    Update metadata records with a single button click
+    Obtain DOI enrichments detected by CORE for your content
 -
   title: Key message 3
-  picture: /images/icons/manage.svg
+  picture: /images/icons/statistics.svg
   description: |
-    Manage access to documents from your repository in CORE
+    Access your collection’s download statistics, harvesting status and
+    metadata and policy compliance
 
 main: |
-  The Repository Dashboard is a free service for our data providers. It provides an online interface offering valuable technical information and statistics to content providers. It is the tool you need to check that your repository is configured correctly to provide maximum visibility to your research outputs. The Repository Dashboard has been created in an effort to improve the quality and transparency of the harvesting process of open access content and to create a two way collaboration between the CORE project and our data providers.
+  The Repository Dashboard is a free service for our data providers. The
+  Repository Dashboard has been created in an effort to improve the quality
+  and transparency of the harvesting process of open access content and to
+  create a two way collaboration between the CORE project and our data
+  providers.
 
-  [Access the dashboard now](https://dashboard.core.ac.uk/).
+  The Repository Dashboard provides an online interface offering valuable
+  technical information and statistics to content providers. It is the tool
+  you need to check that your repository is configured correctly to provide
+  maximum visibility to your research outputs. Additional features include
+  identifier enrichments, such as detecting missing DOIs for repository
+  records. The tool also offers  REF 2021 Open Access compliance monitoring
+  functionality to UK HEIs, and a RIOXX metadata quality checker.
+
+  [Access the dashboard now](https://dashboard.core.ac.uk).
   To register, [send us an email](~about/#contact).
 
   If you use CORE in your work, we kindly request you to [cite one
@@ -83,21 +102,34 @@ what-is-included:
   title:  What’s included
   content: |
     Our free membership provides you with:
-    * Access to the content harvested from the repository.
-    * Enables content management, by requesting metadata updates or
-      managing take down requests.
+
+    * Access to the content harvested from the repository
+    * Enables content management, by requesting metadata updates or managing
+      take down requests
     * Access to all detected technical issues and suggestions for improving
-      the efficiency of harvesting and the quality of metadata.
-    * Statistics regarding the repository content.
+      the efficiency of harvesting and the quality of metadata
+    * Access to RIOXX metadata compliance checking
+    * Statistics regarding the repository content via IRUS-UK
+    * Access to view and manage content downloads
+    * Check compliance content with the REF 2021 Open Access Policy
+
+    For an enhanced repository functionality and content discoverability,
+    plus guaranteed support levels, visit the [CORE Repository
+    Edition](~services/repository-edition).
+
   actions:
     primary:
       url: ~contact
       caption: Contact us to register for free
     secondary:
-      url: https://dashboard.core.ac.uk/login
+      url: https://dashboard.core.ac.uk
       caption: Log in now
 
 related-services:
+-
+  title: CORE Repository Edition
+  picture: /images/services/repository-edition.svg
+  url: ~services/repository-edition
 -
   title: CORE Recommender
   picture: /images/services/recommender.svg
@@ -106,7 +138,3 @@ related-services:
   title: CORE Discovery
   picture: /images/services/discovery.svg
   url: ~services/discovery
--
-  title: CORE Search
-  picture: /images/services/search.svg
-  url: ~services/search
