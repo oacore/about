@@ -476,17 +476,17 @@ sections:
         question: |
           How can I embed the “harvested by CORE” snippet on my website?
         answer: |
-          ![harvested-by-core](/images/harvested-by-core-orange.png)
+          ![harvested-by-core](/resources/harvested-by-core-orange.png)
           ```
-          <img src="https://core.ac.uk/images/harvested-by-core-orange.png">
+          <img src="https://core.ac.uk/resources/harvested-by-core-orange.png">
           ```
       - slug: powered-by-CORE-snippet
         question: |
           How can I embed the “powered by CORE” snippet on my website?
         answer: |
-          ![powered-by-core](/images/powered-by-core-orange.png)
+          ![powered-by-core](/resources/powered-by-core-orange.png)
           ```
-          <img src="https://core.ac.uk/images/powered-by-core-orange.png">
+          <img src="https://core.ac.uk/resources/powered-by-core-orange.png">
           ```
       - slug: cite-CORE
         question: |
