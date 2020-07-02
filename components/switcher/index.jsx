@@ -26,8 +26,6 @@ const SwitcherContent = ({ children, tag: Tag = 'div', ...restProps }) => (
   </Tag>
 )
 
-/* eslint-disable jsx-a11y/mouse-events-have-key-events */
-
 class Switcher extends Component {
   state = {
     items: [],

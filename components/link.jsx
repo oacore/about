@@ -3,25 +3,31 @@ import NextLink from 'next/link'
 
 import Router from '../router'
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
+const Link = React.forwardRef(
+  ({ href, children: child, passHref = true, ...restProps }, ref) => {
+    if (href == null) return child
 
-const Link = ({ href, children, ...restProps }) => {
-  if (href == null) return children
-
-  let pathname = href && href.pathname != null ? href.pathname : href
-  // FIXME: Temporarely skip block routes
-  // TODO: Configure dynamic routing via NextJS config
-  pathname = Router.resolve(pathname)
-  const realHref = typeof href == 'string' ? pathname : { ...href, pathname }
-
-  const nextChildren =
-    typeof children == 'string' ? <a>{children}</a> : children
-
-  return (
-    <NextLink href={realHref} {...restProps}>
-      {nextChildren}
-    </NextLink>
-  )
-}
+    const resolvedHref = Router.resolve(href)
+    const actualChild =
+      typeof child == 'string' ? (
+        <a ref={ref} href={resolvedHref}>
+          {child}
+        </a>
+      ) : (
+        React.cloneElement(child, passHref ? { href: resolvedHref } : {})
+      )
+    try {
+      // eslint-disable-next-line no-new
+      new URL(resolvedHref) // throws if URL is relative
+      return actualChild
+    } catch (relativeUrlError) {
+      return (
+        <NextLink href={resolvedHref} {...restProps}>
+          {actualChild}
+        </NextLink>
+      )
+    }
+  }
+)
 
 export default Link

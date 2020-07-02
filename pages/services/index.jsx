@@ -13,7 +13,7 @@ import {
 import Testimonial from 'components/testimonial'
 import servicesData from 'data/services.yml'
 
-import './services.scss'
+import './services.module.scss'
 
 const ServicesPage = () => (
   <Page

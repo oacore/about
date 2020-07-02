@@ -8,8 +8,6 @@ import {
   CardBody,
 } from 'reactstrap'
 
-import './team-member.scss'
-
 const TeamMember = ({
   className = '',
   children,

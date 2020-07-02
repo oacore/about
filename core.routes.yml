@@ -35,6 +35,7 @@ services:
     fast-sync: ./fastsync
     fastsync: ./fastsync
     discovery: ./discovery
+    search: /search
 
     fast: ./fastsync
     labs-oadiscovery: ./labs/discovery
@@ -165,3 +166,5 @@ blog: https://blog.core.ac.uk
 static: /
 images: /images
 documents: /documents
+ref-audit: /ref-audit
+advantages-of-being-harvested: /advantages-of-being-harvested

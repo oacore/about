@@ -8,7 +8,6 @@ import {
   Button,
   Label,
 } from 'reactstrap'
-import './search-navbar.scss'
 
 const SearchNavbar = ({
   name,

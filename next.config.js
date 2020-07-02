@@ -1,7 +1,5 @@
 const path = require('path')
 
-const withCss = require('@zeit/next-css')
-const withSass = require('@zeit/next-sass')
 const withImages = require('next-images')
 
 const nextConfig = {
@@ -54,12 +52,7 @@ const nextConfig = {
     return config
   },
 
-  sassLoaderOptions: {
-    includePaths: [path.resolve(__dirname, 'node_modules')],
-  },
-
-  target: process.env.NEXT_TARGET || 'serverless',
   exportTrailingSlash: true,
 }
 
-module.exports = withImages(withSass(withCss(nextConfig)))
+module.exports = withImages(nextConfig)

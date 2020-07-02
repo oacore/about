@@ -19,7 +19,7 @@ import { patchStats } from 'components/utils'
 import page from 'data/home.yml'
 import { sections as pageSections } from 'data/endorsements.yml'
 
-import './index.scss'
+import './index.module.scss'
 
 const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
   <Switcher className="home-switcher" {...restProps}>

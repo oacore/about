@@ -10,8 +10,6 @@ import {
   Input,
 } from 'reactstrap'
 
-import './outreach-materials.scss'
-
 const format2name = type =>
   ({
     jpg: 'JPEG',

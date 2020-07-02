@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { Link } from '../elements'
 
@@ -8,29 +8,28 @@ const KeyFeature = ({
   icon,
   href,
   className = '',
-  tag: Tag,
+  tag: Tag = 'div',
   ...restProps
 } = {}) => {
-  const WrapperTag = Tag || href ? Fragment : 'div'
-  const ContentTag = Tag !== 'a' && href ? 'a' : Fragment
-
-  const contentProps =
-    ContentTag !== Fragment
-      ? {
-          className: `key-feature ${className} key-feature-link`,
-          ...restProps,
-        }
-      : restProps
+  const content = (
+    <>
+      <img className="key-feature-icon" src={icon} alt={title} />
+      <span className="key-feature-text">{children}</span>
+    </>
+  )
 
   return (
-    <WrapperTag className={`key-feature ${className}`} {...restProps}>
-      <Link href={href} passHref>
-        <ContentTag {...contentProps}>
-          <img className="key-feature-icon" src={icon} alt={title} />
-          <div className="key-feature-text">{children}</div>
-        </ContentTag>
-      </Link>
-    </WrapperTag>
+    <Tag className={`key-feature ${className}`} {...restProps}>
+      {href != null ? (
+        <Link href={href} passHref>
+          <a className="key-feature-link" href={href}>
+            {content}
+          </a>
+        </Link>
+      ) : (
+        content
+      )}
+    </Tag>
   )
 }
 
@@ -40,6 +39,7 @@ const KeyFeatureList = ({ children, className = '' } = {}) => {
 
     return React.cloneElement(child, {
       key: child.props.title,
+      tag: child.props.tag ?? 'li',
     })
   })
 

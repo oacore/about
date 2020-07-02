@@ -1,4 +1,4 @@
-@import "~components/bootstrap/core";
+@import '~components/bootstrap/core';
 
 $skew-section-icon-size: 4rem;
 
@@ -13,15 +13,15 @@ $skew-section-icon-size: 4rem;
   &::before {
     $icon-size: $skew-section-icon-size;
 
-    content: "";
+    content: '';
     position: relative;
     top: -1 * $spacer;
     display: block;
     width: 2 * $icon-size + $spacer;
     height: $icon-size;
     margin: auto;
-    background: url("/images/icons/university.svg") no-repeat 0 50%,
-      url("/images/icons/factory.svg") no-repeat 100% 50%;
+    background: url('/images/icons/university.svg') no-repeat 0 50%,
+      url('/images/icons/factory.svg') no-repeat 100% 50%;
     background-size: auto 100%;
   }
 }
@@ -37,7 +37,7 @@ $skew-section-icon-size: 4rem;
   &::before {
     $icon-size: $skew-section-icon-size;
 
-    content: "";
+    content: '';
     position: relative;
     top: -1 * $spacer;
     display: block;
@@ -45,8 +45,7 @@ $skew-section-icon-size: 4rem;
     height: $icon-size;
     margin: auto;
     /* Icon made by Freepik (https://www.flaticon.com/authors/freepik) */
-    background: url("/images/icons/group.svg") no-repeat center /
-      contain;
+    background: url('/images/icons/group.svg') no-repeat center / contain;
   }
 }
 

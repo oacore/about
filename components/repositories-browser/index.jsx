@@ -11,6 +11,17 @@ const normalize = string =>
   string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
 class RepositoryBrowser extends Component {
+  static searchOptions = {
+    shouldSort: true,
+    location: 0,
+    treshold: 0.1,
+    distance: 200,
+    maxPatternLength: 50,
+    keys: ['normalizedName', 'repositoryLocation.countryName', 'urlHomepage'],
+  }
+
+  static pageSize = 10
+
   static fetchRepositories(url) {
     return fetch(url)
       .then(res => {
@@ -44,17 +55,6 @@ class RepositoryBrowser extends Component {
       isFetching: false,
     })
   }
-
-  static searchOptions = {
-    shouldSort: true,
-    location: 0,
-    treshold: 0.1,
-    distance: 200,
-    maxPatternLength: 50,
-    keys: ['normalizedName', 'repositoryLocation.countryName', 'urlHomepage'],
-  }
-
-  static pageSize = 10
 
   @bind
   filter(event) {

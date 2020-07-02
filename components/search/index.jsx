@@ -6,6 +6,8 @@ import { SimpleSearchForm, AdvancedSearchForm } from './forms'
 import Suggestions from './suggestions'
 
 class SearchForm extends React.Component {
+  static Suggestions = Suggestions
+
   state = {
     toggleAdvancedSearch: false,
   }
@@ -14,8 +16,6 @@ class SearchForm extends React.Component {
     super(props)
     this.toggleSearchComponent = this.toggleSearchComponent.bind(this)
   }
-
-  static Suggestions = Suggestions
 
   toggleSearchComponent() {
     this.setState(state => ({

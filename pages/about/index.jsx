@@ -26,7 +26,7 @@ import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
 
-import './about.scss'
+import './about.module.scss'
 
 const AboutPage = () => (
   <Page

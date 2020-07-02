@@ -4,8 +4,6 @@ import { bind } from 'decko'
 
 import Testimonial from '../testimonial'
 
-import './testimonials-carousel.scss'
-
 const TestimonialsCarouselControl = ({
   children,
   direction,
