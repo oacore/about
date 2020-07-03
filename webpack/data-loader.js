@@ -4,6 +4,8 @@ const path = require('path')
 const camelize = require('camelize')
 const fetch = require('node-fetch')
 
+let fetchStatsPromise = null
+
 // Hack to avoid data retrieval in the all components
 // TODO: Implement Babel plugin instead
 const statsUrl = 'https://api.core.ac.uk/internal/statistics'
@@ -74,7 +76,9 @@ const retrieveStats = async (url, catchFilePath) => {
 const dataLoader = function loadDataFile(content) {
   const callback = this.async()
   const dataFile = camelize(JSON.parse(content))
-  retrieveStats(statsUrl, cachePath).then(statistics =>
+  if (!fetchStatsPromise) fetchStatsPromise = retrieveStats(statsUrl, cachePath)
+
+  fetchStatsPromise.then(statistics =>
     callback(
       null,
       JSON.stringify({
