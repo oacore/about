@@ -2,6 +2,7 @@ import React from 'react'
 import { Row, Col } from 'reactstrap'
 
 import { repositoriesUrl } from '../data/providers'
+import styles from './about.module.scss'
 
 import {
   Accordion,
@@ -25,8 +26,6 @@ import teamData from 'data/team.yml'
 import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
-
-import './about.module.scss'
 
 const AboutPage = () => (
   <Page
@@ -73,8 +72,8 @@ const AboutPage = () => (
       </Row>
     </Section>
 
-    <Section className="about-endorsements-section" id="endorsements">
-      <h2 className="about-endorsements-section-title">
+    <Section className={styles['about-endorsements-section']} id="endorsements">
+      <h2 className={styles['about-endorsements-section-title']}>
         {aboutData.endorsements.title}
       </h2>
       <Markdown>{aboutData.endorsements.content}</Markdown>
@@ -114,7 +113,10 @@ const AboutPage = () => (
       </Section>
     </Section>
 
-    <Section className="about-services-section text-center" id="services">
+    <Section
+      className={`${styles['about-services-section']} text-center`}
+      id="services"
+    >
       <h2>{aboutData.howItWorks.services.title}</h2>
 
       <ServiceGroups items={servicesData.sections} className="text-left" />
@@ -159,7 +161,7 @@ const AboutPage = () => (
 
     <Section
       id="ambassadors"
-      className="about-ambassadors-section"
+      className={styles['about-ambassadors-section']}
       caption={aboutData.ambassadors.shortTitle}
     >
       <h2>{aboutData.ambassadors.title}</h2>

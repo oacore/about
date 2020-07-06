@@ -1,6 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 
+import styles from './services.module.scss'
+
 import {
   Page,
   Content,
@@ -13,8 +15,6 @@ import {
 import Testimonial from 'components/testimonial'
 import servicesData from 'data/services.yml'
 
-import './services.module.scss'
-
 const ServicesPage = () => (
   <Page
     title={servicesData.title}
@@ -22,8 +22,8 @@ const ServicesPage = () => (
     keywords={servicesData.keywords}
     nav
   >
-    <h1 className="services-page-title">
-      <span className="services-page-title-small">
+    <h1 className={styles['services-page-title']}>
+      <span className={styles['services-page-title-small']}>
         {servicesData.headline[0]}
       </span>
       {servicesData.headline[1]}
@@ -42,12 +42,12 @@ const ServicesPage = () => (
         key={servicesGroup.id}
         id={servicesGroup.id}
         caption={servicesGroup.title}
-        className="service-section"
+        className={styles['service-section']}
       >
         <h2 className="text-center">{servicesGroup.title}</h2>
 
         {servicesGroup.video && (
-          <Section className="service-section-video" tag="div">
+          <Section className={styles['service-section-video']} tag="div">
             <Content className="mx-auto" tag="figure">
               <Content tag="figcaption">
                 <Markdown>{servicesGroup.video.description}</Markdown>
@@ -61,9 +61,18 @@ const ServicesPage = () => (
         )}
 
         {servicesGroup.sections.map(service => (
-          <Section key={service.id} id={service.id} className="service-section">
-            <Row className="service-section-title" tag="h3">
-              <Col sm="6" md="4" tag="span" className="service-section-logo">
+          <Section
+            key={service.id}
+            id={service.id}
+            className={styles['service-section']}
+          >
+            <Row className={styles['service-section-title']} tag="h3">
+              <Col
+                sm="6"
+                md="4"
+                tag="span"
+                className={styles['service-section-logo']}
+              >
                 <Link href={service.action.url} passHref>
                   <a href={service.action.url} title={service.action.caption}>
                     <img src={service.logo} alt={`${service.title}'s logo`} />
@@ -76,13 +85,13 @@ const ServicesPage = () => (
               </Col>
             </Row>
 
-            <Row className="service-section-content">
+            <Row className={styles['service-section-content']}>
               <Col sm="6" md="4">
                 <figure>
                   <Link href={service.action.url} passHref>
                     <a href={service.action.url} title={service.action.caption}>
                       <img
-                        className="service-section-screenshot"
+                        className={styles['service-section-screenshot']}
                         src={service.screenshot}
                         alt={`${service.title}'s screenshot`}
                       />
@@ -99,7 +108,7 @@ const ServicesPage = () => (
                 >
                   {service.description}
                 </Content>
-                <footer className="service-section-footer">
+                <footer className={styles['service-section-footer']}>
                   <Button color="primary" outline href={service.action.url}>
                     {service.action.caption}
                   </Button>

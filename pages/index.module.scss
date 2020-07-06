@@ -1,12 +1,12 @@
 @import '~components/bootstrap/core';
 
 .home-switcher {
-  .switcher-item {
+  :global(.switcher-item) {
     padding-top: map-get($spacers, 5);
     padding-bottom: map-get($spacers, 5);
   }
 
-  .blockquote {
+  :global(.blockquote) {
     margin: 0 auto;
     max-width: 60ch;
   }
