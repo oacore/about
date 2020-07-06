@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { extractTestimonials } from './about/endorsements'
+import styles from './index.module.scss'
 
 import {
   Button,
@@ -19,10 +20,8 @@ import { patchStats } from 'components/utils'
 import page from 'data/home.yml'
 import { sections as pageSections } from 'data/endorsements.yml'
 
-import './index.module.scss'
-
 const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
-  <Switcher className="home-switcher" {...restProps}>
+  <Switcher className={styles['home-switcher']} {...restProps}>
     {text && <Switcher.Content>{text}</Switcher.Content>}
     {items
       .slice(0, limit)
@@ -107,7 +106,7 @@ const IndexPage = () => (
 
     <JoinSection id="join-us" {...page.join} />
 
-    <Section id="endorsements" className="home-endorsements-section">
+    <Section id="endorsements" className={styles['home-endorsements-section']}>
       <h2 className="text-center">{page.endorsements.title}</h2>
 
       <TestimonialsSection
@@ -123,7 +122,7 @@ const IndexPage = () => (
 
       <TestimonialsSection
         id={pageSections.academicInstitutions.id}
-        className="home-academic-institutions-section"
+        className={styles['home-academic-institutions-section']}
         title={page.endorsements.academic.title}
         description={page.endorsements.academic.description}
         items={extractTestimonials(

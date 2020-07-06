@@ -55,11 +55,11 @@ $skew-section-icon-size: 4rem;
   border: 0;
   transition: $transition-base;
 
-  &.active {
+  &:global(.active) {
     background: $beige;
   }
 
-  .card-body {
+  :global(.card-body) {
     margin-top: $spacer;
   }
 }

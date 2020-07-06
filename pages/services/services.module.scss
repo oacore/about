@@ -12,7 +12,7 @@
   font-weight: $font-weight-normal;
 }
 
-.services-page-title + .article-nav {
+.services-page-title + :global(.article-nav) {
   justify-content: center;
 }
 
@@ -62,7 +62,7 @@
     text-align: left;
   }
 
-  .btn {
+  :global(.btn) {
     margin: map-get($spacers, 1) / 2;
   }
 }
