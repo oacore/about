@@ -26,19 +26,23 @@
 }
 
 .service-section-logo {
-  img {
-    max-width: 100px;
-    width: 100%;
-    height: auto;
-  }
+  align-self: stretch;
 
   @include media-breakpoint-up('sm') {
     text-align: right;
 
     .service-section:nth-child(odd) & {
       width: auto !important;
-      flex-basis: auto !important;
+      flex: 1 0 auto !important;
     }
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    width: auto;
+    max-width: 6rem;
+    height: 100%;
   }
 }
 

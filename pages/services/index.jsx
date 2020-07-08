@@ -67,18 +67,18 @@ const ServicesPage = () => (
             className={styles['service-section']}
           >
             <Row className={styles['service-section-title']} tag="h3">
-              <Col
-                sm="6"
-                md="4"
-                tag="span"
-                className={styles['service-section-logo']}
-              >
-                <Link href={service.action.url} passHref>
-                  <a href={service.action.url} title={service.action.caption}>
-                    <img src={service.logo} alt={`${service.title}'s logo`} />
-                  </a>
-                </Link>
-              </Col>
+              <Link href={service.action.url} passHref>
+                <Col
+                  href={service.action.url}
+                  title={service.action.caption}
+                  className={styles['service-section-logo']}
+                  sm="6"
+                  md="4"
+                  tag="a"
+                >
+                  <img src={service.logo} alt={`${service.title}'s logo`} />
+                </Col>
+              </Link>
 
               <Col sm="6" md="8" tag="span">
                 {service.title}
@@ -87,17 +87,22 @@ const ServicesPage = () => (
 
             <Row className={styles['service-section-content']}>
               <Col sm="6" md="4">
-                <figure>
-                  <Link href={service.action.url} passHref>
-                    <a href={service.action.url} title={service.action.caption}>
-                      <img
-                        className={styles['service-section-screenshot']}
-                        src={service.screenshot}
-                        alt={`${service.title}'s screenshot`}
-                      />
-                    </a>
-                  </Link>
-                </figure>
+                {service.screenshot && (
+                  <figure>
+                    <Link href={service.action.url} passHref>
+                      <a
+                        href={service.action.url}
+                        title={service.action.caption}
+                      >
+                        <img
+                          className={styles['service-section-screenshot']}
+                          src={service.screenshot}
+                          alt={`${service.title}'s screenshot`}
+                        />
+                      </a>
+                    </Link>
+                  </figure>
+                )}
               </Col>
 
               <Col sm="6" md="8">
