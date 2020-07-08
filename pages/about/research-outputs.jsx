@@ -3,6 +3,7 @@ import { Card, CardHeader, CardBody } from 'reactstrap'
 import { bind } from 'decko'
 
 import { Page, Section, Button, Reference, Content } from 'components'
+import Markdown from 'components/markdown'
 import CitationsModal from 'components/citations-modal'
 import page from 'data/research-outputs.yml'
 
@@ -105,6 +106,9 @@ class ResearchOutputsPage extends Component {
             onPaperCite={this.toggleCitationsModal}
           />
         ))}
+        <Content>
+          <Markdown>{page.footer}</Markdown>
+        </Content>
         <CitationsModal
           id={`${(activePaper && activePaper.id) || 'unknown'}-citaions-modal`}
           isOpen={isCitationsModalOpen}
