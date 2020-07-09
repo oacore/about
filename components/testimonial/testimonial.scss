@@ -1,0 +1,51 @@
+@import '../bootstrap/core';
+
+$testimonial-avatar-size: 3.5rem !default;
+$testimonial-avatar-compensation: 0.5rem !default;
+$testimonial-logo-width: 8rem !default;
+$testimonial-logo-height: 3rem !default;
+
+.testimonial {
+  margin-bottom: $spacer;
+}
+
+.testimonial-author {
+  position: relative;
+  min-height: 3rem;
+  margin-bottom: $spacer;
+}
+
+.testimonial-author-name {
+  margin-bottom: 0;
+  margin-left: $testimonial-avatar-size - $testimonial-avatar-compensation +
+    $spacer;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+.testimonial-author-role {
+  @extend .testimonial-author-name;
+  color: $gray-700;
+}
+
+.testimonial-author-avatar {
+  position: absolute;
+  left: 0;
+  display: block;
+  margin: $testimonial-avatar-compensation / -2;
+  width: $testimonial-avatar-size;
+  height: $testimonial-avatar-size;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  background: $gray-100 url('./account.svg') no-repeat center / 80% auto;
+  color: transparent;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-organization-logo {
+  display: block;
+  width: auto;
+  max-width: $testimonial-logo-width;
+  max-height: $testimonial-logo-height;
+}
