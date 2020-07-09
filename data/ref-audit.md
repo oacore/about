@@ -266,10 +266,11 @@ we will be happy to help.
   Subscribe to CORE Repository Edition
 </h2>
 
-The new CORE Repository Edition has now been launched. This
-new edition contains both new tools for data enrichments and to enable
-repositories to help ensure compliance with the REF2021 Open Access Policy. 
+The new [CORE Repository Edition](~services/repository-edition) has now been
+launched. This new edition contains both new tools for data enrichments and to
+enable repositories to help ensure compliance with the REF 2021 Open Access
+Policy. 
  
-Visit the CORE Repository Edition service for further
-details. To subscribe contact us via email at
+Visit the [CORE Repository Edition](~services/repository-edition) service for
+further details. To subscribe contact us via email at
 [&#115;&#97;&#108;&#101;&#115;&#64;&#99;&#111;&#114;&#101;&#46;&#97;&#99;&#46;&#117;&#107;](mailto:%73%61l%65s%40%63o%72%65%2ea%63%2eu%6b).
