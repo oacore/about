@@ -1,5 +1,48 @@
-@import "../bootstrap/core";
+@import '../bootstrap/core';
 
 .testimonials-section {
-  @include section-skew-left($blue-light);
+  @include section-skew-left($gray-200);
+
+  .testimonial + .testimonial {
+    margin-top: $spacer;
+  }
+}
+
+.testimonial-section-illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 $spacer;
+}
+
+.testimonial-section-illustration-container {
+  @include media-breakpoint-up('md') {
+    order: 1;
+  }
+}
+
+.testimonial-section-organizations {
+  @include make-row();
+}
+
+.testimonial-section-organizations-item {
+  position: relative;
+  display: block;
+  height: 0;
+  padding: 0 0 percentage(0.5);
+  margin-bottom: $spacer;
+  background: $white;
+  border: $card-border-width solid $card-border-color;
+  @include border-radius($card-border-radius);
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    padding: $card-spacer-y $card-spacer-x;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
