@@ -632,7 +632,9 @@ organizations:
 sections:
   enterprise-companies:
     id: enterprise-companies
-    title: Companies using CORE
+    title: Enterprise companies using CORE
+    illustration: business-plan.svg
+    caption: Enterprise companies
     description: |
       [CORE data services](~services) power innovative applications delivered
       by independent businesses, many of which utilise cutting edge artificial
@@ -668,7 +670,9 @@ sections:
         - *claus-wolf
   academic-institutions:
     id: academic-institutions
-    title: Institutions using CORE
+    title: Academic institutions using CORE
+    caption: Academic institutions
+    illustration: bibliophile.svg
     description: |
       Institutions use CORE in a variety of cases, for example to [discover open access
       content](~services/discovery), [manage their repository content](~services/discovery) in CORE and offer [recommendations](~services/recommender) of
@@ -725,6 +729,8 @@ sections:
   partners:
     id: partner-projects
     title: Partner projects
+    caption: Partner projects
+    illustration: live-collaboration.svg
     description: |
       CORE has created exciting partnerships with open access infrastructure and
       innovative open science projects. With these collaborations CORE has been extending

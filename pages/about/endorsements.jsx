@@ -16,21 +16,16 @@ const extractTestimonials = organizations =>
     }))
 
 const EndorsementsPage = () => (
-  <Page title={title} description={description} keywords={keywords}>
+  <Page title={title} description={description} keywords={keywords} nav>
     <h1>{title}</h1>
 
     {Object.entries(sections).map(
-      ([key, { testimonials, organizations, ...section }]) => (
+      ([key, { testimonials, organizations, caption, ...section }]) => (
         <EndorsementsSection
           key={key}
           organizations={organizations.items}
-          testimonials={{
-            title: testimonials.title,
-            items: [
-              ...extractTestimonials(organizations.items),
-              ...(testimonials.items || []),
-            ],
-          }}
+          subtitle={testimonials.title}
+          caption={caption}
           {...section}
         />
       )
