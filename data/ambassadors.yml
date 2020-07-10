@@ -74,8 +74,8 @@ ambassadors:
       role: Librarian
       organization: International Center of Insect Physiology and Ecology
       location:
-        latitude: -0.023559
-        longitude: 37.906193
+        latitude: -2.5914251
+        longitude: 37.4388897
       country: Kenya
       region: ke
     -
@@ -95,8 +95,8 @@ ambassadors:
       role: Systems Librarian
       organization: Harare Institute of Technology
       location:
-        latitude: -19.015438
-        longitude: 29.154858
+        latitude: -17.8395111
+        longitude: 31.0053595
       country: Zimbabwe
       region: zw
       picture: comfort-maeresera.jpg
@@ -106,8 +106,8 @@ ambassadors:
       role: Open Access Officer
       organization: Brunel University London
       location:
-        latitude: 56
-        longitude: -3
+        latitude: 51.5324044
+        longitude: -0.4751818
       country: United Kingdom
       region: uk
       picture: walters.png
@@ -117,8 +117,8 @@ ambassadors:
       role: Research Support Librarian
       organization: Midlands State University
       location:
-        latitude: -19.015438
-        longitude: 29.154858
+        latitude: -19.4685259
+        longitude: 29.8098908
       country: Zimbabwe
       region: zw
     -
@@ -137,8 +137,8 @@ ambassadors:
       role: Institutional Repository Co-ordinator
       organization: University of Strathclyde
       location:
-        latitude: 56
-        longitude: -3
+        latitude: 55.8621142
+        longitude: -4.244579
       country: United Kingdom
       region: uk
       picture: macgregor.png
@@ -148,8 +148,8 @@ ambassadors:
       role: University Library Director
       organization: Mekelle University
       location:
-        latitude: 9.033140
-        longitude: 38.750080
+        latitude: 13.4799314
+        longitude: 39.4827497
       country: Ethiopia
     -
       id: gloria-kadyamatiba
@@ -160,8 +160,8 @@ ambassadors:
         Institute of Lifelong learning and Development Studies,
         Chinhoyi University of Technology
       location:
-        latitude: -19.0154381
-        longitude: 29.1548576
+        latitude: -17.353289
+        longitude: 30.2036424
       country: Zimbabwe
       picture: gloria.png
     -
@@ -172,8 +172,8 @@ ambassadors:
         Medical Analysis Department,
         Tishk International University (TIU)
       location:
-        latitude: 32.59
-        longitude: 44
+        latitude: 36.1687829
+        longitude: 43.9553013
       country: Iraq
     -
       id: james-simotwo
@@ -181,8 +181,8 @@ ambassadors:
       role: Assistant Librarian
       organization: Mount Kenya University
       location:
-        latitude: -0.023559
-        longitude: 37.906193
+        latitude: -1.046531
+        longitude: 37.082987
       country: Kenya
       region: ke
     -
@@ -191,8 +191,8 @@ ambassadors:
       role: Deputy University Librarian
       organization: Rongo University
       location:
-        latitude: -0.023559
-        longitude: 37.906193
+        latitude: -0.825939
+        longitude: 34.6085277
       country: Kenya
       picture: joel-nakitare.jpeg
     -
@@ -201,8 +201,8 @@ ambassadors:
       role: Sub Librarian - Information Services
       organization: Bindura University of Science Education
       location:
-        latitude: -19.015438
-        longitude: 29.154858
+        latitude: -17.3245217
+        longitude: 31.3307763
       country: Zimbabwe
       region: zw
       picture: josiline-chigwada.jpg
@@ -231,7 +231,7 @@ ambassadors:
       role: Deputy Director
       organization: Belarusian State University Fundamental Library
       location:
-        latitude: 53.709808
+        latitude: 53.89382
         longitude: 27.953388
       country: Belarus
       region: eu
@@ -286,7 +286,7 @@ ambassadors:
       organization: Leeds University
       location:
         latitude: 54
-        longitude: 0
+        longitude: 1
       country: United Kingdom
       region: uk
       picture: sheppard.png
@@ -296,8 +296,8 @@ ambassadors:
       role: Manager of Digital Library Services
       organization: University of Cape Town
       location:
-        latitude: -30.559483
-        longitude: 22.937506
+        latitude: -33.9576475
+        longitude: 18.4590104
       country: South Africa
       picture: niklas-zimmer.jpg
     -
@@ -306,8 +306,8 @@ ambassadors:
       role: Senior Research and Teaching Assistant
       organization: Menoufia University
       location:
-        latitude: 26.820553
-        longitude: 30.802498
+        latitude: 30.5675187
+        longitude: 31.0015841
       country: Egypt
     -
       id: pailet-chewe
@@ -315,8 +315,8 @@ ambassadors:
       role: Librarian
       organization: University of Zambia
       location:
-        latitude: -13.133897
-        longitude: 27.849333
+        latitude: -15.3923098
+        longitude: 28.3263098
       country: Zambia
     -
       id: patrick-mccrudden
@@ -376,8 +376,8 @@ ambassadors:
       role: Lecturer cum Librarian
       organization: Deanship of Library Affairs, Imam Abdulrahman Bin Faisal University
       location:
-        latitude: 23.885942
-        longitude: 45.079163
+        latitude: 26.3928049
+        longitude: 50.1903986
       country: Saudi Arabia
       picture: shakil-ahmad.jpg
     -
@@ -387,7 +387,7 @@ ambassadors:
       organization: Indira Gandhi Institute of Development Research
       location:
         latitude: 20.593683
-        longitude: 78.962883
+        longitude: 72.875408
       country: India
       region: in
       picture: shamprasad-pujar.jpg
@@ -434,8 +434,8 @@ ambassadors:
       role: University Librarian
       organization: Technical University of Mombasa, Kenya
       location:
-        latitude: -0.023559
-        longitude: 37.906193
+        latitude: -4.1715711
+        longitude: 39.5188616
       country: Kenya
       region: ke
       picture: wanyenda-chilimo.jpg
@@ -456,7 +456,7 @@ ambassadors:
       organization: Sokoine University of Agriculture
       location:
         latitude: -6.369028
-        longitude: 34.888821
+        longitude: 37.6554405
       country: Tanzania
       region: tz
       picture: wulystan-pius-mtega.png
@@ -477,7 +477,7 @@ ambassadors:
       role: Deputy University Librarian
       organization: Fiji National University
       location:
-        latitude: -18.16
+        latitude: -18.1259333
         longitude: 172.45 # -6 degrees corrected according to the map
       country: Fiji
       picture: tanveer-haider-naqvi.jpg
@@ -498,8 +498,8 @@ ambassadors:
       organization: Bharathidasan University in India
       location:
         # wrong location, MUST be changed, added to prevent build failing
-        latitude: 28.5426238
-        longitude: 77.1830602
+        latitude: 10.6673178
+        longitude: 78.7367355
       country: India
     -
       id: ta-kumar
@@ -582,7 +582,7 @@ ambassadors:
       organization: MetaBiblioteca
       location:
         latitude: 4.6763005
-        longitude: 74.1219638
+        longitude: -74.1219638
       country: Colombia
       picture: gomez.png
     -
