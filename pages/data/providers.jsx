@@ -27,7 +27,7 @@ const DataProvidersPage = () => (
         {patchStats(repositoriesData.content, repositoriesData.statistics)}
       </Markdown>
 
-      <Button color="primary" href="~contact">
+      <Button color="primary" href="~register-data-provider">
         {repositoriesData.become}
       </Button>
     </Content>
