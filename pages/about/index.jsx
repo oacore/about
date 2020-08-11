@@ -102,7 +102,7 @@ const AboutPage = () => (
         </Row>
 
         <ButtonToolbar align="center" className="flex-row-reverse">
-          <Button color="primary" outline href="~contact">
+          <Button color="primary" outline href="~register-data-provider">
             {aboutData.howItWorks.harvesting.actions.primary}
           </Button>
 
