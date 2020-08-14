@@ -13,6 +13,7 @@ import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
 import { settings as cookieSettingsContext } from 'data/cookies.yml'
+import "swagger-ui-react/swagger-ui.css"
 
 const searchConfig = {
   action: '/search',
