@@ -33,6 +33,7 @@
     "prettier": "^1.19.1"
   },
   "dependencies": {
+    "@oacore/design": "^3.0.0",
     "bootstrap": "^4.5.0",
     "core-js": "^3.6.5",
     "cssnano": "^4.1.10",
