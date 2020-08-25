@@ -1,4 +1,5 @@
-@import "../bootstrap/core";
+@import '../bootstrap/core';
+@import '~bootstrap/scss/variables';
 
 $content-max-width: 80ch;
 $section-sm-spacer: 2 * $spacer !default;
@@ -66,10 +67,11 @@ $article-spacer: $section-lg-spacer !default;
 }
 
 .section {
+  position: relative;
   padding-top: $section-spacer;
   padding-bottom: $section-spacer;
 
-  > .section {
+  > .container > .section {
     padding-top: $section-sm-spacer;
     padding-bottom: $section-sm-spacer;
 
@@ -107,6 +109,14 @@ $article-spacer: $section-lg-spacer !default;
   & > .section:last-child {
     padding-bottom: $article-spacer;
     margin-bottom: -$article-spacer;
+  }
+}
+
+.article,
+.section {
+  > .container .container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
