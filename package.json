@@ -72,7 +72,7 @@
     "test-staging": "blc https://${CORE_STAGING_AREA}core.ac.uk -ro --exclude='/browse' --exclude='/search' --exclude='/public'",
     "test": "npm run test-dev",
     "dev": "next",
-    "build": "next build",
+    "build": "node ./node_modules/.bin/design build icons && next build",
     "export": "next build && next export",
     "start": "next start"
   }

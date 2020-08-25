@@ -1,0 +1,64 @@
+.search-box {
+  --form-control-corner-radius: 0.3rem;
+  --form-control-color: var(--gray-500);
+  --form-label-color: var(--gray-500);
+  --select-option-color: var(--gray-700);
+  --select-option-icon-color: var(--gray-700);
+
+  border-bottom: 1px solid transparent;
+}
+
+.search-box:focus-within {
+  --form-control-color: var(--gray-700);
+  --form-control-padding-x: 0rem;
+}
+
+.search-box:focus-within input,
+.search-box:focus-within .option span:nth-child(2){
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.search-box:focus-within,
+.search-box .option {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.search-box:focus-within div:nth-child(2) {
+  border-bottom: 1px solid var(--primary);
+}
+
+.search-box:focus-within .clear-button{
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+}
+
+.search-box:focus-within div:nth-child(2) span,
+.search-box:focus-within .option span:first-child {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+
+.search-box:focus-within {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.search-box:focus-within div:nth-child(2) > * {
+  border-color: transparent;
+}
+
+.search-box:focus-within .select-menu {
+  color: var(--gray-500)
+}
+
+.search-box:focus-within .last-option {
+  position: relative;
+}
+.search-box:focus-within .last-option::after {
+  content: '';
+  left: 1rem;
+  right: 1rem;
+  position: absolute;
+  border-top: 1px solid var(--gray-300);
+}
