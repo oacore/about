@@ -10,11 +10,6 @@ description: |
   scientific content from scholarly publishers. Data is exposed via the
   ResourceSync protocol.
 
-screenshot:
-  source: /images/screenshots/connector.png
-  caption: |
-    Description of screenshot, which may a [link](~home).
-
 features:
 -
   title: Key message 1
