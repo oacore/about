@@ -1,3 +1,7 @@
+---
+title: Accessibility
+---
+
 # Accessibility Statement
 ## Commitment
 We want core.ac.uk to be accessible to the widest audience possible, regardless of technology or ability. Thus, we are actively working to increase the accessibility and usability of this site.
