@@ -3,7 +3,13 @@ import React from 'react'
 import { Head } from '../layout'
 import { Article } from '../content'
 
-const Page = ({ title, description, keywords, children, ...articleProps }) => (
+const Page = ({
+  title = '',
+  description,
+  keywords,
+  children,
+  ...articleProps
+}) => (
   <>
     <Head title={title} description={description} keywords={keywords} />
 
