@@ -33,56 +33,57 @@ const ServicePage = ({
   >
     <h1 className="service-page-title">{title}</h1>
     <p className="service-page-tagline">{tagline}</p>
+    <Section tag="div">
+      {screenshot && (
+        <figure className="service-page-screenshot">
+          <img src={screenshot.source} alt={`${title}'s screenshot`} />
+          {screenshot.caption && (
+            <figcaption>
+              <Markdown>{screenshot.caption}</Markdown>
+            </figcaption>
+          )}
+        </figure>
+      )}
 
-    {screenshot && (
-      <figure className="service-page-screenshot">
-        <img src={screenshot.source} alt={`${title}'s screenshot`} />
-        {screenshot.caption && (
-          <figcaption>
-            <Markdown>{screenshot.caption}</Markdown>
-          </figcaption>
+      <KeyFeatureList className="service-page-features">
+        {features.map(feature => (
+          <KeyFeature
+            title={feature.title}
+            icon={feature.picture}
+            key={feature.title}
+          >
+            <Markdown>{feature.description}</Markdown>
+          </KeyFeature>
+        ))}
+      </KeyFeatureList>
+
+      <Content className="service-page-content">
+        <Markdown>{main}</Markdown>
+
+        {documentation && (
+          <p>
+            <Link href={/documentation/ + id}>
+              {typeof documentation == 'string'
+                ? documentation
+                : 'Looking for documentation?'}
+            </Link>
+          </p>
         )}
-      </figure>
-    )}
 
-    <KeyFeatureList className="service-page-features">
-      {features.map(feature => (
-        <KeyFeature
-          title={feature.title}
-          icon={feature.picture}
-          key={feature.title}
-        >
-          <Markdown>{feature.description}</Markdown>
-        </KeyFeature>
-      ))}
-    </KeyFeatureList>
+        {additional && (
+          <Collapsed id={`${id}-details`} title={additional.title}>
+            <Markdown>{additional.content}</Markdown>
+          </Collapsed>
+        )}
+      </Content>
 
-    <Content className="service-page-content">
-      <Markdown>{main}</Markdown>
-
-      {documentation && (
-        <p>
-          <Link href={/documentation/ + id}>
-            {typeof documentation == 'string'
-              ? documentation
-              : 'Looking for documentation?'}
-          </Link>
-        </p>
+      {testimonial && (
+        <Testimonial
+          className="service-page-testimonial content"
+          {...testimonial}
+        />
       )}
-
-      {additional && (
-        <Collapsed id={`${id}-details`} title={additional.title}>
-          <Markdown>{additional.content}</Markdown>
-        </Collapsed>
-      )}
-    </Content>
-
-    {testimonial && (
-      <Testimonial
-        className="service-page-testimonial content"
-        {...testimonial}
-      />
-    )}
+    </Section>
 
     {whatIsIncluded && (
       <Section caption={whatIsIncluded.title} id="what-is-included">

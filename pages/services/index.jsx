@@ -43,6 +43,7 @@ const ServicesPage = () => (
         id={servicesGroup.id}
         caption={servicesGroup.title}
         className={styles['service-section']}
+        container={false}
       >
         <h2 className="text-center">{servicesGroup.title}</h2>
 

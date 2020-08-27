@@ -13,9 +13,24 @@
 }
 
 .home-endorsements-section {
+  overflow: hidden;
   background: $beige;
 }
 
 .home-academic-institutions-section {
-  background: $beige-dark;
+  position: relative;
+
+  & > * {
+    position: relative;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2000px;
+    width: 1000%;
+    height: 100%;
+    background: $beige-dark;
+  }
 }
