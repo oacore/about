@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './image-map.module.scss'
+
 const geo2coords = (latitude, longitude) => {
   // The map coefficients are adapted to the SVG-map image from:
   // https://simplemaps.com/resources/svg-world
@@ -30,7 +32,7 @@ const ImageMap = ({
   tag: Tag = 'div',
   ...restProps
 }) => (
-  <Tag className={`image-map ${className}`} {...restProps}>
+  <Tag className={`${styles.imageMap} ${className}`} {...restProps}>
     {React.Children.map(children, child => {
       const { latitude, longitude, style, ...childProps } = child.props
       const { x, y } = geo2coords(latitude, longitude)

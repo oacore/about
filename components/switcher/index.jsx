@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { bind } from 'decko'
 
 import { Button } from '../elements'
+import styles from './switcher.module.scss'
 
 const SwitcherItem = ({
   children,
@@ -12,7 +13,9 @@ const SwitcherItem = ({
   ...restProps
 }) => (
   <Tag
-    className={`switcher-item ${active ? 'active' : ''} ${className}`}
+    className={`${styles.switcherItem} ${
+      active ? styles.active : ''
+    } ${className}`}
     tabIndex={active ? undefined : -1}
     {...restProps}
   >
@@ -21,7 +24,7 @@ const SwitcherItem = ({
 )
 
 const SwitcherContent = ({ children, tag: Tag = 'div', ...restProps }) => (
-  <Tag className="switcher-content" {...restProps}>
+  <Tag className={styles.switcherContent} {...restProps}>
     {children}
   </Tag>
 )
@@ -45,7 +48,7 @@ class Switcher extends Component {
       if (child.type === SwitcherContent) {
         if (content) {
           throw new Error(
-            'Switcher should have no more than one SwithcerContent'
+            'Switcher should have no more than one SwitcherContent'
           )
         }
         content = child
@@ -158,7 +161,9 @@ class Switcher extends Component {
         <Button
           color="link"
           type="button"
-          className="switcher-button"
+          className={`${styles.switcherButton} ${
+            i === activeItemIndex ? styles.active : ''
+          }`}
           active={i === activeItemIndex}
           value={i}
           key={id}
@@ -171,17 +176,17 @@ class Switcher extends Component {
 
     return (
       <Tag
-        className={`switcher ${className}`}
+        className={`${styles.switcher} ${className}`}
         onMouseOver={this.handleMouseOver}
         onMouseLeave={this.handleMouseLeave}
       >
         {content}
-        <div className="switcher-item-list">
+        <div className={styles.switcherItemList}>
           {items.map((item, i) =>
             React.cloneElement(item, { active: i === activeItemIndex })
           )}
         </div>
-        <div className="switcher-controllers">{buttons}</div>
+        <div className={styles.switcherControllers}>{buttons}</div>
       </Tag>
     )
   }

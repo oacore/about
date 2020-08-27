@@ -1,4 +1,4 @@
-@import "../bootstrap/core";
+@import "components/bootstrap/core";
 
 .cookies-form {
   background: $beige-dark;
@@ -7,9 +7,6 @@
   .custom-control-label {
     font-weight: $font-weight-bold;
   }
-}
-
-.cookies-form-title {
 }
 
 .cookies-form-details {

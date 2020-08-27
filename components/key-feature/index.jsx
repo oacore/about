@@ -1,5 +1,6 @@
 import React from 'react'
 
+import styles from './key-feature.module.scss'
 import { Link } from '../elements'
 
 const KeyFeature = ({
@@ -13,16 +14,16 @@ const KeyFeature = ({
 } = {}) => {
   const content = (
     <>
-      <img className="key-feature-icon" src={icon} alt={title} />
-      <span className="key-feature-text">{children}</span>
+      <img className={styles.keyFeatureIcon} src={icon} alt={title} />
+      <span className={styles.keyFeatureText}>{children}</span>
     </>
   )
 
   return (
-    <Tag className={`key-feature ${className}`} {...restProps}>
+    <Tag className={`${styles.keyFeature} ${className}`} {...restProps}>
       {href != null ? (
         <Link href={href} passHref>
-          <a className="key-feature-link" href={href}>
+          <a className={styles.keyFeatureLink} href={href}>
             {content}
           </a>
         </Link>
@@ -43,7 +44,7 @@ const KeyFeatureList = ({ children, className = '' } = {}) => {
     })
   })
 
-  return <ul className={`key-feature-list ${className}`}>{items}</ul>
+  return <ul className={`${styles.keyFeatureList} ${className}`}>{items}</ul>
 }
 
 KeyFeatureList.Item = KeyFeature

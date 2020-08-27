@@ -1,4 +1,4 @@
-@import '../bootstrap/core';
+@import "components/bootstrap/core";
 
 .testimonials-section {
   @include section-skew-left($gray-200);

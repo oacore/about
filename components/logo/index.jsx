@@ -1,6 +1,7 @@
 import React from 'react'
 
 import logoPath from './core-symbol.svg'
+import styles from './logo.module.scss'
 
 const Logo = React.forwardRef((
   {
@@ -13,7 +14,7 @@ const Logo = React.forwardRef((
   // eslint-disable-next-line no-unused-vars
   _
 ) => (
-  <Tag className={`logo ${className}`} {...restProps}>
+  <Tag className={`${styles.logo} ${className}`} {...restProps}>
     <img src={logoPath} alt={alt} />
     {text}
   </Tag>

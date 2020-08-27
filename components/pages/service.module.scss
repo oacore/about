@@ -1,4 +1,4 @@
-@import '../components/bootstrap/core';
+@import "components/bootstrap/core";
 
 .service-section {
 }
@@ -54,10 +54,8 @@
   }
 }
 
-.service-page {
-  .article-nav {
+.service-page :global(.article-nav) {
     margin-bottom: $spacer;
-  }
 }
 
 .service-page-title {
@@ -67,7 +65,7 @@
     text-align: left;
   }
 
-  + .article-nav {
+  + :global(.article-nav) {
     justify-content: center;
 
     @include media-breakpoint-up('md') {

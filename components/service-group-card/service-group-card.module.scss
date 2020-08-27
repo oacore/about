@@ -1,4 +1,4 @@
-@import "../bootstrap/core";
+@import "components/bootstrap/core";
 
 .service-group-card {
   margin: 0 0 map-get($spacers, 2);
@@ -12,19 +12,19 @@
     background-color: $white;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   }
+}
 
-  .card-title {
-    text-align: center;
-    font-size: $font-size-base;
+.card-title {
+  text-align: center;
+  font-size: $font-size-base;
 
-    &::before {
-      content: "Tools for";
-      display: block;
-      font-size: $font-size-sm;
-      font-weight: 400;
-      line-height: 1;
-      color: $gray-600;
-    }
+  &::before {
+    content: "Tools for";
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: 400;
+    line-height: 1;
+    color: $gray-600;
   }
 }
 

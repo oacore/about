@@ -2,6 +2,7 @@ import React from 'react'
 
 import Logo from '../logo'
 import { Section } from '../content'
+import styles from './hero.module.scss'
 
 const HeroSection = ({
   children,
@@ -11,9 +12,9 @@ const HeroSection = ({
   tag = 'div',
   ...restProps
 }) => (
-  <Section className={`hero ${className}`} tag={tag} {...restProps}>
-    <Logo text={title} className="hero-logo" tag="h1" />
-    {tagline && <p className="hero-tagline">{tagline}</p>}
+  <Section className={`${styles.hero} ${className}`} tag={tag} {...restProps}>
+    <Logo text={title} className={styles.heroLogo} tag="h1" />
+    {tagline && <p className={styles.heroTagline}>{tagline}</p>}
     {children}
   </Section>
 )

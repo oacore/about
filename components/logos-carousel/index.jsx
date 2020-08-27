@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Carousel, CarouselItem, CarouselControl } from 'reactstrap'
 import { bind } from 'decko'
 
+import styles from './logos-carousel.module.scss'
+
 const LogosCarouselItem = ({
   src,
   alt,
@@ -91,27 +93,23 @@ class LogosCarousel extends Component {
 
     const slides = itemChunks.map(slideItems => (
       <CarouselItem
-        className="logos-carousel-item"
+        className={styles.logosCarouselItem}
         onExiting={this.onExiting}
         onExited={this.onExited}
       >
-        {slideItems.map(({ logo, name }) => {
-          const item = (
-            <LogosCarouselItem
-              key={name}
-              src={`/images/logos/${logo}`}
-              alt={name}
-            />
-          )
-
-          return item
-        })}
+        {slideItems.map(({ logo, name }) => (
+          <LogosCarouselItem
+            key={name}
+            src={`/images/logos/${logo}`}
+            alt={name}
+          />
+        ))}
       </CarouselItem>
     ))
 
     return (
       <Carousel
-        className={`logos-carousel ${className}`}
+        className={`${styles.logosCarousel} ${className}`}
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
@@ -119,13 +117,13 @@ class LogosCarousel extends Component {
       >
         {slides}
         <CarouselControl
-          className="logos-carousel-control-prev"
+          className={styles.logosCarouselControlPrev}
           direction="prev"
           directionText="Previous"
           onClickHandler={this.previous}
         />
         <CarouselControl
-          className="logos-carousel-control-next"
+          className={styles.logosCarouselControlNext}
           direction="next"
           directionText="Next"
           onClickHandler={this.next}
