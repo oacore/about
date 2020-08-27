@@ -29,7 +29,6 @@ services:
     dataset: ./dataset
     sdk: ./sdk
     recommender: ./recommender
-    connector: ./connector
     repository-dashboard: ./repository-dashboard
     repository-edition: ./repository-edition
     analytics-dashboard: ./analytics-dashboard
