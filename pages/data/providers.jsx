@@ -22,15 +22,17 @@ const DataProvidersPage = () => (
     nav
   >
     <h1 className="page-title">{repositoriesData.title}</h1>
-    <Content className="section">
-      <Markdown>
-        {patchStats(repositoriesData.content, repositoriesData.statistics)}
-      </Markdown>
+    <div className="container">
+      <Content className="content">
+        <Markdown>
+          {patchStats(repositoriesData.content, repositoriesData.statistics)}
+        </Markdown>
 
-      <Button color="primary" href="~register-data-provider">
-        {repositoriesData.become}
-      </Button>
-    </Content>
+        <Button color="primary" href="~register-data-provider">
+          {repositoriesData.become}
+        </Button>
+      </Content>
+    </div>
 
     <Section id="map" caption={repositoriesData.map}>
       <h2>{repositoriesData.map}</h2>
