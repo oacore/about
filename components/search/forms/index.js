@@ -1,2 +1,2 @@
+// eslint-disable-next-line import/prefer-default-export
 export { default as SimpleSearchForm } from './simple'
-export { default as AdvancedSearchForm } from './advanced'
