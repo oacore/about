@@ -68,10 +68,27 @@ $article-spacer: $section-lg-spacer !default;
 
 .section {
   position: relative;
+  display: grid;
   padding-top: $section-spacer;
   padding-bottom: $section-spacer;
+  // Fake padding for extra-small screens
+  grid-template-columns: ($grid-gutter-width / 2) 1fr ($grid-gutter-width / 2);
 
-  > .container > .section {
+  @each $breakpoint, $container-max-width in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      grid-template-columns: 1fr ($container-max-width - $grid-gutter-width) 1fr;
+    }
+  }
+
+  > * {
+    grid-column: 2;
+  }
+
+  & > .section {
+    grid-column: 1 / -1;
+  }
+
+  > .section {
     padding-top: $section-sm-spacer;
     padding-bottom: $section-sm-spacer;
 
@@ -109,14 +126,6 @@ $article-spacer: $section-lg-spacer !default;
   & > .section:last-child {
     padding-bottom: $article-spacer;
     margin-bottom: -$article-spacer;
-  }
-}
-
-.article,
-.section {
-  > .container .container {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 

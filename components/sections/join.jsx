@@ -16,9 +16,11 @@ const JoinSection = ({
   <Section id={id} className={`join-section ${className}`} {...restProps}>
     <h2>{title}</h2>
     <Markdown className="join-section-lead">{lead}</Markdown>
-    <Button className="join-core-button" size="lg" href="~services">
-      {action}
-    </Button>
+    <p className="join-section-button-container">
+      <Button className="join-core-button" size="lg" href="~services">
+        {action}
+      </Button>
+    </p>
     <footer className="join-section-note">
       <Markdown>{note}</Markdown>
     </footer>

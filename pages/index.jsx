@@ -81,7 +81,7 @@ const IndexPage = () => (
     keywords={page.keywords}
   >
     <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
-      <Section tag="div">
+      <div className="py-section-sm">
         <SearchForm
           action="/search"
           name="q"
@@ -90,7 +90,7 @@ const IndexPage = () => (
         <SearchIntro>
           <Markdown>{page.covid19Notice}</Markdown>
         </SearchIntro>
-      </Section>
+      </div>
     </Hero>
 
     <Section className="pb-section-lg">

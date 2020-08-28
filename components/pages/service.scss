@@ -1,4 +1,4 @@
-@import "../components/bootstrap/core";
+@import '../components/bootstrap/core';
 
 .service-section {
 }
@@ -7,7 +7,7 @@
   align-items: center;
   text-align: center;
 
-  @include media-breakpoint-up("sm") {
+  @include media-breakpoint-up('sm') {
     text-align: left;
   }
 }
@@ -19,7 +19,7 @@
     height: auto;
   }
 
-  @include media-breakpoint-up("sm") {
+  @include media-breakpoint-up('sm') {
     text-align: right;
 
     .service-section:nth-child(odd) & {
@@ -45,7 +45,7 @@
   text-align: center;
   margin: map-get($spacers, 1) / -2;
 
-  @include media-breakpoint-up("sm") {
+  @include media-breakpoint-up('sm') {
     text-align: left;
   }
 
@@ -63,14 +63,14 @@
 .service-page-title {
   text-align: center;
 
-  @include media-breakpoint-up("md") {
+  @include media-breakpoint-up('md') {
     text-align: left;
   }
 
   + .article-nav {
     justify-content: center;
 
-    @include media-breakpoint-up("md") {
+    @include media-breakpoint-up('md') {
       justify-content: flex-start;
     }
   }
@@ -87,6 +87,7 @@
 }
 
 .service-page-screenshot {
+  width: 100%;
   max-width: $content-max-width;
   margin-right: auto;
   margin-left: auto;

@@ -22,8 +22,8 @@ const DataProvidersPage = () => (
     nav
   >
     <h1 className="page-title">{repositoriesData.title}</h1>
-    <div className="container">
-      <Content className="content">
+    <Section tag="div">
+      <Content>
         <Markdown>
           {patchStats(repositoriesData.content, repositoriesData.statistics)}
         </Markdown>
@@ -32,7 +32,7 @@ const DataProvidersPage = () => (
           {repositoriesData.become}
         </Button>
       </Content>
-    </div>
+    </Section>
 
     <Section id="map" caption={repositoriesData.map}>
       <h2>{repositoriesData.map}</h2>

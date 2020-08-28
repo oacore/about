@@ -77,9 +77,11 @@ const AboutPage = () => (
         {aboutData.endorsements.title}
       </h2>
       <Markdown>{aboutData.endorsements.content}</Markdown>
-      <Button color="primary" outline href="~about/endorsements">
-        {aboutData.endorsements.action}
-      </Button>
+      <p>
+        <Button color="primary" outline href="~about/endorsements">
+          {aboutData.endorsements.action}
+        </Button>
+      </p>
     </Section>
 
     <Section id="how-it-works" caption="How it works">
@@ -121,9 +123,11 @@ const AboutPage = () => (
 
       <ServiceGroups items={servicesData.sections} className="text-left" />
 
-      <Button color="primary" outline href="~services">
-        {aboutData.howItWorks.services.actions.secondary}
-      </Button>
+      <p>
+        <Button color="primary" outline href="~services">
+          {aboutData.howItWorks.services.actions.secondary}
+        </Button>
+      </p>
     </Section>
 
     <Section id="team" caption={teamData.shortTitle}>
@@ -166,9 +170,11 @@ const AboutPage = () => (
     >
       <h2>{aboutData.ambassadors.title}</h2>
       <Markdown>{aboutData.ambassadors.body}</Markdown>
-      <Button color="primary" outline href="~about/ambassadors">
-        {aboutData.ambassadors.action}
-      </Button>
+      <p>
+        <Button color="primary" outline href="~about/ambassadors">
+          {aboutData.ambassadors.action}
+        </Button>
+      </p>
     </Section>
 
     <Section id="resources" caption={aboutData.resources.shortTitle}>
