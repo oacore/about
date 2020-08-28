@@ -1,7 +1,7 @@
-@import "../bootstrap/core";
+@import '../bootstrap/core';
 
 .join-section {
-  background: $nearly-black url("../images/blue-lights-bg.jpg") no-repeat center /
+  background: $nearly-black url('../images/blue-lights-bg.jpg') no-repeat center /
     cover;
   color: $light;
   text-align: center;
@@ -31,6 +31,10 @@
       color: $link-hover-color;
     }
   }
+}
+
+.join-section-button-container {
+  margin-bottom: 0;
 }
 
 .join-core-button {

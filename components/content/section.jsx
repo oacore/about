@@ -1,5 +1,4 @@
 import React from 'react'
-import { Container as BootstrapContainer } from 'reactstrap'
 
 const Section = props => {
   const {
@@ -7,7 +6,6 @@ const Section = props => {
     large = false,
     small = false,
     className = '',
-    container = true,
     tag: Tag = 'section',
     ...restProps
   } = props
@@ -20,17 +18,9 @@ const Section = props => {
     .filter(truthy => truthy)
     .join(' ')
 
-  if (!container) {
-    return (
-      <Tag className={classNames} {...restProps}>
-        {children}
-      </Tag>
-    )
-  }
-
   return (
     <Tag className={classNames} {...restProps}>
-      <BootstrapContainer>{children}</BootstrapContainer>
+      {children}
     </Tag>
   )
 }

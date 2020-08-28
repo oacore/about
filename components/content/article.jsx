@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import {
-  Container as BootstrapContainer,
-  Nav,
-  NavItem,
-  NavLink,
-} from 'reactstrap'
+import { Nav, NavItem, NavLink } from 'reactstrap'
+
+const ArticleHeader = ({ children, className, ...restProps }) => (
+  <div className={`article-header container ${className || ''}`} {...restProps}>
+    {children}
+  </div>
+)
 
 const ArticleNav = ({ items }) => (
   <Nav className="article-nav">
@@ -50,14 +51,14 @@ const Article = ({ children, ...props }) => {
     if (header.length === 0) return null
 
     return (
-      <BootstrapContainer>
+      <ArticleHeader>
         {header}
         {nav && <ArticleNav items={navItems} />}
-      </BootstrapContainer>
+      </ArticleHeader>
     )
   }
 
-  const { nav, className, tag: Tag, ...restProps } = props
+  const { nav, className, tag: Tag = 'acticle', ...restProps } = props
 
   return (
     <Tag className={`article ${className || ''}`.trim()} {...restProps}>
