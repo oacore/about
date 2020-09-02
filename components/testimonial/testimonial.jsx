@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Content } from '../content'
 import Markdown from '../markdown'
+import styles from './testimonial.module.scss'
 
 const Testimonial = ({
   id,
@@ -11,28 +12,34 @@ const Testimonial = ({
   className = '',
   ...restProps
 }) => (
-  <article id={id} className={`testimonial ${className}`} {...restProps}>
-    <header className="testimonial-author">
+  <article
+    id={id}
+    className={`${styles.testimonial} ${className}`}
+    {...restProps}
+  >
+    <header className={styles.testimonialAuthor}>
       {author.picture != null ? (
         <img
-          className="testimonial-author-avatar"
+          className={styles.testimonialAuthorAvatar}
           src={author.picture}
           alt={author.name}
         />
       ) : (
-        <span className="testimonial-author-avatar" />
+        <span className={styles.testimonialAuthorAvatar} />
       )}
-      <h4 className="testimonial-author-name">{author.name}</h4>
-      {author.role && <p className="testimonial-author-role">{author.role}</p>}
+      <h4 className={styles.testimonialAuthorName}>{author.name}</h4>
+      {author.role && (
+        <p className={styles.testimonialAuthorRole}>{author.role}</p>
+      )}
     </header>
     <Content tag="blockquote">
       <Markdown>{content}</Markdown>
     </Content>
     {organization.logo && (
-      <footer className="testimonial-footer">
+      <footer>
         <a href={organization.url} target="_blank" rel="noopener noreferrer">
           <img
-            className="testimonial-organization-logo"
+            className={styles.testimonialOrganizationLogo}
             src={`/images/logos/${organization.logo}`}
             alt={organization.name}
           />

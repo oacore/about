@@ -1,16 +1,21 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 
+import styles from './highlight-section.module.scss'
 import { Section } from '../content'
 import Link from '../link'
 
 const HighlightSection = ({ image, action, children }) => (
-  <Section className="highlight-section">
+  <Section className={styles.highlightSection}>
     <Row>
-      <Col md="5" lg="4">
+      <Col className={styles.row} md="5" lg="4">
         <Link href={action} passHref>
           <a href={action}>
-            <img className="highlight-section-picture" src={image} alt="" />
+            <img
+              className={styles.highlightSectionPicture}
+              src={image}
+              alt=""
+            />
           </a>
         </Link>
       </Col>

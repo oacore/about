@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { bind } from 'decko'
 
 import AccordionItem from './item'
-
+import styles from './accordion.module.scss'
 // TODO: Make it semantic: provide aria-* attributes
 class Accordion extends Component {
   state = {
@@ -60,7 +60,7 @@ class Accordion extends Component {
       })
     )
 
-    return <Tag className={`accordion ${className}`}>{items}</Tag>
+    return <Tag className={`${styles.accordion} ${className}`}>{items}</Tag>
   }
 }
 

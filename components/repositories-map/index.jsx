@@ -4,6 +4,7 @@ import { bind } from 'decko'
 
 import RepositoriesBrowser from '../repositories-browser'
 import markerUrl from './marker.svg'
+import styles from './repositories-map.module.scss'
 
 class RepositoriesMap extends Component {
   mapContainer = null
@@ -89,21 +90,21 @@ class RepositoriesMap extends Component {
     const { className = '', tag: Tag = 'div' } = this.props
     const { isLoading } = this.state
     const classList = [
-      'repositories-map',
-      isLoading ? 'repositories-map-loading' : '',
+      styles.repositoriesMap,
+      isLoading ? styles.repositoriesMapLoading : '',
       className,
     ]
 
     return (
       <Tag className={classList.join(' ')}>
         <div
-          className="repositories-map-inner"
+          className={styles.repositoriesMapInner}
           ref={element => {
             this.mapContainer = element
           }}
         />
         {isLoading && (
-          <Spinner color="primary" className="repositories-map-spinner" />
+          <Spinner color="primary" className={styles.repositoriesMapSpinner} />
         )}
       </Tag>
     )

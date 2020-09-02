@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './reference.module.scss'
+
 const formatName = name => {
   const last = name.slice(name.indexOf(' ') + 1)
   return `${name.charAt()}.\u00A0${last}`
@@ -27,25 +29,21 @@ const Reference = ({
   ...restProps
 }) => {
   const partials = [
-    <span key="author" className="reference-author">
+    <span key="author">
       {formatNameList(Array.isArray(author) ? author : [author])}
     </span>,
-    year && (
-      <span key="year" className="reference-year">
-        ({year})
-      </span>
-    ),
+    year && <span key="year">({year})</span>,
     url ? (
-      <a key="title" href={url} className="reference-title">
+      <a key="title" href={url} className={styles.referenceTitle}>
         {title.trim()}
       </a>
     ) : (
-      <span key="title" className="reference-title">
+      <span key="title" className={styles.referenceTitle}>
         {title}
       </span>
     ),
     booktitle && (
-      <span key="book" className="reference-book">
+      <span key="book">
         In{' '}
         {editor &&
           `${formatNameList(
@@ -55,7 +53,7 @@ const Reference = ({
       </span>
     ),
     journal && (
-      <span key="journal" className="reference-journal">
+      <span key="journal">
         {journal}
         {(volume || number) && ', '}
         {volume && volume}
@@ -70,7 +68,7 @@ const Reference = ({
     }, [])
 
   return (
-    <Tag className={`reference ${className}`} {...restProps}>
+    <Tag className={className} {...restProps}>
       {partials}
     </Tag>
   )

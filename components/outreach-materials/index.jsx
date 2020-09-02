@@ -10,6 +10,8 @@ import {
   Input,
 } from 'reactstrap'
 
+import styles from './outreach-materials.module.scss'
+
 const format2name = type =>
   ({
     jpg: 'JPEG',
@@ -98,18 +100,18 @@ const OutreachMaterials = ({
     <Card
       id={id}
       className={`
-        outreach-materials-card
-        outreach-materials-card-${attachementType}
+        ${styles.outreachMaterialsCard}
+        ${styles[`outreach-materials-card-${attachementType}`]}
         ${className}
       `}
       {...restProps}
     >
-      <div className="outreach-materials-picture">
+      <div className={styles.outreachMaterialsPicture}>
         {picture && <CardImg src={picture} alt={`${name}'s image`} />}
       </div>
 
-      <CardBody className="outreach-materials-card-body">
-        <CardTitle className="outreach-materials-name">
+      <CardBody className={styles.outreachMaterialsCardBody}>
+        <CardTitle>
           {name}
           {attachementType === 'multi' &&
             ` (${link.options.length} ${link.itemName})`}
@@ -124,7 +126,7 @@ const OutreachMaterials = ({
         ) : (
           <ResourceLink
             id={`${id}-resource`}
-            className="outreach-materials-link"
+            className={styles.outreachMaterialsLink}
             href={link}
             format={format}
           />

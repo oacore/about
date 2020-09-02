@@ -19,6 +19,7 @@ import Link from '../link'
 import Logo from '../logo'
 import SearchNavbar from '../search-navbar'
 import NavDropdown from '../nav-dropdown'
+import styles from './header.module.scss'
 
 class Header extends React.Component {
   state = {
@@ -139,7 +140,7 @@ class Header extends React.Component {
         light
         color="light"
         expand="md"
-        className={`header ${className}`}
+        className={`${styles.header} ${className}`}
         tag="header"
       >
         <Container>

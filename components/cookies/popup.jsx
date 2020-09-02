@@ -3,6 +3,7 @@ import { Form } from 'reactstrap'
 
 import { Button } from '../elements'
 import Markdown from '../markdown'
+import styles from './cookies.module.scss'
 
 const CookiesPopup = ({
   title = 'We use cookies',
@@ -11,12 +12,14 @@ const CookiesPopup = ({
   submitCaption = 'Accept',
   ...formProps
 }) => (
-  <Form className="cookies-popup" id="cookies-popup" {...formProps}>
-    <div className="cookies-popup-body">
-      <h4 className="cookies-popup-title">{title}</h4>
+  <Form className={styles.cookiesPopup} id="cookies-popup" {...formProps}>
+    <div className={styles.cookiesPopupBody}>
+      <h4 className={styles.cookiesPopupTitle}>{title}</h4>
       <Markdown>{body}</Markdown>
     </div>
-    <Button className="cookies-popup-button cookies-popup-button-accept">
+    <Button
+      className={`${styles.cookiesPopupButton} ${styles.cookiesPopupButtonAccept}`}
+    >
       <span className="sr-only">{submitCaption}</span>
     </Button>
   </Form>

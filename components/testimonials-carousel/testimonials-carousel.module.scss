@@ -1,4 +1,4 @@
-@import "../bootstrap/core";
+@import "components/bootstrap/core";
 
 $testimonials-carousel-image-padding-x: $spacer / 2 !default;
 $testimonials-carousel-image-padding-y: $spacer / 2 !default;
@@ -83,14 +83,14 @@ $testimonials-carousel-gutter: $grid-gutter-width !default;
   margin-right: -1.5rem;
 }
 
-.testimonials-carousel-contol-text {
+.testimonials-carousel-control-text {
   color: $gray-600;
 }
 
 .testimonials-carousel-control-prev,
 .testimonials-carousel-control-next {
   @include hover-focus {
-    .testimonials-carousel-contol-text {
+    .testimonials-carousel-control-text {
       color: $body-color;
     }
   }

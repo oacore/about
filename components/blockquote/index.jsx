@@ -1,22 +1,24 @@
 import React, { Fragment } from 'react'
 
+import styles from './blockquote.module.scss'
+
 const BlockquoteFooter = ({
   children,
   className = '',
   tag: Tag = 'footer',
   ...restProps
 }) => (
-  <Tag className={`blockquote-footer ${className}`} {...restProps}>
+  <Tag className={`${styles.blockquoteFooter} ${className}`} {...restProps}>
     {children}
   </Tag>
 )
 
 const BlockquoteCite = ({ name, role, tag: Tag = BlockquoteFooter }) => (
   <Tag>
-    <cite className="blockquote-author-name">{name}</cite>
+    <cite>{name}</cite>
     {role && (
       <>
-        , <cite className="blockquote-author-role">{role}</cite>
+        , <cite>{role}</cite>
       </>
     )}
   </Tag>
@@ -24,7 +26,7 @@ const BlockquoteCite = ({ name, role, tag: Tag = BlockquoteFooter }) => (
 
 const BlockquoteAvatar = ({ src, alt, ...restProps }) => (
   <img
-    className="blockquote-author-avatar"
+    className={styles.blockquoteAuthorAvatar}
     src={src}
     alt={alt}
     {...restProps}
@@ -52,7 +54,9 @@ const Blockquote = ({
   ...restProps
 }) => (
   <Tag
-    className={`blockquote ${avatar ? 'blockquote-avatar' : ''} ${className}`}
+    className={`${styles.blockquote} ${
+      avatar ? styles.blockquoteAvatar : ''
+    } ${className}`}
     {...restProps}
   >
     {children}

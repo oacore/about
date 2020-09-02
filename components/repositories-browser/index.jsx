@@ -6,6 +6,7 @@ import Fuse from 'fuse.js'
 import Link from '../link'
 import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
+import styles from './repositories-browser.module.scss'
 
 const normalize = string =>
   string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -147,7 +148,7 @@ class RepositoryBrowser extends Component {
                 className="mb-3 d-flex align-items-stretch"
                 key={item.id}
               >
-                <Card body className="data-providers-card">
+                <Card body className={styles.dataProvidersCard}>
                   <CardTitle>
                     <Link href={`~search?q=repositories.id:${item.id}`}>
                       {item.name || 'No name repository'}

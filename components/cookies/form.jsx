@@ -4,6 +4,7 @@ import { CustomInput, Form, FormGroup, Card, CardTitle } from 'reactstrap'
 import { Button } from '../elements'
 import ButtonToolbar from '../button-toolbar'
 import Markdown from '../markdown'
+import styles from './cookies.module.scss'
 
 const CookiesForm = ({
   title,
@@ -17,12 +18,12 @@ const CookiesForm = ({
   ...formProps
 }) => (
   <Card
-    className={`card-body cookies-form ${className}`}
+    className={`card-body ${styles.cookiesForm} ${className}`}
     method={method}
     tag={Form}
     {...formProps}
   >
-    <CardTitle className="cookies-form-title" tag="h4">
+    <CardTitle className={styles.cookiesFormTitle} tag="h4">
       {title}
     </CardTitle>
     {Object.entries(items).map(
@@ -39,7 +40,7 @@ const CookiesForm = ({
             defaultChecked={required ? defaultValue : value}
             disabled={required}
           />
-          <details className="cookies-form-details">
+          <details className={styles.cookiesFormDetails}>
             <summary>{itemDescriptionTitle}</summary>
             <Markdown>{description}</Markdown>
           </details>

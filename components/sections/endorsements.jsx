@@ -5,6 +5,7 @@ import Markdown from '../markdown'
 import { Button } from '../elements'
 import { Section, Content } from '../content'
 import Testimonial from '../testimonial'
+import styles from './endorsements.module.scss'
 
 const filterOut = (what, from) => from.filter(item => !what.includes(item))
 const toTestimonial = organization => ({
@@ -14,7 +15,7 @@ const toTestimonial = organization => ({
 
 const Logo = ({ logo, name, url, className = '', ...restProps }) => (
   <span
-    className={`testimonial-section-organizations-item ${className}`}
+    className={`${styles.testimonialSectionOrganizationsItem} ${className}`}
     title={name}
     {...restProps}
   >
@@ -33,7 +34,7 @@ const Preview = ({ organizations }) => {
     <>
       <Testimonial key={main.id} className="card card-body" avatar {...main} />
 
-      <Row className="testimonial-section-organizations">
+      <Row className={styles.testimonialSectionOrganizations}>
         {rest.map(org => (
           <Col xs="6" sm="4" lg="2">
             <Logo key={org.id} {...org} />
@@ -62,7 +63,7 @@ const List = ({ organizations }) => {
         )
       })}
 
-      <div className="testimonial-section-organizations">
+      <div className={styles.testimonialSectionOrganizations}>
         {rest.map(org => (
           <Col xs="6" sm="4" lg="2">
             <Logo key={org.id} {...org} />
@@ -102,7 +103,10 @@ const TestimonialsSection = ({
   const Heading = `h${level}`
 
   return (
-    <Section className={`testimonials-section ${className}`} {...restProps}>
+    <Section
+      className={`${styles.testimonialsSection} ${className}`}
+      {...restProps}
+    >
       <Heading>{title}</Heading>
       {!expanded ? (
         <>
@@ -144,10 +148,10 @@ const EndorsementsSection = ({
     <Section id={id} {...restProps}>
       <Heading>{title}</Heading>
       <Row>
-        <Col md="4" className="testimonial-section-illustration-container">
+        <Col md="4" className={styles.testimonialSectionIllustrationContainer}>
           {illustration && (
             <img
-              className="testimonial-section-illustration"
+              className={styles.testimonialSectionIllustration}
               src={`/images/illustrations/${illustration}`}
               alt=""
               aria-hidden

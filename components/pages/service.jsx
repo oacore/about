@@ -8,6 +8,7 @@ import Markdown from '../markdown'
 import { Button, Link } from '../elements'
 import { KeyFeatureList, KeyFeature } from '../key-feature'
 import Testimonial from '../testimonial'
+import styles from './service.module.scss'
 
 const ServicePage = ({
   id,
@@ -28,14 +29,14 @@ const ServicePage = ({
     title={title}
     description={description}
     keywords={keywords}
-    className="service-page"
+    className={styles.servicePage}
     nav
   >
-    <h1 className="service-page-title">{title}</h1>
-    <p className="service-page-tagline">{tagline}</p>
+    <h1 className={styles.servicePageTitle}>{title}</h1>
+    <p className={styles.servicePageTagline}>{tagline}</p>
     <Section tag="div">
       {screenshot && (
-        <figure className="service-page-screenshot">
+        <figure className={styles.servicePageScreenshot}>
           <img src={screenshot.source} alt={`${title}'s screenshot`} />
           {screenshot.caption && (
             <figcaption>
@@ -45,7 +46,7 @@ const ServicePage = ({
         </figure>
       )}
 
-      <KeyFeatureList className="service-page-features">
+      <KeyFeatureList className={styles.servicePageFeatures}>
         {features.map(feature => (
           <KeyFeature
             title={feature.title}
@@ -57,7 +58,7 @@ const ServicePage = ({
         ))}
       </KeyFeatureList>
 
-      <Content className="service-page-content">
+      <Content className={styles.servicePageContent}>
         <Markdown>{main}</Markdown>
 
         {documentation && (
@@ -79,7 +80,7 @@ const ServicePage = ({
 
       {testimonial && (
         <Testimonial
-          className="service-page-testimonial content"
+          className={`${styles.servicePageTestimonial} content`}
           {...testimonial}
         />
       )}
@@ -119,7 +120,7 @@ const ServicePage = ({
 
     {relatedServices && relatedServices.length && (
       <Section caption="You might also be interested in" id="related-services">
-        <h2 className="service-page-heading">
+        <h2 className={styles.servicePageHeading}>
           You might also be interested in
         </h2>
         <KeyFeatureList>

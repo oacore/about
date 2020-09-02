@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Alert, Spinner, TabPane, FormGroup, Input } from 'reactstrap'
 
+import styles from './citation-tabs.module.scss'
+
 class CitationTextLoader extends Component {
   state = {
     isLoading: true,
@@ -68,24 +70,28 @@ class CitationTextLoader extends Component {
         <Spinner
           key="spinner"
           color="primary"
-          className="citation-tab-spinner"
+          className={styles.citationTabSpinner}
         />
       )
     } else if (errorText) {
       children = (
-        <Alert key="error-text" color="danger" className="citation-tab-error">
+        <Alert
+          key="error-text"
+          color="danger"
+          className={styles.citationTabError}
+        >
           {errorText}
         </Alert>
       )
     } else {
       const controlId = `${id}-citation-text-${type}`
       children = (
-        <FormGroup key="citation-text" className="citation-tab-form-group">
+        <FormGroup key="citation-text" className={styles.citationTabFormGroup}>
           <label className="sr-only" htmlFor={controlId}>
             {title} text to copy
           </label>
           <Input
-            className="citation-tab-control"
+            className={styles.citationTabControl}
             type="textarea"
             value={citationText}
             id={controlId}
@@ -96,7 +102,7 @@ class CitationTextLoader extends Component {
     }
 
     return (
-      <Tag className="citation-tab" {...restProps}>
+      <Tag className={styles.citationTab} {...restProps}>
         {children}
       </Tag>
     )

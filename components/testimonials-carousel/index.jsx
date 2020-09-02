@@ -3,6 +3,7 @@ import { Carousel, CarouselItem } from 'reactstrap'
 import { bind } from 'decko'
 
 import Testimonial from '../testimonial'
+import styles from './testimonials-carousel.module.scss'
 
 const TestimonialsCarouselControl = ({
   children,
@@ -12,7 +13,9 @@ const TestimonialsCarouselControl = ({
   className = '',
 }) => (
   <button
-    className={`${className} testimonials-carousel-control-${direction}`}
+    className={`${className} ${
+      styles[`testimonials-carousel-control-${direction}`]
+    }`}
     type="button"
     tabIndex="0"
     onClick={e => {
@@ -21,12 +24,12 @@ const TestimonialsCarouselControl = ({
     }}
   >
     <span
-      className={`testimonials-carousel-control-${direction}-caption`}
+      className={styles[`testimonials-carousel-control-${direction}-caption`]}
       aria-hidden="true"
     >
       {directionText}
     </span>
-    <span className="testimonials-carousel-contol-text">{children}</span>
+    <span className={styles.testimonialsCarouselControlText}>{children}</span>
   </button>
 )
 
@@ -73,7 +76,7 @@ class TestimonialsCarousel extends Component {
 
     const slides = items.map(item => (
       <CarouselItem
-        className="testimonials-carousel-item"
+        className={styles.testimonialsCarouselItem}
         onExiting={this.onExiting}
         onExited={this.onExited}
       >
@@ -83,22 +86,22 @@ class TestimonialsCarousel extends Component {
 
     return (
       <Carousel
-        className={`testimonials-carousel ${className}`}
+        className={`${styles.testimonialsCarousel} ${className}`}
         activeIndex={activeIndex}
         next={this.next}
         previous={this.previous}
         {...restProps}
       >
         {slides}
-        <div className="testimonials-carousel-control-group">
+        <div className={styles.testimonialsCarouselControlGroup}>
           <TestimonialsCarouselControl
-            className="testimonials-carousel-control-prev"
+            className={styles.testimonialsCarouselControlPrev}
             direction="prev"
             directionText="Previous"
             onClick={this.previous}
           />
           <TestimonialsCarouselControl
-            className="testimonials-carousel-control-next"
+            className={styles.testimonialsCarouselControlNext}
             direction="next"
             directionText="Next"
             onClick={this.next}

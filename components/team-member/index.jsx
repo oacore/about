@@ -8,6 +8,8 @@ import {
   CardBody,
 } from 'reactstrap'
 
+import styles from './team-member.module.scss'
+
 const TeamMember = ({
   className = '',
   children,
@@ -17,13 +19,15 @@ const TeamMember = ({
   description,
   ...restProps
 }) => (
-  <Card className={`team-member ${className}`} {...restProps}>
-    <div className="team-member-picture">
+  <Card className={`${styles.teamMember} ${className}`} {...restProps}>
+    <div className={styles.teamMemberPicture}>
       {picture && <CardImg src={picture} alt={`${name}'s photo`} />}
     </div>
     <CardBody>
-      <CardTitle className="h5 team-member-name">{name}</CardTitle>
-      {role && <CardSubtitle className="team-member-role">{role}</CardSubtitle>}
+      <CardTitle className={`h5 ${styles.teamMemberName}`}>{name}</CardTitle>
+      {role && (
+        <CardSubtitle className={styles.teamMemberRole}>{role}</CardSubtitle>
+      )}
       {description && <CardText>{description}</CardText>}
       {children}
     </CardBody>
