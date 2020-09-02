@@ -1,5 +1,5 @@
 import React from 'react'
-import NextDocument, { Head, Main, NextScript } from 'next/document'
+import NextDocument, { Head, Main, NextScript, Html } from 'next/document'
 
 class Document extends NextDocument {
   static async getInitialProps(ctx) {
@@ -10,13 +10,13 @@ class Document extends NextDocument {
   // eslint-disable-next-line class-methods-use-this
   render() {
     return (
-      <html lang="en">
+      <Html lang="en">
         <Head />
         <body>
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     )
   }
 }
