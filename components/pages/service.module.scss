@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .service-section {
 }
@@ -55,7 +55,7 @@
 }
 
 .service-page :global(.article-nav) {
-    margin-bottom: $spacer;
+  margin-bottom: $spacer;
 }
 
 .service-page-title {
@@ -121,8 +121,6 @@
   max-width: $content-max-width;
 }
 
-.service-page-testimonial {
-  margin-top: $section-sm-spacer;
-  margin-bottom: $section-sm-spacer;
-  margin-left: auto;
+.testimonial {
+  background: $gray-200;
 }

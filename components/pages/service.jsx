@@ -80,7 +80,7 @@ const ServicePage = ({
 
       {testimonial && (
         <Testimonial
-          className={`${styles.servicePageTestimonial} content`}
+          className={`section ${styles.testimonial}`}
           {...testimonial}
         />
       )}
