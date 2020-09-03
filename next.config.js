@@ -18,33 +18,38 @@ const nextConfig = {
     // This is the array of webpack rules that:
     // - is inside a 'oneOf' block
     // - contains a rule that matches 'file.css'
-    const styleRules = (
-      rules.find(
-        m => m.oneOf && m.oneOf.find(({ test: reg }) => reg.test('file.scss'))
-      ) || {}
-    ).oneOf
-    if (!styleRules) return config
-    // Find all the webpack rules that handle CSS modules
-    // Look for rules that match '.module.css'
-    // but aren't being used to generate
-    // error messages.
-    const cssModuleRules = [
-      styleRules.find(
-        ({ test: reg, use }) =>
-          reg.test('file.module.scss') && use.loader !== 'error-loader'
-      ),
-    ].filter(n => n) // remove 'undefined' values
-    // Add the 'localsConvention' config option to the CSS loader config
-    // in each of these rules.
-    cssModuleRules.forEach(cmr => {
-      // Find the item inside the 'use' list that defines css-loader
-      const cssLoaderConfig = cmr.use.find(({ loader }) =>
-        loader.includes('css-loader')
-      )
-      if (cssLoaderConfig && cssLoaderConfig.options) {
-        // Patch it with the new config
-        cssLoaderConfig.options.localsConvention = 'camelCase'
-      }
+    const suffixes = ['css', 'scss']
+    suffixes.forEach(suffix => {
+      const styleRules = (
+        rules.find(
+          m =>
+            m.oneOf &&
+            m.oneOf.find(({ test: reg }) => reg.test(`file.${suffix}`))
+        ) || {}
+      ).oneOf
+      if (!styleRules) return
+      // Find all the webpack rules that handle CSS modules
+      // Look for rules that match '.module.css'
+      // but aren't being used to generate
+      // error messages.
+      const cssModuleRules = [
+        styleRules.find(
+          ({ test: reg, use }) =>
+            reg.test(`file.module.${suffix}`) && use.loader !== 'error-loader'
+        ),
+      ].filter(n => n) // remove 'undefined' values
+      // Add the 'localsConvention' config option to the CSS loader config
+      // in each of these rules.
+      cssModuleRules.forEach(cmr => {
+        // Find the item inside the 'use' list that defines css-loader
+        const cssLoaderConfig = cmr.use.find(({ loader }) =>
+          loader.includes('css-loader')
+        )
+        if (cssLoaderConfig && cssLoaderConfig.options) {
+          // Patch it with the new config
+          cssLoaderConfig.options.localsConvention = 'camelCase'
+        }
+      })
     })
 
     Object.assign(config.resolve.alias, {

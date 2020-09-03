@@ -1,6 +1,7 @@
 import React from 'react'
 import Router from 'next/router'
 import withGA from 'next-ga'
+import '@oacore/design/lib/index.css'
 
 import {
   isCookiesAccepted,

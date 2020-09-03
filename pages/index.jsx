@@ -85,7 +85,9 @@ const IndexPage = () => (
         <SearchForm
           action="/search"
           name="q"
-          placeholder={patchStats(page.searchPlaceholder, page.statistics)}
+          label={patchStats(page.searchPlaceholder, page.statistics)}
+          placeholder="e.g. article title or author name"
+          variant="pure"
         />
         <SearchIntro>
           <Markdown>{page.covid19Notice}</Markdown>
