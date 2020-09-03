@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { Nav, NavItem, NavLink } from 'reactstrap'
 
@@ -19,11 +19,7 @@ const ArticleNav = ({ items }) => (
 )
 
 const Article = ({ children, ...props }) => {
-  const [content, setContent] = useState([])
-  const [header, setHeader] = useState([])
-  const [navItems, setNavItems] = useState([])
-
-  useEffect(() => {
+  const { navItems, header, content } = useMemo(() => {
     const headerInner = []
     const contentInner = []
     React.Children.forEach(children, child => {
@@ -40,9 +36,11 @@ const Article = ({ children, ...props }) => {
       return { text: caption, href: `#${id}` }
     })
 
-    setNavItems(navItemsInner)
-    setHeader(headerInner)
-    setContent(contentInner)
+    return {
+      navItems: navItemsInner,
+      header: headerInner,
+      content: contentInner,
+    }
   }, [children])
 
   const renderHeader = () => {
@@ -58,7 +56,7 @@ const Article = ({ children, ...props }) => {
     )
   }
 
-  const { nav, className, tag: Tag = 'acticle', ...restProps } = props
+  const { nav, className, tag: Tag = 'article', ...restProps } = props
 
   return (
     <Tag className={`article ${className || ''}`.trim()} {...restProps}>
