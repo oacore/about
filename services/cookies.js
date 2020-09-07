@@ -9,7 +9,7 @@ class CookiesManager {
   get(name) {
     if (name == null) {
       const result = {}
-      Object.keys(this.config).forEach(key => {
+      Object.keys(this.config).forEach((key) => {
         result[key] = this.get(key)
       })
       return result
@@ -35,7 +35,7 @@ class CookiesManager {
 
   dispatch(eventName, value) {
     if (!this.eventListeners.has(eventName)) return
-    this.eventListeners.get(eventName).forEach(l => l.call(null, value))
+    this.eventListeners.get(eventName).forEach((l) => l.call(null, value))
   }
 
   addEventListener(eventName, listener) {
@@ -54,7 +54,7 @@ const cookiesManager = new CookiesManager({
   analytics: 'analytics_allowed',
 })
 
-const handleCookiesChange = configDiff => {
+const handleCookiesChange = (configDiff) => {
   Object.entries(configDiff).forEach(([key]) => {
     switch (key) {
       case 'essential':

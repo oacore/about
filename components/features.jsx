@@ -16,7 +16,7 @@ class FeaturesSection extends React.Component {
     if (state.activePaneId !== null) return state
 
     let firstPane = null
-    React.Children.forEach(children, child => {
+    React.Children.forEach(children, (child) => {
       if (!firstPane && child.type === Feature) firstPane = child
     })
 
@@ -39,18 +39,18 @@ class FeaturesSection extends React.Component {
 
     // Filter features to 3 lists
     const { children } = this.props
-    React.Children.forEach(children, child => {
+    React.Children.forEach(children, (child) => {
       if (child.type === Feature) tabs.push(child)
       else (tabs.length === 0 ? beforeTabs : afterTabs).push(child)
     })
 
-    const tabPanes = tabs.map(tab =>
+    const tabPanes = tabs.map((tab) =>
       React.cloneElement(tab, {
         isActive: activePaneId === tab.props.id,
       })
     )
 
-    const tabPills = tabPanes.map(tab => {
+    const tabPills = tabPanes.map((tab) => {
       const { forTitle, id } = tab.props
       return (
         <NavItem key={id}>

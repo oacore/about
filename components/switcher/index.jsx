@@ -41,7 +41,7 @@ class Switcher extends Component {
     const items = []
     let content = null
 
-    React.Children.forEach(children, child => {
+    React.Children.forEach(children, (child) => {
       if (child == null) return
 
       // Extracting SwitcherContent

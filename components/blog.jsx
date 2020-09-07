@@ -4,12 +4,12 @@ import { ListGroup, ListGroupItem, Spinner } from 'reactstrap'
 class PostsList extends Component {
   static fetchFeed(url, options = {}) {
     return fetch(url, options)
-      .then(res => {
+      .then((res) => {
         if (!res.ok) throw new Error(`Error loading ${url}: ${res.status}`)
         return res.json()
       })
-      .then(data =>
-        data.map(item => ({
+      .then((data) =>
+        data.map((item) => ({
           ...item,
           pubDate: new Date(item.pubDate),
         }))

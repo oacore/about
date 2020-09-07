@@ -44,7 +44,9 @@ class Header extends React.Component {
     if (level === 0) {
       return (
         <Nav className="ml-auto" navbar>
-          {children.map(node => Header.renderMenu(node, activePath, level + 1))}
+          {children.map((node) =>
+            Header.renderMenu(node, activePath, level + 1)
+          )}
         </Nav>
       )
     }
@@ -69,12 +71,12 @@ class Header extends React.Component {
             </DropdownToggle>
           </div>
           <DropdownMenu className="dropdown-menu-wide" right>
-            {sections.map(section => (
+            {sections.map((section) => (
               <div className="dropdown-section" key={section.title}>
                 <DropdownItem header tag="p">
                   {section.title}
                 </DropdownItem>
-                {section.children.map(node =>
+                {section.children.map((node) =>
                   Header.renderMenu(node, activePath, level + 2)
                 )}
               </div>
@@ -102,7 +104,7 @@ class Header extends React.Component {
             </DropdownToggle>
           </div>
           <DropdownMenu right>
-            {children.map(node =>
+            {children.map((node) =>
               Header.renderMenu(node, activePath, level + 1)
             )}
           </DropdownMenu>

@@ -18,13 +18,13 @@ const defaultStatsPath =
     ? ''
     : path.join(__dirname, 'statistics.json')
 
-const fetchStats = url => {
+const fetchStats = (url) => {
   let stats = null
   return new Promise((resolve, reject) => {
     if (stats == null) {
       fetch(url)
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           stats = data
           resolve(stats)
         })
@@ -50,7 +50,7 @@ const loadCachedStats = async (cacheFilePath, { ignoreModified = false }) => {
 
   return fsPromises
     .readFile(cacheFilePath)
-    .then(contents => JSON.parse(contents))
+    .then((contents) => JSON.parse(contents))
 }
 
 const retrieveStats = async (url, catchFilePath) => {
@@ -78,7 +78,7 @@ const dataLoader = function loadDataFile(content) {
   const dataFile = camelize(JSON.parse(content))
   if (!fetchStatsPromise) fetchStatsPromise = retrieveStats(statsUrl, cachePath)
 
-  fetchStatsPromise.then(statistics =>
+  fetchStatsPromise.then((statistics) =>
     callback(
       null,
       JSON.stringify({

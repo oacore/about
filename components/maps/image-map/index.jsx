@@ -33,7 +33,7 @@ const ImageMap = ({
   ...restProps
 }) => (
   <Tag className={`${styles.imageMap} ${className}`} {...restProps}>
-    {React.Children.map(children, child => {
+    {React.Children.map(children, (child) => {
       const { latitude, longitude, style, ...childProps } = child.props
       const { x, y } = geo2coords(latitude, longitude)
 

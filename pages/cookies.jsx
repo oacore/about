@@ -17,7 +17,7 @@ export const getCookiesContext = () =>
     return cookieItems
   }, {})
 
-export const handleCookiesUpdate = event => {
+export const handleCookiesUpdate = (event) => {
   event.preventDefault()
 
   const cookieItems = getCookiesContext()
@@ -87,7 +87,7 @@ const CookiesPage = () => (
       <Content>
         <Markdown>{pageContext.cookiesPolicy.content}</Markdown>
       </Content>
-      {pageContext.cookiesPolicy.sections.map(section => (
+      {pageContext.cookiesPolicy.sections.map((section) => (
         <Section>
           <h3>{section.title}</h3>
           <Content>

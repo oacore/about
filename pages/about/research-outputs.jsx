@@ -58,11 +58,11 @@ const ResearchOutputsSection = ({
   <Section id={id} {...restProps}>
     <h2>{title}</h2>
     <Content>
-      {papers.map(paper => (
+      {papers.map((paper) => (
         <ResearchPaperCard
           key={paper.id}
           className="mb-3"
-          onCite={paper.citations && (event => onPaperCite(event, paper))}
+          onCite={paper.citations && ((event) => onPaperCite(event, paper))}
           {...paper}
         />
       ))}
@@ -95,7 +95,7 @@ class ResearchOutputsPage extends Component {
         nav
       >
         <h1>{page.title}</h1>
-        {page.sections.map(section => (
+        {page.sections.map((section) => (
           <ResearchOutputsSection
             key={section.id}
             id={section.id}
