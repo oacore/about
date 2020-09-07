@@ -3,7 +3,7 @@ import React from 'react'
 import { Page, Section, Accordion, Markdown, Content } from 'components'
 import faqData from 'data/faq.yml'
 
-const itemToURL = id => {
+const itemToURL = (id) => {
   const url = new URL(window.location)
   url.hash = id ? `#${id}` : ''
   window.history.replaceState({}, null, url.toString())
@@ -30,7 +30,7 @@ const FAQsSection = ({
           ))}
         </Accordion>
       </Content>
-      {sections.map(section => (
+      {sections.map((section) => (
         <FAQsSection key={section.title} level={level + 1} {...section} />
       ))}
     </Section>
@@ -45,7 +45,7 @@ const FAQsPage = () => (
     nav
   >
     <h1>{faqData.title}</h1>
-    {faqData.sections.map(section => (
+    {faqData.sections.map((section) => (
       <FAQsSection key={section.id} {...section} />
     ))}
   </Page>

@@ -4,13 +4,14 @@ import { Page } from 'components'
 import { EndorsementsSection } from 'components/sections'
 import { title, description, keywords, sections } from 'data/endorsements.yml'
 
-const extractTestimonials = organizations =>
+const extractTestimonials = (organizations) =>
   organizations
     .filter(({ testimonial }) => testimonial != null)
     .filter(
-      org => organizations.find(otherOrg => org.name === otherOrg.name) === org
+      (org) =>
+        organizations.find((otherOrg) => org.name === otherOrg.name) === org
     )
-    .map(organization => ({
+    .map((organization) => ({
       ...organization.testimonial,
       organization,
     }))

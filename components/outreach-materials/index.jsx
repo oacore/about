@@ -12,7 +12,7 @@ import {
 
 import styles from './outreach-materials.module.scss'
 
-const format2name = type =>
+const format2name = (type) =>
   ({
     jpg: 'JPEG',
     jpeg: 'JPEG',
@@ -22,7 +22,7 @@ const format2name = type =>
     gslides: 'Google Slides',
   }[type])
 
-const format2action = type =>
+const format2action = (type) =>
   ['gdoc', 'gslides'].includes(type) ? 'Open' : 'Download'
 
 const ResourceLink = ({ id, href, format, className = '', ...restProps }) => {
@@ -64,7 +64,7 @@ const ResourceLinkSelector = ({ id, options, label, format, ...restProps }) => {
           type="select"
           name="url"
           value={currentUrl}
-          onChange={event => {
+          onChange={(event) => {
             switchUrl(event.target.value)
           }}
         >

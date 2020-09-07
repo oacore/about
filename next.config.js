@@ -3,7 +3,7 @@ const path = require('path')
 const withImages = require('next-images')
 
 const nextConfig = {
-  webpack: config => {
+  webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
       const entries = await originalEntry()
@@ -20,7 +20,7 @@ const nextConfig = {
     // - contains a rule that matches 'file.css'
     const styleRules = (
       rules.find(
-        m => m.oneOf && m.oneOf.find(({ test: reg }) => reg.test('file.scss'))
+        (m) => m.oneOf && m.oneOf.find(({ test: reg }) => reg.test('file.scss'))
       ) || {}
     ).oneOf
     if (!styleRules) return config
@@ -33,10 +33,10 @@ const nextConfig = {
         ({ test: reg, use }) =>
           reg.test('file.module.scss') && use.loader !== 'error-loader'
       ),
-    ].filter(n => n) // remove 'undefined' values
+    ].filter((n) => n) // remove 'undefined' values
     // Add the 'localsConvention' config option to the CSS loader config
     // in each of these rules.
-    cssModuleRules.forEach(cmr => {
+    cssModuleRules.forEach((cmr) => {
       // Find the item inside the 'use' list that defines css-loader
       const cssLoaderConfig = cmr.use.find(({ loader }) =>
         loader.includes('css-loader')

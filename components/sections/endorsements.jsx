@@ -7,8 +7,8 @@ import { Section, Content } from '../content'
 import Testimonial from '../testimonial'
 import styles from './endorsements.module.scss'
 
-const filterOut = (what, from) => from.filter(item => !what.includes(item))
-const toTestimonial = organization => ({
+const filterOut = (what, from) => from.filter((item) => !what.includes(item))
+const toTestimonial = (organization) => ({
   ...organization.testimonial,
   organization,
 })
@@ -35,7 +35,7 @@ const Preview = ({ organizations }) => {
       <Testimonial key={main.id} className="card card-body" avatar {...main} />
 
       <Row className={styles.testimonialSectionOrganizations}>
-        {rest.map(org => (
+        {rest.map((org) => (
           <Col xs="6" sm="4" lg="2">
             <Logo key={org.id} {...org} />
           </Col>
@@ -51,7 +51,7 @@ const List = ({ organizations }) => {
 
   return (
     <>
-      {quoted.map(organization => {
+      {quoted.map((organization) => {
         const testimonial = toTestimonial(organization)
         return (
           <Testimonial
@@ -64,7 +64,7 @@ const List = ({ organizations }) => {
       })}
 
       <div className={styles.testimonialSectionOrganizations}>
-        {rest.map(org => (
+        {rest.map((org) => (
           <Col xs="6" sm="4" lg="2">
             <Logo key={org.id} {...org} />
           </Col>

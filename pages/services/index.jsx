@@ -37,7 +37,7 @@ const ServicesPage = () => (
       />
     )}
 
-    {servicesData.sections.map(servicesGroup => (
+    {servicesData.sections.map((servicesGroup) => (
       <Section
         key={servicesGroup.id}
         id={servicesGroup.id}
@@ -61,7 +61,7 @@ const ServicesPage = () => (
           </Section>
         )}
 
-        {servicesGroup.sections.map(service => (
+        {servicesGroup.sections.map((service) => (
           <Section
             key={service.id}
             id={service.id}

@@ -133,7 +133,7 @@ const AboutPage = () => (
     <Section id="team" caption={teamData.shortTitle}>
       <h2>{teamData.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {teamData.members.map(member => (
+        {teamData.members.map((member) => (
           <Col
             className="d-flex flex-column"
             sm="6"
@@ -156,7 +156,7 @@ const AboutPage = () => (
       <h3 className="mt-5">Past team members</h3>
       <Content>
         <ul className="list-comma-separated">
-          {teamData.pastMembers.map(name => (
+          {teamData.pastMembers.map((name) => (
             <li key={name}>{name}</li>
           ))}
         </ul>
@@ -180,7 +180,7 @@ const AboutPage = () => (
     <Section id="resources" caption={aboutData.resources.shortTitle}>
       <h2>{aboutData.resources.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {resources.slice(0, 3).map(resource => (
+        {resources.slice(0, 3).map((resource) => (
           <Col
             key={resource.id}
             className="d-flex flex-column"

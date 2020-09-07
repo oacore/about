@@ -35,7 +35,7 @@ const KeyFeature = ({
 }
 
 const KeyFeatureList = ({ children, className = '' } = {}) => {
-  const items = React.Children.map(children, child => {
+  const items = React.Children.map(children, (child) => {
     if (child.type !== KeyFeature) return null
 
     return React.cloneElement(child, {

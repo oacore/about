@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Section = props => {
+const Section = (props) => {
   const {
     children,
     large = false,
@@ -15,7 +15,7 @@ const Section = props => {
     small ? 'section-sm' : null,
     className,
   ]
-    .filter(truthy => truthy)
+    .filter((truthy) => truthy)
     .join(' ')
 
   return (

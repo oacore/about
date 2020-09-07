@@ -99,7 +99,7 @@ class RepositoriesMap extends Component {
       <Tag className={classList.join(' ')}>
         <div
           className={styles.repositoriesMapInner}
-          ref={element => {
+          ref={(element) => {
             this.mapContainer = element
           }}
         />

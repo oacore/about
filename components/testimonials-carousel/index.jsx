@@ -18,7 +18,7 @@ const TestimonialsCarouselControl = ({
     }`}
     type="button"
     tabIndex="0"
-    onClick={e => {
+    onClick={(e) => {
       e.preventDefault()
       onClick()
     }}
@@ -74,7 +74,7 @@ class TestimonialsCarousel extends Component {
     const { items, className = '', ...restProps } = this.props
     const { activeIndex } = this.state
 
-    const slides = items.map(item => (
+    const slides = items.map((item) => (
       <CarouselItem
         className={styles.testimonialsCarouselItem}
         onExiting={this.onExiting}

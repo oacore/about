@@ -11,7 +11,7 @@ class CitationTabManager extends Component {
   }
 
   static getDerivedStateFromProps({ children, onToggle }, state) {
-    const navItems = React.Children.map(children, child => {
+    const navItems = React.Children.map(children, (child) => {
       if (child.type !== CitationTab) {
         throw new Error(
           "CitationTabsManager's children must be of CitationTab type"
@@ -78,7 +78,7 @@ class CitationTabManager extends Component {
           ))}
         </Nav>
         <TabContent activeTab={activeTabId}>
-          {React.Children.map(children, child =>
+          {React.Children.map(children, (child) =>
             React.cloneElement(child, {
               tabId: child.props.id,
             })
