@@ -20,6 +20,6 @@ const SectionedPage = ({
   </Page>
 )
 
-SectionedPage.create = props => () => <SectionedPage {...props} />
+SectionedPage.create = (props) => () => <SectionedPage {...props} />
 
 export default SectionedPage

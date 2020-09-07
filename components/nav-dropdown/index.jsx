@@ -51,7 +51,7 @@ class NavDropdown extends React.Component {
 
     return (
       <Dropdown
-        ref={component => {
+        ref={(component) => {
           this.dropdownComponent = component
         }}
         isOpen={isOpen}

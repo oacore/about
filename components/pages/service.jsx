@@ -47,7 +47,7 @@ const ServicePage = ({
       )}
 
       <KeyFeatureList className={styles.servicePageFeatures}>
-        {features.map(feature => (
+        {features.map((feature) => (
           <KeyFeature
             title={feature.title}
             icon={feature.picture}
@@ -124,7 +124,7 @@ const ServicePage = ({
           You might also be interested in
         </h2>
         <KeyFeatureList>
-          {relatedServices.map(service => (
+          {relatedServices.map((service) => (
             <KeyFeature
               title={service.title}
               icon={service.picture}
@@ -140,6 +140,6 @@ const ServicePage = ({
   </Page>
 )
 
-ServicePage.create = pageContext => () => <ServicePage {...pageContext} />
+ServicePage.create = (pageContext) => () => <ServicePage {...pageContext} />
 
 export default ServicePage

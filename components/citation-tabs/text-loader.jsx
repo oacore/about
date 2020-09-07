@@ -21,12 +21,12 @@ class CitationTextLoader extends Component {
   fetchCitation() {
     const { doi, type, onLoad, onError } = this.props
     return fetch(`https://api.crossref.org/works/${doi}/transform/${type}`)
-      .then(response => {
+      .then((response) => {
         if (!response.ok)
           throw new Error('We cannot generate citation data for this article.')
         return response.text()
       })
-      .then(citationText =>
+      .then((citationText) =>
         this.setState(
           {
             citationText,
@@ -37,7 +37,7 @@ class CitationTextLoader extends Component {
           }
         )
       )
-      .catch(error =>
+      .catch((error) =>
         this.setState(
           {
             errorText: error.message,

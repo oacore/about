@@ -53,7 +53,7 @@ class Accordion extends Component {
     const { className, tag: Tag, children } = this.props
 
     const { activeItemId } = this.state
-    const items = React.Children.map(children, item =>
+    const items = React.Children.map(children, (item) =>
       React.cloneElement(item, {
         isOpen: item.props.id === activeItemId,
         onToggle: this.toggleItem,

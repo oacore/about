@@ -71,7 +71,7 @@ const flatRoutesTree = (node, [parentKey = '', parentPath = '/'] = []) => {
 }
 
 const mapped = flatRoutesTree(routes)
-mapped.forEach(item => routesMap.set(...item))
+mapped.forEach((item) => routesMap.set(...item))
 
 // eslint-disable-next-line no-restricted-syntax
 for (const entry of routesMap.entries()) {

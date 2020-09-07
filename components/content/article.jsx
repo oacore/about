@@ -22,14 +22,14 @@ const Article = ({ children, ...props }) => {
   const { navItems, header, content } = useMemo(() => {
     const headerInner = []
     const contentInner = []
-    React.Children.forEach(children, child => {
+    React.Children.forEach(children, (child) => {
       if (!child) return
       if (typeof child.type == 'string' && child.type.match(/header|h[1-6]/))
         headerInner.push(child)
       else contentInner.push(child)
     })
 
-    const navItemsInner = React.Children.map(children, child => {
+    const navItemsInner = React.Children.map(children, (child) => {
       if (child == null) return null
       const { caption, id } = child.props
       if (!caption || !id) return null

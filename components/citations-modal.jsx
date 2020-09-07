@@ -38,7 +38,7 @@ class CitationsModal extends Component {
         id={id}
         isOpen={isOpen}
         toggle={onToggle}
-        innerRef={element => {
+        innerRef={(element) => {
           this.containerElement = element
         }}
         {...restProps}

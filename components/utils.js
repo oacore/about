@@ -1,5 +1,5 @@
 export const processTemplate = (template, context) =>
-  template.replace(/\{\{\w+\}\}/g, replacement => {
+  template.replace(/\{\{\w+\}\}/g, (replacement) => {
     const key = replacement.substr(2, replacement.length - 4)
     if (Object.prototype.hasOwnProperty.call(context, key)) return context[key]
     return replacement

@@ -8,7 +8,7 @@ import Pagination from '../pagination'
 import RepositorySearch from '../repositories-search'
 import styles from './repositories-browser.module.scss'
 
-const normalize = string =>
+const normalize = (string) =>
   string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
 class RepositoryBrowser extends Component {
@@ -25,14 +25,14 @@ class RepositoryBrowser extends Component {
 
   static fetchRepositories(url) {
     return fetch(url)
-      .then(res => {
+      .then((res) => {
         if (res.ok) return res.json()
         throw new Error(`Error loading data providers from ${url}`)
       })
-      .then(repositories =>
+      .then((repositories) =>
         repositories
           .filter(({ name }) => name && name !== 'name')
-          .map(element => ({
+          .map((element) => ({
             ...element,
             normalizedName: normalize(element.name),
           }))
@@ -125,7 +125,7 @@ class RepositoryBrowser extends Component {
         )}
 
         <Row className="mb-4">
-          {page.map(item => {
+          {page.map((item) => {
             const additionalMeta = []
             if (item.repositoryLocation && item.repositoryLocation.countryName)
               additionalMeta.push(item.repositoryLocation.countryName)

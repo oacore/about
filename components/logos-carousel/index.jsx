@@ -91,7 +91,7 @@ class LogosCarousel extends Component {
     const { className = '', ...restProps } = this.props
     const { itemChunks, activeIndex } = this.state
 
-    const slides = itemChunks.map(slideItems => (
+    const slides = itemChunks.map((slideItems) => (
       <CarouselItem
         className={styles.logosCarouselItem}
         onExiting={this.onExiting}

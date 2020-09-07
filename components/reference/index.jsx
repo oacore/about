@@ -2,16 +2,16 @@ import React from 'react'
 
 import styles from './reference.module.scss'
 
-const formatName = name => {
+const formatName = (name) => {
   const last = name.slice(name.indexOf(' ') + 1)
   return `${name.charAt()}.\u00A0${last}`
 }
 
-const formatNameList = names => {
+const formatNameList = (names) => {
   const formated = names.map(formatName)
   const left = formated.slice(0, formated.length - 1).join(', ')
   const right = formated[formated.length - 1]
-  return [left, right].filter(chunk => chunk).join(' and ')
+  return [left, right].filter((chunk) => chunk).join(' and ')
 }
 
 const Reference = ({
@@ -61,7 +61,7 @@ const Reference = ({
       </span>
     ),
   ]
-    .filter(item => item)
+    .filter((item) => item)
     .reduce((result, item, i, array) => {
       result.push(...(i === array.length - 1 ? [item] : [item, '. ']))
       return result

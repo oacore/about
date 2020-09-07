@@ -19,7 +19,7 @@ const Pagination = ({ current, total, limit = 10, onPaginate }) => {
   for (let i = leftBound; i < rightBound; ++i) {
     paginationButtons.push(
       <PaginationItem active={i === current} key={i}>
-        <PaginationLink onClick={e => onPaginate(e, i)} href="#">
+        <PaginationLink onClick={(e) => onPaginate(e, i)} href="#">
           {i + 1}
         </PaginationLink>
       </PaginationItem>
@@ -31,14 +31,18 @@ const Pagination = ({ current, total, limit = 10, onPaginate }) => {
       <PaginationLink
         previous
         href="#"
-        onClick={e => onPaginate(e, current - 1)}
+        onClick={(e) => onPaginate(e, current - 1)}
       />
     </PaginationItem>
   )
 
   const nextButton = (
     <PaginationItem disabled={current >= total - 1}>
-      <PaginationLink next href="#" onClick={e => onPaginate(e, current + 1)} />
+      <PaginationLink
+        next
+        href="#"
+        onClick={(e) => onPaginate(e, current + 1)}
+      />
     </PaginationItem>
   )
 

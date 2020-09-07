@@ -39,8 +39,8 @@ const AmbassadorsPage = () => (
 
       <ImageMap>
         {ambassadors.members
-          .filter(member => member.region == null)
-          .map(member => (
+          .filter((member) => member.region == null)
+          .map((member) => (
             <ImagePin
               key={member.id}
               latitude={member.location.latitude}
@@ -57,13 +57,13 @@ const AmbassadorsPage = () => (
             />
           ))}
         {regions
-          .map(region => ({
+          .map((region) => ({
             ...region,
             quantity: ambassadors.members.filter(
-              member => member.region === region.id
+              (member) => member.region === region.id
             ).length,
           }))
-          .map(region => (
+          .map((region) => (
             <NumberPin
               key={region.id}
               latitude={region.location.latitude}
@@ -91,7 +91,7 @@ const AmbassadorsPage = () => (
     <Section className="outreach-materials-section" id="resources">
       <h2>{resourcesData.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {resourcesData.resources.map(resource => (
+        {resourcesData.resources.map((resource) => (
           <Col
             key={resource.id}
             className="d-flex flex-column"
@@ -119,7 +119,7 @@ const AmbassadorsPage = () => (
       <h2>{ambassadors.title}</h2>
 
       <Row className="list-unstyled" tag="ul">
-        {ambassadors.members.map(member => (
+        {ambassadors.members.map((member) => (
           <Col
             key={member.id}
             className="d-flex flex-column"
