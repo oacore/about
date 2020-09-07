@@ -36,6 +36,6 @@ notify you by email of any changes to this privacy notice.
 ## Any more questions?
 
 If you have any questions regarding our use of your data or for any other
-reason, please [contact us](~contact)
+reason, please [contact us](~contact).
 
 [ou-privacy]: https://www.open.ac.uk/about/main/strategy-and-policies/policies-and-statements/website-privacy-ou
