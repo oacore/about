@@ -45,7 +45,7 @@
     "leaflet.markercluster": "^1.4.1",
     "next": "^9.5.3",
     "next-ga": "^2.3.4",
-    "next-images": "^1.4.0",
+    "next-images": "^1.4.1",
     "node-fetch": "^2.6.1",
     "open-iconic": "^1.1.1",
     "postcss": "^7.0.32",
