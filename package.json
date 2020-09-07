@@ -52,7 +52,7 @@
     "postcss-extend": "^1.0.5",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.6.2",
-    "raw-loader": "^0.5.1",
+    "raw-loader": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.2.2",
