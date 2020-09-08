@@ -22,8 +22,8 @@ const ServicesPage = () => (
     keywords={servicesData.keywords}
     nav
   >
-    <h1 className={styles['services-page-title']}>
-      <span className={styles['services-page-title-small']}>
+    <h1 className={`${styles.servicesPageTitle} display`}>
+      <span className={styles.servicesPageTitleSmall}>
         {servicesData.headline[0]}
       </span>
       {servicesData.headline[1]}
@@ -45,10 +45,10 @@ const ServicesPage = () => (
         className={styles['service-section']}
         container={false}
       >
-        <h2 className="text-center">{servicesGroup.title}</h2>
+        <h2 className="text-center display">{servicesGroup.title}</h2>
 
         {servicesGroup.video && (
-          <Section className={styles['service-section-video']} tag="div">
+          <Section className={styles.serviceSectionVideo} tag="div">
             <Content className="mx-auto" tag="figure">
               <Content tag="figcaption">
                 <Markdown>{servicesGroup.video.description}</Markdown>
@@ -67,12 +67,12 @@ const ServicesPage = () => (
             id={service.id}
             className={styles['service-section']}
           >
-            <Row className={styles['service-section-title']} tag="h3">
+            <Row className={`${styles.serviceSectionTitle} display`} tag="h3">
               <Link href={service.action.url} passHref>
                 <Col
                   href={service.action.url}
                   title={service.action.caption}
-                  className={styles['service-section-logo']}
+                  className={styles.serviceSectionLogo}
                   sm="6"
                   md="4"
                   tag="a"

@@ -33,7 +33,7 @@ ambassadors.members.sort((a, b) => {
 const AmbassadorsPage = () => (
   <Page title={title} description={description} keywords={keywords}>
     <header>
-      <h1 className="text-center">{title}</h1>
+      <h1 className="text-center display">{title}</h1>
 
       <p className="text-center lead">{description}</p>
 
@@ -89,7 +89,7 @@ const AmbassadorsPage = () => (
     </Section>
 
     <Section className="outreach-materials-section" id="resources">
-      <h2>{resourcesData.title}</h2>
+      <h2 className="display">{resourcesData.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {resourcesData.resources.map((resource) => (
           <Col

@@ -21,7 +21,7 @@ const DataProvidersPage = () => (
     keywords={repositoriesData.keywords}
     nav
   >
-    <h1 className="page-title">{repositoriesData.title}</h1>
+    <h1 className="page-title display">{repositoriesData.title}</h1>
     <Section tag="div">
       <Content>
         <Markdown>

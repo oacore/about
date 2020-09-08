@@ -11,7 +11,7 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
     <Container>
       <Row className={styles.footerHighlights}>
         <Col md={{ size: 6, offset: 1 }} tag="aside">
-          <h4>Useful links</h4>
+          <h4 className="display">Useful links</h4>
           <ul className={styles.footerHighlightsList}>
             {usefulLinks.map(({ title, path }) => (
               <li key={`${title} @ ${path}`}>
@@ -22,7 +22,7 @@ const Footer = ({ usefulLinks, partners, researchOutputs, className = '' }) => (
         </Col>
         <Col md="4">
           <aside className={styles.footerCiteInfo}>
-            <h6>Writing about CORE?</h6>
+            <h6 className="display">Writing about CORE?</h6>
             <Markdown>{researchOutputs}</Markdown>
           </aside>
         </Col>

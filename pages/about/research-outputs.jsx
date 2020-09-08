@@ -56,7 +56,7 @@ const ResearchOutputsSection = ({
   ...restProps
 }) => (
   <Section id={id} {...restProps}>
-    <h2>{title}</h2>
+    <h2 className="display">{title}</h2>
     <Content>
       {papers.map((paper) => (
         <ResearchPaperCard

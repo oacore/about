@@ -19,7 +19,7 @@ const JoinSection = ({
     className={`${styles.joinSection} ${className}`}
     {...restProps}
   >
-    <h2>{title}</h2>
+    <h2 className={`display ${styles.joinSectionTitle}`}>{title}</h2>
     <Markdown className={styles.joinSectionLead}>{lead}</Markdown>
     <p className={styles.joinSectionButtonContainer}>
       <Button className={styles.joinCoreButton} size="lg" href="~services">

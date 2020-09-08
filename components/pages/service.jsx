@@ -32,7 +32,7 @@ const ServicePage = ({
     className={styles.servicePage}
     nav
   >
-    <h1 className={styles.servicePageTitle}>{title}</h1>
+    <h1 className={`${styles.servicePageTitle} display`}>{title}</h1>
     <p className={styles.servicePageTagline}>{tagline}</p>
     <Section tag="div">
       {screenshot && (
@@ -88,7 +88,7 @@ const ServicePage = ({
 
     {whatIsIncluded && (
       <Section caption={whatIsIncluded.title} id="what-is-included">
-        <h2>{whatIsIncluded.title}</h2>
+        <h2 className="display">{whatIsIncluded.title}</h2>
         <Content>
           <Markdown>{whatIsIncluded.content}</Markdown>
           {whatIsIncluded.actions && (
@@ -120,7 +120,7 @@ const ServicePage = ({
 
     {relatedServices && relatedServices.length && (
       <Section caption="You might also be interested in" id="related-services">
-        <h2 className={styles.servicePageHeading}>
+        <h2 className={`${styles.servicePageHeading} display`}>
           You might also be interested in
         </h2>
         <KeyFeatureList>

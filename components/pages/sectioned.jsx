@@ -12,7 +12,7 @@ const SectionedPage = ({
   sections = [],
 }) => (
   <Page title={title} description={description} keywords={keywords} nav>
-    <h1>{title}</h1>
+    <h1 className="display">{title}</h1>
     {children || content || description}
     {sections.map(({ id, ...restProps }) => (
       <DescriptionSection key={id} id={id} {...restProps} />

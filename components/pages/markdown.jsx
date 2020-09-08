@@ -10,7 +10,7 @@ import Markdown from '../markdown'
 // the spacing
 const MarkdownPage = ({ title, description, keywords, content, children }) => (
   <Page title={title} description={description} keywords={keywords}>
-    <h1>{title}</h1>
+    <h1 className="display">{title}</h1>
     <BootstrapContainer>
       <Content>
         <Markdown>{children || content}</Markdown>

@@ -7,7 +7,7 @@ import { Button } from './elements'
 
 const ErrorPage = () => (
   <Page title="Page is not found">
-    <h1>Uh-oh</h1>
+    <h1 className="display">Uh-oh</h1>
     <Section tag="div">
       <p>The page you were looking for could not be found.</p>
       <p>To help you find what you are looking for, why not</p>

@@ -2,19 +2,21 @@ import React from 'react'
 import Router from 'next/router'
 import withGA from 'next-ga'
 
+import '@oacore/design/lib/reboot.css'
+import '@oacore/design/lib/foundation/index.css'
+// TODO: Move to map component once this is released
+//       https://github.com/vercel/next.js/issues/12079#issuecomment-678858809
+import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+import 'components/index.scss'
+
 import {
   isCookiesAccepted,
   getCookiesContext,
   handleCookiesUpdate,
 } from './cookies'
 
-// TODO: Move to map component once this is released
-//       https://github.com/vercel/next.js/issues/12079#issuecomment-678858809
-import 'leaflet/dist/leaflet.css'
-import 'leaflet.markercluster/dist/MarkerCluster.css'
-import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
-
-import 'components/index.scss'
 import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'

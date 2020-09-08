@@ -54,7 +54,7 @@ const TestimonialsSection = ({
   ...restProps
 }) => (
   <Section id={id} {...restProps}>
-    <h3>{title}</h3>
+    <h3 className="display">{title}</h3>
     <TestimonialsSwitcher
       items={items}
       limit={limit}
@@ -107,7 +107,7 @@ const IndexPage = () => (
     <JoinSection id="join-us" {...page.join} />
 
     <Section id="endorsements" className={styles['home-endorsements-section']}>
-      <h2 className="text-center">{page.endorsements.title}</h2>
+      <h2 className="text-center display">{page.endorsements.title}</h2>
 
       <TestimonialsSection
         id={pageSections.enterpriseCompanies.id}
@@ -134,7 +134,7 @@ const IndexPage = () => (
     </Section>
 
     <Section id="partner-projects">
-      <h2 className="text-center">{page.partnerProjects.title}</h2>
+      <h2 className="text-center display">{page.partnerProjects.title}</h2>
       <TestimonialsSwitcher
         items={extractTestimonials(pageSections.partners.organizations.items)}
       />

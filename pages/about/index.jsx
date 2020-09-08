@@ -39,7 +39,7 @@ const AboutPage = () => (
     <Section id="our-mission" caption={aboutData.mission.shortTitle} tag="div">
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
-          <h2>{aboutData.mission.title}</h2>
+          <h2 className="display">{aboutData.mission.title}</h2>
 
           <Video
             src={aboutData.video.src}
@@ -73,7 +73,7 @@ const AboutPage = () => (
     </Section>
 
     <Section className={styles['about-endorsements-section']} id="endorsements">
-      <h2 className={styles['about-endorsements-section-title']}>
+      <h2 className={`${styles['about-endorsements-section-title']} display`}>
         {aboutData.endorsements.title}
       </h2>
       <Markdown>{aboutData.endorsements.content}</Markdown>
@@ -85,9 +85,9 @@ const AboutPage = () => (
     </Section>
 
     <Section id="how-it-works" caption="How it works">
-      <h2>{aboutData.howItWorks.title}</h2>
+      <h2 className="display">{aboutData.howItWorks.title}</h2>
       <Section>
-        <h3>{aboutData.howItWorks.harvesting.title}</h3>
+        <h3 className="display">{aboutData.howItWorks.harvesting.title}</h3>
         <Row className="mb-3">
           <Col xs="12" md="6">
             <Markdown>
@@ -119,7 +119,7 @@ const AboutPage = () => (
       className={`${styles['about-services-section']} text-center`}
       id="services"
     >
-      <h2>{aboutData.howItWorks.services.title}</h2>
+      <h2 className="display">{aboutData.howItWorks.services.title}</h2>
 
       <ServiceGroups items={servicesData.sections} className="text-left" />
 
@@ -131,7 +131,7 @@ const AboutPage = () => (
     </Section>
 
     <Section id="team" caption={teamData.shortTitle}>
-      <h2>{teamData.title}</h2>
+      <h2 className="display">{teamData.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {teamData.members.map((member) => (
           <Col
@@ -153,7 +153,7 @@ const AboutPage = () => (
         ))}
       </Row>
 
-      <h3 className="mt-5">Past team members</h3>
+      <h3 className="mt-5 display">Past team members</h3>
       <Content>
         <ul className="list-comma-separated">
           {teamData.pastMembers.map((name) => (
@@ -168,7 +168,7 @@ const AboutPage = () => (
       className={styles['about-ambassadors-section']}
       caption={aboutData.ambassadors.shortTitle}
     >
-      <h2>{aboutData.ambassadors.title}</h2>
+      <h2 className="display">{aboutData.ambassadors.title}</h2>
       <Markdown>{aboutData.ambassadors.body}</Markdown>
       <p>
         <Button color="primary" outline href="~about/ambassadors">
@@ -178,7 +178,7 @@ const AboutPage = () => (
     </Section>
 
     <Section id="resources" caption={aboutData.resources.shortTitle}>
-      <h2>{aboutData.resources.title}</h2>
+      <h2 className="display">{aboutData.resources.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {resources.slice(0, 3).map((resource) => (
           <Col
@@ -206,7 +206,7 @@ const AboutPage = () => (
     </Section>
 
     <Section id="contact" caption={contactData.title}>
-      <h2>{contactData.shortTitle}</h2>
+      <h2 className="display">{contactData.shortTitle}</h2>
 
       <Content>
         <Accordion className="mb-3">
