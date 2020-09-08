@@ -7,7 +7,6 @@ import {
   Markdown,
   Content,
   RepositoriesMap,
-  RepositoriesBrowser,
 } from 'components'
 import { patchStats } from 'components/utils'
 import repositoriesData from 'data/data-providers.yml'
@@ -37,11 +36,6 @@ const DataProvidersPage = () => (
     <Section id="map" caption={repositoriesData.map}>
       <h2>{repositoriesData.map}</h2>
       <RepositoriesMap endpoint={repositoriesUrl} />
-    </Section>
-
-    <Section id="list" caption={repositoriesData.filter}>
-      <h2>{repositoriesData.filter}</h2>
-      <RepositoriesBrowser endpoint={repositoriesUrl} />
     </Section>
   </Page>
 )

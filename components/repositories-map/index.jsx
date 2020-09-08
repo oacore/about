@@ -2,9 +2,26 @@ import React, { Component } from 'react'
 import { Spinner } from 'reactstrap'
 import { bind } from 'decko'
 
-import RepositoriesBrowser from '../repositories-browser'
 import markerUrl from './marker.svg'
 import styles from './repositories-map.module.scss'
+
+const normalize = (string) =>
+  string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+
+const fetchRepositories = (url) =>
+  fetch(url)
+    .then((res) => {
+      if (res.ok) return res.json()
+      throw new Error(`Error loading data providers from ${url}`)
+    })
+    .then((repositories) =>
+      repositories
+        .filter(({ name }) => name && name !== 'name')
+        .map((element) => ({
+          ...element,
+          normalizedName: normalize(element.name),
+        }))
+    )
 
 class RepositoriesMap extends Component {
   mapContainer = null
@@ -40,7 +57,7 @@ class RepositoriesMap extends Component {
     })
 
     const { endpoint } = this.props
-    const repositories = await RepositoriesBrowser.fetchRepositories(endpoint)
+    const repositories = await fetchRepositories(endpoint)
 
     const markerIcon = L.icon({
       iconUrl: markerUrl,
