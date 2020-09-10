@@ -15,7 +15,7 @@ const Logo = React.forwardRef((
   _
 ) => (
   <Tag className={`${styles.logo} ${className}`} {...restProps}>
-    <img src={logoPath} alt={alt} />
+    <img src={logoPath} alt={alt} role={alt ? null : 'presentation'} />
     {text}
   </Tag>
 ))

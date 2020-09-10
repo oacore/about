@@ -15,6 +15,7 @@ const HighlightSection = ({ image, action, children }) => (
               className={styles.highlightSectionPicture}
               src={image}
               alt=""
+              role="presentation"
             />
           </a>
         </Link>
