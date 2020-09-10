@@ -14,7 +14,12 @@ const KeyFeature = ({
 } = {}) => {
   const content = (
     <>
-      <img className={styles.keyFeatureIcon} src={icon} alt={title} />
+      <img
+        className={styles.keyFeatureIcon}
+        src={icon}
+        alt={title}
+        role={title == null ? 'presentation' : null}
+      />
       <span className={styles.keyFeatureText}>{children}</span>
     </>
   )
