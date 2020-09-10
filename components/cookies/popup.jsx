@@ -7,7 +7,7 @@ import styles from './cookies.module.scss'
 
 const CookiesPopup = ({
   title = 'We use cookies',
-  body = '[Learn more](~cookies)',
+  body = '[Learn more <span class="sr-only">about our cookie policy</span>](~cookies)',
   items,
   submitCaption = 'Accept',
   ...formProps
