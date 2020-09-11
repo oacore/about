@@ -11,17 +11,17 @@ screenshot:
 
 features:
 -
-  title: Key message 1
+  title: null
   picture: /images/icons/paywall-2.svg
   description: |
     Overcome publishers' paywalls by discovering open access versions of papers
 -
-  title: Key message 2
+  title: null
   picture: /images/icons/oa-3.svg
   description: |
     Backed by the world's largest dataset of open access full texts with over millions of monthly active users
 -
-  title: Key message 3
+  title: null
   picture: /images/icons/extension.svg
   description: |
     Easy to install browser extension and seamless repository integration

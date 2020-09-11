@@ -18,17 +18,17 @@ screenshot:
 
 features:
 -
-  title: Key message 1
+  title: null
   picture: /images/icons/manage.svg
   description: |
     Manage access to documents from your repository in CORE
 -
-  title: Key message 2
+  title: null
   picture: /images/icons/update.svg
   description: |
     Obtain DOI enrichments detected by CORE for your content
 -
-  title: Key message 3
+  title: null
   picture: /images/icons/statistics.svg
   description: |
     Access your collection’s download statistics, harvesting status and
