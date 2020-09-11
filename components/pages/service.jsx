@@ -126,7 +126,6 @@ const ServicePage = ({
         <KeyFeatureList>
           {relatedServices.map((service) => (
             <KeyFeature
-              title={service.title}
               icon={service.picture}
               href={service.url}
               key={service.title}
