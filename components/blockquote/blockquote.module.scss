@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 $blockquote-avatar-size: 8rem !default;
 $blockquote-padding-left: 3.5 * $font-size-base !default;
@@ -10,19 +10,19 @@ $blockquote-enable-avatar-placeholders: false;
   padding-left: $blockquote-padding-left;
 
   &::before {
-    content: "\201c"; // quotation mark
+    content: '\201c'; // quotation mark
     position: absolute;
     top: 0;
     left: 0;
     margin: -0.24em 0 0 -0.08em;
-    font: italic 5rem/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font: italic 5rem/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
     opacity: 0.5;
     user-select: none;
   }
 }
 
 .blockquote-avatar {
-  @include media-breakpoint-up("md") {
+  @include media-breakpoint-up('md') {
     padding-right: $blockquote-avatar-size + $spacer;
     min-height: $blockquote-avatar-size + $blockquote-avatar-vertical-fix;
   }
@@ -30,8 +30,8 @@ $blockquote-enable-avatar-placeholders: false;
   @if ($blockquote-enable-avatar-placeholders) {
     > .blockquote-footer::before {
       @extend .blockquote-author-avatar;
-      content: "";
-      background: url("man.svg") no-repeat center / 100% 100%;
+      content: '';
+      background: url('man.svg') no-repeat center / 100% 100%;
     }
   }
 }
@@ -46,13 +46,13 @@ $blockquote-enable-avatar-placeholders: false;
   right: 0;
   display: none;
   border-radius: 50%;
-  border: 2px solid $blue-light;
+  border: 2px solid $gray-300;
   width: $blockquote-avatar-size;
   height: $blockquote-avatar-size;
   object-fit: cover;
   object-position: center;
 
-  @include media-breakpoint-up("md") {
+  @include media-breakpoint-up('md') {
     display: block;
   }
 }
