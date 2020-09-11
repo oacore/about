@@ -1,4 +1,4 @@
-@import "../../components/bootstrap/core";
+@import '../../components/bootstrap/core';
 
 $hightlight-section-padding-y: 4 * $spacer;
 
@@ -11,7 +11,7 @@ $hightlight-section-padding-y: 4 * $spacer;
     flex-direction: row-reverse;
   }
 
-  @include media-breakpoint-down("sm") {
+  @include media-breakpoint-down('sm') {
     text-align: center;
 
     .row > :not(:last-child) {
@@ -30,4 +30,10 @@ $hightlight-section-padding-y: 4 * $spacer;
   padding: 0.05em 0.2em;
   border-radius: 0.2em;
   background: mix($success, $white, 50%);
+}
+
+@include media-breakpoint-up('md') {
+  .highlight-section:nth-child(odd) .image-container {
+    order: 1;
+  }
 }
