@@ -29,7 +29,8 @@ Note that this is an extremely large file (&Tilde;322GB) and appropriate tools a
 
 4.  The previous steps will extract the big archive in multiple smaller files.
     Each archive contains all the resources for a specific CORE data provider
-    and a list of CORE’s data providers can be found [here](/data/providers).
+    the full list which you can find at our [data providers](/data/providers)
+    page.
 
     The following command extracts every single archive in the
     appropriate folder.

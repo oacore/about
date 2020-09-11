@@ -14,8 +14,8 @@ If you use CORE in your work, we kindly request you to cite one of our
 
 ## Documentation
 
-The documentation, along with live examples can be found
-[here](al-swagger-ui-home).
+The documentation, along with live examples can be found at
+[CORE API v2 Swagger](/docs) page.
 
 You can also view some practical examples using the CORE API in this [TDM
 course](https://www.fosteropenscience.eu/node/2263).
@@ -36,14 +36,15 @@ We expect the API can be used, for example, to:
 
 ## Where to start
 
-Please register [here](apikeys-register) to receive an API key and start
-testing the [live examples](al-swagger-ui-home).
+Please [register](/api-keys/register) to receive an API key and start
+testing the [live examples](/docs).
 
 A good starting point to start coding with our API is to follow the iPython
 notebook available [on Github](https://github.com/oacore/or2016-api-demo).
 
 In collaboration with [rOpenSci](https://ropensci.org) you can find
-[here](https://github.com/ropenscilabs/cored) an _R_ client for the CORE API.
+[_R_ client for the CORE API](https://github.com/ropenscilabs/cored)
+in the GitHub repository.
 
 ## Quota
 

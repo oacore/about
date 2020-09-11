@@ -28,7 +28,7 @@ sections:
         answer: |
           CORE is an international service and harvests repositories from
           various locations around the world. This information is displayed in
-          a map and can be accessed [here](/data/providers).
+          a map at our [data providers page](/data/providers).
       - slug: I-would-like-to-include-them-in-CORE
         question: |
           I am an author of scientific papers and I would like to include
@@ -38,7 +38,7 @@ sections:
           networking sites, e.g. ResearchGate or Academia.edu, where authors
           can deposit papers, so please do not email us the full text of your
           papers. If you have deposited your articles in a repository
-          [let us](~contact) know the name of the repository.
+          [let us know](~contact) the name of the repository.
           There are chances that we it already and if we don't we could
           start harvesting it.
       - slug: core-harvests-from-doaj
@@ -46,10 +46,10 @@ sections:
           CORE harvests from DOAJ but I cannot find my journal which is already
           registered in DOAJ.
         answer: |
-          CORE harvests DOAJ as a single entry, which means that each journal title
-          does not appear separately in CORE. If you wish to have a separate entry for
-          your journal in CORE, do [send us](~contact) the journal's oai base url and we will create
-          a new entry.
+          CORE harvests DOAJ as a single entry, which means that each journal
+          title does not appear separately in CORE. If you wish to have a
+          separate entry for your journal in CORE, do [send us](~contact) the
+          journal's OAI base URL and we will create a new entry.
 
   - id: aggregation
     title: Aggregation
@@ -80,7 +80,7 @@ sections:
             the number of ingested documents over a unit of time.
 
             If you have a question regarding a specific
-            repository do get in [touch](~contact) with us.
+            repository do [get in touch](~contact) with us.
         - slug: when-will-the-harvesting-process-of-my-repository-be-completed
           question: |
             When will the harvesting process of my repository be completed?
@@ -226,10 +226,11 @@ sections:
           question: |
             How difficult is it to satisfy the CORE harvesting recommendations?
           answer: |
-            We would expect that harvesting could take from one hour to a couple of
-            days for a typical repository. In some repository systems,
-            such as EPrints, most of these recommendations are followed by default.
-            You can find more details [here](~about#how-it-works).
+            We would expect that harvesting could take from one hour to a
+            couple of days for a typical repository. In some repository
+            systems, such as EPrints, most of these recommendations are
+            followed by default. Find more details [how it
+            works](~about#how-it-works).
         - slug: which-metadata-formats-does-CORE-support
           question: |
             Which metadata formats does CORE support?
@@ -322,9 +323,9 @@ sections:
             CORE’s system is fully automated and relies on data made available
             in a machine readable form. Our system understands that the
             full text of a record was removed only when the record is marked
-            as deleted in the metadata of your repository. See [here]
-            (#how-do-I-notify-CORE-to-take-down-full-text-content)
-            how to take down full text from CORE.
+            as deleted in the metadata of your repository. See
+            [how to take down full text](#how-do-I-notify-CORE-to-take-down-full-text-content)
+            from CORE in the related FAQ.
         - slug: how-do-I-notify-CORE-to-take-down-full-text-content
           question: |
             How do I notify CORE to take down full text content?
@@ -359,8 +360,8 @@ sections:
         question: |
           How do I register for an API key?
         answer: |
-          To register a new key to access the CORE API interface please use
-          the form provided [here](/api-keys/register).
+          Use the [registration form](/api-keys/register) to retrieve
+          your personal access key for the CORE API.
       - slug: can-I-use-the-CORE-API-in-a-project
         question: |
           Can I use the CORE API in a project?
@@ -478,8 +479,8 @@ sections:
         question: |
           Where can I find CORE’s flyer?
         answer: |
-          You can find CORE’s flyer
-          [here](/resources/core-flyer-updated-july2017.pdf).
+          Access the [CORE’s flyer](/resources/core-flyer-updated-july2017.pdf)
+          in our resources.
       - slug: harvested-by-CORE-snippet
         question: |
           How can I embed the “harvested by CORE” snippet on my website?
