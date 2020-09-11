@@ -41,8 +41,9 @@ additional:
 
     A good starting point to start coding with our API is to
     follow the iPython notebook available on [Github](https://github.com/oacore/or2016-api-demo).
-    In collaboration with [rOpenSci](https://ropensci.org/) you can find [here](https://github.com/ropensci/rcoreoa)
-    an R client for the CORE API. All our SDKs are available [here](https://github.com/oacore).
+    In collaboration with [rOpenSci](https://ropensci.org/) you can find
+    an [R client for the CORE API](https://github.com/ropensci/rcoreoa) in the GitHub repository.
+    All our SDKs are available from [our GitHub organisation](https://github.com/oacore).
 
 testimonial:
   content: |

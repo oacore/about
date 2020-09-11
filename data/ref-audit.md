@@ -119,10 +119,10 @@ repositories store the deposit date in their  databases, we encourage
 repositories to expose the deposit date on each of the research output’s web
 page, even when RIOXX is not implemented, and ideally to mark it as “Date
 Deposited:”. For example, EPrints repositories typically display the deposit
-date on the page of a given record (an example can be seen
-[here](http://oro.open.ac.uk/30891/)). This date must be the date of the first
-compliant deposit. We rely on the definition of first compliant deposit provided
-[here](http://eprintsug.github.io/hefce_oa/#date-of-first-compliant-deposit-fcd).
+date on the page of a given record ([an example at Open Research
+Online](http://oro.open.ac.uk/30891/)). This date must be the date of the first
+compliant deposit. We rely on the definition of [first compliant
+deposit](http://eprintsug.github.io/hefce_oa/#date-of-first-compliant-deposit-fcd).
 
 
 5. **Ensure that dateAccepted field is used where known**: The date an output

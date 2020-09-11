@@ -22,8 +22,8 @@ Uniqueness of the CORE Recommender:
 * recommendation service for free. We provide it using a machine accessible
 * interface ([API](~api)).
 
-Find out more about the CORE Recommender [here][recommender-blog-post].
-To install the recommender visit our [registration page](recommenders/register).
+Find out more in the [blog post about the CORE Recommender][recommender-blog-post].
+To install the Recommender visit our [registration page](/recommender/register).
 
 For those with access to the [CORE Repositories Dashboard](services#dashboard):
 the Recommender installation guidelines and an installation key can be found in
