@@ -1,14 +1,14 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
-$footer-partners-breakpoint: "sm";
+$footer-partners-breakpoint: 'sm';
 
 .footer {
-  background: $beige-dark;
+  background: $gray-200;
 }
 
 .footer-highlights {
   padding-top: $spacer;
-  background: $beige;
+  background: $gray-100;
 
   > * {
     margin-bottom: $spacer;
@@ -31,7 +31,7 @@ $footer-partners-breakpoint: "sm";
 
 .footer-cite-info {
   padding: $card-spacer-x;
-  background: $beige-dark;
+  background: $white;
 
   :last-child {
     margin-bottom: 0;
@@ -47,10 +47,10 @@ $footer-partners-breakpoint: "sm";
 
   a {
     color: inherit;
-    text-decoration: underline;
+    font-weight: $font-weight-bold;
 
     @include hover-focus {
-      color: $link-hover-color;
+      color: inherit;
     }
   }
 }

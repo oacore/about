@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .join-section {
   background: $nearly-black url('../images/blue-lights-bg.jpg') no-repeat center /
@@ -25,11 +25,7 @@
 
   a {
     color: inherit;
-    text-decoration: underline;
-
-    @include hover-focus {
-      color: $link-hover-color;
-    }
+    font-weight: $font-weight-bold;
   }
 }
 

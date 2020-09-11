@@ -62,26 +62,3 @@ $skew-section-icon-size: 4rem;
     margin-bottom: 0;
   }
 }
-
-.contact-card {
-  margin-top: -1 * $card-spacer-y;
-  padding-top: $card-spacer-y;
-  border: 0;
-  transition: $transition-base;
-
-  &:global(.active) {
-    background: $beige;
-  }
-
-  :global(.card-body) {
-    margin-top: $spacer;
-  }
-}
-
-.contact-card-toggle {
-  align-self: flex-start;
-
-  &:disabled {
-    border-color: transparent;
-  }
-}

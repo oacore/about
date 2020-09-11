@@ -20,7 +20,7 @@ CORE Repository Dashboard you can move on with the instructions below.
   The EPrints version of the&nbsp;plugin works only with the default
   HTML template but it should work fine with custom CSS.
   Although, if something goes wrong, please 
-  <a href="mailto:thet&#101;&#97;m&#64;c&#111;re&#46;&#97;c&#46;&#117;k">
+  <a class="alert-link" href="mailto:thet&#101;&#97;m&#64;c&#111;re&#46;&#97;c&#46;&#117;k">
     let us know</a>.
 </p>
 
