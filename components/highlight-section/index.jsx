@@ -8,7 +8,7 @@ import Link from '../link'
 const HighlightSection = ({ image, action, children }) => (
   <Section className={styles.highlightSection}>
     <Row>
-      <Col className={styles.row} md="5" lg="4">
+      <Col className={styles.imageContainer} md="5" lg="4">
         <Link href={action} passHref>
           <a href={action}>
             <img
