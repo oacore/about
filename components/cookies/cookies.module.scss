@@ -1,7 +1,7 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .cookies-form {
-  background: $beige-dark;
+  background: $gray-200;
   border: 0;
 
   .custom-control-label {
@@ -36,11 +36,11 @@
   padding: 1rem;
   width: 100%;
   z-index: $zindex-fixed;
-  background: $beige-dark;
+  background: $gray-200;
   box-shadow: 0 1px 2px rgba($black, 0.15), 0 4px 8px rgba($black, 0.25);
   animation: 0.25s 3s both slide-in-up;
 
-  @include media-breakpoint-up("sm") {
+  @include media-breakpoint-up('sm') {
     bottom: 1rem;
     max-width: $content-max-width / 2;
     border-radius: $border-radius;
@@ -92,7 +92,7 @@
   }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 1.5rem;
     height: 1.5rem;
@@ -101,9 +101,9 @@
 }
 
 .cookies-popup-button-settings::before {
-  background-image: url("settings.svg");
+  background-image: url('settings.svg');
 }
 
 .cookies-popup-button-accept::before {
-  background-image: url("check.svg");
+  background-image: url('check.svg');
 }

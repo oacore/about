@@ -68,4 +68,4 @@ partner-projects:
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research
-  on [COVID-19](/search?q=COVID-19).
+  on <a class="alert-link" href="/search?q=COVID-19">COVID-19</a>
