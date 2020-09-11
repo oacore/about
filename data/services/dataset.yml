@@ -9,17 +9,17 @@ screenshot:
 
 features:
 -
-  title: Key message 1
+  title: null
   picture: /images/icons/big-data-4.svg
   description: |
     Download all CORE data for big data processing
 -
-  title: Key message 2
+  title: null
   picture: /images/icons/analyse.svg
   description: |
     Prototype, analyse and mine your data in your infrastructure
 -
-  title: Key message 3
+  title: null
   picture: /images/icons/processing.svg
   description: |
     World's largest full text collection of scientific papers
