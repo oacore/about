@@ -1,9 +1,10 @@
 @import '~components/bootstrap/core';
 
+$skew-section-bg: $gray-100;
 $skew-section-icon-size: 4rem;
 
 .about-services-section {
-  @include section-skew-left($blue-light);
+  @include section-skew-left($skew-section-bg);
 
   > p:last-child {
     margin-bottom: 0;
@@ -11,7 +12,7 @@ $skew-section-icon-size: 4rem;
 }
 
 .about-endorsements-section {
-  @include section-skew-left($blue-light);
+  @include section-skew-left($skew-section-bg);
   text-align: center;
 
   &::before {
@@ -40,7 +41,7 @@ $skew-section-icon-size: 4rem;
 }
 
 .about-ambassadors-section {
-  @include section-skew-left($blue-light);
+  @include section-skew-left($skew-section-bg);
   text-align: center;
 
   &::before {

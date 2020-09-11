@@ -27,11 +27,6 @@ $orange: #e08639;
 $orange-dark: #b75400;
 $orange-darker: darken($orange-dark, 12.75);
 
-$blue: #005f96;
-$blue-light: lighten(desaturate($blue, 59.26), 65.29);
-$blue-dark: darken($blue, 8%);
-$blue-darker: darken($blue-dark, 8%);
-
 $brown: #763600;
 $green: #28a745;
 
@@ -173,7 +168,7 @@ $carousel-control-color: $primary;
 
 $navbar-padding-y: 0.5rem;
 
-$navbar-dropdown-border-color: $blue-light;
+$navbar-dropdown-border-color: $gray-300;
 $navbar-dropdown-border-radius: 0;
 
 $navbar-light-color: $nearly-black;
