@@ -31,7 +31,11 @@ join:
   lead: |
     Whether to access data, use powerful tools or get your content harvested,
     join for free today
-  action: Join CORE for free
+  actions:
+    - caption: Explore our services
+      url: ~services
+    - caption: Become a data provider
+      url: ~register-data-provider
   note: |
     CORE is a not-for-profit service delivered by
     [The Open University](https://www.open.ac.uk)

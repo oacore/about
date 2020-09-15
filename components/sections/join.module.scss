@@ -29,11 +29,15 @@
   }
 }
 
-.join-section-button-container {
-  margin-bottom: 0;
+.button-group {
+  margin: -0.25rem;
 }
 
-.join-core-button {
+.button-group .button {
+  margin: 0.25rem;
+}
+
+.button {
   @include button-outline-variant($light, $light, $primary, $primary-dark);
 
   border-color: $primary;
