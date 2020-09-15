@@ -14,7 +14,7 @@ const Link = React.forwardRef(
           {child}
         </a>
       ) : (
-        React.cloneElement(child, passHref ? { href: resolvedHref } : {})
+        React.cloneElement(child, passHref ? { href: resolvedHref, ref } : {})
       )
     try {
       // eslint-disable-next-line no-new

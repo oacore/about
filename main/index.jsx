@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import { Header } from '@oacore/design'
 
 import { useAnalytics } from '../hooks'
 import { useCookieHandler, useCookie } from '../components/cookies/hooks'
@@ -17,8 +18,33 @@ const searchConfig = {
 
 const Main = ({ children }) => {
   const router = useRouter()
+  const [showSearchBar, setShowSearchBar] = useState(router.route !== '/')
+
+  useEffect(() => {
+    const show = router.route !== '/'
+    if (showSearchBar !== show) setShowSearchBar(show)
+  }, [router.route])
+  const handleNavigation = useCallback((url) => router.push(url), [router])
 
   useAnalytics()
+
+  Header.useSearchBar(
+    {
+      onQueryChanged: (searchTerm) => {
+        window.location.href = `https://core.ac.uk/search?q=${encodeURIComponent(
+          searchTerm
+        )}`
+      },
+      initQuery: '',
+      searchBarProps: {
+        label: 'Search',
+        placeholder: searchConfig.placeholder,
+        prependIcon: '#magnify',
+        changeOnBlur: false,
+      },
+    },
+    { isHidden: router.route === '/' }
+  )
 
   const cookiesAccepted = useCookie('cookies_accepted')
   const cookieHandler = useCookieHandler()
@@ -38,9 +64,8 @@ const Main = ({ children }) => {
         description={config.description}
         navigation={config.navigation}
         footer={config.footer}
-        searchConfig={searchConfig}
-        showSearch={router.route !== '/'}
         activeRoute={router.route}
+        onNavigate={handleNavigation}
       >
         {children}
       </Layout>

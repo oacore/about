@@ -33,6 +33,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "@oacore/design": "^3.3.0",
     "bootstrap": "^4.5.3",
     "core-js": "^3.7.0",
     "cssnano": "^4.1.10",
@@ -50,9 +51,9 @@
     "postcss-preset-env": "^6.7.0",
     "prop-types": "^15.6.2",
     "raw-loader": "^4.0.2",
-    "react": "^16.14.0",
+    "react": "^17.0.1",
     "react-cookie": "^4.0.3",
-    "react-dom": "^16.13.1",
+    "react-dom": "^17.0.1",
     "react-ga": "^3.2.1",
     "react-markdown": "^4.2.2",
     "reactstrap": "^8.7.1",
