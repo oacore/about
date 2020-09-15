@@ -9,7 +9,7 @@ const JoinSection = ({
   id,
   title,
   lead,
-  action,
+  actions,
   note,
   className = '',
   ...restProps
@@ -21,10 +21,12 @@ const JoinSection = ({
   >
     <h2>{title}</h2>
     <Markdown className={styles.joinSectionLead}>{lead}</Markdown>
-    <p className={styles.joinSectionButtonContainer}>
-      <Button className={styles.joinCoreButton} size="lg" href="~services">
-        {action}
-      </Button>
+    <p className={styles.buttonGroup}>
+      {actions.map(({ url, caption }) => (
+        <Button className={styles.button} size="lg" href={url}>
+          {caption}
+        </Button>
+      ))}
     </p>
     <footer className={styles.joinSectionNote}>
       <Markdown>{note}</Markdown>
