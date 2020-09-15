@@ -450,6 +450,14 @@ sections:
           Unfortunately CORE does not provide any language specific datasets
           at the moment. Users can use the CORE API to download individual
           PDFs.
+      - slug: what-does-non-commercial-use-mean
+        question: What does non-commercial use mean?
+        answer: |
+          Non-commercial means:
+          - The organisation is a registered charity or a not-for-profit AND
+          - the use of the CORE&nbsp;service will not enable, contribute to
+            or support the use of any paid-for service of the organisation
+            or of another third party organisation linked to this organisation.
   - id: about
     title: General information about CORE
     caption: General information
