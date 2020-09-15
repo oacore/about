@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .navbar-search-form {
   padding-right: $navbar-padding-x;
@@ -61,24 +61,18 @@
           border-bottom: $primary solid 2px;
 
           &::before {
-            content: "\1f50d\00a0";
+            content: '\1f50d\00a0';
           }
         }
       }
 
       @include media-breakpoint-up($next) {
         .navbar-search-form {
-          min-width: 0.75 * $content-max-width;
+          flex-grow: 1;
           max-width: $content-max-width;
-          transition: flex 0.2s;
 
           & ~ .navbar-collapse {
             flex-grow: 0;
-          }
-
-          &:focus-within,
-          &:valid {
-            flex-grow: 1;
           }
         }
 

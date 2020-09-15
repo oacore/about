@@ -3,6 +3,8 @@ description: >
   CORE is a service provided by the Knowledge Media Institute,
   based at The Open University, United Kingdom.
 navigation:
+  - title: Data providers
+    path: ~data-providers
   - title: Services
     path: ~services
     sections:
