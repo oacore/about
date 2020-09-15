@@ -9,8 +9,6 @@ export { default as Layout } from './layout'
 export { default as Page } from './page'
 
 // More complex layout
-export { default as Header } from './header'
-export { default as SearchNavbar } from './search-navbar'
 export { default as Footer } from './footer'
 
 // Elements

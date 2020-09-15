@@ -2,46 +2,6 @@ name: CORE
 description: >
   CORE is a service provided by the Knowledge Media Institute,
   based at The Open University, United Kingdom.
-navigation:
-  - title: Services
-    path: ~services
-    sections:
-      - title: Access to raw data
-        path: ~services#access-to-data
-        children:
-          - title: API
-            path: ~services/api
-          - title: Dataset
-            path: ~services/dataset
-          - title: FastSync
-            path: ~services/fastsync
-      - title: Content discovery
-        path: ~services/discovery
-        children:
-          - title: Recommender
-            path: ~services/recommender
-          - title: Discovery
-            path: ~services/discovery
-      - title: Managing content
-        path: ~services#managing-content
-        children:
-          - title: Repository dashboard
-            path: ~services/repository-dashboard
-          - title: Repository edition
-            path: ~services/repository-edition
-  - title: About
-    path: ~about
-    children:
-      - title: Mission
-        path: ~about#mission
-      - title: Team
-        path: ~about#team
-      - title: Blog
-        path: ~blog
-      - title: FAQs
-        path: ~faq
-      - title: Contact us
-        path: ~contact
 footer:
   useful-links:
     - title: Blog
