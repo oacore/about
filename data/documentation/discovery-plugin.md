@@ -57,6 +57,7 @@ below). The&nbsp;plugin will look similar on your repository.
       class="img-fluid"
       src="/images/discovery/oro-repository-plugin.png"
       alt="CORE Discovery repository plugin at Open Research Online"
+      style="max-height: 74px"
     >
   </a>
 </div>
