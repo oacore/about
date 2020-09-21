@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, CardHeader, CardBody } from 'reactstrap'
+import { Card, CardHeader, CardBody, Container } from 'reactstrap'
 import { bind } from 'decko'
 
 import { Page, Section, Button, Reference, Content } from 'components'
@@ -106,9 +106,11 @@ class ResearchOutputsPage extends Component {
             onPaperCite={this.toggleCitationsModal}
           />
         ))}
-        <Content>
-          <Markdown>{page.footer}</Markdown>
-        </Content>
+        <Container>
+          <Content>
+            <Markdown>{page.footer}</Markdown>
+          </Content>
+        </Container>
         <CitationsModal
           id={`${(activePaper && activePaper.id) || 'unknown'}-citaions-modal`}
           isOpen={isCitationsModalOpen}
