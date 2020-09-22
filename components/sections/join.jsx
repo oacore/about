@@ -23,7 +23,7 @@ const JoinSection = ({
     <Markdown className={styles.joinSectionLead}>{lead}</Markdown>
     <p className={styles.buttonGroup}>
       {actions.map(({ url, caption }) => (
-        <Button className={styles.button} size="lg" href={url}>
+        <Button key={url} className={styles.button} size="lg" href={url}>
           {caption}
         </Button>
       ))}
