@@ -117,7 +117,14 @@ members:
     An expert in Web Development who believes that functional and accessible UI
     is the key of success of the product. Leads front-end development
     and maintains CORE's design system.
-    
+-
+  name: Anna Zelinska
+  role: Project manager
+  picture: anna-zelinska.jpeg
+  description: |
+    Helps to provide high quality services and deliver the best results as
+    quickly as possible. Supports developers to improve software. Inspires by
+    books and new knowlege.
 
 past-members:
 - Giorgio Basile
