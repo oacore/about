@@ -49,7 +49,7 @@ footer:
     - title: Blog
       path: ~blog
     - title: Browse
-      path: ~browse
+      path: ~search
     - title: About CORE
       path: ~about
     - title: Contacts
