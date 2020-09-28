@@ -1,7 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 
-import { repositoriesUrl } from '../data/providers'
 import styles from './about.module.scss'
 
 import {
@@ -26,6 +25,8 @@ import teamData from 'data/team.yml'
 import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
+
+const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
 
 const AboutPage = () => (
   <Page
