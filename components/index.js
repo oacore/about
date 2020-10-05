@@ -20,7 +20,6 @@ export * from './citation-tabs'
 export { default as CitationsModal } from './citations-modal'
 export { KeyFeature, KeyFeatureList } from './key-feature'
 export { default as OutreachMaterials } from './outreach-materials'
-export { default as Pagination } from './pagination'
 export { default as Reference } from './reference'
 export { default as Search } from './search'
 export { default as ServiceGroupCard } from './service-group-card'
@@ -43,9 +42,7 @@ export { default as LogosCarousel } from './logos-carousel'
 export { default as TestimonialsCarousel } from './testimonials-carousel'
 
 // Dynamic data fetching
-export { default as RepositoriesBrowser } from './repositories-browser'
 export { default as RepositoriesMap } from './repositories-map'
-export { default as RepositoriesSearch } from './repositories-search'
 export { default as Blog } from './blog'
 
 // Sections

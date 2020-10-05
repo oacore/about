@@ -61,7 +61,7 @@ services-dataset-dynamic-render:
     method: get
 
 data: /data
-data-providers: /data/providers
+data-providers: /data-providers
 # Despite this might look as a mistake, the route is hosted from oacore/search
 # with a reverse proxy configured to the current website.
 register-data-provider: /data-providers

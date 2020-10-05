@@ -26,7 +26,7 @@ features:
     for machine processing
 
 main: |
-  CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](~data/providers/). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
+  CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](~data-providers/). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
 
   If you use CORE in your work, we kindly request you to
   [cite one of our publications](~research-outputs).

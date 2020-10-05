@@ -11,7 +11,7 @@ sections:
         question: Is my repository or journal harvested by CORE?
         answer: |
           To check whether your repository or journal is harvested
-          by CORE, go to our data providers [list](/data/providers).
+          by CORE, go to our data providers [list](/data-providers).
       - slug: how-do-I-register-my-repository-or-journal-with-CORE?
         question: |
           How do I register my repository or journal with CORE?
@@ -28,7 +28,7 @@ sections:
         answer: |
           CORE is an international service and harvests repositories from
           various locations around the world. This information is displayed in
-          a map at our [data providers page](/data/providers).
+          a map at our [data providers page](/data-providers).
       - slug: I-would-like-to-include-them-in-CORE
         question: |
           I am an author of scientific papers and I would like to include
