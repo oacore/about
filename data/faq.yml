@@ -200,6 +200,11 @@ sections:
             provided by the repository being a pdf file, which a) is publicly downloadable
             (no-login required or output is not under embargo, etc.) and b) the full text is machine readable,
             i.e. it has an extractable text not via OCR.
+        - slug: who-owns-the-rights-of-content-in-the-CORE-collection
+          question: |
+            Who owns the rights of the content in the CORE collection?
+          answer: |
+            CORE does not own any rights of the aggregated content and each resource has its own license, which should be respected by the CORE users.           
     - id: technical-aggregation
       title: Technical
       items:
