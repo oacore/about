@@ -1,40 +1,50 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import { Table } from 'reactstrap'
 
-import { cookies } from '../services'
+import { useCookies } from '../hooks'
 
 import { Page, Content, Section, Markdown, CookiesForm } from 'components'
 import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
 
-export const isCookiesAccepted = () => cookies.get('essential') != null
+const COOKIE_NAMES = ['cookies_accepted', 'analytics_allowed']
 
-export const getCookiesContext = () =>
-  Object.entries(cookies.get()).reduce((cookieItems, [key, value]) => {
-    cookieItems[key] = {
-      ...cookiesContext[key],
-      value,
-    }
-    return cookieItems
-  }, {})
+export const useCookieItems = () => {
+  const values = useCookies(COOKIE_NAMES)
+  return COOKIE_NAMES.map((name, i) => ({
+    ...Object.values(cookiesContext).find((config) => name === config.name),
+    value: values[i] == null ? values[i] : values[i] === 'true',
+  }))
+}
 
-export const handleCookiesUpdate = (event) => {
-  event.preventDefault()
+export const useCookieHandler = ({ patchDefaults = false } = {}) => {
+  const items = useCookieItems()
+  const [setCookie] = useCookies()
 
-  const cookieItems = getCookiesContext()
-  const cookiesUpdate = new FormData(event.target)
-  Object.entries(cookieItems).forEach(
-    ([cookieName, { default: defaultValue }]) => {
-      const fallbackValue =
-        typeof defaultValue == 'undefined' ? false : defaultValue
-      const value = cookiesUpdate.has(cookieName)
-        ? cookiesUpdate.get(cookieName) === 'on'
-        : fallbackValue
+  const updateCookies = useCallback(
+    (event) => {
+      event.preventDefault()
 
-      cookies.set(cookieName, value)
-    }
+      const input = new FormData(event.target)
+      const patch = Object.fromEntries(
+        Array.from(input.entries(), ([name, value]) => [name, value === 'on'])
+      )
+      items.forEach(({ name, default: defaultValue }) => {
+        const fallbackValue =
+          typeof defaultValue == 'undefined' ? false : defaultValue
+        const value = patchDefaults
+          ? patch[name] ?? fallbackValue
+          : !!patch[name]
+
+        setCookie(name, value, {
+          path: '/',
+          maxAge: 1 * 365 * 24 * 60 * 60,
+        })
+      })
+    },
+    [items, setCookie]
   )
 
-  window.location.reload()
+  return updateCookies
 }
 
 const CookiesTable = ({ caption, items }) => (
@@ -74,10 +84,10 @@ const CookiesPage = () => (
         <CookiesForm
           id="cookies-page-form"
           title={pageContext.settings.title}
-          items={getCookiesContext()}
+          items={useCookieItems()}
           itemDescriptionTitle={pageContext.settings.explanationCaption}
           submitCaption={pageContext.settings.saveCaption}
-          onSubmit={handleCookiesUpdate}
+          onSubmit={useCookieHandler()}
         />
       </Content>
     </Section>

@@ -6,15 +6,17 @@ description: |
 description-title: What are these?
 
 cookies:
-  essential:
+  - id: essential
+    name: cookies_accepted
     default: true
     required: true
     title: Essential cookies
     description: |
       **Required** to make the site work, and to save the options you make here
-  analytics:
+  - id: analytics
+    name: analytics_allowed
     default: true
-    required: true
+    required: false
     title: Analytics
     description: |
       Lets us (anonymously) track site usage, so that we can measure

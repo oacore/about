@@ -26,20 +26,29 @@ const CookiesForm = ({
     <CardTitle className={styles.cookiesFormTitle} tag="h4">
       {title}
     </CardTitle>
-    {Object.entries(items).map(
-      ([
+    {items.map(
+      ({
+        id: cookieId,
         name,
-        { default: defaultValue, value, required, title: label, description },
-      ]) => (
+        default: defaultValue,
+        value,
+        required,
+        title: label,
+        description,
+      }) => (
         <FormGroup key={name}>
           <CustomInput
-            id={`${id}-${name}`}
-            name={name}
+            id={`${id}-${cookieId}`}
+            name={required ? null : name}
             type="switch"
             label={label}
-            defaultChecked={required ? defaultValue : value}
+            defaultChecked={required ? defaultValue : value ?? defaultValue}
             disabled={required}
           />
+          {required && defaultValue && (
+            // Preserve default checked since disabled inputs are not sent
+            <input type="hidden" name={name} value="on" />
+          )}
           <details className={styles.cookiesFormDetails}>
             <summary>{itemDescriptionTitle}</summary>
             <Markdown>{description}</Markdown>
