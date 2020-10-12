@@ -1,12 +1,8 @@
-import React from 'react'
-import Router from 'next/router'
-import withGA from 'next-ga'
+import React, { useCallback, useState } from 'react'
+import { useRouter } from 'next/router'
 
-import {
-  isCookiesAccepted,
-  getCookiesContext,
-  handleCookiesUpdate,
-} from './cookies'
+import { useCookies, useAnalytics, usePageviewTracking } from '../hooks'
+import { useCookieItems, useCookieHandler } from './cookies'
 
 // TODO: Move to map component once this is released
 //       https://github.com/vercel/next.js/issues/12079#issuecomment-678858809
@@ -26,42 +22,54 @@ const searchConfig = {
   placeholder: patchStats(config.searchPlaceholder, config.statistics),
 }
 
-const Cookies = () => (
-  <CookiesPopup
-    action="/cookies"
-    method="post"
-    title={cookieSettingsContext.popupTitle}
-    items={getCookiesContext()}
-    onSubmit={handleCookiesUpdate}
-    submitCaption={cookieSettingsContext.acceptCaption}
-  />
-)
+const App = ({ Component, pageProps }) => {
+  const router = useRouter()
 
-const App = ({ Component, pageProps, router }) => (
-  <>
-    {router.route !== '/cookies' && !isCookiesAccepted() && <Cookies />}
-    <Layout
-      title={config.name}
-      description={config.description}
-      navigation={config.navigation}
-      footer={config.footer}
-      searchConfig={searchConfig}
-      showSearch={router.route !== '/'}
-      activeRoute={router.route}
-    >
-      <Component {...pageProps} />
-    </Layout>
-  </>
-)
+  const [cookiesAccepted] = useCookies(['cookies_accepted'])
+  const cookiesAllowed = cookiesAccepted === 'true'
 
-const isAnalyticsEnabled = () => {
-  const { value, default: defaultValue } = getCookiesContext().analytics
-  return value != null ? value : defaultValue
+  const analyticsAllowed = useAnalytics('analytics_allowed')
+  usePageviewTracking(analyticsAllowed)
+
+  const cookieItems = useCookieItems()
+  const cookieHandler = useCookieHandler({ patchDefaults: true })
+  const [, forceUpdate] = useState({})
+
+  const handleCookiesUpdate = useCallback(
+    (...args) => {
+      cookieHandler(...args)
+      // Forcing update of the whole application since cookieHandled
+      // cannot do so using the local state
+      forceUpdate({})
+    },
+    [cookieHandler, forceUpdate]
+  )
+
+  return (
+    <>
+      {router.route !== '/cookies' && !cookiesAllowed && (
+        <CookiesPopup
+          action="/cookies"
+          method="post"
+          title={cookieSettingsContext.popupTitle}
+          items={cookieItems}
+          onSubmit={handleCookiesUpdate}
+          submitCaption={cookieSettingsContext.acceptCaption}
+        />
+      )}
+      <Layout
+        title={config.name}
+        description={config.description}
+        navigation={config.navigation}
+        footer={config.footer}
+        searchConfig={searchConfig}
+        showSearch={router.route !== '/'}
+        activeRoute={router.route}
+      >
+        <Component {...pageProps} />
+      </Layout>
+    </>
+  )
 }
 
-const gaCode =
-  process.env.NODE_ENV === 'production' &&
-  isAnalyticsEnabled() &&
-  process.env.GA_CODE
-
-export default gaCode ? withGA(gaCode, Router)(App) : App
+export default App

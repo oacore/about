@@ -22,6 +22,11 @@ import SearchNavbar from '../search-navbar'
 import NavDropdown from '../nav-dropdown'
 import styles from './header.module.scss'
 
+const IS_BROWSER = typeof window != 'undefined'
+
+if (IS_BROWSER && !window.GA_INITIALIZED && process.env.GA_CODE)
+  ReactGA.initialize(process.env.GA_CODE)
+
 const createLogger = (caption) => (event) => {
   ReactGA.event({
     category: 'Navigation',
