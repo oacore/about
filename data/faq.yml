@@ -204,7 +204,16 @@ sections:
           question: |
             Who owns the rights of the content in the CORE collection?
           answer: |
-            CORE does not own any rights of the aggregated content and each resource has its own license, which should be respected by the CORE users.           
+            CORE does not own any rights of the aggregated content and each
+            resource has its own license, which should be respected
+            by the CORE users.
+        - slug: i-landed-at-a-core-url-linking-to-a-full-text-pdf-but-the-link-gives-a-404-error
+          question: |
+            I landed at a CORE URL linking to a full text PDF but the link
+            gives a 404 error. How can I access this output?
+          answer: |
+            You cannot access it – a 404 error indicates that the full text
+            has been removed from CORE.
     - id: technical-aggregation
       title: Technical
       items:
