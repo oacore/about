@@ -75,9 +75,7 @@ class Header extends React.Component {
         <NavDropdown nav={level === 1} inNavbar key={key}>
           <div className="nav-link-group">
             <Link href={path} passHref>
-              <NavLink onClick={eventLogger} onMouseOver={eventLogger}>
-                {title}
-              </NavLink>
+              <NavLink onClick={eventLogger}>{title}</NavLink>
             </Link>
             <DropdownToggle
               className="dropdown-toggle"
@@ -110,9 +108,7 @@ class Header extends React.Component {
         <NavDropdown nav={level === 1} inNavbar key={key}>
           <div className="nav-link-group">
             <Link href={path} passHref>
-              <NavLink onClick={eventLogger} onMouseOver={eventLogger}>
-                {title}
-              </NavLink>
+              <NavLink onClick={eventLogger}>{title}</NavLink>
             </Link>
             <DropdownToggle
               className="dropdown-toggle"
@@ -136,16 +132,12 @@ class Header extends React.Component {
     return level === 1 ? (
       <NavItem key={key}>
         <Link href={path}>
-          <NavLink onClick={eventLogger} onMouseOver={eventLogger}>
-            {title}
-          </NavLink>
+          <NavLink onClick={eventLogger}>{title}</NavLink>
         </Link>
       </NavItem>
     ) : (
       <Link href={path} key={key} passHref>
-        <DropdownItem onClick={eventLogger} onMouseOver={eventLogger}>
-          {title}
-        </DropdownItem>
+        <DropdownItem onClick={eventLogger}>{title}</DropdownItem>
       </Link>
     )
   }
