@@ -35,10 +35,12 @@ class RepositoriesMap extends Component {
     const { MarkerClusterGroup } = await import('leaflet.markercluster')
 
     const coverLayer = L.tileLayer(
-      'https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}{r}.png',
+      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       {
-        attribution:
-          '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia</a>',
+        attribution: `
+          <a href="https://www.openstreetmap.org">OpenStreetMap</a> under
+          <a href="https://creativecommons.org/licenses/by-sa/2.0">CC-BY-SA</a>
+        `,
         minZoom: 2,
         maxZoom: 12,
       }
