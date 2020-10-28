@@ -64,7 +64,7 @@ data: /data
 data-providers: /data-providers
 # Despite this might look as a mistake, the route is hosted from oacore/search
 # with a reverse proxy configured to the current website.
-register-data-provider: /data-providers
+register-data-provider: /data-providers?query=&size=10&action=add#add-new-data-provider
 
 repositories:
   pattern:  /repositories
