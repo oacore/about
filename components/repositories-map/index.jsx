@@ -76,17 +76,17 @@ class RepositoriesMap extends Component {
 
     repositories
       .filter(
-        ({ name, repositoryLocation }) =>
-          repositoryLocation != null &&
-          repositoryLocation.latitude != null &&
-          repositoryLocation.longitude != null &&
+        ({ name, dataProviderLocation }) =>
+          dataProviderLocation != null &&
+          dataProviderLocation.latitude != null &&
+          dataProviderLocation.longitude != null &&
           name
       )
-      .forEach(({ name, repositoryLocation }) => {
+      .forEach(({ name, dataProviderLocation }) => {
         const marker = L.marker(
           new L.LatLng(
-            repositoryLocation.latitude,
-            repositoryLocation.longitude
+            dataProviderLocation.latitude,
+            dataProviderLocation.longitude
           ),
           {
             title: name,
