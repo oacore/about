@@ -642,6 +642,16 @@ ambassadors:
         latitude: 27.706083
         longitude: 85.3370732
       country: Nepal
+    -
+      id: mahammad-gulam-ghouse-pasha
+      name: Mahammad Gulam Ghouse Pasha
+      role: Librarian and Educational Resources Manager
+      organization: British Applied College
+      location:
+        latitude: 24.466667
+        longitude: 	54.366669
+      country: United Arab Emirates
+      picture: mahammad-gulam-ghouse-pasha.png
 
 regions:
   -
