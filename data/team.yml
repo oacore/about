@@ -91,7 +91,7 @@ members:
     read and travel.
 -
   name: David Pride
-  role: Data scientist
+  role: Research Associate
   picture: david-pride.jpg
   description: |
     David is in the final year of his PhD. His thesis is attempting to understand what research excellence really means and to this end he is applying large-scale text and data mining techniques to the CORE dataset, to better understand citation contexts. When not digging deep into data, you’ll probably find him attached to a Raspberry Pi somewhere.
@@ -101,6 +101,15 @@ members:
   picture: maria-tarasiuk.jpg
   description: |
     Software services and infrastrucutre developer. Keeping and continuously improving our backend systems.
+-
+  name: Bethany Walker
+  role: Manager, Business & Partnerships
+  picture: bethany-walker.jpg
+  description: |
+    Bethany is responsible for CORE’s business development and maintaining our
+    commercial partnerships programme. Her goal is to help internal and
+    external customers get the very best from CORE. In her spare time, Bethany
+    likes to knit and spend time in the garden trying to keep plants alive.
 -
   name: Viktor Yakubiv
   role: Senior Front-End Developer
