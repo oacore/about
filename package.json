@@ -43,7 +43,7 @@
     "leaflet": "^1.7.1",
     "leaflet.markercluster": "^1.4.1",
     "next": "^9.5.3",
-    "next-images": "^1.4.1",
+    "next-images": "^1.6.2",
     "node-fetch": "^2.6.1",
     "postcss": "^7.0.32",
     "postcss-extend": "^1.0.5",
