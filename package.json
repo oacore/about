@@ -21,7 +21,7 @@
     "babel-eslint": "^10.1.0",
     "broken-link-checker": "^0.7.8",
     "camelize": "^1.0.0",
-    "eslint": "^7.8.1",
+    "eslint": "^7.13.0",
     "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jsx-a11y": "^6.3.1",
