@@ -42,7 +42,7 @@
     "json-loader": "^0.5.7",
     "leaflet": "^1.7.1",
     "leaflet.markercluster": "^1.4.1",
-    "next": "^9.5.4",
+    "next": "^10.0.1",
     "next-images": "^1.6.2",
     "node-fetch": "^2.6.1",
     "postcss": "^8.1.7",
