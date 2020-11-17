@@ -6,10 +6,12 @@ import useCookies from './cookies'
 
 const useAnalytics = (cookieName) => {
   const [analyticsAllowed] = useCookies([cookieName])
+  console.log({ analyticsAllowed })
   const enableAnalytics = analyticsAllowed === 'true'
 
   useEffect(() => {
     if (enableAnalytics && process.env.NODE_ENV === 'production') {
+      console.log('enabling GA')
       // Initialise production Google Analytics
       ReactGA.initialize(process.env.GA_CODE)
     } else if (enableAnalytics) {
@@ -33,7 +35,10 @@ const useAnalytics = (cookieName) => {
 
 const usePageviewTracking = (analyticsAllowed) => {
   const router = useRouter()
-  const reportPageview = useCallback((url) => ReactGA.pageview(url), [])
+  const reportPageview = useCallback((url) => {
+    console.log('reportPageView')
+    ReactGA.pageview(url)
+  }, [])
 
   useEffect(() => {
     // Reporting first page view manually because the event doesn't fire

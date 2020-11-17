@@ -7,8 +7,6 @@ env:
 
 settings:
   import/resolver:
-    alias:
-      map:
-        - ['components', './components']
-        - ['data', './data']
-      extensions: ['.js', '.jsx', '.json']
+    node:
+      paths: ['.']
+      extensions: ['.js', '.jsx']
