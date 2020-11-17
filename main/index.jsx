@@ -1,7 +1,8 @@
-import React, { useCallback, useState } from 'react'
+import React from 'react'
 import { useRouter } from 'next/router'
+import { useCookies } from 'react-cookie'
 
-import { useAnalytics, usePageviewTracking } from '../hooks'
+import { useAnalytics } from '../hooks'
 import { useCookieItems, useCookieHandler } from '../hooks/cookies'
 
 import { Layout, CookiesPopup } from 'components'
@@ -18,25 +19,10 @@ const searchConfig = {
 const Main = ({ children }) => {
   const router = useRouter()
 
-  const [cookiesAccepted] = useCookies(['cookies_accepted'])
-  const cookiesAllowed = cookiesAccepted === 'true'
+  useAnalytics()
 
-  const analyticsAllowed = useAnalytics('analytics_allowed')
-  usePageviewTracking(analyticsAllowed)
-
-  const cookieItems = useCookieItems()
-  const cookieHandler = useCookieHandler({ patchDefaults: true })
-  const [, forceUpdate] = useState({})
-
-  const handleCookiesUpdate = useCallback(
-    (...args) => {
-      cookieHandler(...args)
-      // Forcing update of the whole application since cookieHandled
-      // cannot do so using the local state
-      forceUpdate({})
-    },
-    [cookieHandler, forceUpdate]
-  )
+  const [cookies] = useCookies(['cookies_accepted'])
+  const cookiesAllowed = cookies.cookies_accepted === 'true'
 
   return (
     <>
@@ -45,8 +31,8 @@ const Main = ({ children }) => {
           action="/cookies"
           method="post"
           title={cookieSettingsContext.popupTitle}
-          items={cookieItems}
-          onSubmit={handleCookiesUpdate}
+          items={useCookieItems()}
+          onSubmit={useCookieHandler()}
           submitCaption={cookieSettingsContext.acceptCaption}
         />
       )}
