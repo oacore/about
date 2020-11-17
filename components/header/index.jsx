@@ -14,27 +14,12 @@ import {
   DropdownItem,
 } from 'reactstrap'
 import { bind } from 'decko'
-import ReactGA from 'react-ga'
 
 import Link from '../link'
 import Logo from '../logo'
 import SearchNavbar from '../search-navbar'
 import NavDropdown from '../nav-dropdown'
 import styles from './header.module.scss'
-
-const IS_BROWSER = typeof window != 'undefined'
-
-if (IS_BROWSER && !window.GA_INITIALIZED && process.env.GA_CODE)
-  ReactGA.initialize(process.env.GA_CODE)
-
-const createLogger = (caption) => (event) => {
-  ReactGA.event({
-    category: 'Navigation',
-    action: event.type,
-    label: caption,
-    transport: 'beacon',
-  })
-}
 
 class Header extends React.Component {
   state = {
@@ -67,7 +52,6 @@ class Header extends React.Component {
     }
 
     const key = path ? `${title} (${path})` : title
-    const eventLogger = createLogger(title)
 
     // Sectioned dropdown menu if sections are present
     if (sections) {
@@ -75,7 +59,7 @@ class Header extends React.Component {
         <NavDropdown nav={level === 1} inNavbar key={key}>
           <div className="nav-link-group">
             <Link href={path} passHref>
-              <NavLink onClick={eventLogger}>{title}</NavLink>
+              <NavLink>{title}</NavLink>
             </Link>
             <DropdownToggle
               className="dropdown-toggle"
@@ -108,7 +92,7 @@ class Header extends React.Component {
         <NavDropdown nav={level === 1} inNavbar key={key}>
           <div className="nav-link-group">
             <Link href={path} passHref>
-              <NavLink onClick={eventLogger}>{title}</NavLink>
+              <NavLink>{title}</NavLink>
             </Link>
             <DropdownToggle
               className="dropdown-toggle"
@@ -132,12 +116,12 @@ class Header extends React.Component {
     return level === 1 ? (
       <NavItem key={key}>
         <Link href={path}>
-          <NavLink onClick={eventLogger}>{title}</NavLink>
+          <NavLink>{title}</NavLink>
         </Link>
       </NavItem>
     ) : (
       <Link href={path} key={key} passHref>
-        <DropdownItem onClick={eventLogger}>{title}</DropdownItem>
+        <DropdownItem>{title}</DropdownItem>
       </Link>
     )
   }
