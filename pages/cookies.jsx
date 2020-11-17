@@ -1,51 +1,10 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import { Table } from 'reactstrap'
 
-import { useCookies } from '../hooks'
+import { useCookieItems, useCookieHandler } from '../hooks/cookies'
 
 import { Page, Content, Section, Markdown, CookiesForm } from 'components'
-import pageContext, { cookies as cookiesContext } from 'data/cookies.yml'
-
-const COOKIE_NAMES = ['cookies_accepted', 'analytics_allowed']
-
-export const useCookieItems = () => {
-  const values = useCookies(COOKIE_NAMES)
-  return COOKIE_NAMES.map((name, i) => ({
-    ...Object.values(cookiesContext).find((config) => name === config.name),
-    value: values[i] == null ? values[i] : values[i] === 'true',
-  }))
-}
-
-export const useCookieHandler = ({ patchDefaults = false } = {}) => {
-  const items = useCookieItems()
-  const [setCookie] = useCookies()
-
-  const updateCookies = useCallback(
-    (event) => {
-      event.preventDefault()
-
-      const input = new FormData(event.target)
-      const patch = Object.fromEntries(
-        Array.from(input.entries(), ([name, value]) => [name, value === 'on'])
-      )
-      items.forEach(({ name, default: defaultValue }) => {
-        const fallbackValue =
-          typeof defaultValue == 'undefined' ? false : defaultValue
-        const value = patchDefaults
-          ? patch[name] ?? fallbackValue
-          : !!patch[name]
-
-        setCookie(name, value, {
-          path: '/',
-          maxAge: 1 * 365 * 24 * 60 * 60,
-        })
-      })
-    },
-    [items, setCookie]
-  )
-
-  return updateCookies
-}
+import pageContext from 'data/cookies.yml'
 
 const CookiesTable = ({ caption, items }) => (
   <Section size="sm">
