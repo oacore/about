@@ -1,4 +1,5 @@
 import React from 'react'
+import { CookiesProvider } from 'react-cookie'
 
 // TODO: Move to map component once this is released
 //       https://github.com/vercel/next.js/issues/12079#issuecomment-678858809
@@ -11,9 +12,11 @@ import 'components/index.scss'
 import Main from 'main'
 
 const App = ({ Component, pageProps }) => (
-  <Main>
-    <Component {...pageProps} />
-  </Main>
+  <CookiesProvider>
+    <Main>
+      <Component {...pageProps} />
+    </Main>
+  </CookiesProvider>
 )
 
 export default App

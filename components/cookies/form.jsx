@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 import { CustomInput, Form, FormGroup, Card, CardTitle } from 'reactstrap'
 
 import { Button } from '../elements'
@@ -16,51 +16,62 @@ const CookiesForm = ({
   optionalActions = null,
   method = 'post',
   ...formProps
-}) => (
-  <Card
-    className={`card-body ${styles.cookiesForm} ${className}`}
-    method={method}
-    tag={Form}
-    {...formProps}
-  >
-    <CardTitle className={styles.cookiesFormTitle} tag="h4">
-      {title}
-    </CardTitle>
-    {items.map(
-      ({
-        id: cookieId,
-        name,
-        default: defaultValue,
-        value,
-        required,
-        title: label,
-        description,
-      }) => (
-        <FormGroup key={name}>
-          <CustomInput
-            id={`${id}-${cookieId}`}
-            name={required ? null : name}
-            type="switch"
-            label={label}
-            defaultChecked={required ? defaultValue : value ?? defaultValue}
-            disabled={required}
-          />
-          {required && defaultValue && (
-            // Preserve default checked since disabled inputs are not sent
-            <input type="hidden" name={name} value="on" />
-          )}
-          <details className={styles.cookiesFormDetails}>
-            <summary>{itemDescriptionTitle}</summary>
-            <Markdown>{description}</Markdown>
-          </details>
-        </FormGroup>
-      )
-    )}
-    <ButtonToolbar className="cookies-form-actions">
-      <Button color="primary">{submitCaption}</Button>
-      {optionalActions}
-    </ButtonToolbar>
-  </Card>
-)
+}) => {
+  const [checkBoxes, setCheckBoxes] = useState(
+    Object.fromEntries(items.map(({ name, value }) => [name, value]))
+  )
+
+  const handleCheckboxChange = useCallback((event) => {
+    const { name } = event.target
+    setCheckBoxes({
+      ...checkBoxes,
+      [name]: !checkBoxes[name],
+    })
+  }, [])
+
+  return (
+    <Card
+      className={`card-body ${styles.cookiesForm} ${className}`}
+      method={method}
+      tag={Form}
+      {...formProps}
+    >
+      <CardTitle tag="h4">{title}</CardTitle>
+      {items.map(
+        ({
+          id: cookieId,
+          name,
+          default: defaultValue,
+          title: label,
+          description,
+        }) => (
+          <FormGroup key={name}>
+            {defaultValue && !checkBoxes[name] && (
+              // Preserve default checked since disabled inputs are not sent
+              <input type="hidden" name={name} value="off" />
+            )}
+            <CustomInput
+              id={`${id}-${cookieId}`}
+              type="switch"
+              name={name}
+              label={label}
+              defaultChecked={checkBoxes[name]}
+              value="on"
+              onChange={handleCheckboxChange}
+            />
+            <details className={styles.cookiesFormDetails}>
+              <summary>{itemDescriptionTitle}</summary>
+              <Markdown>{description}</Markdown>
+            </details>
+          </FormGroup>
+        )
+      )}
+      <ButtonToolbar className="cookies-form-actions">
+        <Button color="primary">{submitCaption}</Button>
+        {optionalActions}
+      </ButtonToolbar>
+    </Card>
+  )
+}
 
 export default CookiesForm

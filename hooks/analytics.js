@@ -2,19 +2,20 @@ import { useCallback, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ReactGA from 'react-ga'
 
-import useCookies from './cookies'
+import { useCookie } from './cookies'
 
-const useAnalytics = (cookieName) => {
-  const [analyticsAllowed] = useCookies([cookieName])
-  console.log({ analyticsAllowed })
-  const enableAnalytics = analyticsAllowed === 'true'
+export const useAnalytics = () => {
+  const analyticsAllowed = useCookie('analytics_allowed')
+  const router = useRouter()
+  const reportPageview = useCallback((url) => {
+    ReactGA.pageview(url)
+  }, [])
 
   useEffect(() => {
-    if (enableAnalytics && process.env.NODE_ENV === 'production') {
-      console.log('enabling GA')
+    if (analyticsAllowed && process.env.NODE_ENV === 'production') {
       // Initialise production Google Analytics
       ReactGA.initialize(process.env.GA_CODE)
-    } else if (enableAnalytics) {
+    } else if (analyticsAllowed) {
       window.ga = (...args) =>
         // We want to have logging in the development environment
         // eslint-disable-next-line no-console
@@ -28,19 +29,11 @@ const useAnalytics = (cookieName) => {
     return () => {
       window.ga = null
     }
-  }, [enableAnalytics, cookieName])
-
-  return enableAnalytics
-}
-
-const usePageviewTracking = (analyticsAllowed) => {
-  const router = useRouter()
-  const reportPageview = useCallback((url) => {
-    console.log('reportPageView')
-    ReactGA.pageview(url)
-  }, [])
+  }, [analyticsAllowed])
 
   useEffect(() => {
+    if (!analyticsAllowed) return () => {}
+
     // Reporting first page view manually because the event doesn't fire
     reportPageview(router.asPath)
     router.events.on('routeChangeComplete', reportPageview)
@@ -52,4 +45,3 @@ const usePageviewTracking = (analyticsAllowed) => {
 }
 
 export default useAnalytics
-export { useAnalytics, usePageviewTracking }
