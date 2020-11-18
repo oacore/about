@@ -1,9 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { useCookies } from 'react-cookie'
 
 import { useAnalytics } from '../hooks'
-import { useCookieItems, useCookieHandler } from '../hooks/cookies'
+import {
+  useCookieItems,
+  useCookieHandler,
+  useCookie,
+} from '../components/cookies/hooks'
 
 import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
@@ -21,12 +24,11 @@ const Main = ({ children }) => {
 
   useAnalytics()
 
-  const [cookies] = useCookies(['cookies_accepted'])
-  const cookiesAllowed = cookies.cookies_accepted === 'true'
+  const cookiesAccepted = useCookie('cookies_accepted')
 
   return (
     <>
-      {router.route !== '/cookies' && !cookiesAllowed && (
+      {router.route !== '/cookies' && !cookiesAccepted && (
         <CookiesPopup
           action="/cookies"
           method="post"
