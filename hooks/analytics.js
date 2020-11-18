@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import ReactGA from 'react-ga'
 
-import { useCookie } from './cookies'
+import { useCookie } from '../components/cookies/hooks'
 
 export const useAnalytics = () => {
   const analyticsAllowed = useCookie('analytics_allowed')

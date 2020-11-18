@@ -1,5 +1,6 @@
 import React from 'react'
-import { CookiesProvider } from 'react-cookie'
+
+import CookiesProvider from '../components/cookies/cookies-provider'
 
 // TODO: Move to map component once this is released
 //       https://github.com/vercel/next.js/issues/12079#issuecomment-678858809
