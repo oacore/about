@@ -23,10 +23,10 @@ const CookiesForm = ({
 
   const handleCheckboxChange = useCallback((event) => {
     const { name } = event.target
-    setCheckBoxes({
-      ...checkBoxes,
-      [name]: !checkBoxes[name],
-    })
+    setCheckBoxes((checkBoxesInner) => ({
+      ...checkBoxesInner,
+      [name]: !checkBoxesInner[name],
+    }))
   }, [])
 
   return (
@@ -38,15 +38,9 @@ const CookiesForm = ({
     >
       <CardTitle tag="h4">{title}</CardTitle>
       {items.map(
-        ({
-          id: cookieId,
-          name,
-          default: defaultValue,
-          title: label,
-          description,
-        }) => (
+        ({ id: cookieId, name, title: label, description, required }) => (
           <FormGroup key={name}>
-            {defaultValue && !checkBoxes[name] && (
+            {!checkBoxes[name] && (
               // Preserve default checked since disabled inputs are not sent
               <input type="hidden" name={name} value="off" />
             )}
@@ -58,6 +52,7 @@ const CookiesForm = ({
               defaultChecked={checkBoxes[name]}
               value="on"
               onChange={handleCheckboxChange}
+              disabled={required}
             />
             <details className={styles.cookiesFormDetails}>
               <summary>{itemDescriptionTitle}</summary>
