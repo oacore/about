@@ -25,15 +25,14 @@ const Main = ({ children }) => {
 
   return (
     <>
-      {router.route !== '/cookies' && !cookiesAccepted && (
-        <CookiesPopup
-          action="/cookies"
-          method="post"
-          title={cookieSettingsContext.popupTitle}
-          onSubmit={cookieHandler}
-          submitCaption={cookieSettingsContext.acceptCaption}
-        />
-      )}
+      <CookiesPopup
+        action="/cookies"
+        method="post"
+        title={cookieSettingsContext.popupTitle}
+        onSubmit={cookieHandler}
+        submitCaption={cookieSettingsContext.acceptCaption}
+        hidden={router.route === '/cookies' || cookiesAccepted}
+      />
       <Layout
         title={config.name}
         description={config.description}
