@@ -2,11 +2,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 
 import { useAnalytics } from '../hooks'
-import {
-  useCookieItems,
-  useCookieHandler,
-  useCookie,
-} from '../components/cookies/hooks'
+import { useCookieHandler, useCookie } from '../components/cookies/hooks'
 
 import { Layout, CookiesPopup } from 'components'
 import { patchStats } from 'components/utils'
@@ -25,6 +21,7 @@ const Main = ({ children }) => {
   useAnalytics()
 
   const cookiesAccepted = useCookie('cookies_accepted')
+  const cookieHandler = useCookieHandler()
 
   return (
     <>
@@ -33,8 +30,7 @@ const Main = ({ children }) => {
           action="/cookies"
           method="post"
           title={cookieSettingsContext.popupTitle}
-          items={useCookieItems()}
-          onSubmit={useCookieHandler()}
+          onSubmit={cookieHandler}
           submitCaption={cookieSettingsContext.acceptCaption}
         />
       )}

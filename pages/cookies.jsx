@@ -10,70 +10,79 @@ const CookiesTable = ({ caption, items }) => (
   <Section size="sm">
     <h4>{caption}</h4>
     <Table>
-      <tr>
-        <th>{pageContext.cookieListCaptions.name}</th>
-        <th>{pageContext.cookieListCaptions.purpose}</th>
-        <th>{pageContext.cookieListCaptions.expires}</th>
-      </tr>
-      {items.map(({ name, purpose, expires }) => (
+      <thead>
         <tr>
-          <td>
-            <code>{name}</code>
-          </td>
-          <td>{purpose}</td>
-          <td className="text-right">{expires}</td>
+          <th>{pageContext.cookieListCaptions.name}</th>
+          <th>{pageContext.cookieListCaptions.purpose}</th>
+          <th>{pageContext.cookieListCaptions.expires}</th>
         </tr>
-      ))}
+      </thead>
+      <tbody>
+        {items.map(({ name, purpose, expires }) => (
+          <tr key={name}>
+            <td>
+              <code>{name}</code>
+            </td>
+            <td>{purpose}</td>
+            <td className="text-right">{expires}</td>
+          </tr>
+        ))}
+      </tbody>
     </Table>
   </Section>
 )
 
-const CookiesPage = () => (
-  <Page
-    title={pageContext.title}
-    description={pageContext.description}
-    keywords={pageContext.keywords}
-    className="cookies-page"
-    nav
-  >
-    <h1>{pageContext.title}</h1>
+const CookiesPage = () => {
+  const cookieItems = useCookieItems()
+  const cookieHandler = useCookieHandler()
 
-    <Section id="cookie-page" caption="Your cookie settings">
-      <Content className="cookies-page-form">
-        <CookiesForm
-          id="cookies-page-form"
-          title={pageContext.settings.title}
-          items={useCookieItems()}
-          itemDescriptionTitle={pageContext.settings.explanationCaption}
-          submitCaption={pageContext.settings.saveCaption}
-          onSubmit={useCookieHandler()}
-        />
-      </Content>
-    </Section>
+  return (
+    <Page
+      title={pageContext.title}
+      description={pageContext.description}
+      keywords={pageContext.keywords}
+      className="cookies-page"
+      nav
+    >
+      <h1>{pageContext.title}</h1>
 
-    <Section id="cookies-policy" caption={pageContext.cookiesPolicy.title}>
-      <h2>{pageContext.cookiesPolicy.title}</h2>
-      <Content>
-        <Markdown>{pageContext.cookiesPolicy.content}</Markdown>
-      </Content>
-      {pageContext.cookiesPolicy.sections.map((section) => (
-        <Section>
-          <h3>{section.title}</h3>
-          <Content>
-            <Markdown>{section.content}</Markdown>
-          </Content>
-          <CookiesTable caption={section.listTitle} items={section.list} />
-        </Section>
-      ))}
-    </Section>
+      <Section id="cookie-page" caption="Your cookie settings">
+        <Content className="cookies-page-form">
+          <CookiesForm
+            id="cookies-page-form"
+            title={pageContext.settings.title}
+            items={cookieItems}
+            itemDescriptionTitle={pageContext.settings.explanationCaption}
+            submitCaption={pageContext.settings.saveCaption}
+            onSubmit={cookieHandler}
+          />
+        </Content>
+      </Section>
 
-    <Section id="privacy-notice" caption="Privacy notice">
-      <h2>{pageContext.privacyNotice.title}</h2>
-      <Content>
-        <Markdown>{pageContext.privacyNotice.content}</Markdown>
-      </Content>
-    </Section>
-  </Page>
-)
+      <Section id="cookies-policy" caption={pageContext.cookiesPolicy.title}>
+        <h2>{pageContext.cookiesPolicy.title}</h2>
+        <Content>
+          <Markdown>{pageContext.cookiesPolicy.content}</Markdown>
+        </Content>
+        {pageContext.cookiesPolicy.sections.map((section) => (
+          <Section key={section.title}>
+            <h3>{section.title}</h3>
+            <Content>
+              <Markdown>{section.content}</Markdown>
+            </Content>
+            <CookiesTable caption={section.listTitle} items={section.list} />
+          </Section>
+        ))}
+      </Section>
+
+      <Section id="privacy-notice" caption="Privacy notice">
+        <h2>{pageContext.privacyNotice.title}</h2>
+        <Content>
+          <Markdown>{pageContext.privacyNotice.content}</Markdown>
+        </Content>
+      </Section>
+    </Page>
+  )
+}
 
 export default CookiesPage
