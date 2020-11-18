@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import { CustomInput, Form, FormGroup, Card, CardTitle } from 'reactstrap'
 
 import { Button } from '../elements'
@@ -20,6 +20,11 @@ const CookiesForm = ({
   const [checkBoxes, setCheckBoxes] = useState(
     Object.fromEntries(items.map(({ name, value }) => [name, value]))
   )
+  const [isMounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleCheckboxChange = useCallback((event) => {
     const { name } = event.target
@@ -28,6 +33,8 @@ const CookiesForm = ({
       [name]: !checkBoxesInner[name],
     }))
   }, [])
+
+  if (!isMounted) return null
 
   return (
     <Card
@@ -38,28 +45,35 @@ const CookiesForm = ({
     >
       <CardTitle tag="h4">{title}</CardTitle>
       {items.map(
-        ({ id: cookieId, name, title: label, description, required }) => (
-          <FormGroup key={name}>
-            {!checkBoxes[name] && (
-              // Preserve default checked since disabled inputs are not sent
-              <input type="hidden" name={name} value="off" />
-            )}
-            <CustomInput
-              id={`${id}-${cookieId}`}
-              type="switch"
-              name={name}
-              label={label}
-              defaultChecked={checkBoxes[name]}
-              value="on"
-              onChange={handleCheckboxChange}
-              disabled={required}
-            />
-            <details className={styles.cookiesFormDetails}>
-              <summary>{itemDescriptionTitle}</summary>
-              <Markdown>{description}</Markdown>
-            </details>
-          </FormGroup>
-        )
+        ({ id: cookieId, name, title: label, description, required }) => {
+          const isDisabled = required && checkBoxes[name]
+          return (
+            <FormGroup key={`${name}`}>
+              {(!checkBoxes[name] || isDisabled) && (
+                // Preserve default checked since disabled inputs are not sent
+                <input
+                  type="hidden"
+                  name={name}
+                  value={isDisabled ? 'on' : 'off'}
+                />
+              )}
+              <CustomInput
+                id={`${id}-${cookieId}`}
+                type="switch"
+                name={name}
+                label={label}
+                value="on"
+                onChange={handleCheckboxChange}
+                disabled={required && checkBoxes[name]}
+                defaultChecked={checkBoxes[name]}
+              />
+              <details className={styles.cookiesFormDetails}>
+                <summary>{itemDescriptionTitle}</summary>
+                <Markdown>{description}</Markdown>
+              </details>
+            </FormGroup>
+          )
+        }
       )}
       <ButtonToolbar className="cookies-form-actions">
         <Button color="primary">{submitCaption}</Button>
