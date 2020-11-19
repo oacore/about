@@ -3,6 +3,9 @@ const path = require('path')
 const withImages = require('next-images')
 
 const nextConfig = {
+  env: {
+    GA_CODE: process.env.GA_CODE,
+  },
   webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
