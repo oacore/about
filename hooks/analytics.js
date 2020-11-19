@@ -25,6 +25,9 @@ export const useAnalytics = () => {
       window.ga = null
     }
 
+    // Reporting first page view manually because the event doesn't fire
+    reportPageview(router.asPath)
+
     // This clean-up is quite tricky
     return () => {
       window.ga = null
@@ -34,8 +37,6 @@ export const useAnalytics = () => {
   useEffect(() => {
     if (!analyticsAllowed) return () => {}
 
-    // Reporting first page view manually because the event doesn't fire
-    reportPageview(router.asPath)
     router.events.on('routeChangeComplete', reportPageview)
 
     return () => {
