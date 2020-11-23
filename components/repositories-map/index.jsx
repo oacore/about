@@ -3,6 +3,9 @@ import { Spinner } from 'reactstrap'
 import { bind } from 'decko'
 
 import markerUrl from './marker.svg'
+import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 import styles from './repositories-map.module.scss'
 
 const normalize = (string) =>
