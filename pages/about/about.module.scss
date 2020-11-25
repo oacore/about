@@ -1,34 +1,11 @@
 @import '~components/bootstrap/core';
 
-$skew-section-bg: $gray-100;
-$skew-section-icon-size: 4rem;
-
-.about-services-section {
-  @include section-skew-left($skew-section-bg);
-
-  > p:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.about-endorsements-section {
-  @include section-skew-left($skew-section-bg);
+.related {
+  @include section-skew-left($gray-100);
   text-align: center;
 
-  &::before {
-    $icon-size: $skew-section-icon-size;
-
-    content: '';
-    position: relative;
-    top: -1 * $spacer;
-    display: block;
-    grid-column: 2;
-    width: 2 * $icon-size + $spacer;
-    height: $icon-size;
-    margin: 0 auto;
-    background: url('/images/icons/university.svg') no-repeat 0 50%,
-      url('/images/icons/factory.svg') no-repeat 100% 50%;
-    background-size: auto 100%;
+  > h2 {
+    font-style: italic;
   }
 
   > p:last-child {
@@ -36,30 +13,9 @@ $skew-section-icon-size: 4rem;
   }
 }
 
-.about-endorsements-section-title {
-  font-style: italic;
-}
-
-.about-ambassadors-section {
-  @include section-skew-left($skew-section-bg);
-  text-align: center;
-
-  &::before {
-    $icon-size: $skew-section-icon-size;
-
-    content: '';
-    position: relative;
-    top: -1 * $spacer;
-    grid-column: 2;
-    display: block;
-    width: $icon-size;
-    height: $icon-size;
-    margin: 0 auto;
-    /* Icon made by Freepik (https://www.flaticon.com/authors/freepik) */
-    background: url('/public/images/icons/group.svg') no-repeat center / contain;
-  }
-
-  > p:last-child {
-    margin-bottom: 0;
-  }
+.related-icon {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  margin: -2.5rem auto 0.5rem;
 }

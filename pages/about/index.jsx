@@ -1,5 +1,6 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './about.module.scss'
 
@@ -27,6 +28,29 @@ import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
 
 const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
+
+const RelatedContentSection = ({ children, data, className, ...passProps }) => (
+  <Section
+    className={classNames.use(styles.related).join(className)}
+    tag="aside"
+    {...passProps}
+  >
+    {data.picture && (
+      <img
+        className={styles['related-icon']}
+        src={`/images/icons/${data.picture}`}
+        alt=""
+      />
+    )}
+    <h2>{data.title}</h2>
+    {children || <Markdown>{data.body}</Markdown>}
+    <p>
+      <Button color="primary" outline href={data.action.href}>
+        {data.action.label}
+      </Button>
+    </p>
+  </Section>
+)
 
 const AboutPage = () => (
   <Page
@@ -73,17 +97,16 @@ const AboutPage = () => (
       </Row>
     </Section>
 
-    <Section className={styles['about-endorsements-section']} id="endorsements">
-      <h2 className={styles['about-endorsements-section-title']}>
-        {aboutData.endorsements.title}
-      </h2>
-      <Markdown>{aboutData.endorsements.content}</Markdown>
-      <p>
-        <Button color="primary" outline href="~about/endorsements">
-          {aboutData.endorsements.action}
-        </Button>
-      </p>
-    </Section>
+    <RelatedContentSection
+      id="endorsements"
+      data={{
+        ...aboutData.endorsements,
+        action: {
+          label: aboutData.endorsements.action,
+          href: '~about/endorsements',
+        },
+      }}
+    />
 
     <Section id="how-it-works" caption="How it works">
       <h2>{aboutData.howItWorks.title}</h2>
@@ -116,20 +139,18 @@ const AboutPage = () => (
       </Section>
     </Section>
 
-    <Section
-      className={`${styles['about-services-section']} text-center`}
+    <RelatedContentSection
       id="services"
+      data={{
+        ...aboutData.howItWorks.services,
+        action: {
+          label: aboutData.howItWorks.services.action,
+          href: '~services',
+        },
+      }}
     >
-      <h2>{aboutData.howItWorks.services.title}</h2>
-
-      <ServiceGroups items={servicesData.sections} className="text-left" />
-
-      <p>
-        <Button color="primary" outline href="~services">
-          {aboutData.howItWorks.services.actions.secondary}
-        </Button>
-      </p>
-    </Section>
+      <ServiceGroups className="text-left" items={servicesData.sections} />
+    </RelatedContentSection>
 
     <Section id="team" caption={teamData.shortTitle}>
       <h2>{teamData.title}</h2>
@@ -164,19 +185,16 @@ const AboutPage = () => (
       </Content>
     </Section>
 
-    <Section
-      id="ambassadors"
-      className={styles['about-ambassadors-section']}
-      caption={aboutData.ambassadors.shortTitle}
-    >
-      <h2>{aboutData.ambassadors.title}</h2>
-      <Markdown>{aboutData.ambassadors.body}</Markdown>
-      <p>
-        <Button color="primary" outline href="~about/ambassadors">
-          {aboutData.ambassadors.action}
-        </Button>
-      </p>
-    </Section>
+    <RelatedContentSection
+      id="research-outputs"
+      data={{
+        ...aboutData.research,
+        action: {
+          label: aboutData.research.action,
+          href: '~research-outputs',
+        },
+      }}
+    />
 
     <Section id="resources" caption={aboutData.resources.shortTitle}>
       <h2>{aboutData.resources.title}</h2>
@@ -205,6 +223,18 @@ const AboutPage = () => (
       </Row>
       <Markdown>{aboutData.resources.content}</Markdown>
     </Section>
+
+    <RelatedContentSection
+      id="ambassadors"
+      caption={aboutData.ambassadors.shortTitle}
+      data={{
+        ...aboutData.ambassadors,
+        action: {
+          label: aboutData.ambassadors.action,
+          href: '~about/ambassadors',
+        },
+      }}
+    />
 
     <Section id="contact" caption={contactData.title}>
       <h2>{contactData.shortTitle}</h2>
