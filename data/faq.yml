@@ -591,11 +591,11 @@ sections:
           How can I see the deposit date from my repository's REF-able outputs
           in CORE?
         answer: |
-          The [CORE Repositories
-          Dashboard](~services/repository-dashboard) does not currently provide information
-          about the deposit date. While we would like to expose this information
-          to HEIs, this is currently being discussed with RE and it is subject to
-          resources being made available for development.
+          Deposit dates are available via the
+          [CORE Repositorу Edition](~services/repository-edition). Repository
+          managers can access the percentage of papers that are non-compliant,
+          e.g. outputs that were deposited 90 days or more after publication,
+          according to the REF 2021 Open Access Policy.
       - slug: can-I-have-my-repository-deposit-dates
         question: |
           Can I have my repository's deposit dates from CORE in a CSV file?
