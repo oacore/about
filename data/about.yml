@@ -59,8 +59,9 @@ blog:
 endorsements:
   title: Who is using CORE?
   short-title: Endorsements
-  content: Our data and tools power innovation **around the world**
+  body: Our data and tools power innovation **around the world**
   action: Find out more
+  picture: university.svg
 
 how-it-works:
   title: How it works
@@ -86,9 +87,7 @@ how-it-works:
   services:
     title: The services we offer
     short-title: Services
-    actions:
-      primary: Join CORE today for free
-      secondary: Explore our services
+    action: Explore our services
 
 contacts:
   title: Contacts
@@ -104,12 +103,19 @@ ambassadors:
   title: Our ambassadors
   short-title: Ambassadors
   body: |
-    We are supported by our global network of ambassadors
+    We are supported by a global network of ambassadors
   action: Find out more
+  picture: community.svg
 
 resources:
   title: Resources and promotional materials
   short-title: Resources
-  content: |
-    You can find more resources at the
-    [ambassadors page](~about/ambassadors#resources).
+
+research:
+  title: Our research outputs
+  short-title: Research outputs
+  body: |
+    Does your project produce any research papers mentioning CORE?
+    Cite our most suitable paper
+  action: Browse research outputs
+  picture: research.svg
