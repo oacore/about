@@ -103,7 +103,7 @@ ambassadors:
   title: Our ambassadors
   short-title: Ambassadors
   body: |
-    We are supported by our global network of ambassadors
+    We are supported by a global network of ambassadors
   action: Find out more
   picture: community.svg
 
@@ -115,6 +115,7 @@ research:
   title: Our research outputs
   short-title: Research outputs
   body: |
-    Writing about CORE? Cite research outputs of our team
+    Does your project produce any research papers mentioning CORE?
+    Cite our most suitable paper
   action: Browse research outputs
   picture: research.svg
