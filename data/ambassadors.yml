@@ -652,8 +652,24 @@ ambassadors:
         longitude: 	54.366669
       country: United Arab Emirates
       picture: mahammad-gulam-ghouse-pasha.png
+    -
+      id: john-paull
+      name: John Paull
+      role: Doctor
+      organization: University of Tasmania
+      location:
+        latitude: -41.401522
+        longitude: 	147.123975
+      country: Australia
+      picture: john-paull.jpeg
 
 regions:
+-
+    id: au
+    name: Australia
+    location:
+      latitude: 25.0000
+      longitude: 135.0000
   -
     id: eu
     name: Europe
