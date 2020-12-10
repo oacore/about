@@ -226,16 +226,17 @@ sections:
             the content. The easiest way to get your content integrated with CORE
             is the [OAI-PMH protocol](https://www.openarchives.org/pmh/).
             If you wish to join CORE get in [touch](~contact).
-        - slug: what-is-my-journal-oai-base-url
+        - slug: what-is-oai-base-url
           question: |
-            What is my journal's oai base url?
+            WWhat is my journal’s/repository’s OAI base URL?
           answer: |
-            A journal's oai base url looks similar to this http://journaldomain.com/cgi/oai2
-            or http://journaldomain.com/oai/request. A journal's webpage looks similar
-            to this http://journaldomain.com and CORE
-            cannot harvest the journal's content via its webpage url. If you
-            are not sure whether your journal has an oai base url do contact
-            the team that provides technical support to your journal.
+            OAI base URL looks similar to `http://journaldomain.com/cgi/oai2` or
+            `http://journaldomain.com/oai/request` when homepage URL is
+            `http://journaldomain.com`. CORE cannot harvest the
+            journal’s/repository’s content via its webpage URL.
+            If you are not sure whether your journal/repository has an OAI base
+            URL, [contact our team](~contact) and we will provide
+            technical support to you.
         - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
           question: |
             How difficult is it to satisfy the CORE harvesting recommendations?
