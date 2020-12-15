@@ -228,7 +228,7 @@ sections:
             If you wish to join CORE get in [touch](~contact).
         - slug: what-is-oai-base-url
           question: |
-            WWhat is my journal’s/repository’s OAI base URL?
+            What is my journal’s/repository’s OAI base URL?
           answer: |
             OAI base URL looks similar to `http://journaldomain.com/cgi/oai2` or
             `http://journaldomain.com/oai/request` when homepage URL is
@@ -474,6 +474,13 @@ sections:
           - the use of the CORE&nbsp;service will not enable, contribute to
             or support the use of any paid-for service of the organisation
             or of another third party organisation linked to this organisation.
+      - slug: does-CORE-provide-a-list-of-PDFs-in-a-specific-language
+        question: Does CORE provide a list of PDFs in a specific language?
+        answer: |
+          Unfortunately CORE does not provide any language specific datasets
+          at the moment. Users can use the CORE API to download individual
+          PDFs.
+
   - id: about
     title: General information about CORE
     caption: General information
@@ -578,15 +585,13 @@ sections:
           see a date. Is this date the deposit date that CORE has for the
           output?
         answer: |
-          CORE captures data as explained in the [CORE
-          recommendations](/ref-audit). By following our recommendations CORE
-          should have the same deposit date as the repository. The date that you
-          see in the in the [CORE Repositories
-          Dashboard](~services/repository-dashboard) is the date the document
-          was last seen in your repository and imported into CORE. We are
-          currently considering the development of a further technical support
-          to allow institutions to see the deposit dates CORE holds for their
-          outputs.
+          CORE captures data as explained in the CORE recommendations. By
+          following our recommendations CORE should have the same deposit date
+          as the repository. The date you see in the CORE API is the date the
+          document was last seen in your repository and imported to CORE. The
+          date exposed in the CORE Repositories Dashboard uses instead a new
+          harvesting system that reads the “deposited date” exposed by your
+          own repository system.
       - slug: how-can-I-see-the-deposit-date-from-my-repository
         question: |
           How can I see the deposit date from my repository's REF-able outputs
@@ -601,9 +606,10 @@ sections:
         question: |
           Can I have my repository's deposit dates from CORE in a CSV file?
         answer: |
-          We are currently discussing the level of support that CORE will be
-          able to provide to repositories with Research England. We will provide
-          more details about it as soon as we can.
+          This is possible via a subscription to the CORE Repository Edition.
+          Repository managers can access the percentage of papers that are
+          non-compliant, e.g. outputs that were deposited 90 days or more
+          after publication, according to the REF 2021 Open Access Policy.
       - slug: date-that-a-metadata-record-was-created-may-not-be-the-same
         question: |
           The date that a metadata record was created may not be the same with
