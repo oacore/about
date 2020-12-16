@@ -37,7 +37,7 @@ const Main = ({ children }) => {
       },
       initQuery: '',
       searchBarProps: {
-        label: 'Search',
+        label: searchConfig.placeholder,
         placeholder: searchConfig.placeholder,
         prependIcon: '#magnify',
         changeOnBlur: false,
