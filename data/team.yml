@@ -34,13 +34,6 @@ members:
     all CORE services. Has been developing for CORE for several years and Continuous Integration secret lover.
     Once he was a Super Mario plumber.
 -
-  name: Jozef Harag
-  role: Full Stack Developer
-  picture: jozef-harag.jpg
-  description: |
-    A lover of new technologies. He enjoys writing clean and reusable code in both Javascript & Python.
-    At CORE he mostly works on the Reader and the Analytics Dashboard.
--
   name: Drahomira Herrmannova
   role: Data Analyst & Researcher
   picture: drahomira-herrmannova.jpg
@@ -132,6 +125,7 @@ past-members:
 - Giorgio Basile
 - Bikash Gyawali
 - Aristotelis Charalampous
+- Jozef Harag
 - Tomas Korec
 - Dominika Koroncziova
 - Magdalena Krygielova
