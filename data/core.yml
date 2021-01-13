@@ -6,8 +6,6 @@ footer:
   useful-links:
     - title: Blog
       path: ~blog
-    - title: Browse
-      path: ~browse
     - title: About CORE
       path: ~about
     - title: Contacts
