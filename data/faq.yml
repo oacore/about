@@ -348,8 +348,8 @@ sections:
             If full text content appears in CORE but not in the
             hosting service your repository manager can take it down via the
             [CORE Repository Dashboard](~services/repository-dashboard)
-            anytime without notifying us. If the hosting service does not have
-            access to the Dashboard visit [this page](~services/repository-dashboard).
+            anytime without notifying us. Alternatively, you can use the
+            [update or remove article form](/article-update).
         - slug: full-text-has-been-removed-but-metadata-still-visible
           question: |
             The full text has been removed, but the metadata is still visible
