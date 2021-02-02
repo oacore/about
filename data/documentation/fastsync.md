@@ -7,7 +7,7 @@ Resource Dump standard](http://www.openarchives.org/rs/1.1/resourcesync#Resource
 The FastSync dump can be downloaded at the following url:
 [`https://core.ac.uk/dumps/resync_dump.tar.xz`](https://core.ac.uk/dumps/resync_dump.tar.xz)
 
-Note that this is an extremely large file (&Tilde;322GB) and appropriate tools are necessary for downloading it.
+Note that this is an extremely large file (&Tilde;395GB) and appropriate tools are necessary for downloading it. Once extracted it will use about 2.1TB of filesystem.
 
 1.  To validate a  download compare it with the MD5 Checksum by running:
 
@@ -18,7 +18,7 @@ Note that this is an extremely large file (&Tilde;322GB) and appropriate tools a
 2.  Test  that the output hash is the same as the following:
 
     ```txt
-    7b69993c2f4e0afa9ef49ef4ef4a5a9a
+    73efe0336a6e730bae7a34b2c5e21309
     ```
 
 3.  Perform the extraction by running:
