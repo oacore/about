@@ -592,6 +592,11 @@ sections:
                  url = {http://oro.open.ac.uk/41678/},
             abstract = {Usage statistics are frequently used by repositories to justify their value to the management who decide about the funding to support the repository infrastructure. Another reason for collecting usage statistics at repositories is the increased use of webometrics in the process of assessing the impact of publications and researchers. Consequently, one of the worries repositories sometimes have about their content being aggregated is that they feel aggregations have a detrimental effect on the accuracy of statistics they collect. They believe that this potential decrease in reported usage can negatively influence the funding provided by their own institutions. This raises the fundamental question of whether repositories should allow aggregators to harvest their metadata and content. In this paper, we discuss the benefits of allowing content aggregations harvest repository content and investigate how to overcome the drawbacks.}
         }
+-
+  id: citation-contest
+  title: Citation contest
+  caption: Citation contest
+  papers: []
 
 footer: |
   Find more our research outputs at [Big Scientific Data and Text Analytics
