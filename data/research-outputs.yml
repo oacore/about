@@ -603,7 +603,7 @@ sections:
     booktitle: >
       Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020
     title: |
-      ACT: An Annotation Platform for Citation Typing at Scale
+      An Authoritative Approach to Citation Classification
     author:
       - David Pride
       - Petr Knoth
@@ -630,6 +630,9 @@ sections:
       by authors. We also demonstrate the scalability of our data collection
       approach and perform a compari- son between this new dataset and those
       gathered by two previous studies.
+    description: |
+      The paper introduces the new multi-disciplinary ACT dataset, which is
+      currently the largest of it kind, annotated by the authors themselves.
     citations:
       text: >
         Pride, D., & Knoth, P. (2020). An Authoritative Approach to Citation Classification. Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020. doi:10.1145/3383583.3398617
@@ -671,6 +674,10 @@ sections:
       of citations annotated according to their purposes and influence on the
       citing paper. Furthermore, this process is ongoing and the dataset will
       continue to expand following this initial phase.
+    description: |
+      This paper describes the online tool for annotating citations in
+      a research paper based on their purpose. Citations are also annotated
+      based on how influential it is for research assessment.
     citations:
       text: >
         Pride, D., Knoth, P., & Harag, J. (2019). ACT: An Annotation Platform for Citation Typing at Scale. 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL). doi:10.1109/jcdl.2019.00055
@@ -720,6 +727,10 @@ sections:
       by the teams based on the evaluation criteria. The shared task
       has been organised as part of the 8th International Workshop
       on Mining Scientific Publications (WOSP 2020) workshop.
+    description: |
+      The overview paper highlights findings from the first edition of the
+      3C Citation Context Classification task, organised as part of
+      the workshop, WOSP 2020.
     citations:
       text: >
         Kunnath, Suchetha N.; Pride, David; Gyawali, Bikash and Knoth, Petr (2020). Overview of the 2020 WOSP 3C Citation Context Classification Task. In: Proceedings of the 8th International Workshop on Mining Scientific Publications, Association for Computational Linguistics pp. 75–83.
