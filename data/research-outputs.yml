@@ -632,7 +632,7 @@ sections:
       gathered by two previous studies.
     description: |
       The paper introduces the new multi-disciplinary ACT dataset, which is
-      currently the largest of it kind, annotated by the authors themselves.
+      currently the largest of its kind, annotated by the authors themselves.
     citations:
       text: >
         Pride, D., & Knoth, P. (2020). An Authoritative Approach to Citation Classification. Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020. doi:10.1145/3383583.3398617
