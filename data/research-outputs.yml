@@ -593,10 +593,150 @@ sections:
             abstract = {Usage statistics are frequently used by repositories to justify their value to the management who decide about the funding to support the repository infrastructure. Another reason for collecting usage statistics at repositories is the increased use of webometrics in the process of assessing the impact of publications and researchers. Consequently, one of the worries repositories sometimes have about their content being aggregated is that they feel aggregations have a detrimental effect on the accuracy of statistics they collect. They believe that this potential decrease in reported usage can negatively influence the funding provided by their own institutions. This raises the fundamental question of whether repositories should allow aggregators to harvest their metadata and content. In this paper, we discuss the benefits of allowing content aggregations harvest repository content and investigate how to overcome the drawbacks.}
         }
 -
-  id: citation-contest
-  title: Citation contest
-  caption: Citation contest
-  papers: []
+  id: related-research
+  title: Supporting research assessment and evaluation
+  papers:
+  -
+    type: inproceedings
+    id: oro70520
+    booktitle: >
+      Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020
+    title: |
+      ACT: An Annotation Platform for Citation Typing at Scale
+    author:
+      - David Pride
+      - Petr Knoth
+    year: 2020
+    keywords:
+      - usage statistics
+    url: http://oro.open.ac.uk/70520/
+    abstract: |
+      The ability to understand not only that a piece of research has been
+      cited, but why it has been cited has wide-ranging applications
+      in the areas of research evaluation, in tracking the dissemination
+      of new ideas and in better understanding research impact.
+      There have been several studies that have collated datasets of citations
+      annotated according to type using a class schema. These have favoured
+      annotation by independent annotators and the datasets produced have been
+      fairly small. We argue that authors themselves are in a primary position
+      to answer the question of why something was cited. No previous study has,
+      to our knowledge, undertaken such a large-scale survey of authors
+      to ascertain their own personal rea- sons for citation. In this work,
+      we introduce a new methodology for annotating citations and a significant
+      new dataset of 11,233 citations annotated by 883 authors.
+      This is the largest dataset of its type compiled to date, the first
+      truly multi-disciplinary dataset and the only dataset annotated
+      by authors. We also demonstrate the scalability of our data collection
+      approach and perform a compari- son between this new dataset and those
+      gathered by two previous studies.
+    citations:
+      text: >
+        Pride, D., & Knoth, P. (2020). An Authoritative Approach to Citation Classification. Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020. doi:10.1145/3383583.3398617
+      bibtex: |
+        @inproceedings{oro70520,
+          doi = {10.1145/3383583.3398617},
+          url = {http://oro.open.ac.uk/70520/},
+          year = 2020,
+          month = {aug},
+          publisher = {{ACM}},
+          author = {David Pride and Petr Knoth},
+          title = {An Authoritative Approach to Citation Classification},
+          booktitle = {Proceedings of the {ACM}/{IEEE} Joint Conference on Digital Libraries in 2020}
+        }
+  -
+    type: inproceedings
+    id: oro60670
+    booktitle: 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL)
+    title: |
+      ACT: An Annotation Platform for Citation Typing at Scale
+    author:
+      - David Pride
+      - Petr Knoth
+      - Jozef Harag
+    year: 2019
+    keywords:
+      - usage statistics
+    url: http://oro.open.ac.uk/60670/
+    abstract: |
+      In this paper we introduce the Academic Citation Typing (ACT) Platform,
+      a highly scalable online tool that takes as its input any full text
+      research paper and which then enables rapid annotation and classification
+      of in-text citations according to purpose and in uence.
+      In contrast to previous work, we employ first authors as annotators.
+      Our evaluation shows that these authors are able to quickly classify
+      the citations within their own papers. Over 200 authors have thus
+      far annotated their papers using the ACT platform.
+      This approach has already enabled the collection of the largest dataset
+      of citations annotated according to their purposes and influence on the
+      citing paper. Furthermore, this process is ongoing and the dataset will
+      continue to expand following this initial phase.
+    citations:
+      text: >
+        Pride, D., Knoth, P., & Harag, J. (2019). ACT: An Annotation Platform for Citation Typing at Scale. 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL). doi:10.1109/jcdl.2019.00055
+      bibtex: |
+        @inproceedings{oro60670,
+          doi = {10.1109/jcdl.2019.00055},
+          url = {http://oro.open.ac.uk/60670/},
+          year = 2019,
+          month = {jun},
+          publisher = {{IEEE}},
+          author = {David Pride and Petr Knoth and Jozef Harag},
+          title = {{ACT}: An Annotation Platform for Citation Typing at Scale},
+          booktitle = {2019 {ACM}/{IEEE} Joint Conference on Digital Libraries ({JCDL})}
+        }
+  -
+    type: inproceedings
+    id: oro73290
+    booktitle: >
+      Proceedings of the 8th International Workshop on Mining Scientific
+      Publications
+    title: |
+      Overview of the 2020 WOSP 3C Citation Context Classification Task
+    author:
+      - Suchetha N. Kunnath
+      - David Pride
+      - Bikash Gyawali
+      - Petr Knoth
+    year: 2019
+    keywords:
+      - usage statistics
+    url: http://oro.open.ac.uk/73290/
+    abstract: |
+      The 3C Citation Context Classification task is the first shared task
+      addressing citation context classification. The two subtasks, A and B,
+      associated with this shared task, involves the classification of citations
+      based on their purpose and influence, respectively. Both tasks use
+      a portion of the new ACT dataset, developed by the researchers
+      at The Open University, UK. The tasks were hosted on Kaggle,
+      and the participated systems were evaluated using the macro f-score.
+      Three teams participated in subtask A and four teams participated
+      in subtask B. The best performing systems obtained an overall score
+      of 0.2056 for subtask A and 0.5556 for subtask B, outperforming the
+      simple majority class baseline models, which scored 0.11489 and 0.32249,
+      respectively. In this paper we provide a report specifying
+      the shared task, the dataset used, a short description
+      of the participating systems and the final results obtained
+      by the teams based on the evaluation criteria. The shared task
+      has been organised as part of the 8th International Workshop
+      on Mining Scientific Publications (WOSP 2020) workshop.
+    citations:
+      text: >
+        Kunnath, Suchetha N.; Pride, David; Gyawali, Bikash and Knoth, Petr (2020). Overview of the 2020 WOSP 3C Citation Context Classification Task. In: Proceedings of the 8th International Workshop on Mining Scientific Publications, Association for Computational Linguistics pp. 75–83.
+      bibtex: |
+        @inproceedings{oro73290,
+          title = "Overview of the 2020 {WOSP} 3{C} Citation Context Classification Task",
+          author = "Kunnath, Suchetha Nambanoor  and
+            Pride, David  and
+            Gyawali, Bikash  and
+            Knoth, Petr",
+          booktitle = "Proceedings of the 8th International Workshop on Mining Scientific Publications",
+          month = "05 " # aug,
+          year = "2020",
+          address = "Wuhan, China",
+          publisher = "Association for Computational Linguistics",
+          url = "https://www.aclweb.org/anthology/2020.wosp-1.12",
+          pages = "75--83",
+        }
 
 footer: |
   Find more our research outputs at [Big Scientific Data and Text Analytics
