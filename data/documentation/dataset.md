@@ -6,17 +6,17 @@ title: CORE Dataset
 
 ### 2018 onwards
 
-**Deduplication Dataset 2020**
+**Dataset 2020-03-18**
 
 [Register for Access](/dataset/getdatadump)
+   
+Full dataset (~400GB, 2.1TB Extracted)
 
-Dataset created for Deduplication of Scholarly Documents using Locality Sensitive Hashing and Word Embeddings (LREC 2020) (62 MB compressed, 204 MB in total)
+**License:**
+For research use only. [Contact us](~about/#contact) for details.
 
-**CORE-MAG Mapping 2019-04-01**
-
-[Register for Access](/dataset/getdatadump)
-
-CORE Dataset to Microsoft Academic Graph (MAG) mapping (80MB compressed, 173 MB in total) - 8.9M items
+**Note:**  
+Please read the section "Structure of datasets" below for more information.
 
 **Dataset 2018-03-01**
 
@@ -26,8 +26,31 @@ Metadata only dataset (beta) (127 GB) - 123M metadata items, 85.6M items with ab
 
 With full text dataset (beta) (330 GB) - 123M metadata items, 85.6M items with abstract, 9.8M items with fulltext
 
+**License:**
+[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+
 **Note:**  
 For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB (full text) of free space on disk. It is possible to extract each repository individually. Please read the section "Structure of datasets" below for more information.
+
+**Deduplication Dataset 2020**
+
+[Register for Access](/dataset/getdatadump)
+
+Dataset created for Deduplication of Scholarly Documents using Locality Sensitive Hashing and Word Embeddings (LREC 2020) (62 MB compressed, 204 MB in total)
+
+**License:**
+[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+
+
+**CORE-MAG Mapping 2019-04-01**
+
+[Register for Access](/dataset/getdatadump)
+
+CORE Dataset to Microsoft Academic Graph (MAG) mapping (80MB compressed, 173 MB in total) - 8.9M items
+
+**License:**
+[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+
 
 ### 2017
 
@@ -38,6 +61,9 @@ For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB
 Metadata only dataset (beta) (22.65 GB) - 64 million items
 
 With full text dataset (beta) (157.38 GB) - 8 million items  
+
+**License:**
+[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
 
 Beta notice: while in beta, we cannot guarantee completeness or integrity of the dataset and we appreciate any feedback on the format or data of the dataset. We are aware of an issue where the statistics in the repository object are incorrect or incomplete. We do not use these fields internally and plan on removing them in future releases.  
 
@@ -70,6 +96,138 @@ These datasets conform to the dataset structure described below as 'Pre-2017'
     Metadata dataset as RDF (835 MB)  
 
 ## Structure of datasets
+
+### 2020
+The CORE dump implements the approach of the [ResourceSync Framework
+Resource Dump standard](http://www.openarchives.org/rs/1.1/resourcesync#ResourceDump).
+
+Note that this is an extremely large file (&Tilde;395GB) and appropriate tools are necessary for downloading it. Once extracted it will use about 2.1TB of filesystem.
+
+1.  Perform the extraction by running:
+
+    ```sh
+    tar -xf resync_dump.tar.xz -C /target/directory
+    ```
+
+2.  The previous steps will extract the big archive in multiple smaller files.
+    Each archive contains all the resources for a specific CORE data provider
+    the full list which you can find at our [data providers](/data-providers)
+    page.
+
+    The following command extracts every single archive in the
+    appropriate folder.
+
+    ```sh
+    #!/bin/bash
+
+    for FILE in `ls -1 tmp/*.tar.xz`;
+    do
+            PROVIDER="${FILE%.*.*}"
+            echo $PROVIDER
+            echo $FILE
+            mkdir -p output/$PROVIDER
+    	tar xf $FILE -C output/$PROVIDER/
+    done
+    ```
+
+    Replace _PROVIDER_ with the ID of every single archive.
+
+
+
+The extracted folder generated in step 4, is a two-level deep
+file structure and includes a Manifest named manifest.xml file
+in the root, which lists the resources. Below is the format of
+a single entry in the manifest which lists the available resources:
+
+```xml
+<url>
+  <loc>https://core.ac.uk/api-v2/articles/get/132196135</loc>
+  <rs:md
+    hash="md5:39127e4b3b76fc5a66f3eabee28ab71f"
+    length="3759"
+    type="application/json"
+    path="/182/a2/132196135.json"
+  />
+</url>
+```
+
+The url inside the `<loc></loc>` tags is the ID of the file that can be used
+for tracking future updates on the resource. The path attribute is where the
+file can be found in the folder structure, and in order to validate the file,
+a md5 checksum and the file size are also provided.
+
+#### Data structure
+
+This is a sample data structure from the Dataset
+
+```json
+{
+  "doi": DOI,
+  "coreId": "228783",
+  "oai": OAI_IDENTIFIER,
+  "identifiers": [ADDITIONAL IDENTIFIERS],
+  "title": "TITLE",
+  "authors": ["AUTHOR1", "AUTHOR2"],
+  "enrichments": {
+    "references": [REFERENCES],
+    "documentType": {
+      "type": "RESEARCH|THESIS|PRESENTATION",
+      "confidence": CONFIDENCE
+    },
+    "citationCount": COUNT
+  },
+  "contributors": [CONTRIBUTORS],
+  "datePublished": "DATE OR YEAR",
+  "abstract": "ABSTRACT",
+  "downloadUrl": DOWNLOAD URL IF AVAILABLE,
+  "fullTextIdentifier": FULL TEXT ID IF AVAILABLE,
+  "pdfHashValue": HASH OF THE PDF IF AVAILABLE,
+  "publisher": PUBLISHER,
+  "rawRecordXml": "XML RECORD",
+  "journals": [JOURNALS],
+  "language": {
+    "code": "COUNTRY CODE",
+    "name": "LANGUAGE NAME",
+    "id": ID
+  },
+  "relations": ["URLs WITH RELATIONS"],
+  "year": PUBLICATION YEAR,
+  "topics": ["TOPIC1","TOPIC2" ],
+  "subjects": ["SUBJECT1", "SUBJECT2"],
+  "issn": "ISSN-IDENTIFIER",
+  "fullText": "FULL TEXT"
+}
+```
+##### Fields description
+| Field name   |      Description      |
+|----------|:-------------|
+| doi |  [Digital Object Identifier](https://www.doi.org). A persistent and unique identifier for the document. This data is collected from the data provider or discovered by enrichment processes by CORE using [Crossref](https://crossref.org) and other DOIs collections.  |
+| coreId |  The persistent identifier of a document in the CORE infrastructure. |
+| oai |  The identifier of a resource harvested from a repository. It usually contains a static part identifying the data provider and a variable part identifying the single record. It is originated by data provider using the OAI-PMH protocol but if the data provider is not using it, CORE will generate one for the record. |
+| identifiers |  A list of identifiers for the document, it might contains urls, PMC IDs, DOI etc. This information is collected from the data provider (`dc.identifier` tag) and enriched by CORE. |
+| title |  The title of the document|
+| authors |  An array containing the list of authors. |
+| enrichments |  This sub-object contains enrichments to the data harvested from the data provider. |
+| enrichments.references |  A list of references (other documents) discovered by CORE. |
+| enrichments.documentType |  The type of the document. We use a machine learning algorithm to discover the document type, the type has also a confidence associated.  |
+| enrichments.citationCount |  The count of papers citing the paper. This information is extracted via [Microsoft Academic Graph](https://www.microsoft.com/en-us/research/project/microsoft-academic-graph/). |
+| contributors |  Matches the `dc.contributors` tag in the Dublin Core metadata format. |
+| datePublished |  Date of when the document has been published. If the data is not available from the original data provider, CORE will try to discover this using other data sources. |
+| abstract |  The abstract of the document |
+| downloadUrl |  The url where the full text is available. If the full text is hosted in CORE this will be a CORE url, otherwise it will be a url to a different data source.|
+| fullTextIdentifier |  This url is the location where CORE managed to find the hosted full text. |
+| pdfHashValue |  An hash value of the pdf, to validate the integrity of a document and test for duplicates and changes.|
+| publisher |  Coming from `dc.publisher` |
+| rawRecordXml |  left-aligned |
+| journals |  Sub object containing metadata about the journal where the record has been publish. |
+| language |  Language of the record discovered by CORE. |
+| relations |  Coming from `dc.relations` |
+| year |  Based on the different dates available for the record, this field contains the year on which this document has been published. It uses only year because data quality is variable and many document don't have detailed informations. |
+| topics |  Coming from `dc.topic`.|
+| subjects |  Coming from `dc.subject` |
+| issn |  The issn of the journal where the article was published on. This information is extracted from the [Crossref](https://crossref.org) data. |
+| fullText |  The text extracted from the hosted full text. |
+
 
 ### 2018 onwards
 
