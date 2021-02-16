@@ -14,7 +14,6 @@ import {
   Markdown,
   Section,
   TeamMember,
-  Collapsed,
   OutreachMaterials,
   RepositoriesMap,
   ServiceGroups,
@@ -72,11 +71,7 @@ const AboutPage = () => (
             tag="p"
           />
 
-          <Markdown>{aboutData.mission.short}</Markdown>
-
-          <Collapsed id="full-mission" title={aboutData.mission.full.caption}>
-            <Markdown>{aboutData.mission.full.content}</Markdown>
-          </Collapsed>
+          <Markdown>{aboutData.mission.content}</Markdown>
         </Col>
 
         <Col
