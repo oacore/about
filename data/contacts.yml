@@ -31,12 +31,20 @@ cases:
         petr (dot) knoth (at) open (dot) ac (dot) uk
       </a>
     </address>
+- slug: other
+  purpose: Other requests
+  description: |
+    For any other question or enquiry about CORE you will probably find an
+    answer in our [FAQs](~faq).
 
-outro: |
-  For any other question or enquiry about CORE you will probably
-  find an answer in our [FAQs](~faq).
+    For any questions that have not yet been answered in the [FAQs](~faq),
+    you can contact us by email. Please note that as we are receiving
+    very high volumes of requests, we are unable to answer questions
+    or deal with requests that fall into the above categories,
+    such as requests to [update or remove an article](/article-update).
+    Such requests will not be answered through this route.
+    However, if your request falls outside of the above categories, you can
+    [email us](mailto:thet&#101;&#97;m&#64;c&#111;re&#46;&#97;c&#46;&#117;k)
+    and we will reply when we can.
 
-  However, if you did not, [email us](mailto:thet&#101;&#97;m&#64;c&#111;re&#46;&#97;c&#46;&#117;k).
-  A team member will reply as soon as possible – please note that
-  questions that fall into the above categories will not be answered
-  on this email.
+outro: null

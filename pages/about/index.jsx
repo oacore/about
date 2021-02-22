@@ -243,7 +243,7 @@ const AboutPage = () => (
           ))}
         </Accordion>
 
-        <Markdown>{contactData.outro}</Markdown>
+        {contactData.outro && <Markdown>{contactData.outro}</Markdown>}
       </Content>
     </Section>
   </Page>
