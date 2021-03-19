@@ -1,3 +1,4 @@
 [submodule "content"]
   path = content
   url = git@github.com:oacore/content.git
+	branch = master
