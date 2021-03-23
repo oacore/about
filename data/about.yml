@@ -34,7 +34,7 @@ blog:
 endorsements:
   title: Who is using CORE?
   short-title: Endorsements
-  body: Our data and tools power innovation **around the world**
+  body: Our data and tools power **global innovation**
   action: Find out more
   picture: university.svg
 
@@ -44,12 +44,9 @@ how-it-works:
   harvesting:
     title: Harvesting data
     content: |
-      CORE [harvests](~advantages-of-being-harvested) research papers from
-      data providers from all over the world including institutional and
-      subject repositories, open access and hybrid journal publishers.
+      CORE [harvests](~advantages-of-being-harvested) research papers from such as institutional and subject repositories, and open access and hybrid journals.
 
-      CORE currently contains {{totalArticlesCount}}&nbsp;open access articles,
-      from thousands and over tens of thousands of journals, collected from
+      CORE currently contains {{totalArticlesCount}}&nbsp;open access articles collected from
       {{repositoriesCount}}&nbsp; data providers around the world.
 
       CORE will supply data for the UK REF 2021 Open Access Policy Audit
@@ -90,7 +87,7 @@ research:
   title: Our research outputs
   short-title: Research outputs
   body: |
-    Does your project produce any research papers mentioning CORE?
-    Cite our most suitable paper
+    Does your project produce research articles mentioning CORE?
+    If so, please cite our work.
   action: Browse research outputs
   picture: research.svg
