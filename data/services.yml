@@ -94,7 +94,7 @@ sections:
   -
     id: repository-dashboard
     title: Repository Dashboard
-    short-description: Monitor & improve your repository output
+    short-description: Monitor and improve your repository output
     description: |
       The Repository Dashboard is a free service for our data providers. It
       provides an online interface offering valuable technical information and
