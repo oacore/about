@@ -48,14 +48,15 @@ additional:
 what-is-included:
   title:  What’s included
   content: |
-    The dataset is free to use for non-commercial purposes. If you want to use the dataset for
-    commercial purposes, including consultancies and commercial analysis, please [contact](~about/#contact) us.
     The dataset provides you with:
 
     * The entire CORE's corpus of both metadata and full texts in a machine processable format.
     * Mappings of the CORE articles to entities in the Microsoft Academic Graph (MAG), enabling to access
       CORE fulltexts and use additional entities from MAG where available.
     * Detailed [documentation](~documentation/dataset) on how to download the CORE dataset and how data is organised.
+
+    The terms of use for the dataset are available on our
+    [datasets download page](~documentation/dataset).
 
     ### Disclaimer
 
