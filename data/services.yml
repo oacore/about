@@ -46,7 +46,7 @@ sections:
   -
     id: fastsync
     title: FastSync
-    short-description: Update data fast
+    short-description: Stay in sync with CORE
     description: |
       Keep an always up to date copy of all CORE data in your infrastructure. FastSync is our premium service offering fast enterprise incremental access to CORE for both commercial and non-commercial purposes. Ideal for all types of businesses, from  start-ups to large enterprises.
     action:
@@ -68,7 +68,7 @@ sections:
   -
     id: recommender
     title: Recommender
-    short-description: Get related content from the whole CORE internet
+    short-description: Find related content in CORE 
     description: |
       The recommender is a plugin for repositories, journal systems and web interfaces to suggest similar articles. Its purpose is to support users in discovering articles of interest from across the network of open access repositories.
     action:
@@ -79,7 +79,7 @@ sections:
   -
     id: discovery
     title: Discovery
-    short-description: Drop the paywall of the open access papers
+    short-description: Locate open access versions of paywalled articles
     description: |
       CORE Discovery is our new service, available both as a browser extension and a repository plugin, that assists users in finding freely accessible copies of research papers that are often behind a paywall. It currently provides access to millions of full text open access papers from within CORE and other data providers.
     action:
@@ -94,7 +94,7 @@ sections:
   -
     id: repository-dashboard
     title: Repository Dashboard
-    short-description: Monitor the harvesting of your repository
+    short-description: Monitor and improve your repository output
     description: |
       The Repository Dashboard is a free service for our data providers. It
       provides an online interface offering valuable technical information and
@@ -109,7 +109,7 @@ sections:
   -
     id: repository-edition
     title: Repository Edition
-    short-description: Monitor the harvesting of your repository
+    short-description: Enhance your repository’s discoverability 
     description: |
       Subscription to CORE Repository Edition comes with guaranteed support
       levels to enable repositories to gain maximum exposure for their content
