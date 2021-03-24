@@ -33,6 +33,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "@oacore/content": "github:oacore/content",
     "@oacore/design": "^4.0.2",
     "bootstrap": "^4.5.3",
     "core-js": "^3.7.0",
