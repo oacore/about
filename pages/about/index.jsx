@@ -21,10 +21,10 @@ import {
 } from 'components'
 import { patchStats } from 'components/utils'
 import aboutData from 'data/about.yml'
-import teamData from 'data/team.yml'
 import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
+import retrieveContent from 'content'
 
 const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
 
@@ -51,7 +51,7 @@ const RelatedContentSection = ({ children, data, className, ...passProps }) => (
   </Section>
 )
 
-const AboutPage = () => (
+const AboutPage = ({ data }) => (
   <Page
     title={aboutData.title}
     description={aboutData.description}
@@ -147,10 +147,10 @@ const AboutPage = () => (
       <ServiceGroups className="text-left" items={servicesData.sections} />
     </RelatedContentSection>
 
-    <Section id="team" caption={teamData.shortTitle}>
-      <h2>{teamData.title}</h2>
+    <Section id="team" caption={aboutData.team.shortTitle}>
+      <h2>{aboutData.team.title}</h2>
       <Row className="list-unstyled" tag="ul">
-        {teamData.members.map((member) => (
+        {data.team.members.current.map((member) => (
           <Col
             className="d-flex flex-column"
             sm="6"
@@ -163,8 +163,8 @@ const AboutPage = () => (
               className="mb-3"
               name={member.name}
               role={member.role}
-              description={member.description}
-              picture={`/images/team/${member.picture}`}
+              description={member.body}
+              picture={member.photoUrl}
             />
           </Col>
         ))}
@@ -173,8 +173,10 @@ const AboutPage = () => (
       <h3 className="mt-5">Past team members</h3>
       <Content>
         <ul className="list-comma-separated">
-          {teamData.pastMembers.map((name) => (
-            <li key={name}>{name}</li>
+          {data.team.members.past.map(({ id, name }) => (
+            <li id={id} key={id}>
+              {name}
+            </li>
           ))}
         </ul>
       </Content>
@@ -248,5 +250,54 @@ const AboutPage = () => (
     </Section>
   </Page>
 )
+
+const getTeamMembers = async () => {
+  const allTeamMembers = (await retrieveContent('team')).map((member) => ({
+    ...member,
+    // TODO: Move to the global domains configuration
+    photoUrl: new URL(member.photo, 'https://oacore.github.io/content/').href,
+  }))
+
+  const compareTeamMembers = (first, second) =>
+    first.order !== second.order
+      ? (second.order || 0) - (first.order || 0) // bigger number goes first
+      : first.lastName.localeCompare(second.lastName)
+
+  const currentTeamMembers = allTeamMembers
+    .filter(({ past }) => !past)
+    .sort(compareTeamMembers)
+    .map(({ firstName, lastName, ...member }) => ({
+      ...member,
+      name: `${firstName} ${lastName}`,
+    }))
+
+  const pastTeamMembers = allTeamMembers
+    .filter(({ past }) => past)
+    .sort(compareTeamMembers)
+    // Optimising data transferring cutting out data that won't be rendered
+    .map(({ id, firstName, lastName }) => ({
+      id,
+      name: `${firstName} ${lastName}`,
+    }))
+
+  return {
+    current: currentTeamMembers,
+    past: pastTeamMembers,
+  }
+}
+
+export async function getStaticProps() {
+  const teamMembers = await getTeamMembers()
+
+  return {
+    props: {
+      data: {
+        team: {
+          members: teamMembers,
+        },
+      },
+    },
+  }
+}
 
 export default AboutPage
