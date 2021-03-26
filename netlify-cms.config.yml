@@ -1,0 +1,95 @@
+site_url: https://core.ac.uk
+
+backend:
+  name: github
+  repo: oacore/content
+  branch: main
+  
+  cms_label_prefix: '✏️ '
+
+  site_domain: core.ac.uk
+
+  base_url: https://auth.oacore.vercel.app
+  auth_endpoint: api/begin
+
+  commit_messages:
+    create: Create {{collection}} "{{slug}}"
+    update: Update {{collection}} "{{slug}}"
+    delete: Delete {{collection}} "{{slug}}"
+    uploadMedia: Upload {{path}}
+    deleteMedia: Delete {{path}}
+  squash_merges: true
+
+media_folder: images
+public_folder: ''
+
+publish_mode: editorial_workflow
+
+slug:
+  clean_accents: true
+
+show_preview_links: false
+
+collections:
+- name: team
+
+  folder: team
+  extension: md
+  format: yaml-frontmatter
+
+  media_folder: '/images/team'
+
+  create: true
+  delete: false
+
+  label: 🧑‍💻 Team
+  label_singular: team member
+  summary: '{{first-name}} {{last-name}}'
+
+  fields:
+  - name: first-name
+    label: First Name
+    widget: string
+  - name: last-name
+    label: Last Name
+    widget: string
+  - name: role
+    label: Role
+    widget: string
+  - name: photo
+    label: Photo
+    widget: file
+    allow_multiple: false
+    required: false
+  - name: body
+    widget: markdown
+    buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+    label: Description
+    hint: >
+      Try to keep this text relatively small, about 3 sentences
+  - name: past
+    widget: boolean
+    default: false
+    label: Past
+    hint: >
+      Toggle the switch on if the member left the team
+  - name: order
+    widget: hidden
+    default: 0
+    label: Order
+    hint: >
+      This is used to force sorting team members on the website in a way
+      different from alphabetical. Higher numbers go first.
+
+      Practically, this is used to make project founder go first.
+
+  slug: '{{first-name}}-{{last-name}}'
+
+  sortable_fields: [first-name, last-name]
+  view_filters:
+  - field: past
+    pattern: false
+    label: Current
+  - field: past
+    pattern: true
+    label: Past
