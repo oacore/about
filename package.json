@@ -74,6 +74,7 @@
     "test-staging": "blc https://${CORE_STAGING_AREA}core.ac.uk -ro --exclude='/browse' --exclude='/search' --exclude='/public'",
     "test": "npm run test-dev",
     "dev": "next",
+    "prebuild": "mkdir -p public/edit && cp netlify-cms.admin.html public/edit/index.html && cp netlify-cms.config.yml public/edit/config.yml",
     "build": "next build",
     "export": "next build && next export",
     "start": "if [ \"$NODE_ENV\" = 'production' ]; then next start; else next; fi"
