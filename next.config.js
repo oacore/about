@@ -55,6 +55,7 @@ const nextConfig = {
     Object.assign(config.resolve.alias, {
       components: path.resolve(__dirname, 'components'),
       data: path.resolve(__dirname, 'data'),
+      content: path.resolve(__dirname, 'content'),
     })
 
     config.module.rules.push(
