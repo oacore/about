@@ -28,7 +28,7 @@ publish_mode: editorial_workflow
 slug:
   clean_accents: true
 
-show_preview_links: false
+show_preview_links: true
 
 collections:
 - name: team
@@ -93,3 +93,5 @@ collections:
   - field: past
     pattern: true
     label: Past
+
+  preview_path: api/preview?page=about&ref=cms/team/{{slug}}

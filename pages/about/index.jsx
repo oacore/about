@@ -251,12 +251,14 @@ const AboutPage = ({ data }) => (
   </Page>
 )
 
-const getTeamMembers = async () => {
-  const allTeamMembers = (await retrieveContent('team')).map((member) => ({
-    ...member,
-    // TODO: Move to the global domains configuration
-    photoUrl: new URL(member.photo, 'https://oacore.github.io/content/').href,
-  }))
+const getTeamMembers = async ({ ref } = {}) => {
+  const allTeamMembers = (await retrieveContent('team', { ref })).map(
+    (member) => ({
+      ...member,
+      // TODO: Move to the global domains configuration
+      photoUrl: new URL(member.photo, 'https://oacore.github.io/content/').href,
+    })
+  )
 
   const compareTeamMembers = (first, second) =>
     first.order !== second.order
@@ -286,8 +288,10 @@ const getTeamMembers = async () => {
   }
 }
 
-export async function getStaticProps() {
-  const teamMembers = await getTeamMembers()
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+
+  const teamMembers = await getTeamMembers({ ref })
 
   return {
     props: {
