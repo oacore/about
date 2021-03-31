@@ -1,37 +1,87 @@
 # CORE Next
 
-CORE static website on React and Next.js
+Static pages for [CORE](https://core.ac.uk). The project is based on React and
+Next.js.
 
 
-## Installation & Preview
+## Prerequisites
 
-The project requires [__Node.js__][node-download] and
-[__NPM__][npm-install] package manager.
+1.  **Node.js**: [download from nodejs.org][node-download] or check the
+    [official installation guidelines][node-package-manager-download] if you
+    prefer using a package manager
+
+2.  **NPM**: usually is installed with Node but you can have a look at the
+    [installation guide][npm-install]
+
+3.  **NPM_TOKEN**: generate a token with the `package:read` permission at
+    your [GitHub Settings][github-token] and place it into your `.bashrc` or
+    `.zshrc` as follows:
+
+    ```sh
+    export NPM_TOKEN=<your-token-goes-here>
+    ```
+
+    The token is needed to enable NPM to download our scoped `@oacore` 
+    packages, deployed to the GitHub Registry.
 
 
-After cloning this repository  you will need to generate Github Token with package read permission [here][github-token] in order to download our @oacore packages from Github NPM registry.
+## Getting started
 
+When you pass all [Prerequisites](#prerequisites) you can `cd` into the
+project directory and start development as follows:
 
 ```sh
-yarn install  # to install all dependencies
-yarn dev      # to build dev-version of the project and start simple server
+npm install
+npm run dev
 ```
 
-Open [localhost:3000](http://localhost:3000) to preview.
+Open [localhost:3000](http://localhost:3000) to see the website.
 
-__Well done!__
+__Well done! 🎉__
 
-[github-token]: https://github.com/settings/tokens
-[node-download]: https://nodejs.org/en/download/
-[npm-install]: https://www.npmjs.com/get-npm
+
+## Project structure
+
+The infrastructure and relations between the front-end modules is displayed
+using the following diagram:
+
+![Schema of the CORE front-end infrastructure consisting of 2 library modules
+  and many application modules
+](https://user-images.githubusercontent.com/8440244/112995708-29e46580-9174-11eb-9acc-cd874cd798c3.png)
+
+There is a _Library Layer_ providing all shared components for the
+applications, and an _Application Layer_ which consists of these applications,
+consuming shared components.
+
+Specifically, this projects requires the [@oacore/design][design] package 
+during the installation stage and depends on [oacore/content][content] 
+and our [API][api] at the build stage.
+
+We use [Netlify CMS][netlify-cms] for editing our content. The CMS pushes
+changes to some directories at [oacore/content][content].
+
+Also, this projects uses images hosted directly from
+[oacore.github.io/content](https://oacore.github.io/content) for simplicity.
+
 
 ## Thanks ❤️
 
 We support Open Access and Open Source. Many open-source and 
 non-open-source projects help us to deliver our products in great quality.
 
-We thank to:
+We give thanks to:
 
 [
   ![BrowserStack](docs/images/browserstack-logo.svg)
 ](https://browserstack.com)
+
+
+[github-token]: https://github.com/settings/tokens
+[node-download]: https://nodejs.org/en/download/
+[node-package-manager-download]: https://nodejs.org/en/download/package-manager/
+[npm-install]: https://www.npmjs.com/get-npm
+[netlify-cms]: https://www.netlifycms.org
+
+[design]: https://github.com/oacore/design
+[content]: https://github.com/oacore/content
+[api]: https://api.core.ac.uk
