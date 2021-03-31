@@ -1,4 +1,4 @@
-# CORE Next
+# CORE About
 
 Static pages for [CORE](https://core.ac.uk). The project is based on React and
 Next.js.

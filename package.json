@@ -1,7 +1,7 @@
 {
-  "name": "core-next",
-  "version": "0.0.6",
-  "description": "CORE website on Next.js",
+  "name": "@oacore/about",
+  "version": "1.0.0",
+  "description": "Static website for CORE",
   "main": "index.js",
   "author": "Knowledge Media Institute",
   "license": "MIT",
