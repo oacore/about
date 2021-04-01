@@ -131,3 +131,39 @@ collections:
   sortable_fields: [title]
 
   # preview_path: api/preview?page=faq&ref=cms/faq/{{slug}}
+
+- name: faq-categories
+
+  folder: faq/categories
+  extension: md
+  format: yaml-frontmatter
+
+  # media_folder: '/images/team'
+
+  create: true
+  delete: true
+
+  label: '❓ FAQ: Categories'
+  label_singular: FAQ category
+
+  fields:
+  - name: title
+    label: Title
+    widget: string
+  - name: caption
+    widget: string
+    label: Caption
+    hint: Should be shorter than Title. Used for generating navigation and URLs
+  - name: order
+    widget: hidden
+    default: 0
+    label: Order
+    hint: >
+      This is used to force sorting team members on the website in a way
+      different from alphabetical. Higher numbers go first.
+
+      Practically, this is used to make project founder go first.
+
+  sortable_fields: [title]
+
+  # preview_path: api/preview?page=faq&ref=cms/faq/{{slug}}
