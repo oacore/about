@@ -3,7 +3,7 @@ site_url: https://core.ac.uk
 backend:
   name: github
   repo: oacore/content
-  branch: main
+  branch: faqs
   
   cms_label_prefix: '✏️ '
 
@@ -95,3 +95,39 @@ collections:
     label: Past
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
+
+- name: faq-questions
+
+  folder: faq/questions
+  extension: md
+  format: yaml-frontmatter
+
+  # media_folder: '/images/team'
+
+  create: true
+  delete: true
+
+  label: '❓ FAQ: Questions'
+  label_singular: FAQ
+
+  fields:
+  - name: title
+    label: Question
+    widget: text
+  - name: body
+    widget: markdown
+    buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+    label: Answer
+  - name: order
+    widget: hidden
+    default: 0
+    label: Order
+    hint: >
+      This is used to force sorting team members on the website in a way
+      different from alphabetical. Higher numbers go first.
+
+      Practically, this is used to make project founder go first.
+
+  sortable_fields: [title]
+
+  # preview_path: api/preview?page=faq&ref=cms/faq/{{slug}}
