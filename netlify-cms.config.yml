@@ -118,7 +118,7 @@ collections:
   - name: category
     widget: relation
     collection: faq-categories
-    value_field: slug
+    value_field: title
     search_fields: [title, caption]
     display_fields: [title]
     label: Category
