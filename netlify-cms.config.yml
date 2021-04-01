@@ -115,6 +115,13 @@ collections:
   - name: title
     widget: text
     label: Question
+  - name: category
+    widget: relation
+    collection: faq-categories
+    value_field: slug
+    search_fields: [title, caption]
+    display_fields: [title]
+    label: Category
   - name: body
     widget: markdown
     buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
