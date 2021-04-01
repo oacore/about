@@ -162,6 +162,14 @@ collections:
     widget: string
     label: Caption
     hint: Should be shorter than title. Used for generating navigation and URLs
+  - name: questions
+    widget: relation
+    collection: faq-questions
+    value_field: title
+    search_fields: [title, body]
+    display_fields: [title]
+    multiple: true
+    label: Questions
   - name: order
     widget: hidden
     default: 0
