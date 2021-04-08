@@ -95,8 +95,6 @@ const nextConfig = {
     })
     return config
   },
-
-  trailingSlash: true,
 }
 
 module.exports = withImages(nextConfig)
