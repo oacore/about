@@ -165,6 +165,16 @@ ambassadors:
       country: Zimbabwe
       picture: gloria.png
     -
+      id: habtamu-keno
+      name: Habtamu Keno
+      role: Lecturer
+      organization: Ambo University
+      location:
+        latitude: 8.9833
+        longitude: 37.8500
+      country: Ethiopia
+      picture: habtamu-keno.jpg
+    -
       id: ibrahim-yaseen
       name: Ibrahim Yaseen
       role: Research Center Coordinator
