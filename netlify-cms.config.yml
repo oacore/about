@@ -4,7 +4,7 @@ backend:
   name: github
   repo: oacore/content
   branch: main
-  
+
   cms_label_prefix: '✏️ '
 
   site_domain: core.ac.uk
@@ -31,6 +31,271 @@ slug:
 show_preview_links: true
 
 collections:
+- name: about
+
+  create: false
+  delete: false
+
+  label: ℹ️ About
+  label_singular: section
+  description: >
+    All the sections on the page “About CORE”. Sections are listed in order
+    appearing on the page.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file: about/meta.yml
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: >
+          Displayed in the browser as a tab name and in Google, when
+          the page appears in the search results.
+      - name: description
+        widget: text
+        label: Description
+        hint: >
+          Description of the page, not visible on the page but will be shown
+          in search engines when the page appers in results. Important
+          to have good performance in search engines.
+      - name: headline
+        widget: string
+        label: Headline
+        hint: >
+          The title of the page. Displayed on the page below header
+          and above the page navigation.
+
+    - name: mission
+      label: 👁 Mission
+      file: about/mission.md
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: >
+          Appears above the text and video.
+      - name: short-title
+        widget: string
+        label: Short Title
+        hint:  >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: video
+        widget: object
+        label: Video
+        summary: '{{ fields.title }}'
+        fields:
+        - name: title
+          widget: string
+          label: Caption
+          hint: >
+            Necessary for people who cannot watch or load the video.
+            Lets them understand what it is about.
+        - name: src
+          widget: string
+          label: Link
+          hint: >
+            An embeddable URL for the video. When you click on “Share” and
+            then “Embed” on YouTube, it should be the <URL>
+            inside src="<URL>"
+      - name: body
+        widget: markdown
+        label: Content
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+    - name: blog
+      label: 📘 Blog
+      file: about/blog.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended to call the user view the target page.
+
+    - name: endorsements
+      label: '👉 Teaser: Endorsements'
+      file: about/endorsements.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: body
+        widget: markdown
+        label: Content
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended to call the user view the target page.
+      - name: icon-url
+        widget: hidden
+        label: Decorative icon
+        hint: >
+          An icon above the section. Configured internally.
+          There is no need to bother the content manager by designer things.
+
+    - name: how-it-works
+      label: ✨ How it works
+      file: about/how-it-works.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: body
+        label: Content
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      # Actions need rethinking. It's better if there is only one action only
+      # per piece of content, i.e. section
+      - name: action-labels
+        widget: object
+        label: Calls to action
+        hint: >
+          Button captions, intended to call the user view the target page or do
+          something we want them to do.
+        fields:
+        - name: primary
+          widget: string
+          label: Primary
+        - name: secondary
+          widget: string
+          label: Secondary
+
+    - name: services
+      label: '👉 Teaser: Services'
+      file: about/services.md
+      fields:
+      - name: title
+        label: Subsection title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended to call the user view the target page.
+
+    - name: team
+      label: 🧑‍💻 Team
+      file: about/team.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+
+    - name: ambassadors
+      label: '👉 Teaser: Ambassadors'
+      file: about/ambassadors.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: body
+        widget: markdown
+        label: Content
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended to call the user view the target page.
+      - name: icon-url
+        widget: hidden
+        label: Decorative icon
+        hint: >
+          An icon above the section. Configured internally.
+          There is no need to bother the content manager by designer things.
+
+    - name: resources
+      label: 🎇 Resources
+      file: about/resources.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+
+    - name: research
+      label: '👉 Teaser: Research outputs'
+      file: about/research.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: short-title
+        label: Short title
+        widget: string
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: body
+        widget: markdown
+        label: Content
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended to call the user view the target page.
+      - name: icon-url
+        widget: hidden
+        label: Decorative icon
+        hint: >
+          An icon above the section. Configured internally.
+          There is no need to bother the content manager by designer things.
+
+  slug: '{{filename}}'
+
+  preview_path: api/preview?page=about&ref=cms/about/{{slug}}
+
+
 - name: team
 
   folder: team
