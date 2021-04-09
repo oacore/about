@@ -4,7 +4,7 @@ backend:
   name: github
   repo: oacore/content
   branch: main
-  
+
   cms_label_prefix: '✏️ '
 
   site_domain: core.ac.uk
@@ -95,3 +95,236 @@ collections:
     label: Past
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
+
+  - name: about
+
+    extension: md
+    format: yaml-frontmatter
+
+    media_folder: '/images/about'
+
+    create: true
+    delete: false
+
+    label: ℹ️ About
+    label_singular: section
+
+    files:
+      - name: about
+        label: About
+        file: /about/about.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: description
+          label: Description
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+      - name: video
+        label: Video
+        file: /about/video.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: src
+          label: Link
+          widget: string
+
+      - name: mission
+        label: Mission
+        file: /about/mission.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: content
+          label: Content
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+      - name: blog
+        label: Blog
+        file: /about/blog.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: visit-button
+          label: Action
+          widget: string
+
+      - name: endorsements
+        label: Endorsements
+        file: /about/endorsements.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: body
+          label: Body
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: action
+          label: Action
+          widget: string
+        - name: picture
+          label: Picture
+          widget: file
+          allow_multiple: false
+
+      - name: how-it-works
+        label: How it works
+        file: /about/how-it-works.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: harvesting
+          label: Harvesting
+          widget: object
+          fields:
+            - name: title
+              label: Title
+              widget: string
+            - name: content
+              label: Content
+              widget: markdown
+              buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+            - name: actions
+              label: Actions
+              widget: object
+              fields:
+                - name: primary
+                  label: Primary
+                  widget: string
+                - name: secondary
+                  label: Secondary
+                  widget: string
+        - name: services
+          label: Services
+          widget: object
+          fields:
+            - name: title
+              label: Title
+              widget: string
+            - name: short-title
+              label: Short title
+              widget: string
+            - name: action
+              label: Action
+              widget: string
+
+      - name: team
+        label: Team
+        file: /about/team.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+
+      - name: contacts
+        label: Contacts
+        file: /about/contacts.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: address
+          label: Address
+          widget: object
+          fields:
+            - name: caption
+              label: Caption
+              widget: string
+            - name: name
+              label: Name
+              widget: string
+            - name: org
+              label: Organisation
+              widget: string
+            - name: city
+              label: City
+              widget: string
+            - name: country
+              label: Country
+              widget: string
+
+      - name: ambassadors
+        label: Ambassadors
+        file: /about/ambassadors.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: body
+          label: Body
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: action
+          label: Action
+          widget: string
+        - name: picture
+          label: Picture
+          widget: file
+          allow_multiple: false
+
+      - name: resources
+        label: Resources
+        file: /about/resources.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+
+      - name: research
+        label: Research
+        file: /about/research.md
+        fields:
+        - name: title
+          label: Title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+        - name: body
+          label: Body
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: action
+          label: Action
+          widget: string
+        - name: picture
+          label: Picture
+          widget: file
+          allow_multiple: false
+
+    slug: '{{title}}'
+
+    preview_path: api/preview?page=about&ref=cms/about/{{slug}}
