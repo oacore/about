@@ -115,70 +115,75 @@ collections:
         file: /about/about.md
         fields:
         - name: title
-          label: Title
+          label: Page title
           widget: string
         - name: description
-          label: Description
+          label: Page description
           widget: markdown
           buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
-
-      - name: video
-        label: Video
-        file: /about/video.md
-        fields:
-        - name: title
-          label: Title
-          widget: string
-        - name: src
-          label: Link
-          widget: string
 
       - name: mission
         label: Mission
         file: /about/mission.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
-        - name: content
-          label: Content
+          hint: Identifies the section in the navigation bar
+        - name: body
+          label: Section content
           widget: markdown
           buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: video
+          label: Video
+          widget: object
+          fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: src
+            label: Link
+            widget: string
+            hint: The video should be embeddable
 
       - name: blog
         label: Blog
         file: /about/blog.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
+          hint: Identifies the section in the navigation bar
         - name: visit-button
           label: Action
           widget: string
+          hint: Button text
 
       - name: endorsements
         label: Endorsements
         file: /about/endorsements.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
+          hint: Identifies the section in the navigation bar
         - name: body
-          label: Body
+          label: Section content
           widget: markdown
           buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
         - name: action
           label: Action
           widget: string
+          hint: Button text
         - name: picture
           label: Picture
           widget: file
@@ -189,20 +194,21 @@ collections:
         file: /about/how-it-works.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
+          hint: Identifies the section in the navigation bar
         - name: harvesting
           label: Harvesting
           widget: object
           fields:
             - name: title
-              label: Title
+              label: Subsection title
               widget: string
             - name: content
-              label: Content
+              label: Subsection content
               widget: markdown
               buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
             - name: actions
@@ -215,78 +221,54 @@ collections:
                 - name: secondary
                   label: Secondary
                   widget: string
+              hint: Button texts
         - name: services
           label: Services
           widget: object
           fields:
             - name: title
-              label: Title
+              label: Subsection title
               widget: string
             - name: short-title
               label: Short title
               widget: string
+              hint: Identifies the section in the navigation bar
             - name: action
               label: Action
               widget: string
+              hint: Button text
 
       - name: team
         label: Team
         file: /about/team.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
-
-      - name: contacts
-        label: Contacts
-        file: /about/contacts.md
-        fields:
-        - name: title
-          label: Title
-          widget: string
-        - name: short-title
-          label: Short title
-          widget: string
-        - name: address
-          label: Address
-          widget: object
-          fields:
-            - name: caption
-              label: Caption
-              widget: string
-            - name: name
-              label: Name
-              widget: string
-            - name: org
-              label: Organisation
-              widget: string
-            - name: city
-              label: City
-              widget: string
-            - name: country
-              label: Country
-              widget: string
+          hint: Identifies the section in the navigation bar
 
       - name: ambassadors
         label: Ambassadors
         file: /about/ambassadors.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
+          hint: Identifies the section in the navigation bar
         - name: body
-          label: Body
+          label: Section content
           widget: markdown
           buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
         - name: action
           label: Action
           widget: string
+          hint: Button text
         - name: picture
           label: Picture
           widget: file
@@ -297,29 +279,32 @@ collections:
         file: /about/resources.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
+          hint: Identifies the section in the navigation bar
 
       - name: research
         label: Research
         file: /about/research.md
         fields:
         - name: title
-          label: Title
+          label: Section title
           widget: string
         - name: short-title
           label: Short title
           widget: string
+          hint: Identifies the section in the navigation bar
         - name: body
-          label: Body
+          label: Section content
           widget: markdown
           buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
         - name: action
           label: Action
           widget: string
+          hint: Button text
         - name: picture
           label: Picture
           widget: file
