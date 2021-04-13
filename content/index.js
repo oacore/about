@@ -5,7 +5,9 @@ import extractFrontMatter from 'front-matter'
 import { Octokit } from '@octokit/rest'
 import camelize from 'camelize'
 
-const octokit = new Octokit()
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+})
 
 const repo = {
   owner: 'oacore',
