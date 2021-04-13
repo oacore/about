@@ -74,7 +74,7 @@
     "test-staging": "blc https://${CORE_STAGING_AREA}core.ac.uk -ro --exclude='/browse' --exclude='/search' --exclude='/public'",
     "test": "npm run test-dev",
     "dev": "next",
-    "prebuild": "mkdir -p public/edit && cp netlify-cms.admin.html public/edit/index.html && cp netlify-cms.config.yml public/edit/config.yml",
+    "prebuild": "cp netlify-cms.admin.html public/edit.html && cp netlify-cms.config.yml public/",
     "build": "next build",
     "preexport": "npm run build",
     "export": "next export",
