@@ -4,7 +4,7 @@ backend:
   name: github
   repo: oacore/content
   branch: main
-  
+
   cms_label_prefix: '✏️ '
 
   site_domain: core.ac.uk
@@ -95,3 +95,221 @@ collections:
     label: Past
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
+
+  - name: about
+
+    extension: md
+    format: yaml-frontmatter
+
+    media_folder: '/images/about'
+
+    create: true
+    delete: false
+
+    label: ℹ️ About
+    label_singular: section
+
+    files:
+      - name: about
+        label: About
+        file: /about/about.md
+        fields:
+        - name: title
+          label: Page title
+          widget: string
+        - name: description
+          label: Page description
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+      - name: mission
+        label: Mission
+        file: /about/mission.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+        - name: body
+          label: Section content
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: video
+          label: Video
+          widget: object
+          fields:
+          - name: title
+            label: Title
+            widget: string
+          - name: src
+            label: Link
+            widget: string
+            hint: The video should be embeddable
+
+      - name: blog
+        label: Blog
+        file: /about/blog.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+        - name: visit-button
+          label: Action
+          widget: string
+          hint: Button text
+
+      - name: endorsements
+        label: Endorsements
+        file: /about/endorsements.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+        - name: body
+          label: Section content
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: action
+          label: Action
+          widget: string
+          hint: Button text
+        - name: picture
+          label: Picture
+          widget: file
+          allow_multiple: false
+
+      - name: how-it-works
+        label: How it works
+        file: /about/how-it-works.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+        - name: harvesting
+          label: Harvesting
+          widget: object
+          fields:
+            - name: title
+              label: Subsection title
+              widget: string
+            - name: content
+              label: Subsection content
+              widget: markdown
+              buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+            - name: actions
+              label: Actions
+              widget: object
+              fields:
+                - name: primary
+                  label: Primary
+                  widget: string
+                - name: secondary
+                  label: Secondary
+                  widget: string
+              hint: Button texts
+        - name: services
+          label: Services
+          widget: object
+          fields:
+            - name: title
+              label: Subsection title
+              widget: string
+            - name: short-title
+              label: Short title
+              widget: string
+              hint: Identifies the section in the navigation bar
+            - name: action
+              label: Action
+              widget: string
+              hint: Button text
+
+      - name: team
+        label: Team
+        file: /about/team.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+
+      - name: ambassadors
+        label: Ambassadors
+        file: /about/ambassadors.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+        - name: body
+          label: Section content
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: action
+          label: Action
+          widget: string
+          hint: Button text
+        - name: picture
+          label: Picture
+          widget: file
+          allow_multiple: false
+
+      - name: resources
+        label: Resources
+        file: /about/resources.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+
+      - name: research
+        label: Research
+        file: /about/research.md
+        fields:
+        - name: title
+          label: Section title
+          widget: string
+        - name: short-title
+          label: Short title
+          widget: string
+          hint: Identifies the section in the navigation bar
+        - name: body
+          label: Section content
+          widget: markdown
+          buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        - name: action
+          label: Action
+          widget: string
+          hint: Button text
+        - name: picture
+          label: Picture
+          widget: file
+          allow_multiple: false
+
+    slug: '{{title}}'
+
+    preview_path: api/preview?page=about&ref=cms/about/{{slug}}

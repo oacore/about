@@ -20,7 +20,6 @@ import {
   Video,
 } from 'components'
 import { patchStats } from 'components/utils'
-import aboutData from 'data/about.yml'
 import servicesData from 'data/services.yml'
 import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
@@ -35,11 +34,7 @@ const RelatedContentSection = ({ children, data, className, ...passProps }) => (
     {...passProps}
   >
     {data.picture && (
-      <img
-        className={styles['related-icon']}
-        src={`/images/icons/${data.picture}`}
-        alt=""
-      />
+      <img className={styles['related-icon']} src={data.pictureUrl} alt="" />
     )}
     <h2>{data.title}</h2>
     {children || <Markdown>{data.body}</Markdown>}
@@ -53,25 +48,25 @@ const RelatedContentSection = ({ children, data, className, ...passProps }) => (
 
 const AboutPage = ({ data }) => (
   <Page
-    title={aboutData.title}
-    description={aboutData.description}
-    keywords={aboutData.keywords}
+    title={data.about.title}
+    description={data.about.description}
+    keywords={data.about.keywords}
     nav
   >
-    <h1>{aboutData.title}</h1>
+    <h1>{data.about.title}</h1>
 
-    <Section id="our-mission" caption={aboutData.mission.shortTitle} tag="div">
+    <Section id="our-mission" caption={data.mission.shortTitle} tag="div">
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
-          <h2>{aboutData.mission.title}</h2>
+          <h2>{data.mission.title}</h2>
 
           <Video
-            src={aboutData.video.src}
-            title={aboutData.video.title}
+            src={data.mission.video.src}
+            title={data.mission.video.title}
             tag="p"
           />
 
-          <Markdown>{aboutData.mission.content}</Markdown>
+          <Markdown>{data.mission.body}</Markdown>
         </Col>
 
         <Col
@@ -81,11 +76,11 @@ const AboutPage = ({ data }) => (
           className="d-none d-md-block mt-3 mt-sm-0"
           tag="aside"
         >
-          <h4 className="mt-md-3">{aboutData.blog.title}</h4>
+          <h4 className="mt-md-3">{data.blog.title}</h4>
           <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
           <ButtonToolbar align="center">
             <Button href="~blog" className="mt-3" color="primary" outline>
-              {aboutData.blog.visitButton}
+              {data.blog.visitButton}
             </Button>
           </ButtonToolbar>
         </Col>
@@ -95,23 +90,23 @@ const AboutPage = ({ data }) => (
     <RelatedContentSection
       id="endorsements"
       data={{
-        ...aboutData.endorsements,
+        ...data.endorsements,
         action: {
-          label: aboutData.endorsements.action,
+          label: data.endorsements.action,
           href: '~about/endorsements',
         },
       }}
     />
 
     <Section id="how-it-works" caption="How it works">
-      <h2>{aboutData.howItWorks.title}</h2>
+      <h2>{data['how-it-works'].title}</h2>
       <Section>
-        <h3>{aboutData.howItWorks.harvesting.title}</h3>
+        <h3>{data['how-it-works'].harvesting.title}</h3>
         <Row className="mb-3">
           <Col xs="12" md="6">
             <Markdown>
               {patchStats(
-                aboutData.howItWorks.harvesting.content,
+                data['how-it-works'].harvesting.content,
                 data.statistics
               )}
             </Markdown>
@@ -124,11 +119,11 @@ const AboutPage = ({ data }) => (
 
         <ButtonToolbar align="center" className="flex-row-reverse">
           <Button color="primary" outline href="~register-data-provider">
-            {aboutData.howItWorks.harvesting.actions.primary}
+            {data['how-it-works'].harvesting.actions.primary}
           </Button>
 
           <Button color="link" href="~data-providers">
-            {aboutData.howItWorks.harvesting.actions.secondary}
+            {data['how-it-works'].harvesting.actions.secondary}
           </Button>
         </ButtonToolbar>
       </Section>
@@ -137,9 +132,9 @@ const AboutPage = ({ data }) => (
     <RelatedContentSection
       id="services"
       data={{
-        ...aboutData.howItWorks.services,
+        ...data['how-it-works'].services,
         action: {
-          label: aboutData.howItWorks.services.action,
+          label: data['how-it-works'].services.action,
           href: '~services',
         },
       }}
@@ -147,8 +142,8 @@ const AboutPage = ({ data }) => (
       <ServiceGroups className="text-left" items={servicesData.sections} />
     </RelatedContentSection>
 
-    <Section id="team" caption={aboutData.team.shortTitle}>
-      <h2>{aboutData.team.title}</h2>
+    <Section id="team" caption={data.team.shortTitle}>
+      <h2>{data.team.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {data.team.members.current.map((member) => (
           <Col
@@ -185,16 +180,16 @@ const AboutPage = ({ data }) => (
     <RelatedContentSection
       id="research-outputs"
       data={{
-        ...aboutData.research,
+        ...data.research,
         action: {
-          label: aboutData.research.action,
+          label: data.research.action,
           href: '~research-outputs',
         },
       }}
     />
 
-    <Section id="resources" caption={aboutData.resources.shortTitle}>
-      <h2>{aboutData.resources.title}</h2>
+    <Section id="resources" caption={data.resources.shortTitle}>
+      <h2>{data.resources.title}</h2>
       <Row className="list-unstyled" tag="ul">
         {resources.slice(0, 3).map((resource) => (
           <Col
@@ -218,16 +213,16 @@ const AboutPage = ({ data }) => (
           </Col>
         ))}
       </Row>
-      <Markdown>{aboutData.resources.content}</Markdown>
+      <Markdown>{data.resources.content}</Markdown>
     </Section>
 
     <RelatedContentSection
       id="ambassadors"
-      caption={aboutData.ambassadors.shortTitle}
+      caption={data.ambassadors.shortTitle}
       data={{
-        ...aboutData.ambassadors,
+        ...data.ambassadors,
         action: {
-          label: aboutData.ambassadors.action,
+          label: data.ambassadors.action,
           href: '~about/ambassadors',
         },
       }}
@@ -258,6 +253,24 @@ const fetchStats = (url) =>
       .then((data) => resolve(data))
       .catch(reject)
   })
+
+const getAboutPageContent = async ({ ref } = {}) => {
+  let content = await retrieveContent('about', { ref })
+  const contentObject = {}
+  content = content.map((section) => {
+    if ('picture' in section) {
+      section.pictureUrl = new URL(
+        section.picture,
+        'https://oacore.github.io/content/images/about'
+      ).href
+    }
+
+    contentObject[section.id] = section
+
+    return section
+  })
+  return contentObject
+}
 
 const getTeamMembers = async ({ ref } = {}) => {
   const allTeamMembers = (await retrieveContent('team', { ref })).map(
@@ -303,14 +316,18 @@ export async function getStaticProps({ previewData }) {
   const statsUrl = 'https://api.core.ac.uk/internal/statistics'
   const statistics = await fetchStats(statsUrl)
 
+  const about = await getAboutPageContent({ ref: 'about' })
+
+  const data = about
+
+  if (!('team' in data)) data.team = {}
+  Object.assign(data.team, { members: teamMembers })
+
+  data.statistics = statistics
+
   return {
     props: {
-      data: {
-        team: {
-          members: teamMembers,
-        },
-        statistics,
-      },
+      data,
     },
   }
 }
