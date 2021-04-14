@@ -112,7 +112,7 @@ const AboutPage = ({ data }) => (
             <Markdown>
               {patchStats(
                 aboutData.howItWorks.harvesting.content,
-                aboutData.statistics
+                data.statistics
               )}
             </Markdown>
           </Col>
@@ -251,6 +251,15 @@ const AboutPage = ({ data }) => (
   </Page>
 )
 
+const fetchStats = (url) => {
+  return new Promise((resolve, reject) => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => resolve(data))
+      .catch(reject)
+  })
+}
+
 const getTeamMembers = async ({ ref } = {}) => {
   const allTeamMembers = (await retrieveContent('team', { ref })).map(
     (member) => ({
@@ -292,6 +301,8 @@ export async function getStaticProps({ previewData }) {
   const ref = previewData?.ref
 
   const teamMembers = await getTeamMembers({ ref })
+  const statsUrl = 'https://api.core.ac.uk/internal/statistics'
+  const statistics = await fetchStats(statsUrl)
 
   return {
     props: {
@@ -299,6 +310,7 @@ export async function getStaticProps({ previewData }) {
         team: {
           members: teamMembers,
         },
+        statistics,
       },
     },
   }
