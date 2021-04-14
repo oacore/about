@@ -251,14 +251,13 @@ const AboutPage = ({ data }) => (
   </Page>
 )
 
-const fetchStats = (url) => {
-  return new Promise((resolve, reject) => {
+const fetchStats = (url) =>
+  new Promise((resolve, reject) => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => resolve(data))
       .catch(reject)
   })
-}
 
 const getTeamMembers = async ({ ref } = {}) => {
   const allTeamMembers = (await retrieveContent('team', { ref })).map(
