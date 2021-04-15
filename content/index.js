@@ -82,6 +82,16 @@ const transformData = (
     return autoEntries.length === 1 ? autoEntries[0] : autoEntries
   }
 
+  if (strategy === 'object') {
+    return processedEntries.length === 1
+      ? {
+          [targetKey]: processedEntries[0][0],
+          // Dangerously expects that the value is an object
+          ...processedEntries[0][1],
+        }
+      : camelize(Object.fromEntries(processedEntries))
+  }
+
   return processedEntries
 }
 
