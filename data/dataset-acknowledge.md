@@ -6,8 +6,8 @@ title: How to acknowledge the use of CORE
     entities coming from a particular CORE document, by giving a provenance
     link back to this document in CORE, etc.)
 2.  the use of CORE. We expect an attribution at the project’s main page by using
-    [CORE’s logo](https://core.ac.uk/resources/corelogo_hires.png) or the
-    [powered by CORE](https://core.ac.uk/images/powered-by-core-orange.png)
+    [CORE’s logo](/resources/core-logo.png) or the
+    [powered by CORE](/resources/powered-by-core-orange.png)
     picture.
 
 
