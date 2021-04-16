@@ -108,16 +108,16 @@ collections:
   create: true
   delete: true
 
-  label: History
-  label_singular: event
+  label: 🕰 History
+  label_singular: event in history
   summary: '{{date}} - {{title}}'
 
   fields:
   - name: date
     label: Date
     widget: datetime
-    format: DD.MM.YYYY
-    date_format: 'DD.MM.YYYY'
+    format: YYYY-MM-DD
+    date_format: YYYY-MM-DD
     time_format: ''
     default: ''
     hint: >
@@ -130,18 +130,19 @@ collections:
     hint: >
       The title for the event
   - name: body
-    label: Comment
     widget: markdown
     buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+    label: Description
     hint: >
-      Try to keep this concise
-  - name: image
-    label: Image
-    widget: file
+      Try to keep this concise, it should be approximately 2-3 lines on the website.
+  - name: image-url
+    widget: image
     allow_multiple: false
     required: false
+    label: Image
     hint: >
-      An optional image to complement the comment
+      A good illustration of what the event is about.
+      Despite it being optional, having illustrations is preferable.
   - name: link
     label: Link
     hint: >
@@ -164,7 +165,6 @@ collections:
 
   slug: '{{date}}-{{title}}'
 
-  sortable_fields: [date]
+  sortable_fields: [date, title]
 
   preview_path: api/preview?page=history&ref=cms/history/{{slug}}
-  
