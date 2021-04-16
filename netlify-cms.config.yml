@@ -95,3 +95,62 @@ collections:
     label: Past
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
+
+
+- name: history
+
+  folder: history
+  extension: md
+  format: yaml-frontmatter
+
+  media_folder: '/images/history'
+
+  create: true
+  delete: true
+
+  label: History
+  label_singular: event
+  summary: '{{date}} - {{title}}'
+
+  fields:
+  - name: date
+    label: Date
+    widget: datetime
+    format: DD.MM.YYYY
+    date_format: 'DD.MM.YYYY'
+    time_format: ''
+    default: ''
+    hint: >
+      All events on the page are sorted in chronologic order.
+      The day is not displayed, therefore it doesn't have to be correct.
+    picker_utc: true
+  - name: title
+    label: Event
+    widget: string
+    hint: >
+      The title for the event
+  - name: body
+    label: Comment
+    widget: markdown
+    buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+    hint: >
+      Try to keep this concise
+  - name: image
+    label: Image
+    widget: file
+    allow_multiple: false
+    required: false
+    hint: >
+      An optional image to complement the comment
+  - name: link
+    label: Link
+    widget: string
+    hint: >
+      The link to a relevant resource
+
+  slug: '{{date}}-{{title}}'
+
+  sortable_fields: [date]
+
+  preview_path: api/preview?page=history&ref=cms/history/{{slug}}
+  
