@@ -144,9 +144,23 @@ collections:
       An optional image to complement the comment
   - name: link
     label: Link
-    widget: string
     hint: >
       The link to a relevant resource
+    widget: object
+    fields:
+      - name: href
+        label: URL
+        widget: string
+      - name: caption
+        label: Caption
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+        required: false
+      - name: source
+        label: Source
+        widget: string
 
   slug: '{{date}}-{{title}}'
 
