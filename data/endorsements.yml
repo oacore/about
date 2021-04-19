@@ -628,6 +628,10 @@ organizations:
   name: Ivane Javakhishvili Tbilisi State University
   url: https://www.tsu.ge
   logo: tsu.png
+- &flowcite
+  name: Flowcite
+  url: https://flowcite.com
+  logo: flowcite-symbol-text.png
 
 sections:
   enterprise-companies:
@@ -759,6 +763,7 @@ sections:
         - *irus
         - *coar
         - *bl
+        - *flowcite
     testimonials:
       title: What partners say about us
   # testimonials:
