@@ -47,7 +47,10 @@ const parseData = (entries) =>
     const id = parseId(fileName)
 
     if (format === 'yaml') {
-      const data = yaml.load(content)
+      // Due to CMS preference of having `---` before and after actual content
+      // we load multiple documents safely but take into account only
+      // the first one
+      const [data] = yaml.loadAll(content)
       return [id, data]
     }
 
