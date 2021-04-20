@@ -68,12 +68,16 @@ const retrieveStats = async (url, catchFilePath) => {
       try {
         saveCachedStats(catchFilePath, JSON.stringify(stats))
       } catch (cannotWriteFile) {
-        // ignore
+        // Ignored
+        // We don't care if we cannot create a local cache. It's for dev only.
       }
 
       return stats
     } catch (fetchError) {
-      return loadCachedStats(defaultStatsPath, { ignoreModified: true })
+      if (process.env.NODE_ENV !== 'production')
+        return loadCachedStats(defaultStatsPath, { ignoreModified: true })
+
+      throw new Error('Statistics retrieval failed due to API instability.')
     }
   }
 }
