@@ -23,6 +23,11 @@ const fetchStats = (url) => {
   return new Promise((resolve, reject) => {
     if (stats == null) {
       fetch(url)
+        .then((res) => {
+          if (res.status >= 400)
+            throw new Error('Could not fetch actual statistics')
+          return res
+        })
         .then((res) => res.json())
         .then((data) => {
           stats = data
