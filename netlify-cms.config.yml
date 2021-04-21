@@ -138,6 +138,7 @@ collections:
   - name: image
     label: Image
     widget: object
+    summary: 'Image: {{alt}}'
     hint: >
       A good illustration of what the event is about.
       Despite it being optional, having illustrations is preferable.
