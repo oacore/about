@@ -1,11 +1,11 @@
 const camelize = require('camelize')
 
 const retrieveStats = async () => ({
-  totalArticlesCount: 208035267,
-  fullTextCount: 26150625,
-  repositoriesCount: 1098,
-  countriesCount: 144,
-  openAccessLinksCount: 76814521,
+  totalArticlesCount: 208396257,
+  fullTextCount: 26109570,
+  repositoriesCount: 10279,
+  countriesCount: 147,
+  openAccessLinksCount: 75006205,
 })
 
 const fetchStatsPromise = retrieveStats()
