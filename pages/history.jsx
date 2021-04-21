@@ -1,16 +1,23 @@
 import React from 'react'
 
+const LinkCard = ({ link }) => (
+  <div>
+    <h4>{link.caption}</h4>
+    <p>{link.source}</p>
+    <a href={link.href} target="_blank" rel="noreferrer"></a>
+  </div>
+)
+
 const HistoryEvent = ({ event }) => (
   <div>
-    <img src={event.imageUrl} alt="" />
+    <div>
+      <img src={event.image.src} alt={event.image.alt} />
+    </div>
     <div>
       <time dateTime={event.fullDate}>{event.date}</time>
       <h3>{event.title}</h3>
       <p>{event.body}</p>
-      <a href={event.link.href} target="_blank" rel="noreferrer">
-        <h4>{event.link.caption}</h4>
-        <p>{event.link.source}</p>
-      </a>
+      <LinkCard link={event.link} />
     </div>
   </div>
 )
@@ -18,8 +25,8 @@ const HistoryEvent = ({ event }) => (
 const HistoryPage = ({ data }) => (
   <>
     <p>{data?.body}</p>
-    {data.events.slice(1).map((event) => (
-      <HistoryEvent event={event} />
+    {data.events.slice(1).map((event, index) => (
+      <HistoryEvent key={index} event={event} />
     ))}
     <p>{data.events[0]?.body}</p>
   </>
@@ -36,22 +43,22 @@ const getEvents = async () => {
 
   const formatDate = (date) => {
     // Assuming format: 'YYYY.MM.DD'
-    const getMonth = (dateString) => dateString.slice(5, 7)
+    const getMonth = (dateString) => +dateString.slice(5, 7)
 
-    const monthNames = {
-      '01': 'January',
-      '02': 'February',
-      '03': 'March',
-      '04': 'April',
-      '05': 'May',
-      '06': 'June',
-      '07': 'July',
-      '08': 'August',
-      '09': 'September',
-      '10': 'October',
-      '11': 'November',
-      '12': 'December',
-    }
+    const monthNames = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ]
 
     return `${monthNames[getMonth(date)]} ${date.slice(0, 4)}`
   }
