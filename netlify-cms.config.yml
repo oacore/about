@@ -151,11 +151,13 @@ collections:
         hint: >
           Provide a link to the image or upload as a file.
       - name: alt
-        label: Description
         widget: string
         required: false
+        label: Alternative text
         hint: >
-          A short description. Necessary in case the user can't see the image.
+          Description of what is actually displayed on the image.
+          It helps tech-assistive users who can't see the screen understand
+          what is on the picture.
   - name: link
     label: Link
     hint: >

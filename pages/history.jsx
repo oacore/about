@@ -44,17 +44,18 @@ const getPageData = async () => {
 const getEvents = async () => {
   const events = []
 
-  const formatDate = (date) =>
-    new Intl.DateTimeFormat('en-GB', {
-      year: 'numeric',
-      month: 'long',
-    }).format(Date.parse(date))
+  const formatter = new Intl.DateTimeFormat('en-GB', {
+    year: 'numeric',
+    month: 'long',
+  })
 
-  const processedEvents = events.map((event) => ({
-    ...event,
-    fullDate: event.date,
-    date: formatDate(event.date),
-  }))
+  const processedEvents = events
+    .sort((event1, event2) => (event1.date < event2.date ? -1 : 1))
+    .map((event) => ({
+      ...event,
+      fullDate: event.date,
+      date: formatter.format(Date.parse(event.date)),
+    }))
 
   return processedEvents
 }
