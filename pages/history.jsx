@@ -1,5 +1,9 @@
 import React from 'react'
 
+import { Markdown } from 'components'
+import historyData from 'data/history.yml'
+import retrieveContent from 'content'
+
 const LinkCard = ({ link }) => (
   <div>
     <h4>
@@ -19,7 +23,7 @@ const HistoryEvent = ({ event }) => (
     <div>
       <time dateTime={event.id}>{event.date}</time>
       <h3>{event.title}</h3>
-      <p>{event.body}</p>
+      <Markdown>{event.body}</Markdown>
       <LinkCard link={event.link} />
     </div>
   </div>
@@ -27,22 +31,27 @@ const HistoryEvent = ({ event }) => (
 
 const HistoryPage = ({ data }) => (
   <>
-    <p>{data?.body}</p>
+    <Markdown>{data?.body}</Markdown>
     {data.events.slice(1).map((event) => (
-      <HistoryEvent key={event.fullDate} event={event} />
+      <HistoryEvent key={event.id} event={event} />
     ))}
-    <p>{data.events[0]?.body}</p>
+    <div id="root">
+      <Markdown>{data.events[0]?.body}</Markdown>
+    </div>
   </>
 )
 
-const getPageData = async () => {
-  const data = {}
+const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-  return data
-}
+const getPageData = async () => historyData
 
 const getEvents = async () => {
-  const events = []
+  const events = await retrieveContent('history', { ref: 'history' })
+
+  events.forEach((event) => {
+    if ('image' in event)
+      event.image.src = new URL(event.image.src, ASSETS_BASE_URL).href
+  })
 
   const formatter = new Intl.DateTimeFormat('en-GB', {
     year: 'numeric',
@@ -53,8 +62,7 @@ const getEvents = async () => {
     .sort((event1, event2) => (event1.date < event2.date ? -1 : 1))
     .map((event) => ({
       ...event,
-      fullDate: event.date,
-      date: formatter.format(Date.parse(event.date)),
+      date: formatter.format(event.date),
     }))
 
   return processedEvents
