@@ -109,7 +109,7 @@ collections:
   delete: true
 
   label: 🕰 History
-  label_singular: event in history
+  label_singular: milestone
   summary: '{{date}} - {{title}}'
 
   fields:
@@ -121,14 +121,14 @@ collections:
     time_format: ''
     default: ''
     hint: >
-      All events on the page are sorted in chronologic order.
+      All milestones on the page are sorted in chronologic order.
       The day is not displayed, therefore it doesn't have to be correct.
     picker_utc: true
   - name: title
-    label: Event
+    label: Milestone
     widget: string
     hint: >
-      The title for the event
+      The title for the milestone
   - name: body
     widget: markdown
     buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
@@ -140,7 +140,7 @@ collections:
     widget: object
     summary: 'Image: {{alt}}'
     hint: >
-      A good illustration of what the event is about.
+      A good illustration of what the milestone is about.
       Despite it being optional, having illustrations is preferable.
     fields:
       - name: src

@@ -15,16 +15,16 @@ const LinkCard = ({ link }) => (
   </div>
 )
 
-const HistoryEvent = ({ event }) => (
+const Milestone = ({ milestone }) => (
   <div>
     <div>
-      <img src={event.image.src} alt={event.image.alt} />
+      <img src={milestone.image.src} alt={milestone.image.alt} />
     </div>
     <div>
-      <time dateTime={event.id}>{event.date}</time>
-      <h3>{event.title}</h3>
-      <Markdown>{event.body}</Markdown>
-      <LinkCard link={event.link} />
+      <time dateTime={milestone.id}>{milestone.date}</time>
+      <h3>{milestone.title}</h3>
+      <Markdown>{milestone.body}</Markdown>
+      <LinkCard link={milestone.link} />
     </div>
   </div>
 )
@@ -32,11 +32,11 @@ const HistoryEvent = ({ event }) => (
 const HistoryPage = ({ data }) => (
   <>
     <Markdown>{data?.body}</Markdown>
-    {data.events.slice(1).map((event) => (
-      <HistoryEvent key={event.id} event={event} />
+    {data.milestones.slice(1).map((milestone) => (
+      <Milestone key={milestone.id} milestone={milestone} />
     ))}
     <div id="root">
-      <Markdown>{data.events[0]?.body}</Markdown>
+      <Markdown>{data.milestones[0]?.body}</Markdown>
     </div>
   </>
 )
@@ -45,12 +45,12 @@ const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
 const getPageData = async () => historyData
 
-const getEvents = async () => {
-  const events = await retrieveContent('history', { ref: 'history' })
+const getMilestones = async () => {
+  const milestones = await retrieveContent('history', { ref: 'history' })
 
-  events.forEach((event) => {
-    if ('image' in event)
-      event.image.src = new URL(event.image.src, ASSETS_BASE_URL).href
+  milestones.forEach((milestone) => {
+    if ('image' in milestone)
+      milestone.image.src = new URL(milestone.image.src, ASSETS_BASE_URL).href
   })
 
   const formatter = new Intl.DateTimeFormat('en-GB', {
@@ -58,25 +58,27 @@ const getEvents = async () => {
     month: 'long',
   })
 
-  const processedEvents = events
-    .sort((event1, event2) => (event1.date < event2.date ? -1 : 1))
-    .map((event) => ({
-      ...event,
-      date: formatter.format(event.date),
+  const processedMilestones = milestones
+    .sort((milestone1, milestone2) =>
+      milestone1.date < milestone2.date ? -1 : 1
+    )
+    .map((milestone) => ({
+      ...milestone,
+      date: formatter.format(milestone.date),
     }))
 
-  return processedEvents
+  return processedMilestones
 }
 
 export async function getStaticProps() {
   const data = await getPageData()
-  const events = await getEvents()
+  const milestones = await getMilestones()
 
   return {
     props: {
       data: {
         ...data,
-        events,
+        milestones,
       },
     },
   }
