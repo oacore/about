@@ -1,5 +1,7 @@
 import React from 'react'
 
+import styles from './history.module.scss'
+
 import { Markdown } from 'components'
 import historyData from 'data/history.yml'
 import retrieveContent from 'content'
