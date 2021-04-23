@@ -1,6 +1,206 @@
-title: CORE History
-description: |
-  CORE 10 year anniversary
+meta:
+  title: We celebrate 10 years of CORE in 2021!
+  description: ''
+  headline: Genesis of the CORE family
 
-body: |
-  Since the [beginning of the story](#root), we collected 210,421,275 scientific outputs containing 77,634,504 full text links along with 26,180,633 hosted documents bringing open science to everyone. We didn’t achieve this in a moment but werked hardly for over 10 years and now, we are happy to share the story of us.
+milestones:
+-
+  date: 2010-09-01
+  title: Initial idea developed
+  body: Petr Knoth comes up with the idea of aggregating research papers as part of his doctoral work at the Knowledge media institute, The Open University. He recognises that research papers are scattered across many systems limiting their reuse potential. He is motivated by the opportunity to connect repositories by aggregating open access papers so that research papers can be text-mined, enabling the development of innovative technologies for information access. He becomes a strong supporter of the open access movement and open access repositories, wanting to see democratisation of knowledge generated using tax-payers’ money.
+  link:
+    href: ''
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: None
+-
+  date: 2010-11-01
+  title: Initial grant application submitted
+  body: Petr Knoth writes an application for the first grant for his idea. He is asking for an initial seed of £40k which will fund his project for 6 months. The CORE (COnnecting REpositories) brand is born.
+  link:
+    href: Project Plan – CORE
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: Reuse the graphics from the blog post
+-
+  date: 2011-02-01
+  title: CORE project started
+  body: "The first grant for CORE is awarded by Jisc in January and the project commences on 1st February 2011, initiating a long-term collaboration of the Open University and Jisc (which is not yet known at this time). CORE embarks on a mission to facilitate free, unrestricted access to research for all. \n\nCORE’s initial goal is to connect 20 repositories and provide a recommendation system for their papers. \n\nOne of the project’s achievements is the integration of the CORE Plugin (later called CORE Recommender) into the Open University’s repository, Open Research Online. This is the first adopter with hundreds more to follow in the future. \n\nThe project over-delivers, developing an aggregation engine for over 60 repositories, a recommender system, linked open data module and search and web UI. The funder (Jisc) is impressed, paving the way for new opportunities."
+  link:
+    href: "https://web.archive.org/web/20150213215116/http://core.ac.uk/\n\n\n\n\n\n\n\n\n\nCORE Plugin deployed in Open Research Online – CORE"
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: "Browser or laptop mockup with Screenshot from the Internet Archive\nIf splitted, reuse the screenshot of CORE Plugin"
+-
+  date: 2011-11-01
+  title: From a national aggregator to a worldwide aggregator
+  body: "Petr Knoth secures a new grant running for 9 month with the objective of developing a UK nationwide aggregation service for research publications scattered across institutional repositories. The potential of the system is demonstrated through the development of 5 services on top of the aggregation system: CORE Portal (with search), CORE Mobile, CORE Recommender and CORE API. \n\nThe project again over-delivers, resulting not just in the aggregation of the vast majority of the UK repositories but quickly expanding, both technically and strategically, to aggregated research outputs from institutional repositories aggregated globally."
+  link:
+    href: https://web.archive.org/web/20150206045900/http://core-project.kmi.open.ac.uk/
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: "Could be some Storyset graphics\nMap of the world with ‘aggregation’ spreading"
+-
+  date: 2012-01-01
+  title: Another grant brings a 2 year stability
+  body: "A new research grant called DiggiCORE provides a necessary degree of stability for the development of CORE and allows expanding and improving the technology. \n\nThis is the time when CORE manages to scale out its functionality to harvest, process and analyse not just metadata of open access research papers but their full texts too. This processing of full texts becomes a defining feature of CORE, connecting full text research papers from across repositories globally. It is a clear response to the need of going beyond poor quality metadata only silos on which it is hardly possible to develop engaging services."
+  link:
+    href: "https://web.archive.org/web/20150119010918/http://core-project.kmi.open.ac.uk/about-diggicore-project \nBlogpost https://web.archive.org/web/20130613010020/http://core-project.kmi.open.ac.uk/two-new-projects-part-of-the-core-family"
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: "Full text harvesting something\n\nCORE Box full of PDFs ✅"
+-
+  date: 2012-05-01
+  title: Mobile application launched
+  body: First release of a mobile application for Android.
+  link:
+    href: CORE Mobile Application – CORE
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: "iPhone mockup with the screenshots from the Apple Store (Internet Archive)\n\nThere is one already, possibly will be reused ✅"
+-
+  date: 2013-07-01
+  title: The UK national aggregator
+  body: Jisc recognises CORE as the official UK’s national Open Access aggregator, after CORE wins a Jisc-commissioned tender.
+  link:
+    href: CORE becomes the official UK Open Access Aggregator after winning a Jisc-commissioned tender
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: A map of the UK with universities marked, rather than the flag & photo
+-
+  date: 2015-08-01
+  title: CORE becomes an open access service
+  body: "A series of small grants and engagements eventually leads to the CORE team landing a multiyear national open access aggregator service contract with Jisc. CORE joins the Jisc Open Access Services portfolio, but the team delivering CORE stays at the Open University, in a bilateral agreement of Jisc with the Open University in which both institutions commit to supporting CORE. \n\nFrom a technical perspective, this enables CORE to develop its services along the Service Oriented Architecture (SOA) paradigm and put in place the required hardware for the service provision."
+  link:
+    href: ''
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: CORE + Jisc ✅
+-
+  date: 2015-09-01
+  title: CORE Repository Dashboard is launched
+  body: The Repository Dashboard is launched. It initially provides an online interface for repositories and content providers to manage harvesting. However, the functionality is regularly updated.
+  link:
+    href: "https://web.archive.org/web/20141007132102/http://core-project.kmi.open.ac.uk/node/53\nhttps://blog.core.ac.uk/2015/09/08/core-repositories-dashboard"
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea:
+-
+  date: 2016-06-01
+  title: Aggregator of open access journals and preprints
+  body: research grants, including national and European Commission funded Horizon 2020, enable CORE to expand its functionality to harvest open access journals, including hybrid journals, and preprint repositories. Another series of multi-year research grants, including national and European Commision funded H2020, enable CORE to expand its ability to harvesting content from open access journals (including hybrid) and preprint systems.
+  link:
+    href: ''
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea:
+-
+  date: 2017-05-01
+  title: 75 million metadata and 6 million full texts
+  body: CORE reaches the milestone of 75 million metadata records and 6 million full text research articles harvested from open access journals and repositories.
+  link:
+    href: https://blog.core.ac.uk/2017/05/16/core-reaches-a-new-milestone-75-million-metadata-and-6-million-full-text/
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea:
+-
+  date: 2018-12-01
+  title: Becoming world’s largest open access aggregator
+  body:
+  link:
+    href: https://blog.core.ac.uk/2018/12/18/core-becomes-the-worlds-largest-open-access-aggregator-or-how-about-them-stats-2018-edition/
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: Santa letter
+-
+  date: 2019-01-01
+  title: Fast growing user base
+  body: CORE reaches 10 million monthly active users
+  link:
+    href:
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea:
+-
+  date: 2019-06-01
+  title: CORE announced to be used in REF2021
+  body: Research England announces to use CORE for the REF2021 Open Access audit. This is motivated by our research study “Do Authors Deposit on Time? Tracking Open Access Policy Compliance.”
+  link:
+    href: https://core.ac.uk/ref-audit/ if nothing better
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea:
+-
+  date: 2019-07-01
+  title: Hello CORE Discovery!
+  body:
+  link:
+    href: 2 thoughts on “CORE update for April to June 2019”
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: CORE Discovery in the Web Store – reuse existing CORE Discovery graphics
+-
+  date: 2019-11-01
+  title: Award for Outstanding Impact of Research on Society and Prosperity
+  body: CORE is continuing to grow both its content, user-base and range of services. With now close to 14 million full texts and 135 million metadata items from about 10,000 providers, CORE aims to facilitate free, unrestricted access to research for all.
+  link:
+    href: "https://blog.core.ac.uk/2020/01/30/core-update-for-october-to-december-2019/#CORE_won_an_Outstanding_Impact_of_Research_on_Society_and_Prosperity_Award\n\nCORE wins an Outstanding Impact of Research on Society and Prosperity Award – Jisc scholarly communications \n\nAward for Outstanding Impact of Research on Society and Prosperity"
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: Star or team photo from the blog ⏳
+-
+  date: 2020-04-01
+  title: CORE launches Repository Edition
+  body:
+  link:
+    href: "https://blog.core.ac.uk/2020/04/23/core-update-for-january-to-march-2020/#CORE_is_ready_to_release_a_premium_version_of_the_Repository_Dashboard \n\nTrack compliance of the REF2021 open access policy with the CORE Repository Dashboard – CORE"
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: Dashboard Premium screenshot ✅
+-
+  date: 2020-12-01
+  title: CORE reaches 30 million visits per month
+  body: As of November 1, 2020, CORE is listed among the top 2,000 websites by user engagement, calculated from a combination of daily visitors and page views on a website over the last 90 days. In the beginning of December, CORE achieved 1,528 positions on the rank.
+  link:
+    href: "CORE reaches 30 million visits per month – CORE\n\nCORE reaches 30 million visits per month – Jisc scholarly communications"
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: Storyset Illustration ✅
+-
+  date: 2020-10-01
+  title: CORE Recommender now supports article discovery on arXiv
+  body: To generate a list of recommended works, the tool utilizes an algorithm based on the article’s full text and metadata, including title, authors, and abstract. The suggestions come both from arXiv and other resources in the CORE collection, and as many as five articles with freely accessible full texts might be recommended
+  link:
+    href: https://blog.core.ac.uk/2020/10/16/core-recommender-now-supports-article-discovery-on-arxiv/
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: Screenshot of the Recommender + arXiv logo + CORE ✅
+-
+  date: 2021-02-01
+  title: CORE participates in PMC LinkOut
+  body: This development now enables PubMed users to access full text links to articles hosted in CORE via its LinkOut service, providing researchers with a direct route to the research. The linking of CORE papers directly from PubMed resources and other related databases further increases the discoverability of content aggregated by CORE, providing a valuable service to our repositories.
+  link:
+    href: https://blog.core.ac.uk/2021/02/04/core-pubmed-collaborate-for-further-full-text-dissemination/
+    type: CORE Blog
+    label: ''
+    description: ''
+  grapics-idea: "We could create one history point about collaboration CORE+Arxiv+Pubmed\n\nPubMed Central + CORE Button screenshot"

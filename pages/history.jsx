@@ -18,7 +18,9 @@ const LinkCard = ({ link }) => (
 const Milestone = ({ milestone }) => (
   <div>
     <div>
-      <img src={milestone.image.src} alt={milestone.image.alt} />
+      {milestone.image && (
+        <img src={milestone.image.src} alt={milestone.image.alt} />
+      )}
     </div>
     <div>
       <time dateTime={milestone.id}>{milestone.date}</time>
@@ -31,7 +33,6 @@ const Milestone = ({ milestone }) => (
 
 const HistoryPage = ({ data }) => (
   <>
-    <Markdown>{data?.body}</Markdown>
     {data.milestones.slice(1).map((milestone) => (
       <Milestone key={milestone.id} milestone={milestone} />
     ))}
@@ -43,8 +44,9 @@ const HistoryPage = ({ data }) => (
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-const getPageData = async () => historyData
+const getPageData = () => historyData
 
+// eslint-disable-next-line no-unused-vars
 const getMilestones = async () => {
   const milestones = await retrieveContent('history', { ref: 'history' })
 
@@ -72,13 +74,12 @@ const getMilestones = async () => {
 
 export async function getStaticProps() {
   const data = await getPageData()
-  const milestones = await getMilestones()
+  // const milestones = await getMilestones()
 
   return {
     props: {
       data: {
         ...data,
-        milestones,
       },
     },
   }
