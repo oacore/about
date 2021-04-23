@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './history.module.scss'
 
-import { Markdown } from 'components'
+import { Markdown, Page } from 'components'
 import historyData from 'data/history.yml'
 import retrieveContent from 'content'
 
@@ -18,7 +18,7 @@ const LinkCard = ({ link }) => (
 )
 
 const Milestone = ({ milestone }) => (
-  <div>
+  <section>
     <div>
       <img src={milestone.image.src} alt={milestone.image.alt} />
     </div>
@@ -28,19 +28,27 @@ const Milestone = ({ milestone }) => (
       <Markdown>{milestone.body}</Markdown>
       <LinkCard link={milestone.link} />
     </div>
-  </div>
+  </section>
 )
 
 const HistoryPage = ({ data }) => (
-  <>
-    <Markdown>{data?.body}</Markdown>
+  <Page
+    title={data.title}
+    description={data.description}
+    className={styles.article}
+  >
+    <section className={styles['front-section']}>
+      <Markdown className={`${styles['root-milestone']} ${styles.top}`}>
+        {data?.body}
+      </Markdown>
+    </section>
     {data.milestones.slice(1).map((milestone) => (
       <Milestone key={milestone.id} milestone={milestone} />
     ))}
-    <div id="root">
+    <section id="root">
       <Markdown>{data.milestones[0]?.body}</Markdown>
-    </div>
-  </>
+    </section>
+  </Page>
 )
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'

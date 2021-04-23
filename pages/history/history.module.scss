@@ -1,0 +1,52 @@
+$timeline-color: rgba(0, 0, 0, 0.12);
+
+.article {
+  // 3rd gradient is the timeline, 1st and 2nd are white rectangles to hide the line on top and bottom of the page
+  background: linear-gradient(180deg, #fff, #fff 50vh, transparent 50vh),
+    linear-gradient(0deg, #fff, #fff 150px, transparent 150px),
+    linear-gradient(
+      90deg,
+      transparent calc(50% - 2px),
+      $timeline-color calc(50% - 2px),
+      $timeline-color calc(50% + 2px),
+      transparent calc(50% + 2px)
+    );
+}
+
+.front-section {
+  height: 100vh;
+  margin-top: -4.5rem;
+  background: url('assets/anniversary-logo-big.svg') center -1px no-repeat,
+    url('assets/side-curve-left.svg') -1px top no-repeat,
+    url('assets/side-curve-right.svg') right top no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.root-milestone {
+  width: 40%;
+  padding: 16px;
+  border: 2px solid $timeline-color;
+  border-radius: 4px;
+  background: #fff;
+}
+
+.root-milestone p {
+  margin: 0;
+}
+
+.root-milestone.top::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 24px;
+  height: 48px;
+  // 4px = 16px - 12px. It cancels padding and aligns ::after on the border.
+  transform: translate(-50%, 4px);
+  background: url('assets/circle.svg') no-repeat,
+    url('assets/arrow.svg') 50% calc(100% - 4px) no-repeat, #fff;
+}
