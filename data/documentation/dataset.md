@@ -13,7 +13,7 @@ title: CORE Dataset
 Full dataset (~400GB, 2.1TB Extracted)
 
 **License:**
-For research use only. [Contact us](~about/#contact) for details.
+All rights reserved. See our [Terms & Conditions](/terms).
 
 **Note:**  
 Please read the section "Structure of datasets" below for more information.
