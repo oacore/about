@@ -360,3 +360,46 @@ collections:
     label: Past
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
+
+
+- name: pages
+
+  folder: pages
+  extension: md
+  format: yaml-frontmatter
+
+  create: true
+  delete: true
+
+  label: 🗒 Other
+  label_singular: page
+
+  fields:
+  - name: title
+    widget: string
+    label: Title
+    hint: >
+      Displayed in the browser as a tab name and in Google, when
+      the page appears in the search results.
+  - name: description
+    widget: text
+    label: Description
+    hint: >
+      Description of the page, not visible on the page but will be shown
+      in search engines when the page appers in results. Important
+      to have good performance in search engines.
+  - name: headline
+    widget: string
+    required: false
+    default: ''
+    label: Headline
+    hint: >
+      The title of the page. Displayed on the page below header
+      and above the page navigation. If empty, the TITLE is used.
+  - name: body
+    widget: markdown
+    label: Content
+
+  sortable_fields: [title]
+
+  preview_path: api/preview?page=about&ref=cms/pages/{{slug}}
