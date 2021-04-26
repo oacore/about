@@ -14,7 +14,7 @@ title: CORE Terms and Conditions
 ## CC-BY licenced datasets
 
 1.  You can use these datasets for any commercial or non-commercial
-  purposes in line with the&nbsp;CC-BY licence.
+    purposes in line with the&nbsp;CC-BY licence.
 
 2.  You need to acknowledge the use of CORE as [described](/acknowledge).
 
@@ -36,7 +36,9 @@ in any case (even if one of the below points apply to you) if:
     such as but not limited to an API, a recommender system,
     search, discovery system or analytical dashboard.
 
-If you are **an individual**, you can use CORE data freely if:
+### Individuals
+
+If you are an individual, you can use CORE data freely if:
 
 1.  You are conducting work in your own personal
     capacity <b>AND</b>
@@ -46,8 +48,11 @@ If you are **an individual**, you can use CORE data freely if:
     for free use <b>AND</b>
 4.  You will acknowledge the use of CORE as [described](/acknowledge).
 
-If you are working for **a public research
-organisation**&nbsp;(e.g.&nbsp;a&nbsp;university):
+
+### Public research organisations
+
+If you are working for a public research
+organisation&nbsp;(e.g.&nbsp;a&nbsp;university):
 
 1.  You can use CORE data freely if:
 
@@ -63,7 +68,9 @@ organisation**&nbsp;(e.g.&nbsp;a&nbsp;university):
     [contact us](mailto:th%65%74eam%40c%6fr%65%2eac%2eu%6b)
     to obtain a licence.
 
+### Others
+
 [Contact us](mailto:th%65%74eam%40c%6fr%65%2eac%2eu%6b)
-to discuss use of CORE data in all **other** cases.
+to discuss use of CORE data in all other cases.
 
 </section>
