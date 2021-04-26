@@ -61,16 +61,18 @@ testimonial:
 what-is-included:
   title: What’s included
   content: |
-    The API is free to use for non-commercial purposes. If you want to use the CORE API in commercial applications,
-    please [contact](~about/#contact) us. Our free membership provides you with:
+    Subscription to the API provides you with:
 
     * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
     * Detailed [documentation](/documentation/api) on how to use the CORE API with live examples and wrappers to common programming languages.
     * One batch request or five single requests per 10 seconds. Need a faster rate? [Contact us](~about/#contact).
+
+    Check our [Terms & Conditions](/terms) to see if you are elegible
+    for a free license.
   actions:
     primary:
       url: /api-keys/register
-      caption: Apply for a free API key
+      caption: Apply for an API key
     secondary:
       url: /documentation/api
       caption: Read documentation
