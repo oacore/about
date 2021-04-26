@@ -32,7 +32,7 @@ jobs:
       run: npm ci
 
     - name: Build
-      run: npm build
+      run: npm run build
 
   lint:
     name: Analyse code quality
