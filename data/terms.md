@@ -2,8 +2,6 @@
 title: CORE Terms and Conditions
 ---
 
-<!-- <p>By using this service you are agreeing to the following usage criteria.</p> -->
-
 <style>
   ol p + ol, ol p + ul, ul p + ol, ul p + ul {
     margin-bottom: 1.5rem;
