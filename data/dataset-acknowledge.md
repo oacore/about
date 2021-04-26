@@ -2,21 +2,26 @@
 title: How to acknowledge the use of CORE
 ---
 
-1.  resources coming from CORE in an appropriate way (e.g. by linking the
-    entities coming from a particular CORE document, by giving a provenance
-    link back to this document in CORE, etc.)
-2.  the use of CORE. We expect an attribution at the project’s main page by using
-    [CORE’s logo](/resources/core-logo.png) or the
-    [powered by CORE](/resources/powered-by-core-orange.png)
-    picture.
+If you use CORE in your work, you should acknowledge it as follows:
 
+1.  **In research papers:** provide an explicit citation to one or more of
+    our relevant research outputs. Please, do not just provide
+    a&nbsp;URL to&nbsp;CORE in a footnote.
 
-If your project is producing any research papers mentioning CORE, you support
-this mention by means of an explicit citation to a relevant paper listed
-in our [research outputs](~about/research-outputs).
-            
+2.  **A website using/powered by CORE:** we expect an attribution at
+    the project’s main page by using [CORE’s logo][logo]
+    or the [powered by CORE][powered-by-banner].
+
+3.  **Where CORE feeds individual resources, e.g. research articles,
+    into a third party system:** provide a provenance link back to the
+    relevant CORE entity. We also encourage the use of
+    the [CORE’s logo][logo] or the [powered by CORE][powered-by-banner].
+
 You authorise us to use the logo of your project on our website and
 mentioning our support to you.
 
 We reserve the right to withdraw our approval for use of CORE at any time
 by giving you a 30-day notice.
+
+[logo]: /resources/core-logo.png
+[powered-by-banner]: /resources/powered-by-core-orange.png
