@@ -41,9 +41,13 @@ const processFile = (githubFile) => {
 }
 
 const processDirectory = (githubDirectory) => {
-  const urls = githubDirectory.map(({ download_url: url }) => url)
+  // Directory URLs are not supported yet. It's quite a question how to fit
+  // directories and recursive processing into current system
+  const fileUrls = githubDirectory
+    .filter(({ type }) => type === 'file')
+    .map(({ download_url: url }) => url)
 
-  return Promise.all(urls.map((url) => octokit.request(url)))
+  return Promise.all(fileUrls.map((url) => octokit.request(url)))
     .then((responses) => responses.map(({ data }) => data))
     .then((rawFiles) =>
       rawFiles.map((content, i) => [githubDirectory[i].path, content])
