@@ -361,6 +361,52 @@ collections:
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
 
+- name: docs
+
+  folder: docs
+  extension: md
+  format: yaml-frontmatter
+
+  create: true
+  delete: false
+
+  label: 📘 Documentation
+  label_singular: documentation page
+  description: >
+    These are service documentation pages which are usually linked
+    from the landing pages, e.g. from core.ac.uk/services/dataset.
+    You can create more pages if needed by they will remain hidden
+    from whe website unless you link them explicitly or send to someone.
+
+  fields:
+  - name: title
+    widget: string
+    label: Title
+    hint: >
+      Displayed in the browser as a tab name and in Google, when
+      the page appears in the search results.
+  - name: description
+    widget: text
+    label: Description
+    hint: >
+      Description of the page, not visible on the page but will be shown
+      in search engines when the page appers in results. Important
+      to have good performance in search engines.
+  - name: headline
+    widget: string
+    required: false
+    default: ''
+    label: Headline
+    hint: >
+      The title of the page. Displayed on the page below header
+      and above the page navigation. If empty, the TITLE is used.
+  - name: body
+    widget: markdown
+    label: Content
+
+  sortable_fields: [title]
+
+  preview_path: api/preview?page=documentation/{{slug}}&ref=cms/docs/{{slug}}
 
 - name: pages
 
