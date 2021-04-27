@@ -402,4 +402,4 @@ collections:
 
   sortable_fields: [title]
 
-  preview_path: api/preview?page=about&ref=cms/pages/{{slug}}
+  preview_path: api/preview?page={{slug}}&ref=cms/pages/{{slug}}
