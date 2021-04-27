@@ -7,7 +7,7 @@ import historyData from 'data/history.yml'
 import retrieveContent from 'content'
 
 const LinkCard = ({ link }) => (
-  <div>
+  <div className={styles.card}>
     <h4>
       <a href={link.href} target="_blank" rel="noreferrer">
         {link.caption}
@@ -18,13 +18,15 @@ const LinkCard = ({ link }) => (
 )
 
 const Milestone = ({ milestone }) => (
-  <section>
-    <div>
+  <section className={styles.milestone}>
+    <div className={styles['milestone-image-container']}>
       <img src={milestone.image.src} alt={milestone.image.alt} />
     </div>
-    <div>
-      <time dateTime={milestone.id}>{milestone.date}</time>
-      <h3>{milestone.title}</h3>
+    <div className={styles['milestone-text-content']}>
+      <time className={styles.date} dateTime={milestone.date.numeric}>
+        {milestone.date.long}
+      </time>
+      <h3 className={styles['milestone-title']}>{milestone.title}</h3>
       <Markdown>{milestone.body}</Markdown>
       <LinkCard link={milestone.link} />
     </div>
@@ -45,7 +47,10 @@ const HistoryPage = ({ data }) => (
     {data.milestones.slice(1).map((milestone) => (
       <Milestone key={milestone.id} milestone={milestone} />
     ))}
-    <section id="root">
+    <section
+      className={`${styles['root-milestone']} ${styles.bottom}`}
+      id="root"
+    >
       <Markdown>{data.milestones[0]?.body}</Markdown>
     </section>
   </Page>
@@ -63,10 +68,16 @@ const getMilestones = async () => {
       milestone.image.src = new URL(milestone.image.src, ASSETS_BASE_URL).href
   })
 
-  const formatter = new Intl.DateTimeFormat('en-GB', {
-    year: 'numeric',
-    month: 'long',
-  })
+  const formatter = {
+    long: new Intl.DateTimeFormat('en-GB', {
+      year: 'numeric',
+      month: 'long',
+    }),
+    numeric: new Intl.DateTimeFormat('en-GB', {
+      year: 'numeric',
+      month: 'numeric',
+    }),
+  }
 
   const processedMilestones = milestones
     .sort((milestone1, milestone2) =>
@@ -74,7 +85,10 @@ const getMilestones = async () => {
     )
     .map((milestone) => ({
       ...milestone,
-      date: formatter.format(milestone.date),
+      date: {
+        numeric: formatter.numeric.format(milestone.date).replace('/', '-'),
+        long: formatter.long.format(milestone.date),
+      },
     }))
 
   return processedMilestones
