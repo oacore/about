@@ -27,7 +27,7 @@ Metadata only dataset (beta) (127 GB) - 123M metadata items, 85.6M items with ab
 With full text dataset (beta) (330 GB) - 123M metadata items, 85.6M items with abstract, 9.8M items with fulltext
 
 **License:**
-[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+[Open Data Commons Attribution (ODC-By)][license] license.
 
 **Note:**  
 For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB (full text) of free space on disk. It is possible to extract each repository individually. Please read the section "Structure of datasets" below for more information.
@@ -39,7 +39,7 @@ For extracting all repositories, you will need up to 509 GB (metadata) or 1.3 TB
 Dataset created for Deduplication of Scholarly Documents using Locality Sensitive Hashing and Word Embeddings (LREC 2020) (62 MB compressed, 204 MB in total)
 
 **License:**
-[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+[Open Data Commons Attribution (ODC-By)][license] license.
 
 
 **CORE-MAG Mapping 2019-04-01**
@@ -49,7 +49,7 @@ Dataset created for Deduplication of Scholarly Documents using Locality Sensitiv
 CORE Dataset to Microsoft Academic Graph (MAG) mapping (80MB compressed, 173 MB in total) - 8.9M items
 
 **License:**
-[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+[Open Data Commons Attribution (ODC-By)][license] license.
 
 
 ### 2017
@@ -63,7 +63,7 @@ Metadata only dataset (beta) (22.65 GB) - 64 million items
 With full text dataset (beta) (157.38 GB) - 8 million items  
 
 **License:**
-[Creative Commons Attribution (CC-BY)](https://creativecommons.org/licenses/by/4.0/) license.
+[Open Data Commons Attribution (ODC-By)][license] license.
 
 Beta notice: while in beta, we cannot guarantee completeness or integrity of the dataset and we appreciate any feedback on the format or data of the dataset. We are aware of an issue where the statistics in the repository object are incorrect or incomplete. We do not use these fields internally and plan on removing them in future releases.  
 
@@ -390,3 +390,5 @@ content in the dataset. It is therefore up to the user of this dataset to
 ensure that the way in which they use the dataset does not breach copyright.
 The dataset is in no way intended for the purposes of reading the original 
 publications, but for machine processing only.
+
+[license]: https://opendatacommons.org/licenses/by/1-0/
