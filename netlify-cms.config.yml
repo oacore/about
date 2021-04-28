@@ -109,7 +109,7 @@ collections:
   delete: true
 
   label: 🕰 History
-  label_singular: milestone
+  label_singular: history milestone
   summary: '{{date}} - {{title}}'
 
   fields:
@@ -125,16 +125,18 @@ collections:
       The day is not displayed, therefore it doesn't have to be correct.
     picker_utc: true
   - name: title
-    label: Milestone
+    label: Title
     widget: string
     hint: >
-      The title for the milestone
+      Keep it short to garantee a clean scannable of the entry on the website.
+      A line would be ideal, up to 2 lines in general.
   - name: body
     widget: markdown
     buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
     label: Description
     hint: >
-      Try to keep this concise, it should be approximately 2-3 lines on the website.
+      Try to keep this concise, it should be approximately 2-3 lines
+      on the website.
   - name: image
     label: Image
     widget: object
@@ -167,16 +169,19 @@ collections:
       - name: href
         label: URL
         widget: string
-      - name: caption
-        label: Caption
+      - name: label
+        label: Label
         widget: string
       - name: description
         label: Description
         widget: string
         required: false
-      - name: source
-        label: Source
+      - name: type
         widget: string
+        label: Type
+        hint: >
+          What kind of the resoure it is and where? A “Post in CORE Blog”,
+          a “Webpage in Internet Archive” etc.
 
   slug: '{{date}}-{{title}}'
 
