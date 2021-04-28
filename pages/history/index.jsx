@@ -10,10 +10,10 @@ const LinkCard = ({ link }) => (
   <div className={styles.card}>
     <h4>
       <a href={link.href} target="_blank" rel="noreferrer">
-        {link.caption}
+        {link.label}
       </a>
     </h4>
-    <p>{link.source}</p>
+    <p>{link.type}</p>
   </div>
 )
 
