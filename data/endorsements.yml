@@ -632,6 +632,10 @@ organizations:
   name: Flowcite
   url: https://flowcite.com
   logo: flowcite-symbol-text.png
+- &access-my-research
+  name: AccessMyResearch
+  url: http://www.accessmyresearch.org
+  logo: access-my-research.png
 
 sections:
   enterprise-companies:
@@ -764,6 +768,7 @@ sections:
         - *coar
         - *bl
         - *flowcite
+        - *access-my-research
     testimonials:
       title: What partners say about us
   # testimonials:
