@@ -1,0 +1,77 @@
+.timeline {
+  padding-right: calc(var(--column-gap) / 2);
+  padding-left: calc(var(--column-gap) / 2);
+}
+
+.timeline > * {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.intro {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  max-width: var(--max-text-width);
+  border: 1px solid var(--line-color);
+  border-radius: var(--component-corner-radius, 2px);
+  background: #fff;
+}
+
+/* Circle (copied from the HistoryMilestone) */
+.intro::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: calc(var(--circle-size) / -2);
+  left: calc(50% - var(--circle-size) / 2);
+  display: block;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  background: #fff;
+  border: var(--line-width) solid var(--line-color);
+}
+
+.intro::after {
+  content: url('./arrow.svg');
+  position: absolute;
+  z-index: 1;
+  bottom: calc(var(--circle-size) / -2);
+  left: 50%;
+  display: block;
+  padding: var(--line-width);
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, 100%);
+}
+
+/* Aligning last milestone stile similar to introduction container */
+.timeline > :last-child {
+  @extend .intro;
+  flex-direction: column;
+  background-image: none;
+}
+
+.timeline > :last-child::after {
+  top: calc(var(--circle-size) / -2);
+  bottom: unset;
+  transform: translate(-50%, -100%) rotate(180deg);
+}
+
+/* Cleaning spacing workaround in the last milestone */
+.timeline > :last-child > * {
+  padding-bottom: 0;
+}
+
+/* Hiding empty image container */
+.timeline > :last-child > :empty {
+  display: none;
+}
+
+/* Aligning the circle properly */
+.timeline > :last-child::before {
+  top: calc(var(--circle-size) / -2);
+  bottom: unset;
+}

@@ -1,0 +1,27 @@
+/**
+ * 1. Ideally, could be global
+ */
+.page {
+  --min-text-width: 35ch;
+  --max-text-width: 70ch;
+  --break-width: calc(var(--min-text-width) * 2 + var(--column-gap));
+  --column-gap: 2rem;
+  --line-width: 4px;
+  --line-color: var(--gray-300);
+  --circle-size: 1.5rem;
+}
+
+/* Workaround for changed content width */
+.page :global(.content) {
+  max-width: var(--max-text-width);
+}
+
+.hero {
+  padding-bottom: 0;
+}
+
+.blobs-background {
+  background: url('assets/side-curve-left.svg') top left / contain,
+    url('assets/side-curve-right.svg') top right / contain;
+  background-repeat: no-repeat;
+}
