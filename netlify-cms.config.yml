@@ -373,9 +373,9 @@ collections:
   create: true
   delete: true
 
-  label: 🕰 History Test
+  label: 🕰 History
   label_singular: history milestone
-  summary: '{{date}} - {{title}}'
+  summary: '{{date | date('YYYY-MM') }} - {{title}}'
 
   fields:
   - name: date
