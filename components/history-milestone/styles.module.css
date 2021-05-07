@@ -1,0 +1,98 @@
+/**
+ * Generic Layout
+ *
+ * This could be moved to the @oacore/design or at least into a more general
+ * place.
+ */
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--row-gap) var(--column-gap);
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--break-width, 0) - 100%) * 999);
+}
+
+/* Layout */
+
+/**
+ * Container is a Switcher braking at doubled text size
+ *
+ * 1. Ideally, could be global
+ * 2. Row gap does work because we need to hide the line behind content
+ *    Using padding for this
+ */
+.container {
+  --min-text-width: 35ch;
+  --max-text-width: 70ch; /* 1 */
+  --break-width: calc(var(--min-text-width) * 2 + var(--column-gap));
+  --column-gap: 2rem; /* 1 */
+  --row-gap: 0; /* 2 */
+  position: relative;
+  justify-content: center;
+  padding-top: var(--section-spacer);
+  padding-right: calc(var(--column-gap) / 2);
+  padding-bottom: calc(var(--section-spacer) - 1.5rem); /* 2 */
+  padding-left: calc(var(--column-gap) / 2);
+}
+
+.container > * {
+  max-width: var(--max-text-width);
+  padding-bottom: 1.5rem; /* 2 */
+}
+
+/* Layout changing */
+
+.container:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+/* Decoration */
+
+.container {
+  --line-width: 4px;
+  --line-color: var(--gray-300);
+  --circle-size: 1.5rem;
+  background-image: linear-gradient(
+    90deg,
+    transparent calc(50% - var(--line-width) / 2),
+    var(--line-color) calc(50% - var(--line-width) / 2),
+    var(--line-color) calc(50% + var(--line-width) / 2),
+    transparent calc(50% + var(--line-width) / 2)
+  );
+}
+
+/* Circle */
+.container::before {
+  content: '';
+  position: absolute;
+  top: calc(var(--section-spacer) - var(--circle-size) / 2 + 0.75rem);
+  left: calc(50% - var(--circle-size) / 2);
+  display: block;
+  width: var(--circle-size);
+  height: var(--circle-size);
+  border-radius: 50%;
+  background: #fff;
+  border: var(--line-width) solid var(--line-color);
+}
+
+.container > * {
+  background: #fff;
+}
+
+/* Child elements */
+
+.image-container img {
+  display: block;
+  width: 100%;
+}
+
+.date {
+  color: #b75400;
+  font-size: 0.75em;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
