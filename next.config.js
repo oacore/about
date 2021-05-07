@@ -67,6 +67,7 @@ const nextConfig = {
 
     Object.assign(config.resolve.alias, {
       components: path.resolve(__dirname, 'components'),
+      templates: path.resolve(__dirname, 'templates'),
       data: path.resolve(__dirname, 'data'),
       content: path.resolve(__dirname, 'content'),
     })

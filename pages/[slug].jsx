@@ -1,26 +1,5 @@
-import React from 'react'
-import { Container as BootstrapContainer } from 'reactstrap'
-
-import { Page, Content, Markdown } from 'components'
 import retrieveContent from 'content'
-
-// Since Page which is currently based on Article assumes that the content is
-// constructed from sections (with containers inside), we add a container to fix
-// the spacing
-const PureMarkdownPage = ({ data }) => (
-  <Page
-    title={data.title}
-    description={data.description}
-    keywords={data.keywords}
-  >
-    <h1>{data.headline || data.title}</h1>
-    <BootstrapContainer>
-      <Content>
-        <Markdown>{data.body}</Markdown>
-      </Content>
-    </BootstrapContainer>
-  </Page>
-)
+import { MarkdownPage } from 'templates'
 
 const PAGES_BASE = 'pages'
 
@@ -51,5 +30,7 @@ async function getStaticPaths() {
   }
 }
 
-export default PureMarkdownPage
+// This bare import could be composed with a page created here
+// if more props needed to process
+export default MarkdownPage
 export { getStaticProps, getStaticPaths }
