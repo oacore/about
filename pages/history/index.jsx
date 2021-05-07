@@ -3,57 +3,9 @@ import React from 'react'
 import hatSrc from './assets/hat.svg'
 import styles from './history.module.scss'
 
-import { Markdown, Page, Logo } from 'components'
+import { Page, Markdown, HistoryMilestone as Milestone, Logo } from 'components'
 import historyData from 'data/history.yml'
 import retrieveContent from 'content'
-
-const parseDataAttributes = (data = {}) =>
-  Object.fromEntries(
-    Object.entries(data).map(([key, value]) => [`data-${key}`, value])
-  )
-
-const LinkCard = ({ link }) => (
-  <div className={styles.card}>
-    <h4>
-      <a href={link.href} target="_blank" rel="noreferrer">
-        {link.label}
-      </a>
-    </h4>
-    <p>{link.type}</p>
-  </div>
-)
-
-const Milestone = ({
-  milestone,
-  data,
-  tag: Tag = 'div',
-  className = '',
-  ...htmlProps
-}) => (
-  <Tag
-    className={`${styles.milestone} ${className}`}
-    {...htmlProps}
-    {...parseDataAttributes(data)}
-  >
-    <div className={styles['milestone-image-container']}>
-      {milestone.image && (
-        <img
-          src={milestone.image.src}
-          alt={milestone.image.alt}
-          className={styles['milestone-image']}
-        />
-      )}
-    </div>
-    <div className={styles['milestone-text-content']}>
-      <time className={styles.date} dateTime={milestone.date.numeric}>
-        {milestone.date.long}
-      </time>
-      <h3 className={styles['milestone-title']}>{milestone.title}</h3>
-      <Markdown>{milestone.body}</Markdown>
-      {milestone.link && <LinkCard link={milestone.link} />}
-    </div>
-  </Tag>
-)
 
 const RootMilestone = ({ children, className = '', ...htmlProps }) => (
   <Markdown
@@ -101,7 +53,7 @@ const HistoryPage = ({ data }) => (
       .slice(1)
       .reverse()
       .map((milestone) => (
-        <Milestone key={milestone.id} milestone={milestone} />
+        <Milestone key={milestone.id} data={milestone} />
       ))}
     <RootMilestone className={styles.bottom} id="root">
       {data.milestones[0]?.body}
