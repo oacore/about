@@ -65,7 +65,7 @@ additional:
     and click on the “Add to Chrome” button to install the extension.
 
     To install the CORE Discovery repository plugin,
-    [follow these instructions](/documentation/discovery/plugin).
+    [follow these instructions](/documentation/discovery-plugin).
 
     If you are interested in the integration of the CORE Discovery API in your
     repository, website or application please [contact us](~about#contact).
@@ -101,7 +101,7 @@ what-is-included:
       url: https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh
     secondary:
       caption: Get repository plugin
-      url: /documentation/discovery/plugin
+      url: /documentation/discovery-plugin
 
 related-services:
 -
