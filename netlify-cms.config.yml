@@ -375,7 +375,7 @@ collections:
 
   label: 🕰 History
   label_singular: history milestone
-  summary: '{{date | date('YYYY-MM') }} - {{title}}'
+  summary: "{{date | date('YYYY-MM')}} - {{title}}"
 
   fields:
   - name: date
@@ -410,38 +410,46 @@ collections:
     hint: >
       A good illustration of what the milestone is about.
       Despite it being optional, having illustrations is preferable.
+      Fill either all or none of the fields.
     fields:
       - name: src
         label: Source
         widget: image
+        required: false
         allow_multiple: false
         hint: >
           Provide a link to the image or upload as a file.
       - name: alt
         widget: string
+        required: false
         label: Alternative text
         hint: >
           Description of what is actually displayed on the image.
           It helps tech-assistive users who can't see the screen understand
           what is on the picture.
   - name: link
+    widget: object
+    required: false
     label: Link
     hint: >
-      The link to a relevant resource
-    widget: object
+      The link to a relevant resource. It is optional but recommended.
+      Fill either all or none of the fields.
     fields:
       - name: href
+        widget: string
+        required: false
         label: URL
-        widget: string
       - name: label
-        label: Label
         widget: string
+        required: false
+        label: Label
       - name: description
         label: Description
         widget: string
         required: false
       - name: type
         widget: string
+        required: false
         label: Type
         hint: >
           What kind of the resoure it is and where? A “Post in CORE Blog”,
