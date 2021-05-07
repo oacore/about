@@ -1,0 +1,66 @@
+.container {
+  max-width: 45ch;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.container.clickable {
+  cursor: pointer;
+  transition: box-shadow 150ms;
+}
+
+.container.clickable:hover {
+  box-shadow: var(--elevation-04);
+}
+
+.container.clickable:focus-within {
+  box-shadow: var(--elevation-04);
+}
+
+.container.clickable:active {
+  box-shadow: var(--elevation-01);
+}
+
+.container h4 {
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* I hope this will become a recommendation in the specification soon */
+.description {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+/**
+ * 1. Using opacity just for a variable.
+ *    Ideally, it should be embedded into the colour
+ */
+.source {
+  position: relative;
+  padding-right: 2rem;
+  font-size: 0.75rem;
+  line-height: 1;
+  opacity: var(--on-surface-medium-emphasis); /* 1 */
+}
+
+.source::after {
+  content: url('open-in-new.svg');
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  margin-top: calc((1em - 1rem) / 2);
+  margin-top: calc((1lh - 1rem) / 2);
+  width: 1rem;
+  height: 1rem;
+}

@@ -12,6 +12,7 @@ export { default as Page } from './page'
 export { default as Footer } from './footer'
 
 // Elements
+export { default as LinkCard } from './link-card'
 export { default as Logo } from './logo'
 export { default as Blockquote } from './blockquote'
 export * from './citation-tabs'
