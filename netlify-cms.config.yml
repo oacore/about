@@ -373,7 +373,7 @@ collections:
   create: true
   delete: true
 
-  label: 🕰 History
+  label: 🕰 History Test
   label_singular: history milestone
   summary: '{{date}} - {{title}}'
 
