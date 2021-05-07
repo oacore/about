@@ -1,6 +1,19 @@
+const fs = require('fs').promises
 const path = require('path')
 
 const withImages = require('next-images')
+const yaml = require('js-yaml')
+
+let legacyConfig = null
+const readLegacyConfig = async (filepath = './legacy.config.yml') => {
+  if (legacyConfig == null) {
+    const contents = await fs.readFile(filepath)
+    const config = await yaml.load(contents)
+    legacyConfig = config
+  }
+
+  return legacyConfig
+}
 
 const nextConfig = {
   env: {
@@ -94,6 +107,11 @@ const nextConfig = {
       main: path.join(__dirname, 'main'),
     })
     return config
+  },
+
+  async redirects() {
+    const config = await readLegacyConfig()
+    return config.redirects
   },
 }
 
