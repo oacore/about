@@ -361,6 +361,100 @@ collections:
 
   preview_path: api/preview?page=about&ref=cms/team/{{slug}}
 
+
+- name: history
+
+  folder: history
+  extension: md
+  format: yaml-frontmatter
+
+  media_folder: '/images/history'
+
+  create: true
+  delete: true
+
+  label: 🕰 History
+  label_singular: history milestone
+  summary: '{{date}} - {{title}}'
+
+  fields:
+  - name: date
+    label: Date
+    widget: datetime
+    format: YYYY-MM-DD
+    date_format: YYYY-MM-DD
+    time_format: ''
+    default: ''
+    hint: >
+      All milestones on the page are sorted in chronologic order.
+      The day is not displayed, therefore it doesn't have to be correct.
+    picker_utc: true
+  - name: title
+    label: Title
+    widget: string
+    hint: >
+      Keep it short to garantee a clean scannable look of the entry
+      on the website. A line would be ideal, up to 2 lines in general.
+  - name: body
+    widget: markdown
+    buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+    label: Description
+    hint: >
+      Try to keep this concise, it should be approximately 2-3 lines
+      on the website.
+  - name: image
+    label: Image
+    widget: object
+    summary: 'Image: {{alt}}'
+    hint: >
+      A good illustration of what the milestone is about.
+      Despite it being optional, having illustrations is preferable.
+    fields:
+      - name: src
+        label: Source
+        widget: image
+        allow_multiple: false
+        required: false
+        hint: >
+          Provide a link to the image or upload as a file.
+      - name: alt
+        widget: string
+        required: false
+        label: Alternative text
+        hint: >
+          Description of what is actually displayed on the image.
+          It helps tech-assistive users who can't see the screen understand
+          what is on the picture.
+  - name: link
+    label: Link
+    hint: >
+      The link to a relevant resource
+    widget: object
+    fields:
+      - name: href
+        label: URL
+        widget: string
+      - name: label
+        label: Label
+        widget: string
+      - name: description
+        label: Description
+        widget: string
+        required: false
+      - name: type
+        widget: string
+        label: Type
+        hint: >
+          What kind of the resoure it is and where? A “Post in CORE Blog”,
+          a “Webpage in Internet Archive” etc.
+
+  slug: '{{date}}-{{title}}'
+
+  sortable_fields: [date, title]
+
+  preview_path: api/preview?page=history&ref=cms/history/{{slug}}
+
+
 - name: docs
 
   folder: docs
@@ -407,6 +501,7 @@ collections:
   sortable_fields: [title]
 
   preview_path: api/preview?page=documentation/{{slug}}&ref=cms/docs/{{slug}}
+
 
 - name: pages
 
