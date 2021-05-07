@@ -26,4 +26,4 @@ free to install:
   [Chrome webstore](https://discovery.core.ac.uk/download).
 
 * Integrate the CORE Discovery repository plugin by 
-  [following these instructions](/documentation/discovery/plugin).
+  [following these instructions](./discovery-plugin).
