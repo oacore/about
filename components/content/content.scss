@@ -8,6 +8,14 @@ $section-lg-spacer: 8 * $spacer !default;
 $section-spacer: $section-md-spacer !default;
 $article-spacer: $section-lg-spacer !default;
 
+:root {
+  --section-sm-spacer: #{$section-sm-spacer};
+  --section-md-spacer: #{$section-md-spacer};
+  --section-lg-spacer: #{$section-lg-spacer};
+  --section-spacer: #{$section-spacer};
+  --article-spacer: #{$article-spacer};
+}
+
 .content {
   max-width: $content-max-width;
   margin-bottom: $spacer;
