@@ -25,7 +25,14 @@ const format2name = (type) =>
 const format2action = (type) =>
   ['gdoc', 'gslides'].includes(type) ? 'Open' : 'Download'
 
-const ResourceLink = ({ id, href, format, className = '', ...restProps }) => {
+const ResourceLink = ({
+  id,
+  href,
+  format,
+  label,
+  className = '',
+  ...restProps
+}) => {
   const action = format2action(format)
   const name = format2name(format)
 
@@ -41,6 +48,9 @@ const ResourceLink = ({ id, href, format, className = '', ...restProps }) => {
   return (
     <CardLink
       className={`btn btn-outline-primary ${className}`}
+      data-format={format.toLowerCase()}
+      data-action={action}
+      data-label={label}
       {...props}
       {...restProps}
     >
@@ -49,8 +59,19 @@ const ResourceLink = ({ id, href, format, className = '', ...restProps }) => {
   )
 }
 
-const ResourceLinkSelector = ({ id, options, label, format, ...restProps }) => {
+const ResourceLinkSelector = ({
+  id,
+  options,
+  label,
+  format,
+  linkLabelPrefix,
+  onLinkClick,
+  ...restProps
+}) => {
   const [currentUrl, switchUrl] = useState(options[0].value)
+  const selectedLinkLabel = options.find(({ value }) => value === currentUrl)
+    ?.title
+  const linkLabel = `${linkLabelPrefix} (${selectedLinkLabel})`
 
   return (
     <div {...restProps}>
@@ -80,6 +101,8 @@ const ResourceLinkSelector = ({ id, options, label, format, ...restProps }) => {
         id={id}
         href={currentUrl}
         format={format}
+        label={linkLabel}
+        onClick={onLinkClick}
       />
     </div>
   )
@@ -92,6 +115,7 @@ const OutreachMaterials = ({
   picture,
   format,
   link,
+  onLinkClick,
   ...restProps
 }) => {
   const attachementType = typeof link == 'string' ? 'single' : 'multi'
@@ -122,6 +146,8 @@ const OutreachMaterials = ({
             options={link.options}
             label={link.label}
             format={format}
+            linkLabelPrefix={name}
+            onLinkClick={onLinkClick}
           />
         ) : (
           <ResourceLink
@@ -129,6 +155,8 @@ const OutreachMaterials = ({
             className={styles.outreachMaterialsLink}
             href={link}
             format={format}
+            label={name}
+            onClick={onLinkClick}
           />
         )}
       </CardBody>
