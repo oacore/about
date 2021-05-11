@@ -66,7 +66,7 @@ const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 const getPageData = async () => historyData
 
 const getMilestones = async () => {
-  const milestones = await retrieveContent('history', { ref: 'history' })
+  const milestones = await retrieveContent('history')
 
   milestones.forEach((milestone) => {
     if ('image' in milestone)
