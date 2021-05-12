@@ -1,8 +1,10 @@
-$timeline-color: rgba(0, 0, 0, 0.12);
+$timeline-color: rgb(224, 224, 224);
 
 .article {
   // 3rd gradient is the timeline, 1st and 2nd are white rectangles to hide the line on top and bottom of the page
-  background: linear-gradient(180deg, #fff, #fff 50vh, transparent 50vh),
+  background: url('assets/side-curve-left.svg') -1px top / 30% no-repeat,
+    url('assets/side-curve-right.svg') right top / 30% no-repeat,
+    linear-gradient(180deg, #fff, #fff 50vh, transparent 50vh),
     linear-gradient(0deg, #fff, #fff 150px, transparent 150px),
     linear-gradient(
       90deg,
@@ -13,13 +15,79 @@ $timeline-color: rgba(0, 0, 0, 0.12);
     );
 }
 
-.front-section {
+.anniversary-logo {
+  position: absolute;
+  left: 50%;
+  width: 30vw;
+  height: 30vw;
+  margin-top: -9rem;
+  transform: translateX(-50%);
+}
+.logo-circles {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.logo-circle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  border: calc(2vw / 15) solid;
+
+  &-1 {
+    border-color: #616161;
+    transform: translate(1%, 1%);
+  }
+  &-2 {
+    border-color: #b75400;
+    transform: translate(0.5%, -1%);
+  }
+  &-3 {
+    border-color: #b75400;
+    transform: translate(-0.75%, 0.25%);
+  }
+}
+.logo-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  font-size: 5vw;
+}
+.logo-side-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1em;
+  color: #b75400;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1vw;
+  line-height: 1em;
+}
+.logo-1st-line {
+  font-size: 3em;
+  line-height: 1em;
+}
+.logo-hat {
+  width: 2.5vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% - 3.2vw), calc(-50% - 2.7vw));
+}
+
+.hero {
   height: 100vh;
   margin-top: -4.5rem;
-  background: url('assets/anniversary-logo-big.svg') center -1px no-repeat,
-    url('assets/side-curve-left.svg') -1px top no-repeat,
-    url('assets/side-curve-right.svg') right top no-repeat;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -66,42 +134,54 @@ $timeline-color: rgba(0, 0, 0, 0.12);
   margin: auto;
   display: flex;
 
+  &-title {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      width: 24px;
+      height: 24px;
+      background: url('assets/circle.svg');
+      transform: translateX(-50%);
+    }
+  }
+
+  &-image-container,
+  &-text-content {
+    flex-basis: 100%;
+    width: 40%;
+    margin: 50px;
+  }
+  &-image-container {
+    font-style: italic;
+    text-align: right;
+  }
+  &-image {
+    max-width: 100%;
+  }
+
   &:nth-child(2n-1) {
     flex-direction: row-reverse;
     text-align: right;
-  }
-}
 
-.milestone-image-container,
-.milestone-text-content {
-  flex-basis: 100%;
-  margin: 50px;
-}
-.milestone-image-container {
-  box-shadow: 0 0 25px #0008;
-  border-radius: 5px;
+    & .milestone-title {
+      justify-content: flex-end;
+    }
+
+    & .milestone-image-container {
+      text-align: left;
+    }
+  }
 }
 
 .date {
   color: #b75400;
   font-size: 0.75em;
   text-transform: uppercase;
-}
-.milestone-title {
-  font-size: 1.5em;
-
-  display: flex;
-  align-items: center;
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    background: url('assets/circle.svg');
-    transform: translateX(-50%);
-  }
 }
 
 .card {
