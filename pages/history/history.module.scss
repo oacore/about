@@ -1,26 +1,8 @@
-$timeline-color: rgba(224, 224, 224);
+$timeline-color: rgba(0, 0, 0, 0.12);
 
 .article {
-  margin-top: -4.5rem;
-  display: flex;
-  align-items: stretch;
-}
-
-.page-container {
-  width: 100vw;
-  margin-left: -100vw;
-}
-
-.bg {
-  position: relative;
-  width: 100vw;
-  text-align: center;
-  z-index: -1;
   // 3rd gradient is the timeline, 1st and 2nd are white rectangles to hide the line on top and bottom of the page
-  background: url('assets/side-curve-left.svg') -1px top / 30% no-repeat,
-    url('assets/side-curve-right.svg') right top / 30% no-repeat
-      /* ,
-    linear-gradient(180deg, #fff, #fff 50vh, transparent 50vh),
+  background: linear-gradient(180deg, #fff, #fff 50vh, transparent 50vh),
     linear-gradient(0deg, #fff, #fff 150px, transparent 150px),
     linear-gradient(
       90deg,
@@ -28,22 +10,16 @@ $timeline-color: rgba(224, 224, 224);
       $timeline-color calc(50% - 2px),
       $timeline-color calc(50% + 2px),
       transparent calc(50% + 2px)
-    ) */;
-}
-.line {
-  position: absolute;
-  left: calc(50% - 4px);
-  right: calc(50% - 4px);
-  top: 50vh;
-  bottom: 4.5rem;
-  background: $timeline-color;
-}
-.anniversary-logo {
-  width: 30%;
+    );
 }
 
-.hero {
+.front-section {
   height: 100vh;
+  margin-top: -4.5rem;
+  background: url('assets/anniversary-logo-big.svg') center -1px no-repeat,
+    url('assets/side-curve-left.svg') -1px top no-repeat,
+    url('assets/side-curve-right.svg') right top no-repeat;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,7 +27,6 @@ $timeline-color: rgba(224, 224, 224);
 }
 
 .root-milestone {
-  position: relative;
   width: 40%;
   margin: auto;
   padding: 16px;
@@ -70,57 +45,20 @@ $timeline-color: rgba(224, 224, 224);
     left: 50%;
     display: block;
     width: 24px;
-    height: 24px;
-    margin-left: 8px;
-    border: 5px solid $timeline-color;
-    border-radius: 50%;
-    background: #fff;
-  }
-  &.top::before,
-  &.bottom::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: 8px;
-    background: url('assets/arrow.svg') center no-repeat,
-      linear-gradient(
-        90deg,
-        transparent calc(50% - 3px),
-        #fff calc(50% - 3px),
-        #fff calc(50% + 3px),
-        transparent calc(50% + 3px)
-      );
+    height: 48px;
+    background: url('assets/circle.svg') no-repeat,
+      url('assets/arrow.svg') 50% calc(100% - 4px) no-repeat, #fff;
   }
 
   &.top::after {
     // 4px = 16px - 12px. It cancels padding and aligns ::after on the border.
     transform: translate(-50%, 4px);
   }
-  &.top::before {
-    bottom: 0;
-    transform: translate(-50%, 150%);
-  }
 
   &.bottom::before {
     // 53 = 16 + 48 - 12 + 1 (parent margin + height - circle radius + ?)
-    transform: translate(-50%, calc(-100% - 4px));
+    transform: translate(-50%, -53px) scaleY(-1);
   }
-  &.bottom::after {
-    top: 0;
-    transform: translate(-50%, -150%) scale(-1);
-  }
-}
-
-.milestone-image-container,
-.milestone-text-content {
-  flex-basis: 100%;
-  margin: 50px;
-}
-.milestone-image-container {
-  font-style: italic;
-  text-align: right;
 }
 
 .milestone {
@@ -131,15 +69,17 @@ $timeline-color: rgba(224, 224, 224);
   &:nth-child(2n-1) {
     flex-direction: row-reverse;
     text-align: right;
-
-    & .milestone-title {
-      justify-content: flex-end;
-    }
-
-    & .milestone-image-container {
-      text-align: left;
-    }
   }
+}
+
+.milestone-image-container,
+.milestone-text-content {
+  flex-basis: 100%;
+  margin: 50px;
+}
+.milestone-image-container {
+  box-shadow: 0 0 25px #0008;
+  border-radius: 5px;
 }
 
 .date {
@@ -181,12 +121,6 @@ $timeline-color: rgba(224, 224, 224);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12),
     0px 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 2px;
-  transition: box-shadow 0.15s;
-
-  &:hover {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.28), 0px 2px 1px rgba(0, 0, 0, 0.24),
-      0px 1px 3px rgba(0, 0, 0, 0.4);
-  }
 
   & h4 {
     display: inline;
