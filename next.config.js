@@ -18,6 +18,7 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
 const nextConfig = {
   env: {
     GA_CODE: process.env.GA_CODE,
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   },
   webpack: (config) => {
     const originalEntry = config.entry
