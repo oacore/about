@@ -5,6 +5,7 @@ const withImages = require('next-images')
 const nextConfig = {
   env: {
     GA_CODE: process.env.GA_CODE,
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   },
   webpack: (config) => {
     const originalEntry = config.entry
