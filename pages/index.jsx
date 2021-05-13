@@ -80,7 +80,7 @@ const IndexPage = () => (
     description={page.description}
     keywords={page.keywords}
   >
-    <Hero headline={page.hero.headline} tagline={page.hero.tagline}>
+    <Hero data={page.hero}>
       <div className="py-section-sm">
         <SearchForm
           action="/search"
