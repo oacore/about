@@ -1,18 +1,22 @@
 import React from 'react'
+import { classNames } from '@oacore/design/lib/utils'
 
 import Logo from '../logo'
 import { Section } from '../content'
 import styles from './hero.module.scss'
 
 const HeroSection = ({
+  data: { title = 'CORE', tagline = '' } = {},
+  className,
   children,
-  title = 'CORE',
-  tagline = '',
-  className = '',
   tag = 'div',
-  ...restProps
+  ...passProps
 }) => (
-  <Section className={`${styles.hero} ${className}`} tag={tag} {...restProps}>
+  <Section
+    className={classNames.use(styles.hero).join(className)}
+    tag={tag}
+    {...passProps}
+  >
     <Logo text={title} className={styles.heroLogo} tag="h1" />
     {tagline && <p className={styles.heroTagline}>{tagline}</p>}
     {children}
