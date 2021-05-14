@@ -8,8 +8,10 @@ const getMilestones = async () => {
   const milestones = await retrieveContent('history')
 
   milestones.forEach((milestone) => {
-    if ('image' in milestone)
-      milestone.image.src = new URL(milestone.image.src, ASSETS_BASE_URL).href
+    if ('image' in milestone) {
+      const relativeUrl = milestone.image.src.replace(/^\/?/, './')
+      milestone.image.src = new URL(relativeUrl, ASSETS_BASE_URL).href
+    }
   })
 
   const formatter = {
