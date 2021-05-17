@@ -4,8 +4,8 @@ import { HistoryPage } from 'templates'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-const getMilestones = async () => {
-  const milestones = await retrieveContent('history')
+const getMilestones = async ({ ref } = {}) => {
+  const milestones = await retrieveContent('history', { ref })
 
   milestones.forEach((milestone) => {
     if ('image' in milestone) {
@@ -40,11 +40,13 @@ const getMilestones = async () => {
   return processedMilestones
 }
 
-async function getStaticProps() {
+async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+
   const { statistics, body: intro, ...page } = (
     await import('data/history.yml')
   ).default
-  const milestones = await getMilestones()
+  const milestones = await getMilestones({ ref })
   const data = {
     ...page,
     milestones: milestones.slice().reverse(),
