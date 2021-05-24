@@ -7,7 +7,6 @@ import {
   Page,
   Section,
   AnniversaryLogo as Logo,
-  Search as SearchForm,
   HistoryTimeline as Timeline,
 } from 'components'
 
@@ -38,15 +37,7 @@ const HistoryPage = ({ data }) => (
     description={data.description}
     className={styles.page}
   >
-    <Hero className={styles['blobs-background']} data={data}>
-      <div className="py-section-sm">
-        <SearchForm
-          action="/search"
-          name="q"
-          placeholder={data.searchPlaceholder}
-        />
-      </div>
-    </Hero>
+    <Hero className={styles['blobs-background']} data={data} />
     <Timeline className={styles.timeline} data={data} />
   </Page>
 )
