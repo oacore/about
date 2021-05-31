@@ -15,3 +15,16 @@
 .home-academic-institutions-section {
   background: $gray-100;
 }
+
+.research-section {
+  background: $gray-100;
+}
+.research-columns {
+  display: flex;
+}
+.research-column {
+  flex-basis: 50%;
+}
+.research-column:last-child {
+  text-align: right;
+}

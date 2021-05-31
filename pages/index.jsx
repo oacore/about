@@ -139,6 +139,22 @@ const IndexPage = () => (
         items={extractTestimonials(pageSections.partners.organizations.items)}
       />
     </Section>
+
+    <Section id="research" className={styles['research-section']}>
+      <h2 className="text-center">{page.researchOutputs.title}</h2>
+      <div className={styles['research-columns']}>
+        <Markdown className={styles['research-column']}>
+          {page.researchOutputs.description}
+        </Markdown>
+        <div className={styles['research-column']}>
+          <img
+            alt="BSDTAg logo"
+            src="/images/logo/bsdtag.svg"
+            className={styles['bsdtag-logo']}
+          />
+        </div>
+      </div>
+    </Section>
   </Page>
 )
 
