@@ -28,7 +28,7 @@ features:
     Direct machine access to full texts of research papers
 
 main: |
-  CORE collects, processess, harmonises and enriches [large quantities](~data) of metadata and full texts of research papers from many [data providers](~about/#how-it-works). On top of this continuously growing collection, we provide a truly unique API offerring real-time machine access to both metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
+  CORE collects, processess, harmonises and enriches [large quantities](~data) of metadata and full texts of research papers from many [data providers](~about/#how-it-works). On top of this continuously growing collection, we provide a truly unique API offering real-time machine access to both metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
 
   If you use CORE in your work, we kindly request you to [cite one
   of our publications](~research-outputs).
