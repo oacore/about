@@ -25,18 +25,20 @@ const MarkdownImage = ({ src, alt, className = '', ...restProps }) => (
 
 const markdownConfig = {
   components: {
-    blockquote: ({ children }) => (
-      <blockquote className="blockquote">{children}</blockquote>
+    a: MarkdownLink,
+    img: MarkdownImage,
+
+    blockquote: ({ children, ...restProps }) => (
+      <blockquote className="blockquote" {...restProps}>
+        {children}
+      </blockquote>
     ),
 
-    table: ({ children }) => (
-      <table className="table table-hover">{children}</table>
+    table: ({ children, ...restProps }) => (
+      <table className="table table-hover" {...restProps}>
+        {children}
+      </table>
     ),
-
-    image: MarkdownImage,
-
-    link: MarkdownLink,
-    linkReference: MarkdownLink,
   },
 
   rehypePlygins: [rehypeRaw],
