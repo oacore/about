@@ -27,13 +27,15 @@ const processFile = (githubFile) => {
   // Polyfilling because of atob being missing in Node.js < 16
   // and also marked as legacy 🤔
   //
+  // Prioritising Buffer over atob because of errors in Node 16 while testing.
+  //
   // See more:
   // - https://nodejs.org/api/all.html#globals_atob_data
   // - https://stackoverflow.com/questions/23097928/node-js-throws-btoa-is-not-defined-error
   const content =
-    typeof atob == 'function'
-      ? atob(githubFile.content)
-      : Buffer.from(githubFile.content, 'base64').toString()
+    typeof Buffer != 'undefined'
+      ? Buffer.from(githubFile.content, 'base64').toString()
+      : atob(githubFile.content)
 
   // Returning array to make it consistent with directory processing result.
   // It simplifies processing data in batch.
