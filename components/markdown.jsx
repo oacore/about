@@ -1,5 +1,6 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown/with-html'
+import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 import Link from './link'
 
@@ -23,9 +24,7 @@ const MarkdownImage = ({ src, alt, className = '', ...restProps }) => (
 )
 
 const markdownConfig = {
-  escapeHtml: false,
-
-  renderers: {
+  components: {
     blockquote: ({ children }) => (
       <blockquote className="blockquote">{children}</blockquote>
     ),
@@ -39,6 +38,8 @@ const markdownConfig = {
     link: MarkdownLink,
     linkReference: MarkdownLink,
   },
+
+  rehypePlygins: [rehypeRaw],
 }
 
 const Markdown = ({ children, tag, ...markdownProps }) => (
