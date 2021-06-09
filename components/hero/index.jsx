@@ -1,9 +1,11 @@
 import React from 'react'
 import { classNames } from '@oacore/design/lib/utils'
 
-import Logo from '../logo'
 import { Section } from '../content'
 import styles from './hero.module.scss'
+import stylesHistory from '../../templates/history/history.module.scss'
+
+import { AnniversaryLogo as Logo } from 'components'
 
 const HeroSection = ({
   data: { title = 'CORE', tagline = '' } = {},
@@ -13,12 +15,16 @@ const HeroSection = ({
   ...passProps
 }) => (
   <Section
-    className={classNames.use(styles.hero).join(className)}
+    className={classNames
+      .use(stylesHistory.blobsBackgroundHomepage)
+      .join(className)}
     tag={tag}
     {...passProps}
   >
-    <Logo text={title} className={styles.heroLogo} tag="h1" />
-    {tagline && <p className={styles.heroTagline}>{tagline}</p>}
+    <a href="/history" className={stylesHistory.linkLogo}>
+      <Logo text={title} className={stylesHistory.heroLogo} tag="h1" />
+    </a>
+    {tagline && <p className={styles.heroTaglineBorder}>{tagline}</p>}
     {children}
   </Section>
 )

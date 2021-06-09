@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .hero {
   padding-top: $article-spacer;
@@ -31,4 +31,16 @@
 .hero-tagline {
   font-size: $lead-font-size;
   text-align: center;
+}
+
+.hero-tagline-border {
+  font-size: $lead-font-size;
+  text-align: center;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  max-width: 70ch;
+  border: 1px solid $gray-300;
+  background: #fff;
 }

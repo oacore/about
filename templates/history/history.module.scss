@@ -25,3 +25,20 @@
     url('assets/side-curve-right.svg') top right / contain;
   background-repeat: no-repeat;
 }
+
+.blobs-background-homepage {
+  background: url('assets/side-curve-left.svg') top left / 4.5%,
+    url('assets/side-curve-right.svg') top right / 5.4%;
+  background-repeat: no-repeat;
+}
+
+.link-logo:link,
+.link-logo:visited,
+.link-logo:hover,
+.link-logo:active {
+  text-decoration: none;
+
+  div[class^='logo_logo'] {
+    color: #212121;
+  }
+}
