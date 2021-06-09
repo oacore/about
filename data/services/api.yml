@@ -69,6 +69,14 @@ what-is-included:
 
     Check our [Terms & Conditions](/terms) to see if you are elegible
     for a free license.
+
+    <p class="alert alert-secondary">
+      We have released a new version of the API in beta, if you are interested
+      please <a href="https://api.core.ac.uk/docs/v3">check the documentation</a>.
+      For any issue or request about it you can
+      <a href="https://forms.gle/4SvoxeVADnnwsweXA" target="_blank" rel="noreferrer noopener">send us feedback</a>.
+    </p>
+
   actions:
     primary:
       url: /api-keys/register
