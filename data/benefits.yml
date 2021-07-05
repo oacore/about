@@ -1,0 +1,46 @@
+title: Benefits
+description: |
+  Data providers joining benefits page
+
+
+sections:
+  title: Why join the data providers community?
+  blocks:
+  -
+    id: content-visibility
+    title: Increase your content’s visibility and discoverability
+    picture: /images/benefits/content-visibility.svg
+    description: |
+      CORE ensures an increased visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, the number of content downloads increases by 15% on average and up to 32% if the repository is well configured for harvesting.
+      CORE integrates and makes your content discoverable across a variety of platforms including  PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services and facilitates the widest possible dissemination of open access content.
+  -
+    id: content-machine-readable
+    title: Make your content machine readable
+    picture: /images/benefits/content-machine-readable.svg
+    description: |
+      Open access content hosted in repository and journal platforms, it is not always easily discoverable by search engines. CORE can technically validate and monitor your repository or journal and help you to keep it well configured. Through the harvesting process, CORE can detect technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. All this information is exposed via the CORE Repository Dashboard service - which each data provider can access for free - which includes error messages relating to the configuration of your platform and provides fixing solutions.
+  -
+    id: open-access-network
+    title: Integrate with the open access network
+    picture: /images/benefits/open-access-network.svg
+    description: |
+      For all open access funder policies, e.g. PlanS, CORE can improve your understanding of your content’s compliant (or non-compliant) outputs at the level of individual articles and help you prepare reports with analytical information addressed to research administrators and funders. For example, CORE assisted with the REF2021 audit guidance with the verification of the dates that outputs became publicly available and a comparison of the published and deposited dates.
+      Furthermore, your infrastructure contributes to the national and international monitoring of open access content growth and enables the better predicting of new trends in scientific disciplines. All data providers join the vast network of interoperable repositories and journals and take advantage of the further enrichments, e.g. recommendations, DOIs, ORCID iDs, etc.
+
+
+statistic:
+  title: How many joined us already?
+  blocks:
+    -
+      title: this month
+      value: 14
+    -
+      title: last year
+      value: 393
+    -
+      title: all time
+      value: 10,286
+
+join:
+  title: Join CORE for free now and contribute to the creation of a mutually beneficial ecosystem.
+  picture: /images/benefits/join-core-form.svg

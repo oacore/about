@@ -10,6 +10,7 @@ export { default as Page } from './page'
 
 // More complex layout
 export { default as Footer } from './footer'
+export { default as FooterDesign2 } from './design-v2/footer'
 
 // Elements
 export { default as LinkCard } from './link-card'

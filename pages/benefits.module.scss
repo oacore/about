@@ -1,0 +1,38 @@
+@import 'components/bootstrap/core';
+
+.services-page-title {
+  font-style: italic;
+  font-weight: $font-weight-bold;
+  text-align: center;
+}
+
+.services-page-title-small {
+  display: block;
+  font-size: 0.4em;
+  font-weight: $font-weight-normal;
+}
+
+.services-page-title + :global(.article-nav) {
+  justify-content: center;
+}
+
+.service-section-title {
+  align-items: center;
+  text-align: center;
+
+  @include media-breakpoint-up('sm') {
+    text-align: left;
+  }
+}
+
+.service-section-picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.service-section-content {
+  .service-section:nth-child(odd) & {
+    flex-direction: row-reverse;
+  }
+}

@@ -1,0 +1,104 @@
+@import 'components/bootstrap/core';
+
+$footer-partners-breakpoint: 'sm';
+
+.footer {
+  background: $gray-200;
+}
+
+.footer-highlights {
+  padding-top: $spacer;
+  background: $gray-100;
+
+  > * {
+    margin-bottom: $spacer;
+  }
+}
+
+.footer-highlights-list {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: 0 ($grid-gutter-width / -2) (-1 * $spacer);
+
+  li {
+    display: block;
+    width: 25%;
+    flex-grow: 1;
+    margin: 0 ($grid-gutter-width / 2) $spacer;
+  }
+}
+
+.footer-cite-info {
+  padding: $card-spacer-x;
+  background: $white;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: ($spacer / 2) ($grid-gutter-width / 2);
+  margin: 0 ($grid-gutter-width / -2);
+
+  a {
+    color: inherit;
+    font-weight: $font-weight-bold;
+
+    @include hover-focus {
+      color: inherit;
+    }
+  }
+}
+
+.footer-partners-item {
+  display: block;
+  margin: 0;
+  padding: ($spacer / 2) ($grid-gutter-width / 2);
+}
+
+.footer-partners-logo {
+  display: block;
+  flex: 1;
+
+  @include media-breakpoint-up($footer-partners-breakpoint) {
+    height: 4 * $spacer;
+    flex: 0 !important; // to override id's property
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    @include media-breakpoint-up($footer-partners-breakpoint) {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.footer-partners-text {
+  width: 100%;
+  flex-grow: 2;
+
+  @include media-breakpoint-up($footer-partners-breakpoint) {
+    max-width: 16rem;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+#footer-logo-jisc {
+  flex-grow: 0.68;
+}
+
+#footer-logo-ou {
+  flex-grow: 1;
+}
