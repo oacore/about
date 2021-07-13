@@ -23,3 +23,43 @@ footer:
     [The Open University](https://www.open.ac.uk)
     and [Jisc](https://www.jisc.ac.uk).
 search-placeholder: Search {{totalArticlesCount}} papers around the world
+footer_v2:
+  useful-links:
+    - title-block: Project
+      menu:
+        - title: About us
+          path: ~about
+        - title: Team
+          path: ~about
+        - title: Services
+          path: ~about
+        - title: Blog
+          path: ~about
+    - title-block: Data
+      menu:
+        - title: Data providers
+          path: ~about
+        - title: Harvested content
+          path: ~about
+    - title-block: Support
+      menu:
+        - title: FAQs
+          path: ~about
+        - title: Contact us
+          path: ~about
+    - title-block: Legal
+      menu:
+        - title: Accessibility
+          path: ~about
+        - title: Cookies
+          path: ~about
+        - title: Terms and Conditions
+          path: ~about
+        - title: Privacy
+          path: ~about
+  research-outputs: |
+    Discover our [research outputs](~research-outputs) and cite our work.
+  partners: |
+    CORE is a not-for-profit service delivered by
+    [The Open University](https://www.open.ac.uk)
+    and [Jisc](https://www.jisc.ac.uk).

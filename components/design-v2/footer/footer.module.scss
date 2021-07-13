@@ -3,7 +3,7 @@
 $footer-partners-breakpoint: 'sm';
 
 .footer {
-  background: $gray-200;
+  background: $gray-100;
 }
 
 .footer-highlights {
@@ -16,22 +16,36 @@ $footer-partners-breakpoint: 'sm';
 }
 
 .footer-highlights-list {
-  display: flex;
+  display: block;
   flex-flow: row wrap;
   padding: 0;
-  margin: 0 ($grid-gutter-width / -2) (-1 * $spacer);
+  margin: (0.8 * $spacer) ($grid-gutter-width / -2) (-1 * $spacer);
 
   li {
     display: block;
-    width: 25%;
-    flex-grow: 1;
-    margin: 0 ($grid-gutter-width / 2) $spacer;
+    margin: 0 ($grid-gutter-width / 2) (0.4 * $spacer);
+
+    a {
+      color: red;
+      font-size: small;
+    }
   }
 }
 
 .footer-cite-info {
   padding: $card-spacer-x;
   background: $white;
+  display: flex;
+  //TODO move ro variables
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+
+  margin-top: -45px;
+
+  .column-left {
+    width: 190px;
+  }
 
   :last-child {
     margin-bottom: 0;
@@ -47,7 +61,6 @@ $footer-partners-breakpoint: 'sm';
 
   a {
     color: inherit;
-    font-weight: $font-weight-bold;
 
     @include hover-focus {
       color: inherit;
@@ -66,7 +79,7 @@ $footer-partners-breakpoint: 'sm';
   flex: 1;
 
   @include media-breakpoint-up($footer-partners-breakpoint) {
-    height: 4 * $spacer;
+    height: 3 * $spacer;
     flex: 0 !important; // to override id's property
   }
 
