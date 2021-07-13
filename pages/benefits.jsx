@@ -52,6 +52,19 @@ const benefitsPage = () => (
         </Row>
       </Section>
     ))}
+    <Section id="statistic" caption="statistic" className={styles.statistic}>
+      <div className={styles.title}>{benefitsData.statistic.title}</div>
+      {/* caption={statisticGroup.title} */}
+
+      <Row>
+        {benefitsData.statistic.blocks.map((statisticGroup) => (
+          <Col tag="span">
+            <div className={styles.statTitle}>{statisticGroup.title}</div>
+            <div className={styles.statValue}>{statisticGroup.value}</div>
+          </Col>
+        ))}
+      </Row>
+    </Section>
   </Page>
 )
 

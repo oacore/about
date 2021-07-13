@@ -1,4 +1,4 @@
-@import 'components/bootstrap/core';
+@import 'components/bootstrap_v2/core';
 
 .services-page-title {
   font-style: italic;
@@ -34,5 +34,24 @@
 .service-section-content {
   .service-section:nth-child(odd) & {
     flex-direction: row-reverse;
+  }
+}
+
+.statistic {
+  background-color: $gray-100;
+
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: ($spacer * 2) 0;
+  }
+  .stat-title {
+    font-size: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .stat-value {
+    font-size: 3rem;
+    text-align: center;
   }
 }

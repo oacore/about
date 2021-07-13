@@ -23,40 +23,40 @@ footer:
     [The Open University](https://www.open.ac.uk)
     and [Jisc](https://www.jisc.ac.uk).
 search-placeholder: Search {{totalArticlesCount}} papers around the world
-footer_v2:
+footer_design2:
   useful-links:
     - title-block: Project
       menu:
         - title: About us
           path: ~about
         - title: Team
-          path: ~about
+          path: ~about#team
         - title: Services
-          path: ~about
+          path: ~services
         - title: Blog
-          path: ~about
+          path: http://blog.core.ac.uk/
     - title-block: Data
       menu:
         - title: Data providers
-          path: ~about
+          path: ~services/repository-dashboard
         - title: Harvested content
-          path: ~about
+          path: ~services/dataset
     - title-block: Support
       menu:
         - title: FAQs
-          path: ~about
+          path: ~faq
         - title: Contact us
-          path: ~about
+          path: ~contact
     - title-block: Legal
       menu:
         - title: Accessibility
-          path: ~about
+          path: ~accessibility
         - title: Cookies
-          path: ~about
+          path: ~cookies
         - title: Terms and Conditions
-          path: ~about
+          path: ~faq#joining-core
         - title: Privacy
-          path: ~about
+          path: ~privacy
   research-outputs: |
     Discover our [research outputs](~research-outputs) and cite our work.
   partners: |

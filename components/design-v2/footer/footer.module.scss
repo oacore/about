@@ -1,4 +1,4 @@
-@import 'components/bootstrap/core';
+@import 'components/bootstrap_v2/core';
 
 $footer-partners-breakpoint: 'sm';
 
@@ -15,6 +15,10 @@ $footer-partners-breakpoint: 'sm';
   }
 }
 
+.footer-highlights-title {
+  color: $color-footer-link-title;
+}
+
 .footer-highlights-list {
   display: block;
   flex-flow: row wrap;
@@ -26,7 +30,7 @@ $footer-partners-breakpoint: 'sm';
     margin: 0 ($grid-gutter-width / 2) (0.4 * $spacer);
 
     a {
-      color: red;
+      color: $color-footer-link;
       font-size: small;
     }
   }
@@ -45,6 +49,13 @@ $footer-partners-breakpoint: 'sm';
 
   .column-left {
     width: 190px;
+    font-size: 0.87rem;
+    color: $color-footer-link;
+    // font-weight: $font-weight-light;
+    .title {
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
   }
 
   :last-child {
@@ -54,7 +65,6 @@ $footer-partners-breakpoint: 'sm';
 
 .footer-partners {
   display: flex;
-  flex-wrap: wrap;
   align-items: flex-start;
   padding: ($spacer / 2) ($grid-gutter-width / 2);
   margin: 0 ($grid-gutter-width / -2);
@@ -72,6 +82,13 @@ $footer-partners-breakpoint: 'sm';
   display: block;
   margin: 0;
   padding: ($spacer / 2) ($grid-gutter-width / 2);
+
+  &:first-child {
+    padding: ($spacer / 2) ($grid-gutter-width / 2) ($spacer / 2) 0;
+  }
+  &:last-child {
+    padding: ($spacer / 3) 0 ($spacer / 2) 0;
+  }
 }
 
 .footer-partners-logo {
@@ -96,8 +113,9 @@ $footer-partners-breakpoint: 'sm';
 }
 
 .footer-partners-text {
-  width: 100%;
   flex-grow: 2;
+  color: $color-footer-link-60;
+  font-size: 0.8rem;
 
   @include media-breakpoint-up($footer-partners-breakpoint) {
     max-width: 16rem;
@@ -114,4 +132,43 @@ $footer-partners-breakpoint: 'sm';
 
 #footer-logo-ou {
   flex-grow: 1;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 1rem;
+  margin-right: 0.5rem;
+  color: initial;
+  text-decoration: none;
+}
+
+.logo-link:hover,
+.logo-link:focus {
+  color: initial;
+  text-decoration: none;
+  background-color: hsl(
+    var(--app-bar-overlay, var(--component-overlay)) /
+      var(--app-bar-overlay-hover, var(--component-overlay-hover))
+  );
+}
+
+.logo {
+  min-width: calc(var(--logo-min-width) - 1.5rem);
+  max-width: var(--page-padding-x);
+  height: 1rem;
+  position: relative;
+  line-height: 2.4rem;
+  display: flex;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.logo-icon {
+  margin-top: -0.37rem;
+  margin-bottom: -0.13rem;
+  vertical-align: -0.0625rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: -10px;
 }

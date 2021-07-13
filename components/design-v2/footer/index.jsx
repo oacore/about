@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Container, Row, Col } from 'reactstrap'
+import { Icon } from '@oacore/design/lib/elements'
 
 import Markdown from '../../markdown'
 import Link from '../../link'
@@ -15,11 +16,23 @@ const FooterDesign2 = ({
   <footer className={`${styles.footer} ${className}`}>
     <Container>
       <Row className={styles.footerHighlights}>
-        <Col>Logo</Col>
+        <Col>
+          <a href="/" className={styles.logoLink}>
+            <span className={styles.logo}>
+              <Icon
+                src="#core-symbol"
+                className={styles.logoIcon}
+                width="18"
+                height="24"
+              />
+              CORE
+            </span>
+          </a>
+        </Col>
 
         {usefulLinks.map(({ titleBlock, menu }) => (
           <Col>
-            <div>{titleBlock}</div>
+            <div className={styles.footerHighlightsTitle}>{titleBlock}</div>
             <ul className={styles.footerHighlightsList}>
               {menu.map(({ title, path }) => (
                 <li key={`${title} @ ${path}`}>
@@ -33,7 +46,7 @@ const FooterDesign2 = ({
         <Col>
           <div className={styles.footerCiteInfo}>
             <div className={styles.columnLeft}>
-              <h6>Writing about CORE?</h6>
+              <div className={styles.title}>Writing about CORE?</div>
               <Markdown>{researchOutputs}</Markdown>
             </div>
             <div>

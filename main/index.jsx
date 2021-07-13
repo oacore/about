@@ -50,7 +50,7 @@ const Main = ({ children }) => {
   const cookieHandler = useCookieHandler()
 
   let footerConfig = config.footer
-  if (useRouter().route === '/benefits') footerConfig = config.footerV2
+  if (useRouter().route === '/benefits') footerConfig = config.footerDesign2
 
   return (
     <>
