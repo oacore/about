@@ -1,4 +1,4 @@
-@import 'components/bootstrap_v2/core';
+@import 'components/bootstrap_design-v2/core';
 
 .services-page-title {
   font-style: italic;
@@ -53,5 +53,16 @@
   .stat-value {
     font-size: 3rem;
     text-align: center;
+  }
+}
+
+.join-core {
+  .form-block {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .img-block {
+    text-align: right;
   }
 }

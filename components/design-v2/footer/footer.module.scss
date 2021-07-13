@@ -1,4 +1,4 @@
-@import 'components/bootstrap_v2/core';
+@import 'components/bootstrap_design-v2/core';
 
 $footer-partners-breakpoint: 'sm';
 
@@ -147,16 +147,11 @@ $footer-partners-breakpoint: 'sm';
 .logo-link:focus {
   color: initial;
   text-decoration: none;
-  background-color: hsl(
-    var(--app-bar-overlay, var(--component-overlay)) /
-      var(--app-bar-overlay-hover, var(--component-overlay-hover))
-  );
 }
 
 .logo {
   min-width: calc(var(--logo-min-width) - 1.5rem);
   max-width: var(--page-padding-x);
-  height: 1rem;
   position: relative;
   line-height: 2.4rem;
   display: flex;

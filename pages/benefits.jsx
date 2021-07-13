@@ -54,8 +54,6 @@ const benefitsPage = () => (
     ))}
     <Section id="statistic" caption="statistic" className={styles.statistic}>
       <div className={styles.title}>{benefitsData.statistic.title}</div>
-      {/* caption={statisticGroup.title} */}
-
       <Row>
         {benefitsData.statistic.blocks.map((statisticGroup) => (
           <Col tag="span">
@@ -63,6 +61,16 @@ const benefitsPage = () => (
             <div className={styles.statValue}>{statisticGroup.value}</div>
           </Col>
         ))}
+      </Row>
+    </Section>
+    <Section id="join-core" caption="join-core" className={styles.joinCore}>
+      <Row>
+        <Col className={styles.formBlock}>
+          <div>{benefitsData.join.title}</div>
+        </Col>
+        <Col className={styles.imgBlock}>
+          <img src={benefitsData.join.picture} alt={benefitsData.join.title} />
+        </Col>
       </Row>
     </Section>
   </Page>
