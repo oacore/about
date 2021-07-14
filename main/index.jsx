@@ -49,9 +49,6 @@ const Main = ({ children }) => {
   const cookiesAccepted = useCookie('cookies_accepted')
   const cookieHandler = useCookieHandler()
 
-  let footerConfig = config.footer
-  if (useRouter().route === '/benefits') footerConfig = config.footerDesign2
-
   return (
     <>
       <CookiesPopup
@@ -66,7 +63,7 @@ const Main = ({ children }) => {
         title={config.name}
         description={config.description}
         navigation={config.navigation}
-        footer={footerConfig}
+        footer={config.footer}
         activeRoute={router.route}
         onNavigate={handleNavigation}
       >

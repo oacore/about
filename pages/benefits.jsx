@@ -20,7 +20,9 @@ const benefitsPage = () => (
           <div className={styles.description}>
             {benefitsData.banner.description}
           </div>
-          <Button>{benefitsData.banner.button}</Button>
+          <Button href="https://core.ac.uk/searchAssets/api-keys/register/">
+            {benefitsData.banner.button}
+          </Button>
         </Col>
 
         <Col className={styles.columnVelcro}>

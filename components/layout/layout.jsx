@@ -1,10 +1,8 @@
 import React, { useCallback } from 'react'
 import { Header } from '@oacore/design'
-import { useRouter } from 'next/router'
 
 import Head from './head'
 import Footer from '../footer'
-import FooterDesign2 from '../design-v2/footer'
 import SkipToContent from '../skip-to-content'
 
 const Layout = ({ title, description, footer, children, onNavigate }) => {
@@ -19,10 +17,6 @@ const Layout = ({ title, description, footer, children, onNavigate }) => {
     [onNavigate]
   )
 
-  let footerBlock = <Footer className="page-footer" {...footer} />
-  if (useRouter().route === '/benefits')
-    footerBlock = <FooterDesign2 className="page-footer" {...footer} />
-
   return (
     <>
       <Head title={title} description={description} />
@@ -30,7 +24,7 @@ const Layout = ({ title, description, footer, children, onNavigate }) => {
       <Header id="header" onClick={handleHeaderClick} />
       <div id="content" />
       {children}
-      {footerBlock}
+      <Footer className="page-footer" {...footer} />
     </>
   )
 }
