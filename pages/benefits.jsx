@@ -3,7 +3,8 @@ import { Col, Row } from 'reactstrap'
 
 import styles from './benefits.module.scss'
 
-import { Page, Content, Section } from 'components'
+import { Button } from 'components/elements'
+import { Page, Section } from 'components'
 import benefitsData from 'data/benefits.yml'
 
 const benefitsPage = () => (
@@ -12,46 +13,79 @@ const benefitsPage = () => (
     description={benefitsData.description}
     keywords={benefitsData.keywords}
   >
-    <h4>{benefitsData.sections.title}</h4>
+    <Section id="banner" caption="banner" className={styles.banner}>
+      <Row>
+        <Col className={styles.columnDescription}>
+          <div className={styles.title}>{benefitsData.banner.title}</div>
+          <div className={styles.description}>
+            {benefitsData.banner.description}
+          </div>
+          <Button>{benefitsData.banner.button}</Button>
+        </Col>
 
-    {benefitsData.sections.blocks.map((benefitsGroup) => (
-      <Section
-        key={benefitsGroup.id}
-        id={benefitsGroup.id}
-        caption={benefitsGroup.title}
-        className={styles['service-section']}
-      >
-        <Row className={styles['service-section-title']} tag="h6">
-          <Col sm="6" md="8" tag="span">
-            {benefitsGroup.title}
-          </Col>
-        </Row>
+        <Col className={styles.columnVelcro}>
+          <div className={styles.velcroWrap}>
+            <div className={styles.velcro}>
+              <div className={styles.title}>
+                {benefitsData.banner.velcro.title}
+              </div>
+              {benefitsData.banner.velcro.blocks.map((velcroGroup) => (
+                <div>
+                  <img
+                    src={velcroGroup.picture}
+                    alt={velcroGroup.title}
+                    className={styles.velcroPicture}
+                  />
+                  <div className={styles.velcroTextBlock}>
+                    <span className={styles.velcroTitle}>
+                      {velcroGroup.title}
+                    </span>
+                    <span className={styles.velcroDescription}>
+                      {velcroGroup.description}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Section>
 
-        <Row className={styles['service-section-content']}>
-          <Col sm="6" md="4">
-            {benefitsGroup.picture && (
-              <figure>
-                {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-                <img
-                  className={styles['service-section-picture']}
-                  src={benefitsGroup.picture}
-                  alt={`${benefitsGroup.title}'s picture`}
-                />
-              </figure>
-            )}
-          </Col>
-          <Col sm="6" md="8">
-            <Content
-              markdown
-              id={benefitsGroup.description}
-              key={benefitsGroup.description}
-            >
-              {benefitsGroup.description}
-            </Content>
-          </Col>
-        </Row>
-      </Section>
-    ))}
+    <Section id="sections" caption="sections">
+      <h4>{benefitsData.sections.title}</h4>
+      {benefitsData.sections.blocks.map((benefitsGroup) => (
+        <Section
+          key={benefitsGroup.id}
+          id={benefitsGroup.id}
+          caption={benefitsGroup.title}
+          className={styles['service-section']}
+        >
+          <Row className={styles['service-section-content']}>
+            <Col sm="6" md="4">
+              {benefitsGroup.picture && (
+                <figure>
+                  {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+                  <img
+                    className={styles['service-section-picture']}
+                    src={benefitsGroup.picture}
+                    alt={`${benefitsGroup.title}'s picture`}
+                  />
+                </figure>
+              )}
+            </Col>
+            <Col sm="6" md="8">
+              <h6 className={styles['service-section-title']}>
+                {benefitsGroup.title}
+              </h6>
+              <p className={styles.serviceSectionDescription}>
+                {benefitsGroup.description}
+              </p>
+            </Col>
+          </Row>
+        </Section>
+      ))}
+    </Section>
     <Section id="statistic" caption="statistic" className={styles.statistic}>
       <div className={styles.title}>{benefitsData.statistic.title}</div>
       <Row>

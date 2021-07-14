@@ -2,6 +2,25 @@ title: Benefits
 description: |
   Data providers joining benefits page
 
+banner:
+  title: Why join CORE
+  description: Facilitate access of your scientific research outputs to everyone in the world
+  button: Join now
+  velcro:
+    title: On this page
+    blocks:
+      -
+        title: Increase your content’s discoverability 
+        description: Further disseminate your content, increase the number of users who read it and download it, and boost your output’s visibility and impact
+        picture: /images/benefits/icons/discoverability.svg
+      -
+        title: Ensure your content is machine readable 
+        description: Technically validate and monitor your repository and journal and keep it well configured
+        picture: /images/benefits/icons/readable.svg
+      -
+        title: Integrate with the open access network 
+        description: Monitor funder open access policies compliance rates and gain an insight of your contribution to the global open access growth 
+        picture: /images/benefits/icons/network.svg
 
 sections:
   title: Why join the data providers community?
@@ -26,7 +45,6 @@ sections:
     description: |
       For all open access funder policies, e.g. PlanS, CORE can improve your understanding of your content’s compliant (or non-compliant) outputs at the level of individual articles and help you prepare reports with analytical information addressed to research administrators and funders. For example, CORE assisted with the REF2021 audit guidance with the verification of the dates that outputs became publicly available and a comparison of the published and deposited dates.
       Furthermore, your infrastructure contributes to the national and international monitoring of open access content growth and enables the better predicting of new trends in scientific disciplines. All data providers join the vast network of interoperable repositories and journals and take advantage of the further enrichments, e.g. recommendations, DOIs, ORCID iDs, etc.
-
 
 statistic:
   title: How many joined us already?

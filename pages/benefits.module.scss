@@ -16,6 +16,11 @@
   justify-content: center;
 }
 
+.service-section-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
 .service-section-title {
   align-items: center;
   text-align: center;
@@ -64,5 +69,74 @@
   }
   .img-block {
     text-align: right;
+  }
+}
+
+.banner {
+  border-bottom: 1px solid $gray-100;
+  padding: 0;
+
+  .column-description {
+    .title {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .description {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+      color: $color-footer-link;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .column-velcro {
+    .title {
+      font-size: 1rem;
+      color: $color-footer-link;
+      margin-bottom: 1rem;
+    }
+    .velcroPicture {
+      width: 48px;
+      height: 48px;
+      float: left;
+      margin-right: ($spacer / 2);
+    }
+    .velcro-text-block {
+      overflow: hidden;
+      margin-bottom: ($spacer / 2);
+    }
+
+    .velcroTitle {
+      font-size: 0.9rem;
+      color: $color-footer-link;
+      font-weight: 400;
+      display: block;
+    }
+
+    .velcroDescription {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      display: inline-block;
+      color: $color-footer-link-60;
+    }
+
+    .velcro-wrap {
+      background: no-repeat center / contain;
+      background-image: url('/images/benefits/background-velcro.svg');
+      padding: 0 $spacer;
+      padding: 40px;
+    }
+    .velcro {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+      padding: $spacer;
+      background-color: $white;
+      position: relative;
+      right: 5px;
+      bottom: 10px;
+    }
   }
 }
