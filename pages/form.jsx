@@ -5,10 +5,9 @@ import styles from './benefits.module.scss'
 
 import fetchDataProviderAdd from 'api/data-providers'
 import { useInput } from 'hooks'
-import { generateFormMessage } from 'templates/data-providers/utils'
+import generateFormMessage from 'templates/data-providers/utils/generate-form-message'
 
 export async function checkDataProviders({ params }) {
-  const data = {}
   const { uri, setIsDataProviderAddActive } = params
 
   try {
@@ -25,14 +24,7 @@ export async function checkDataProviders({ params }) {
       notFound: true,
     }
   }
-
-  data.dataProviders = {
-    [uri]: true,
-  }
-
-  return {
-    props: { data },
-  }
+  return true
 }
 
 const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
