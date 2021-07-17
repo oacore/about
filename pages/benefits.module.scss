@@ -20,6 +20,7 @@
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5rem;
+  white-space: pre-line;
 }
 .service-section-title {
   align-items: center;
@@ -149,4 +150,8 @@
       bottom: 10px;
     }
   }
+}
+
+.submit-section {
+  margin-top: 1rem;
 }

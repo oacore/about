@@ -2,6 +2,7 @@ import React from 'react'
 import { Col, Row } from 'reactstrap'
 
 import styles from './benefits.module.scss'
+import AddDataProviderForm from './form'
 
 import { Button } from 'components/elements'
 import { Page, Section } from 'components'
@@ -102,7 +103,10 @@ const benefitsPage = () => (
     <Section id="join-core" caption="join-core" className={styles.joinCore}>
       <Row>
         <Col className={styles.formBlock}>
-          <div>{benefitsData.join.title}</div>
+          <div id="add-new-data-provider" className={styles.addDataProvider}>
+            <p>{benefitsData.join.title}</p>
+            <AddDataProviderForm />
+          </div>
         </Col>
         <Col className={styles.imgBlock}>
           <img src={benefitsData.join.picture} alt={benefitsData.join.title} />
