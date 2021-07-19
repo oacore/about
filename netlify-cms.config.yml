@@ -576,14 +576,14 @@ collections:
           Displayed in the browser as a tab name and in Google, when
           the page appears in the search results.
       - name: citation
-        widget: text
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
         label: Citation
         hint: >
           Citation
       - name: author
         label: Author
-        widget: markdown
-        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        widget: text
         hint: >
            Author of the citation above
 
