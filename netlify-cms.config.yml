@@ -558,7 +558,7 @@ collections:
   create: false
   delete: false
 
-  label: 👥 Communities
+  label: 👥 Community
   label_singular: community
   description: >
     All the sections on the page Community CORE”. Sections are listed in order
@@ -682,43 +682,44 @@ collections:
 
   preview_path: api/preview?page=about&ref=cms/community/{{slug}}
 
-
 - name: community-quotes
 
-  create: false
+  folder: community/quotes
+  extension: md
+  format: yaml-frontmatter
+
+  media_folder: '/images/community/quotes'
+
+  create: true
   delete: false
-  media_folder: '/images/community'
 
+  label: 🕵️‍♀️ Community quotes
+  label_singular: community quote
+  summary: '{{first-name}} {{last-name}}'
 
-  label: 🕵️‍♀️ Community quotes
-  label_singular: community-quote
-  description: >
-    Quotes of the researchers in the page Community CORE”.
+  fields:
+  - name: first-name
+    label: First Name
+    widget: string
+  - name: last-name
+    label: Last Name
+    widget: string
+  - name: role
+    label: Role
+    widget: string
+  - name: photo
+    label: Photo
+    widget: file
+    allow_multiple: false
+  - name: profession
+    widget: string
+    label: Profession
+  - name: description
+    widget: markdown
+    buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+    label: Description
 
-  files:
-    - name: quote
-      label: ℹ️ Quote
-      file: community/quote.yml
-      fields:
-      - name: first-name
-        widget: string
-        label: First Name
-      - name: second-name
-        widget: string
-        label: Second name
-      - name: profession
-        widget: string
-        label: Profession
-      - name: avatar
-        label: Avatar
-        widget: file
-      - name: description
-        widget: markdown
-        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
-        label: Description
-        hint: >
-          Text of the quote
+  slug: '{{first-name}}-{{last-name}}'
 
-  slug: '{{filename}}'
+  preview_path: api/preview?page=about&ref=cms/community/quote/{{slug}}
 
-  preview_path: api/preview?page=about&ref=cms/community-quote/{{slug}}
