@@ -551,3 +551,174 @@ collections:
   sortable_fields: [title]
 
   preview_path: api/preview?page={{slug}}&ref=cms/pages/{{slug}}
+
+
+- name: community
+
+  create: false
+  delete: false
+
+  label: 👥 Communities
+  label_singular: community
+  description: >
+    All the sections on the page Community CORE”. Sections are listed in order
+    appearing on the page.
+
+  files:
+    - name: header
+      label: ℹ️ Header(title,citation,author)
+      file: community/header.yml
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: >
+          Displayed in the browser as a tab name and in Google, when
+          the page appears in the search results.
+      - name: citation
+        widget: text
+        label: Citation
+        hint: >
+          Citation
+      - name: author
+        label: Author
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        hint: >
+           Author of the citation above
+
+    - name: mission
+      label: 👁 Mission
+      file: community/mission.md
+      fields:
+      - name: description
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        label: Description
+        hint: >
+          Appears at the left side
+
+    - name: symposium
+      label: 📘 Symposium Card
+      file: community/symposium.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+        hint: >
+          Title of the card
+      - name: description
+        label: Description
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        hint: >
+          Description of the card
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended show modal window with register request.
+
+    - name: join-cards
+      label: '👉 Why join?'
+      file: community/join-cards.md
+      fields:
+      - name: first-card-title
+        label: First Card Title
+        widget: string
+      - name: first-card-description
+        widget: markdown
+        label: First Card Description
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: second-card-title
+        label: Second Card Title
+        widget: string
+      - name: second-card-description
+        widget: markdown
+        label: Second Card Description
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: third-card-title
+        label: Third Card Title
+        widget: string
+      - name: third-card-description
+        widget: markdown
+        label: Third Card Description
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+    - name: spotlight
+      label: ✨ Spotlight
+      file: community/spotlight.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+    - name: join-footer
+      label: '👉 Join us'
+      file: community/join-us.md
+      fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: description
+        label: Description
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: contact
+        label: Contact block
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+      - name: action-label
+        widget: string
+        label: Call to action
+        hint: >
+          A button caption, intended to call the user view the target page.
+
+  slug: '{{filename}}'
+
+  preview_path: api/preview?page=about&ref=cms/community/{{slug}}
+
+
+- name: community-quotes
+
+  create: false
+  delete: false
+  media_folder: '/images/community'
+
+
+  label: 🕵️‍♀️ Community quotes
+  label_singular: community-quote
+  description: >
+    Quotes of the researchers in the page Community CORE”.
+
+  files:
+    - name: quote
+      label: ℹ️ Quote
+      file: community/quote.yml
+      fields:
+      - name: first-name
+        widget: string
+        label: First Name
+      - name: second-name
+        widget: string
+        label: Second name
+      - name: profession
+        widget: string
+        label: Profession
+      - name: avatar
+        label: Avatar
+        widget: file
+      - name: description
+        widget: markdown
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+        label: Description
+        hint: >
+          Text of the quote
+
+  slug: '{{filename}}'
+
+  preview_path: api/preview?page=about&ref=cms/community-quote/{{slug}}
