@@ -62,6 +62,7 @@ const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
         />
         <div className={styles.submitSection}>
           <Button
+            className={styles.buttonCustom}
             type="submit"
             variant="contained"
             onClick={() => {

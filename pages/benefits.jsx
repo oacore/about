@@ -4,7 +4,6 @@ import { Col, Row } from 'reactstrap'
 import styles from './benefits.module.scss'
 import AddDataProviderForm from './form'
 
-import { Button } from 'components/elements'
 import { Page, Section } from 'components'
 import benefitsData from 'data/benefits.yml'
 
@@ -21,11 +20,14 @@ const benefitsPage = () => (
           <div className={styles.description}>
             {benefitsData.banner.description}
           </div>
-          <Button href="https://core.ac.uk/searchAssets/api-keys/register/">
+          <a
+            title={benefitsData.banner.button}
+            className={styles.buttonCustom}
+            href="https://core.ac.uk/searchAssets/api-keys/register/"
+          >
             {benefitsData.banner.button}
-          </Button>
+          </a>
         </Col>
-
         <Col className={styles.columnVelcro}>
           <div className={styles.velcroWrap}>
             <div className={styles.velcro}>

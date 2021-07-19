@@ -155,3 +155,54 @@
 .submit-section {
   margin-top: 1rem;
 }
+
+// TODO Style need to move to a new bootstrap for new design
+.button-custom {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+  --button-background: var(--primary);
+  --button-color: var(--white);
+  display: inline-block;
+  padding: calc(0.5rem - 1px) calc(1rem - 1px);
+  padding: calc(var(--button-padding-y) - 1px)
+    calc(var(--button-padding-x) - 1px);
+  font-family: var(--buton-font-family);
+  font-size: 0.875rem;
+  font-size: var(--button-font-size, 0.875rem);
+  font-weight: var(--button-font-weight);
+  line-height: 1rem;
+  line-height: var(--button-line-height, 1rem);
+  color: inherit;
+  color: var(--button-color, var(--primary, inherit));
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  letter-spacing: var(--button-letter-spacing, 0.08rem);
+  white-space: var(--button-white-space);
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent linear-gradient(transparent, transparent);
+  background: var(--button-background, transparent)
+    linear-gradient(
+      var(--button-overlay, transparent),
+      var(--button-overlay, transparent)
+    );
+  border: 1px solid var(--button-border, transparent);
+  border-radius: 3px;
+  transition-duration: 0.15s;
+  transition-property: color, background, border-color, box-shadow;
+
+  &:hover {
+    text-decoration: none;
+    color: #ffffff;
+    --button-overlay: rgba(0, 0, 0, 0.06667);
+    background: var(--button-background, transparent)
+      linear-gradient(
+        var(--button-overlay, transparent),
+        var(--button-overlay, transparent)
+      );
+  }
+}
