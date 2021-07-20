@@ -691,7 +691,7 @@ collections:
   media_folder: '/images/community/quotes'
 
   create: true
-  delete: false
+  delete: true
 
   label: 🕵️‍♀️ Community quotes
   label_singular: community quote
