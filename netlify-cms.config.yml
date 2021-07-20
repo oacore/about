@@ -319,8 +319,6 @@ collections:
   description: >
     All the sections on the page "Consultancy Services". Sections are listed in order
     appearing on the page.
-
-
   files:
    - name: meta
      label: ℹ️ Metadata (title, description, headline)
@@ -956,8 +954,6 @@ collections:
   description: >
     All the sections on the page "Dataset data". Sections are listed in order
     appearing on the page.
-
-
   files:
    - name: meta
      label: ℹ️ Metadata (title, description, headline)
