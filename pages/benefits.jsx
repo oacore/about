@@ -23,7 +23,7 @@ const benefitsPage = () => (
           <a
             title={benefitsData.banner.button}
             className={styles.buttonCustom}
-            href="https://core.ac.uk/searchAssets/api-keys/register/"
+            href="#join-core"
           >
             {benefitsData.banner.button}
           </a>
@@ -35,7 +35,7 @@ const benefitsPage = () => (
                 {benefitsData.banner.velcro.title}
               </div>
               {benefitsData.banner.velcro.blocks.map((velcroGroup) => (
-                <div>
+                <a href={`#${velcroGroup.id}`}>
                   <img
                     src={velcroGroup.picture}
                     alt={velcroGroup.title}
@@ -49,7 +49,7 @@ const benefitsPage = () => (
                       {velcroGroup.description}
                     </span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>

@@ -104,12 +104,19 @@
   }
 
   .column-velcro {
+    a:hover {
+      text-decoration: none;
+
+      .velcro-title {
+        color: var(--primary);
+      }
+    }
     .title {
       font-size: 1rem;
       color: $color-footer-link;
       margin-bottom: 1rem;
     }
-    .velcroPicture {
+    .velcro-picture {
       width: 48px;
       height: 48px;
       float: left;
@@ -120,14 +127,14 @@
       margin-bottom: ($spacer / 2);
     }
 
-    .velcroTitle {
+    .velcro-title {
       font-size: 0.9rem;
       color: $color-footer-link;
       font-weight: 400;
       display: block;
     }
 
-    .velcroDescription {
+    .velcro-description {
       font-size: 0.7rem;
       line-height: 1rem;
       display: inline-block;

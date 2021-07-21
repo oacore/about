@@ -10,14 +10,17 @@ banner:
     title: On this page
     blocks:
       -
+        id: content-visibility
         title: Increase your content’s discoverability
         description: Further disseminate your content, increase the number of users who read it and download it, and boost your output’s visibility and impact
         picture: /images/benefits/icons/discoverability.svg
       -
+        id: content-machine-readable
         title: Ensure your content is machine readable
         description: Technically validate and monitor your repository and journal and keep it well configured
         picture: /images/benefits/icons/readable.svg
       -
+        id: open-access-network
         title: Integrate with the open access network
         description: Monitor funder open access policies compliance rates and gain an insight of your contribution to the global open access growth
         picture: /images/benefits/icons/network.svg
