@@ -28,6 +28,9 @@ const benefitsPage = () => (
           >
             {benefitsData.banner.button}
           </a>
+          <a href="//core.ac.uk/data-providers" className="btn btn-link">
+            See the full list of data providers
+          </a>
         </Col>
         <Col className={styles.columnVelcro}>
           <div className={styles.velcroWrap}>
