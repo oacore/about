@@ -50,18 +50,18 @@ sections:
 
       Furthermore, your infrastructure contributes to the national and international monitoring of open access content growth and enables the better predicting of new trends in scientific disciplines. All data providers join the vast network of interoperable repositories and journals and take advantage of the further enrichments, e.g. recommendations, DOIs, ORCID iDs, etc.
 
-statistic:
+stat:
   title: How many joined us already?
   blocks:
     -
       title: this month
-      value: 14
+      value: <mark>{{lastMonthDataprovidersCount}}</mark>
     -
       title: last year
-      value: 393
+      value: <mark>{{lastYearDataprovidersCount}}</mark>
     -
       title: all time
-      value: 10,286
+      value: <mark>{{repositoriesCount}}</mark>
 
 join:
   title: Join CORE for free now and contribute to the creation of a mutually beneficial ecosystem.

@@ -4,8 +4,9 @@ import { Col, Row } from 'reactstrap'
 import styles from './benefits.module.scss'
 import AddDataProviderForm from './form'
 
-import { Page, Section } from 'components'
+import { Markdown, Page, Section } from 'components'
 import benefitsData from 'data/benefits.yml'
+import { patchStats } from 'components/utils'
 
 const benefitsPage = () => (
   <Page
@@ -92,12 +93,14 @@ const benefitsPage = () => (
       ))}
     </Section>
     <Section id="statistic" caption="statistic" className={styles.statistic}>
-      <div className={styles.title}>{benefitsData.statistic.title}</div>
+      <div className={styles.title}>{benefitsData.stat.title}</div>
       <Row>
-        {benefitsData.statistic.blocks.map((statisticGroup) => (
+        {benefitsData.stat.blocks.map((statisticGroup) => (
           <Col tag="span">
             <div className={styles.statTitle}>{statisticGroup.title}</div>
-            <div className={styles.statValue}>{statisticGroup.value}</div>
+            <Markdown>
+              {patchStats(statisticGroup.value, benefitsData.statistics)}
+            </Markdown>
           </Col>
         ))}
       </Row>

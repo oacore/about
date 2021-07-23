@@ -56,9 +56,12 @@
     text-align: center;
     text-transform: uppercase;
   }
-  .stat-value {
-    font-size: 3rem;
+  p {
     text-align: center;
+  }
+  mark {
+    font-size: 3rem;
+    background-color: transparent;
   }
 }
 
