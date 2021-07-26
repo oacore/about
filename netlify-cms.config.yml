@@ -693,7 +693,7 @@ collections:
   create: true
   delete: true
 
-  label: 🕵️‍♀️ Community quotes
+  label: 🕵️‍♀️  Community quotes
   label_singular: quote
   summary: '{{first-name}} {{last-name}}'
 
