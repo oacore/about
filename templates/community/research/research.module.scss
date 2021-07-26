@@ -1,0 +1,132 @@
+$main-padding: 0 var(--page-padding-x);
+
+@mixin displayFlex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.container {
+  @include displayFlex;
+  padding: $main-padding;
+}
+
+.header {
+  align-items: center;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.headerText {
+  flex-basis: 50%;
+
+  p {
+    font-size: 24px;
+  }
+  p,
+  span {
+    font-weight: 300;
+    color: var(--gray-600);
+  }
+  span {
+    font-size: 14px;
+    float: right;
+    font-style: italic;
+  }
+}
+
+.content-main {
+  margin: 2rem 0;
+
+  p {
+    flex-basis: 55%;
+  }
+  &-text {
+    margin-top: 1.3rem;
+  }
+  &-card {
+    max-width: 28.2rem;
+    span {
+      color: var(--primary);
+      font-size: 10px;
+    }
+    &-title {
+      margin-top: 0;
+    }
+  }
+}
+
+.join-cards-wrapper {
+  background-color: var(--gray-100);
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.join-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.join-card {
+  text-align: center;
+  h6 {
+    margin-top: 1rem;
+  }
+
+  &:not(:last-child) {
+    padding-right: 2rem;
+  }
+}
+
+.community {
+  flex-direction: column;
+  padding-top: 4rem;
+  p {
+    margin-top: 0.5rem;
+    max-width: 56.2rem;
+  }
+  &-cards {
+    margin-top: 3rem;
+  }
+  &-card {
+    max-width: 31.2rem;
+    border-top: 7px solid var(--primary);
+
+    p {
+      font-size: 16px;
+    }
+    &-author {
+      background-color: var(--gray-100);
+      display: flex;
+      align-items: center;
+      img {
+        margin-right: 1rem;
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+      }
+      &-prof {
+        margin-top: 0.2rem;
+        font-size: 13px;
+        color: var(--gray-600);
+      }
+    }
+  }
+}
+
+.join-footer {
+  margin-top: 1rem;
+  max-width: 63rem;
+  padding: $main-padding;
+  &-contact {
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--gray-800);
+  }
+}
