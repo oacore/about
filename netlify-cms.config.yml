@@ -682,19 +682,19 @@ collections:
 
   preview_path: api/preview?page=about&ref=cms/community/{{slug}}
 
-- name: community-quotes
+- name: quote
 
-  folder: community/quotes
+  folder: quote
   extension: md
   format: yaml-frontmatter
 
-  media_folder: '/images/community/quotes'
+  media_folder: '/images/quote'
 
   create: true
   delete: true
 
   label: 🕵️‍♀️ Community quotes
-  label_singular: community quote
+  label_singular: quote
   summary: '{{first-name}} {{last-name}}'
 
   fields:
@@ -703,9 +703,6 @@ collections:
     widget: string
   - name: last-name
     label: Last Name
-    widget: string
-  - name: role
-    label: Role
     widget: string
   - name: photo
     label: Photo
@@ -721,5 +718,5 @@ collections:
 
   slug: '{{first-name}}-{{last-name}}'
 
-  preview_path: api/preview?page=about&ref=cms/community/quote/{{slug}}
+  preview_path: api/preview?page=about&ref=cms/quote/{{slug}}
 
