@@ -1,6 +1,7 @@
 node_modules
 .next
 .idea
+
 out
 /public/design
 /public/edit*
