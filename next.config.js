@@ -71,6 +71,8 @@ const nextConfig = {
       templates: path.resolve(__dirname, 'templates'),
       data: path.resolve(__dirname, 'data'),
       content: path.resolve(__dirname, 'content'),
+      hooks: path.resolve(__dirname, 'hooks'),
+      api: path.resolve(__dirname, 'api'),
     })
 
     config.module.rules.push(

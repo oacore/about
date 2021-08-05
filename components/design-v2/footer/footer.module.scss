@@ -1,0 +1,169 @@
+@import 'components/bootstrap_design-v2/core';
+
+$footer-partners-breakpoint: 'sm';
+
+.footer {
+  background: $gray-100;
+}
+
+.footer-highlights {
+  padding-top: $spacer;
+  background: $gray-100;
+
+  > * {
+    margin-bottom: $spacer;
+  }
+}
+
+.footer-highlights-title {
+  color: $color-footer-link-title;
+}
+
+.footer-highlights-list {
+  display: block;
+  flex-flow: row wrap;
+  padding: 0;
+  margin: (0.8 * $spacer) ($grid-gutter-width / -2) (-1 * $spacer);
+
+  li {
+    display: block;
+    margin: 0 ($grid-gutter-width / 2) (0.4 * $spacer);
+
+    a {
+      color: $color-footer-link;
+      font-size: small;
+    }
+  }
+}
+
+.footer-cite-info {
+  padding: $card-spacer-x;
+  background: $white;
+  display: flex;
+  //TODO move ro variables
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.12),
+    0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+
+  margin-top: -45px;
+
+  .column-left {
+    width: 190px;
+    font-size: 0.87rem;
+    color: $color-footer-link;
+    // font-weight: $font-weight-light;
+    .title {
+      font-weight: 500;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.footer-partners {
+  display: flex;
+  align-items: flex-start;
+  padding: ($spacer / 2) ($grid-gutter-width / 2);
+  margin: 0 ($grid-gutter-width / -2);
+
+  a {
+    color: inherit;
+
+    @include hover-focus {
+      color: inherit;
+    }
+  }
+}
+
+.footer-partners-item {
+  display: block;
+  margin: 0;
+  padding: ($spacer / 2) ($grid-gutter-width / 2);
+
+  &:first-child {
+    padding: ($spacer / 2) ($grid-gutter-width / 2) ($spacer / 2) 0;
+  }
+  &:last-child {
+    padding: ($spacer / 3) 0 ($spacer / 2) 0;
+  }
+}
+
+.footer-partners-logo {
+  display: block;
+  flex: 1;
+
+  @include media-breakpoint-up($footer-partners-breakpoint) {
+    height: 3 * $spacer;
+    flex: 0 !important; // to override id's property
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    @include media-breakpoint-up($footer-partners-breakpoint) {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.footer-partners-text {
+  flex-grow: 2;
+  color: $color-footer-link-60;
+  font-size: 0.8rem;
+
+  @include media-breakpoint-up($footer-partners-breakpoint) {
+    max-width: 16rem;
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+#footer-logo-jisc {
+  flex-grow: 0.68;
+}
+
+#footer-logo-ou {
+  flex-grow: 1;
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 1rem;
+  margin-right: 0.5rem;
+  color: initial;
+  text-decoration: none;
+}
+
+.logo-link:hover,
+.logo-link:focus {
+  color: initial;
+  text-decoration: none;
+}
+
+.logo {
+  min-width: calc(var(--logo-min-width) - 1.5rem);
+  max-width: var(--page-padding-x);
+  position: relative;
+  line-height: 2.4rem;
+  display: flex;
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+.logo-icon {
+  margin-top: -0.37rem;
+  margin-bottom: -0.13rem;
+  vertical-align: -0.0625rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: -10px;
+}

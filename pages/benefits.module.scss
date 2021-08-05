@@ -1,0 +1,218 @@
+@import 'components/bootstrap_design-v2/core';
+
+.services-page-title {
+  font-style: italic;
+  font-weight: $font-weight-bold;
+  text-align: center;
+}
+
+.services-page-title-small {
+  display: block;
+  font-size: 0.4em;
+  font-weight: $font-weight-normal;
+}
+
+.services-page-title + :global(.article-nav) {
+  justify-content: center;
+}
+
+.service-section-description {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  white-space: pre-line;
+}
+.service-section-title {
+  align-items: center;
+  text-align: center;
+
+  @include media-breakpoint-up('sm') {
+    text-align: left;
+  }
+}
+
+.service-section-picture {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.service-section-content {
+  .service-section:nth-child(odd) & {
+    flex-direction: row-reverse;
+  }
+}
+
+.statistic {
+  background-color: $gray-100;
+
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+    margin: ($spacer * 2) 0;
+  }
+  .stat-title {
+    font-size: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  p {
+    text-align: center;
+  }
+  mark {
+    font-size: 3rem;
+    background-color: transparent;
+  }
+}
+
+.join-core {
+  .form-block {
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .img-block {
+    text-align: right;
+  }
+}
+
+.banner {
+  padding: 0;
+
+  &::after {
+    background: $gray-100;
+    width: 100%;
+    height: 2px;
+    display: block;
+    content: '';
+    position: absolute;
+    bottom: 25px;
+    z-index: -1;
+  }
+
+  .column-description {
+    .title {
+      font-size: 3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .description {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+      font-weight: 400;
+      color: $color-footer-link;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .column-velcro {
+    a:hover {
+      text-decoration: none;
+
+      .velcro-title {
+        color: var(--primary);
+      }
+    }
+    .title {
+      font-size: 1rem;
+      color: $color-footer-link;
+      margin-bottom: 1rem;
+    }
+    .velcro-picture {
+      width: 48px;
+      height: 48px;
+      float: left;
+      margin-right: ($spacer / 2);
+    }
+    .velcro-text-block {
+      overflow: hidden;
+      margin-bottom: ($spacer / 2);
+    }
+
+    .velcro-title {
+      font-size: 0.9rem;
+      color: $color-footer-link;
+      font-weight: 400;
+      display: block;
+    }
+
+    .velcro-description {
+      font-size: 0.7rem;
+      line-height: 1rem;
+      display: inline-block;
+      color: $color-footer-link-60;
+    }
+
+    .velcro-wrap {
+      background: no-repeat center / contain;
+      background-image: url('/images/benefits/background-velcro.svg');
+      padding: 0 $spacer;
+      padding: 40px;
+    }
+    .velcro {
+      box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
+      padding: $spacer;
+      background-color: $white;
+      position: relative;
+      right: 5px;
+      bottom: 10px;
+    }
+  }
+}
+
+.submit-section {
+  margin-top: 1rem;
+}
+
+// TODO Style need to move to a new bootstrap for new design
+.button-custom {
+  box-shadow: 0 1px 2px rgb(0 0 0 / 20%);
+  --button-background: var(--primary);
+  --button-color: var(--white);
+  display: inline-block;
+  padding: calc(0.5rem - 1px) calc(1rem - 1px);
+  padding: calc(var(--button-padding-y) - 1px)
+    calc(var(--button-padding-x) - 1px);
+  font-family: var(--buton-font-family);
+  font-size: 0.875rem;
+  font-size: var(--button-font-size, 0.875rem);
+  font-weight: var(--button-font-weight);
+  line-height: 1rem;
+  line-height: var(--button-line-height, 1rem);
+  color: inherit;
+  color: var(--button-color, var(--primary, inherit));
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  letter-spacing: var(--button-letter-spacing, 0.08rem);
+  white-space: var(--button-white-space);
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: transparent linear-gradient(transparent, transparent);
+  background: var(--button-background, transparent)
+    linear-gradient(
+      var(--button-overlay, transparent),
+      var(--button-overlay, transparent)
+    );
+  border: 1px solid var(--button-border, transparent);
+  border-radius: 3px;
+  transition-duration: 0.15s;
+  transition-property: color, background, border-color, box-shadow;
+
+  &:hover {
+    text-decoration: none;
+    color: #ffffff;
+    --button-overlay: rgba(0, 0, 0, 0.06667);
+    background: var(--button-background, transparent)
+      linear-gradient(
+        var(--button-overlay, transparent),
+        var(--button-overlay, transparent)
+      );
+  }
+}

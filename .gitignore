@@ -1,5 +1,7 @@
+# master -> 2
 node_modules
 .next
+.idea
 out
 /public/design
 /public/edit*
