@@ -8,24 +8,24 @@ search-placeholder: Search {{totalArticlesCount}} papers around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   children:
-  - title: Worldwide data
-    description: |
-      We aggregate and enrich open access research papers from around the world
+    - title: Worldwide data
+      description: |
+        We aggregate and enrich open access research papers from around the world
 
-      [Read about our data](~data)
-    picture: /images/globe.svg
-  - title: Unique APIs
-    description: |
-      We provide seamless access to content and data, through our
-      unique [APIs](~services#access-to-raw-data)
+        [Read about our data](~data)
+      picture: /images/globe.svg
+    - title: Unique APIs
+      description: |
+        We provide seamless access to content and data, through our
+        unique [APIs](~services#access-to-raw-data)
 
-      **Perfect for [text mining](~about/endorsements#enterprise-companies)!**
-    picture: /images/api.svg
-  - title: Powerful Services
-    description: |
-      We create powerful [services](~services) for researchers, universities,
-      and industry
-    picture: /images/hall.svg
+        **Perfect for [text mining](~about/endorsements#enterprise-companies)!**
+      picture: /images/api.svg
+    - title: Powerful Services
+      description: |
+        We create powerful [services](~services) for researchers, universities,
+        and industry
+      picture: /images/hall.svg
 join:
   title: Join CORE
   lead: |
@@ -69,6 +69,12 @@ partner-projects:
       - Advocating for and supporting the open access movement.
       - Developing artifical intelligence powered tools for researchers.
       - Contributing to standards and improving interoperability
+research-outputs:
+  title: Research
+  description: |
+    CORE is developed and supported by [Big Scientific Data and Text Analytics group](#) from KMi, The Open University.
+
+    We do a lot of research and other project which you can find on our website.
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research
