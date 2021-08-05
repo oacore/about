@@ -113,7 +113,7 @@ const AboutPage = ({ data }) => (
       </Row>
 
       <ButtonToolbar align="center" className="flex-row-reverse">
-        <Button color="primary" outline href="~register-data-provider">
+        <Button color="primary" outline href="~benefits">
           {data.howItWorks.actionLabels.primary}
         </Button>
 

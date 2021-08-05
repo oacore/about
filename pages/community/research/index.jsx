@@ -3,18 +3,9 @@ import React from 'react'
 import { ResearchPage } from 'templates'
 import { Page } from 'components'
 import retrieveContent from 'content'
+import datasetData from 'data/community/research.yml'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content'
-
-const Research = ({ data }) => (
-  <Page
-    title="Research Community"
-    description="The CORE Researcher Network provides opportunities for researchers working with CORE data to engage and collaborate with others from within and across disciplines."
-    keywords="Researcher Network, Free, Data, Open Access"
-  >
-    <ResearchPage data={data} />
-  </Page>
-)
 
 const getSections = async ({ ref } = {}) => {
   const content = await retrieveContent('community', {
@@ -32,10 +23,11 @@ const getSections = async ({ ref } = {}) => {
   return content
 }
 
+// TODO: When we will have > 2 quotes add map function.
+// Temporary we have only 1 'Hardcoded' quote.
 const getQuotes = async ({ ref } = {}) => {
-  const quote = await retrieveContent('community/quotes', {
+  const quote = await retrieveContent('quote', {
     ref,
-    transform: 'object',
   })
 
   const quoteWithPhoto = {
@@ -63,5 +55,15 @@ export const getStaticProps = async ({ previewData }) => {
     },
   }
 }
+
+const Research = ({ data }) => (
+  <Page
+    title={datasetData.title}
+    description={datasetData.description}
+    keywords={datasetData.keywords}
+  >
+    <ResearchPage data={data} />
+  </Page>
+)
 
 export default Research

@@ -1,8 +1,13 @@
-$main-padding: 0 var(--page-padding-x);
+$main-padding: var(--page-padding-y) var(--page-padding-x);
+$join-card-max-width: 22rem;
+$symposium-card-max-width: 28rem;
+$text-max-width: 39rem;
+$carousel-card-max-width: 31.2rem;
 
 @mixin displayFlex {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .title {
@@ -13,48 +18,52 @@ $main-padding: 0 var(--page-padding-x);
 .container {
   @include displayFlex;
   padding: $main-padding;
+  img {
+    height: auto;
+    max-width: 100%;
+  }
 }
 
 .header {
+  padding-top: 0;
+  padding-bottom: 0;
   align-items: center;
   border-bottom: 1px solid var(--gray-200);
-}
 
-.headerText {
-  flex-basis: 50%;
-
-  p {
-    font-size: 24px;
+  &-text {
+    max-width: $text-max-width;
+    p {
+      font-size: 24px;
+    }
+    p,
+    span {
+      font-weight: 300;
+      color: var(--gray-600);
+    }
+    span {
+      font-size: 14px;
+      float: right;
+      font-style: italic;
+    }
   }
-  p,
-  span {
-    font-weight: 300;
-    color: var(--gray-600);
-  }
-  span {
-    font-size: 14px;
-    float: right;
-    font-style: italic;
+  &-banner {
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
 .content-main {
-  margin: 2rem 0;
-
-  p {
-    flex-basis: 55%;
-  }
   &-text {
     margin-top: 1.3rem;
+    max-width: $text-max-width;
   }
+
   &-card {
-    max-width: 28.2rem;
+    max-width: $symposium-card-max-width;
+
     span {
       color: var(--primary);
       font-size: 10px;
-    }
-    &-title {
-      margin-top: 0;
     }
   }
 }
@@ -63,43 +72,44 @@ $main-padding: 0 var(--page-padding-x);
   background-color: var(--gray-100);
   flex-direction: column;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .join-cards {
-  display: flex;
-  justify-content: space-between;
+  @include displayFlex;
+  width: 100%;
 }
 
 .join-card {
+  max-width: $join-card-max-width;
   text-align: center;
+
   h6 {
     margin-top: 1rem;
-  }
-
-  &:not(:last-child) {
-    padding-right: 2rem;
   }
 }
 
 .community {
   flex-direction: column;
+  flex-wrap: nowrap;
   padding-top: 4rem;
+
   p {
     margin-top: 0.5rem;
     max-width: 56.2rem;
   }
+
   &-cards {
     margin-top: 3rem;
   }
+
   &-card {
-    max-width: 31.2rem;
+    max-width: $carousel-card-max-width;
     border-top: 7px solid var(--primary);
 
     p {
       font-size: 16px;
     }
+
     &-author {
       background-color: var(--gray-100);
       display: flex;
@@ -121,12 +131,8 @@ $main-padding: 0 var(--page-padding-x);
 }
 
 .join-footer {
-  margin-top: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
   max-width: 63rem;
-  padding: $main-padding;
-  &-contact {
-    margin-top: 2.5rem;
-    margin-bottom: 2rem;
-    color: var(--gray-800);
-  }
+  padding-top: var(--page-padding-y);
 }
