@@ -275,7 +275,7 @@ const getTeamMembers = async ({ ref } = {}) => {
   const allTeamMembers = (await retrieveContent('team', { ref })).map(
     (member) => ({
       ...member,
-      photoUrl: new URL(member.photo, ASSETS_BASE_URL).href,
+      photoUrl: ASSETS_BASE_URL + member.photo,
     })
   )
 
