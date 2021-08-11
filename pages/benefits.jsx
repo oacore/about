@@ -99,12 +99,17 @@ const benefitsPage = () => (
       <div className={styles.title}>{benefitsData.stat.title}</div>
       <Row>
         {benefitsData.stat.blocks.map((statisticGroup) => (
-          <Col tag="span">
-            <div className={styles.statTitle}>{statisticGroup.title}</div>
-            <Markdown>
-              {patchStats(statisticGroup.value, benefitsData.statistics)}
-            </Markdown>
-          </Col>
+          <>
+            {patchStats(statisticGroup.value, benefitsData.statistics) !==
+              '<mark>0</mark>' && (
+              <Col tag="span">
+                <div className={styles.statTitle}>{statisticGroup.title}</div>
+                <Markdown>
+                  {patchStats(statisticGroup.value, benefitsData.statistics)}
+                </Markdown>
+              </Col>
+            )}
+          </>
         ))}
       </Row>
     </Section>
