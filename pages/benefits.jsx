@@ -16,7 +16,7 @@ const benefitsPage = () => (
   >
     <Section id="banner" caption="banner" className={styles.banner}>
       <Row>
-        <Col className={styles.columnDescription}>
+        <Col sm="6" md="6" className={styles.columnDescription}>
           <div className={styles.title}>{benefitsData.banner.title}</div>
           <div className={styles.description}>
             {benefitsData.banner.description}
@@ -32,7 +32,7 @@ const benefitsPage = () => (
             See the full list of data providers
           </a>
         </Col>
-        <Col className={styles.columnVelcro}>
+        <Col sm="6" md="6" className={styles.columnVelcro}>
           <div className={styles.velcroWrap}>
             <div className={styles.velcro}>
               <div className={styles.title}>

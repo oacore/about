@@ -158,7 +158,16 @@
       position: relative;
       right: 5px;
       bottom: 10px;
+      max-width: 368px;
+      margin: 0 auto;
     }
+  }
+}
+@media (max-width: 992px) {
+  .column-description,
+  .column-velcro {
+    flex: none;
+    max-width: none;
   }
 }
 
