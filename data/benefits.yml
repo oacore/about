@@ -40,7 +40,7 @@ CORE makes your content discoverable by integrating with a variety of platforms 
     title: Ensure your content is machine readable
     picture: /images/benefits/content-machine-readable.svg
     description: |
-     Open access content hosted in repository and journal platforms is not always easily discoverable by search engines. CORE will technologically validate and monitor your repository or journal to help you keep it well configured. Through the harvesting process, CORE detects technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. This information is exposed via the freely available CORE Repository Dashboard [~repository-dashboard] which provides suggestions for improvements to the platform’s configuration for optimal discoverability.
+     Open access content hosted in repository and journal platforms is not always easily discoverable by search engines. CORE will technologically validate and monitor your repository or journal to help you keep it well configured. Through the harvesting process, CORE detects technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. This information is exposed via the freely available CORE Repository Dashboard which provides suggestions for improvements to the platform’s configuration for optimal discoverability.
  -
     id: open-access-network
     title: Integrate with the open access network
