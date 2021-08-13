@@ -12,7 +12,7 @@ banner:
       -
         id: content-visibility
         title: Increase the discoverability of your content
-        description: Widely disseminate your content, increase download rates and readership, and boost your output’s visibility and impact
+        description: Widely disseminate your content, increase download rates and readership,  and boost your output’s visibility and impact
         picture: /images/benefits/icons/discoverability.svg
       -
         id: content-machine-readable
@@ -33,22 +33,22 @@ sections:
     title: Increase the  discoverability of your content
     picture: /images/benefits/content-visibility.svg
     description: |
-      CORE ensures an increased visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, the number of content downloads increases by 15% on average and up to 32% if the repository is well configured for harvesting.
-      CORE integrates and makes your content discoverable across a variety of platforms including  PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services and facilitates the widest possible dissemination of open access content.
-  -
+     CORE increases the visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, average content downloads increase by 15% and up to 32% if the repository is well configured.
+CORE makes your content discoverable by integrating with a variety of platforms including PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services. We facilitate the widest possible dissemination of open access content.
+ -
     id: content-machine-readable
     title: Ensure your content is machine readable
     picture: /images/benefits/content-machine-readable.svg
     description: |
-      Open access content hosted in repository and journal platforms, it is not always easily discoverable by search engines. CORE can technically validate and monitor your repository or journal and help you to keep it well configured. Through the harvesting process, CORE can detect technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. All this information is exposed via the CORE Repository Dashboard service - which each data provider can access for free - which includes error messages relating to the configuration of your platform and provides fixing solutions.
-  -
+     Open access content hosted in repository and journal platforms is not always easily discoverable by search engines. CORE will technologically validate and monitor your repository or journal to help you keep it well configured. Through the harvesting process, CORE detects technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. This information is exposed via the freely available CORE Repository Dashboard [~repository-dashboard] which provides suggestions for improvements to the platform’s configuration for optimal discoverability.
+ -
     id: open-access-network
     title: Integrate with the open access network
     picture: /images/benefits/open-access-network.svg
     description: |
-      For all open access funder policies, e.g. PlanS, CORE can improve your understanding of your content’s compliant (or non-compliant) outputs at the level of individual articles and help you prepare reports with analytical information addressed to research administrators and funders. For example, CORE assisted with the REF2021 audit guidance with the verification of the dates that outputs became publicly available and a comparison of the published and deposited dates.
+CORE helps you meet open access funder policies. We provide insights into your compliant (or non-compliant) outputs on an individual article level and we help you prepare analytical reports for research administrators and funders. For example, CORE assisted with the UK’s REF 2021 audit by verifying content availability deadlines and comparing published and deposited dates. 
 
-      Furthermore, your infrastructure contributes to the national and international monitoring of open access content growth and enables the better predicting of new trends in scientific disciplines. All data providers join the vast network of interoperable repositories and journals and take advantage of the further enrichments, e.g. recommendations, DOIs, ORCID iDs, etc.
+Furthermore, your infrastructure contributes to national and international monitoring of open access content growth and enables more accurate prediction of trends in scientific disciplines. As a data provider, you join a vast network of interoperable repositories and journals and take advantage of the CORE’s data enrichments.
 
 stat:
   title: How many joined us already?
