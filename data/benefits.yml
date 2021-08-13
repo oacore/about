@@ -11,18 +11,18 @@ banner:
     blocks:
       -
         id: content-visibility
-        title: Increase your content’s discoverability
-        description: Further disseminate your content, increase the number of users who read it and download it, and boost your output’s visibility and impact
+        title: Increase the discoverability of your content
+        description: Widely disseminate your content, increase download rates and readership, and boost your output’s visibility and impact
         picture: /images/benefits/icons/discoverability.svg
       -
         id: content-machine-readable
         title: Ensure your content is machine readable
-        description: Technically validate and monitor your repository and journal and keep it well configured
+        description: Technically validate and monitor your repository or journal and keep it well configured
         picture: /images/benefits/icons/readable.svg
       -
         id: open-access-network
         title: Integrate with the open access network
-        description: Monitor funder open access policies compliance rates and gain an insight of your contribution to the global open access growth
+        description: Monitor compliance with open access funder policies and gain an insights into your contribution to the global growth of open access 
         picture: /images/benefits/icons/network.svg
 
 sections:
@@ -30,14 +30,14 @@ sections:
   blocks:
   -
     id: content-visibility
-    title: Increase your content’s visibility and discoverability
+    title: Increase the  discoverability of your content
     picture: /images/benefits/content-visibility.svg
     description: |
       CORE ensures an increased visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, the number of content downloads increases by 15% on average and up to 32% if the repository is well configured for harvesting.
       CORE integrates and makes your content discoverable across a variety of platforms including  PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services and facilitates the widest possible dissemination of open access content.
   -
     id: content-machine-readable
-    title: Make your content machine readable
+    title: Ensure your content is machine readable
     picture: /images/benefits/content-machine-readable.svg
     description: |
       Open access content hosted in repository and journal platforms, it is not always easily discoverable by search engines. CORE can technically validate and monitor your repository or journal and help you to keep it well configured. Through the harvesting process, CORE can detect technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. All this information is exposed via the CORE Repository Dashboard service - which each data provider can access for free - which includes error messages relating to the configuration of your platform and provides fixing solutions.
