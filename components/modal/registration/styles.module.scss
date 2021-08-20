@@ -1,9 +1,13 @@
+@use "sass:math";
+
 @import 'components/bootstrap/core';
+
+$border-main: 1px solid var(--gray-300);
 
 .modal {
   &-form {
     input {
-      border: 1px solid var(--gray-300);
+      border: $border-main;
       &:not(:last-child) {
         margin-bottom: 1rem;
       }
@@ -30,7 +34,7 @@
 
 .profiles {
   border: none;
-  box-shadow: inset 0 0 0 1px hsl(var(--card-color, var(--on-surface)) / 0.12);
+  border: $border-main;
   padding: 0 0.5rem 0.5rem 0.5rem;
   margin-bottom: 1rem;
   &-title {

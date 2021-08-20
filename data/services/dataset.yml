@@ -61,10 +61,11 @@ what-is-included:
 
     The terms of use for the dataset are available on our
     [datasets download page](~documentation/dataset).
-  actions:
-    primary:
-      url: /dataset/getdatadump
-      caption: Register for access
+  form:
+    title: Register for an API key
+    subtitle: Enter your email address to register new or restore your previous API key
+    helper: We will send the key and instructions to this address
+    action: Register now
 
 related-services:
 -

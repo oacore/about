@@ -24,7 +24,7 @@ const ModalForm = observe(() => {
 
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
-    if ((firstName, lastName, country))
+    if (firstName && lastName && country)
       registration.setData({ firstName, lastName, country: country.id })
 
     if (organizationName) registration.setData({ organizationName })
@@ -38,7 +38,7 @@ const ModalForm = observe(() => {
       hideManually
       className={styles.modalForm}
     >
-      <Modal.Title tag="h6">Tell us about yourself</Modal.Title>
+      <h6>Tell us about yourself</h6>
       <ProfileSelect />
       <Form onSubmit={onHandleSubmit}>
         <div className={styles.inputGroup}>

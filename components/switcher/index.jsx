@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { bind } from 'decko'
@@ -87,13 +88,20 @@ class Switcher extends Component {
     this.stop()
   }
 
-  start() {
-    const { pause } = this.state
-    if (pause) return
+  handleChange(index) {
+    this.activateItem(index)
+  }
 
-    const { interval } = this.props
-    if (interval > 0)
-      this.timeoutId = setTimeout(this.activateNextItem, interval)
+  @bind
+  handleMouseOver() {
+    const { pauseOnMouseOver } = this.props
+    if (pauseOnMouseOver) this.pause()
+  }
+
+  @bind
+  handleMouseLeave() {
+    const { pauseOnMouseOver } = this.props
+    if (pauseOnMouseOver) this.play()
   }
 
   stop() {
@@ -126,22 +134,6 @@ class Switcher extends Component {
     const nextItem = (activeItemIndex + 1) % items.length
 
     this.activateItem(nextItem)
-  }
-
-  @bind
-  handleMouseOver() {
-    const { pauseOnMouseOver } = this.props
-    if (pauseOnMouseOver) this.pause()
-  }
-
-  @bind
-  handleMouseLeave() {
-    const { pauseOnMouseOver } = this.props
-    if (pauseOnMouseOver) this.play()
-  }
-
-  handleChange(index) {
-    this.activateItem(index)
   }
 
   render() {
