@@ -1,8 +1,5 @@
 @import 'components/bootstrap/core';
 
-.service-section {
-}
-
 .service-section-title {
   align-items: center;
   text-align: center;
@@ -123,4 +120,19 @@
 
 .testimonial {
   background: $gray-200;
+}
+
+.card {
+  &-subtitle {
+    margin: 1.5rem 0;
+  }
+  &-input {
+    input {
+      border: 1px solid var(--gray-300);
+      &:focus {
+        border: 1px solid var(--primary);
+      }
+    }
+    margin-bottom: 1rem;
+  }
 }

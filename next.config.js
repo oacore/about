@@ -4,6 +4,8 @@ const path = require('path')
 const withImages = require('next-images')
 const yaml = require('js-yaml')
 
+const envConfig = require('./env.config')
+
 let legacyConfig = null
 const readLegacyConfig = async (filepath = './legacy.config.yml') => {
   if (legacyConfig == null) {
@@ -16,10 +18,10 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
 }
 
 const nextConfig = {
-  env: {
+  env: Object.assign(envConfig, {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
-  },
+  }),
   webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
@@ -109,6 +111,8 @@ const nextConfig = {
 
     Object.assign(config.resolve.alias, {
       main: path.join(__dirname, 'main'),
+      store: path.join(__dirname, 'store'),
+      api: path.join(__dirname, 'api'),
     })
     return config
   },
