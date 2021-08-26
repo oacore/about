@@ -4,9 +4,9 @@ import { Modal, Button } from '@oacore/design/lib'
 import styles from './styles.module.scss'
 import emailsSVG from './images/Emails.svg'
 
-import { useStore } from 'store'
+import { useStore, observe } from 'store'
 
-const ModalSuccess = () => {
+const ModalSuccess = observe(() => {
   const { registration } = useStore()
 
   const onCloseModal = () => {
@@ -15,7 +15,8 @@ const ModalSuccess = () => {
 
   const textSelect = () => {
     switch (registration.data.accountType) {
-      case 'personal' || 'researcher':
+      case 'personal':
+      case 'research':
         return (
           <p>
             We have sent you access instructions to{' '}
@@ -23,7 +24,8 @@ const ModalSuccess = () => {
           </p>
         )
 
-      case 'institution' || 'enterprise':
+      case 'institution':
+      case 'enterprise':
         return (
           <>
             <p>
@@ -57,6 +59,6 @@ const ModalSuccess = () => {
       </footer>
     </Modal>
   )
-}
+})
 
 export default ModalSuccess

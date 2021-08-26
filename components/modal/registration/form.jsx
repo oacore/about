@@ -12,7 +12,7 @@ import { useStore, observe } from 'store'
 const ModalForm = observe(() => {
   const { value: firstName, bind: bindFirstName } = useInput('')
   const { value: lastName, bind: bindLastName } = useInput('')
-  const { value: organizationName, bind: bindOrganizationName } = useInput('')
+  const { value: organisationName, bind: bindOrganisationName } = useInput('')
 
   const { value: country, onChange: countryOnChange } = useSelect()
 
@@ -27,7 +27,8 @@ const ModalForm = observe(() => {
     if (firstName && lastName && country)
       registration.setData({ firstName, lastName, country: country.id })
 
-    if (organizationName) registration.setData({ organizationName })
+    if (organisationName)
+      registration.setData({ organisation: organisationName })
     registration.setIsModalFormActive(false)
     registration.setIsModalConditionsActive(true)
   }
@@ -67,7 +68,7 @@ const ModalForm = observe(() => {
             label="Organization name"
             placeholder="e.g. CORE"
             className={styles.formInput}
-            {...bindOrganizationName}
+            {...bindOrganisationName}
             required
           />
         )}

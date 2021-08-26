@@ -11,7 +11,6 @@ const ModalConditions = observe(() => {
   const onSubmit = () => {
     registration.registerSubmit()
     registration.setIsModalConditionsActive(false)
-    registration.setIsModalSuccessActive(true)
   }
 
   const onCloseModal = () => {

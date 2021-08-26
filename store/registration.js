@@ -4,7 +4,12 @@ import { registerKey } from '../api/services'
 
 class Registration {
   data = {
+    firstName: '',
+    lastName: '',
+    organisation: '',
+    country: '',
     accountType: 'personal',
+    email: '',
   }
 
   isModalFormActive = false
@@ -14,6 +19,8 @@ class Registration {
   isModalSuccessActive = false
 
   isModalExitActive = false
+
+  isModalErrorActive = false
 
   isLoading = false
 
@@ -26,6 +33,7 @@ class Registration {
       isModalConditionsActive: observable,
       isModalSuccessActive: observable,
       isModalExitActive: observable,
+      isModalErrorActive: observable,
       isLoading: observable,
       error: observable,
       setData: action,
@@ -33,6 +41,7 @@ class Registration {
       setIsModalConditionsActive: action,
       setIsModalSuccessActive: action,
       setIsModalExitActive: action,
+      setIsModalErrorActive: action,
       setIsLoading: action,
       reset: action,
     })
@@ -58,25 +67,40 @@ class Registration {
     this.isModalExitActive = boolean
   }
 
+  setIsModalErrorActive(boolean) {
+    this.isModalErrorActive = boolean
+  }
+
   setIsLoading(boolean) {
-    this.setIsLoading = boolean
+    this.isLoading = boolean
   }
 
   async registerSubmit() {
+    this.setIsLoading(true)
     try {
       const response = await registerKey(this.data)
-      if (response.status === 200) this.error = null
+      if (response.status === 200) this.setIsModalSuccessActive(true)
     } catch (error) {
-      this.error = 'error'
+      this.setIsModalErrorActive(true)
+    } finally {
+      this.setIsLoading(false)
     }
   }
 
   reset() {
-    this.data = { accountType: 'personal' }
+    this.data = {
+      firstName: '',
+      lastName: '',
+      organisation: '',
+      country: '',
+      accountType: 'personal',
+      email: '',
+    }
     this.isModalFormActive = false
     this.isModalConditionsActive = false
     this.isModalSuccessActive = false
     this.isModalExitActive = false
+    this.isModalErrorActive = false
     this.isLoading = false
     this.error = null
   }

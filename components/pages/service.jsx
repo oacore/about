@@ -32,13 +32,13 @@ const ServicePage = observe(
     documentation, // @optional
     relatedServices,
   }) => {
+    const { registration } = useStore()
     const {
       value: email,
       element: elemEmail,
       bind: bindEmail,
     } = useInput('', 'email')
 
-    const { registration } = useStore()
     const router = useRouter()
     const productType = router.route.match(/(?:dataset|api)/s)?.join('')
 
@@ -56,8 +56,6 @@ const ServicePage = observe(
         className={styles.servicePage}
         nav
       >
-        <RegistrationModals />
-
         <h1 className={styles.servicePageTitle}>{title}</h1>
         <p className={styles.servicePageTagline}>{tagline}</p>
         <Section tag="div">
@@ -191,6 +189,7 @@ const ServicePage = observe(
             </KeyFeatureList>
           </Section>
         )}
+        <RegistrationModals />
       </Page>
     )
   }
