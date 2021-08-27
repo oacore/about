@@ -14,6 +14,7 @@ const ModalConditions = observe(() => {
   }
 
   const onCloseModal = () => {
+    registration.setIsModalConditionsActive(false)
     registration.setIsModalExitActive(true)
   }
 
