@@ -40,7 +40,7 @@ const ServicePage = observe(
     } = useInput('', 'email')
 
     const router = useRouter()
-    const productType = router.route.match(/(?:dataset|api)/s)?.join('')
+    const productType = router?.route?.match(/(?:dataset|api)/s)?.join('')
 
     const onHandleSubmit = (e) => {
       e.preventDefault()
