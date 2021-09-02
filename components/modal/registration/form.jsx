@@ -6,6 +6,8 @@ import ProfileSelect from './profile-select'
 import useInput from '../hooks/use-input'
 import CountrySelect from './country-select'
 import useSelect from '../hooks/use-select'
+import Markdown from '../../markdown'
+import findText from './helpers/findText'
 
 import { useStore, observe } from 'store'
 
@@ -41,6 +43,12 @@ const ModalForm = observe(() => {
     >
       <h6>Tell us about yourself</h6>
       <ProfileSelect />
+      <div className={styles.modalFormText}>
+        <Markdown>{findText('text')}</Markdown>
+      </div>
+      <div className={styles.modalFormTextBordered}>
+        <Markdown>{findText('box')}</Markdown>
+      </div>
       <Form onSubmit={onHandleSubmit}>
         <div className={styles.inputGroup}>
           <TextField
@@ -60,13 +68,15 @@ const ModalForm = observe(() => {
             required
           />
         </div>
-
-        {(registration.data.accountType === 'enterprise' ||
-          registration.data.accountType === 'institution') && (
+        {registration.data.accountType !== 'personal' && (
           <TextField
             id="organization_name"
-            label="Organization name"
-            placeholder="e.g. CORE"
+            label={
+              registration.data.accountType === 'enterprise'
+                ? 'Organization name'
+                : 'Institution name'
+            }
+            placeholder="Full name of your organisation or institute, e.g 'The Open University' "
             className={styles.formInput}
             {...bindOrganisationName}
             required

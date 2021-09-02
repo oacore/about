@@ -3,6 +3,9 @@ import { Modal, Button } from '@oacore/design/lib'
 
 import styles from './styles.module.scss'
 import emailsSVG from './images/Emails.svg'
+import { patchStats } from '../../utils'
+import Markdown from '../../markdown'
+import findText from './helpers/findText'
 
 import { useStore, observe } from 'store'
 
@@ -13,36 +16,6 @@ const ModalSuccess = observe(() => {
     registration.reset()
   }
 
-  const textSelect = () => {
-    switch (registration.data.accountType) {
-      case 'personal':
-      case 'research':
-        return (
-          <p>
-            We have sent you access instructions to{' '}
-            <span>{registration.data.email}</span>.
-          </p>
-        )
-
-      case 'institution':
-      case 'enterprise':
-        return (
-          <>
-            <p>
-              Thank you for registering. Our team will be in touch with further
-              details as soon as possible.
-            </p>
-            <p>
-              Any questions contact <span>theteam@core.ac.uk</span>
-            </p>
-          </>
-        )
-
-      default:
-        return null
-    }
-  }
-
   return (
     <Modal hideManually aria-label="success-modal" className={styles.modalSm}>
       <h6>Success!</h6>
@@ -50,7 +23,10 @@ const ModalSuccess = observe(() => {
         <div>
           <img src={emailsSVG} alt="emails" />
         </div>
-        {textSelect()}
+
+        <Markdown>
+          {patchStats(findText('modalContent'), registration.data)}
+        </Markdown>
       </main>
       <footer className={styles.buttonGroup}>
         <Button variant="text" onClick={onCloseModal}>

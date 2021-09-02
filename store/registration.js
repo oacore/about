@@ -10,6 +10,7 @@ class Registration {
     country: '',
     accountType: 'personal',
     email: '',
+    productType: '',
   }
 
   isModalFormActive = false
@@ -95,6 +96,7 @@ class Registration {
       country: '',
       accountType: 'personal',
       email: '',
+      productType: '',
     }
     this.isModalFormActive = false
     this.isModalConditionsActive = false
