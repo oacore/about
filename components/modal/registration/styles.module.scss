@@ -5,7 +5,9 @@
     max-height: 90vh;
     input {
       border: 1px solid var(--gray-300);
-
+      &::placeholder {
+        text-overflow: ellipsis;
+      }
       &:not(:last-child) {
         margin-bottom: 1rem;
       }
@@ -13,18 +15,7 @@
         border: 1px solid var(--primary);
       }
     }
-    input[placeholder] {
-      text-overflow: ellipsis;
-    }
-    input::-moz-placeholder {
-      text-overflow: ellipsis;
-    }
-    input:-moz-placeholder {
-      text-overflow: ellipsis;
-    }
-    input:-ms-input-placeholder {
-      text-overflow: ellipsis;
-    }
+
     &-text {
       padding: 1rem;
       &-bordered {
