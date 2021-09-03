@@ -77,7 +77,7 @@ const ModalForm = observe(() => {
                 : 'Institution name'
             }
             placeholder="Full name of your institute, e.g ‘The Open University’"
-            className={styles.formInput}
+            className={styles.modalFormInputOrg}
             {...bindOrganisationName}
             required
           />
