@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Link } from '@oacore/design'
 import React from 'react'
 
@@ -35,8 +36,7 @@ const generateFormMessage = ({ created, duplicated, error }) => {
             title="the administrator email address"
           >
             {created.email}
-          </Link>
-          . Join the community and add a{' '}
+          </Link>. Join the community and add a{' '}
           <Link href={HARVESTED_BY_CORE} title="Harvested by CORE Logo">
             harvested by CORE
           </Link>{' '}
