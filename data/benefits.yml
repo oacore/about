@@ -34,7 +34,8 @@ sections:
     picture: /images/benefits/content-visibility.svg
     description: |
      CORE increases the visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, average content downloads increase by 15% and up to 32% if the repository is well configured.
-CORE makes your content discoverable by integrating with a variety of platforms including PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services. We facilitate the widest possible dissemination of open access content.
+
+     CORE makes your content discoverable by integrating with a variety of platforms including PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services. We facilitate the widest possible dissemination of open access content.
  -
     id: content-machine-readable
     title: Ensure your content is machine readable
@@ -46,9 +47,9 @@ CORE makes your content discoverable by integrating with a variety of platforms 
     title: Integrate with the open access network
     picture: /images/benefits/open-access-network.svg
     description: |
-CORE helps you meet open access funder policies. We provide insights into your compliant (or non-compliant) outputs on an individual article level and we help you prepare analytical reports for research administrators and funders. For example, CORE assisted with the UK’s REF 2021 audit by verifying content availability deadlines and comparing published and deposited dates.
+     CORE helps you meet open access funder policies. We provide insights into your compliant (or non-compliant) outputs on an individual article level and we help you prepare analytical reports for research administrators and funders. For example, CORE assisted with the UK’s REF 2021 audit by verifying content availability deadlines and comparing published and deposited dates.
 
-Furthermore, your infrastructure contributes to national and international monitoring of open access content growth and enables more accurate prediction of trends in scientific disciplines. As a data provider, you join a vast network of interoperable repositories and journals and take advantage of the CORE’s data enrichments.
+     Furthermore, your infrastructure contributes to national and international monitoring of open access content growth and enables more accurate prediction of trends in scientific disciplines. As a data provider, you join a vast network of interoperable repositories and journals and take advantage of the CORE’s data enrichments.
 
 stat:
   title: How many joined us already?
