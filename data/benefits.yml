@@ -33,7 +33,7 @@ sections:
     title: Increase the  discoverability of your content
     picture: /images/benefits/content-visibility.svg
     description: |
-      CORE increases the visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, average content downloads increase by 15% and up to 32% if the repository is well configured.
+      CORE increases the visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, average content downloads increase by <b>15%</b> and up to <b>32%</b> if the repository is well configured.
       
       CORE makes your content discoverable by integrating with a variety of platforms including PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services. We facilitate the widest possible dissemination of open access content.
   -
@@ -41,7 +41,7 @@ sections:
     title: Ensure your content is machine readable
     picture: /images/benefits/content-machine-readable.svg
     description: |
-      Open access content hosted in repository and journal platforms is not always easily discoverable by search engines. CORE will technologically validate and monitor your repository or journal to help you keep it well configured. Through the harvesting process, CORE detects technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. This information is exposed via the freely available CORE Repository Dashboard which provides suggestions for improvements to the platform’s configuration for optimal discoverability.
+      Open access content hosted in repository and journal platforms is not always easily discoverable by search engines. CORE will technologically validate and monitor your repository or journal to help you keep it well configured. Through the harvesting process, CORE detects technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. This information is exposed via the freely available <a href="https://core.ac.uk/services/repository-dashboard">CORE Repository Dashboard</a> which provides suggestions for improvements to the platform’s configuration for optimal discoverability.
   -
     id: open-access-network
     title: Integrate with the open access network

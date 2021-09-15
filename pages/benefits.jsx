@@ -1,5 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'reactstrap'
+import Parser from 'html-react-parser'
+// TODO Remove Pareser after moving beenfits to netlify
 
 import styles from './benefits.module.scss'
 import AddDataProviderForm from './form'
@@ -88,7 +90,7 @@ const benefitsPage = () => (
                 {benefitsGroup.title}
               </h6>
               <p className={styles.serviceSectionDescription}>
-                {benefitsGroup.description}
+                {Parser(benefitsGroup.description)}
               </p>
             </Col>
           </Row>
