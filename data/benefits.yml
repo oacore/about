@@ -12,7 +12,7 @@ banner:
       -
         id: content-visibility
         title: Increase the discoverability of your content
-        description: Widely disseminate your content, increase download rates and readership, and boost your output’s visibility and impact
+        description: Widely disseminate your content, increase download rates and readership,  and boost your output’s visibility and impact
         picture: /images/benefits/icons/discoverability.svg
       -
         id: content-machine-readable
@@ -52,7 +52,7 @@ sections:
       Furthermore, your infrastructure contributes to national and international monitoring of open access content growth and enables more accurate prediction of trends in scientific disciplines. As a data provider, you join a vast network of interoperable repositories and journals and take advantage of the CORE’s data enrichments.
 
 stat:
-  title: How many joined us already?
+  title: How many data providers have joined CORE?
   blocks:
     -
       title: this month
