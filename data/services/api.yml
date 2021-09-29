@@ -79,7 +79,7 @@ what-is-included:
 
   form:
     title: Register for an API key
-    subtitle: Enter your email address to register new or restore your previous API key
+    subtitle: Enter your email address to register, or restore a previous a API key
     helper: We will send the key and instructions to this address
     action: Register now
 

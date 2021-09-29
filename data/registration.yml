@@ -4,7 +4,7 @@ sections:
     text: |
       For organisations and professionals developing innovative products, services, or software using CORE data. Read [Terms & Conditions](/terms) for more details.
     modal-content:
-      Thank you for registering with CORE. We have sent access instructions to <span>{{email}}</span>.Please check your email and spam folder.
+      Thank you for registering with CORE. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
 
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>
@@ -13,7 +13,7 @@ sections:
     text: |
       For users working on behalf on an academic institution to develop new tools and implementations on top of CORE data.
     modal-content:
-      Thank you for registering with CORE. We have sent access instructions to <span>{{email}}</span>.Please check your email and spam folder.
+      Thank you for registering with CORE. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
 
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>
@@ -23,15 +23,15 @@ sections:
       For members of the general public accessing CORE data for personal use.
     modal-content:
       Thank you for registering with CORE. We have sent access
-      instructions to <span>{{email}}</span>.Please check
+      instructions to <span>{{email}}</span>. Please check
       your email and spam folder.
   -
     id: dataset-research
     text: |
-      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the CORE Researcher Community for inspiration and discussion.
+      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the [CORE Researcher Community](https://core.ac.uk/community/research) for inspiration and discussion.
     modal-content:
       Thank you for registering with CORE. We have sent access
-      instructions to <span>{{email}}</span>.Please check
+      instructions to <span>{{email}}</span>. Please check
       your email and spam folder.
   -
     id: api-enterprise
@@ -43,7 +43,7 @@ sections:
 
       Register below to access the CORE API for free for the first 30 days. Read [Terms & Conditions](/terms) for more details.
     modal-content:
-      Thank you for registering with CORE. We have sent access instructions to your 30 day trial to <span>{{email}}</span>.Please check your email and spam folder.
+      Thank you for registering with CORE. We have sent access instructions to your 30 day trial to <span>{{email}}</span>. Please check your email and spam folder.
 
 
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>
@@ -57,7 +57,7 @@ sections:
 
        Register below to access the CORE API for free for the first 30 days. Read [Terms & Conditions](/terms) for more details.
     modal-content:
-      Thank you for registering with CORE. We have sent access instructions to your 30 day trial to <span>{{email}}</span>.Please check your email and spam folder.
+      Thank you for registering with CORE. We have sent access instructions to your 30 day trial to <span>{{email}}</span>. Please check your email and spam folder.
 
 
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>
@@ -67,13 +67,13 @@ sections:
       For members of the general public accessing CORE data for personal use.
     modal-content:
       Thank you for registering with CORE. We have sent access
-      instructions to <span> {{email}} </span>.Please check
+      instructions to <span> {{email}}</span>. Please check
       your email and spam folder.
   -
     id: api-research
     text: |
-      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the CORE Researcher Community for inspiration and discussion.
+      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the [CORE Researcher Community](https://core.ac.uk/community/research) for inspiration and discussion.
     modal-content:
       Thank you for registering with CORE. We have sent access
-      instructions to <span>{{email}}</span>.Please check
+      instructions to <span>{{email}}</span>. Please check
       your email and spam folder.

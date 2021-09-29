@@ -13,14 +13,15 @@ const CountrySelect = ({ onChange }) => {
 
   const handleOnInput = (data) => {
     if (data.value && !data.id) {
-      setSuggestions(
-        countries.filter((obj) =>
-          Object.values(obj).some((item) =>
-            item.toLowerCase().includes(data.value.toLowerCase())
-          )
+      const result = countries.filter((obj) =>
+        Object.values(obj).some((item) =>
+          item.toLowerCase().includes(data.value.toLowerCase())
         )
       )
+
+      setSuggestions(result)
     }
+
     setValue(data.value)
   }
 

@@ -33,7 +33,7 @@ const ProfileSelect = observe(() => {
   const { registration } = useStore()
   return (
     <fieldset className={styles.profiles}>
-      <legend className={styles.profilesTitle}>Profile</legend>
+      <legend className={styles.profilesTitle}>What’s your use case?</legend>
       <div className={styles.profilesItems}>
         {PROFILES.map(({ label, id, iconSrc }) => (
           <Card

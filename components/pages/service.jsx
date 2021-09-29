@@ -129,7 +129,7 @@ const ServicePage = observe(
                       value={email}
                       label="Email"
                       className={styles.cardInput}
-                      placeholder="e.g. john.doe@ac.ck.uk"
+                      placeholder="e.g. john.doe@ac.uk"
                       type="email"
                       required
                       helper={whatIsIncluded.form.helper}

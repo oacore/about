@@ -21,8 +21,8 @@ const ModalExit = observe(() => {
           <img src={leaveSVG} alt="leave" />
         </div>
         <p>
-          Don not hesitate to <Link href="/contact">contact us</Link> if you
-          have any questions.
+          Do not hesitate to <Link href="/contact">contact us</Link> if you have
+          any questions.
         </p>
       </main>
       <footer className={styles.buttonGroup}>

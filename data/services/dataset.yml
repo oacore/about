@@ -62,9 +62,9 @@ what-is-included:
     The terms of use for the dataset are available on our
     [datasets download page](~documentation/dataset).
   form:
-    title: Register for an API key
-    subtitle: Enter your email address to register new or restore your previous API key
-    helper: We will send the key and instructions to this address
+    title: Register for the CORE Dataset
+    subtitle: Enter your email address to access the CORE Dataset
+    helper: We will send the instructions to this address
     action: Register now
 
 related-services:

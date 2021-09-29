@@ -22,7 +22,7 @@ const ModalConditions = observe(() => {
     <Modal hideManually aria-label="conditions-modal">
       <h6>Do you agree with our Terms and Conditions?</h6>
       <main>
-        Please, view our <Link href="/terms">Terms and Conditions</Link> and
+        Please view our <Link href="/terms">Terms and Conditions</Link> and
         <Link href="/privacy"> Privacy notice</Link>. These documents are
         designed to inform you of your rights and obligations when using the
         CORE service.
