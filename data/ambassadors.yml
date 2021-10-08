@@ -596,16 +596,6 @@ ambassadors:
       country: Colombia
       picture: gomez.png
     -
-      id: abhilab-gupta
-      name: Abhilab Gupta
-      role: Student
-      organization: University of Jammu
-      location:
-        latitude: 32.712024
-        longitude: 74.8239048
-      country: India
-      region: in
-    -
       id: kuldeep-pawar
       name: Kuldeep Pawar
       role: Librarian
