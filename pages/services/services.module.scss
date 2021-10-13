@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import 'components/bootstrap/core';
 
 .services-page-title {
@@ -60,14 +62,14 @@
 
 .service-section-footer {
   text-align: center;
-  margin: map-get($spacers, 1) / -2;
+  margin: math.div(map-get($spacers, 1), -2);
 
   @include media-breakpoint-up('sm') {
     text-align: left;
   }
 
   :global(.btn) {
-    margin: map-get($spacers, 1) / 2;
+    margin: map-get($spacers, 1) * 0.5;
   }
 }
 
