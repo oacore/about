@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import 'components/bootstrap/core';
 
 $footer-partners-breakpoint: 'sm';
@@ -19,13 +21,13 @@ $footer-partners-breakpoint: 'sm';
   display: flex;
   flex-flow: row wrap;
   padding: 0;
-  margin: 0 ($grid-gutter-width / -2) (-1 * $spacer);
+  margin: 0 math.div($grid-gutter-width, -2) (-1 * $spacer);
 
   li {
     display: block;
     width: 25%;
     flex-grow: 1;
-    margin: 0 ($grid-gutter-width / 2) $spacer;
+    margin: 0 ($grid-gutter-width * 0.5) $spacer;
   }
 }
 
@@ -42,8 +44,8 @@ $footer-partners-breakpoint: 'sm';
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  padding: ($spacer / 2) ($grid-gutter-width / 2);
-  margin: 0 ($grid-gutter-width / -2);
+  padding: ($spacer * 0.5) ($grid-gutter-width * 0.5);
+  margin: 0 math.div($grid-gutter-width, -2);
 
   a {
     color: inherit;
@@ -58,7 +60,7 @@ $footer-partners-breakpoint: 'sm';
 .footer-partners-item {
   display: block;
   margin: 0;
-  padding: ($spacer / 2) ($grid-gutter-width / 2);
+  padding: ($spacer * 0.5) ($grid-gutter-width * 0.5);
 }
 
 .footer-partners-logo {

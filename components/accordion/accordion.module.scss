@@ -1,6 +1,6 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
-$chevron-icon: url("../icons/chevron-top.svg");
+$chevron-icon: url('../icons/chevron-top.svg');
 $accordion-title-size: $font-size-lg !default;
 $accordion-title-weight: $font-weight-normal !default;
 $accordion-icon-size: $accordion-title-size + 1rem !default;
@@ -49,15 +49,15 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
 
   &::before,
   &::after {
-    content: "";
+    content: '';
     position: absolute;
-    top: ((2 * $card-spacer-y + $accordion-title-size) - $accordion-icon-size) /
-      2;
+    top: ((2 * $card-spacer-y + $accordion-title-size) - $accordion-icon-size) *
+      0.5;
     left: 0;
     display: block;
     box-sizing: content-box;
     margin: $card-border-width 0 0;
-    padding: ($accordion-icon-size - $accordion-title-size) / 2;
+    padding: ($accordion-icon-size - $accordion-title-size) * 0.5;
     width: $accordion-title-size;
     height: $accordion-title-size;
     background-color: $primary;
