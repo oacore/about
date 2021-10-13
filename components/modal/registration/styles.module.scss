@@ -150,4 +150,10 @@
 
 .error input {
   border: 1px solid var(--danger-dark);
+  color: var(--danger-dark);
+  background: var(--danger-light-background);
+}
+
+.error label {
+  color: var(--danger-dark);
 }
