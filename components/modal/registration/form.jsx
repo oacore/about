@@ -38,13 +38,15 @@ const ModalForm = observe(() => {
 
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
-    if (firstName && lastName && countryName)
-      registration.setData({ firstName, lastName, country: countryName.id })
 
     if (organisationName)
       registration.setData({ organisation: organisationName })
-    registration.setIsModalFormActive(false)
-    registration.setIsModalConditionsActive(true)
+
+    if (firstName && lastName && countryName.id) {
+      registration.setData({ firstName, lastName, country: countryName.id })
+      registration.setIsModalFormActive(false)
+      registration.setIsModalConditionsActive(true)
+    }
   }
 
   return (

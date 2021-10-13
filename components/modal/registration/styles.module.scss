@@ -147,3 +147,7 @@
     max-height: 12.5rem;
   }
 }
+
+.error input {
+  border: 1px solid var(--danger-dark);
+}

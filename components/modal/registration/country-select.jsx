@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { Select } from '@oacore/design/lib'
+import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './styles.module.scss'
 
@@ -10,7 +11,7 @@ const { countries } = countriesData
 const CountrySelect = ({ onChange }) => {
   const [suggestions, setSuggestions] = React.useState(countries)
   const [value, setValue] = React.useState('')
-
+  const ref = useRef()
   const handleOnInput = (data) => {
     if (data.value && !data.id) {
       const result = countries.filter((obj) =>
@@ -38,7 +39,10 @@ const CountrySelect = ({ onChange }) => {
       onInput={handleOnInput}
       onChange={onChange}
       value={value}
-      className={styles.select}
+      ref={ref}
+      className={classNames.use(styles.select, {
+        [styles.error]: suggestions.length === 0,
+      })}
       clearButton={false}
       placeholder="e.g United kingdom"
       required
