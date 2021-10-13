@@ -1,16 +1,14 @@
-@use "sass:math";
-
-@import 'components/bootstrap/core';
+@import "components/bootstrap/core";
 
 .switcher {
   display: flex;
   flex-wrap: wrap;
-  margin-left: math.div($grid-gutter-width, -2);
-  margin-right: math.div($grid-gutter-width, -2);
+  margin-left: ($grid-gutter-width / -2);
+  margin-right: ($grid-gutter-width / -2);
 
   > * {
-    padding-left: ($grid-gutter-width * 0.5);
-    padding-right: ($grid-gutter-width * 0.5);
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
   }
 }
 
@@ -40,7 +38,7 @@
   width: 100%;
   margin-bottom: $spacer;
 
-  @include media-breakpoint-up('md') {
+  @include media-breakpoint-up("md") {
     width: 25%;
 
     & + .switcher-item-list {
@@ -58,7 +56,7 @@
 }
 
 .switcher-button {
-  margin: 0 (map-get($spacers, 1) * 0.5) map-get($spacers, 1);
+  margin: 0 (map-get($spacers, 1) / 2) map-get($spacers, 1);
   border: $btn-border-width solid transparent;
 
   &.active {

@@ -7,7 +7,7 @@ $navbar-dropdown-border-color: $dropdown-border-color !default;
 $navbar-dropdown-border-radius: $dropdown-border-radius !default;
 $navbar-dropdown-border-width: $dropdown-border-width !default;
 
-$chevron-icon-primary: url('../icons/chevron-primary.svg');
+$chevron-icon-primary: url("../icons/chevron-primary.svg");
 
 // Navbar nav
 //
@@ -152,7 +152,7 @@ $chevron-icon-primary: url('../icons/chevron-primary.svg');
               bottom: -1 * $navbar-dropdown-border-width;
               left: 0;
               z-index: $zindex-dropdown + 1;
-              content: '';
+              content: "";
               background: $navbar-dropdown-bg;
               border: $navbar-dropdown-border-width solid
                 $navbar-dropdown-border-color;
@@ -185,7 +185,7 @@ $chevron-icon-primary: url('../icons/chevron-primary.svg');
 
             &::after {
               $width: 0.7rem;
-              $border-width: $width * 0.5 * 1.44;
+              $border-width: $width / 2 * 1.44;
               position: absolute;
               top: 100%;
               left: 50%;

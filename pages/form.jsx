@@ -28,8 +28,9 @@ export async function checkDataProviders({ params }) {
 }
 
 const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
-  const [isIsDataProviderAddActive, setIsDataProviderAddActive] =
-    useState(false)
+  const [isIsDataProviderAddActive, setIsDataProviderAddActive] = useState(
+    false
+  )
   const {
     value: uri,
     element: elemDataProviderUrl,
