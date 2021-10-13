@@ -43,9 +43,11 @@ const getMilestones = async ({ ref } = {}) => {
 async function getStaticProps({ previewData }) {
   const ref = previewData?.ref
 
-  const { statistics, body: intro, ...page } = (
-    await import('data/history.yml')
-  ).default
+  const {
+    statistics,
+    body: intro,
+    ...page
+  } = (await import('data/history.yml')).default
   const milestones = await getMilestones({ ref })
   const data = {
     ...page,

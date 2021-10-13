@@ -185,7 +185,7 @@ $chevron-icon-primary: url('../icons/chevron-primary.svg');
 
             &::after {
               $width: 0.7rem;
-              $border-width: $width / 2 * 1.44;
+              $border-width: $width * 0.5 * 1.44;
               position: absolute;
               top: 100%;
               left: 50%;
