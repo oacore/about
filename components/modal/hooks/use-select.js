@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-const useSelect = () => {
-  const [value, setValue] = useState()
+const useSelect = (element) => {
+  const [value, setValue] = useState('')
 
   return {
     value,
-    setValue,
+    element,
     onChange: (data) => {
       setValue(data)
     },

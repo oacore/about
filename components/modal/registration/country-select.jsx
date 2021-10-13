@@ -23,11 +23,17 @@ const CountrySelect = ({ onChange }) => {
     }
 
     setValue(data.value)
+    const foundedCountry = countries.find(
+      (item) => item.name.toLowerCase() === data.value.toLowerCase()
+    )
+    if (foundedCountry)
+      onChange({ value: foundedCountry.name, id: foundedCountry.code })
   }
 
   return (
     <Select
       id="country-select"
+      name="country-select"
       label="Country"
       onInput={handleOnInput}
       onChange={onChange}

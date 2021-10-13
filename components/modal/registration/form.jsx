@@ -3,20 +3,32 @@ import { Modal, Form, TextField, Button } from '@oacore/design/lib'
 
 import styles from './styles.module.scss'
 import ProfileSelect from './profile-select'
-import useInput from '../hooks/use-input'
 import CountrySelect from './country-select'
 import useSelect from '../hooks/use-select'
+import useInput from '../hooks/use-input'
 import Markdown from '../../markdown'
 import findText from './helpers/findText'
 
 import { useStore, observe } from 'store'
 
 const ModalForm = observe(() => {
-  const { value: firstName, bind: bindFirstName } = useInput('')
-  const { value: lastName, bind: bindLastName } = useInput('')
-  const { value: organisationName, bind: bindOrganisationName } = useInput('')
-
-  const { value: country, onChange: countryOnChange } = useSelect()
+  const {
+    value: firstName,
+    bind: bindFirstName,
+    element: elemFirstName,
+  } = useInput('firstName')
+  const {
+    value: lastName,
+    bind: bindLastName,
+    element: elemLastName,
+  } = useInput('lastName')
+  const {
+    value: organisationName,
+    bind: bindOrganisationName,
+    element: elemOrganisationName,
+  } = useInput('organisationName')
+  const { value: countryName, onChange: countryOnChange } =
+    useSelect('countryName')
 
   const { registration } = useStore()
 
@@ -26,8 +38,8 @@ const ModalForm = observe(() => {
 
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
-    if (firstName && lastName && country)
-      registration.setData({ firstName, lastName, country: country.id })
+    if (firstName && lastName && countryName)
+      registration.setData({ firstName, lastName, country: countryName.id })
 
     if (organisationName)
       registration.setData({ organisation: organisationName })
@@ -52,25 +64,28 @@ const ModalForm = observe(() => {
       <Form onSubmit={onHandleSubmit}>
         <div className={styles.inputGroup}>
           <TextField
-            id="first_name"
+            id={elemFirstName}
+            name={elemFirstName}
             label="First name"
             placeholder="e.g. John"
             className={styles.inputGroupItem}
-            {...bindFirstName}
             required
+            {...bindFirstName}
           />
           <TextField
-            id="last_name"
+            id={elemLastName}
+            name={elemLastName}
             label="Last name"
             placeholder="e.g.Doe"
             className={styles.inputGroupItem}
-            {...bindLastName}
             required
+            {...bindLastName}
           />
         </div>
         {registration.data.accountType !== 'personal' && (
           <TextField
-            id="organization_name"
+            id={elemOrganisationName}
+            name={elemOrganisationName}
             label={
               registration.data.accountType === 'enterprise'
                 ? 'Organization name'

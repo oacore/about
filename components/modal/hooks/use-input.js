@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
-const useInput = (initialValue) => {
-  const [value, setValue] = useState(initialValue)
+const useInput = (element) => {
+  const [value, setValue] = useState('')
 
   return {
     value,
-    setValue,
+    element,
     reset: () => setValue(''),
     bind: {
       value,

@@ -1,0 +1,19 @@
+title: Registration confirm
+description: |
+  Registration confirm
+
+api:
+  picture: /images/confirm_registration/api.svg
+  title: Welcome to the CORE API
+  info: Congratulations you’ve verified! Now check your email for your unique API key.
+  button:
+    link: https://api.core.ac.uk/docs/v3
+    text: API Documentation
+
+dataset:
+  picture: /images/confirm_registration/dataset.svg
+  title: Welcome to the CORE Dataset
+  info: Congratulations you’ve verified! Now check your email for download details for the current and archive CORE Dataset.
+  button:
+    link: https://core.ac.uk/documentation/dataset
+    text: Dataset Documentation
