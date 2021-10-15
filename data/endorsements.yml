@@ -347,6 +347,11 @@ organizations:
   name: Intoolab
   url: http://www.intoolab.com/
   logo: intoolab.png
+- &cypris
+  id: cypris
+  name: Cypris
+  url: https://ipcypris.com/
+  logo: Cypris.png
 - &turnitin
   id: turnitin
   name: Turnitin
