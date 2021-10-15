@@ -3,8 +3,7 @@ name: Pull request check
 on: [push]
 
 env:
-   NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   API_KEY: ${{ secrets.CORE_API_KEY }}
+  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:

@@ -1,6 +1,4 @@
-@use "sass:math";
-
-@import 'components/bootstrap/core';
+@import "components/bootstrap/core";
 
 .repositories-map {
   position: relative;
@@ -14,7 +12,7 @@
 }
 
 .repositories-map-loading::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 1;
   top: 0;
@@ -32,7 +30,7 @@
   top: 50%;
   left: 50%;
   display: block;
-  margin: math.div($spinner-height, -2) 0 0 math.div($spinner-width, -2);
+  margin: ($spinner-height / -2) 0 0 ($spinner-width / -2);
   pointer-events: none;
 }
 
