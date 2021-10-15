@@ -61,10 +61,11 @@ what-is-included:
 
     The terms of use for the dataset are available on our
     [datasets download page](~documentation/dataset).
-  actions:
-    primary:
-      url: /dataset/getdatadump
-      caption: Register for access
+  form:
+    title: Register for the CORE Dataset
+    subtitle: Enter your email address to access the CORE Dataset
+    helper: We will send the instructions to this address
+    action: Register now
 
 related-services:
 -
