@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import { Select } from '@oacore/design/lib'
 import classNames from '@oacore/design/lib/utils/class-names'
 
@@ -8,10 +8,9 @@ import countriesData from 'data/countries.yml'
 
 const { countries } = countriesData
 
-const CountrySelect = ({ onChange }) => {
+const CountrySelect = React.forwardRef(({ onChange }, ref) => {
   const [suggestions, setSuggestions] = React.useState(countries)
   const [value, setValue] = React.useState('')
-  const ref = useRef()
   const handleOnInput = (data) => {
     if (data.value && !data.id) {
       const result = countries.filter((obj) =>
@@ -54,6 +53,6 @@ const CountrySelect = ({ onChange }) => {
       ))}
     </Select>
   )
-}
+})
 
 export default CountrySelect
