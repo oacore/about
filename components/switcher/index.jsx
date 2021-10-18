@@ -87,6 +87,22 @@ class Switcher extends Component {
     this.stop()
   }
 
+  handleChange(index) {
+    this.activateItem(index)
+  }
+
+  @bind
+  handleMouseOver() {
+    const { pauseOnMouseOver } = this.props
+    if (pauseOnMouseOver) this.pause()
+  }
+
+  @bind
+  handleMouseLeave() {
+    const { pauseOnMouseOver } = this.props
+    if (pauseOnMouseOver) this.play()
+  }
+
   start() {
     const { pause } = this.state
     if (pause) return
@@ -126,22 +142,6 @@ class Switcher extends Component {
     const nextItem = (activeItemIndex + 1) % items.length
 
     this.activateItem(nextItem)
-  }
-
-  @bind
-  handleMouseOver() {
-    const { pauseOnMouseOver } = this.props
-    if (pauseOnMouseOver) this.pause()
-  }
-
-  @bind
-  handleMouseLeave() {
-    const { pauseOnMouseOver } = this.props
-    if (pauseOnMouseOver) this.play()
-  }
-
-  handleChange(index) {
-    this.activateItem(index)
   }
 
   render() {

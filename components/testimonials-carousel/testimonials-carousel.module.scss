@@ -1,7 +1,7 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
-$testimonials-carousel-image-padding-x: $spacer / 2 !default;
-$testimonials-carousel-image-padding-y: $spacer / 2 !default;
+$testimonials-carousel-image-padding-x: $spacer * 0.5 !default;
+$testimonials-carousel-image-padding-y: $spacer * 0.5 !default;
 $testimonials-carousel-spacer-x: $card-spacer-x !default;
 $testimonials-carousel-spacer-y: $card-spacer-y !default;
 $testimonials-carousel-gutter: $grid-gutter-width !default;
@@ -63,7 +63,7 @@ $testimonials-carousel-gutter: $grid-gutter-width !default;
 
 .testimonials-carousel-control-prev-caption::before,
 .testimonials-carousel-control-next-caption::after {
-  content: "";
+  content: '';
   display: inline-block;
   width: 1em;
   height: 1em;
