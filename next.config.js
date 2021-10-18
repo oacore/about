@@ -20,7 +20,6 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
 const nextConfig = {
   env: Object.assign(envConfig, {
     GA_CODE: process.env.GA_CODE,
-    API_KEY: process.env.API_KEY,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
   webpack: (config) => {
