@@ -1,16 +1,9 @@
 import dataset from 'data/registration.yml'
-import { useStore } from 'store'
 
-const findText = (element) => {
-  const { registration } = useStore()
+const findText = () => {
   const { sections } = dataset
 
-  const text = sections.find(
-    ({ id }) =>
-      id === `${registration.data.productType}-${registration.data.accountType}`
-  )[element]
-
-  return text || null
+  return sections || null
 }
 
 export default findText

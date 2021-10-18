@@ -7,14 +7,8 @@ import { patchStats } from '../../utils'
 import Markdown from '../../markdown'
 import findText from './helpers/findText'
 
-import { useStore, observe } from 'store'
-
-const ModalSuccess = observe(() => {
-  const { registration } = useStore()
-
-  const onCloseModal = () => {
-    registration.reset()
-  }
+const ModalSuccess = () => {
+  const onCloseModal = () => {}
 
   return (
     <Modal hideManually aria-label="success-modal" className={styles.modalSm}>
@@ -24,9 +18,7 @@ const ModalSuccess = observe(() => {
           <img src={emailsSVG} alt="emails" />
         </div>
 
-        <Markdown>
-          {patchStats(findText('modalContent'), registration.data)}
-        </Markdown>
+        <Markdown>{patchStats(findText('modalContent'))}</Markdown>
       </main>
       <footer className={styles.buttonGroup}>
         <Button variant="text" onClick={onCloseModal}>
@@ -35,6 +27,6 @@ const ModalSuccess = observe(() => {
       </footer>
     </Modal>
   )
-})
+}
 
 export default ModalSuccess

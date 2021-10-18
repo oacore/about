@@ -4,14 +4,8 @@ import { Modal, Link, Button } from '@oacore/design/lib'
 import styles from './styles.module.scss'
 import leaveSVG from './images/Alone.svg'
 
-import { useStore, observe } from 'store'
-
-const ModalExit = observe(() => {
-  const { registration } = useStore()
-
-  const onCloseModal = () => {
-    registration.reset()
-  }
+const ModalExit = () => {
+  const onCloseModal = () => {}
 
   return (
     <Modal hideManually aria-label="exit-modal" className={styles.modalSm}>
@@ -32,6 +26,6 @@ const ModalExit = observe(() => {
       </footer>
     </Modal>
   )
-})
+}
 
 export default ModalExit

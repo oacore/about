@@ -3,20 +3,10 @@ import { Modal, Button, Link } from '@oacore/design/lib'
 
 import styles from './styles.module.scss'
 
-import { observe, useStore } from 'store'
+const ModalConditions = () => {
+  const onSubmit = () => {}
 
-const ModalConditions = observe(() => {
-  const { registration } = useStore()
-
-  const onSubmit = () => {
-    registration.registerSubmit()
-    registration.setIsModalConditionsActive(false)
-  }
-
-  const onCloseModal = () => {
-    registration.setIsModalConditionsActive(false)
-    registration.setIsModalExitActive(true)
-  }
+  const onCloseModal = () => {}
 
   return (
     <Modal hideManually aria-label="conditions-modal">
@@ -37,6 +27,6 @@ const ModalConditions = observe(() => {
       </footer>
     </Modal>
   )
-})
+}
 
 export default ModalConditions

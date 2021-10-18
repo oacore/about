@@ -9,44 +9,16 @@ import useInput from '../hooks/use-input'
 import Markdown from '../../markdown'
 import findText from './helpers/findText'
 
-import { useStore, observe } from 'store'
+const ModalForm = () => {
+  const { bind: bindFirstName, element: elemFirstName } = useInput('firstName')
+  const { bind: bindLastName, element: elemLastName } = useInput('lastName')
 
-const ModalForm = observe(() => {
-  const {
-    value: firstName,
-    bind: bindFirstName,
-    element: elemFirstName,
-  } = useInput('firstName')
-  const {
-    value: lastName,
-    bind: bindLastName,
-    element: elemLastName,
-  } = useInput('lastName')
-  const {
-    value: organisationName,
-    bind: bindOrganisationName,
-    element: elemOrganisationName,
-  } = useInput('organisationName')
-  const { value: countryName, onChange: countryOnChange } =
-    useSelect('countryName')
+  const { onChange: countryOnChange } = useSelect('countryName')
 
-  const { registration } = useStore()
-
-  const onCloseModal = () => {
-    registration.reset()
-  }
+  const onCloseModal = () => {}
 
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
-
-    if (organisationName)
-      registration.setData({ organisation: organisationName })
-
-    if (firstName && lastName && countryName.id) {
-      registration.setData({ firstName, lastName, country: countryName.id })
-      registration.setIsModalFormActive(false)
-      registration.setIsModalConditionsActive(true)
-    }
   }
 
   return (
@@ -84,21 +56,6 @@ const ModalForm = observe(() => {
             {...bindLastName}
           />
         </div>
-        {registration.data.accountType !== 'personal' && (
-          <TextField
-            id={elemOrganisationName}
-            name={elemOrganisationName}
-            label={
-              registration.data.accountType === 'enterprise'
-                ? 'Organization name'
-                : 'Institution name'
-            }
-            placeholder="Full name of your institution, e.g ‘The Open University’"
-            className={styles.modalFormInputOrg}
-            {...bindOrganisationName}
-            required
-          />
-        )}
 
         <CountrySelect onChange={countryOnChange} />
 
@@ -113,6 +70,6 @@ const ModalForm = observe(() => {
       </Form>
     </Modal>
   )
-})
+}
 
 export default ModalForm
