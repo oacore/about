@@ -69,8 +69,9 @@ const ResourceLinkSelector = ({
   ...restProps
 }) => {
   const [currentUrl, switchUrl] = useState(options[0].value)
-  const selectedLinkLabel = options.find(({ value }) => value === currentUrl)
-    ?.title
+  const selectedLinkLabel = options.find(
+    ({ value }) => value === currentUrl
+  )?.title
   const linkLabel = `${linkLabelPrefix} (${selectedLinkLabel})`
 
   return (

@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import 'components/bootstrap_design-v2/core';
 
 $footer-partners-breakpoint: 'sm';
@@ -23,11 +25,11 @@ $footer-partners-breakpoint: 'sm';
   display: block;
   flex-flow: row wrap;
   padding: 0;
-  margin: (0.8 * $spacer) ($grid-gutter-width / -2) (-1 * $spacer);
+  margin: (0.8 * $spacer) math.div($grid-gutter-width, -2) (-1 * $spacer);
 
   li {
     display: block;
-    margin: 0 ($grid-gutter-width / 2) (0.4 * $spacer);
+    margin: 0 ($grid-gutter-width * 0.5) (0.4 * $spacer);
 
     a {
       color: $color-footer-link;
@@ -66,8 +68,8 @@ $footer-partners-breakpoint: 'sm';
 .footer-partners {
   display: flex;
   align-items: flex-start;
-  padding: ($spacer / 2) ($grid-gutter-width / 2);
-  margin: 0 ($grid-gutter-width / -2);
+  padding: ($spacer * 0.5) ($grid-gutter-width * 0.5);
+  margin: 0 math.div($grid-gutter-width, -2);
 
   a {
     color: inherit;
@@ -81,13 +83,13 @@ $footer-partners-breakpoint: 'sm';
 .footer-partners-item {
   display: block;
   margin: 0;
-  padding: ($spacer / 2) ($grid-gutter-width / 2);
+  padding: ($spacer * 0.5) ($grid-gutter-width * 0.5);
 
   &:first-child {
-    padding: ($spacer / 2) ($grid-gutter-width / 2) ($spacer / 2) 0;
+    padding: ($spacer * 0.5) ($grid-gutter-width * 0.5) ($spacer * 0.5) 0;
   }
   &:last-child {
-    padding: ($spacer / 3) 0 ($spacer / 2) 0;
+    padding: math.div($spacer, 3) 0 ($spacer * 0.5) 0;
   }
 }
 
