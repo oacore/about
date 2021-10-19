@@ -109,7 +109,6 @@ const nextConfig = {
 
     Object.assign(config.resolve.alias, {
       main: path.join(__dirname, 'main'),
-      store: path.join(__dirname, 'store'),
     })
     return config
   },
