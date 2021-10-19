@@ -19,7 +19,7 @@ const JoinSection = ({
     className={`${styles.joinSection} ${className}`}
     {...restProps}
   >
-    <h2>{title}</h2>
+    <h2 className={styles.joinSectionTitle}>{title}</h2>
     <Markdown className={styles.joinSectionLead}>{lead}</Markdown>
     <p className={styles.buttonGroup}>
       {actions.map(({ url, caption }) => (
