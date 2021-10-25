@@ -76,12 +76,12 @@ We give thanks to:
 ](https://browserstack.com)
 
 
-[github-token](https://github.com/settings/tokens)
-[node-download](https://nodejs.org/en/download/)
-[node-package-manager-download](https://nodejs.org/en/download/package-manager/)
-[npm-install](https://www.npmjs.com/get-npm)
-[netlify-cms](https://www.netlifycms.org)
+⋅⋅* [github-token](https://github.com/settings/tokens)
+⋅⋅* [node-download](https://nodejs.org/en/download/)
+⋅⋅* [node-package-manager-download](https://nodejs.org/en/download/package-manager/)
+⋅⋅* [npm-install](https://www.npmjs.com/get-npm)
+⋅⋅* [netlify-cms](https://www.netlifycms.org)
 
-[design](https://github.com/oacore/design)
-[content](https://github.com/oacore/content)
-[api](https://api.core.ac.uk)
+⋅⋅* [design](https://github.com/oacore/design)
+⋅⋅* [content](https://github.com/oacore/content)
+⋅⋅* [api](https://api.core.ac.uk)
