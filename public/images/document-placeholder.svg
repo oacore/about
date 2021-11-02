@@ -34,5 +34,4 @@
 <rect x="54" y="57" width="4" height="9" fill="#686868"/>
 <rect x="60" y="53" width="4" height="13" fill="#686868"/>
 <rect x="66" y="62" width="4" height="4" fill="#686868"/>
-<path d="M0.5 2C0.5 1.17157 1.17157 0.5 2 0.5H78C78.8284 0.5 79.5 1.17157 79.5 2V104.5H0.5V2Z" stroke="black" stroke-opacity="0.12"/>
 </svg>
