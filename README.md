@@ -63,6 +63,18 @@ changes to some directories at [oacore/content][content].
 Also, this projects uses images hosted directly from
 [oacore.github.io/content](https://oacore.github.io/content) for simplicity.
 
+## Links for help
+
+* [github-token](https://github.com/settings/tokens)
+* [node-download](https://nodejs.org/en/download/)
+* [node-package-manager-download](https://nodejs.org/en/download/package-manager/)
+* [npm-install](https://www.npmjs.com/get-npm)
+* [netlify-cms](https://www.netlifycms.org)
+
+* [design](https://github.com/oacore/design)
+* [content](https://github.com/oacore/content)
+* [api](https://api.core.ac.uk)
+
 
 ## Thanks ❤️
 
@@ -75,13 +87,3 @@ We give thanks to:
   ![BrowserStack](docs/images/browserstack-logo.svg)
 ](https://browserstack.com)
 
-
-[github-token]: https://github.com/settings/tokens
-[node-download]: https://nodejs.org/en/download/
-[node-package-manager-download]: https://nodejs.org/en/download/package-manager/
-[npm-install]: https://www.npmjs.com/get-npm
-[netlify-cms]: https://www.netlifycms.org
-
-[design]: https://github.com/oacore/design
-[content]: https://github.com/oacore/content
-[api]: https://api.core.ac.uk
