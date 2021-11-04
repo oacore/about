@@ -35,9 +35,13 @@ const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
         >
           <blockquote className="blockquote">
             <Markdown>{content}</Markdown>
-            <footer className="blockquote-footer">
-              {author.name}, {author.role}
-            </footer>
+            {author && author.name && author.role ? (
+              <footer className="blockquote-footer">
+                {author.name}, {author.role}
+              </footer>
+            ) : (
+              ''
+            )}
           </blockquote>
         </Switcher.Item>
       ))}

@@ -53,14 +53,18 @@ const List = ({ organizations }) => {
     <>
       {quoted.map((organization) => {
         const testimonial = toTestimonial(organization)
-        return (
-          <Testimonial
-            key={testimonial.id}
-            className="card card-body"
-            avatar
-            {...testimonial}
-          />
-        )
+
+        if (testimonial.author.name !== null) {
+          return (
+            <Testimonial
+              key={testimonial.id}
+              className="card card-body"
+              avatar
+              {...testimonial}
+            />
+          )
+        }
+        return <> </>
       })}
 
       <div className={styles.testimonialSectionOrganizations}>
