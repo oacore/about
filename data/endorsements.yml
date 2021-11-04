@@ -142,16 +142,16 @@ testimonials:
     picture: /images/people/botev.jpg
   api: true
 
-- &iris-ai-anonymous
+- &ronin-wu
   id: iris-ai-anonymous
   content: |
-    Iris.ai has spent the last 5 years building an award-winning AI engine for scientific 
-    text understanding. Their patented algorithms for text similarity, tabular data extraction, 
-    domain-specific entity representation learning and entity disambiguation and 
-    linking mean they are world leaders in this domain.
+    Iris.ai have partnered with CORE on a research project
+    developing new AI  models to identify the purpose of
+    citations and to create novel techniques for the generation of
+    scholarly knowledge graphs.
   author:
-    name:
-    role:
+    name: Ronin Wu
+    role: Research Lead and Head of Research Collaboration, IRIS.ai
     picture:
     
 - &claus-wolf
@@ -312,7 +312,7 @@ organizations:
   name: IRIS AI
   url: https://the.iris.ai
   logo: iris-ai.png
-  testimonial: *iris-ai-anonymous
+  testimonial: *ronin-wu
 - &research
   id: research-research
   name: ResearchResearch
