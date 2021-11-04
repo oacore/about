@@ -142,6 +142,18 @@ testimonials:
     picture: /images/people/botev.jpg
   api: true
 
+- &iris-ai-anonymous
+  id: iris-ai-anonymous
+  content: |
+    Iris.ai has spent the last 5 years building an award-winning AI engine for scientific 
+    text understanding. Their patented algorithms for text similarity, tabular data extraction, 
+    domain-specific entity representation learning and entity disambiguation and 
+    linking mean they are world leaders in this domain.
+  author:
+    name:
+    role:
+    picture:
+    
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -295,6 +307,12 @@ organizations:
   url: https://the.iris.ai
   logo: iris-ai.png
   testimonial: *viktor-botev
+- &iris-ai-second
+  id: iris-ai-second
+  name: IRIS AI
+  url: https://the.iris.ai
+  logo: iris-ai.png
+  testimonial: *iris-ai-anonymous
 - &research
   id: research-research
   name: ResearchResearch
@@ -757,6 +775,7 @@ sections:
       title: Our partners
       items:
         - *microsoft
+        - *iris-ai-second
         - *mooc
         - *openaire
         - *oacg
