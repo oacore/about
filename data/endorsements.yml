@@ -152,7 +152,7 @@ testimonials:
   author:
     name: Ronin Wu
     role: Research Lead and Head of Research Collaboration, IRIS.ai
-    picture:
+    picture: /images/people/Ronin Wu.png
     
 - &claus-wolf
   id: claus-wolf
