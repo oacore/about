@@ -165,6 +165,15 @@ testimonials:
     name: Claus Wolf
     picture: /images/people/claus-wolf.png
 
+- &gareth-malcolm
+  id: gareth-malcolm
+  content: |
+    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full texts that we can utilise in our plagiarism detection software.
+  author:
+    name: Gareth Malcolm
+    role: Content Manager, Turnitin
+    picture: /images/people/sejin.png
+
 - &kim-sejin
   id: kim-sejin
   content: |
@@ -175,8 +184,8 @@ testimonials:
     to collect these data in traditional ways.
   author:
     name: Kim Sejin
-    role: Content Manager, Naver Academic Service
-    picture: /images/people/sejin.png
+    role: Content Partner Manager, Naver Academic Service
+    picture: /images/logos/Gareth_Malcolm.jpeg
 
 - &johan-tilstra
   id: johan-tilstra
