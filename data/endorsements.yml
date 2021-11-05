@@ -694,7 +694,6 @@ sections:
       title: Companies who work with us
       items:
         - *cypris
-        - *
         - *turnitin
         - *ontochem
         - *ropensci
