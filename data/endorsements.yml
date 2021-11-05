@@ -178,6 +178,17 @@ testimonials:
     role: Content Manager, Naver Academic Service
     picture: /images/people/sejin.png
 
+
+- &gareth-malcolm
+  id: gareth-malcolm
+  content: |
+    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full 
+    texts that we can utilise in our plagiarism detection software.
+  author:
+    name: Gareth Malcolm
+    role: Content Partner Manager at Turnitin
+    picture: /images/people/Gareth_Malcolm.jpeg
+    
 - &johan-tilstra
   id: johan-tilstra
   content: |
@@ -683,7 +694,6 @@ sections:
       items:
         - *cypris
         - *turnitin
-        - *naver
         - *ontochem
         - *ropensci
         - *research
