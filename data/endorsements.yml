@@ -386,6 +386,7 @@ organizations:
   name: Turnitin
   url: https://www.turnitin.com/
   logo: turnitin.jpg
+  testimonial: *gareth-malcolm
 - &ontochem
   id: ontochem
   name: Ontochem
@@ -693,6 +694,7 @@ sections:
       title: Companies who work with us
       items:
         - *cypris
+        - *
         - *turnitin
         - *ontochem
         - *ropensci
