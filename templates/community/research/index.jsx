@@ -4,7 +4,6 @@ import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './research.module.scss'
 
-
 const Research = ({ data }) => {
   const { header, joinCards, mission, symposium } = data
 
@@ -101,9 +100,7 @@ const Research = ({ data }) => {
           )} */}
       {/* </div>
       </section> */}
-      
     </div>
   )
 }
-
 export default Research
