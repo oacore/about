@@ -102,18 +102,7 @@ const Research = ({ data }) => {
           )} */}
       {/* </div>
       </section> */}
-      <section className={classNames.use(styles.container, styles.joinFooter)}>
-        <h2 className={styles.title}>{joinUs.title}</h2>
-        <p>{joinUs.description}</p>
-        <Markdown>{joinUs.contact}</Markdown>
-        <Button
-          variant="contained"
-          href="https://core.ac.uk/about#contact"
-          tag="a"
-        >
-          {joinUs.actionLabel}
-        </Button>
-      </section>
+      
     </div>
   )
 }
