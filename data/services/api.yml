@@ -65,7 +65,7 @@ what-is-included:
 
     * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
     * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to use the CORE API with live examples and wrappers to common programming languages.
-    * The API usage rate is limited for personal use. Need a faster rate? [Contact us](~about/#contact).
+    * The API is free but the usage rate is limited depending on your profile. Need a faster rate? [Contact us](~about/#contact).
 
     Check our [Terms & Conditions](/terms) to see if you are elegible
     for a free license.
