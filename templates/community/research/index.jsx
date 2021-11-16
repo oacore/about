@@ -4,10 +4,9 @@ import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './research.module.scss'
 
-import Markdown from 'components/markdown'
 
 const Research = ({ data }) => {
-  const { header, joinCards, mission, symposium, joinUs } = data
+  const { header, joinCards, mission, symposium } = data
 
   return (
     <div className={styles.layout}>
