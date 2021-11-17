@@ -5,7 +5,7 @@ import classNames from '@oacore/design/lib/utils/class-names'
 import styles from './research.module.scss'
 
 const Research = ({ data }) => {
-  const { header, joinCards, mission, symposium } = data
+  const { header, joinCards, mission } = data
 
   return (
     <div className={styles.layout}>
@@ -24,21 +24,6 @@ const Research = ({ data }) => {
       </section>
       <section className={classNames.use(styles.contentMain, styles.container)}>
         <p className={styles.contentMainText}>{mission.description}</p>
-        <Card className={styles.contentMainCard}>
-          <span>ONLINE</span>
-          <Card.Title tag="h5" className={styles.contentMainCardTitle}>
-            {symposium.title}
-          </Card.Title>
-          <Card.Description>{symposium.description}</Card.Description>
-          <Button
-            variant="contained"
-            tag="a"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSe-oyNDMTuZSrhktAjwo5Dyho1Jl2e11lOIo89oSlgYT7nD4A/viewform"
-            target="_blank"
-          >
-            {symposium.actionLabel}
-          </Button>
-        </Card>
       </section>
       <section
         className={classNames.use(styles.container, styles.joinCardsWrapper)}
