@@ -1,5 +1,4 @@
 import React from 'react'
-import { Card, Button } from '@oacore/design'
 import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './research.module.scss'
