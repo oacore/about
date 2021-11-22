@@ -8,14 +8,15 @@ import { useInput } from 'hooks'
 import generateFormMessage from 'templates/data-providers/utils/generate-form-message'
 
 export async function checkDataProviders({ params }) {
-  const { uri, setIsDataProviderAddActive } = params
+  const { uri, setIsDataProviderAddActive, setDataProvidersResponse } = params
 
   try {
-    const resultAdd = await fetchDataProviderAdd({ uri })
+    const result = await fetchDataProviderAdd({ uri })
     // eslint-disable-next-line no-console
     console.log(`fetchDataProviderAdd
-    => ${JSON.stringify(resultAdd)}`) // Debug
+    => ${JSON.stringify(result)}`) // Debug
     setIsDataProviderAddActive(true)
+    setDataProvidersResponse(result)
   } catch (errorWithDataProvider) {
     return {
       props: {
@@ -30,6 +31,7 @@ export async function checkDataProviders({ params }) {
 const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
   const [isIsDataProviderAddActive, setIsDataProviderAddActive] =
     useState(false)
+  const [dataProvidersResponse, setDataProvidersResponse] = useState([])
   const {
     value: uri,
     element: elemDataProviderUrl,
@@ -41,7 +43,7 @@ const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
     if (onSubmit) onSubmit(event)
   }
 
-  const message = generateFormMessage({ created: true })
+  const message = generateFormMessage({ dataProvidersResponse })
 
   return (
     <>
@@ -66,7 +68,11 @@ const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
             variant="contained"
             onClick={() => {
               checkDataProviders({
-                params: { uri, setIsDataProviderAddActive },
+                params: {
+                  uri,
+                  setIsDataProviderAddActive,
+                  setDataProvidersResponse,
+                },
               })
             }}
           >
