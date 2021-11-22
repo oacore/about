@@ -182,7 +182,7 @@ testimonials:
 - &gareth-malcolm
   id: gareth-malcolm
   content: |
-    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full
+    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full 
     texts that we can utilise in our plagiarism detection software.
   author:
     name: Gareth Malcolm
