@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable prettier/prettier */
 import { Link } from '@oacore/design'
 import React from 'react'
@@ -15,7 +16,7 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
     dataProvidersResponse.error.length > 1 && 
     dataProvidersResponse.existingDataProviders && 
     dataProvidersResponse.existingDataProviders.length === 0) {
-    // console.log('DataProvider error')  // debug
+    console.log('DataProvider error')  // debug
       
       return {
       helper: (
@@ -31,7 +32,7 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
 
   if (dataProvidersResponse.error && 
     dataProvidersResponse.error.length === 0) {
-    // console.log('DataProvider is added') // debug
+    console.log('DataProvider is added') // debug
 
     return {
       helper: (
@@ -53,7 +54,7 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
   if (dataProvidersResponse.existingDataProviders && 
     dataProvidersResponse.existingDataProviders.length > 1) {
       const row = dataProvidersResponse.existingDataProviders
-    // console.log('DataProvider is exist') // debug
+    console.log('DataProvider is exist') // debug
 
     return {
       helper: (
