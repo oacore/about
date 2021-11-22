@@ -42,6 +42,16 @@ const RelatedContentSection = ({ children, data, className, ...passProps }) => (
       <Button color="primary" outline href={data.action.href}>
         {data.action.label}
       </Button>
+      {data.extraAction && (
+        <Button
+          className={styles.relatedExtraButton}
+          color="primary"
+          outline
+          href={data.extraAction.href}
+        >
+          {data.extraAction.label}
+        </Button>
+      )}
     </p>
   </Section>
 )
@@ -80,7 +90,7 @@ const AboutPage = ({ data }) => (
           <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
           <ButtonToolbar align="center">
             <Button href="~blog" className="mt-3" color="primary" outline>
-              {data.blog.visitButton}
+              {data.blog.actionLabel}
             </Button>
           </ButtonToolbar>
         </Col>
@@ -94,17 +104,6 @@ const AboutPage = ({ data }) => (
         action: {
           label: data.endorsements.actionLabel,
           href: '~about/endorsements',
-        },
-      }}
-    />
-    <RelatedContentSection
-      id="Communities"
-      caption={data.communities.shortTitle}
-      data={{
-        ...data.communities,
-        action: {
-          label: data.communities.actionLabel,
-          href: '~about/ambassadors',
         },
       }}
     />
@@ -133,7 +132,21 @@ const AboutPage = ({ data }) => (
         </Button>
       </ButtonToolbar>
     </Section>
-
+    <RelatedContentSection
+      id="Communities"
+      caption={data.communities.shortTitle}
+      data={{
+        ...data.communities,
+        action: {
+          label: data.communities.actionLabel,
+          href: '~about/ambassadors',
+        },
+        extraAction: {
+          label: data.communities.extraActionLabel,
+          href: '~community/research',
+        },
+      }}
+    />
     <RelatedContentSection
       id="services"
       data={{
@@ -143,6 +156,7 @@ const AboutPage = ({ data }) => (
           href: '~services',
         },
       }}
+      className={styles.services}
     >
       <ServiceGroups className="text-left" items={servicesData.sections} />
     </RelatedContentSection>
