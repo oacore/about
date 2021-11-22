@@ -97,6 +97,17 @@ const AboutPage = ({ data }) => (
         },
       }}
     />
+    <RelatedContentSection
+      id="Communities"
+      caption={data.communities.shortTitle}
+      data={{
+        ...data.communities,
+        action: {
+          label: data.communities.actionLabel,
+          href: '~about/ambassadors',
+        },
+      }}
+    />
 
     <Section id="how-it-works" caption="How it works">
       <h2>{data.howItWorks.title}</h2>
@@ -210,18 +221,6 @@ const AboutPage = ({ data }) => (
       <Markdown>{data.resources.content}</Markdown>
     </Section>
 
-    <RelatedContentSection
-      id="ambassadors"
-      caption={data.ambassadors.shortTitle}
-      data={{
-        ...data.ambassadors,
-        action: {
-          label: data.ambassadors.actionLabel,
-          href: '~about/ambassadors',
-        },
-      }}
-    />
-
     <Section id="contact" caption={contactData.title}>
       <h2>{contactData.shortTitle}</h2>
 
@@ -275,7 +274,7 @@ const getTeamMembers = async ({ ref } = {}) => {
   const allTeamMembers = (await retrieveContent('team', { ref })).map(
     (member) => ({
       ...member,
-      photoUrl: new URL(member.photo, ASSETS_BASE_URL).href,
+      photoUrl: ASSETS_BASE_URL + member.photo,
     })
   )
 

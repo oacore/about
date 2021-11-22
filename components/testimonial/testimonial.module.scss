@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import '../bootstrap/core';
 
 $testimonial-avatar-size: 3.5rem !default;
@@ -32,7 +34,7 @@ $testimonial-logo-height: 3rem !default;
   position: absolute;
   left: 0;
   display: block;
-  margin: $testimonial-avatar-compensation / -2;
+  margin: math.div($testimonial-avatar-compensation, -2);
   width: $testimonial-avatar-size;
   height: $testimonial-avatar-size;
   border-radius: 50%;

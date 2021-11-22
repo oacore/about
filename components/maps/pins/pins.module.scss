@@ -1,7 +1,9 @@
-@import "../../bootstrap/core";
+@use 'sass:math';
+
+@import '../../bootstrap/core';
 
 $pin-size: 3rem !default;
-$pin-pointer-size: $pin-size / 4 !default;
+$pin-pointer-size: $pin-size * 0.25 !default;
 $pin-color: $primary !default;
 $pin-bg: $body-bg !default;
 
@@ -13,7 +15,8 @@ $pin-bg: $body-bg !default;
   width: $pin-size;
   height: $pin-size;
   // move pin origin to the bottom center angle
-  margin: (-1 * ($pin-size + $pin-pointer-size / 1.44)) 0 0 ($pin-size / -2);
+  margin: (-1 * ($pin-size + math.div($pin-pointer-size, 1.44))) 0 0
+    math.div($pin-size, -2);
   border: 4px solid $pin-color;
   border-radius: 50%;
   background: $pin-bg;
@@ -26,9 +29,9 @@ $pin-bg: $body-bg !default;
   user-select: none;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
-    bottom: $pin-pointer-size / -1.44;
+    bottom: math.div($pin-pointer-size, -1.44);
     left: 50%;
     display: block;
     margin-bottom: -4px;

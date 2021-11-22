@@ -3,7 +3,7 @@ name: Pull request check
 on: [push]
 
 env:
-  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+   NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   build:

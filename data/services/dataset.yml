@@ -35,6 +35,10 @@ additional:
   title: Available datasets
   content: |
 
+    **Dataset 2020-03-18**
+
+    Full dataset (~400GB, 2.1TB Extracted)
+
     **Dataset 2018-03-01**
 
     Metadata only dataset (beta) (127 GB) - 123M metadata items,
@@ -57,10 +61,11 @@ what-is-included:
 
     The terms of use for the dataset are available on our
     [datasets download page](~documentation/dataset).
-  actions:
-    primary:
-      url: /dataset/getdatadump
-      caption: Register for access
+  form:
+    title: Register for the CORE Dataset
+    subtitle: Enter your email address to access the CORE Dataset
+    helper: We will send the instructions to this address
+    action: Register now
 
 related-services:
 -

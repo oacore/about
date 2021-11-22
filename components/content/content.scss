@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import '../bootstrap/core';
 @import '~bootstrap/scss/variables';
 
@@ -57,8 +59,10 @@ $article-spacer: $section-lg-spacer !default;
   }
 
   &.blockquote {
-    $blockquote-text-max-width: $content-max-width * $font-size-base /
-      $blockquote-font-size;
+    $blockquote-text-max-width: math.div(
+      $content-max-width * $font-size-base,
+      $blockquote-font-size
+    );
 
     max-width: 75%; // 9/12 columns fallback
     max-width: calc(
@@ -80,7 +84,9 @@ $article-spacer: $section-lg-spacer !default;
   padding-top: $section-spacer;
   padding-bottom: $section-spacer;
   // Fake padding for extra-small screens
-  grid-template-columns: ($grid-gutter-width / 2) 1fr ($grid-gutter-width / 2);
+  grid-template-columns: ($grid-gutter-width * 0.5) 1fr (
+      $grid-gutter-width * 0.5
+    );
 
   @each $breakpoint, $container-max-width in $container-max-widths {
     @include media-breakpoint-up($breakpoint, $grid-breakpoints) {

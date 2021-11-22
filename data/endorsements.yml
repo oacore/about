@@ -142,6 +142,18 @@ testimonials:
     picture: /images/people/botev.jpg
   api: true
 
+- &ronin-wu
+  id: iris-ai-anonymous
+  content: |
+    Iris.ai have partnered with CORE on a research project
+    developing new AI  models to identify the purpose of
+    citations and to create novel techniques for the generation of
+    scholarly knowledge graphs.
+  author:
+    name: Ronin Wu
+    role: Research Lead and Head of Research Collaboration, IRIS.ai
+    picture: /images/people/Ronin-Wu.jpg
+    
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -166,6 +178,17 @@ testimonials:
     role: Content Manager, Naver Academic Service
     picture: /images/people/sejin.png
 
+
+- &gareth-malcolm
+  id: gareth-malcolm
+  content: |
+    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full 
+    texts that we can utilise in our plagiarism detection software.
+  author:
+    name: Gareth Malcolm
+    role: Content Partner Manager at Turnitin
+    picture: /images/people/Gareth_Malcolm.jpeg
+    
 - &johan-tilstra
   id: johan-tilstra
   content: |
@@ -295,6 +318,12 @@ organizations:
   url: https://the.iris.ai
   logo: iris-ai.png
   testimonial: *viktor-botev
+- &iris-ai-second
+  id: iris-ai-second
+  name: IRIS AI
+  url: https://the.iris.ai
+  logo: iris-ai.png
+  testimonial: *ronin-wu
 - &research
   id: research-research
   name: ResearchResearch
@@ -347,11 +376,17 @@ organizations:
   name: Intoolab
   url: http://www.intoolab.com/
   logo: intoolab.png
+- &cypris
+  id: cypris
+  name: Cypris
+  url: https://ipcypris.com/
+  logo: Cypris.png
 - &turnitin
   id: turnitin
   name: Turnitin
   url: https://www.turnitin.com/
   logo: turnitin.jpg
+  testimonial: *gareth-malcolm
 - &ontochem
   id: ontochem
   name: Ontochem
@@ -658,8 +693,8 @@ sections:
     organizations:
       title: Companies who work with us
       items:
+        - *cypris
         - *turnitin
-        - *naver
         - *ontochem
         - *ropensci
         - *research
@@ -751,6 +786,7 @@ sections:
       title: Our partners
       items:
         - *microsoft
+        - *iris-ai-second
         - *mooc
         - *openaire
         - *oacg
