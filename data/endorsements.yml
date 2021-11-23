@@ -153,7 +153,7 @@ testimonials:
     name: Ronin Wu
     role: Research Lead and Head of Research Collaboration, IRIS.ai
     picture: /images/people/Ronin-Wu.jpg
-    
+
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -188,7 +188,7 @@ testimonials:
     name: Gareth Malcolm
     role: Content Partner Manager at Turnitin
     picture: /images/people/Gareth_Malcolm.jpeg
-    
+
 - &johan-tilstra
   id: johan-tilstra
   content: |
