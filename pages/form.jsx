@@ -18,6 +18,11 @@ export async function checkDataProviders({ params }) {
     setIsDataProviderAddActive(true)
     setDataProvidersResponse(result)
   } catch (errorWithDataProvider) {
+    setIsDataProviderAddActive(true)
+    setDataProvidersResponse({
+      error: errorWithDataProvider,
+      existingDataProviders: [],
+    })
     return {
       props: {
         error: errorWithDataProvider,
