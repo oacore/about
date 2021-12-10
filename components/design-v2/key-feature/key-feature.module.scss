@@ -1,0 +1,50 @@
+$status-icon-font-color: var(--white);
+$status-icon-background: #8bc34a;
+$breakpoint-sm: 46rem;
+.key-feature-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+
+  @media (max-width: $breakpoint-sm) {
+    justify-content: space-around;
+  }
+}
+.card {
+  padding: 1rem 0;
+}
+.key-feature {
+  position: relative;
+  flex: 0 1;
+  display: block;
+  &-icon {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  &-title {
+    margin-bottom: 1rem;
+  }
+  &-text {
+    display: block;
+    padding-top: 1rem;
+    border-top: 4px solid var(--primary);
+  }
+  &-contained {
+    padding: 1rem;
+    background-color: lighten(#b75400, 60%);
+  }
+  &-status-icon {
+    display: block;
+    position: absolute;
+    padding: 0.3rem 0.5rem;
+    top: -0.5rem;
+    left: -0.5rem;
+    color: $status-icon-font-color;
+    border-radius: 0.2rem;
+    background-color: $status-icon-background;
+    text-transform: capitalize;
+  }
+}

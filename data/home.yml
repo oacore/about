@@ -1,66 +1,115 @@
 title: CORE – Aggregating the world’s open access research papers
-description: |
-  The world’s largest collection of open access research papers
-hero:
-  headline: CORE
-  tagline: The world’s largest collection of open access research papers
+description: The world’s largest collection of open access research papers
+keywords: research, core, thesis, open access
+slides:
+  children:
+  - title: The world’s largest collection of open access research papers
+    image: /images/heros/community.svg
+    label: community
+    action: Search
+  - title: Powerful services for enterprises, institutions and researchers
+    image: /images/heros/services.svg
+    label: services
+    action: /services
+    actionLabel: Explore Services
+  - title: Resolve OAI identifier
+    description: |
+     OAIs are unique identifiers used by repositories.
+     As opposed to DOIs, they are minted in a distributed way and cost-free.
+     Our service allows you to resolve an OAI in the same way as you
+     would resolve a DOI.
+    image: /images/heros/oai.svg
+    label: OAI
+    action: /services
+    actionLabel: Resolve
 search-placeholder: Search {{totalArticlesCount}} papers around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   children:
-  - title: Worldwide data
-    description: |
-      We aggregate and enrich open access research papers from around the world
+  - title: Global aggregator
+    description: We serve the global network of open access [repositories and journals](~benefits)
+    picture: /images/features/globe.svg
+  - title: Harmonized data access
+    description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
+    picture: /images/features/gears.svg
+  - title: Powerful services
+    description: We create powerful [services](~services) for researchers, universities, and industry
+    picture: /images/features/building.svg
+    status: new
+  - title: Cutting-edge solutions
+    description: We [research](~about/research-outputs) and develop innovative data-driven and AI [solutions](~community/research)
+    picture: /images/features/neural.svg
 
-      [Read about our data](~data)
-    picture: /images/globe.svg
-  - title: Unique APIs
-    description: |
-      We provide seamless access to content and data, through our
-      unique [APIs](~services#access-to-raw-data)
-
-      **Perfect for [text mining](~about/endorsements#enterprise-companies)!**
-    picture: /images/api.svg
-  - title: Powerful Services
-    description: |
-      We create powerful [services](~services) for researchers, universities,
-      and industry
-    picture: /images/hall.svg
 join:
   title: Join CORE
-  lead: |
-    Whether to access data, use powerful tools or get your content harvested,
-    join for free today
-  actions:
+  children:
     - caption: Explore our services
-      url: ~services
+      url: services
+      picture: /images/join/server.svg
     - caption: Become a data provider
-      url: ~benefits-of-joining
-  note: |
-    CORE is a not-for-profit service delivered by
-    [The Open University](https://www.open.ac.uk)
-    and [Jisc](https://www.jisc.ac.uk)
-endorsements:
-  title: Who else is using CORE?
-  enterprise:
-    title: Enterprise customers using CORE technologies
-    description: |
-      Enterprise data services:
-      - Fast and reliable machine access to data.
-      - Text and data mine full texts from across many data providers.
-      - Stay in sync or interact with CORE in real time.
-    limit: 5
-    more: Read more about how CORE is used in industry
-  academic:
-    title: Academic institutions using CORE
-    description: |
-      Our services are used and trusted by hundreds of academic institutions
-
-      - Giving more than 20 million+ users free access to research papers every month.
-      - Increasing the visibility of content in repositories and journals.
-      - Tools and global scholarly analytics for institutions, funders and policy makers.
-    limit: 5
-    more: Read more...
+      url: benefits
+      picture: /images/join/data-provider.svg
+    - caption: Join our communities
+      url: about#Communities
+      picture: /images/join/community.svg
+testimonials:
+  title: Who we serve?
+  actionLabel: Find out more
+  action: /endorsements#enterprise-companies
+  children:
+    - title: Companies
+      description: Enabling others to create new tools and innovate using a global comprehensive collection of research papers.
+      logo: /images/logos/turnitin.png
+      citation: |
+        Our partnership with CORE will provide
+        Turnitin with vast amounts of metadata and full texts
+        that we can utilise in our plagiarism detection software.
+      author: Gareth Malcolm, Content Partner Manager at Turnitin
+    - title:  Academic institutions
+      description: Making research more discoverable, improving metadata quality, helping to meet and monitor open access compliance.
+      logo: /images/logos/open-university.png
+      citation: |
+        CORE’s role in providing a unified search of
+        repository content is a great tool for the researcher and
+        extends the reach of the locally held content in our institutional
+        repository, Open Research Online.
+      author: Nicola Dowson, Library Services Manager at Open University
+    - title:  Researchers & general public
+      description: Tools to find, discover and explore the wealth of open access research. Free for everyone, forever.
+      logo: /images/logos/mooc-founder.png
+      citation: |
+        With millions of research papers available across thousands of different systems,
+        CORE provides an invaluable service helping researchers to
+        save time and effort. CORE’s mission to make all this content
+        available for text and data mining is critical for future avenues of
+        research, and a major part of advancing open science.
+      author: Jon Tennant, Rogue Paleontologist and Founder of the Open Science MOOC
+      extraText: In memorial
+    - title:  Funders
+      description: Helping funders to analyse, audit and monitor open research and accelerate towards open science.
+      logo: /images/logos/brunel-sm.png
+      citation: |
+        With millions of research papers available
+        across thousands of different systems, CORE
+        provides an invaluable.
+        With millions of research papers available
+        across thousands of different systems, CORE
+        provides an invaluable.
+      author: Ben Johnson, Research Policy Adviser
+services:
+  title: Our services
+  actionLabel: Learn more
+  action: /services
+  children:
+    - title: Access to raw data
+      subtitle: Create new and innovative solutions.
+      imgUrl: /images/services/server-status.png
+    - title: Content discovery
+      subtitle: Find relevant research and make your research more visible.
+      imgUrl: /images/services/search-engine.png
+    - title: Managing content
+      subtitle: Manage how your research content is exposed to the world.
+      imgUrl: /images/services/time-management.png
 partner-projects:
   title: Partner projects
   description: |

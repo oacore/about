@@ -1,0 +1,47 @@
+$header-min-height: 8.4rem;
+
+@import './variables';
+
+.list {
+  display: flex;
+  @media (max-width: $breakpoint-lg) {
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  .item {
+    flex-basis: 20rem;
+    &:not(:last-child) {
+      margin-right: 2rem;
+
+      @media (max-width: $breakpoint-sm) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+      }
+    }
+
+    .header {
+      height: $header-min-height;
+      position: relative;
+      margin-bottom: 3.3rem;
+      padding-right: 2rem;
+      @media (max-width: $breakpoint-sm) {
+        margin-bottom: 1rem;
+      }
+
+      &:after {
+        position: absolute;
+        top: 0;
+        display: block;
+        content: '';
+        width: 2px;
+        height: 100%;
+        background: url('line.svg') 0 0 no-repeat;
+        right: 0;
+      }
+      .title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

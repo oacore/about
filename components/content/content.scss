@@ -147,3 +147,7 @@ $article-spacer: $section-lg-spacer !default;
   margin-left: -$nav-link-padding-x;
   margin-right: -$nav-link-padding-x;
 }
+
+.fullHeight {
+  height: 65vh;
+}
