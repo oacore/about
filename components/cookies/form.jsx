@@ -14,13 +14,15 @@ const CookiesForm = ({
   itemDescriptionTitle = 'What are these?',
   submitCaption = 'Apply',
   optionalActions = null,
-  method = 'post',
+  onSubmit,
   ...formProps
 }) => {
   const [checkBoxes, setCheckBoxes] = useState(
     Object.fromEntries(items.map(({ name, value }) => [name, value]))
   )
   const [isMounted, setMounted] = useState(false)
+
+  // const [eventId, setEventId] = useState('cookies-essential')
 
   useEffect(() => {
     setMounted(true)
@@ -35,18 +37,24 @@ const CookiesForm = ({
   }, [])
 
   if (!isMounted) return null
-
   return (
     <Card
       className={`card-body ${styles.cookiesForm} ${className}`}
-      method={method}
       tag={Form}
       {...formProps}
     >
       <CardTitle tag="h4">{title}</CardTitle>
       {items.map(
-        ({ id: cookieId, name, title: label, description, required }) => {
-          const isDisabled = required && checkBoxes[name]
+        ({
+          id: cookieId,
+          name,
+          title: label,
+          description,
+          required,
+          value,
+        }) => {
+          const isDisabled = required
+
           return (
             <FormGroup key={`${name}`}>
               {(!checkBoxes[name] || isDisabled) && (
@@ -64,8 +72,8 @@ const CookiesForm = ({
                 label={label}
                 value="on"
                 onChange={handleCheckboxChange}
-                disabled={required && checkBoxes[name]}
-                defaultChecked={checkBoxes[name]}
+                disabled={isDisabled}
+                defaultChecked={value}
               />
               <details className={styles.cookiesFormDetails}>
                 <summary>{itemDescriptionTitle}</summary>
@@ -76,7 +84,9 @@ const CookiesForm = ({
         }
       )}
       <ButtonToolbar className="cookies-form-actions">
-        <Button color="primary">{submitCaption}</Button>
+        <Button color="primary" onClick={onSubmit}>
+          {submitCaption}
+        </Button>
         {optionalActions}
       </ButtonToolbar>
     </Card>

@@ -1,5 +1,4 @@
-import { useCallback } from 'react'
-import { useCookies } from 'react-cookie'
+import { useCookies } from '@oacore/design'
 
 import { cookies as cookiesContext } from 'data/cookies.yml'
 
@@ -10,6 +9,7 @@ const convertCookieValue = (value) => {
 
   return cookieValue
 }
+
 export const useCookieItems = () => {
   const [cookies] = useCookies()
   return cookiesContext.map((cookie) => {
@@ -31,33 +31,4 @@ export const useCookie = (cookieName) => {
     cookieValue ??
     cookiesContext.find(({ name }) => name === cookieName)?.default
   )
-}
-
-export const useCookieHandler = () => {
-  const [, setCookie] = useCookies()
-  const items = useCookieItems()
-
-  return useCallback((event) => {
-    event.preventDefault()
-
-    let patch
-
-    // assuming when user hit accept in popup form we accept all cookies
-    if (event.target.id === 'cookies-popup')
-      patch = items.filter((el) => !el.value).map(({ name }) => [name, true])
-    else {
-      const input = new FormData(event.target)
-      patch = Array.from(input.entries(), ([name, value]) => [
-        name,
-        value === 'on',
-      ])
-    }
-
-    patch.forEach(([cookieName, cookieValue]) => {
-      setCookie(cookieName, cookieValue, {
-        path: '/',
-        maxAge: 1 * 365 * 24 * 60 * 60,
-      })
-    })
-  }, items)
 }
