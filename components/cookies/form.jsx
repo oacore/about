@@ -6,6 +6,9 @@ import ButtonToolbar from '../button-toolbar'
 import Markdown from '../markdown'
 import styles from './cookies.module.scss'
 
+import getKeyByValue from 'helpers'
+
+// TODO: Create new component in design library
 const CookiesForm = ({
   title,
   items,
@@ -21,8 +24,6 @@ const CookiesForm = ({
     Object.fromEntries(items.map(({ name, value }) => [name, value]))
   )
   const [isMounted, setMounted] = useState(false)
-
-  // const [eventId, setEventId] = useState('cookies-essential')
 
   useEffect(() => {
     setMounted(true)
@@ -71,8 +72,8 @@ const CookiesForm = ({
                 name={name}
                 label={label}
                 value="on"
-                onChange={handleCheckboxChange}
                 disabled={isDisabled}
+                onChange={handleCheckboxChange}
                 defaultChecked={value}
               />
               <details className={styles.cookiesFormDetails}>
@@ -84,7 +85,11 @@ const CookiesForm = ({
         }
       )}
       <ButtonToolbar className="cookies-form-actions">
-        <Button color="primary" onClick={onSubmit}>
+        <Button
+          color="primary"
+          onClick={onSubmit}
+          id={getKeyByValue(checkBoxes, true)}
+        >
           {submitCaption}
         </Button>
         {optionalActions}
