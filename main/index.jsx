@@ -7,7 +7,6 @@ import { useAnalytics } from '../hooks'
 import { Layout } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
-import { settings as cookieSettingsContext } from 'data/cookies.yml'
 
 const searchConfig = {
   action: '/search',
