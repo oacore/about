@@ -1,0 +1,35 @@
+@import 'components/bootstrap_design-v2/core';
+
+.logo {
+  background: no-repeat center / contain;
+  background-image: url('/images/oai_resolve/logo.svg');
+  display: block;
+  width: 191px;
+  height: 82px;
+}
+
+.oaiResolveForm p {
+  font-size: 44px;
+  font-weight: bold;
+  margin-bottom: 72px;
+}
+
+.submit-section {
+  margin-top: 1rem;
+}
+
+.section-block span::after {
+  width: 90%;
+  height: 2px;
+  background-color: #b75400;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: inline-block;
+  transform: translate(-50%);
+}
+
+.imgBlock img {
+  width: 466px;
+}
