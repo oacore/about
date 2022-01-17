@@ -11,9 +11,6 @@
   > p:last-child {
     margin-bottom: 0;
   }
-  &-extra-button {
-    margin-left: 1rem;
-  }
 }
 
 .related-icon {
@@ -21,9 +18,4 @@
   width: 4rem;
   height: 4rem;
   margin: -2.5rem auto 0.5rem;
-}
-
-.services {
-  background-color: var(--white);
-  border: none;
 }

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable prettier/prettier */
 import { Link } from '@oacore/design'
 import React from 'react'
@@ -11,14 +10,9 @@ const SUPPORT_EMAIL = decodeURIComponent(
   SUPPORT_EMAIL_URL.slice('mailto:'.length)
 )
 
-const generateFormMessage = ({ dataProvidersResponse }) => {
-  if (dataProvidersResponse.error && 
-    dataProvidersResponse.error.length > 1 && 
-    dataProvidersResponse.existingDataProviders && 
-    dataProvidersResponse.existingDataProviders.length === 0) {
-    console.log('DataProvider error')  // debug
-      
-      return {
+const generateFormMessage = ({ created, duplicated, error }) => {
+  if (error) {
+    return {
       helper: (
         <>
           We cannot detect a repository or a journal at this address. Please,
@@ -30,17 +24,19 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
     }
   }
 
-  if (dataProvidersResponse.error && 
-    dataProvidersResponse.error.length === 0) {
-    console.log('DataProvider is added') // debug
-
+  if (created) {
     return {
       helper: (
         <>
-          We found {dataProvidersResponse.name} under the entered address 
-          and added it to our data provider collection. 
-          As soon as we approve adding, we will start
-          harvesting. Join the community and add a{' '}
+          We found {created.name} under the entered address and added it to our
+          data provider collection. As soon as we approve adding, we will start
+          harvesting and sent a confirmation email to{' '}
+          <Link
+            href={`mailto:${created.email}`}
+            title="the administrator email address"
+          >
+            {created.email}
+          </Link>. Join the community and add a{' '}
           <Link href={HARVESTED_BY_CORE} title="Harvested by CORE Logo">
             harvested by CORE
           </Link>{' '}
@@ -51,20 +47,16 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
     }
   }
 
-  if (dataProvidersResponse.existingDataProviders && 
-    dataProvidersResponse.existingDataProviders.length > 1) {
-      const row = dataProvidersResponse.existingDataProviders
-    console.log('DataProvider is exist') // debug
-
+  if (duplicated) {
     return {
       helper: (
         <>
-          <a href={searchUrlFor(row[0].id)}>
-            {row[0].name}
+          <a href={searchUrlFor(duplicated.existingDataProviders[0].id)}>
+            {duplicated.existingDataProviders[0].name}
           </a>{' '}
-          {row.length > 1
+          {duplicated.existingDataProviders.length > 1
             ? `and ${
-              row.length - 1
+                duplicated.existingDataProviders.length - 1
               } more are our data providers`
             : 'is our data provider'}{' '}
           already. If you host multiple repositories or journals on the same

@@ -219,9 +219,9 @@ collections:
           Identifies the section in the page navigation bar.
           If empty, the section won't appear in the page navigation.
 
-    - name: communities
-      label: '👉 Communities'
-      file: about/communities.md
+    - name: ambassadors
+      label: '👉 Teaser: Ambassadors'
+      file: about/ambassadors.md
       fields:
       - name: title
         label: Title
@@ -241,11 +241,6 @@ collections:
         label: Call to action
         hint: >
           A button caption, intended to call the user view the target page.
-      - name: extra-action-label
-        widget: string
-        label: Call to extra action
-        hint: >
-          An extra button caption, intended to call the user view the target page
       - name: icon-url
         widget: hidden
         label: Decorative icon

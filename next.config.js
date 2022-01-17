@@ -69,16 +69,12 @@ const nextConfig = {
     })
 
     Object.assign(config.resolve.alias, {
-      'components': path.resolve(__dirname, 'components'),
-      'templates': path.resolve(__dirname, 'templates'),
-      'data': path.resolve(__dirname, 'data'),
-      'content': path.resolve(__dirname, 'content'),
-      'hooks': path.resolve(__dirname, 'hooks'),
-      'api': path.resolve(__dirname, 'api'),
-      'main': path.join(__dirname, 'main'),
-      'store': path.join(__dirname, 'store'),
-      'react': path.join(__dirname, 'node_modules', 'react'),
-      'react-dom': path.join(__dirname, 'node_modules', 'react-dom'),
+      components: path.resolve(__dirname, 'components'),
+      templates: path.resolve(__dirname, 'templates'),
+      data: path.resolve(__dirname, 'data'),
+      content: path.resolve(__dirname, 'content'),
+      hooks: path.resolve(__dirname, 'hooks'),
+      api: path.resolve(__dirname, 'api'),
     })
 
     config.module.rules.push(
@@ -112,6 +108,12 @@ const nextConfig = {
         use: ['json-loader', 'yaml-frontmatter-loader'],
       }
     )
+
+    Object.assign(config.resolve.alias, {
+      main: path.join(__dirname, 'main'),
+      store: path.join(__dirname, 'store'),
+      api: path.join(__dirname, 'api'),
+    })
     return config
   },
 
