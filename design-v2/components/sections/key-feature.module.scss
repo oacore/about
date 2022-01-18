@@ -1,6 +1,5 @@
-$status-icon-font-color: var(--white);
-$status-icon-background: #8bc34a;
-$breakpoint-sm: 46rem;
+@import './variables';
+
 .key-feature-list {
   width: 100%;
   display: flex;
@@ -8,14 +7,11 @@ $breakpoint-sm: 46rem;
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
-
-  @media (max-width: $breakpoint-sm) {
+  @media (max-width: $breakpoint-lg) {
     justify-content: space-around;
   }
 }
-.card {
-  padding: 1rem 0;
-}
+
 .key-feature {
   position: relative;
   flex: 0 1;

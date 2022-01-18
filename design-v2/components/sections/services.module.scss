@@ -1,16 +1,12 @@
 @import './variables';
 .list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
+  flex-wrap: wrap;
   text-align: center;
 
   @media (max-width: $breakpoint-lg) {
     justify-content: space-around;
-  }
-
-  @media (max-width: $breakpoint-sm) {
-    display: block;
   }
 
   .item {
@@ -18,11 +14,12 @@
     padding: 2rem;
     border: 0.1rem solid var(--gray-400);
     border-radius: 0.4rem;
+    color: inherit;
     background-color: var(--gray-100);
-    &:not(:last-child) {
-      @media (max-width: $breakpoint-sm) {
-        margin-bottom: 1rem;
-      }
+    text-decoration: none;
+    @media (max-width: $breakpoint-sm) {
+      margin: 1rem;
+      flex-grow: 1;
     }
 
     .icon {

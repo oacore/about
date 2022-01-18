@@ -2,9 +2,9 @@ import React from 'react'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './testimonial.module.scss'
-import TestimonialCard from '../components/testimonial-card'
+import TestimonialCard from '../testimonial'
 
-export const TestimonialItem = ({
+const TestimonialItem = ({
   title,
   description,
   logo,
@@ -34,7 +34,7 @@ export const TestimonialItem = ({
   </Tag>
 )
 
-export const TestimonialList = ({ children, className = '' }) => {
+const TestimonialList = ({ children, className = '' }) => {
   const items = React.Children.map(children, (child) => {
     if (child.type !== TestimonialItem) return null
     return React.cloneElement(child, {
@@ -47,3 +47,5 @@ export const TestimonialList = ({ children, className = '' }) => {
 }
 
 TestimonialList.Item = TestimonialItem
+
+export { TestimonialList, TestimonialItem }

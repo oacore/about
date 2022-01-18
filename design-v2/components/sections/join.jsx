@@ -1,10 +1,10 @@
 import React from 'react'
-import { Button } from '@oacore/design/lib/elements'
+import { Button } from '@oacore/design/lib'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './join.module.scss'
 
-export const JoinItem = ({
+const JoinItem = ({
   caption,
   url,
   picture,
@@ -22,13 +22,18 @@ export const JoinItem = ({
       alt={caption}
       role={caption == null ? 'presentation' : null}
     />
-    <Button href={url} className={styles.joinItemButton} variant="contained">
+    <Button
+      tag="a"
+      href={url}
+      className={styles.joinItemButton}
+      variant="contained"
+    >
       {caption}
     </Button>
   </Tag>
 )
 
-export const JoinList = ({ children, className = '' }) => {
+const JoinList = ({ children, className = '' }) => {
   const items = React.Children.map(children, (child) => {
     if (child.type !== JoinItem) return null
     return React.cloneElement(child, {
@@ -41,3 +46,5 @@ export const JoinList = ({ children, className = '' }) => {
 }
 
 JoinList.Item = JoinItem
+
+export { JoinList, JoinItem }

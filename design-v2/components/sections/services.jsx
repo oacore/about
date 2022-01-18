@@ -1,29 +1,33 @@
 import React from 'react'
+import NextLink from 'next/link'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './services.module.scss'
 
-export const ServiceItem = ({
+const ServiceItem = ({
   title,
   subtitle,
   imgUrl,
   className = '',
+  action,
   tag: Tag = 'div',
   ...restProps
 }) => (
-  <Tag className={classNames.use(styles.item).join(className)} {...restProps}>
-    <img
-      className={styles.icon}
-      src={imgUrl}
-      alt={title}
-      role={title == null ? 'presentation' : null}
-    />
-    <h4 className={styles.title}>{title}</h4>
-    <p className={styles.subtitle}>{subtitle}</p>
-  </Tag>
+  <NextLink href={action}>
+    <Tag className={classNames.use(styles.item).join(className)} {...restProps}>
+      <img
+        className={styles.icon}
+        src={imgUrl}
+        alt={title}
+        role={title == null ? 'presentation' : null}
+      />
+      <h4 className={styles.title}>{title}</h4>
+      <p className={styles.subtitle}>{subtitle}</p>
+    </Tag>
+  </NextLink>
 )
 
-export const ServicesList = ({ children, className = '' }) => {
+const ServicesList = ({ children, className = '' }) => {
   const items = React.Children.map(children, (child) => {
     if (child.type !== ServiceItem) return null
     return React.cloneElement(child, {
@@ -36,3 +40,5 @@ export const ServicesList = ({ children, className = '' }) => {
 }
 
 ServicesList.Item = ServiceItem
+
+export { ServicesList, ServiceItem }

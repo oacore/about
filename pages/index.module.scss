@@ -1,21 +1,22 @@
-@import '/components/design-v2/sections/variables';
+@import '/design-v2/components/sections/variables';
+
 .page {
   padding: var(--page-padding-y) var(--page-padding-x);
 }
+
 .hero {
   &-item {
     display: flex !important;
     @media (max-width: $breakpoint-sm) {
       flex-wrap: wrap-reverse;
     }
-
     &-description {
       font-size: 1.2rem;
     }
     &-img {
       width: 100%;
+      max-height: 20rem;
       height: auto;
-
       @media (max-width: $breakpoint-sm) {
         margin-top: 2rem;
       }
@@ -34,20 +35,39 @@
   &-join {
     position: relative;
     background-color: var(--gray-200);
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -9999px;
-      right: 0;
-      border-left: 9999px solid var(--gray-200);
-      box-shadow: 9999px 0 0 var(--gray-200);
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    &-list {
+      padding: var(--page-padding-y) var(--page-padding-x);
     }
   }
   &-services {
     .action-button {
       margin-top: 4rem;
+    }
+  }
+  &-partners {
+    &-list {
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: $breakpoint-sm) {
+        flex-wrap: wrap;
+      }
+
+      &-item {
+        flex-basis: 30%;
+        text-align: center;
+        @media (max-width: $breakpoint-sm) {
+          flex-basis: 100%;
+          margin-bottom: 1rem;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
     }
   }
 }

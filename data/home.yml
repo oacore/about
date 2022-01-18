@@ -12,16 +12,16 @@ slides:
     label: services
     action: /services
     actionLabel: Explore Services
-  - title: Resolve OAI identifier
-    description: |
-     OAIs are unique identifiers used by repositories.
-     As opposed to DOIs, they are minted in a distributed way and cost-free.
-     Our service allows you to resolve an OAI in the same way as you
-     would resolve a DOI.
-    image: /images/heros/oai.svg
-    label: OAI
-    action: /services
-    actionLabel: Resolve
+  # - title: Resolve OAI identifier
+  #   description: |
+  #    OAIs are unique identifiers used by repositories.
+  #    As opposed to DOIs, they are minted in a distributed way and cost-free.
+  #    Our service allows you to resolve an OAI in the same way as you
+  #    would resolve a DOI.
+  #   image: /images/heros/oai.svg
+  #   label: OAI
+  #   action: /services
+  #   actionLabel: Resolve
 search-placeholder: Search {{totalArticlesCount}} papers around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
@@ -44,13 +44,14 @@ join:
   title: Join CORE
   children:
     - caption: Explore our services
-      url: services
+      url: /services
       picture: /images/join/server.svg
     - caption: Become a data provider
-      url: benefits
+      action: '/benefits'
+      url: /benefits
       picture: /images/join/data-provider.svg
     - caption: Join our communities
-      url: about#Communities
+      url: /about#Communities
       picture: /images/join/community.svg
 testimonials:
   title: Who we serve?
@@ -84,18 +85,15 @@ testimonials:
         available for text and data mining is critical for future avenues of
         research, and a major part of advancing open science.
       author: Jon Tennant, Rogue Paleontologist and Founder of the Open Science MOOC
-      extraText: In memorial
+      extraText: In memoriam
     - title:  Funders
       description: Helping funders to analyse, audit and monitor open research and accelerate towards open science.
-      logo: /images/logos/brunel-sm.png
+      logo: /images/features/building.svg
       citation: |
-        With millions of research papers available
-        across thousands of different systems, CORE
-        provides an invaluable.
-        With millions of research papers available
-        across thousands of different systems, CORE
-        provides an invaluable.
-      author: Ben Johnson, Research Policy Adviser
+        CORE provides funders with tools
+        to monitor compliance with
+        open access policies.
+      # author: Rachel Bruce, UKRI
 services:
   title: Our services
   actionLabel: Learn more
@@ -104,20 +102,29 @@ services:
     - title: Access to raw data
       subtitle: Create new and innovative solutions.
       imgUrl: /images/services/server-status.png
+      action: /services#access-to-raw-data
     - title: Content discovery
       subtitle: Find relevant research and make your research more visible.
       imgUrl: /images/services/search-engine.png
+      action: /services#content-discovery
     - title: Managing content
       subtitle: Manage how your research content is exposed to the world.
       imgUrl: /images/services/time-management.png
-partner-projects:
+      action: /services#managing-content
+partnerProjects:
   title: Partner projects
-  description: |
-    We work with organisations and projects from around the world to support open science
+  actionLabel: Show all
+  action: /about/endorsements#partner-projects
+  children:
+    - logo: /images/partners/coar.png
+    #   citation: |
+    #     Our partnership with CORE will provide
+    #     Turnitin with vast amounts of metadata and full texts
+    #     that we can utilise in our plagiarism detection software.
+    #   author: Gareth Malcolm, Content Partner Manager at Turnitin
+    - logo: /images/partners/ukri.png
+    - logo: /images/partners/ukcorr.png
 
-      - Advocating for and supporting the open access movement.
-      - Developing artifical intelligence powered tools for researchers.
-      - Contributing to standards and improving interoperability
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research

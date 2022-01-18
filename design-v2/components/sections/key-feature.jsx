@@ -4,6 +4,8 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './key-feature.module.scss'
 
+import Markdown from 'components/markdown'
+
 const KeyFeature = ({
   title,
   children,
@@ -33,7 +35,7 @@ const KeyFeature = ({
       <Card.Title tag="h6" className={styles.keyFeatureTitle}>
         {title}
       </Card.Title>
-      <span className={styles.keyFeatureText}>{children}</span>
+      <Markdown className={styles.keyFeatureText}>{children}</Markdown>
     </Card>
   )
 
@@ -66,5 +68,4 @@ const KeyFeatureList = ({ children, className = '' } = {}) => {
 
 KeyFeatureList.Item = KeyFeature
 
-export default KeyFeature
 export { KeyFeature, KeyFeatureList }

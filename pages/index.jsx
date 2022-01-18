@@ -1,21 +1,21 @@
 import React from 'react'
-import { Carousel, Button } from '@oacore/design/lib'
+import { Carousel, Button, Card } from '@oacore/design/lib'
 
 import styles from './index.module.scss'
-import { Card } from '../../design/lib/elements'
-import SearchForm from '../components/design-v2/search-form'
-import Section from '../components/design-v2/layout/section'
-import { KeyFeatureList, KeyFeature } from '../components/design-v2/key-feature'
-import { JoinList, JoinItem } from '../components/design-v2/sections/join'
-import {
-  TestimonialItem,
-  TestimonialList,
-} from '../components/design-v2/sections/testimonial'
-import {
-  ServiceItem,
-  ServicesList,
-} from '../components/design-v2/sections/services'
 
+import {
+  SearchForm,
+  Section,
+  KeyFeatureList,
+  KeyFeature,
+  JoinList,
+  JoinItem,
+  TestimonialList,
+  TestimonialItem,
+  TestimonialCard,
+  ServicesList,
+  ServiceItem,
+} from 'design-v2/components'
 import { Page } from 'components'
 import page from 'data/home.yml'
 
@@ -51,6 +51,19 @@ const SlideHeroItem = ({
   </div>
 )
 
+const PartnerProjectsList = () => (
+  <ul className={styles.sectionPartnersList}>
+    {page.partnerProjects.children.map(({ logo }, index) => (
+      <TestimonialCard
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
+        imgUrl={logo}
+        className={styles.sectionPartnersListItem}
+      />
+    ))}
+  </ul>
+)
+
 const IndexPage = () => (
   <Page
     title={page.title}
@@ -83,7 +96,7 @@ const IndexPage = () => (
     </Section>
     <Section className={styles.sectionJoin}>
       <h3 className={styles.title}>{page.join.title}</h3>
-      <JoinList>
+      <JoinList className={styles.sectionJoinList}>
         {page.join.children.map(({ caption, url, picture }) => (
           <JoinItem
             caption={caption}
@@ -113,12 +126,22 @@ const IndexPage = () => (
       <h3 className={styles.title}>{page.services.title}</h3>
       <ServicesList>
         {page.services.children.map((item) => (
-          <ServiceItem key={item.title} {...item} />
+          <ServiceItem key={item.title} {...item} tag="a" />
         ))}
       </ServicesList>
       <div className={styles.actionButton}>
         <Button variant="contained" tag="a" href={page.services.action}>
           {page.services.actionLabel}
+        </Button>
+      </div>
+    </Section>
+
+    <Section className={styles.sectionPartners}>
+      <h3 className={styles.title}>{page.partnerProjects.title}</h3>
+      <PartnerProjectsList />
+      <div className={styles.actionButton}>
+        <Button variant="outlined" tag="a" href={page.partnerProjects.action}>
+          {page.partnerProjects.actionLabel}
         </Button>
       </div>
     </Section>

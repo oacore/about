@@ -31,8 +31,9 @@ const TestimonialCard = ({
   extraText,
   useDivider,
   imgSmall,
+  className,
 }) => (
-  <div className={styles.content}>
+  <div className={classNames.use(styles.content).join(className)}>
     <img
       className={classNames.use(styles.logo, {
         [styles.logoSm]: imgSmall,
@@ -42,7 +43,7 @@ const TestimonialCard = ({
       role={title == null ? 'presentation' : null}
     />
     {useDivider && <div className={styles.divider} />}
-    <ReadMore textMaxLength={105}>{description}</ReadMore>
+    {description && <ReadMore textMaxLength={105}>{description}</ReadMore>}
     <h6 className={styles.author}>{author}</h6>
     {extraText && <span className={styles.extra}>{extraText}</span>}
   </div>
