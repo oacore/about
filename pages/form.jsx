@@ -8,21 +8,15 @@ import { useInput } from 'hooks'
 import generateFormMessage from 'templates/data-providers/utils/generate-form-message'
 
 export async function checkDataProviders({ params }) {
-  const { uri, setIsDataProviderAddActive, setDataProvidersResponse } = params
+  const { uri, setIsDataProviderAddActive } = params
 
   try {
-    const result = await fetchDataProviderAdd({ uri })
+    const resultAdd = await fetchDataProviderAdd({ uri })
     // eslint-disable-next-line no-console
     console.log(`fetchDataProviderAdd
-    => ${JSON.stringify(result)}`) // Debug
+    => ${JSON.stringify(resultAdd)}`) // Debug
     setIsDataProviderAddActive(true)
-    setDataProvidersResponse(result)
   } catch (errorWithDataProvider) {
-    setIsDataProviderAddActive(true)
-    setDataProvidersResponse({
-      error: errorWithDataProvider,
-      existingDataProviders: [],
-    })
     return {
       props: {
         error: errorWithDataProvider,
@@ -36,7 +30,6 @@ export async function checkDataProviders({ params }) {
 const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
   const [isIsDataProviderAddActive, setIsDataProviderAddActive] =
     useState(false)
-  const [dataProvidersResponse, setDataProvidersResponse] = useState([])
   const {
     value: uri,
     element: elemDataProviderUrl,
@@ -48,7 +41,7 @@ const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
     if (onSubmit) onSubmit(event)
   }
 
-  const message = generateFormMessage({ dataProvidersResponse })
+  const message = generateFormMessage({ created: true })
 
   return (
     <>
@@ -73,11 +66,7 @@ const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
             variant="contained"
             onClick={() => {
               checkDataProviders({
-                params: {
-                  uri,
-                  setIsDataProviderAddActive,
-                  setDataProvidersResponse,
-                },
+                params: { uri, setIsDataProviderAddActive },
               })
             }}
           >

@@ -17,7 +17,11 @@ const SearchForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    router.push(`search/${value}`)
+    router.push(`search?q=${value}`)
+  }
+
+  const handleOnChange = () => {
+    router.push(`search?q=${value}`)
   }
 
   return (
@@ -31,6 +35,7 @@ const SearchForm = () => {
         changeOnBlur={false}
         onInput={handleInput}
         className={styles.select}
+        onChange={handleOnChange}
         label=""
       >
         {/* {suggestions.map((el) => (

@@ -22,11 +22,6 @@ cookies: /cookies
 browse: /browse
 search: /search
 
-community:
-  pattern: /community
-  children:
-    research: ./research
-
 services:
   pattern: /services
   children:
