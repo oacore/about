@@ -18,7 +18,7 @@ const ArticleNav = ({ items }) => (
   </Nav>
 )
 
-const Article = ({ children, ...props }) => {
+const Article = ({ children, fullHeight, ...props }) => {
   const { navItems, header, content } = useMemo(() => {
     const headerInner = []
     const contentInner = []
@@ -59,7 +59,12 @@ const Article = ({ children, ...props }) => {
   const { nav, className, tag: Tag = 'article', ...restProps } = props
 
   return (
-    <Tag className={`article ${className || ''}`.trim()} {...restProps}>
+    <Tag
+      className={`article ${fullHeight ? 'fullHeight' : ''} ${
+        className || ''
+      }`.trim()}
+      {...restProps}
+    >
       {renderHeader()}
       {content}
     </Tag>
@@ -69,11 +74,13 @@ const Article = ({ children, ...props }) => {
 Article.propTypes = {
   tag: PropTypes.node,
   nav: PropTypes.bool,
+  fullHeight: PropTypes.bool,
 }
 
 Article.defaultProps = {
   tag: 'article',
   nav: false,
+  fullHeight: false,
 }
 
 export default Article

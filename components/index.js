@@ -11,6 +11,9 @@ export { default as Page } from './page'
 // More complex layout
 export { default as Footer } from './footer'
 
+// Old key - feature
+export { KeyFeature, KeyFeatureList } from './key-feature'
+
 // Elements
 export { default as LinkCard } from './link-card'
 export { default as Logo } from './logo'
@@ -20,17 +23,15 @@ export * from './citation-tabs'
 export { default as CitationsModal } from './citations-modal'
 export { default as HistoryMilestone } from './history-milestone'
 export { default as HistoryTimeline } from './history-timeline'
-export { KeyFeature, KeyFeatureList } from './key-feature'
 export { default as OutreachMaterials } from './outreach-materials'
 export { default as Reference } from './reference'
-export { default as Search } from './search'
 export { default as ServiceGroupCard } from './service-group-card'
 export { default as ServiceGroups } from './service-groups'
 export { default as TeamMember } from './team-member'
+
 export { default as Testimonial } from './testimonial'
 export { default as Video } from './video'
 export * from './maps'
-
 // Complex elements
 export { default as Accordion } from './accordion'
 export { default as Collapsed } from './collapsed'
