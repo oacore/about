@@ -37,7 +37,7 @@ features:
     picture: /images/features/building.svg
     status: new
   - title: Cutting-edge solutions
-    description: We [research](~about/research-outputs) and develop innovative data-driven and AI [solutions](~community-research)
+    description: We [research](~about/research/outputs) and develop innovative data-driven and AI [solutions](~community-research)
     picture: /images/features/neural.svg
 
 join:
@@ -56,7 +56,7 @@ join:
 testimonials:
   title: Who we serve?
   actionLabel: Find out more
-  action: /endorsements#enterprise-companies
+  action: /about/endorsements#enterprise-companies
   children:
     - title: Companies
       description: Enabling others to create new tools and innovate using a global comprehensive collection of research papers.

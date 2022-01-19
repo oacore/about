@@ -123,11 +123,6 @@ $article-spacer: $section-lg-spacer !default;
   }
 }
 
-//  Class to switch the site to wide format page by page
-.section-wide {
-  grid-template-columns: 1fr $container-max-width-wide 1fr;
-}
-
 .section-lg {
   padding-top: $section-lg-spacer;
   padding-bottom: $section-lg-spacer;
