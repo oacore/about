@@ -11,6 +11,7 @@ const TestimonialItem = ({
   citation,
   author,
   extraText,
+  temporaryText,
   className = '',
   tag: Tag = 'div',
   ...restProps
@@ -24,11 +25,12 @@ const TestimonialItem = ({
       <TestimonialCard
         imgUrl={logo}
         title={title}
-        description={citation}
+        description={citation || temporaryText}
         author={author}
         extraText={extraText}
         imgSmall
         useDivider
+        textMaxLength={105}
       />
     </div>
   </Tag>

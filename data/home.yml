@@ -89,10 +89,11 @@ testimonials:
     - title:  Funders
       description: Helping funders to analyse, audit and monitor open research and accelerate towards open science.
       logo: /images/features/building.svg
-      citation: |
+      temporaryText: |
         CORE provides funders with tools
         to monitor compliance with
         open access policies.
+
       # author: Rachel Bruce, UKRI
 services:
   title: Our services

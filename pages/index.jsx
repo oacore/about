@@ -1,5 +1,6 @@
 import React from 'react'
 import { Carousel, Button, Card } from '@oacore/design/lib'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './index.module.scss'
 
@@ -47,7 +48,13 @@ const SlideHeroItem = ({
         )}
       </Card.Description>
     </Card>
-    <img src={imgHref} alt={label} className={styles.heroItemImg} />
+    <img
+      src={imgHref}
+      alt={label}
+      className={classNames.use(styles.heroItemImg, {
+        [styles.heroItemImgBig]: action === 'Search',
+      })}
+    />
   </div>
 )
 

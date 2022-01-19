@@ -14,8 +14,10 @@
     margin-bottom: 1rem;
     font-style: italic;
   }
+  .author {
+    margin-bottom: 0;
+  }
   .extra {
-    font-style: italic;
     color: var(--gray-600);
   }
 }
