@@ -48,7 +48,6 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
       you can check all requirements.
     </>
   )
-
   return (
     <>
       <form ref={ref} onSubmit={handleSubmit}>
@@ -56,13 +55,12 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
           id={elementOAIidentifier}
           name={elementOAIidentifier}
           label="Put OAI of the article"
-          // placeholder="For example, oai:oro.open.ac.uk:33975"
           value={OAIidentifier}
           helper={
             (useRouter().query.error === '404' && errorMassageRoute) ||
             (isOAInotValid && errorMassageFormat)
           }
-          // statusIcon
+          variant="error"
           required
           {...bindOAIidentifier}
         />
