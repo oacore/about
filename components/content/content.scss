@@ -123,7 +123,6 @@ $article-spacer: $section-lg-spacer !default;
   }
 }
 
-// TODO Remove after switching to wide format in $container-max-widths
 //  Class to switch the site to wide format page by page
 .section-wide {
   grid-template-columns: 1fr $container-max-width-wide 1fr;
