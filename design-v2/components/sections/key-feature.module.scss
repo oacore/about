@@ -1,0 +1,46 @@
+@import './variables';
+
+.key-feature-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  @media (max-width: $breakpoint-lg) {
+    justify-content: space-around;
+  }
+}
+
+.key-feature {
+  position: relative;
+  flex: 0 1;
+  display: block;
+  &-icon {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+  }
+  &-title {
+    margin-bottom: 1rem;
+  }
+  &-text {
+    display: block;
+    padding-top: 1rem;
+    border-top: 4px solid var(--primary);
+  }
+  &-contained {
+    padding: 1rem;
+    background-color: lighten(#b75400, 60%);
+  }
+  &-status-icon {
+    display: block;
+    position: absolute;
+    padding: 0.3rem 0.5rem;
+    top: -0.5rem;
+    left: -0.5rem;
+    color: $status-icon-font-color;
+    border-radius: 0.2rem;
+    background-color: $status-icon-background;
+    text-transform: capitalize;
+  }
+}

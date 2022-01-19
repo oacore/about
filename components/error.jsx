@@ -6,7 +6,7 @@ import { Section } from './content'
 import { Button } from './elements'
 
 const ErrorPage = () => (
-  <Page title="Page is not found">
+  <Page title="Page is not found" fullHeight>
     <h1>Uh-oh</h1>
     <Section tag="div">
       <p>The page you were looking for could not be found.</p>
