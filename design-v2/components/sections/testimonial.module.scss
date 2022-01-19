@@ -11,14 +11,26 @@ $header-min-height: 8.4rem;
     justify-content: space-around;
   }
   .item {
+    position: relative;
     max-width: 18rem;
     padding: 1rem 0;
 
+    &:not(:last-child):after {
+      position: absolute;
+      top: 1rem;
+      display: block;
+      content: '';
+      width: 2px;
+      height: 100%;
+      background: url('line.svg') 0 0 no-repeat;
+      right: 0;
+    }
+
     .header {
       height: $header-min-height;
-      position: relative;
       margin-bottom: 3.3rem;
       padding-right: 2rem;
+
       @media (max-width: $breakpoint-lg) {
         margin-bottom: 1rem;
       }
@@ -28,16 +40,6 @@ $header-min-height: 8.4rem;
         margin-bottom: 0.5rem;
       }
 
-      &:after {
-        position: absolute;
-        top: 0;
-        display: block;
-        content: '';
-        width: 2px;
-        height: 100%;
-        background: url('line.svg') 0 0 no-repeat;
-        right: 0;
-      }
       .title {
         font-size: 1.1rem;
         margin-bottom: 1rem;
