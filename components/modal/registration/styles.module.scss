@@ -1,0 +1,161 @@
+@use 'sass:math';
+
+@import 'components/bootstrap/core';
+
+.modal {
+  &-form {
+    max-height: 90vh;
+    input {
+      border: 1px solid var(--gray-300);
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      &:focus {
+        border: 1px solid var(--primary);
+      }
+    }
+
+    &-text {
+      padding: 1rem;
+      &-bordered {
+        * {
+          background-color: var(--gray-100);
+        }
+        h6 {
+          margin-bottom: 0;
+          padding: 1rem 1rem 0rem 1rem;
+        }
+        p {
+          padding: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    &-input-org {
+      input::placeholder {
+        @include media-breakpoint-down('sm') {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  &-sm {
+    max-width: 20rem;
+    &-content {
+      div {
+        text-align: center;
+      }
+      p {
+        margin-top: 1rem;
+      }
+      span {
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+.profiles {
+  border: none;
+  border: 1px solid var(--gray-300);
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  &-title {
+    width: auto;
+    margin-left: 0.5rem;
+    font-size: 12px;
+    color: var(--primary);
+    background-color: var(--white);
+    margin-bottom: 0;
+  }
+  &-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-down('sm') {
+      flex-wrap: wrap;
+    }
+  }
+  &-item {
+    flex-basis: 25%;
+    min-width: auto;
+    margin: 0 0.2rem;
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &:hover,
+    &-active {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    &-text {
+      display: flex;
+      align-items: flex-end;
+      span {
+        margin-left: 1rem;
+      }
+    }
+
+    @include media-breakpoint-down('sm') {
+      flex-basis: 45%;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+
+  @include media-breakpoint-down('sm') {
+    flex-wrap: wrap;
+  }
+
+  &-item {
+    width: 100%;
+    &:not(:last-child) {
+      padding-right: 0.5rem;
+    }
+    &:not(:first-child) {
+      padding-left: 0.5rem;
+    }
+
+    @include media-breakpoint-down('sm') {
+      &:not(:last-child) {
+        padding-right: 0;
+      }
+      &:not(:first-child) {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+
+  button:last-child {
+    margin-left: 1rem;
+  }
+}
+
+.select {
+  ul {
+    position: relative;
+    max-height: 12.5rem;
+  }
+}
+
+.error input {
+  border: 1px solid var(--danger-dark);
+  color: var(--danger-dark);
+  background: var(--danger-light-background);
+}
+
+.error label {
+  color: var(--danger-dark);
+}

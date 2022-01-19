@@ -1,77 +1,74 @@
 import React from 'react'
+import { Carousel, Button, Card } from '@oacore/design/lib'
+import { classNames } from '@oacore/design/lib/utils'
 
-import { extractTestimonials } from './about/endorsements'
 import styles from './index.module.scss'
 
 import {
-  Button,
-  Hero,
-  KeyFeature,
-  KeyFeatureList,
-  Switcher,
-  Markdown,
-  Page,
+  SearchForm,
   Section,
-  Search as SearchForm,
-  Content,
-} from 'components'
-import { JoinSection } from 'components/sections'
-import { patchStats } from 'components/utils'
+  KeyFeatureList,
+  KeyFeature,
+  JoinList,
+  JoinItem,
+  TestimonialList,
+  TestimonialItem,
+  TestimonialCard,
+  ServicesList,
+  ServiceItem,
+} from 'design-v2/components'
+import { Page } from 'components'
 import page from 'data/home.yml'
-import { sections as pageSections } from 'data/endorsements.yml'
 
-const TestimonialsSwitcher = ({ items, limit, text = null, ...restProps }) => (
-  <Switcher className={styles['home-switcher']} {...restProps}>
-    {text && <Switcher.Content>{text}</Switcher.Content>}
-    {items
-      .slice(0, limit)
-      .filter(({ organization }) => organization)
-      .map(({ id, content, author, organization }) => (
-        <Switcher.Item
-          id={id}
-          title={organization.name}
-          picture={`/images/logos/${organization.logo}`}
-          key={id}
-        >
-          <blockquote className="blockquote">
-            <Markdown>{content}</Markdown>
-            <footer className="blockquote-footer">
-              {author.name}, {author.role}
-            </footer>
-          </blockquote>
-        </Switcher.Item>
-      ))}
-  </Switcher>
-)
-
-const TestimonialsSection = ({
-  id,
+const SlideHeroItem = ({
   title,
+  image: imgHref,
+  label,
   description,
-  items,
-  limit,
-  more,
-  ...restProps
+  action,
+  actionLabel,
 }) => (
-  <Section id={id} {...restProps}>
-    <h3>{title}</h3>
-    <TestimonialsSwitcher
-      items={items}
-      limit={limit}
-      text={<Markdown>{description}</Markdown>}
+  <div className={styles.heroItem}>
+    <Card variant="pure" className={styles.heroItemCard}>
+      <Card.Title tag="h2" className={styles.heroTitle}>
+        {title}
+      </Card.Title>
+      <Card.Description tag="div">
+        {action === 'Search' ? (
+          <SearchForm />
+        ) : (
+          <>
+            {description && (
+              <p className={styles.heroItemDescription}>{description}</p>
+            )}
+            <Button tag="a" variant="contained" href={action}>
+              {actionLabel}
+            </Button>
+          </>
+        )}
+      </Card.Description>
+    </Card>
+    <img
+      src={imgHref}
+      alt={label}
+      className={classNames.use(styles.heroItemImg, {
+        [styles.heroItemImgBig]: action === 'Search',
+      })}
     />
-    {more && (
-      <div className="mt-3 text-center">
-        <Button color="primary" outline href={`~endorsements#${id}`}>
-          {more}
-        </Button>
-      </div>
-    )}
-  </Section>
+  </div>
 )
 
-const SearchIntro = ({ children }) => (
-  <Content className="mx-auto alert alert-secondary">{children}</Content>
+const PartnerProjectsList = () => (
+  <ul className={styles.sectionPartnersList}>
+    {page.partnerProjects.children.map(({ logo }, index) => (
+      <TestimonialCard
+        // eslint-disable-next-line react/no-array-index-key
+        key={index}
+        imgUrl={logo}
+        className={styles.sectionPartnersListItem}
+      />
+    ))}
+  </ul>
 )
 
 const IndexPage = () => (
@@ -79,65 +76,81 @@ const IndexPage = () => (
     title={page.title}
     description={page.description}
     keywords={page.keywords}
+    className={styles.page}
   >
-    <Hero data={page.hero}>
-      <div className="py-section-sm">
-        <SearchForm
-          action="/search"
-          name="q"
-          placeholder={patchStats(page.searchPlaceholder, page.statistics)}
-        />
-        <SearchIntro>
-          <Markdown>{page.covid19Notice}</Markdown>
-        </SearchIntro>
-      </div>
-    </Hero>
+    <Carousel draggable={false} useArrows={false} slidesToShow={1} infinite>
+      {page.slides.children.map((slide) => (
+        <SlideHeroItem key={slide.title} {...slide} />
+      ))}
+    </Carousel>
 
-    <Section className="pb-section-lg">
+    <Section>
       <h2 className="sr-only">{page.features.title}</h2>
       <KeyFeatureList>
-        {page.features.children.map(({ title, description, picture }) => (
-          <KeyFeature title={title} icon={picture} key={title}>
-            <Markdown>{description}</Markdown>
-          </KeyFeature>
-        ))}
+        {page.features.children.map(
+          ({ title, description, picture, status }) => (
+            <KeyFeature
+              title={title}
+              status={status}
+              icon={picture}
+              key={title}
+            >
+              {description}
+            </KeyFeature>
+          )
+        )}
       </KeyFeatureList>
     </Section>
-
-    <JoinSection id="join-us" {...page.join} />
-
-    <Section id="endorsements" className={styles['home-endorsements-section']}>
-      <h2 className="text-center">{page.endorsements.title}</h2>
-
-      <TestimonialsSection
-        id={pageSections.enterpriseCompanies.id}
-        title={page.endorsements.enterprise.title}
-        description={page.endorsements.enterprise.description}
-        items={extractTestimonials(
-          pageSections.enterpriseCompanies.organizations.items
-        )}
-        limit={page.endorsements.enterprise.limit}
-        more={page.endorsements.enterprise.more}
-      />
-
-      <TestimonialsSection
-        id={pageSections.academicInstitutions.id}
-        className={styles['home-academic-institutions-section']}
-        title={page.endorsements.academic.title}
-        description={page.endorsements.academic.description}
-        items={extractTestimonials(
-          pageSections.academicInstitutions.organizations.items
-        )}
-        limit={page.endorsements.enterprise.limit}
-        more={page.endorsements.academic.more}
-      />
+    <Section className={styles.sectionJoin}>
+      <h3 className={styles.title}>{page.join.title}</h3>
+      <JoinList className={styles.sectionJoinList}>
+        {page.join.children.map(({ caption, url, picture }) => (
+          <JoinItem
+            caption={caption}
+            url={url}
+            picture={picture}
+            key={caption}
+          />
+        ))}
+      </JoinList>
     </Section>
 
-    <Section id="partner-projects">
-      <h2 className="text-center">{page.partnerProjects.title}</h2>
-      <TestimonialsSwitcher
-        items={extractTestimonials(pageSections.partners.organizations.items)}
-      />
+    <Section className={styles.sectionTestimonial}>
+      <h3 className={styles.title}>{page.testimonials.title}</h3>
+      <TestimonialList>
+        {page.testimonials.children.map((item) => (
+          <TestimonialItem key={item.title} {...item} />
+        ))}
+      </TestimonialList>
+      <div className={styles.actionButton}>
+        <Button variant="contained" tag="a" href={page.testimonials.action}>
+          {page.testimonials.actionLabel}
+        </Button>
+      </div>
+    </Section>
+
+    <Section className={styles.sectionServices}>
+      <h3 className={styles.title}>{page.services.title}</h3>
+      <ServicesList>
+        {page.services.children.map((item) => (
+          <ServiceItem key={item.title} {...item} tag="a" />
+        ))}
+      </ServicesList>
+      <div className={styles.actionButton}>
+        <Button variant="contained" tag="a" href={page.services.action}>
+          {page.services.actionLabel}
+        </Button>
+      </div>
+    </Section>
+
+    <Section className={styles.sectionPartners}>
+      <h3 className={styles.title}>{page.partnerProjects.title}</h3>
+      <PartnerProjectsList />
+      <div className={styles.actionButton}>
+        <Button variant="outlined" tag="a" href={page.partnerProjects.action}>
+          {page.partnerProjects.actionLabel}
+        </Button>
+      </div>
     </Section>
   </Page>
 )

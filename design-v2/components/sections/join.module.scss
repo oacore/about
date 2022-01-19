@@ -1,0 +1,28 @@
+@import './variables';
+
+.join {
+  &-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media (max-width: $breakpoint-lg) {
+      justify-content: space-around;
+    }
+  }
+  &-item {
+    text-align: center;
+    @media (max-width: $breakpoint-lg) {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+    &-icon {
+      display: block;
+      margin: 0 auto;
+    }
+    &-button {
+      margin-top: 1rem;
+      padding: 1.5rem 3rem !important;
+    }
+  }
+}

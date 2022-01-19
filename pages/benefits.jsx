@@ -1,5 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'reactstrap'
+import Parser from 'html-react-parser'
+// TODO Remove Pareser after moving beenfits to netlify
 
 import styles from './benefits.module.scss'
 import AddDataProviderForm from './form'
@@ -16,7 +18,7 @@ const benefitsPage = () => (
   >
     <Section id="banner" caption="banner" className={styles.banner}>
       <Row>
-        <Col className={styles.columnDescription}>
+        <Col sm="6" md="6" className={styles.columnDescription}>
           <div className={styles.title}>{benefitsData.banner.title}</div>
           <div className={styles.description}>
             {benefitsData.banner.description}
@@ -32,7 +34,7 @@ const benefitsPage = () => (
             See the full list of data providers
           </a>
         </Col>
-        <Col className={styles.columnVelcro}>
+        <Col sm="6" md="6" className={styles.columnVelcro}>
           <div className={styles.velcroWrap}>
             <div className={styles.velcro}>
               <div className={styles.title}>
@@ -88,7 +90,7 @@ const benefitsPage = () => (
                 {benefitsGroup.title}
               </h6>
               <p className={styles.serviceSectionDescription}>
-                {benefitsGroup.description}
+                {Parser(benefitsGroup.description)}
               </p>
             </Col>
           </Row>
@@ -99,12 +101,17 @@ const benefitsPage = () => (
       <div className={styles.title}>{benefitsData.stat.title}</div>
       <Row>
         {benefitsData.stat.blocks.map((statisticGroup) => (
-          <Col tag="span">
-            <div className={styles.statTitle}>{statisticGroup.title}</div>
-            <Markdown>
-              {patchStats(statisticGroup.value, benefitsData.statistics)}
-            </Markdown>
-          </Col>
+          <>
+            {patchStats(statisticGroup.value, benefitsData.statistics) !==
+              '<mark>0</mark>' && (
+              <Col tag="span">
+                <div className={styles.statTitle}>{statisticGroup.title}</div>
+                <Markdown>
+                  {patchStats(statisticGroup.value, benefitsData.statistics)}
+                </Markdown>
+              </Col>
+            )}
+          </>
         ))}
       </Row>
     </Section>

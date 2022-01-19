@@ -1,7 +1,6 @@
-@import 'components/bootstrap/core';
+@use 'sass:math';
 
-.service-section {
-}
+@import 'components/bootstrap/core';
 
 .service-section-title {
   align-items: center;
@@ -43,14 +42,14 @@
 
 .service-section-footer {
   text-align: center;
-  margin: map-get($spacers, 1) / -2;
+  margin: math.div(map-get($spacers, 1), -2);
 
   @include media-breakpoint-up('sm') {
     text-align: left;
   }
 
   .btn {
-    margin: map-get($spacers, 1) / 2;
+    margin: map-get($spacers, 1) * 0.5;
   }
 }
 
@@ -123,4 +122,19 @@
 
 .testimonial {
   background: $gray-200;
+}
+
+.card {
+  &-subtitle {
+    margin: 1.5rem 0;
+  }
+  &-input {
+    input {
+      border: 1px solid var(--gray-300);
+      &:focus {
+        border: 1px solid var(--primary);
+      }
+    }
+    margin-bottom: 1rem;
+  }
 }

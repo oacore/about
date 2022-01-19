@@ -1,18 +1,20 @@
-@import "components/bootstrap/core";
+@use 'sass:math';
 
-$logos-carousel-image-padding-x: $spacer / 2 !default;
-$logos-carousel-image-padding-y: $spacer / 2 !default;
+@import 'components/bootstrap/core';
+
+$logos-carousel-image-padding-x: $spacer * 0.5 !default;
+$logos-carousel-image-padding-y: $spacer * 0.5 !default;
 $logos-carousel-spacer-x: $card-spacer-x;
 $logos-carousel-spacer-y: $card-spacer-y;
 $logos-carousel-gutter: $grid-gutter-width;
 
 .logos-carousel {
-  margin-left: $logos-carousel-gutter / -2;
-  margin-right: $logos-carousel-gutter / -2;
+  margin-left: math.div($logos-carousel-gutter, -2);
+  margin-right: math.div($logos-carousel-gutter, -2);
 }
 
 .logos-carousel-item {
-  padding: 0 $logos-carousel-gutter / 2;
+  padding: 0 $logos-carousel-gutter * 0.5;
 }
 
 .logos-carousel-figure {
@@ -82,15 +84,15 @@ $logos-carousel-gutter: $grid-gutter-width;
 .logos-carousel-control-prev {
   background: linear-gradient(to left, rgba($white, 0), $white 50%);
 
-  @include media-breakpoint-up("sm") {
-    left: $logos-carousel-gutter / -2;
+  @include media-breakpoint-up('sm') {
+    left: math.div($logos-carousel-gutter, -2);
   }
 }
 
 .logos-carousel-control-next {
   background: linear-gradient(to right, rgba($white, 0), $white 50%);
 
-  @include media-breakpoint-up("sm") {
-    right: $logos-carousel-gutter / -2;
+  @include media-breakpoint-up('sm') {
+    right: math.div($logos-carousel-gutter, -2);
   }
 }

@@ -8,12 +8,13 @@ const Page = ({
   description,
   keywords,
   children,
+  fullHeight,
   ...articleProps
 }) => (
   <>
     <Head title={title} description={description} keywords={keywords} />
 
-    <Article tag="main" {...articleProps}>
+    <Article tag="main" fullHeight={fullHeight} {...articleProps}>
       {children}
     </Article>
   </>

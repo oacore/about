@@ -28,23 +28,20 @@ const Main = ({ children }) => {
 
   useAnalytics()
 
-  Header.useSearchBar(
-    {
-      onQueryChanged: (searchTerm) => {
-        window.location.href = `https://core.ac.uk/search?q=${encodeURIComponent(
-          searchTerm
-        )}`
-      },
-      initQuery: '',
-      searchBarProps: {
-        label: searchConfig.placeholder,
-        placeholder: searchConfig.placeholder,
-        prependIcon: '#magnify',
-        changeOnBlur: false,
-      },
+  Header.useSearchBar({
+    onQueryChanged: (searchTerm) => {
+      window.location.href = `https://core.ac.uk/search?q=${encodeURIComponent(
+        searchTerm
+      )}`
     },
-    { isHidden: router.route === '/' }
-  )
+    initQuery: '',
+    searchBarProps: {
+      label: searchConfig.placeholder,
+      placeholder: searchConfig.placeholder,
+      prependIcon: '#magnify',
+      changeOnBlur: false,
+    },
+  })
 
   const cookiesAccepted = useCookie('cookies_accepted')
   const cookieHandler = useCookieHandler()

@@ -4,6 +4,8 @@ const path = require('path')
 const withImages = require('next-images')
 const yaml = require('js-yaml')
 
+const envConfig = require('./env.config')
+
 let legacyConfig = null
 const readLegacyConfig = async (filepath = './legacy.config.yml') => {
   if (legacyConfig == null) {
@@ -16,10 +18,10 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
 }
 
 const nextConfig = {
-  env: {
+  env: Object.assign(envConfig, {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
-  },
+  }),
   webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
@@ -67,12 +69,17 @@ const nextConfig = {
     })
 
     Object.assign(config.resolve.alias, {
-      components: path.resolve(__dirname, 'components'),
-      templates: path.resolve(__dirname, 'templates'),
-      data: path.resolve(__dirname, 'data'),
-      content: path.resolve(__dirname, 'content'),
-      hooks: path.resolve(__dirname, 'hooks'),
-      api: path.resolve(__dirname, 'api'),
+      'components': path.resolve(__dirname, 'components'),
+      'design-v2': path.resolve(__dirname, 'design-v2'),
+      'templates': path.resolve(__dirname, 'templates'),
+      'data': path.resolve(__dirname, 'data'),
+      'content': path.resolve(__dirname, 'content'),
+      'hooks': path.resolve(__dirname, 'hooks'),
+      'api': path.resolve(__dirname, 'api'),
+      'main': path.join(__dirname, 'main'),
+      'store': path.join(__dirname, 'store'),
+      'react': path.join(__dirname, 'node_modules', 'react'),
+      'react-dom': path.join(__dirname, 'node_modules', 'react-dom'),
     })
 
     config.module.rules.push(
@@ -106,10 +113,6 @@ const nextConfig = {
         use: ['json-loader', 'yaml-frontmatter-loader'],
       }
     )
-
-    Object.assign(config.resolve.alias, {
-      main: path.join(__dirname, 'main'),
-    })
     return config
   },
 

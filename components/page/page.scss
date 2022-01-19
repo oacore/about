@@ -1,5 +1,5 @@
-@import "components/bootstrap/core";
-@import "../bootstrap/variables";
+@import 'components/bootstrap/core';
+@import '../bootstrap/variables';
 
 $page-background: linear-gradient(
     #fff0,
@@ -7,13 +7,14 @@ $page-background: linear-gradient(
     #ffff calc(100% - 85vh),
     #fff0
   ),
-  url("paper-background.jpg") !default;
+  url('paper-background.jpg') !default;
 $page-background-breakpoint: md !default;
 
 html,
 body {
   width: 100%;
   height: 100%;
+  overflow-x: hidden;
 }
 
 .page {

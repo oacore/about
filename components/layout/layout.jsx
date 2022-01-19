@@ -1,11 +1,10 @@
 import React, { useCallback } from 'react'
-import { Header } from '@oacore/design'
+import { Header, Footer } from '@oacore/design'
 
 import Head from './head'
-import Footer from '../footer'
 import SkipToContent from '../skip-to-content'
 
-const Layout = ({ title, description, footer, children, onNavigate }) => {
+const Layout = ({ title, description, children, onNavigate }) => {
   const handleHeaderClick = useCallback(
     (event) => {
       const linkElement = event.target.closest('a')
@@ -24,7 +23,7 @@ const Layout = ({ title, description, footer, children, onNavigate }) => {
       <Header id="header" onClick={handleHeaderClick} />
       <div id="content" />
       {children}
-      <Footer className="page-footer" {...footer} />
+      <Footer />
     </>
   )
 }
