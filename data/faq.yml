@@ -237,6 +237,21 @@ sections:
             If you are not sure whether your journal/repository has an OAI base
             URL, [contact our team](~contact) and we will provide
             technical support to you.
+        - slug: oai-about
+          question: |
+            What is OAI identifier?
+          answer: |
+            An item is a constituent of a repository from which metadata about a resource can be disseminated. 
+            An item is conceptually a container that stores or dynamically generates metadata about a single resource 
+            in multiple formats, each of which can be harvested as records via the OAI-PMH. Each item has an identifier that is 
+            unique within the scope of the repository of which it is a constituent.
+        - slug: oai-structure
+          question: |
+            What structure of OAI identifier?
+          answer: |
+            Example: <b>oai:oro.open.ac.uk:33975</b> <br/>
+            Description: <b>prefix:repository:ID in repository</b> <br/>
+            The identifier must have the prefix <b>oai</b> separated from the main part of the identifier by a colon.
         - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
           question: |
             How difficult is it to satisfy the CORE harvesting recommendations?
