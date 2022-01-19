@@ -37,10 +37,10 @@ additional:
   title: Where to start?
   content: |
     Please [register to receive an API key](/api-keys/register)
-    and start testing the [live examples](/documentation/api).
+    and start testing the [live examples](https://api.core.ac.uk/docs/v3).
 
     A good starting point to start coding with our API is to
-    follow the iPython notebook available on [Github](https://github.com/oacore/or2016-api-demo).
+    follow the examples gallery available in the [documentation](https://api.core.ac.uk/docs/v3#section/Quick-start-examples).
     In collaboration with [rOpenSci](https://ropensci.org/) you can find
     an [R client for the CORE API](https://github.com/ropensci/rcoreoa) in the GitHub repository.
     All our SDKs are available from [our GitHub organisation](https://github.com/oacore).
@@ -64,17 +64,18 @@ what-is-included:
     Subscription to the API provides you with:
 
     * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
-    * Detailed [documentation](/documentation/api) on how to use the CORE API with live examples and wrappers to common programming languages.
-    * One batch request or five single requests per 10 seconds. Need a faster rate? [Contact us](~about/#contact).
+    * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to use the CORE API with live examples and wrappers to common programming languages.
+    * Free access to the CORE data. The usage rate is limited depending on your profile, need a faster rate? [Contact us](~about/#contact).
 
     Check our [Terms & Conditions](/terms) to see if you are elegible
     for a free license.
 
     <p class="alert alert-secondary">
-      We have released a new version of the API in beta, if you are interested
-      please <a href="https://api.core.ac.uk/docs/v3">check the documentation</a>.
-      For any issue or request about it you can
-      <a href="https://forms.gle/4SvoxeVADnnwsweXA" target="_blank" rel="noreferrer noopener">send us feedback</a>.
+      We encourage everybody to use the latest version above. However, if you still need support for version 2,
+      the documentation is available <a href="https://core.ac.uk/docs">here</a>.
+      The migration is relatively painless, and in addition, you will also get 
+      <a href="https://research.jiscinvolve.org/wp/2021/07/16/apiv3-announcing-a-new-api-to-access-core-data/">many improvements</a>. 
+      If you need help on how to migrate your code to the new version, feel free to <a href="https://core.ac.uk/about#contact">contact us</a>.
     </p>
 
   form:
