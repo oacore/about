@@ -14,11 +14,7 @@ const oaiResolverPage = () => (
     description={oaiResolve.description}
     keywords={oaiResolve.keywords}
   >
-    <Section
-      id="set-oai-resolve"
-      caption="set-oai-resolve"
-      className="section-wide"
-    >
+    <Section id="set-oai-resolve" caption="set-oai-resolve">
       <Row>
         <Col className={styles.formBlock}>
           <div className={styles.logo} />
@@ -36,7 +32,7 @@ const oaiResolverPage = () => (
       </Row>
     </Section>
 
-    <Section id="sections" caption="sections" className="section-wide">
+    <Section id="sections" caption="sections">
       <Row>
         {oaiResolve.sections.blocks.map((resolveGroup) => (
           <Col sm="3" md="3" className={styles['section-block']}>
