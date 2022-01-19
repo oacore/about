@@ -18,7 +18,7 @@
   margin-top: 1rem;
 }
 
-.section-block span {
+.section-block span::after {
   width: 90%;
   height: 2px;
   background-color: #b75400;
@@ -28,23 +28,8 @@
   left: 50%;
   display: inline-block;
   transform: translate(-50%);
-
-  &:after {
-    border-width: 6px 13px 6px;
-    display: block;
-    right: -18px;
-    top: -5px;
-    border-left-color: #b75400;
-    content: '';
-    position: absolute;
-    border-style: solid;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-  }
 }
 
 .imgBlock img {
   width: 466px;
-  float: right;
 }

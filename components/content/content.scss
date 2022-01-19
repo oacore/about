@@ -1,4 +1,4 @@
-@use 'sass:math';
+@use "sass:math";
 
 @import '../bootstrap/core';
 @import '~bootstrap/scss/variables';
@@ -121,11 +121,6 @@ $article-spacer: $section-lg-spacer !default;
     padding-bottom: $section-sm-spacer;
     margin-bottom: -$section-sm-spacer;
   }
-}
-
-//  Class to switch the site to wide format page by page
-.section-wide {
-  grid-template-columns: 1fr $container-max-width-wide 1fr;
 }
 
 .section-lg {
