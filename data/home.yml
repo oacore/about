@@ -37,7 +37,7 @@ features:
     picture: /images/features/building.svg
     status: new
   - title: Cutting-edge solutions
-    description: We [research](~about/research/outputs) and develop innovative data-driven and AI [solutions](~community-research)
+    description: We [research](~about/research-outputs) and develop innovative data-driven and AI [solutions](~community/research)
     picture: /images/features/neural.svg
 
 join:
