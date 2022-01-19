@@ -48,6 +48,7 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
       you can check all requirements.
     </>
   )
+
   return (
     <>
       <form ref={ref} onSubmit={handleSubmit}>
