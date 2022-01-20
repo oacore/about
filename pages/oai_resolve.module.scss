@@ -1,3 +1,4 @@
+@use 'sass:map';
 @import 'components/bootstrap/core';
 
 .logo {
@@ -47,4 +48,24 @@
 .imgBlock img {
   width: 466px;
   float: right;
+}
+
+$grid-breakpoints-md: map.get($grid-breakpoints, 'md');
+$grid-breakpoints-sm: map.get($grid-breakpoints, 'sm');
+
+@media (max-width: $grid-breakpoints-md) {
+  .section-block span {
+    width: 65%;
+    left: 45%;
+  }
+}
+
+@media (max-width: $grid-breakpoints-sm) {
+  .section-block span {
+    width: 90%;
+    left: 50%;
+  }
+  .section-block {
+    margin-bottom: 15px;
+  }
 }

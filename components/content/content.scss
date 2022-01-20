@@ -135,7 +135,11 @@ $article-spacer: $section-lg-spacer !default;
 
 //  Class to switch the site to wide format page by page
 .section-wide {
-  grid-template-columns: 1fr $container-max-width-wide 1fr;
+  @each $breakpoint, $container-max-width in $container-max-width-wide {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      grid-template-columns: 1fr ($container-max-width - $grid-gutter-width) 1fr;
+    }
+  }
 }
 
 .article {
