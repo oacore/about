@@ -94,6 +94,15 @@ $container-max-widths: (
   lg: 960px,
 );
 
+// TODO Remove after change variable $container-max-widths
+//  Variable to switch the site to wide format page by page
+
+$container-max-width-wide: (
+  sm: 540px,
+  md: 720px,
+  lg: 1200px,
+);
+
 // Grid columns
 //
 // Set the number of columns and specify the width of the gutters.

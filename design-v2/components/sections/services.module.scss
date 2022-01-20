@@ -1,0 +1,37 @@
+@import './variables';
+.list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: center;
+
+  @media (max-width: $breakpoint-lg) {
+    justify-content: space-around;
+  }
+
+  .item {
+    flex-basis: calc(((100vw - (var(--page-padding-x) * 2)) / 3) - 2rem);
+    padding: 2rem;
+    border: 0.1rem solid var(--gray-400);
+    border-radius: 0.4rem;
+    color: inherit;
+    background-color: var(--gray-100);
+    text-decoration: none;
+    @media (max-width: $breakpoint-sm) {
+      margin: 1rem;
+      flex-grow: 1;
+    }
+
+    .icon {
+      margin-bottom: 1.2rem;
+    }
+    .title {
+      margin-bottom: 1.5rem;
+    }
+    &:hover {
+      border: 0.1rem solid var(--primary);
+      border-radius: 0.2rem;
+      background-color: var(--gray-200);
+    }
+  }
+}

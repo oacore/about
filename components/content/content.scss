@@ -133,6 +133,15 @@ $article-spacer: $section-lg-spacer !default;
   }
 }
 
+//  Class to switch the site to wide format page by page
+.section-wide {
+  @each $breakpoint, $container-max-width in $container-max-width-wide {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      grid-template-columns: 1fr ($container-max-width - $grid-gutter-width) 1fr;
+    }
+  }
+}
+
 .article {
   padding-top: $article-spacer;
   padding-bottom: $article-spacer;
@@ -146,4 +155,8 @@ $article-spacer: $section-lg-spacer !default;
 .article-nav {
   margin-left: -$nav-link-padding-x;
   margin-right: -$nav-link-padding-x;
+}
+
+.fullHeight {
+  height: 65vh;
 }

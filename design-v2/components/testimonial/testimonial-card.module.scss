@@ -1,0 +1,30 @@
+.content {
+  .logo {
+    padding-bottom: 0.8rem;
+
+    &-sm {
+      max-height: 4rem;
+    }
+  }
+  .divider {
+    border-bottom: 3px solid var(--primary);
+  }
+  .citation {
+    padding-top: 0.8rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+  .author {
+    margin-bottom: 0;
+  }
+  .extra {
+    color: var(--gray-600);
+  }
+}
+
+.read-more {
+  margin-left: 0.2rem;
+  cursor: pointer;
+  color: var(--primary);
+  text-decoration: underline;
+}
