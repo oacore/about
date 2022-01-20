@@ -102,15 +102,15 @@ services:
   children:
     - title: Access to raw data
       subtitle: Create new and innovative solutions.
-      imgUrl: /images/services/server-status.png
+      imgUrl: /images/services/server-status.svg
       action: /services#access-to-raw-data
     - title: Content discovery
       subtitle: Find relevant research and make your research more visible.
-      imgUrl: /images/services/search-engine.png
+      imgUrl: /images/services/search-engine.svg
       action: /services#content-discovery
     - title: Managing content
       subtitle: Manage how your research content is exposed to the world.
-      imgUrl: /images/services/time-management.png
+      imgUrl: /images/services/time-management.svg
       action: /services#managing-content
 partnerProjects:
   title: Partner projects
