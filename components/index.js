@@ -37,7 +37,7 @@ export { default as Accordion } from './accordion'
 export { default as Collapsed } from './collapsed'
 
 // Forms
-export * from './cookies'
+export { default as CookiesForm } from './cookies'
 
 // Dynamic (carousels, switchers)
 export { default as Switcher, SwitcherItem } from './switcher'

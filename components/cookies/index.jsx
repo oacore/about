@@ -6,6 +6,9 @@ import ButtonToolbar from '../button-toolbar'
 import Markdown from '../markdown'
 import styles from './cookies.module.scss'
 
+import getKeyByValue from 'helpers'
+
+// TODO: Create new component in design library
 const CookiesForm = ({
   title,
   items,
@@ -14,7 +17,7 @@ const CookiesForm = ({
   itemDescriptionTitle = 'What are these?',
   submitCaption = 'Apply',
   optionalActions = null,
-  method = 'post',
+  onSubmit,
   ...formProps
 }) => {
   const [checkBoxes, setCheckBoxes] = useState(
@@ -35,18 +38,24 @@ const CookiesForm = ({
   }, [])
 
   if (!isMounted) return null
-
   return (
     <Card
       className={`card-body ${styles.cookiesForm} ${className}`}
-      method={method}
       tag={Form}
       {...formProps}
     >
       <CardTitle tag="h4">{title}</CardTitle>
       {items.map(
-        ({ id: cookieId, name, title: label, description, required }) => {
-          const isDisabled = required && checkBoxes[name]
+        ({
+          id: cookieId,
+          name,
+          title: label,
+          description,
+          required,
+          value,
+        }) => {
+          const isDisabled = required
+
           return (
             <FormGroup key={`${name}`}>
               {(!checkBoxes[name] || isDisabled) && (
@@ -63,9 +72,9 @@ const CookiesForm = ({
                 name={name}
                 label={label}
                 value="on"
+                disabled={isDisabled}
                 onChange={handleCheckboxChange}
-                disabled={required && checkBoxes[name]}
-                defaultChecked={checkBoxes[name]}
+                defaultChecked={value}
               />
               <details className={styles.cookiesFormDetails}>
                 <summary>{itemDescriptionTitle}</summary>
@@ -76,7 +85,13 @@ const CookiesForm = ({
         }
       )}
       <ButtonToolbar className="cookies-form-actions">
-        <Button color="primary">{submitCaption}</Button>
+        <Button
+          color="primary"
+          onClick={onSubmit}
+          id={getKeyByValue(checkBoxes, true)}
+        >
+          {submitCaption}
+        </Button>
         {optionalActions}
       </ButtonToolbar>
     </Card>
