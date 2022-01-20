@@ -75,6 +75,7 @@ const nextConfig = {
       'data': path.resolve(__dirname, 'data'),
       'content': path.resolve(__dirname, 'content'),
       'hooks': path.resolve(__dirname, 'hooks'),
+      'helpers': path.resolve(__dirname, 'helpers'),
       'api': path.resolve(__dirname, 'api'),
       'main': path.join(__dirname, 'main'),
       'store': path.join(__dirname, 'store'),

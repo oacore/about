@@ -1,14 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { Header } from '@oacore/design'
+import { Header, Cookies as CookiesPopup } from '@oacore/design'
 
 import { useAnalytics } from '../hooks'
-import { useCookieHandler, useCookie } from '../components/cookies/hooks'
 
-import { Layout, CookiesPopup } from 'components'
+import { Layout } from 'components'
 import { patchStats } from 'components/utils'
 import config from 'data/core.yml'
-import { settings as cookieSettingsContext } from 'data/cookies.yml'
 
 const searchConfig = {
   action: '/search',
@@ -43,19 +41,8 @@ const Main = ({ children }) => {
     },
   })
 
-  const cookiesAccepted = useCookie('cookies_accepted')
-  const cookieHandler = useCookieHandler()
-
   return (
     <>
-      <CookiesPopup
-        action="/cookies"
-        method="post"
-        title={cookieSettingsContext.popupTitle}
-        onSubmit={cookieHandler}
-        submitCaption={cookieSettingsContext.acceptCaption}
-        hidden={router.route === '/cookies' || cookiesAccepted}
-      />
       <Layout
         title={config.name}
         description={config.description}
@@ -66,6 +53,7 @@ const Main = ({ children }) => {
       >
         {children}
       </Layout>
+      <CookiesPopup />
     </>
   )
 }

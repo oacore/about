@@ -7,14 +7,14 @@ description-title: What are these?
 
 cookies:
   - id: essential
-    name: cookies_accepted
+    name: essential_cookies_allowed
     default: true
     required: true
     title: Essential cookies
     description: |
       **Required** to make the site work, and to save the options you make here
   - id: analytics
-    name: analytics_allowed
+    name: analytics_cookies_allowed
     default: true
     required: false
     title: Analytics
@@ -48,13 +48,13 @@ cookies-policy:
     list-title: Our essential cookies
     list:
       -
-        name: cookies_accepted
+        name: essential_cookies_allowed
         purpose: |
           This helps us to know your cookies preferences and do not show pop-up
           window on each visit to website
         expires: 1 year
       -
-        name: analytics_allowed
+        name: analytics_cookies_allowed
         purpose: |
           This helps us to know you preferences in analytics and tracking
           user behaviour
