@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { Header, Cookies as CookiesPopup } from '@oacore/design'
 
@@ -16,12 +16,7 @@ const searchConfig = {
 
 const Main = ({ children }) => {
   const router = useRouter()
-  const [showSearchBar, setShowSearchBar] = useState(router.route !== '/')
 
-  useEffect(() => {
-    const show = router.route !== '/'
-    if (showSearchBar !== show) setShowSearchBar(show)
-  }, [router.route])
   const handleNavigation = useCallback((url) => router.push(url), [router])
 
   useAnalytics()
