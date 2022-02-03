@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .testimonials-section {
   @include section-skew-left($gray-200);
@@ -6,23 +6,47 @@
   .testimonial + .testimonial {
     margin-top: $spacer;
   }
+  //1280 PX - new container
+  //TODO: Once new container will use all components -  change in main file
+  @include media-breakpoint-up('lg') {
+    grid-template-columns: 1fr 1280px 1fr;
+  }
 }
 
 .testimonial-section-illustration {
+  display: flex;
+
+  @include media-breakpoint-down('sm') {
+    flex-wrap: wrap;
+  }
+
+  &-content {
+    flex: 1;
+    @include media-breakpoint-down('sm') {
+      flex: auto;
+    }
+  }
+
+  &-container {
+    flex: 1;
+    @include media-breakpoint-up('md') {
+      order: 1;
+    }
+    @include media-breakpoint-down('sm') {
+      flex: auto;
+    }
+  }
+}
+
+.testimonial-section-illustration .testimonial-section-illustration-img {
   display: block;
   width: 100%;
   height: auto;
   margin: 0 0 $spacer;
 }
 
-.testimonial-section-illustration-container {
-  @include media-breakpoint-up('md') {
-    order: 1;
-  }
-}
-
 .testimonial-section-organizations {
-  @include make-row();
+  display: flex;
 }
 
 .testimonial-section-organizations-item {
