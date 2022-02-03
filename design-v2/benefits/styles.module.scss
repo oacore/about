@@ -140,6 +140,8 @@ $spacer: 1.5rem;
   .stats {
     display: flex;
     justify-content: space-around;
+    max-width: var(--main-content-max-width);
+    margin: 0 auto;
   }
   .title {
     text-align: center;
