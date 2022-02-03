@@ -1,0 +1,43 @@
+@import '../../components/bootstrap/core';
+
+.container {
+  display: flex;
+  margin-bottom: 5rem;
+  align-items: center;
+
+  .text-container {
+    margin-left: 4rem;
+    margin-right: 0;
+  }
+
+  &:nth-child(odd) {
+    flex-direction: row-reverse;
+    .text-container {
+      margin-left: 0;
+      margin-right: 4rem;
+    }
+  }
+
+  @include media-breakpoint-down('sm') {
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    text-align: center;
+    .text-container {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.highlight-section {
+  margin: 0 auto;
+  &-picture {
+    max-height: 400px;
+    width: auto;
+    height: auto;
+
+    @include media-breakpoint-down('sm') {
+      width: 100%;
+    }
+  }
+}
