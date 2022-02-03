@@ -50,4 +50,4 @@ export { default as Blog } from './blog'
 
 // Sections
 export { default as Hero } from './hero'
-export { default as HighlightSection } from './highlight-section'
+export { default as HighlightSection } from '../design-v2/highlight-section'

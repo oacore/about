@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Row, Col } from 'reactstrap'
+import classNames from '@oacore/design/lib/utils/class-names'
 
 import Markdown from '../markdown'
 import { Button } from '../elements'
@@ -108,7 +109,7 @@ const TestimonialsSection = ({
 
   return (
     <Section
-      className={`${styles.testimonialsSection} ${className}`}
+      className={classNames.use(styles.testimonialsSection).join(className)}
       {...restProps}
     >
       <Heading>{title}</Heading>
@@ -149,36 +150,35 @@ const EndorsementsSection = ({
   const Heading = `h${level}`
 
   return (
-    <Section id={id} {...restProps}>
-      <Heading>{title}</Heading>
-      <Row>
-        <Col md="4" className={styles.testimonialSectionIllustrationContainer}>
+    <div id={id} {...restProps}>
+      <div className={styles.testimonialSectionIllustration}>
+        <Content className={styles.testimonialSectionIllustrationContent}>
+          <Heading>{title}</Heading>
+          <Markdown>{description}</Markdown>
+          <p className="font-weight-bold">{action.title}</p>
+          <Button color="primary" href={action.url}>
+            {action.name}
+          </Button>
+        </Content>
+
+        <div className={styles.testimonialSectionIllustrationContainer}>
           {illustration && (
             <img
-              className={styles.testimonialSectionIllustration}
+              className={styles.testimonialSectionIllustrationImg}
               src={`/images/illustrations/${illustration}`}
               alt=""
               aria-hidden
             />
           )}
-        </Col>
-        <Col md="8">
-          <Content>
-            <Markdown>{description}</Markdown>
-            <p className="font-weight-bold">{action.title}</p>
-            <Button color="primary" href={action.url}>
-              {action.name}
-            </Button>
-          </Content>
-        </Col>
-      </Row>
+        </div>
+      </div>
 
       <TestimonialsSection
         title={subtitle}
         items={organizations}
         level={level + 1}
       />
-    </Section>
+    </div>
   )
 }
 

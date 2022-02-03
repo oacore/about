@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { TextField, Button } from '@oacore/design'
 
-import styles from './benefits.module.scss'
+import styles from './styles.module.scss'
 
 import fetchDataProviderAdd from 'api/data-providers'
 import { useInput } from 'hooks'

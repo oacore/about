@@ -1,3 +1,2 @@
-import Section from './section'
-
-export default Section
+export { default as Section } from './section'
+export { default as Layout } from './layout'
