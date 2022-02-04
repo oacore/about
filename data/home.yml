@@ -25,6 +25,7 @@ slides:
 search-placeholder: Search {{totalArticlesCount}} papers around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
+  hidden: true
   children:
   - title: Global aggregator
     description: We serve the global network of open access [repositories and journals](~benefits)
