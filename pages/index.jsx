@@ -85,7 +85,7 @@ const IndexPage = () => (
         ))}
       </Carousel>
       <Section>
-        <h2>{page.features.title}</h2>
+        <h2 hidden={page.features.hidden}>{page.features.title}</h2>
         <KeyFeatureList>
           {page.features.children.map(
             ({ title, description, picture, status }) => (
