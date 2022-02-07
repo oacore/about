@@ -1,13 +1,15 @@
 title: CORE Services
 description: |
-  CORE harvests, maintains, enriches and makes available metadata and full text
-  content - typically a PDF - from many Open Access journals and repositories.
-  We provide powerful services based on our huge dataset.
-
+ We deliver services for a wide range of audiences,
+ including researchers, libraries, universities, innovative
+ companies and funders. Process and analyse the largest structured
+ collection of open research with their full texts, manage your research
+ papers, make them more discoverable, and comply with funder mandates.
+ All this you can do with CORE Services.
+hero: /images/heros/services.svg
 headline:
   - Learn more about our
   - powerful services
-
 
 sections:
 -
@@ -20,40 +22,62 @@ sections:
       Why we need raw data access to research papers
       and how CORE provides it
 
-  sections:
+  features:
   -
     id: api
-    title: API
-    short-description: Direct access to CORE data
-    description: |
-      A unique and free API providing real-time machine access to metadata and full texts of research papers in CORE. One API for accessing data across all data providers. Perfect for developing and running innovative applications that need global access to research papers.
-    action:
-      caption: Learn more about the CORE API
-      url: ~services/api
     logo: /images/services/api.svg
-    screenshot: /images/screenshots/api.png
+    title: CORE API
+    description: |
+      A unique and free API providing real-time machine access
+      to metadata and full texts of research papers in CORE.
+    recommender:
+    -
+      title: Companies
+    -
+      title: Academic institutions
+    -
+      title: Researchers
+    -
+      title: Funders
+    action:
+      caption: Learn more
+      url: ~services/api
+
   -
     id: dataset
-    title: Dataset
-    short-description: Download data in bulk
-    description: |
-      Download all of CORE data and run processes in your own infrastructure. One data set with a harmonised format for accessing data across all of our data providers. Perfect for prototyping new methods, data analysis and text mining.
-    action:
-      caption: Learn more about the CORE Dataset
-      url: ~services/dataset
     logo: /images/services/dataset.svg
-    screenshot: /images/screenshots/dataset.png
+    title: CORE Dataset
+    description: |
+     Download all of CORE
+     data and run processes in your own infrastructure.
+     Perfect for prototyping new methods, data analysis and text mining.
+    recommender:
+    -
+      title: Companies
+    -
+      title: Academic institutions
+    -
+      title: Researchers
+    -
+      title: Funders
+    action:
+      caption: Learn more
+      url: ~services/api
+
   -
     id: fastsync
     title: FastSync
-    short-description: Stay in sync with CORE
-    description: |
-      Keep an always up to date copy of all CORE data in your infrastructure. FastSync is our premium service offering fast enterprise incremental access to CORE for both commercial and non-commercial purposes. Ideal for all types of businesses, from  start-ups to large enterprises.
-    action:
-      caption: Learn more about the CORE FastSync
-      url: ~services/fastsync
     logo: /images/services/fastsync.svg
-    screenshot: /images/screenshots/fastsync.png
+    description: |
+      Keep an always up to date copy of all CORE data in your
+      infrastructure.
+    recommender:
+    -
+      title: Companies
+    action:
+      caption: Learn more
+      url: ~services/fastsync
+
 -
   id: content-discovery
   title: Content discovery
@@ -64,29 +88,40 @@ sections:
       How we aid the discovery of research papers
       and help manage repository content
 
-  sections:
+  features:
   -
     id: recommender
     title: Recommender
-    short-description: Find related content in CORE 
-    description: |
-      The recommender is a plugin for repositories, journal systems and web interfaces to suggest similar articles. Its purpose is to support users in discovering articles of interest from across the network of open access repositories.
-    action:
-      caption: Learn more about the CORE Recommender
-      url: ~services/recommender
     logo: /images/services/recommender.svg
-    screenshot: /images/screenshots/recommender.png
+    short-description: Find related content in CORE
+    description: |
+      The recommender is a plugin for repositories, journal systems
+      and web interfaces to suggest similar articles.
+    recommender:
+    -
+      title: Companies
+    action:
+      caption: Learn more
+      url: ~services/recommender
   -
     id: discovery
     title: Discovery
     short-description: Locate open access versions of paywalled articles
-    description: |
-      CORE Discovery is our new service, available both as a browser extension and a repository plugin, that assists users in finding freely accessible copies of research papers that are often behind a paywall. It currently provides access to millions of full text open access papers from within CORE and other data providers.
-    action:
-      caption: Learn more about the CORE Discovery
-      url: ~services/discovery
     logo: /images/services/discovery.svg
-    screenshot: /images/screenshots/discovery.png
+    description: |
+      Available both as a browser extension and a repository plugin,
+      that assists users in finding freely accessible copies of research
+      papers.
+    recommender:
+    -
+      title: General public
+    -
+      title: Researchers
+    -
+      title: Academic institutions
+    action:
+      caption: Learn more
+      url: ~services/discovery
 -
   id: managing-content
   title: Managing content
@@ -94,28 +129,31 @@ sections:
   -
     id: repository-dashboard
     title: Repository Dashboard
+    logo: /images/services/repository-dashboard.svg
     short-description: Monitor and improve your repository output
     description: |
-      The Repository Dashboard is a free service for our data providers. It
-      provides an online interface offering valuable technical information and
-      statistics to content providers. It is the tool you need to check that
-      your repository is configured correctly to provide maximum visibility to
-      your research outputs.
+     A service for our data providers.
+     It provides an online interface offering valuable technical information and statistics.
+    recommender:
+    -
+      title: Academic institutions
+    -
+      title: Funders
     action:
-      caption: Learn more about the CORE Repository Dashboard
+      caption: Learn more
       url: ~services/repository-dashboard
-    logo: /images/services/repository-dashboard.svg
-    screenshot: /images/screenshots/dashboard-overview.png
   -
     id: repository-edition
     title: Repository Edition
-    short-description: Enhance your repository’s discoverability 
-    description: |
-      Subscription to CORE Repository Edition comes with guaranteed support
-      levels to enable repositories to gain maximum exposure for their content
-      and help ensure compliance with Open Access policies. Also provided is
-      access to an enhanced version of the Repository Dashboard.
-    action:
-      caption: Learn more about the CORE Repository Edition
-      url: ~services/repository-edition
     logo: /images/services/repository-edition.svg
+    short-description: Enhance your repository’s discoverability
+    description: |
+     Provide guaranteed support levels to enable repositories
+     to gain maximum exposure for their content and help ensure
+     compliance with Open Access policies.
+    recommender:
+    -
+      title: Academic institutions
+    action:
+      caption: Learn more
+      url: ~services/repository-edition
