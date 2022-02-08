@@ -153,7 +153,21 @@ testimonials:
     name: Ronin Wu
     role: Research Lead and Head of Research Collaboration, IRIS.ai
     picture: /images/people/Ronin-Wu.jpg
-
+    
+    - &Philippe-Régall
+  id: Philippe-Régall
+  content: |
+    TechDico partnered with CORE to offer to scientific and technical 
+    translators a new valuable translation resource never used before.
+    The outcome is the world’s first multilingual dictionary proposing 
+    translation results including research paper abstract in 280 
+    languages pairs.
+  author:
+    name: Philippe Régall
+    role: CEO, TechDico
+    picture: /images/people/TechDico_Philippe Regall.jpeg
+    
+    
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -445,6 +459,10 @@ organizations:
   id: irus
   name: IRUS
   logo: irus.png
+- &TechDico
+  id: TechDico
+  name: TechDico
+  logo: logo_TechDico.png
 - &opendoar
   id: opendoar
   name: OpenDOAR
@@ -801,6 +819,7 @@ sections:
         - *rioxx
         - *opendoar
         - *irus
+        - *TechDico
         - *coar
         - *bl
         - *flowcite
