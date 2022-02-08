@@ -154,7 +154,7 @@ testimonials:
     role: Research Lead and Head of Research Collaboration, IRIS.ai
     picture: /images/people/Ronin-Wu.jpg
     
-    - &Philippe-Régall
+- &Philippe-Régall
   id: Philippe-Régall
   content: |
     TechDico partnered with CORE to offer to scientific and technical 
