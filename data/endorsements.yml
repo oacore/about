@@ -338,8 +338,8 @@ organizations:
   url: https://the.iris.ai
   logo: iris-ai.png
   testimonial: *ronin-wu
-- &TechDico
-  id: TechDico
+- &tech-dico
+  id: tech-dico
   name: TechDico
   url: https://www.techdico.com/
   logo: logo_TechDico.png
@@ -465,10 +465,6 @@ organizations:
   id: irus
   name: IRUS
   logo: irus.png
-- &TechDico
-  id: TechDico
-  name: TechDico
-  logo: logo_TechDico.png
 - &opendoar
   id: opendoar
   name: OpenDOAR
@@ -825,7 +821,7 @@ sections:
         - *rioxx
         - *opendoar
         - *irus
-        - *TechDico
+        - *tech-dico
         - *coar
         - *bl
         - *flowcite
