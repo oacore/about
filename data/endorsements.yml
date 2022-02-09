@@ -338,6 +338,12 @@ organizations:
   url: https://the.iris.ai
   logo: iris-ai.png
   testimonial: *ronin-wu
+- &TechDico
+  id: TechDico
+  name: TechDico
+  url: https://www.techdico.com/
+  logo: logo_TechDico.png
+  testimonial: *Philippe-Régall
 - &research
   id: research-research
   name: ResearchResearch
