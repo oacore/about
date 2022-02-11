@@ -12,7 +12,7 @@ const ServiceGroups = ({ items, className = '', ...restProps }) => (
   >
     {items.map((group) => (
       <Col key={group.id} sm="6" lg="4" tag="li">
-        <ServiceGroupCard title={group.title} items={group.sections} />
+        <ServiceGroupCard title={group.title} items={group.features} />
       </Col>
     ))}
   </Row>

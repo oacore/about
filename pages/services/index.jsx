@@ -32,7 +32,7 @@ const FeaturesSection = ({ description, title, video, features }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(false)
 
   return (
-    <Section className={styles.section}>
+    <Section className={styles.sectionContainer}>
       <div className={styles.sectionHeader}>
         {video && (
           <button

@@ -21,7 +21,6 @@ sections:
     description: >
       Why we need raw data access to research papers
       and how CORE provides it
-
   features:
   -
     id: api
@@ -30,6 +29,7 @@ sections:
     description: |
       A unique and free API providing real-time machine access
       to metadata and full texts of research papers in CORE.
+    short-description: Direct access to CORE data
     recommender:
     -
       title: Companies
@@ -47,6 +47,7 @@ sections:
     id: dataset
     logo: /images/services/dataset.svg
     title: CORE Dataset
+    short-description: Download data in bulk
     description: |
      Download all of CORE
      data and run processes in your own infrastructure.
@@ -62,12 +63,13 @@ sections:
       title: Funders
     action:
       caption: Learn more
-      url: services/api
+      url: services/dataset
 
   -
     id: fastsync
     title: FastSync
     logo: /images/services/fastsync.svg
+    short-description: Stay in sync with CORE
     description: |
       Keep an always up to date copy of all CORE data in your
       infrastructure.
@@ -87,7 +89,6 @@ sections:
     description: >
       How we aid the discovery of research papers
       and help manage repository content
-
   features:
   -
     id: recommender
