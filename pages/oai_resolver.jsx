@@ -1,6 +1,7 @@
 import React from 'react'
 import { Col, Row } from 'reactstrap'
 import Parser from 'html-react-parser'
+import { Link } from '@oacore/design'
 
 import styles from './oai_resolve.module.scss'
 import OAIResolveForm from './oai_resolve_form'
@@ -46,6 +47,15 @@ const oaiResolverPage = () => (
             <span />
           </Col>
         ))}
+      </Row>
+    </Section>
+    <Section id="oai-doc" caption="oai-doc" className="section-wide">
+      <Row>
+        <Col md="12">
+          <Link href="/oai_resolver/doc" target="_blank">
+            Want to find out more about OAI identificator? - See documentation.
+          </Link>
+        </Col>
       </Row>
     </Section>
   </Page>

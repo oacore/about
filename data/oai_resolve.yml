@@ -3,20 +3,22 @@ description: |
   OAI resolver
 
 resolve:
-  title: Resolve a OAI Name
+  title: Resolve an OAI identifier
   picture: /images/oai_resolve/explore.png
 
 sections:
   blocks:
     -
       id: unique-identifiers
-      description: <b>OAIs</b> - unique identifiers used by repositories.
+      description: <b>OAIs</b> is a globally unique identifier used by repositories.
     -
       id: Type-paste
-      description: Type or paste a OAI name into the text box.
+      description: Insert an OAI identifier into the search box.
     -
       id: click-resolve
-      description: Make sure you entered it correctly and click Resolve.
+      description: |
+        Make sure you entered it <a href="https://core.ac.uk/faq#oai-structure" target="_blank">correctly</a>
+        and click Resolve.
     -
       id: page-associated
-      description: You will be taken to a page associated with that OAI name.
+      description: You will be taken to a page associated with that identifier.

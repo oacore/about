@@ -50,6 +50,11 @@
   float: right;
 }
 
+.helperLink {
+  color: var(--form-helper-color);
+  text-decoration: underline;
+}
+
 $grid-breakpoints-md: map.get($grid-breakpoints, 'md');
 $grid-breakpoints-sm: map.get($grid-breakpoints, 'sm');
 
