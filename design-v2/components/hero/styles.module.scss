@@ -1,0 +1,32 @@
+@import 'design-v2/variables';
+
+.hero {
+  &-item {
+    display: flex !important;
+    @media (max-width: $breakpoint-sm) {
+      flex-wrap: wrap-reverse;
+    }
+    &-description {
+      font-size: 1.2rem;
+    }
+    &-img {
+      width: 100%;
+      height: auto;
+      max-height: 20rem;
+      &-big {
+        margin-top: 1rem;
+        max-height: fit-content;
+      }
+      @media (max-width: $breakpoint-sm) {
+        margin-top: 2rem;
+      }
+    }
+  }
+  &-title {
+    line-height: 1.5;
+    @media (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+      line-height: 1.3;
+    }
+  }
+}
