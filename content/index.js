@@ -30,10 +30,7 @@ const processFile = (githubFile) => {
   // See more:
   // - https://nodejs.org/api/all.html#globals_atob_data
   // - https://stackoverflow.com/questions/23097928/node-js-throws-btoa-is-not-defined-error
-  const content =
-    typeof atob == 'function'
-      ? atob(githubFile.content)
-      : Buffer.from(githubFile.content, 'base64').toString()
+  const content = Buffer.from(githubFile.content, 'base64').toString()
 
   // Returning array to make it consistent with directory processing result.
   // It simplifies processing data in batch.

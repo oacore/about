@@ -1,11 +1,9 @@
 import React from 'react'
-import { Carousel, Button, Card } from '@oacore/design/lib'
-import { classNames } from '@oacore/design/lib/utils'
+import { Carousel, Button } from '@oacore/design/lib'
 
 import styles from './index.module.scss'
 
 import {
-  SearchForm,
   Section,
   KeyFeatureList,
   KeyFeature,
@@ -17,47 +15,10 @@ import {
   ServicesList,
   ServiceItem,
   Layout,
+  Hero,
 } from 'design-v2/components'
 import { Page } from 'components'
 import page from 'data/home.yml'
-
-const SlideHeroItem = ({
-  title,
-  image: imgHref,
-  label,
-  description,
-  action,
-  actionLabel,
-}) => (
-  <div className={styles.heroItem}>
-    <Card variant="pure" className={styles.heroItemCard}>
-      <Card.Title tag="h2" className={styles.heroTitle}>
-        {title}
-      </Card.Title>
-      <Card.Description tag="div">
-        {action === 'Search' ? (
-          <SearchForm />
-        ) : (
-          <>
-            {description && (
-              <p className={styles.heroItemDescription}>{description}</p>
-            )}
-            <Button tag="a" variant="contained" href={action}>
-              {actionLabel}
-            </Button>
-          </>
-        )}
-      </Card.Description>
-    </Card>
-    <img
-      src={imgHref}
-      alt={label}
-      className={classNames.use(styles.heroItemImg, {
-        [styles.heroItemImgBig]: action === 'Search',
-      })}
-    />
-  </div>
-)
 
 const PartnerProjectsList = () => (
   <ul className={styles.sectionPartnersList}>
@@ -81,7 +42,7 @@ const IndexPage = () => (
     <Layout>
       <Carousel draggable={false} useArrows={false} slidesToShow={1} infinite>
         {page.slides.children.map((slide) => (
-          <SlideHeroItem key={slide.title} {...slide} />
+          <Hero key={slide.title} {...slide} />
         ))}
       </Carousel>
       <Section>
