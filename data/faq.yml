@@ -263,6 +263,13 @@ sections:
             <a href='https://www.ietf.org/rfc/rfc2396.txt?number=2396'>URI (Uniform Resource Identifier)</a> syntax.
             For more information about how OAI Identifiers are formed, visit 
             <a href='http://www.openarchives.org/OAI/2.0/guidelines-oai-identifier.htm'>Specification and XML Schema for the OAI Identifier Format</a>.
+        - slug: oai-not-resolve
+          question: |
+            An OAI identifier is registered but does not resolve.
+          answer: |        
+            Reasons:<br> 
+            -The item has not been harvested by CORE yet <br/> 
+            -The repository is not yet registered as a CORE data provider. Become a <a href='https://core.ac.uk/benefits' target='_blank'>provider</a>        
         - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
           question: |
             How difficult is it to satisfy the CORE harvesting recommendations?
