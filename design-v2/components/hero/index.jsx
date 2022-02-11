@@ -12,8 +12,9 @@ const Hero = ({
   description,
   action,
   actionLabel,
+  className,
 }) => (
-  <div className={styles.heroItem}>
+  <div className={classNames.use(styles.heroItem).join(className)}>
     <Card variant="pure" className={styles.heroItemCard}>
       <Card.Title tag="h2" className={styles.heroTitle}>
         {title}
@@ -35,13 +36,15 @@ const Hero = ({
         )}
       </Card.Description>
     </Card>
-    <img
-      src={imgHref}
-      alt={label}
-      className={classNames.use(styles.heroItemImg, {
-        [styles.heroItemImgBig]: action === 'Search',
-      })}
-    />
+    <div className={styles.heroItemImgContainer}>
+      <img
+        src={imgHref}
+        alt={label}
+        className={classNames.use(styles.heroItemImg, {
+          [styles.heroItemImgBig]: action === 'Search',
+        })}
+      />
+    </div>
   </div>
 )
 

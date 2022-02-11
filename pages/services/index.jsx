@@ -85,15 +85,17 @@ const ServicesPage = () => (
         title={servicesData.title}
         description={servicesData.description}
       />
-      {servicesData.sections.map((item) => (
-        <FeaturesSection
-          id={item.id}
-          description={item.description}
-          title={item.title}
-          video={item.video}
-          features={item.features}
-        />
-      ))}
+      <div className={styles.wrapper}>
+        {servicesData.sections.map((item) => (
+          <FeaturesSection
+            id={item.id}
+            description={item.description}
+            title={item.title}
+            video={item.video}
+            features={item.features}
+          />
+        ))}
+      </div>
     </Layout>
   </Page>
 )

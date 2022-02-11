@@ -2,15 +2,30 @@
 
 .hero {
   &-item {
-    display: flex !important;
+    display: flex;
     @media (max-width: $breakpoint-sm) {
       flex-wrap: wrap-reverse;
     }
     &-description {
       font-size: 1.2rem;
     }
+
+    &-card {
+      flex: 1;
+      @media (max-width: $breakpoint-sm) {
+        flex: auto;
+      }
+    }
     &-img {
-      width: 100%;
+      &-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        @media (max-width: $breakpoint-sm) {
+          flex: auto;
+          justify-content: center;
+        }
+      }
       height: auto;
       max-height: 20rem;
       &-big {
