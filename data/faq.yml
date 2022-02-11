@@ -239,19 +239,30 @@ sections:
             technical support to you.
         - slug: oai-about
           question: |
-            What is OAI identifier?
+            What is an OAI Identifier?
           answer: |
-            An item is a constituent of a repository from which metadata about a resource can be disseminated.
-            An item is conceptually a container that stores or dynamically generates metadata about a single resource
-            in multiple formats, each of which can be harvested as records via the OAI-PMH. Each item has an identifier that is
-            unique within the scope of the repository of which it is a constituent.
-        - slug: oai-structure
-          question: |
-            What structure of OAI identifier?
-          answer: |
-            Example: <b>oai:oro.open.ac.uk:33975</b> <br/>
-            Description: <b>prefix:repository:ID in repository</b> <br/>
-            The identifier must have the prefix <b>oai</b> separated from the main part of the identifier by a colon.
+            A more technical answer for <a href='https://support.core.ac.uk'>https://support.core.ac.uk</a> <br/>
+            Target audience: repository managers, Technical staff. <br/><br/>
+            An OAI Identifier is a unique identifier which distinguishes items in a repository. 
+            It <a href ='http://www.openarchives.org/OAI/openarchivesprotocol.html#UniqueIdentifier'>“unambiguously identifies an 
+            item within a repository; the unique identifier is used in OAI-PMH requests for extracting metadata 
+            from the item”</a> <br/><br/>
+            The Identifier contains 3 parts, split using: <br/>
+            “oai“ : Unique identifier oai. This describes the type of the identifier <br/>
+            “website address”: Where the item is hosted. <br/>
+            “Unique identifier”: An identifier of the object <br/><br/>
+
+            For example:<br/>
+            <i>oai:eprints.gla.ac.uk:129357<br/>
+            oai:digitalcommons.odu.edu:oaweek-1012<br/>
+            oai:oro.open.ac.uk:75049 <br/>
+            oai:dspace.stir.ac.uk:1893/24654</i><br/><br/>
+
+            Not all OAI Identifiers look like this, but they are non-standard and their use is discouraged.
+            OAI Identifiers must follow the 
+            <a href='https://www.ietf.org/rfc/rfc2396.txt?number=2396'>URI (Uniform Resource Identifier)</a> syntax.
+            For more information about how OAI Identifiers are formed, visit 
+            <a href='http://www.openarchives.org/OAI/2.0/guidelines-oai-identifier.htm'>Specification and XML Schema for the OAI Identifier Format</a>.
         - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
           question: |
             How difficult is it to satisfy the CORE harvesting recommendations?

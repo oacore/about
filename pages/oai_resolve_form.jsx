@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
 import { TextField, Button, Link, Select } from '@oacore/design'
@@ -18,6 +19,7 @@ const validateIdentifier = (string) => {
 const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
   const router = useRouter()
   const identifier = router.route.substring(1)
+  const { error } = router.query
 
   const {
     value: OAIidentifier,
@@ -52,11 +54,18 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
 
   const msgErrorRoute = (
     <>
-      The OAI identifier is not found.{' '}
-      <Link href="https://core.ac.uk/faq#oai-structure" target="_blank">
-        Here
-      </Link>{' '}
-      you can check all requirements.
+      <span>
+        We can not find this OAI identifier.
+        <br />
+      </span>
+      <span>
+        If you believe that this OAI identifier is registered with a repository,
+        check the reasons why this might be the case in our{'  '}
+        <Link href="https://core.ac.uk/faq#oai-structure" target="_blank">
+          FAQ
+        </Link>
+        .
+      </span>
     </>
   )
 
@@ -99,7 +108,11 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
           {...bindOAIidentifier}
         />
         <span className={styles.helper}>
-          {isOAInotValid ? msgErrorFormat : msgHelper}
+          {isOAInotValid
+            ? msgErrorFormat
+            : error === '404'
+            ? msgErrorRoute
+            : msgHelper}
         </span>
 
         <div className={styles.submitSection}>
