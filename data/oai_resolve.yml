@@ -17,7 +17,7 @@ sections:
     -
       id: click-resolve
       description: |
-        Make sure you entered it <a href="https://core.ac.uk/faq#oai-structure" target="_blank">correctly</a>
+        Make sure you entered it <a href="https://core.ac.uk/faq#oai-about" target="_blank">correctly</a>
         and click Resolve.
     -
       id: page-associated
