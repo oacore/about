@@ -61,7 +61,7 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
       <span>
         If you believe that this OAI identifier is registered with a repository,
         check the reasons why this might be the case in our{'  '}
-        <Link href="https://core.ac.uk/faq#oai-structure" target="_blank">
+        <Link href="https://core.ac.uk/faq#oai-about" target="_blank">
           FAQ
         </Link>
         .
@@ -72,7 +72,7 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
   const msgErrorFormat = (
     <>
       The OAI format is wrong.{' '}
-      <Link href="https://core.ac.uk/faq#oai-structure" target="_blank">
+      <Link href="https://core.ac.uk/faq#oai-about" target="_blank">
         Here
       </Link>{' '}
       you can check all requirements.
