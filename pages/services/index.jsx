@@ -88,6 +88,7 @@ const ServicesPage = () => (
       <div className={styles.wrapper}>
         {servicesData.sections.map((item) => (
           <FeaturesSection
+            key={item.id}
             id={item.id}
             description={item.description}
             title={item.title}
