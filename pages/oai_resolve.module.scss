@@ -19,8 +19,22 @@
   margin-top: 1rem;
 }
 
+.select {
+  z-index: 1;
+}
+
+.section-block {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#sections .row {
+  margin-right: -40px;
+  margin-left: -40px;
+}
+
 .section-block span {
-  width: 90%;
+  width: 74%;
   height: 2px;
   background-color: #b75400;
   content: '';
@@ -54,13 +68,23 @@
   font-size: var(--form-helper-font-size);
   color: var(--form-helper-color);
   padding-right: var(--form-control-padding-x);
-  padding-left: var(--form-control-padding-x);
+  padding-top: var(--form-control-padding-y);
   margin-top: calc(1.5rem - 1em);
+  display: block;
 }
 
 .helperLink {
   color: var(--form-helper-color);
   text-decoration: underline;
+}
+
+#set-oai-resolve {
+  padding-top: 0;
+}
+
+.col-md-3 {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 $grid-breakpoints-md: map.get($grid-breakpoints, 'md');
