@@ -13,7 +13,7 @@ const FeatureBox = ({ iconSrc, title, description, recommender, action }) => (
     <Card.Title tag="h5">{title}</Card.Title>
     <Card.Description>{description}</Card.Description>
     <Card.Footer className={styles.cardFooter}>
-      <span className={styles.cardFooterCaption}>Recommender for:</span>
+      <span className={styles.cardFooterCaption}>Recommended for:</span>
       <div className={styles.cardRecommender}>
         {recommender.map((item) => (
           <div key={item.title} className={styles.item}>
