@@ -75,8 +75,7 @@ const AboutPage = ({ data }) => (
             title={data.mission.video.title}
             tag="p"
           />
-
-          <Markdown>{data.mission.body}</Markdown>
+          <Markdown className={styles.mission}>{data.mission.body}</Markdown>
         </Col>
 
         <Col

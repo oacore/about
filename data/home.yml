@@ -22,7 +22,7 @@ slides:
   #   label: OAI
   #   action: /services
   #   actionLabel: Resolve
-search-placeholder: Search {{totalArticlesCount}} papers around the world
+search-placeholder: Search {{totalArticlesCount}} from papers around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   hidden: true
