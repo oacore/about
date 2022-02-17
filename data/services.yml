@@ -100,7 +100,11 @@ sections:
       and web interfaces to suggest similar articles.
     recommender:
     -
-      title: Companies
+      title: Repositories
+    -
+      title: Publishers
+    -
+      title: Academic institutions
     action:
       caption: Learn more
       url: services/recommender
