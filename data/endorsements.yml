@@ -167,6 +167,18 @@ testimonials:
     role: CEO, TechDico
     picture: /images/people/TechDico_PhilippeRegall.jpg
     
+- &Chorst-Klaus
+  id: Chorst-Klaus
+  content: |
+    The CORE is our strategic partner. We are using CORE services
+    to expand the data reach of our plagiarism detection service and 
+    to enrich our service with a vast amount of metadata. We seek 
+    to provide high-end service to our customers, and CORE greatly 
+    helps us with that.
+  author:
+    name: Chorst Klaus
+    role: OXISCO founder
+    picture: /images/people/Founder Chorst Klaus.png
     
 - &claus-wolf
   id: claus-wolf
@@ -344,6 +356,12 @@ organizations:
   url: https://www.techdico.com/
   logo: logo_TechDico.png
   testimonial: *Philippe-Régall
+- &oxisco
+  id: oxisco
+  name: OXISCO
+  url: https://www.oxsico.com/
+  logo: OXSICO-Logo.jpg
+  testimonial: *Chorst-Klaus
 - &research
   id: research-research
   name: ResearchResearch
@@ -822,6 +840,7 @@ sections:
         - *opendoar
         - *irus
         - *tech-dico
+        - *oxisco
         - *coar
         - *bl
         - *flowcite
