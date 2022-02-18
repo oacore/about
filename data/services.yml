@@ -41,7 +41,7 @@ sections:
       title: Funders
     action:
       caption: Learn more
-      url: ~services/api
+      url: services/api
 
   -
     id: dataset

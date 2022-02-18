@@ -57,8 +57,8 @@ const AddDataProviderForm = React.forwardRef(({ onSubmit }, ref) => {
           id={elemDataProviderUrl}
           type="url"
           name={elemDataProviderUrl}
-          label="Data provider URL"
-          placeholder="For example, https://oro.open.ac.uk"
+          label="OAI base URL"
+          placeholder="For example, http://example.com/cgi/oai2"
           value={uri}
           helper={isIsDataProviderAddActive && message.helper}
           variant={(isIsDataProviderAddActive && message.variant) || 'normal'}
