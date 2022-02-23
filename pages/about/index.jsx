@@ -64,10 +64,12 @@ const AboutPage = ({ data }) => (
     nav
   >
     <h1>{data.meta.headline}</h1>
-
-    <Section id="our-mission" caption={data.mission.shortTitle} tag="div">
+    <Section id="core-mission" tag="div">
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
+          <h2>{data.core.title}</h2>
+
+          <Markdown className="mb-4">{data.core.description}</Markdown>
           <h2>{data.mission.title}</h2>
 
           <Video
@@ -77,7 +79,6 @@ const AboutPage = ({ data }) => (
           />
           <Markdown className={styles.mission}>{data.mission.body}</Markdown>
         </Col>
-
         <Col
           xs="12"
           md="5"
@@ -85,7 +86,7 @@ const AboutPage = ({ data }) => (
           className="d-none d-md-block mt-3 mt-sm-0"
           tag="aside"
         >
-          <h4 className="mt-md-3">{data.blog.title}</h4>
+          <h4 className="md-3">{data.blog.title}</h4>
           <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
           <ButtonToolbar align="center">
             <Button href="~blog" className="mt-3" color="primary" outline>
@@ -94,6 +95,10 @@ const AboutPage = ({ data }) => (
           </ButtonToolbar>
         </Col>
       </Row>
+    </Section>
+
+    <Section id="our-mission" caption={data.mission.shortTitle} tag="div">
+      <Row />
     </Section>
 
     <RelatedContentSection
