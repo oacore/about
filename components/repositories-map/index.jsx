@@ -44,18 +44,18 @@ class RepositoriesMap extends Component {
           <a href="https://www.openstreetmap.org">OpenStreetMap</a> under
           <a href="https://creativecommons.org/licenses/by-sa/2.0">CC-BY-SA</a>
         `,
-        minZoom: 2,
+        minZoom: 1,
         maxZoom: 12,
       }
     )
-    const centerPosition = new L.LatLng(52.04, 0.76) // Milton Keynes position
+    const centerPosition = new L.LatLng(55.04, 0.76) // Milton Keynes position
 
     this.map = L.map(this.mapContainer, {
       center: centerPosition,
-      zoom: 3,
+      zoom: 1,
       maxBounds: [
-        [-90, -180],
-        [90, 180],
+        [-70, -180],
+        [70, 180],
       ],
       layers: [coverLayer],
       scrollWheelZoom: false,
