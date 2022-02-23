@@ -67,7 +67,9 @@ const AboutPage = ({ data }) => (
     <Section id="core-mission" tag="div">
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
-          <Markdown className="mb-4">{data.meta.description}</Markdown>
+          <h2>{data.core.title}</h2>
+
+          <Markdown className="mb-4">{data.core.description}</Markdown>
           <h2>{data.mission.title}</h2>
 
           <Video
