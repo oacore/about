@@ -24,6 +24,7 @@ const nextConfig = {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
   assetPrefix: isProd ? 'https://core.ac.uk' : '',
+  dynamicAssetPrefix: true,
   webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
