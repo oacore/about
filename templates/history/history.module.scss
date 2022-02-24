@@ -21,15 +21,13 @@
 }
 
 .blobs-background {
-  background: url('assets/side-curve-left.svg') top left / contain,
-    url('assets/side-curve-right.svg') top right / contain;
-  background-repeat: no-repeat;
+  background: no-repeat url('assets/side-curve-left.svg') top left / contain,
+    no-repeat url('assets/side-curve-right.svg') top right / contain;
 }
 
 .blobs-background-homepage {
-  background: url('assets/side-curve-left.svg') top left / 4.5%,
-    url('assets/side-curve-right.svg') top right / 5.4%;
-  background-repeat: no-repeat;
+  background: no-repeat url('assets/side-curve-left.svg') top left / 4.5%,
+    no-repeat url('assets/side-curve-right.svg') top right / 5.4%;
 }
 
 .link-logo:link,
