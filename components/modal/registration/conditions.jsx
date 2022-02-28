@@ -3,6 +3,7 @@ import { Modal, Button, Link } from '@oacore/design/lib'
 
 import styles from './styles.module.scss'
 
+import { Checkbox } from 'components/checkbox'
 import { observe, useStore } from 'store'
 
 const ModalConditions = observe(() => {
@@ -20,13 +21,15 @@ const ModalConditions = observe(() => {
 
   return (
     <Modal hideManually aria-label="conditions-modal">
-      <h6>Do you agree with our Terms and Conditions?</h6>
+      <h6>Just one more thing!</h6>
       <main>
-        Please view our <Link href="/terms">Terms and Conditions</Link> and
-        <Link href="/privacy"> Privacy notice</Link>. These documents are
-        designed to inform you of your rights and obligations when using the
-        CORE service.
+        Please read and agree to the CORE
+        <Link href="/terms">Terms and Conditions</Link> and
+        <Link href="/privacy"> privacy notice</Link>. The T&Cs and privacy
+        notice are designed to inform you of your rights and obligations when
+        using the CORE service.
       </main>
+      {Checkbox()}
       <footer className={styles.buttonGroup}>
         <Button variant="text" onClick={onCloseModal}>
           Decline & Finish
