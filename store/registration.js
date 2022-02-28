@@ -15,7 +15,7 @@ class Registration {
 
   isModalFormActive = false
 
-  isModalConditionsActive = true
+  isModalConditionsActive = false
 
   isModalSuccessActive = false
 

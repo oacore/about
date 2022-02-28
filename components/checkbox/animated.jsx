@@ -14,6 +14,7 @@ const Checkbox = () => {
   const checkboxAnimationRef = useSpringRef()
   const checkboxAnimationStyle = useSpring({
     backgroundColor: isChecked ? '#b75400' : '#fff',
+    borderColor: isChecked ? '#b75400' : '#757575',
     config: config.gentle,
     ref: checkboxAnimationRef,
   })
@@ -62,8 +63,10 @@ const Checkbox = () => {
           strokeDashoffset={checkmarkAnimationStyle.x}
         />
       </animated.svg>
-      I want to receive information about the CORE API and related CORE products
-      and services. You may unsubscribe at any time.
+      <div className={styles.label}>
+        I want to receive information about the CORE API and related CORE
+        products and services. You may unsubscribe at any time.
+      </div>
     </label>
   )
 }
