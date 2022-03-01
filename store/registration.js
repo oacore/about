@@ -11,6 +11,7 @@ class Registration {
     accountType: 'personal',
     email: '',
     productType: '',
+    agreeNewsletter: false,
   }
 
   isModalFormActive = false
@@ -97,6 +98,7 @@ class Registration {
       accountType: 'personal',
       email: '',
       productType: '',
+      agreeNewsletter: false,
     }
     this.isModalFormActive = false
     this.isModalConditionsActive = false

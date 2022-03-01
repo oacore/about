@@ -9,7 +9,7 @@ import {
 
 import styles from './styles.module.scss'
 
-const Checkbox = () => {
+const Checkbox = ({ id, labelText, setCheckbox }) => {
   const [isChecked, setIsChecked] = useState(false)
   const checkboxAnimationRef = useSpringRef()
   const checkboxAnimationStyle = useSpring({
@@ -37,11 +37,13 @@ const Checkbox = () => {
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={styles.agreeEmail}>
+    <label className={styles.labelBox}>
       <input
+        id={id}
         type="checkbox"
         onChange={() => {
           setIsChecked(!isChecked)
+          setCheckbox(!isChecked)
         }}
         className={styles.disabled}
       />
@@ -63,10 +65,7 @@ const Checkbox = () => {
           strokeDashoffset={checkmarkAnimationStyle.x}
         />
       </animated.svg>
-      <div className={styles.label}>
-        I want to receive information about the CORE API and related CORE
-        products and services. You may unsubscribe at any time.
-      </div>
+      <div className={styles.label}>{labelText}</div>
     </label>
   )
 }
