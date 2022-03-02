@@ -1,0 +1,35 @@
+@use 'sass:math';
+
+@import 'components/bootstrap/core';
+
+.label-box {
+  margin-top: 24px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.0016em;
+  text-align: left;
+  color: var(--gray-600);
+}
+
+.checkbox {
+  float: left;
+  height: 20px;
+  width: 20px;
+  background: #fff;
+  border: 2px var(--gray-600) solid;
+  margin-right: 10px;
+  border-radius: 2px;
+  width: 20px;
+  height: 20px;
+}
+
+.label {
+  display: grid;
+}
+
+.disabled {
+  display: none;
+}
