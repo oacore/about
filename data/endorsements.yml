@@ -193,7 +193,7 @@ testimonials:
   author:
     name: Eric Olson
     role: Co-founder and CEO
-    picture: /images/people/Eric Olson.png
+    picture: /images/people/Eric.Olson.png
     
 - &claus-wolf
   id: claus-wolf
@@ -381,7 +381,7 @@ organizations:
   id: consensus
   name: Consensus
   url: https://consensus.app/
-  logo: Consensus .png
+  logo: Consensus.png
   testimonial: *Eric-Olson
 - &research
   id: research-research
