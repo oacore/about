@@ -180,6 +180,21 @@ testimonials:
     role: OXISCO founder
     picture: /images/people/Founder Chorst Klaus.png
     
+    - &Eric-Olson
+  id: Eric-Olson
+  content: |
+    To build the product we have always envisioned, having a robust and 
+    comprehensive dataset of machine-readable, peer-reviewed papers is 
+    absolutely essential. We are incredibly grateful to be able to partner 
+    with an organization like CORE that not only can meet our data needs, 
+    but also shares our vision of making science more accessible and consumable. 
+    This unique combination of best-in-class data-offering and mission-alignment 
+    makes CORE an ideal partner for Consensus.
+  author:
+    name: Eric Olson
+    role: Co-founder and CEO
+    picture: /images/people/Eric Olson.png
+    
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -362,6 +377,12 @@ organizations:
   url: https://www.oxsico.com/
   logo: OXSICO-Logo.jpg
   testimonial: *Chorst-Klaus
+  - &consensus
+  id: consensus
+  name: Consensus
+  url: https://consensus.app/
+  logo: Consensus .png
+  testimonial: *Eric-Olson
 - &research
   id: research-research
   name: ResearchResearch
@@ -841,6 +862,7 @@ sections:
         - *irus
         - *tech-dico
         - *oxisco
+        - *consensus
         - *coar
         - *bl
         - *flowcite
