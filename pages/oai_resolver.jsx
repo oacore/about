@@ -8,6 +8,8 @@ import OAIResolveForm from './oai_resolve_form'
 
 import { Page, Section } from 'components'
 import oaiResolve from 'data/oai_resolve.yml'
+/* eslint-disable prefer-destructuring */
+const DOMAIN = process.env.DOMAIN
 
 const oaiResolverPage = () => (
   <Page
@@ -30,7 +32,7 @@ const oaiResolverPage = () => (
         </Col>
         <Col className={styles.imgBlock}>
           <img
-            src={oaiResolve.resolve.picture}
+            src={`${DOMAIN}${oaiResolve.resolve.picture}`}
             alt={oaiResolve.resolve.title}
           />
         </Col>

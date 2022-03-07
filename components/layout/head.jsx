@@ -1,5 +1,7 @@
 import React from 'react'
 import NextHead from 'next/head'
+/* eslint-disable prefer-destructuring */
+const DOMAIN = process.env.DOMAIN
 
 const Head = ({ title, description, keywords, children, ...restProps }) => (
   <NextHead {...restProps}>
@@ -17,9 +19,9 @@ const Head = ({ title, description, keywords, children, ...restProps }) => (
       />
     )}
 
-    <link rel="shortcut icon" href="/favicon/favicon-32px.png" />
-    <link rel="icon" href="/favicon/favicon-128px.png" />
-    <link rel="icon" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href={`${DOMAIN}/favicon/favicon-32px.png`} />
+    <link rel="icon" href={`${DOMAIN}/favicon/favicon-128px.png`} />
+    <link rel="icon" href={`${DOMAIN}/favicon/favicon.svg`} />
 
     {children}
   </NextHead>
