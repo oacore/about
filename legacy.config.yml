@@ -3,3 +3,11 @@ redirects:
   source: /documentation/discovery/plugin
   destination: /documentation/discovery-plugin
   permanent: true
+- 
+  source: /oai_resolver/:slug
+  destination: https://api.core.ac.uk/oai/:slug
+  permanent: true
+- 
+  source: https://oai.core.ac.uk/:slug
+  destination: https://api.core.ac.uk/oai/:slug
+  permanent: true
