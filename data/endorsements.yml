@@ -377,7 +377,7 @@ organizations:
   url: https://www.oxsico.com/
   logo: OXSICO-Logo.jpg
   testimonial: *Chorst-Klaus
-  - &consensus
+- &consensus
   id: consensus
   name: Consensus
   url: https://consensus.app/
