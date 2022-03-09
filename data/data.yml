@@ -16,10 +16,10 @@ sections:
   content: |
     It's the biggest collection of open access full texts,
     making it an unparalleled research tool.
-    It's over 45&nbsp;terabytes&nbsp;(TB) of textual data.
   link:
     caption: How we compare to other services?
     url: https://scholarlycommunications.jiscinvolve.org/wp/files/2018/06/HowCOREcomparesMay2018-2.pdf
+    external: true
   image: /images/illustrations/analysis-amico.svg
 - title: |
     CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable

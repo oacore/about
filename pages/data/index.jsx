@@ -17,14 +17,18 @@ const DataPage = () => (
         <h1>{datasetData.headline}</h1>
         <Markdown>{datasetData.tagline}</Markdown>
       </div>
-
       {datasetData.sections.map(({ title, content, link, image }) => (
         <HighlightSection image={image} action={link.url} key={title}>
           <h3>
             <Markdown>{patchStats(title, datasetData.statistics)}</Markdown>
           </h3>
           <Markdown>{patchStats(content, datasetData.statistics)}</Markdown>
-          <Button outline href={link.url} color="primary">
+          <Button
+            outline
+            href={link.url}
+            rel={link.external ? 'nofollow' : 'next'}
+            color="primary"
+          >
             {link.caption}
           </Button>
         </HighlightSection>
