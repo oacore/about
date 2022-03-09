@@ -180,7 +180,7 @@ testimonials:
     role: OXISCO founder
     picture: /images/people/Founder Chorst Klaus.png
     
-    - &Eric-Olson
+- &Eric-Olson
   id: Eric-Olson
   content: |
     To build the product we have always envisioned, having a robust and 
