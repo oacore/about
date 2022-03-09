@@ -3,8 +3,8 @@ import { Col, Row } from 'reactstrap'
 import Parser from 'html-react-parser'
 import { Link } from '@oacore/design'
 
-import styles from './oai_resolve.module.scss'
-import OAIResolveForm from './oai_resolve_form'
+import styles from './oai_resolver.module.scss'
+import OAIResolveForm from './oai_resolver_form'
 
 import { Page, Section } from 'components'
 import oaiResolve from 'data/oai_resolve.yml'
