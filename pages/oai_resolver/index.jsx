@@ -7,6 +7,7 @@ import styles from './oai_resolver.module.scss'
 import OAIResolveForm from './oai_resolver_form'
 
 import { Page, Section } from 'components'
+import { Layout } from 'design-v2/components'
 import oaiResolve from 'data/oai_resolve.yml'
 
 const oaiResolverPage = () => (
@@ -15,49 +16,52 @@ const oaiResolverPage = () => (
     description={oaiResolve.description}
     keywords={oaiResolve.keywords}
   >
-    <Section
-      id={styles.setOaiResolve}
-      caption="set-oai-resolve"
-      className="section-wide"
-    >
-      <Row>
-        <Col className={styles.formBlock}>
-          <div className={styles.logo} />
-          <div id="oai-resolve-form" className={styles.oaiResolveForm}>
-            <p>{oaiResolve.resolve.title}</p>
-            <OAIResolveForm />
-          </div>
-        </Col>
-        <Col className={styles.imgBlock}>
-          <img
-            src={oaiResolve.resolve.picture}
-            alt={oaiResolve.resolve.title}
-          />
-        </Col>
-      </Row>
-    </Section>
-
-    <Section id={styles.sections} caption="sections" className="section-wide">
-      <Row className={styles.row}>
-        {oaiResolve.sections.blocks.map((resolveGroup) => (
-          <Col sm="3" md="3" className={styles['section-block']}>
-            <p className={styles.serviceSectionDescription}>
-              {Parser(resolveGroup.description)}
-            </p>
-            <span />
+    <Layout>
+      <Section
+        id={styles.setOaiResolve}
+        caption="set-oai-resolve"
+        className="section-wide"
+      >
+        <Row>
+          <Col className={styles.formBlock}>
+            <div className={styles.logo} />
+            <div id="oai-resolve-form" className={styles.oaiResolveForm}>
+              <p>{oaiResolve.resolve.title}</p>
+              <OAIResolveForm />
+            </div>
           </Col>
-        ))}
-      </Row>
-    </Section>
-    <Section id="oai-doc" caption="oai-doc" className="section-wide">
-      <Row>
-        <Col md="12">
-          <Link href="/oai_resolver/doc" target="_blank">
-            Want to find out more about OAI identificator? - See documentation.
-          </Link>
-        </Col>
-      </Row>
-    </Section>
+          <Col className={styles.imgBlock}>
+            <img
+              src={oaiResolve.resolve.picture}
+              alt={oaiResolve.resolve.title}
+            />
+          </Col>
+        </Row>
+      </Section>
+
+      <Section id={styles.sections} caption="sections" className="section-wide">
+        <Row className={styles.row}>
+          {oaiResolve.sections.blocks.map((resolveGroup) => (
+            <Col sm="3" md="3" className={styles['section-block']}>
+              <p className={styles.serviceSectionDescription}>
+                {Parser(resolveGroup.description)}
+              </p>
+              <span />
+            </Col>
+          ))}
+        </Row>
+      </Section>
+      <Section id="oai-doc" caption="oai-doc" className="section-wide">
+        <Row>
+          <Col md="12">
+            <Link href="/oai_resolver/doc" target="_blank">
+              Want to find out more about OAI identificator? - See
+              documentation.
+            </Link>
+          </Col>
+        </Row>
+      </Section>
+    </Layout>
   </Page>
 )
 
