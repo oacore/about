@@ -195,6 +195,20 @@ testimonials:
     role: Co-founder and CEO
     picture: /images/people/Eric.Olson.png
     
+- &Guillaume-Grust
+  id: Guillaume-Grust
+  content: |
+    Integration with CORE has allowed us to expand Flowcite Knowledge Library to
+    250 million Open Access articles, thus giving our users with an opportunity
+    to find relevant sources for their research in one click. This collaboration
+    makes us one step closer to creating a unique all-in-one academic software
+    that allows researchers to accomplish their papers in shorter time and with
+    less stress
+  author:
+    name: Guillaume Grust
+    role: CEO and Founder of Flowcite
+    picture: /images/people/Guillaume.Grust.png
+  
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -383,6 +397,12 @@ organizations:
   url: https://consensus.app/
   logo: Consensus.png
   testimonial: *Eric-Olson
+- &flowcite
+  id: flowcite
+  name: Flowcite
+  url: https://flowcite.com/
+  logo: Flowcite.png
+  testimonial: *Guillaume-Grust
 - &research
   id: research-research
   name: ResearchResearch
@@ -863,6 +883,7 @@ sections:
         - *tech-dico
         - *oxisco
         - *consensus
+        - *flowcite
         - *coar
         - *bl
         - *flowcite
