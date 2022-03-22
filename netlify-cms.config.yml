@@ -4,7 +4,6 @@ backend:
   name: github
   repo: oacore/content
   branch: main
-  local_backend: true
 
   cms_label_prefix: '✏️ '
 
@@ -529,44 +528,52 @@ collections:
   - name: block_1/1of2
     widget: markdown
     label: Block 1 (1 of 2)
+    required: false
     hint: >
       Used for: OAI
   - name: block_1/2of2
     widget: markdown
     label: Block 1 (2 of 2)
+    required: false
     hint: >
       Used for: OAI
 # Block 2
   - name: block_2/1of2
     widget: markdown
     label: Block 2 (1 of 2)
+    required: false
     hint: >
       Used for: OAI
   - name: block_2/2of2
     widget: markdown
     label: Block 2 (2 of 2)
+    required: false
     hint: >
       Used for: OAI
 # Block 3
   - name: block_3/1of2
     widget: markdown
     label: Block 3 (1 of 2)
+    required: false
     hint: >
       Used for: OAI
   - name: block_3/2of2
     widget: markdown
     label: Block 3 (2 of 2)
+    required: false
     hint: >
       Used for: OAI
 # Block 4
   - name: block_4/1of2
     widget: markdown
     label: Block 4 (1 of 2)
+    required: false
     hint: >
       Used for: OAI
   - name: block_4/2of2
     widget: markdown
     label: Block 4 (2 of 2)
+    required: false
     hint: >
       Used for: OAI
 
