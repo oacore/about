@@ -4,7 +4,6 @@ backend:
   name: github
   repo: oacore/content
   branch: main
-  local_backend: true
 
   cms_label_prefix: '✏️ '
 
