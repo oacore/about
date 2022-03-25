@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { TextField, Button, Link, Select } from '@oacore/design'
 import { useRouter } from 'next/router'
 
-import styles from './oai_resolve.module.scss'
+import styles from './oai_resolver.module.scss'
 
 import { useInput } from 'hooks'
 
