@@ -16,7 +16,26 @@ async function getStaticProps({ previewData }) {
   }
 }
 
+async function getStatPaths() {
+  const paths = [
+    { params: { slug: 'api' } },
+    { params: { slug: 'connector' } },
+    { params: { slug: 'dataset' } },
+    { params: { slug: 'discovery-plugin' } },
+    { params: { slug: 'discovery' } },
+    { params: { slug: 'fastsync' } },
+    { params: { slug: 'oai-resolver' } },
+    { params: { slug: 'recommender' } },
+    { params: { slug: 'repository-dashboard' } },
+  ]
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
 // This bare import could be composed with a page created here
 // if more props needed to process
 export default DocumentationPageOaiResolver
-export { getStaticProps }
+export { getStaticProps, getStatPaths }
