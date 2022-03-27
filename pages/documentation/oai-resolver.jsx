@@ -2,7 +2,7 @@ import retrieveContent from 'content'
 import { DocumentationPageOaiResolver } from 'templates'
 
 const PAGES_BASE = 'docs'
-const PAGE_SLUG = 'oai-resolver'
+export const PAGE_SLUG = 'oai-resolver'
 
 async function getStaticProps({ previewData }) {
   const ref = previewData?.ref
@@ -17,7 +17,7 @@ async function getStaticProps({ previewData }) {
 }
 
 async function getStatPaths() {
-  const paths = [{ params: { slug: 'oai-resolver' } }]
+  const paths = [{ params: { slug: PAGE_SLUG } }]
 
   return {
     paths,

@@ -4,7 +4,6 @@
 
 //Style for Netlify page
 // TODO implement to widget Netlify
-//<style>
 
 .pageTitle {
   font-size: 24px;
@@ -81,6 +80,7 @@
   color: #b75400;
   margin-left: 16px;
 }
+
 .oaiElem {
   margin: 0 5px;
   line-height: 48px;
@@ -91,11 +91,73 @@
   font-size: 14px;
   line-height: 12px;
 }
+
 .helperText:first-child {
   margin-left: 5px;
 }
+
 .helperText:last-child {
   margin-left: 15px;
 }
 
-//</style >
+.firstPart {
+  margin-left: 20px;
+}
+
+.secondPart {
+  margin-left: 25px;
+}
+
+.el {
+  display: inline-flex;
+}
+
+.firstPart > div {
+  width: 57px;
+}
+
+.secondPart > div {
+  width: 13px;
+}
+
+.el > div {
+  height: 1px;
+  background: #666666;
+  margin: 10px 5px;
+  position: relative;
+}
+
+.el > div:before,
+.el > div:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-top-left-radius: 200px;
+  border: 1px solid #666666;
+  border-right: none;
+  border-bottom: none;
+}
+
+.el > div:after {
+  right: -5px;
+}
+
+.right:after {
+  transform: rotate(-180deg);
+  top: -4px;
+}
+
+.left:before {
+  transform: rotate(-90deg);
+  top: -4px;
+  left: -5px;
+}
+
+.left:after {
+  transform: rotate(90deg);
+}
+
+.right:before {
+  left: -5px;
+}
