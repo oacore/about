@@ -17,17 +17,7 @@ async function getStaticProps({ previewData }) {
 }
 
 async function getStatPaths() {
-  const paths = [
-    { params: { slug: 'api' } },
-    { params: { slug: 'connector' } },
-    { params: { slug: 'dataset' } },
-    { params: { slug: 'discovery-plugin' } },
-    { params: { slug: 'discovery' } },
-    { params: { slug: 'fastsync' } },
-    { params: { slug: 'oai-resolver' } },
-    { params: { slug: 'recommender' } },
-    { params: { slug: 'repository-dashboard' } },
-  ]
+  const paths = [{ params: { slug: 'oai-resolver' } }]
 
   return {
     paths,
