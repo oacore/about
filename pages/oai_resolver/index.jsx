@@ -56,7 +56,7 @@ const oaiResolverPage = () => (
           <Col md="12">
             To find out more see{' '}
             <Link
-              href="https://core.ac.uk//documentation/oai-resolver"
+              href="https://core.ac.uk/documentation/oai-resolver"
               target="_blank"
             >
               documentation.
