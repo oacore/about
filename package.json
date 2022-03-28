@@ -55,7 +55,7 @@
     "node-fetch": "^2.6.1",
     "postcss": "^8.1.7",
     "postcss-extend": "^1.0.5",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "7.0.1",
     "prop-types": "^15.6.2",
     "raw-loader": "^4.0.2",
     "react": "^17.0.1",
