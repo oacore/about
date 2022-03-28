@@ -38,6 +38,7 @@ const IndexPage = () => (
     title={page.title}
     description={page.description}
     keywords={page.keywords}
+    className={styles.page}
   >
     <Layout>
       <Carousel draggable={false} useArrows={false} slidesToShow={1} infinite>
