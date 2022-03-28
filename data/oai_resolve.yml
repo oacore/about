@@ -1,0 +1,24 @@
+title: OAI resolver
+description: |
+  OAI resolver
+
+resolve:
+  title: Resolve an OAI identifier
+  picture: /images/oai_resolve/explore.png
+
+sections:
+  blocks:
+    -
+      id: unique-identifiers
+      description: <b>OAIs</b> is a globally unique identifier used by repositories.
+    -
+      id: Type-paste
+      description: Insert an OAI identifier into the search box.
+    -
+      id: click-resolve
+      description: |
+        Make sure you entered it <a href="https://core.ac.uk/faq#oai-about" target="_blank">correctly</a>
+        and click Resolve.
+    -
+      id: page-associated
+      description: You will be taken to a page associated with that identifier.

@@ -67,6 +67,21 @@ collections:
           The title of the page. Displayed on the page below header
           and above the page navigation.
 
+    - name: core
+      label: ❓ What is core (title, description)
+      file: about/core.yml
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: >
+          Section title
+      - name: description
+        widget: text
+        label: Description
+        hint: >
+          Section description
+
     - name: mission
       label: 👁 Mission
       file: about/mission.md
@@ -509,6 +524,58 @@ collections:
   - name: body
     widget: markdown
     label: Content
+# Block 1
+  - name: block_1_column_1
+    widget: markdown
+    label: Block 1 (Column 1)
+    required: false
+    hint: >
+      Used for: OAI
+  - name: block_1_column_2
+    widget: markdown
+    label: Block 1 (Column 2)
+    required: false
+    hint: >
+      Used for: OAI
+# Block 2
+  - name: block_2_column_1
+    widget: markdown
+    label: Block 2 (Column 1)
+    required: false
+    hint: >
+      Used for: OAI
+  - name: block_2_column_2
+    widget: markdown
+    label: Block 2 (Column 2)
+    required: false
+    hint: >
+      Used for: OAI
+# Block 3
+  - name: block_3_column_1
+    widget: markdown
+    label: Block 3 (Column 1)
+    required: false
+    hint: >
+      Used for: OAI
+  - name: block_3_column_2
+    widget: markdown
+    label: Block 3 (Column 2)
+    required: false
+    hint: >
+      Used for: OAI
+# Block 4
+  - name: block_4_column_1
+    widget: markdown
+    label: Block 4 (Column 1)
+    required: false
+    hint: >
+      Used for: OAI
+  - name: block_4_column_2
+    widget: markdown
+    label: Block 4 (Column 2)
+    required: false
+    hint: >
+      Used for: OAI
 
   sortable_fields: [title]
 

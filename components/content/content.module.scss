@@ -3,20 +3,20 @@
 @import '../bootstrap/core';
 @import '~bootstrap/scss/variables';
 
-$content-max-width: 80ch;
+$content-max-width: 80vw;
 $section-sm-spacer: 2 * $spacer !default;
 $section-md-spacer: 4 * $spacer !default;
 $section-lg-spacer: 8 * $spacer !default;
 $section-spacer: $section-md-spacer !default;
 $article-spacer: $section-lg-spacer !default;
 
-:root {
-  --section-sm-spacer: #{$section-sm-spacer};
-  --section-md-spacer: #{$section-md-spacer};
-  --section-lg-spacer: #{$section-lg-spacer};
-  --section-spacer: #{$section-spacer};
-  --article-spacer: #{$article-spacer};
-}
+// :root {
+//   --section-sm-spacer: #{$section-sm-spacer};
+//   --section-md-spacer: #{$section-md-spacer};
+//   --section-lg-spacer: #{$section-lg-spacer};
+//   --section-spacer: #{$section-spacer};
+//   --article-spacer: #{$article-spacer};
+// }
 
 .content {
   max-width: $content-max-width;
@@ -133,10 +133,16 @@ $article-spacer: $section-lg-spacer !default;
   }
 }
 
-.article {
-  padding-top: $article-spacer;
-  padding-bottom: $article-spacer;
+//  Class to switch the site to wide format page by page
+.section-wide {
+  @each $breakpoint, $container-max-width in $container-max-width-wide {
+    @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+      grid-template-columns: 1fr ($container-max-width - $grid-gutter-width) 1fr;
+    }
+  }
+}
 
+.article {
   & > .section:last-child {
     padding-bottom: $article-spacer;
     margin-bottom: -$article-spacer;

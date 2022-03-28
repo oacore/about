@@ -1,8 +1,4 @@
-@import '/design-v2/components/sections/variables';
-
-.page {
-  padding: var(--page-padding-y) var(--page-padding-x);
-}
+@import 'design-v2/variables';
 
 .hero {
   &-item {
@@ -43,7 +39,7 @@
     margin-left: -50vw;
     left: 50%;
     &-list {
-      padding: var(--page-padding-y) var(--page-padding-x);
+      padding: 0 var(--page-padding-x);
     }
   }
   &-services {
@@ -79,6 +75,7 @@
 .title {
   margin-bottom: 3rem;
 }
+
 .title,
 .action-button {
   text-align: center;

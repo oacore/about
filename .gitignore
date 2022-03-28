@@ -7,3 +7,4 @@ out
 /public/edit*
 /public/netlify-cms.config.*
 *.cache
+.DS_Store

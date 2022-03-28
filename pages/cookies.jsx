@@ -1,7 +1,6 @@
 import React from 'react'
 import { Table } from 'reactstrap'
-
-import { useCookieItems, useCookieHandler } from '../components/cookies/hooks'
+import { useCookieHandler, useCookieItems } from '@oacore/design'
 
 import { Page, Content, Section, Markdown, CookiesForm } from 'components'
 import pageContext from 'data/cookies.yml'

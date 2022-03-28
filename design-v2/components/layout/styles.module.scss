@@ -1,5 +1,8 @@
 $main-spacer: 3rem;
 
-.section {
+.layout {
+  padding: var(--page-padding-y) var(--page-padding-x);
+}
+.container {
   padding: $main-spacer 0;
 }

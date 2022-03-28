@@ -17,11 +17,14 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
   return legacyConfig
 }
 
+const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   env: Object.assign(envConfig, {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
+  assetPrefix: isProd ? 'https://core.ac.uk' : '',
+  dynamicAssetPrefix: true,
   webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
@@ -75,6 +78,7 @@ const nextConfig = {
       'data': path.resolve(__dirname, 'data'),
       'content': path.resolve(__dirname, 'content'),
       'hooks': path.resolve(__dirname, 'hooks'),
+      'helpers': path.resolve(__dirname, 'helpers'),
       'api': path.resolve(__dirname, 'api'),
       'main': path.join(__dirname, 'main'),
       'store': path.join(__dirname, 'store'),

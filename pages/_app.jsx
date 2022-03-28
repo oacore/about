@@ -1,9 +1,8 @@
 import React from 'react'
-import { DesignProvider } from '@oacore/design'
+import { DesignProvider, CookiesProvider } from '@oacore/design'
 import '@oacore/design/lib/index.css'
 
 import { useInitStore, StoreProvider } from '../store'
-import CookiesProvider from '../components/cookies/cookies-provider'
 import 'components/index.scss'
 
 import Main from 'main'

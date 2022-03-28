@@ -37,7 +37,7 @@ export { default as Accordion } from './accordion'
 export { default as Collapsed } from './collapsed'
 
 // Forms
-export * from './cookies'
+export { default as CookiesForm } from './cookies'
 
 // Dynamic (carousels, switchers)
 export { default as Switcher, SwitcherItem } from './switcher'
@@ -50,4 +50,4 @@ export { default as Blog } from './blog'
 
 // Sections
 export { default as Hero } from './hero'
-export { default as HighlightSection } from './highlight-section'
+export { default as HighlightSection } from '../design-v2/highlight-section'
