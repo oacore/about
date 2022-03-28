@@ -153,48 +153,48 @@ testimonials:
     name: Ronin Wu
     role: Research Lead and Head of Research Collaboration, IRIS.ai
     picture: /images/people/Ronin-Wu.jpg
-    
+
 - &Philippe-Régall
   id: Philippe-Régall
   content: |
-    TechDico partnered with CORE to offer to scientific and technical 
+    TechDico partnered with CORE to offer to scientific and technical
     translators a new valuable translation resource never used before.
-    The outcome is the world’s first multilingual dictionary proposing 
-    translation results including research paper abstract in 280 
+    The outcome is the world’s first multilingual dictionary proposing
+    translation results including research paper abstract in 280
     languages pairs.
   author:
     name: Philippe Régall
     role: CEO, TechDico
     picture: /images/people/TechDico_PhilippeRegall.jpg
-    
+
 - &Chorst-Klaus
   id: Chorst-Klaus
   content: |
     The CORE is our strategic partner. We are using CORE services
-    to expand the data reach of our plagiarism detection service and 
-    to enrich our service with a vast amount of metadata. We seek 
-    to provide high-end service to our customers, and CORE greatly 
+    to expand the data reach of our plagiarism detection service and
+    to enrich our service with a vast amount of metadata. We seek
+    to provide high-end service to our customers, and CORE greatly
     helps us with that.
   author:
     name: Chorst Klaus
     role: OXISCO founder
     picture: /images/people/Founder Chorst Klaus.png
-    
+
 - &Eric-Olson
   id: Eric-Olson
   content: |
-    To build the product we have always envisioned, having a robust and 
-    comprehensive dataset of machine-readable, peer-reviewed papers is 
-    absolutely essential. We are incredibly grateful to be able to partner 
-    with an organization like CORE that not only can meet our data needs, 
-    but also shares our vision of making science more accessible and consumable. 
-    This unique combination of best-in-class data-offering and mission-alignment 
+    To build the product we have always envisioned, having a robust and
+    comprehensive dataset of machine-readable, peer-reviewed papers is
+    absolutely essential. We are incredibly grateful to be able to partner
+    with an organization like CORE that not only can meet our data needs,
+    but also shares our vision of making science more accessible and consumable.
+    This unique combination of best-in-class data-offering and mission-alignment
     makes CORE an ideal partner for Consensus.
   author:
     name: Eric Olson
     role: Co-founder and CEO
     picture: /images/people/Eric.Olson.png
-    
+
 - &Guillaume-Grust
   id: Guillaume-Grust
   content: |
@@ -208,7 +208,7 @@ testimonials:
     name: Guillaume Grust
     role: CEO and Founder of Flowcite
     picture: /images/people/Guillaume.Grust.png
-  
+
 - &claus-wolf
   id: claus-wolf
   content: |
@@ -237,7 +237,7 @@ testimonials:
 - &gareth-malcolm
   id: gareth-malcolm
   content: |
-    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full 
+    Our partnership with CORE will provide Turnitin with vast amounts of metadata and full
     texts that we can utilise in our plagiarism detection software.
   author:
     name: Gareth Malcolm
@@ -460,6 +460,52 @@ organizations:
   name: Cypris
   url: https://ipcypris.com/
   logo: Cypris.png
+- &academia
+  id: academia
+  name: Academia
+  url: https://www.academia.edu/
+  logo: academia.svg
+- &cactus
+  id: cactus
+  name: Cactus
+  url: https://cactusglobal.com/
+  logo: cactus.png
+- &interac
+  id: interac
+  name: Interac
+  url: https://www.interac.ca/en
+  logo: interac.png
+- &ezassi
+  id: ezassi
+  name: Ezassi
+  url: https://ezassi.com/
+  logo: ezassi.png
+- &artificialresearcher
+  id: artificialresearcher
+  name: Artifical Research
+  url: https://artificialresearcher.com/
+  logo: artificalresearcher.jpeg
+- &innovationengineering
+  id: innovationengineering
+  name: Innovation Engineering
+  url: https://www.innovationengineering.eu/
+  logo: innovation-engineering.png
+- &dtudk
+  id: dtudk
+  name: Technical University of Denmark
+  url: https://www.dtu.dk/english
+  logo: dtu.png
+- &uprightproject
+  id: uprightproject
+  name: Upright Oy
+  url: https://www.uprightproject.com
+  logo: upright-project.png
+- &allanswers
+  id: uprightproject
+  name: All Answers / Viper
+  url: https://www.allanswers.co.uk/
+  logo: all-answers.png
+
 - &turnitin
   id: turnitin
   name: Turnitin
@@ -554,6 +600,26 @@ organizations:
   logo: metadata2020.svg
 
 # institutions
+- &stgeorgs
+  id: stgeorgs
+  name: St. George's, University of London
+  logo: stgeorg.png
+- &aru
+  id: aru
+  name: Anglia Ruskin University
+  logo: aru.svg
+- &sussex
+  id: sussex
+  name: University of Sussex
+  logo: sussex.svg
+- &trent
+  id: trent
+  name: Nottingham Trent University
+  logo: trent.png
+- &adri
+  id: adri
+  name: ADRI - Arabic Digital Reform Institute
+  logo: adri.png
 - &lbu
   id: lbu
   name: Leeds Beckett University
@@ -769,8 +835,16 @@ sections:
       title: Companies who work with us
       items:
         - *cypris
+        - *cactus
+        - *academia
+        - *ezassi
+        - *dtudk
         - *turnitin
         - *ontochem
+        - *innovationengineering
+        - *artificialresearcher
+        - *uprightproject
+        - *allanswers
         - *ropensci
         - *research
         - *wheesbee
@@ -778,6 +852,7 @@ sections:
         - *rygbee
         - *ritc
         - *4science
+        - *interac
         - *unsilo
         - *macmicro
         - *scilit
@@ -803,6 +878,11 @@ sections:
       title: Institutions who work with us
       items:
           - *ou
+          - *stgeorgs
+          - *aru
+          - *sussex
+          - *trent
+          - *adri
           - *apollo
           - *aston
           - *asu
