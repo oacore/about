@@ -460,6 +460,52 @@ organizations:
   name: Cypris
   url: https://ipcypris.com/
   logo: Cypris.png
+- &academia
+  id: academia
+  name: Academia
+  url: https://www.academia.edu/
+  logo: academia.svg
+- &cactus
+  id: cactus
+  name: Cactus
+  url: https://cactusglobal.com/
+  logo: cactus.png
+- &interac
+  id: interac
+  name: Interac
+  url: https://www.interac.ca/en
+  logo: interac.png
+- &ezassi
+  id: ezassi
+  name: Ezassi
+  url: https://ezassi.com/
+  logo: ezassi.png
+- &artificialresearcher
+  id: artificialresearcher
+  name: Artifical Research
+  url: https://artificialresearcher.com/
+  logo: artificalresearcher.jpeg
+- &innovationengineering
+  id: innovationengineering
+  name: Innovation Engineering
+  url: https://www.innovationengineering.eu/
+  logo: innovation-engineering.png
+- &dtudk
+  id: dtudk
+  name: Technical University of Denmark
+  url: https://www.dtu.dk/english
+  logo: dtu.png
+- &uprightproject
+  id: uprightproject
+  name: Upright Oy
+  url: https://www.uprightproject.com
+  logo: upright-project.png
+- &allanswers
+  id: uprightproject
+  name: All Answers / Viper
+  url: https://www.allanswers.co.uk/
+  logo: all-answers.png
+
 - &turnitin
   id: turnitin
   name: Turnitin
@@ -554,6 +600,26 @@ organizations:
   logo: metadata2020.svg
 
 # institutions
+- &stgeorgs
+  id: stgeorgs
+  name: St. George's, University of London
+  logo: stgeorg.png
+- &aru
+  id: aru
+  name: Anglia Ruskin University
+  logo: aru.svg
+- &sussex
+  id: sussex
+  name: University of Sussex
+  logo: sussex.svg
+- &trent
+  id: trent
+  name: Nottingham Trent University
+  logo: trent.png
+- &adri
+  id: adri
+  name: ADRI - Arabic Digital Reform Institute
+  logo: adri.png
 - &lbu
   id: lbu
   name: Leeds Beckett University
@@ -769,8 +835,16 @@ sections:
       title: Companies who work with us
       items:
         - *cypris
+        - *cactus
+        - *academia
+        - *ezassi
+        - *dtudk
         - *turnitin
         - *ontochem
+        - *innovationengineering
+        - *artificialresearcher
+        - *uprightproject
+        - *allanswers
         - *ropensci
         - *research
         - *wheesbee
@@ -778,6 +852,7 @@ sections:
         - *rygbee
         - *ritc
         - *4science
+        - *interac
         - *unsilo
         - *macmicro
         - *scilit
@@ -803,6 +878,11 @@ sections:
       title: Institutions who work with us
       items:
           - *ou
+          - *stgeorgs
+          - *aru
+          - *sussex
+          - *trent
+          - *adri
           - *apollo
           - *aston
           - *asu
