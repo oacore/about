@@ -52,8 +52,9 @@ const oaiResolverPage = () => (
     <Section id="oai-doc" caption="oai-doc" className="section-wide">
       <Row>
         <Col md="12">
-          <Link href="/oai_resolver/doc" target="_blank">
-            Want to find out more about OAI identificator? - See documentation.
+          To find out more see{' '}
+          <Link href="/documentation/oai-resolver" target="_blank">
+            documentation.
           </Link>
         </Col>
       </Row>
