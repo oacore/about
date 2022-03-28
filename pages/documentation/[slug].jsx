@@ -1,3 +1,5 @@
+import { PAGE_SLUG } from './oai-resolver'
+
 import retrieveContent from 'content'
 import { MarkdownPage } from 'templates'
 
@@ -20,9 +22,14 @@ async function getStaticProps({ params, previewData }) {
 async function getStaticPaths() {
   const pages = await retrieveContent(PAGES_BASE)
 
-  const paths = pages.map(({ id }) => ({
-    params: { slug: id },
-  }))
+  const paths = pages.reduce((result, item) => {
+    if (item.id !== PAGE_SLUG) {
+      result.push({
+        params: { slug: item.id },
+      })
+    }
+    return result
+  }, [])
 
   return {
     paths,
