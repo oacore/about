@@ -161,6 +161,6 @@
 .right:before {
   left: -5px;
 }
-.resolverImg { background: url(https://oai.core.ac.uk/images/oai_resolve/explore.png) no-repeat 50% 50%; height: 255px; width: 375px; background-size: 100%; }
+.resolverImg { background: url(https://oai.core.ac.uk/images/oai_resolve/explore.png) no-repeat 50% 50%; height: 255px; max-width: 375px; background-size: 100%; }
 
 
