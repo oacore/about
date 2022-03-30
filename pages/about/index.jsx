@@ -64,19 +64,19 @@ const AboutPage = ({ data }) => (
     nav
   >
     <h1>{data.meta.headline}</h1>
-    <Section id="core-mission" tag="div">
+    <Section tag="div" id="core-mission" caption={data.mission.shortTitle}>
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
           <h2>{data.core.title}</h2>
 
           <Markdown className="mb-4">{data.core.description}</Markdown>
           <h2>{data.mission.title}</h2>
-
           <Video
             src={data.mission.video.src}
             title={data.mission.video.title}
             tag="p"
           />
+
           <Markdown className={styles.mission}>{data.mission.body}</Markdown>
         </Col>
         <Col
@@ -95,10 +95,6 @@ const AboutPage = ({ data }) => (
           </ButtonToolbar>
         </Col>
       </Row>
-    </Section>
-
-    <Section id="our-mission" caption={data.mission.shortTitle} tag="div">
-      <Row />
     </Section>
 
     <RelatedContentSection
