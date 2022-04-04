@@ -27,6 +27,9 @@ community:
   children:
     research: ./research
 
+mebmership:
+  pattern: /mebmership
+
 services:
   pattern: /services
   children:

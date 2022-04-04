@@ -1,0 +1,92 @@
+$card-header-color: #fef5ef;
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  .description {
+    font-size: 1.3rem;
+    color: var(--gray-700);
+    margin-bottom: 3rem;
+  }
+}
+
+.logo-container {
+  text-align: right;
+}
+
+.plansWrapper {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.card {
+  border-top: none;
+  &-header {
+    background-color: $card-header-color;
+    text-align: center;
+    padding: 1rem;
+    &-caption {
+      color: var(--gray-500);
+    }
+  }
+
+  .divider {
+    height: 1.5rem;
+    background-color: var(--primary);
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    min-height: 35rem;
+    border: 1px solid var(--gray-200);
+    .advantages {
+      width: 100%;
+      ul {
+        list-style: disc;
+        li {
+          margin-left: 1rem;
+          line-height: 2;
+          ul {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+
+    &-button {
+      margin-top: auto;
+      text-align: center;
+    }
+  }
+  &-box {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: var(--gray-100);
+    &-title {
+      margin-bottom: 0.5rem;
+    }
+    &-caption {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  }
+}
+
+.box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  background-color: var(--gray-100);
+  padding: 1.5rem;
+  &-text {
+    line-height: 2;
+    flex: 1;
+  }
+  &-button {
+    text-align: right;
+    flex: 0.6;
+  }
+}

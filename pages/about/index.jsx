@@ -64,7 +64,7 @@ const AboutPage = ({ data }) => (
     nav
   >
     <h1>{data.meta.headline}</h1>
-    <Section tag="div" id="core-mission" caption={data.mission.shortTitle}>
+    <Section tag="div" id="mission" caption={data.mission.shortTitle}>
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
           <h2>{data.core.title}</h2>
@@ -76,7 +76,6 @@ const AboutPage = ({ data }) => (
             title={data.mission.video.title}
             tag="p"
           />
-
           <Markdown className={styles.mission}>{data.mission.body}</Markdown>
         </Col>
         <Col

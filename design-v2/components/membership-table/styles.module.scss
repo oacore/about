@@ -1,0 +1,120 @@
+$table-border: 1px solid var(--gray-400);
+$checkbox-success-color: #8bc34a;
+$checkbox-danger-color: rgba(255, 95, 82, 1);
+$card-header-color: #fef5ef;
+
+.table,
+.header {
+  margin-top: 1.5rem;
+  border: $table-border;
+  .head {
+    border-width: 1px;
+  }
+  td {
+    padding: 0;
+    border: $table-border;
+  }
+}
+
+.row {
+  width: 25vw;
+  &-title {
+    padding: 0.5rem;
+    font-weight: 600;
+    background-color: var(--gray-100);
+    p {
+      margin: 0;
+      &:not(:first-child) {
+        margin: 0 2rem;
+      }
+    }
+  }
+  &-description {
+    padding: 1.5rem;
+    color: var(--gray-700);
+  }
+}
+
+.header {
+  font-weight: 400;
+  width: 10vw;
+  text-align: center;
+  &:not(:first-child) {
+    background-color: var(--gray-100);
+  }
+  &-text {
+    color: var(--primary);
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+  &-action {
+    background-color: var(--white);
+  }
+}
+
+.box {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.checked {
+  background-color: $checkbox-success-color;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 8px;
+    width: 8px;
+    height: 17px;
+    border: solid var(--white);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+}
+
+.caption {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.uncheked {
+  background-color: $checkbox-danger-color;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background-color: white;
+    top: 11px;
+  }
+  &::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 2px;
+  }
+  &::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    right: 2px;
+  }
+}
+
+.divider {
+  height: 1.5rem;
+  background-color: var(--primary);
+}
+
+.title {
+  text-align: center;
+  padding: 1.5rem;
+  font-weight: 500;
+  background-color: $card-header-color;
+  margin-bottom: 0;
+}
