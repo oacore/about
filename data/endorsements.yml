@@ -243,7 +243,24 @@ testimonials:
     name: Gareth Malcolm
     role: Content Partner Manager at Turnitin
     picture: /images/people/Gareth_Malcolm.jpeg
-
+- &steven-hafif
+  id: steven-hafif
+  content: |
+    CORE has done a tremendous job of accumulating a highly relevant database of open access journals & they’ve already been
+    phenomenal partners to work with. Using our resources in AI and data modeling we believe we’ll draw some interesting insights out of the data to help support our growing userbase.
+  author:
+    name: Steven Hafif
+    role: CEO at Cypris
+    picture: /images/people/steven-hafif.jpeg
+- &felix-berthelmann
+  id: felix-berthelmann
+  content: |
+    Our partnership with CORE has significantly increased the depth and breadth of full text content available to our customers, greatly enhancing the value of our offering overall while delivering savings in terms of time, cost and human resource to our company in the area of data aggregation.
+    The full text data provided by CORE is fundamental to the operation of our SciWalker platform, a leading search and analysis tool for the life sciences.
+  author:
+    name: Felix Berthelmann
+    role: CEO Ontochem GmbH
+    picture: /images/people/felix-berthelmann.jpeg
 - &johan-tilstra
   id: johan-tilstra
   content: |
@@ -460,6 +477,7 @@ organizations:
   name: Cypris
   url: https://ipcypris.com/
   logo: Cypris.png
+  testimonial: *steven-hafif
 - &academia
   id: academia
   name: Academia
@@ -480,21 +498,11 @@ organizations:
   name: Ezassi
   url: https://ezassi.com/
   logo: ezassi.png
-- &artificialresearcher
-  id: artificialresearcher
-  name: Artifical Research
-  url: https://artificialresearcher.com/
-  logo: artificalresearcher.jpeg
 - &innovationengineering
   id: innovationengineering
   name: Innovation Engineering
   url: https://www.innovationengineering.eu/
   logo: innovation-engineering.png
-- &dtudk
-  id: dtudk
-  name: Technical University of Denmark
-  url: https://www.dtu.dk/english
-  logo: dtu.png
 - &uprightproject
   id: uprightproject
   name: Upright Oy
@@ -517,6 +525,7 @@ organizations:
   name: Ontochem
   url: https://www.ontochem.de/
   logo: ontochem.png
+  testimonial: *felix-berthelmann
 - &macmicro
   id: macmicro
   name: MacMicro Inc.
@@ -838,11 +847,9 @@ sections:
         - *cactus
         - *academia
         - *ezassi
-        - *dtudk
         - *turnitin
         - *ontochem
         - *innovationengineering
-        - *artificialresearcher
         - *uprightproject
         - *allanswers
         - *ropensci
