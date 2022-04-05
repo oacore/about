@@ -261,6 +261,14 @@ testimonials:
     name: Felix Berthelmann
     role: CEO Ontochem GmbH
     picture: /images/people/felix-berthelmann.jpeg
+- &ali-mazraeh
+  id: ali-mazraeh
+  content: |
+    Our partnership with CORE will open new horizons for the MENA region in respect to science, innovation and sustainable developments and with tangible outcomes.
+  author:
+    name: Ali Mazraeh
+    role: Director of ADRI
+    picture: /images/people/ali-mazraeh.jpeg
 - &johan-tilstra
   id: johan-tilstra
   content: |
@@ -629,6 +637,7 @@ organizations:
   id: adri
   name: ADRI - Arabic Digital Reform Institute
   logo: adri.png
+  testimonial: *ali-mazraeh
 - &lbu
   id: lbu
   name: Leeds Beckett University
