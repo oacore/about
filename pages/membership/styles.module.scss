@@ -14,7 +14,7 @@ $card-header-color: #fef5ef;
   text-align: right;
 }
 
-.plansWrapper {
+.plans-wrapper {
   display: grid;
   grid-gap: 3rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -88,5 +88,50 @@ $card-header-color: #fef5ef;
   &-button {
     text-align: right;
     flex: 0.6;
+  }
+}
+
+.table {
+  margin-top: 2rem;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.card {
+  &-divider {
+    height: 0.2rem;
+    background-color: var(--primary);
+  }
+  &-members {
+    display: flex;
+    flex-wrap: wrap;
+
+    .logo-container {
+      flex: 0 0 33%;
+      max-width: 33%;
+      position: relative;
+      border: 1px solid var(--gray-200);
+      span {
+        position: relative;
+        display: block;
+
+        padding: 0 0 50%;
+        margin-bottom: 1.5rem;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: auto;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
   }
 }

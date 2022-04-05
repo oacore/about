@@ -182,4 +182,23 @@ comparison-table:
         description: We are keen to provide a hosted or interview style blog post about open access, open science and other relevant mission-oriented activities your organisation is conducting on the CORE blog. (T&Cs apply)
         plans: [Sustaining]
 
+support:
+  title: What does your membership support?
+  description: Our Supporting and Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our [mission](~about#mission).
+  cards:
+    - title: Supporting
+      caption: Co-funds the maintenance of CORE services as they are.
+      img: /images/membership/supporting.svg
+    - title: Sustaining
+      caption: Co-funds the maintenance of CORE services and their continuous improvement.
+      img: /images/membership/sustaining.svg
+  members:
+    - logo: stgeorg.png
+    - logo: university-of-london.svg
+    - logo: brunel.png
+    - logo: trent.png
+    - logo: sussex.svg
+    - logo: aru.svg
+
+
 

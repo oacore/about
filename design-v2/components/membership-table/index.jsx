@@ -6,7 +6,7 @@ import styles from './styles.module.scss'
 
 import { Markdown } from 'components'
 
-const MembershipTable = ({ textData }) => {
+const MembershipTable = ({ className, textData }) => {
   const headerNames = textData.headers.map((header) => header.name).slice(1)
 
   const renderHeaders = () => (
@@ -64,7 +64,7 @@ const MembershipTable = ({ textData }) => {
     ))
 
   return (
-    <div className={styles.container}>
+    <div className={classNames.use(styles.container).join(className)}>
       <h3 className={styles.title}>{textData.title}</h3>
       <div className={styles.divider} />
       <table className={styles.table}>

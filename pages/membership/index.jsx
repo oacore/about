@@ -7,8 +7,34 @@ import { Markdown, Page } from 'components'
 import textData from 'data/membership.yml'
 import { Layout, MembershipTable, Section } from 'design-v2/components'
 
+const Card = ({ plan }) => (
+  <article className={styles.card} key={plan.title}>
+    <div className={styles.cardHeader}>
+      <h5>{plan.title}</h5>
+      {plan.caption && (
+        <span className={styles.cardHeaderCaption}>{plan.caption}</span>
+      )}
+    </div>
+    <div className={styles.divider} />
+    <div className={styles.cardContent}>
+      {plan.box && (
+        <div className={styles.cardBox}>
+          <Markdown className={styles.cardBoxTitle}>{plan.box.title}</Markdown>
+          <Markdown className={styles.cardBoxCaption} tag="span">
+            {plan.box.caption}
+          </Markdown>
+        </div>
+      )}
+      <Markdown className={styles.advantages}>{plan.advantages}</Markdown>
+      <div className={styles.cardContentButton}>
+        <Button variant="contained">{plan.action.title}</Button>
+      </div>
+    </div>
+  </article>
+)
+
 const MembershipPage = () => {
-  const [visibleTable, setVisibleTable] = React.useState(true)
+  const [visibleTable, setVisibleTable] = React.useState(false)
 
   const toggleVisibleTable = React.useCallback(() => {
     setVisibleTable(!visibleTable)
@@ -44,35 +70,7 @@ const MembershipPage = () => {
           <h4>{textData.plans.title}</h4>
           <div className={styles.plansWrapper}>
             {textData.plans.cards.map((plan) => (
-              <article className={styles.card} key={plan.title}>
-                <div className={styles.cardHeader}>
-                  <h5>{plan.title}</h5>
-                  {plan.caption && (
-                    <span className={styles.cardHeaderCaption}>
-                      {plan.caption}
-                    </span>
-                  )}
-                </div>
-                <div className={styles.divider} />
-                <div className={styles.cardContent}>
-                  {plan.box && (
-                    <div className={styles.cardBox}>
-                      <Markdown className={styles.cardBoxTitle}>
-                        {plan.box.title}
-                      </Markdown>
-                      <Markdown className={styles.cardBoxCaption} tag="span">
-                        {plan.box.caption}
-                      </Markdown>
-                    </div>
-                  )}
-                  <Markdown className={styles.advantages}>
-                    {plan.advantages}
-                  </Markdown>
-                  <div className={styles.cardContentButton}>
-                    <Button variant="contained">{plan.action.title}</Button>
-                  </div>
-                </div>
-              </article>
+              <Card plan={plan} />
             ))}
           </div>
         </Section>
@@ -89,10 +87,36 @@ const MembershipPage = () => {
               </Button>
             </div>
           </div>
+          {visibleTable && (
+            <MembershipTable
+              className={styles.table}
+              textData={textData.comparisonTable}
+            />
+          )}
         </Section>
-        {visibleTable && (
-          <MembershipTable textData={textData.comparisonTable} />
-        )}
+        <Section id="support">
+          <h4>{textData.support.title}</h4>
+          <Markdown className={styles.supportText}>
+            {textData.support.description}
+          </Markdown>
+          <div className={styles.cards}>
+            {textData.support.cards.map((card) => (
+              <div key={card.title} className={styles.card}>
+                <img src={card.img} alt={card.title} />
+                <div className={styles.cardDivider} />
+              </div>
+            ))}
+            <div className={styles.cardMembers}>
+              {textData.support.members.map((member) => (
+                <div className={styles.logoContainer}>
+                  <span>
+                    <img src={`/images/logos/${member.logo}`} alt="logo" />
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Section>
       </Layout>
     </Page>
   )
