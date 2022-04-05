@@ -142,12 +142,13 @@ $article-spacer: $section-lg-spacer !default;
   }
 }
 
-.article {
-  & > .section:last-child {
-    padding-bottom: $article-spacer;
-    margin-bottom: -$article-spacer;
-  }
-}
+// TODO: use new container
+// .article {
+//   & > .section:last-child {
+//     padding-bottom: $article-spacer;
+//     margin-bottom: -$article-spacer;
+//   }
+// }
 
 .article-nav {
   margin-left: -$nav-link-padding-x;
