@@ -63,7 +63,7 @@ what-is-included:
     [datasets download page](~documentation/dataset).
   form:
     title: Register for the CORE Dataset
-    subtitle: Enter your email address to access the CORE Dataset
+    subtitle: Enter your email address to register for our datasets or access the download page if you have already registered. Please enter your institutional email if you are registering in an institutional capacity.
     helper: We will send the instructions to this address
     action: Register now
 

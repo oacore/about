@@ -28,11 +28,11 @@ const FeatureBox = ({ iconSrc, title, description, recommender, action }) => (
   </Card>
 )
 
-const FeaturesSection = ({ description, title, video, features }) => {
+const FeaturesSection = ({ id, description, title, video, features }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(false)
 
   return (
-    <Section className={styles.sectionContainer}>
+    <Section className={styles.sectionContainer} id={id}>
       <div className={styles.sectionHeader}>
         {video && (
           <button
