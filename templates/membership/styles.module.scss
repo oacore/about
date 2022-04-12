@@ -1,17 +1,29 @@
 $card-header-color: #fef5ef;
+$support-card-width: 21.5rem;
+$member-image-width: 102px;
 
 .header {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
   .description {
+    max-width: 50ch;
     font-size: 1.3rem;
     color: var(--gray-700);
     margin-bottom: 3rem;
   }
-}
-
-.logo-container {
-  text-align: right;
+  .title {
+    max-width: 25ch;
+  }
+  &-prices {
+    margin: 0 auto;
+    max-width: 100ch;
+    text-align: center;
+    .description {
+      font-size: 1.3rem;
+      color: var(--gray-700);
+    }
+  }
 }
 
 .plans-wrapper {
@@ -20,9 +32,10 @@ $card-header-color: #fef5ef;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
-.card {
+.plan {
   border-top: none;
   &-header {
+    min-height: 6.5rem;
     background-color: $card-header-color;
     text-align: center;
     padding: 1rem;
@@ -96,42 +109,81 @@ $card-header-color: #fef5ef;
 }
 
 .cards {
-  display: flex;
-  align-items: center;
+  margin-left: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($support-card-width, 1fr));
+  grid-gap: 1rem;
   margin-top: 2rem;
 }
 
 .card {
-  &-divider {
-    height: 0.2rem;
-    background-color: var(--primary);
+  position: relative;
+  &::before {
+    position: absolute;
+    bottom: -8rem;
+    left: -1rem;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: url('./assets/line.svg') 0 0 no-repeat;
   }
-  &-members {
-    display: flex;
-    flex-wrap: wrap;
+  &-image {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &-title {
+    display: inline-block;
+    padding-top: 0.3rem;
+    margin-bottom: 1rem;
+    border-top: 2px solid var(--primary);
+  }
 
+  &-caption {
+    max-width: 20rem;
+  }
+
+  &-members {
+    display: grid;
+    grid-template-columns: repeat(3, $member-image-width);
+    grid-gap: 1rem;
+
+    &-title {
+      text-align: center;
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+    }
     .logo-container {
-      flex: 0 0 33%;
-      max-width: 33%;
+      width: $member-image-width;
+      height: 4.2rem;
       position: relative;
       border: 1px solid var(--gray-200);
+      padding: 1rem;
       span {
         position: relative;
         display: block;
-
         padding: 0 0 50%;
         margin-bottom: 1.5rem;
         background: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.125);
       }
       img {
         position: absolute;
         left: 0;
         top: 0;
-        height: auto;
+        height: 100%;
         width: 100%;
         object-fit: contain;
       }
     }
+  }
+}
+
+.support-text {
+  max-width: 90ch;
+}
+
+.fee-section {
+  text-align: center;
+  &-table {
+    margin-bottom: 2rem;
   }
 }

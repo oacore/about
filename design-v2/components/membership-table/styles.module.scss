@@ -3,6 +3,10 @@ $checkbox-success-color: #8bc34a;
 $checkbox-danger-color: rgba(255, 95, 82, 1);
 $card-header-color: #fef5ef;
 
+.fixed {
+  table-layout: fixed;
+}
+
 .table,
 .header {
   margin-top: 1.5rem;
@@ -10,14 +14,43 @@ $card-header-color: #fef5ef;
   .head {
     border-width: 1px;
   }
-  td {
-    padding: 0;
-    border: $table-border;
-  }
 }
 
-.row {
-  width: 25vw;
+.cell {
+  border: $table-border;
+  width: 20ch;
+  &-details-first {
+    padding: 0;
+    width: 50ch;
+  }
+  &-prices {
+    text-align: center;
+
+    &-active,
+    &:hover {
+      border: 1px double var(--primary);
+      color: var(--primary);
+      background-color: $card-header-color;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    &-first {
+      background-color: var(--gray-100);
+      p {
+        font-weight: 500;
+        margin: 0;
+        &:first-child {
+          font-size: 1.5rem;
+        }
+      }
+      a {
+        font-size: 1.5rem;
+        text-decoration: underline;
+      }
+    }
+  }
+
   &-title {
     padding: 0.5rem;
     font-weight: 600;
@@ -37,7 +70,6 @@ $card-header-color: #fef5ef;
 
 .header {
   font-weight: 400;
-  width: 10vw;
   text-align: center;
   &:not(:first-child) {
     background-color: var(--gray-100);
@@ -114,7 +146,10 @@ $card-header-color: #fef5ef;
 .title {
   text-align: center;
   padding: 1.5rem;
-  font-weight: 500;
   background-color: $card-header-color;
   margin-bottom: 0;
+  span {
+    text-transform: uppercase;
+    color: var(--primary);
+  }
 }

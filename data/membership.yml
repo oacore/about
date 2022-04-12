@@ -38,9 +38,9 @@ plans:
 
       action:
         title: become member
+        url: 'https://core.ac.uk/benefits#join-core'
 
     - title: Supporting
-      caption: '10000'
       box:
         title: All Supporting benefits
         caption: PLUS
@@ -59,9 +59,9 @@ plans:
 
       action:
         title: become member
+        url: 'membership/supporting'
 
     - title: Sustaining
-      caption: '20000'
       box:
         title: All Supporting benefits
         caption: PLUS
@@ -84,6 +84,8 @@ plans:
 
       action:
         title: become member
+        url: 'membership/sustaining'
+
 
 box:
  description: Here you can find a comparison table with detailed information about each features. I can help you choose the most sutible membership plan for you.
@@ -193,12 +195,64 @@ support:
       caption: Co-funds the maintenance of CORE services and their continuous improvement.
       img: /images/membership/sustaining.svg
   members:
-    - logo: stgeorg.png
-    - logo: university-of-london.svg
-    - logo: brunel.png
-    - logo: trent.png
-    - logo: sussex.svg
-    - logo: aru.svg
+    title: Some of our members
+    children:
+      - logo: stgeorg.png
+        name: St. George's, University of London
+      - logo: university-of-london.svg
+        name: City University of London
+      - logo: brunel.png
+        name: Brunel University
+      - logo: trent.png
+        name: Nottingham Trent University
+      - logo: sussex.svg
+        name: University of Sussex
+      - logo: aru.svg
+        name: Anglia Ruskin University
+
+
+
+
+fee:
+  title: Membership fee for <span>{{plan}}</span> members
+  action:
+    caption: Become member
+    url: '~about'
+  table:
+      headers:
+      - name: ""
+      - name: Small size data provider
+        caption:  (≤5000 articles) 50% discount
+      - name: Middle-large size data provider
+        caption: (more than 5000 articles)
+      supporting:
+        rows:
+          - title: |
+              [Low-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+            caption: 70% discount
+            prices: [5000,6000]
+          - title: |
+              [Middle income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+            caption: 50% discount
+            prices: [343,4234]
+          - title: |
+              High-income countries
+            prices: [70000,2342423432]
+      sustaining:
+        rows:
+          - title: |
+              [Low-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+            caption: 70% discount
+            prices: [21313,645654]
+          - title: |
+              [Middle income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+            caption: 50% discount
+            prices: [10000,30000]
+          - title: |
+              High-income countries
+            prices: [44444,23424324]
+
+
 
 
 

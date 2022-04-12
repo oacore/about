@@ -1,0 +1,46 @@
+title:  Become a {{plan}} members
+short-title: Become our new member!
+caption: Enter your details and our manager will contact you as soon as possible
+form:
+  id: Member-details
+  maxRepositoriesCount: 3
+  fields:
+    - placeholder: Organisation name
+      label: Organisation name
+      id: organisation-name
+      type: input
+    - placeholder: Organisation type
+      label: Organisation type
+      id: organisation-type
+      type: select
+      options:
+         - id: higher-educ-inst
+           name: Higher Education Institution
+           icon: school
+         - id: publisher
+           name: Publisher
+           icon: domain
+         - id: other
+           name: Other (clarify)
+           icon: database
+    - placeholder: Repository name
+      label: Repository name
+      type: async-select
+      options: []
+      id: repository-name
+      caption:
+        title: Can't find repository?
+        options:
+          - name: Register repository
+            action: 'benefits'
+          - name: Contact us
+            action: 'contact'
+    - label: Add
+      id: add-input-button
+      type: button
+
+    - placeholder: Organisation name
+      label: Name of contact person
+      id: name
+      type: input
+

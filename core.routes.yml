@@ -27,8 +27,10 @@ community:
   children:
     research: ./research
 
-mebmership:
-  pattern: /mebmership
+membership:
+  pattern: /membership
+  children:
+    supporting: ./supporting
 
 services:
   pattern: /services
