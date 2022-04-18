@@ -1,88 +1,56 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.container {
+  padding: var(--page-padding-y) calc(var(--page-padding-x) * 1.5) !important;
 }
 
-.select {
-  &-container {
-    width: 100%;
+.title {
+  text-align: center;
+  & > * {
+    font-size: 1.5rem;
   }
-  // z-index: 1 !important;
-  // position: relative;
-
-  // input {
-  //   z-index: 1;
-  // }
-
-  ul {
-    position: relative;
-    z-index: 10000;
-    overflow: hidden;
+  span {
+    color: var(--primary);
+    text-transform: uppercase;
   }
-  li {
-    z-index: 100;
-    overflow: hidden;
-  }
-  // ul {
-  //   position: relative;
-  // }
-
-  // label {
-  //   z-index: 1 !important;
-  // }
-}
-.button-plus {
-  position: relative;
-  width: 35px;
-  height: 35px;
-  background: #fff;
-  cursor: pointer;
-  border: 2px solid var(--primary);
 }
 
-.button-plus:after {
-  content: '';
-  position: absolute;
-  transform: translate(-50%, -50%);
-  height: 2px;
-  width: 50%;
-  background: var(--primary);
-  top: 50%;
-  left: 50%;
-}
-
-.button-plus:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--primary);
-  height: 50%;
-  width: 2px;
-}
-
-.button-plus:hover:before,
-.button-plus:hover:after {
-  background: #fff;
-  transition: 0.2s;
-}
-
-.button-plus:hover {
-  background: var(--primary);
-  transition: 0.2s;
-}
-
-.hidden {
-  display: none;
-}
-
-.button-help {
-  all: unset;
+.caption {
   margin-top: 1rem;
-  float: right;
-  text-transform: capitalize;
-  text-decoration: underline;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.additional-info {
   color: var(--gray-600);
+  span {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.form-section {
+  padding-top: 1.5rem;
+}
+
+.box {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.success {
+  text-align: center;
+  .description {
+    max-width: 80ch;
+    margin: 0 auto;
+    color: var(--gray-600);
+    font-size: 1.4rem;
+  }
+  .image {
+    margin-top: 2rem;
+  }
+  .caption {
+    margin: 1rem auto 2rem;
+    max-width: 60ch;
+    display: block;
+  }
 }

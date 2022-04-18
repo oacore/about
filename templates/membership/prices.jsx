@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { Button } from '@oacore/design/lib/elements'
+import { classNames } from '@oacore/design/lib/utils'
+import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
@@ -11,12 +13,16 @@ import { observe, useStore } from 'store'
 
 const MembershipPricesPageTemplate = observe(({ data }) => {
   const { membership } = useStore()
-
+  const router = useRouter()
   useEffect(() => {
     membership.setData({
       activePlan: data.plan,
     })
   }, [])
+
+  const handleClick = () => {
+    router.push(data.fee.action.url)
+  }
 
   return (
     <Layout>
@@ -37,8 +43,13 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
         />
 
         <Button
+          type="button"
           variant="contained"
-          disabled={membership.data.activePlan === ''}
+          onClick={handleClick}
+          className={classNames.use(
+            styles.button,
+            membership.data.price === 0 && styles.disabled
+          )}
         >
           {data.fee.action.caption}
         </Button>

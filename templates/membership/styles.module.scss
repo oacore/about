@@ -88,22 +88,6 @@ $member-image-width: 102px;
   }
 }
 
-.box {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  background-color: var(--gray-100);
-  padding: 1.5rem;
-  &-text {
-    line-height: 2;
-    flex: 1;
-  }
-  &-button {
-    text-align: right;
-    flex: 0.6;
-  }
-}
-
 .table {
   margin-top: 2rem;
 }
@@ -186,4 +170,10 @@ $member-image-width: 102px;
   &-table {
     margin-bottom: 2rem;
   }
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
 }

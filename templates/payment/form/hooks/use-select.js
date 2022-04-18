@@ -16,14 +16,6 @@ export const useSelect = (elementType, initialValue, initOptions) => {
       setSuggestions(result)
     }
     if (!data.value) setSuggestions(initOptions)
-
-    // if id doesn't exists it means user type own text and didn't use suggestion
-    // if (!data.id) {
-    //   setSuggestions(
-    //     options.slice(0, Math.max(0, options.length - data.value.length))
-    //   )
-    // }
-    // setValue(data.value)
   }
   return {
     value,

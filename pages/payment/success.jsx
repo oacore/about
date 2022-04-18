@@ -1,12 +1,12 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
+import PaymentSuccessPageTemplate from 'templates/payment/success'
 import { Page } from 'components'
 import textData from 'data/payment.yml'
-import PaymentPageTemplate from 'templates/payment'
 import { useStore } from 'store'
 
-const PaymentPage = () => {
+const PaymentSuccessPage = () => {
   const { membership } = useStore()
   const router = useRouter()
 
@@ -21,9 +21,9 @@ const PaymentPage = () => {
 
   return (
     <Page title={textData.shortTitle} description={textData.caption}>
-      <PaymentPageTemplate textData={textData} />
+      <PaymentSuccessPageTemplate textData={textData.success} />
     </Page>
   )
 }
 
-export default PaymentPage
+export default PaymentSuccessPage

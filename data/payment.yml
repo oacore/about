@@ -1,15 +1,19 @@
-title:  Become a {{plan}} members
+title:  Become a <span>{{activePlan}}</span> members
 short-title: Become our new member!
 caption: Enter your details and our manager will contact you as soon as possible
 form:
   id: Member-details
   maxRepositoriesCount: 3
+  price: "Price:  <span> ￡ {{price}} *</span>"
+  action:
+    caption: Become a member
+    url: '/success'
   fields:
-    - placeholder: Organisation name
+    - placeholder: Open University
       label: Organisation name
       id: organisation-name
       type: input
-    - placeholder: Organisation type
+    - placeholder: Higher Education Institution
       label: Organisation type
       id: organisation-type
       type: select
@@ -23,24 +27,52 @@ form:
          - id: other
            name: Other (clarify)
            icon: database
-    - placeholder: Repository name
+    - placeholder: Open research online
       label: Repository name
       type: async-select
       options: []
       id: repository-name
-      caption:
-        title: Can't find repository?
-        options:
+    - label: Can't find repository?
+      type: caption
+      options:
           - name: Register repository
             action: 'benefits'
           - name: Contact us
             action: 'contact'
     - label: Add
-      id: add-input-button
       type: button
-
-    - placeholder: Organisation name
+      caption: You can add up to 3 repositories
+    - placeholder: Marco Dami
       label: Name of contact person
       id: name
       type: input
+    - placeholder: marco.dami@gmail.com
+      label: Email
+      id: email
+      type: input
+    - placeholder: We have 2 more repository. Is it possible add them later?
+      label: Any additional information you want to tell us
+      id: additional-text
+      type: input
+      optional: true
+      appendText: Optional
 
+additional-info:
+  icon: "*"
+  text: The price is formed based on the data you entered. Our manager will check all the information and if everything is correct, the price will remain unchanged.
+
+box:
+ description: Not a data-provider but still want to support CORE?
+ action:
+  active: Contact us
+  url: about/#contact
+
+success:
+ title: CORE Membership for Organisations
+ description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
+ image:
+  url: /images/membership/email.svg
+  caption: Thank you for apply with CORE Membership for organisations. Your request has been successfully sent. Our teams will contact you shortly.
+ button:
+  caption: homepage
+  url: "/"

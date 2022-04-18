@@ -31,6 +31,12 @@ membership:
   pattern: /membership
   children:
     supporting: ./supporting
+    sustaining: ./sustaining
+
+payment:
+  pattern: /payment
+  children:
+    success: /success
 
 services:
   pattern: /services

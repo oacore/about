@@ -8,6 +8,7 @@ const icons = [
   'file-search',
   'database',
   'school',
+  'close',
 ]
 
 const iconsRoot = path.join(

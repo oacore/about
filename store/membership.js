@@ -1,6 +1,4 @@
-import { makeObservable, observable, action, toJS } from 'mobx'
-
-import { registerKey } from '../api/services'
+import { makeObservable, observable, action } from 'mobx'
 
 class Membership {
   data = {
@@ -19,7 +17,6 @@ class Membership {
 
   setData(data) {
     Object.assign(this.data, data)
-    console.log(toJS(this.data))
   }
 
   setIsLoading(boolean) {
@@ -27,7 +24,12 @@ class Membership {
   }
 
   async submit() {
-    console.log(data)
+    const myPromise = new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(this.data)
+      }, 300)
+    })
+    return myPromise
   }
 
   reset() {

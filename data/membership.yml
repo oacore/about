@@ -217,7 +217,7 @@ fee:
   title: Membership fee for <span>{{plan}}</span> members
   action:
     caption: Become member
-    url: '~about'
+    url: '/payment'
   table:
       headers:
       - name: ""

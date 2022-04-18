@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { Select as DesignSelect } from '@oacore/design/lib/modules'
-import { toJS } from 'mobx'
-import { Button, ProgressSpinner } from '@oacore/design/lib/elements'
+import { Icon, ProgressSpinner } from '@oacore/design/lib/elements'
+import classNames from '@oacore/design/lib/utils/class-names'
 
-import useSelect from './hooks/use-select'
-import styles from '../styles.module.scss'
+import { useSelect } from './hooks'
+import styles from './styles.module.scss'
 
 const Select = ({
   id,
@@ -14,11 +14,10 @@ const Select = ({
   options,
   loading,
   setFormValue,
-  caption,
+  onDelete,
 }) => {
   const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
     useSelect(type, '', options)
-
   // For async values
   useEffect(() => {
     setSuggestions(options)
@@ -31,17 +30,19 @@ const Select = ({
     setFormValue(id, option.value)
   }
 
-  // console.log(suggestions)
   return (
     <div className={styles.selectContainer}>
       <DesignSelect
-        className={styles.select}
+        className={classNames.use(styles.input, styles.select, {
+          [styles.filled]: value !== '',
+        })}
         id={id}
         value={value}
         label={label}
         onChange={(option) => handleSelectChange(option)}
         onInput={handleOnInput}
         placeholder={placeholder}
+        clearButtonClassName={styles.clearButton}
         required
       >
         {loading ? (
@@ -62,10 +63,12 @@ const Select = ({
           ))
         )}
       </DesignSelect>
-      {caption && (
-        <span type="button" className={styles.buttonHelp}>
-          {caption.title}
-        </span>
+      {onDelete && (
+        <Icon
+          src="#close"
+          onClick={() => onDelete(id)}
+          className={styles.closeIcon}
+        />
       )}
     </div>
   )
