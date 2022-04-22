@@ -18,8 +18,9 @@ const validateIdentifier = (string) => {
 
 const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
   const router = useRouter()
-  const identifier = router.route.substring(1)
-  const { error } = router.query
+  const { slug } = router.query
+  const error = !!(slug && slug[0] && slug[0] === 'error')
+  const identifier = slug && slug[1] ? slug[1] : ''
 
   const {
     value: OAIidentifier,
@@ -108,11 +109,7 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
           {...bindOAIidentifier}
         />
         <span className={styles.helper}>
-          {isOAInotValid
-            ? msgErrorFormat
-            : error === '404'
-            ? msgErrorRoute
-            : msgHelper}
+          {isOAInotValid ? msgErrorFormat : error ? msgErrorRoute : msgHelper}
         </span>
 
         <div className={styles.submitSection}>

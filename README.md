@@ -73,6 +73,7 @@ Also, this projects uses images hosted directly from
 
 * [design](https://github.com/oacore/design)
 * [content](https://github.com/oacore/content)
+* [edit content](https://core.ac.uk/edit)
 * [api](https://api.core.ac.uk)
 
 
