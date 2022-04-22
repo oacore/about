@@ -14,19 +14,25 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
   const onSelectActivePlan = (price) => {
     membership.setData({ price })
   }
-
   const renderHeaders = () => (
     <tr>
       {textData.headers.map((header) => (
-        <th key={header.name} className={styles.header}>
-          <h6>{header.name}</h6>
+        <th
+          key={header.name}
+          className={classNames.use(styles.header, {
+            [styles.headerActive]:
+              membership.data.activePlan === header.name.toLowerCase(),
+          })}
+        >
+          <h6 className={styles.headerTitle}>{header.name}</h6>
           {header.defaultText && (
             <span className={styles.headerText}>{header.defaultText}</span>
           )}
           {header.caption && (
             <span className={styles.headerCaption}>{header.caption}</span>
           )}
-          {header.action && (
+          {header.action &&
+          membership.data.activePlan !== header.name.toLowerCase() ? (
             <Button
               className={styles.headerAction}
               variant="outlined"
@@ -34,6 +40,8 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
             >
               {header.action.caption}
             </Button>
+          ) : (
+            <span className={styles.headerText}>{header.selectedText}</span>
           )}
         </th>
       ))}

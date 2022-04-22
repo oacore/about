@@ -1,11 +1,44 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
+import { useOutsideClick } from '@oacore/design/lib/hooks'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
 
 import { Markdown } from 'components'
 import { Layout, Section } from 'design-v2/components'
+
+const DetailsBox = ({ title, description }) => {
+  const [open, setOpen] = useState(false)
+  const boxRef = useRef(null)
+
+  const toggleClick = (e) => {
+    e.preventDefault()
+    setOpen(!open)
+  }
+
+  const onClose = () => setOpen(false)
+
+  useOutsideClick(boxRef, onClose)
+
+  return (
+    <details
+      {...(open ? { open: true } : {})}
+      className={styles.box}
+      ref={boxRef}
+    >
+      <summary className={styles.title} onClick={toggleClick}>
+        <Markdown>{title}</Markdown>
+      </summary>
+      <Markdown
+        onClick={(e) => e.stopPropagation()}
+        className={styles.description}
+      >
+        {description}
+      </Markdown>
+    </details>
+  )
+}
 
 const Card = ({ plan }) => (
   <article className={styles.plan} key={plan.title}>
@@ -25,7 +58,16 @@ const Card = ({ plan }) => (
           </Markdown>
         </div>
       )}
-      <Markdown className={styles.advantages}>{plan.advantages}</Markdown>
+      <ul className={styles.planAdvantages}>
+        {plan.advantages.map((advantage) => (
+          <li key={advantage.title}>
+            <DetailsBox
+              title={advantage.title}
+              description={advantage.description}
+            />
+          </li>
+        ))}
+      </ul>
       <div className={styles.planContentButton}>
         <Button variant="contained" href={plan.action.url}>
           {plan.action.title}

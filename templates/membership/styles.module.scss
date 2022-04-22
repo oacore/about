@@ -43,6 +43,33 @@ $member-image-width: 102px;
       color: var(--gray-500);
     }
   }
+  &-advantages {
+    width: 100%;
+    list-style: disc;
+    li {
+      margin-left: 1rem;
+      line-height: 2;
+      color: var(--gray-800);
+    }
+
+    .box {
+      .title {
+        cursor: pointer;
+        list-style: none;
+        &:hover {
+          text-decoration: underline;
+        }
+        p {
+          margin-bottom: 0;
+        }
+      }
+      .description {
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-left: 1.2rem;
+      }
+    }
+  }
 
   .divider {
     height: 1.5rem;
@@ -52,21 +79,8 @@ $member-image-width: 102px;
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    min-height: 35rem;
+    min-height: 32rem;
     border: 1px solid var(--gray-200);
-    .advantages {
-      width: 100%;
-      ul {
-        list-style: disc;
-        li {
-          margin-left: 1rem;
-          line-height: 2;
-          ul {
-            max-width: 300px;
-          }
-        }
-      }
-    }
 
     &-button {
       margin-top: auto;

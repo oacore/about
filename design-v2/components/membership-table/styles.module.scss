@@ -71,8 +71,13 @@ $card-header-color: #fef5ef;
 .header {
   font-weight: 400;
   text-align: center;
-  &:not(:first-child) {
-    background-color: var(--gray-100);
+  background-color: var(--gray-100);
+
+  &-active {
+    background-color: #fae2d2;
+  }
+  &:first-child {
+    background-color: var(--white);
   }
   &-text {
     color: var(--primary);
@@ -81,6 +86,9 @@ $card-header-color: #fef5ef;
   }
   &-action {
     background-color: var(--white);
+  }
+  &-title {
+    font-size: 1.2rem;
   }
 }
 

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useSelect = (elementType, initialValue, initOptions) => {
+export const useSelect = (initialValue, initOptions) => {
   const [value, setValue] = useState(initialValue)
   const [suggestions, setSuggestions] = useState(initOptions)
   const handleOnChange = (data) => {

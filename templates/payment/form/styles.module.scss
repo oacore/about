@@ -8,7 +8,7 @@
   width: 100%;
   input,
   span {
-    border-color: var(--gray-200);
+    border-color: var(--gray-300);
   }
   &-append {
     float: right;
@@ -35,7 +35,9 @@
   }
 
   .option {
-    color: var(--black);
+    > * {
+      color: var(--gray-800);
+    }
   }
 }
 

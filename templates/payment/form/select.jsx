@@ -10,14 +10,13 @@ const Select = ({
   id,
   placeholder,
   label,
-  type,
   options,
   loading,
   setFormValue,
   onDelete,
 }) => {
   const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
-    useSelect(type, '', options)
+    useSelect('', options)
   // For async values
   useEffect(() => {
     setSuggestions(options)
@@ -56,7 +55,8 @@ const Select = ({
               key={el.id}
               id={el.id}
               value={el.name}
-              icon={el.icon}
+              icon={`#${el.icon}`}
+              customValue={el.customValue}
             >
               {el.name}
             </DesignSelect.Option>

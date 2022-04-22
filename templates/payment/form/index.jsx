@@ -1,9 +1,10 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Form, TextField } from '@oacore/design/lib/elements/forms'
 import classNames from '@oacore/design/lib/utils/class-names'
 import { Button } from '@oacore/design/lib/elements'
 import { useRouter } from 'next/router'
+import { useOutsideClick } from '@oacore/design/lib/hooks'
 
 import styles from './styles.module.scss'
 import Select from './select'
@@ -16,6 +17,8 @@ import { Markdown } from 'components'
 const PaymentDefailsForm = observe(({ form }) => {
   const { membership, dataProviders } = useStore()
   const router = useRouter()
+
+  const helpBoxRef = useRef(null)
 
   useEffect(() => {
     dataProviders.fetchData()
@@ -62,9 +65,15 @@ const PaymentDefailsForm = observe(({ form }) => {
     })
   }
 
-  const toggleVisibleHelpBox = () => {
+  const toggleHelpBox = () => {
     setVisibleHelpBox(!visibleHelpBox)
   }
+
+  const closeHelpBox = () => {
+    setVisibleHelpBox(false)
+  }
+
+  useOutsideClick(helpBoxRef, closeHelpBox)
 
   const onCreateNewInput = () => {
     setRepositoryInputsList([
@@ -143,11 +152,11 @@ const PaymentDefailsForm = observe(({ form }) => {
         }
         if (field.type === 'caption') {
           return (
-            <div className={styles.help} key={field.label}>
+            <div className={styles.help} key={field.label} ref={helpBoxRef}>
               <button
                 type="button"
                 className={styles.helpButton}
-                onClick={toggleVisibleHelpBox}
+                onClick={toggleHelpBox}
               >
                 {field.label}
               </button>
