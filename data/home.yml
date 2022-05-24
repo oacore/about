@@ -89,10 +89,13 @@ testimonials:
       extraText: In memoriam
     - title:  Funders
       description: Helping funders to analyse, audit and monitor open research and accelerate towards open science.
-      logo: /images/logos/research-england.png
-      citation: |
-       Aggregation plays an increasingly essential role in maximising the long-term benefits of open access, helping to turn the promise of a 'research commons' into a reality. The aggregation services that CORE provides therefore make a very valuable contribution to the evolving open access environment in the UK.
-      author: Ben Johnson, Research Policy Adviser at Research England
+      logo: /images/features/building.svg
+      temporaryText: |
+        CORE provides funders with tools
+        to monitor compliance with
+        open access policies.
+
+      # author: Rachel Bruce, UKRI
 services:
   title: Our services
   actionLabel: Learn more
