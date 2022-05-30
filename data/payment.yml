@@ -78,8 +78,7 @@ success:
 error:
   title: Server Error
   description: |
-       The server encountered an error and could not complete you request.
-
+       The server encountered an error and could not complete you request.</br>
        Please try again later or contact us.
   image:
     url: /images/membership/error.svg
