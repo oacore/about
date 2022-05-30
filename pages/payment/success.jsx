@@ -9,11 +9,10 @@ import { useStore } from 'store'
 const PaymentSuccessPage = () => {
   const { membership } = useStore()
   const router = useRouter()
-
   const [loaded, setLoaded] = React.useState(false)
 
   React.useEffect(() => {
-    if (membership.data.activePlan === '') router.push('/membership')
+    if (membership.data.planName === '') router.push('/membership')
     else setLoaded(true)
   }, [])
 

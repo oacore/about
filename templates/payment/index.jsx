@@ -22,7 +22,6 @@ const PaymentPageTemplate = observe(({ textData }) => {
       <Section id={form.id} className={styles.formSection}>
         <PaymentDefailsForm form={form} />
       </Section>
-
       <Section>
         <p className={styles.additionalInfo}>
           <span>{additionalInfo.icon}</span>

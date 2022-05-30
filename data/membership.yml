@@ -235,45 +235,153 @@ support:
         name: Anglia Ruskin University
 
 fee:
-  title: Membership fee for <span>{{plan}}</span> members
+  title: Membership fee for <span>{{planName}}</span> members
+  caption: 30% Early bird CORE Membership discount (ends September 30th, 2022)
+  description:
+    supporting: |
+        Our Supporting members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
+    sustaining: |
+        Our Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services and their continuous improvement.
+  note: "*Jisc Members already have CORE Supporting Membership through their subscription."
   action:
     caption: Become member
     url: '/payment'
   table:
       headers:
-      - name: ""
-      - name: Small size data provider
-        caption:  (≤5000 articles) 50% discount
-      - name: Middle-large size data provider
-        caption: (more than 5000 articles)
+      - name: Data provider size
+      - name: |
+           [Low-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+        type: low
+      - name: |
+           [Middle-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+        type: middle
+      - name: |
+           [High-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+        type: higg
       supporting:
         rows:
-          - title: |
-              [Low-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
-            caption: 70% discount
-            prices: [5000,6000]
-          - title: |
-              [Middle income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
-            caption: 50% discount
-            prices: [343,4234]
-          - title: |
-              High-income countries
-            caption: "&nbsp"
-            prices: [70000,2342423432]
+          - title: Band 1
+            caption: up to 5k articles
+            prices:
+             - type: low
+               original: 450
+               discount: 315
+             - type: middle
+               original: 900
+               discount: 630
+             - type: hign
+               original: 1500
+               discount: 1050
+          - title: Band 2
+            caption: 5k - 10k articles
+            prices:
+             - type: low
+               original: 900
+               discount: 630
+             - type: middle
+               original: 1800
+               discount: 1260
+             - type: high
+               original: 3000
+               discount: 2100
+          - title: Band 3
+            caption: 10k - 20k articles
+            prices:
+             - type: low
+               original: 1350
+               discount: 945
+             - type: middle
+               original: 2700
+               discount: 1890
+             - type: high
+               original: 4500
+               discount: 3150
+          - title: Band 4
+            caption: 20k - 40k articles
+            prices:
+             - type: low
+               original: 1800
+               discount: 1260
+             - type: middle
+               original: 3600
+               discount: 2520
+             - type: high
+               original: 6000
+               discount: 4200
+          - title: Band 5
+            caption: 40k+ articles
+            prices:
+             - type: low
+               original: 2250
+               discount: 1575
+             - type: middle
+               original: 4500
+               discount: 3150
+             - type: high
+               original: 7500
+               discount: 5250
       sustaining:
         rows:
-          - title: |
-              [Low-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
-            caption: 70% discount
-            prices: [21313,645654]
-          - title: |
-              [Middle income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
-            caption: 50% discount
-            prices: [10000,30000]
-          - title: |
-              High-income countries
-            caption: "&nbsp"
-            prices: [44444,23424324]
+          - title: Band 1
+            caption: up to 5k articles
+            prices:
+             - type: low
+               original: 900
+               discount: 630
+             - type: middle
+               original: 1800
+               discount: 1260
+             - type: hign
+               original: 3000
+               discount: 2100
+          - title: Band 2
+            caption: 5k - 10k articles
+            prices:
+             - type: low
+               original: 1800
+               discount: 1260
+             - type: middle
+               original: 3600
+               discount: 2520
+             - type: high
+               original: 6000
+               discount: 4200
+          - title: Band 3
+            caption: 10k - 20k articles
+            prices:
+             - type: low
+               original: 2700
+               discount: 1890
+             - type: middle
+               original: 5400
+               discount: 3780
+             - type: high
+               original: 9000
+               discount: 6300
+          - title: Band 4
+            caption: 20k - 40k articles
+            prices:
+             - type: low
+               original: 3600
+               discount: 2520
+             - type: middle
+               original: 7200
+               discount: 5040
+             - type: high
+               original: 12000
+               discount: 8400
+          - title: Band 5
+            caption: 40k+ articles
+            prices:
+             - type: low
+               original: 4500
+               discount: 3150
+             - type: middle
+               original: 9000
+               discount: 6300
+             - type: high
+               original: 15000
+               discount: 10500
 
 
 

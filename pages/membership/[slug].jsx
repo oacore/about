@@ -12,7 +12,7 @@ export async function getStaticProps({ params }) {
   const data = {
     header: {
       title: textData.header.title,
-      description: textData.header.description,
+      description: textData.fee.description[slug],
     },
     fee: {
       ...textData.fee,
@@ -21,7 +21,7 @@ export async function getStaticProps({ params }) {
         ...textData.fee.table[slug],
       },
     },
-    plan: slug,
+    planName: slug,
     comparisonTable: textData.comparisonTable,
     box: textData.box,
   }

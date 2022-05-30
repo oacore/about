@@ -1,9 +1,7 @@
-/* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { useEffect, useRef, useState } from 'react'
 import { Form, TextField } from '@oacore/design/lib/elements/forms'
 import classNames from '@oacore/design/lib/utils/class-names'
 import { Button } from '@oacore/design/lib/elements'
-import { useRouter } from 'next/router'
 import { useOutsideClick } from '@oacore/design/lib/hooks'
 
 import styles from './styles.module.scss'
@@ -16,7 +14,6 @@ import { Markdown } from 'components'
 
 const PaymentDefailsForm = observe(({ form }) => {
   const { membership, dataProviders } = useStore()
-  const router = useRouter()
 
   const helpBoxRef = useRef(null)
 
@@ -41,14 +38,29 @@ const PaymentDefailsForm = observe(({ form }) => {
   ])
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    membership.setData({
-      ...formValues,
+
+    // Make array from repos id's
+    const repository = Object.values(
+      Object.keys(formValues)
+        .filter((k) => k.indexOf('repository') === 0)
+        .reduce((newData, k) => {
+          newData[k] = formValues[k]
+          return newData
+        }, {})
+    )
+
+    Object.keys(formValues).forEach((key) => {
+      if (/repository-[0-9]/gm.test(key)) delete formValues[key]
     })
 
-    membership.submit()
-    router.push(router.pathname + form.action.url)
+    membership.setData({
+      ...formValues,
+      repository,
+    })
+
+    await membership.submit()
   }
   const handleInputChange = (e) => {
     const { name, value } = e.target
@@ -81,7 +93,7 @@ const PaymentDefailsForm = observe(({ form }) => {
       {
         ...initRepositorySelect,
         ['name' && 'id']: `${initRepositorySelect.id}-${
-          repositoryInputsList.length + 1
+          repositoryInputsList.length + 2
         }`,
       },
     ])
@@ -139,6 +151,7 @@ const PaymentDefailsForm = observe(({ form }) => {
           return (
             <div key={field.label}>
               <button
+                aria-label="create-new-input"
                 type="button"
                 className={classNames.use(styles.buttonPlus, {
                   [styles.hidden]:

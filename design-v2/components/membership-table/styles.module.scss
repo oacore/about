@@ -11,9 +11,18 @@ $card-header-color: #fef5ef;
 .header {
   margin-top: 1.5rem;
   border: $table-border;
+  margin-bottom: 0;
   .head {
     border-width: 1px;
   }
+}
+
+.table-caption {
+  min-height: 1rem;
+  text-align: center;
+  padding: 0.2rem;
+  color: var(--white);
+  background-color: var(--primary);
 }
 
 .cell {
@@ -24,29 +33,18 @@ $card-header-color: #fef5ef;
     width: 50ch;
   }
   &-prices {
-    text-align: center;
-
     &-active,
     &:hover {
-      border: 1px double var(--primary);
-      color: var(--primary);
-      background-color: $card-header-color;
-      font-weight: 800;
+      background-color: var(--gray-200);
       cursor: pointer;
     }
 
     &-first {
-      background-color: var(--gray-100);
       p {
-        font-weight: 500;
-        margin: 0;
-        &:first-child {
-          font-size: 1.5rem;
-        }
+        margin-bottom: 0;
       }
-      a {
-        font-size: 1.5rem;
-        text-decoration: underline;
+      &-caption {
+        font-weight: 300;
       }
     }
   }
@@ -55,12 +53,6 @@ $card-header-color: #fef5ef;
     padding: 0.5rem;
     font-weight: 600;
     background-color: var(--gray-100);
-    p {
-      margin: 0;
-      &:not(:first-child) {
-        margin: 0 2rem;
-      }
-    }
   }
   &-description {
     padding: 1.5rem;
@@ -76,7 +68,7 @@ $card-header-color: #fef5ef;
   &-active {
     background-color: #fae2d2;
   }
-  &:first-child {
+  &-empty {
     background-color: var(--white);
   }
   &-text {
@@ -89,6 +81,13 @@ $card-header-color: #fef5ef;
   }
   &-title {
     font-size: 1.2rem;
+    a {
+      color: var(--black);
+      text-decoration: underline;
+    }
+    &-details {
+      margin-bottom: 1rem;
+    }
   }
 }
 
@@ -116,11 +115,16 @@ $card-header-color: #fef5ef;
   }
 }
 
-.caption {
+.price {
   display: block;
   margin-top: 0.5rem;
   text-align: center;
 }
+
+.price-discount {
+  color: var(--primary);
+}
+
 .uncheked {
   background-color: $checkbox-danger-color;
   &::before,
@@ -144,11 +148,6 @@ $card-header-color: #fef5ef;
     transform: rotate(-45deg);
     right: 2px;
   }
-}
-
-.divider {
-  height: 1.5rem;
-  background-color: var(--primary);
 }
 
 .title {

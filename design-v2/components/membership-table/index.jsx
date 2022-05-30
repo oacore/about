@@ -7,13 +7,24 @@ import styles from './styles.module.scss'
 import { Markdown } from 'components'
 import { observe, useStore } from 'store'
 
+const Price = ({ tag: Tag = 'span', price, className }) => (
+  <Tag className={classNames.use(styles.price).join(className)}>
+    {new Intl.NumberFormat('en-GB', {
+      style: 'currency',
+      currency: 'GBP',
+      maximumSignificantDigits: 3,
+    }).format(price)}
+  </Tag>
+)
+
 const MembershipTable = observe(({ className, textData, type = 'details' }) => {
   const headerNames = textData.headers.map((header) => header.name).slice(1)
   const { membership } = useStore()
 
-  const onSelectActivePlan = (price) => {
-    membership.setData({ price })
+  const onSelectActivePlan = (price, size) => {
+    membership.setData({ price, size })
   }
+
   const renderHeaders = () => (
     <tr>
       {textData.headers.map((header) => (
@@ -21,10 +32,17 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
           key={header.name}
           className={classNames.use(styles.header, {
             [styles.headerActive]:
-              membership.data.activePlan === header.name.toLowerCase(),
+              membership.data.planName === header.name.toLowerCase(),
+            [styles.headerEmpty]: header.name.length === 0,
           })}
         >
-          <h6 className={styles.headerTitle}>{header.name}</h6>
+          <Markdown
+            className={classNames.use(styles.headerTitle, {
+              [styles.headerTitleDetails]: type === 'details',
+            })}
+          >
+            {header.name}
+          </Markdown>
           {header.defaultText && (
             <span className={styles.headerText}>{header.defaultText}</span>
           )}
@@ -32,7 +50,7 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
             <span className={styles.headerCaption}>{header.caption}</span>
           )}
           {header.action &&
-          membership.data.activePlan !== header.name.toLowerCase() ? (
+          membership.data.planName !== header.name.toLowerCase() ? (
             <Button
               className={styles.headerAction}
               variant="outlined"
@@ -51,26 +69,26 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
   const renderPricesRows = () =>
     textData.rows.map((row) => (
       <tr key={row.title}>
-        <td className={styles.cellPricesFirst}>
+        <td className={styles.cellPricesFirst} align="center">
           <Markdown>{row.title}</Markdown>
-          <Markdown>{row.caption}</Markdown>
+          <Markdown className={styles.cellPricesFirstCaption}>
+            {row.caption}
+          </Markdown>
         </td>
-        {row.prices.map((price) => (
+        {row.prices.map(({ type: priceType, original, discount }) => (
           <td
-            key={price}
+            key={`${priceType}-${original}`}
             className={classNames.use(styles.cell, styles.cellPrices, {
-              [styles.cellPricesActive]: membership.data.price === price,
+              [styles.cellPricesActive]:
+                (membership.data.price === discount ||
+                  membership.data.price === original) &&
+                membership.data.size === row.title,
             })}
             role="gridcell"
-            onClick={() => onSelectActivePlan(price)}
+            onClick={() => onSelectActivePlan(discount || original, row.title)}
           >
-            <span className={styles.caption}>
-              {new Intl.NumberFormat('en-GB', {
-                style: 'currency',
-                currency: 'GBP',
-                maximumSignificantDigits: 3,
-              }).format(price)}
-            </span>
+            <Price price={discount} className={styles.priceDiscount} />
+            <Price tag={discount && 'strike'} price={original} />
           </td>
         ))}
       </tr>
@@ -113,7 +131,7 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
       <Markdown
         className={styles.title}
       >{`<h3>${textData.title}</h3>`}</Markdown>
-      <div className={styles.divider} />
+      <div className={styles.tableCaption}>{textData.caption} </div>
       <table
         className={classNames.use(styles.table, {
           [styles.fixed]: type === 'prices',

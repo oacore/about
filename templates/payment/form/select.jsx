@@ -7,7 +7,7 @@ import { useSelect } from './hooks'
 import styles from './styles.module.scss'
 
 const Select = ({
-  id,
+  id: name,
   placeholder,
   label,
   options,
@@ -26,7 +26,7 @@ const Select = ({
 
   const handleSelectChange = (option) => {
     handleOnChange(option)
-    setFormValue(id, option.value)
+    setFormValue(name, option.id)
   }
 
   return (
@@ -35,7 +35,7 @@ const Select = ({
         className={classNames.use(styles.input, styles.select, {
           [styles.filled]: value !== '',
         })}
-        id={id}
+        id={name}
         value={value}
         label={label}
         onChange={(option) => handleSelectChange(option)}
@@ -66,7 +66,7 @@ const Select = ({
       {onDelete && (
         <Icon
           src="#close"
-          onClick={() => onDelete(id)}
+          onClick={() => onDelete(name)}
           className={styles.closeIcon}
         />
       )}

@@ -14,9 +14,10 @@ import { observe, useStore } from 'store'
 const MembershipPricesPageTemplate = observe(({ data }) => {
   const { membership } = useStore()
   const router = useRouter()
+
   useEffect(() => {
     membership.setData({
-      activePlan: data.plan,
+      planName: data.planName,
     })
   }, [])
 
@@ -37,11 +38,12 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
           textData={{
             ...data.fee.table,
             title: patchStats(data.fee.title, data),
+            caption: data.fee.caption,
           }}
           type="prices"
           className={styles.feeSectionTable}
         />
-
+        <Markdown className={styles.feeSectionNote}>{data.fee.note}</Markdown>
         <Button
           type="button"
           variant="contained"

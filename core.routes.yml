@@ -37,6 +37,7 @@ payment:
   pattern: /payment
   children:
     success: /success
+    error: /error
 
 services:
   pattern: /services

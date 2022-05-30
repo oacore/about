@@ -180,9 +180,16 @@ $member-image-width: 102px;
 }
 
 .fee-section {
-  text-align: center;
   &-table {
     margin-bottom: 2rem;
+  }
+  &-note {
+    margin-bottom: 2rem;
+    color: var(--gray-800);
+  }
+  .button {
+    display: block;
+    margin: 0 auto;
   }
 }
 
