@@ -101,7 +101,7 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
           value={OAIidentifier}
           variant={isOAInotValid ? 'normal' : 'pure'}
           prependIcon="#magnify"
-          placeholder="Put OAI of the article"
+          placeholder="Insert an OAI identifier"
           changeOnBlur={false}
           onInput={handleInput}
           className={styles.select}
