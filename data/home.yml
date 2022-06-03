@@ -14,7 +14,9 @@ slides:
     actionLabel: Explore Services
   - title: Resolve OAI identifier
     description: |
-      OAIs are unique identifiers used by repositories. As opposed to DOIs, they are minted in a distributed way and cost-free. Our service allows you to resolve an OAI in the same way as you would resolve a DOI.
+      OAIs are unique identifiers used by repositories.
+      As opposed to DOIs, they are minted in a distributed way and cost-free.
+      Our service allows you to resolve an OAI in the same way as you would resolve a DOI.
     image: /images/heros/oai.svg
     label: OAI
     action: http://oai.core.ac.uk

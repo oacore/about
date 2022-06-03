@@ -35,14 +35,13 @@ const markdownConfig = {
     ),
 
     image: MarkdownImage,
-
     link: MarkdownLink,
     linkReference: MarkdownLink,
   },
 }
 
 const Markdown = ({ children, tag, ...markdownProps }) => (
-  <ReactMarkdown {...markdownConfig} {...markdownProps} root={tag}>
+  <ReactMarkdown {...markdownConfig} {...markdownProps}>
     {children}
   </ReactMarkdown>
 )
