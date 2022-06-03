@@ -41,7 +41,6 @@ collections:
   description: >
     All the sections on the page “About CORE”. Sections are listed in order
     appearing on the page.
-
   files:
     - name: meta
       label: ℹ️ Metadata (title, description, headline)
@@ -64,9 +63,8 @@ collections:
         widget: string
         label: Headline
         hint: >
-          The title of the page. Displayed on the page below header
-          and above the page navigation.
-
+          The title of the page. Displayed on the page below header
+          and above the page navigation.
     - name: core
       label: ❓ What is core (title, description)
       file: about/core.yml
@@ -81,7 +79,6 @@ collections:
         label: Description
         hint: >
           Section description
-
     - name: mission
       label: 👁 Mission
       file: about/mission.md
@@ -138,7 +135,6 @@ collections:
         label: Call to action
         hint: >
           A button caption, intended to call the user view the target page.
-
     - name: endorsements
       label: '👉 Teaser: Endorsements'
       file: about/endorsements.md
@@ -167,7 +163,6 @@ collections:
         hint: >
           An icon above the section. Configured internally.
           There is no need to bother the content manager by designer things.
-
     - name: how-it-works
       label: ✨ How it works
       file: about/how-it-works.md
@@ -219,7 +214,6 @@ collections:
         label: Call to action
         hint: >
           A button caption, intended to call the user view the target page.
-
     - name: team
       label: 🧑‍💻 Team
       file: about/team.md
@@ -233,7 +227,6 @@ collections:
         hint: >
           Identifies the section in the page navigation bar.
           If empty, the section won't appear in the page navigation.
-
     - name: communities
       label: '👉 Communities'
       file: about/communities.md
@@ -267,7 +260,6 @@ collections:
         hint: >
           An icon above the section. Configured internally.
           There is no need to bother the content manager by designer things.
-
     - name: resources
       label: 🎇 Resources
       file: about/resources.md
@@ -281,7 +273,6 @@ collections:
         hint: >
           Identifies the section in the page navigation bar.
           If empty, the section won't appear in the page navigation.
-
     - name: research
       label: '👉 Teaser: Research outputs'
       file: about/research.md
@@ -310,7 +301,6 @@ collections:
         hint: >
           An icon above the section. Configured internally.
           There is no need to bother the content manager by designer things.
-
   slug: '{{filename}}'
 
   preview_path: api/preview?page=about&ref=cms/about/{{slug}}
@@ -327,7 +317,7 @@ collections:
   create: true
   delete: false
 
-  label: 🧑‍💻 Team
+  label: 🧑‍💻 Team
   label_singular: team member
   summary: '{{first-name}} {{last-name}}'
 
@@ -365,9 +355,7 @@ collections:
     hint: >
       This is used to force sorting team members on the website in a way
       different from alphabetical. Higher numbers go first.
-
       Practically, this is used to make project founder go first.
-
   slug: '{{first-name}}-{{last-name}}'
 
   sortable_fields: [first-name, last-name]
@@ -474,7 +462,6 @@ collections:
         hint: >
           What kind of the resoure it is and where? A “Post in CORE Blog”,
           a “Webpage in Internet Archive” etc.
-
   slug: '{{date}}-{{title}}'
 
   sortable_fields: [date, title]
@@ -498,7 +485,6 @@ collections:
     from the landing pages, e.g. from core.ac.uk/services/dataset.
     You can create more pages if needed by they will remain hidden
     from whe website unless you link them explicitly or send to someone.
-
   fields:
   - name: title
     widget: string
@@ -519,8 +505,8 @@ collections:
     default: ''
     label: Headline
     hint: >
-      The title of the page. Displayed on the page below header
-      and above the page navigation. If empty, the TITLE is used.
+      The title of the page. Displayed on the page below header
+      and above the page navigation. If empty, the TITLE is used.
   - name: body
     widget: markdown
     label: Content
@@ -576,7 +562,6 @@ collections:
     required: false
     hint: >
       Used for: OAI
-
   sortable_fields: [title]
 
   preview_path: api/preview?page=documentation/{{slug}}&ref=cms/docs/{{slug}}
@@ -614,8 +599,8 @@ collections:
     default: ''
     label: Headline
     hint: >
-      The title of the page. Displayed on the page below header
-      and above the page navigation. If empty, the TITLE is used.
+      The title of the page. Displayed on the page below header
+      and above the page navigation. If empty, the TITLE is used.
   - name: body
     widget: markdown
     label: Content
@@ -635,7 +620,6 @@ collections:
   description: >
     All the sections on the page Community CORE”. Sections are listed in order
     appearing on the page.
-
   files:
     - name: header
       label: ℹ️ Header(title,citation,author)
@@ -658,7 +642,6 @@ collections:
         widget: text
         hint: >
            Author of the citation above
-
     - name: mission
       label: 👁 Mission
       file: community/mission.md
@@ -669,7 +652,6 @@ collections:
         label: Description
         hint: >
           Appears at the left side
-
     - name: symposium
       label: 📘 Symposium Card
       file: community/symposium.md
@@ -690,7 +672,6 @@ collections:
         label: Call to action
         hint: >
           A button caption, intended show modal window with register request.
-
     - name: join-cards
       label: '👉 Why join?'
       file: community/join-cards.md
@@ -749,7 +730,6 @@ collections:
         label: Call to action
         hint: >
           A button caption, intended to call the user view the target page.
-
   slug: '{{filename}}'
 
   preview_path: api/preview?page=about&ref=cms/community/{{slug}}
@@ -765,7 +745,7 @@ collections:
   create: true
   delete: true
 
-  label: 🕵️‍♀️  Community quotes
+  label: 🕵️‍♀️  Community quotes
   label_singular: quote
   summary: '{{first-name}} {{last-name}}'
 
@@ -791,4 +771,3 @@ collections:
   slug: '{{first-name}}-{{last-name}}'
 
   preview_path: api/preview?page=about&ref=cms/quote/{{slug}}
-

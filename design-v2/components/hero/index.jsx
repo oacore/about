@@ -5,6 +5,8 @@ import { classNames } from '@oacore/design/lib/utils'
 import SearchForm from '../search-form'
 import styles from './styles.module.scss'
 
+import Markdown from 'components/markdown'
+
 const Hero = ({
   title,
   image: imgHref,
@@ -17,7 +19,7 @@ const Hero = ({
   <div className={classNames.use(styles.heroItem).join(className)}>
     <Card variant="pure" className={styles.heroItemCard}>
       <Card.Title tag="h2" className={styles.heroTitle}>
-        {title}
+        <Markdown>{title}</Markdown>
       </Card.Title>
       <Card.Description tag="div">
         {action === 'Search' ? (
@@ -25,7 +27,9 @@ const Hero = ({
         ) : (
           <>
             {description && (
-              <p className={styles.heroItemDescription}>{description}</p>
+              <Markdown className={styles.heroItemDescription}>
+                {description}
+              </Markdown>
             )}
             {actionLabel && (
               <Button tag="a" variant="contained" href={action}>
