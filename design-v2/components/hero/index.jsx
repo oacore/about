@@ -1,51 +1,30 @@
 import React from 'react'
-import { Card, Button } from '@oacore/design/lib/elements'
+import { Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
 
-import SearchForm from '../search-form'
 import styles from './styles.module.scss'
+import { Section } from '../layout'
 
-const Hero = ({
-  title,
-  image: imgHref,
-  label,
-  description,
-  action,
-  actionLabel,
-  className,
-}) => (
-  <div className={classNames.use(styles.heroItem).join(className)}>
-    <Card variant="pure" className={styles.heroItemCard}>
-      <Card.Title tag="h2" className={styles.heroTitle}>
-        {title}
-      </Card.Title>
-      <Card.Description tag="div">
-        {action === 'Search' ? (
-          <SearchForm />
-        ) : (
-          <>
-            {description && (
-              <p className={styles.heroItemDescription}>{description}</p>
-            )}
-            {actionLabel && (
-              <Button tag="a" variant="contained" href={action}>
-                {actionLabel}
-              </Button>
-            )}
-          </>
-        )}
-      </Card.Description>
-    </Card>
-    <div className={styles.heroItemImgContainer}>
-      <img
-        src={imgHref}
-        alt={label}
-        className={classNames.use(styles.heroItemImg, {
-          [styles.heroItemImgBig]: action === 'Search',
-        })}
-      />
+import { Markdown } from 'components'
+
+const Hero = ({ id, icon, title, description, actions, image, className }) => (
+  <Section id={id} className={classNames.use(styles.header).join(className)}>
+    <div className={styles.content}>
+      <div className={styles.meta}>
+        {icon && <img className={styles.icon} src={icon} alt={title} />}
+        <h1 className={styles.title}>{title}</h1>
+      </div>
+      <Markdown className={styles.description}>{description}</Markdown>
+      {actions.map((action) => (
+        <Button href={action.url} variant={action.variant} key={action.caption}>
+          {action.caption}
+        </Button>
+      ))}
     </div>
-  </div>
+    <div className={styles.logoContainer}>
+      <img src={image} alt="logo" />
+    </div>
+  </Section>
 )
 
 export default Hero
