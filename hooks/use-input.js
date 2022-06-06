@@ -17,7 +17,9 @@ const useInput = (initialValue, initialElem) => {
     bind: {
       value,
       onChange: (event) => {
-        setValue(event.target.value)
+        if (event.value !== undefined) setValue(event.value)
+        if (event.target && event.target.value !== undefined)
+          setValue(event.target.value)
       },
     },
   }

@@ -39,8 +39,8 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-columns: $grid-responsive-for-sections;
   .content {
     .button {
-      display: block;
-      margin: 2rem 0 0 auto;
+      float: right;
+      margin-top: 2rem;
     }
   }
 }

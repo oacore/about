@@ -8,33 +8,29 @@
     }
     &-description {
       font-size: 1.2rem;
+      margin: 2rem 0;
+      line-height: 1.8;
+      max-width: 90ch;
     }
 
     &-card {
-      flex: 1;
-      @media (max-width: $breakpoint-sm) {
-        flex: auto;
-      }
+      max-width: 75ch;
     }
+
     &-img {
-      &-container {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        @media (max-width: $breakpoint-sm) {
-          flex: auto;
-          justify-content: center;
-        }
+      margin-left: auto;
+      @media (max-width: $breakpoint-sm) {
+        width: 100%;
+        height: auto;
       }
-      width: 100%;
-      height: auto;
-      max-height: 20rem;
+
+      &-container {
+        width: 100%;
+      }
+
       &-big {
         margin-top: 1rem;
         max-height: fit-content;
-      }
-      @media (max-width: $breakpoint-sm) {
-        margin-top: 2rem;
       }
     }
   }

@@ -106,8 +106,12 @@ const ServicePage = observe(
             <article className={styles.content}>
               <h3>{howItWorks.title}</h3>
               <Markdown>{howItWorks.description}</Markdown>
-              <Button className={styles.button} variant="contained">
-                {howItWorks.action}
+              <Button
+                className={styles.button}
+                href={howItWorks.action.url}
+                variant="contained"
+              >
+                {howItWorks.action.title}
               </Button>
             </article>
           </Section>

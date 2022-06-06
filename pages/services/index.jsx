@@ -5,7 +5,7 @@ import styles from './services.module.scss'
 
 import { Page } from 'components'
 import servicesData from 'data/services.yml'
-import { Hero, Layout, Section, Video } from 'design-v2/components'
+import { Layout, Section, Video, Hero } from 'design-v2/components'
 
 const FeatureBox = ({ iconSrc, title, description, recommender, action }) => (
   <Card variant="pure" className={styles.card}>
@@ -46,7 +46,6 @@ const FeaturesSection = ({ id, description, title, video, features }) => {
 
         <p hidden>{description}</p>
         <h3 className={styles.sectionTitle}>{title}</h3>
-
         {video && (
           <Video
             visibleModal={visibleVideo}
