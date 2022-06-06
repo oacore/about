@@ -22,6 +22,7 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
 
   .card-header {
     position: relative; // to align link icon
+    padding-bottom: var(--spacer);
     padding-left: $accordion-spacer-left;
     background: transparent;
     border-bottom: 0;
