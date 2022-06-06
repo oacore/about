@@ -46,7 +46,6 @@ const FeaturesSection = ({ id, description, title, video, features }) => {
 
         <p hidden>{description}</p>
         <h3 className={styles.sectionTitle}>{title}</h3>
-
         {video && (
           <Video
             visibleModal={visibleVideo}
