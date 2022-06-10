@@ -31,6 +31,8 @@ slug:
 show_preview_links: true
 
 collections:
+
+
 - name: about
 
   create: false
@@ -305,6 +307,136 @@ collections:
 
   preview_path: api/preview?page=about&ref=cms/about/{{slug}}
 
+- name: consultancy
+
+  media_folder: '/images/consultancy'
+
+  create: false
+  delete: false
+
+  label: 🤝 Consultancy
+  label_singular: section
+  description: >
+    All the sections on the page "Consultancy Services". Sections are listed in order
+    appearing on the page.
+  files:
+   - name: header
+     label: Header(title,description,image)
+     file: consultancy/header.yml
+     fields:
+     - name: title
+       widget: string
+       hint: >
+          Displayed in the browser as a tab name and in Google, when
+          the page appears in the search results.
+     - name: description
+       widget: text
+       label: Description
+       hint: >
+          Description of the page, not visible on the page but will be shown
+          in search engines when the page appers in results. Important
+          to have good performance in search engines.
+     - name: icon
+       widget: File
+       label: Icon near title
+       hint: >
+          Icon near title. Optional.
+       optional: true
+     - name: image
+       widget: File
+       label: Image
+       hint: Image on the right side on the top of the page.
+     - name: actions
+       widget: list
+       label: Actions
+       allow_add: true
+       fields:
+        - { label: Caption, name: caption, widget: string, hint: Caption of the button }
+        - { label: Variant, name: variant, widget: string, hint: You can make button filled or outlined. For filled use - contained, optional: true, default: outilned }
+        - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true}
+   - name: features
+     label: Features
+     file: consultancy/features.yml
+     fields:
+      - name: features
+        widget: list
+        label: Actions
+        allow_add: true
+        fields:
+        - { label: Title, name: title, widget: string, hint: Title of the feature card }
+        - { label: Description, name: description, widget: string, hint: Description of the feature card }
+   - name: how-it-works
+     label: How it works?
+     file: consultancy/how-it-works.yml
+     fields:
+     - name: title
+       widget: string
+       label: Title
+     - name: description
+       widget: string
+       label: Description
+     - name: image
+       widget: File
+       label: Image
+       hint: Image on the right side on the top of the page.
+   - name: benefits
+     label: Our benefits
+     file: consultancy/benefits.yml
+     fields:
+      - name: benefits
+        widget: list
+        label: Actions
+        allow_add: true
+        fields:
+        - { label: Title, name: title, widget: string, hint: Title of the benefit card }
+        - { label: Description, name: description, widget: string, hint: Description of the benefit card }
+        - { label: Icon, name: icon, widget: File, hint: Icon on the left side }
+   - name: contact
+     label: Contact us
+     file: consultancy/contact.yml
+     fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: Title of the box
+      - name: caption
+        widget: string
+        label: Caption
+        hint: Caption (below title)
+      - name: image
+        widget: File
+        label: Image
+        hint: Image on the right side.
+   - name: testimonials
+     label: Testimonial
+     file: consultancy/testimonials.yml
+     fields:
+      - name: benefits
+        widget: list
+        label: Actions
+        allow_add: true
+        fields:
+          - { label: content,
+              name: Content,
+              widget: string,
+              hint: Main content of the testimonial
+            }
+      - label: Author
+        name: author
+        widget: object
+        fields:
+          - {label: Name, name: name, widget: string}
+          - {label: Role, name: role, widget: string}
+          - {label: Avatar, name: picture, widget: file, hint: Small image in circle }
+
+   - name: related-services
+     label: Related Services
+     file: consultancy/related-services.yml
+     allow_add: true
+     fields:
+       - {label: Title, name: title, widget: string, hint: Service name}
+       - {label: Href (url), name: url, widget: string, hint: Link to the service. Example-fastsync}
+       - {label: Picture, name: picture, widget: file, hint: Logo of the service }
 
 - name: team
 
