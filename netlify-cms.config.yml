@@ -337,13 +337,13 @@ collections:
           in search engines when the page appers in results. Important
           to have good performance in search engines.
      - name: icon
-       widget: File
+       widget: file
        label: Icon near title
        hint: >
           Icon near title. Optional.
        optional: true
      - name: image
-       widget: File
+       widget: file
        label: Image
        hint: Image on the right side on the top of the page.
      - name: actions
@@ -376,7 +376,7 @@ collections:
        widget: string
        label: Description
      - name: image
-       widget: File
+       widget: file
        label: Image
        hint: Image on the right side on the top of the page.
    - name: benefits
@@ -390,7 +390,7 @@ collections:
         fields:
         - { label: Title, name: title, widget: string, hint: Title of the benefit card }
         - { label: Description, name: description, widget: string, hint: Description of the benefit card }
-        - { label: Icon, name: icon, widget: File, hint: Icon on the left side }
+        - { label: Icon, name: icon, widget: file, hint: Icon on the left side }
    - name: contact
      label: Contact us
      file: consultancy/contact.yml
@@ -404,7 +404,7 @@ collections:
         label: Caption
         hint: Caption (below title)
       - name: image
-        widget: File
+        widget: file
         label: Image
         hint: Image on the right side.
    - name: testimonials
