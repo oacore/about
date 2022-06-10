@@ -52,6 +52,16 @@ const RelatedService = ({ title, picture, url }) => (
   </a>
 )
 
+const Benefit = ({ title, icon, description }) => (
+  <article className={styles.benefit}>
+    <img src={icon} alt={title} className={styles.benefitIcon} />
+    <div className={styles.benefitContent}>
+      <h5>{title}</h5>
+      <Markdown>{description}</Markdown>
+    </div>
+  </article>
+)
+
 const ServicePage = observe(
   ({
     id,
@@ -59,6 +69,7 @@ const ServicePage = observe(
     tagline,
     header,
     features,
+    benefits,
     howItWorks,
     keywords,
     whatIsIncluded,
@@ -66,6 +77,7 @@ const ServicePage = observe(
     stats,
     additional, // @optional
     testimonials, // @optional
+    contactUs,
     relatedServices,
     form,
   }) => {
@@ -115,6 +127,34 @@ const ServicePage = observe(
               </Button>
             </article>
           </Section>
+          {benefits && (
+            <Section id="benefits">
+              <h3>{benefits.title}</h3>
+              <div className={styles.benefits}>
+                {benefits.items.map((benefit) => (
+                  <Benefit key={benefit.title} {...benefit} />
+                ))}
+              </div>
+            </Section>
+          )}
+          {contactUs && (
+            <Section id="contact" className={styles.contact}>
+              <div className={styles.content}>
+                <h3>{contactUs.title}</h3>
+                <div className={styles.box}>
+                  <Markdown>{contactUs.caption}</Markdown>
+                  <Button variant="contained" href={contactUs.action.url}>
+                    {contactUs.action.caption}
+                  </Button>
+                </div>
+              </div>
+              <img
+                className={styles.image}
+                src={contactUs.image}
+                alt="Contact"
+              />
+            </Section>
+          )}
           {testimonials && (
             <Section id="testimonial" className={styles.additional}>
               {testimonials.map((testimonial) => (
@@ -188,6 +228,7 @@ const ServicePage = observe(
               <RegistrationModals />
             </Section>
           )}
+
           <Section id="related-services">
             <h3>{relatedServices.title}</h3>
             <div className={styles.services}>
