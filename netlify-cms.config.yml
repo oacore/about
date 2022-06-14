@@ -463,6 +463,10 @@ collections:
      label: Related Services
      file: consultancy/related-services.yml
      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: Title of the section
       - name: related-services
         widget: list
         min: 1
