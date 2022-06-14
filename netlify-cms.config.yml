@@ -441,9 +441,9 @@ collections:
      label: Testimonial
      file: consultancy/testimonials.yml
      fields:
-      - name: benefits
+      - name: testimonials
         widget: list
-        label: Actions
+        label: Testimonials
         allow_add: true
         fields:
           - { label: content,
