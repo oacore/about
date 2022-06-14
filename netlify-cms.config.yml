@@ -324,7 +324,7 @@ collections:
   files:
    - name: meta
      label: ℹ️ Metadata (title, description, headline)
-     file: about/meta.yml
+     file: consultancy/meta.yml
      fields:
      - name: title
        widget: string
@@ -430,8 +430,8 @@ collections:
         widget: file
         label: Image
         hint: Image on the right side.
-      - label: Action
-        name: action
+      - name: action
+        label: Action
         widget: object
         fields:
         - { label: Caption, name: caption, widget: string, hint: Caption of the button }
