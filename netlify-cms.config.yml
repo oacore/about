@@ -319,7 +319,26 @@ collections:
   description: >
     All the sections on the page "Consultancy Services". Sections are listed in order
     appearing on the page.
+
+
   files:
+   - name: meta
+     label: ℹ️ Metadata (title, description, headline)
+     file: about/meta.yml
+     fields:
+     - name: title
+       widget: string
+       label: Title
+       hint: >
+          Displayed in the browser as a tab name and in Google, when
+          the page appears in the search results.
+     - name: tagline
+       widget: text
+       label: Description
+       hint: >
+          Description of the page, not visible on the page but will be shown
+          in search engines when the page appers in results. Important
+          to have good performance in search engines.
    - name: header
      label: Header(title,description,image)
      file: consultancy/header.yml
@@ -360,6 +379,8 @@ collections:
      fields:
       - name: features
         widget: list
+        min: 1
+        max: 4
         label: Actions
         allow_add: true
         fields:
@@ -385,6 +406,8 @@ collections:
      fields:
       - name: benefits
         widget: list
+        min: 1
+        max: 6
         label: Actions
         allow_add: true
         fields:
