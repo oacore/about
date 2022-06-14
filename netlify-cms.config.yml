@@ -346,15 +346,12 @@ collections:
      - name: title
        widget: string
        hint: >
-          Displayed in the browser as a tab name and in Google, when
-          the page appears in the search results.
+         The title of the page. Displayed on the page below header.
      - name: description
        widget: text
        label: Description
        hint: >
-          Description of the page, not visible on the page but will be shown
-          in search engines when the page appers in results. Important
-          to have good performance in search engines.
+          Description. Near the page title.
      - name: icon
        widget: file
        label: Icon near title
@@ -404,6 +401,9 @@ collections:
      label: Our benefits
      file: consultancy/benefits.yml
      fields:
+      - name: title
+        widget: string
+        label: Title
       - name: benefits
         widget: list
         min: 1
