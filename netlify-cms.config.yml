@@ -451,13 +451,13 @@ collections:
               widget: string,
               hint: Main content of the testimonial
             }
-      - label: Author
-        name: author
-        widget: object
-        fields:
-          - {label: Name, name: name, widget: string}
-          - {label: Role, name: role, widget: string}
-          - {label: Avatar, name: picture, widget: file, hint: Small image in circle }
+          - label: Author
+            name: author
+            widget: object
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Role, name: role, widget: string}
+              - {label: Avatar, name: picture, widget: file, hint: Small image in circle }
 
    - name: related-services
      label: Related Services
