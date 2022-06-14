@@ -430,13 +430,20 @@ collections:
         widget: file
         label: Image
         hint: Image on the right side.
+      - label: Action
+        name: action
+        widget: object
+        fields:
+        - { label: Caption, name: caption, widget: string, hint: Caption of the button }
+        - { label: Variant, name: variant, widget: string, hint: You can make button filled or outlined. For filled use - contained, optional: true, default: contained }
+        - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true}
    - name: testimonials
      label: Testimonial
      file: consultancy/testimonials.yml
      fields:
-      - name: benefits
+      - name: testimonials
         widget: list
-        label: Actions
+        label: Testimonials
         allow_add: true
         fields:
           - { label: content,
