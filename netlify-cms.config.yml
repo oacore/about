@@ -446,8 +446,8 @@ collections:
         label: Testimonials
         allow_add: true
         fields:
-          - { label: content,
-              name: Content,
+          - { label: Content,
+              name: content,
               widget: string,
               hint: Main content of the testimonial
             }
