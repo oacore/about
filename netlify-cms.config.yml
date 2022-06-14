@@ -462,11 +462,17 @@ collections:
    - name: related-services
      label: Related Services
      file: consultancy/related-services.yml
-     allow_add: true
      fields:
-       - {label: Title, name: title, widget: string, hint: Service name}
-       - {label: Href (url), name: url, widget: string, hint: Link to the service. Example-fastsync}
-       - {label: Picture, name: picture, widget: file, hint: Logo of the service }
+      - name: related-services
+        widget: list
+        min: 1
+        max: 4
+        label: Services
+        allow_add: true
+        fields:
+        - {label: Title, name: title, widget: string, hint: Service name}
+        - {label: Href (url), name: url, widget: string, hint: Link to the service. Example-fastsync}
+        - {label: Picture, name: picture, widget: file, hint: Logo of the service }
 
 - name: team
 
