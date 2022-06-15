@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Form, TextField } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 import { Button } from '@oacore/design/lib/elements'
+import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './styles.module.scss'
 import { Layout, Section } from '../layout'
@@ -77,7 +78,7 @@ const ServicePage = observe(
     stats,
     additional, // @optional
     testimonials, // @optional
-    contactUs,
+    contact,
     relatedServices,
     form,
   }) => {
@@ -113,18 +114,24 @@ const ServicePage = observe(
           </Section>
           <Section id="how-it-works" className={styles.howItWorks}>
             <div className={styles.imageWrapper}>
-              <img src={howItWorks.image} alt={howItWorks.title} />
+              <img
+                className={styles.banner}
+                src={howItWorks.image}
+                alt={howItWorks.title}
+              />
             </div>
             <article className={styles.content}>
               <h3>{howItWorks.title}</h3>
               <Markdown>{howItWorks.description}</Markdown>
-              <Button
-                className={styles.button}
-                href={howItWorks.action.url}
-                variant="contained"
-              >
-                {howItWorks.action.title}
-              </Button>
+              {howItWorks.action && (
+                <Button
+                  className={styles.button}
+                  href={howItWorks.action.url}
+                  variant="contained"
+                >
+                  {howItWorks.action.title}
+                </Button>
+              )}
             </article>
           </Section>
           {benefits && (
@@ -137,20 +144,20 @@ const ServicePage = observe(
               </div>
             </Section>
           )}
-          {contactUs && (
+          {contact && (
             <Section id="contact" className={styles.contact}>
               <div className={styles.content}>
-                <h3>{contactUs.title}</h3>
+                <h3>{contact.title}</h3>
                 <div className={styles.box}>
-                  <Markdown>{contactUs.caption}</Markdown>
-                  <Button variant="contained" href={contactUs.action.url}>
-                    {contactUs.action.caption}
+                  <Markdown>{contact.caption}</Markdown>
+                  <Button variant="contained" href={contact.action.url}>
+                    {contact.action.caption}
                   </Button>
                 </div>
               </div>
               <img
-                className={styles.image}
-                src={contactUs.image}
+                className={classNames.use(styles.banner, styles.image)}
+                src={contact.image}
                 alt="Contact"
               />
             </Section>
@@ -158,7 +165,7 @@ const ServicePage = observe(
           {testimonials && (
             <Section id="testimonial" className={styles.additional}>
               {testimonials.map((testimonial) => (
-                <Testimonial key={testimonial.id} {...testimonial} />
+                <Testimonial key={testimonial.author.name} {...testimonial} />
               ))}
               {additional && (
                 <div>
@@ -182,7 +189,11 @@ const ServicePage = observe(
                 <h3>{whatIsIncluded.title}</h3>
                 <Markdown>{whatIsIncluded.content}</Markdown>
               </div>
-              <img src={whatIsIncluded.image} alt={whatIsIncluded.title} />
+              <img
+                src={whatIsIncluded.image}
+                className={styles.banner}
+                alt={whatIsIncluded.title}
+              />
             </Section>
           )}
           {statistics && stats && (
@@ -232,7 +243,7 @@ const ServicePage = observe(
           <Section id="related-services">
             <h3>{relatedServices.title}</h3>
             <div className={styles.services}>
-              {relatedServices.services.map((service) => (
+              {relatedServices.items.map((service) => (
                 <RelatedService key={service.title} {...service} />
               ))}
             </div>

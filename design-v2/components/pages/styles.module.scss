@@ -215,3 +215,8 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
     margin-left: auto;
   }
 }
+
+.banner {
+  max-width: 100%;
+  height: auto;
+}

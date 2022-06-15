@@ -1,26 +1,52 @@
+@import 'design-v2/variables';
+
 .header {
   display: flex;
-  flex-wrap: wrap-reverse;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .meta {
   display: flex;
   align-items: center;
   margin-bottom: 4rem;
+
+  @media (max-width: $breakpoint-sm) {
+    margin-bottom: 2rem;
+  }
+
   .icon {
     margin-right: 1rem;
-    width: 4rem;
-    height: 4rem;
+    max-width: 4rem;
+    max-height: 4rem;
     transform: scale(1.4);
+
+    @media (max-width: $breakpoint-sm) {
+      transform: none;
+    }
   }
 
   .title {
     display: inline-block;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+    }
   }
 }
 .description {
   max-width: 60ch;
   margin-bottom: 4rem;
   line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.logo {
+  height: auto;
+  width: 100%;
 }

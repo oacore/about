@@ -107,7 +107,7 @@ form:
 
 related-services:
   title: You might be also interested in
-  services:
+  items:
   -
     title: CORE Dataset
     picture: /images/services/dataset.svg

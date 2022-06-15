@@ -15,19 +15,21 @@ const Hero = ({ id, icon, title, description, actions, image, className }) => (
         <h1 className={styles.title}>{title}</h1>
       </div>
       <Markdown className={styles.description}>{description}</Markdown>
-      {actions &&
-        actions.map((action) => (
-          <Button
-            href={action.url}
-            variant={action.variant}
-            key={action.caption}
-          >
-            {action.caption}
-          </Button>
-        ))}
+      <div className={styles.actions}>
+        {actions &&
+          actions.map((action) => (
+            <Button
+              href={action.url}
+              variant={action.variant}
+              key={action.caption}
+            >
+              {action.caption}
+            </Button>
+          ))}
+      </div>
     </div>
-    <div className={styles.logoContainer}>
-      <img src={image} alt="logo" />
+    <div>
+      <img src={image} alt="logo" className={styles.logo} />
     </div>
   </Section>
 )
