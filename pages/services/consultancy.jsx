@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { ServicePage } from 'design-v2/components'
-// import page from 'data/services/consultancy.yml'
 import retrieveContent from 'content'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
