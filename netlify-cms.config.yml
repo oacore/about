@@ -1008,7 +1008,7 @@ collections:
            - { label: Label,name: label, widget: string }
            - { label: Link (url),name: link, widget: string, hint: Anchor link to the block. Must match id of the block }
      - name: caption
-       widget: text
+       widget: markdown
        label: Caption
        optional: true
        hint: Text below links
@@ -1024,7 +1024,7 @@ collections:
        label: id
        hint: id of the block. Must match anchor link url
      - name: recommended
-       widget: text
+       widget: markdown
        label: Our recommendation
      - name: reminder
        widget: object
@@ -1032,12 +1032,12 @@ collections:
         - {
           name: title,
           widget: string,
-          label: Remider title
+          label: Reminder title
          }
         - {
           name: description,
-          widget: text,
-          label: Remider description
+          widget: markdown,
+          label: Reminder description
          }
    - name: datasetLatest
      label: Latest dataset
@@ -1074,7 +1074,7 @@ collections:
             - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true}
         - label: Free text
           name: text
-          widget: text
+          widget: markdown
           hint: Text bellow button.
    - name: datasetAdditional
      label: Additional datasets
@@ -1092,7 +1092,7 @@ collections:
            label: Boxes with data
            fields:
             - { label: Title, name: title, widget: string, hint: Title of the Box }
-            - { label: Caption, name: caption, widget: text, hint: Caption inside box  }
+            - { label: Caption, name: caption, widget: markdown, hint: Caption inside box  }
             - label: Data size
               name: dataSize
               widget: list
@@ -1101,16 +1101,17 @@ collections:
               fields:
                 - { label: Count, name: count, widget: string, hint: Count of the data. Example - 67TB}
                 - { label: Data Type, name: dataType, widget: string, hint: Type of the data. Example - compressed }
-                - { label: footer, name: Footer, widget: string, hint: Footer text}
-                - { label: license, name: License, widget: text, hint: License text}
-                - { label: Note, name: note, widget: text, hint: Note text}
-                - label: Action
-                  name: action
-                  widget: object
-                  hint: Action button
-                  fields:
-                  - {label: Caption, name: caption, widget: string, hint: Caption of the button}
-                  - {label: Url, name: url, widget: string, hint: Url (action call) of the button}
+
+            - { label: footer, name: Footer, widget: string, hint: Footer text}
+            - { label: license, name: License, widget: markdown, hint: License text}
+            - { label: Note, name: note, widget: markdown, hint: Note text}
+            - label: Action
+              name: action
+              widget: object
+              hint: Action button
+              fields:
+               - {label: Caption, name: caption, widget: string, hint: Caption of the button}
+               - {label: Url, name: url, widget: string, hint: Url (action call) of the button}
    - name: sctructers
      label: Structures
      file: dataset/structures.yml
@@ -1125,8 +1126,8 @@ collections:
          - {name: title, widget: string, label: Title}
          - {name: id, widget: string, label: ID, hint: id of the structure. Required. Must match anchor link url }
          - name: text
-           widget: text
+           widget: markdown
            label: Text with data
          - name : fields
-           widget: text
+           widget: markdown
            label: Fields description
