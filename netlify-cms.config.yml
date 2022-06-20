@@ -951,7 +951,7 @@ collections:
   create: false
   delete: false
 
-  label: 🤝 Dataset Data
+  label: 📚 Dataset Data
   label_singular: section
   description: >
     All the sections on the page "Dataset data". Sections are listed in order
