@@ -944,14 +944,14 @@ collections:
 
   preview_path: api/preview?page=about&ref=cms/quote/{{slug}}
 
-- name: dataset/data
+- name: dataset
 
-  media_folder: '/images/dataset/data'
+  media_folder: '/images/dataset'
 
   create: false
   delete: false
 
-  label: 📚 Dataset Data
+  label: 📚 Dataset
   label_singular: section
   description: >
     All the sections on the page "Dataset data". Sections are listed in order
@@ -961,7 +961,7 @@ collections:
   files:
    - name: meta
      label: ℹ️ Metadata (title, description, headline)
-     file:  dataset/data/meta.yml
+     file:  dataset/meta.yml
      fields:
      - name: title
        widget: string
@@ -978,7 +978,7 @@ collections:
           to have good performance in search engines.
    - name: header
      label: Header(title,description,image)
-     file: dataset/data/header.yml
+     file: dataset/header.yml
      fields:
      - name: title
        widget: string
@@ -1014,7 +1014,7 @@ collections:
        hint: Text below links
    - name: instruction
      label: Download instruction
-     file: dataset/data/instruction.yml
+     file: dataset/instruction.yml
      fields:
      - name: title
        widget: string
@@ -1041,7 +1041,7 @@ collections:
          }
    - name: datasetLatest
      label: Latest dataset
-     file: dataset/data/datasetLatest.yml
+     file: dataset/datasetLatest.yml
      fields:
       - name: title
         widget: string
@@ -1078,7 +1078,7 @@ collections:
           hint: Text bellow button.
    - name: datasetAdditional
      label: Additional datasets
-     file: dataset/data/additional.yml
+     file: dataset/additional.yml
      fields:
       - name: items
         label: Datasets
@@ -1113,7 +1113,7 @@ collections:
                   - {label: Url, name: url, widget: string, hint: Url (action call) of the button}
    - name: sctructers
      label: Structures
-     file: dataset/data/structures.yml
+     file: dataset/structures.yml
      fields:
       - name: title
         label: Title
