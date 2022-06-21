@@ -988,6 +988,10 @@ collections:
        widget: file
        label: Image
        hint: Image on the right side.
+     - name: id
+       widget: string
+       label: id
+       hint: id of the block. Must match anchor link url
      - name: links
        widget: object
        label: Links
@@ -1057,7 +1061,7 @@ collections:
         - { label: Title, name: title, widget: string, hint: Title of the Box }
         - { label: Icon, name: icon, widget: file, hint: Icon below title }
         - label: Data size
-          name: dataSize
+          name: dataSizes
           widget: list
           allow_add: true
           hint: Size and type of the data.
@@ -1078,7 +1082,7 @@ collections:
           hint: Text bellow button.
    - name: datasetAdditional
      label: Additional datasets
-     file: dataset/additional.yml
+     file: dataset/additionalDatasets.yml
      fields:
       - name: items
         label: Datasets
@@ -1094,7 +1098,7 @@ collections:
             - { label: Title, name: title, widget: string, hint: Title of the Box }
             - { label: Caption, name: caption, widget: markdown, hint: Caption inside box  }
             - label: Data size
-              name: dataSize
+              name: dataSizes
               widget: list
               allow_add: true
               hint: Size and type of the data.
@@ -1102,8 +1106,8 @@ collections:
                 - { label: Count, name: count, widget: string, hint: Count of the data. Example - 67TB}
                 - { label: Data Type, name: dataType, widget: string, hint: Type of the data. Example - compressed }
 
-            - { label: footer, name: Footer, widget: string, hint: Footer text}
-            - { label: license, name: License, widget: markdown, hint: License text}
+            - { label: Footer, name: footer, widget: string, hint: Footer text}
+            - { label: License, name: license, widget: markdown, hint: License text}
             - { label: Note, name: note, widget: markdown, hint: Note text}
             - label: Action
               name: action
