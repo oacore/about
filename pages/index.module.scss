@@ -8,6 +8,9 @@
     }
     &-description {
       font-size: 1.2rem;
+      margin: 2rem 0;
+      line-height: 1.8;
+      max-width: 90ch;
     }
 
     &-card {
@@ -32,9 +35,6 @@
       &-big {
         margin-top: 1rem;
         max-height: fit-content;
-      }
-      @media (max-width: $breakpoint-sm) {
-        margin-top: 2rem;
       }
     }
   }
