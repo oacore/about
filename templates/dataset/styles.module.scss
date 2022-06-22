@@ -1,0 +1,95 @@
+$left-border: 4px solid var(--primary);
+$box-bg-color: #fef5ef;
+$primary-color: #b75400;
+
+.header {
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-list {
+    border-left: $left-border;
+    padding-left: 2.5rem;
+    list-style: decimal;
+    color: $primary-color;
+    line-height: 2;
+  }
+  &-caption {
+    line-height: 2;
+    margin-top: 2.5rem;
+    max-width: 110ch;
+  }
+}
+
+.instruction {
+  background-color: var(--gray-200);
+  &-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  &-reminder {
+    max-width: 50ch;
+    margin-left: auto;
+    &-text {
+      border-left: $left-border;
+      padding-left: 2rem;
+      line-height: 1.8;
+    }
+  }
+
+  strong {
+    color: $primary-color;
+  }
+  em {
+    color: var(--gray-600);
+  }
+  ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+    li {
+      color: var(--gray-700);
+    }
+  }
+}
+
+.dataset {
+  .box-wide {
+    grid-column: 1/10;
+    background-color: lighten($primary-color, 60%);
+    padding: 2rem;
+    text-align: center;
+    .sizes {
+      margin-top: 1rem;
+    }
+    .button {
+      margin-bottom: 1rem;
+    }
+    .count {
+      color: $primary-color;
+    }
+
+    code {
+      background-color: var(--white);
+      padding: 0.5rem;
+    }
+  }
+}
+
+.structure {
+  &-content {
+    column-count: 2;
+    code {
+      color: var(--primary);
+    }
+    pre {
+      border-left: 4px solid var(--primary);
+      margin-left: 0;
+      padding-left: 1rem;
+    }
+  }
+  &-table {
+    margin-top: 4rem;
+  }
+}

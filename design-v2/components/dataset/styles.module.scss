@@ -1,0 +1,110 @@
+$primary-color: #b75400;
+$blue-color: #2a51aa;
+$green-color: #8bc34a;
+$card-base-padding: 1rem 0.8rem;
+
+@function lightenColor($baseColor, $amout: 30%) {
+  $result: lighten($baseColor, $amout);
+  @return $result;
+}
+
+@mixin accentColor($colorName) {
+  @if $colorName == blue {
+    color: $blue-color;
+  }
+
+  @if $colorName == green {
+    color: darken($green-color, 10%);
+  }
+}
+
+.section {
+  &-title {
+    color: var(--white);
+    padding: 0.2rem 0.5rem;
+    font-weight: 500;
+    &.primary {
+      background-color: $primary-color;
+    }
+    &.blue {
+      background-color: $blue-color;
+    }
+    &.green {
+      background-color: $green-color;
+    }
+  }
+}
+
+.list {
+  display: grid;
+  row-gap: 2rem;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, 300px);
+}
+.card {
+  position: relative;
+  padding: 0;
+  min-width: auto;
+  min-height: 18rem;
+  &-title {
+    padding: $card-base-padding;
+    &.green {
+      background-color: lightenColor($green-color, 40%);
+    }
+    &.blue {
+      background-color: lightenColor($blue-color, 50%);
+    }
+  }
+  &-content {
+    padding: $card-base-padding;
+    font-weight: 500;
+  }
+  &-sizes {
+    color: var(--gray-600);
+    .count {
+      font-weight: 600;
+      line-height: 2;
+      &.green {
+        @include accentColor(green);
+      }
+      &.blue {
+        @include accentColor(blue);
+      }
+    }
+  }
+  &-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 0.8rem;
+    background-color: var(--gray-100);
+    padding: 0.5rem;
+  }
+}
+
+.note {
+  margin: var(--spacer) 0;
+  font-size: 0.9rem;
+  &.green {
+    a {
+      color: darken($green-color, 10%);
+    }
+  }
+
+  &.blue {
+    a {
+      color: $blue-color;
+    }
+  }
+}
+
+.button {
+  color: var(--white) !important;
+  text-decoration: underline;
+  &.green {
+    background-color: $green-color;
+  }
+  &.blue {
+    background-color: $blue-color;
+  }
+}
