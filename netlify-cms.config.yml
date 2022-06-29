@@ -1133,6 +1133,6 @@ collections:
            widget: markdown
            label: Text with data
          - name : fields
-           required: false
            widget: markdown
+           required: false
            label: Fields description
