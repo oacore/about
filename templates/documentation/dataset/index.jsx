@@ -108,7 +108,6 @@ const DatasetPageTemplate = ({
           <Markdown>{datasetLatest.box.text}</Markdown>
         </div>
       </DatasetSection>
-
       {additionalDatasets.items.map((dataset) => (
         <DatasetSection
           key={dataset.id}
@@ -118,7 +117,7 @@ const DatasetPageTemplate = ({
         >
           {dataset.boxes.map((box) => (
             <DatasetCard
-              key={box.title}
+              key={`${box.title}-${box.caption}`}
               {...box}
               accentColor={setDatasetAccentColor(dataset.id)}
             />
@@ -136,9 +135,7 @@ const DatasetPageTemplate = ({
             <Markdown className={styles.structureContent}>
               {structure.text}
             </Markdown>
-            <Markdown className={styles.structureTable}>
-              {structure.fields}
-            </Markdown>
+            <Markdown>{structure.fields}</Markdown>
           </Collapsed>
         ))}
       </Section>

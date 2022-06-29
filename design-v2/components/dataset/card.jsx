@@ -28,7 +28,7 @@ const DatasetCard = ({
           <Markdown>{caption}</Markdown>
           <ul className={styles.cardSizes}>
             {dataSizes.map((size) => (
-              <li key={size.dataType}>
+              <li key={`${size.dataType}-${size.count}`}>
                 <span className={addAccentColor(styles.count)}>
                   {size.count}
                 </span>{' '}

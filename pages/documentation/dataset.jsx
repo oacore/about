@@ -1,6 +1,6 @@
 import React from 'react'
 
-import DatasetPageTemplate from 'templates/dataset'
+import DatasetPageTemplate from 'templates/documentation/dataset'
 import retrieveContent from 'content'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
