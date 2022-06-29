@@ -49,16 +49,25 @@ how-it-works:
 
 
 additional:
-  title: Where to start?
-  content: |
-    Please [register to receive an API key](/api-keys/register)
-    and start testing the [live examples](https://api.core.ac.uk/docs/v3).
+  items:
+  - title: Where to start?
+    content: |
+      Please [register to receive an API key](/api-keys/register)
+      and start testing the [live examples](https://api.core.ac.uk/docs/v3).
 
-    A good starting point to start coding with our API is to
-    follow the examples gallery available in the [documentation](https://api.core.ac.uk/docs/v3#section/Quick-start-examples).
-    In collaboration with [rOpenSci](https://ropensci.org/) you can find
-    an [R client for the CORE API](https://github.com/ropensci/rcoreoa) in the GitHub repository.
-    All our SDKs are available from [our GitHub organisation](https://github.com/oacore).
+      A good starting point to start coding with our API is to
+      follow the examples gallery available in the [documentation](https://api.core.ac.uk/docs/v3#section/Quick-start-examples).
+      In collaboration with [rOpenSci](https://ropensci.org/) you can find
+      an [R client for the CORE API](https://github.com/ropensci/rcoreoa) in the GitHub repository.
+      All our SDKs are available from [our GitHub organisation](https://github.com/oacore).
+  - title: Can I use the CORE API for commercial purposes?
+    content: |
+      Yes, you can use the CORE API for commercial purposes,
+      [(Terms & Conditions)](https://core.ac.uk/terms) apply.
+      We provide 30 Day Free Trial for Institution and Enterprise.
+      We will ask you for your circumstances during the registration process
+      and we might contact you afterwards to clarify any points and assess your eligibility
+      for a free licence. If your circumstances change, you need to let us know about it.
   note: If you use CORE in your work, we kindly request you to cite one of our publications.
   action:
     title: cite publication

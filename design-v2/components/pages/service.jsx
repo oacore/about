@@ -122,12 +122,11 @@ const ServicePage = observe(
               ))}
               {additional && (
                 <div>
-                  <Collapsed id={`${id}-details`} title={additional.title}>
-                    <Markdown>{additional.content}</Markdown>
-                  </Collapsed>
-                  <Collapsed id={`${id}-details`} title={additional.title}>
-                    <Markdown>{additional.content}</Markdown>
-                  </Collapsed>
+                  {additional.items.map((item) => (
+                    <Collapsed id={`${id}-details`} title={item.title}>
+                      <Markdown>{item.content}</Markdown>
+                    </Collapsed>
+                  ))}
                   <Markdown className={styles.note}>{additional.note}</Markdown>
                   <Button className={styles.action} variant="outlined">
                     {additional.action.title}
