@@ -123,7 +123,11 @@ const ServicePage = observe(
               {additional && (
                 <div>
                   {additional.items.map((item) => (
-                    <Collapsed id={`${id}-details`} title={item.title}>
+                    <Collapsed
+                      key={item.title}
+                      id={`${id}-details`}
+                      title={item.title}
+                    >
                       <Markdown>{item.content}</Markdown>
                     </Collapsed>
                   ))}

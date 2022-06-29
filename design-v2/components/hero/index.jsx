@@ -21,6 +21,7 @@ const Hero = ({ id, icon, title, description, actions, image, className }) => (
             href={action.url}
             variant={action.variant}
             key={action.caption}
+            download={action.download}
           >
             {action.caption}
           </Button>
