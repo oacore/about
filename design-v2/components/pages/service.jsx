@@ -132,7 +132,11 @@ const ServicePage = observe(
                     </Collapsed>
                   ))}
                   <Markdown className={styles.note}>{additional.note}</Markdown>
-                  <Button className={styles.action} variant="outlined">
+                  <Button
+                    className={styles.action}
+                    variant="outlined"
+                    href={additional.action.url}
+                  >
                     {additional.action.title}
                   </Button>
                 </div>

@@ -80,8 +80,8 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: var(--spacer);
   }
   .action {
-    display: block;
-    margin: 1rem 0 0 auto;
+    float: right;
+    margin: 1rem 0 0;
   }
 }
 
