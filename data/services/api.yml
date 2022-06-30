@@ -131,7 +131,7 @@ related-services:
   -
     title: CORE Recommender
     picture: /images/services/recommender.svg
-    url: discovery
+    url: recommender
   -
     title: CORE Discovery
     picture: /images/services/discovery.svg
