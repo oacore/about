@@ -18,7 +18,7 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
 
 .accordion-item {
   border: solid $card-border-color;
-  border-width: $card-border-width 0;
+  border-width: $card-border-width 0 !important;
 
   .card-header {
     position: relative; // to align link icon
