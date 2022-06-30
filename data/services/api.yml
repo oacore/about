@@ -1,58 +1,85 @@
 id: api
 
+
 title: CORE API
 tagline: Develop new applications with the CORE API
-description: |
 
 
-screenshot:
-  source: /images/screenshots/api.png
-  caption: |
+header:
+  id: header
+  title: CORE API
+  icon: /images/services/api.svg
+  image: /images/services/server.svg
+  description: Develop applications, products or services based on [our vast corpus](https://core.ac.uk/data) of searchable research papers
+  actions:
+     - caption: Register now
+       variant: contained
+       url: '#form'
+     - caption: Download our flyer
+       variant: text
+       url: /resources/core-api-flyer.pdf
+       download: true
 
 
 features:
 -
-  title: null
-  picture: /images/icons/api.svg
+  title: The biggest research repository
   description: |
-    Free real-time machine access to the world's largest collection of open access papers
+   Free real-time machine access to the world's largest collection of open access papers
 -
-  title: null
-  picture: /images/icons/data.svg
+  title: Unlimited access
   description: |
     Harmonised access to data from across the network of CORE providers
 -
-  title: null
-  picture: /images/icons/machine.svg
+  title: Machine-readable access
   description: |
     Direct machine access to full texts of research papers
+-
+  title: Detailed documentation
+  description: |
+    Accessible and easy to understand description of using Care API
 
-main: |
-  CORE collects, processess, harmonises and enriches [large quantities](~data) of metadata and full texts of research papers from many [data providers](~about/#how-it-works). On top of this continuously growing collection, we provide a truly unique API offering real-time machine access to both metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
 
-  If you use CORE in your work, we kindly request you to [cite one
-  of our publications](~research-outputs).
+how-it-works:
+  title: How it works?
+  image: /images/services/work.svg
+  description: |
+   CORE collects, harmonises and enriches large quantities of both metadata and full text research articles from thousands of data providers. On top of this continuously growing corpus, we provide a truly unique API providing real-time machine access to both the metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
+  action:
+    title: Access documentation
+    url: https://api.core.ac.uk/docs/v3
+
 
 additional:
-  title: Where to start?
-  content: |
-    Please [register to receive an API key](/api-keys/register)
-    and start testing the [live examples](https://api.core.ac.uk/docs/v3).
+  items:
+  - title: Where to start?
+    content: |
+      Please [register to receive an API key](/api-keys/register)
+      and start testing the [live examples](https://api.core.ac.uk/docs/v3).
 
-    A good starting point to start coding with our API is to
-    follow the examples gallery available in the [documentation](https://api.core.ac.uk/docs/v3#section/Quick-start-examples).
-    In collaboration with [rOpenSci](https://ropensci.org/) you can find
-    an [R client for the CORE API](https://github.com/ropensci/rcoreoa) in the GitHub repository.
-    All our SDKs are available from [our GitHub organisation](https://github.com/oacore).
+      A good starting point to start coding with our API is to
+      follow the examples gallery available in the [documentation](https://api.core.ac.uk/docs/v3#section/Quick-start-examples).
+      In collaboration with [rOpenSci](https://ropensci.org/) you can find
+      an [R client for the CORE API](https://github.com/ropensci/rcoreoa) in the GitHub repository.
+      All our SDKs are available from [our GitHub organisation](https://github.com/oacore).
+  - title: Can I use the CORE API for commercial purposes?
+    content: |
+      Yes, you can use the CORE API for commercial purposes,
+      [(Terms & Conditions)](https://core.ac.uk/terms) apply.
+      We provide 30 Day Free Trial for Institution and Enterprise.
+      We will ask you for your circumstances during the registration process
+      and we might contact you afterwards to clarify any points and assess your eligibility
+      for a free licence. If your circumstances change, you need to let us know about it.
+  note: If you use CORE in your work, we kindly request you to cite one of our publications.
+  action:
+    title: cite publication
+    url: https://core.ac.uk/about/research-outputs
 
-testimonial:
+testimonials:
+-
+  id: Botev
   content: |
-    We are integrating the CORE API into our product, IRIS, because so far it
-    is the open access portal that covers almost all open access content,
-    provides easy to integrate API and has a powerful search querying engine.
-    We want to make open access articles more easily accessible and more useful
-    to researchers and the open public and we see the CORE API as a way
-    to speed that up.
+   “We are integrating the CORE API into our product, IRIS, because so far it is the open access portal that covers almost all open access content, provides easy to integrate API and has a powerful search querying engine. We want to make open access articles more easily accessible and more useful to researchers and the open public and we see the CORE API as a way to speed that up.”
   author:
     name: Viktor Botev
     role: CTO, Iris AI AS
@@ -61,39 +88,51 @@ testimonial:
 what-is-included:
   title: What’s included
   content: |
-    Subscription to the API provides you with:
+    The API provides you with:
 
-    * Machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
+    * Real-time machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
+    * Harmonised access to data accross CORE’s provider network
     * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to use the CORE API with live examples and wrappers to common programming languages.
     * Free access to the CORE data. The usage rate is limited depending on your profile, need a faster rate? [Contact us](~about/#contact).
+  image: /images/services/delivery.svg
 
-    Check our [Terms & Conditions](/terms) to see if you are elegible
-    for a free license.
+stats:
+ - title: more than
+   count: "{{fullTextCount}}"
+   caption: full texts
+ - title: more than
+   count: "{{totalArticlesCount}}"
+   caption: searchable research papers
+ - title: more than
+   count: "{{repositoriesCount}}"
+   caption: data providers
+ - title: more than
+   count: "150"
+   caption: countries
 
-    <p class="alert alert-secondary">
-      We encourage everybody to use the latest version above. However, if you still need support for version 2,
-      the documentation is available <a href="https://core.ac.uk/docs">here</a>.
-      The migration is relatively painless, and in addition, you will also get
-      <a href="https://research.jiscinvolve.org/wp/2021/07/16/apiv3-announcing-a-new-api-to-access-core-data/">many improvements</a>.
-      If you need help on how to migrate your code to the new version, feel free to <a href="https://core.ac.uk/about#contact">contact us</a>.
-    </p>
-
-  form:
+form:
     title: Register for an API key
     subtitle: Enter your email address to register for a new API key, or restore a previous API key. If you are registering in an institutional capacity, please enter your institutional email.
     helper: We will send the key and instructions to this address
     action: Register now
+    note: Check our [Terms & Conditions](https://core.ac.uk/terms) to see if you are elegible for a free license.
 
 related-services:
--
-  title: CORE Dataset
-  picture: /images/services/dataset.svg
-  url: ~services/dataset
--
-  title: CORE FastSync
-  picture: /images/services/fastsync.svg
-  url: ~services/fastsync
--
-  title: CORE Discovery
-  picture: /images/services/discovery.svg
-  url: ~services/discovery
+  title: You might be also interested in
+  services:
+  -
+    title: CORE Dataset
+    picture: /images/services/dataset.svg
+    url: dataset
+  -
+    title: CORE FastSync
+    picture: /images/services/fastsync.svg
+    url: fastsync
+  -
+    title: CORE Recommender
+    picture: /images/services/recommender.svg
+    url: discovery
+  -
+    title: CORE Discovery
+    picture: /images/services/discovery.svg
+    url: discovery
