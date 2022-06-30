@@ -1,0 +1,166 @@
+@import 'design-v2/variables';
+
+$spacer: 1.4rem;
+$grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
+$grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  .feature {
+    flex: 1;
+    padding: $spacer;
+    background-color: var(--gray-100);
+    position: relative;
+
+    @media (max-width: $breakpoint-sm) {
+      flex: auto;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        bottom: 0;
+        right: -1rem;
+        content: '';
+        height: 100%;
+        border: 1px dashed var(--gray-300);
+      }
+    }
+    &-title {
+      color: var(--primary);
+    }
+  }
+}
+
+.how-it-works {
+  display: grid;
+  grid-template-columns: $grid-responsive-for-sections;
+  .content {
+    .button {
+      float: right;
+      margin-top: 2rem;
+    }
+  }
+}
+
+.testimonial {
+  background-color: var(--gray-200);
+  padding: $spacer;
+  .header {
+    display: flex;
+    .picture {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 50%;
+      object-fit: contain;
+    }
+    .info {
+      margin-left: 1rem;
+      p {
+        margin-bottom: 0.5rem;
+      }
+      &-role {
+        color: var(--primary);
+      }
+    }
+  }
+  .content {
+    font-style: italic;
+  }
+}
+
+.additional {
+  display: grid;
+  grid-template-columns: $grid-responsive-for-sections;
+  align-items: flex-start;
+  gap: var(--spacer);
+  .note {
+    margin-top: var(--spacer);
+  }
+  .action {
+    float: right;
+    margin: 1rem 0 0;
+  }
+}
+
+.what-is-included {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  ul {
+    margin-left: 1.5rem;
+    li {
+      line-height: 2rem;
+      list-style-type: disc;
+    }
+  }
+  .section {
+    max-width: 95ch;
+  }
+}
+
+.statistics {
+  display: grid;
+  grid-template-columns: $grid-responsive-for-cards;
+  gap: 2rem;
+  &-box {
+    padding: 1rem;
+
+    border: 1px solid var(--gray-300);
+    border-bottom: 1px solid var(--primary);
+    .title {
+      color: var(--gray-900);
+      font-weight: 300;
+    }
+    .count {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+  }
+}
+
+.form {
+  box-shadow: none;
+  background-color: var(--gray-100);
+  .caption {
+    max-width: 80ch;
+    line-height: 2;
+  }
+  .textfield {
+    input {
+      border: none;
+    }
+  }
+  .button {
+    margin-top: 2rem;
+  }
+}
+
+.note {
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+.services {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: $grid-responsive-for-cards;
+  gap: 2rem;
+  .service {
+    padding: 2rem;
+    flex: 1;
+    border: 2px solid var(--primary);
+    border-radius: 0.4rem;
+    text-align: center;
+    .title {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+    .image {
+      max-height: 50px;
+    }
+  }
+}
