@@ -11,14 +11,14 @@ $accordion-spacer-left: $accordion-icon-size + $card-spacer-x !default;
   .card,
   .card:first-of-type,
   .card:not(:first-of-type):not(:last-of-type) {
-    border: solid $card-border-color !important;
-    border-width: $card-border-width 0 !important;
+    border: solid $card-border-color;
+    border-width: $card-border-width 0;
   }
 }
 
 .accordion-item {
   border: solid $card-border-color;
-  border-width: $card-border-width 0;
+  border-width: $card-border-width 0 !important;
 
   .card-header {
     position: relative; // to align link icon
