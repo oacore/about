@@ -168,7 +168,7 @@ const ServicePage = observe(
             <Section id="form">
               <h3>{form.title}</h3>
               <Card variant="outlined" className={styles.form}>
-                <p className={styles.cardSubtitle}>{form.subtitle}</p>
+                <p className={styles.caption}>{form.subtitle}</p>
                 <Form onSubmit={onHandleSubmit}>
                   <TextField
                     id={elemEmail}
