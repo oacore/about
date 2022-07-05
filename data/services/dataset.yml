@@ -15,7 +15,7 @@ header:
       url: '#form'
     - caption: Download our flyer
       variant: text
-      url: /resources/core-api-flyer.pdf
+      url: /resources/core-dataset-flyer.pdf
       download: true
 
 features:
