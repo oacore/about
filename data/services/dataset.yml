@@ -2,81 +2,126 @@ id: dataset
 
 title: CORE Dataset
 tagline: Download millions of research outputs for text and data analysis
-description: |
 
-screenshot:
-  source: /images/screenshots/dataset.png
+header:
+  id: header
+  title: CORE Dataset
+  icon: /images/services/dataset.svg
+  image: /images/services/cloud.svg
+  description: Download millions of research outputs for text and data analysis and process it directly in your own infrastructure.
+  actions:
+    - caption: Register now
+      variant: contained
+      url: '#form'
+    - caption: Download our flyer
+      variant: text
+      url: /resources/core-dataset-flyer.pdf
+      download: true
 
 features:
--
-  title: null
-  picture: /images/icons/big-data-4.svg
-  description: |
-    Download all CORE data for big data processing
--
-  title: null
-  picture: /images/icons/analyse.svg
-  description: |
-    Prototype, analyse and mine your data in your infrastructure
--
-  title: null
-  picture: /images/icons/processing.svg
-  description: |
-    World's largest full text collection of scientific papers
-    for machine processing
+  - title: All the data in one single place
+    description: |
+      Download all the CORE data in a single package.
+  - title: Matching your needs
+    description: |
+      Prototype, analyse and process your data directly on your infrastructure.
+  - title: Largest full text collection
+    description: |
+      World's largest full text collection of scientific papers for machine processing
+  - title: Simple to use
+    description: |
+      Accessible and easy to understand documentation and processes.
 
-main: |
-  CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](~data-providers/). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
-
-  If you use CORE in your work, we kindly request you to
-  [cite one of our publications](~research-outputs).
+how-it-works:
+  title: How it works?
+  image: /images/services/work.svg
+  description: |
+    CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](https://core.ac.uk/data-providers?q=&size=10). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
+  action:
+    title: Access documentation
+    url: https://core.ac.uk/documentation/dataset
 
 additional:
-  title: Available datasets
-  content: |
+  items:
+    - title: Available datasets
+      content: |
+        **Dataset 2020-03-18**
 
-    **Dataset 2020-03-18**
+        Full dataset (~400GB, 2.1TB Extracted)
 
-    Full dataset (~400GB, 2.1TB Extracted)
+        **Dataset 2018-03-01**
 
-    **Dataset 2018-03-01**
+        Metadata only dataset (beta) (127 GB) - 123M metadata items,
+        85.6M items with abstract
 
-    Metadata only dataset (beta) (127 GB) - 123M metadata items,
-    85.6M items with abstract
+        With full text dataset (beta) (330 GB) - 123M metadata items,
+        85.6M items with abstract, 9.8M items with fulltext.
 
-    With full text dataset (beta) (330 GB) - 123M metadata items,
-    85.6M items with abstract, 9.8M items with fulltext.
+        [Documentation and access to previous datasets](~documentation/dataset).
+    - title: How often is the CORE dataset updated?
+      content: |
+        We aim to generate a new public dataset at least once a year. If you need a more recent dataset, please get in touch with us as we might be able to arrange it.
+  action:
+    title: cite publication
+    url: https://core.ac.uk/about/research-outputs
 
-    [Documentation and access to previous datasets](~documentation/dataset).
+testimonials:
+  - id: Olsen
+    content: |
+      “To build the product we have always envisioned, having a robust and comprehensive dataset of machine-readable, peer-reviewed papers is absolutely essential. We are incredibly grateful to be able to partner with an organization like CORE that not only can meet our data needs, but also shares our vision of making science more accessible and consumable. This unique combination of best-in-class data-offering and mission-alignment makes CORE an ideal partner for Consensus.”
+    author:
+      name: Eric Olson
+      role: Consensus, co-founder and CEO
+      picture: /images/people/olson.png
 
 what-is-included:
-  title:  What’s included
+  title: What’s included
   content: |
-    The dataset provides you with:
+    The Dataset provides you with:
 
     * The entire CORE's corpus of both metadata and full texts in a machine processable format.
-    * Mappings of the CORE articles to entities in the Microsoft Academic Graph (MAG), enabling to access
-      CORE fulltexts and use additional entities from MAG where available.
-    * Detailed [documentation](~documentation/dataset) on how to download the CORE dataset and how data is organised.
+    * Mappings of the CORE articles to entities in the Microsoft Academic Graph (MAG), enabling to access CORE fulltexts and use additional entities from MAG where available.
+    * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to download the CORE dataset and how data is organised.
+  image: /images/services/delivery.svg
 
-    The terms of use for the dataset are available on our
-    [datasets download page](~documentation/dataset).
-  form:
-    title: Register for the CORE Dataset
-    subtitle: Enter your email address to register for our datasets or access the download page if you have already registered. Please enter your institutional email if you are registering in an institutional capacity.
-    helper: We will send the instructions to this address
-    action: Register now
+stats:
+  - title: dataset
+    count: 2022
+    caption: year
+    badge: Latest
+    url: /documentation/dataset#latest
+  - title: datasets
+    count: 2021
+    caption: year
+    url: /documentation/dataset#other
+  - title: datasets
+    count: 2020
+    caption: year
+    url: /documentation/dataset#other
+  - title: datasets
+    count: 2019
+    caption: year
+    url: /documentation/dataset#other
+
+form:
+  title: Register for the CORE Dataset
+  subtitle: Enter your email address to register for our datasets or access the download page if you have already registered. Please enter your institutional email if you are registering in an institutional capacity.
+  helper: We will send the instructions to this address
+  action: Register now
+  note: The terms of use for the dataset are available on our [datasets download page](https://api.core.ac.uk/documentation/dataset).
 
 related-services:
--
-  title: CORE API
-  picture: /images/services/api.svg
-  url: ~services/api
--
-  title: CORE FastSync
-  picture: /images/services/fastsync.svg
-  url: ~services/fastsync
--
-  title: CORE Discovery
-  picture: /images/services/discovery.svg
-  url: ~services/discovery
+  title: You might be also interested in
+  services:
+    - title: CORE API
+      picture: /images/services/api.svg
+      url: api
+    - title: CORE FastSync
+      picture: /images/services/fastsync.svg
+      url: fastsync
+    - title: CORE Recommender
+      picture: /images/services/recommender.svg
+      url: recommender
+    - title: CORE Discovery
+      picture: /images/services/discovery.svg
+      url: discovery

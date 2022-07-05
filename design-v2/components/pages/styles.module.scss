@@ -105,11 +105,13 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   display: grid;
   grid-template-columns: $grid-responsive-for-cards;
   gap: 2rem;
-  &-box {
-    padding: 1rem;
 
+  &-box {
+    position: relative;
+    padding: 1rem;
     border: 1px solid var(--gray-300);
     border-bottom: 1px solid var(--primary);
+
     .title {
       color: var(--gray-900);
       font-weight: 300;
@@ -118,6 +120,25 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
       font-size: 2rem;
       color: var(--primary);
     }
+    .caption {
+      color: var(--gray-900);
+    }
+
+    .badge {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      padding: 0.2rem 0.4rem;
+      color: var(--white);
+      background-color: $status-icon-background;
+      border-radius: 0.2rem;
+    }
+  }
+  .active {
+    background-color: #fbf6f2;
+  }
+  .link {
+    text-decoration: none;
   }
 }
 
