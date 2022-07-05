@@ -22,15 +22,16 @@ async function getStaticProps({ params, previewData }) {
 async function getStaticPaths() {
   const pages = await retrieveContent(PAGES_BASE)
 
-  const paths = pages.reduce((result, item) => {
-    if (item.id !== PAGE_SLUG) {
-      result.push({
-        params: { slug: item.id },
-      })
-    }
-    return result
-  }, [])
-
+  const paths = pages
+    .filter((item) => item.id !== 'dataset')
+    .reduce((result, item) => {
+      if (item.id !== PAGE_SLUG) {
+        result.push({
+          params: { slug: item.id },
+        })
+      }
+      return result
+    }, [])
   return {
     paths,
     fallback: false,
