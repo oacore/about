@@ -61,6 +61,7 @@ additional:
     - title: How often is the CORE dataset updated?
       content: |
         We aim to generate a new public dataset at least once a year. If you need a more recent dataset, please get in touch with us as we might be able to arrange it.
+  note: If you use CORE in your work, we kindly request you to cite one of our publications.
   action:
     title: cite publication
     url: https://core.ac.uk/about/research-outputs
@@ -108,7 +109,7 @@ form:
   subtitle: Enter your email address to register for our datasets or access the download page if you have already registered. Please enter your institutional email if you are registering in an institutional capacity.
   helper: We will send the instructions to this address
   action: Register now
-  note: The terms of use for the dataset are available on our [datasets download page](https://api.core.ac.uk/documentation/dataset).
+  note: The terms of use for the dataset are available on our [datasets download page](https://core.ac.uk/documentation/dataset).
 
 related-services:
   title: You might be also interested in
