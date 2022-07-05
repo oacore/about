@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Form, TextField } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 import { Button } from '@oacore/design/lib/elements'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 import { Layout, Section } from '../layout'
@@ -22,12 +23,26 @@ const Feature = ({ title, description }) => (
   </div>
 )
 
-const StatisticBox = ({ title, count, caption }) => (
-  <div className={styles.statisticsBox}>
+const StatisticBox = ({
+  title,
+  count,
+  caption,
+  url,
+  badge,
+  tag: Tag = 'div',
+}) => (
+  <Tag
+    className={classNames.use(styles.statisticsBox, {
+      [styles.active]: badge,
+      [styles.link]: url,
+    })}
+    href={url}
+  >
+    {badge && <span className={styles.badge}>{badge}</span>}
     <Markdown className={styles.title}>{title}</Markdown>
     <Markdown className={styles.count}>{count}</Markdown>
     <Markdown className={styles.caption}>{caption}</Markdown>
-  </div>
+  </Tag>
 )
 
 const Testimonial = ({ content, author }) => (
@@ -39,9 +54,7 @@ const Testimonial = ({ content, author }) => (
         <Markdown className={styles.infoRole}>{author.role}</Markdown>
       </div>
     </div>
-    <Markdown t className={styles.content}>
-      {content}
-    </Markdown>
+    <Markdown className={styles.content}>{content}</Markdown>
   </article>
 )
 
@@ -156,9 +169,12 @@ const ServicePage = observe(
             <Section id="statistics" className={styles.statistics}>
               {stats.map((stat) => (
                 <StatisticBox
-                  key={stat.caption}
+                  key={`${stat.caption}-${stat.count}`}
                   title={stat.title}
                   caption={stat.caption}
+                  url={stat?.url}
+                  badge={stat?.badge}
+                  tag={stat.url ? 'a' : 'div'}
                   count={patchStats(stat.count, statistics)}
                 />
               ))}
