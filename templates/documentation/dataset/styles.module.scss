@@ -90,7 +90,9 @@ $primary-color: #b75400;
       white-space: pre-wrap;
     }
   }
-  &-table {
-    margin-top: 4rem;
+  &-fields {
+    h5 {
+      margin-top: calc(var(--spacer) * 2);
+    }
   }
 }

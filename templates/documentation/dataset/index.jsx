@@ -135,7 +135,9 @@ const DatasetPageTemplate = ({
             <Markdown className={styles.structureContent}>
               {structure.text}
             </Markdown>
-            <Markdown>{structure.fields}</Markdown>
+            <Markdown className={styles.structureFields}>
+              {structure.fields}
+            </Markdown>
           </Collapsed>
         ))}
       </Section>
