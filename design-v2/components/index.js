@@ -1,5 +1,6 @@
 export * from './sections'
 export * from './layout'
+export * from './dataset'
 export { default as SearchForm } from './search-form'
 export { default as TestimonialCard } from './testimonial'
 export { default as Hero } from './hero'
