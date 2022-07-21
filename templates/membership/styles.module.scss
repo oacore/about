@@ -13,8 +13,24 @@ $member-image-width: 102px;
     margin-bottom: 3rem;
   }
   .title {
+    position: relative;
+
     max-width: 25ch;
   }
+
+  .extra-text {
+    position: absolute;
+    display: inline-block;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--success-dark);
+    border-radius: 0.2rem;
+    padding: 0.4rem 0.6rem;
+    margin-left: 1rem;
+    font-weight: 100;
+    bottom: 0.7rem;
+  }
+
   &-prices {
     margin: 0 auto;
     max-width: 100ch;

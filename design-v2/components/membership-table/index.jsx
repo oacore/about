@@ -44,7 +44,9 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
             {header.name}
           </Markdown>
           {header.defaultText && (
-            <span className={styles.headerText}>{header.defaultText}</span>
+            <Markdown className={styles.headerText}>
+              {header.defaultText}
+            </Markdown>
           )}
           {header.caption && (
             <span className={styles.headerCaption}>{header.caption}</span>

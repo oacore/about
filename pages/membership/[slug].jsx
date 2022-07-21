@@ -1,34 +1,39 @@
 import React from 'react'
 
 import MembershipPricesPageTemplate from 'templates/membership/prices'
-import textData from 'data/membership.yml'
+// import textData from 'data/membership.yml'
 import { Page } from 'components'
 
 export const slugs = ['supporting', 'sustaining']
 
-export async function getStaticProps({ params }) {
-  const { slug } = params
+export async function getStaticProps() {
+  // const { slug } = params
 
-  const data = {
-    header: {
-      title: textData.header.title,
-      description: textData.fee.description[slug],
-    },
-    fee: {
-      ...textData.fee,
-      table: {
-        headers: textData.fee.table.headers,
-        ...textData.fee.table[slug],
-      },
-    },
-    planName: slug,
-    comparisonTable: textData.comparisonTable,
-    box: textData.box,
-  }
+  // const data = {
+  //   header: {
+  //     title: textData.header.title,
+  //     description: textData.fee.description[slug],
+  //   },
+  //   fee: {
+  //     ...textData.fee,
+  //     table: {
+  //       headers: textData.fee.table.headers,
+  //       ...textData.fee.table[slug],
+  //     },
+  //   },
+  //   planName: slug,
+  //   comparisonTable: textData.comparisonTable,
+  //   box: textData.box,
+  // }
 
+  // return {
+  //   props: {
+  //     data,
+  //   },
+  // }
   return {
-    props: {
-      data,
+    redirect: {
+      destination: '/membership',
     },
   }
 }
