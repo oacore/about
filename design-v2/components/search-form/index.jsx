@@ -28,14 +28,12 @@ const SearchForm = () => {
       <Select
         id="search-input"
         value={value}
-        variant="pure"
         prependIcon="#magnify"
-        placeholder={patchStats(page.searchPlaceholder, page.statistics)}
         changeOnBlur={false}
         onInput={handleInput}
         className={styles.select}
         onChange={handleOnChange}
-        label=""
+        label={patchStats(page.searchPlaceholder, page.statistics)}
       >
         {/* {suggestions.map((el) => (
                   <Select.Option

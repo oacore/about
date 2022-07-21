@@ -6,3 +6,15 @@ $main-spacer: 3rem;
 .container {
   padding: $main-spacer 0;
 }
+
+.full {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  margin-left: -50vw;
+  left: 50%;
+  z-index: -1;
+  > div {
+    padding: 0 var(--page-padding-x);
+  }
+}

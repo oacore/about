@@ -3,43 +3,42 @@ description: The world’s largest collection of open access research papers
 keywords: research, core, thesis, open access
 slides:
   children:
-  - title: The world’s largest collection of open access research papers
-    image: /images/heros/community.svg
-    label: community
-    action: Search
-  - title: Powerful services for enterprises, institutions and researchers
-    image: /images/heros/services.svg
-    label: services
-    action: /services
-    actionLabel: Explore Services
-  # - title: Resolve OAI identifier
-  #   description: |
-  #    OAIs are unique identifiers used by repositories.
-  #    As opposed to DOIs, they are minted in a distributed way and cost-free.
-  #    Our service allows you to resolve an OAI in the same way as you
-  #    would resolve a DOI.
-  #   image: /images/heros/oai.svg
-  #   label: OAI
-  #   action: /services
-  #   actionLabel: Resolve
+    - title: The world’s largest collection of open access research papers
+      image: /images/heros/community.svg
+      label: community
+      action: Search
+    - title: Powerful services for enterprises, institutions and researchers
+      image: /images/heros/services.svg
+      label: services
+      action: /services
+      actionLabel: Explore Services
+    - title: Resolve OAI identifier
+      description: |
+        OAIs are unique identifiers used by repositories.
+        As opposed to DOIs, they are minted in a distributed way and cost-free.
+        Our service allows you to resolve an OAI in the same way as you would resolve a DOI.
+      image: /images/heros/oai.svg
+      label: OAI
+      action: http://oai.core.ac.uk
+      actionLabel: Resolve
 search-placeholder: Search {{totalArticlesCount}} from papers around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   hidden: true
   children:
-  - title: Global aggregator
-    description: We serve the global network of open access [repositories and journals](~benefits)
-    picture: /images/features/globe.svg
-  - title: Harmonized data access
-    description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
-    picture: /images/features/gears.svg
-  - title: Powerful services
-    description: We create powerful [services](~services) for researchers, universities, and industry
-    picture: /images/features/building.svg
-    status: new
-  - title: Cutting-edge solutions
-    description: We [research](~about/research-outputs) and develop innovative data-driven and AI [solutions](~community/research)
-    picture: /images/features/neural.svg
+    - title: Global aggregator
+      description: We serve the global network of open access [repositories and journals](~benefits)
+      picture: /images/features/globe.svg
+    - title: Harmonized data access
+      description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
+      picture: /images/features/gears.svg
+    - title: Powerful services
+      description: We create powerful [services](~services) for researchers, universities, and industry
+      picture: /images/features/building.svg
+      status: new
+    - title: Cutting-edge solutions
+      description: We [research](~about/research-outputs) and develop innovative data-driven and AI [solutions](~community/research)
+      picture: /images/features/neural.svg
 
 join:
   title: Join CORE
@@ -51,9 +50,9 @@ join:
       action: '/benefits'
       url: /benefits
       picture: /images/join/data-provider.svg
-    - caption: Join our communities
-      url: /about#Communities
-      picture: /images/join/community.svg
+    - caption: Become a member
+      url: /membership
+      picture: /images/join/membership.svg
 testimonials:
   title: Who we serve?
   actionLabel: Find out more
@@ -67,7 +66,7 @@ testimonials:
         Turnitin with vast amounts of metadata and full texts
         that we can utilise in our plagiarism detection software.
       author: Gareth Malcolm, Content Partner Manager at Turnitin
-    - title:  Academic institutions
+    - title: Academic institutions
       description: Making research more discoverable, improving metadata quality, helping to meet and monitor open access compliance.
       logo: /images/logos/open-university.png
       citation: |
@@ -76,7 +75,7 @@ testimonials:
         extends the reach of the locally held content in our institutional
         repository, Open Research Online.
       author: Nicola Dowson, Library Services Manager at Open University
-    - title:  Researchers & general public
+    - title: Researchers & general public
       description: Tools to find, discover and explore the wealth of open access research. Free for everyone, forever.
       logo: /images/logos/mooc-founder.png
       citation: |
@@ -87,15 +86,12 @@ testimonials:
         research, and a major part of advancing open science.
       author: Jon Tennant, Rogue Paleontologist and Founder of the Open Science MOOC
       extraText: In memoriam
-    - title:  Funders
+    - title: Funders
       description: Helping funders to analyse, audit and monitor open research and accelerate towards open science.
-      logo: /images/features/building.svg
-      temporaryText: |
-        CORE provides funders with tools
-        to monitor compliance with
-        open access policies.
-
-      # author: Rachel Bruce, UKRI
+      logo: /images/logos/research-england.png
+      citation: |
+        Aggregation plays an increasingly essential role in maximising the long-term benefits of open access, helping to turn the promise of a 'research commons' into a reality. The aggregation services that CORE provides therefore make a very valuable contribution to the evolving open access environment in the UK.
+      author: Ben Johnson, Research Policy Adviser at Research England
 services:
   title: Our services
   actionLabel: Learn more
@@ -126,7 +122,6 @@ partnerProjects:
     #   author: Gareth Malcolm, Content Partner Manager at Turnitin
     - logo: /images/partners/ukri.png
     - logo: /images/partners/ukcorr.png
-
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research
