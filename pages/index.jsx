@@ -107,6 +107,7 @@ const IndexPage = () => (
           )}
         </KeyFeatureList>
       </Section>
+
       <Section className={styles.sectionJoin}>
         <h3 className={styles.title}>{page.join.title}</h3>
         <JoinList className={styles.sectionJoinList}>
