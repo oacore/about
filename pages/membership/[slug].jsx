@@ -4,7 +4,7 @@ import MembershipPricesPageTemplate from 'templates/membership/prices'
 // import textData from 'data/membership.yml'
 import { Page } from 'components'
 
-export const slugs = ['supporting', 'sustaining']
+// export const slugs = ['supporting', 'sustaining']
 
 export async function getStaticProps() {
   // const { slug } = params
@@ -33,16 +33,14 @@ export async function getStaticProps() {
   // }
   return {
     redirect: {
+      permnament: true,
       destination: '/membership',
     },
   }
 }
 
 export async function getStaticPaths() {
-  const paths = slugs.map((slug) => ({
-    params: { slug },
-  }))
-
+  const paths = []
   return {
     paths,
     fallback: false,
