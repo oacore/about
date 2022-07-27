@@ -7,7 +7,16 @@ import { Section } from '../layout'
 
 import { Markdown } from 'components'
 
-const Hero = ({ id, icon, title, description, actions, image, className }) => (
+const Hero = ({
+  id,
+  icon,
+  title,
+  description,
+  caption,
+  actions,
+  image,
+  className,
+}) => (
   <Section id={id} className={classNames.use(styles.header).join(className)}>
     <div className={styles.content}>
       <div className={styles.meta}>
@@ -15,9 +24,10 @@ const Hero = ({ id, icon, title, description, actions, image, className }) => (
         <h1 className={styles.title}>{title}</h1>
       </div>
       <Markdown className={styles.description}>{description}</Markdown>
-      <div className={styles.group}>
-        {actions &&
-          actions.map((action) => (
+      {caption && <Markdown className={styles.caption}>{caption}</Markdown>}
+      {actions && (
+        <div className={styles.group}>
+          {actions.map((action) => (
             <Button
               href={action.url}
               variant={action.variant}
@@ -27,7 +37,8 @@ const Hero = ({ id, icon, title, description, actions, image, className }) => (
               {action.caption}
             </Button>
           ))}
-      </div>
+        </div>
+      )}
     </div>
     <div>
       <img className={styles.logo} src={image} alt="logo" />
