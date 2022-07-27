@@ -20,13 +20,20 @@
 }
 .description {
   max-width: 60ch;
-  margin-bottom: 4rem;
   line-height: 1.8;
 }
+
+.caption {
+  margin-top: var(--spacer);
+  color: var(--gray-600);
+}
+
 .group {
   display: flex;
   gap: 1rem;
+  margin-top: 4rem;
 }
+
 .logo {
   width: 100%;
   height: auto;
