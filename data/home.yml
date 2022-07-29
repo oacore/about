@@ -50,9 +50,9 @@ join:
       action: '/benefits'
       url: /benefits
       picture: /images/join/data-provider.svg
-    - caption: Become a member
-      url: /membership
-      picture: /images/join/membership.svg
+    - caption: Join our communities
+      url: /about#Communities
+      picture: /images/join/community.svg
 testimonials:
   title: Who we serve?
   actionLabel: Find out more
