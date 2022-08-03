@@ -1,52 +1,65 @@
 id: fastsync
 
 title: CORE FastSync
-tagline: Keep your data in sync with CORE and never miss a new research output
-description: |
-  CORE FastSync is an enterprise solution that enables you to keep an always
-  up to date copy of all CORE data in your infrastructure. New content can be
-  transferred as soon as it becomes available in CORE.
+tagline: Stay in sync with CORE. Keep your data in sync with our database and never miss a new research output.
 
-screenshot:
-  source: /images/screenshots/fastsync.png
-  caption: |
+header:
+  id: header
+  title: CORE FastSync
+  icon:  /images/services/dataset.svg
+  image: /images/services/hosting-man.svg
+  description: Stay in sync with CORE. Keep your data in sync with our database and never miss a new research output.
+  actions:
+    - caption: Contact us for quote
+      variant: contained
+      url: /about#contact
+    - caption: Download our flyer
+      variant: text
+      url: /resources/core-dataset-flyer.pdf
+      download: true
+
+
 
 features:
--
-  title: null
-  picture: /images/icons/sync.svg
-  description: |
-    An enterprise solution to keep your data in sync with research content
-    from around the world
--
-  title: null
-  picture: /images/icons/solving.svg
-  description: |
-     Spend less time collecting data and more on solving problems
--
-  title: null
-  picture: /images/icons/fast.svg
-  description: |
-    Fast and incremental updates as soon as they become available.
-    No usage restrictions
+  - title: Fresh data
+    description: |
+     An enterprise solution to keep your data in sync with research content from around the world
+  - title: Time saving
+    description: |
+      Spend less time collecting data and more on solving problems
+  - title: Instant updates
+    description: |
+      Fast and incremental updates as soon as they become available. No usage restrictions
+  - title: Technical support
+    description: |
+      We provide technical support for this service, so you can be confident that you can rely on it.
 
-main: |
-  Enables you to keep an always up to date copy of all CORE data in your
-  infrastructure, new content can be transferred as soon as it becomes
-  available in CORE. It provides fast, incremental and enterprise data
-  synchronisation using a single API. FastSync is our premium service for both
-  commercial and non-commercial purposes. Ideal for all types of businesses,
-  from start-ups to large enterprises.
+
+how-it-works:
+  title: How it works?
+  image: /images/services/work.svg
+  description: |
+   Enables you to keep an always up to date copy of all CORE data in your infrastructure, new content can be transferred as soon as it becomes available in CORE. It provides fast, incremental and enterprise data synchronisation using a single API. FastSync is our premium service for both commercial and non-commercial purposes. Ideal for all types of businesses, from start-ups to large enterprises.
 
 additional:
-  title: Where to start?
-  content: |
-    FastSync implements an improved version of the ResourceSync protocol.
-    We provide our customers with a data client they can install on their servers.
-    Customers can run this client as often as they desire, receiveing incremental updates from CORE.
-    We also provide technical support for this service, so you can be confident that you can rely on it.
+  items:
+  - title: Where to start?
+    content: |
+     FastSync implements an improved version of the ResourceSync
+     protocol. We provide our customers with a data client they can
+     install on their servers. Customers can run this client as often
+     as they desire, receiveing incremental updates from CORE.
+     We also provide technical support for this service,
+     so you can be confident that you can rely on it.
+  note: If you use CORE in your work, we kindly request you to cite one of our publications.
+  action:
+    title: cite publication
+    url: https://core.ac.uk/about/research-outputs
 
-testimonial:
+
+testimonials:
+-
+  id: Kim Sejin
   content: |
     By integrating with CORE, we have significantly increased the number of
     research papers in the Naver Academic indexes. In fact, CORE is Naver’s largest
@@ -58,7 +71,6 @@ testimonial:
     role: Content Manager, Naver Academic Service
     picture: /images/people/sejin.png
 
-
 what-is-included:
   title:  What’s included
   content: |
@@ -67,23 +79,29 @@ what-is-included:
     * Access to the FastSync service, an initial data dump and a client for incremental updates.
     * Technical support for the duration of the service.
 
-    If you are interested in more information about CORE FastSync or would like to subscribe contact us.
+    If you are interested in more information about CORE FastSync or would like to subscribe [contact us](~contact).
+  image: /images/services/delivery.svg
 
-  actions:
-    primary:
-      url: ~contact
-      caption: Contact us for a quote
+  action:
+    url: ~contact
+    caption: Contact us for a quote
 
 related-services:
--
-  title: CORE API
-  picture: /images/services/api.svg
-  url: ~services/api
--
-  title: CORE Dataset
-  picture: /images/services/dataset.svg
-  url: ~services/dataset
--
-  title: CORE Discovery
-  picture: /images/services/discovery.svg
-  url: ~services/discovery
+  title: You might be also interested in
+  services:
+  -
+    title: CORE Dataset
+    picture: /images/services/dataset.svg
+    url: dataset
+  -
+    title: CORE API
+    picture: /images/services/api.svg
+    url: api
+  -
+    title: CORE Recommender
+    picture: /images/services/recommender.svg
+    url: recommender
+  -
+    title: CORE Discovery
+    picture: /images/services/discovery.svg
+    url: discovery

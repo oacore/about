@@ -98,6 +98,9 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   }
   .section {
     max-width: 95ch;
+    .button {
+      margin-top: 2rem;
+    }
   }
 }
 
