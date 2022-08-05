@@ -28,6 +28,14 @@ $card-header-color: #fef5ef;
 .cell {
   border: $table-border;
   width: 20ch;
+  text-align: center;
+  position: relative;
+  .caption {
+    position: absolute;
+    top: 75%;
+    transform: translate(-50%, -50%);
+  }
+
   &-details-first {
     padding: 0;
     width: 50ch;

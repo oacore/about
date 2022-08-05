@@ -37,9 +37,9 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
           })}
         >
           <Markdown
-            className={classNames.use(styles.headerTitle, {
-              [styles.headerTitleDetails]: type === 'details',
-            })}
+            className={`${styles.headerTitle} ${
+              type === 'details' && styles.headerTitleDetails
+            }`}
           >
             {header.name}
           </Markdown>

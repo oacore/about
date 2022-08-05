@@ -69,11 +69,15 @@ $member-image-width: 102px;
 
     .box {
       .title {
+        display: block;
         cursor: pointer;
-        list-style: none;
         &:hover {
           text-decoration: underline;
         }
+        &::-webkit-details-marker {
+          display: none;
+        }
+
         p {
           margin-bottom: 0;
         }

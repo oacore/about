@@ -1,6 +1,6 @@
 header:
   title: CORE Membership for organisations
-  extra: Comming soon
+  extra: Coming soon
   description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
   logo: /images/membership/international-cooperation.svg
   actions:
@@ -18,7 +18,7 @@ content:
     plans: [Starting, Supporting, Sustaining]
   - &discovery
     title: CORE Discovery
-    description: In from our plugin which turns metadata only pages in repositories to pages with full text links, whenever an open access version of the document is available anywhere across the open research network.
+    description: Benefit from our plugin which turns metadata only pages in repositories to pages with full text links, whenever an open access version of the document is available anywhere across the open research network.
     plans: [Starting, Supporting, Sustaining]
   - &search
     title: CORE Search
@@ -30,7 +30,11 @@ content:
     plans: [Starting, Supporting, Sustaining]
   - &support
     title: General support
-    description: Our enthusiastic open access team ready to answer general queries.
+    description: Our enthusiastic open access team ready to answer general queries about CORE.
+    plans: [Starting, Supporting, Sustaining]
+  - &oai-identifier
+    title: Get your OAI identifiers resolved to your repository
+    description: Make OAI identifiers originating from your repository resolve directly to your repository instead of just to their pages in CORE.
     plans: [Starting, Supporting, Sustaining]
   - &statistics
     title: Download statistics
@@ -40,12 +44,12 @@ content:
     title: |-
       Repository Discovery Boost:
 
-       &#45 PMC
+       &ndash; PMC
 
-       &#45 Recommended across the repositories network
+       &ndash; Recommended across the repositories network
 
     description: |-
-      &#45 Open access full texts from your repository promoted to PubMed Central via their Link Out service. Increases the discoverability of your content.
+      &ndash; Open access full texts from your repository promoted to PubMed Central via their Link Out service. Increases the discoverability of your content.
     plans: [Starting, Supporting, Sustaining]
   - &logos
     title: Logos for your papers
@@ -60,22 +64,22 @@ content:
     description: Promote your research conferences, events, academic jobs and other mission-aligned communications on the CORE website.
     plans: [Sustaining]
   - &supporting-board-support
-    title: Board of Supporters(1 vote)
-    description: Help shape our development roadmap by having a formal say on our Board of Supporters.
+    title: Board of Supporters (1 vote)
+    description: Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
   - &sustaining-board-support
-    title: Board of Supporters(2 votes)
-    description: Help shape our development roadmap by having a formal say on our Board of Supporters.
+    title: Board of Supporters (2 votes)
+    description: Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
   - &board-support
     title: Board of Supporters
-    description: Help shape our development roadmap by having a formal say on our Board of Supporters.
+    description: Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
     captions:
       - plan: Supporting
-        name: 1 vote
+        name: (1 vote)
       - plan: Sustaining
-        name: 2 votes
+        name: (2 votes)
   - &tech-support
     title: Technical support (≤5)
     description: Guaranteed technical support of up to 5 technical queries per year.
@@ -85,13 +89,9 @@ content:
     description: Get unlimited technical support and your questions prioritised on top to get your answers sooner.
     plans: [Sustaining]
   - &dashboard-premium
-    title: CORE Repository Dashboard Premium
-    description: Unlock premium features, such as Open Access compliance monitoring and metadata enrichments.
+    title: CORE OA Compliance dashboard
+    description: Tools for Open Access compliance monitoring and metadata enrichments.
     plans: [Sustaining]
-  - &oai-identifier
-    title: Get your OAI identifiers resolved to your repository
-    description: Make OAI identifiers originating from your repository resolve directly to your repository instead of just to their pages in CORE.
-    plans: [Supporting, Sustaining]
   - &api
     title: АPI use for your university
     description: Use of the CORE API for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs.
@@ -124,6 +124,7 @@ plans:
         - *search
         - *recommender
         - *support
+        - *oai-identifier
         - *statistics
         - *discovery-boost
       action:
@@ -132,14 +133,13 @@ plans:
 
     - title: Supporting
       box:
-        title: All Supporting benefits
+        title: All Starting benefits
         caption: PLUS
       advantages:
         - *logos
         - *logo-banner
         - *supporting-board-support
         - *tech-support
-        - *oai-identifier
         - *api
       action:
         title: Register your interest
@@ -163,7 +163,7 @@ plans:
         url: 'https://docs.google.com/forms/d/1gTuZnPyDJuDnSqaFVjtp8HOIzU5x9u8jhvMLFIGfrGs/edit'
 
 box:
-  description: Here you can find a comparison table with detailed information about each features. I can help you choose the most sutible membership plan for you.
+  description: Here you can find a comparison table with detailed information about each features. I can help you choose the most suitable membership plan for you.
   action:
     default: features’ Details and Comparison
     active: Hide

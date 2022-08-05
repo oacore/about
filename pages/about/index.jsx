@@ -1,12 +1,12 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 import { classNames } from '@oacore/design/lib/utils'
+import { Button } from '@oacore/design'
 
 import styles from './about.module.scss'
 
 import {
   Accordion,
-  Button,
   ButtonToolbar,
   Blog,
   Page,
