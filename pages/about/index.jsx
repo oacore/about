@@ -133,7 +133,7 @@ const AboutPage = ({ data }) => (
       </ButtonToolbar>
     </Section>
     <RelatedContentSection
-      id="Communities"
+      id="communities"
       caption={data.communities.shortTitle}
       data={{
         ...data.communities,
