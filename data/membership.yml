@@ -5,7 +5,7 @@ header:
   logo: /images/membership/international-cooperation.svg
   actions:
     - caption: Register your interest
-      url: https://docs.google.com/forms/d/1gTuZnPyDJuDnSqaFVjtp8HOIzU5x9u8jhvMLFIGfrGs/edit
+      url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
       variant: contained
     - caption: download our flyer
       url: ''
@@ -49,7 +49,7 @@ content:
        &ndash; Recommended across the repositories network
 
     description: |-
-      &ndash; Open access full texts from your repository promoted to PubMed Central via their Link Out service. Increases the discoverability of your content.
+      &ndash; Increases the discoverability of your content. Open access full texts from your repository promoted to PubMed Central via their Link Out service.
     plans: [Starting, Supporting, Sustaining]
   - &logos
     title: Logos for your papers
@@ -143,7 +143,7 @@ plans:
         - *api
       action:
         title: Register your interest
-        url: 'https://docs.google.com/forms/d/1gTuZnPyDJuDnSqaFVjtp8HOIzU5x9u8jhvMLFIGfrGs/edit'
+        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
     - title: Sustaining
       box:
@@ -160,13 +160,13 @@ plans:
         - *health-check
       action:
         title: Register your interest
-        url: 'https://docs.google.com/forms/d/1gTuZnPyDJuDnSqaFVjtp8HOIzU5x9u8jhvMLFIGfrGs/edit'
+        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
 box:
-  description: Here you can find a comparison table with detailed information about each features. I can help you choose the most suitable membership plan for you.
+  description: Here you can find a comparison table with detailed information about each features. It can help you choose the most suitable membership plan.
   action:
-    default: features’ Details and Comparison
-    active: Hide
+    default: Show feature details and comparison
+    active: Close feature details and comparison
 
 comparison-table:
   title: Features’ details and comparison
