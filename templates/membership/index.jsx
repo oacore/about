@@ -91,15 +91,18 @@ const MembershipPageTemplate = ({ data }) => (
         <Markdown className={styles.description}>
           {data.header.description}
         </Markdown>
-        {data.header.actions.map((action) => (
-          <Button
-            href={action.url}
-            variant={action.variant}
-            key={action.caption}
-          >
-            {action.caption}
-          </Button>
-        ))}
+        <div className={styles.buttonGroup}>
+          {data.header.actions.map((action) => (
+            <Button
+              href={action.url}
+              variant={action.variant}
+              key={action.caption}
+              download={action.download}
+            >
+              {action.caption}
+            </Button>
+          ))}
+        </div>
       </div>
       <div className={styles.logoContainer}>
         <img src={data.header.logo} alt="logo" />

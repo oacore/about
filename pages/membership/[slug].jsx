@@ -34,9 +34,13 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = slugs.map((slug) => ({
-    params: { slug },
-  }))
+  // Enable once membership API will be ready.
+  // const paths = [
+  //   slugs.map((slug) => ({
+  //     params: { slug },
+  //   })),
+  // ]
+  const paths = []
   return {
     paths,
     fallback: false,

@@ -217,3 +217,9 @@ $member-image-width: 102px;
   pointer-events: none;
   opacity: 0.5;
 }
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}

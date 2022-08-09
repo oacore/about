@@ -8,8 +8,10 @@ header:
       url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
       variant: contained
     - caption: download our flyer
-      url: ''
+      url: /resources/core-membership-flyer.pdf
       variant: text
+      download: true
+
 
 content:
   - &dashboard
