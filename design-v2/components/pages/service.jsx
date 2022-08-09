@@ -3,6 +3,7 @@ import { Card, Form, TextField } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 import { Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
+import { Popover } from '@oacore/design/lib/modules'
 
 import styles from './styles.module.scss'
 import { Layout, Section } from '../layout'
@@ -76,11 +77,12 @@ const ServicePage = observe(
     keywords,
     whatIsIncluded,
     statistics,
-    stats,
+    stats, // @optional
     additional, // @optional
     testimonials, // @optional
+    form, // @optional
+    uniqueness, // @optional
     relatedServices,
-    form,
   }) => {
     const { registration } = useStore()
     const {
@@ -119,13 +121,15 @@ const ServicePage = observe(
             <article className={styles.content}>
               <h3>{howItWorks.title}</h3>
               <Markdown>{howItWorks.description}</Markdown>
-              <Button
-                className={styles.button}
-                href={howItWorks.action.url}
-                variant="contained"
-              >
-                {howItWorks.action.title}
-              </Button>
+              {howItWorks.action && (
+                <Button
+                  className={styles.button}
+                  href={howItWorks.action.url}
+                  variant="contained"
+                >
+                  {howItWorks.action.title}
+                </Button>
+              )}
             </article>
           </Section>
           {testimonials && (
@@ -209,6 +213,32 @@ const ServicePage = observe(
               </Card>
               <Markdown className={styles.note}>{form.note}</Markdown>
               <RegistrationModals />
+            </Section>
+          )}
+          {uniqueness && (
+            <Section id="uniqueness" className={styles.uniqueness}>
+              <img src={uniqueness.image} alt={whatIsIncluded.title} />
+              <div className={styles.section}>
+                <h3>{uniqueness.title}</h3>
+                <Markdown>{uniqueness.content}</Markdown>
+                <div className={styles.group}>
+                  {uniqueness.actions.map((action) => (
+                    <Popover
+                      key={action.caption}
+                      placement="bottom"
+                      content={action.hint}
+                    >
+                      <Button
+                        href={action.url}
+                        variant={action.primary ? 'contained' : 'outlined'}
+                        className={styles.action}
+                      >
+                        {action.caption}
+                      </Button>
+                    </Popover>
+                  ))}
+                </div>
+              </div>
             </Section>
           )}
           <Section id="related-services">

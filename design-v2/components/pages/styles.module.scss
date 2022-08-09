@@ -54,7 +54,6 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
       width: 3.5rem;
       height: 3.5rem;
       border-radius: 50%;
-      object-fit: contain;
     }
     .info {
       margin-left: 1rem;
@@ -85,7 +84,8 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
-.what-is-included {
+.what-is-included,
+.uniqueness {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -101,6 +101,30 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
+.uniqueness {
+  flex-wrap: wrap-reverse;
+  gap: 1rem;
+  img {
+    width: 100%;
+    max-width: 36rem;
+    height: auto;
+  }
+  .section {
+    max-width: 70ch;
+    ul {
+      margin-left: 2.5rem;
+    }
+    .group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      .action {
+        margin-left: 1.5rem;
+        text-transform: none;
+      }
+    }
+  }
+}
 .statistics {
   display: grid;
   grid-template-columns: $grid-responsive-for-cards;
