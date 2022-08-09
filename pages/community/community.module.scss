@@ -16,3 +16,14 @@
   padding: 1.3rem;
   font-size: 1.5rem;
 }
+
+.main {
+  background-color: var(--gray-100);
+  p {
+    max-width: 75ch;
+  }
+}
+
+.search {
+  margin: 1rem 0;
+}
