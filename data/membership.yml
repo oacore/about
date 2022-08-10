@@ -130,7 +130,7 @@ plans:
         - *statistics
         - *discovery-boost
       action:
-        title: become member
+        title: become a member
         url: 'https://core.ac.uk/benefits#join-core'
 
     - title: Supporting
@@ -175,11 +175,8 @@ comparison-table:
   headers:
     - name: ''
     - name: Starting
-      defaultText: Primary
     - name: Supporting
-      defaultText: '&nbsp;'
     - name: Sustaining
-      defaultText: '&nbsp;'
 
   rows:
     - *dashboard
