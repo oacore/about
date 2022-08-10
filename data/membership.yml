@@ -1,0 +1,376 @@
+header:
+  title: CORE Membership for organisations
+  extra: Coming soon
+  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
+  logo: /images/membership/international-cooperation.svg
+  actions:
+    - caption: Register your interest
+      url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+      variant: contained
+    - caption: download our flyer
+      url: /resources/core-membership-flyer.pdf
+      variant: text
+      download: true
+
+
+content:
+  - &dashboard
+    title: CORE Repository Dashboard
+    description: Monitor, manage and access statistics about how your  metadata are exposed across the open access research network.
+    plans: [Starting, Supporting, Sustaining]
+  - &discovery
+    title: CORE Discovery
+    description: Benefit from our plugin which turns metadata only pages in repositories to pages with full text links, whenever an open access version of the document is available anywhere across the open research network.
+    plans: [Starting, Supporting, Sustaining]
+  - &search
+    title: CORE Search
+    description: Your organisation's research visible and discoverable by over 30 million monthly active users who rely on CORE.
+    plans: [Starting, Supporting, Sustaining]
+  - &recommender
+    title: CORE Recommender
+    description: Install our recommender plugin to  help your users find related content within your own repository and from across the global open research network.
+    plans: [Starting, Supporting, Sustaining]
+  - &support
+    title: General support
+    description: Our enthusiastic open access team ready to answer general queries about CORE.
+    plans: [Starting, Supporting, Sustaining]
+  - &oai-identifier
+    title: Get your OAI identifiers resolved to your repository
+    description: Make OAI identifiers originating from your repository resolve directly to your repository instead of just to their pages in CORE.
+    plans: [Starting, Supporting, Sustaining]
+  - &statistics
+    title: Download statistics
+    description: Access statistics about how many times papers from your organisation were downloaded (from CORE and directly from your repository - IRUS tracker integration required for the latter)
+    plans: [Starting, Supporting, Sustaining]
+  - &discovery-boost
+    title: |-
+      Repository Discovery Boost:
+
+       &ndash; PMC
+
+       &ndash; Recommended across the repositories network
+
+    description: |-
+      &ndash; Increases the discoverability of your content. Open access full texts from your repository promoted to PubMed Central via their Link Out service.
+    plans: [Starting, Supporting, Sustaining]
+  - &logos
+    title: Logos for your papers
+    description: Associate your research papers in CORE with your official organisational logo. This will be visible in CORE Search, CORE Recommender, CORE Discovery and from across the CORE Portal. Your logo can be uploaded from the CORE Repository Dashboard.
+    plans: [Supporting, Sustaining]
+  - &logo-banner
+    title: Logo banner
+    description: We highly value the generous support of our Supporting and Sustaining members. We proudly display banners acknowledging your sponsorship and support to the open access and open science mission.
+    plans: [Supporting, Sustaining]
+  - &personal-banner
+    title: Personalised banner
+    description: Promote your research conferences, events, academic jobs and other mission-aligned communications on the CORE website.
+    plans: [Sustaining]
+  - &supporting-board-support
+    title: Board of Supporters (1 vote)
+    description: Help shape our development roadmap by having a say on our Board of Supporters.
+    plans: [Supporting, Sustaining]
+  - &sustaining-board-support
+    title: Board of Supporters (2 votes)
+    description: Help shape our development roadmap by having a say on our Board of Supporters.
+    plans: [Supporting, Sustaining]
+  - &board-support
+    title: Board of Supporters
+    description: Help shape our development roadmap by having a say on our Board of Supporters.
+    plans: [Supporting, Sustaining]
+    captions:
+      - plan: Supporting
+        name: (1 vote)
+      - plan: Sustaining
+        name: (2 votes)
+  - &tech-support
+    title: Technical support (≤5)
+    description: Guaranteed technical support of up to 5 technical queries per year.
+    plans: [Supporting, Sustaining]
+  - &priority-support
+    title: Unlimited and prioritised support
+    description: Get unlimited technical support and your questions prioritised on top to get your answers sooner.
+    plans: [Sustaining]
+  - &dashboard-premium
+    title: CORE OA Compliance dashboard
+    description: Tools for Open Access compliance monitoring and metadata enrichments.
+    plans: [Sustaining]
+  - &api
+    title: АPI use for your university
+    description: Use of the CORE API for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs.
+    plans: [Supporting, Sustaining]
+  - &dataset
+    title: Dataset use for your university
+    description: Use of the CORE Dataset for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs.
+    plans: [Sustaining]
+  - &health-check
+    title: Repository health check
+    description: Possibility of a data-driven metadata quality assessment consultation for your institution. We assess current level of metadata quality (including in relation to FAIRness) and provide guidance on how to improve it. (1 consultation per year included).
+    plans: [Sustaining]
+  - &better-articles
+    title: Promoted / spotlight / featured articles
+    description: When research papers from your organisation would appear on pages 2-4 of CORE Search results, your paper gets promoted to the front of the first page and is highlighted as a featured article.
+    plans: [Sustaining]
+  - &styles
+    title: Hosted or interview style blog post on mission-aligned activities
+    description: We are keen to provide a hosted or interview style blog post about open access, open science and other relevant mission-oriented activities your organisation is conducting on the CORE blog. (T&Cs apply)
+    plans: [Sustaining]
+
+plans:
+  title: What is CORE membership?
+  cards:
+    - title: Starting
+      caption: Free
+      advantages:
+        - *dashboard
+        - *discovery
+        - *search
+        - *recommender
+        - *support
+        - *oai-identifier
+        - *statistics
+        - *discovery-boost
+      action:
+        title: become a member
+        url: 'https://core.ac.uk/benefits#join-core'
+
+    - title: Supporting
+      box:
+        title: All Starting benefits
+        caption: PLUS
+      advantages:
+        - *logos
+        - *logo-banner
+        - *supporting-board-support
+        - *tech-support
+        - *api
+      action:
+        title: Register your interest
+        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+
+    - title: Sustaining
+      box:
+        title: All Supporting benefits
+        caption: PLUS
+      advantages:
+        - *personal-banner
+        - *sustaining-board-support
+        - *dashboard-premium
+        - *priority-support
+        - *better-articles
+        - *dataset
+        - *styles
+        - *health-check
+      action:
+        title: Register your interest
+        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+
+box:
+  description: Here you can find a comparison table with detailed information about each features. It can help you choose the most suitable membership plan.
+  action:
+    default: Show feature details and comparison
+    active: Close feature details and comparison
+
+comparison-table:
+  title: Features’ details and comparison
+  headers:
+    - name: ''
+    - name: Starting
+    - name: Supporting
+    - name: Sustaining
+
+  rows:
+    - *dashboard
+    - *discovery
+    - *search
+    - *recommender
+    - *support
+    - *statistics
+    - *discovery-boost
+    - *logos
+    - *logo-banner
+    - *personal-banner
+    - *board-support
+    - *tech-support
+    - *priority-support
+    - *dashboard-premium
+    - *oai-identifier
+    - *api
+    - *dataset
+    - *health-check
+    - *better-articles
+    - *styles
+
+support:
+  title: What does your membership support?
+  description: Our Supporting and Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our [mission](~about#mission).
+  cards:
+    - title: Supporting
+      caption: Co-funds the maintenance of CORE services as they are.
+      img: /images/membership/supporting.svg
+    - title: Sustaining
+      caption: Co-funds the maintenance of CORE services and their continuous improvement.
+      img: /images/membership/sustaining.svg
+  members:
+    title: Some of our members
+    children:
+      - logo: stgeorg.png
+        name: St. George's, University of London
+      - logo: university-of-london.svg
+        name: City University of London
+      - logo: brunel.png
+        name: Brunel University
+      - logo: trent.png
+        name: Nottingham Trent University
+      - logo: sussex.svg
+        name: University of Sussex
+      - logo: aru.svg
+        name: Anglia Ruskin University
+
+fee:
+  title: Membership fee for <span>{{planName}}</span> members
+  caption: 30% Early bird CORE Membership discount (ends September 30th, 2022)
+  description:
+    supporting: |
+      Our Supporting members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
+    sustaining: |
+      Our Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services and their continuous improvement.
+  note: '*Jisc Members already have CORE Supporting Membership through their subscription.'
+  action:
+    caption: Become member
+    url: '/payment'
+  table:
+    headers:
+      - name: Data provider size
+      - name: |
+          [Low-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+        type: low
+      - name: |
+          [Middle-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+        type: middle
+      - name: |
+          [High-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
+        type: higg
+    supporting:
+      rows:
+        - title: Band 1
+          caption: up to 5k articles
+          prices:
+            - type: low
+              original: 450
+              discount: 315
+            - type: middle
+              original: 900
+              discount: 630
+            - type: hign
+              original: 1500
+              discount: 1050
+        - title: Band 2
+          caption: 5k - 10k articles
+          prices:
+            - type: low
+              original: 900
+              discount: 630
+            - type: middle
+              original: 1800
+              discount: 1260
+            - type: high
+              original: 3000
+              discount: 2100
+        - title: Band 3
+          caption: 10k - 20k articles
+          prices:
+            - type: low
+              original: 1350
+              discount: 945
+            - type: middle
+              original: 2700
+              discount: 1890
+            - type: high
+              original: 4500
+              discount: 3150
+        - title: Band 4
+          caption: 20k - 40k articles
+          prices:
+            - type: low
+              original: 1800
+              discount: 1260
+            - type: middle
+              original: 3600
+              discount: 2520
+            - type: high
+              original: 6000
+              discount: 4200
+        - title: Band 5
+          caption: 40k+ articles
+          prices:
+            - type: low
+              original: 2250
+              discount: 1575
+            - type: middle
+              original: 4500
+              discount: 3150
+            - type: high
+              original: 7500
+              discount: 5250
+    sustaining:
+      rows:
+        - title: Band 1
+          caption: up to 5k articles
+          prices:
+            - type: low
+              original: 900
+              discount: 630
+            - type: middle
+              original: 1800
+              discount: 1260
+            - type: hign
+              original: 3000
+              discount: 2100
+        - title: Band 2
+          caption: 5k - 10k articles
+          prices:
+            - type: low
+              original: 1800
+              discount: 1260
+            - type: middle
+              original: 3600
+              discount: 2520
+            - type: high
+              original: 6000
+              discount: 4200
+        - title: Band 3
+          caption: 10k - 20k articles
+          prices:
+            - type: low
+              original: 2700
+              discount: 1890
+            - type: middle
+              original: 5400
+              discount: 3780
+            - type: high
+              original: 9000
+              discount: 6300
+        - title: Band 4
+          caption: 20k - 40k articles
+          prices:
+            - type: low
+              original: 3600
+              discount: 2520
+            - type: middle
+              original: 7200
+              discount: 5040
+            - type: high
+              original: 12000
+              discount: 8400
+        - title: Band 5
+          caption: 40k+ articles
+          prices:
+            - type: low
+              original: 4500
+              discount: 3150
+            - type: middle
+              original: 9000
+              discount: 6300
+            - type: high
+              original: 15000
+              discount: 10500

@@ -18,11 +18,14 @@ export const patchStats = (text, statistics) => {
   const context = {}
   // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(statistics)) {
-    context[key] = formatNumber(value, {
-      notation: 'compact',
-      compactDisplay: 'short',
-      maximumFractionDigits: 0,
-    })
+    context[key] =
+      typeof value === 'number'
+        ? formatNumber(value, {
+            notation: 'compact',
+            compactDisplay: 'short',
+            maximumFractionDigits: 0,
+          })
+        : value
   }
   return processTemplate(text, context)
 }

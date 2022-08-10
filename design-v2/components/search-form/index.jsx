@@ -23,7 +23,6 @@ const SearchForm = () => {
   const handleOnChange = () => {
     router.push(`search?q=${value}`)
   }
-
   return (
     <form onSubmit={handleSubmit}>
       <Select

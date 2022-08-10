@@ -30,7 +30,7 @@ const JoinSectionItem = ({ title, picture, description }) => (
   </div>
 )
 
-const BenefitstPageTemplate = () => (
+const BenefitsPageTemplate = () => (
   <Layout>
     <Section id="banner" caption="banner" className={styles.sectionBanner}>
       <div className={styles.columnDescription}>
@@ -121,4 +121,4 @@ const BenefitstPageTemplate = () => (
   </Layout>
 )
 
-export default BenefitstPageTemplate
+export default BenefitsPageTemplate

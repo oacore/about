@@ -1,0 +1,15 @@
+.box {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  background-color: var(--gray-100);
+  padding: 1.5rem;
+  &-text {
+    line-height: 2;
+    max-width: 80ch;
+  }
+  &-button {
+    text-align: right;
+    flex: 1;
+  }
+}

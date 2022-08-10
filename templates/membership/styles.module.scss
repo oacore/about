@@ -1,0 +1,225 @@
+$card-header-color: #fef5ef;
+$support-card-width: 21.5rem;
+$member-image-width: 102px;
+
+.header {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  .description {
+    max-width: 50ch;
+    font-size: 1.3rem;
+    color: var(--gray-700);
+    margin-bottom: 3rem;
+  }
+  .title {
+    position: relative;
+    max-width: 25ch;
+  }
+
+  .extra-text {
+    position: relative;
+    display: inline-block;
+    font-size: 1rem;
+    color: var(--white);
+    background-color: var(--success-dark);
+    border-radius: 0.2rem;
+    padding: 0.4rem 0.6rem;
+    margin-left: 1rem;
+    font-weight: 100;
+    bottom: 0.6rem;
+  }
+
+  &-prices {
+    margin: 0 auto;
+    max-width: 100ch;
+    text-align: center;
+    .description {
+      font-size: 1.3rem;
+      color: var(--gray-700);
+    }
+  }
+}
+
+.plans-wrapper {
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.plan {
+  border-top: none;
+  &-header {
+    min-height: 6.5rem;
+    background-color: $card-header-color;
+    text-align: center;
+    padding: 1rem;
+    &-caption {
+      color: var(--gray-500);
+    }
+  }
+  &-advantages {
+    width: 100%;
+    list-style: disc;
+    li {
+      margin-left: 1rem;
+      line-height: 2;
+      color: var(--gray-800);
+    }
+
+    .box {
+      .title {
+        display: block;
+        cursor: pointer;
+        &:hover {
+          text-decoration: underline;
+        }
+        &::-webkit-details-marker {
+          display: none;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+      .description {
+        text-decoration: none;
+        font-size: 0.9rem;
+        margin-left: 1.2rem;
+      }
+    }
+  }
+
+  .divider {
+    height: 1.5rem;
+    background-color: var(--primary);
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    min-height: 32rem;
+    border: 1px solid var(--gray-200);
+
+    &-button {
+      margin-top: auto;
+      text-align: center;
+    }
+  }
+  &-box {
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    text-align: center;
+    background-color: var(--gray-100);
+    &-title {
+      margin-bottom: 0.5rem;
+    }
+    &-caption {
+      color: var(--primary);
+      font-weight: 700;
+    }
+  }
+}
+
+.table {
+  margin-top: 2rem;
+}
+
+.cards {
+  margin-left: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($support-card-width, 1fr));
+  grid-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.card {
+  position: relative;
+  &::before {
+    position: absolute;
+    bottom: -8rem;
+    left: -1rem;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: url('./assets/line.svg') 0 0 no-repeat;
+  }
+  &-image {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  &-title {
+    display: inline-block;
+    padding-top: 0.3rem;
+    margin-bottom: 1rem;
+    border-top: 2px solid var(--primary);
+  }
+
+  &-caption {
+    max-width: 20rem;
+  }
+
+  &-members {
+    display: grid;
+    grid-template-columns: repeat(3, $member-image-width);
+    grid-gap: 1rem;
+
+    &-title {
+      text-align: center;
+      grid-column: 1 / -1;
+      margin-bottom: 0;
+    }
+    .logo-container {
+      width: $member-image-width;
+      height: 4.2rem;
+      position: relative;
+      border: 1px solid var(--gray-200);
+      padding: 1rem;
+      span {
+        position: relative;
+        display: block;
+        padding: 0 0 50%;
+        margin-bottom: 1.5rem;
+        background: #fff;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+.support-text {
+  max-width: 90ch;
+}
+
+.fee-section {
+  &-table {
+    margin-bottom: 2rem;
+  }
+  &-note {
+    margin-bottom: 2rem;
+    color: var(--gray-800);
+  }
+  .button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
