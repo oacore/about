@@ -13,7 +13,7 @@ $main-spacer: 3rem;
   height: 100%;
   margin-left: -50vw;
   left: 50%;
-  z-index: -1;
+  z-index: 1;
   > div {
     padding: 0 var(--page-padding-x);
   }
