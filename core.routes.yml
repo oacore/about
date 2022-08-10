@@ -26,6 +26,7 @@ community:
   pattern: /community
   children:
     research: ./research
+    supporters: ./supporters
 
 services:
   pattern: /services

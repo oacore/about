@@ -11,5 +11,8 @@ header:
 actions:
   - title: Researchers
     url: /community/research
+  - title: Board of Supporters
+    url: /community/supporters
   - title: Ambassadors
     url: /about/ambassadors
+

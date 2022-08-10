@@ -5,7 +5,7 @@ import styles from './community.module.scss'
 import { Page, Button } from 'components'
 import page from 'data/community/home.yml'
 import { Layout, Hero, Section } from 'design-v2/components'
-// TODO: Fix temporal text-center class usage
+
 const CommunityPage = () => (
   <Page title={page.title} description={page.description}>
     <Layout className={styles.container}>

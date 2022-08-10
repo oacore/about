@@ -23,7 +23,9 @@ const Hero = ({
         {icon && <img className={styles.icon} src={icon} alt={title} />}
         <h1 className={styles.title}>{title}</h1>
       </div>
-      <Markdown className={styles.description}>{description}</Markdown>
+      {description && (
+        <Markdown className={styles.description}>{description}</Markdown>
+      )}
       {caption && <Markdown className={styles.caption}>{caption}</Markdown>}
       {actions && (
         <div className={styles.group}>
