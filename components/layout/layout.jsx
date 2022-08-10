@@ -21,8 +21,8 @@ const Layout = ({ title, description, children, onNavigate }) => {
       <Head title={title} description={description} />
       <SkipToContent path="#content" caption="Skip to main content" />
       <Header id="header" onClick={handleHeaderClick} />
-      <div id="content" />
-      {children}
+      <div id="content">{children}</div>
+
       <Footer />
     </>
   )
