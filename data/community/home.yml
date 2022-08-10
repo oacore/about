@@ -10,7 +10,7 @@ header:
 
 actions:
   - title: Researchers
-    url: research
+    url: /community/research
   - title: Board of Supporters
     url: /community/supporters
   - title: Ambassadors
