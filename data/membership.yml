@@ -165,7 +165,7 @@ plans:
         url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
 box:
-  description: Here you can find a comparison table with detailed information about each features. It can help you choose the most suitable membership plan.
+  description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
   action:
     default: Show feature details and comparison
     active: Close feature details and comparison
