@@ -2,6 +2,8 @@ const path = require('path')
 
 const icons = [
   'menu',
+  'chevron-left',
+  'chevron-right',
   'account',
   'domain',
   'office-building',

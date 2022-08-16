@@ -1,0 +1,30 @@
+.main {
+  background-color: var(--gray-100);
+  p {
+    max-width: 75ch;
+  }
+}
+
+.search {
+  margin: 1rem 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.row {
+  border-bottom: none;
+}
+.icon {
+  color: var(--gray-700);
+}
+.icon-disabled {
+  color: var(--gray-300);
+}
