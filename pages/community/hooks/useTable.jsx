@@ -6,7 +6,7 @@ const useTable = ({ itemsPerPage = 20, initialData }) => {
   const [isNoResults, setIsNoResults] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
   const [pagesCount, setPagesCount] = useState(
-    Math.ceil(membersList.length / itemsPerPage)
+    Math.ceil(initialData.length / itemsPerPage)
   )
 
   const handlePaginate = (action, list = initialData) => {
