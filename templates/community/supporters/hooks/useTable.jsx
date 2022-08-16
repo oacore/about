@@ -35,7 +35,7 @@ const useTable = ({ itemsPerPage = 20, initialData = [] }) => {
     const { value } = e.target
     setInputValue(value)
     const founded = initialData.filter((member) =>
-      member.organisation_name.toLowerCase().includes(value)
+      member.organisation_name.toLowerCase().includes(value.toLowerCase())
     )
     if (founded.length === 0) setIsNoResults(true)
     else setIsNoResults(false)
