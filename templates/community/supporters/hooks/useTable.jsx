@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const useTable = ({ itemsPerPage = 20, initialData }) => {
+const useTable = ({ itemsPerPage = 20, initialData = [] }) => {
   const [inputValue, setInputValue] = useState('')
   const [membersList, setMembersList] = useState(initialData)
   const [isNoResults, setIsNoResults] = useState(false)
