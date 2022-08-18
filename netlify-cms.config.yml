@@ -319,8 +319,6 @@ collections:
   description: >
     All the sections on the page "Consultancy Services". Sections are listed in order
     appearing on the page.
-
-
   files:
    - name: meta
      label: ℹ️ Metadata (title, description, headline)
@@ -943,3 +941,194 @@ collections:
   slug: '{{first-name}}-{{last-name}}'
 
   preview_path: api/preview?page=about&ref=cms/quote/{{slug}}
+
+- name: dataset
+
+  media_folder: '/images/dataset'
+
+  create: false
+  delete: false
+
+  label: 📚 Dataset
+  label_singular: section
+  description: >
+    All the sections on the page "Dataset data". Sections are listed in order
+    appearing on the page.
+  files:
+   - name: meta
+     label: ℹ️ Metadata (title, description, headline)
+     file:  dataset/meta.yml
+     fields:
+     - name: title
+       widget: string
+       label: Title
+       hint: >
+          Displayed in the browser as a tab name and in Google, when
+          the page appears in the search results.
+     - name: tagline
+       widget: text
+       label: Description
+       hint: >
+          Description of the page, not visible on the page but will be shown
+          in search engines when the page appers in results. Important
+          to have good performance in search engines.
+   - name: header
+     label: Header(title,description,image)
+     file: dataset/header.yml
+     fields:
+     - name: title
+       widget: string
+       hint: >
+         The title of the page. Displayed on the page below header.
+     - name: image
+       widget: file
+       label: Image
+       hint: Image on the right side.
+     - name: id
+       widget: string
+       label: id
+       hint: id of the block. Must match anchor link url
+     - name: links
+       widget: object
+       label: Links
+       hint: >
+          Anchor links to the page content.Muso to equal block name.
+       fields:
+        - {
+           name: title,
+           widget: string,
+           label: Title,
+           hint: Title of the links block
+          }
+        - name: items
+          widget: list
+          label: items
+          allow_add: true
+          fields:
+           - { label: Label,name: label, widget: string }
+           - { label: Link (url),name: link, widget: string, hint: Anchor link to the block. Must match id of the block }
+     - name: caption
+       widget: markdown
+       label: Caption
+       optional: true
+       hint: Text below links
+   - name: instruction
+     label: Download instruction
+     file: dataset/instruction.yml
+     fields:
+     - name: title
+       widget: string
+       label: Title
+     - name: id
+       widget: string
+       label: id
+       hint: id of the block. Must match anchor link url
+     - name: recommended
+       widget: markdown
+       label: Our recommendation
+     - name: reminder
+       widget: object
+       fields:
+        - {
+          name: title,
+          widget: string,
+          label: Reminder title
+         }
+        - {
+          name: description,
+          widget: markdown,
+          label: Reminder description
+         }
+   - name: datasetLatest
+     label: Latest dataset
+     file: dataset/datasetLatest.yml
+     fields:
+      - name: title
+        widget: string
+        label: Title
+      - name: id
+        widget: string
+        label: id
+        hint: id of the block. Must match anchor link url
+      - name: box
+        widget: object
+        label: Box with Data
+        fields:
+        - { label: Title, name: title, widget: string, hint: Title of the Box }
+        - { label: Icon, name: icon, widget: file, hint: Icon below title }
+        - label: Data size
+          name: dataSizes
+          widget: list
+          allow_add: true
+          hint: Size and type of the data.
+          fields:
+           - { label: Count, name: count, widget: string, hint: Count of the data. Example - 67TB }
+           - { label: Data Type, name: dataType, widget: string, hint: Type of the data. Example - compressed}
+        - label: Actions
+          name: actions
+          widget: list
+          allow_add: true
+          fields:
+            - { label: Caption, name: caption, widget: string, hint: Caption of the button }
+            - { label: Variant, name: variant, widget: string, hint: You can make button filled or outlined or text (without borders). For filled use - contained, optional: true, default: text }
+            - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true}
+        - label: Free text
+          name: text
+          widget: markdown
+          hint: Text bellow button.
+   - name: datasetAdditional
+     label: Additional datasets
+     file: dataset/additionalDatasets.yml
+     fields:
+      - name: items
+        label: Datasets
+        widget: list
+        fields:
+         - {name: title, widget: string, label: Title}
+         - {name: id,widget: string,label: id,hint: id of the block. Must match anchor link url}
+         - name: boxes
+           widget: list
+           allow_add: true
+           label: Boxes with data
+           fields:
+            - { label: Title, name: title, widget: string, hint: Title of the Box }
+            - { label: Caption, name: caption, widget: markdown, hint: Caption inside box  }
+            - label: Data size
+              name: dataSizes
+              widget: list
+              allow_add: true
+              hint: Size and type of the data.
+              fields:
+                - { label: Count, name: count, widget: string, hint: Count of the data. Example - 67TB}
+                - { label: Data Type, name: dataType, widget: string, hint: Type of the data. Example - compressed }
+
+            - { label: Footer, name: footer, widget: string, hint: Footer text}
+            - { label: License, name: license, widget: markdown, hint: License text}
+            - { label: Note, name: note, widget: markdown, hint: Note text}
+            - label: Action
+              name: action
+              widget: object
+              hint: Action button
+              fields:
+               - {label: Caption, name: caption, widget: string, hint: Caption of the button}
+               - {label: Url, name: url, widget: string, hint: Url (action call) of the button}
+   - name: sctructers
+     label: Structures
+     file: dataset/structures.yml
+     fields:
+      - name: title
+        label: Title
+        widget: string
+      - name: items
+        label: Expanded Structure
+        widget: list
+        fields:
+         - {name: title, widget: string, label: Title}
+         - {name: id, widget: string, label: ID, hint: id of the structure. Required. Must match anchor link url }
+         - name: text
+           widget: markdown
+           label: Text with data
+         - name : fields
+           widget: markdown
+           required: false
+           label: Fields description

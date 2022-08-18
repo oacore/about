@@ -7,29 +7,44 @@ import { Section } from '../layout'
 
 import { Markdown } from 'components'
 
-const Hero = ({ id, icon, title, description, actions, image, className }) => (
+const Hero = ({
+  id,
+  icon,
+  title,
+  description,
+  caption,
+  actions,
+  image,
+  className,
+  hideButtons = false,
+}) => (
   <Section id={id} className={classNames.use(styles.header).join(className)}>
     <div className={styles.content}>
       <div className={styles.meta}>
         {icon && <img className={styles.icon} src={icon} alt={title} />}
         <h1 className={styles.title}>{title}</h1>
       </div>
-      <Markdown className={styles.description}>{description}</Markdown>
-      <div className={styles.actions}>
-        {actions &&
-          actions.map((action) => (
+      {description && (
+        <Markdown className={styles.description}>{description}</Markdown>
+      )}
+      {caption && <Markdown className={styles.caption}>{caption}</Markdown>}
+      {!hideButtons && actions && (
+        <div className={styles.group}>
+          {actions.map((action) => (
             <Button
               href={action.url}
               variant={action.variant}
               key={action.caption}
+              download={action.download}
             >
               {action.caption}
             </Button>
           ))}
-      </div>
+        </div>
+      )}
     </div>
     <div>
-      <img src={image} alt="logo" className={styles.logo} />
+      <img className={styles.logo} src={image} alt="logo" />
     </div>
   </Section>
 )

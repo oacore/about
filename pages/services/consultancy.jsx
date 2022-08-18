@@ -52,11 +52,15 @@ export async function getStaticProps({ previewData }) {
   const ref = previewData?.ref
 
   const sections = await getSections({ ref })
-
   const data = {
     ...sections,
     title: sections.meta.title,
     tagline: sections.meta.tagline,
+    relatedServices: {
+      ...sections.relatedServices,
+      services: sections.relatedServices.items,
+    },
+    hideButtons: true,
   }
 
   return {

@@ -46,6 +46,7 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .testimonial {
+  min-height: 14.5rem;
   background-color: var(--gray-200);
   padding: $spacer;
   .header {
@@ -54,7 +55,6 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
       width: 3.5rem;
       height: 3.5rem;
       border-radius: 50%;
-      object-fit: contain;
     }
     .info {
       margin-left: 1rem;
@@ -80,12 +80,13 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
     margin-top: var(--spacer);
   }
   .action {
-    display: block;
-    margin: 1rem 0 0 auto;
+    float: right;
+    margin: 1rem 0 0;
   }
 }
 
-.what-is-included {
+.what-is-included,
+.uniqueness {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -101,15 +102,41 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
 
+.uniqueness {
+  flex-wrap: wrap-reverse;
+  gap: 1rem;
+  img {
+    width: 100%;
+    max-width: 36rem;
+    height: auto;
+  }
+  .section {
+    max-width: 70ch;
+    ul {
+      margin-left: 2.5rem;
+    }
+    .group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      .action {
+        margin-left: 1.5rem;
+        text-transform: none;
+      }
+    }
+  }
+}
 .statistics {
   display: grid;
   grid-template-columns: $grid-responsive-for-cards;
   gap: 2rem;
-  &-box {
-    padding: 1rem;
 
+  &-box {
+    position: relative;
+    padding: 1rem;
     border: 1px solid var(--gray-300);
     border-bottom: 1px solid var(--primary);
+
     .title {
       color: var(--gray-900);
       font-weight: 300;
@@ -118,12 +145,35 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
       font-size: 2rem;
       color: var(--primary);
     }
+    .caption {
+      color: var(--gray-900);
+    }
+
+    .badge {
+      position: absolute;
+      top: -1rem;
+      left: -1rem;
+      padding: 0.2rem 0.4rem;
+      color: var(--white);
+      background-color: $status-icon-background;
+      border-radius: 0.2rem;
+    }
+  }
+  .active {
+    background-color: #fbf6f2;
+  }
+  .link {
+    text-decoration: none;
   }
 }
 
 .form {
   box-shadow: none;
   background-color: var(--gray-100);
+  .caption {
+    max-width: 80ch;
+    line-height: 2;
+  }
   .textfield {
     input {
       border: none;

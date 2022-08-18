@@ -26,6 +26,19 @@ community:
   pattern: /community
   children:
     research: ./research
+    supporters: ./supporters
+
+membership:
+  pattern: /membership
+  children:
+    supporting: ./supporting
+    sustaining: ./sustaining
+
+payment:
+  pattern: /payment
+  children:
+    success: /success
+    error: /error
 
 services:
   pattern: /services

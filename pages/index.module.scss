@@ -14,20 +14,24 @@
     }
 
     &-card {
-      max-width: 75ch;
-    }
-
-    &-img {
-      margin-left: auto;
+      flex: 1;
       @media (max-width: $breakpoint-sm) {
-        width: 100%;
-        height: auto;
+        flex: auto;
       }
-
+    }
+    &-img {
       &-container {
-        width: 100%;
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        @media (max-width: $breakpoint-sm) {
+          flex: auto;
+          justify-content: center;
+        }
       }
-
+      width: 100%;
+      height: auto;
+      max-height: 20rem;
       &-big {
         margin-top: 1rem;
         max-height: fit-content;

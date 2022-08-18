@@ -1,0 +1,92 @@
+title:  Become a <span>{{planName}}</span> members
+short-title: Become our new member!
+caption: Enter your details and our manager will contact you as soon as possible
+form:
+  id: Member-details
+  maxRepositoriesCount: 3
+  price: "Price:  <span> ￡ {{price}} *</span>"
+  action:
+    caption: Become a member
+  fields:
+    - placeholder: Full name of your organisation
+      label: Organisation name
+      id: organisationName
+      type: input
+    - placeholder: Select the type of your organization or enter your own
+      label: Organisation type
+      id: organisationType
+      type: select
+      options:
+         - id: Higher Education Institution
+           name: Higher Education Institution
+           value: higher-educ-inst
+           icon: school
+         - id: Publisher
+           name: Publisher
+           value: publisher
+           icon: domain
+    - placeholder: Search your repository
+      label: Repository name
+      type: async-select
+      options: []
+      id: repository
+    - label: Can't find repository?
+      type: caption
+      options:
+          - name: Register repository
+            action: 'benefits'
+          - name: Contact us
+            action: 'contact'
+    - label: Add
+      type: button
+      caption: You can add up to 3 repositories
+    - placeholder: e.g. John
+      label: Name of contact person
+      id: contactName
+      type: input
+    - placeholder: e.g. john.doe@ac.uk
+      label: Email
+      id: email
+      type: input
+    - placeholder: " "
+      label: Any additional information you want to tell us
+      id: additionalInfo
+      type: input
+      optional: true
+      appendText: Optional
+
+additional-info:
+  icon: "*"
+  text: The price is formed based on the data you entered. Our manager will check all the information and if everything is correct, the price will remain unchanged.
+
+box:
+ description: Not a data-provider but still want to support CORE?
+ action:
+  active: Contact us
+  url: about/#contact
+
+success:
+ title: CORE Membership for Organisations
+ description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
+ image:
+  url: /images/membership/email.svg
+  caption: Thank you for apply with CORE Membership for organisations. Your request has been successfully sent. Our teams will contact you shortly.
+ button:
+  caption: homepage
+  url: "/"
+
+error:
+  title: Server Error
+  description: |
+       The server encountered an error and could not complete you request.</br>
+       Please try again later or contact us.
+  image:
+    url: /images/membership/error.svg
+    alt: Error
+  actions:
+    - caption: try again
+      url: "/membership"
+      variant: contained
+    - caption: contact us
+      url: "/contact"
+      variant: outlined

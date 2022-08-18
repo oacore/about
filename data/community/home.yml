@@ -1,0 +1,18 @@
+title: CORE Communities
+description: |
+  CORE supports and runs several communities maintaining a close and active connection with our users. Take part and help shape the future of CORE.
+
+header:
+  id: header
+  image:  /images/community/community.svg
+  caption: Choose which one suits you best.
+
+
+actions:
+  - title: Researchers
+    url: /community/research
+  - title: Board of Supporters
+    url: /community/supporters
+  - title: Ambassadors
+    url: /about/ambassadors
+

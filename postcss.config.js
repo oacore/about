@@ -18,6 +18,6 @@ module.exports = {
         },
       ],
     },
-    'postcss-extend': {},
+    'postcss-extend-rule': {},
   },
 }

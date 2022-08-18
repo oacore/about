@@ -1,0 +1,32 @@
+id: supporters
+
+title: Board of Supporters
+tagline: Help shape the future of open science together
+
+
+header:
+  id: header
+  image: /images/community/research/header.svg
+
+
+main:
+ id: join
+ text: |
+    Our Members can help shape our development roadmap.
+    Join and make a strong statement about your organisation’s
+    support for open science infrastructure.
+
+    CORE Supporting and Sustaining Members are invited to
+    join our Board of Supporters. The Board meets annually
+    to identify opportunities, collect feedback and
+    help prioritise the development of the service.
+ action:
+   url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+   caption: JOIN NOW
+
+supporters:
+  id: supportes
+  title: Membership List
+
+
+

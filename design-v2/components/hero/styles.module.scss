@@ -2,51 +2,46 @@
 
 .header {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
-  gap: 2rem;
 }
-
 .meta {
   display: flex;
   align-items: center;
   margin-bottom: 4rem;
-
+  gap: 2rem;
   @media (max-width: $breakpoint-sm) {
-    margin-bottom: 2rem;
+    margin: 2rem 0;
   }
-
   .icon {
-    margin-right: 1rem;
-    max-width: 4rem;
-    max-height: 4rem;
+    width: 4rem;
+    height: 4rem;
     transform: scale(1.4);
-
-    @media (max-width: $breakpoint-sm) {
-      transform: none;
-    }
   }
 
   .title {
-    display: inline-block;
-
     @media (max-width: $breakpoint-sm) {
-      font-size: 2rem;
+      font-size: 3rem;
     }
   }
 }
 .description {
-  max-width: 60ch;
-  margin-bottom: 4rem;
+  max-width: 70ch;
   line-height: 1.8;
 }
 
-.actions {
+.caption {
+  margin-top: var(--spacer);
+  color: var(--gray-600);
+}
+
+.group {
   display: flex;
   gap: 1rem;
+  margin-top: 4rem;
 }
 
 .logo {
-  height: auto;
   width: 100%;
+  height: auto;
 }

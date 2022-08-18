@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactMarkdown from 'react-markdown/with-html'
+import ReactMarkdown from 'react-markdown'
 
 import Link from './link'
 
