@@ -10,7 +10,7 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   .feature {
     flex: 1;
-    padding: $spacer;
+    padding: 1rem;
     background-color: var(--gray-100);
     position: relative;
 
