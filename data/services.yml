@@ -128,6 +128,52 @@ sections:
       caption: Learn more
       url: services/discovery
 -
+  id: oai-identifies
+  title: OAI identifiers
+  features:
+  -
+    id: oai-resover
+    title: OAI Resolver
+    logo: /images/oai_resolve/logo.svg
+    short-description: Monitor and improve your repository output
+    description: |
+        Make OAI identifiers originating from your repository resolve
+        directly to your repository, turning them into free-to-mint
+        unique persistent identifiers (PIDs) for open access papers.
+    recommender:
+    -
+      title: Academic institutions
+    -
+      title: Funders
+    -
+      title: Publishers
+    action:
+      caption: Learn more
+      url: documentation/oai-resolver
+-
+  id: contracts
+  title: Bespoke contracts
+  features:
+  -
+    id: consultancy
+    title: Consultancy services
+    logo: /images/services/consultancy.svg
+    short-description: Consultancy services for users
+    description: |
+        Helping  organisations to analyse and derive value from large
+        amounts of research data, empowering them to understand,
+        interpret and build on new knowledge.
+    recommender:
+    -
+      title: Companies
+    -
+      title: Funders
+    -
+      title: Academic insitutions
+    action:
+      caption: Learn more
+      url: services/consultancy
+-
   id: managing-content
   title: Managing content
   features:
@@ -147,18 +193,3 @@ sections:
     action:
       caption: Learn more
       url: services/repository-dashboard
-  -
-    id: repository-edition
-    title: Repository Edition
-    logo: /images/services/repository-edition.svg
-    short-description: Enhance your repository’s discoverability
-    description: |
-     Provide guaranteed support levels to enable repositories
-     to gain maximum exposure for their content and help ensure
-     compliance with Open Access policies.
-    recommender:
-    -
-      title: Academic institutions
-    action:
-      caption: Learn more
-      url: services/repository-edition
