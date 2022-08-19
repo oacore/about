@@ -10,7 +10,7 @@ sections:
   blocks:
     -
       id: unique-identifiers
-      description: <b>OAIs</b> is a globally unique identifier used by repositories.
+      description: <b>OAIs</b> are globally unique identifiers used by data providers, including repositories, publishers and archives.
     -
       id: Type-paste
       description: Insert an OAI identifier into the search box.
