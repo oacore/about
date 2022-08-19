@@ -48,7 +48,7 @@ how-it-works:
     url: https://api.core.ac.uk/docs/v3
 
 
-additional:
+main:
   items:
   - title: Where to start?
     content: |
