@@ -214,6 +214,13 @@ sections:
           answer: |
             You cannot access it – a 404 error indicates that the full text
             has been removed from CORE.
+        - slug: my-repository-contains-a-mix-of-oa-and-non-oa-papers
+          question: |
+            My repository contains a mix of OA and non-OA papers.
+            Can I ask CORE to limit harvesting only to OA papers?
+          answer: |
+            Yes, this is possible.
+            Please contact us and we will enable this for your repository.
     - id: technical-aggregation
       title: Technical
       items:

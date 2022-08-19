@@ -1,0 +1,129 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input {
+  width: 100%;
+  input,
+  span {
+    border-color: var(--gray-300);
+  }
+  &-append {
+    float: right;
+    color: var(--gray-600);
+  }
+}
+
+.filled {
+  input,
+  span {
+    border-color: var(--primary);
+  }
+}
+.select {
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .close-icon {
+      color: var(--gray-600);
+      cursor: pointer;
+    }
+  }
+
+  .option {
+    > * {
+      color: var(--gray-800);
+    }
+  }
+}
+
+.button-plus {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid var(--primary);
+  &:after {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    width: 50%;
+    background: var(--primary);
+    top: 50%;
+    left: 50%;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--primary);
+    height: 50%;
+    width: 2px;
+  }
+  &:hover:before,
+  &:hover:after {
+    background: #fff;
+    transition: 0.2s;
+  }
+  &:hover {
+    background: var(--primary);
+    transition: 0.2s;
+  }
+  &-caption {
+    color: var(--gray-600);
+    margin-top: 1rem;
+    display: block;
+  }
+}
+
+.box {
+  margin-left: auto;
+  .price {
+    background-color: #fef5ef;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    span {
+      color: var(--primary) !important;
+    }
+  }
+}
+
+.button-submit {
+  text-align: right;
+}
+.hidden {
+  display: none;
+}
+
+.help {
+  position: relative;
+  &-button {
+    all: unset;
+    float: right;
+    text-transform: capitalize;
+    text-decoration: underline;
+    color: var(--gray-600);
+
+    &:active,
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+      --button-overlay: none;
+      --button-focus-ring: none;
+    }
+  }
+  &-box {
+    position: absolute;
+    right: 0;
+    top: 1.5rem;
+  }
+}

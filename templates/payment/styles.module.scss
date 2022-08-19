@@ -1,0 +1,56 @@
+.container {
+  padding: var(--page-padding-y) calc(var(--page-padding-x) * 1.5) !important;
+}
+
+.title {
+  text-align: center;
+  & > * {
+    font-size: 1.5rem;
+  }
+  span {
+    color: var(--primary);
+    text-transform: uppercase;
+  }
+}
+
+.caption {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.additional-info {
+  color: var(--gray-600);
+  span {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.form-section {
+  padding-top: 1.5rem;
+}
+
+.box {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.success {
+  text-align: center;
+  .description {
+    max-width: 80ch;
+    margin: 0 auto;
+    color: var(--gray-600);
+    font-size: 1.4rem;
+  }
+  .image {
+    margin-top: 2rem;
+  }
+  .caption {
+    margin: 1rem auto 2rem;
+    max-width: 60ch;
+    display: block;
+  }
+}

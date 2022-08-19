@@ -1,55 +1,52 @@
 import React from 'react'
-import { Card, Button } from '@oacore/design/lib/elements'
+import { Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
 
-import SearchForm from '../search-form'
 import styles from './styles.module.scss'
+import { Section } from '../layout'
 
-import Markdown from 'components/markdown'
+import { Markdown } from 'components'
 
 const Hero = ({
+  id,
+  icon,
   title,
-  image: imgHref,
-  label,
   description,
-  action,
-  actionLabel,
+  caption,
+  actions,
+  image,
   className,
+  hideButtons = false,
 }) => (
-  <div className={classNames.use(styles.heroItem).join(className)}>
-    <Card variant="pure" className={styles.heroItemCard}>
-      <Card.Title tag="h2" className={styles.heroTitle}>
-        <Markdown>{title}</Markdown>
-      </Card.Title>
-      <Card.Description tag="div">
-        {action === 'Search' ? (
-          <SearchForm />
-        ) : (
-          <>
-            {description && (
-              <Markdown className={styles.heroItemDescription}>
-                {description}
-              </Markdown>
-            )}
-            {actionLabel && (
-              <Button tag="a" variant="contained" href={action}>
-                {actionLabel}
-              </Button>
-            )}
-          </>
-        )}
-      </Card.Description>
-    </Card>
-    <div className={styles.heroItemImgContainer}>
-      <img
-        src={imgHref}
-        alt={label}
-        className={classNames.use(styles.heroItemImg, {
-          [styles.heroItemImgBig]: action === 'Search',
-        })}
-      />
+  <Section id={id} className={classNames.use(styles.header).join(className)}>
+    <div className={styles.content}>
+      <div className={styles.meta}>
+        {icon && <img className={styles.icon} src={icon} alt={title} />}
+        <h1 className={styles.title}>{title}</h1>
+      </div>
+      {description && (
+        <Markdown className={styles.description}>{description}</Markdown>
+      )}
+      {caption && <Markdown className={styles.caption}>{caption}</Markdown>}
+      {!hideButtons && actions && (
+        <div className={styles.group}>
+          {actions.map((action) => (
+            <Button
+              href={action.url}
+              variant={action.variant}
+              key={action.caption}
+              download={action.download}
+            >
+              {action.caption}
+            </Button>
+          ))}
+        </div>
+      )}
     </div>
-  </div>
+    <div>
+      <img className={styles.logo} src={image} alt="logo" />
+    </div>
+  </Section>
 )
 
 export default Hero

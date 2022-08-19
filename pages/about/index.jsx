@@ -1,12 +1,12 @@
 import React from 'react'
 import { Row, Col } from 'reactstrap'
 import { classNames } from '@oacore/design/lib/utils'
+import { Button } from '@oacore/design'
 
 import styles from './about.module.scss'
 
 import {
   Accordion,
-  Button,
   ButtonToolbar,
   Blog,
   Page,
@@ -64,7 +64,7 @@ const AboutPage = ({ data }) => (
     nav
   >
     <h1>{data.meta.headline}</h1>
-    <Section tag="div" id="core-mission" caption={data.mission.shortTitle}>
+    <Section tag="div" id="mission" caption={data.mission.shortTitle}>
       <Row>
         <Col xs="12" md="7" lg="8" tag="section">
           <h2>{data.core.title}</h2>
@@ -76,7 +76,6 @@ const AboutPage = ({ data }) => (
             title={data.mission.video.title}
             tag="p"
           />
-
           <Markdown className={styles.mission}>{data.mission.body}</Markdown>
         </Col>
         <Col
@@ -133,7 +132,7 @@ const AboutPage = ({ data }) => (
       </ButtonToolbar>
     </Section>
     <RelatedContentSection
-      id="Communities"
+      id="communities"
       caption={data.communities.shortTitle}
       data={{
         ...data.communities,

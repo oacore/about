@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BenefitstPageTemplate from '../design-v2/benefits'
+import BenefitsPageTemplate from '../design-v2/benefits'
 
 import { Page } from 'components'
 import benefitsData from 'data/benefits.yml'
@@ -11,7 +11,7 @@ const benefitsPage = () => (
     description={benefitsData.description}
     keywords={benefitsData.keywords}
   >
-    <BenefitstPageTemplate />
+    <BenefitsPageTemplate />
   </Page>
 )
 

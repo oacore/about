@@ -1,0 +1,20 @@
+.list {
+  border: 1px solid var(--gray-300);
+  box-shadow: var(--elevation-01);
+}
+
+.item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--gray-300);
+  }
+  &:hover {
+    background-color: var(--gray-100);
+    text-decoration: underline;
+  }
+}
+.link,
+.link:hover {
+  color: var(--gray-700);
+}

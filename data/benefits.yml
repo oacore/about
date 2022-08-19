@@ -3,7 +3,7 @@ description: |
   Data providers joining benefits page
 
 banner:
-  title: Why join CORE
+  title: Why become a data provider?
   description: Facilitate access of your scientific research outputs to everyone in the world
   actions:
     links:
@@ -73,5 +73,5 @@ stat:
       value: <mark>{{repositoriesCount}}</mark>
 
 join:
-  title: Join CORE for free now and contribute to the creation of a mutually beneficial ecosystem.
+  title: Join CORE as a data provider for free now and contribute to the creation of a mutually beneficial ecosystem.
   picture: /images/benefits/join-core-form.svg
