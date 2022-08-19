@@ -1,10 +1,14 @@
-$main-spacer: 3rem;
+@import 'design-v2/variables';
 
 .layout {
   padding: var(--page-padding-y) var(--page-padding-x);
 }
 .container {
-  padding: $main-spacer 0;
+  padding: var(--page-padding-y) 0;
+
+  @media (max-width: $breakpoint-sm) {
+    --page-padding-y: 2rem;
+  }
 }
 
 .full {

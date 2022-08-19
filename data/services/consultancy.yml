@@ -1,0 +1,119 @@
+id: consultancy
+
+
+title: CORE Consultancy
+tagline: Develop new applications with the CORE API
+
+header:
+  id: header
+  title: Consulting services
+  icon: /images/services/consultancy.svg
+  image: /images/services/partnership.svg
+  description: CORE is a team of consultants specialising in harvesting and sharing the values of open research data with a focus on scholarly communication, and research information management, policy and infrastructure.
+  actions:
+     - caption: Apply now
+       variant: contained
+       url: '#form'
+     - caption: Download our flyer
+       variant: text
+
+features:
+-
+  title: Qualitative Research
+  description: |
+   Analysis and synthesis of data to support evidence, clear visualisation and interpretation.
+-
+  title: Mixed-Methods Research
+  description: |
+    Combining qualitative and quantitative research to deliver insight and clear recommendations.
+-
+  title: Bespoke Consultancy
+  description: |
+    Bringing consultancy capacity and expertise to address their dimensions and capability gaps.
+-
+  title: Reviews
+  description: |
+    Reviews of research papers, metadata and full texts.
+
+how-it-works:
+  title: How it works?
+  image: /images/services/work.svg
+  description: |
+   CORE collects, harmonises and enriches large quantities of both metadata and full text research articles from thousands of data providers. On top of this continuously growing corpus, we provide a truly unique API providing real-time machine access to both the metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
+  action:
+    title: Access documentation
+    url: https://api.core.ac.uk/docs/v3
+
+benefits:
+ title: What we provide?
+ items:
+  -
+    title: Review & Evaluation
+    icon: /images/services/automation.svg
+    description: Review and evaluation of strategy, policy and operations at project, organisation, national and international levels.
+  -
+    title: Market Insights & Business Cases
+    icon: /images/services/automation.svg
+    description: Developing business cases, value proposition design and propositions for new or strategic developments.
+  -
+    title: Strategy & Policy
+    icon: /images/services/automation.svg
+    description: Strategy and policy development at organisational, national and international levels.
+  -
+    title: Training & Capacity Building
+    icon: /images/services/automation.svg
+    description: Augmenting the capacity and capability of clients’ in house teams; delivering training on key topics.
+  -
+    title: Management & Benchmarking
+    icon: /images/services/automation.svg
+    description: Comparative analysis to enable benchmarking with peers, reviews of research management, operations and systems.
+  -
+    title: Impact
+    icon: /images/services/automation.svg
+    description: Enabling and assessing impact from research, innovation and scholarly communication.
+
+contact-us:
+  title: Contact us
+  caption: Get in touch with us and find out how we can help your next project
+  action:
+    caption: get in touch
+    url: /about#contact
+  image: /images/services/contact-us.svg
+
+testimonials:
+-
+  id: Botev
+  content: |
+   “We are integrating the CORE API into our product, IRIS, because so far it is the open access portal that covers almost all open access content, provides easy to integrate API and has a powerful search querying engine. We want to make open access articles more easily accessible and more useful to researchers and the open public and we see the CORE API as a way to speed that up.”
+  author:
+    name: Viktor Botev
+    role: CTO, Iris AI AS
+    picture: /images/people/botev.jpg
+-
+  id: Botev1
+  content: |
+   “We are integrating the CORE API into our product, IRIS, because so far it is the open access portal that covers almost all open access content, provides easy to integrate API and has a powerful search querying engine. We want to make open access articles more easily accessible and more useful to researchers and the open public and we see the CORE API as a way to speed that up.”
+  author:
+    name: Viktor Botev
+    role: CTO, Iris AI AS
+    picture: /images/people/botev.jpg
+
+related-services:
+  title: You might be also interested in
+  services:
+  -
+    title: CORE Dataset
+    picture: /images/services/dataset.svg
+    url: dataset
+  -
+    title: CORE FastSync
+    picture: /images/services/fastsync.svg
+    url: fastsync
+  -
+    title: CORE Recommender
+    picture: /images/services/recommender.svg
+    url: discovery
+  -
+    title: CORE Discovery
+    picture: /images/services/discovery.svg
+    url: discovery

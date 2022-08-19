@@ -10,7 +10,7 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
   .feature {
     flex: 1;
-    padding: $spacer;
+    padding: 1rem;
     background-color: var(--gray-100);
     position: relative;
 
@@ -46,6 +46,7 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .testimonial {
+  min-height: 14.5rem;
   background-color: var(--gray-200);
   padding: $spacer;
   .header {
@@ -208,4 +209,64 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
       max-height: 50px;
     }
   }
+}
+
+.benefits {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+  .benefit {
+    position: relative;
+    background-color: var(--gray-100);
+    display: flex;
+    padding: 0.5rem 1rem;
+
+    &-icon {
+      max-height: 4rem;
+      margin-right: 1rem;
+    }
+    &-content {
+      margin: 1rem 0;
+    }
+    &:nth-child(odd) {
+      &::after {
+        position: absolute;
+        bottom: 0;
+        right: -1rem;
+        content: '';
+        height: 100%;
+        border: 1px dashed var(--gray-300);
+      }
+    }
+  }
+}
+
+.contact {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: $grid-responsive-for-sections;
+  justify-content: space-between;
+
+  .content {
+    width: 100%;
+    margin-top: auto;
+    flex: 1;
+  }
+  .box {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--gray-300);
+  }
+  .image {
+    margin-left: auto;
+  }
+}
+
+.banner {
+  max-width: 100%;
+  height: auto;
 }
