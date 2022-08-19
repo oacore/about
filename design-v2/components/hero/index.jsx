@@ -16,6 +16,7 @@ const Hero = ({
   actions,
   image,
   className,
+  hideButtons = false,
 }) => (
   <Section id={id} className={classNames.use(styles.header).join(className)}>
     <div className={styles.content}>
@@ -27,7 +28,7 @@ const Hero = ({
         <Markdown className={styles.description}>{description}</Markdown>
       )}
       {caption && <Markdown className={styles.caption}>{caption}</Markdown>}
-      {actions && (
+      {!hideButtons && actions && (
         <div className={styles.group}>
           {actions.map((action) => (
             <Button

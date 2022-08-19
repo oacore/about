@@ -66,6 +66,16 @@ const RelatedService = ({ title, picture, url }) => (
   </a>
 )
 
+const Benefit = ({ title, icon, description }) => (
+  <article className={styles.benefit}>
+    <img src={icon} alt={title} className={styles.benefitIcon} />
+    <div className={styles.benefitContent}>
+      <h5>{title}</h5>
+      <Markdown>{description}</Markdown>
+    </div>
+  </article>
+)
+
 const ServicePage = observe(
   ({
     id,
@@ -77,12 +87,15 @@ const ServicePage = observe(
     keywords,
     whatIsIncluded,
     statistics,
+    benefits, // @optional
+    contact, // @optional
     stats, // @optional
     additional, // @optional
     testimonials, // @optional
     form, // @optional
     uniqueness, // @optional
     relatedServices,
+    hideButtons = false, // @optional
   }) => {
     const { registration } = useStore()
     const {
@@ -108,7 +121,7 @@ const ServicePage = observe(
         className={styles.servicePage}
       >
         <Layout>
-          <Hero {...header} />
+          <Hero {...header} hideButtons={hideButtons} />
           <Section id="features" className={styles.features}>
             {features.map((item) => (
               <Feature key={item.title} {...item} />
@@ -132,10 +145,38 @@ const ServicePage = observe(
               )}
             </article>
           </Section>
+          {benefits && (
+            <Section id="benefits">
+              <h3>{benefits.title}</h3>
+              <div className={styles.benefits}>
+                {benefits.items.map((benefit) => (
+                  <Benefit key={benefit.title} {...benefit} />
+                ))}
+              </div>
+            </Section>
+          )}
+          {contact && (
+            <Section id="contact" className={styles.contact}>
+              <div className={styles.content}>
+                <h3>{contact.title}</h3>
+                <div className={styles.box}>
+                  <Markdown>{contact.caption}</Markdown>
+                  <Button variant="contained" href={contact.action.url}>
+                    {contact.action.caption}
+                  </Button>
+                </div>
+              </div>
+              <img
+                className={classNames.use(styles.banner, styles.image)}
+                src={contact.image}
+                alt="Contact"
+              />
+            </Section>
+          )}
           {testimonials && (
             <Section id="testimonial" className={styles.additional}>
               {testimonials.map((testimonial) => (
-                <Testimonial key={testimonial.id} {...testimonial} />
+                <Testimonial key={testimonial.author.name} {...testimonial} />
               ))}
               {additional && (
                 <div>
@@ -241,14 +282,16 @@ const ServicePage = observe(
               </div>
             </Section>
           )}
-          <Section id="related-services">
-            <h3>{relatedServices.title}</h3>
-            <div className={styles.services}>
-              {relatedServices.services.map((service) => (
-                <RelatedService key={service.title} {...service} />
-              ))}
-            </div>
-          </Section>
+          {relatedServices && (
+            <Section id="related-services">
+              <h3>{relatedServices.title}</h3>
+              <div className={styles.services}>
+                {relatedServices.services?.map((service) => (
+                  <RelatedService key={service.title} {...service} />
+                ))}
+              </div>
+            </Section>
+          )}
         </Layout>
       </Page>
     )
