@@ -49,13 +49,12 @@
 
 .section {
   &-join {
-    position: relative;
     background-color: var(--gray-200);
-    width: 100vw;
-    margin-left: -50vw;
-    left: 50%;
+    div {
+      padding: unset;
+    }
     &-list {
-      padding: 0 var(--page-padding-x);
+      padding: 0 var(--page-padding-x) !important;
     }
   }
   &-services {
