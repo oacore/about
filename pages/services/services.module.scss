@@ -5,6 +5,16 @@
 .section {
   &-container {
     padding: 1rem 0 !important;
+    &-inline {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: stretch;
+      max-width: 25.35rem;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
   }
   &-header {
     display: flex;
@@ -44,6 +54,7 @@
     background-color: var(--gray-100);
     display: flex;
     flex-direction: column;
+    min-height: 29rem;
     &-logo {
       width: 96px;
       height: 63px;
