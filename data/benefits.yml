@@ -10,27 +10,27 @@ banner:
       -
        url: join-core
        text: Join NOW
-      -
-       url: /data-providers
-       text: See the full list of data providers
-       link: true
+      # -
+      #  url: /data-providers
+      #  text: See the full list of data providers
+      #  link: true
   velcro:
     title: On this page
     blocks:
       -
         id: content-visibility
-        title: Increase the discoverability of your content
-        description: Widely disseminate your content, increase download rates and readership,  and boost your output’s visibility and impact
+        title: Increase your content’s discoverability
+        description: Further disseminate your content, increase the number of users who read it and download it, and boost your outputs’ visibility and impact
         picture: /images/benefits/icons/discoverability.svg
       -
         id: content-machine-readable
-        title: Ensure your content is machine readable
-        description: Technically validate and monitor your repository or journal and keep it well configured
+        title: Make your papers uniquelly identifiable and resolvable with PIDs
+        description: Freely register your OAI identifiers of papers and make them globally resolvable to your system.
         picture: /images/benefits/icons/readable.svg
       -
         id: open-access-network
-        title: Integrate with the open access network
-        description: Monitor compliance with open access funder policies and gain an insights into your contribution to the global growth of open access
+        title: Assess and contribute to Open Access compliance and FAIRness
+        description: Monitor funder open access policies compliance rates and gain an insight of your contribution to the global open access growth
         picture: /images/benefits/icons/network.svg
 
 sections:
@@ -38,26 +38,100 @@ sections:
   blocks:
   -
     id: content-visibility
-    title: Increase the  discoverability of your content
-    picture: /images/benefits/content-visibility.svg
-    description: |
-      CORE increases the visibility of your content and makes research papers more discoverable. A study of 21 UK institutions carried out in 2019 showed that when a repository is harvested by CORE, average content downloads increase by <b>15%</b> and up to <b>32%</b> if the repository is well configured.
-
-      CORE makes your content discoverable by integrating with a variety of platforms including PMC LinkOut, Microsoft Academic Search, arXiv, and a range of library discovery services. We facilitate the widest possible dissemination of open access content.
-  -
-    id: content-machine-readable
-    title: Ensure your content is machine readable
-    picture: /images/benefits/content-machine-readable.svg
-    description: |
-      Open access content hosted in repository and journal platforms is not always easily discoverable by search engines. CORE will technologically validate and monitor your repository or journal to help you keep it well configured. Through the harvesting process, CORE detects technical issues relating to the configuration of your infrastructure that affect the machine accessibility and visibility of your content. This information is exposed via the freely available <a href="https://core.ac.uk/services/repository-dashboard">CORE Repository Dashboard</a> which provides suggestions for improvements to the platform’s configuration for optimal discoverability.
-  -
-    id: open-access-network
-    title: Integrate with the open access network
+    title: Increase your contents’ discoverability and prevent its misuse
     picture: /images/benefits/open-access-network.svg
     description: |
-      CORE helps you meet open access funder policies. We provide insights into your compliant (or non-compliant) outputs on an individual article level and we help you prepare analytical reports for research administrators and funders. For example, CORE assisted with the UK’s REF 2021 audit by verifying content availability deadlines and comparing published and deposited dates.
+     Inclusion in CORE ensures the widest possible dissemination of your
+     open access content, resulting in increased visibility and
+     discoverability of your papers. We achieve this by promoting your
+     content to over 30 million monthly active users of CORE.
+     Your content will be discoverable not just in CORE Search,
+     but also across the open access network, within the systems of
+     hundreds of data providers using the CORE Recommender
+     (such as arxiv.org) and CORE Discovery plugins.
+     We also integrate with PMC LinkOut and there are dozens of
+     mission-driven third-party services that have been built on top
+     of our aggregated data, such as the Pocket Open Access mobile app
+     and the Lean Library discovery service. By cooperating with
+     world-leading plagirism detection solutions, we also facilitate
+     early-detection and prevention of misuse of content produced by
+     your staff.
 
-      Furthermore, your infrastructure contributes to national and international monitoring of open access content growth and enables more accurate prediction of trends in scientific disciplines. As a data provider, you join a vast network of interoperable repositories and journals and take advantage of the CORE’s data enrichments.
+     A study of 21 UK institutions carried out in 2019 showed that
+     when a repository is harvested by CORE, the number of content
+     downloads increases by 15% on average and up to 32% if the
+     repository is well configured for harvesting.
+  -
+    id: papers-unique
+    title: Make your papers uniquelly identifiable and resolvable with PIDs
+    picture: /images/logo/OAI-resolver.png
+    description: |
+      Identifiers of metadata records harvested by CORE are
+      automatically registered as globally unique persistent
+      identifiers (PIDs). CORE uses for this purpose OAI identifiers
+      that have been almost universaly adopted across the network of
+      open access repositories and publishers. OAI Identifiers are
+      viable PIDs for repositories, publishers and archives that can be,
+      as opposed to DOIs, minted in a distributed fashion and cost-free,
+      and that are resolvable directly to the data provider rather than,
+      as is typical with DOIs, to the publisher’s website. As a result,
+      OAIs are highly suitable identifiers supporting the green
+      (self-archiving) route to Open Access, envisaged by the Budapest Open
+      Access Initiative. Data providers are encouraged to freely register
+      their OAI prefix with CORE (using the CORE Dashboard) to benefit from
+      our global OAI Resolver.
+  -
+    id: open-access-network
+    title: Assess and contribute to Open Access compliance and FAIRness
+    picture: /images/illustrations/data-points-amico.svg
+    description: |
+      In the context of rapidly increasing open access policies
+      (such as REF, UKRI or Plan S) and best practices (such as FAIR),
+      CORE can improve the understanding of your content’s status and
+      help you prepare analytical reports for research administrators
+      and funders. For example, CORE conducted the  the UK REF2021 open
+      access audit, verifying when outputs became publicly available as
+      open access.
+
+      By being included in CORE, your infrastructure contributes to the
+      national and international monitoring of open access content
+      growth and enables the prediction of new trends in scientific
+      disciplines. Join our vast network of interoperable repositories
+      and journals and take advantage of metadata  enrichments,
+      e.g. recommendations, DOIs, ORCID iDs, etc.
+  -
+    id: content-machine-readable
+    title: Make your content machine readable
+    picture: /images/benefits/content-machine-readable.svg
+    description: |
+      Open access content hosted in repository and journal platforms is
+      typically not easily usable in  analytical, text and data mining
+      tasks. However, creators of innovative research tools, funders and
+      researchers themselves frequently need research content in a
+      well-structured machine readable format, a prerequisite for a wide
+      range of use cases, including domain specific research search
+      engines, plagiarism detection, fact checking and misinformation
+      detection, research graphs, rapid systematic reviews, detection of
+      research trends, research assessment, identifying suitable
+      peer-reviewers, recommender systems, innovation engineering,
+      compliance monitoring, etc. CORE provides access to open access
+      content in a machine readable format doing all the heavy lifting
+      with the help of AI. This involves harmonising metadata, cleaning
+      and creating a structured representation of scholarly data.
+  -
+    id: join-membership
+    title: Become a CORE Member and benefit from lots more
+    picture: /images/membership/international-cooperation.svg
+    description: |
+      After joining as a data provider, you will be able to become a
+      CORE Member, giving you many more benefits, such as:
+
+        * Public recognition of your support for key Open Science infrastructure through display of your organisation’s logo and banners within CORE Search and across the CORE ecosystem.
+        * Participation in our governance programme.
+        * Guaranteed technical support for your repository.
+        * Access to the CORE Repository Dashboard loaded with tools for Open Access compliance checking, metadata quality validation, enrichment and assessment of repository health.
+        * Access to raw data services for your organisation: CORE API and CORE Dataset.
+
 
 stat:
   title: How many data providers have joined CORE?
