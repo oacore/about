@@ -138,7 +138,7 @@ const ServicePage = observe(
                 <Button
                   className={styles.button}
                   href={howItWorks.action.url}
-                  variant="contained"
+                  variant={howItWorks.action.variant || 'contained'}
                 >
                   {howItWorks.action.title}
                 </Button>

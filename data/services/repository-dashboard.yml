@@ -153,15 +153,21 @@ additional:
        url: https://dashboard.core.ac.uk/login
 
 related-services:
--
-  title: CORE Repository Edition
-  picture: /images/services/repository-edition.svg
-  url: ~services/repository-edition
--
-  title: CORE Recommender
-  picture: /images/services/recommender.svg
-  url: ~services/recommender
--
-  title: CORE Discovery
-  picture: /images/services/discovery.svg
-  url: ~services/discovery
+  title: You might be also interested in
+  services:
+    -
+      title: CORE Discovery
+      picture: /images/services/discovery.svg
+      url: discovery
+    -
+      title: CORE Search
+      picture: /images/services/search.svg
+      url: search
+    -
+      title: CORE Recommeneder
+      picture: /images/services/recommender.svg
+      url: recommender
+    -
+      title: CORE API
+      picture: /images/services/api.svg
+      url: api
