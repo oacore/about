@@ -1,15 +1,19 @@
-$main-spacer: 3rem;
+@import 'design-v2/variables';
 
 .layout {
   padding: var(--page-padding-y) var(--page-padding-x);
 }
 .container {
-  padding: $main-spacer 0;
+  padding: var(--page-padding-y) 0;
+
+  @media (max-width: $breakpoint-sm) {
+    --page-padding-y: 2rem;
+  }
 }
 
 .full {
   position: relative;
-  width: 100vw;
+  width: 99.5vw;
   height: 100%;
   margin-left: -50vw;
   left: 50%;

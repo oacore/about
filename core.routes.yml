@@ -45,6 +45,7 @@ services:
   children:
     api: ./api
     dataset: ./dataset
+    consultancy: ./consultancy
     sdk: ./sdk
     recommender: ./recommender
     connector: ./connector

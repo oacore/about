@@ -1,3 +1,5 @@
+@import 'design-v2/variables';
+
 .header {
   display: flex;
   flex-wrap: wrap-reverse;
@@ -7,18 +9,24 @@
   display: flex;
   align-items: center;
   margin-bottom: 4rem;
+  gap: 2rem;
+  @media (max-width: $breakpoint-sm) {
+    margin: 2rem 0;
+  }
   .icon {
-    margin-right: 1rem;
     width: 4rem;
     height: 4rem;
     transform: scale(1.4);
   }
 
   .title {
+    @media (max-width: $breakpoint-sm) {
+      font-size: 3rem;
+    }
   }
 }
 .description {
-  max-width: 60ch;
+  max-width: 70ch;
   line-height: 1.8;
 }
 
