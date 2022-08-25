@@ -54,8 +54,7 @@ how-it-works:
       all recommended articles are free to read and can be accessed without a paywall. Thus, the CORE
       Recommender increases the visibility of open access content. Being open should pay off!
 
-
-additional:
+main:
   items:
   - title: Where to start?
     content: |
@@ -109,9 +108,7 @@ what-is-included:
     * A user feedback system that improves the recommendation accuracy.
   image: /images/services/delivery.svg
 
-
-
-uniqueness:
+additional:
   title: Uniqueness of the CORE Recommender
   image: /images/screenshots/recommender2.png
   content: |
