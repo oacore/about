@@ -53,7 +53,7 @@ sections:
      mission-driven third-party services that have been built on top
      of our aggregated data, such as the Pocket Open Access mobile app
      and the Lean Library discovery service. By cooperating with
-     world-leading plagirism detection solutions, we also facilitate
+     world-leading plagiarism detection solutions, we also facilitate
      early-detection and prevention of misuse of content produced by
      your staff.
 
@@ -68,9 +68,10 @@ sections:
     description: |
       Identifiers of metadata records harvested by CORE are
       automatically registered as globally unique persistent
-      identifiers (PIDs). CORE uses for this purpose OAI identifiers
+      identifiers (PIDs). CORE uses for this purpose
+      [OAI identifiers](/documentation/oai-resolver)
       that have been almost universaly adopted across the network of
-      open access repositories and publishers. OAI Identifiers are
+      open access repositories and publishers. OAI identifiers are
       viable PIDs for repositories, publishers and archives that can be,
       as opposed to DOIs, minted in a distributed fashion and cost-free,
       and that are resolvable directly to the data provider rather than,
@@ -79,7 +80,7 @@ sections:
       (self-archiving) route to Open Access, envisaged by the Budapest Open
       Access Initiative. Data providers are encouraged to freely register
       their OAI prefix with CORE (using the CORE Dashboard) to benefit from
-      our global OAI Resolver.
+      our global [OAI Resolver](https://oai.core.ac.uk/).
   -
     id: open-access-network
     title: Assess and contribute to Open Access compliance and FAIRness
@@ -89,7 +90,7 @@ sections:
       (such as REF, UKRI or Plan S) and best practices (such as FAIR),
       CORE can improve the understanding of your content’s status and
       help you prepare analytical reports for research administrators
-      and funders. For example, CORE conducted the  the UK REF2021 open
+      and funders. For example, CORE conducted the UK REF2021 open
       access audit, verifying when outputs became publicly available as
       open access.
 
@@ -124,7 +125,7 @@ sections:
     picture: /images/membership/international-cooperation.svg
     description: |
       After joining as a data provider, you will be able to become a
-      CORE Member, giving you many more benefits, such as:
+       [CORE Member](/membership), giving you many more benefits, such as:
 
         * Public recognition of your support for key Open Science infrastructure through display of your organisation’s logo and banners within CORE Search and across the CORE ecosystem.
         * Participation in our governance programme.
