@@ -21,10 +21,6 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
   const headerNames = textData.headers.map((header) => header.name).slice(1)
   const { membership } = useStore()
 
-  const onSelectActivePlan = (price, size) => {
-    membership.setData({ price, size })
-  }
-
   const renderHeaders = () => (
     <tr>
       {textData.headers.map((header) => (
@@ -87,7 +83,6 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
                 membership.data.size === row.title,
             })}
             role="gridcell"
-            onClick={() => onSelectActivePlan(discount || original, row.title)}
           >
             <Price price={discount} className={styles.priceDiscount} />
             <Price tag={discount && 'strike'} price={original} />

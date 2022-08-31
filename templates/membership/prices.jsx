@@ -1,69 +1,50 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
-import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
 
 import { Markdown } from 'components'
-import { patchStats } from 'components/utils'
 import { Layout, MembershipTable, Section } from 'design-v2/components'
-import { observe, useStore } from 'store'
 
-const MembershipPricesPageTemplate = observe(({ data }) => {
-  const { membership } = useStore()
-  const router = useRouter()
-
-  useEffect(() => {
-    membership.setData({
-      planName: data.planName,
-    })
-  }, [])
-
-  const handleClick = () => {
-    router.push(data.fee.action.url)
-  }
-
-  return (
-    <Layout>
-      <Section id="meta" className={styles.headerPrices}>
-        <h2 className={styles.title}>{data.header.title}</h2>
-        <Markdown className={styles.description}>
-          {data.header.description}
-        </Markdown>
-      </Section>
-      <Section id="fee" className={styles.feeSection}>
+const MembershipPricesPageTemplate = ({ data }) => (
+  <Layout>
+    <Section id="meta" className={styles.headerPrices}>
+      <h2 className={styles.title}>{data.header.title}</h2>
+      <Markdown className={styles.description}>{data.fee.description}</Markdown>
+    </Section>
+    <Section id="fee" className={styles.feeSection}>
+      {data.fee.tables.content.map((table) => (
         <MembershipTable
+          key={table.id}
           textData={{
-            ...data.fee.table,
-            title: patchStats(data.fee.title, data),
+            ...table,
             caption: data.fee.caption,
+            headers: data.fee.tables.headers,
           }}
           type="prices"
           className={styles.feeSectionTable}
         />
-        <Markdown className={styles.feeSectionNote}>{data.fee.note}</Markdown>
-        <Button
-          type="button"
-          variant="contained"
-          onClick={handleClick}
-          className={classNames.use(
-            styles.button,
-            membership.data.price === 0 && styles.disabled
-          )}
-        >
-          {data.fee.action.caption}
-        </Button>
-      </Section>
-      <DetailsTable
-        data={{
-          box: data.box,
-          comparisonTable: data.comparisonTable,
-        }}
-      />
-    </Layout>
-  )
-})
+      ))}
+      <Markdown className={styles.feeSectionNote}>{data.fee.note}</Markdown>
+      <Button
+        type="button"
+        variant="contained"
+        href={data.fee.action.url}
+        tag="a"
+        className={classNames.use(styles.button)}
+      >
+        {data.fee.action.caption}
+      </Button>
+    </Section>
+    <DetailsTable
+      data={{
+        box: data.box,
+        comparisonTable: data.comparisonTable,
+      }}
+    />
+  </Layout>
+)
 
 export default MembershipPricesPageTemplate

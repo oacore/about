@@ -31,14 +31,13 @@ community:
 membership:
   pattern: /membership
   children:
-    supporting: ./supporting
-    sustaining: ./sustaining
+    fee: ./fee
+    payment:
+      pattern: /payment
+      children:
+        success: ./success
+        error: ./error
 
-payment:
-  pattern: /payment
-  children:
-    success: /success
-    error: /error
 
 services:
   pattern: /services

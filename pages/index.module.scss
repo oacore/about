@@ -50,12 +50,6 @@
 .section {
   &-join {
     background-color: var(--gray-200);
-    div {
-      padding: unset;
-    }
-    &-list {
-      padding: 0 var(--page-padding-x) !important;
-    }
   }
   &-services {
     .action-button {

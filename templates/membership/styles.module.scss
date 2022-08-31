@@ -54,8 +54,12 @@ $member-image-width: 102px;
     background-color: $card-header-color;
     text-align: center;
     padding: 1rem;
-    &-caption {
-      color: var(--gray-500);
+    &-caption,
+    &-link {
+      color: var(--gray-600);
+    }
+    &-link {
+      text-decoration: underline;
     }
   }
   &-advantages {
@@ -199,16 +203,17 @@ $member-image-width: 102px;
 }
 
 .fee-section {
+  text-align: center;
   &-table {
     margin-bottom: 2rem;
   }
   &-note {
+    text-align: left;
     margin-bottom: 2rem;
     color: var(--gray-800);
   }
   .button {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
   }
 }
 

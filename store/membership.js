@@ -5,6 +5,8 @@ import { createMembershipPayment } from '../api/services'
 import routes from '../core.routes.yml'
 
 class Membership {
+  activePlan = ''
+
   data = {
     price: 0,
     planName: '',
@@ -16,9 +18,11 @@ class Membership {
   constructor() {
     makeObservable(this, {
       data: observable,
+      activePlan: observable,
       reset: action,
       setData: action,
       submit: action,
+      setActivePlan: action,
     })
   }
 
@@ -28,6 +32,10 @@ class Membership {
 
   setIsLoading(boolean) {
     this.isLoading = boolean
+  }
+
+  setActivePlan(plan) {
+    this.activePlan = plan
   }
 
   async submit() {

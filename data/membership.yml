@@ -131,9 +131,11 @@ plans:
         - *discovery-boost
       action:
         title: become a member
-        url: 'https://core.ac.uk/benefits#join-core'
-
+        url: membership/payment
     - title: Supporting
+      caption:
+        url: membership/fee
+        title: Membership fee
       box:
         title: All Starting benefits
         caption: PLUS
@@ -145,9 +147,12 @@ plans:
         - *api
       action:
         title: Register your interest
-        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+        url: membership/payment
 
     - title: Sustaining
+      caption:
+        url: membership/fee
+        title: Membership fee
       box:
         title: All Supporting benefits
         caption: PLUS
@@ -162,7 +167,7 @@ plans:
         - *health-check
       action:
         title: Register your interest
-        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+        url: membership/payment
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
@@ -227,18 +232,13 @@ support:
         name: Anglia Ruskin University
 
 fee:
-  title: Membership fee for <span>{{planName}}</span> members
   caption: 30% Early bird CORE Membership discount (ends September 30th, 2022)
-  description:
-    supporting: |
-      Our Supporting members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
-    sustaining: |
-      Our Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services and their continuous improvement.
+  description: Our members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
   note: '*Jisc Members already have CORE Supporting Membership through their subscription.'
   action:
-    caption: Become member
-    url: '/payment'
-  table:
+    caption: Become a member
+    url: payment
+  tables:
     headers:
       - name: Data provider size
       - name: |
@@ -249,128 +249,131 @@ fee:
         type: middle
       - name: |
           [High-income countries](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups)
-        type: higg
-    supporting:
-      rows:
-        - title: Band 1
-          caption: up to 5k articles
-          prices:
-            - type: low
-              original: 450
-              discount: 315
-            - type: middle
-              original: 900
-              discount: 630
-            - type: hign
-              original: 1500
-              discount: 1050
-        - title: Band 2
-          caption: 5k - 10k articles
-          prices:
-            - type: low
-              original: 900
-              discount: 630
-            - type: middle
-              original: 1800
-              discount: 1260
-            - type: high
-              original: 3000
-              discount: 2100
-        - title: Band 3
-          caption: 10k - 20k articles
-          prices:
-            - type: low
-              original: 1350
-              discount: 945
-            - type: middle
-              original: 2700
-              discount: 1890
-            - type: high
-              original: 4500
-              discount: 3150
-        - title: Band 4
-          caption: 20k - 40k articles
-          prices:
-            - type: low
-              original: 1800
-              discount: 1260
-            - type: middle
-              original: 3600
-              discount: 2520
-            - type: high
-              original: 6000
-              discount: 4200
-        - title: Band 5
-          caption: 40k+ articles
-          prices:
-            - type: low
-              original: 2250
-              discount: 1575
-            - type: middle
-              original: 4500
-              discount: 3150
-            - type: high
-              original: 7500
-              discount: 5250
-    sustaining:
-      rows:
-        - title: Band 1
-          caption: up to 5k articles
-          prices:
-            - type: low
-              original: 900
-              discount: 630
-            - type: middle
-              original: 1800
-              discount: 1260
-            - type: hign
-              original: 3000
-              discount: 2100
-        - title: Band 2
-          caption: 5k - 10k articles
-          prices:
-            - type: low
-              original: 1800
-              discount: 1260
-            - type: middle
-              original: 3600
-              discount: 2520
-            - type: high
-              original: 6000
-              discount: 4200
-        - title: Band 3
-          caption: 10k - 20k articles
-          prices:
-            - type: low
-              original: 2700
-              discount: 1890
-            - type: middle
-              original: 5400
-              discount: 3780
-            - type: high
-              original: 9000
-              discount: 6300
-        - title: Band 4
-          caption: 20k - 40k articles
-          prices:
-            - type: low
-              original: 3600
-              discount: 2520
-            - type: middle
-              original: 7200
-              discount: 5040
-            - type: high
-              original: 12000
-              discount: 8400
-        - title: Band 5
-          caption: 40k+ articles
-          prices:
-            - type: low
-              original: 4500
-              discount: 3150
-            - type: middle
-              original: 9000
-              discount: 6300
-            - type: high
-              original: 15000
-              discount: 10500
+        type: high
+    content:
+      - id: supporting
+        title: Membership fee for <span>SUPPORTING</span> members
+        rows:
+          - title: Band 1
+            caption: up to 1k records
+            prices:
+              - type: low
+                original: 625
+                discount: 500
+              - type: middle
+                original: 1250
+                discount: 875
+              - type: hign
+                original: 2000
+                discount: 1375
+          - title: Band 2
+            caption: 1k - 5k records
+            prices:
+              - type: low
+                original: 1250
+                discount: 875
+              - type: middle
+                original: 2375
+                discount: 1625
+              - type: high
+                original: 4000
+                discount: 2750
+          - title: Band 3
+            caption: 5k - 10k records
+            prices:
+              - type: low
+                original: 1750
+                discount: 1250
+              - type: middle
+                original: 3625
+                discount: 2500
+              - type: high
+                original: 6000
+                discount: 4250
+          - title: Band 4
+            caption: 10k - 25k records
+            prices:
+              - type: low
+                original: 2375
+                discount: 1625
+              - type: middle
+                original: 4750
+                discount: 3375
+              - type: high
+                original: 8000
+                discount: 5625
+          - title: Band 5
+            caption: 25k+ records
+            prices:
+              - type: low
+                original: 3000
+                discount: 2125
+              - type: middle
+                original: 6000
+                discount: 4250
+              - type: high
+                original: 1000
+                discount: 7000
+      - id: sustaining
+        title: Membership fee for <span>SUSTAINING</span> members
+        rows:
+          - title: Band 1
+            caption: up to 1k records
+            prices:
+              - type: low
+                original: 1250
+                discount: 1000
+              - type: middle
+                original: 2500
+                discount: 1750
+              - type: hign
+                original: 4000
+                discount: 2750
+          - title: Band 2
+            caption: 1k - 5k records
+            prices:
+              - type: low
+                original: 2500
+                discount: 1750
+              - type: middle
+                original: 4750
+                discount: 3250
+              - type: high
+                original: 8000
+                discount: 5500
+          - title: Band 3
+            caption: 5k - 10k records
+            prices:
+              - type: low
+                original: 3500
+                discount: 2500
+              - type: middle
+                original: 7250
+                discount: 5000
+              - type: high
+                original: 12000
+                discount: 8500
+          - title: Band 4
+            caption: 10k - 25k records
+            prices:
+              - type: low
+                original: 4650
+                discount: 3250
+              - type: middle
+                original: 9500
+                discount: 6750
+              - type: high
+                original: 16000
+                discount: 11250
+          - title: Band 5
+            caption: 25k+ records
+            prices:
+              - type: low
+                original: 6000
+                discount: 4250
+              - type: middle
+                original: 12000
+                discount: 8500
+              - type: high
+                original: 20000
+                discount: 14000

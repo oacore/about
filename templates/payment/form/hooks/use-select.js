@@ -1,7 +1,10 @@
 import { useState } from 'react'
 
 export const useSelect = (initialValue, initOptions) => {
-  const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(
+    initialValue.charAt(0).toUpperCase() + initialValue.slice(1)
+  )
+
   const [suggestions, setSuggestions] = useState(initOptions)
   const handleOnChange = (data) => {
     setValue(data.value)

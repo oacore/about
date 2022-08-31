@@ -41,12 +41,6 @@ $card-header-color: #fef5ef;
     width: 50ch;
   }
   &-prices {
-    &-active,
-    &:hover {
-      background-color: var(--gray-200);
-      cursor: pointer;
-    }
-
     &-first {
       p {
         margin-bottom: 0;

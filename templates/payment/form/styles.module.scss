@@ -41,6 +41,10 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
 .button-plus {
   position: relative;
   width: 35px;
@@ -83,7 +87,6 @@
     display: block;
   }
 }
-
 .box {
   margin-left: auto;
   .price {
@@ -99,9 +102,6 @@
 
 .button-submit {
   text-align: right;
-}
-.hidden {
-  display: none;
 }
 
 .help {

@@ -14,12 +14,7 @@ import { Markdown } from 'components'
 
 const PaymentDefailsForm = observe(({ form }) => {
   const { membership, dataProviders } = useStore()
-
   const helpBoxRef = useRef(null)
-
-  useEffect(() => {
-    dataProviders.fetchData()
-  }, [])
 
   const initRepositorySelect = form.fields.find(
     (field) => field.type === 'async-select'
@@ -28,7 +23,7 @@ const PaymentDefailsForm = observe(({ form }) => {
   if (dataProviders.data) initRepositorySelect.options = [...dataProviders.data]
 
   const initialValues = form.fields.reduce((acc, elem) => {
-    if (elem.id) acc[elem.id] = ''
+    if (elem.id) acc[elem.id] = membership[elem.id] || ''
     return acc
   }, {})
 
@@ -37,6 +32,17 @@ const PaymentDefailsForm = observe(({ form }) => {
     initRepositorySelect,
   ])
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
+
+  useEffect(() => {
+    dataProviders.fetchData()
+  }, [])
+
+  const handleSelectChange = (name, value) => {
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    })
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -59,18 +65,10 @@ const PaymentDefailsForm = observe(({ form }) => {
       ...formValues,
       repository,
     })
-
     await membership.submit()
   }
   const handleInputChange = (e) => {
     const { name, value } = e.target
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    })
-  }
-
-  const handleSelectChange = (name, value) => {
     setFormValues({
       ...formValues,
       [name]: value,
@@ -106,6 +104,9 @@ const PaymentDefailsForm = observe(({ form }) => {
     setRepositoryInputsList(list)
     setFormValues(rest)
   }
+
+  const isActiveRepositoryMultipleSelect =
+    formValues.activePlan !== '' && formValues.activePlan !== 'starting'
 
   return (
     <Form id={form.id} className={styles.form} onSubmit={handleSubmit}>
@@ -143,20 +144,25 @@ const PaymentDefailsForm = observe(({ form }) => {
               prependIcon="#magnify"
               loading={dataProviders.isLoading}
               setFormValue={handleSelectChange}
+              defaultValue={formValues[field.id]}
             />
           )
         }
 
         if (field.type === 'button') {
           return (
-            <div key={field.label}>
+            <div
+              key={field.label}
+              className={classNames.use({
+                [styles.hidden]:
+                  !isActiveRepositoryMultipleSelect ||
+                  repositoryInputsList.length === form.maxRepositoriesCount,
+              })}
+            >
               <button
                 aria-label="create-new-input"
                 type="button"
-                className={classNames.use(styles.buttonPlus, {
-                  [styles.hidden]:
-                    repositoryInputsList.length === form.maxRepositoriesCount,
-                })}
+                className={classNames.use(styles.buttonPlus)}
                 onClick={onCreateNewInput}
               />
               <span className={styles.buttonPlusCaption}>{field.caption}</span>

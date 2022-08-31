@@ -14,9 +14,10 @@ const Select = ({
   loading,
   setFormValue,
   onDelete,
+  defaultValue = '',
 }) => {
   const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
-    useSelect('', options)
+    useSelect(defaultValue, options)
   // For async values
   useEffect(() => {
     setSuggestions(options)
@@ -38,7 +39,7 @@ const Select = ({
         id={name}
         value={value}
         label={label}
-        onChange={(option) => handleSelectChange(option)}
+        onChange={handleSelectChange}
         onInput={handleOnInput}
         placeholder={placeholder}
         clearButtonClassName={styles.clearButton}
