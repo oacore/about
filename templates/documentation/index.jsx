@@ -3,21 +3,9 @@ import { Col, Row } from 'reactstrap'
 
 import faqData from '../../data/faq.yml'
 import styles from './documentation.module.scss'
+import Block from './components/block'
 
 import { Page, Section, Content, Markdown, Accordion } from 'components'
-
-const Block = ({ column1, column2 }) => (
-  <Section className={`section-wide ${styles.block}`}>
-    <Row>
-      <Col md="6">
-        <Markdown>{column1}</Markdown>
-      </Col>
-      <Col md="6">
-        <Markdown>{column2}</Markdown>
-      </Col>
-    </Row>
-  </Section>
-)
 
 const itemToURL = (id) => {
   const url = new URL(window.location)
