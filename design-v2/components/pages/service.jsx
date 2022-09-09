@@ -85,15 +85,15 @@ const ServicePage = observe(
     features,
     howItWorks,
     keywords,
-    whatIsIncluded,
-    statistics,
+    whatIsIncluded, // @optional
+    statistics, // @optional
+    main, // @optional
     benefits, // @optional
     contact, // @optional
     stats, // @optional
     additional, // @optional
     testimonials, // @optional
     form, // @optional
-    uniqueness, // @optional
     relatedServices,
     hideButtons = false, // @optional
   }) => {
@@ -138,7 +138,7 @@ const ServicePage = observe(
                 <Button
                   className={styles.button}
                   href={howItWorks.action.url}
-                  variant="contained"
+                  variant={howItWorks.action.variant || 'contained'}
                 >
                   {howItWorks.action.title}
                 </Button>
@@ -174,13 +174,13 @@ const ServicePage = observe(
             </Section>
           )}
           {testimonials && (
-            <Section id="testimonial" className={styles.additional}>
+            <Section id="testimonial" className={styles.main}>
               {testimonials.map((testimonial) => (
                 <Testimonial key={testimonial.author.name} {...testimonial} />
               ))}
-              {additional && (
+              {main && (
                 <div>
-                  {additional.items.map((item) => (
+                  {main.items.map((item) => (
                     <Collapsed
                       key={item.title}
                       id={`${id}-details`}
@@ -189,13 +189,13 @@ const ServicePage = observe(
                       <Markdown>{item.content}</Markdown>
                     </Collapsed>
                   ))}
-                  <Markdown className={styles.note}>{additional.note}</Markdown>
+                  <Markdown className={styles.note}>{main.note}</Markdown>
                   <Button
                     className={styles.action}
                     variant="outlined"
-                    href={additional.action.url}
+                    href={main.action.url}
                   >
-                    {additional.action.title}
+                    {main.action.title}
                   </Button>
                 </div>
               )}
@@ -256,14 +256,14 @@ const ServicePage = observe(
               <RegistrationModals />
             </Section>
           )}
-          {uniqueness && (
-            <Section id="uniqueness" className={styles.uniqueness}>
-              <img src={uniqueness.image} alt={whatIsIncluded.title} />
+          {additional && (
+            <Section id="additional" className={styles.additional}>
+              <img src={additional.image} alt={additional.title} />
               <div className={styles.section}>
-                <h3>{uniqueness.title}</h3>
-                <Markdown>{uniqueness.content}</Markdown>
+                <h3>{additional.title}</h3>
+                <Markdown>{additional.content}</Markdown>
                 <div className={styles.group}>
-                  {uniqueness.actions.map((action) => (
+                  {additional.actions.map((action) => (
                     <Popover
                       key={action.caption}
                       placement="bottom"

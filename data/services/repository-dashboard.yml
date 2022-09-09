@@ -1,101 +1,115 @@
 id: repository-dashboard
 
-title: CORE Repository Dashboard
+title: CORE Dashboard
 tagline: Manage your repository outputs and ensure they are visible to the world
-description:
-  The Repository Dashboard is a free service for our data providers. It
-  provides an online interface offering valuable technical information and
-  statistics to content providers. It is the tool you need to check that your
-  repository is configured correctly to provide maximum visibility to your
-  research outputs. The Repository Dashboard has been created in an effort to
-  improve the quality and transparency of the harvesting process of open
-  access content and to create a two way collaboration between the CORE
-  project and our data providers.
 
-screenshot:
-  source: /images/screenshots/dashboard-overview.png
-  caption: CORE Repository Dashboard home page
+header:
+  id: header
+  title: CORE Dashboard
+  icon: /images/services/repository-dashboard.svg
+  image: /images/services/dashboard-charts.svg
+  description: |
+    The Repository Dashboard is a service provided to CORE Members.
+    It offers a range of tools for repository management,
+    content enrichment, metadata quality assessment and open access
+    compliance checking. It serves as a central hub for accessing
+    member services for data providers, such as to  configure
+    CORE’s [OAI Resolver](https://core.ac.uk/documentation/oai-resolver), Recommender and Discovery services
+    for your repository or to promote your organisation to millions
+    of CORE’s users.
+  actions:
+     - caption: BECOME A MEMBER TO GET ACCESS
+       variant: contained
+       url: /membership
+     - caption: Log in
+       variant: outlined
+       url: https://dashboard.core.ac.uk/login
 
 features:
 -
-  title: null
-  picture: /images/icons/manage.svg
+  title: Managing content
   description: |
-    Manage access to documents from your repository in CORE
+   Monitor repository harvesting and health; manage access to documents from your repository in CORE and see your download stats.
 -
-  title: null
-  picture: /images/icons/update.svg
+  title: Register your OAI identifiers
   description: |
-    Obtain DOI enrichments detected by CORE for your content
+    Freely register your OAI identifiers so that our OAI Resolver can resolve these PIDs directly and persistently to your repository system.
 -
-  title: null
-  picture: /images/icons/statistics.svg
+  title: Content enrichments
   description: |
-    Access your collection’s download statistics, harvesting status and
-    metadata and policy compliance
+    Obtain DOI enrichments detected by CORE for your content.
+-
+  title: Compliance checking
+  description: |
+    Assess how your repository meets  open access policies and best practices.
 
-main: |
-  The Repository Dashboard is a free service for our data providers. The
-  Repository Dashboard has been created in an effort to improve the quality
-  and transparency of the harvesting process of open access content and to
-  create a two way collaboration between the CORE project and our data
-  providers.
+how-it-works:
+  title: How it works?
+  image: /images/services/work.svg
+  description: |
+   The Repository Dashboard provides an online interface offering
+   valuable technical information and statistics for content providers.
+   It is the tool you need to check that your repository is
+   configured correctly to provide maximum visibility to your research
+   outputs. Additional features include OAI Resolver resolution,
+   persistent identifiers (PIDs) enrichments, access to repository tools
+   enhancing user experience (Recommender and Discovery) and ability to
+   promote your logos across the CORE ecosystem. For UK members,
+   it also offers REF Open Access compliance monitoring and a RIOXX
+   metadata quality validator.
+  action:
+    title: Log in
+    variant: outlined
+    url: https://dashboard.core.ac.uk/login
 
-  The Repository Dashboard provides an online interface offering valuable
-  technical information and statistics to content providers. It is the tool
-  you need to check that your repository is configured correctly to provide
-  maximum visibility to your research outputs. Additional features include
-  identifier enrichments, such as detecting missing DOIs for repository
-  records. The tool also offers  REF 2021 Open Access compliance monitoring
-  functionality to UK HEIs, and a RIOXX metadata quality checker.
+main:
+  items:
+  - title: Institutions using the Repository Dashboard
+    content: |
+      Here are some of the insitutions using the CORE Repository Dashboard
+      around the world.
 
-  [Access the dashboard now](https://dashboard.core.ac.uk).
-  To register, [send us an email](~about/#contact).
+      **Australia**
+      - University of Adelaide
+      - University of Canberra
 
-  If you use CORE in your work, we kindly request you to [cite one
-  of our publications](~research-outputs).
+      **Belgium**
+      - University of Li&egrave;ge
+      - University of Louvain
 
-additional:
-  title: Institutions using the Repository Dashboard
+      **Netherlands**
+      - Utrecth University
+      - TU Delft University
+
+      **South Africa**
+      - University of Cape Town
+
+      **United Kingdom**
+      - Cambridge University
+      - University of Leeds
+      - University of Sheffield
+      - University of York
+      - London School of Economics
+      - Imperial College London
+      - Strathclyde University
+
+      **United States**
+      - Columbia University
+      - Harvard University
+  note: If you use CORE in your work, we kindly request you to cite one of our publications.
+  action:
+    title: cite publication
+    url: https://core.ac.uk/about/research-outputs
+
+testimonials:
+-
+  id: Botev
   content: |
-    Here are some of the insitutions using the CORE Repository Dashboard
-    around the world.
-
-    **Australia**
-    - University of Adelaide
-    - University of Canberra
-
-    **Belgium**
-    - University of Li&egrave;ge
-    - University of Louvain
-
-    **Netherlands**
-    - Utrecth University
-    - TU Delft University
-    
-    **South Africa**
-    - University of Cape Town
-
-    **United Kingdom**
-    - Cambridge University
-    - University of Leeds
-    - University of Sheffield
-    - University of York
-    - London School of Economics
-    - Imperial College London
-    - Strathclyde University
-
-    **United States**
-    - Columbia University
-    - Harvard University
-
-testimonial:
-  content: |
-    The [CORE Repository Dashboard] (https://core.ac.uk/services/repository-dashboard) provides an excellent level of
+    “The [CORE Repository Dashboard](https://core.ac.uk/services/repository-dashboard) provides an excellent level of
     feedback and control over what gets harvested, aggregated and exposed.
     It also provides intelligence on harvesting errors which may need
     troubleshooting, thereby ensuring optimum repository health for text mining
-    as well as discovery of repository content.
+    as well as discovery of repository content.”
   author:
     name: George Macgregor
     role: Institutional Repository Manager, University of Strathclyde
@@ -119,25 +133,41 @@ what-is-included:
     For an enhanced repository functionality and content discoverability,
     plus guaranteed support levels, visit the [CORE Repository
     Edition](~services/repository-edition).
+  image: /images/services/delivery.svg
 
+additional:
+  title: Register for the CORE Dashboard
+  image: /images/screenshots/charts-placeholder.png
+  content: |
+   The Repository Dashboard has been created in an effort to improve
+   the quality and transparency of the harvesting process of open access
+   content and to create a two way collaboration between the CORE
+   project and our data providers.
   actions:
-    primary:
-      url: ~contact
-      caption: Contact us to register for free
-    secondary:
-      url: https://dashboard.core.ac.uk
-      caption: Log in now
+     - caption: BECOME A MEMBER TO GET ACCESS
+       url: /membership
+       hint: For those who are not CORE Data Providers
+       primary: true
+     - caption: LOG IN
+       hint: For those who are CORE Data Providers
+       url: https://dashboard.core.ac.uk/login
 
 related-services:
--
-  title: CORE Repository Edition
-  picture: /images/services/repository-edition.svg
-  url: ~services/repository-edition
--
-  title: CORE Recommender
-  picture: /images/services/recommender.svg
-  url: ~services/recommender
--
-  title: CORE Discovery
-  picture: /images/services/discovery.svg
-  url: ~services/discovery
+  title: You might be also interested in
+  services:
+    -
+      title: CORE Discovery
+      picture: /images/services/discovery.svg
+      url: discovery
+    -
+      title: CORE Search
+      picture: /images/services/search.svg
+      url: search
+    -
+      title: CORE Recommeneder
+      picture: /images/services/recommender.svg
+      url: recommender
+    -
+      title: CORE API
+      picture: /images/services/api.svg
+      url: api
