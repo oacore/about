@@ -12,7 +12,7 @@ banner:
        text: Join NOW
       -
        url: /data-providers
-       text: See the full list of data providers
+       text: LIST  OF DATA PROVIDERS
        link: true
   velcro:
     title: On this page
