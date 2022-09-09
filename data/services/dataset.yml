@@ -41,7 +41,7 @@ how-it-works:
     title: Access documentation
     url: https://core.ac.uk/documentation/dataset
 
-additional:
+main:
   items:
     - title: Available datasets
       content: |

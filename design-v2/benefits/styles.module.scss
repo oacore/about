@@ -11,6 +11,7 @@ $spacer: 1.5rem;
   }
 }
 .image {
+  max-height: 25rem;
   @media (max-width: $breakpoint-sm) {
     width: 100%;
     height: auto;
@@ -64,7 +65,7 @@ $spacer: 1.5rem;
         }
       }
       .title {
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin-bottom: 1rem;
       }
       .velcro-picture {
@@ -79,14 +80,14 @@ $spacer: 1.5rem;
       }
 
       .velcro-title {
-        font-size: 0.9rem;
-        font-weight: 400;
+        font-size: 1rem;
         display: block;
         color: var(--black);
+        margin-bottom: 0.5rem;
       }
 
       .velcro-description {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         line-height: 1rem;
         display: inline-block;
         color: var(--gray-800);
@@ -100,12 +101,12 @@ $spacer: 1.5rem;
       .velcro {
         box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
           0px 2px 1px rgba(0, 0, 0, 0.12), 0px 1px 3px rgba(0, 0, 0, 0.2);
-        padding: $spacer;
+        padding: calc($spacer / 2) $spacer;
         background-color: var(--white);
         position: relative;
         right: 5px;
         bottom: 10px;
-        max-width: 368px;
+        max-width: 420px;
         margin: 0 auto;
       }
     }
@@ -115,7 +116,7 @@ $spacer: 1.5rem;
 .services {
   display: flex;
   align-items: center;
-
+  gap: 3rem;
   @media (max-width: $breakpoint-sm) {
     flex-wrap: wrap;
     justify-content: center;
@@ -124,10 +125,8 @@ $spacer: 1.5rem;
   &:nth-child(odd) {
     flex-direction: row-reverse;
   }
-  .image {
-    &:nth-child(1) {
-      margin-right: 1rem;
-    }
+  &:not(:last-child) {
+    margin-bottom: 5rem;
   }
 }
 
@@ -179,4 +178,13 @@ $spacer: 1.5rem;
 
 .button-custom {
   margin-top: 1rem;
+}
+
+.content {
+  ul {
+    margin-left: 2rem;
+    li {
+      list-style: disc;
+    }
+  }
 }

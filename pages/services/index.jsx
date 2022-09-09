@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card, Button } from '@oacore/design/lib/elements'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './services.module.scss'
 
@@ -32,7 +33,12 @@ const FeaturesSection = ({ id, description, title, video, features }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(false)
 
   return (
-    <Section className={styles.sectionContainer} id={id}>
+    <Section
+      className={classNames.use(styles.sectionContainer, {
+        [styles.sectionContainerInline]: features.length === 1,
+      })}
+      id={id}
+    >
       <div className={styles.sectionHeader}>
         {video && (
           <button
