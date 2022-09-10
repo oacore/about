@@ -27,15 +27,14 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
     element: elementOAIidentifier,
     bind: bindOAIidentifier,
     onInput: onInputIidentifier,
+    setValue: setOAIidentifier,
   } = useInput(
     validateIdentifier(identifier) ? identifier : '',
     'oai-identifier'
   )
-  const [value, setValue] = useState('')
+  const exampleLink = 'oai:researchonline.rca.ac.uk:1035'
 
-  const handleInput = (e) => {
-    setValue(e.value)
-  }
+  const handleInput = (e) => {}
 
   const [isOAInotValid, setOAInotValid] = useState(false)
 
@@ -80,16 +79,17 @@ const OAIResolveForm = React.forwardRef(({ onSubmit }, ref) => {
     </>
   )
 
+  const onclick = () => {
+    setOAIidentifier(exampleLink)
+  }
+
   const msgHelper = (
     <>
-      Example:{' '}
-      <Link
-        href="https://core.ac.uk/display/12820815?recSetID="
-        target="_blank"
-        className={styles.helperLink}
-      >
-        oai:researchonline.rca.ac.uk:1035
-      </Link>
+      Example: {/* eslint-disable-next-line max-len */}
+      {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
+      <span className={styles.helperLink} onClick={onclick}>
+        {exampleLink}
+      </span>
     </>
   )
 
