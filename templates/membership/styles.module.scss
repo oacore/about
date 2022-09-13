@@ -85,7 +85,9 @@ $member-image-width: 102px;
       .description {
         text-decoration: none;
         font-size: 0.9rem;
-        margin-left: 1.2rem;
+        margin-left: 1rem;
+        background-color: var(--gray-100);
+        padding: 5px 10px;
       }
     }
   }
