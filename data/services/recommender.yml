@@ -17,10 +17,10 @@ header:
   actions:
      - caption: Install
        variant: contained
-       url: '#uniqueness'
+       url: '#additional'
      - caption: Download our flyer
        variant: text
-       url: /resources/core-api-flyer.pdf
+       url: /resources/core_flyer_recomender.pdf
        download: true
 
 
