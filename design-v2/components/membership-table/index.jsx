@@ -12,7 +12,8 @@ const Price = ({ tag: Tag = 'span', price, className }) => (
     {new Intl.NumberFormat('en-GB', {
       style: 'currency',
       currency: 'GBP',
-      maximumSignificantDigits: 3,
+      minimumSignificantDigits: 1,
+      maximumSignificantDigits: 4,
     }).format(price)}
   </Tag>
 )
