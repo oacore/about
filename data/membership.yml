@@ -261,62 +261,62 @@ fee:
           caption: up to 5k articles
           prices:
             - type: low
-              original: 450
-              discount: 315
+              original: 625
+              discount: 500
             - type: middle
-              original: 900
-              discount: 630
+              original: 1250
+              discount: 875
             - type: hign
-              original: 1500
-              discount: 1050
+              original: 2000
+              discount: 1375
         - title: Band 2
           caption: 5k - 10k articles
           prices:
             - type: low
-              original: 900
-              discount: 630
+              original: 1250
+              discount: 875
             - type: middle
-              original: 1800
-              discount: 1260
+              original: 2375
+              discount: 1625
             - type: high
-              original: 3000
-              discount: 2100
+              original: 4000
+              discount: 2750
         - title: Band 3
           caption: 10k - 20k articles
           prices:
             - type: low
-              original: 1350
-              discount: 945
+              original: 1750
+              discount: 1250
             - type: middle
-              original: 2700
-              discount: 1890
+              original: 3625
+              discount: 2500
             - type: high
-              original: 4500
-              discount: 3150
+              original: 6000
+              discount: 4250
         - title: Band 4
           caption: 20k - 40k articles
           prices:
             - type: low
-              original: 1800
-              discount: 1260
+              original: 2375
+              discount: 1625
             - type: middle
-              original: 3600
-              discount: 2520
+              original: 4750
+              discount: 3375
             - type: high
-              original: 6000
-              discount: 4200
+              original: 8000
+              discount: 5625
         - title: Band 5
           caption: 40k+ articles
           prices:
             - type: low
-              original: 2250
-              discount: 1575
+              original: 3000
+              discount: 2125
             - type: middle
-              original: 4500
-              discount: 3150
+              original: 6000
+              discount: 4250
             - type: high
-              original: 7500
-              discount: 5250
+              original: 10000
+              discount: 7000
     sustaining:
       rows:
         - title: Band 1
