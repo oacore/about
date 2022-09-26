@@ -130,8 +130,8 @@ plans:
         - *statistics
         - *discovery-boost
       action:
-        title: become a member
-        url: 'https://core.ac.uk/benefits#join-core'
+        title: Register your interest
+        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
 
     - title: Supporting
       caption: <a href='membership/supporting'>Membership fee</a>
@@ -230,7 +230,7 @@ support:
 
 fee:
   title: Membership fee for <span>{{planName}}</span> members*
-  caption: 30% Early bird CORE Membership discount (ends September 30th, 2022)
+  caption: 30% Early bird CORE Membership discount (ends December 1st, 2022)
   description:
     supporting: |
       Our Supporting members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
