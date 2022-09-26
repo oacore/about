@@ -49,6 +49,15 @@ $member-image-width: 102px;
 
 .plan {
   border-top: none;
+
+  a {
+    color: var(--gray-500);
+    text-decoration: underline;
+  }
+  a:hover {
+    color: var(--gray-700);
+  }
+
   &-header {
     min-height: 6.5rem;
     background-color: $card-header-color;
@@ -207,6 +216,9 @@ $member-image-width: 102px;
   &-note {
     margin-bottom: 2rem;
     color: var(--gray-800);
+  }
+  &-note-second {
+    margin-top: 25px;
   }
   .button {
     display: block;

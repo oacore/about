@@ -6,24 +6,25 @@ import { Page } from 'components'
 
 export const slugs = ['supporting', 'sustaining']
 
-export async function getStaticProps() {
-  // const { slug } = params
+export async function getStaticProps({ params }) {
+  const { slug } = params
 
   const data = {
     header: {
       title: textData.header.title,
-      // description: textData.fee.description[slug],
+      description: textData.fee.description[slug],
     },
-    // fee: {
-    //   ...textData.fee,
-    //   table: {
-    //     headers: textData.fee.table.headers,
-    //     ...textData.fee.table[slug],
-    //   },
-    // },
-    // planName: slug,
+    fee: {
+      ...textData.fee,
+      table: {
+        headers: textData.fee.table.headers,
+        ...textData.fee.table[slug],
+      },
+    },
+    planName: slug,
     comparisonTable: textData.comparisonTable,
     box: textData.box,
+    discount: textData.discount,
   }
 
   return {
@@ -34,13 +35,10 @@ export async function getStaticProps() {
 }
 
 export async function getStaticPaths() {
-  // Enable once membership API will be ready.
-  // const paths = [
-  //   slugs.map((slug) => ({
-  //     params: { slug },
-  //   })),
-  // ]
-  const paths = []
+  const paths = slugs.map((slug) => ({
+    params: { slug },
+  }))
+
   return {
     paths,
     fallback: false,

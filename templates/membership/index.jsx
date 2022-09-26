@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { useOutsideClick } from '@oacore/design/lib/hooks'
+import Parser from 'html-react-parser'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
@@ -44,9 +45,10 @@ const Card = ({ plan }) => (
   <article className={styles.plan} key={plan.title}>
     <div className={styles.planHeader}>
       <h5>{plan.title}</h5>
-      {plan.caption && (
-        <span className={styles.planHeaderCaption}>{plan.caption}</span>
-      )}
+      {plan.caption &&
+        Parser(
+          `<span className=${styles.planHeaderCaption}>${plan.caption}</span>`
+        )}
     </div>
     <div className={styles.divider} />
     <div className={styles.planContent}>
