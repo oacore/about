@@ -134,6 +134,7 @@ plans:
         url: 'https://core.ac.uk/benefits#join-core'
 
     - title: Supporting
+      caption: <a href='membership/supporting'>Membership fee</a>
       box:
         title: All Starting benefits
         caption: PLUS
@@ -148,6 +149,7 @@ plans:
         url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
     - title: Sustaining
+      caption: <a href='membership/sustaining'>Membership fee</a>
       box:
         title: All Supporting benefits
         caption: PLUS
@@ -227,7 +229,7 @@ support:
         name: Anglia Ruskin University
 
 fee:
-  title: Membership fee for <span>{{planName}}</span> members
+  title: Membership fee for <span>{{planName}}</span> members*
   caption: 30% Early bird CORE Membership discount (ends September 30th, 2022)
   description:
     supporting: |
@@ -235,6 +237,8 @@ fee:
     sustaining: |
       Our Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services and their continuous improvement.
   note: '*Jisc Members already have CORE Supporting Membership through their subscription.'
+  noteSecond: |
+    **This discount is available for those who sign up for 3 or 5 years. Both annual and single payment invocing is possible.
   action:
     caption: Become member
     url: '/payment'
@@ -374,3 +378,17 @@ fee:
             - type: high
               original: 15000
               discount: 10500
+
+discount:
+  title: Multy-year discount**
+  table:
+    headers:
+      - name: Period
+      - name: Discount
+    rows:
+      - title: row 1
+        period: 3 years
+        discount: 10%
+      - title: row 2
+        period: 5 years
+        discount: 15%

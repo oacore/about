@@ -132,7 +132,7 @@ const MembershipTable = observe(({ className, textData, type = 'details' }) => {
     <div className={classNames.use(styles.container).join(className)}>
       <Markdown
         className={styles.title}
-      >{`<h3>${textData.title}</h3>`}</Markdown>
+      >{`<div class="${styles.lowerCase}">${textData.title}</div>`}</Markdown>
       <div className={styles.tableCaption}>{textData.caption} </div>
       <table
         className={classNames.use(styles.table, {
