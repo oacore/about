@@ -8,7 +8,7 @@ header:
       url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
       variant: contained
     - caption: download our flyer
-      url: /resources/core-membership-flyer.pdf
+      url: /resources/core-leaflet-Glasgow-A3.pdf
       variant: text
       download: true
 
