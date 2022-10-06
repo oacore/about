@@ -134,7 +134,7 @@ plans:
         url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
 
     - title: Supporting
-      caption: <a href='membership/supporting'>Membership fee</a>
+      caption: <a href='membership/supporting'>Membership fees</a>
       box:
         title: All Starting benefits
         caption: PLUS
@@ -149,7 +149,7 @@ plans:
         url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
     - title: Sustaining
-      caption: <a href='membership/sustaining'>Membership fee</a>
+      caption: <a href='membership/sustaining'>Membership fees</a>
       box:
         title: All Supporting benefits
         caption: PLUS
