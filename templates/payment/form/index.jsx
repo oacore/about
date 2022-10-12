@@ -137,7 +137,12 @@ const PaymentDefailsForm = observe(({ form }) => {
         }
         if (field.type === 'checkbox') {
           return (
-            <Checkbox id={field.id} labelText={Parser(field.label)} setCheckbox={eval(field.setCheckbox)} className={styles.paymentLink}/>
+            <Checkbox
+              id={field.id}
+              labelText={Parser(field.label)}
+              setCheckbox={eval(field.setCheckbox)}
+              className={styles.paymentLink}
+            />
         )
         }
         if (field.type === 'select') {

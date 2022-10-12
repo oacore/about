@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 import { classNames } from "@oacore/design/lib/utils";
 
 
-const Checkbox = ({ id, labelText, setCheckbox, className = '' }) => {
+const Checkbox = ({ id, labelText, setCheckbox, className }) => {
   const [isChecked, setIsChecked] = useState(false)
   const checkboxAnimationRef = useSpringRef()
   const checkboxAnimationStyle = useSpring({
@@ -39,7 +39,7 @@ const Checkbox = ({ id, labelText, setCheckbox, className = '' }) => {
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={styles.labelBox}>
+    <label key={id} className={styles.labelBox}>
       <input
         id={id}
         type="checkbox"
