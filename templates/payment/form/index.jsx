@@ -11,6 +11,8 @@ import { patchStats } from 'components/utils'
 import { ListBox } from 'design-v2/components'
 import { observe, useStore } from 'store'
 import { Markdown } from 'components'
+import Checkbox from "components/checkbox/animated";
+import Parser from 'html-react-parser'
 
 const PaymentDefailsForm = observe(({ form }) => {
   const { membership, dataProviders } = useStore()
@@ -37,6 +39,8 @@ const PaymentDefailsForm = observe(({ form }) => {
     initRepositorySelect,
   ])
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
+  const [isTermsConditions, setIsTermsConditions] = useState(false)
+  const [isNoRepositories, setIsNoRepositories] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -131,6 +135,11 @@ const PaymentDefailsForm = observe(({ form }) => {
             </div>
           )
         }
+        if (field.type === 'checkbox') {
+          return (
+            <Checkbox id={field.id} labelText={Parser(field.label)} setCheckbox={eval(field.setCheckbox)} className={styles.paymentLink}/>
+        )
+        }
         if (field.type === 'select') {
           return (
             <Select
@@ -191,6 +200,7 @@ const PaymentDefailsForm = observe(({ form }) => {
             loading={dataProviders.isLoading}
             setFormValue={handleSelectChange}
             onDelete={input.id !== initRepositorySelect.id && onDeleteInput}
+            required={!input.optional ?? true}
           />
         ))
       })}

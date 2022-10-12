@@ -14,6 +14,7 @@ const Select = ({
   loading,
   setFormValue,
   onDelete,
+  required= true,
 }) => {
   const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
     useSelect('', options)
@@ -42,7 +43,7 @@ const Select = ({
         onInput={handleOnInput}
         placeholder={placeholder}
         clearButtonClassName={styles.clearButton}
-        required
+        required={required}
       >
         {loading ? (
           <DesignSelect.Option className={styles.option} id="loader">

@@ -130,8 +130,10 @@ plans:
         - *statistics
         - *discovery-boost
       action:
-        title: Register your interest
-        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
+        title: Become member
+        url: '/payment'
+#        title: Register your interest
+#        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
 
     - title: Supporting
       caption: <a href='membership/supporting'>Membership fees</a>
@@ -145,8 +147,10 @@ plans:
         - *tech-support
         - *api
       action:
-        title: Register your interest
-        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+        title: Become member
+        url: '/membership/supporting'
+#        title: Register your interest
+#        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
     - title: Sustaining
       caption: <a href='membership/sustaining'>Membership fees</a>
@@ -163,8 +167,10 @@ plans:
         - *styles
         - *health-check
       action:
-        title: Register your interest
-        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+        title: Become member
+        url: '/membership/sustaining'
+#        title: Register your interest
+#        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
@@ -241,8 +247,8 @@ fee:
     **This discount is available for those who sign up for 3 or 5 years. Both annual and single payment invocing is possible.
   action:
     caption: Become member
-#    url: '/payment'
-    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
+    url: '/payment'
+#    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
   table:
     headers:
       - name: Data provider size

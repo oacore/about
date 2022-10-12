@@ -8,8 +8,10 @@ import {
 } from 'react-spring'
 
 import styles from './styles.module.scss'
+import { classNames } from "@oacore/design/lib/utils";
 
-const Checkbox = ({ id, labelText, setCheckbox }) => {
+
+const Checkbox = ({ id, labelText, setCheckbox, className = '' }) => {
   const [isChecked, setIsChecked] = useState(false)
   const checkboxAnimationRef = useSpringRef()
   const checkboxAnimationStyle = useSpring({
@@ -65,7 +67,7 @@ const Checkbox = ({ id, labelText, setCheckbox }) => {
           strokeDashoffset={checkmarkAnimationStyle.x}
         />
       </animated.svg>
-      <div className={styles.label}>{labelText}</div>
+      <div className={classNames.use(styles.label).join(className)}>{labelText}</div>
     </label>
   )
 }

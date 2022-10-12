@@ -30,13 +30,18 @@ form:
       type: async-select
       options: []
       id: repository
-    - label: Can't find repository?
-      type: caption
-      options:
-          - name: Register repository
-            action: 'benefits'
-          - name: Contact us
-            action: 'contact'
+      optional: true
+    - label: I cannot find one or more of my repositories in the list.
+      type: checkbox
+      id: noRepositories
+      setCheckbox: setIsNoRepositories
+#    - label: Can't find repository?
+#      type: caption
+#      options:
+#          - name: Register repository
+#            action: 'benefits'
+#          - name: Contact us
+#            action: 'contact'
     - label: Add
       type: button
       caption: You can add up to 3 repositories
@@ -44,16 +49,38 @@ form:
       label: Name of contact person
       id: contactName
       type: input
+    - placeholder: e.g. Developer
+      label: What is your role in the organisation?
+      id: roleInOrganisation
+      type: input
     - placeholder: e.g. john.doe@ac.uk
       label: Email
       id: email
       type: input
+    - placeholder: Select the type of your contract
+      label: Types of contracts
+      id: typesContracts
+      type: select
+      options:
+        - id: Annual rolling
+          name: Annual rolling
+          value: annual-rolling
+        - id: 3-year
+          name: 3-year
+          value: 3-year
+        - id: 5-year
+          name: 5-year
+          value: 5-year
     - placeholder: " "
       label: Any additional information you want to tell us
       id: additionalInfo
       type: input
       optional: true
       appendText: Optional
+    - label: Please read and agree to the CORE <a href='https://core.ac.uk/terms' target='_blank'>Terms and Conditions</a> and <a href='https://core.ac.uk/privacy' target='_blank'>Privacy notice</a>.
+      type: checkbox
+      id: termsConditions
+      setCheckbox: setIsTermsConditions
 
 additional-info:
   icon: "*"

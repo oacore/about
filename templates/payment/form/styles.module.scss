@@ -127,3 +127,12 @@
     top: 1.5rem;
   }
 }
+
+.payment-link {
+  display: inline-block;
+}
+
+.payment-link a {
+  color: var(--gray-600);
+  text-decoration: underline;
+}
