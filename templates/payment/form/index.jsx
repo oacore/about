@@ -62,8 +62,6 @@ const PaymentDefailsForm = observe(({ form }) => {
       if (/repository-[0-9]/gm.test(key)) delete formValues[key]
     })
 
-    formValues.noRepositoryInList = isRepositoryInList
-    formValues.approveTermsConditions = isTermsConditions
     formValues.planName = membership.data.planName.replace('"', '')
     formValues.price = membership.data.price
 
