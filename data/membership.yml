@@ -131,7 +131,7 @@ plans:
         - *discovery-boost
       action:
         title: Become member
-        url: '/payment/starting'
+        url: '/payment'
 #        title: Register your interest
 #        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
 

@@ -39,11 +39,17 @@ const PaymentDefailsForm = observe(({ form }) => {
     initRepositorySelect,
   ])
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
-  const [isRepositoryInList, setIsRepositoryInList] = useState(false)
+  const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if(!isRepositoriesSelected && (!formValues.repository || formValues.repository.length === 0)) {
+      let selectRepo = e.target['select-repository'].parentNode
+      selectRepo.classList.add(styles.error);
+      return
+    }
 
     if(!isTermsConditions){
       return
@@ -64,6 +70,7 @@ const PaymentDefailsForm = observe(({ form }) => {
 
     formValues.planName = membership.data.planName.replace('"', '')
     formValues.price = membership.data.price
+    delete formValues['noRepositories']
 
     membership.setData({
       ...formValues,
@@ -146,7 +153,7 @@ const PaymentDefailsForm = observe(({ form }) => {
             <Checkbox
               id={field.id}
               labelText={Parser(field.label)}
-              setCheckbox={ field.id === 'termsConditions' ? setIsTermsConditions : setIsRepositoryInList }
+              setCheckbox={ field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected }
               className={styles.paymentLink}
             />
         )

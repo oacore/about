@@ -140,3 +140,17 @@
   color: var(--gray-600);
   text-decoration: underline;
 }
+
+
+// Duplicated need move out
+
+.error input,
+.error span {
+  border: 1px solid var(--danger-dark);
+  color: var(--danger-dark);
+  background: var(--danger-light-background);
+}
+
+.error label {
+  color: var(--danger-dark);
+}
