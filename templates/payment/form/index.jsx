@@ -39,12 +39,15 @@ const PaymentDefailsForm = observe(({ form }) => {
     initRepositorySelect,
   ])
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
+  const [isRepositoryInList, setIsRepositoryInList] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
-  const [isNoRepositories, setIsNoRepositories] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
+    if(!isTermsConditions){
+      return
+    }
     // Make array from repos id's
     const repository = Object.values(
       Object.keys(formValues)
@@ -58,6 +61,11 @@ const PaymentDefailsForm = observe(({ form }) => {
     Object.keys(formValues).forEach((key) => {
       if (/repository-[0-9]/gm.test(key)) delete formValues[key]
     })
+
+    formValues.noRepositoryInList = isRepositoryInList
+    formValues.approveTermsConditions = isTermsConditions
+    formValues.planName = membership.data.planName.replace('"', '')
+    formValues.price = membership.data.price
 
     membership.setData({
       ...formValues,
@@ -140,7 +148,7 @@ const PaymentDefailsForm = observe(({ form }) => {
             <Checkbox
               id={field.id}
               labelText={Parser(field.label)}
-              setCheckbox={eval(field.setCheckbox)}
+              setCheckbox={ field.id === 'termsConditions' ? setIsTermsConditions : setIsRepositoryInList }
               className={styles.paymentLink}
             />
         )
@@ -213,7 +221,7 @@ const PaymentDefailsForm = observe(({ form }) => {
         <Markdown className={styles.price}>
           {patchStats(form.price, membership.data)}
         </Markdown>
-        <Button type="submit" variant="contained">
+        <Button type="submit" variant="contained" className={isTermsConditions ? '' : styles.buttonUnActive} >
           {form.action.caption}
         </Button>
       </div>

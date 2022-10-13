@@ -81,10 +81,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
         </table>
 
         <Markdown
-          className={classNames.use(
-            styles.feeSectionNote,
-            styles.feeSectionNoteSecond
-          )}
+          className={classNames.use(styles.feeSectionNote, styles.feeSectionNoteSecond)}
         >
           {data.fee.noteSecond}
         </Markdown>
