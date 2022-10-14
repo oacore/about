@@ -39,7 +39,7 @@ const Checkbox = ({ id, labelText, setCheckbox, className }) => {
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label key={id} className={styles.labelBox}>
+    <label key={labelText} className={styles.labelBox}>
       <input
         id={id}
         type="checkbox"

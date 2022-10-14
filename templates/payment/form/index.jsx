@@ -150,12 +150,14 @@ const PaymentDefailsForm = observe(({ form }) => {
         }
         if (field.type === 'checkbox') {
           return (
-            <Checkbox
-              id={field.id}
-              labelText={Parser(field.label)}
-              setCheckbox={ field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected }
-              className={styles.paymentLink}
-            />
+            <div key={field.id}>
+              <Checkbox
+                id={field.id}
+                labelText={Parser(field.label)}
+                setCheckbox={ field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected }
+                className={styles.paymentLink}
+              />
+            </div>
         )
         }
         if (field.type === 'select') {
@@ -219,6 +221,7 @@ const PaymentDefailsForm = observe(({ form }) => {
             setFormValue={handleSelectChange}
             onDelete={input.id !== initRepositorySelect.id && onDeleteInput}
             required={!input.optional ?? true}
+            disabled={isRepositoriesSelected}
           />
         ))
       })}
