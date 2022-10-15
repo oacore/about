@@ -1,21 +1,21 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Form, TextField } from '@oacore/design/lib/elements/forms'
+import React, {useEffect, useRef, useState} from 'react'
+import {Form, TextField} from '@oacore/design/lib/elements/forms'
 import classNames from '@oacore/design/lib/utils/class-names'
-import { Button } from '@oacore/design/lib/elements'
-import { useOutsideClick } from '@oacore/design/lib/hooks'
+import {Button} from '@oacore/design/lib/elements'
+import {useOutsideClick} from '@oacore/design/lib/hooks'
 
 import styles from './styles.module.scss'
 import Select from './select'
 
-import { patchStats } from 'components/utils'
-import { ListBox } from 'design-v2/components'
-import { observe, useStore } from 'store'
-import { Markdown } from 'components'
-import Checkbox from "components/checkbox/animated";
+import {patchStats, patchStatsFull} from 'components/utils'
+import {ListBox} from 'design-v2/components'
+import {observe, useStore} from 'store'
+import {Markdown} from 'components'
+import {Checkbox, Radiobutton} from "components/checkbox";
 import Parser from 'html-react-parser'
 
-const PaymentDefailsForm = observe(({ form }) => {
-  const { membership, dataProviders } = useStore()
+const PaymentDefailsForm = observe(({form}) => {
+  const {membership, membershipPrice, dataProviders} = useStore()
 
   const helpBoxRef = useRef(null)
 
@@ -41,17 +41,18 @@ const PaymentDefailsForm = observe(({ form }) => {
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
   const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
+  const [isLoaded, setLoaded] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if(!isRepositoriesSelected && (!formValues.repository || formValues.repository.length === 0)) {
+    if (!isRepositoriesSelected && (!formValues.repository || formValues.repository.length === 0)) {
       let selectRepo = e.target['select-repository'].parentNode
       selectRepo.classList.add(styles.error);
       return
     }
 
-    if(!isTermsConditions){
+    if (!isTermsConditions) {
       return
     }
     // Make array from repos id's
@@ -76,15 +77,24 @@ const PaymentDefailsForm = observe(({ form }) => {
       ...formValues,
       repository,
     })
+    membershipPrice.setData({
+      ...formValues,
+      repository,
+    })
 
     await membership.submit()
   }
+
   const handleInputChange = (e) => {
-    const { name, value } = e.target
+    const {name, value} = e.target
     setFormValues({
       ...formValues,
       [name]: value,
     })
+  }
+
+  const fetchPrice = async () => {
+    await membershipPrice.fetchPrice()
   }
 
   const handleSelectChange = (name, value) => {
@@ -92,6 +102,12 @@ const PaymentDefailsForm = observe(({ form }) => {
       ...formValues,
       [name]: value,
     })
+    if (name.includes('repository')) {
+      setLoaded(true)
+      membershipPrice.data.repository.push(value)
+      membershipPrice.data.planName = membership.data.planName.replace('"', '')
+      fetchPrice()
+    }
   }
 
   const toggleHelpBox = () => {
@@ -118,10 +134,20 @@ const PaymentDefailsForm = observe(({ form }) => {
 
   const onDeleteInput = (id) => {
     const list = repositoryInputsList.filter((input) => input.id !== id)
-    const { [id]: _tmp, ...rest } = formValues
+    const {[id]: _tmp, ...rest} = formValues
 
     setRepositoryInputsList(list)
     setFormValues(rest)
+
+    // Update priceCalculated
+    let repository = []
+    for (const [key, value] of Object.entries(rest)) {
+      if (key.includes('repository')) {
+        repository.push(value)
+      }
+    }
+    membershipPrice.data.repository = repository
+    fetchPrice()
   }
 
   return (
@@ -154,12 +180,24 @@ const PaymentDefailsForm = observe(({ form }) => {
               <Checkbox
                 id={field.id}
                 labelText={Parser(field.label)}
-                setCheckbox={ field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected }
+                setCheckbox={field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected}
                 className={styles.paymentLink}
               />
             </div>
-        )
+          )
         }
+        // if (field.type === 'radio') {
+        //   return (
+        //     <div key={field.id}>
+        //       <Radiobutton
+        //         id={field.id}
+        //         labelText={Parser(field.label)}
+        //         // setCheckbox={ field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected }
+        //         options={field.options}
+        //       />
+        //     </div>
+        //   )
+        // }
         if (field.type === 'select') {
           return (
             <Select
@@ -184,7 +222,7 @@ const PaymentDefailsForm = observe(({ form }) => {
                 type="button"
                 className={classNames.use(styles.buttonPlus, {
                   [styles.hidden]:
-                    repositoryInputsList.length === form.maxRepositoriesCount,
+                  repositoryInputsList.length === form.maxRepositoriesCount,
                 })}
                 onClick={onCreateNewInput}
               />
@@ -203,7 +241,7 @@ const PaymentDefailsForm = observe(({ form }) => {
                 {field.label}
               </button>
               {visibleHelpBox && (
-                <ListBox className={styles.helpBox} list={field.options} />
+                <ListBox className={styles.helpBox} list={field.options}/>
               )}
             </div>
           )
@@ -227,9 +265,12 @@ const PaymentDefailsForm = observe(({ form }) => {
       })}
       <div className={styles.box}>
         <Markdown className={styles.price}>
-          {patchStats(form.price, membership.data)}
+          {((!isLoaded && membershipPrice.priceCalculated !== 0) || isRepositoriesSelected) ?
+            patchStats(form.price, membership.data) +'-membership-' + membership.data.price
+            : patchStatsFull(form.priceCalculated, membershipPrice.data)  + '-membershipPrice-' + membershipPrice.data.priceCalculated
+          }
         </Markdown>
-        <Button type="submit" variant="contained" className={isTermsConditions ? '' : styles.buttonUnActive} >
+        <Button type="submit" variant="contained" className={isTermsConditions ? '' : styles.buttonUnActive}>
           {form.action.caption}
         </Button>
       </div>

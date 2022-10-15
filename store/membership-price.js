@@ -1,11 +1,12 @@
-import { makeObservable, observable, action } from 'mobx'
+import {makeObservable, observable, action} from 'mobx'
 
-import { getMembershipPrice } from '../api/services'
+import {getMembershipPrice} from '../api/services'
 
 class MembershipPrice {
   data = {
     repository: [],
     planName: '',
+    priceCalculated: 0,
   }
 
   isLoadingPrice = false
@@ -14,9 +15,10 @@ class MembershipPrice {
     makeObservable(this, {
       data: observable,
       isLoadingPrice: observable,
+      setIsLoadingPrice: action,
       setData: action,
-      fetchData: action,
-      reset: action,
+      fetchPrice: action,
+      // reset: action,
     })
   }
 
@@ -28,22 +30,32 @@ class MembershipPrice {
     this.isLoadingPrice = boolean
   }
 
-  async fetchData() {
-    this.setIsLoadingPrice(true)
-
+  async fetchPrice() {
+    // this.setIsLoadingPrice(false)
     try {
-      const { data }  = await getMembershipPrice(this.data)
-      this.setData(data)
+      // Uniq repository id's
+      this.data.repository = [...new Set(this.data.repository)];
 
-      // console.log("getMembershipPrice data")
-      // console.log(data)
-
+      const {data} = await getMembershipPrice(this.data)
+      if (data.price && data.price > 0) {
+        this.data.priceCalculated = data.price
+        this.setIsLoadingPrice(true)
+      }
     } catch (error) {
       console.error(error)
     } finally {
       this.setIsLoadingPrice(false)
     }
   }
+
+  // reset() {
+  //   this.data = {
+  //     repository: [],
+  //     planName: '',
+  //     priceCalculated: 0,
+  //   }
+  //   this.isLoadingPrice = false
+  // }
 
 }
 

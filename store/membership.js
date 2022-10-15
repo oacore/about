@@ -7,10 +7,11 @@ import routes from '../core.routes.yml'
 class Membership {
   data = {
     price: 0,
+    priceCalculated: 0,
     planName: '',
     size: '',
-    transactionToken: 'TOKEN_saddsadasdasdasdasdqweqwedasd',
-    transactionDescription: 'Test transaction',
+    transactionToken: '',
+    transactionDescription: '',
   }
 
   constructor() {
@@ -48,6 +49,7 @@ class Membership {
   reset() {
     this.data = {
       price: 0,
+      priceCalculated: 0,
       planName: '',
     }
   }
