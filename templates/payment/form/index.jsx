@@ -42,6 +42,8 @@ const PaymentDefailsForm = observe(({form}) => {
   const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
   const [isLoaded, setLoaded] = useState(false)
+  const [radioButtonsState, setRadioButtonsState] = useState([]);
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -71,6 +73,7 @@ const PaymentDefailsForm = observe(({form}) => {
 
     formValues.planName = membership.data.planName.replace('"', '')
     formValues.price = membership.data.price
+    formValues.invoicingFrequency = radioButtonsState.invoicingFrequency
     delete formValues['noRepositories']
 
     membership.setData({
@@ -186,18 +189,18 @@ const PaymentDefailsForm = observe(({form}) => {
             </div>
           )
         }
-        // if (field.type === 'radio') {
-        //   return (
-        //     <div key={field.id}>
-        //       <Radiobutton
-        //         id={field.id}
-        //         labelText={Parser(field.label)}
-        //         // setCheckbox={ field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected }
-        //         options={field.options}
-        //       />
-        //     </div>
-        //   )
-        // }
+        if (field.type === 'radio') {
+          return (
+            <div key={field.id}>
+              <Radiobutton
+                id={field.id}
+                labelText={Parser(field.label)}
+                setRadioButtonsState={setRadioButtonsState}
+                options={field.options}
+              />
+            </div>
+          )
+        }
         if (field.type === 'select') {
           return (
             <Select

@@ -1,31 +1,31 @@
-import React, { useState } from 'react'
-import {
-  animated,
-  useSpring,
-  config,
-  useSpringRef,
-  useChain,
-} from 'react-spring'
+import React, {useEffect} from 'react'
 
 import styles from './styles.module.scss'
-import { classNames } from "@oacore/design/lib/utils";
 
+const Radiobutton = ({id, labelText, options, setRadioButtonsState, className = null}) => {
+  const handleRadioButton = (id, value, setRadioButtonsState) => {
+    const states = {
+      [id]: value
+    }
+    setRadioButtonsState(states);
+  }
 
-const Radiobutton = ({ id, labelText, options, setCheckbox, className }) => {
-  const [isChecked, setIsChecked] = useState(false)
+  useEffect(() => {
+    handleRadioButton(id, options[0].id, setRadioButtonsState)
+  }, []);
 
-
-  // console.log(options)
   return (
-    <div key="radiobutton-wrapper">
+    <div key={labelText}>
       <div>{labelText}:</div>
       {options.map((field) => {
         return (
           <div className="form-check">
-            <input className="form-check-input" type="radio" name={id} id={field.id} />
-              <label className="form-check-label" htmlFor={field.id} >
-                {field.value}
-              </label>
+            <input className="form-check-input " type="radio" name={id} id={field.id}
+                   onChange={() => handleRadioButton(id, field.id, setRadioButtonsState)}
+            />
+            <label className={styles.radioLabel} htmlFor={field.id}>
+              {field.value}
+            </label>
           </div>
         )
       })}
