@@ -77,20 +77,19 @@ form:
       type: input
       optional: true
       appendText: Optional
+    - label: Invoicing frequency
+      type: radio
+      id: invoicingFrequency
+      options:
+        - id: single-payment
+          name: single-payment
+          value: Single payment
+        - id: annually
+          name: annually
+          value: Annually
     - label: Please read and agree to the CORE <a href='https://core.ac.uk/terms' target='_blank'>Terms and Conditions</a> and <a href='https://core.ac.uk/privacy' target='_blank'>Privacy notice</a>.
       type: checkbox
       id: approveTermsConditions
-
-#    - label: Invoicing frequency
-#      type: radio
-#      id: invoicingFrequency
-#      options:
-#        - id: single-payment
-#          name: single-payment
-#          value: Single payment
-#        - id: annually
-#          name: annually
-#          value: Annually
 
 additional-info:
   icon: "*"
