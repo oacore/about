@@ -269,8 +269,8 @@ const PaymentDefailsForm = observe(({form}) => {
       <div className={styles.box}>
         <Markdown className={styles.price}>
           {((!isLoaded && membershipPrice.priceCalculated !== 0) || isRepositoriesSelected) ?
-            patchStats(form.price, membership.data) +'-membership-' + membership.data.price
-            : patchStatsFull(form.priceCalculated, membershipPrice.data)  + '-membershipPrice-' + membershipPrice.data.priceCalculated
+            patchStats(form.price, membership.data)
+            : patchStatsFull(form.priceCalculated, membershipPrice.data)
           }
         </Markdown>
         <Button type="submit" variant="contained" className={isTermsConditions ? '' : styles.buttonUnActive}>
