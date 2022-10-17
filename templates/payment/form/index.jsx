@@ -18,6 +18,7 @@ const PaymentDefailsForm = observe(({form}) => {
   const {membership, membershipPrice, dataProviders} = useStore()
 
   const helpBoxRef = useRef(null)
+  const planName = membership.data.planName.replace('"', '')
 
   useEffect(() => {
     dataProviders.fetchData()
@@ -71,7 +72,7 @@ const PaymentDefailsForm = observe(({form}) => {
       if (/repository-[0-9]/gm.test(key)) delete formValues[key]
     })
 
-    formValues.planName = membership.data.planName.replace('"', '')
+    formValues.planName = planName
     formValues.price = membership.data.price
     formValues.invoicingFrequency = radioButtonsState.invoicingFrequency
     delete formValues['noRepositories']
@@ -189,7 +190,7 @@ const PaymentDefailsForm = observe(({form}) => {
             </div>
           )
         }
-        if (field.type === 'radio') {
+        if (field.type === 'radio' && planName !== 'starting') {
           return (
             <div key={field.id}>
               <Radiobutton
@@ -267,12 +268,13 @@ const PaymentDefailsForm = observe(({form}) => {
         ))
       })}
       <div className={styles.box}>
-        <Markdown className={styles.price}>
-          {((!isLoaded && membershipPrice.priceCalculated !== 0) || isRepositoriesSelected) ?
-            patchStats(form.price, membership.data)
-            : patchStatsFull(form.priceCalculated, membershipPrice.data)
-          }
-        </Markdown>
+        {(planName === 'starting') ? '' :
+          (<Markdown className={styles.price}>
+            {((!isLoaded && membershipPrice.priceCalculated !== 0) || isRepositoriesSelected) ?
+              patchStats(form.price, membership.data)
+              : patchStatsFull(form.priceCalculated, membershipPrice.data)
+            }
+          </Markdown>)}
         <Button type="submit" variant="contained" className={isTermsConditions ? '' : styles.buttonUnActive}>
           {form.action.caption}
         </Button>

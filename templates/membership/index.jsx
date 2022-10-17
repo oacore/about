@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, {useRef, useState} from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { useOutsideClick } from '@oacore/design/lib/hooks'
 import Parser from 'html-react-parser'
@@ -41,45 +41,65 @@ const DetailsBox = ({ title, description }) => {
   )
 }
 
-const Card = ({ plan }) => (
-  <article className={styles.plan} key={plan.title}>
-    <div className={styles.planHeader}>
-      <h5>{plan.title}</h5>
-      {plan.caption &&
-        Parser(
-          `<span className=${styles.planHeaderCaption}>${plan.caption}</span>`
-        )}
-    </div>
-    <div className={styles.divider} />
-    <div className={styles.planContent}>
-      {plan.box && (
-        <div className={styles.planBox}>
-          <Markdown className={styles.planBoxTitle}>{plan.box.title}</Markdown>
-          <Markdown className={styles.planBoxCaption} tag="span">
-            {plan.box.caption}
-          </Markdown>
-        </div>
-      )}
-      <ul className={styles.planAdvantages}>
-        {plan.advantages.map((advantage) => (
-          <li key={advantage.title}>
-            <DetailsBox
-              title={advantage.title}
-              description={advantage.description}
-            />
-          </li>
-        ))}
-      </ul>
-      <div className={styles.planContentButton}>
-        <Button variant="contained" href={plan.action.url}>
-          {plan.action.title}
-        </Button>
-      </div>
-    </div>
-  </article>
-)
 
-const MembershipPageTemplate = ({ data }) => (
+const Card = ({ plan, membership, router }) => {
+  const handleClickPlanStarting = () => {
+    membership.setData({
+        planName: 'starting'
+      })
+    router.push(plan.action.url)
+  }
+
+  return (
+    <article className={styles.plan} key={plan.title}>
+      <div className={styles.planHeader}>
+        <h5>{plan.title}</h5>
+        {plan.caption &&
+          Parser(
+            `<span className=${styles.planHeaderCaption}>${plan.caption}</span>`
+          )}
+      </div>
+      <div className={styles.divider} />
+      <div className={styles.planContent}>
+        {plan.box && (
+          <div className={styles.planBox}>
+            <Markdown className={styles.planBoxTitle}>{plan.box.title}</Markdown>
+            <Markdown className={styles.planBoxCaption} tag="span">
+              {plan.box.caption}
+            </Markdown>
+          </div>
+        )}
+        <ul className={styles.planAdvantages}>
+          {plan.advantages.map((advantage) => (
+            <li key={advantage.title}>
+              <DetailsBox
+                title={advantage.title}
+                description={advantage.description}
+              />
+            </li>
+          ))}
+        </ul>
+        <div className={styles.planContentButton}>
+          {plan.action.url.includes('starting') ?
+            (
+              <Button
+                variant="contained"
+                onClick={handleClickPlanStarting}
+              >
+                {plan.action.title}
+              </Button>
+            )
+            : (<Button variant="contained" href={plan.action.url}>
+              {plan.action.title}
+            </Button>)
+          }
+        </div>
+      </div>
+    </article>
+  )
+}
+
+const MembershipPageTemplate = ({ data, membership, router }) => (
   <Layout>
     <Section id="metadata" className={styles.header}>
       <div>
@@ -114,7 +134,7 @@ const MembershipPageTemplate = ({ data }) => (
       <h4>{data.plans.title}</h4>
       <div className={styles.plansWrapper}>
         {data.plans.cards.map((plan) => (
-          <Card key={plan.title} plan={plan} />
+          <Card key={plan.title} plan={plan} membership={membership} router={router} />
         ))}
       </div>
     </Section>
