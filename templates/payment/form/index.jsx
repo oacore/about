@@ -110,7 +110,7 @@ const PaymentDefailsForm = observe(({form}) => {
     if (name.includes('repository')) {
       setLoaded(true)
       membershipPrice.data.repository.push(value)
-      membershipPrice.data.planName = membership.data.planName.replace('"', '')
+      membershipPrice.data.planName = planName
       fetchPrice()
     }
   }
@@ -271,7 +271,7 @@ const PaymentDefailsForm = observe(({form}) => {
       <div className={styles.box}>
         {(planName === 'starting') ? '' :
           (<Markdown className={styles.price}>
-            {((!isLoaded && membershipPrice.priceCalculated !== 0) || isRepositoriesSelected) ?
+            {((!isLoaded && membershipPrice.priceCalculated < 1) || isRepositoriesSelected) ?
               patchStats(form.price, membership.data)
               : patchStatsFull(form.priceCalculated, membershipPrice.data)
             }
