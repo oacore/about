@@ -42,14 +42,7 @@ const DetailsBox = ({ title, description }) => {
 }
 
 
-const Card = ({ plan, membership, router }) => {
-  const handleClickPlanStarting = () => {
-    membership.setData({
-        planName: 'starting'
-      })
-    router.push(plan.action.url)
-  }
-
+const Card = ({ plan }) => {
   return (
     <article className={styles.plan} key={plan.title}>
       <div className={styles.planHeader}>
@@ -80,26 +73,16 @@ const Card = ({ plan, membership, router }) => {
           ))}
         </ul>
         <div className={styles.planContentButton}>
-          {plan.action.url.includes('starting') ?
-            (
-              <Button
-                variant="contained"
-                onClick={handleClickPlanStarting}
-              >
-                {plan.action.title}
-              </Button>
-            )
-            : (<Button variant="contained" href={plan.action.url}>
+          <Button variant="contained" href={plan.action.url}>
               {plan.action.title}
-            </Button>)
-          }
+          </Button>
         </div>
       </div>
     </article>
   )
 }
 
-const MembershipPageTemplate = ({ data, membership, router }) => (
+const MembershipPageTemplate = ({ data }) => (
   <Layout>
     <Section id="metadata" className={styles.header}>
       <div>
@@ -134,7 +117,7 @@ const MembershipPageTemplate = ({ data, membership, router }) => (
       <h4>{data.plans.title}</h4>
       <div className={styles.plansWrapper}>
         {data.plans.cards.map((plan) => (
-          <Card key={plan.title} plan={plan} membership={membership} router={router} />
+          <Card key={plan.title} plan={plan} />
         ))}
       </div>
     </Section>
