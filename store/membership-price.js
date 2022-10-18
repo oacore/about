@@ -19,7 +19,6 @@ class MembershipPrice {
       setIsLoadingPrice: action,
       setData: action,
       fetchPrice: action,
-      // reset: action,
     })
   }
 
@@ -49,15 +48,6 @@ class MembershipPrice {
       this.setIsLoadingPrice(false)
     }
   }
-
-  // reset() {
-  //   this.data = {
-  //     repository: [],
-  //     planName: '',
-  //     priceCalculated: 0,
-  //   }
-  //   this.isLoadingPrice = false
-  // }
 
 }
 

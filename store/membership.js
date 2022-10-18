@@ -35,6 +35,7 @@ class Membership {
     const { pathname } = Router
     try {
       await createMembershipPayment(this.data)
+      this.reset()
       Router.push({
         pathname: pathname + routes.payment.children.success,
       })

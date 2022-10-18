@@ -203,7 +203,7 @@ const PaymentDefailsForm = observe(({form}) => {
           )
         }
         if (field.type === 'radio') {
-          if (planName === 'starting') return (<>11 - starting</>)
+          if (planName === 'starting') return (<div key={field.id}></div>)
           return (
             <div key={field.id}>
               <Radiobutton
@@ -216,6 +216,7 @@ const PaymentDefailsForm = observe(({form}) => {
           )
         }
         if (field.type === 'select') {
+          if (planName === 'starting' && field.id === 'typesContracts') return (<div key={field.id}></div>)
           return (
             <Select
               key={field.id}
