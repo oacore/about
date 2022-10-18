@@ -169,6 +169,7 @@ const PaymentDefailsForm = observe(({ form }) => {
 
     // Update priceCalculated
     const repository = []
+    // eslint-disable-next-line no-restricted-syntax
     for (const [key, value] of Object.entries(rest))
       if (key.includes('repository')) repository.push(value)
 
