@@ -8,6 +8,7 @@ class Membership {
   data = {
     price: 0,
     priceCalculated: 0,
+    discount: 0,
     planName: '',
     size: '',
     transactionToken: 'TOKEN',
@@ -52,6 +53,7 @@ class Membership {
       price: 0,
       priceCalculated: 0,
       planName: '',
+      discount: 0,
     }
   }
 }
