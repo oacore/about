@@ -9,25 +9,11 @@ import PaymentSuccessPage from "./success";
 
 export const slugs = ['starting', 'supporting', 'sustaining', 'success', 'error']
 
-export async function getStaticProps({ params }) {
-  const { slug } = params
+export async function getStaticProps({params}) {
+  const {slug} = params
 
   const data = {
-    // header: {
-    //   title: textData.header.title,
-    //   description: textData.fee.description[slug],
-    // },
-    // fee: {
-    //   ...textData.fee,
-    //   table: {
-    //     headers: textData.fee.table.headers,
-    //     ...textData.fee.table[slug],
-    //   },
-    // },
-    planName: slug,
-    // comparisonTable: textData.comparisonTable,
-    // box: textData.box,
-    // discount: textData.discount,
+    planName: slug
   }
 
   return {
@@ -39,7 +25,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const paths = slugs.map((slug) => ({
-    params: { slug },
+    params: {slug},
   }))
 
   return {
@@ -50,11 +36,9 @@ export async function getStaticPaths() {
 
 const PaymentPage = ({data}) => {
   const {membership} = useStore()
-  const { planName } = data
-  if(planName === 'success')  return <PaymentSuccessPage />
-  if(planName === 'error')  return <PaymentErrorPage />
-
-  console.log("PaymentPage planName " + planName)
+  const {planName} = data
+  if (planName === 'success') return <PaymentSuccessPage/>
+  if (planName === 'error') return <PaymentErrorPage/>
 
   React.useEffect(() => {
     membership.setData({
