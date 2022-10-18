@@ -65,10 +65,10 @@ form:
         - id: Annual rolling
           name: Annual rolling
           value: annual-rolling
-        - id: 3-year
+        - id: 10
           name: 3-year
           value: 3-year
-        - id: 5-year
+        - id: 15
           name: 5-year
           value: 5-year
     - placeholder: " "
