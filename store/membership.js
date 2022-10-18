@@ -10,8 +10,8 @@ class Membership {
     priceCalculated: 0,
     planName: '',
     size: '',
-    transactionToken: '',
-    transactionDescription: '',
+    transactionToken: 'TOKEN',
+    transactionDescription: 'description',
   }
 
   constructor() {
@@ -37,11 +37,12 @@ class Membership {
       await createMembershipPayment(this.data)
       this.reset()
       Router.push({
-        pathname: pathname + routes.payment.children.success,
+        pathname: pathname + routes.payment.status.success,
+        // pathname: pathname + routes.payment.children.success,
       })
     } catch (error) {
       Router.push({
-        pathname: pathname + routes.payment.children.error,
+        pathname: pathname + routes.payment.status.error,
       })
       console.error(error)
     }

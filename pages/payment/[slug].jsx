@@ -58,7 +58,6 @@ const PaymentPage = ({data}) => {
     })
   }, [])
 
-  // return <>1</>
   return (
     <Page title={textData.shortTitle} description={textData.caption}>
       <PaymentPageTemplate textData={textData}/>

@@ -102,17 +102,19 @@ const PaymentDefailsForm = observe(({form}) => {
       ...formValues,
       [name]: value,
     })
-    if (name.includes('repository')) {
-      membershipPrice.data.repository.push(value)
-      membershipPrice.data.planName = planName
 
-      fetchPrice()
-    }
+    if (planName !== 'starting') {
+      if (name.includes('repository')) {
+        membershipPrice.data.repository.push(value)
+        membershipPrice.data.planName = planName
+        fetchPrice()
+      }
 
-    if (name.includes('typesContracts')) {
-      membershipPrice.data.typesContracts = value
+      if (name.includes('typesContracts')) {
+        membershipPrice.data.typesContracts = value
+      }
+      calculatePrice()
     }
-    calculatePrice()
   }
 
   const calculatePrice = () => {
