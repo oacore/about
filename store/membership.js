@@ -37,12 +37,11 @@ class Membership {
       await createMembershipPayment(this.data)
       this.reset()
       Router.push({
-        pathname: pathname + routes.payment.status.success,
-        // pathname: pathname + routes.payment.children.success,
+        pathname: pathname + routes.payment.children.success,
       })
     } catch (error) {
       Router.push({
-        pathname: pathname + routes.payment.status.error,
+        pathname: pathname + routes.payment.children.error,
       })
       console.error(error)
     }
