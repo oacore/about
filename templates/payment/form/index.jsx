@@ -206,13 +206,12 @@ const PaymentDefailsForm = observe(({form}) => {
           if (planName === 'starting') return (<>11 - starting</>)
           return (
             <div key={field.id}>
-              radio
-              {/*<Radiobutton*/}
-              {/*  id={field.id}*/}
-              {/*  labelText={Parser(field.label)}*/}
-              {/*  setRadioButtonsState={setRadioButtonsState}*/}
-              {/*  options={field.options}*/}
-              {/*/>*/}
+              <Radiobutton
+                id={field.id}
+                labelText={Parser(field.label)}
+                setRadioButtonsState={setRadioButtonsState}
+                options={field.options}
+              />
             </div>
           )
         }

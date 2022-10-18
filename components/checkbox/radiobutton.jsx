@@ -19,7 +19,7 @@ const Radiobutton = ({id, labelText, options, setRadioButtonsState, className = 
       <div>{labelText}:</div>
       {options.map((field) => {
         return (
-          <div className="form-check">
+          <div key={field.value} className="form-check">
             <input className="form-check-input " type="radio" name={id} id={field.id}
                    onChange={() => handleRadioButton(id, field.id, setRadioButtonsState)}
             />
