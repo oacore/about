@@ -8,14 +8,6 @@ import textData from 'data/payment.yml'
 import PaymentPageTemplate from 'templates/payment'
 import { useStore } from 'store'
 
-export const slugs = [
-  'starting',
-  'supporting',
-  'sustaining',
-  'success',
-  'error',
-]
-
 export async function getStaticProps({ params }) {
   const { slug } = params
 
@@ -31,12 +23,8 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = slugs.map((slug) => ({
-    params: { slug },
-  }))
-
   return {
-    paths,
+    paths: ['/starting', '/supporting', '/sustaining', '/success', '/error'],
     fallback: false,
   }
 }
@@ -44,8 +32,8 @@ export async function getStaticPaths() {
 const PaymentPage = ({ data }) => {
   const { membership } = useStore()
   const { planName } = data
-  if (planName === 'success') return <PaymentSuccessPage />
-  if (planName === 'error') return <PaymentErrorPage />
+  if (planName === '/success') return <PaymentSuccessPage />
+  if (planName === '/error') return <PaymentErrorPage />
 
   React.useEffect(() => {
     membership.setData({
