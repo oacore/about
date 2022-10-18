@@ -5,7 +5,7 @@ import textData from 'data/payment.yml'
 import PaymentPageTemplate from 'templates/payment'
 import { useStore } from 'store'
 
-export const slugs = ['starting', 'supporting', 'sustaining']
+export const slugsPaymentPage = ['starting', 'supporting', 'sustaining']
 
 export async function getStaticProps({ params }) {
   const { slug } = params
@@ -22,7 +22,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const paths = slugs.map((slug) => ({
+  const paths = slugsPaymentPage.map((slug) => ({
     params: { slug },
   }))
 
