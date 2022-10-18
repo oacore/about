@@ -10,13 +10,10 @@ export const useSelect = (initialValue, initOptions) => {
   const handleOnInput = (data) => {
     if (data.value) {
       const result = initOptions.filter((option) => {
-          if (Number.isInteger(data.value)) {
-            option.name.toLowerCase().includes(data.value)
-          } else {
-            option.name.toLowerCase().includes(data.value.toLowerCase())
-          }
-        }
-      )
+        if (Number.isInteger(data.value))
+          option.name.toLowerCase().includes(data.value)
+        else option.name.toLowerCase().includes(data.value.toLowerCase())
+      })
 
       setSuggestions(result)
     }

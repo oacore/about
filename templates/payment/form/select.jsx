@@ -14,8 +14,8 @@ const Select = ({
   loading,
   setFormValue,
   onDelete,
-  required= true,
-  disabled= false,
+  required = true,
+  disabled = false,
 }) => {
   const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
     useSelect('', options)

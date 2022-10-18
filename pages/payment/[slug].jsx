@@ -1,19 +1,26 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 
-import {Page} from 'components'
+import PaymentErrorPage from './error'
+import PaymentSuccessPage from './success'
+
+import { Page } from 'components'
 import textData from 'data/payment.yml'
 import PaymentPageTemplate from 'templates/payment'
-import {useStore} from 'store'
-import PaymentErrorPage from "./error";
-import PaymentSuccessPage from "./success";
+import { useStore } from 'store'
 
-export const slugs = ['starting', 'supporting', 'sustaining', 'success', 'error']
+export const slugs = [
+  'starting',
+  'supporting',
+  'sustaining',
+  'success',
+  'error',
+]
 
-export async function getStaticProps({params}) {
-  const {slug} = params
+export async function getStaticProps({ params }) {
+  const { slug } = params
 
   const data = {
-    planName: slug
+    planName: slug,
   }
 
   return {
@@ -25,7 +32,7 @@ export async function getStaticProps({params}) {
 
 export async function getStaticPaths() {
   const paths = slugs.map((slug) => ({
-    params: {slug},
+    params: { slug },
   }))
 
   return {
@@ -34,21 +41,21 @@ export async function getStaticPaths() {
   }
 }
 
-const PaymentPage = ({data}) => {
-  const {membership} = useStore()
-  const {planName} = data
-  if (planName === 'success') return <PaymentSuccessPage/>
-  if (planName === 'error') return <PaymentErrorPage/>
+const PaymentPage = ({ data }) => {
+  const { membership } = useStore()
+  const { planName } = data
+  if (planName === 'success') return <PaymentSuccessPage />
+  if (planName === 'error') return <PaymentErrorPage />
 
   React.useEffect(() => {
     membership.setData({
-      planName
+      planName,
     })
   }, [])
 
   return (
     <Page title={textData.shortTitle} description={textData.caption}>
-      <PaymentPageTemplate textData={textData}/>
+      <PaymentPageTemplate textData={textData} />
     </Page>
   )
 }

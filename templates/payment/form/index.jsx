@@ -1,24 +1,24 @@
-import React, {useEffect, useRef, useState} from 'react'
-import {Form, TextField} from '@oacore/design/lib/elements/forms'
+import React, { useEffect, useRef, useState } from 'react'
+import { Form, TextField } from '@oacore/design/lib/elements/forms'
 import classNames from '@oacore/design/lib/utils/class-names'
-import {Button} from '@oacore/design/lib/elements'
-import {useOutsideClick} from '@oacore/design/lib/hooks'
+import { Button } from '@oacore/design/lib/elements'
+import { useOutsideClick } from '@oacore/design/lib/hooks'
+import Parser from 'html-react-parser'
 
 import styles from './styles.module.scss'
 import Select from './select'
 
-import {patchStatsFull} from 'components/utils'
-import {ListBox} from 'design-v2/components'
-import {observe, useStore} from 'store'
-import {Markdown} from 'components'
-import {Checkbox, Radiobutton} from "components/checkbox";
-import Parser from 'html-react-parser'
+import { patchStatsFull } from 'components/utils'
+import { ListBox } from 'design-v2/components'
+import { observe, useStore } from 'store'
+import { Markdown } from 'components'
+import { Checkbox, Radiobutton } from 'components/checkbox'
 
-const PaymentDefailsForm = observe(({form}) => {
-  const {membership, membershipPrice, dataProviders} = useStore()
+const PaymentDefailsForm = observe(({ form }) => {
+  const { membership, membershipPrice, dataProviders } = useStore()
 
   const helpBoxRef = useRef(null)
-  const planName = membership.data.planName
+  const { planName } = membership.data
 
   useEffect(() => {
     dataProviders.fetchData()
@@ -43,21 +43,22 @@ const PaymentDefailsForm = observe(({form}) => {
   const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
   // const [isLoaded, setLoaded] = useState(false)
-  const [radioButtonsState, setRadioButtonsState] = useState([]);
-
+  const [radioButtonsState, setRadioButtonsState] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    if (!isRepositoriesSelected && (!formValues.repository || formValues.repository.length === 0)) {
-      let selectRepo = e.target['select-repository'].parentNode
-      selectRepo.classList.add(styles.error);
+    if (
+      !isRepositoriesSelected &&
+      (!formValues.repository || formValues.repository.length === 0)
+    ) {
+      const selectRepo = e.target['select-repository'].parentNode
+      selectRepo.classList.add(styles.error)
       return
     }
 
-    if (!isTermsConditions) {
-      return
-    }
+    if (!isTermsConditions) return
+
     // Make array from repos id's
     const repository = Object.values(
       Object.keys(formValues)
@@ -75,7 +76,7 @@ const PaymentDefailsForm = observe(({form}) => {
     formValues.planName = planName
     formValues.invoicingFrequency = radioButtonsState.invoicingFrequency
     formValues.approveTermsConditions = 1
-    delete formValues['noRepositories']
+    delete formValues.noRepositories
 
     membership.setData({
       ...formValues,
@@ -86,7 +87,7 @@ const PaymentDefailsForm = observe(({form}) => {
   }
 
   const handleInputChange = (e) => {
-    const {name, value} = e.target
+    const { name, value } = e.target
     setFormValues({
       ...formValues,
       [name]: value,
@@ -103,6 +104,9 @@ const PaymentDefailsForm = observe(({form}) => {
       [name]: value,
     })
 
+    console.log(`name - ${name}`)
+    console.log(`value - ${value}`)
+
     if (planName !== 'starting') {
       if (name.includes('repository')) {
         membershipPrice.data.repository.push(value)
@@ -110,15 +114,15 @@ const PaymentDefailsForm = observe(({form}) => {
         fetchPrice()
       }
 
-      if (name.includes('typesContracts')) {
+      if (name.includes('typesContracts'))
         membershipPrice.data.typesContracts = value
-      }
+
       calculatePrice()
     }
   }
 
   const calculatePrice = () => {
-    const price = membershipPrice.data.price
+    const { price } = membershipPrice.data
     const discountRow = membershipPrice.data.typesContracts
 
     if (price > 1 && discountRow) {
@@ -130,12 +134,10 @@ const PaymentDefailsForm = observe(({form}) => {
       )
 
       const discount = option.value
-      if (Number.isInteger(option['value'])) {
+      if (Number.isInteger(option.value)) {
         membershipPrice.data.priceCalculated = price - (price * discount) / 100
         membershipPrice.data.discount = discount
-      } else {
-        membershipPrice.data.priceCalculated = price
-      }
+      } else membershipPrice.data.priceCalculated = price
     }
   }
 
@@ -163,18 +165,16 @@ const PaymentDefailsForm = observe(({form}) => {
 
   const onDeleteInput = (id) => {
     const list = repositoryInputsList.filter((input) => input.id !== id)
-    const {[id]: _tmp, ...rest} = formValues
+    const { [id]: _tmp, ...rest } = formValues
 
     setRepositoryInputsList(list)
     setFormValues(rest)
 
     // Update priceCalculated
-    let repository = []
-    for (const [key, value] of Object.entries(rest)) {
-      if (key.includes('repository')) {
-        repository.push(value)
-      }
-    }
+    const repository = []
+    for (const [key, value] of Object.entries(rest))
+      if (key.includes('repository')) repository.push(value)
+
     membershipPrice.data.repository = repository
     fetchPrice()
   }
@@ -209,14 +209,18 @@ const PaymentDefailsForm = observe(({form}) => {
               <Checkbox
                 id={field.id}
                 labelText={Parser(field.label)}
-                setCheckbox={field.id === 'approveTermsConditions' ? setIsTermsConditions : setRepositoriesSelected}
+                setCheckbox={
+                  field.id === 'approveTermsConditions'
+                    ? setIsTermsConditions
+                    : setRepositoriesSelected
+                }
                 className={styles.paymentLink}
               />
             </div>
           )
         }
         if (field.type === 'radio') {
-          if (planName === 'starting') return (<div key={field.id}></div>)
+          if (planName === 'starting') return <div key={field.id} />
           return (
             <div key={field.id}>
               <Radiobutton
@@ -229,7 +233,8 @@ const PaymentDefailsForm = observe(({form}) => {
           )
         }
         if (field.type === 'select') {
-          if (planName === 'starting' && field.id === 'typesContracts') return (<div key={field.id}></div>)
+          if (planName === 'starting' && field.id === 'typesContracts')
+            return <div key={field.id} />
           return (
             <Select
               key={field.id}
@@ -253,7 +258,7 @@ const PaymentDefailsForm = observe(({form}) => {
                 type="button"
                 className={classNames.use(styles.buttonPlus, {
                   [styles.hidden]:
-                  repositoryInputsList.length === form.maxRepositoriesCount,
+                    repositoryInputsList.length === form.maxRepositoriesCount,
                 })}
                 onClick={onCreateNewInput}
               />
@@ -272,7 +277,7 @@ const PaymentDefailsForm = observe(({form}) => {
                 {field.label}
               </button>
               {visibleHelpBox && (
-                <ListBox className={styles.helpBox} list={field.options}/>
+                <ListBox className={styles.helpBox} list={field.options} />
               )}
             </div>
           )
@@ -294,13 +299,20 @@ const PaymentDefailsForm = observe(({form}) => {
         ))
       })}
       <div className={styles.box}>
-        {(planName === 'starting') ? '' :
-          (<Markdown className={styles.price}>
-            {(membershipPrice.priceCalculated < 1) ?
-              0 : patchStatsFull(form.priceCalculated, membershipPrice.data)
-            }
-          </Markdown>)}
-        <Button type="submit" variant="contained" className={isTermsConditions ? '' : styles.buttonUnActive}>
+        {planName === 'starting' ? (
+          ''
+        ) : (
+          <Markdown className={styles.price}>
+            {membershipPrice.priceCalculated < 1
+              ? 0
+              : patchStatsFull(form.priceCalculated, membershipPrice.data)}
+          </Markdown>
+        )}
+        <Button
+          type="submit"
+          variant="contained"
+          className={isTermsConditions ? '' : styles.buttonUnActive}
+        >
           {form.action.caption}
         </Button>
       </div>

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import React, { useRef, useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { useOutsideClick } from '@oacore/design/lib/hooks'
 import Parser from 'html-react-parser'
@@ -41,46 +41,43 @@ const DetailsBox = ({ title, description }) => {
   )
 }
 
-
-const Card = ({ plan }) => {
-  return (
-    <article className={styles.plan} key={plan.title}>
-      <div className={styles.planHeader}>
-        <h5>{plan.title}</h5>
-        {plan.caption &&
-          Parser(
-            `<span className=${styles.planHeaderCaption}>${plan.caption}</span>`
-          )}
-      </div>
-      <div className={styles.divider} />
-      <div className={styles.planContent}>
-        {plan.box && (
-          <div className={styles.planBox}>
-            <Markdown className={styles.planBoxTitle}>{plan.box.title}</Markdown>
-            <Markdown className={styles.planBoxCaption} tag="span">
-              {plan.box.caption}
-            </Markdown>
-          </div>
+const Card = ({ plan }) => (
+  <article className={styles.plan} key={plan.title}>
+    <div className={styles.planHeader}>
+      <h5>{plan.title}</h5>
+      {plan.caption &&
+        Parser(
+          `<span className=${styles.planHeaderCaption}>${plan.caption}</span>`
         )}
-        <ul className={styles.planAdvantages}>
-          {plan.advantages.map((advantage) => (
-            <li key={advantage.title}>
-              <DetailsBox
-                title={advantage.title}
-                description={advantage.description}
-              />
-            </li>
-          ))}
-        </ul>
-        <div className={styles.planContentButton}>
-          <Button variant="contained" href={plan.action.url}>
-              {plan.action.title}
-          </Button>
+    </div>
+    <div className={styles.divider} />
+    <div className={styles.planContent}>
+      {plan.box && (
+        <div className={styles.planBox}>
+          <Markdown className={styles.planBoxTitle}>{plan.box.title}</Markdown>
+          <Markdown className={styles.planBoxCaption} tag="span">
+            {plan.box.caption}
+          </Markdown>
         </div>
+      )}
+      <ul className={styles.planAdvantages}>
+        {plan.advantages.map((advantage) => (
+          <li key={advantage.title}>
+            <DetailsBox
+              title={advantage.title}
+              description={advantage.description}
+            />
+          </li>
+        ))}
+      </ul>
+      <div className={styles.planContentButton}>
+        <Button variant="contained" href={plan.action.url}>
+          {plan.action.title}
+        </Button>
       </div>
-    </article>
-  )
-}
+    </div>
+  </article>
+)
 
 const MembershipPageTemplate = ({ data }) => (
   <Layout>
