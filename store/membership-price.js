@@ -6,6 +6,7 @@ class MembershipPrice {
   data = {
     repository: [],
     planName: '',
+    price: 0,
     priceCalculated: 0,
   }
 
@@ -31,13 +32,14 @@ class MembershipPrice {
   }
 
   async fetchPrice() {
-    // this.setIsLoadingPrice(false)
+    this.setIsLoadingPrice(false)
     try {
       // Uniq repository id's
       this.data.repository = [...new Set(this.data.repository)];
 
       const {data} = await getMembershipPrice(this.data)
-      if (data.price && data.price > 0) {
+      if (data.price && data.price > 0 && Number.isInteger(data.price)) {
+        this.data.price = data.price
         this.data.priceCalculated = data.price
         this.setIsLoadingPrice(true)
       }
