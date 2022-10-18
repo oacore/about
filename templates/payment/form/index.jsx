@@ -119,12 +119,23 @@ const PaymentDefailsForm = observe(({form}) => {
 
   const calculatePrice = () => {
     const price = membershipPrice.data.price
-    const discount = membershipPrice.data.typesContracts
+    const discountRow = membershipPrice.data.typesContracts
 
-    if (price > 1 && Number.isInteger(discount)) {
-      membershipPrice.data.priceCalculated = price - (price * discount) / 100
-    } else {
-      membershipPrice.data.priceCalculated = price
+    if (price > 1 && discountRow) {
+      const typesContracts = form.fields.find(
+        (field) => field.id === 'typesContracts'
+      )
+      const option = typesContracts.options.find(
+        (field) => field.id === discountRow
+      )
+
+      const discount = option.value
+      if (Number.isInteger(option['value'])) {
+        membershipPrice.data.priceCalculated = price - (price * discount) / 100
+        membershipPrice.data.discount = discount
+      } else {
+        membershipPrice.data.priceCalculated = price
+      }
     }
   }
 
