@@ -98,29 +98,6 @@ const PaymentDefailsForm = observe(({ form }) => {
     await membershipPrice.fetchPrice()
   }
 
-  const handleSelectChange = (name, value) => {
-    setFormValues({
-      ...formValues,
-      [name]: value,
-    })
-
-    console.log(`name - ${name}`)
-    console.log(`value - ${value}`)
-
-    if (planName !== 'starting') {
-      if (name.includes('repository')) {
-        membershipPrice.data.repository.push(value)
-        membershipPrice.data.planName = planName
-        fetchPrice()
-      }
-
-      if (name.includes('typesContracts'))
-        membershipPrice.data.typesContracts = value
-
-      calculatePrice()
-    }
-  }
-
   const calculatePrice = () => {
     const { price } = membershipPrice.data
     const discountRow = membershipPrice.data.typesContracts
@@ -138,6 +115,26 @@ const PaymentDefailsForm = observe(({ form }) => {
         membershipPrice.data.priceCalculated = price - (price * discount) / 100
         membershipPrice.data.discount = discount
       } else membershipPrice.data.priceCalculated = price
+    }
+  }
+
+  const handleSelectChange = (name, value) => {
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    })
+
+    if (planName !== 'starting') {
+      if (name.includes('repository')) {
+        membershipPrice.data.repository.push(value)
+        membershipPrice.data.planName = planName
+        fetchPrice()
+      }
+
+      if (name.includes('typesContracts'))
+        membershipPrice.data.typesContracts = value
+
+      calculatePrice()
     }
   }
 

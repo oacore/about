@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import PaymentErrorPage from './error'
 import PaymentSuccessPage from './success'

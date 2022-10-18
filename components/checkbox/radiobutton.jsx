@@ -2,14 +2,8 @@ import React, { useEffect } from 'react'
 
 import styles from './styles.module.scss'
 
-const Radiobutton = ({
-  id,
-  labelText,
-  options,
-  setRadioButtonsState,
-  className = null,
-}) => {
-  const handleRadioButton = (id, value, setRadioButtonsState) => {
+const Radiobutton = ({ id, labelText, options, setRadioButtonsState }) => {
+  const handleRadioButton = (value) => {
     const states = {
       [id]: value,
     }
@@ -17,7 +11,7 @@ const Radiobutton = ({
   }
 
   useEffect(() => {
-    handleRadioButton(id, options[0].id, setRadioButtonsState)
+    handleRadioButton(options[0].id)
   }, [])
 
   return (
@@ -30,9 +24,7 @@ const Radiobutton = ({
             type="radio"
             name={id}
             id={field.id}
-            onChange={() =>
-              handleRadioButton(id, field.id, setRadioButtonsState)
-            }
+            onChange={() => handleRadioButton(field.id)}
           />
           <label className={styles.radioLabel} htmlFor={field.id}>
             {field.value}

@@ -1,6 +1,6 @@
-import {makeObservable, observable, action} from 'mobx'
+import { makeObservable, observable, action } from 'mobx'
 
-import {getMembershipPrice} from '../api/services'
+import { getMembershipPrice } from '../api/services'
 
 class MembershipPrice {
   data = {
@@ -34,9 +34,9 @@ class MembershipPrice {
     this.setIsLoadingPrice(false)
     try {
       // Uniq repository id's
-      this.data.repository = [...new Set(this.data.repository)];
+      this.data.repository = [...new Set(this.data.repository)]
 
-      const {data} = await getMembershipPrice(this.data)
+      const { data } = await getMembershipPrice(this.data)
       if (data.price && data.price > 0 && Number.isInteger(data.price)) {
         this.data.price = data.price
         this.data.priceCalculated = data.price
@@ -48,7 +48,6 @@ class MembershipPrice {
       this.setIsLoadingPrice(false)
     }
   }
-
 }
 
 export default MembershipPrice
