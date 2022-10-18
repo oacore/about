@@ -37,8 +37,8 @@ membership:
 payment:
   pattern: /payment
   children:
-    success: /status/success
-    error: /status/error
+    success: /success
+    error: /error
 
 services:
   pattern: /services

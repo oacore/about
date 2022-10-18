@@ -4,8 +4,10 @@ import {Page} from 'components'
 import textData from 'data/payment.yml'
 import PaymentPageTemplate from 'templates/payment'
 import {useStore} from 'store'
+import PaymentErrorPage from "./error";
+import PaymentSuccessPage from "./success";
 
-export const slugs = ['starting', 'supporting', 'sustaining']
+export const slugs = ['starting', 'supporting', 'sustaining', 'success', 'error']
 
 export async function getStaticProps({ params }) {
   const { slug } = params
@@ -49,6 +51,8 @@ export async function getStaticPaths() {
 const PaymentPage = ({data}) => {
   const {membership} = useStore()
   const { planName } = data
+  if(planName === 'success')  return <PaymentSuccessPage />
+  if(planName === 'error')  return <PaymentErrorPage />
 
   console.log("PaymentPage planName " + planName)
 
