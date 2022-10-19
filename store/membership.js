@@ -33,16 +33,17 @@ class Membership {
   }
 
   async submit() {
-    const { pathname } = Router
     try {
       await createMembershipPayment(this.data)
       this.reset()
       Router.push({
-        pathname: pathname + routes.paymentStatus.children.success,
+        pathname:
+          routes.paymentStatus.pattern + routes.paymentStatus.children.success,
       })
     } catch (error) {
       Router.push({
-        pathname: pathname + routes.paymentStatus.children.error,
+        pathname:
+          routes.paymentStatus.pattern + routes.paymentStatus.children.error,
       })
       console.error(error)
     }

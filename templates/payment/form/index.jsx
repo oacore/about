@@ -42,7 +42,6 @@ const PaymentDefailsForm = observe(({ form }) => {
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
   const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
-  // const [isLoaded, setLoaded] = useState(false)
   const [radioButtonsState, setRadioButtonsState] = useState([])
 
   const handleSubmit = async (e) => {
