@@ -301,8 +301,8 @@ const PaymentDefailsForm = observe(({ form }) => {
           ''
         ) : (
           <Markdown className={styles.price}>
-            {membershipPrice.priceCalculated < 1
-              ? 0
+            {membershipPrice.data.priceCalculated < 1
+              ? 'Price: N/A'
               : patchStatsFull(form.priceCalculated, membershipPrice.data)}
           </Markdown>
         )}
