@@ -45,6 +45,7 @@ form:
     - label: Add
       type: button
       caption: You can add up to 3 repositories
+      id: addRepositories
     - placeholder: e.g. John
       label: Name of contact person
       id: contactName

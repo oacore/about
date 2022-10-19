@@ -248,6 +248,8 @@ const PaymentDefailsForm = observe(({ form }) => {
         }
 
         if (field.type === 'button') {
+          if (planName === 'starting' && field.id === 'addRepositories')
+            return <div key={field.id} />
           return (
             <div key={field.label}>
               <button
