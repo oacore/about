@@ -10,6 +10,7 @@ class Membership {
     priceCalculated: 0,
     discount: 0,
     planName: '',
+    noRepositories: 0,
     size: '',
     transactionToken: 'TOKEN',
     transactionDescription: 'description',
