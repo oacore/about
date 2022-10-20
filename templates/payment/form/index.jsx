@@ -75,7 +75,6 @@ const PaymentDefailsForm = observe(({ form }) => {
     formValues.planName = planName
     formValues.invoicingFrequency = radioButtonsState.invoicingFrequency
     formValues.approveTermsConditions = 1
-    delete formValues.noRepositories
 
     membership.setData({
       ...formValues,
