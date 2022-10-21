@@ -17,8 +17,14 @@ const Select = ({
   required = true,
   disabled = false,
 }) => {
-  const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
-    useSelect('', options)
+  const {
+    value,
+    handleOnInput,
+    handleOnChange,
+    suggestions,
+    setSuggestions,
+    isError,
+  } = useSelect('', options, false)
   // For async values
   useEffect(() => {
     setSuggestions(options)
@@ -34,9 +40,14 @@ const Select = ({
   return (
     <div className={styles.selectContainer}>
       <DesignSelect
-        className={classNames.use(styles.input, styles.select, {
-          [styles.filled]: value !== '',
-        })}
+        className={classNames.use(
+          styles.input,
+          styles.select,
+          isError ? styles.errorSelect : '',
+          {
+            [styles.filled]: value !== '',
+          }
+        )}
         id={name}
         value={value}
         label={label}

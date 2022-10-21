@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
-export const useSelect = (initialValue, initOptions) => {
+export const useSelect = (initialValue, initOptions, initError) => {
   const [value, setValue] = useState(initialValue)
   const [suggestions, setSuggestions] = useState(initOptions)
+  const [isError, setIsError] = useState(initError)
   const handleOnChange = (data) => {
     setValue(data.value)
   }
@@ -16,6 +17,14 @@ export const useSelect = (initialValue, initOptions) => {
       )
 
       setSuggestions(result)
+      // Set error code for wrong input
+      const inputValue = data.value.toLowerCase().split(' ').join('_')
+      let initValue = ''
+      if (result[0] && result[0].name)
+        initValue = result[0].name.toLowerCase().split(' ').join('_')
+
+      if (inputValue === initValue) setIsError(false)
+      else setIsError(true)
     }
     if (!data.value) setSuggestions(initOptions)
   }
@@ -25,6 +34,7 @@ export const useSelect = (initialValue, initOptions) => {
     handleOnInput,
     handleOnChange,
     setSuggestions,
+    isError,
   }
 }
 

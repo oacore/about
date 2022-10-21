@@ -140,9 +140,10 @@
   text-decoration: underline;
 }
 
-
 // Duplicated need move out
 
+.error-select input,
+.error-select div span,
 .error input,
 .error span {
   border: 1px solid var(--danger-dark);
