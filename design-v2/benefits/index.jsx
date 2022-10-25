@@ -12,7 +12,7 @@ import benefitsData from 'data/benefits.yml'
 import { patchStats } from 'components/utils'
 
 const JoinSectionItem = ({ title, picture, description }) => (
-  <div caption={title} className={styles.services}>
+  <div key={title} className={styles.services}>
     {picture && (
       <figure>
         {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
