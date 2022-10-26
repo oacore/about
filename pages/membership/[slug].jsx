@@ -13,6 +13,7 @@ export async function getStaticProps({ params }) {
     header: {
       title: textData.header.title,
       description: textData.fee.description[slug],
+      note: textData.fee.note[slug],
     },
     fee: {
       ...textData.fee,

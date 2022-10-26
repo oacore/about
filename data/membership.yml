@@ -245,7 +245,11 @@ fee:
       Our Supporting members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
     sustaining: |
       Our Sustaining members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services and their continuous improvement.
-  note: '*Jisc Members already have CORE Supporting Membership through their subscription.'
+  note:
+     supporting: |
+       *Jisc Members are eligible for CORE Supporting Membership for free until the end of July 2023. Minimum membership duration 1 year.
+     sustaining: |
+       *Jisc Members will obtain an additional 50% discount for CORE Sustaining membership until the end of July 2023. Minimum membership duration 1 year.
   noteSecond: |
     **This discount is available for those who sign up for 3 or 5 years. Both annual and single payment invocing is possible.
   action:
