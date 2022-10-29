@@ -43,6 +43,7 @@ class MembershipPrice {
         this.setIsLoadingPrice(true)
       }
     } catch (error) {
+      this.data.priceCalculated = -1
       console.error(error)
     } finally {
       this.setIsLoadingPrice(false)

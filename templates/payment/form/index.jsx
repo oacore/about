@@ -302,8 +302,14 @@ const PaymentDefailsForm = observe(({ form }) => {
           ''
         ) : (
           <Markdown className={styles.price}>
+            {/* eslint-disable-next-line no-nested-ternary */}
             {membershipPrice.data.priceCalculated < 1
-              ? 'Price: N/A'
+              ? membershipPrice.data.priceCalculated === 0
+                ? 'Fee: N/A'
+                : patchStatsFull(
+                    form.errorPriceCalculation,
+                    membershipPrice.data
+                  )
               : patchStatsFull(form.priceCalculated, membershipPrice.data)}
           </Markdown>
         )}

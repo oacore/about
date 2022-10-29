@@ -94,8 +94,25 @@
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
+    max-width: 420px;
     span {
       color: var(--primary) !important;
+    }
+    div {
+      span:first-child {
+        display: inline-block;
+        vertical-align: top;
+        color: var(--black) !important;
+      }
+
+      span:last-child {
+        width: 85%;
+        display: inline-block;
+        color: var(--primary) !important;
+        font-size: 14px !important;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
     }
   }
 }
