@@ -34,7 +34,7 @@ const Select = ({
 
   const handleSelectChange = (option) => {
     handleOnChange(option)
-    setFormValue(name, option.id)
+    setFormValue(name, option.id, value)
   }
 
   return (

@@ -117,7 +117,28 @@ const PaymentDefailsForm = observe(({ form }) => {
     }
   }
 
-  const handleSelectChange = (name, value) => {
+  // Check for changing select
+  const handleSelectChange = (name, value, oldValue) => {
+    if (name.includes('repository') && oldValue) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const key in dataProviders.data) {
+        if (
+          // eslint-disable-next-line no-prototype-builtins
+          !dataProviders.data.hasOwnProperty(key) ||
+          !dataProviders.data[key].id
+        )
+          // eslint-disable-next-line no-continue
+          continue
+        if (dataProviders.data[key].name === oldValue) {
+          membershipPrice.data.repository =
+            membershipPrice.data.repository.filter(
+              (item) => item !== dataProviders.data[key].id
+            )
+          break
+        }
+      }
+    }
+
     setFormValues({
       ...formValues,
       [name]: value,
@@ -303,7 +324,10 @@ const PaymentDefailsForm = observe(({ form }) => {
         ) : (
           <Markdown className={styles.price}>
             {/* eslint-disable-next-line no-nested-ternary */}
-            {membershipPrice.data.priceCalculated < 1
+            {isRepositoriesSelected
+              ? patchStatsFull(form.errorPriceCalculation, membershipPrice.data)
+              : // eslint-disable-next-line no-nested-ternary
+              membershipPrice.data.priceCalculated <= 1
               ? membershipPrice.data.priceCalculated === 0
                 ? 'Fee: N/A'
                 : patchStatsFull(
