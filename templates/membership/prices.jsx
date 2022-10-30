@@ -23,7 +23,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
   }, [])
 
   const handleClick = () => {
-    router.push(data.fee.action.url)
+    router.push(`/payment/${data.planName}`)
   }
 
   const renderHeaders = () => (
@@ -94,10 +94,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
           type="button"
           variant="contained"
           onClick={handleClick}
-          className={classNames.use(
-            styles.button,
-            membership.data.price === 0 && styles.disabled
-          )}
+          className={styles.button}
         >
           {data.fee.action.caption}
         </Button>
