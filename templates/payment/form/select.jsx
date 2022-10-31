@@ -79,7 +79,7 @@ const Select = ({
       </DesignSelect>
       {onDelete && (
         <Icon
-          src="#close"
+          src="#bin"
           onClick={() => onDelete(name)}
           className={styles.closeIcon}
         />
