@@ -38,13 +38,13 @@ form:
     - label: I cannot find one or more of my repositories in the list.
       type: checkbox
       id: noRepositories
-#    - label: Can't find repository?
-#      type: caption
-#      options:
-#          - name: Register repository
-#            action: 'benefits'
-#          - name: Contact us
-#            action: 'contact'
+    - label: Can't find repository?
+      type: caption
+      options:
+          - name: Register repository
+            action: '/benefits'
+          - name: Contact us
+            action: '/contact'
     - label: Add
       type: button
       caption: You can add up to 3 repositories

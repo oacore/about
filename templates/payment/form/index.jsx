@@ -222,6 +222,8 @@ const PaymentDefailsForm = observe(({ form }) => {
           )
         }
         if (field.type === 'checkbox') {
+          if (planName === 'starting' && field.id === 'noRepositories')
+            return <div key={field.id} />
           return (
             <div key={field.id}>
               <Checkbox
@@ -287,6 +289,7 @@ const PaymentDefailsForm = observe(({ form }) => {
           )
         }
         if (field.type === 'caption') {
+          if (planName !== 'starting') return <div key={field.id} />
           return (
             <div className={styles.help} key={field.label} ref={helpBoxRef}>
               <button
