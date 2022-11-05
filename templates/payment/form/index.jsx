@@ -77,6 +77,8 @@ const PaymentDefailsForm = observe(({ form }) => {
     formValues.approveTermsConditions = 1
     formValues.noRepositories = isRepositoriesSelected ? 1 : 0
     formValues.discount = membershipPrice.data.discount
+    formValues.price = membershipPrice.data.price
+    formValues.priceCalculated = membershipPrice.data.priceCalculated
 
     membership.setData({
       ...formValues,
