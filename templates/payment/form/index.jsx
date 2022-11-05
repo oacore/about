@@ -76,6 +76,7 @@ const PaymentDefailsForm = observe(({ form }) => {
     formValues.invoicingFrequency = radioButtonsState.invoicingFrequency
     formValues.approveTermsConditions = 1
     formValues.noRepositories = isRepositoriesSelected ? 1 : 0
+    formValues.discount = membershipPrice.data.discount
 
     membership.setData({
       ...formValues,

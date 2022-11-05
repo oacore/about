@@ -8,6 +8,7 @@ class MembershipPrice {
     planName: '',
     price: 0,
     priceCalculated: 0,
+    discount: 0,
   }
 
   isLoadingPrice = false
