@@ -130,9 +130,9 @@ plans:
         - *statistics
         - *discovery-boost
       action:
-        title: Become member
+        title: Become a member
 #        url: '/membership/starting'
-        url: '/payment/starting'
+        url: '/member/starting'
 #        title: Register your interest
 #        url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
 
@@ -148,8 +148,8 @@ plans:
         - *tech-support
         - *api
       action:
-        title: Become member
-        url: '/payment/supporting'
+        title: Become a member
+        url: '/member/supporting'
 #        url: '/membership/supporting'
 #        title: Register your interest
 #        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
@@ -169,8 +169,8 @@ plans:
         - *styles
         - *health-check
       action:
-        title: Become member
-        url: '/payment/sustaining'
+        title: Become a member
+        url: '/member/sustaining'
 #        url: '/membership/sustaining'
 #        title: Register your interest
 #        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
@@ -254,7 +254,7 @@ fee:
     **This discount is available for those who sign up for 3 or 5 years. Both annual and single payment invocing is possible.
   action:
     caption: Become member
-    url: '/payment'
+    url: '/member'
 #    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
   table:
     headers:

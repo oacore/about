@@ -39,12 +39,14 @@ class Membership {
       this.reset()
       Router.push({
         pathname:
-          routes.paymentStatus.pattern + routes.paymentStatus.children.success,
+          routes.membershipRequestStatus.pattern +
+          routes.membershipRequestStatus.children.success,
       })
     } catch (error) {
       Router.push({
         pathname:
-          routes.paymentStatus.pattern + routes.paymentStatus.children.error,
+          routes.membershipRequestStatus.pattern +
+          routes.membershipRequestStatus.children.error,
       })
       console.error(error)
     }

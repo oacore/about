@@ -1,7 +1,7 @@
 import React from 'react'
 // import { useRouter } from 'next/router'
 
-import PaymentSuccessPageTemplate from 'templates/payment/success'
+import PaymentSuccessPageTemplate from 'templates/member/success'
 import { Page } from 'components'
 import textData from 'data/payment.yml'
 // import { useStore } from 'store'

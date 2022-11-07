@@ -44,7 +44,7 @@ form:
           - name: Register repository
             action: '/benefits'
           - name: Contact us
-            action: '/contact'
+            action: '/about#contact'
     - label: Add
       type: button
       caption: You can add up to 3 repositories

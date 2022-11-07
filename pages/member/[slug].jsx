@@ -1,8 +1,8 @@
 import React from 'react'
 
+import PaymentPageTemplate from 'templates/member'
 import { Page } from 'components'
 import textData from 'data/payment.yml'
-import PaymentPageTemplate from 'templates/payment'
 import { useStore } from 'store'
 
 export const slugsPaymentPage = ['starting', 'supporting', 'sustaining']
