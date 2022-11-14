@@ -83,12 +83,7 @@ const MembershipPageTemplate = ({ data }) => (
   <Layout>
     <Section id="metadata" className={styles.header}>
       <div>
-        <h2 className={styles.title}>
-          {data.header.title}
-          {data.header.extra && (
-            <span className={styles.extraText}>{data.header.extra}</span>
-          )}
-        </h2>
+        <h2 className={styles.title}>{data.header.title}</h2>
 
         <Markdown className={styles.description}>
           {data.header.description}
