@@ -23,7 +23,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
   }, [])
 
   const handleClick = () => {
-    router.push(`/payment/${data.planName}`)
+    router.push(`/member/${data.planName}`)
   }
 
   const renderHeaders = () => (
