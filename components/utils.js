@@ -29,3 +29,11 @@ export const patchStats = (text, statistics) => {
   }
   return processTemplate(text, context)
 }
+
+export const patchStatsFull = (text, statistics) => {
+  const context = {}
+  // eslint-disable-next-line no-restricted-syntax
+  for (const [key, value] of Object.entries(statistics)) context[key] = value
+
+  return processTemplate(text, context)
+}

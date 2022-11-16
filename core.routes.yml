@@ -36,6 +36,9 @@ membership:
 
 payment:
   pattern: /payment
+
+membershipRequestStatus:
+  pattern: /membership-request-status
   children:
     success: /success
     error: /error

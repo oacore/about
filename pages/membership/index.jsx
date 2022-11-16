@@ -9,4 +9,5 @@ const MembershipPage = () => (
     <MembershipPageTemplate data={textData} />
   </Page>
 )
+
 export default MembershipPage

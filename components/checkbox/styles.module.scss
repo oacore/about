@@ -22,8 +22,6 @@
   border: 2px var(--gray-600) solid;
   margin-right: 10px;
   border-radius: 2px;
-  width: 20px;
-  height: 20px;
 }
 
 .label {
@@ -32,4 +30,16 @@
 
 .disabled {
   display: none;
+}
+
+.radio-top-label {
+  margin-bottom: 10px;
+}
+
+.radio-form-check {
+  margin-bottom: 5px;
+}
+
+.radio-label {
+  margin-left: 8px;
 }
