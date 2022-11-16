@@ -385,7 +385,7 @@ fee:
               discount: 14000
 
 discount:
-  title: Multy-year discount**
+  title: Multi-year discount**
   table:
     headers:
       - name: Period
