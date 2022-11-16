@@ -1,10 +1,14 @@
-title:  Become a <span>{{planName}}</span> members
+title:  Become a <span>{{planName}}</span> member
 short-title: Become our new member!
 caption: Enter your details and our manager will contact you as soon as possible
 form:
   id: Member-details
   maxRepositoriesCount: 3
-  price: "Price:  <span> ￡ {{price}} *</span>"
+  price: "Fee:  <span> ￡ {{price}} *</span>"
+  price-calculated: "Fee:  <span> ￡ {{priceCalculated}} </span>"
+  error-price-calculation: |
+    <div><span>Fee:</span><span>We are afraid that we do not have enough data to calculate the fee automatically at this stage.
+    A member of the CORE team will be in touch with you shortly after submitting your request.</span></div>
   action:
     caption: Become a member
   fields:
@@ -30,30 +34,66 @@ form:
       type: async-select
       options: []
       id: repository
+      optional: true
+    - label: I cannot find one or more of my repositories in the list.
+      type: checkbox
+      id: noRepositories
     - label: Can't find repository?
       type: caption
       options:
           - name: Register repository
-            action: 'benefits'
+            action: '/benefits'
           - name: Contact us
-            action: 'contact'
+            action: '/about#contact'
     - label: Add
       type: button
       caption: You can add up to 3 repositories
+      id: addRepositories
     - placeholder: e.g. John
       label: Name of contact person
       id: contactName
+      type: input
+    - placeholder: e.g. Developer
+      label: What is your role in the organisation?
+      id: roleInOrganisation
       type: input
     - placeholder: e.g. john.doe@ac.uk
       label: Email
       id: email
       type: input
+    - placeholder: Select the type of your contract
+      label: Types of contracts
+      id: typesContracts
+      type: select
+      options:
+        - id: Annual rolling
+          name: Annual rolling
+          value: annual-rolling
+        - id: 3-year
+          name: 3-year
+          value: 10
+        - id: 5-year
+          name: 5-year
+          value: 15
+    - label: Invoicing frequency
+      type: radio
+      id: invoicingFrequency
+      options:
+        - id: single-payment
+          name: single-payment
+          value: Single payment
+        - id: annually
+          name: annually
+          value: Annually
     - placeholder: " "
       label: Any additional information you want to tell us
       id: additionalInfo
       type: input
       optional: true
       appendText: Optional
+    - label: Please read and agree to the CORE <a href='https://core.ac.uk/terms' target='_blank'>Terms and Conditions</a> and <a href='https://core.ac.uk/privacy' target='_blank'>Privacy notice</a>.
+      type: checkbox
+      id: approveTermsConditions
 
 additional-info:
   icon: "*"
@@ -70,7 +110,7 @@ success:
  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
  image:
   url: /images/membership/email.svg
-  caption: Thank you for apply with CORE Membership for organisations. Your request has been successfully sent. Our teams will contact you shortly.
+  caption: Thank you for apply with CORE Membership for organisations. Your request has been successfully sent. Our team will contact you shortly.
  button:
   caption: homepage
   url: "/"

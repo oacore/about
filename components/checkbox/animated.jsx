@@ -6,10 +6,11 @@ import {
   useSpringRef,
   useChain,
 } from 'react-spring'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 
-const Checkbox = ({ id, labelText, setCheckbox }) => {
+const Checkbox = ({ id, labelText, setCheckbox, className }) => {
   const [isChecked, setIsChecked] = useState(false)
   const checkboxAnimationRef = useSpringRef()
   const checkboxAnimationStyle = useSpring({
@@ -37,7 +38,7 @@ const Checkbox = ({ id, labelText, setCheckbox }) => {
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={styles.labelBox}>
+    <label key={labelText} className={styles.labelBox}>
       <input
         id={id}
         type="checkbox"
@@ -65,7 +66,9 @@ const Checkbox = ({ id, labelText, setCheckbox }) => {
           strokeDashoffset={checkmarkAnimationStyle.x}
         />
       </animated.svg>
-      <div className={styles.label}>{labelText}</div>
+      <div className={classNames.use(styles.label).join(className)}>
+        {labelText}
+      </div>
     </label>
   )
 }

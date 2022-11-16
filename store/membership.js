@@ -7,10 +7,13 @@ import routes from '../core.routes.yml'
 class Membership {
   data = {
     price: 0,
+    priceCalculated: 0,
+    discount: 0,
     planName: '',
+    noRepositories: 0,
     size: '',
-    transactionToken: 'TOKEN_saddsadasdasdasdasdqweqwedasd',
-    transactionDescription: 'Test transaction',
+    transactionToken: 'TOKEN',
+    transactionDescription: 'description',
   }
 
   constructor() {
@@ -31,15 +34,19 @@ class Membership {
   }
 
   async submit() {
-    const { pathname } = Router
     try {
       await createMembershipPayment(this.data)
+      this.reset()
       Router.push({
-        pathname: pathname + routes.payment.children.success,
+        pathname:
+          routes.membershipRequestStatus.pattern +
+          routes.membershipRequestStatus.children.success,
       })
     } catch (error) {
       Router.push({
-        pathname: pathname + routes.payment.children.error,
+        pathname:
+          routes.membershipRequestStatus.pattern +
+          routes.membershipRequestStatus.children.error,
       })
       console.error(error)
     }
@@ -48,7 +55,9 @@ class Membership {
   reset() {
     this.data = {
       price: 0,
+      priceCalculated: 0,
       planName: '',
+      discount: 0,
     }
   }
 }

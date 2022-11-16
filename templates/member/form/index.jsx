@@ -3,19 +3,22 @@ import { Form, TextField } from '@oacore/design/lib/elements/forms'
 import classNames from '@oacore/design/lib/utils/class-names'
 import { Button } from '@oacore/design/lib/elements'
 import { useOutsideClick } from '@oacore/design/lib/hooks'
+import Parser from 'html-react-parser'
 
 import styles from './styles.module.scss'
 import Select from './select'
 
-import { patchStats } from 'components/utils'
+import { patchStatsFull } from 'components/utils'
 import { ListBox } from 'design-v2/components'
 import { observe, useStore } from 'store'
 import { Markdown } from 'components'
+import { Checkbox, Radiobutton } from 'components/checkbox'
 
 const PaymentDefailsForm = observe(({ form }) => {
-  const { membership, dataProviders } = useStore()
+  const { membership, membershipPrice, dataProviders } = useStore()
 
   const helpBoxRef = useRef(null)
+  const { planName } = membership.data
 
   useEffect(() => {
     dataProviders.fetchData()
@@ -37,9 +40,23 @@ const PaymentDefailsForm = observe(({ form }) => {
     initRepositorySelect,
   ])
   const [visibleHelpBox, setVisibleHelpBox] = useState(false)
+  const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
+  const [isTermsConditions, setIsTermsConditions] = useState(false)
+  const [radioButtonsState, setRadioButtonsState] = useState([])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    if (
+      !isRepositoriesSelected &&
+      (!formValues.repository || formValues.repository.length === 0)
+    ) {
+      const selectRepo = e.target['select-repository'].parentNode
+      selectRepo.classList.add(styles.error)
+      return
+    }
+
+    if (!isTermsConditions) return
 
     // Make array from repos id's
     const repository = Object.values(
@@ -55,6 +72,14 @@ const PaymentDefailsForm = observe(({ form }) => {
       if (/repository-[0-9]/gm.test(key)) delete formValues[key]
     })
 
+    formValues.planName = planName
+    formValues.invoicingFrequency = radioButtonsState.invoicingFrequency
+    formValues.approveTermsConditions = 1
+    formValues.noRepositories = isRepositoriesSelected ? 1 : 0
+    formValues.discount = membershipPrice.data.discount
+    formValues.price = membershipPrice.data.price
+    formValues.priceCalculated = membershipPrice.data.priceCalculated
+
     membership.setData({
       ...formValues,
       repository,
@@ -62,6 +87,7 @@ const PaymentDefailsForm = observe(({ form }) => {
 
     await membership.submit()
   }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target
     setFormValues({
@@ -70,11 +96,69 @@ const PaymentDefailsForm = observe(({ form }) => {
     })
   }
 
-  const handleSelectChange = (name, value) => {
+  const fetchPrice = async () => {
+    await membershipPrice.fetchPrice()
+  }
+
+  const calculatePrice = () => {
+    const { price } = membershipPrice.data
+    const discountRow = membershipPrice.data.typesContracts
+
+    if (price > 1 && discountRow) {
+      const typesContracts = form.fields.find(
+        (field) => field.id === 'typesContracts'
+      )
+      const option = typesContracts.options.find(
+        (field) => field.id === discountRow
+      )
+
+      const discount = option.value
+      if (Number.isInteger(option.value)) {
+        membershipPrice.data.priceCalculated = price - (price * discount) / 100
+        membershipPrice.data.discount = discount
+      } else membershipPrice.data.priceCalculated = price
+    }
+  }
+
+  // Check for changing select
+  const handleSelectChange = (name, value, oldValue) => {
+    if (name.includes('repository') && oldValue) {
+      // eslint-disable-next-line no-restricted-syntax
+      for (const key in dataProviders.data) {
+        if (
+          // eslint-disable-next-line no-prototype-builtins
+          !dataProviders.data.hasOwnProperty(key) ||
+          !dataProviders.data[key].id
+        )
+          // eslint-disable-next-line no-continue
+          continue
+        if (dataProviders.data[key].name === oldValue) {
+          membershipPrice.data.repository =
+            membershipPrice.data.repository.filter(
+              (item) => item !== dataProviders.data[key].id
+            )
+          break
+        }
+      }
+    }
+
     setFormValues({
       ...formValues,
       [name]: value,
     })
+
+    if (planName !== 'starting') {
+      if (name.includes('repository')) {
+        membershipPrice.data.repository.push(value)
+        membershipPrice.data.planName = planName
+        fetchPrice()
+      }
+
+      if (name.includes('typesContracts'))
+        membershipPrice.data.typesContracts = value
+
+      calculatePrice()
+    }
   }
 
   const toggleHelpBox = () => {
@@ -105,6 +189,15 @@ const PaymentDefailsForm = observe(({ form }) => {
 
     setRepositoryInputsList(list)
     setFormValues(rest)
+
+    // Update priceCalculated
+    const repository = []
+    // eslint-disable-next-line no-restricted-syntax
+    for (const [key, value] of Object.entries(rest))
+      if (key.includes('repository')) repository.push(value)
+
+    membershipPrice.data.repository = repository
+    fetchPrice()
   }
 
   return (
@@ -131,7 +224,40 @@ const PaymentDefailsForm = observe(({ form }) => {
             </div>
           )
         }
+        if (field.type === 'checkbox') {
+          if (planName === 'starting' && field.id === 'noRepositories')
+            return <div key={field.id} />
+          return (
+            <div key={field.id}>
+              <Checkbox
+                id={field.id}
+                labelText={Parser(field.label)}
+                setCheckbox={
+                  field.id === 'approveTermsConditions'
+                    ? setIsTermsConditions
+                    : setRepositoriesSelected
+                }
+                className={styles.paymentLink}
+              />
+            </div>
+          )
+        }
+        if (field.type === 'radio') {
+          if (planName === 'starting') return <div key={field.id} />
+          return (
+            <div key={field.id}>
+              <Radiobutton
+                id={field.id}
+                labelText={Parser(field.label)}
+                setRadioButtonsState={setRadioButtonsState}
+                options={field.options}
+              />
+            </div>
+          )
+        }
         if (field.type === 'select') {
+          if (planName === 'starting' && field.id === 'typesContracts')
+            return <div key={field.id} />
           return (
             <Select
               key={field.id}
@@ -148,6 +274,8 @@ const PaymentDefailsForm = observe(({ form }) => {
         }
 
         if (field.type === 'button') {
+          if (planName === 'starting' && field.id === 'addRepositories')
+            return <div key={field.id} />
           return (
             <div key={field.label}>
               <button
@@ -164,6 +292,7 @@ const PaymentDefailsForm = observe(({ form }) => {
           )
         }
         if (field.type === 'caption') {
+          if (planName !== 'starting') return <div key={field.id} />
           return (
             <div className={styles.help} key={field.label} ref={helpBoxRef}>
               <button
@@ -191,14 +320,34 @@ const PaymentDefailsForm = observe(({ form }) => {
             loading={dataProviders.isLoading}
             setFormValue={handleSelectChange}
             onDelete={input.id !== initRepositorySelect.id && onDeleteInput}
+            required={!input.optional ?? true}
           />
         ))
       })}
       <div className={styles.box}>
-        <Markdown className={styles.price}>
-          {patchStats(form.price, membership.data)}
-        </Markdown>
-        <Button type="submit" variant="contained">
+        {planName === 'starting' ? (
+          ''
+        ) : (
+          <Markdown className={styles.price}>
+            {/* eslint-disable-next-line no-nested-ternary */}
+            {isRepositoriesSelected
+              ? patchStatsFull(form.errorPriceCalculation, membershipPrice.data)
+              : // eslint-disable-next-line no-nested-ternary
+              membershipPrice.data.priceCalculated <= 1
+              ? membershipPrice.data.priceCalculated === 0
+                ? 'Fee: N/A'
+                : patchStatsFull(
+                    form.errorPriceCalculation,
+                    membershipPrice.data
+                  )
+              : patchStatsFull(form.priceCalculated, membershipPrice.data)}
+          </Markdown>
+        )}
+        <Button
+          type="submit"
+          variant="contained"
+          className={isTermsConditions ? '' : styles.buttonUnActive}
+        >
           {form.action.caption}
         </Button>
       </div>

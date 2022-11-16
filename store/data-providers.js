@@ -7,12 +7,16 @@ class DataProviders {
 
   isLoading = false
 
+  isError = false
+
   constructor() {
     makeObservable(this, {
       data: observable,
       isLoading: observable,
+      isError: observable,
       setDataProviders: action,
       setIsLoading: action,
+      setIsError: action,
       fetchData: action,
       reset: action,
     })
@@ -26,12 +30,17 @@ class DataProviders {
     this.isLoading = boolean
   }
 
+  setIsError(boolean) {
+    this.isError = boolean
+  }
+
   async fetchData() {
     this.setIsLoading(true)
     try {
       const { data } = await apiRequest('/repositories/formap')
       this.setDataProviders(data)
     } catch (error) {
+      this.setIsError(true)
       console.error(error)
     } finally {
       this.setIsLoading(false)

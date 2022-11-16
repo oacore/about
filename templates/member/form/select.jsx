@@ -14,9 +14,17 @@ const Select = ({
   loading,
   setFormValue,
   onDelete,
+  required = true,
+  disabled = false,
 }) => {
-  const { value, handleOnInput, handleOnChange, suggestions, setSuggestions } =
-    useSelect('', options)
+  const {
+    value,
+    handleOnInput,
+    handleOnChange,
+    suggestions,
+    setSuggestions,
+    isError,
+  } = useSelect('', options, false)
   // For async values
   useEffect(() => {
     setSuggestions(options)
@@ -26,15 +34,20 @@ const Select = ({
 
   const handleSelectChange = (option) => {
     handleOnChange(option)
-    setFormValue(name, option.id)
+    setFormValue(name, option.id, value)
   }
 
   return (
     <div className={styles.selectContainer}>
       <DesignSelect
-        className={classNames.use(styles.input, styles.select, {
-          [styles.filled]: value !== '',
-        })}
+        className={classNames.use(
+          styles.input,
+          styles.select,
+          isError ? styles.errorSelect : '',
+          {
+            [styles.filled]: value !== '',
+          }
+        )}
         id={name}
         value={value}
         label={label}
@@ -42,7 +55,8 @@ const Select = ({
         onInput={handleOnInput}
         placeholder={placeholder}
         clearButtonClassName={styles.clearButton}
-        required
+        required={required}
+        disabled={disabled}
       >
         {loading ? (
           <DesignSelect.Option className={styles.option} id="loader">
@@ -65,7 +79,7 @@ const Select = ({
       </DesignSelect>
       {onDelete && (
         <Icon
-          src="#close"
+          src="#bin"
           onClick={() => onDelete(name)}
           className={styles.closeIcon}
         />

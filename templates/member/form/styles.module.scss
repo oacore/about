@@ -83,6 +83,9 @@
     display: block;
   }
 }
+.button-un-active {
+  background: var(--gray-200);
+}
 
 .box {
   margin-left: auto;
@@ -91,8 +94,25 @@
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     margin-bottom: 1rem;
+    max-width: 420px;
     span {
       color: var(--primary) !important;
+    }
+    div {
+      span:first-child {
+        display: inline-block;
+        vertical-align: top;
+        color: var(--black) !important;
+      }
+
+      span:last-child {
+        width: 85%;
+        display: inline-block;
+        color: var(--primary) !important;
+        font-size: 14px !important;
+        margin-top: 5px;
+        margin-left: 5px;
+      }
     }
   }
 }
@@ -125,5 +145,31 @@
     position: absolute;
     right: 0;
     top: 1.5rem;
+    background: #ffffff;
+    z-index: 9000;
   }
+}
+
+.payment-link {
+  display: inline-block !important;
+}
+
+.payment-link a {
+  color: var(--gray-600);
+  text-decoration: underline;
+}
+
+// Duplicated need move out
+
+.error-select input,
+.error-select div span,
+.error input,
+.error span {
+  border: 1px solid var(--danger-dark);
+  color: var(--danger-dark);
+  background: var(--danger-light-background);
+}
+
+.error label {
+  color: var(--danger-dark);
 }
