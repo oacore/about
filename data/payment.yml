@@ -99,6 +99,10 @@ additional-info:
   icon: "*"
   text: The price is formed based on the data you entered. Our manager will check all the information and if everything is correct, the price will remain unchanged.
 
+discount-info:
+  icon: "**"
+  text: If you are Jisc member eligible for the Jisc discount until July 2023, this will be applied later.
+
 box:
  description: Not a data-provider but still want to support CORE?
  action:

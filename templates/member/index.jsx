@@ -9,7 +9,7 @@ import { patchStats } from 'components/utils'
 import { Markdown } from 'components'
 
 const PaymentPageTemplate = observe(({ textData }) => {
-  const { form, box, additionalInfo, title, caption } = textData
+  const { form, box, additionalInfo, discountInfo, title, caption } = textData
 
   const { membership } = useStore()
 
@@ -26,6 +26,10 @@ const PaymentPageTemplate = observe(({ textData }) => {
         <p className={styles.additionalInfo}>
           <span>{additionalInfo.icon}</span>
           {additionalInfo.text}
+        </p>
+        <p className={styles.additionalInfo}>
+          <span>{discountInfo.icon}</span>
+          {discountInfo.text}
         </p>
         <TextBox
           className={styles.box}
