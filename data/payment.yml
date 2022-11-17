@@ -114,7 +114,7 @@ success:
  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
  image:
   url: /images/membership/email.svg
-  caption: Thank you for apply with CORE Membership for organisations. Your request has been successfully sent. Our team will contact you shortly.
+  caption: Thank you for your application to CORE Membership for organisations. Your request has been successfully sent. Our team will contact you shortly.
  button:
   caption: homepage
   url: "/"
