@@ -8,7 +8,7 @@ import { useStore, observe } from 'store'
 import { patchStats } from 'components/utils'
 import { Markdown } from 'components'
 
-const PaymentPageTemplate = observe(({ textData }) => {
+const PaymentPageTemplate = observe(({ textData, planName }) => {
   const { form, box, additionalInfo, discountInfo, title, caption } = textData
 
   const { membership } = useStore()
@@ -27,10 +27,12 @@ const PaymentPageTemplate = observe(({ textData }) => {
           <span>{additionalInfo.icon}</span>
           {additionalInfo.text}
         </p>
-        <p className={styles.additionalInfo}>
-          <span>{discountInfo.icon}</span>
-          {discountInfo.text}
-        </p>
+        {planName !== 'starting' && (
+          <p className={styles.additionalInfo}>
+            <span>{discountInfo.icon}</span>
+            {discountInfo.text}
+          </p>
+        )}
         <TextBox
           className={styles.box}
           description={box.description}
