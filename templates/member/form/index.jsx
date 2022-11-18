@@ -335,7 +335,7 @@ const PaymentDefailsForm = observe(({ form }) => {
               : // eslint-disable-next-line no-nested-ternary
               membershipPrice.data.priceCalculated <= 1
               ? membershipPrice.data.priceCalculated === 0
-                ? 'Fee: N/A'
+                ? 'Annual fee: N/A'
                 : patchStatsFull(
                     form.errorPriceCalculation,
                     membershipPrice.data
