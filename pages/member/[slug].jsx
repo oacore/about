@@ -44,7 +44,7 @@ const PaymentPage = ({ data }) => {
 
   return (
     <Page title={textData.shortTitle} description={textData.caption}>
-      <PaymentPageTemplate textData={textData} />
+      <PaymentPageTemplate textData={textData} planName={planName} />
     </Page>
   )
 }
