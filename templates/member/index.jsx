@@ -23,10 +23,12 @@ const PaymentPageTemplate = observe(({ textData, planName }) => {
         <PaymentDefailsForm form={form} />
       </Section>
       <Section>
-        <p className={styles.additionalInfo}>
-          <span>{additionalInfo.icon}</span>
-          {additionalInfo.text}
-        </p>
+        {planName !== 'starting' && (
+          <p className={styles.additionalInfo}>
+            <span>{additionalInfo.icon}</span>
+            {additionalInfo.text}
+          </p>
+        )}
         {planName !== 'starting' && (
           <p className={styles.additionalInfo}>
             <span>{discountInfo.icon}</span>
