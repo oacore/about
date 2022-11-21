@@ -8,7 +8,7 @@ import Parser from 'html-react-parser'
 import styles from './styles.module.scss'
 import Select from './select'
 
-import { patchStatsFull } from 'components/utils'
+import { patchNumberComma } from 'components/utils'
 import { ListBox } from 'design-v2/components'
 import { observe, useStore } from 'store'
 import { Markdown } from 'components'
@@ -43,6 +43,7 @@ const PaymentDefailsForm = observe(({ form }) => {
   const [isRepositoriesSelected, setRepositoriesSelected] = useState(false)
   const [isTermsConditions, setIsTermsConditions] = useState(false)
   const [radioButtonsState, setRadioButtonsState] = useState([])
+  const [typeContractsAnnual, setTypeContractAnnual] = useState(true)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -148,6 +149,11 @@ const PaymentDefailsForm = observe(({ form }) => {
     })
 
     if (planName !== 'starting') {
+      if (name.includes('typesContracts')) {
+        if (value === 'Annual rolling') setTypeContractAnnual(true)
+        else setTypeContractAnnual(false)
+      }
+
       if (name.includes('repository')) {
         membershipPrice.data.repository.push(value)
         membershipPrice.data.planName = planName
@@ -243,7 +249,8 @@ const PaymentDefailsForm = observe(({ form }) => {
           )
         }
         if (field.type === 'radio') {
-          if (planName === 'starting') return <div key={field.id} />
+          if (planName === 'starting' || typeContractsAnnual)
+            return <div key={field.id} />
           return (
             <div key={field.id}>
               <Radiobutton
@@ -331,16 +338,19 @@ const PaymentDefailsForm = observe(({ form }) => {
           <Markdown className={styles.price}>
             {/* eslint-disable-next-line no-nested-ternary */}
             {isRepositoriesSelected
-              ? patchStatsFull(form.errorPriceCalculation, membershipPrice.data)
+              ? patchNumberComma(
+                  form.errorPriceCalculation,
+                  membershipPrice.data
+                )
               : // eslint-disable-next-line no-nested-ternary
               membershipPrice.data.priceCalculated <= 1
               ? membershipPrice.data.priceCalculated === 0
                 ? 'Annual fee: N/A'
-                : patchStatsFull(
+                : patchNumberComma(
                     form.errorPriceCalculation,
                     membershipPrice.data
                   )
-              : patchStatsFull(form.priceCalculated, membershipPrice.data)}
+              : patchNumberComma(form.priceCalculated, membershipPrice.data)}
           </Markdown>
         )}
         <Button
