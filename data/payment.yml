@@ -5,7 +5,7 @@ form:
   id: Member-details
   maxRepositoriesCount: 3
   price: "Annual fee:  <span>￡{{price}} *</span>"
-  price-calculated: "Annual fee:  <span>￡{{priceCalculated}} </span>"
+  price-calculated: "Annual fee:  <span>￡{{priceCalculated}} *</span>"
   error-price-calculation: |
     <div><span>Fee:</span><span>We are afraid that we do not have enough data to calculate the fee automatically at this stage.
     A member of the CORE team will be in touch with you shortly after submitting your request.</span></div>
