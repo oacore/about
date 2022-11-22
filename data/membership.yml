@@ -12,7 +12,6 @@ header:
       variant: text
       download: true
 
-
 content:
   - &dashboard
     title: CORE Repository Dashboard
