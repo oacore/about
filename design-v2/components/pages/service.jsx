@@ -206,6 +206,15 @@ const ServicePage = observe(
               <div className={styles.section}>
                 <h3>{whatIsIncluded.title}</h3>
                 <Markdown>{whatIsIncluded.content}</Markdown>
+                {whatIsIncluded.action && (
+                  <Button
+                    className={styles.contactBtn}
+                    variant="contained"
+                    href={whatIsIncluded.action.url}
+                  >
+                    {whatIsIncluded.action.caption}
+                  </Button>
+                )}
               </div>
               <img src={whatIsIncluded.image} alt={whatIsIncluded.title} />
             </Section>
