@@ -37,6 +37,7 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 .how-it-works {
   display: grid;
   grid-template-columns: $grid-responsive-for-sections;
+  align-items: center;
   .content {
     .button {
       float: right;
@@ -99,6 +100,9 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   }
   .section {
     max-width: 95ch;
+    .contactBtn {
+      margin-top: 2.5rem;
+    }
   }
 }
 
