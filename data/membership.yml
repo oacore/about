@@ -12,7 +12,6 @@ header:
       variant: text
       download: true
 
-
 content:
   - &dashboard
     title: CORE Repository Dashboard
@@ -239,7 +238,7 @@ support:
 
 fee:
   title: Membership fee for <span>{{planName}}</span> members*
-  caption: 30% Early bird CORE Membership discount (ends December 1st, 2022)
+  caption: 30% Early bird CORE Membership discount (ends December 31st, 2022)
   description:
     supporting: |
       Our Supporting members are the pillars of our open scholarly infrastructure service. They enable us in delivering on our mission. Co-funds the maintenance of CORE services as they are.
