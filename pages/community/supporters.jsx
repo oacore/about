@@ -22,9 +22,15 @@ export async function getStaticProps() {
     return item
   })
 
+  const filtered = members.filter(
+    (member) =>
+      member.billing_type !== 'starting' &&
+      !member.organisation_name.toLowerCase().includes('test')
+  )
+
   return {
     props: {
-      members,
+      members: filtered,
     },
   }
 }
