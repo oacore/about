@@ -443,10 +443,11 @@ sections:
         question: |
           Can I use the CORE API for commercial purposes?
         answer: |
-          Yes, you can use the CORE API for commercial purposes, but you need
-          to contact us first and let us know about it. Commercial use of our
-          API could increase the traffic in our servers and we would like to be
-          aware of the expected traffic.
+          Yes, you can use the CORE API for commercial purposes, (Terms & Conditions) apply. 
+          We provide 30 Day Free Trial for Institution and Enterprise. 
+          We will ask you for your circumstances during the registration process and we might 
+          contact you afterwards to clarify any points and assess your eligibility for a free licence. 
+          If your circumstances change, please let us know.
       - slug: can-I-use-the-CORE-dataset-for-commercial-purposes
         question: |
           Can I use the CORE dataset for commercial purposes?

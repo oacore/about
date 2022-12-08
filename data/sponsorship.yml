@@ -4,7 +4,7 @@ header:
   logo: /images/membership/sponsorship.svg
   actions:
     - caption: become a sponsor
-      url: "#sponsor_link"
+      url: "#link_to_page"
       variant: contained
     - caption: download our flyer
       url: /resources/flyer-CORE-Sponsorship.pdf
