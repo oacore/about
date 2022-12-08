@@ -1,0 +1,116 @@
+header:
+  title: CORE Sponsorship
+  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our sponsors to support and sustain the service.
+  logo: /images/membership/sponsorship.svg
+  actions:
+    - caption: become a sponsor
+      url: "#sponsor_link"
+      variant: contained
+    - caption: download our flyer
+      url: /resources/flyer-CORE-Sponsorship.pdf
+      variant: text
+      download: true
+
+content:
+  - &website
+    title: Acknowledgement on the CORE sponsors webpage with a hyperlink to the sponsor’s website
+    plans: [Strategic partner, Premium, Gold, Silver, Bronze]
+  - &logo
+    title: Logo banner integrated in CORE Search
+    plans: [Strategic partner, Premium, Gold, Silver]
+  - &baner
+    title: Personalised banners for research events within CORE
+    plans: [Strategic partner, Premium, Gold, Silver]
+  - &acknowledgement
+    title: Acknowledgement in our communication and promotion materials
+    plans: [Strategic partner, Premium, Gold]
+  - &blog
+    title: Invited post on CORE blog*
+    plans: [Strategic partner, Premium]
+  - &presentation
+    title: Acknowledgement in presentations delivered by the CORE team
+    plans: [Strategic partner, Premium]
+  - &partner
+    title: Listing as a strategic partner on the CORE homepage and within the CORE footer of every CORE page right next to The Open University logo
+    plans: [Strategic partner]
+  - &paper
+    title: Acknowledgement of support provided in relevant research papers produced by the CORE team
+    plans: [Strategic partner]
+
+features:
+  title: By becoming a CORE Sponsor you support
+  services:
+  -
+    title: Open scholarly infrastructures
+    description: |
+      We provide a worldwide service and are committed to the Principles of Open Scholarly Infrastructure (POSI).
+  -
+    title: Open repositories network
+    description: |
+      We support the global open repositories network with innovative technical solutions as an integral part of our mission.
+  -
+    title: Open research community
+    description: |
+      We support researchers, academic institutions, developers, funders and other organisations in their Open Access & Open Research mission.
+  -
+    title: Raising scholarly data quality
+    description: |
+      We facilitate interoperability and raise quality of scholarly data to align with FAIR principles.
+
+
+how-to-sponsor:
+  title: How to sponsor?
+  image: /images/membership/howToSponsor.svg
+  description: |
+    We offer five levels of sponsorship enabling organisations to select the most suitable option. In becoming a CORE Sponsor you make a very public statement of support for Open Access and Open Research.
+  action:
+    title: Access documentation
+    url: https://api.core.ac.uk/docs/v3
+  types:
+  -
+    title: Strategic partner
+  -
+    title: Premium
+  -
+    title: Gold
+  -
+    title: Silver
+  -
+    title: Bronze
+
+comparison-table:
+  title: Sponsorship benefits
+  headers:
+    - name: ''
+      defaultText: ""
+    - name: Strategic partner
+      defaultText: "Contact us"
+      url: https://core.ac.uk/about#contact
+    - name: Premium
+      defaultText: "£20,000 "
+    - name: Gold
+      defaultText: "£10,000 "
+    - name: Silver
+      defaultText: "£5,000 "
+    - name: Bronze
+      defaultText: "£2,500 "
+
+  rows:
+    - *website
+    - *logo
+    - *baner
+    - *acknowledgement
+    - *blog
+    - *presentation
+    - *partner
+    - *paper
+  warning: "* This cannot be used for advertising and is subject to compliance with CORE's T&Cs. It can be used for addressing topics relevant to open research delivered in a way that engages the open scholarly community."
+
+contact-us:
+  title: Contact us
+  image: /images/membership/contact.svg
+  description: |
+    If you still have some question send us a request and we will be happy to get in touch with you.
+  action:
+    title: Become a SPONSOR
+    url: https://core.ac.uk/about#contact
