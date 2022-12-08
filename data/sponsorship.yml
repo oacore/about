@@ -7,7 +7,7 @@ header:
       url: "#facebook_ads_example"
       variant: contained
     - caption: download our flyer
-      url: /resources/core-leaflet-Glasgow-A3.pdf
+      url: /resources/flyer-CORE-Sponsorship.pdf
       variant: text
       download: true
 
