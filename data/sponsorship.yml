@@ -4,7 +4,7 @@ header:
   logo: /images/membership/sponsorship.svg
   actions:
     - caption: become a sponsor
-      url: "#facebook_ads_example"
+      url: "#sponsor_link"
       variant: contained
     - caption: download our flyer
       url: /resources/flyer-CORE-Sponsorship.pdf
