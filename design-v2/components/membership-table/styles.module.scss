@@ -40,6 +40,11 @@ $card-header-color: #fef5ef;
     padding: 0;
     width: 50ch;
   }
+  &-back-ground {
+    background-color: var(--gray-100);
+    width: 30ch;
+  }
+
   &-prices {
     &-active,
     &:hover {
@@ -62,6 +67,10 @@ $card-header-color: #fef5ef;
     font-weight: 600;
     background-color: var(--gray-100);
   }
+  &-padding {
+    padding: 1rem;
+    font-weight: 400;
+  }
   &-description {
     padding: 1.5rem;
     color: var(--gray-700);
@@ -83,6 +92,7 @@ $card-header-color: #fef5ef;
     color: var(--primary);
     font-weight: 400;
     font-size: 0.9rem;
+    text-decoration: underline;
   }
   &-action {
     background-color: var(--white);
@@ -173,6 +183,10 @@ $card-header-color: #fef5ef;
     text-transform: none;
     color: var(--gray-900);
   }
+}
+
+.alignLeft {
+  text-align: left;
 }
 
 .bold-text-500 {
