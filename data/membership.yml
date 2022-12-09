@@ -147,11 +147,8 @@ plans:
         - *tech-support
         - *api
       action:
-        title: Become a member
-        url: '/member/supporting'
-#        url: '/membership/supporting'
-#        title: Register your interest
-#        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+       title: Register your interest
+       url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
     - title: Sustaining
       caption: <a href='membership/sustaining'>Membership fees</a>
@@ -168,11 +165,8 @@ plans:
         - *styles
         - *health-check
       action:
-        title: Become a member
-        url: '/member/sustaining'
-#        url: '/membership/sustaining'
-#        title: Register your interest
-#        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+        title: Register your interest
+        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
