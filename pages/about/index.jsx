@@ -88,7 +88,12 @@ const AboutPage = ({ data }) => (
           <h4 className="md-3">{data.blog.title}</h4>
           <Blog endpoint="https://api.core.ac.uk/internal/blog/feed" />
           <ButtonToolbar align="center">
-            <Button href="~blog" className="mt-3" color="primary" outline>
+            <Button
+              href="https://blog.core.ac.uk"
+              className="mt-3"
+              color="primary"
+              outline
+            >
               {data.blog.actionLabel}
             </Button>
           </ButtonToolbar>
@@ -102,7 +107,7 @@ const AboutPage = ({ data }) => (
         ...data.endorsements,
         action: {
           label: data.endorsements.actionLabel,
-          href: '~about/endorsements',
+          href: '/about/endorsements',
         },
       }}
     />
@@ -122,11 +127,11 @@ const AboutPage = ({ data }) => (
       </Row>
 
       <ButtonToolbar align="center" className="flex-row-reverse">
-        <Button color="primary" outline href="~benefits">
+        <Button color="primary" outline href="benefits">
           {data.howItWorks.actionLabels.primary}
         </Button>
 
-        <Button color="link" href="~data-providers">
+        <Button color="link" href="data-providers">
           {data.howItWorks.actionLabels.secondary}
         </Button>
       </ButtonToolbar>
@@ -138,11 +143,11 @@ const AboutPage = ({ data }) => (
         ...data.communities,
         action: {
           label: data.communities.actionLabel,
-          href: '~about/ambassadors',
+          href: 'about/ambassadors',
         },
         extraAction: {
           label: data.communities.extraActionLabel,
-          href: '~community/research',
+          href: 'community/research',
         },
       }}
     />
@@ -152,7 +157,7 @@ const AboutPage = ({ data }) => (
         ...data.services,
         action: {
           label: data.services.actionLabel,
-          href: '~services',
+          href: 'services',
         },
       }}
       className={styles.services}
