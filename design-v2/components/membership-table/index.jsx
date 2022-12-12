@@ -29,7 +29,7 @@ const MembershipTable = observe(
 
     const renderHeaders = () => (
       <tr>
-        {textData.headers.map((header) => (
+        {textData.headers.map((header, i) => (
           <th
             key={header.name}
             className={classNames.use(styles.header, {
@@ -47,7 +47,11 @@ const MembershipTable = observe(
             </Markdown>
             {header.defaultText && (
               <a href={header.url}>
-                <Markdown className={styles.headerText}>
+                <Markdown
+                  className={classNames.use(styles.headerText, {
+                    [styles.headerUnderline]: i === 1,
+                  })}
+                >
                   {header.defaultText}
                 </Markdown>
               </a>
