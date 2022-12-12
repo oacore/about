@@ -3,8 +3,8 @@ header:
   description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our sponsors to support and sustain the service.
   logo: /images/membership/sponsorship.svg
   actions:
-    - caption: become a sponsor
-      url: "#link_to_page"
+    - caption: Register your interest
+      url: https://docs.google.com/forms/d/1M8kSnsjxBlVyZZsMvprxLgr_yxN1AP82Yp_hfw2K_QE/edit
       variant: contained
     - caption: download our flyer
       url: /resources/flyer-CORE-Sponsorship.pdf
@@ -85,7 +85,7 @@ comparison-table:
       defaultText: ""
     - name: Strategic partner
       defaultText: "Contact us"
-      url: https://core.ac.uk/about#contact
+      url: https://docs.google.com/forms/d/1M8kSnsjxBlVyZZsMvprxLgr_yxN1AP82Yp_hfw2K_QE/edit
     - name: Premium
       defaultText: "£20,000 "
     - name: Gold
@@ -112,5 +112,5 @@ contact-us:
   description: |
     If you still have some question send us a request and we will be happy to get in touch with you.
   action:
-    title: Become a SPONSOR
-    url: https://core.ac.uk/about#contact
+    title: Register your interest
+    url: https://docs.google.com/forms/d/1M8kSnsjxBlVyZZsMvprxLgr_yxN1AP82Yp_hfw2K_QE/edit
