@@ -92,8 +92,12 @@ $card-header-color: #fef5ef;
     color: var(--primary);
     font-weight: 400;
     font-size: 0.9rem;
+  }
+
+  &-underline {
     text-decoration: underline;
   }
+
   &-action {
     background-color: var(--white);
   }

@@ -72,7 +72,7 @@ const SponsorshipPageTemplate = ({ data }) => (
       <span className={styles.warning}>{data.comparisonTable.warning}</span>
     </Section>
     <Section id="contact-us" className={styles.howToContact}>
-      <div id="link_to_page">
+      <div>
         <article className={styles.content}>
           <h3>{data.contactUs.title}</h3>
           <div className={styles.contactWrapper}>
