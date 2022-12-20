@@ -4,7 +4,7 @@ header:
   logo: /images/membership/sponsorship.svg
   actions:
     - caption: Register your interest
-      url: https://docs.google.com/forms/d/1M8kSnsjxBlVyZZsMvprxLgr_yxN1AP82Yp_hfw2K_QE/edit
+      url: https://forms.gle/hTmouubv97ULf5rA7
       variant: contained
     - caption: download our flyer
       url: /resources/flyer-CORE-Sponsorship.pdf
