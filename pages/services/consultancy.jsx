@@ -60,7 +60,6 @@ export async function getStaticProps({ previewData }) {
       ...sections.relatedServices,
       services: sections.relatedServices.items,
     },
-    hideButtons: true,
   }
 
   return {
