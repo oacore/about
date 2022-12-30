@@ -26,6 +26,7 @@ export async function getStaticProps({ params }) {
     comparisonTable: textData.comparisonTable,
     box: textData.box,
     discount: textData.discount,
+    googleForm: textData.fee.action.googleForm,
   }
 
   return {
