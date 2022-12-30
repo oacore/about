@@ -248,7 +248,7 @@ fee:
   action:
     caption: Become member
     url: '/member'
-#    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
+    google-form: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
   table:
     headers:
       - name: Data provider size

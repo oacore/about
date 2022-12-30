@@ -23,7 +23,8 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
   }, [])
 
   const handleClick = () => {
-    router.push(`/member/${data.planName}`)
+    router.push(data.googleForm)
+    // router.push(`/member/${data.planName}`)
   }
 
   const renderHeaders = () => (
