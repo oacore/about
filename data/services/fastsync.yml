@@ -17,7 +17,7 @@ header:
     - caption: Download our flyer
       variant: text
       url: /resources/core-api-flyer.pdf
-      download: true
+      target: _blank
 
 
 features:
