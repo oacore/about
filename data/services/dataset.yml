@@ -16,7 +16,7 @@ header:
     - caption: Download our flyer
       variant: text
       url: /resources/core-dataset-flyer.pdf
-      target: _blank
+      download: true
 
 features:
   - title: All the data in one single place
