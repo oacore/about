@@ -23,7 +23,7 @@ const format2name = (type) =>
   }[type])
 
 const format2action = (type) =>
-  ['gdoc', 'gslides', 'pdf'].includes(type) ? 'Open' : 'Download'
+  ['gdoc', 'gslides'].includes(type) ? 'Open' : 'Download'
 
 const ResourceLink = ({
   id,
@@ -51,7 +51,6 @@ const ResourceLink = ({
       data-format={format.toLowerCase()}
       data-action={action}
       data-label={label}
-      target="_blank"
       {...props}
       {...restProps}
     >

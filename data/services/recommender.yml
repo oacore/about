@@ -21,7 +21,7 @@ header:
      - caption: Download our flyer
        variant: text
        url: /resources/core_flyer_recomender.pdf
-       target: _blank
+       download: true
 
 
 

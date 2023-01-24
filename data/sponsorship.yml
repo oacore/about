@@ -9,7 +9,7 @@ header:
     - caption: download our flyer
       url: /resources/flyer-CORE-Sponsorship.pdf
       variant: text
-      target: _blank
+      download: true
 
 content:
   - &website

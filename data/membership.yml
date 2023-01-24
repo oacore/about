@@ -10,7 +10,7 @@ header:
     - caption: download our flyer
       url: /resources/core-leaflet-Glasgow-A3.pdf
       variant: text
-      target: _blank
+      download: true
 
 content:
   - &dashboard
