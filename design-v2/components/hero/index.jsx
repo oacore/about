@@ -33,6 +33,7 @@ const Hero = ({
           {actions.map((action) => (
             <Button
               href={action.url}
+              target={action.target}
               variant={action.variant}
               key={action.caption}
               download={action.download}
