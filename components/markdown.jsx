@@ -9,7 +9,9 @@ import Link from './link'
 // pure text but renders own TextRenderer componet instead
 const MarkdownLink = ({ href, title, children }) => (
   <Link href={href} passHref>
-    <a title={title}>{children}</a>
+    <a target={href.includes('.pdf') ? '_blank' : '_self'} title={title}>
+      {children}
+    </a>
   </Link>
 )
 
