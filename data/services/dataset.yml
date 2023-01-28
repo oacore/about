@@ -36,7 +36,7 @@ how-it-works:
   title: How it works?
   image: /images/services/work.svg
   description: |
-    CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](https://core.ac.uk/data-providers?q=&size=10). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
+    CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides harmonised and enriched metadata and full text content aggregated by CORE delivered in a machine readable format. This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
   action:
     title: Access documentation
     url: https://core.ac.uk/documentation/dataset
@@ -81,7 +81,6 @@ what-is-included:
     The Dataset provides you with:
 
     * The entire CORE's corpus of both metadata and full texts in a machine processable format.
-    * Mappings of the CORE articles to entities in the Microsoft Academic Graph (MAG), enabling to access CORE fulltexts and use additional entities from MAG where available.
     * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to download the CORE dataset and how data is organised.
   image: /images/services/delivery.svg
 
