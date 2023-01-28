@@ -40,6 +40,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "@babel/runtime": "^7.20.13",
     "@oacore/design": "latest",
     "@octokit/rest": "^18.5.0",
     "bootstrap": "^4.5.3",
