@@ -5,7 +5,8 @@ import { Section } from '../content'
 import styles from './hero.module.scss'
 import stylesHistory from '../../templates/history/history.module.scss'
 
-import { AnniversaryLogo as Logo } from 'components'
+// eslint-disable-next-line import/no-cycle
+import AnniversaryLogo from 'components'
 
 const HeroSection = ({
   data: { title = 'CORE', tagline = '' } = {},
@@ -22,7 +23,11 @@ const HeroSection = ({
     {...passProps}
   >
     <a href="/history" className={stylesHistory.linkLogo}>
-      <Logo text={title} className={stylesHistory.heroLogo} tag="h1" />
+      <AnniversaryLogo
+        text={title}
+        className={stylesHistory.heroLogo}
+        tag="h1"
+      />
     </a>
     {tagline && <p className={styles.heroTaglineBorder}>{tagline}</p>}
     {children}
