@@ -5,6 +5,7 @@ import { Section } from '../content'
 import styles from './hero.module.scss'
 import stylesHistory from '../../templates/history/history.module.scss'
 
+// eslint-disable-next-line import/no-cycle
 import { AnniversaryLogo as Logo } from 'components'
 
 const HeroSection = ({
