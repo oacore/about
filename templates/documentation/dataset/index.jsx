@@ -100,6 +100,7 @@ const DatasetPageTemplate = ({
               key={action.caption}
               variant="contained"
               href={action.url}
+              target={action.target}
               className={styles.button}
             >
               {action.caption}
