@@ -47,7 +47,7 @@ const Card = ({ plan }) => (
       <h5>{plan.title}</h5>
       {plan.caption &&
         Parser(
-          `<span className=${styles.planHeaderCaption}>${plan.caption}</span>`
+          `<span className={styles.planHeaderCaption}>${plan.caption}</span>`
         )}
     </div>
     <div className={styles.divider} />
@@ -92,6 +92,7 @@ const MembershipPageTemplate = ({ data }) => (
           {data.header.actions.map((action) => (
             <Button
               href={action.url}
+              target={action.target}
               variant={action.variant}
               key={action.caption}
               download={action.download}
