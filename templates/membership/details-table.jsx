@@ -10,7 +10,7 @@ import { MembershipTable, Section, TextBox } from 'design-v2/components'
 const DetailsTable = ({ data, howItWorksOption }) => {
   const { visibleTable, toggleVisibleTable } = useTable()
   return (
-    <Section id={howItWorksOption ? 'documentation' : 'documentation'}>
+    <Section id={howItWorksOption ? 'documentation' : 'comparison-table'}>
       {howItWorksOption ? (
         <Section id="how-it-works" className={styles.howItWorks}>
           <div className={styles.imageWrapper}>
