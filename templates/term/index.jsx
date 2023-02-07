@@ -46,7 +46,7 @@ const TermsPageTemplate = ({ data }) => (
         ))}
       </div>
     </div>
-    <div className={styles.additionalItem}>
+    <div className={styles.additionalItem} id="disclaimer">
       <h2 className={styles.mainTitle}>{data.additional.title}</h2>
       <Markdown>{data.additional.content}</Markdown>
     </div>
