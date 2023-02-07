@@ -4,10 +4,10 @@ import textData from '../../data/terms.yml'
 import { Page } from '../../components'
 import TermsPageTemplate from '../../templates/term'
 
-const TermsPage2 = () => (
+const TermsPage = () => (
   <Page title={textData.header.title} description={textData.header.description}>
     <TermsPageTemplate data={textData} />
   </Page>
 )
 
-export default TermsPage2
+export default TermsPage
