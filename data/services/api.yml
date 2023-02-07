@@ -16,7 +16,7 @@ header:
        url: '#form'
      - caption: Download our flyer
        variant: text
-       url: /resources/core-api-flyer.pdf
+       url: /resources/Flyer-API-Service.pdf
        target: _blank
 
 
