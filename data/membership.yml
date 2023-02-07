@@ -211,6 +211,11 @@ carousel:
     caption: See all CORE members
     url: 'https://core.ac.uk/community/supporters'
 
+box:
+  description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
+  action:
+    default: Show feature details and comparison
+    active: Close feature details and comparison
 
 how-it-works:
   title: Find out more about membership’s features

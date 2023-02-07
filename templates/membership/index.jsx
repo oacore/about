@@ -164,6 +164,7 @@ const MembershipPageTemplate = ({ data }) => {
       <DetailsTable
         howItWorksOption
         data={{
+          box: data.box,
           howItWorks: data.howItWorks,
           comparisonTable: data.comparisonTable,
         }}
