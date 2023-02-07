@@ -162,6 +162,7 @@ const MembershipPageTemplate = ({ data }) => {
         </div>
       </section>
       <DetailsTable
+        howItWorksOption
         data={{
           howItWorks: data.howItWorks,
           comparisonTable: data.comparisonTable,
