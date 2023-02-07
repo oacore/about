@@ -1,9 +1,9 @@
 header:
   title: Terms & Conditions
-  description: This page sets the Terms & Conditions under which [CORE data*](https://core.ac.uk/terms) <br> can be used by others.
+  description: This page sets the Terms & Conditions under which [CORE data*](~terms#disclaimer) <br> can be used by others.
   actions:
     - caption: Download pdf
-      url: /resources/flyer-CORE-Sponsorship.pdf
+      url: /resources/core-terms-conditions.pdf
       variant: contained
       target: _blank
 main:
