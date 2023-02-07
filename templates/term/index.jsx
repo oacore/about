@@ -7,7 +7,7 @@ import { Markdown } from '../../components'
 
 const TermsPageTemplate = ({ data }) => (
   <Layout>
-    <Section id="metadata" className={styles.header}>
+    <Section id="termsPage" className={styles.header}>
       <div>
         <h2 className={styles.title}>{data.header.title}</h2>
         <Markdown className={styles.description}>
@@ -31,7 +31,7 @@ const TermsPageTemplate = ({ data }) => (
     <div className={styles.contentWrapper}>
       <div className={styles.contentItem}>
         {data.main[0].mainItems.map((mainItem) => (
-          <div className={styles.item}>
+          <div key={mainItem.title} className={styles.item}>
             <h2 className={styles.mainTitle}>{mainItem.title}</h2>
             <Markdown>{mainItem.content}</Markdown>
           </div>
@@ -39,7 +39,7 @@ const TermsPageTemplate = ({ data }) => (
       </div>
       <div className={styles.contentItem}>
         {data.main[1].mainItems.map((mainItem) => (
-          <div className={styles.item}>
+          <div key={mainItem.title} className={styles.item}>
             <h2 className={styles.mainTitle}>{mainItem.title}</h2>
             <Markdown>{mainItem.content}</Markdown>
           </div>
