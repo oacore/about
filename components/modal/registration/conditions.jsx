@@ -26,7 +26,7 @@ const ModalConditions = observe(() => {
       <h6>Just one more thing!</h6>
       <main>
         Please read and agree to the CORE
-        <Link href="/terms">Terms and Conditions</Link> and
+        <Link href="/index">Terms and Conditions</Link> and
         <Link href="/privacy"> privacy notice</Link>. The T&Cs and privacy
         notice are designed to inform you of your rights and obligations when
         using the CORE service.

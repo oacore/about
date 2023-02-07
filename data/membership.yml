@@ -1,3 +1,14 @@
+headerLink:
+  - link: Membership levels
+    href: '#membership-levels'
+  - link: CORE Members
+    href: '#core-members'
+#    bring back when have documentation
+#  - link: Documentation
+#    href: '#documentation'
+  - link: Membership materials
+    href: '#membership-materials'
+
 header:
   title: CORE Membership for organisations
   extra: Coming soon
@@ -115,7 +126,17 @@ content:
     plans: [Sustaining]
 
 plans:
-  title: What is CORE membership?
+  title: CORE Membership levels
+  cardsDescription:
+    - title: |
+        STARTING for:
+      content: Organisations who want to get their content indexed in CORE and benefit from increased discoverability, while staying in control of how their content is exposed using the CORE  Dashboard.
+    - title: |
+        SUPPORTING for:
+      content: Organisations who want to be widely recognised for their open research. This membership also comes with extra visibility for your organisation in the OA network, additional technical support, CORE API access for your researchers, and a seat on our Board of Supporters.
+    - title: |
+        SUSTAINING for:
+      content: Organisations who want to be seen as open research champions. This membership  comes with additional tools to help stay compliant with OA policies and FAIR, unlimited technical support, CORE Dataset access for your researchers for text and data mining, and two seats on our Board of Supporters
   cards:
     - title: Starting
       caption: Free
@@ -149,6 +170,7 @@ plans:
       action:
        title: Register your interest
        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+      subscribe: UK HEIs can subscribe via the <br> [Jisc license subscriptions manager](https://subscriptionsmanager.jisc.ac.uk/#)
 
     - title: Sustaining
       caption: <a href='membership/sustaining'>Membership fees</a>
@@ -167,12 +189,42 @@ plans:
       action:
         title: Register your interest
         url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
+      subscribe: UK HEIs can subscribe via the <br> [Jisc license subscriptions manager](https://subscriptionsmanager.jisc.ac.uk/#)
+
+carousel:
+  items:
+    - img: /images/membership/bristol.svg
+      alt: "bristol"
+    - img: /images/membership/city.svg
+      alt: "city"
+    - img: /images/membership/george.svg
+      alt: "george"
+    - img: /images/membership/kent.png
+      alt: "kent"
+    - img: /images/membership/lancaster.svg
+      alt: "lancaster"
+    - img: /images/membership/sussex.svg
+      alt: "sussex"
+    - img: /images/membership/belfast.png
+      alt: "belfast"
+  action:
+    caption: See all CORE members
+    url: 'https://core.ac.uk/community/supporters'
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
   action:
     default: Show feature details and comparison
     active: Close feature details and comparison
+
+how-it-works:
+  title: Find out more about membership’s features
+  image: /images/services/work.svg
+  description: |
+    Here you can find a comparison table with detailed information about each features. It can help you choose the most suitable membership’s level for you. Also you can access Membership documentation where described how each feature works.
+  action:
+    default: Comparison table
+    active: Comparison table
 
 comparison-table:
   title: Features’ details and comparison
@@ -214,21 +266,29 @@ support:
     - title: Sustaining
       caption: Co-funds the maintenance of CORE services and their continuous improvement.
       img: /images/membership/sustaining.svg
-  members:
-    title: Some of our members
-    children:
-      - logo: stgeorg.png
-        name: St. George's, University of London
-      - logo: university-of-london.svg
-        name: City University of London
-      - logo: brunel.png
-        name: Brunel University
-      - logo: trent.png
-        name: Nottingham Trent University
-      - logo: sussex.svg
-        name: University of Sussex
-      - logo: aru.svg
-        name: Anglia Ruskin University
+
+materials:
+  title: Membership materials
+  cards:
+    - image: /images/membership/video.svg
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+
+#      bring back when we will have pdf file for it
+#    - image: /images/membership/presentation.svg
+#      action:
+#        caption: Open presentation
+#        url: /resources/core-leaflet-Glasgow-A3.pdf
+#        target: _blank
+    - image: /images/membership/flyer.svg
+      action:
+        caption: Open flyer
+        url: /resources/core-leaflet-Glasgow-A3.pdf
+        target: _blank
+
+
 
 fee:
   title: Membership fee for <span>{{planName}}</span> members*

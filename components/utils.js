@@ -32,7 +32,7 @@ export const patchStats = (text, statistics) => {
 
 export const patchNumberComma = (text, statistics) => {
   const context = {}
-  // eslint-disable-next-line no-restricted-syntax,max-len
+  // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(statistics)) {
     context[key] =
       typeof value === 'number'
