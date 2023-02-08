@@ -59,7 +59,9 @@ const SponsorshipPageTemplate = ({ data }) => (
       </div>
       <div className={styles.itemGroup}>
         {data.howToSponsor.types.map((type) => (
-          <div className={styles.groupItem}>{type.title}</div>
+          <div key={type.title} className={styles.groupItem}>
+            {type.title}
+          </div>
         ))}
       </div>
     </Section>

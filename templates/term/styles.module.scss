@@ -1,0 +1,66 @@
+@import 'design-v2/variables';
+
+.header {
+  .title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 60px;
+    color: #000000;
+  }
+  .description {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #616161;
+  }
+  .buttonGroup {
+    margin-top: 24px;
+  }
+}
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  .content-item {
+    width: 48%;
+    .item {
+      margin-bottom: 44px;
+      ul {
+        margin-left: 1.5rem;
+        li {
+          line-height: 2rem;
+          list-style-type: disc;
+        }
+      }
+      .main-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 24px;
+        color: #212121;
+      }
+    }
+    @media (max-width: $breakpoint-sm) {
+      width: 100%;
+    }
+  }
+}
+.additional-item {
+  margin-bottom: 65px;
+  .main-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 24px;
+    color: #212121;
+  }
+  .main-content {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #212121;
+  }
+}
