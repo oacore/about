@@ -172,10 +172,34 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .carousel-wrapper {
+  position: relative;
   .carousel-items {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(212px, 1fr));
     grid-gap: 35px;
+  }
+  ul {
+    top: unset;
+    width: 100%;
+    transform: translate(-50%, 0);
+    left: 50%;
+    li {
+      width: 128px;
+      max-width: unset;
+      &:not(:last-child) {
+        margin-right: 0;
+      }
+      span {
+        width: 100%;
+      }
+    }
+  }
+  .arrow {
+    position: absolute;
+    transform: translate(-50%, 0);
+  }
+  div div div div div div {
+    margin: 0 10px;
   }
 }
 
@@ -183,7 +207,7 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 50px;
+  margin-top: 98px;
   a {
     text-decoration: underline;
   }
@@ -344,7 +368,11 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
 }
 
 .carousel-item {
-  margin: 0 35px;
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+  border: 1px solid #b75400;
+}
+
+.slick-slide {
+  div {
+    margin: 0 20px;
+  }
 }

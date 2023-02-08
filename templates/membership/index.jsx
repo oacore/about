@@ -1,47 +1,35 @@
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { Carousel } from '@oacore/design/lib'
-import { useOutsideClick } from '@oacore/design/lib/hooks'
 import Parser from 'html-react-parser'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
 import listIcon from '../../public/images/membership/listIcon.svg'
+import carouselArrowRight from '../../public/images/membership/carouselArrowRight.svg'
+import carouselArrowLeft from '../../public/images/membership/carouselArrowLeft.svg'
 
 import { Markdown } from 'components'
 import { Layout, Section, Video } from 'design-v2/components'
 
-const DetailsBox = ({ title, description }) => {
-  const [open, setOpen] = useState(false)
-  const boxRef = useRef(null)
-
-  const toggleClick = (e) => {
-    e.preventDefault()
-    setOpen(!open)
-  }
-
-  const onClose = () => setOpen(false)
-
-  useOutsideClick(boxRef, onClose)
-
-  return (
-    <details
-      {...(open ? { open: true } : {})}
-      className={styles.box}
-      ref={boxRef}
-    >
-      <summary className={styles.title} onClick={toggleClick}>
-        <Markdown>{title}</Markdown>
-      </summary>
-      <Markdown
-        onClick={(e) => e.stopPropagation()}
-        className={styles.description}
-      >
-        {description}
-      </Markdown>
-    </details>
-  )
-}
+const DetailsBox = ({
+  title,
+  description,
+  advantageId,
+  handleToggle,
+  active,
+}) => (
+  <div className={styles.box}>
+    {/* eslint-disable-next-line max-len */}
+    {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
+    <div className={styles.title} onClick={() => handleToggle(advantageId)}>
+      <Markdown>{title}</Markdown>
+    </div>
+    {active === advantageId && (
+      <Markdown className={styles.description}>{description}</Markdown>
+    )}
+  </div>
+)
 
 const CardDescription = ({ plan }) => (
   <article className={styles.memberDescription} key={plan.title}>
@@ -50,51 +38,68 @@ const CardDescription = ({ plan }) => (
   </article>
 )
 
-const Card = ({ plan }) => (
-  <article className={styles.plan} key={plan.title}>
-    <div className={styles.planHeader}>
-      <h5>{plan.title}</h5>
-      {plan.caption &&
-        Parser(
-          `<span className={styles.planHeaderCaption}>${plan.caption}</span>`
-        )}
-    </div>
-    <div className={styles.divider} />
-    <div className={styles.planContent}>
-      {plan.box && (
-        <div className={styles.planBox}>
-          <Markdown className={styles.planBoxTitle}>{plan.box.title}</Markdown>
-          <Markdown className={styles.planBoxCaption} tag="span">
-            {plan.box.caption}
-          </Markdown>
-        </div>
-      )}
-      <ul className={styles.planAdvantages}>
-        {plan.advantages.map((advantage) => (
-          <div className={styles.listWrapper}>
-            <img src={listIcon} alt="listIcon" />
-            <li key={advantage.title}>
-              <DetailsBox
-                title={advantage.title}
-                description={advantage.description}
-              />
-            </li>
-          </div>
-        ))}
-      </ul>
-      <div className={styles.planContentButton}>
-        <Button variant="contained" href={plan.action.url}>
-          {plan.action.title}
-        </Button>
+const Card = ({ plan }) => {
+  const [active, setActive] = useState(null)
+
+  const handleToggle = React.useCallback(
+    (id) => {
+      if (active !== id) setActive(id)
+      else setActive(null)
+    },
+    [active]
+  )
+
+  return (
+    <article className={styles.plan} key={plan.title}>
+      <div className={styles.planHeader}>
+        <h5>{plan.title}</h5>
+        {plan.caption &&
+          Parser(
+            `<span className={styles.planHeaderCaption}>${plan.caption}</span>`
+          )}
       </div>
-      {plan.subscribe ? (
-        <Markdown className={styles.subscription}>{plan.subscribe}</Markdown>
-      ) : (
-        ''
-      )}
-    </div>
-  </article>
-)
+      <div className={styles.divider} />
+      <div className={styles.planContent}>
+        {plan.box && (
+          <div className={styles.planBox}>
+            <Markdown className={styles.planBoxTitle}>
+              {plan.box.title}
+            </Markdown>
+            <Markdown className={styles.planBoxCaption} tag="span">
+              {plan.box.caption}
+            </Markdown>
+          </div>
+        )}
+        <ul className={styles.planAdvantages}>
+          {plan.advantages.map((advantage) => (
+            <div className={styles.listWrapper} key={advantage.id}>
+              <img src={listIcon} alt="listIcon" />
+              <li key={advantage.title}>
+                <DetailsBox
+                  active={active}
+                  handleToggle={() => handleToggle(advantage.id)}
+                  advantageId={advantage.id}
+                  title={advantage.title}
+                  description={advantage.description}
+                />
+              </li>
+            </div>
+          ))}
+        </ul>
+        <div className={styles.planContentButton}>
+          <Button variant="contained" href={plan.action.url}>
+            {plan.action.title}
+          </Button>
+        </div>
+        {plan.subscribe ? (
+          <Markdown className={styles.subscription}>{plan.subscribe}</Markdown>
+        ) : (
+          ''
+        )}
+      </div>
+    </article>
+  )
+}
 
 const MembershipPageTemplate = ({ data }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(false)
@@ -147,11 +152,28 @@ const MembershipPageTemplate = ({ data }) => {
       </Section>
       <section id="core-members" className={styles.carouselWrapper}>
         <Carousel
-          dots={false}
           draggable
           slidesToShow={5}
           infinite
-          arrows={false}
+          autoplay={false}
+          prevArrow={
+            <div>
+              <img
+                className={styles.arrow}
+                src={carouselArrowLeft}
+                alt="carouselArrowLeft"
+              />
+            </div>
+          }
+          nextArrow={
+            <div>
+              <img
+                className={styles.arrow}
+                src={carouselArrowRight}
+                alt="carouselArrowRight"
+              />
+            </div>
+          }
         >
           {data.carousel.items.map((slide) => (
             <img className={styles.carouselItem} src={slide.img} alt="logo" />
