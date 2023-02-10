@@ -40,7 +40,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
-    "@oacore/design": "latest",
+    "@oacore/design": "github:oacore/design#bugfix/eslint",
     "@octokit/rest": "^18.5.0",
     "bootstrap": "^4.5.3",
     "camelize": "^1.0.0",
