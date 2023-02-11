@@ -1162,9 +1162,9 @@ collections:
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
-    - name: header
-      label: Header(title,description,image)
-      file: docs-membership/header.yml
+    - name: headerDashboard
+      label: Header for Dashboard (title, description)
+      file: docs-membership/headerDashboard.yml
       fields:
         - name: title
           widget: string
@@ -1174,3 +1174,21 @@ collections:
           widget: string
           label: id
           hint: id of the block. Must match anchor link url
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content.Muso to equal block name.
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: caption,
+              widget: text,
+              label: Caption,
+              hint: Caption
+            }
