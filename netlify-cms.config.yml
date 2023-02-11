@@ -1162,15 +1162,102 @@ collections:
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
-    - name: header
-      label: Header(title,description,image)
-      file: docs-membership/header.yml
+    - name: headerDashboard
+      label: Header for Dashboard (title, description)
+      file: docs-membership/headerDashboard.yml
       fields:
         - name: title
           widget: string
           hint: >
             The title of the page. Displayed on the page below header.
-        - name: id
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: caption,
+              widget: text,
+              label: Caption,
+              hint: Caption
+            }
+    - name: headerAbout
+      label: Header for About (title, description)
+      file: docs-membership/headerAbout.yml
+      fields:
+        - name: title
           widget: string
-          label: id
-          hint: id of the block. Must match anchor link url
+          hint: >
+            The title of the page. Displayed on the page below header.
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: caption,
+              widget: text,
+              label: Caption,
+              hint: Caption
+            }
+    - name: documentation
+      label: Documentation
+      file: docs-membership/docs.yml
+      fields:
+        - name: items
+          widget: object
+          label: Items
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: descriptionAbout,
+              widget: text,
+              label: descriptionAbout,
+              hint: Description for About
+            }
+            - {
+              name: descriptionDashboard,
+              widget: text,
+              label: descriptionDashboard,
+              hint: Description for sDashboard
+            }
+            - name: imagesList,
+              widget: object,
+              label: imagesList,
+              hint: Images bottom description.
+              fields:
+                - {name: file, widget: image, label: file, required: false, allow_multiple: false }
+                - {name: file, widget: image, label: file, required: false, allow_multiple: false }
+                - {name: file, widget: image, label: file, required: false, allow_multiple: false }
+
+
+            #            - {
+            #              name: membership
+            #              label: Membership
+            #              widget: object
+            #              fields:
+            #                - { label: Caption, name: caption, widget: string, hint: Caption of the button }
+            #                - { label: Variant, name: variant, widget: string, hint: You can, optional: true, default: contained }
+            #                - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true }
+            #            }
