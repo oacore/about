@@ -1219,8 +1219,9 @@ collections:
       file: docs-membership/docs.yml
       fields:
         - name: items
-          widget: object
+          widget: list
           label: Items
+          allow_add: true
           hint: >
             Anchor links to the page content. Must to equal block name.
           fields:
@@ -1228,20 +1229,15 @@ collections:
               widget: string
               label: Title
               hint: Title of the links block
+            - name: descriptionAbout
+              widget: text
+              label: descriptionAbout
+              hint: Description for About
+            - name: descriptionDashboard
+              widget: text
+              label: descriptionDashboard
+              hint: Description for sDashboard
 
-
-#            - {
-#              name: descriptionAbout,
-#              widget: text,
-#              label: descriptionAbout,
-#              hint: Description for About
-#            }
-#            - {
-#              name: descriptionDashboard,
-#              widget: text,
-#              label: descriptionDashboard,
-#              hint: Description for sDashboard
-#            }
 #            - name: imagesList
 #              widget: object
 #              label: imagesList
