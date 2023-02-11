@@ -1225,6 +1225,10 @@ collections:
           hint: >
             Anchor links to the page content. Must to equal block name.
           fields:
+            - name: id
+              widget: string
+              label: id
+              hint: id of the block. Must match anchor link url
             - name: title
               widget: string
               label: Title
