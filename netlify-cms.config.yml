@@ -1227,7 +1227,7 @@ collections:
           fields:
             - name: id
               widget: string
-              label: id
+              label: ID
               hint: id of the block. Must match anchor link url
             - name: title
               widget: string
@@ -1235,11 +1235,11 @@ collections:
               hint: Title of the links block
             - name: descriptionAbout
               widget: text
-              label: descriptionAbout
+              label: Description about
               hint: Description for About
             - name: descriptionDashboard
               widget: text
-              label: descriptionDashboard
+              label: Description dashboard
               hint: Description for sDashboard
 
 #            - name: imagesList
