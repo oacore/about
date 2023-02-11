@@ -1242,15 +1242,15 @@ collections:
               label: descriptionDashboard,
               hint: Description for sDashboard
             }
-            - name: imagesList,
-              widget: object,
-              label: imagesList,
+            - name: imagesList
+              widget: object
+              label: imagesList
               hint: Images bottom description.
               fields:
-                - name: file,
-                  widget: image,
-                  label: file,
-                  required: false,
+                - name: file
+                  widget: image
+                  label: file
+                  required: false
                   allow_multiple: true
             #            - {
             #              name: membership
