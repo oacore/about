@@ -1247,11 +1247,11 @@ collections:
               label: imagesList,
               hint: Images bottom description.
               fields:
-                - {name: file, widget: image, label: file, required: false, allow_multiple: false }
-                - {name: file, widget: image, label: file, required: false, allow_multiple: false }
-                - {name: file, widget: image, label: file, required: false, allow_multiple: false }
-
-
+                - name: file,
+                  widget: image,
+                  label: file,
+                  required: false,
+                  allow_multiple: true
             #            - {
             #              name: membership
             #              label: Membership
