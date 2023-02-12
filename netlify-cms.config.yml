@@ -1234,7 +1234,8 @@ collections:
               label: Title
               hint: Title of the links block
             - name: membership-types
-              widget: object
+              widget: list
+              allow_add: false
               label: Membership types
               hint: Membership type. Three types, you need enable/disable every type.
               fields:
