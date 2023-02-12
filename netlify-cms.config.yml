@@ -1259,15 +1259,12 @@ collections:
                 - label: starting 
                   name: starting
                   widget: boolean
-                  type: boolean
-                  default: 0
+                  default: false
                 - label: supporting 
                   name: supporting
                   widget: boolean
-                  type: boolean
-                  default: 0
+                  default: false
                 - label: sustaining 
                   name: sustaining
                   widget: boolean
-                  type: boolean
-                  default: 0
+                  default: false
