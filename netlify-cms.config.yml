@@ -1257,13 +1257,18 @@ collections:
                hint: Membership type. Three types, you need enable/disbale every type.
                fields:
                  - label: starting 
-                   default: starting
-                   name: name
-                   widget: string 
-                   hint: The name of membership type
-                 - label: status 
-                   default: 0
-                   name: status
+                   name: starting
                    widget: boolean
                    type: boolean
+                   default: 0
+                 - label: supporting 
+                   name: supporting
+                   widget: boolean
+                   type: boolean
+                   default: 0
+                 - label: sustaining 
+                   name: sustaining
+                   widget: boolean
+                   type: boolean
+                   default: 0
 
