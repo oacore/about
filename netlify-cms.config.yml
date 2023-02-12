@@ -1242,20 +1242,20 @@ collections:
                   name: starting
                   widget: "select"
                   options:
-                    - { label: "No", value: 0 }
-                    - { label: "Yes", value: 1 }
+                    - { label: "No", value: false }
+                    - { label: "Yes", value: true }
                 - label: supporting
                   name: supporting
                   widget: select
                   options:
-                    - { label: "No", value: 0 }
-                    - { label: "Yes", value: 1 }
+                    - { label: "No", value: false }
+                    - { label: "Yes", value: true }
                 - label: sustaining
                   name: sustaining
                   widget: select
                   options:
-                    - { label: "No", value: 0 }
-                    - { label: "Yes", value: 1 }
+                    - { label: "No", value: false }
+                    - { label: "Yes", value: true }
             - name: membership-type
               widget: object
               label: Membership type
