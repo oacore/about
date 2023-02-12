@@ -1233,6 +1233,29 @@ collections:
               widget: string
               label: Title
               hint: Title of the links block
+            - name: membership-types
+              widget: object
+              label: Membership types
+              hint: Membership type. Three types, you need enable/disable every type.
+              fields:
+                - label: starting
+                  name: starting
+                  widget: "select"
+                  options:
+                    - { label: "No", value: 0 }
+                    - { label: "Yes", value: 1 }
+                - label: supporting
+                  name: supporting
+                  widget: select
+                  options:
+                    - { label: "No", value: 0 }
+                    - { label: "Yes", value: 1 }
+                - label: sustaining
+                  name: sustaining
+                  widget: select
+                  options:
+                    - { label: "No", value: 0 }
+                    - { label: "Yes", value: 1 }
             - name: membership-type
               widget: object
               label: Membership type
