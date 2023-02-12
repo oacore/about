@@ -1243,15 +1243,14 @@ collections:
               hint: Description for Dashboard
             - name: imagesList
               widget: list
-              label: imagesList
+              label: Images list
               hint: Images bottom description.
               allow_add: true
               fields:
                 - name: file
                   widget: image
-                  label: file
-                  required: false
-                  allow_multiple: false
+                  label: File
+                  hint: Image in description
             #            - {
             #              name: membership
             #              label: Membership
