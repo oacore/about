@@ -1241,47 +1241,18 @@ collections:
                 - name: starting
                   widget: boolean
                   default: false
-                  required: false
                   label: starting
                   hint: Toggle the switch
                 - name: supporting
                   widget: boolean
                   default: false
-                  required: false
                   label: supporting
                   hint: Toggle the switch
                 - name: sustaining
                   widget: boolean
                   default: false
-                  required: false
                   label: sustaining
                   hint: Toggle the switch
-            - name: membership-types
-              widget: object
-              label: Membership type
-              hint: Membership type. Three types, you need enable/disbale every type.
-              fields:
-                - label: starting
-                  name: starting
-                  widget: select
-                  options:
-                    - { label: "Yes", value: 1 }
-                    - { label: "No", value: 0 }
-                  default: [ "No" ]
-                - label: supporting
-                  name: supporting
-                  widget: select
-                  options:
-                    - { label: "Yes", value: 1 }
-                    - { label: "No", value: 0 }
-                  default: [ "No" ]
-                - label: sustaining
-                  name: sustaining
-                  widget: select
-                  options:
-                    - { label: "Yes", value: 1 }
-                    - { label: "No", value: 0 }
-                  default: [ "No" ]
             - name: images
               widget: list
               label: Images list
