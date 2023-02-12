@@ -1240,18 +1240,18 @@ collections:
             - name: descriptionDashboard
               widget: text
               label: Description dashboard
-              hint: Description for sDashboard
-
-#            - name: imagesList
-#              widget: object
-#              label: imagesList
-#              hint: Images bottom description.
-#              fields:
-#                - name: file
-#                  widget: image
-#                  label: file
-#                  required: false
-#                  allow_multiple: true
+              hint: Description for Dashboard
+            - name: imagesList
+              widget: list
+              label: imagesList
+              hint: Images bottom description.
+              allow_add: true
+              fields:
+                - name: file
+                  widget: image
+                  label: file
+                  required: false
+                  allow_multiple: false
             #            - {
             #              name: membership
             #              label: Membership
