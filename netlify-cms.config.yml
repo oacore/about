@@ -1238,44 +1238,24 @@ collections:
               label: Membership types
               hint: Membership type. Three types, you need enable/disable every type.
               fields:
-                - label: starting
-                  name: starting
-                  widget: "select"
-                  options:
-                    - { label: "No", value: false }
-                    - { label: "Yes", value: true }
-                - label: supporting
-                  name: supporting
-                  widget: select
-                  options:
-                    - { label: "No", value: false }
-                    - { label: "Yes", value: true }
-                - label: sustaining
-                  name: sustaining
-                  widget: select
-                  options:
-                    - { label: "No", value: false }
-                    - { label: "Yes", value: true }
-            - name: membership-type
-              widget: object
-              label: Membership type
-              hint: Membership type. Three types, you need enable/disbale every type.
-              fields:
                 - name: starting
-                  widget: boolean
-                  default: false
                   label: starting
-                  hint: Toggle the switch
+                  widget: select
+                  options:
+                    - { label: "No", value: "No" }
+                    - { label: "Yes", value: "Yes" }
                 - name: supporting
-                  widget: boolean
-                  default: false
                   label: supporting
-                  hint: Toggle the switch
+                  widget: select
+                  options:
+                    - { label: "No", value: "No" }
+                    - { label: "Yes", value: "Yes" }
                 - name: sustaining
-                  widget: boolean
-                  default: false
                   label: sustaining
-                  hint: Toggle the switch
+                  widget: select
+                  options:
+                    - { label: "No", value: "No" }
+                    - { label: "Yes", value: "Yes" }
             - name: images
               widget: list
               label: Images list
