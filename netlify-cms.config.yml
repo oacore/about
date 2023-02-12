@@ -1251,12 +1251,19 @@ collections:
                   widget: image
                   label: File
                   hint: Image in description
-            #            - {
-            #              name: membership
-            #              label: Membership
-            #              widget: object
-            #              fields:
-            #                - { label: Caption, name: caption, widget: string, hint: Caption of the button }
-            #                - { label: Variant, name: variant, widget: string, hint: You can, optional: true, default: contained }
-            #                - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true }
-            #            }
+             - name: membership
+               label: Membership type
+               widget: object
+               hint: Membership type. Three types, you need enable/disbale every type.
+               fields:
+                 - label: starting 
+                   default: starting
+                   name: name
+                   widget: string 
+                   hint: The name of membership type
+                 - label: status 
+                   default: 0
+                   name: status
+                   widget: boolean
+                   type: boolean
+
