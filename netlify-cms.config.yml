@@ -1241,7 +1241,7 @@ collections:
               widget: text
               label: Description dashboard
               hint: Description for Dashboard
-            - name: imagesList
+            - name: images
               widget: list
               label: Images list
               hint: Images bottom description.
