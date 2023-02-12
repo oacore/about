@@ -1240,19 +1240,16 @@ collections:
               fields:
                 - name: starting
                   widget: boolean
-                  default: false
                   required: false
                   label: starting
                   hint: Toggle the switch
                 - name: supporting
                   widget: boolean
-                  default: false
                   required: false
                   label: supporting
                   hint: Toggle the switch
                 - name: sustaining
                   widget: boolean
-                  default: false
                   required: false
                   label: sustaining
                   hint: Toggle the switch
