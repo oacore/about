@@ -1256,15 +1256,19 @@ collections:
               widget: object
               hint: Membership type. Three types, you need enable/disbale every type.
               fields:
-                - label: starting 
-                  name: starting
+                - name: starting
                   widget: boolean
                   default: false
-                - label: supporting 
-                  name: supporting
+                  label: starting
+                  hint: Toggle the switch
+                - name: supporting
                   widget: boolean
                   default: false
-                - label: sustaining 
-                  name: sustaining
+                  label: supporting
+                  hint: Toggle the switch
+                - name: sustaining
                   widget: boolean
                   default: false
+                  label: sustaining
+                  hint: Toggle the switch
+                
