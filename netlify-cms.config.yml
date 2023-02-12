@@ -1233,24 +1233,6 @@ collections:
               widget: string
               label: Title
               hint: Title of the links block
-            - name: descriptionAbout
-              widget: text
-              label: Description about
-              hint: Description for About
-            - name: descriptionDashboard
-              widget: text
-              label: Description dashboard
-              hint: Description for Dashboard
-            - name: images
-              widget: list
-              label: Images list
-              hint: Images bottom description.
-              allow_add: true
-              fields:
-                - name: file
-                  widget: image
-                  label: File
-                  hint: Image in description
             - name: membership-type
               widget: object
               label: Membership type
@@ -1274,4 +1256,21 @@ collections:
                   required: false
                   label: sustaining
                   hint: Toggle the switch
-                
+            - name: images
+              widget: list
+              label: Images list
+              hint: Images bottom description.
+              allow_add: true
+              fields:
+                - name: file
+                  widget: image
+                  label: File
+                  hint: Image in description
+            - name: descriptionAbout
+              widget: text
+              label: Description about
+              hint: Description for About
+            - name: descriptionDashboard
+              widget: text
+              label: Description dashboard
+              hint: Description for Dashboard
