@@ -1251,9 +1251,9 @@ collections:
                   widget: image
                   label: File
                   hint: Image in description
-            - name: membership
-              label: Membership type
+            - name: membership-type
               widget: object
+              label: Membership type
               hint: Membership type. Three types, you need enable/disbale every type.
               fields:
                 - name: starting
