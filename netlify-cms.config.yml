@@ -1251,24 +1251,23 @@ collections:
                   widget: image
                   label: File
                   hint: Image in description
-             - name: membership
-               label: Membership type
-               widget: object
-               hint: Membership type. Three types, you need enable/disbale every type.
-               fields:
-                 - label: starting 
-                   name: starting
-                   widget: boolean
-                   type: boolean
-                   default: 0
-                 - label: supporting 
-                   name: supporting
-                   widget: boolean
-                   type: boolean
-                   default: 0
-                 - label: sustaining 
-                   name: sustaining
-                   widget: boolean
-                   type: boolean
-                   default: 0
-
+            - name: membership
+              label: Membership type
+              widget: object
+              hint: Membership type. Three types, you need enable/disbale every type.
+              fields:
+                - label: starting 
+                  name: starting
+                  widget: boolean
+                  type: boolean
+                  default: 0
+                - label: supporting 
+                  name: supporting
+                  widget: boolean
+                  type: boolean
+                  default: 0
+                - label: sustaining 
+                  name: sustaining
+                  widget: boolean
+                  type: boolean
+                  default: 0
