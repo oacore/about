@@ -1,0 +1,33 @@
+.sider {
+  width: 370px;
+  height: max-content;
+  margin-right: 32px;
+  background: #f5f5f5;
+}
+
+.sider-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 20px 16px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #424242;
+  cursor: pointer;
+}
+
+.sider-item-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sider-item-link:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.active-item {
+  color: #b75400;
+  background: #e0e0e0;
+}

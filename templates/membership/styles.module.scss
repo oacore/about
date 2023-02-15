@@ -2,6 +2,9 @@ $card-header-color: #fef5ef;
 $support-card-width: 21.5rem;
 $member-image-width: 102px;
 $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
+$breakpoint-sm: 800px;
+$breakpoint-md: 1130px;
+$breakpoint-lg: 1415px;
 
 .nav-wrapper {
   display: flex;
@@ -138,7 +141,9 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
     padding: 2rem;
     min-height: 37rem;
     border: 1px solid var(--gray-200);
-
+    .placement {
+      margin-top: 0;
+    }
     &-button {
       margin-top: auto;
       text-align: center;
@@ -194,9 +199,23 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
       }
     }
   }
-  .arrow {
+  .arrow-left {
     position: absolute;
+    top: 100px;
     transform: translate(-50%, 0);
+    //left: 80px;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
+  }
+  .arrow-right {
+    position: absolute;
+    top: 100px;
+    transform: translate(-50%, 0);
+    //right: 0;
+    @media (max-width: $breakpoint-md) {
+      display: none;
+    }
   }
   div div div div div div {
     margin: 0 10px;
@@ -295,6 +314,13 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    .materials-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
     .button-wrapper {
       width: 100%;
       display: flex;
@@ -351,6 +377,13 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-columns: $grid-responsive-for-sections;
   align-items: center;
   .content {
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      gap: 14px;
+      margin-top: 38px;
+    }
     .button {
       float: right;
       margin-top: 2rem;
@@ -360,11 +393,6 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
       }
     }
   }
-}
-
-.arrow {
-  position: absolute;
-  top: 100px;
 }
 
 .carousel-item {

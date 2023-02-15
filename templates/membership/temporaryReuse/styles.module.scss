@@ -1,0 +1,114 @@
+.documentation-wrapper {
+  margin: 15px 0;
+}
+
+.documentation-inner-wrapper {
+  width: calc(100vw - 370px);
+  overflow-y: scroll;
+}
+
+.documentation-header {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #212121;
+}
+
+.documentation-sub-title {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #212121;
+}
+
+.placement {
+  display: flex;
+  justify-content: space-between;
+  max-height: 1472px;
+  overflow-y: scroll;
+}
+
+.documentation-item {
+  padding: 8px 0;
+  border-bottom: 2px dashed #eee;
+}
+
+.documentation-item p {
+  margin: 24px 0;
+}
+
+.documentation-item ul {
+  margin-left: 1.5rem;
+}
+
+.documentation-item li {
+  line-height: 2rem;
+  list-style-type: disc;
+}
+
+.documentation-item-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #212121;
+}
+
+.documentation-text {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  color: #212121;
+}
+
+.membership {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  height: 24px;
+  padding: 8px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-transform: capitalize;
+  border-radius: 2px;
+}
+
+.image {
+  width: 100%;
+  margin-bottom: 24px;
+  object-fit: contain;
+}
+
+.logo-banner {
+  width: 50%;
+}
+
+.logo-personalised {
+  width: 50%;
+}
+
+.type-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.enabled {
+  color: #212121;
+  background: #fae2d2;
+}
+
+.disabled {
+  color: #bdbdbd;
+  background: #f5f5f5;
+}
+
+.highlighted {
+  color: #b75400;
+}

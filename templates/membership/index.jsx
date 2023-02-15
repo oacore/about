@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { Carousel } from '@oacore/design/lib'
 import Parser from 'html-react-parser'
+import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
@@ -34,7 +35,7 @@ const DetailsBox = ({
 const CardDescription = ({ plan }) => (
   <article className={styles.memberDescription} key={plan.title}>
     <h6 className={styles.memberDescriptionTitle}>{plan.title}</h6>
-    <span>{plan.content}</span>
+    <Markdown>{plan.content}</Markdown>
   </article>
 )
 
@@ -86,7 +87,11 @@ const Card = ({ plan }) => {
             </div>
           ))}
         </ul>
-        <div className={styles.planContentButton}>
+        <div
+          className={classNames.use(styles.planContentButton, {
+            [styles.placement]: !plan.subscribe,
+          })}
+        >
           <Button variant="contained" href={plan.action.url}>
             {plan.action.title}
           </Button>
@@ -103,6 +108,12 @@ const Card = ({ plan }) => {
 
 const MembershipPageTemplate = ({ data }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(false)
+
+  const handleContentOpen = (condition) => {
+    if (condition) return () => setVisibleVideo(true)
+
+    return null
+  }
 
   return (
     <Layout>
@@ -159,7 +170,7 @@ const MembershipPageTemplate = ({ data }) => {
           prevArrow={
             <div>
               <img
-                className={styles.arrow}
+                className={styles.arrowLeft}
                 src={carouselArrowLeft}
                 alt="carouselArrowLeft"
               />
@@ -168,7 +179,7 @@ const MembershipPageTemplate = ({ data }) => {
           nextArrow={
             <div>
               <img
-                className={styles.arrow}
+                className={styles.arrowRight}
                 src={carouselArrowRight}
                 alt="carouselArrowRight"
               />
@@ -215,14 +226,25 @@ const MembershipPageTemplate = ({ data }) => {
         <div className={styles.cardsWrapper}>
           {data.materials.cards.map((card) => (
             <article className={styles.materialsCard}>
-              <img src={card.image} alt="" />
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              <a
+                target={card.action.target}
+                href={!card.video ? card.action.url : null}
+                onClick={handleContentOpen(card.video)}
+              >
+                <img
+                  src={card.image}
+                  className={styles.materialsImage}
+                  alt=""
+                />
+              </a>
               <div className={styles.buttonWrapper}>
                 <Button
                   className={styles.materialButton}
                   variant="outlined"
-                  href={!card.video ? card.action.url : ''}
+                  href={!card.video ? card.action.url : null}
                   target={card.action.target}
-                  onClick={card.video ? () => setVisibleVideo(true) : ''}
+                  onClick={handleContentOpen(card.video)}
                 >
                   {card.action.caption}
                 </Button>
