@@ -203,7 +203,9 @@ $breakpoint-lg: 1415px;
     position: absolute;
     top: 100px;
     transform: translate(-50%, 0);
-    //left: 80px;
+    @media (max-width: $breakpoint-lg) {
+      left: 80px;
+    }
     @media (max-width: $breakpoint-md) {
       display: none;
     }
@@ -212,7 +214,9 @@ $breakpoint-lg: 1415px;
     position: absolute;
     top: 100px;
     transform: translate(-50%, 0);
-    //right: 0;
+    @media (max-width: $breakpoint-lg) {
+      right: 0;
+    }
     @media (max-width: $breakpoint-md) {
       display: none;
     }
