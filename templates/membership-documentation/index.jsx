@@ -22,14 +22,16 @@ const DocumentationPageTemplate = ({ headerAbout, docs }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      document.getElementById(id).scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      })
-      const n = docs.items.findIndex((item) => item.id === id)
-      setHighlight(n)
+      setTimeout(() => {
+        document.getElementById(id).scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        })
+        const n = docs.items.findIndex((item) => item.id === id)
+        setHighlight(n)
+      }, 100)
     }
-  }, [route.query])
+  }, [route.query.r])
 
   useEffect(() => {
     const id = route.query?.r
