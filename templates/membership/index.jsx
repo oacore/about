@@ -81,7 +81,7 @@ const Card = ({ plan }) => {
                   handleToggle={() => handleToggle(advantage.id)}
                   advantageId={advantage.id}
                   title={advantage.title}
-                  description={advantage.description}
+                  description={advantage.descriptionCardCard}
                 />
               </li>
             </div>
