@@ -1162,15 +1162,115 @@ collections:
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
-    - name: header
-      label: Header(title,description,image)
-      file: docs-membership/header.yml
+    - name: headerDashboard
+      label: Header for Dashboard (title, description)
+      file: docs-membership/headerDashboard.yml
       fields:
         - name: title
           widget: string
           hint: >
             The title of the page. Displayed on the page below header.
-        - name: id
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: caption,
+              widget: text,
+              label: Caption,
+              hint: Caption
+            }
+    - name: headerAbout
+      label: Header for About (title, description)
+      file: docs-membership/headerAbout.yml
+      fields:
+        - name: title
           widget: string
-          label: id
-          hint: id of the block. Must match anchor link url
+          hint: >
+            The title of the page. Displayed on the page below header.
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: caption,
+              widget: text,
+              label: Caption,
+              hint: Caption
+            }
+    - name: documentation
+      label: Documentation
+      file: docs-membership/docs.yml
+      fields:
+        - name: items
+          widget: list
+          label: Items
+          allow_add: true
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: ID
+              hint: id of the block. Must match anchor link url
+            - name: title
+              widget: string
+              label: Title
+              hint: Title of the links block
+            - name: membership-types
+              widget: object
+              label: Membership types
+              hint: Membership type. Three types, you need enable/disable every type.
+              fields:
+                - name: starting
+                  label: starting
+                  widget: select
+                  options:
+                    - { label: "No", value: "No" }
+                    - { label: "Yes", value: "Yes" }
+                - name: supporting
+                  label: supporting
+                  widget: select
+                  options:
+                    - { label: "No", value: "No" }
+                    - { label: "Yes", value: "Yes" }
+                - name: sustaining
+                  label: sustaining
+                  widget: select
+                  options:
+                    - { label: "No", value: "No" }
+                    - { label: "Yes", value: "Yes" }
+            - name: images
+              widget: list
+              label: Images list
+              hint: Images bottom description.
+              allow_add: true
+              fields:
+                - name: file
+                  widget: image
+                  label: File
+                  hint: Image in description
+            - name: descriptionAbout
+              widget: text
+              label: Description about
+              hint: Description for About
+            - name: descriptionDashboard
+              widget: text
+              label: Description dashboard
+              hint: Description for Dashboard
