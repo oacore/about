@@ -92,7 +92,7 @@ const Card = ({ plan }) => {
             [styles.placement]: !plan.subscribe,
           })}
         >
-          <Button variant="contained" href={plan.action.url}>
+          <Button id="core-members" variant="contained" href={plan.action.url}>
             {plan.action.title}
           </Button>
         </div>
@@ -161,7 +161,7 @@ const MembershipPageTemplate = ({ data }) => {
           ))}
         </div>
       </Section>
-      <section id="core-members" className={styles.carouselWrapper}>
+      <section className={styles.carouselWrapper}>
         <Carousel
           draggable
           slidesToShow={5}
