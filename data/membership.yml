@@ -11,7 +11,7 @@ headerLink:
 header:
   title: CORE Membership for data providers
   extra: Coming soon
-  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
+  description: CORE is a mission-driven not-for-profit endeavour and a signatory of the Principle of Open Scholarly Infrastructure [(POSI)](https://openscholarlyinfrastructure.org/posse/) and we rely on the generous support of our members to support and sustain the service.
   logo: /images/membership/international-cooperation.svg
   actions:
     - caption: Choose your membership
@@ -297,7 +297,7 @@ carousel:
       alt: "belfast"
   action:
     caption: See all CORE members
-    url: 'https://core.ac.uk/community/supporters'
+    url: 'https://core.ac.uk/community/supporters/#supportes'
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
@@ -316,7 +316,7 @@ how-it-works:
       active: Comparison table
   - action:
       caption: Access documentation
-      url: https://core.ac.uk/membership-documentation
+      url: /membership-documentation
 
 comparison-table:
   title: Features’ details and comparison
