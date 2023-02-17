@@ -8,7 +8,6 @@ import { useRouter } from 'next/router'
 import Markdown from '../../components/markdown'
 import { Layout } from '../../design-v2/components'
 import textData from '../../data/membership.yml'
-// import DocumentationNav from '../membership/membershipDocumentationNav'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
