@@ -5,8 +5,6 @@ const withImages = require('next-images')
 const yaml = require('js-yaml')
 
 const envConfig = require('./env.config')
-// Implement from dashboard
-const csp = require('./csp.config')
 
 let legacyConfig = null
 const readLegacyConfig = async (filepath = './legacy.config.yml') => {
@@ -25,14 +23,6 @@ const nextConfig = {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
-  async headers() {
-    return [
-      {
-        source: '/:path(.*)',
-        headers: [{ key: 'Content-Security-Policy', value: csp }],
-      },
-    ]
-  },
   assetPrefix: isProd ? 'https://core.ac.uk' : '',
   dynamicAssetPrefix: true,
   webpack: (config) => {
