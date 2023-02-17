@@ -5,6 +5,7 @@ const withImages = require('next-images')
 const yaml = require('js-yaml')
 
 const envConfig = require('./env.config')
+// Implement from dashboard
 const csp = require('./csp.config')
 
 let legacyConfig = null
