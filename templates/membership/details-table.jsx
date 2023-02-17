@@ -26,18 +26,25 @@ const DetailsTable = ({ data, howItWorksOption }) => {
           <article className={styles.content}>
             <h3>{data.howItWorks?.title}</h3>
             <Markdown>{data.howItWorks?.description}</Markdown>
-            {data.howItWorks?.action && (
+            <div className={styles.buttons}>
+              {data.howItWorks?.actions && (
+                <Button
+                  href={data.howItWorks?.actions[0].action.url}
+                  variant="outlined"
+                  onClick={toggleVisibleTable}
+                >
+                  {visibleTable
+                    ? data.howItWorks?.actions[0].action.active
+                    : data.howItWorks?.actions[0].action.default}
+                </Button>
+              )}
               <Button
-                className={styles.button}
-                href={data.howItWorks?.action.url}
-                variant={data.howItWorks?.action.variant || 'outlined'}
-                onClick={toggleVisibleTable}
+                href={data.howItWorks?.actions[1].action.url}
+                variant="contained"
               >
-                {visibleTable
-                  ? data.howItWorks?.action.active
-                  : data.howItWorks?.action.default}
+                {data.howItWorks?.actions[1].action.caption}
               </Button>
-            )}
+            </div>
           </article>
         </Section>
       ) : (

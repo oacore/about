@@ -111,19 +111,19 @@ const MembershipTable = observe(
         <tr key={row.title}>
           <td
             className={classNames.use(styles.cellDetailsFirst, {
-              [styles.cellBackGround]: !row.description,
+              [styles.cellBackGround]: !row.descriptionCardTable,
             })}
           >
             <Markdown
               className={classNames.use(styles.cellTitle, {
-                [styles.cellPadding]: !row.description,
+                [styles.cellPadding]: !row.descriptionCardTable,
               })}
             >
               {row.title}
             </Markdown>
-            {row.description ? (
+            {row.descriptionCardTable ? (
               <Markdown className={styles.cellDescription}>
-                {row.description}
+                {row.descriptionCardTable}
               </Markdown>
             ) : (
               <></>
