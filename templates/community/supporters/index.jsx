@@ -4,9 +4,29 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './supporters.module.scss'
 import useTable from './hooks/useTable'
+import imagePlaceholder from '../../../public/images/supporters/imagePlaceholder.svg'
 
 import { Page, Markdown } from 'components'
 import { Layout, Hero, Section } from 'design-v2/components'
+
+const CardDescription = ({ plan }) => (
+  <article className={styles.principlesDescription} key={plan.title}>
+    <h6 className={styles.principlesDescriptionTitle}>{plan.title}</h6>
+    <Markdown>{plan.content}</Markdown>
+  </article>
+)
+
+const Card = ({ plan }) => (
+  <article className={styles.howItWorksDescription} key={plan.title}>
+    <div className={styles.howItWorksImgWrapper}>
+      <img src={plan.image} alt="support" />
+    </div>
+    <div>
+      <h6 className={styles.howItWorksDescriptionTitle}>{plan.title}</h6>
+      <Markdown>{plan.description}</Markdown>
+    </div>
+  </article>
+)
 
 const CommunitySupportersPageTemplate = ({ members, page }) => {
   const {
@@ -22,6 +42,12 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
   const isPrevButtonDisabled = activePage === 1
   const isNextButtonDisabled = pagesCount === activePage
 
+  const handleRedirect = (providerId) => {
+    const repoId = Array.isArray(providerId) ? providerId[0] : providerId
+    if (typeof window !== 'undefined')
+      window.location.href = `https://core.ac.uk/data-providers/${repoId}`
+  }
+
   return (
     <Page title={page.title} description={page.tagline}>
       <Layout className={styles.container}>
@@ -29,13 +55,38 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
           id={page.header.id}
           image={page.header.image}
           title={page.title}
+          description={page.description}
           caption={page.tagline}
+          actions={page.actions}
+          reverse
         />
-        <Section className={styles.main} useFullPageWidth id={page.main.id}>
-          <Markdown>{page.main.text}</Markdown>
-          <Button href={page.main.action.url} variant="contained">
-            {page.main.action.caption}
-          </Button>
+        <Section id="our-principles" className={styles.ourPrinciples}>
+          <h4>{page.ourPrinciples.title}</h4>
+          <div className={styles.principlesWrapper}>
+            {page.ourPrinciples.cardsDescription.map((plan) => (
+              <CardDescription key={plan.title} plan={plan} />
+            ))}
+          </div>
+        </Section>
+        <Section id="principles" className={styles.principles}>
+          <div className={styles.imageWrapper}>
+            <img
+              className={styles.image}
+              src={page.principles.image}
+              alt="support"
+            />
+          </div>
+          <article className={styles.content}>
+            <Markdown>{page.principles.description}</Markdown>
+          </article>
+        </Section>
+        <Section id="how-it-works" className={styles.howItWorks}>
+          <h4>{page.howItWorks.title}</h4>
+          <div className={styles.howItWorksWrapper}>
+            {page.howItWorks.services.map((plan) => (
+              <Card key={plan.title} plan={plan} />
+            ))}
+          </div>
         </Section>
         <Section id={page.supporters.id} className={styles.supporters}>
           <h3>{page.supporters.title}</h3>
@@ -61,7 +112,21 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
             <Table.Body>
               {itemsList.map((member) => (
                 <Table.Row key={member.organisation_id}>
-                  <Table.Cell>{member.organisation_name}</Table.Cell>
+                  <div className={styles.organisationWrapper}>
+                    <div className={styles.logoWrapper}>
+                      <img
+                        className={styles.repositoryLogo}
+                        src={`https://api.core.ac.uk/data-providers/${member.repo_id}/logo`}
+                        onError={(e) => {
+                          e.target.src = imagePlaceholder
+                        }}
+                        alt="logo"
+                      />
+                    </div>
+                    <Table.Cell onClick={() => handleRedirect(member.repo_id)}>
+                      {member.organisation_name}
+                    </Table.Cell>
+                  </div>
                   <Table.Cell>{member.country}</Table.Cell>
                 </Table.Row>
               ))}

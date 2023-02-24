@@ -2,27 +2,59 @@ id: supporters
 
 title: Board of Supporters
 tagline: Help shape the future of open science together
+description: The CORE Board of Supporters is a community of organisations committed to open scholarly infrastructure and the principles of the Principles of Open Scholarly Infrastructure (POSI). The CORE Board of Supporters is composed of [Supporting and Sustaining](/membership) members and is central to defining the roadmap for CORE’s future. The board guides CORE's development of services to best support the Open Access community.
+actions:
+  - caption: join now
+    url: 'https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform'
+    variant: contained
+    target: _blank
 
+our-principles:
+  title: Our principles
+  cardsDescription:
+    - title: |
+        Stakeholder Governed
+      content: To give the community confidence that decisions regarding the future of CORE will be made based on community consensus and will take into account various interests.
+    - title: |
+        Transparency
+      content: To establish trust in the selection of representatives to governance groups, transparent processes and operations are essential. Transparency in overall operations is crucial for achieving this goal.
+    - title: |
+        Inclusivity
+      content: To ensure all are included. Research is not confined to a specific discipline, geography, institution, or stakeholder. Infrastructure must be able to accommodate the diverse needs and perspectives of researchers across the entire research enterprise.
+
+principles:
+  image: /images/supporters/supporters.svg
+  description: |
+    At CORE, we believe that **openness** is fundamental to the philosophy of science, as it promotes transparency, collaboration, and the free exchange of ideas and knowledge. Open science infrastructure facilitates the sharing of research data, software, and publications, making research more **accessible** and **reproducible**, which in turn fosters innovation, accelerates scientific discovery, and maximises the impact of research.
+    The Board of Supporters plays a crucial role in **promoting trust** and **accountability** in the research community by **advocating for open and transparent practices** and by shaping the future direction of CORE according to the community’s needs. 
+
+how-it-works:
+  title: How it works?
+  services:
+    -
+      title: Bi-annual Meetings
+      image: /images/supporters/meetings.svg
+      description: |
+        The Board meets virtually, twice per year, to review recent progress and to define actions for the following six months.
+    -
+      title: Collecting Feedback 
+      image: /images/supporters/feedback.svg
+      description: |
+        We consistently gather and respond to feedback from board members on an ongoing basis. Working with our members ensures we are always fully aware of the needs of the community.
+    -
+      title: Prioritising development directions
+      image: /images/supporters/directions.svg
+      description: |
+        By listening to the board members, CORE can effectively commit resources to development where they are most needed.
+    -
+      title: Voting Rights
+      image: /images/supporters/voting.svg
+      description: |
+        Each board member receives voting rights and can actively participate in shaping the future development of CORE. It is by listening to our community that we can ensure that the community’s needs are best met.
 
 header:
   id: header
   image: /images/community/research/header.svg
-
-
-main:
- id: join
- text: |
-    Our Members can help shape our development roadmap.
-    Join and make a strong statement about your organisation’s
-    support for open science infrastructure.
-
-    CORE Supporting and Sustaining Members are invited to
-    join our Board of Supporters. The Board meets annually
-    to identify opportunities, collect feedback and
-    help prioritise the development of the service.
- action:
-   url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
-   caption: JOIN NOW
 
 supporters:
   id: supportes

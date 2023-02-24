@@ -16,6 +16,7 @@ const Hero = ({
   actions,
   image,
   className,
+  reverse,
   hideButtons = false,
 }) => (
   <Section id={id} className={classNames.use(styles.header).join(className)}>
@@ -24,10 +25,24 @@ const Hero = ({
         {icon && <img className={styles.icon} src={icon} alt={title} />}
         <h1 className={styles.title}>{title}</h1>
       </div>
-      {description && (
-        <Markdown className={styles.description}>{description}</Markdown>
-      )}
-      {caption && <Markdown className={styles.caption}>{caption}</Markdown>}
+      <div
+        className={classNames.use(styles.default, {
+          [styles.reverse]: reverse,
+        })}
+      >
+        {description && (
+          <Markdown className={styles.description}>{description}</Markdown>
+        )}
+        {caption && (
+          <Markdown
+            className={classNames.use(styles.caption, {
+              [styles.reverseStyle]: reverse,
+            })}
+          >
+            {caption}
+          </Markdown>
+        )}
+      </div>
       {!hideButtons && actions && (
         <div className={styles.group}>
           {actions.map((action) => (

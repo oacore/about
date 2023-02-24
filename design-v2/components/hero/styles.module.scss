@@ -45,3 +45,15 @@
   width: 100%;
   height: auto;
 }
+
+.reverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.reverse-style {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
