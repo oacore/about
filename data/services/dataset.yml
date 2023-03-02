@@ -36,10 +36,14 @@ how-it-works:
   title: How it works?
   image: /images/services/work.svg
   description: |
-    CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides harmonised and enriched metadata and full text content aggregated by CORE delivered in a machine readable format. This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
+    CORE data can be downloaded as a bulk dataset, allowing you to process it on your own computer or within your infrastructure. The dataset provides a harmonised and enriched data format for access content from across our [data providers](/data-providers). This is perfect for prototyping new methods, especially when intensive data processes need to be run. It is also a good choice for data analysis and text mining.
   action:
-    title: Access documentation
-    url: https://core.ac.uk/documentation/dataset
+    - title: Access documentation
+      url: /documentation/dataset
+      variant: contained
+    - title: see data statistics
+      url: /data
+      variant: outlined
 
 main:
   items:
@@ -74,6 +78,10 @@ testimonials:
       name: Eric Olson
       role: Consensus, co-founder and CEO
       picture: /images/people/olson.png
+    action:
+      title: SEE More testimonials
+      url: /about/endorsements#partner-projects
+      variant: outlined
 
 what-is-included:
   title: What’s included
@@ -85,23 +93,24 @@ what-is-included:
   image: /images/services/delivery.svg
 
 stats:
-  - title: dataset
-    count: 2022
-    caption: year
-    badge: Latest
-    url: /documentation/dataset#latest
-  - title: datasets
-    count: 2021
-    caption: year
-    url: /documentation/dataset#other
-  - title: datasets
-    count: 2020
-    caption: year
-    url: /documentation/dataset#other
-  - title: datasets
-    count: 2019
-    caption: year
-    url: /documentation/dataset#other
+  items:
+    - title: dataset
+      count: 2022
+      caption: year
+      badge: Latest
+      url: /documentation/dataset#latest
+    - title: datasets
+      count: 2021
+      caption: year
+      url: /documentation/dataset#other
+    - title: datasets
+      count: 2020
+      caption: year
+      url: /documentation/dataset#other
+    - title: datasets
+      count: 2019
+      caption: year
+      url: /documentation/dataset#other
 
 form:
   title: Register for the CORE Dataset
