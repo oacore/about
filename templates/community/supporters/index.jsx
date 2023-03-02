@@ -51,6 +51,13 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
   return (
     <Page title={page.title} description={page.tagline}>
       <Layout className={styles.container}>
+        <div className={styles.navWrapper}>
+          {page.headerLink.map((item) => (
+            <a className={styles.linkItem} href={item.href}>
+              {item.link}
+            </a>
+          ))}
+        </div>
         <Hero
           id={page.header.id}
           image={page.header.image}

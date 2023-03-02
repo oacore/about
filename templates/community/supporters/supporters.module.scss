@@ -1,6 +1,17 @@
 $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
 $grid-responsive-for-items: repeat(auto-fit, minmax(500px, 1fr));
 
+.nav-wrapper {
+  display: flex;
+  gap: 24px;
+  .link-item {
+    color: #666666;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .principles-wrapper {
   display: grid;
   grid-gap: 3rem;
