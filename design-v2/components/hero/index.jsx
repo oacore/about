@@ -17,11 +17,16 @@ const Hero = ({
   image,
   className,
   reverse,
+  spacing,
   hideButtons = false,
 }) => (
   <Section id={id} className={classNames.use(styles.header).join(className)}>
     <div className={styles.content}>
-      <div className={styles.meta}>
+      <div
+        className={classNames.use(styles.meta, {
+          [styles.spacing]: spacing,
+        })}
+      >
         {icon && <img className={styles.icon} src={icon} alt={title} />}
         <h1 className={styles.title}>{title}</h1>
       </div>
