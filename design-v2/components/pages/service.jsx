@@ -46,7 +46,7 @@ const StatisticBox = ({
   </Tag>
 )
 
-const Testimonial = ({ content, author }) => (
+const Testimonial = ({ content, author, action }) => (
   <article className={styles.testimonial}>
     <div className={styles.header}>
       <img src={author.picture} alt={author.name} className={styles.picture} />
@@ -56,6 +56,15 @@ const Testimonial = ({ content, author }) => (
       </div>
     </div>
     <Markdown className={styles.content}>{content}</Markdown>
+    {action && (
+      <Button
+        className={styles.button}
+        href={action.url}
+        variant={action.variant || 'contained'}
+      >
+        {action.title}
+      </Button>
+    )}
   </article>
 )
 
@@ -134,15 +143,28 @@ const ServicePage = observe(
             <article className={styles.content}>
               <h3>{howItWorks.title}</h3>
               <Markdown>{howItWorks.description}</Markdown>
-              {howItWorks.action && (
-                <Button
-                  className={styles.button}
-                  href={howItWorks.action.url}
-                  variant={howItWorks.action.variant || 'contained'}
-                >
-                  {howItWorks.action.title}
-                </Button>
-              )}
+              {howItWorks.action && Array.isArray(howItWorks.action)
+                ? howItWorks.action.map((item) => (
+                    <Button
+                      href={item.url}
+                      target={item.target}
+                      variant={item.variant}
+                      key={item.title}
+                      download={item.download}
+                      className={styles.button}
+                    >
+                      {item.title}
+                    </Button>
+                  ))
+                : howItWorks.action && (
+                    <Button
+                      className={styles.button}
+                      href={howItWorks.action.url}
+                      variant={howItWorks.action.variant || 'contained'}
+                    >
+                      {howItWorks.action.title}
+                    </Button>
+                  )}
             </article>
           </Section>
           {benefits && (
@@ -220,19 +242,30 @@ const ServicePage = observe(
             </Section>
           )}
           {statistics && stats && (
-            <Section id="statistics" className={styles.statistics}>
-              {stats.map((stat) => (
-                <StatisticBox
-                  key={`${stat.caption}-${stat.count}`}
-                  title={stat.title}
-                  caption={stat.caption}
-                  url={stat?.url}
-                  badge={stat?.badge}
-                  tag={stat.url ? 'a' : 'div'}
-                  count={patchStats(stat.count, statistics)}
-                />
-              ))}
-            </Section>
+            <>
+              <Section id="statistics" className={styles.statistics}>
+                {stats.items.map((stat) => (
+                  <StatisticBox
+                    key={`${stat.caption}-${stat.count}`}
+                    title={stat.title}
+                    caption={stat.caption}
+                    url={stat?.url}
+                    badge={stat?.badge}
+                    tag={stat.url ? 'a' : 'div'}
+                    count={patchStats(stat.count, statistics)}
+                  />
+                ))}
+              </Section>
+              {stats.action && (
+                <Button
+                  className={styles.statsButton}
+                  href={stats.action.url}
+                  variant={stats.action.variant || 'contained'}
+                >
+                  {stats.action.title}
+                </Button>
+              )}
+            </>
           )}
           {form && (
             <Section id="form">
