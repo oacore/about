@@ -66,6 +66,7 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
           caption={page.tagline}
           actions={page.actions}
           reverse
+          spacing
         />
         <Section id="our-principles" className={styles.ourPrinciples}>
           <h4>{page.ourPrinciples.title}</h4>

@@ -297,7 +297,7 @@ carousel:
       alt: "belfast"
   action:
     caption: See all CORE members
-    url: 'https://core.ac.uk/community/supporters/#supportes'
+    url: 'https://core.ac.uk/community/supporters/#membership-list'
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.
