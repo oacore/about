@@ -42,6 +42,10 @@ how-it-works:
   image: /images/services/work.svg
   description: |
     FastSync enables you to keep an always up to date copy of all CORE data in your infrastructure, new content is transferred as soon as it becomes available in CORE. It provides fast, incremental and enterprise data synchronisation. It is our premium service, ideal for all types of businesses, from start-ups to large enterprises.
+  action:
+    title: see data statistics
+    url: /data
+
 
 
 main:
@@ -65,6 +69,10 @@ testimonials:
       name: Kim Sejin
       role: Content Manager, Naver Academic Service
       picture: /images/people/sejin.png
+    action:
+      title: SEE More testimonials
+      url: /about/endorsements#partner-projects
+      variant: outlined
 
 what-is-included:
   title: What’s included ?

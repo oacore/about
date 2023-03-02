@@ -43,10 +43,14 @@ how-it-works:
   title: How it works?
   image: /images/services/work.svg
   description: |
-   CORE collects, harmonises and enriches large quantities of both metadata and full text research articles from thousands of data providers. On top of this continuously growing corpus, we provide a truly unique API providing real-time machine access to both the metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
+    CORE collects, harmonises and enriches large quantities of both metadata and full text research articles from thousands of [data providers](/data-providers). On top of this continuously growing corpus, we provide a truly unique API providing real-time machine access to both the metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
   action:
-    title: Access documentation
-    url: https://api.core.ac.uk/docs/v3
+    - title: Access documentation
+      url: https://api.core.ac.uk/docs/v3
+      variant: contained
+    - title: see data statistics
+      url: /data
+      variant: outlined
 
 
 main:
@@ -83,6 +87,10 @@ testimonials:
     name: Viktor Botev
     role: CTO, Iris AI AS
     picture: /images/people/botev.jpg
+  action:
+    title: SEE More testimonials
+    url: /about/endorsements#partner-projects
+    variant: outlined
 
 what-is-included:
   title: What’s included
@@ -96,18 +104,23 @@ what-is-included:
   image: /images/services/delivery.svg
 
 stats:
- - title: more than
-   count: "{{fullTextCount}}"
-   caption: full texts
- - title: more than
-   count: "{{totalArticlesCount}}"
-   caption: searchable research papers
- - title: more than
-   count: "{{repositoriesCount}}"
-   caption: data providers
- - title: more than
-   count: "150"
-   caption: countries
+  items:
+    - title: more than
+      count: "{{fullTextCount}}"
+      caption: full texts
+    - title: more than
+      count: "{{totalArticlesCount}}"
+      caption: searchable research papers
+    - title: more than
+      count: "{{repositoriesCount}}"
+      caption: data providers
+    - title: more than
+      count: "150"
+      caption: countries
+  action:
+   title: see data statistics
+   url: /data
+   variant: outlined
 
 form:
     title: Register for an API key
