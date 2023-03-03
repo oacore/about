@@ -62,7 +62,7 @@ const Hero = ({
                   variant="outlined"
                   href={statisticAction}
                 >
-                  {actionLabel}
+                  {statisticActionLabel}
                 </Button>
               )}
             </div>

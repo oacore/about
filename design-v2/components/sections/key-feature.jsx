@@ -21,10 +21,10 @@ const KeyFeature = ({
     <Card
       variant="pure"
       className={classNames.use(styles.card, {
-        [styles.keyFeatureContained]: status === 'new',
+        [styles.keyFeatureContained]: status === 'data',
       })}
     >
-      {status === 'new' && (
+      {status === 'data' && (
         <span className={styles.keyFeatureStatusIcon}>{status}</span>
       )}
       <a href={url}>
