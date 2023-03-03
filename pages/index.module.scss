@@ -3,6 +3,7 @@
 .hero {
   &-item {
     display: flex;
+    margin-top: 24px;
     @media (max-width: $breakpoint-sm) {
       flex-wrap: wrap-reverse;
     }
@@ -24,6 +25,7 @@
         flex: 1;
         display: flex;
         justify-content: flex-end;
+        margin-top: 20px;
         @media (max-width: $breakpoint-sm) {
           flex: auto;
           justify-content: center;
@@ -91,10 +93,38 @@
   margin-bottom: 3rem;
 }
 
+.statistic-label {
+  margin-left: 1.5rem;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  .subtitle {
+    padding: 2px 14px;
+    height: 28px;
+    border-radius: 2px;
+    background: #b75400;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #ffffff;
+    width: max-content;
+    margin-bottom: 50px;
+  }
+}
+
 .title,
 .action-button {
   text-align: center;
   a {
     padding: 0.5rem 3rem !important;
   }
+}
+
+.button-wrapper {
+  margin-top: 60px;
 }

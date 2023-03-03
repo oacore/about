@@ -28,6 +28,8 @@ const Hero = ({
   description,
   action,
   actionLabel,
+  statisticAction,
+  statisticActionLabel,
   className,
 }) => (
   <div className={classNames.use(styles.heroItem).join(className)}>
@@ -43,11 +45,27 @@ const Hero = ({
             {description && (
               <p className={styles.heroItemDescription}>{description}</p>
             )}
-            {actionLabel && (
-              <Button tag="a" variant="contained" href={action}>
-                {actionLabel}
-              </Button>
-            )}
+            <div
+              className={classNames.use({
+                [styles.buttonWrapper]: statisticActionLabel,
+              })}
+            >
+              {actionLabel && (
+                <Button tag="a" variant="contained" href={action}>
+                  {actionLabel}
+                </Button>
+              )}
+              {statisticActionLabel && (
+                <Button
+                  className={styles.statisticLabel}
+                  tag="a"
+                  variant="outlined"
+                  href={statisticAction}
+                >
+                  {actionLabel}
+                </Button>
+              )}
+            </div>
           </>
         )}
       </Card.Description>
@@ -94,12 +112,13 @@ const IndexPage = () => (
         <h2 hidden={page.features.hidden}>{page.features.title}</h2>
         <KeyFeatureList>
           {page.features.children.map(
-            ({ title, description, picture, status }) => (
+            ({ title, description, picture, status, url }) => (
               <KeyFeature
                 title={title}
                 status={status}
                 icon={picture}
                 key={title}
+                url={url}
               >
                 {description}
               </KeyFeature>
@@ -121,7 +140,10 @@ const IndexPage = () => (
         </JoinList>
       </Section>
       <Section className={styles.sectionTestimonial}>
-        <h3 className={styles.title}>{page.testimonials.title}</h3>
+        <div className={styles.center}>
+          <h3 className={styles.title}>{page.testimonials.title}</h3>
+          <span className={styles.subtitle}>{page.testimonials.subtitle}</span>
+        </div>
         <TestimonialList>
           {page.testimonials.children.map((item) => (
             <TestimonialItem key={item.title} {...item} />
