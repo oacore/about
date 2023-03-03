@@ -7,11 +7,14 @@ slides:
       image: /images/heros/community.svg
       label: community
       action: Search
-    - title: Powerful services for enterprises, institutions and researchers
+    - title: Machine access to our vast unique full text corpus
       image: /images/heros/services.svg
       label: services
       action: /services
       actionLabel: Explore Services
+      statisticLabel: statistic
+      statisticAction: /data
+      statisticActionLabel: see our data statistic
     - title: Resolve OAI identifier
       description: |
         OAIs are unique identifiers used by repositories.
@@ -29,16 +32,20 @@ features:
     - title: Global aggregator
       description: We serve the global network of open access [repositories and journals](~benefits)
       picture: /images/features/globe.svg
-    - title: Harmonized data access
+      url: /benefits
+    - title: Harmonised data access
       description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
       picture: /images/features/gears.svg
+      url: /data
     - title: Powerful services
       description: We create powerful [services](~services) for researchers, universities, and industry
       picture: /images/features/building.svg
       status: new
+      url: /services
     - title: Cutting-edge solutions
-      description: We [research](~about/research-outputs) and develop innovative data-driven and AI [solutions](~community/research)
+      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~community/research)
       picture: /images/features/neural.svg
+      url: /community/supporters
 
 join:
   title: Join CORE
@@ -55,6 +62,7 @@ join:
       picture: /images/join/membership.svg
 testimonials:
   title: Who we serve?
+  subtitle: 20 million monthly active users
   actionLabel: Find out more
   action: /about/endorsements#enterprise-companies
   children:
