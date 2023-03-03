@@ -36,11 +36,11 @@ features:
     - title: Harmonised data access
       description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
       picture: /images/features/gears.svg
+      status: data
       url: /data
     - title: Powerful services
       description: We create powerful [services](~services) for researchers, universities, and industry
       picture: /images/features/building.svg
-      status: new
       url: /services
     - title: Cutting-edge solutions
       description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~community/research)
