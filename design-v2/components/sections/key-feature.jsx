@@ -11,6 +11,7 @@ const KeyFeature = ({
   children,
   icon,
   href,
+  url,
   status,
   className = '',
   tag: Tag = 'div',
@@ -26,12 +27,14 @@ const KeyFeature = ({
       {status === 'new' && (
         <span className={styles.keyFeatureStatusIcon}>{status}</span>
       )}
-      <img
-        className={styles.keyFeatureIcon}
-        src={icon}
-        alt={title}
-        role={title == null ? 'presentation' : null}
-      />
+      <a href={url}>
+        <img
+          className={styles.keyFeatureIcon}
+          src={icon}
+          alt={title}
+          role={title == null ? 'presentation' : null}
+        />
+      </a>
       <Card.Title tag="h6" className={styles.keyFeatureTitle}>
         {title}
       </Card.Title>
