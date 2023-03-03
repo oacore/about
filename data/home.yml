@@ -8,7 +8,7 @@ slides:
       label: community
       action: Search
     - title: Machine access to our vast unique full text corpus
-      image: /images/heros/services.svg
+      image: /images/heros/homeServices.svg
       label: services
       action: /services
       actionLabel: Explore Services
