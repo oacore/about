@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Carousel, Button, Card } from '@oacore/design/lib'
 import { classNames } from '@oacore/design/lib/utils'
 
@@ -23,6 +23,8 @@ import page from 'data/home.yml'
 
 const Hero = ({
   title,
+  setSearchValue,
+  searchValue,
   image: imgHref,
   label,
   description,
@@ -39,7 +41,10 @@ const Hero = ({
       </Card.Title>
       <Card.Description tag="div">
         {action === 'Search' ? (
-          <SearchForm />
+          <SearchForm
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+          />
         ) : (
           <>
             {description && (
@@ -95,90 +100,111 @@ const PartnerProjectsList = () => (
   </ul>
 )
 
-const IndexPage = () => (
-  <Page
-    title={page.title}
-    description={page.description}
-    keywords={page.keywords}
-    className={styles.page}
-  >
-    <Layout>
-      <Carousel draggable={false} useArrows={false} slidesToShow={1} infinite>
-        {page.slides.children.map((slide) => (
-          <Hero key={slide.title} {...slide} />
-        ))}
-      </Carousel>
-      <Section>
-        <h2 hidden={page.features.hidden}>{page.features.title}</h2>
-        <KeyFeatureList>
-          {page.features.children.map(
-            ({ title, description, picture, status, url }) => (
-              <KeyFeature
-                title={title}
-                status={status}
-                icon={picture}
-                key={title}
-                url={url}
-              >
-                {description}
-              </KeyFeature>
-            )
-          )}
-        </KeyFeatureList>
-      </Section>
-      <Section className={styles.sectionJoin} useFullPageWidth>
-        <h3 className={styles.title}>{page.join.title}</h3>
-        <JoinList className={styles.sectionJoinList}>
-          {page.join.children.map(({ caption, url, picture }) => (
-            <JoinItem
-              caption={caption}
-              url={url}
-              picture={picture}
-              key={caption}
+const IndexPage = () => {
+  const [searchValue, setSearchValue] = useState('')
+
+  return (
+    <Page
+      title={page.title}
+      description={page.description}
+      keywords={page.keywords}
+      className={styles.page}
+    >
+      <Layout>
+        <Carousel
+          draggable={false}
+          useArrows={false}
+          slidesToShow={1}
+          infinite
+          autoplay={!searchValue?.length}
+        >
+          {page.slides.children.map((slide) => (
+            <Hero
+              searchValue={searchValue}
+              setSearchValue={setSearchValue}
+              key={slide.title}
+              {...slide}
             />
           ))}
-        </JoinList>
-      </Section>
-      <Section className={styles.sectionTestimonial}>
-        <div className={styles.center}>
-          <h3 className={styles.title}>{page.testimonials.title}</h3>
-          <span className={styles.subtitle}>{page.testimonials.subtitle}</span>
-        </div>
-        <TestimonialList>
-          {page.testimonials.children.map((item) => (
-            <TestimonialItem key={item.title} {...item} />
-          ))}
-        </TestimonialList>
-        <div className={styles.actionButton}>
-          <Button variant="contained" tag="a" href={page.testimonials.action}>
-            {page.testimonials.actionLabel}
-          </Button>
-        </div>
-      </Section>
-      <Section className={styles.sectionServices}>
-        <h3 className={styles.title}>{page.services.title}</h3>
-        <ServicesList>
-          {page.services.children.map((item) => (
-            <ServiceItem key={item.title} {...item} tag="a" />
-          ))}
-        </ServicesList>
-        <div className={styles.actionButton}>
-          <Button variant="contained" tag="a" href={page.services.action}>
-            {page.services.actionLabel}
-          </Button>
-        </div>
-      </Section>
-      <Section className={styles.sectionPartners}>
-        <h3 className={styles.title}>{page.partnerProjects.title}</h3>
-        <PartnerProjectsList />
-        <div className={styles.actionButton}>
-          <Button variant="outlined" tag="a" href={page.partnerProjects.action}>
-            {page.partnerProjects.actionLabel}
-          </Button>
-        </div>
-      </Section>
-    </Layout>
-  </Page>
-)
+        </Carousel>
+        <Section>
+          <h2 hidden={page.features.hidden}>{page.features.title}</h2>
+          <KeyFeatureList>
+            {page.features.children.map(
+              ({ title, description, picture, status, url }) => (
+                <KeyFeature
+                  title={title}
+                  status={status}
+                  icon={picture}
+                  key={title}
+                  url={url}
+                >
+                  {description}
+                </KeyFeature>
+              )
+            )}
+          </KeyFeatureList>
+        </Section>
+        <Section className={styles.sectionJoin} useFullPageWidth>
+          <h3 className={styles.title}>{page.join.title}</h3>
+          <JoinList className={styles.sectionJoinList}>
+            {page.join.children.map(({ caption, url, picture }) => (
+              <JoinItem
+                caption={caption}
+                url={url}
+                picture={picture}
+                key={caption}
+              />
+            ))}
+          </JoinList>
+        </Section>
+        <Section className={styles.sectionTestimonial}>
+          <div className={styles.center}>
+            <h3 className={styles.title}>{page.testimonials.title}</h3>
+            <span className={styles.subtitle}>
+              {page.testimonials.subtitle}
+            </span>
+          </div>
+          <TestimonialList>
+            {page.testimonials.children.map((item) => (
+              <TestimonialItem key={item.title} {...item} />
+            ))}
+          </TestimonialList>
+          <div className={styles.actionButton}>
+            <Button variant="contained" tag="a" href={page.testimonials.action}>
+              {page.testimonials.actionLabel}
+            </Button>
+          </div>
+        </Section>
+        <Section className={styles.sectionServices}>
+          <h3 className={styles.title}>{page.services.title}</h3>
+          <ServicesList>
+            {page.services.children.map((item) => (
+              <ServiceItem key={item.title} {...item} tag="a" />
+            ))}
+          </ServicesList>
+          <div className={styles.actionButton}>
+            <Button variant="contained" tag="a" href={page.services.action}>
+              {page.services.actionLabel}
+            </Button>
+          </div>
+        </Section>
+        <Section className={styles.sectionPartners}>
+          <h3 className={styles.title}>{page.partnerProjects.title}</h3>
+          <PartnerProjectsList />
+          <div className={styles.actionButton}>
+            <Button
+              variant="outlined"
+              tag="a"
+              href={page.partnerProjects.action}
+            >
+              {page.partnerProjects.actionLabel}
+            </Button>
+          </div>
+        </Section>
+      </Layout>
+    </Page>
+  )
+}
 
 export default IndexPage
