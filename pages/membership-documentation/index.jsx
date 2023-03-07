@@ -1,6 +1,7 @@
 import React from 'react'
 
 import DocumentationPageTemplate from '../../templates/membership-documentation'
+import { Page } from '../../components'
 
 import retrieveContent from 'content'
 
@@ -44,6 +45,10 @@ export async function getStaticProps({ previewData }) {
   }
 }
 
-const DocumentationPage = ({ data }) => <DocumentationPageTemplate {...data} />
+const DocumentationPage = ({ data }) => (
+  <Page title={data.meta.title} description={data.meta.description}>
+    <DocumentationPageTemplate {...data} />
+  </Page>
+)
 
 export default DocumentationPage
