@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React from 'react'
 import { Button, Select } from '@oacore/design/lib'
 
 import styles from './styles.module.scss'
@@ -7,21 +7,20 @@ import styles from './styles.module.scss'
 import { patchStats } from 'components/utils'
 import page from 'data/home.yml'
 
-const SearchForm = () => {
-  const [value, setValue] = useState('')
+const SearchForm = ({ setSearchValue, searchValue }) => {
   const router = useRouter()
 
   const handleInput = (e) => {
-    setValue(e.value)
+    setSearchValue(e.value)
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    router.push(`search?q=${value}`)
+    router.push(`search?q=${searchValue}`)
   }
 
   const handleOnChange = () => {
-    router.push(`search?q=${value}`)
+    router.push(`search?q=${searchValue}`)
   }
   return (
     <form onSubmit={handleSubmit}>
@@ -29,7 +28,7 @@ const SearchForm = () => {
         id="search-input"
         variant="pure"
         label={patchStats(page.searchPlaceholder, page.statistics)}
-        value={value}
+        value={searchValue}
         prependIcon="#magnify"
         changeOnBlur={false}
         onInput={handleInput}
