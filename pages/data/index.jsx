@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Page, Button, Markdown, HighlightSection } from 'components'
+import { Page, Markdown, HighlightSection } from 'components'
 import { patchStats } from 'components/utils'
 import datasetData from 'data/data.yml'
 import { Layout } from 'design-v2/components'
@@ -24,9 +24,6 @@ const DataPage = () => (
             <Markdown>{patchStats(title, datasetData.statistics)}</Markdown>
           </h3>
           <Markdown>{patchStats(content, datasetData.statistics)}</Markdown>
-          <Button outline href={link.url} color="primary">
-            {link.caption}
-          </Button>
         </HighlightSection>
       ))}
     </Layout>
