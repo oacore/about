@@ -16,9 +16,6 @@ sections:
   content: |
     It's the biggest collection of open access full texts,
     making it an unparalleled research tool.
-  link:
-    caption: How we compare to other services?
-    url: https://scholarlycommunications.jiscinvolve.org/wp/files/2018/06/HowCOREcomparesMay2018-2.pdf
   image: /images/illustrations/analysis-amico.svg
 - title: |
     CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable
@@ -29,7 +26,7 @@ sections:
     journals.
   link:
     caption: Learn more about the nature of our dataset
-    url: ~services#access-to-raw-data
+    url: services#access-to-raw-data
   image: /images/illustrations/file-searching-amico.svg
 - title: |
     We're truly global, aggregating from
@@ -39,7 +36,7 @@ sections:
     And we're used by every country in the world.
   link:
     caption: Learn about how we harvest data or become a data provider
-    url: ~about#how-it-works
+    url: about#how-it-works
   image: /images/illustrations/online-world.svg
 - title: |
     You can access the data for free, and do exciting and powerful
@@ -48,5 +45,5 @@ sections:
     Our APIs and datasets are perfect for doing text and data mining research and building innovative services.
   link:
     caption: Learn more about machine access to our data
-    url: ~services#access-to-raw-data
+    url: services#access-to-raw-data
   image: /images/illustrations/data-points-amico.svg
