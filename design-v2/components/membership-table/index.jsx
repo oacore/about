@@ -99,8 +99,7 @@ const MembershipTable = observe(
                 onSelectActivePlan(discount || original, row.title)
               }
             >
-              <Price price={discount} className={styles.priceDiscount} />
-              <Price tag={discount && 'strike'} price={original} />
+              <Price className={styles.price} price={original} />
             </td>
           ))}
         </tr>
@@ -159,7 +158,6 @@ const MembershipTable = observe(
             [styles.alignLeft]: headerAlignment,
           })}
         >{`<div class="${styles.lowerCase}">${textData.title}</div>`}</Markdown>
-        <div className={styles.tableCaption}>{textData.caption} </div>
         <table
           className={classNames.use(styles.table, {
             [styles.fixed]: type === 'prices',
