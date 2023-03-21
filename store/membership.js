@@ -35,12 +35,14 @@ class Membership {
 
   async submit() {
     try {
+      const { email } = this.data
       await createMembershipPayment(this.data)
       this.reset()
       Router.push({
         pathname:
           routes.membershipRequestStatus.pattern +
           routes.membershipRequestStatus.children.success,
+        search: `?email=${email}`,
       })
     } catch (error) {
       Router.push({

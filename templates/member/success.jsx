@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button } from '@oacore/design/lib/elements'
 
 import styles from './styles.module.scss'
+import VerifyRegisteredTemplate from './starting/verify-registered'
 
 import { Layout, Section } from 'design-v2/components'
 
-const PaymentSuccessPageTemplate = ({ textData }) => (
+const PaymentSuccessPageTemplate = ({ textData, emailAdministrator }) => (
   <Layout className={styles.success}>
     <Section>
       <h2>{textData.title}</h2>
@@ -15,10 +15,18 @@ const PaymentSuccessPageTemplate = ({ textData }) => (
         src={textData.image.url}
         alt={textData.title}
       />
-      <span className={styles.caption}>{textData.image.caption}</span>
-      <Button variant="contained" href={textData.button.url}>
-        {textData.button.caption}
-      </Button>
+
+      {textData.requestStatus &&
+        textData.requestStatus.map((item) => (
+          <div>
+            {item.id === 'verify_registered' && (
+              <VerifyRegisteredTemplate
+                item={item}
+                emailAdministrator={emailAdministrator}
+              />
+            )}
+          </div>
+        ))}
     </Section>
   </Layout>
 )

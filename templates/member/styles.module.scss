@@ -13,10 +13,24 @@
   }
 }
 
-.caption {
-  margin-top: 1rem;
-  margin-bottom: 0;
+.inner-wrap-text {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.text {
+  margin-bottom: 15px;
+  display: block;
+  text-align: justify;
+}
+.text span {
+  color: var(--primary);
+}
+
+.wrap-btn {
+  display: block;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .additional-info {

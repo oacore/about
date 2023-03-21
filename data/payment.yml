@@ -106,18 +106,30 @@ discount-info:
 box:
  description: Not a data-provider but still want to support CORE?
  action:
-  active: Contact us
-  url: about/#contact
+  active: Find out more
+  url: /sponsorship
 
 success:
  title: CORE Membership for Organisations
  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.
  image:
   url: /images/membership/email.svg
-  caption: Thank you for your application to CORE Membership for organisations. Your request has been successfully sent. Our team will contact you shortly.
- button:
-  caption: homepage
-  url: "/"
+ request-status:
+   - id: verify_registered
+     title: Your organisation is already a CORE Starting Member
+     text1: |
+      Thank you for your interest in becoming a <b>CORE Starting Member</b>. Starting members are institutions that have registered for a
+       <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard</a> account.
+     text2: |
+      We have found that the repository you listed already has a Dashboard account which is registered to <span>{{emailAdministrator}}</span>.
+     text3: |
+      If you need access to the CORE Dashboard, please contact the administrator asking them to invite you. Alternatively, click the button below and we will send an email informing them that you are requesting Dashboard access.
+     button1:
+      caption: Request dashboard access
+      url: "/"
+     button2:
+      caption: Back to the homepage
+      url: "/"
 
 error:
   title: Server Error
