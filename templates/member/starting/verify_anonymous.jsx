@@ -7,14 +7,17 @@ import { patchStats } from '../../../components/utils'
 import Markdown from '../../../components/markdown'
 
 /**
- * The repository already has a dashboard account. verify_registered.html.twig
+ // eslint-disable-next-line max-len
+ * The repository does not have a Dashboard account,
+ * and we do not have an email
+ * email to send: verify_anonymous.html.twig
  *
  * @param item
  * @param emailAdministrator
  * @returns {JSX.Element}
  * @constructor
  */
-const VerifyRegisteredTemplate = ({ item, emailAdministrator }) => (
+const VerifyAnonymousTemplate = ({ item, emailAdministrator }) => (
   <div>
     <h4 className={styles.caption}>{item.title}</h4>
     <div className={styles.innerWrapText}>
@@ -32,6 +35,8 @@ const VerifyRegisteredTemplate = ({ item, emailAdministrator }) => (
           {item.button1.caption}
         </Button>
       </span>
+      <span className={styles.text}>{Parser(item.text4)}</span>
+
       <span className={styles.wrapBtn}>
         <Button
           variant="outlined"
@@ -44,4 +49,4 @@ const VerifyRegisteredTemplate = ({ item, emailAdministrator }) => (
     </div>
   </div>
 )
-export default VerifyRegisteredTemplate
+export default VerifyAnonymousTemplate

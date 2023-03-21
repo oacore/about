@@ -1,7 +1,7 @@
 import { makeObservable, observable, action } from 'mobx'
 import Router from 'next/router'
 
-import { createMembershipPayment } from '../api/services'
+import { createMembershipRegistrationPayment } from '../api/services'
 import routes from '../core.routes.yml'
 
 class Membership {
@@ -36,13 +36,17 @@ class Membership {
   async submit() {
     try {
       const { email } = this.data
-      await createMembershipPayment(this.data)
+      const membershipPayment = await createMembershipRegistrationPayment(
+        this.data
+      )
+      const { typeRepository } = membershipPayment
+
       this.reset()
       Router.push({
         pathname:
           routes.membershipRequestStatus.pattern +
           routes.membershipRequestStatus.children.success,
-        search: `?email=${email}`,
+        search: `?typeRepository=${typeRepository}&email=${email}`,
       })
     } catch (error) {
       Router.push({

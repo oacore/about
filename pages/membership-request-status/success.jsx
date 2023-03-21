@@ -9,6 +9,7 @@ const PaymentSuccessPage = () => {
   // const { membership } = useStore()
   const router = useRouter()
   const { email } = router.query ?? ''
+  const { typeRepository } = router.query ?? ''
 
   // const [loaded, setLoaded] = React.useState(false)
 
@@ -24,6 +25,7 @@ const PaymentSuccessPage = () => {
       <PaymentSuccessPageTemplate
         textData={textData.success}
         emailAdministrator={email}
+        typeRepository={typeRepository}
       />
     </Page>
   )
