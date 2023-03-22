@@ -16,9 +16,12 @@ class Membership {
     transactionDescription: 'description',
   }
 
+  typeRepositoryList = ['has_account', 'has_email', 'anonymous']
+
   constructor() {
     makeObservable(this, {
       data: observable,
+      typeRepositoryList: observable,
       reset: action,
       setData: action,
       submit: action,
@@ -36,18 +39,25 @@ class Membership {
   async submit() {
     try {
       const { email } = this.data
-      const membershipPayment = await createMembershipRegistrationPayment(
-        this.data
-      )
-      const { typeRepository } = membershipPayment
+      const { data } = await createMembershipRegistrationPayment(this.data)
+      const { typeRepository } = data
 
-      this.reset()
-      Router.push({
-        pathname:
-          routes.membershipRequestStatus.pattern +
-          routes.membershipRequestStatus.children.success,
-        search: `?typeRepository=${typeRepository}&email=${email}`,
-      })
+      if (this.typeRepositoryList.includes(typeRepository)) {
+        this.reset()
+        Router.push({
+          pathname:
+            routes.membershipRequestStatus.pattern +
+            routes.membershipRequestStatus.children.success,
+          search: `?typeRepository=${typeRepository}&email=${email}`,
+        })
+      } else {
+        console.error('typeRepository', typeRepository)
+        Router.push({
+          pathname:
+            routes.membershipRequestStatus.pattern +
+            routes.membershipRequestStatus.children.error,
+        })
+      }
     } catch (error) {
       Router.push({
         pathname:

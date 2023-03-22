@@ -115,7 +115,7 @@ success:
  image:
   url: /images/membership/email.svg
  request-status:
-   - id: repository_has_dashboard_account
+   has_account:
      title: Your organisation is already a CORE Starting Member
      text1: |
       Thank you for your interest in becoming a <b>CORE Starting Member</b>. Starting members are institutions that have registered for a
@@ -130,7 +130,7 @@ success:
      button2:
       caption: Back to the homepage
       url: "/"
-   - id: repository_does_not_have_dashboard_account_but_have_email
+   has_email:
      text1: |
        Thank you for your interest in becoming a <b>CORE Starting Member</b>. In order to complete your membership registration, we need to grant you access to the <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard</a>.
      text2: |
@@ -145,10 +145,22 @@ success:
      button2:
       caption: Back to the homepage
       url: "/"
-   - id: repository_does_not_have_dashboard_account_and_does_not_have_email
+   anonymous:
+     title: Unfortunately, we cannot automatically verify you
      text1: |
-
-
+       Thank you for your interest in becoming a <b>CORE Starting Member</b>. Starting members are institutions that have a <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard account</a>.
+     text2: |
+       Our records show that the repository you listed does not have the <a href="https://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a> adminEmail property populated. We need this in order to send an email to verify that you have the authority to manage this repository via the CORE Dashboard.
+     text3: |
+       If you are the repository administrator, we advise you to specify the  <a href="https://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a> adminEmail property.
+     text4: |
+       Alternatively, you can click the button below to send us an email asking for a manual verification. It might take a few days for us to get back to you.
+     button1:
+       caption: SEND EMAIL
+       url: "/"
+     button2:
+       caption: Back to the homepage
+       url: "/"
 
 error:
   title: Server Error

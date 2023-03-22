@@ -3,14 +3,13 @@ import React from 'react'
 import styles from './styles.module.scss'
 import VerifyRegisteredTemplate from './starting/verify-registered'
 import OrganisationsFeeTemplate from './starting/organisations_fee'
+import VerifyAnonymousTemplate from './starting/verify_anonymous'
 
 import { Layout, Section } from 'design-v2/components'
 
-export const TYPE_HAS_ACCOUNT = 'repository_has_dashboard_account'
-export const TYPE_HAS_EMAIL =
-  'repository_does_not_have_dashboard_account_but_have_email'
-export const TYPE_DONT_HAVE_ACCOUNT_AND_EMAIL =
-  'repository_does_not_have_dashboard_account_and_does_not_have_email'
+export const TYPE_REPO_HAS_ACCOUNT = 'has_account'
+export const TYPE_REPO_HAS_EMAIL = 'has_email'
+export const TYPE_REPO_ANONYMOUS = 'anonymous'
 
 const PaymentSuccessPageTemplate = ({
   textData,
@@ -28,31 +27,31 @@ const PaymentSuccessPageTemplate = ({
       />
 
       {textData.requestStatus &&
-        textData.requestStatus.map((item) => (
-          <div>
-            {item.id === typeRepository &&
-              TYPE_HAS_ACCOUNT === typeRepository && (
-                <VerifyRegisteredTemplate
-                  item={item}
-                  emailAdministrator={emailAdministrator}
-                />
-              )}
-            {item.id === typeRepository &&
-              TYPE_HAS_EMAIL === typeRepository && (
-                <OrganisationsFeeTemplate
-                  item={item}
-                  emailAdministrator={emailAdministrator}
-                />
-              )}
-            {item.id === typeRepository &&
-              TYPE_DONT_HAVE_ACCOUNT_AND_EMAIL === typeRepository && (
-                <OrganisationsFeeTemplate
-                  item={item}
-                  emailAdministrator={emailAdministrator}
-                />
-              )}
-          </div>
-        ))}
+        textData.requestStatus.hasAccount &&
+        typeRepository === TYPE_REPO_HAS_ACCOUNT && (
+          <VerifyRegisteredTemplate
+            item={textData.requestStatus.hasAccount}
+            emailAdministrator={emailAdministrator}
+          />
+        )}
+
+      {textData.requestStatus &&
+        textData.requestStatus.hasEmail &&
+        typeRepository === TYPE_REPO_HAS_EMAIL && (
+          <OrganisationsFeeTemplate
+            item={textData.requestStatus.hasEmail}
+            emailAdministrator={emailAdministrator}
+          />
+        )}
+
+      {textData.requestStatus &&
+        textData.requestStatus.anonymous &&
+        typeRepository === TYPE_REPO_ANONYMOUS && (
+          <VerifyAnonymousTemplate
+            item={textData.requestStatus.anonymous}
+            emailAdministrator={emailAdministrator}
+          />
+        )}
     </Section>
   </Layout>
 )

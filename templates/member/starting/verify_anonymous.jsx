@@ -8,8 +8,7 @@ import Markdown from '../../../components/markdown'
 
 /**
  // eslint-disable-next-line max-len
- * The repository does not have a Dashboard account,
- * and we do not have an email
+ * The repository does not have a Dashboard account, and we does not have an
  * email to send: verify_anonymous.html.twig
  *
  * @param item
@@ -26,26 +25,17 @@ const VerifyAnonymousTemplate = ({ item, emailAdministrator }) => (
         <Markdown>{patchStats(item.text2, { emailAdministrator })}</Markdown>
       </span>
       <span className={styles.text}>{Parser(item.text3)}</span>
-      <span className={styles.wrapBtn}>
-        <Button
-          variant="contained"
-          href={item.button1.url}
-          className={styles.btn}
-        >
-          {item.button1.caption}
-        </Button>
-      </span>
       <span className={styles.text}>{Parser(item.text4)}</span>
-
-      <span className={styles.wrapBtn}>
-        <Button
-          variant="outlined"
-          href={item.button2.url}
-          className={styles.btn}
-        >
-          {item.button2.caption}
-        </Button>
-      </span>
+      <Button
+        variant="contained"
+        href={item.button1.url}
+        className={styles.btn}
+      >
+        {item.button1.caption}
+      </Button>
+      <Button variant="outlined" href={item.button2.url} className={styles.btn}>
+        {item.button2.caption}
+      </Button>
     </div>
   </div>
 )
