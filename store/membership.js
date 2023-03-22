@@ -1,7 +1,7 @@
 import { makeObservable, observable, action } from 'mobx'
 import Router from 'next/router'
 
-import { checkTypeRepository } from '../api/services'
+import { checkMembershipTypeRepository } from '../api/services'
 import routes from '../core.routes.yml'
 
 class Membership {
@@ -39,7 +39,7 @@ class Membership {
 
   async submit() {
     try {
-      const { data } = await checkTypeRepository(this.data)
+      const { data } = await checkMembershipTypeRepository(this.data)
       Object.assign(this.data, data)
 
       // this.reset()

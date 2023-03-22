@@ -24,8 +24,11 @@ export const createMembershipPayment = async (body) => {
   return response
 }
 
-export const checkTypeRepository = async (body) => {
-  const url = new URL('/internal/type-repository', process.env.API_URL)
+export const checkMembershipTypeRepository = async (body) => {
+  const url = new URL(
+    '/internal/membership/type-repository',
+    process.env.API_URL
+  )
   const response = await apiRequest(url, {
     body,
     method: 'POST',
