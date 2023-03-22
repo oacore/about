@@ -1,15 +1,17 @@
 import React from 'react'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 
+import { useStore } from 'store'
 import PaymentSuccessPageTemplate from 'templates/member/success'
 import { Page } from 'components'
 import textData from 'data/payment.yml'
 
 const PaymentSuccessPage = () => {
-  // const { membership } = useStore()
-  const router = useRouter()
-  const { email } = router.query ?? ''
-  const { typeRepository } = router.query ?? ''
+  const { membership } = useStore()
+  // const router = useRouter()
+  // const { typeRepository } = router.query ?? ''
+
+  // console.log('getData ' + JSON.stringify(membership.getData()))
 
   // const [loaded, setLoaded] = React.useState(false)
 
@@ -24,8 +26,7 @@ const PaymentSuccessPage = () => {
     <Page title={textData.shortTitle} description={textData.caption}>
       <PaymentSuccessPageTemplate
         textData={textData.success}
-        emailAdministrator={email}
-        typeRepository={typeRepository}
+        membership={membership.getData()}
       />
     </Page>
   )

@@ -1,7 +1,7 @@
 import { makeObservable, observable, action } from 'mobx'
 import Router from 'next/router'
 
-import { createMembershipRegistrationPayment } from '../api/services'
+import { checkTypeRepository } from '../api/services'
 import routes from '../core.routes.yml'
 
 class Membership {
@@ -16,12 +16,9 @@ class Membership {
     transactionDescription: 'description',
   }
 
-  typeRepositoryList = ['has_account', 'has_email', 'anonymous']
-
   constructor() {
     makeObservable(this, {
       data: observable,
-      typeRepositoryList: observable,
       reset: action,
       setData: action,
       submit: action,
@@ -32,32 +29,25 @@ class Membership {
     Object.assign(this.data, data)
   }
 
+  getData() {
+    return this.data
+  }
+
   setIsLoading(boolean) {
     this.isLoading = boolean
   }
 
   async submit() {
     try {
-      const { email } = this.data
-      const { data } = await createMembershipRegistrationPayment(this.data)
-      const { typeRepository } = data
+      const { data } = await checkTypeRepository(this.data)
+      Object.assign(this.data, data)
 
-      if (this.typeRepositoryList.includes(typeRepository)) {
-        this.reset()
-        Router.push({
-          pathname:
-            routes.membershipRequestStatus.pattern +
-            routes.membershipRequestStatus.children.success,
-          search: `?typeRepository=${typeRepository}&email=${email}`,
-        })
-      } else {
-        console.error('typeRepository', typeRepository)
-        Router.push({
-          pathname:
-            routes.membershipRequestStatus.pattern +
-            routes.membershipRequestStatus.children.error,
-        })
-      }
+      // this.reset()
+      Router.push({
+        pathname:
+          routes.membershipRequestStatus.pattern +
+          routes.membershipRequestStatus.children.success,
+      })
     } catch (error) {
       Router.push({
         pathname:

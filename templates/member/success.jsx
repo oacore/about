@@ -11,11 +11,7 @@ export const TYPE_REPO_HAS_ACCOUNT = 'has_account'
 export const TYPE_REPO_HAS_EMAIL = 'has_email'
 export const TYPE_REPO_ANONYMOUS = 'anonymous'
 
-const PaymentSuccessPageTemplate = ({
-  textData,
-  emailAdministrator,
-  typeRepository,
-}) => (
+const PaymentSuccessPageTemplate = ({ textData, membership }) => (
   <Layout className={styles.success}>
     <Section>
       <h2>{textData.title}</h2>
@@ -28,28 +24,28 @@ const PaymentSuccessPageTemplate = ({
 
       {textData.requestStatus &&
         textData.requestStatus.hasAccount &&
-        typeRepository === TYPE_REPO_HAS_ACCOUNT && (
+        membership.typeRepository === TYPE_REPO_HAS_ACCOUNT && (
           <VerifyRegisteredTemplate
             item={textData.requestStatus.hasAccount}
-            emailAdministrator={emailAdministrator}
+            emailAdministrator={membership.emailDashboard}
           />
         )}
 
       {textData.requestStatus &&
         textData.requestStatus.hasEmail &&
-        typeRepository === TYPE_REPO_HAS_EMAIL && (
+        membership.typeRepository === TYPE_REPO_HAS_EMAIL && (
           <OrganisationsFeeTemplate
             item={textData.requestStatus.hasEmail}
-            emailAdministrator={emailAdministrator}
+            emailAdministrator={membership.emailDashboard}
           />
         )}
 
       {textData.requestStatus &&
         textData.requestStatus.anonymous &&
-        typeRepository === TYPE_REPO_ANONYMOUS && (
+        membership.typeRepository === TYPE_REPO_ANONYMOUS && (
           <VerifyAnonymousTemplate
             item={textData.requestStatus.anonymous}
-            emailAdministrator={emailAdministrator}
+            emailAdministrator={membership.emailDashboard}
           />
         )}
     </Section>
