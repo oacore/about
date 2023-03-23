@@ -51,7 +51,6 @@ const PaymentSuccessPageTemplate = ({
         membership.typeRepository === TYPE_REPO_ANONYMOUS && (
           <VerifyAnonymousTemplate
             item={textData.requestStatus.anonymous}
-            emailAdministrator={membership.emailDashboard}
             handleSubmitStarting={handleSubmitStarting}
           />
         )}

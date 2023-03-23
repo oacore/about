@@ -65,9 +65,6 @@ class Membership {
     try {
       await createMembershipPayment(this.data)
       this.reset()
-      Router.push({
-        pathname: routes.home,
-      })
     } catch (error) {
       Router.push({
         pathname:
