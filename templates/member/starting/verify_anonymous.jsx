@@ -13,10 +13,15 @@ import Markdown from '../../../components/markdown'
  *
  * @param item
  * @param emailAdministrator
+ * @param handleSubmitStarting
  * @returns {JSX.Element}
  * @constructor
  */
-const VerifyAnonymousTemplate = ({ item, emailAdministrator }) => (
+const VerifyAnonymousTemplate = ({
+  item,
+  emailAdministrator,
+  handleSubmitStarting,
+}) => (
   <div>
     <h4 className={styles.caption}>{item.title}</h4>
     <div className={styles.innerWrapText}>
@@ -28,8 +33,8 @@ const VerifyAnonymousTemplate = ({ item, emailAdministrator }) => (
       <span className={styles.text}>{Parser(item.text4)}</span>
       <Button
         variant="contained"
-        href={item.button1.url}
         className={styles.btn}
+        onClick={handleSubmitStarting}
       >
         {item.button1.caption}
       </Button>

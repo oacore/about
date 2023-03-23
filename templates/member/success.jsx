@@ -11,7 +11,11 @@ export const TYPE_REPO_HAS_ACCOUNT = 'has_account'
 export const TYPE_REPO_HAS_EMAIL = 'has_email'
 export const TYPE_REPO_ANONYMOUS = 'anonymous'
 
-const PaymentSuccessPageTemplate = ({ textData, membership }) => (
+const PaymentSuccessPageTemplate = ({
+  textData,
+  membership,
+  handleSubmitStarting,
+}) => (
   <Layout className={styles.success}>
     <Section>
       <h2>{textData.title}</h2>
@@ -28,6 +32,7 @@ const PaymentSuccessPageTemplate = ({ textData, membership }) => (
           <VerifyRegisteredTemplate
             item={textData.requestStatus.hasAccount}
             emailAdministrator={membership.emailDashboard}
+            handleSubmitStarting={handleSubmitStarting}
           />
         )}
 
@@ -37,6 +42,7 @@ const PaymentSuccessPageTemplate = ({ textData, membership }) => (
           <OrganisationsFeeTemplate
             item={textData.requestStatus.hasEmail}
             emailAdministrator={membership.emailDashboard}
+            handleSubmitStarting={handleSubmitStarting}
           />
         )}
 
@@ -46,6 +52,7 @@ const PaymentSuccessPageTemplate = ({ textData, membership }) => (
           <VerifyAnonymousTemplate
             item={textData.requestStatus.anonymous}
             emailAdministrator={membership.emailDashboard}
+            handleSubmitStarting={handleSubmitStarting}
           />
         )}
     </Section>

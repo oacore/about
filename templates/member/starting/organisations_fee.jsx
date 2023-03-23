@@ -12,10 +12,15 @@ import Markdown from '../../../components/markdown'
  *
  * @param item
  * @param emailAdministrator
+ * @param handleSubmitStarting
  * @returns {JSX.Element}
  * @constructor
  */
-const OrganisationsFeeTemplate = ({ item, emailAdministrator }) => (
+const OrganisationsFeeTemplate = ({
+  item,
+  emailAdministrator,
+  handleSubmitStarting,
+}) => (
   <div>
     <h4 className={styles.caption}>{item.title}</h4>
     <div className={styles.innerWrapText}>
@@ -27,8 +32,8 @@ const OrganisationsFeeTemplate = ({ item, emailAdministrator }) => (
       <span className={styles.wrapBtn}>
         <Button
           variant="contained"
-          href={item.button1.url}
           className={styles.btn}
+          onClick={handleSubmitStarting}
         >
           {item.button1.caption}
         </Button>

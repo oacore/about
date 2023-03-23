@@ -22,11 +22,17 @@ const PaymentSuccessPage = () => {
   //
   // if (!loaded) return <div />
 
+  const handleSubmitStarting = (evt) => {
+    evt.preventDefault()
+    membership.createMembershipPayment()
+  }
+
   return (
     <Page title={textData.shortTitle} description={textData.caption}>
       <PaymentSuccessPageTemplate
         textData={textData.success}
         membership={membership.getData()}
+        handleSubmitStarting={handleSubmitStarting}
       />
     </Page>
   )
