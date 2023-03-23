@@ -8,42 +8,49 @@ tagline: |
   Our dataset is *huge*, *global*, and [*widely used*](~about/endorsements).
 
 sections:
-- title: |
-    CORE provides access to <mark>{{openAccessLinksCount}}</mark>
-    free to read full text research papers
-    with <mark>{{fullTextCount}}</mark>&nbsp;full texts
-    hosted directly by CORE
-  content: |
-    It's the biggest collection of open access full texts,
-    making it an unparalleled research tool.
-  image: /images/illustrations/analysis-amico.svg
-- title: |
-    CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable
-    research papers
-  content: |
-    CORE is the most comprehensive aggregator harvesting from institutional,
-    subject and preprint repositories as well as gold and hybrid open access
-    journals.
-  link:
-    caption: Learn more about the nature of our dataset
-    url: services#access-to-raw-data
-  image: /images/illustrations/file-searching-amico.svg
-- title: |
-    We're truly global, aggregating from
-    <mark>{{repositoriesCount}}</mark>&nbsp;data providers,
-    in more than 150 countries.
-  content: |
-    And we're used by every country in the world.
-  link:
-    caption: Learn about how we harvest data or become a data provider
-    url: about#how-it-works
-  image: /images/illustrations/online-world.svg
-- title: |
-    You can access the data for free, and do exciting and powerful
-    things with it
-  content: |
-    Our APIs and datasets are perfect for doing text and data mining research and building innovative services.
-  link:
-    caption: Learn more about machine access to our data
-    url: services#access-to-raw-data
-  image: /images/illustrations/data-points-amico.svg
+  - title: |
+      CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable
+      research papers
+    content: |
+      CORE is the most comprehensive aggregator harvesting from institutional,
+      subject and preprint repositories as well as gold and hybrid open access
+      journals.
+    link:
+      caption: Learn more about the nature of our dataset
+      url: services#access-to-raw-data
+    image: /images/illustrations/file-searching-amico.svg
+  - title: |
+      CORE provides access to an estimated  <mark>{{openAccessLinksCount}}</mark>
+      free to read full text research papers with <mark>{{fullTextCount}}</mark>&nbsp;full texts hosted directly by CORE
+    content: |
+      It's the biggest collection of open access full texts,
+      making it an unparalleled research tool.
+    image: /images/illustrations/analysis-amico.svg
+  - title: |
+      You can access the data programmatically and do exciting and powerful things with it
+    link:
+      caption: Learn more about machine access to our data
+      url: services#access-to-raw-data
+    data:
+      - type: CORE API
+        link: services/api
+        image: /images/coreApi.svg
+      - type: CORE Dataset
+        link: services/dataset
+        image: /images/coreDataset.svg
+      - type: CORE FastSync
+        link: services/fastsync
+        image: /images/coreFastSync.svg
+  - title: |
+      We're truly global, aggregating from
+      <mark>{{repositoriesCount}}</mark>&nbsp;data providers,
+      in more than 150 countries.
+    content: |
+      And we're used by every country in the world.
+    link:
+      caption: Learn about how we harvest data or become a data provider
+      url: about#how-it-works
+    image: /images/illustrations/online-world.svg
+
+disclaimer: |
+   **Disclaimer:** The exact statistics might differ based on the used CORE service (Search, API, Dataset, FastSync). This is due to the application of different data quality filtering mechanisms across these services.
