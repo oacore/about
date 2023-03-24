@@ -119,7 +119,7 @@ const MembershipPageTemplate = ({ data }) => {
     <Layout>
       <div className={styles.navWrapper}>
         {data.headerLink.map((item) => (
-          <a className={styles.linkItem} href={item.href}>
+          <a className={styles.linkItem} href={item.href} key={item.link}>
             {item.link}
           </a>
         ))}
@@ -187,7 +187,12 @@ const MembershipPageTemplate = ({ data }) => {
           }
         >
           {data.carousel.items.map((slide) => (
-            <img className={styles.carouselItem} src={slide.img} alt="logo" />
+            <img
+              className={styles.carouselItem}
+              src={slide.img}
+              alt="logo"
+              key={slide.alt}
+            />
           ))}
         </Carousel>
         <div className={styles.linkWrapper}>
@@ -225,7 +230,7 @@ const MembershipPageTemplate = ({ data }) => {
         <h4>{data.materials.title}</h4>
         <div className={styles.cardsWrapper}>
           {data.materials.cards.map((card) => (
-            <article className={styles.materialsCard}>
+            <article className={styles.materialsCard} key={card.image}>
               {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
               <a
                 target={card.action.target}

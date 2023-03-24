@@ -1,11 +1,21 @@
 import React from 'react'
-import { Button } from '@oacore/design/lib/elements'
 
 import styles from './styles.module.scss'
+import VerifyRegisteredTemplate from './starting/verify-registered'
+import OrganisationsFeeTemplate from './starting/organisations_fee'
+import VerifyAnonymousTemplate from './starting/verify_anonymous'
 
 import { Layout, Section } from 'design-v2/components'
 
-const PaymentSuccessPageTemplate = ({ textData }) => (
+export const TYPE_REPO_HAS_ACCOUNT = 'has_account'
+export const TYPE_REPO_HAS_EMAIL = 'has_email'
+export const TYPE_REPO_ANONYMOUS = 'anonymous'
+
+const PaymentSuccessPageTemplate = ({
+  textData,
+  membership,
+  handleSubmitStarting,
+}) => (
   <Layout className={styles.success}>
     <Section>
       <h2>{textData.title}</h2>
@@ -15,10 +25,35 @@ const PaymentSuccessPageTemplate = ({ textData }) => (
         src={textData.image.url}
         alt={textData.title}
       />
-      <span className={styles.caption}>{textData.image.caption}</span>
-      <Button variant="contained" href={textData.button.url}>
-        {textData.button.caption}
-      </Button>
+
+      {textData.requestStatus &&
+        textData.requestStatus.hasAccount &&
+        membership.typeRepository === TYPE_REPO_HAS_ACCOUNT && (
+          <VerifyRegisteredTemplate
+            item={textData.requestStatus.hasAccount}
+            emailAdministrator={membership.emailDashboard}
+            handleSubmitStarting={handleSubmitStarting}
+          />
+        )}
+
+      {textData.requestStatus &&
+        textData.requestStatus.hasEmail &&
+        membership.typeRepository === TYPE_REPO_HAS_EMAIL && (
+          <OrganisationsFeeTemplate
+            item={textData.requestStatus.hasEmail}
+            emailAdministrator={membership.emailDashboard}
+            handleSubmitStarting={handleSubmitStarting}
+          />
+        )}
+
+      {textData.requestStatus &&
+        textData.requestStatus.anonymous &&
+        membership.typeRepository === TYPE_REPO_ANONYMOUS && (
+          <VerifyAnonymousTemplate
+            item={textData.requestStatus.anonymous}
+            handleSubmitStarting={handleSubmitStarting}
+          />
+        )}
     </Section>
   </Layout>
 )
