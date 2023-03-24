@@ -148,8 +148,8 @@ stat:
   title: How many data providers have joined CORE?
   blocks:
     -
-      title: this month
-      value: <mark>{{lastMonthDataprovidersCount}}</mark>
+      title: Last quarter
+      value: <mark>{{lastQuarterDataprovidersCount}}</mark>
     -
       title: last year
       value: <mark>{{lastYearDataprovidersCount}}</mark>
