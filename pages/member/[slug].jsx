@@ -35,6 +35,8 @@ export async function getStaticPaths() {
 const PaymentPage = ({ data }) => {
   const { membership } = useStore()
   const { planName } = data
+  // Clear data.
+  membership.reset()
 
   React.useEffect(() => {
     membership.setData({

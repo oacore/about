@@ -1,7 +1,10 @@
 import { makeObservable, observable, action } from 'mobx'
 import Router from 'next/router'
 
-import { createMembershipPayment } from '../api/services'
+import {
+  checkMembershipTypeRepository,
+  createMembershipPayment,
+} from '../api/services'
 import routes from '../core.routes.yml'
 
 class Membership {
@@ -22,11 +25,16 @@ class Membership {
       reset: action,
       setData: action,
       submit: action,
+      createMembershipPayment: action,
     })
   }
 
   setData(data) {
     Object.assign(this.data, data)
+  }
+
+  getData() {
+    return this.data
   }
 
   setIsLoading(boolean) {
@@ -35,13 +43,28 @@ class Membership {
 
   async submit() {
     try {
-      await createMembershipPayment(this.data)
-      this.reset()
+      const { data } = await checkMembershipTypeRepository(this.data)
+      Object.assign(this.data, data)
+
       Router.push({
         pathname:
           routes.membershipRequestStatus.pattern +
           routes.membershipRequestStatus.children.success,
       })
+    } catch (error) {
+      Router.push({
+        pathname:
+          routes.membershipRequestStatus.pattern +
+          routes.membershipRequestStatus.children.error,
+      })
+      console.error(error)
+    }
+  }
+
+  async createMembershipPayment() {
+    try {
+      await createMembershipPayment(this.data)
+      this.reset()
     } catch (error) {
       Router.push({
         pathname:
