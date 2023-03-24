@@ -166,7 +166,7 @@ content:
     id: 17
     title: CORE OA Compliance dashboard
     descriptionCardCard: |
-      Tools for Open Access compliance monitoring and metadata enrichments. [read more](~membership-documentation/?r=compliance-dashboard)
+      Tools for Open Access compliance monitoring and metadata enrichments. [read more](/membership-documentation/?r=compliance-dashboard)
     descriptionCardTable: |
       Tools for Open Access compliance monitoring and metadata enrichments.
     plans: [Sustaining]
@@ -222,7 +222,7 @@ plans:
       content: Organisations who want to be widely recognised for their open research. In addition to all the STARTING benefits, this membership also comes with extra visibility for your organisation in the OA network, additional technical support, [CORE API](~services/api) access for your researchers, and a seat on our [Board of Supporters](~community/supporters).
     - title: |
         SUSTAINING for:
-      content: Organisations who want to be seen as open research champions. In addition to all the SUPPORTING benefits, this membership comes with additional tools to help stay compliant with [OA policies](~membership-documentation/?r=compliance-dashboard) and FAIR, unlimited technical support, [CORE Dataset](https://core.ac.uk/services/dataset) access for your researchers for text and data mining, and two seats on our Board of Supporters
+      content: Organisations who want to be seen as open research champions. In addition to all the SUPPORTING benefits, this membership comes with additional tools to help stay compliant with [OA policies](/membership-documentation/?r=compliance-dashboard) and FAIR, unlimited technical support, [CORE Dataset](https://core.ac.uk/services/dataset) access for your researchers for text and data mining, and two seats on our Board of Supporters
   cards:
     - title: Starting
       caption: Free
