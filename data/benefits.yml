@@ -2,6 +2,14 @@ title: Benefits
 description: |
   Data providers joining benefits page
 
+headerLink:
+  - link: Why join
+    href: '#join'
+  - link: How to join
+    href: '#how-to-join'
+  - link: FAQs
+    href: '#join-faq'
+
 banner:
   title: Why become a data provider?
   description: Facilitate access of your scientific research outputs to everyone in the world
@@ -15,7 +23,6 @@ banner:
        text: LIST  OF DATA PROVIDERS
        link: true
   velcro:
-    title: On this page
     blocks:
       -
         id: content-visibility
@@ -61,6 +68,9 @@ sections:
      when a repository is harvested by CORE, the number of content
      downloads increases by 15% on average and up to 32% if the
      repository is well configured for harvesting.
+    additional:
+      Info: With millions of monthly active users, it matters to become a data provider and show to the world that your content is indexed.
+      picture: /images/benefits/indexed-by-core.svg
   -
     id: papers-unique
     title: Make your papers uniquelly identifiable and resolvable with PIDs
@@ -147,6 +157,43 @@ stat:
       title: all time
       value: <mark>{{repositoriesCount}}</mark>
 
+HowTo:
+  title: How to join?
+  items:
+    - title: Step 1
+      titlePicture: /images/benefits/join-circle.svg
+      description: Submit the data provider OAI base URL into the form below.
+      picture: /images/benefits/join-arrow.svg
+
+    - title: Step 2
+      titlePicture: /images/benefits/join-circle.svg
+      description: We will index your content  and send an email once completed.
+      picture: /images/benefits/join-arrow.svg
+
+    - title: Step 3
+      titlePicture: /images/benefits/join-circle.svg
+      description: Claim access to the [CORE Dashboard](/services/repository-dashboard) to manage your content.
+      picture: /images/benefits/join-arrow.svg
+
+    - title: Step 4
+      titlePicture: /images/benefits/join-circle.svg
+      description: Become a Supporting or Sustaining [member](/membership) to receive even more benefits.
+      picture: /images/benefits/join-arrow.svg
+
 join:
-  title: Join CORE as a data provider for free now and contribute to the creation of a mutually beneficial ecosystem.
-  picture: /images/benefits/join-core-form.svg
+  title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
+  picture: /images/benefits/join-core.svg
+
+services:
+  - title: CORE Membership
+    picture: /images/services/membership.svg
+    description: CORE is a mission-driven not-for-profit endeavour and a signatory of the Principle of Open Scholarly Infrastructure (POSI) and we rely on the generous support of our members to support and sustain the service.
+    action:
+      - title: Find out more
+        url: membership
+  - title: CORE Dashboard
+    picture: /images/services/repository-dashboard.svg
+    description: The Repository Dashboard is a service provided to CORE Members. It offers a range of tools for repository management, content enrichment, metadata quality assessment and open access compliance checking.
+    action:
+      - title: Find out more
+        url: services/repository-dashboard
