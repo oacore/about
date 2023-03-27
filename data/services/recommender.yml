@@ -45,7 +45,7 @@ features:
     We provide our recommendation service for free.
 
 how-it-works:
-  title: How it works?
+  title: How it works
   image: /images/services/work.svg
   description: |
     The recommender is a plugin for repositories, journal systems and web interfaces that provides suggestions
