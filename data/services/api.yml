@@ -40,7 +40,7 @@ features:
 
 
 how-it-works:
-  title: How it works?
+  title: How it works
   image: /images/services/work.svg
   description: |
     CORE collects, harmonises and enriches large quantities of both metadata and full text research articles from thousands of [data providers](/data-providers). On top of this continuously growing corpus, we provide a truly unique API providing real-time machine access to both the metadata and full texts of research papers, enabling developers to build and run innovative applications on top of CORE's content.
