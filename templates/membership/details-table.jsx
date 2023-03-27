@@ -8,7 +8,7 @@ import { Markdown } from '../../components'
 import { MembershipTable, Section, TextBox } from 'design-v2/components'
 
 const DetailsTable = ({ data, howItWorksOption }) => {
-  const { visibleTable, toggleVisibleTable } = useTable()
+  const { visibleTable, toggleVisibleTable, tableRef } = useTable()
   const [pathType, setPathType] = useState(false)
 
   useEffect(() => {
@@ -58,13 +58,15 @@ const DetailsTable = ({ data, howItWorksOption }) => {
           }
         />
       )}
-      {visibleTable && (
-        <MembershipTable
-          className={styles.table}
-          textData={data.comparisonTable}
-          type="details"
-        />
-      )}
+      <div ref={tableRef}>
+        {visibleTable && (
+          <MembershipTable
+            className={styles.table}
+            textData={data.comparisonTable}
+            type="details"
+          />
+        )}
+      </div>
     </Section>
   )
 }
