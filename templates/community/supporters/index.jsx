@@ -48,6 +48,26 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
       window.location.href = `https://core.ac.uk/data-providers/${repoId}`
   }
 
+  const getLink = (repoId) => {
+    if (Array.isArray(repoId)) {
+      // eslint-disable-next-line no-param-reassign
+      repoId = repoId.find((id) =>
+        fetch(`https://api.core.ac.uk/data-providers/${id}/logo`).then(() => id)
+      )
+    }
+
+    return (
+      <img
+        className={styles.repositoryLogo}
+        src={`https://api.core.ac.uk/data-providers/${repoId}/logo`}
+        onError={(e) => {
+          e.target.src = imagePlaceholder
+        }}
+        alt="logo"
+      />
+    )
+  }
+
   return (
     <Page title={page.title} description={page.tagline}>
       <Layout className={styles.container}>
@@ -122,14 +142,7 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
                 <Table.Row key={member.organisation_id}>
                   <div className={styles.organisationWrapper}>
                     <div className={styles.logoWrapper}>
-                      <img
-                        className={styles.repositoryLogo}
-                        src={`https://api.core.ac.uk/data-providers/${member.repo_id}/logo`}
-                        onError={(e) => {
-                          e.target.src = imagePlaceholder
-                        }}
-                        alt="logo"
-                      />
+                      {getLink(member.repo_id)}
                     </div>
                     <Table.Cell onClick={() => handleRedirect(member.repo_id)}>
                       {member.organisation_name}
