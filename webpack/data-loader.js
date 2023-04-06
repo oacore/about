@@ -76,8 +76,13 @@ const retrieveStats = async (url, catchFilePath) => {
     } catch (fetchError) {
       if (process.env.NODE_ENV !== 'production')
         return loadCachedStats(defaultStatsPath, { ignoreModified: true })
-
-      throw new Error('Statistics retrieval failed due to API instability.')
+      console.error(
+        'Fail. Statistics retrieval failed due to API Core instability.'
+      )
+      process.exit(-1)
+      throw new Error(
+        'Fail. Statistics retrieval failed due to API Core instability.'
+      )
     }
   }
 }
