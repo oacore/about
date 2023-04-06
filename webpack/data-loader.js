@@ -59,6 +59,8 @@ const loadCachedStats = async (cacheFilePath, { ignoreModified = false }) => {
 }
 
 const retrieveStats = async (url, catchFilePath) => {
+  const errorMsg =
+    'Fail. Statistics retrieval failed due to API Core instability.'
   try {
     return await loadCachedStats(catchFilePath)
   } catch (cacheError) {
@@ -76,13 +78,9 @@ const retrieveStats = async (url, catchFilePath) => {
     } catch (fetchError) {
       if (process.env.NODE_ENV !== 'production')
         return loadCachedStats(defaultStatsPath, { ignoreModified: true })
-      console.error(
-        'Fail. Statistics retrieval failed due to API Core instability.'
-      )
+      console.error(errorMsg)
       process.exit(-1) // It needs for strict success build
-      throw new Error(
-        'Fail. Statistics retrieval failed due to API Core instability.'
-      )
+      throw new Error(errorMsg)
     }
   }
 }
