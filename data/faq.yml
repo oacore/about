@@ -540,20 +540,29 @@ sections:
           in our resources.
       - slug: harvested-by-CORE-snippet
         question: |
-          How can I embed the “harvested by CORE” snippet on my website?
-        answer: |
-          ![harvested-by-core](/resources/harvested-by-core-orange.png)
-          ```
-          <img src="https://core.ac.uk/resources/harvested-by-core-orange.png">
-          ```
-      - slug: powered-by-CORE-snippet
-        question: |
-          How can I embed the “powered by CORE” snippet on my website?
-        answer: |
-          ![powered-by-core](/resources/powered-by-core-orange.png)
-          ```
-          <img src="https://core.ac.uk/resources/powered-by-core-orange.png">
-          ```
+          How can I embed the CORE badge on my website?
+        badge:
+          - title: CORE badges
+            id: core-badges
+            images:
+              - file: /images/resources/indexed_by_core.svg
+                source: <img src="https://core.ac.uk/images/resources/indexed_by_core.svg"/>
+              - file: /images/resources/core_starting_member_line.svg
+                source: <img src="https://core.ac.uk/images/resources/core_starting_member_line.svg"/>
+              - file: /images/resources/core_supporting_member_line.svg
+                source: <img src="https://core.ac.uk/images/resources/core_supporting_member_line.svg"/>
+              - file: /images/resources/core_sustaining_member_line.svg
+                source: <img src="https://core.ac.uk/images/resources/core_sustaining_member_line.svg"/>
+              - file: /images/resources/core_starting_member_square.svg
+                source: <img src="https://core.ac.uk/images/resources/core_starting_member_square.svg"/>
+              - file: /images/resources/core_supporting_member_square.svg
+                source: <img src="https://core.ac.uk/images/resources/core_supporting_member_square.svg"/>
+              - file: /images/resources/core_sustaining_member_square.svg
+                source: <img src="https://core.ac.uk/images/resources/core_sustaining_member_square.svg"/>
+            description: >
+              You can use the below badges on your website to show that your content is indexed by CORE and that you
+              are a part of CORE and Open Research community. Please chose the badges according to your
+              membership tier and include the badges in your system by means of the supplied html tags.
       - slug: cite-CORE
         question: |
           Do you need to cite CORE?

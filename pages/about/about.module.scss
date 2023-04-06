@@ -32,3 +32,132 @@
   padding-left: 1rem;
   list-style: disc;
 }
+
+.outreach-materials-card {
+  flex: 1;
+  margin-bottom: 1.5rem !important;
+}
+
+.outreach-materials-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  label {
+    font-weight: bold;
+  }
+}
+
+.outreach-materials-link {
+  margin-top: auto;
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-modal {
+  position: relative;
+  background-color: #fff;
+  padding: 16px;
+  gap: 24px;
+  width: 1216px;
+  height: max-content;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  .badge-title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 20px;
+    color: #212121;
+  }
+  .badge-container {
+    display: flex;
+    gap: 2rem;
+    .badge-description {
+      margin-top: 1rem;
+      margin-left: 1rem;
+      line-height: 1.5rem;
+      color: var(--gray-900);
+      .badgeWrapper {
+        margin-top: 32px;
+        display: flex;
+        .column {
+          .card-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90px;
+            margin-bottom: 24px;
+            .img-wrapper {
+              display: flex;
+              justify-content: flex-end;
+              width: 45%;
+              padding-right: 24px;
+              .image {
+                width: 100%;
+                object-fit: contain;
+              }
+              .badge-image {
+                width: max-content;
+                height: 40px;
+              }
+              .badge-image-height {
+                height: 90px;
+              }
+            }
+            .text-alignment {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              width: 50%;
+              height: 40px;
+              padding-left: 24px;
+              border-left: 1px dashed #9e9e9e;
+              .text {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                color: #000;
+              }
+            }
+            @media (max-width: 1080px) {
+              min-height: 60px;
+              margin-bottom: 16px;
+            }
+          }
+        }
+        @media (max-width: 1080px) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      border: none;
+      background-color: transparent;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+.modal-content {
+  margin-top: 20px;
+}
