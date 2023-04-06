@@ -79,7 +79,7 @@ const retrieveStats = async (url, catchFilePath) => {
       console.error(
         'Fail. Statistics retrieval failed due to API Core instability.'
       )
-      process.exit(-1)
+      process.exit(-1) // It needs for strict success build
       throw new Error(
         'Fail. Statistics retrieval failed due to API Core instability.'
       )
