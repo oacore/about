@@ -60,7 +60,7 @@ const loadCachedStats = async (cacheFilePath, { ignoreModified = false }) => {
 
 const retrieveStats = async (url, catchFilePath) => {
   const errorMsg =
-    'Fail. Statistics retrieval failed due to API Core instability.'
+    'Fail. ==> Statistics retrieval failed due to API Core instability.'
   try {
     return await loadCachedStats(catchFilePath)
   } catch (cacheError) {
