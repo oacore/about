@@ -107,13 +107,13 @@ if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
 fi
 
 # 2. Select node version
-selectNodeVersion
+#selectNodeVersion
 
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
-  echo "Running $NPM_CMD install --production"
-  eval $NPM_CMD install --production
+  echo "Running npm install --production"
+  eval npm install --production
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
