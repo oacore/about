@@ -5,7 +5,7 @@ name: Build and deploy Node.js app to Azure Web App - coretestapp2
 
 env:
    NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-   
+
 on:
   push:
     branches:
@@ -23,11 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
-
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
