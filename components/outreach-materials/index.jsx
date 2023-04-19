@@ -140,13 +140,13 @@ const OutreachMaterials = ({
         <CardTitle>
           {name}
           {attachementType === 'multi' &&
-            ` (${link.options.length} ${link.itemName})`}
+            ` (${link?.options?.length} ${link?.itemName})`}
         </CardTitle>
         {attachementType === 'multi' ? (
           <ResourceLinkSelector
             id={`${id}-resource`}
-            options={link.options}
-            label={link.label}
+            options={link?.options}
+            label={link?.label}
             format={format}
             linkLabelPrefix={name}
             onLinkClick={onLinkClick}
