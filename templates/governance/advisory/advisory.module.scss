@@ -1,0 +1,22 @@
+.organisation-wrapper {
+  display: flex;
+  align-items: center;
+  .logo-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid #b75400;
+    padding: 4px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .repository-logo {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.1),
+        inset 0px 1px 2px rgba(0, 0, 0, 0.05);
+    }
+  }
+}
