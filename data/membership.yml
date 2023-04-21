@@ -121,7 +121,7 @@ content:
     id: 12
     title: Board of Supporters (1 vote)
     descriptionCardCard: |
-      Help shape our development roadmap by having a say on our [Board of Supporters](~community/supporters). [read more](~membership-documentation/?r=board-supporters)
+      Help shape our development roadmap by having a say on our [Board of Supporters](~governance/supporters). [read more](~membership-documentation/?r=board-supporters)
     descriptionCardTable: |
       Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
@@ -137,7 +137,7 @@ content:
     id: 14
     title: Board of Supporters
     descriptionCardCard: |
-      Help shape our development roadmap by having a say on our [Board of Supporters](~community/supporters). [read more](~membership-documentation/?r=board-supporters)
+      Help shape our development roadmap by having a say on our [Board of Supporters](~governance/supporters). [read more](~membership-documentation/?r=board-supporters)
     descriptionCardTable: |
       Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
@@ -219,7 +219,7 @@ plans:
       content: Organisations who want to get their content indexed in CORE and benefit from increased discoverability (in search, [Recommender](~services/recommender),  [Discovery](~services/discovery) and PMC) and persistent identification (via [OAI Resolver](https://oai.core.ac.uk)), while staying in control of how their content is exposed using the [CORE  Dashboard](~services/repository-dashboard).
     - title: |
         SUPPORTING for:
-      content: Organisations who want to be widely recognised for their open research. In addition to all the STARTING benefits, this membership also comes with extra visibility for your organisation in the OA network, additional technical support, [CORE API](~services/api) access for your researchers, and a seat on our [Board of Supporters](~community/supporters).
+      content: Organisations who want to be widely recognised for their open research. In addition to all the STARTING benefits, this membership also comes with extra visibility for your organisation in the OA network, additional technical support, [CORE API](~services/api) access for your researchers, and a seat on our [Board of Supporters](~governance/supporters).
     - title: |
         SUSTAINING for:
       content: Organisations who want to be seen as open research champions. In addition to all the SUPPORTING benefits, this membership comes with additional tools to help stay compliant with [OA policies](/membership-documentation/?r=compliance-dashboard) and FAIR, unlimited technical support, [CORE Dataset](https://core.ac.uk/services/dataset) access for your researchers for text and data mining, and two seats on our Board of Supporters
@@ -297,7 +297,7 @@ carousel:
       alt: "belfast"
   action:
     caption: See all CORE members
-    url: 'https://core.ac.uk/community/supporters/#membership-list'
+    url: 'https://core.ac.uk/governance/supporters/#membership-list'
 
 box:
   description: Here you can find a comparison table with detailed information about each feature. It can help you choose the most suitable membership plan.

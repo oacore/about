@@ -902,7 +902,7 @@ collections:
           A button caption, intended to call the user view the target page.
   slug: '{{filename}}'
 
-  preview_path: api/preview?page=about&ref=cms/community/{{slug}}
+  preview_path: api/preview?page=about&ref=cms/governance/{{slug}}
 
 - name: quote
 

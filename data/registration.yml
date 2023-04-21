@@ -28,7 +28,7 @@ sections:
   -
     id: dataset-research
     text: |
-      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the [CORE Researcher Community](https://core.ac.uk/community/research) for inspiration and discussion.
+      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the [CORE Researcher Community](https://core.ac.uk/governance/research) for inspiration and discussion.
     modal-content:
       Thank you for registering with CORE. We have sent access
       instructions to <span>{{email}}</span>. Please check
@@ -72,7 +72,7 @@ sections:
   -
     id: api-research
     text: |
-      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the [CORE Researcher Community](https://core.ac.uk/community/research) for inspiration and discussion.
+      For researchers using CORE data to facilitate an exciting research project that will help the community. Check out the [CORE Researcher Community](https://core.ac.uk/governance/research) for inspiration and discussion.
     modal-content:
       Thank you for registering with CORE. We have sent access
       instructions to <span>{{email}}</span>. Please check
