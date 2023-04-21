@@ -28,13 +28,15 @@ const Advisory = () => (
           <Table.Body>
             {data.table.data.map((member) => (
               <Table.Row key={member.name}>
+                <Table.Cell>{member.name}</Table.Cell>
                 <div className={styles.organisationWrapper}>
-                  <div className={styles.logoWrapper}>
-                    <img src={member.image} alt="member" />
-                  </div>
-                  <Table.Cell>{member.name}</Table.Cell>
+                  <img
+                    className={styles.logoWrapper}
+                    src={member.image}
+                    alt="member"
+                  />
+                  <Table.Cell>{member.organisation}</Table.Cell>
                 </div>
-                <Table.Cell>{member.organisation}</Table.Cell>
                 <Table.Cell>{member.country}</Table.Cell>
               </Table.Row>
             ))}
