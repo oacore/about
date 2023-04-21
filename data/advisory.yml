@@ -1,0 +1,48 @@
+header:
+  title: Advisory Board
+  description: Our advisory board comprises of distinguished open research experts who advise on strategic directions and ensure mission alignment with the community needs.
+  image: /images/advisory-board.svg
+
+table:
+  title: Advisory Board List
+  data:
+    - name: Rachel Bruce / Andy Hepburn
+      image: /images/ukri.svg
+      organisation: UKRI
+      country: UK
+    - name: George Macgregor
+      image: /images/ukcorr.svg
+      organisation: UKCORR / University of Strathclyde
+      country: UK
+    - name: Kathleen Sheerer
+      image: /images/core.svg
+      organisation: COAR
+      country: Canada
+    - name: Herbert van de Sompel
+      image: /images/dans.svg
+      organisation: DANS
+      country: NL
+    - name: Jean-Claude Guedon
+      image: /images/montreal.svg
+      organisation: University of Montreal
+      country: Canada
+    - name: Kazu Yamaji
+      image: /images/nationalInstitute.svg
+      organisation: National Institute of Informatics
+      country: Japan
+    - name: Aaron Tay
+      image: /images/singaporesvg.svg
+      organisation: Singapore Management University
+      country: UK
+    - name: Allan Hanbury
+      image: /images/tuwien.svg
+      organisation: TU Wien
+      country: Austria
+    - name: Torsten Reimer
+      image: /images/chicago.svg
+      organisation: The University of Chicago
+      country: USA
+    - name: Peter Suber
+      image: /images/harvard.svg
+      organisation: Harvard University
+      country: USA

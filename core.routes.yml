@@ -24,7 +24,7 @@ browse: /browse
 search: /search
 
 community:
-  pattern: /community
+  pattern: /governance
   children:
     research: ./research
     supporters: ./supporters

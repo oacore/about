@@ -5,6 +5,13 @@
   flex-wrap: wrap-reverse;
   justify-content: space-between;
 }
+
+.custom-header {
+  border-bottom: 1px dashed #9e9e9e;
+  padding: 0;
+  margin: var(--page-padding-y) 0;
+}
+
 .meta {
   display: flex;
   align-items: center;

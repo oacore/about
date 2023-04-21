@@ -2,11 +2,11 @@ import React from 'react'
 
 import styles from './community.module.scss'
 
-import { Page, Button } from 'components'
+import { Page, Button, Markdown } from 'components'
 import page from 'data/community/home.yml'
 import { Layout, Hero, Section } from 'design-v2/components'
 
-const CommunityPage = () => (
+const GovernancePage = () => (
   <Page title={page.title} description={page.description}>
     <Layout className={styles.container}>
       <Hero
@@ -15,7 +15,21 @@ const CommunityPage = () => (
         title={page.title}
         description={page.description}
         caption={page.header.caption}
+        borderBottom
       />
+      <Section className={styles.header}>
+        <div>
+          <img className={styles.logo} src={page.connectionsImage} alt="logo" />
+        </div>
+        <div className={styles.content}>
+          {page.connections.map((item) => (
+            <>
+              <h5 className={styles.governanceType}>{item.title}</h5>
+              <Markdown>{item.description}</Markdown>
+            </>
+          ))}
+        </div>
+      </Section>
       <Section className={styles.group}>
         {page.actions.map((action) => (
           <Button
@@ -30,4 +44,4 @@ const CommunityPage = () => (
     </Layout>
   </Page>
 )
-export default CommunityPage
+export default GovernancePage

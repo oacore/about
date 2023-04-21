@@ -28,7 +28,7 @@ const Card = ({ plan }) => (
   </article>
 )
 
-const CommunitySupportersPageTemplate = ({ members, page }) => {
+const GovernanceSupportersPageTemplate = ({ members, page }) => {
   const {
     handlePaginate,
     handleSearch,
@@ -199,4 +199,4 @@ const CommunitySupportersPageTemplate = ({ members, page }) => {
   )
 }
 
-export default CommunitySupportersPageTemplate
+export default GovernanceSupportersPageTemplate

@@ -27,19 +27,34 @@ import retrieveContent from 'content'
 
 const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
 
-const RelatedContentSection = ({ children, data, className, ...passProps }) => (
+const RelatedContentSection = ({
+  renderImage,
+  children,
+  data,
+  className,
+  ...passProps
+}) => (
   <Section
     className={classNames.use(styles.related).join(className)}
     tag="aside"
     {...passProps}
   >
-    {data.iconUrl && (
+    {!renderImage && data.iconUrl && (
       <img className={styles['related-icon']} src={data.iconUrl} alt="" />
     )}
     <h2>{data.title}</h2>
     {children || <Markdown>{data.body}</Markdown>}
+    {renderImage && data.iconUrl && (
+      <div className={styles.governanceImageWrapper}>
+        <img className={styles.governanceImage} src={data.iconUrl} alt="" />
+      </div>
+    )}
     <p>
-      <Button color="primary" outline href={data.action.href}>
+      <Button
+        color="primary"
+        variant={renderImage ? 'contained' : 'text'}
+        href={data.action.href}
+      >
         {data.action.label}
       </Button>
       {data.extraAction && (
@@ -139,15 +154,12 @@ const AboutPage = ({ data }) => (
     <RelatedContentSection
       id="communities"
       caption={data.communities.shortTitle}
+      renderImage
       data={{
         ...data.communities,
         action: {
           label: data.communities.actionLabel,
-          href: 'about/ambassadors',
-        },
-        extraAction: {
-          label: data.communities.extraActionLabel,
-          href: 'community/research',
+          href: 'governance',
         },
       }}
     />

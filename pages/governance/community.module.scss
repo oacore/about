@@ -1,0 +1,48 @@
+@import 'design-v2/variables';
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 20ch;
+
+  @media (max-width: $breakpoint-sm) {
+    padding-bottom: var(--page-padding-y);
+  }
+}
+
+.button {
+  flex: 1;
+  padding: 1.3rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  .governance-type {
+    margin-bottom: 10px;
+  }
+  ul {
+    li {
+      list-style-type: disc;
+      &:first-child {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

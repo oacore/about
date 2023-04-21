@@ -5,7 +5,7 @@ slides:
   children:
     - title: The world’s largest collection of open access research papers
       image: /images/heros/community.svg
-      label: community
+      label: governance
       action: Search
     - title: Machine access to our vast unique full text corpus
       image: /images/heros/homeServices.svg
@@ -43,9 +43,9 @@ features:
       picture: /images/features/building.svg
       url: /services
     - title: Cutting-edge solutions
-      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~community/research)
+      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~governance/research)
       picture: /images/features/neural.svg
-      url: /community/supporters
+      url: /governance/supporters
 
 join:
   title: Join CORE
