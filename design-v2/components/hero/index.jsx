@@ -18,9 +18,17 @@ const Hero = ({
   className,
   reverse,
   spacing,
+  borderBottom,
   hideButtons = false,
 }) => (
-  <Section id={id} className={classNames.use(styles.header).join(className)}>
+  <Section
+    id={id}
+    className={classNames
+      .use(styles.header, {
+        [styles.customHeader]: borderBottom,
+      })
+      .join(className)}
+  >
     <div className={styles.content}>
       <div
         className={classNames.use(styles.meta, {

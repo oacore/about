@@ -1,18 +1,43 @@
-title: CORE Communities
+title: Governance
 description: |
-  CORE supports and runs several communities maintaining a close and active connection with our users. Take part and help shape the future of CORE.
+  CORE is a community governed service. Our organisational structure reflects the diversity of our stakeholders ensuring our activities are kept in alignment with our mission and community needs.
 
 header:
   id: header
   image:  /images/community/community.svg
-  caption: Choose which one suits you best.
 
 
 actions:
-  - title: Researchers
-    url: /community/research
+  - title: Advisory Board
+    url: /governance/advisory
   - title: Board of Supporters
-    url: /community/supporters
-  - title: Ambassadors
-    url: /about/ambassadors
+    url: /governance/supporters
+  - title: Research network
+    url: /governance/research
+  - title: The Open University Stakeholders group
+    url: https://www.open.ac.uk
 
+connections:
+  - title: Advisory Board
+    description: |
+     * Advises on strategic directions
+     * Ensures mission alignment with the needs of the open research community
+  - title: Board of Supporters
+    description: |
+      * Helping to identify requirements and prioritise the development roadmap
+      * Represents the interests of the global open repositories and journals network.
+  - title: The Open University Stakeholder Group
+    description: |
+      * Assumes overall financial and legal responsibility for CORE’s obligations.
+      * Provides institutional support and resources for CORE (e.g. HR, financial, legal, infrastructure).
+  - title: Research network representatives
+    description: |
+      * Ensures relevance and provides guidance on effectively supporting the open research community.
+  - title: CORE Leadership & Management Team
+    description: |
+      * Is responsible for the day to day operation of CORE.
+      * Takes operational decisions with guidance from the governance groups
+
+
+
+connectionsImage: /images/governance.svg

@@ -1,12 +1,13 @@
 import React from 'react'
 
+import GovernanceSupportersPageTemplate from '../../templates/governance/supporters'
+
 import { countries } from 'data/countries.yml'
 import apiRequest from 'api'
-import CommunitySupportersPageTemplate from 'templates/community/supporters'
 import page from 'data/community/supporters.yml'
 
-const CommunitySupportersPage = ({ members }) => (
-  <CommunitySupportersPageTemplate members={members} page={page} />
+const GovernanceSupportersPage = ({ members }) => (
+  <GovernanceSupportersPageTemplate members={members} page={page} />
 )
 
 export async function getStaticProps() {
@@ -35,4 +36,4 @@ export async function getStaticProps() {
   }
 }
 
-export default CommunitySupportersPage
+export default GovernanceSupportersPage
