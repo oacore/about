@@ -6,7 +6,7 @@ header:
 table:
   title: Advisory Board List
   data:
-    - name: Rachel Bruce / Andy Hepburn
+    - name: Rachel Bruce & Andy Hepburn
       image: /images/ukri.svg
       organisation: UKRI
       country: UK
@@ -16,11 +16,11 @@ table:
       country: UK
     - name: Kathleen Sheerer
       image: /images/core.svg
-      organisation: COAR
+      organisation: Confederation of Open Access Repositories (COAR)
       country: Canada
     - name: Herbert van de Sompel
       image: /images/dans.svg
-      organisation: DANS
+      organisation: Data Archiving and Networked Services (DANS)
       country: NL
     - name: Jean-Claude Guedon
       image: /images/montreal.svg
@@ -33,7 +33,7 @@ table:
     - name: Aaron Tay
       image: /images/singaporesvg.svg
       organisation: Singapore Management University
-      country: UK
+      country: Singapore
     - name: Allan Hanbury
       image: /images/tuwien.svg
       organisation: TU Wien
@@ -45,4 +45,8 @@ table:
     - name: Peter Suber
       image: /images/harvard.svg
       organisation: Harvard University
+      country: USA
+    - name: Tom Cramer
+      image: /images/stanford.svg
+      organisation: Stanford University
       country: USA
