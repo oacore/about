@@ -117,7 +117,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
-
+npm run build
 npm run production
 
 echo "Not really sure where we are $NPM_TOKEN is it here?"
