@@ -117,10 +117,13 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
-echo "aaaaaa"
-npm install
-npm run build
+echo "Running npm run build"
+echo "$DEPLOYMENT_TARGET"
+cd "$DEPLOYMENT_TARGET"
+eval npm run build
+exitWithMessageOnError "npm build failed"
+cd - > /dev/null
 
-echo "Not really sure where we are $NPM_TOKEN is it here?"
+echo "$PWD"
 ##################################################################################################################################
 echo "Finished successfully."
