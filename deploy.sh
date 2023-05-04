@@ -7,7 +7,7 @@
 
 # Helpers
 # -------
-
+echo "in kudu"
 exitWithMessageOnError () {
   if [ ! $? -eq 0 ]; then
     echo "An error has occurred during web site deployment."
@@ -117,6 +117,7 @@ if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
+echo "aaaaaa"
 npm install
 npm run build
 
