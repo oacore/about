@@ -20,10 +20,11 @@ const format2name = (type) =>
     pdf: 'PDF',
     gdoc: 'Google Doc',
     gslides: 'Google Slides',
+    page: 'page',
   }[type])
 
 const format2action = (type) =>
-  ['gdoc', 'gslides', 'pdf'].includes(type) ? 'Open' : 'Download'
+  ['gdoc', 'gslides', 'pdf', 'page'].includes(type) ? 'Open' : 'Download'
 
 const ResourceLink = ({
   id,
