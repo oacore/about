@@ -18,30 +18,37 @@ const itemToURL = (id) => {
   window.history.replaceState({}, null, url.toString())
 }
 
-const JoinSectionItem = ({ title, picture, description, additional }) => (
-  <div key={title} className={styles.services}>
-    {picture && (
-      <figure>
-        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-        <img
-          className={styles.image}
-          src={picture}
-          alt={`${title}'s picture`}
-        />
-      </figure>
-    )}
-    <div className={styles.content}>
-      <h5>{title}</h5>
-      <Markdown>{description}</Markdown>
-      {additional && (
-        <div className={styles.infoWrapper}>
-          <span className={styles.info}>{additional.Info}</span>
-          <img src={additional.picture} alt={additional.Info} />
-        </div>
+const JoinSectionItem = ({ title, picture, description, additional }) => {
+  const navigateToPage = () => {
+    window.location = `faq/${additional.href}`
+  }
+  return (
+    <div key={title} className={styles.services}>
+      {picture && (
+        <figure>
+          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+          <img
+            className={styles.image}
+            src={picture}
+            alt={`${title}'s picture`}
+          />
+        </figure>
       )}
+      <div className={styles.content}>
+        <h5>{title}</h5>
+        <Markdown>{description}</Markdown>
+        {additional && (
+          <div className={styles.infoWrapper}>
+            <span className={styles.info}>{additional.Info}</span>
+            <Button onClick={navigateToPage}>
+              <img src={additional.picture} alt={additional.Info} />
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const BenefitsPageTemplate = () => {
   const [showAll, setShowAll] = useState(false)
