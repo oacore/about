@@ -48,11 +48,12 @@ resources:
         title: Ukrainian
         value: /resources/core-adaptable-promo-text-ukrainian.pdf
 -
-  id: badges
-  name: See all badges
-  type: page
-  url: /faq#harvested-by-CORE-snippet
+  id: Badges
+  name: Badges
+  type: pop up
+  url: ''
   picture: badges.png
+  action: See all badges
 -
   id: business-card
   name: Business card
