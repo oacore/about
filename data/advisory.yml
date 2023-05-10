@@ -50,3 +50,7 @@ table:
       image: /images/stanford.svg
       organisation: Stanford University
       country: USA
+    - name: Kevin Shakesheff
+      image: /images/openUniversity.svg
+      organisation: The Open University
+      country: UK
