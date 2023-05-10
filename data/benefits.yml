@@ -71,6 +71,7 @@ sections:
     additional:
       Info: With millions of monthly active users, it matters to become a data provider and show to the world that your content is indexed.
       picture: /images/benefits/indexed-by-core.svg
+      href: '#badges'
   -
     id: papers-unique
     title: Make your papers uniquelly identifiable and resolvable with PIDs

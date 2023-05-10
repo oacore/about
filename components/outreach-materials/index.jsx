@@ -20,10 +20,11 @@ const format2name = (type) =>
     pdf: 'PDF',
     gdoc: 'Google Doc',
     gslides: 'Google Slides',
+    page: 'page',
   }[type])
 
 const format2action = (type) =>
-  ['gdoc', 'gslides', 'pdf'].includes(type) ? 'Open' : 'Download'
+  ['gdoc', 'gslides', 'pdf', 'page'].includes(type) ? 'Open' : 'Download'
 
 const ResourceLink = ({
   id,
@@ -140,13 +141,13 @@ const OutreachMaterials = ({
         <CardTitle>
           {name}
           {attachementType === 'multi' &&
-            ` (${link.options.length} ${link.itemName})`}
+            ` (${link?.options?.length} ${link?.itemName})`}
         </CardTitle>
         {attachementType === 'multi' ? (
           <ResourceLinkSelector
             id={`${id}-resource`}
-            options={link.options}
-            label={link.label}
+            options={link?.options}
+            label={link?.label}
             format={format}
             linkLabelPrefix={name}
             onLinkClick={onLinkClick}

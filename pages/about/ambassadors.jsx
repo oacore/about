@@ -3,24 +3,24 @@ import { Col, Row } from 'reactstrap'
 import ReactGA from 'react-ga'
 
 import {
-  Content,
-  Markdown,
-  Page,
-  Section,
   Button,
-  OutreachMaterials,
-  TeamMember,
+  Content,
   ImageMap,
   ImagePin,
+  Markdown,
   NumberPin,
+  OutreachMaterials,
+  Page,
+  Section,
+  TeamMember,
 } from 'components'
 import {
-  title,
-  description,
-  content,
-  keywords,
   ambassadors,
+  content,
+  description,
+  keywords,
   regions,
+  title,
 } from 'data/ambassadors.yml'
 import resourcesData from 'data/resources.yml'
 
@@ -31,8 +31,8 @@ ambassadors.members.sort((a, b) => {
   return a.name.localeCompare(b.name)
 })
 
-const useDownloadReporting = () => {
-  const trackDownload = useCallback((event) => {
+const useDownloadReporting = () =>
+  useCallback((event) => {
     const hyperlink = event.target
     const { label, action } = hyperlink.dataset
     ReactGA.event({
@@ -41,9 +41,6 @@ const useDownloadReporting = () => {
       label,
     })
   }, [])
-
-  return trackDownload
-}
 
 const AmbassadorsPage = () => {
   const reportDownload = useDownloadReporting()
