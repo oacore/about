@@ -227,6 +227,11 @@ const PaymentDefailsForm = observe(({ form }) => {
                 required={!field.optional}
                 onChange={handleInputChange}
               />
+              {field.appendTextBottom && (
+                <span className={styles.inputAppendBottom}>
+                  {field.appendTextBottom}
+                </span>
+              )}
             </div>
           )
         }

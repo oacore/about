@@ -5,11 +5,13 @@ import Parser from 'html-react-parser'
 import styles from '../styles.module.scss'
 import { patchStats } from '../../../components/utils'
 import Markdown from '../../../components/markdown'
+import ModalConditions from './conditions/index'
 
 /**
  * The repository already has a dashboard account. verify_registered.html.twig
  *
  * @param item
+ * @param repositoryName
  * @param emailAdministrator
  * @param handleSubmitStarting
  * @returns {JSX.Element}
@@ -17,22 +19,39 @@ import Markdown from '../../../components/markdown'
  */
 const VerifyRegisteredTemplate = ({
   item,
+  repositoryName,
   emailAdministrator,
   handleSubmitStarting,
 }) => {
   const [buttonText, setButtonText] = useState(item.button1.caption)
   const [buttonStyle, setButtonStyle] = useState(styles.btn)
   const [buttonDisabled, setButtonDisabled] = useState(false)
+  const [isModalConditions, setIsModalConditions] = useState(false)
 
   const handleClick = (evt) => {
+    setIsModalConditions(false)
     setButtonText('Request sent')
     setButtonStyle(styles.btnSent)
     setButtonDisabled(true)
     handleSubmitStarting(evt)
   }
 
+  const handleModalUp = () => {
+    setIsModalConditions(true)
+  }
+  const handleModalDown = () => {
+    setIsModalConditions(false)
+  }
+
   return (
     <div>
+      {isModalConditions && (
+        <ModalConditions
+          repositoryName={repositoryName}
+          onSubmitConditions={handleClick}
+          onCloseConditions={handleModalDown}
+        />
+      )}
       <h4 className={styles.caption}>{item.title}</h4>
       <div className={styles.innerWrapText}>
         <span className={styles.text}>{Parser(item.text1)}</span>
@@ -44,7 +63,7 @@ const VerifyRegisteredTemplate = ({
           <Button
             variant="contained"
             className={buttonStyle}
-            onClick={handleClick}
+            onClick={handleModalUp}
             disabled={buttonDisabled}
           >
             {buttonText}

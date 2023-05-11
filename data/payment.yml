@@ -61,6 +61,7 @@ form:
       label: Email
       id: email
       type: input
+      appendTextBottom: Please provide your institutional email. Applications from personal emails will not be approved.
     - placeholder: Select the type of your contract
       label: Types of contracts
       id: typesContracts
@@ -121,9 +122,9 @@ success:
       Thank you for your interest in becoming a <b>CORE Starting Member</b>. Starting members are institutions that have registered for a
        <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard</a> account.
      text2: |
-      We have found that the repository you listed already has a Dashboard account which is registered to <span>{{emailAdministrator}}</span>.
+      We have found that the repository you listed already has a Dashboard account.
      text3: |
-      If you need access to the CORE Dashboard, please contact the administrator asking them to invite you. Alternatively, click the button below and we will send an email informing them that you are requesting Dashboard access.
+      If you need access to the CORE Dashboard, please contact the administrator asking them to invite you. Alternatively, you can click the button below and we will send an email to the administrator and inform them that you are requesting Dashboard access.
      button1:
       caption: Request dashboard access
       url: "/"
