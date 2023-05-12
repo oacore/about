@@ -81,6 +81,9 @@ const PaymentDefailsForm = observe(({ form }) => {
     formValues.price = membershipPrice.data.price
     formValues.priceCalculated = membershipPrice.data.priceCalculated
 
+    const selectRepo = e.target['select-repository']
+    formValues.repoName = selectRepo.value
+
     membership.setData({
       ...formValues,
       repository,

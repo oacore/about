@@ -4,7 +4,7 @@ import { Modal, Button } from '@oacore/design/lib'
 import styles from './styles.module.scss'
 
 const ModalConditions = ({
-  repositoryName,
+  repoName,
   onSubmitConditions,
   onCloseConditions,
 }) => (
@@ -13,7 +13,7 @@ const ModalConditions = ({
     <main>
       <p>
         We are now going to send an email to the repository manager of{' '}
-        {repositoryName}. They will receive your personal information including
+        {repoName}. They will receive your personal information including
         including name and email to decide whether to approve your request.
       </p>
       <p>Do you wish to proceed?</p>

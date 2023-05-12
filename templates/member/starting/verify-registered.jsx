@@ -11,7 +11,7 @@ import ModalConditions from './conditions/index'
  * The repository already has a dashboard account. verify_registered.html.twig
  *
  * @param item
- * @param repositoryName
+ * @param repoName
  * @param emailAdministrator
  * @param handleSubmitStarting
  * @returns {JSX.Element}
@@ -19,7 +19,7 @@ import ModalConditions from './conditions/index'
  */
 const VerifyRegisteredTemplate = ({
   item,
-  repositoryName,
+  repoName,
   emailAdministrator,
   handleSubmitStarting,
 }) => {
@@ -47,7 +47,7 @@ const VerifyRegisteredTemplate = ({
     <div>
       {isModalConditions && (
         <ModalConditions
-          repositoryName={repositoryName}
+          repoName={repoName}
           onSubmitConditions={handleClick}
           onCloseConditions={handleModalDown}
         />

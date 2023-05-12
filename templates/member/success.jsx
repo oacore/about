@@ -30,7 +30,7 @@ const PaymentSuccessPageTemplate = ({
         membership.typeRepository === TYPE_REPO_HAS_ACCOUNT && (
           <VerifyRegisteredTemplate
             item={textData.requestStatus.hasAccount}
-            repositoryName={membership.repositoryName}
+            repoName={membership.repoName}
             emailAdministrator={membership.emailDashboard}
             handleSubmitStarting={handleSubmitStarting}
           />
