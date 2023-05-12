@@ -147,15 +147,14 @@ success:
       caption: Back to the homepage
       url: "/"
    anonymous:
-     title: Unfortunately, we cannot automatically verify you
+     title: Thank you for your interest in becoming a CORE Starting Member.
      text1: |
-       Thank you for your interest in becoming a <b>CORE Starting Member</b>. Starting members are institutions that have a <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard account</a>.
+       Starting members are institutions that have a <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard</a> account.
      text2: |
-       Our records show that the repository you listed does not have the <a href="https://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a> adminEmail property populated. We need this in order to send an email to verify that you have the authority to manage this repository via the CORE Dashboard.
+       To give you instant access to the Dashboard, we need to verify that you have ownership of the repository.  We need to manually check that you are the repository manager. Please provide a justification why are you the authorised person to receive access to the Dashboard. Our team will asses the provided information and decide whether to approve your request.
      text3: |
-       If you are the repository administrator, we advise you to specify the  <a href="https://www.openarchives.org/OAI/openarchivesprotocol.html" target="_blank">OAI-PMH</a> adminEmail property.
+       You can click the button below to send us an email asking for a manual verification.  It might take a few days for us to get back to you.
      text4: |
-       Alternatively, you can click the button below to send us an email asking for a manual verification. It might take a few days for us to get back to you.
      button1:
        caption: SEND EMAIL
        url: "/"
