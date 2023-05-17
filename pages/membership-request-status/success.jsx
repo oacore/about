@@ -23,7 +23,7 @@ const PaymentSuccessPage = () => {
   // if (!loaded) return <div />
   const handleSubmitStarting = ({ evt, roleInOrganisation }) => {
     evt.preventDefault()
-    membership.setData({ roleInOrganisation })
+    if (roleInOrganisation) membership.setData({ roleInOrganisation })
     membership.createMembershipPayment()
   }
 

@@ -33,7 +33,7 @@ const VerifyRegisteredTemplate = ({
     setButtonText('Request sent')
     setButtonStyle(styles.btnSent)
     setButtonDisabled(true)
-    handleSubmitStarting(evt)
+    handleSubmitStarting({ evt })
   }
 
   const handleModalUp = () => {

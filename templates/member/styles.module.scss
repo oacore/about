@@ -89,12 +89,10 @@
   }
 }
 
-//label
-//{
-//  text-align: left !important;
-//  color: green  !important;
-//}
-
 .text-field {
   margin-top: 2rem;
+
+  label {
+    text-align: left !important;
+  }
 }
