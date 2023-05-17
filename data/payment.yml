@@ -161,6 +161,11 @@ success:
      button2:
        caption: Back to the homepage
        url: "/"
+     fields:
+       placeholder: Why are you the authorised person to get access?
+       label: Justification
+       id: roleInOrganisation
+       appendTextBottom: Please note, than we will check the request only with institutional email.
 
 error:
   title: Server Error
