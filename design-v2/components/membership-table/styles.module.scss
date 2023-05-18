@@ -94,6 +94,19 @@ $card-header-color: #fef5ef;
     font-size: 0.9rem;
   }
 
+  &-status {
+    color: #212121;
+    margin-left: 4px;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
+
+  &-text-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   &-underline {
     text-decoration: underline;
   }
@@ -187,6 +200,12 @@ $card-header-color: #fef5ef;
     text-transform: none;
     color: var(--gray-900);
   }
+}
+
+.title-border {
+  width: 100%;
+  height: 23px;
+  background: #b75400;
 }
 
 .alignLeft {

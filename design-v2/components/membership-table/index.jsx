@@ -29,7 +29,7 @@ const MembershipTable = observe(
 
     const renderHeaders = () => (
       <tr>
-        {textData.headers.map((header, i) => (
+        {textData.headers.map((header) => (
           <th
             key={header.name}
             className={classNames.use(styles.header, {
@@ -46,14 +46,11 @@ const MembershipTable = observe(
               {header.name}
             </Markdown>
             {header.defaultText && (
-              <a href={header.url}>
-                <Markdown
-                  className={classNames.use(styles.headerText, {
-                    [styles.headerUnderline]: i === 1,
-                  })}
-                >
+              <a className={styles.headerTextWrapper} href={header.url}>
+                <Markdown className={styles.headerText}>
                   {header.defaultText}
                 </Markdown>
+                <span className={styles.headerStatus}>{header.status}</span>
               </a>
             )}
             {header.caption && (
@@ -158,6 +155,7 @@ const MembershipTable = observe(
             [styles.alignLeft]: headerAlignment,
           })}
         >{`<div class="${styles.lowerCase}">${textData.title}</div>`}</Markdown>
+        <div className={styles.titleBorder} />
         <table
           className={classNames.use(styles.table, {
             [styles.fixed]: type === 'prices',

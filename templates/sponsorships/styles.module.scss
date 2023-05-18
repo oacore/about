@@ -81,6 +81,10 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-columns: $grid-responsive-for-sections;
 }
 
+.fee-section-note-second {
+  margin-top: 24px;
+}
+
 .how-to-contact {
   display: grid;
   grid-template-columns: $grid-responsive-for-sections;
@@ -131,4 +135,8 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   line-height: 24px;
   letter-spacing: 0.0016em;
   color: #212121;
+}
+
+.discount-section {
+  padding: 6px 0 54px 0;
 }
