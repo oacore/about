@@ -20,7 +20,7 @@ content:
     plans: [Strategic partner, Premium, Gold, Silver]
   - &baner
     title: Personalised banners for research events within CORE
-    plans: [Strategic partner, Premium, Gold, Silver]
+    plans: [Strategic partner, Premium, Gold]
   - &acknowledgement
     title: Acknowledgement in our communication and promotion materials
     plans: [Strategic partner, Premium, Gold]
@@ -29,6 +29,9 @@ content:
     plans: [Strategic partner, Premium]
   - &presentation
     title: Acknowledgement in presentations delivered by the CORE team
+    plans: [Strategic partner, Premium]
+  - &sponsor
+    title: Listing as a key sponsor on the CORE homepage
     plans: [Strategic partner, Premium]
   - &partner
     title: Listing as a strategic partner on the CORE homepage and within the CORE footer of every CORE page right next to The Open University logo
@@ -68,15 +71,15 @@ how-to-sponsor:
     url: https://api.core.ac.uk/docs/v3
   types:
   -
-    title: Strategic partner
+    title: Bronze
   -
-    title: Premium
+    title:  Silver
   -
     title: Gold
   -
-    title: Silver
+    title: Premium
   -
-    title: Bronze
+    title: Strategic partner
 
 comparison-table:
   title: Sponsorship benefits
@@ -84,16 +87,20 @@ comparison-table:
     - name: ''
       defaultText: ""
     - name: Strategic partner
-      defaultText: "Contact us"
-      url: https://docs.google.com/forms/d/1M8kSnsjxBlVyZZsMvprxLgr_yxN1AP82Yp_hfw2K_QE/edit
+      defaultText: "Starting from £50K"
+      status: p.a.
     - name: Premium
-      defaultText: "£20,000 "
+      defaultText: "£20,000"
+      status: p.a.
     - name: Gold
       defaultText: "£10,000 "
+      status: p.a.
     - name: Silver
       defaultText: "£5,000 "
+      status: p.a.
     - name: Bronze
       defaultText: "£2,500 "
+      status: p.a.
 
   rows:
     - *website
@@ -102,6 +109,7 @@ comparison-table:
     - *acknowledgement
     - *blog
     - *presentation
+    - *sponsor
     - *partner
     - *paper
   warning: "* This cannot be used for advertising and is subject to compliance with CORE's T&Cs. It can be used for addressing topics relevant to open research delivered in a way that engages the open scholarly community."

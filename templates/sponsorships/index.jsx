@@ -1,8 +1,11 @@
 import React from 'react'
 import { Button } from '@oacore/design/lib/elements'
+import { classNames } from '@oacore/design/lib/utils'
 
+import membershipData from '../../data/membership.yml'
 import styles from './styles.module.scss'
 import { Markdown } from '../../components'
+import stylesMT from '../../design-v2/components/membership-table/styles.module.scss'
 
 import { Layout, MembershipTable, Section } from 'design-v2/components'
 
@@ -12,6 +15,35 @@ const Feature = ({ title, description }) => (
     <Markdown>{description}</Markdown>
   </div>
 )
+
+const renderHeaders = () => (
+  <tr>
+    {membershipData.discount.table.headers.map((header) => (
+      <th
+        key={header.name}
+        className={classNames.use(stylesMT.header, stylesMT.boldText500)}
+      >
+        <Markdown className={stylesMT.headerTitle}>{header.name}</Markdown>
+      </th>
+    ))}
+  </tr>
+)
+
+const renderDiscountsRows = () =>
+  membershipData.discount.table.rows.map((row) => (
+    <tr key={row.title}>
+      <td key={row.period} className={stylesMT.cell} role="gridcell">
+        {row.period}
+      </td>
+      <td
+        key={row.discount}
+        className={classNames.use(stylesMT.cell, stylesMT.boldText700)}
+        role="gridcell"
+      >
+        {row.discount}
+      </td>
+    </tr>
+  ))
 
 const SponsorshipPageTemplate = ({ data }) => (
   <Layout>
@@ -73,6 +105,19 @@ const SponsorshipPageTemplate = ({ data }) => (
         headerAlignment
       />
       <span className={styles.warning}>{data.comparisonTable.warning}</span>
+    </Section>
+    <Section id="discount" className={styles.discountSection}>
+      <div className={stylesMT.tableCaption}>
+        {membershipData.discount.title}{' '}
+      </div>
+      <table className={classNames.use(stylesMT.table)} role="grid">
+        <thead className={stylesMT.head}>{renderHeaders()}</thead>
+        <tbody>{renderDiscountsRows()}</tbody>
+      </table>
+
+      <Markdown className={styles.feeSectionNoteSecond}>
+        {membershipData.fee.noteSecond}
+      </Markdown>
     </Section>
     <Section id="contact-us" className={styles.howToContact}>
       <div>
