@@ -333,6 +333,7 @@ const PaymentDefailsForm = observe(({ form }) => {
             type={input.type}
             options={input.options}
             loading={dataProviders.isLoading}
+            inputLimit={3}
             setFormValue={handleSelectChange}
             onDelete={input.id !== initRepositorySelect.id && onDeleteInput}
             required={!input.optional ?? true}
