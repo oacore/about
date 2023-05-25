@@ -139,7 +139,10 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
             </Table.Head>
             <Table.Body>
               {itemsList.map((member) => (
-                <Table.Row key={member.organisation_id}>
+                <Table.Row
+                  className={styles.tableRow}
+                  key={member.organisation_id}
+                >
                   <div className={styles.organisationWrapper}>
                     <div className={styles.logoWrapper}>
                       {getLink(member.repo_id)}
