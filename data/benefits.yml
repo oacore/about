@@ -185,6 +185,14 @@ join:
   title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
   picture: /images/benefits/join-core.svg
 
+joinModal:
+  title: Tell us about yourself
+  oaiMessage: If you don’t know the OAI base URL of the data provider, insert the URL of it and we will try to find it.
+  description: |
+    We will review your request to add this data provider to CORE. If this request is successful, we will index the content from this data provider and notify you. This can take up to three weeks depending on the size of the data provider and our workload.
+
+    Once completed, if you are an authorised representative of this data provider, we encourage you to become a [CORE Member]() and obtain access to the [CORE Dashboard]().
+
 services:
   - title: CORE Membership
     picture: /images/services/membership.svg

@@ -3,10 +3,13 @@ import { Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
-import AddDataProviderForm from './form'
+// eslint-disable-next-line import/order
 import { Layout, Section } from '../components'
 
 // TODO: REPLACE OLD COMPONENT
+import JoinForm from './joinForm'
+import GratitudeModal from './GratitudeModal'
+
 import { Accordion, Content, Markdown } from 'components'
 import benefitsData from 'data/benefits.yml'
 import faqData from 'data/faq.yml'
@@ -52,6 +55,8 @@ const JoinSectionItem = ({ title, picture, description, additional }) => {
 
 const BenefitsPageTemplate = () => {
   const [showAll, setShowAll] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [showGratitudeModal, setGratitudeModal] = useState(false)
 
   const toggleShowAll = () => {
     setShowAll((prev) => !prev)
@@ -166,7 +171,18 @@ const BenefitsPageTemplate = () => {
             <p className={styles.addDataProviderText}>
               {benefitsData.join.title}
             </p>
-            <AddDataProviderForm />
+            <Button onClick={() => setShowModal(true)} variant="contained">
+              JOIN NOW
+            </Button>
+            <JoinForm
+              visibleModal={showModal}
+              setGratitudeModal={setGratitudeModal}
+              closeModal={() => setShowModal(false)}
+            />
+            <GratitudeModal
+              showGratitudeModal={showGratitudeModal}
+              setGratitudeModal={setGratitudeModal}
+            />
           </div>
         </div>
         <div className={styles.imgBlock}>
