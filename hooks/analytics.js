@@ -11,10 +11,15 @@ export const useAnalytics = (options) => {
   const reportPageview = useCallback(
     // eslint-disable-next-line no-shadow
     (url, title, hitType = 'pageview') => {
+      const pathName =
+        window.location.pathname === '/'
+          ? 'core.ac.uk'
+          : window.location.pathname
+
       ReactGA.send({
         hitType,
         page: url,
-        title: typeof title === 'string' ? title : window.location.pathname,
+        title: typeof title === 'string' ? title : pathName,
       })
     },
     []
