@@ -47,7 +47,6 @@ export const useAnalytics = (options) => {
     if (!analyticsAllowed) return () => {}
 
     router.events.on('routeChangeComplete', reportPageview)
-
     return () => {
       router.events.off('routeChangeComplete', reportPageview)
     }
