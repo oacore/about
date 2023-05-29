@@ -10,11 +10,11 @@ export const useAnalytics = (options) => {
   const router = useRouter()
   const reportPageview = useCallback(
     // eslint-disable-next-line no-shadow
-    (url, title = 'title', type = 'pageview') => {
+    (url, title, hitType = 'pageview') => {
       ReactGA.send({
-        hitType: type,
+        hitType,
         page: url,
-        title,
+        title: typeof title === 'string' ? title : window.location.pathname,
       })
     },
     []
