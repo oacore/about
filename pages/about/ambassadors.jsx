@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { Col, Row } from 'reactstrap'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
 import {
   Button,

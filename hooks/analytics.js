@@ -1,13 +1,19 @@
 import { useCallback, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import ReactGA from 'react-ga'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import ReactGA from 'react-ga4'
 import { useCookie } from '@oacore/design'
 
 export const useAnalytics = () => {
   const analyticsAllowed = useCookie('analytics_cookies_allowed')
   const router = useRouter()
   const reportPageview = useCallback((url) => {
-    ReactGA.pageview(url)
+    // ReactGA.pageview(url)
+    ReactGA.send({
+      hitType: 'pageview',
+      page: url,
+      title: 'Custom Title',
+    })
   }, [])
 
   useEffect(() => {
@@ -26,6 +32,12 @@ export const useAnalytics = () => {
 
     // Reporting first page view manually because the event doesn't fire
     reportPageview(router.asPath)
+
+    ReactGA.send({
+      hitType: 'pageview',
+      page: router.asPath,
+      title: 'Custom Title',
+    })
 
     // This clean-up is quite tricky
     return () => {
