@@ -1,0 +1,36 @@
+.toggle-panel-title {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  letter-spacing: 0.0015em;
+  color: #ffffff;
+  background: #b75400;
+  border-radius: 2px;
+  padding: 15px 10px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  .svg-wrapper {
+    width: 34px;
+    height: 34px;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .toggle-arrow {
+      transition: 0.3s ease-out;
+    }
+  }
+}
+
+.toggle-content {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
