@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Card, Container } from 'reactstrap'
+import { Card } from 'reactstrap'
 import { bind } from 'decko'
 import { classNames } from '@oacore/design/lib/utils'
 import { Button } from '@oacore/design/lib/elements'
@@ -185,14 +185,12 @@ class ResearchOutputsPage extends Component {
             activePaper={activePaper}
           />
         ))}
-        <Container>
-          <Content className={styles.footerWrapper}>
-            <Markdown className={styles.footerText}>{page.footer}</Markdown>
-            <Button href={page.action.href} variant="contained" target="_blank">
-              {page.action.text}
-            </Button>
-          </Content>
-        </Container>
+        <Content className={styles.footerWrapper}>
+          <Markdown className={styles.footerText}>{page.footer}</Markdown>
+          <Button href={page.action.href} variant="contained" target="_blank">
+            {page.action.text}
+          </Button>
+        </Content>
       </Layout>
     )
   }
