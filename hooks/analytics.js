@@ -1,14 +1,29 @@
 import { useCallback, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import ReactGA from 'react-ga'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import ReactGA from 'react-ga4'
 import { useCookie } from '@oacore/design'
 
-export const useAnalytics = () => {
+export const useAnalytics = (options) => {
+  const title = options
   const analyticsAllowed = useCookie('analytics_cookies_allowed')
   const router = useRouter()
-  const reportPageview = useCallback((url) => {
-    ReactGA.pageview(url)
-  }, [])
+  const reportPageview = useCallback(
+    // eslint-disable-next-line no-shadow
+    (url, title, hitType = 'pageview') => {
+      const pathName =
+        window.location.pathname === '/'
+          ? 'core.ac.uk'
+          : window.location.pathname
+
+      ReactGA.send({
+        hitType,
+        page: url,
+        title: typeof title === 'string' ? title : pathName,
+      })
+    },
+    []
+  )
 
   useEffect(() => {
     if (analyticsAllowed && process.env.NODE_ENV === 'production') {
@@ -25,7 +40,7 @@ export const useAnalytics = () => {
     }
 
     // Reporting first page view manually because the event doesn't fire
-    reportPageview(router.asPath)
+    reportPageview(router.asPath, title)
 
     // This clean-up is quite tricky
     return () => {
@@ -37,7 +52,6 @@ export const useAnalytics = () => {
     if (!analyticsAllowed) return () => {}
 
     router.events.on('routeChangeComplete', reportPageview)
-
     return () => {
       router.events.off('routeChangeComplete', reportPageview)
     }

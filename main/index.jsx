@@ -19,7 +19,7 @@ const Main = ({ children }) => {
 
   const handleNavigation = useCallback((url) => router.push(url), [router])
 
-  useAnalytics()
+  useAnalytics({ title: config.name })
 
   Header.useSearchBar({
     onQueryChanged: (searchTerm) => {

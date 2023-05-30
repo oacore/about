@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Modal, ModalHeader, ModalBody } from 'reactstrap'
 import { bind } from 'decko'
 
+import styles from './styles.module.scss'
 import { Button } from './elements'
-import ButtonToolbar from './button-toolbar'
 import { CitationTab, CitationTabManager } from './citation-tabs'
 
 const citationTitles = {
@@ -34,19 +33,15 @@ class CitationsModal extends Component {
   render() {
     const { id, citations, isOpen, onCite, onToggle, ...restProps } = this.props
     return (
-      <Modal
+      <div
         id={id}
-        isOpen={isOpen}
-        toggle={onToggle}
-        innerRef={(element) => {
+        ref={(element) => {
           this.containerElement = element
         }}
         {...restProps}
       >
-        <ModalHeader className="sr-only" toggle={onToggle}>
-          Cite the work
-        </ModalHeader>
-        <ModalBody>
+        <div className="sr-only">Cite the work</div>
+        <div>
           <CitationTabManager>
             {Object.entries(citationTitles).map(([type, tabTitle]) => (
               <CitationTab
@@ -58,16 +53,13 @@ class CitationsModal extends Component {
               />
             ))}
           </CitationTabManager>
-          <ButtonToolbar>
-            <Button color="primary" onClick={this.handleCiteClick}>
-              Copy the citation
+          <div className={styles.actionBtn}>
+            <Button color="primary" outline onClick={this.handleCiteClick}>
+              Copy to clipboard
             </Button>
-            <Button color="primary" outline onClick={onToggle}>
-              Cancel
-            </Button>
-          </ButtonToolbar>
-        </ModalBody>
-      </Modal>
+          </div>
+        </div>
+      </div>
     )
   }
 }
