@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
-import { Card, CardHeader, CardBody, Container } from 'reactstrap'
+import { Card } from 'reactstrap'
 import { bind } from 'decko'
+import { classNames } from '@oacore/design/lib/utils'
+import { Button } from '@oacore/design/lib/elements'
 
-import { Page, Section, Button, Reference, Content } from 'components'
+import styles from './about.module.scss'
+import researchOutputs from '../../public/images/research-outputs.svg'
+import coreLogo from '../../public/images/core-logo-circle.svg'
+import { Layout } from '../../design-v2/components'
+import TogglePanel from '../../components/toggle-panel/togglePanel'
+
+import { Content, Reference, Section } from 'components'
 import Markdown from 'components/markdown'
 import CitationsModal from 'components/citations-modal'
 import page from 'data/research-outputs.yml'
@@ -20,32 +28,80 @@ const ResearchPaperCard = ({
   number,
   description,
   url,
-  onCite,
+  isCitationsModalOpen,
+  activePaper,
+  papersLength,
+  paper,
   ...cardProps
 }) => (
   <Card {...cardProps}>
-    <CardHeader>
-      <Reference
-        className="mb-0"
-        author={author}
-        title={title}
-        url={url}
-        year={year}
-        booktitle={booktitle}
-        editor={editor}
-        journal={journal}
-        volume={volume}
-        number={number}
-      />
-    </CardHeader>
-    <CardBody>
-      <Content tag="p">{description}</Content>
-      {onCite && (
-        <Button outline onClick={onCite}>
-          Cite
-        </Button>
-      )}
-    </CardBody>
+    <div
+      className={classNames.use(styles.cardTitle, {
+        [styles.cardTitleColumn]: papersLength,
+      })}
+    >
+      {
+        (year && <span key="year">({year})</span>,
+        url ? (
+          <a key="title" href={url} className={styles.referenceTitle}>
+            {title.trim()}
+          </a>
+        ) : (
+          <span key="title" className={styles.referenceTitle}>
+            {title}
+          </span>
+        ))
+      }
+    </div>
+    <div
+      className={classNames.use(styles.cardWrapper, {
+        [styles.cardWrapperColumn]: papersLength,
+      })}
+    >
+      <div
+        className={classNames.use(styles.itemWrapper, {
+          [styles.itemWrapperColumn]: papersLength,
+        })}
+      >
+        <div
+          className={classNames.use(styles.cardHeader, {
+            [styles.cardHeaderColumn]: papersLength,
+          })}
+        >
+          <img src={coreLogo} alt="" />
+          <Reference
+            className="mb-0"
+            author={author}
+            title={title}
+            url={url}
+            year={year}
+            booktitle={booktitle}
+            editor={editor}
+            journal={journal}
+            volume={volume}
+            number={number}
+            description={description}
+          />
+        </div>
+        <p
+          className={classNames.use(styles.cardInfoDescription, {
+            [styles.cardInfoDescriptionColumn]: papersLength,
+          })}
+        >
+          {description}
+        </p>
+      </div>
+      <div
+        className={classNames.use(styles.urlWrapper, {
+          [styles.urlWrapperColumn]: papersLength,
+        })}
+      >
+        <CitationsModal
+          id={`${(activePaper && activePaper.id) || 'unknown'}-citaions-modal`}
+          citations={paper.citations || {}}
+        />
+      </div>
+    </div>
   </Card>
 )
 
@@ -54,19 +110,35 @@ const ResearchOutputsSection = ({
   title,
   papers,
   onPaperCite,
+  isCitationsModalOpen,
+  activePaper,
   ...restProps
 }) => (
-  <Section id={id} {...restProps}>
-    <h2>{title}</h2>
+  <Section id={id} {...restProps} className={styles.researchSection}>
     <Content>
-      {papers.map((paper) => (
-        <ResearchPaperCard
-          key={paper.id}
-          className="mb-3"
-          onCite={paper.citations && ((event) => onPaperCite(event, paper))}
-          {...paper}
-        />
-      ))}
+      <TogglePanel
+        id={title}
+        title={title}
+        key={title}
+        className={styles.toggler}
+        content={papers.map((paper) => (
+          <div
+            className={classNames.use(styles.toggleItem, {
+              [styles.toggleItemSmall]: papers.length > 1,
+            })}
+          >
+            <ResearchPaperCard
+              paper={paper}
+              papersLength={papers.length > 1}
+              key={paper.id}
+              className="mb-3"
+              isCitationsModalOpen={isCitationsModalOpen}
+              activePaper={activePaper}
+              {...paper}
+            />
+          </div>
+        ))}
+      />
     </Content>
   </Section>
 )
@@ -89,13 +161,18 @@ class ResearchOutputsPage extends Component {
     const { isCitationsModalOpen, activePaper } = this.state
 
     return (
-      <Page
-        title={page.title}
-        description={page.description}
-        keywords={page.keywords}
-        nav
-      >
-        <h1>{page.title}</h1>
+      <Layout>
+        <Section className={styles.header}>
+          <div className={styles.innerWrapper}>
+            <h1 className={styles.title}>{page.title}</h1>
+            <Markdown className={styles.description}>
+              {page.description}
+            </Markdown>
+          </div>
+          <div className={styles.logoContainer}>
+            <img className={styles.headerImage} src={researchOutputs} alt="" />
+          </div>
+        </Section>
         {page.sections.map((section) => (
           <ResearchOutputsSection
             key={section.id}
@@ -104,20 +181,17 @@ class ResearchOutputsPage extends Component {
             title={section.title}
             papers={section.papers}
             onPaperCite={this.toggleCitationsModal}
+            isCitationsModalOpen={isCitationsModalOpen}
+            activePaper={activePaper}
           />
         ))}
-        <Container>
-          <Content>
-            <Markdown>{page.footer}</Markdown>
-          </Content>
-        </Container>
-        <CitationsModal
-          id={`${(activePaper && activePaper.id) || 'unknown'}-citaions-modal`}
-          isOpen={isCitationsModalOpen}
-          onToggle={this.toggleCitationsModal}
-          citations={(activePaper && activePaper.citations) || {}}
-        />
-      </Page>
+        <Content className={styles.footerWrapper}>
+          <Markdown className={styles.footerText}>{page.footer}</Markdown>
+          <Button href={page.action.href} variant="contained" target="_blank">
+            {page.action.text}
+          </Button>
+        </Content>
+      </Layout>
     )
   }
 }
