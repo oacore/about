@@ -249,7 +249,7 @@ const AboutPage = ({ data }) => {
           ...data.research,
           action: {
             label: data.research.actionLabel,
-            href: '~research-outputs',
+            href: '/about/research-outputs',
           },
         }}
       />
