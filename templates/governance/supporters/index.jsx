@@ -1,6 +1,5 @@
-import React from 'react'
-import { Button, Icon, Table, TextField } from '@oacore/design/lib/elements'
-import { classNames } from '@oacore/design/lib/utils'
+import React, { useState } from 'react'
+import { Button, Table, TextField } from '@oacore/design/lib/elements'
 
 import styles from './supporters.module.scss'
 import useTable from './hooks/useTable'
@@ -29,18 +28,12 @@ const Card = ({ plan }) => (
 )
 
 const GovernanceSupportersPageTemplate = ({ members, page }) => {
-  const {
-    handlePaginate,
-    handleSearch,
-    inputValue,
-    itemsList,
-    isNoResults,
-    pagesCount,
-    activePage,
-  } = useTable({ initialData: members })
+  const { handleSearch, inputValue, isNoResults } = useTable({
+    initialData: members,
+  })
 
-  const isPrevButtonDisabled = activePage === 1
-  const isNextButtonDisabled = pagesCount === activePage
+  const [displayedItems, setDisplayedItems] = useState(10)
+  const maxItems = members.length
 
   const handleRedirect = (providerId) => {
     const repoId = Array.isArray(providerId) ? providerId[0] : providerId
@@ -138,7 +131,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
               </Table.Row>
             </Table.Head>
             <Table.Body>
-              {itemsList.map((member) => (
+              {members.slice(0, displayedItems).map((member) => (
                 <Table.Row
                   className={styles.tableRow}
                   key={member.organisation_id}
@@ -162,39 +155,25 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
                 </Table.Row>
               )}
             </Table.Body>
-            {pagesCount !== 0 && (
-              <Table.Footer>
-                <Table.Row className={styles.row}>
-                  <Table.Cell colSpan={1000}>
-                    <div className={styles.pagination}>
-                      <Button
-                        disabled={isPrevButtonDisabled}
-                        onClick={() => handlePaginate('prev')}
-                      >
-                        <Icon
-                          src="#chevron-left"
-                          className={classNames.use(styles.icon, {
-                            [styles.iconDisabled]: isPrevButtonDisabled,
-                          })}
-                        />
-                      </Button>
-                      <p>{activePage}</p>
-                      <Button
-                        disabled={isNextButtonDisabled}
-                        onClick={() => handlePaginate('next')}
-                      >
-                        <Icon
-                          src="#chevron-right"
-                          className={classNames.use(styles.icon, {
-                            [styles.iconDisabled]: isNextButtonDisabled,
-                          })}
-                        />
-                      </Button>
-                    </div>
-                  </Table.Cell>
-                </Table.Row>
-              </Table.Footer>
-            )}
+            <Table.Footer>
+              <Table.Row className={styles.paginationRow}>
+                <Table.Cell colSpan={2}>
+                  <p className={styles.paginationText}>
+                    Showing 1 - {Math.min(displayedItems, maxItems)} of{' '}
+                    {maxItems}
+                  </p>
+                  <Button
+                    onClick={() =>
+                      setDisplayedItems((prevCount) => prevCount + 10)
+                    }
+                    variant="outlined"
+                    disabled={displayedItems >= maxItems}
+                  >
+                    Show More
+                  </Button>
+                </Table.Cell>
+              </Table.Row>
+            </Table.Footer>
           </Table>
         </Section>
       </Layout>
