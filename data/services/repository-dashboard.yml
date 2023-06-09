@@ -58,9 +58,13 @@ how-it-works:
    it also offers REF Open Access compliance monitoring and a RIOXX
    metadata quality validator.
   action:
-    title: Log in
-    variant: outlined
-    url: https://dashboard.core.ac.uk/login
+    - title: Log in
+      variant: outlined
+      url: https://dashboard.core.ac.uk/login
+    - title: dashboard presentation
+      url: /resources/CORE-Dashboard-tool-for-the-management-of-open-access-content.pdf
+      variant: contained
+      target: _blank
 
 main:
   items:
