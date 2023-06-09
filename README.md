@@ -40,7 +40,6 @@ npm run dev
 1. Use Node v.16
 2. Run `npm update @oacore/design`
 
-
 Open [localhost:3000](http://localhost:3000) to see the website.
 
 __Well done! 🎉__
