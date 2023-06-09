@@ -144,6 +144,17 @@ $grid-responsive-for-items: repeat(auto-fit, minmax(500px, 1fr));
 .row {
   border-bottom: none;
 }
+
+.pagination-row {
+  text-align: right;
+  border-bottom: none;
+  .pagination-text {
+    display: inline-block;
+    margin-right: 32px;
+    margin-top: 32px;
+  }
+}
+
 .icon {
   color: var(--gray-700);
 }
