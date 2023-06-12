@@ -143,6 +143,42 @@ const ResearchOutputsSection = ({
   </Section>
 )
 
+const ResearchOutputsOpenSection = ({
+  id,
+  title,
+  papers,
+  onPaperCite,
+  isCitationsModalOpen,
+  activePaper,
+  subTitle,
+  index,
+  ...restProps
+}) => (
+  <Section id={id} {...restProps} className={styles.researchSection}>
+    <div className={styles.togglePanelTitle}>{title}</div>
+    <p className={styles.togglePanelSubTitle}>{subTitle}</p>
+    <div className={styles.alwaysOpen}>
+      {papers?.map((paper) => (
+        <div
+          className={classNames.use(styles.toggleItem, {
+            [styles.toggleItemSmall]: papers.length > 1,
+          })}
+        >
+          <ResearchPaperCard
+            paper={paper}
+            papersLength={papers.length > 1}
+            key={paper.id}
+            className="mb-3"
+            isCitationsModalOpen={isCitationsModalOpen}
+            activePaper={activePaper}
+            {...paper}
+          />
+        </div>
+      ))}
+    </div>
+  </Section>
+)
+
 class ResearchOutputsPage extends Component {
   state = {
     isCitationsModalOpen: false,
@@ -173,9 +209,21 @@ class ResearchOutputsPage extends Component {
             <img className={styles.headerImage} src={researchOutputs} alt="" />
           </div>
         </Section>
-        {page.sections.map((section) => (
+        <ResearchOutputsOpenSection
+          key={page.openedSection.id}
+          id={page.openedSection.id}
+          caption={page.openedSection.caption || page.openedSection.title}
+          title={page.openedSection.title}
+          subTitle={page.openedSection.subTitle}
+          papers={page.openedSection.papers}
+          onPaperCite={this.toggleCitationsModal}
+          isCitationsModalOpen={isCitationsModalOpen}
+          activePaper={activePaper}
+        />
+        {page.sections.map((section, index) => (
           <ResearchOutputsSection
             key={section.id}
+            index={index}
             id={section.id}
             caption={section.caption || section.title}
             title={section.title}
