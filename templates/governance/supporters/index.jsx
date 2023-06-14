@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { Button, Table, TextField } from '@oacore/design/lib/elements'
 
 import styles from './supporters.module.scss'
-import useTable from './hooks/useTable'
 import imagePlaceholder from '../../../public/images/supporters/imagePlaceholder.svg'
 
 import { Page, Markdown } from 'components'
@@ -28,12 +27,18 @@ const Card = ({ plan }) => (
 )
 
 const GovernanceSupportersPageTemplate = ({ members, page }) => {
-  const { handleSearch, inputValue, isNoResults } = useTable({
-    initialData: members,
-  })
-
+  const [searchValue, setSearchValue] = useState('')
   const [displayedItems, setDisplayedItems] = useState(10)
   const maxItems = members.length
+
+  const handleSearch = (event) => {
+    const { value } = event.target
+    setSearchValue(value)
+  }
+
+  const filteredMembers = members.filter((member) =>
+    member.organisation_name.toLowerCase().includes(searchValue.toLowerCase())
+  )
 
   const handleRedirect = (providerId) => {
     const repoId = Array.isArray(providerId) ? providerId[0] : providerId
@@ -114,7 +119,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
           <form>
             <TextField
               className={styles.search}
-              value={inputValue}
+              value={searchValue}
               onChange={handleSearch}
               id="search"
               type="search"
@@ -131,7 +136,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
               </Table.Row>
             </Table.Head>
             <Table.Body>
-              {members.slice(0, displayedItems).map((member) => (
+              {filteredMembers.slice(0, displayedItems).map((member) => (
                 <Table.Row
                   className={styles.tableRow}
                   key={member.organisation_id}
@@ -147,9 +152,9 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
                   <Table.Cell>{member.country}</Table.Cell>
                 </Table.Row>
               ))}
-              {isNoResults && (
+              {filteredMembers.length === 0 && (
                 <Table.Row>
-                  <Table.Cell colSpan={12}>
+                  <Table.Cell colSpan={2}>
                     No results. Please update your query
                   </Table.Cell>
                 </Table.Row>
