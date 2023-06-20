@@ -122,6 +122,11 @@ echo "Running npm run build"
 echo "$DEPLOYMENT_TARGET"
 cd "$DEPLOYMENT_TARGET"
 eval node -v
+# test start
+eval export GA_CODE='G-2ZWQFDN91Z'
+eval git clean -fdX
+# test end
+
 eval NODE_ENV=production npm run build
 exitWithMessageOnError "npm build failed"
 cd - > /dev/null
