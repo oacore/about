@@ -109,6 +109,13 @@ fi
 # 2. Select node version
 #selectNodeVersion
 
+# test start
+echo "Set global variables"
+eval export GA_CODE='G-2ZWQFDN91Z'
+eval git clean -fdX
+eval export NODE_ENV='production'
+# test end
+
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
@@ -122,11 +129,6 @@ echo "Running npm run build"
 echo "$DEPLOYMENT_TARGET"
 cd "$DEPLOYMENT_TARGET"
 eval node -v
-# test start
-eval export GA_CODE='G-2ZWQFDN91Z'
-eval git clean -fdX
-# test end
-
 eval NODE_ENV=production npm run build
 exitWithMessageOnError "npm build failed"
 cd - > /dev/null
