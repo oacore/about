@@ -62,7 +62,7 @@ const nextConfig = {
     // Add the 'localsConvention' config option to the CSS loader config
     // in each of these rules.
     cssModuleRules.forEach((cmr) => {
-      // Find the item inside the 'use' list that defines css-loader
+      // Find the item inside the 'use' list that  defines css-loader
       const cssLoaderConfig = cmr.use.find(({ loader }) =>
         loader.includes('css-loader')
       )
