@@ -18,13 +18,16 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
 }
 
 const isProd = process.env.NODE_ENV === 'production'
+// eslint-disable-next-line no-console
+console.log(`NODE_ENV = ${process.env.NODE_ENV}`)
+
 const nextConfig = {
   env: Object.assign(envConfig, {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
   assetPrefix: isProd ? 'https://core.ac.uk' : '',
-  hot: !isProd, // https://webpack.js.org/guides/hot-module-replacement/
+  hot: isProd, // https://webpack.js.org/guides/hot-module-replacement/
   dynamicAssetPrefix: true,
   webpack: (config) => {
     const originalEntry = config.entry
