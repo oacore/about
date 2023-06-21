@@ -27,7 +27,7 @@ const nextConfig = {
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
   assetPrefix: isProd ? 'https://core.ac.uk' : '',
-  hot: isProd, // https://webpack.js.org/guides/hot-module-replacement/
+  hot: false, // https://webpack.js.org/guides/hot-module-replacement/
   dynamicAssetPrefix: true,
   webpack: (config) => {
     const originalEntry = config.entry
