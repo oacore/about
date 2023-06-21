@@ -119,7 +119,9 @@ echo "Set global variables"
 # 3. Install npm packages
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
+  eval export GA_CODE='G-2ZWQFDN91Z'
   eval export NODE_ENV='production'
+  eval git clean -fdX
   echo "Running npm install"
   eval node -v
   eval npm install
