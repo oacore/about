@@ -21,13 +21,16 @@ const isProd = process.env.NODE_ENV === 'production'
 // eslint-disable-next-line no-console
 console.log(`NODE_ENV = ${process.env.NODE_ENV}`)
 
+let assetPrefixDomain = ''
+if (process.env.DOMAIN && isProd) assetPrefixDomain = process.env.DOMAIN
+
 const nextConfig = {
   env: Object.assign(envConfig, {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
   // assetPrefix: isProd ? 'https://core.ac.uk' : '',
-  assetPrefix: isProd ? 'https://core-about.azurewebsites.net/' : '',
+  assetPrefix: assetPrefixDomain,
   hot: false, // https://webpack.js.org/guides/hot-module-replacement/
   dynamicAssetPrefix: true,
   webpack: (config) => {
