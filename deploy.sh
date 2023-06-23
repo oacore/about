@@ -131,8 +131,8 @@ echo "Running npm run build"
 echo "$DEPLOYMENT_TARGET"
 cd "$DEPLOYMENT_TARGET"
 eval node -v
-#eval npm run build
-eval NODE_ENV=production npm run build
+eval npm run build
+#eval NODE_ENV=production npm run build
 exitWithMessageOnError "npm build failed"
 cd - > /dev/null
 

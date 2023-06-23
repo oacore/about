@@ -26,7 +26,8 @@ const nextConfig = {
     GA_CODE: process.env.GA_CODE,
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
-  assetPrefix: isProd ? 'https://core.ac.uk' : '',
+  // assetPrefix: isProd ? 'https://core.ac.uk' : '',
+  assetPrefix: isProd ? 'https://core-about.azurewebsites.net/' : '',
   hot: false, // https://webpack.js.org/guides/hot-module-replacement/
   dynamicAssetPrefix: true,
   webpack: (config) => {
