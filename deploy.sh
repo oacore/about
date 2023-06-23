@@ -120,7 +120,6 @@ echo "Set global variables"
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   cd "$DEPLOYMENT_TARGET"
   eval export GA_CODE='G-2ZWQFDN91Z'
-  eval export NODE_ENV='production'
   eval git clean -fdX
   echo "Running npm install"
   eval node -v
@@ -132,7 +131,8 @@ echo "Running npm run build"
 echo "$DEPLOYMENT_TARGET"
 cd "$DEPLOYMENT_TARGET"
 eval node -v
-eval npm run build
+#eval npm run build
+eval NODE_ENV=production npm run build
 exitWithMessageOnError "npm build failed"
 cd - > /dev/null
 
