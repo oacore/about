@@ -119,7 +119,7 @@ success:
    has_account:
      title: Your organisation is already a CORE Starting Member
      text1: |
-      Thank you for your interest in becoming a <b>CORE Starting Member</b>. Starting members are institutions that have registered for a
+      Thank you for your interest in becoming <br/> a <b>CORE Starting Member</b>. Starting members are institutions that have registered for a
        <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard</a> account.
      text2: |
       We have found that the repository you listed already has a Dashboard account.

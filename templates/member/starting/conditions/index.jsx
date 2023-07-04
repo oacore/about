@@ -13,8 +13,8 @@ const ModalConditions = ({
     <main>
       <p>
         We are now going to send an email to the repository manager of{' '}
-        {repoName}. They will receive your personal information including
-        including name and email to decide whether to approve your request.
+        {repoName}. They will receive your personal information including name
+        and email to decide whether to approve your request.
       </p>
       <p>Do you wish to proceed?</p>
     </main>
