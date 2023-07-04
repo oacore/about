@@ -76,3 +76,23 @@
     display: block;
   }
 }
+
+.input {
+  width: 100%;
+  input,
+  &-append-bottom {
+    display: block;
+    text-align: justify;
+    color: var(--gray-600);
+    margin-left: 0.5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.text-field {
+  margin-top: 2rem;
+
+  label {
+    text-align: left !important;
+  }
+}
