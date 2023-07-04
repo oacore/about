@@ -147,7 +147,7 @@ success:
       caption: Back to the homepage
       url: "/"
    anonymous:
-     title: Thank you for your interest in becoming a CORE Starting Member.
+     title: Thank you for your interest <br/>in becoming a CORE Starting Member.
      text1: |
        Starting members are institutions that have a <a href="https://core.ac.uk/services/repository-dashboard" target="_blank">CORE Dashboard</a> account.
      text2: |
