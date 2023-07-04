@@ -39,6 +39,15 @@ jobs:
         with:
           name: node-app
 
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build Bicep template
+        run: |
+          az bicep build --file deploy/template.bicep
+
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
@@ -48,15 +57,3 @@ jobs:
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BB53179B67B2415898AFDEFAAC637AD2 }}
           package: .
 
-      # ARM template deployment
-    #   - name: 'Login to Azure'
-    #     uses: azure/login@v1
-        # with:
-        #   creds: ${{ secrets.AZURE_CREDENTIALS }}
-
-      - name: 'Deploy ARM Template'
-        uses: azure/arm-deploy@1
-        with:
-          resource-group: 'core_frontend'
-          template: '.github/workflows/arm_template/about-arm-template.json'
-          deployment-name: 'arm-deployment'
