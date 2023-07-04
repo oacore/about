@@ -37,7 +37,7 @@ const VerifyAnonymousTemplate = ({ item, handleSubmitStarting }) => {
 
   return (
     <div>
-      <h4 className={styles.caption}>{item.title}</h4>
+      <h4 className={styles.caption}>{Parser(item.title)}</h4>
       <div className={styles.innerWrapText}>
         <span className={styles.text}>{Parser(item.text1)}</span>
         <span className={styles.text}>{Parser(item.text2)}</span>
