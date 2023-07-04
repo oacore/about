@@ -166,7 +166,7 @@ related-services:
     -
       title: CORE Search
       picture: /images/services/search.svg
-      url: search
+      url: /
     -
       title: CORE Recommeneder
       picture: /images/services/recommender.svg
