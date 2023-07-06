@@ -457,13 +457,6 @@ organizations:
   # logo: companies/rygbee-logo.jpg
   logo: raxter.svg
   # testimonial: *sourish-dasgupta
-- &ritc
-  id: ritc
-  name: Ritc
-  url: http://www.macmicro.com
-  # logo: companies/ritc-logo.png
-  logo: macmicro.png # ???
-  # testimonial: *colin-goldberg
 - &4science
   id: 4science
   name: 4Science
@@ -479,6 +472,18 @@ organizations:
   name: Intoolab
   url: http://www.intoolab.com/
   logo: intoolab.png
+- &anthropic
+  id: anthropic
+  name: Anthropic
+  logo: Anthropic_logo.svg
+- &audemicr
+  id: audemicr
+  name: Audemicr
+  logo: Audemicr_logo.svg
+- &caktus
+  id: caktus
+  name: Caktus
+  logo: Caktus_logo.svg
 - &cypris
   id: cypris
   name: Cypris
@@ -865,13 +870,15 @@ sections:
         - *wheesbee
         - *iris-ai
         - *rygbee
-        - *ritc
         - *4science
         - *interac
         - *unsilo
         - *macmicro
         - *scilit
         - *intoolab
+        - *anthropic
+        - *audemicr
+        - *caktus
     testimonials:
       title: What companies say about us
       items:
