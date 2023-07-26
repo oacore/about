@@ -24,9 +24,9 @@ opened-section:
           - Nancy Pontika
           - Samuel Pearce
           - Bikash Gyawali
-          - David Pridede
+          - David Pride
         year: 2023
-        journal: In Nature Scientific Data
+        journal: In Nature Scientific Data 10, 366 (2023)
         keywords:
           - digital libraries
           - open access
@@ -60,7 +60,7 @@ opened-section:
         url: https://www.nature.com/articles/s41597-023-02208-w
         citations:
           text: >
-            Knoth, P., Herrmannova, D., Cancellieri, M. et al. CORE: A Global Aggregation Service for Open Access Papers. Sci Data 10, 366 (2023). https://doi.org/10.1038/s41597-023-02208-w
+            Knoth, P., Herrmannova, D., Cancellieri, M. et al. CORE: A Global Aggregation Service for Open Access Papers. Nature Scientific Data 10, 366 (2023). https://doi.org/10.1038/s41597-023-02208-w
           bibtex: |
             @article{Knoth2023-zi,
               title  = “{CORE}: A global aggregation service for open access papers”,
