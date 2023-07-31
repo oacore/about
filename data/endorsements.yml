@@ -660,7 +660,7 @@ organizations:
 - &ou
   id: ou
   name: Open University
-  logo: ou.png
+  logo: open-university.png
   testimonial: *nicola-dowson
 # recom-used-in:
 - &clok
@@ -720,7 +720,7 @@ organizations:
   name: Open Research Online
   description: The Open University
   url: http://oro.open.ac.uk
-  logo: ou.png
+  logo: open-university.png
 - &apollo
   name: Apollo
   description: University of Cambridge
