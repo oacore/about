@@ -210,6 +210,30 @@ content:
     descriptionCardTable: |
       We are keen to provide a hosted or interview style blog post about open access, open science and other relevant mission-oriented activities your organisation is conducting on the CORE blog. (T&Cs apply)
     plans: [Sustaining]
+  - &riox
+    id: 23
+    title: RIOXX metadata validator
+    descriptionCardCard: |
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX, a widely used metadata standard for repositories.
+    descriptionCardTable: |
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX , a widely used metadata standard for repositories.
+    plans: [Starting, Supporting, Sustaining]
+  - &versions
+    id: 24
+    title: Versions and duplicates detection
+    descriptionCardCard: |
+      Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean.
+    descriptionCardTable: |
+      Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean.
+    plans: [Supporting, Sustaining]
+  - &rioxCompliance
+    id: 25
+    title: Monitor RIOXX compliance
+    descriptionCardCard: |
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR.
+    descriptionCardTable: |
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR.
+    plans: [Supporting, Sustaining]
 
 plans:
   title: CORE Membership levels
@@ -235,6 +259,7 @@ plans:
         - *support
         - *statistics
         - *discovery-boost
+        - *riox
       action:
         title: Become a member
 #        url: '/membership/starting'
@@ -248,11 +273,13 @@ plans:
         title: All Starting benefits
         caption: PLUS
       advantages:
+        - *versions
+        - *api
+        - *tech-support
         - *logos
         - *logo-banner
+        - *rioxCompliance
         - *supporting-board-support
-        - *tech-support
-        - *api
       action:
        title: Register your interest
        url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
@@ -264,14 +291,14 @@ plans:
         title: All Supporting benefits
         caption: PLUS
       advantages:
-        - *personal-banner
-        - *sustaining-board-support
         - *dashboard-premium
-        - *priority-support
-        - *better-articles
         - *dataset
-        - *styles
         - *health-check
+        - *priority-support
+        - *personal-banner
+        - *better-articles
+        - *styles
+        - *sustaining-board-support
       action:
         title: Register your interest
         url: https://docs.google.com/forms/d/e/1FAIpQLSfFJmMIspYfOEM5aOKG4FTZoK4qeqozyds47O75Wm4dJ1ta2w/viewform
@@ -334,6 +361,9 @@ comparison-table:
     - *support
     - *statistics
     - *discovery-boost
+    - *riox
+    - *versions
+    - *rioxCompliance
     - *logos
     - *logo-banner
     - *personal-banner
@@ -567,6 +597,12 @@ navItems:
     href: "#repository-discovery-boost"
   - item: Get your OAI identifiers resolved to your repository
     href: "#OAI-identifiers"
+  - item: RIOXX metadata validator
+    href: "#rioxx-validator"
+  - item: Versions and duplicates detection
+    href: "#versions-duplicates"
+  - item: Monitor RIOXX compliance
+    href: "#rioxx-compliance"
   - item: Logos for your papers
     href: "#paper_logo"
   - item: Logo banner
