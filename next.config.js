@@ -93,6 +93,7 @@ const nextConfig = {
         use: [
           'json-loader',
           path.resolve('webpack/data-loader.js'),
+          path.resolve('webpack/data-loader/formap.js'),
           {
             loader: 'yaml-import-loader',
             options: {
