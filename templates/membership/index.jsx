@@ -24,7 +24,10 @@ const DetailsBox = ({
     {/* eslint-disable-next-line max-len */}
     {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
     <div className={styles.title} onClick={() => handleToggle(advantageId)}>
-      <Markdown>{title}</Markdown>
+      <>
+        {title}
+        {advantageId === 25 && <span className={styles.soon}>coming soon</span>}
+      </>
     </div>
     {active === advantageId && (
       <Markdown className={styles.description}>{description}</Markdown>
