@@ -33,8 +33,6 @@ import { resources } from 'data/resources.yml'
 import contactData from 'data/contacts.yml'
 import retrieveContent from 'content'
 
-const repositoriesUrl = 'https://api.core.ac.uk/internal/repositories/formap'
-
 const RelatedContentSection = ({
   renderImage,
   children,
@@ -168,7 +166,7 @@ const AboutPage = ({ data }) => {
           </Col>
 
           <Col xs="12" md="6">
-            <RepositoriesMap endpoint={repositoriesUrl} />
+            <RepositoriesMap />
           </Col>
         </Row>
 
