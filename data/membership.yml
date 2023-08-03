@@ -214,7 +214,7 @@ content:
     id: 23
     title: RIOXX metadata validator
     descriptionCardCard: |
-      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX, a widely used metadata standard for repositories.
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX, a widely used metadata standard for repositories. [read more](~membership-documentation/?r=rioxx-validator)
     descriptionCardTable: |
       Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX , a widely used metadata standard for repositories.
     plans: [Starting, Supporting, Sustaining]
@@ -222,7 +222,7 @@ content:
     id: 24
     title: Versions and duplicates detection
     descriptionCardCard: |
-      Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean.
+      Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean. [read more](~membership-documentation/?r=versions-duplicates)
     descriptionCardTable: |
       Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean.
     plans: [Supporting, Sustaining]
@@ -230,7 +230,7 @@ content:
     id: 25
     title: Monitor RIOXX compliance
     descriptionCardCard: |
-      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR.
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR. [read more](~membership-documentation/?r=rioxx-compliance)
     descriptionCardTable: |
       Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR.
     plans: [Supporting, Sustaining]
