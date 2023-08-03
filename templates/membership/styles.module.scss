@@ -107,6 +107,11 @@ $breakpoint-lg: 1415px;
     }
 
     .box {
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .title {
         display: block;
         cursor: pointer;
@@ -129,8 +134,12 @@ $breakpoint-lg: 1415px;
         padding: 5px 10px;
       }
       .soon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 4px;
         width: max-content;
+        height: 22px;
         margin-left: 6px;
         font-size: 12px;
         font-style: normal;

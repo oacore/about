@@ -117,10 +117,30 @@ const MembershipTable = observe(
             >
               {row.title}
             </Markdown>
+            {/* eslint-disable-next-line no-nested-ternary */}
             {row.descriptionCardTable ? (
-              <Markdown className={styles.cellDescription}>
-                {row.descriptionCardTable}
-              </Markdown>
+              row.id !== 23 ? (
+                <Markdown className={styles.cellDescription}>
+                  {row.descriptionCardTable}
+                </Markdown>
+              ) : (
+                <div className={styles.cellRedirect}>
+                  Aligning with established metadata practices is key for the
+                  interoperability of your repository with external systems and
+                  for meeting FAIR principles. Funders increasingly mandate the
+                  use of established metadata profiles. The RIOXX metadata
+                  validator is a tool that helps you validate compliance of
+                  individual metadata records with a{' '}
+                  <a
+                    rel="nofollow noreferrer"
+                    target="_blank"
+                    href="https://www.rioxx.net/profiles/"
+                  >
+                    RIOXX
+                  </a>{' '}
+                  , a widely used metadata standard for repositories.
+                </div>
+              )
             ) : (
               <></>
             )}
