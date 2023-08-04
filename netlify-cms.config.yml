@@ -1134,14 +1134,14 @@ collections:
            label: Fields description
          - name: fields_table
            label: Expanded Structure
-           widget: list
+           widget: object
            fields:
            - name: title
              label: Title
              widget: string
            - name: table
              label: Expanded Structure
-             widget: list
+             widget: object
              fields:
              - name: column_1
                label: Column 1
