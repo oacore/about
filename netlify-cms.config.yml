@@ -1132,20 +1132,6 @@ collections:
            widget: markdown
            required: false
            label: Fields description
-         - name: fields_table
-           label: Expanded Structure (Table response)
-           widget: list
-           fields:
-           - name: title
-             label: Title
-             widget: string
-           - name: table
-             label: Table
-             widget: list
-             allow_add: true
-             fields:
-               - { label: Column 1, name: column_1, widget: string }
-               - { label: Column 2, name: column_2, widget: markdown }
 
 - name: docs-membership
 
