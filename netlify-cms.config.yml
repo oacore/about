@@ -1133,22 +1133,18 @@ collections:
            required: false
            label: Fields description
          - name: fields_table
-           label: Expanded Structure
-           widget: object
+           label: Expanded Structure (Table response)
+           widget: list
            fields:
            - name: title
              label: Title
              widget: string
-           - name: table
-             label: Expanded Structure
-             widget: object
-             fields:
-             - name: column_1
-               label: Column 1
-               widget: text
-             - name: column_2
-               label: Column 2
-               widget: text
+           - name: column_1
+             label: Column 1
+             widget: text
+           - name: column_2
+             label: Column 2
+             widget: text
 
 - name: docs-membership
 
