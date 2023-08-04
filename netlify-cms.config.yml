@@ -1145,10 +1145,10 @@ collections:
              fields:
              - name: column_1
                label: Column 1
-               widget: string
+               widget: text
              - name: column_2
                label: Column 2
-               widget: string
+               widget: text
 
 - name: docs-membership
 
