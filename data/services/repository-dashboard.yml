@@ -122,20 +122,18 @@ testimonials:
 what-is-included:
   title:  What’s included
   content: |
-    Our free membership provides you with:
+    The dashboard provides you with:
 
-    * Access to the content harvested from the repository
-    * Enables content management, by requesting metadata updates or managing
-      take down requests
-    * Access to all detected technical issues and suggestions for improving
-      the efficiency of harvesting and the quality of metadata
-    * Access to RIOXX metadata compliance checking
-    * Statistics regarding the repository content via IRUS-UK
-    * Access to view and manage content downloads
-    * Check compliance content with the REF 2021 Open Access Policy
-
-    For an enhanced repository functionality and content discoverability,
-    plus guaranteed support levels, visit the [CORE Membership](~membership).
+    * Access control for the content harvested from your system.
+    * Harvesting / reharvesting controls.
+    * Finding versions and near-duplicate records in your repository.
+    * Content and download statistics.
+    * Register your repository OAI Prefix, to make your OAI identifiers resolve directly to your system.
+    * Information about detected technical issues and suggestions for improving harvesting efficiency.
+    * Tailored suggestions for metadata quality improvements to make your repository FAIRer.
+    * Metadata quality assessment according to the Research Outputs Metadata Schema (RIOXX).
+    * Check compliance with open access policies.
+    * Show the logos of your institution in CORE search and across the CORE ecosystem.
   image: /images/services/delivery.svg
 
 additional:
