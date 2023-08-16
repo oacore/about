@@ -63,11 +63,11 @@ opened-section:
             Knoth, P., Herrmannova, D., Cancellieri, M. et al. CORE: A Global Aggregation Service for Open Access Papers. Nature Scientific Data 10, 366 (2023). https://doi.org/10.1038/s41597-023-02208-w
           bibtex: |
             @article{Knoth2023-zi,
-              title  = “{CORE}: A global aggregation service for open access papers”,
-              author = “Knoth, Petr and Herrmannova, Drahomira and Cancellieri, Matteo
+              title  = {CORE: A global aggregation service for open access papers},
+              author = {Knoth, Petr and Herrmannova, Drahomira and Cancellieri, Matteo
               and Anastasiou, Lucas and Pontika, Nancy and Pearce, Samuel and
-              Gyawali, Bikash and Pride, David”,
-              abstract = “This paper introduces CORE, a widely used scholarly service,
+              Gyawali, Bikash and Pride, David},
+              abstract = {This paper introduces CORE, a widely used scholarly service,
               which provides access to the world’s largest collection of open
               access research publications, acquired from a global network of
               repositories and journals. CORE was created with the goal of
@@ -87,14 +87,14 @@ opened-section:
               developed to overcome these challenges. The paper then provides
               an in-depth discussion of the services and tools built on top of
               the aggregated data and finally examines several use cases that
-              have leveraged the CORE dataset and services.“,
-              journal = “Nature Scientific Data”,
+              have leveraged the CORE dataset and services.},
+              journal = {Nature Scientific Data},
               volume = 10,
               number = 1,
-              pages  = “366",
+              pages  = 366,
               month  = jun,
               year   = 2023,
-              language = “en”
+              language = {en}
             }
       - id: oro35755
         type: article
