@@ -25,10 +25,18 @@
         h6 {
           margin-bottom: 0;
           padding: 1rem 1rem 0rem 1rem;
+          color: #424242;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 700;
         }
         p {
           padding: 1rem;
           margin-bottom: 1rem;
+          color: #424242;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
         }
       }
     }
@@ -78,7 +86,7 @@
     }
   }
   &-item {
-    flex-basis: 25%;
+    flex-basis: 33%;
     min-width: auto;
     margin: 0 0.2rem;
     text-transform: capitalize;
@@ -103,6 +111,15 @@
       margin-bottom: 0.5rem;
     }
   }
+}
+
+.modal-form-text {
+  color: #424242;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.035px;
 }
 
 .input-group {
@@ -158,4 +175,53 @@
 
 .error label {
   color: var(--danger-dark);
+}
+
+.word-count {
+  color: #424242;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.035px;
+  padding-left: 1rem;
+}
+
+.institution-subtitle {
+  color: #424242;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 24px;
+  padding-left: 1rem;
+}
+
+.exceeded-limit {
+  background: red;
+}
+
+.type-main-wrapper {
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 10px 16px;
+  margin: 0 0 24px 0;
+  .type-wrapper {
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      .title {
+        color: #424242;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+      }
+    }
+    .type-text {
+      color: #424242;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+    }
+  }
 }

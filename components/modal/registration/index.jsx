@@ -13,7 +13,9 @@ const RegistrationModals = observe(() => {
 
   return (
     <>
-      {registration.isModalFormActive && <ModalForm />}
+      {registration.isModalFormActive && (
+        <ModalForm emailFill={registration.data.email} />
+      )}
       {registration.isModalConditionsActive && <ModalConditions />}
       {registration.isModalExitActive && <ModalExit />}
       {registration.isModalSuccessActive && <ModalSuccess />}

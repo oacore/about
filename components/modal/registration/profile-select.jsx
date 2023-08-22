@@ -14,17 +14,12 @@ const PROFILES = [
   },
   {
     id: 2,
-    label: 'research',
-    iconSrc: '#file-search',
-  },
-  {
-    id: 3,
-    label: 'institution',
+    label: 'academic',
     iconSrc: '#office-building',
   },
   {
-    id: 4,
-    label: 'enterprise',
+    id: 3,
+    label: 'non-academic',
     iconSrc: '#domain',
   },
 ]
@@ -33,7 +28,7 @@ const ProfileSelect = observe(() => {
   const { registration } = useStore()
   return (
     <fieldset className={styles.profiles}>
-      <legend className={styles.profilesTitle}>What’s your use case?</legend>
+      <legend className={styles.profilesTitle}>Profile</legend>
       <div className={styles.profilesItems}>
         {PROFILES.map(({ label, id, iconSrc }) => (
           <Card

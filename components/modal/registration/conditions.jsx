@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Modal, Button, Link } from '@oacore/design/lib'
+import { Modal, Button } from '@oacore/design/lib'
 
 import styles from './styles.module.scss'
 
@@ -25,11 +25,8 @@ const ModalConditions = observe(() => {
     <Modal hideManually aria-label="conditions-modal">
       <h6>Just one more thing!</h6>
       <main>
-        Please read and agree to the CORE
-        <Link href="/index">Terms and Conditions</Link> and
-        <Link href="/privacy"> privacy notice</Link>. The T&Cs and privacy
-        notice are designed to inform you of your rights and obligations when
-        using the CORE service.
+        Provider/College The T&Cs and privacy notice are designed to inform you
+        of your rights and obligations when using the CORE service.
       </main>
       <Checkbox
         id="agreeNewsletter"
