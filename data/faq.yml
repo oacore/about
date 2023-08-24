@@ -5,6 +5,7 @@ description: |
 sections:
   - id: joining-core
     title: Joining CORE as data provider
+    updateDate: Last updated 24.08.2023
     caption: Joining CORE
     items:
       - slug: is-my-repository-or-journal-harvested-by-CORE
@@ -53,6 +54,7 @@ sections:
 
   - id: aggregation
     title: Aggregation
+    updateDate: Last updated 24.08.2023
     caption: Aggregation
     sections:
     - id: general-aggregation
@@ -439,6 +441,7 @@ sections:
           Both the Recommender and the Discovery tools are free of charge for any institution that provides their data for harvesting. They are both benefits of the free starting membership.
   - id: dashboard
     title: Dashboard
+    updateDate: Last updated 24.08.2023
     caption: Dashboard
     items:
       - slug: what-is-the-CORE-dashboard
@@ -472,6 +475,7 @@ sections:
           Simply put, any CRIS system (Current Research Information System) works for an individual institution. Although it can often show compliance for papers within that institution, a CRIS system (or an individual repository) cannot find duplicate copies of articles that were deposited in another institution, for example if a paper has a co-author from Sheffield when the main author is based at Leeds. CORE is unique in harvesting repositories from around the world, and can identify duplicate copies of papers. As a result, CORE and CRIS systems are complements, not substitutes, for each other. 
   - id: services
     title: CORE services
+    updateDate: Last updated 24.08.2023
     caption: Services
     items:
       - slug: how-do-I-register-for-an-API-key
@@ -581,6 +585,7 @@ sections:
 
   - id: about
     title: General information about CORE
+    updateDate: Last updated 24.08.2023
     caption: General information
     items:
       - slug: high-resolution-logo-CORE
@@ -634,6 +639,7 @@ sections:
 
   - id: ref-audit
     title: CORE guidance on REF2021 Audit
+    updateDate: Last updated 24.08.2023
     caption: REF2021 Audit
     items:
       - slug: deposit-dates-be-provided-by-aggregators
