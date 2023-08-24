@@ -409,6 +409,7 @@ sections:
             marked as "restricted" CORE will still display it.
   - id: membership
     title: Membership
+    updateDate: Last updated 24.08.2023
     caption: Membership
     items:
       - slug: what-is-membership-of-CORE

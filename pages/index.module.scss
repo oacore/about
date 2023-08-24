@@ -132,6 +132,12 @@
   margin-top: 60px;
 }
 
+.faq-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .badge-main-wrapper {
   padding-top: 0;
   .badge-title {
