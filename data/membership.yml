@@ -308,6 +308,8 @@ carousel:
   items:
     - img: /images/membership/oxford.svg
       alt: "oxford"
+    - img: /images/membership/cambridge.svg
+      alt: "cambridge"
     - img: /images/membership/bristol.svg
       alt: "bristol"
     - img: /images/membership/city.svg
