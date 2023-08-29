@@ -283,6 +283,23 @@ $breakpoint-lg: 1415px;
     display: block;
     margin-bottom: 1rem;
   }
+
+  &-count {
+    display: flex;
+    width: 99px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    color: #b75400;
+  }
+
   &-title {
     display: inline-block;
     padding-top: 0.3rem;
