@@ -168,7 +168,6 @@ const ModalForm = observe((emailFill) => {
         )}
         <div>
           <TextField
-            className={styles.textBox}
             id={elemLastDescription}
             name={elemLastDescription}
             label="Describe the use case in which you would like to use CORE data"
