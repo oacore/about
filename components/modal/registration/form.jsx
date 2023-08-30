@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Modal, Form, TextField, Button } from '@oacore/design/lib'
+import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 import ProfileSelect from './profile-select'
@@ -9,10 +10,12 @@ import useInput from '../hooks/use-input'
 import Markdown from '../../markdown'
 import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
+import DropdownInput from './institution-select'
 
 import { useStore, observe } from 'store'
 
 const ModalForm = observe((emailFill) => {
+  const router = useRouter()
   const {
     value: firstName,
     bind: bindFirstName,
@@ -33,15 +36,18 @@ const ModalForm = observe((emailFill) => {
 
   const {
     value: organisationName,
+    suggestions: organisationNameSuggestions,
     bind: bindOrganisationName,
     element: elemOrganisationName,
-  } = useInput('organisationName')
+  } = useInput('organisationName', true)
 
   const {
     value: libraryEmail,
     element: elemLibraryEmail,
     bind: bindLibraryEmail,
-  } = useInput('', 'email')
+  } = useInput('libraryEmail')
+
+  const [email, setEmail] = useState(emailFill.emailFill)
 
   const { value: countryName, onChange: countryOnChange } =
     useSelect('countryName')
@@ -62,12 +68,13 @@ const ModalForm = observe((emailFill) => {
 
     if (libraryEmail) registration.setData({ libraryEmail })
 
-    if (firstName && lastName && countryName.id && description) {
+    if (firstName && lastName && countryName.id && description && email) {
       registration.setData({
         firstName,
         lastName,
         country: countryName.id,
         description,
+        email,
       })
       registration.setIsModalFormActive(false)
       registration.setIsModalConditionsActive(true)
@@ -110,27 +117,21 @@ const ModalForm = observe((emailFill) => {
           />
         </div>
         <TextField
-          id={emailFill}
-          name={emailFill}
+          id={emailFill.emailFill}
+          name={emailFill.emailFill}
           label="Email [prefiled email]"
           placeholder="john.doe@mail.com"
           required
-          defaultValue={emailFill.emailFill}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         {registration.data.accountType !== 'personal' && (
           <>
-            <TextField
-              id={elemOrganisationName}
-              name={elemOrganisationName}
-              label={
-                registration.data.accountType === 'non-academic'
-                  ? 'Organization name'
-                  : 'Institution name'
-              }
-              placeholder="Full name of your institution, e.g ‘The Open University’"
-              className={styles.modalFormInputOrg}
-              {...bindOrganisationName}
-              required
+            <DropdownInput
+              elemOrganisationName={elemOrganisationName}
+              bindOrganisationName={bindOrganisationName}
+              registration={registration}
+              organisationNameSuggestions={organisationNameSuggestions}
             />
             <div className={styles.institutionSubtitle}>
               The supplied email address must correspond to the institution that
@@ -138,7 +139,8 @@ const ModalForm = observe((emailFill) => {
             </div>
           </>
         )}
-        {registration.data.accountType === 'academic' && (
+        <CountrySelect onChange={countryOnChange} />
+        {registration.data.accountType === 'institution' && (
           <div className={styles.typeMainWrapper}>
             <div className={styles.typeWrapper}>
               <div className={styles.titleWrapper}>
@@ -147,25 +149,26 @@ const ModalForm = observe((emailFill) => {
                 </span>
               </div>
               <Markdown className={styles.typeText}>
-                {text.membershipType.typeText}
+                {router.pathname.includes('api')
+                  ? text.membershipType.typeText
+                  : text.membershipType.typeTextChecked}
               </Markdown>
             </div>
           </div>
         )}
-        {registration.data.accountType === 'academic' && (
+        {registration.data.accountType === 'institution' && (
           <TextField
             id={elemLibraryEmail}
             name={elemLibraryEmail}
             label="Could you please provide us with the email for your library contact?"
             placeholder="john.doe@mail.com"
-            required
             defaultValue={emailFill.emailFill}
             {...bindLibraryEmail}
           />
         )}
-        <CountrySelect onChange={countryOnChange} />
         <div>
           <TextField
+            className={styles.textBox}
             id={elemLastDescription}
             name={elemLastDescription}
             label="Describe the use case in which you would like to use CORE data"

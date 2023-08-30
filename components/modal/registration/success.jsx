@@ -9,7 +9,7 @@ import findText from './helpers/findText'
 
 import { useStore, observe } from 'store'
 
-const ModalSuccess = observe(() => {
+const ModalSuccess = observe(({ responseData }) => {
   const { registration } = useStore()
 
   const onCloseModal = () => {
@@ -25,7 +25,9 @@ const ModalSuccess = observe(() => {
         </div>
 
         <Markdown>
-          {patchStats(findText('modalContent'), registration.data)}
+          {responseData.isMember
+            ? patchStats(findText('modalContent'), registration.data)
+            : patchStats(findText('typeModalContent'), registration.data)}
         </Markdown>
       </main>
       <footer className={styles.buttonGroup}>

@@ -1,37 +1,53 @@
 sections:
   -
-    id: dataset-non-academic
+    id: dataset-enterprise
     text: |
       For organisations and professionals developing innovative products, services, or software using CORE data. Read [Terms & Conditions](/terms) for more details.
     box:
       <h6>30 Day Free Trial</h6>
 
 
-      Register below to access the CORE API for free for the first 30 days. Read [Terms & Conditions](/terms) for more details.
-    modal-content:
+      Register below to access the CORE Dataset for free for the first 30 days. Read [Terms & Conditions](/terms) for more details.
+    modal-content: |
+      Thank you for registering for the CORE Dataset. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
+
+      Our team will be in touch with further details as soon as possible. Any questions contact theteam@core.ac.uk.
+
+    type-modal-content: |
       Thank you for registering for the CORE Dataset. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
       Our team will be in touch with further details as soon as possible. Any questions contact theteam@core.ac.uk.
   -
-    id: dataset-academic
+    id: dataset-institution
     text: |
       For users affiliated with an academic institution (e.g. researchers, students, library staff, research managers) to conduct research and data analyses, but not for the development of tools that can be used outside of the organisation.
 
 
       If you are based at an academic institution and are developing a new tool (whether for or not-for-profit) that can be used from outside of your academic institution, then register as a non-academic institution.
-    modal-content:
-      Thank you for registering with the CORE Dataset. We have sent access instructions to <span>{{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
-
-      We provide access for the CORE Dataset to our Sustaining members. Your institution is already our member. Thank you for your support and enjoy using the API!
-
-      Feel free to contact theteam@core.ac.uk with any questions or feedback.
-  -
-    id: dataset-personal
-    text: |
-      For members of the general public accessing CORE data for personal use only.
     modal-content: |
-      Thank you for registering with CORE Dataset.
-      We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
+      **Thank you for registering with the CORE Dataset.**
+
+      Your institution is already our Sustaining member and you will have access to the latest dataset.
+
+      We have sent access instructions to <span>{{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
+    type-modal-content: |
+      **Thank you for registering with the CORE Dataset.**
+
+      We have sent access instructions to <span>{{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
+
+      We provide improved access to the CORE Dataset for our [Sustaining](/membership) members. We will speak to a representative from your Library, Research Office or equivalent about membership’s features.
+
+      Don’t worry, you can still download the other datasets, while we are discussing the CORE membership for your institution.
+  -
+      id: dataset-personal
+      text: |
+        For members of the general public accessing CORE data for personal use only.
+      modal-content: |
+        Thank you for registering with CORE Dataset.
+        We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
+      type-modal-content: |
+        Thank you for registering with CORE Dataset.
+        We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
   -
     id: dataset-research
     text: |
@@ -44,7 +60,7 @@ sections:
       instructions to <span>{{email}}</span>. Please check
       your email and spam folder.
   -
-    id: api-non-academic
+    id: api-enterprise
     text: |
       For organisations and professionals developing innovative products, services, or software using CORE data.
     box:
@@ -52,29 +68,46 @@ sections:
 
 
       Register below to access the CORE API for free for the first 30 days. Read [Terms & Conditions](/terms) for more details.
-    modal-content:
+    modal-content: |
       Thank you for registering for the CORE API. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
+      Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>.
+
+    type-modal-content: |
+      Thank you for registering for the CORE API. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>.
   -
-    id: api-academic
+    id: api-institution
     text: |
       For users affiliated with an academic institution (e.g. researchers, students, library staff, research managers) to conduct research and data analyses, but not for the development of tools that can be used outside of the organisation.
 
 
       If you are based at an academic institution and are developing a new tool (whether for or not-for-profit) that can be used from outside of your academic institution, then register as a non-academic institution.
-    modal-content:
-      Thank you for registering with the CORE API. We have sent access instructions to <span>{{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
+    modal-content: |
+      **Thank you for registering with the CORE API.**
 
-      We provide access for the CORE API to our Supporting and Sustaining members. Your institution is already our member. Thank you for your support and enjoy using the API!
+      Your institution is already our member and you will have access to the faster API.
 
-      Feel free to contact <span>theteam@core.ac.uk</span> with any questions or feedback.
+      We have sent access instructions to <span> {{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
+
+    type-modal-content: |
+      **Thank you for registering with the CORE API.**
+
+      We have sent access instructions to <span> {{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
+
+      We provide access to a faster CORE API to our [Supporting and Sustaining](/membership) members. We will speak to a representative from your Library, Research Office or equivalent about membership’s features.
+
+      Don’t worry, you can still use the API, while we are discussing the CORE membership for your institution.
+
   -
     id: api-personal
     text: |
       For members of the general public accessing CORE data for personal use only.
     modal-content: >-
+      Thank you for registering with CORE API.
+      We have sent access instructions to <span> {{email}}</span>. Please check your email and spam folder.
+    type-modal-content: >-
       Thank you for registering with CORE API.
       We have sent access instructions to <span> {{email}}</span>. Please check your email and spam folder.
   -
@@ -91,9 +124,18 @@ sections:
 membershipType:
     title: Membership
     typeText: |
-      We provide access for the CORE API to our Supporting and Sustaining [members](/membership). We need to speak to a member from your institutional library or equivalent. Please leave us a contact for a responsible person you would recommend us to get in touch with.
+      We provide access for the CORE API to our [Supporting and Sustaining](/membership) members.
 
+      **If your institution is not our member yet**, please provide us with an email for a representative from your Library, Research Office or equivalent as they may be interested in subscribing.
 
-      Don’t worry, you can use the API in the meantime, while we are discussing with them CORE membership for your institution.
+      Don’t worry, you can still use the API, while we are discussing the CORE membership for your institution.
+
+      **If your institution is a member** you don’t need to fill up the fields bellow.
     typeTextChecked: |
-      We provide access for the CORE API to our Supporting and Sustaining members. Your institution is already our member. Thank you and enjoy using the API!
+      We provide improved access to the CORE Dataset for our [Sustaining](/membership) members.
+
+      **If your institution is not our member yet**, please provide us with an email for a representative from your Library, Research Office or equivalent as they may be interested in subscribing.
+
+      Don’t worry, you can still download the other datasets, while we are discussing the CORE membership for your institution.
+
+      **If your institution is a member** you don’t need to fill up the fields bellow.

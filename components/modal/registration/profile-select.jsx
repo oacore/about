@@ -10,16 +10,19 @@ const PROFILES = [
   {
     id: 1,
     label: 'personal',
+    value: 'personal',
     iconSrc: '#account',
   },
   {
     id: 2,
     label: 'academic',
+    value: 'institution',
     iconSrc: '#office-building',
   },
   {
     id: 3,
     label: 'non-academic',
+    value: 'enterprise',
     iconSrc: '#domain',
   },
 ]
@@ -30,15 +33,15 @@ const ProfileSelect = observe(() => {
     <fieldset className={styles.profiles}>
       <legend className={styles.profilesTitle}>Profile</legend>
       <div className={styles.profilesItems}>
-        {PROFILES.map(({ label, id, iconSrc }) => (
+        {PROFILES.map(({ value, label, id, iconSrc }) => (
           <Card
             variant="outlined"
             className={classNames.use(styles.profilesItem, {
               [styles.profilesItemActive]:
-                registration.data.accountType === label,
+                registration.data.accountType === value,
             })}
             key={id}
-            onClick={() => registration.setData({ accountType: label })}
+            onClick={() => registration.setData({ accountType: value })}
           >
             <Card.Description className={styles.profilesItemText}>
               <Icon src={iconSrc} />

@@ -10,6 +10,7 @@ import { observe, useStore } from 'store'
 
 const RegistrationModals = observe(() => {
   const { registration } = useStore()
+  const { responseData } = registration
 
   return (
     <>
@@ -18,7 +19,9 @@ const RegistrationModals = observe(() => {
       )}
       {registration.isModalConditionsActive && <ModalConditions />}
       {registration.isModalExitActive && <ModalExit />}
-      {registration.isModalSuccessActive && <ModalSuccess />}
+      {registration.isModalSuccessActive && (
+        <ModalSuccess responseData={responseData} />
+      )}
       {registration.isModalErrorActive && <ModalError />}
     </>
   )
