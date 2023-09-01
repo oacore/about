@@ -47,6 +47,11 @@
         }
       }
     }
+    .description {
+      textarea {
+        height: 104px;
+      }
+    }
   }
   &-sm {
     max-width: 20rem;
