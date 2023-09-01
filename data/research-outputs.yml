@@ -421,6 +421,113 @@ sections:
                 abstract = {This paper presents CORE (COnnecting REpositories), a system that aims to facilitate the access and navigation across scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from Open Access repositories, by applying text mining techniques to discover semanticly related articles and by representing and exposing these relations as Linked Data. The information about associations between articles expressed in an interoperable format will enable the emergence of a wide range of applications. The potential of CORE can be demonstrated on two use-cases: (1) Improving the the navigation capabilities of digital libraries by the means of a CORE pluging, (2) Providing access to digital content from smart phones and tablet devices by the means of the CORE Mobile application.}
             }
 
+  - id: ai-ml-papers
+    title: AI/ML papers
+    caption: AI/ML papers
+    papers:
+      - type: inproceedings
+        id: oro37824
+        booktitle: arXiv preprint arXiv:2307.04683, (2023)
+        title: |
+          CORE-GPT: Combining Open Access research and large language models for credible, trustworthy question answering
+        author:
+          - D. Pride, M. Cancellieri, P. Knoth
+        year: 2023
+        keywords:
+          - AI
+          - ML
+          - papers
+        url: https://arxiv.org/abs/2307.04683
+        abstract: |
+          In this paper, we present CORE-GPT, a novel question-answering platform that combines GPT-based language models and more than 32 million full-text open access scientific articles from CORE. We first demonstrate that GPT3.5 and GPT4 cannot be relied upon to provide references or citations for generated text. We then introduce CORE-GPT which delivers evidence-based answers to questions, along with citations and links to the cited papers, greatly increasing the trustworthiness of the answers and reducing the risk of hallucinations. CORE-GPT's performance was evaluated on a dataset of 100 questions covering the top 20 scientific domains in CORE, resulting in 100 answers and links to 500 relevant articles. The quality of the provided answers and relevance of the links were assessed by two annotators. Our results demonstrate that CORE-GPT can produce comprehensive and trustworthy answers across the majority of scientific domains, complete with links to genuine, relevant scientific articles.
+        description: |
+          In this paper, we present CORE-GPT, a novel question-answering platform that combines GPT-based language models and more than 32 million full-text open access scientific articles from CORE. We first demonstrate that GPT3.5 and GPT4 cannot be relied upon to provide references or citations for generated text. We then introduce CORE-GPT which delivers evidence-based answers to questions, along with citations and links to the cited papers, greatly increasing the trustworthiness of the answers and reducing the risk of hallucinations. CORE-GPT's performance was evaluated on a dataset of 100 questions covering the top 20 scientific domains in CORE, resulting in 100 answers and links to 500 relevant articles. The quality of the provided answers and relevance of the links were assessed by two annotators. Our results demonstrate that CORE-GPT can produce comprehensive and trustworthy answers across the majority of scientific domains, complete with links to genuine, relevant scientific articles.
+        citations:
+          text: >
+            Pride, David, Matteo Cancellieri, and Petr Knoth. "CORE-GPT: Combining Open Access research and large language models for credible, trustworthy question answering." arXiv preprint arXiv:2307.04683 (2023).
+          bibtex: |
+            @article{pride2023core,
+              title={CORE-GPT: Combining Open Access research and large language models for credible, trustworthy question answering},
+              author={Pride, David and Cancellieri, Matteo and Knoth, Petr},
+              journal={arXiv preprint arXiv:2307.04683},
+              year={2023}
+            }
+      - type: inproceedings
+        id: oro37823
+        booktitle: |
+          Quantitative Science Studies 2023/5/1.
+        title: |
+          Predicting article quality scores with machine learning: The UK Research Excellence Framework
+        author:
+          PMike Thelwall, Kayvan Kousha, Paul Wilson, Meiko Makita, Mahshid Abdoli, Emma Stuart, Jonathan Levitt, Petr Knoth, Matteo Cancellieri
+        year: 2023
+        url: https://direct.mit.edu/qss/article/4/2/547/115675
+        abstract: |
+          National research evaluation initiatives and incentive schemes choose between simplistic quantitative indicators and time-consuming peer/expert review, sometimes supported by bibliometrics. Here we assess whether machine learning could provide a third alternative, estimating article quality using more multiple bibliometric and metadata inputs. We investigated this using provisional three-level REF2021 peer review scores for 84,966 articles submitted to the U.K. Research Excellence Framework 2021, matching a Scopus record 2014–18 and with a substantial abstract. We found that accuracy is highest in the medical and physical sciences Units of Assessment (UoAs) and economics, reaching 42% above the baseline (72% overall) in the best case. This is based on 1,000 bibliometric inputs and half of the articles used for training in each UoA. Prediction accuracies above the baseline for the social science, mathematics, engineering, arts, and humanities UoAs were much lower or close to zero. The Random Forest Classifier (standard or ordinal) and Extreme Gradient Boosting Classifier algorithms performed best from the 32 tested. Accuracy was lower if UoAs were merged or replaced by Scopus broad categories. We increased accuracy with an active learning strategy and by selecting articles with higher prediction probabilities, but this substantially reduced the number of scores predicted.
+        description: |
+          National research evaluation initiatives and incentive schemes choose between simplistic quantitative indicators and time-consuming peer/expert review, sometimes supported by bibliometrics. Here we assess whether machine learning could provide a third alternative, estimating article quality using more multiple bibliometric and metadata inputs. We investigated this using provisional three-level REF2021 peer review scores for 84,966 articles submitted to the U.K. Research Excellence Framework 2021, matching a Scopus record 2014–18 and with a substantial abstract. We found that accuracy is highest in the medical and physical sciences Units of Assessment (UoAs) and economics, reaching 42% above the baseline (72% overall) in the best case. This is based on 1,000 bibliometric inputs and half of the articles used for training in each UoA. Prediction accuracies above the baseline for the social science, mathematics, engineering, arts, and humanities UoAs were much lower or close to zero. The Random Forest Classifier (standard or ordinal) and Extreme Gradient Boosting Classifier algorithms performed best from the 32 tested. Accuracy was lower if UoAs were merged or replaced by Scopus broad categories. We increased accuracy with an active learning strategy and by selecting articles with higher prediction probabilities, but this substantially reduced the number of scores predicted.
+        citations:
+          text: >
+            Thelwall, M., Kousha, K., Wilson, P., Makita, M., Abdoli, M., Stuart, E., Levitt, J., Knoth, P. and Cancellieri, M., 2023. Predicting article quality scores with machine learning: The UK Research Excellence Framework. Quantitative Science Studies, 4(2), pp.547-573.
+          bibtex: |
+            @article{thelwall2023predicting,
+              title={Predicting article quality scores with machine learning: The UK Research Excellence Framework},
+              author={Thelwall, Mike and Kousha, Kayvan and Wilson, Paul and Makita, Meiko and Abdoli, Mahshid and Stuart, Emma and Levitt, Jonathan and Knoth, Petr and Cancellieri, Matteo},
+              journal={Quantitative Science Studies},
+              volume={4},
+              number={2},
+              pages={547--573},
+              year={2023},
+              publisher={MIT Press}
+            }
+      - type: inproceedings
+        id: oro46870
+        booktitle: Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing
+        title: |
+          Dynamic Context Extraction for Citation Classification
+        author:
+          - Suchetha Nambanoor Kunnath, David Pride, Petr Knoth. 2022/11.F
+        year: 2022
+        url: https://aclanthology.org/2022.aacl-main.41/
+        abstract: |
+          We investigate the effect of varying citation context window sizes on model performance in citation intent classification. Prior studies have been limited to the application of fixed-size contiguous citation contexts or the use of manually curated citation contexts. We introduce a new automated unsupervised approach for the selection of a dynamic-size and potentially non-contiguous citation context, which utilises the transformer-based document representations and embedding similarities. Our experiments show that the addition of non-contiguous citing sentences improves performance beyond previous results. Evaluating on the (1) domain-specific (ACL-ARC) and (2) the multi-disciplinary (SDP-ACT) dataset demonstrates that the inclusion of additional context beyond the citing sentence significantly improves the citation classification model’s performance, irrespective of the dataset’s domain. 
+        description: |
+          We investigate the effect of varying citation context window sizes on model performance in citation intent classification. Prior studies have been limited to the application of fixed-size contiguous citation contexts or the use of manually curated citation contexts. We introduce a new automated unsupervised approach for the selection of a dynamic-size and potentially non-contiguous citation context, which utilises the transformer-based document representations and embedding similarities. Our experiments show that the addition of non-contiguous citing sentences improves performance beyond previous results. Evaluating on the (1) domain-specific (ACL-ARC) and (2) the multi-disciplinary (SDP-ACT) dataset demonstrates that the inclusion of additional context beyond the citing sentence significantly improves the citation classification model’s performance, irrespective of the dataset’s domain. 
+        citations:
+          text: >
+            Kunnath, Suchetha Nambanoor, David Pride, and Petr Knoth. "Dynamic Context Extraction for Citation Classification." Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing. 2022.
+          bibtex: |
+            @inproceedings{kunnath2022dynamic,
+              title={Dynamic Context Extraction for Citation Classification},
+              author={Kunnath, Suchetha Nambanoor and Pride, David and Knoth, Petr},
+              booktitle={Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing},
+              pages={539--549},
+              year={2022}
+            }
+      - type: inproceedings
+        id: oro32560
+        booktitle: Proceedings of the Third Workshop on Scholarly Document Processing 2022/10.
+        title: |
+          Benchmark for research theme classification of scholarly documents
+        author:
+          - Óscar E Mendoza, Wojciech Kusa, Alaa El-Ebshihy, Ronin Wu, David Pride, Petr Knoth, Drahomira Herrmannova, Florina Piroi, Gabriella Pasi, Allan Hanbury.
+        year: 2022
+        url: https://aclanthology.org/2022.sdp-1.31/
+        abstract: |
+          We present a new gold-standard dataset and a benchmark for the Research Theme Identification task, a sub-task of the Scholarly Knowledge Graph Generation shared task, at the 3rd Workshop on Scholarly Document Processing. The objective of the shared task was to label given research papers with research themes from a total of 36 themes. The benchmark was compiled using data drawn from the largest overall assessment of university research output ever undertaken globally (the Research Excellence Framework-2014). We provide a performance comparison of a transformer-based ensemble, which obtains multiple predictions for a research paper, given its multiple textual fields (eg title, abstract, reference), with traditional machine learning models. The ensemble involves enriching the initial data with additional information from open-access digital libraries and Argumentative Zoning techniques (CITATION). It uses a weighted sum aggregation for the multiple predictions to obtain a final single prediction for the given research paper.
+        description: |
+          We present a new gold-standard dataset and a benchmark for the Research Theme Identification task, a sub-task of the Scholarly Knowledge Graph Generation shared task, at the 3rd Workshop on Scholarly Document Processing. The objective of the shared task was to label given research papers with research themes from a total of 36 themes. The benchmark was compiled using data drawn from the largest overall assessment of university research output ever undertaken globally (the Research Excellence Framework-2014). We provide a performance comparison of a transformer-based ensemble, which obtains multiple predictions for a research paper, given its multiple textual fields (eg title, abstract, reference), with traditional machine learning models. The ensemble involves enriching the initial data with additional information from open-access digital libraries and Argumentative Zoning techniques (CITATION). It uses a weighted sum aggregation for the multiple predictions to obtain a final single prediction for the given research paper.
+        citations:
+          text: >
+            Mendoza, Óscar E., Wojciech Kusa, Alaa El-Ebshihy, Ronin Wu, David Pride, Petr Knoth, Drahomira Herrmannova, Florina Piroi, Gabriella Pasi, and Allan Hanbury. "Benchmark for research theme classification of scholarly documents." In Proceedings of the Third Workshop on Scholarly Document Processing, pp. 253-262. 2022.
+          bibtex: |
+            @inproceedings{mendoza2022benchmark,
+              title={Benchmark for research theme classification of scholarly documents},
+              author={Mendoza, {\'O}scar E and Kusa, Wojciech and El-Ebshihy, Alaa and Wu, Ronin and Pride, David and Knoth, Petr and Herrmannova, Drahomira and Piroi, Florina and Pasi, Gabriella and Hanbury, Allan},
+              booktitle={Proceedings of the Third Workshop on Scholarly Document Processing},
+              pages={253--262},
+              year={2022}
+            }
   -
     id: recommender
     title: CORE Recommender

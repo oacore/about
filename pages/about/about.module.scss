@@ -253,6 +253,9 @@
     .card-header-column {
       min-height: 96px;
     }
+    .card-header-height {
+      min-height: 120px;
+    }
     .item-wrapper {
       width: 50%;
       .card-info-description {
@@ -261,6 +264,9 @@
       }
       .card-info-description-column {
         min-height: 170px;
+      }
+      .card-wrapper-height {
+        min-height: 480px;
       }
     }
     .item-wrapper-column {
