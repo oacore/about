@@ -17,6 +17,7 @@ import page from 'data/research-outputs.yml'
 
 const ResearchPaperCard = ({
   id,
+  paperId,
   type,
   title,
   author,
@@ -66,6 +67,7 @@ const ResearchPaperCard = ({
         <div
           className={classNames.use(styles.cardHeader, {
             [styles.cardHeaderColumn]: papersLength,
+            [styles.cardHeaderHeight]: paperId === 'ai-ml-papers',
           })}
         >
           <img src={coreLogo} alt="" />
@@ -86,6 +88,7 @@ const ResearchPaperCard = ({
         <p
           className={classNames.use(styles.cardInfoDescription, {
             [styles.cardInfoDescriptionColumn]: papersLength,
+            [styles.cardWrapperHeight]: paperId === 'ai-ml-papers',
           })}
         >
           {description}
@@ -131,6 +134,7 @@ const ResearchOutputsSection = ({
               paper={paper}
               papersLength={papers.length > 1}
               key={paper.id}
+              paperId={id}
               className="mb-3"
               isCitationsModalOpen={isCitationsModalOpen}
               activePaper={activePaper}
