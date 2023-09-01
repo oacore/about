@@ -25,7 +25,7 @@ const ModalSuccess = observe(({ responseData }) => {
         </div>
 
         <Markdown>
-          {responseData.isMember
+          {responseData.memberStatus !== 'starting'
             ? patchStats(findText('modalContent'), registration.data)
             : patchStats(findText('typeModalContent'), registration.data)}
         </Markdown>
