@@ -123,6 +123,7 @@ const ResearchOutputsSection = ({
         id={title}
         title={title}
         key={title}
+        sectionId={id}
         className={styles.toggler}
         content={papers.map((paper) => (
           <div

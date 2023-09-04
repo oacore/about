@@ -1,9 +1,11 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 
-const TogglePanel = ({ className, title, content }) => {
+const TogglePanel = ({ className, title, content, sectionId }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const router = useRouter()
 
   const contentRef = useRef(null)
 
@@ -16,6 +18,23 @@ const TogglePanel = ({ className, title, content }) => {
 
     setIsOpen((prev) => !prev)
   }
+
+  useEffect(() => {
+    if (
+      router.asPath.includes('ai-ml-papers') &&
+      sectionId === 'ai-ml-papers'
+    ) {
+      setIsOpen(true)
+      setTimeout(() => {
+        contentRef.current?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest',
+        })
+        window.scrollBy(0, -60)
+      }, 0)
+    } else setIsOpen(false)
+  }, [router.asPath])
 
   return (
     // eslint-disable-next-line max-len
