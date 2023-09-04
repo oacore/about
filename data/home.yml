@@ -43,7 +43,7 @@ features:
       picture: /images/features/building.svg
       url: /services
     - title: Cutting-edge solutions
-      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~governance/research)
+      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~about/research-outputs/#ai-ml-papers)
       picture: /images/features/neural.svg
       url: /governance/supporters
 
