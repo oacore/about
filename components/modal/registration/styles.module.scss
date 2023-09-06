@@ -16,6 +16,17 @@
       }
     }
 
+    textarea {
+      border: 1px solid var(--gray-300);
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      &:focus {
+        border: 1px solid var(--primary);
+      }
+    }
+
     &-text {
       padding: 1rem;
       &-bordered {
@@ -46,6 +57,11 @@
           font-size: 0.8rem;
         }
       }
+      textarea::placeholder {
+        @include media-breakpoint-down('sm') {
+          font-size: 0.8rem;
+        }
+      }
     }
     .description {
       textarea {
@@ -66,6 +82,9 @@
         color: var(--primary);
       }
     }
+  }
+  &-bg {
+    max-width: 28rem;
   }
 }
 

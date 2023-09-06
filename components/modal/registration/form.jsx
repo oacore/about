@@ -68,12 +68,13 @@ const ModalForm = observe((emailFill) => {
 
     if (libraryEmail) registration.setData({ libraryEmail })
 
-    if (firstName && lastName && countryName.id && description && email) {
+    if (description) registration.setData({ description })
+
+    if (firstName && lastName && countryName.id && email) {
       registration.setData({
         firstName,
         lastName,
         country: countryName.id,
-        description,
         email,
       })
       registration.setIsModalFormActive(false)
@@ -119,7 +120,7 @@ const ModalForm = observe((emailFill) => {
         <TextField
           id={emailFill.emailFill}
           name={emailFill.emailFill}
-          label="Email [prefiled email]"
+          label="Email"
           placeholder="john.doe@mail.com"
           required
           value={email}
@@ -174,7 +175,6 @@ const ModalForm = observe((emailFill) => {
             label="Describe the use case in which you would like to use CORE data"
             placeholder="Text..."
             type="textarea"
-            required
             value={description}
             {...bindDescription}
           />

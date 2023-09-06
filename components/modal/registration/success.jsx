@@ -1,5 +1,6 @@
 import React from 'react'
 import { Modal, Button } from '@oacore/design/lib'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 import emailsSVG from './images/Emails.svg'
@@ -17,7 +18,13 @@ const ModalSuccess = observe(({ responseData }) => {
   }
 
   return (
-    <Modal hideManually aria-label="success-modal" className={styles.modalSm}>
+    <Modal
+      hideManually
+      aria-label="success-modal"
+      className={classNames.use(styles.modalSm, {
+        [styles.modalBg]: responseData?.memberStatus === 'starting',
+      })}
+    >
       <h6>Success!</h6>
       <main className={styles.modalSmContent}>
         <div>

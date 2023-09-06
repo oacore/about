@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { Modal, Button } from '@oacore/design/lib'
 
+import text from '../../../data/registration.yml'
 import styles from './styles.module.scss'
+import Markdown from '../../markdown'
 
 import { Checkbox } from 'components/checkbox'
 import { observe, useStore } from 'store'
@@ -24,10 +26,7 @@ const ModalConditions = observe(() => {
   return (
     <Modal hideManually aria-label="conditions-modal">
       <h6>Just one more thing!</h6>
-      <main>
-        Provider/College The T&Cs and privacy notice are designed to inform you
-        of your rights and obligations when using the CORE service.
-      </main>
+      <Markdown>{text.terms}</Markdown>
       <Checkbox
         id="agreeNewsletter"
         labelText="I want to receive information about the CORE API and related CORE products and services. You may unsubscribe at any time."
