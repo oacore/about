@@ -409,7 +409,7 @@ materials:
     - image: /images/membership/flyer.svg
       action:
         caption: Open flyer
-        url: /resources/core-leaflet-Glasgow-A3.pdf
+        url: /resources/CORE-Flyer-2023.pdf
         target: _blank
 
 
