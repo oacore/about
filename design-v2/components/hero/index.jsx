@@ -19,6 +19,7 @@ const Hero = ({
   reverse,
   spacing,
   borderBottom,
+  actionButton,
   hideButtons = false,
 }) => (
   <Section
@@ -56,6 +57,18 @@ const Hero = ({
           </Markdown>
         )}
       </div>
+      {actionButton && (
+        <Button
+          href={actionButton.url}
+          target={actionButton.target}
+          variant={actionButton.variant}
+          key={actionButton.caption}
+          download={actionButton.download}
+          className={styles.flyerButton}
+        >
+          {actionButton.caption}
+        </Button>
+      )}
       {!hideButtons && actions && (
         <div className={styles.group}>
           {actions.map((action) => (

@@ -4,6 +4,9 @@
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: space-between;
+  .flyer-button {
+    padding: 0;
+  }
 }
 
 .custom-header {
