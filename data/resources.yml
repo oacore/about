@@ -9,7 +9,7 @@ resources:
   id: brochure
   name: Brochure
   type: pdf
-  url: /resources/core-leaflet-Glasgow-A3.pdf
+  url: /resources/CORE-Flyer-2023.pdf
   picture: brochure.png
 -
   id: adaptable-promo-text
