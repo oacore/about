@@ -118,7 +118,7 @@ const ResearchOutputsSection = ({
   ...restProps
 }) => (
   <Section id={id} {...restProps} className={styles.researchSection}>
-    <Content>
+    <Content className={styles.researchItem}>
       <TogglePanel
         id={title}
         title={title}
