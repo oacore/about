@@ -105,7 +105,6 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 
 .itemGroup {
   display: flex;
-  flex-wrap: wrap;
   gap: 0.5rem;
   .groupItem {
     flex: 1;
@@ -121,6 +120,10 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
     @media (max-width: $breakpoint-sm) {
       flex: auto;
     }
+  }
+  @media (max-width: $breakpoint-md) {
+    flex-wrap: wrap;
+    margin-top: 1rem;
   }
 }
 
@@ -139,4 +142,16 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 
 .discount-section {
   padding: 6px 0 54px 0;
+}
+
+.sponsorship-main-wrapper {
+  .logo-container,
+  .image-wrapper {
+    @media (max-width: $breakpoint-sm) {
+      width: 320px;
+      img {
+        width: 100%;
+      }
+    }
+  }
 }

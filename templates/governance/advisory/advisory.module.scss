@@ -1,3 +1,4 @@
+@import 'design-v2/variables';
 .organisation-wrapper {
   display: flex;
   align-items: center;
@@ -9,5 +10,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.supporters {
+  @media (max-width: $breakpoint-sm) {
+    td {
+      font-size: 10px;
+    }
+    th {
+      button {
+        font-size: 10px;
+      }
+    }
   }
 }
