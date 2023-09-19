@@ -46,7 +46,7 @@ const renderDiscountsRows = () =>
   ))
 
 const SponsorshipPageTemplate = ({ data }) => (
-  <Layout>
+  <Layout className={styles.sponsorshipMainWrapper}>
     <Section id="metadata" className={styles.header}>
       <div>
         <h2 className={styles.title}>{data.header.title}</h2>
