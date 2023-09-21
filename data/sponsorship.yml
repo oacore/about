@@ -14,25 +14,25 @@ header:
 content:
   - &website
     title: Acknowledgement on the CORE sponsors webpage with a hyperlink to the sponsor’s website
-    plans: [Strategic partner, Premium, Gold, Silver, Bronze]
+    plans: [Strategic partner, Platinum, Gold, Silver, Bronze]
   - &logo
     title: Logo banner integrated in CORE Search
-    plans: [Strategic partner, Premium, Gold, Silver]
+    plans: [Strategic partner, Platinum, Gold, Silver]
   - &baner
     title: Personalised banners for research events within CORE
-    plans: [Strategic partner, Premium, Gold]
+    plans: [Strategic partner, Platinum, Gold]
   - &acknowledgement
     title: Acknowledgement in our communication and promotion materials
-    plans: [Strategic partner, Premium, Gold]
+    plans: [Strategic partner, Platinum, Gold]
   - &blog
     title: Invited post on CORE blog*
-    plans: [Strategic partner, Premium]
+    plans: [Strategic partner, Platinum]
   - &presentation
     title: Acknowledgement in presentations delivered by the CORE team
-    plans: [Strategic partner, Premium]
+    plans: [Strategic partner, Platinum]
   - &sponsor
     title: Listing as a key sponsor on the CORE homepage
-    plans: [Strategic partner, Premium]
+    plans: [Strategic partner, Platinum]
   - &partner
     title: Listing as a strategic partner on the CORE homepage and within the CORE footer of every CORE page right next to The Open University logo
     plans: [Strategic partner]
@@ -71,15 +71,15 @@ how-to-sponsor:
     url: https://api.core.ac.uk/docs/v3
   types:
   -
-    title: Bronze
+    title: Strategic partner
   -
-    title:  Silver
+    title: Platinum
   -
     title: Gold
   -
-    title: Premium
+    title:  Silver
   -
-    title: Strategic partner
+    title: Bronze
 
 comparison-table:
   title: Sponsorship benefits
@@ -89,7 +89,7 @@ comparison-table:
     - name: Strategic partner
       defaultText: "Starting from £50K"
       status: p.a.
-    - name: Premium
+    - name: Platinum
       defaultText: "£20,000"
       status: p.a.
     - name: Gold
