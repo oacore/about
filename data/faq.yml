@@ -418,27 +418,32 @@ sections:
         question: |
           What is membership of CORE?
         answer: |
-          We founded CORE to provide free harvesting, and discovery for institutions. Initially, we were funded to provide these tools, but our funding has now ended. As a result, we have created a membership model. Our founding goal still remains with our membership model: starting membership, including free harvesting and discovery, continues to be free of charge. We have added optional paid tools that assist in analytics and compliance. 
+          We founded CORE to provide free harvesting, and discovery for institutions. Initially, we were funded to provide these tools, but much of our funding ended in July 2023. As a result, we have created a membership model, with both free and paid membership. Our founding goal remains as before: we harvest any institutional repository. If you register as a starting member, you can see a freely available dashboard that shows useful information about your repository. We have added optional paid tools that assist in analytics and compliance.
       - slug: is-CORE-paid-membership-worth-it
         question: |
           Is CORE paid membership worth it?
         answer: |
-          We believe that our paid membership provides tools that save your institution time and money. It enables you to check automatically what would otherwise have to be done by hand, for example finding copies of papers by a member of your institution that were deposited in another repository (what we call the “cress-repository check”. 
+          By joining CORE you are supporting the open research community. Moreover, we believe that our paid membership provides tools that save your institution time and money. It enables you to check automatically what would otherwise have to be done by hand, for example finding copies of papers by a member of your institution that were deposited in another repository (what we call the “cress-repository check”). Finally, as a paying member, we provide anyone from your institution with fast API access to the full CORE dataset for text and data-mining (TDM) purposes.
       - slug: Your-membership-prices-look-very-high-for-developing-countries
         question: |
-          Your membership prices look very high for developing countries
+          Your membership prices look very high for low-income countries
         answer: |
-          Actually we have set three tiers of membership, using the generally accepted [World Bank criteria](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups) for low- and middle-income countries. Our aim is to make membership available to all, because the more institutions who join, the better the service for all members (we can check other repositories for relevant content). 
+          Our aim is to make membership available for the widest range of institutions. Accordingly, we have set three tiers of membership, using the widely accepted [World Bank criteria](https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups) for low- and middle-income countries. Our aim is to make membership available to all, because the more institutions who join, the better the service for all members: specifically, we can check other repositories for relevant content to your institution, wherever it appears.
       - slug: can-you-help-us
         question: |
           We don’t have enough technical knowledge to use the dashboard. Can you help us? 
         answer: |
-          Many institutions don’t have the staff or the knowledge to manage their repository effectively. For sustaining members, we provide a free repository health check every year. We go through all the results from our automatic checks and show you how to fix them. In other words, we provide a kind of out-sourced technical resource for you. 
+          Many institutions don’t have the staff or the knowledge to manage their repository effectively. For sustaining members, we provide a free repository health check every year. We go through all the results from our automatic checks and show you how to fix them. In other words, we provide a kind of out-sourced technical resource for you.
       - slug: do-I-need-to-be-a-member-of-CORE-to-use-the-Recommender-tool?
         question: |
           Do I need to be a member of CORE to use the Recommender tool?
         answer: |
           Both the Recommender and the Discovery tools are free of charge for any institution that provides their data for harvesting. They are both benefits of the free starting membership.
+      - slug: why-do-we-need-compliance-tools
+        question: |
+          We don’t use our repository to track compliance, so why do we need compliance tools?
+        answer: |
+          For many countries, including the United States, institutions may not track compliant across the institution. However, individual faculties and departments want to ensure that their publications are comipliant with federal and with funder mandates. Membership of CORE enables you to identify that a paper has been deposited, even if it was not deposited in your local repository.
   - id: dashboard
     title: Dashboard
     updateDate: Last updated 24.08.2023
@@ -448,21 +453,21 @@ sections:
         question: |
           What is the CORE dashboard?
         answer: |
-          For any institution, we provide a dashboard that enables them to see their repository from the outside - the way that any external service sees them. We give you statistics about the number of items harvested, how many of them are full text, and the proportion of content that has a DOI identifier. The dashboard is free to access for any institution who signs up for free starting membership. 
+          For any institution, we provide a dashboard that enables them to see their repository from the outside - the way that any external service sees them. We give you statistics about the number of items harvested, how many of them are full text, and the proportion of content that has a DOI identifier. The dashboard is free to access for any institution who signs up for free starting membership.
       - slug: why-can’t-I-see-my-dashboard
         question: |
           Why can’t I see my dashboard?
         answer: |
-          You can only see the dashboard for your organisation if you have signed up as a member. Becoming a starting member is free of charge for any institution that provides content for CORE to harvest. Simply contact the administrator at [XX@core.ac.uk]() to be sent an invitation to open an account. 
+          You can only see the dashboard for your organisation if you have signed up as a member. Becoming a starting member is free of charge for any institution that provides content for CORE to harvest. Simply contact the administrator at [XX@core.ac.uk]() to be sent an invitation to open an account.
       - slug: how-does-CORE-help-my-institution-with-compliance
         question: |
           How does CORE help my institution with compliance?
         answer: |
-          Open access articles are free to access, but the publisher may not maintain a freely available copy for researchers to access. It makes sense for researchers to self-archive their content.  The author (or the institution) posts the article in a repository, typically the institutional repository of the university where they work. However, in many countries, funding requirements are not only that the article should be available open access, but that the article should be available within a certain time period after acceptance. For the UK REF 2021, this time period, known as the deposit delay, was 90 days.
+          Open access articles are free to access, but the publisher may not maintain a freely available copy for researchers to access. It makes sense for researchers to self-archive their content.  The author (or the institution) posts the article in a repository, typically the institutional repository of the university where they work. However, in many countries, funding requirements are not only that the article should be available open access, but that the article should be available within a certain time period after acceptance. For the UK REF 2021, this time period, known as the deposit delay, was 90 days.
 
           This introduces a reporting requirement for any institution that wants to be compliant with funder mandates: it is necessary to demonstrate that articles are compliant, that is, available open access and deposited within the correct time frame.
 
-          For every institutional repository where CORE harvests content, we try to assist you with compliance, identifying the date of deposit wherever possible, as well as the date of publication. 
+          For every institutional repository where CORE harvests content, we try to assist you with compliance, identifying the date of deposit wherever possible, as well as the date of publication.
       - slug: how-can-I-track-the-date-of-deposit-for-my-content
         question: |
           How can I track the date of deposit for my content?
@@ -472,7 +477,7 @@ sections:
         question: |
           I have a CRIS system, so why do I need CORE?
         answer: |
-          Simply put, any CRIS system (Current Research Information System) works for an individual institution. Although it can often show compliance for papers within that institution, a CRIS system (or an individual repository) cannot find duplicate copies of articles that were deposited in another institution, for example if a paper has a co-author from Sheffield when the main author is based at Leeds. CORE is unique in harvesting repositories from around the world, and can identify duplicate copies of papers. As a result, CORE and CRIS systems are complements, not substitutes, for each other. 
+          Simply put, any CRIS system (Current Research Information System) works for an individual institution. Although it can often show compliance for papers within that institution, a CRIS system (or an individual repository) cannot find duplicate copies of articles that were deposited in another institution, for example if a paper has a co-author from Sheffield when the main author is based at Leeds. CORE is unique in harvesting repositories from around the world, and can identify duplicate copies of papers. As a result, CORE and CRIS systems are complements, not substitutes, for each other.
   - id: services
     title: CORE services
     updateDate: Last updated 24.08.2023
