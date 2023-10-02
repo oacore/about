@@ -20,7 +20,7 @@ export async function getStaticProps() {
       item.country = countries.find(
         (country) =>
           country.code.toLowerCase() === item.country_code.toLowerCase()
-      ).name
+      )?.name
     } else item.country = ''
 
     return item
