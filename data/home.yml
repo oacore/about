@@ -50,9 +50,6 @@ features:
 join:
   title: Join CORE
   children:
-    - caption: Explore our services
-      url: /services
-      picture: /images/join/server.svg
     - caption: Become a data provider
       action: '/benefits'
       url: /benefits
@@ -60,6 +57,9 @@ join:
     - caption: Become a member
       url: /membership
       picture: /images/join/membership.svg
+    - caption: Explore our services
+      url: /services
+      picture: /images/join/server.svg
 testimonials:
   title: Who we serve?
   subtitle: 20 million monthly active users
