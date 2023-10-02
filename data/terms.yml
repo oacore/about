@@ -24,13 +24,13 @@ main:
       - title: Free licence eligibility
         content: |
                 If your use of CORE data does not fall under any of the categories mentioned in the above points 1-3 **AND** you are either an individual or a public research organisation, then you might be eligible for a free licence.
-  - mainItems:
       - title: Individuals
         content: |
-                If you are an individual, you can use CORE data freely if:
+          If you are an individual, you can use CORE data freely if:
 
-                * You are conducting work in your own personal capacity **AND**
-                * You will acknowledge the use of CORE as [described](https://core.ac.uk/acknowledge).
+          * You are conducting work in your own personal capacity **AND**
+          * You will acknowledge the use of CORE as [described](https://core.ac.uk/acknowledge).
+  - mainItems:
       - title: Public research organisations
         content: |
                 If you are working for a public research organisation (e.g. a university):
@@ -40,7 +40,10 @@ main:
                 * You are pursuing research on CORE data with the objective of producing a research paper or a publicly available report AND
                 * You will acknowledge the use of CORE as [described](https://core.ac.uk/acknowledge).
 
-                If you are intending to use CORE as part of a research project(s) then you should [contact us](https://core.ac.uk/about#contact) to obtain a licence. Depending on the circumstances, we will assess if you are eligible for a free licence.
+                If you are intending to use CORE as part of a research project(s) then, unless you are a Supporting or a Sustaining Member, you should [contact us](https://core.ac.uk/about#contact) to obtain a licence. Depending on the circumstances, we will assess if you might be eligible for a free licence.
+      - title: CORE Supporting and Sustaining members
+        content: |
+          Academic institutions who are CORE Supporting and Sustaining members receive automatically a free non-commercial licence to the CORE API for any internal purposes for all of their staff and students as part of CORE Membership. CORE Sustaining members receive automatically a free non-commercial licence to the CORE API for any internal purposes for all of their staff and students as part of CORE Membership.
       - title: Authorisation for use of your data
         content: |
                 You authorise us to use the logo of your organisation and/or project on our website and to mention our support to you in public communication.
