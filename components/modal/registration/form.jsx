@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
-import { Modal, Form, TextField, Button } from '@oacore/design/lib'
+import React, { useEffect, useState } from 'react'
+import { Modal, Form, TextField, Button, Popover } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 
+import questionInfo from '../../../public/images/logos/questionInfo.svg'
 import styles from './styles.module.scss'
 import ProfileSelect from './profile-select'
 import CountrySelect from './country-select'
@@ -11,6 +12,7 @@ import Markdown from '../../markdown'
 import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
 import DropdownInput from './institution-select'
+import CustomRadio from '../../radio-button'
 
 import { useStore, observe } from 'store'
 
@@ -48,15 +50,25 @@ const ModalForm = observe((emailFill) => {
   } = useInput('libraryEmail')
 
   const [email, setEmail] = useState(emailFill.emailFill)
+  const { registration } = useStore()
+
+  const [selectedOption, setSelectedOption] = useState('')
+  const handleRadioSelect = (id) => {
+    setSelectedOption(id)
+  }
 
   const { value: countryName, onChange: countryOnChange } =
     useSelect('countryName')
 
-  const { registration } = useStore()
-
   const onCloseModal = () => {
     registration.reset()
   }
+
+  useEffect(() => {
+    setSelectedOption(
+      registration.data.accountType === 'enterprise' ? 'all' : 'few'
+    )
+  }, [registration.data.accountType])
 
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
@@ -76,6 +88,7 @@ const ModalForm = observe((emailFill) => {
         lastName,
         country: countryName.id,
         email,
+        accessLevel: selectedOption === 'all',
       })
       registration.setIsModalFormActive(false)
       registration.setIsModalConditionsActive(true)
@@ -97,6 +110,70 @@ const ModalForm = observe((emailFill) => {
         <Markdown>{findText('box')}</Markdown>
       </div>
       <Form onSubmit={onHandleSubmit}>
+        {router.pathname.includes('dataset') && (
+          <div className={styles.radioItemsWrapper}>
+            <h6 className={styles.radioItemsTitle}>
+              Choose the datasets you wish to get access to
+            </h6>
+            <div className={styles.radioItemsInnerWrapper}>
+              <div className={styles.radioItem}>
+                <div className={styles.radioTitleWrapper}>
+                  <CustomRadio
+                    id={text.options.only.id}
+                    label={text.options.only.label}
+                    checked={selectedOption === text.options.only.id}
+                    onChange={() => handleRadioSelect(text.options.only.id)}
+                  />
+                  <Popover
+                    className={styles.popover}
+                    placement="top"
+                    content={text.options.only.info}
+                  >
+                    <Button>
+                      <img src={questionInfo} alt="questionInfo" />
+                    </Button>
+                  </Popover>
+                </div>
+                <Markdown className={styles.radioDescription}>
+                  {text.options.only.description}
+                </Markdown>
+              </div>
+              {registration.data.accountType === 'personal' && (
+                <div className={styles.none}>{text.options.none}</div>
+              )}
+              {registration.data.accountType !== 'personal' && (
+                <div className={styles.radioItem}>
+                  <div className={styles.radioTitleWrapper}>
+                    <CustomRadio
+                      id={text.options.all.id}
+                      label={text.options.all.label}
+                      checked={selectedOption === text.options.all.id}
+                      onChange={() => handleRadioSelect(text.options.all.id)}
+                    />
+                    <Popover
+                      className={styles.popover}
+                      placement="top"
+                      content={
+                        <Markdown>
+                          {registration.data.accountType === 'enterprise'
+                            ? text.options.all.info
+                            : text.options.all.susInfo}
+                        </Markdown>
+                      }
+                    >
+                      <Button>
+                        <img src={questionInfo} alt="questionInfo" />
+                      </Button>
+                    </Popover>
+                  </div>
+                  <Markdown className={styles.radioDescription}>
+                    {text.options.all.description}
+                  </Markdown>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
         <div className={styles.inputGroup}>
           <TextField
             id={elemFirstName}
@@ -117,28 +194,28 @@ const ModalForm = observe((emailFill) => {
             {...bindLastName}
           />
         </div>
-        <TextField
-          id={emailFill.emailFill}
-          name={emailFill.emailFill}
-          label="Email"
-          placeholder="john.doe@mail.com"
-          required
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <>
+          <TextField
+            id={emailFill.emailFill}
+            name={emailFill.emailFill}
+            label="Email"
+            placeholder="john.doe@mail.com"
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <div className={styles.institutionSubtitle}>
+            The supplied email address must correspond to the institution that
+            you select.{' '}
+          </div>
+        </>
         {registration.data.accountType !== 'personal' && (
-          <>
-            <DropdownInput
-              elemOrganisationName={elemOrganisationName}
-              bindOrganisationName={bindOrganisationName}
-              registration={registration}
-              organisationNameSuggestions={organisationNameSuggestions}
-            />
-            <div className={styles.institutionSubtitle}>
-              The supplied email address must correspond to the institution that
-              you select.{' '}
-            </div>
-          </>
+          <DropdownInput
+            elemOrganisationName={elemOrganisationName}
+            bindOrganisationName={bindOrganisationName}
+            registration={registration}
+            organisationNameSuggestions={organisationNameSuggestions}
+          />
         )}
         <CountrySelect onChange={countryOnChange} />
         {registration.data.accountType === 'institution' && (

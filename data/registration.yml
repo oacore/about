@@ -2,21 +2,16 @@ sections:
   -
     id: dataset-enterprise
     text: |
-      For organisations and professionals developing innovative products, services, or software using CORE data. Read [Terms & Conditions](/terms) for more details.
-    box:
-      <h6>30 Day Free Trial</h6>
-
-
-      Register below to access the CORE Dataset for free for the first 30 days. Read [Terms & Conditions](/terms) for more details.
+      For organisations and professionals requiring access to CORE data and/or developing innovative products, services, or software using CORE data.
     modal-content: |
       Thank you for registering for the CORE Dataset. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
-      Our team will be in touch with further details as soon as possible. Any questions contact theteam@core.ac.uk.
+      Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>
 
     type-modal-content: |
       Thank you for registering for the CORE Dataset. We have sent access instructions to <span>{{email}}</span>. Please check your email and spam folder.
 
-      Our team will be in touch with further details as soon as possible. Any questions contact theteam@core.ac.uk.
+      Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>
   -
     id: dataset-institution
     text: |
@@ -27,7 +22,7 @@ sections:
     modal-content: |
       **Thank you for registering with the CORE Dataset.**
 
-      Your institution is already our Sustaining member and you will have access to the latest dataset.
+      Your institution is already our [Sustaining](/membership) member and you will have access to the latest dataset.
 
       We have sent access instructions to <span>{{email}}</span>. Please check your email. In case you have not received anything within a few minutes, please also check also your spam folder.
     type-modal-content: |
@@ -132,15 +127,38 @@ membershipType:
 
       **If your institution is a member** you don’t need to fill up the fields bellow.
     typeTextChecked: |
-      We provide improved access to the CORE Dataset for our [Sustaining](/membership) members.
+      Our ODC-By datasets are free for everyone. Additionally, our [Sustaining](/membership) members can download all of the CORE Datasets.
 
-      **If your institution is not our member yet**, please provide us with an email for a representative from your Library, Research Office or equivalent as they may be interested in subscribing.
+      **If your institution is not our member yet**, and you wish to obtain access to all the datasets, then please provide us with an email for a representative from your Library, Research Office or equivalent as they may be interested in subscribing.
 
-      Don’t worry, you can still download the other datasets, while we are discussing the CORE membership for your institution.
+      Don’t worry, you can still download our ODC-by datasets, while we are discussing the CORE membership for your institution.
 
-      **If your institution is a member** you don’t need to fill up the fields bellow.
+      **If your institution is a member** you don’t need to fill up the fields bellow and you can instantly access all the datasets.
 
 terms: |
   I agree to the CORE [Terms and Conditions](/terms) and [privacy notice](/privacy). The T&Cs and
   privacy notice are designed to inform you of your rights and obligations
   when using the CORE service.
+
+options:
+  all:
+    label: All datasets
+    id: all
+    value: true
+    description: |
+      * **Dataset 2023**
+      * Dataset 2022
+      * Dataset 2020
+      * Dataset 2018
+      * Dataset 2017
+    info: We will contact you after registration to arrange a quote.
+    susInfo: We will contact you after registration to discuss access. [Sustaining members](/membership) have free access.
+  only:
+    label: Only ODC-By licensed datasets
+    id: few
+    value: false
+    description: |
+      * Dataset 2018
+      * Dataset 2017
+    info: Anyone can access this dataset for free subject to the ODC-By terms.
+  none: To get access to the latest dataset please choose Academic or Non-academic
