@@ -1,3 +1,4 @@
+@import 'design-v2/variables';
 $table-border: 1px solid var(--gray-400);
 $checkbox-success-color: #8bc34a;
 $checkbox-danger-color: rgba(255, 95, 82, 1);
@@ -66,10 +67,17 @@ $card-header-color: #fef5ef;
     padding: 0.5rem;
     font-weight: 600;
     background-color: var(--gray-100);
+    @media (max-width: $breakpoint-sm) {
+      font-size: 10px;
+    }
   }
   &-padding {
     padding: 1rem;
     font-weight: 400;
+    @media (max-width: $breakpoint-sm) {
+      padding: 6px;
+      width: 85px;
+    }
   }
   &-description {
     padding: 1.5rem;
@@ -85,7 +93,9 @@ $card-header-color: #fef5ef;
   font-weight: 400;
   text-align: center;
   background-color: var(--gray-100);
-
+  @media (max-width: $breakpoint-sm) {
+    padding: 2px;
+  }
   &-active {
     background-color: #fae2d2;
   }
@@ -96,6 +106,9 @@ $card-header-color: #fef5ef;
     color: var(--primary);
     font-weight: 400;
     font-size: 0.9rem;
+    @media (max-width: $breakpoint-sm) {
+      font-size: 10px;
+    }
   }
 
   &-status {
@@ -120,12 +133,18 @@ $card-header-color: #fef5ef;
   }
   &-title {
     font-size: 1.2rem;
+    @media (max-width: $breakpoint-sm) {
+      font-size: 10px;
+    }
     a {
       color: var(--black);
       text-decoration: underline;
     }
     &-details {
       margin-bottom: 1rem;
+      @media (max-width: $breakpoint-sm) {
+        margin-bottom: 5px;
+      }
     }
   }
 }
@@ -151,6 +170,16 @@ $card-header-color: #fef5ef;
     border: solid var(--white);
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+    @media (max-width: $breakpoint-sm) {
+      width: 6px;
+      height: 10px;
+      left: 6px;
+      top: 2px;
+    }
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 1rem;
+    height: 1rem;
   }
 }
 
@@ -174,18 +203,33 @@ $card-header-color: #fef5ef;
     height: 2px;
     background-color: white;
     top: 11px;
+    @media (max-width: $breakpoint-sm) {
+      width: 10px;
+      height: 2px;
+      top: 7px;
+    }
   }
   &::before {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     transform: rotate(45deg);
     left: 2px;
+    @media (max-width: $breakpoint-sm) {
+      left: 3px;
+    }
   }
   &::after {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     transform: rotate(-45deg);
     right: 2px;
+    @media (max-width: $breakpoint-sm) {
+      left: 3px;
+    }
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 1rem;
+    height: 1rem;
   }
 }
 

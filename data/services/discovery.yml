@@ -2,119 +2,159 @@ id: discovery
 
 title: CORE Discovery
 tagline: One-click access to free copies of research papers whenever you hit the paywall
-description: |
 
-screenshot:
-  source: /images/screenshots/discovery.svg
-  caption: |
+actionButton:
+    caption: Download our flyer
+    variant: text
+    url: /resources/core_flyer_recomender.pdf
+    target: _blank
 
+header:
+  id: header
+  title: CORE Discovery
+  icon: /images/services/discoveryLock.svg
+  image: /images/services/discoveryImage.svg
+  description: |
+    One-click access to free copies of research papers whenever you hit the paywall
+  actions:
+    - caption: Get browser extention
+      variant: contained
+      url: 'https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh'
+      target: _blank
+    - caption: Get repository plugin
+      variant: text
+      url: /documentation/discovery-plugin
+      target: _blank
 
 features:
 -
-  title: null
-  picture: /images/icons/paywall-2.svg
+  title: Open access versions
   description: |
     Overcome publishers' paywalls by discovering open access versions of papers
 -
-  title: null
-  picture: /images/icons/oa-3.svg
+  title: Largest dataset of OA full texts
   description: |
     Backed by the world's largest dataset of open access full texts with over millions of monthly active users
 -
-  title: null
-  picture: /images/icons/extension.svg
+  title: Easy to use
   description: |
     Easy to install browser extension and seamless repository integration
+-
+  title: Free access
+  description: |
+    CORE Discovery is a completely free plugin available available for many different browsers
 
-main: |
 
-  CORE Discovery helps users to discover freely accessible copies of research
-  papers. It is backed by our [huge dataset](~data) of millions of full text
-  open access papers as well as content from widely used external services
-  beyond CORE. Discovery reduces the time it takes to access full texts of
-  research papers and the frustration associated with hitting a paywall on the
-  publisher's site. With CORE Discovery, you can be confident to benefit from
-  the highest coverage of freely available copies of articles anywhere on the
-  planet. So try it, it's free.
+how-it-works:
+  title: How it works
+  image: /images/services/work.svg
+  description: |
+    Our service processes information from a wide number of authoritative scholarly data sources to discover, download and validate information about free availability of articles wherever they are located on the web. In this way, we are curating a vast database of freely available copies of articles. CORE Discovery has a preference for displaying first the open access content, originating from our approved content providers, and seeks alternative routes, providing access to free versions, only if they are not available from them.
 
-  The tool is available as:
-  * Browser extension for researchers and anyone interested in reading
-    scientific documents
-  * Plugin for repositories, enriching metadata only pages in repositories
-    with links to freely available copies of the paper
-  * API for developers and third party services
+how-it-works-description:
+  description: |
+    CORE Discovery helps users to discover freely accessible copies of research papers. It is backed by our huge dataset of millions of full text open access papers as well as content from widely used external services beyond CORE. Discovery reduces the time it takes to access full texts of research papers and the frustration associated with hitting a paywall on the publisher's site. With CORE Discovery, you can be confident to benefit from the highest coverage of freely available copies of articles anywhere on the planet.
+  main:
+    items:
+      - title: Where to start?
+        content: |
+          It’s free to install CORE Discovery in your browser. Using Google Chrome or Chromium, open the [extension page on Web Store](https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh) and click on the “Add to Chrome” button to install the extension.
 
-  ### How it works?
+          The extension is also avilable for [Mozilla Firefox](https://addons.mozilla.org/uk/firefox/addon/core-discovery/?src=search) and [Opera](https://addons.opera.com/ru/extensions/details/core-discovery/) users.
 
-  Our service processes information from a wide number of authoritative
-  scholarly data sources to discover, download and validate information
-  about free availability of articles wherever they are located on the web.
-  In this way, we are curating a vast database of freely available copies
-  of articles. CORE Discovery has a preference for displaying first the open
-  access content, originating from our approved content providers, and seeks
-  alternative routes, providing access to free versions, only if they
-  are not available from them.
+          To install the CORE Discovery repository plugin, [follow these instructions](/documentation/discovery-plugin).
 
-documentation: false
+          If you are interested in the integration of the CORE Discovery API in your repository, website or application please [contact us](/about#contact).
+    note: If you use CORE in your work, we kindly request you to cite one of our publications.
+    action:
+      title: cite publication
+      url: https://core.ac.uk/about/research-outputs
+
 
 additional:
-  title: Where to start
+  id: discovery
+  title: |
+    The tool is available as:
+  image: /images/screenshots/discovery.svg
   content: |
-    It’s free to install CORE Discovery in your browser.
-    Using Google Chrome or Chromium, open the [extension page on Web Store](https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh)
-    and click on the “Add to Chrome” button to install the extension.
-
-    The extension is also avilable for [Mozilla Firefox](https://addons.mozilla.org/uk/firefox/addon/core-discovery/?src=search) and [Opera](https://addons.opera.com/ru/extensions/details/core-discovery/) users.
-
-    To install the CORE Discovery repository plugin,
-    [follow these instructions](/documentation/discovery-plugin).
-
-    If you are interested in the integration of the CORE Discovery API in your
-    repository, website or application please [contact us](~about#contact).
-
-what-is-included:
-  title: What is included
-  content: |
-    Our free CORE Discovery service provides you with:
-
-    * **Highest coverage of freely available content.**
-      Our tests have shown that CORE Discovery delivers state-of-the-art
-      performance compared to other discovery tools in terms of both content
-      coverage (finding a freely available copy when it is available) and
-      precision (reliably delivering a free copy of the paper on success).
-    * **Free service for researchers by researchers.**
-      CORE Discovery is the only free content discovery extension developed
-      by researchers for researchers. There is no major publisher
-      or enterprise controlling and profiting from your usage data.
-    * **Best grip on open repository content.**
-      Due to CORE being a leader in harvesting open access literature,
-      CORE Discovery has the best grip on open content from open repositories
-      as opposed to other services that disproportionately focus only
-      on content indexed in major commercial databases.
-    * **Repository integration and discovering documents without a DOI.**
-      The only service offering seamless and free integration
-      into repositories. CORE Discovery is also the only discovery system
-      that can locate scientific content even for items with
-      an unknown DOI or which do not have a DOI.
-
+    * Browser extension for researchers and anyone interested in reading scientific documents
+    * Plugin for repositories, enriching metadata only pages in repositories with links to freely available copies of the paper
+    * API for developers and third party services
   actions:
-    primary:
-      caption: Get browser extension
+    -
       url: https://chrome.google.com/webstore/detail/core-discovery/ockidfiihjhkngdalfnbeeepgfbmkmlh
-    secondary:
+      caption: Get browser extention
+      hint: For those who are CORE Data Providers
+      primary: true
+      target: _blank
+    -
+      url: https://core.ac.uk/documentation/discovery-plugin
       caption: Get repository plugin
-      url: /documentation/discovery-plugin
+      hint: For those who are not CORE Data Providers
+      target: _blank
+
+stats:
+  items:
+    - title: more than
+      count: "6K"
+      caption: users
+    - title: more than
+      count: "{{fullTextCount}}"
+      caption: full texts
+    - title: more than
+      count: "{{totalArticlesCount}}"
+      caption: searchable research papers
+    - title: more than
+      count: "150"
+      caption: countries
+
+benefits:
+  title: What’s included?
+  items:
+    - title: Highest coverage of freely available content
+      description: |
+        Our tests have shown that CORE Discovery delivers state-of-the-art
+        performance compared to other discovery tools in terms of both content
+        coverage (finding a freely available copy when it is available) and
+        precision (reliably delivering a free copy of the paper on success).
+      icon: /images/services/coverage.svg
+    - title: Free service for researchers by researchers.
+      description: |
+        CORE Discovery is the only free content discovery extension developed
+        by researchers for researchers. There is no major publisher
+        or enterprise controlling and profiting from your usage data.
+      icon: /images/services/grip.svg
+    - title: Best grip on open repository content.
+      description: |
+        Due to CORE being a leader in harvesting open access literature,
+        CORE Discovery has the best grip on open content from open repositories
+        as opposed to other services that disproportionately focus only
+        on content indexed in major commercial databases.
+      icon: /images/services/laptop.svg
+    - title: Repository integration and discovering documents without a DOI.
+      description: |
+        The only service offering seamless and free integration
+        into repositories. CORE Discovery is also the only discovery system
+        that can locate scientific content even for items with
+        an unknown DOI or which do not have a DOI.
+      icon: /images/services/doi.svg
 
 related-services:
--
-  title: CORE Recommender
-  picture: /images/services/recommender.svg
-  url: ~services/recommender
--
-  title: CORE FastSync
-  picture: /images/services/fastsync.svg
-  url: ~services/fastsync
--
-  title: CORE API
-  picture: /images/services/api.svg
-  url: ~services/api
+  title: You might be also interested in
+  services:
+    -
+      title: CORE FastSync
+      picture: /images/services/fastsync.svg
+      url: fastsync
+    -
+      title: CORE Recommender
+      picture: /images/services/recommender.svg
+      url: recommender
+    -
+      title: CORE Dashboard
+      picture: /images/services/repository-dashboard.svg
+      url: repository-dashboard
+    -
+      title: CORE API
+      picture: /images/services/api.svg
+      url: api

@@ -93,6 +93,8 @@ const ServicePage = observe(
     header,
     features,
     howItWorks,
+    howItWorksDescription,
+    actionButton,
     keywords,
     whatIsIncluded, // @optional
     statistics, // @optional
@@ -130,7 +132,11 @@ const ServicePage = observe(
         className={styles.servicePage}
       >
         <Layout>
-          <Hero {...header} hideButtons={hideButtons} />
+          <Hero
+            actionButton={actionButton}
+            hideButtons={hideButtons}
+            {...header}
+          />
           <Section id="features" className={styles.features}>
             {features.map((item) => (
               <Feature key={item.title} {...item} />
@@ -167,6 +173,34 @@ const ServicePage = observe(
                   )}
             </article>
           </Section>
+          {howItWorksDescription && (
+            <Section id="testimonial" className={styles.main}>
+              <div className={styles.mainDescription}>
+                {howItWorksDescription.description}
+              </div>
+              <div>
+                {howItWorksDescription.main.items.map((item) => (
+                  <Collapsed
+                    key={item.title}
+                    id={`${id}-details`}
+                    title={item.title}
+                  >
+                    <Markdown>{item.content}</Markdown>
+                  </Collapsed>
+                ))}
+                <Markdown className={styles.mainNote}>
+                  {howItWorksDescription.main.note}
+                </Markdown>
+                <Button
+                  className={styles.action}
+                  variant="outlined"
+                  href={howItWorksDescription.main.action.url}
+                >
+                  {howItWorksDescription.main.action.title}
+                </Button>
+              </div>
+            </Section>
+          )}
           {benefits && (
             <Section id="benefits">
               <h3>{benefits.title}</h3>
@@ -299,7 +333,12 @@ const ServicePage = observe(
             </Section>
           )}
           {additional && (
-            <Section id="additional" className={styles.additional}>
+            <Section
+              id="additional"
+              className={classNames.use(styles.additional, {
+                [styles.additionalReverse]: additional.id === 'discovery',
+              })}
+            >
               <img src={additional.image} alt={additional.title} />
               <div className={styles.section}>
                 <h3>{additional.title}</h3>
