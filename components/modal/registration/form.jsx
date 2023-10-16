@@ -205,8 +205,9 @@ const ModalForm = observe((emailFill) => {
             onChange={(e) => setEmail(e.target.value)}
           />
           <div className={styles.institutionSubtitle}>
-            The supplied email address must correspond to the institution that
-            you select.{' '}
+            {registration.data.accountType === 'enterprise'
+              ? 'The supplied email address must correspond to the organization that you select.'
+              : 'The supplied email address must correspond to the institution that you select.'}
           </div>
         </>
         {registration.data.accountType !== 'personal' && (
