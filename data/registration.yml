@@ -152,7 +152,7 @@ options:
       * Dataset 2018
       * Dataset 2017
     info: We will contact you after registration to arrange a quote.
-    susInfo: We will contact you after registration to discuss access. [Sustaining members](/membership) have free access.
+    susInfo: We will contact you after registration to discuss access. Sustaining members have free access.
   only:
     label: Only ODC-By licensed datasets
     id: few

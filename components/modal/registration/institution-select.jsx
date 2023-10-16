@@ -29,7 +29,7 @@ const DropdownInput = ({
         id={elemOrganisationName}
         name={elemOrganisationName}
         label={
-          registration.data.accountType === 'non-academic'
+          registration.data.accountType === 'enterprise'
             ? 'Organization name'
             : 'Institution name'
         }
