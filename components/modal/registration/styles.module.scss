@@ -374,3 +374,24 @@
 .customTextField.focus .control {
   padding-top: 0.5em;
 }
+
+.checked-wrapper {
+  display: flex;
+  align-items: center;
+  .img-wrapper {
+    width: 20px;
+    height: 20px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .checked-text {
+    color: #666;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.026px;
+    margin-left: 16px;
+  }
+}

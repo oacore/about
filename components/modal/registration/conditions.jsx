@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Modal, Button } from '@oacore/design/lib'
+import { useRouter } from 'next/router'
 
 import text from '../../../data/registration.yml'
 import styles from './styles.module.scss'
@@ -11,6 +12,7 @@ import { observe, useStore } from 'store'
 const ModalConditions = observe(() => {
   const [isAgreeNewsletter, setIsAgreeNewsletter] = useState(false)
   const { registration } = useStore()
+  const router = useRouter()
 
   const onSubmit = () => {
     registration.setData({ agreeNewsletter: isAgreeNewsletter })
@@ -27,6 +29,20 @@ const ModalConditions = observe(() => {
     <Modal hideManually aria-label="conditions-modal">
       <h6>Just one more thing!</h6>
       <Markdown>{text.terms}</Markdown>
+      {registration.data.accountType !== 'personal' && (
+        <Checkbox
+          value
+          isDisabled
+          id="agreeNewsletter"
+          labelText={
+            router.pathname.includes('api')
+              ? ` I authorise CORE to send me information about the CORE API
+              (required).`
+              : ` I authorise CORE to send me information about the CORE Dataset (required).x`
+          }
+          setCheckbox={setIsAgreeNewsletter}
+        />
+      )}
       <Checkbox
         id="agreeNewsletter"
         labelText="I want to receive information about the CORE API and related CORE products and services. You may unsubscribe at any time."

@@ -88,7 +88,7 @@ const ModalForm = observe((emailFill) => {
         lastName,
         country: countryName.id,
         email,
-        accessLevel: selectedOption === 'all',
+        paidAccess: selectedOption === 'all',
       })
       registration.setIsModalFormActive(false)
       registration.setIsModalConditionsActive(true)
@@ -242,6 +242,7 @@ const ModalForm = observe((emailFill) => {
             label="Could you please provide us with the email for your library contact?"
             placeholder="john.doe@mail.com"
             defaultValue={emailFill.emailFill}
+            type="email"
             {...bindLibraryEmail}
           />
         )}
@@ -254,6 +255,7 @@ const ModalForm = observe((emailFill) => {
             placeholder="Text..."
             type="textarea"
             value={description}
+            required
             {...bindDescription}
           />
           {description.trim().split(/\s+/).length > 150 && (
