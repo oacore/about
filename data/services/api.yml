@@ -36,7 +36,7 @@ features:
 -
   title: Detailed documentation
   description: |
-    Accessible and easy to understand description of using Core API.
+    Accessible and easy to understand description of using CORE API.
 
 
 how-it-works:
@@ -101,7 +101,6 @@ what-is-included:
     * Harmonised access to data accross CORE’s provider network
     * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to use the CORE API with live examples and wrappers to common programming languages.
     * One batch request or five single requests per 10 seconds. Need a faster rate? [Contact us](/about#contact).
-    * Free access to the CORE data. The usage rate is limited depending on your profile, need a faster rate? [Contact us](~about/#contact).
     * Scalable [API rates:](https://api.core.ac.uk/docs/v3#section/Rate-limits)
       1. Free API access without registration (subject to our T&Cs)
       2. Better performance for registered users
