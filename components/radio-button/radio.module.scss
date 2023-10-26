@@ -1,0 +1,53 @@
+.custom-radio {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  margin-right: 10px;
+
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background-color: transparent;
+      border: 2px solid #ccc;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      background-color: #b75400;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+  }
+
+  input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + label:before {
+      border-color: #b75400;
+    }
+
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+}

@@ -36,7 +36,7 @@ features:
 -
   title: Detailed documentation
   description: |
-    Accessible and easy to understand description of using Care API.
+    Accessible and easy to understand description of using CORE API.
 
 
 how-it-works:
@@ -100,7 +100,13 @@ what-is-included:
     * Real-time machine access to the world's largest corpus of open access research papers, containing both metadata and full texts.
     * Harmonised access to data accross CORE’s provider network
     * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to use the CORE API with live examples and wrappers to common programming languages.
-    * Free access to the CORE data. The usage rate is limited depending on your profile, need a faster rate? [Contact us](~about/#contact).
+    * One batch request or five single requests per 10 seconds. Need a faster rate? [Contact us](/about#contact).
+    * Scalable [API rates:](https://api.core.ac.uk/docs/v3#section/Rate-limits)
+      1. Free API access without registration (subject to our T&Cs)
+      2. Better performance for registered users
+      3. Need an even faster rate? Contact us for a VIP rate quote.
+
+    If you use CORE in your work, we kindly request you to [cite one of our publications.](/about/research-outputs)
   image: /images/services/delivery.svg
 
 stats:

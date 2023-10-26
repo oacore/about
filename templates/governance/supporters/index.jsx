@@ -28,7 +28,7 @@ const Card = ({ plan }) => (
 
 const GovernanceSupportersPageTemplate = ({ members, page }) => {
   const [searchValue, setSearchValue] = useState('')
-  const [displayedItems, setDisplayedItems] = useState(10)
+  const [displayedItems, setDisplayedItems] = useState(50)
   const maxItems = members.length
 
   const handleSearch = (event) => {
@@ -38,6 +38,10 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
 
   const filteredMembers = members.filter((member) =>
     member.organisation_name.toLowerCase().includes(searchValue.toLowerCase())
+  )
+
+  const sortedMembers = [...filteredMembers].sort((a, b) =>
+    a.organisation_name.localeCompare(b.organisation_name)
   )
 
   const handleRedirect = (providerId) => {
@@ -136,7 +140,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
               </Table.Row>
             </Table.Head>
             <Table.Body>
-              {filteredMembers.slice(0, displayedItems).map((member) => (
+              {sortedMembers.slice(0, displayedItems).map((member) => (
                 <Table.Row
                   className={styles.tableRow}
                   key={member.organisation_id}
@@ -164,8 +168,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
               <Table.Row className={styles.paginationRow}>
                 <Table.Cell colSpan={2}>
                   <p className={styles.paginationText}>
-                    Showing 1 - {Math.min(displayedItems, maxItems)} of{' '}
-                    {maxItems}
+                    Showing 1 - {Math.min(displayedItems, maxItems)}
                   </p>
                   <Button
                     onClick={() =>
