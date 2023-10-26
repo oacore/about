@@ -90,25 +90,27 @@ what-is-included:
 
     * The entire CORE's corpus of both metadata and full texts in a machine processable format.
     * Detailed [documentation](https://api.core.ac.uk/docs/v3) on how to download the CORE dataset and how data is organised.
+    * Access to a very large corpus of research documents at the level of full texts, perfect for training machine learning models, NLP and text mining.
+    * Unique content from the network of open repositories, in addition to research papers with a registered DOI.
   image: /images/services/delivery.svg
 
 stats:
   items:
     - title: dataset
-      count: 2022
+      count: 2023
       caption: year
       badge: Latest
       url: /documentation/dataset#latest
+    - title: datasets
+      count: 2022
+      caption: year
+      url: /documentation/dataset#other
     - title: datasets
       count: 2021
       caption: year
       url: /documentation/dataset#other
     - title: datasets
       count: 2020
-      caption: year
-      url: /documentation/dataset#other
-    - title: datasets
-      count: 2019
       caption: year
       url: /documentation/dataset#other
 
