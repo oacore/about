@@ -379,7 +379,7 @@ testimonials:
   api: true
 organizations:
 # companies
-- &naver
+- &naverTest
   id: naver
   name: Naver
   url: https://www.naver.com
@@ -439,6 +439,11 @@ organizations:
   url: https://ropensci.org
   logo: ropensci.svg
   #testimonial: *scott-chamberlain
+- &naver
+  id: naver
+  name: Naver
+  url: https://www.naver.com
+  logo: naver.svg
 - &wheesbee
   id: wheesbee
   name: Wheesbee
@@ -878,13 +883,19 @@ sections:
         - *rygbee
         - *4science
         - *interac
-        - *unsilo
         - *macmicro
         - *scilit
         - *intoolab
         - *anthropic
         - *audemicr
         - *caktus
+        - *naver
+        - *naverTest
+        - *lean-library
+        - *tech-dico
+        - *oxisco
+        - *consensus
+        - *flowcite
     testimonials:
       title: What companies say about us
       items:
@@ -978,16 +989,11 @@ sections:
         - *oab
         - *doaj
         - *okm
-        - *lean-library
         - *foster
         - *orcid
         - *rioxx
         - *opendoar
         - *irus
-        - *tech-dico
-        - *oxisco
-        - *consensus
-        - *flowcite
         - *coar
         - *bl
         - *access-my-research
