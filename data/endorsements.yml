@@ -444,6 +444,10 @@ organizations:
   name: Naver
   url: https://www.naver.com
   logo: naver.svg
+- &nvidia
+  id: nvidia
+  name: Nvidia
+  logo: nvidia.png
 - &wheesbee
   id: wheesbee
   name: Wheesbee
@@ -889,6 +893,7 @@ sections:
         - *anthropic
         - *audemicr
         - *caktus
+        - *nvidia
         - *naver
         - *naverTest
         - *lean-library
