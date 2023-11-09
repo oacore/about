@@ -447,7 +447,7 @@ organizations:
 - &nvidia
   id: nvidia
   name: Nvidia
-  logo: nvidia.svg
+  logo: nvidia.png
 - &wheesbee
   id: wheesbee
   name: Wheesbee
