@@ -9,6 +9,9 @@ import styles from './styles.module.scss'
 import { Layout, Section } from '../layout'
 import Hero from '../hero'
 
+import api from 'data/services/api.yml'
+import dataset from 'data/services/dataset.yml'
+import fastsync from 'data/services/fastsync.yml'
 import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
@@ -105,6 +108,9 @@ const ServicePage = observe(
     additional, // @optional
     testimonials, // @optional
     form, // @optional
+    apilogos, // @optional
+    datasetLogos, // @optional
+    fastsyncLogos, // @optional
     relatedServices,
     hideButtons = false, // @optional
   }) => {
@@ -256,6 +262,69 @@ const ServicePage = observe(
                 </div>
               )}
             </Section>
+          )}
+          {apilogos && (
+            <section className={styles.carouselWrapper}>
+              <div className={styles.carouselItems}>
+                {api.apilogos.items.map((slide) => (
+                  <img
+                    className={styles.apiCarouselItem}
+                    src={slide.img}
+                    alt="logo"
+                    key={slide.alt}
+                  />
+                ))}
+              </div>
+              <div className={styles.linkWrapper}>
+                <a className={styles.link} href={api.apilogos.action.url}>
+                  {api.apilogos.action.caption}
+                </a>
+              </div>
+            </section>
+          )}
+          {datasetLogos && (
+            <section className={styles.carouselWrapper}>
+              <div className={styles.carouselItems}>
+                {dataset.datasetLogos.items.map((slide) => (
+                  <img
+                    className={styles.dataCarouselItem}
+                    src={slide.img}
+                    alt="logo"
+                    key={slide.alt}
+                  />
+                ))}
+              </div>
+              <div className={styles.linkWrapper}>
+                <a
+                  className={styles.link}
+                  href={dataset.datasetLogos.action.url}
+                >
+                  {dataset.datasetLogos.action.caption}
+                </a>
+              </div>
+            </section>
+          )}
+          {fastsyncLogos && (
+            <section className={styles.carouselWrapper}>
+              <div className={styles.carouselItems}>
+                {fastsync.fastsyncLogos.items.map((slide) => (
+                  <img
+                    className={styles.fastCarouselItem}
+                    src={slide.img}
+                    alt="logo"
+                    key={slide.alt}
+                  />
+                ))}
+              </div>
+              <div className={styles.linkWrapper}>
+                <a
+                  className={styles.link}
+                  href={fastsync.fastsyncLogos.action.url}
+                >
+                  {fastsync.fastsyncLogos.action.caption}
+                </a>
+              </div>
+            </section>
           )}
           {whatIsIncluded && (
             <Section id="what-is-included" className={styles.whatIsIncluded}>

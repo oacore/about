@@ -154,3 +154,19 @@ related-services:
     title: CORE Discovery
     picture: /images/services/discovery.svg
     url: discovery
+
+apilogos:
+  items:
+    - img: /images/logos/iris.png
+      alt: "iris"
+    - img: /images/logos/audemic.svg
+      alt: "audemic"
+    - img: /images/logos/interac.svg
+      alt: "interac"
+    - img: /images/logos/flowcite.svg
+      alt: "flow"
+    - img: /images/logos/cypris.svg
+      alt: "cypris"
+  action:
+    caption: Show all
+    url: '/about/endorsements'
