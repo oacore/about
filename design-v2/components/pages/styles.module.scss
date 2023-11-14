@@ -335,3 +335,45 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
     height: auto;
   }
 }
+
+.carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  .carousel-items {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+  }
+  .api-carousel-item {
+    border: 1px solid #b75400;
+    min-width: 212px;
+    height: 104px;
+    padding: 16px;
+    &:first-child {
+      padding: 28px;
+    }
+  }
+  .data-carousel-item {
+    border: 1px solid #b75400;
+    min-width: 212px;
+    height: 104px;
+    padding: 16px;
+  }
+  .fast-carousel-item {
+    border: 1px solid #b75400;
+    min-width: 212px;
+    height: 104px;
+    padding: 16px;
+    &:last-child {
+      padding: 28px;
+    }
+  }
+  .link-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 24px;
+    .link {
+      padding: 8px 16px;
+    }
+  }
+}
