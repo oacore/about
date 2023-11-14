@@ -136,3 +136,19 @@ related-services:
     - title: CORE Discovery
       picture: /images/services/discovery.svg
       url: discovery
+
+datasetLogos:
+  items:
+    - img: /images/logos/nvidia.svg
+      alt: "nvidia"
+    - img: /images/logos/anthropic.svg
+      alt: "anthropic"
+    - img: /images/logos/grammarly.svg
+      alt: "grammarly"
+    - img: /images/logos/lean.svg
+      alt: "lean"
+    - img: /images/logos/caktus.svg
+      alt: "caktus"
+  action:
+    caption: Show all
+    url: '/about/endorsements'
