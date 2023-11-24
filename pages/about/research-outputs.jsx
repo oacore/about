@@ -5,10 +5,9 @@ import { classNames } from '@oacore/design/lib/utils'
 import { Button } from '@oacore/design/lib/elements'
 
 import styles from './about.module.scss'
-import researchOutputs from '../../public/images/research-outputs.svg'
+import bsdtag from '../../public/images/bsdtag.svg'
 import coreLogo from '../../public/images/core-logo-circle.svg'
 import { Layout } from '../../design-v2/components'
-import TogglePanel from '../../components/toggle-panel/togglePanel'
 
 import { Content, Reference, Section } from 'components'
 import Markdown from 'components/markdown'
@@ -115,17 +114,15 @@ const ResearchOutputsSection = ({
   onPaperCite,
   isCitationsModalOpen,
   activePaper,
+  subTitle,
   ...restProps
 }) => (
   <Section id={id} {...restProps} className={styles.researchSection}>
     <Content className={styles.researchItem}>
-      <TogglePanel
-        id={title}
-        title={title}
-        key={title}
-        sectionId={id}
-        className={styles.toggler}
-        content={papers.map((paper) => (
+      <div className={styles.togglePanelTitle}>{title}</div>
+      <p className={styles.togglePanelSubTitle}>{subTitle}</p>
+      <div className={styles.toggleContent}>
+        {papers?.map((paper) => (
           <div
             className={classNames.use(styles.toggleItem, {
               [styles.toggleItemSmall]: papers.length > 1,
@@ -143,44 +140,8 @@ const ResearchOutputsSection = ({
             />
           </div>
         ))}
-      />
+      </div>
     </Content>
-  </Section>
-)
-
-const ResearchOutputsOpenSection = ({
-  id,
-  title,
-  papers,
-  onPaperCite,
-  isCitationsModalOpen,
-  activePaper,
-  subTitle,
-  index,
-  ...restProps
-}) => (
-  <Section id={id} {...restProps} className={styles.researchSection}>
-    <div className={styles.togglePanelTitle}>{title}</div>
-    <p className={styles.togglePanelSubTitle}>{subTitle}</p>
-    <div className={styles.alwaysOpen}>
-      {papers?.map((paper) => (
-        <div
-          className={classNames.use(styles.toggleItem, {
-            [styles.toggleItemSmall]: papers.length > 1,
-          })}
-        >
-          <ResearchPaperCard
-            paper={paper}
-            papersLength={papers.length > 1}
-            key={paper.id}
-            className="mb-3"
-            isCitationsModalOpen={isCitationsModalOpen}
-            activePaper={activePaper}
-            {...paper}
-          />
-        </div>
-      ))}
-    </div>
   </Section>
 )
 
@@ -188,6 +149,24 @@ class ResearchOutputsPage extends Component {
   state = {
     isCitationsModalOpen: false,
     activePaper: null,
+  }
+
+  constructor(props) {
+    super(props)
+    this.headerHeight = 50
+  }
+
+  handleScroll = (id) => {
+    const element = document.getElementById(id)
+    const offset = this.headerHeight
+
+    if (element) {
+      const position = element.offsetTop - offset
+      window.scrollTo({
+        top: position,
+        behavior: 'smooth',
+      })
+    }
   }
 
   @bind
@@ -209,22 +188,35 @@ class ResearchOutputsPage extends Component {
             <Markdown className={styles.description}>
               {page.description}
             </Markdown>
+            <img className={styles.headerImage} src={bsdtag} alt="bsdtag" />
           </div>
-          <div className={styles.logoContainer}>
-            <img className={styles.headerImage} src={researchOutputs} alt="" />
+          <div className={styles.sectionWrapper}>
+            <ul className={styles.redirectWrapper}>
+              {page.links.content.map((item) => (
+                <li className={styles.redirectLink}>
+                  {/* eslint-disable-next-line max-len */}
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+                  <a onClick={() => this.handleScroll(item.href)}>
+                    {item.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.redirectButtonWrapper}>
+              <Markdown className={styles.redirectLinks}>
+                {page.links.more}
+              </Markdown>
+              <Button
+                className={styles.redirectButton}
+                tag="a"
+                variant="contained"
+                href={page.links.moreAction.link}
+              >
+                {page.links.moreAction.title}
+              </Button>
+            </div>
           </div>
         </Section>
-        <ResearchOutputsOpenSection
-          key={page.openedSection.id}
-          id={page.openedSection.id}
-          caption={page.openedSection.caption || page.openedSection.title}
-          title={page.openedSection.title}
-          subTitle={page.openedSection.subTitle}
-          papers={page.openedSection.papers}
-          onPaperCite={this.toggleCitationsModal}
-          isCitationsModalOpen={isCitationsModalOpen}
-          activePaper={activePaper}
-        />
         {page.sections.map((section, index) => (
           <ResearchOutputsSection
             key={section.id}
@@ -232,6 +224,7 @@ class ResearchOutputsPage extends Component {
             id={section.id}
             caption={section.caption || section.title}
             title={section.title}
+            subTitle={section.subTitle}
             papers={section.papers}
             onPaperCite={this.toggleCitationsModal}
             isCitationsModalOpen={isCitationsModalOpen}

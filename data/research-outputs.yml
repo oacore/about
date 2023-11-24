@@ -4,8 +4,29 @@ description: Writing about CORE? Discover our research outputs and cite our work
 
 image: /images/research-outputs
 
-opened-section:
-    id: our-vision
+links:
+  content:
+    - title:  CORE reference articles
+      href: our-vision
+    - title:  CORE aggregation approaches and infrastructure
+      href: aggregation-approaches-and-infrastructure
+    - title:  Selected AI/ML papers
+      href: ai-ml-papers
+    - title:  CORE Recommender
+      href: recommender
+    - title:  CORE repositories dashboard
+      href: repositories-dashboard
+    - title:  CORE and download statistics
+      href: download-statistics
+    - title:  Supporting research assessment and evaluation
+      href: supporting-research-assessment-and-evaluation
+  more: Find more our research outputs at [Big Scientific Data and Text Analytics group website.](http://bsdtag.kmi.open.ac.uk)
+  moreAction:
+    title: find more
+    link: http://bsdtag.kmi.open.ac.uk
+
+sections:
+  - id: our-vision
     title: CORE vision and mission
     subTitle: If you use CORE in your work, we kindly ask you to cite one of our reference publications.
     caption: Vision and mission
@@ -155,7 +176,6 @@ opened-section:
                      url = {http://oro.open.ac.uk/35755/},
                 abstract = {The last 10 years have seen a massive increase in the amount of Open Access publications in journals and institutional repositories. The open availability of large volumes of state-of-the-art knowledge online has the potential to provide huge savings and benefits in many fields. However, in order to fully leverage this knowledge, it is necessary to develop systems that (a) make it easy for users to discover and access this knowledge at the level of individual resources, (b) explore and analyse this knowledge at the level of collections of resources and (c) provide infrastructure and access to raw data in order to lower the barriers to the research and development of systems and services on top of this knowledge. In this paper, we argue why these requirements should be satisfied and show that current systems do not meet them. Consequently, we present the CORE (COnnecting REpositories) system, a large-scale Open Access aggregation, outlining its existing functionality and discussing the future technical development. We demonstrate how the system addresses the above needs and how it can be applied to the benefit of the whole ecosystem that includes institutional repositories, individuals, researchers, developers, funding bodies and governments.}
             }
-sections:
   - id: aggregation-approaches-and-infrastructure
     title: CORE aggregation approaches and infrastructure
     caption: Aggregation approaches and infrastructure
