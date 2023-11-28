@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { TextField } from '@oacore/design'
 
 import styles from './styles.module.scss'
@@ -10,6 +10,7 @@ const DropdownInput = ({
   organisationNameSuggestions,
 }) => {
   const [isOpen, setIsOpen] = useState(false)
+  const dropdownRef = useRef(null)
 
   const handleInputChange = (event) => {
     bindOrganisationName.onChange(event)
@@ -23,8 +24,21 @@ const DropdownInput = ({
 
   const hasValue = !!bindOrganisationName.value
 
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target))
+      setIsOpen(false)
+  }
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [])
+
   return (
-    <div className={styles.dropdownInput}>
+    <div className={styles.dropdownInput} ref={dropdownRef}>
       <TextField
         id={elemOrganisationName}
         name={elemOrganisationName}
