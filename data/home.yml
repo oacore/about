@@ -130,6 +130,91 @@ partnerProjects:
     #   author: Gareth Malcolm, Content Partner Manager at Turnitin
     - logo: /images/partners/ukri.png
     - logo: /images/partners/ukcorr.png
+users:
+  - title: |
+      **Companies** using CORE
+    testimonial:
+        id: gareth-malcolm
+        content: |
+          *Our partnership with CORE will provide Turnitin with vast amounts of metadata and full
+          texts that we can utilise in our plagiarism detection software.*
+        author:
+          name: Gareth Malcolm
+          role: Content Partner Manager at Turnitin
+          picture: /images/people/Gareth_Malcolm.jpeg
+    userList:
+      items:
+        - img: /images/logos/nvidia.svg
+          alt: "nvidia"
+        - img: /images/logos/anthropic.svg
+          alt: "anthropic"
+        - img: /images/logos/grammarly.svg
+          alt: "grammarly"
+        - img: /images/logos/lean.svg
+          alt: "lean"
+        - img: /images/logos/naver.svg
+          alt: "naver"
+      action:
+        caption: Show all
+        url: '/about/endorsements'
+  - title: |
+      **Academic** institution using CORE
+    testimonial:
+        id: kathleen-shearer
+        content: |
+          *CORE has significantly assisted the academic institutions participating in our global network with their key mission, which is their scientific content exposure. In addition, CORE has helped our content administrators to showcase the real benefits of repositories via its added value services.*
+        author:
+          name: Kathleen Shearer
+          role: Executive Director of the Confederation of Open Access Repositories (COAR)
+          picture: /images/people/kathleen.svg
+    userList:
+      items:
+        - img: /images/membership/cambridge.svg
+          alt: "cambridge"
+        - img: /images/membership/oxford.svg
+          alt: "oxford"
+          full: true
+        - img: /images/logos/chica.svg
+          alt: "chica"
+        - img: /images/logos/stAndrews.svg
+          alt: "andrews"
+        - img: /images/logos/imperial.svg
+          alt: "imperial"
+          full: true
+      action:
+        caption: Show all
+        url: '/about/endorsements'
+  - title: |
+      **Partner** projects
+    testimonial:
+        id: ben-johnson
+        content: |
+          *Aggregation plays an increasingly essential role in maximising the
+          long-term benefits of open access, helping to turn the promise of a
+          'research commons' into a reality. The aggregation services that CORE
+          provides therefore make a very valuable contribution to the evolving
+          open access environment in the UK.*
+        author:
+          name: Ben Johnson
+          role: Research Policy Adviser
+          picture: /images/people/johnson.jpg
+    userList:
+      items:
+        - img: /images/logos/coar.svg
+          alt: "coar"
+        - img: /images/logos/sparc.png
+          alt: "sparc"
+          full: true
+        - img: /images/logos/researchInovation.svg
+          alt: "researchInovation"
+        - img: /images/logos/losAlamos.svg
+          alt: "losAlamos"
+        - img: /images/logos/jisc.svg
+          alt: "jisc"
+          background: true
+      action:
+        caption: Show all
+        url: '/about/endorsements'
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research

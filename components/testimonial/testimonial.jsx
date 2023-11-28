@@ -1,4 +1,5 @@
 import React from 'react'
+import { classNames } from '@oacore/design/lib/utils'
 
 import { Content } from '../content'
 import Markdown from '../markdown'
@@ -10,6 +11,7 @@ const Testimonial = ({
   author,
   organization = {},
   className = '',
+  roleHighlite,
   ...restProps
 }) => (
   <article
@@ -29,7 +31,13 @@ const Testimonial = ({
       )}
       <h4 className={styles.testimonialAuthorName}>{author.name}</h4>
       {author.role && (
-        <p className={styles.testimonialAuthorRole}>{author.role}</p>
+        <p
+          className={classNames.use(styles.testimonialAuthorRole, {
+            [styles.roleHighlite]: roleHighlite,
+          })}
+        >
+          {author.role}
+        </p>
       )}
     </header>
     <Content tag="blockquote">
