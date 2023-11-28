@@ -16,6 +16,7 @@ const itemToURL = (id) => {
 const FAQsSection = ({
   id,
   title,
+  updateDate,
   items = [],
   sections = [],
   caption = title,
@@ -45,7 +46,10 @@ const FAQsSection = ({
   return (
     <div ref={badgedItem ? badgesRef : null}>
       <Section id={id} caption={caption}>
-        <Heading>{title}</Heading>
+        <div className={styles.faqHeaderWrapper}>
+          <Heading>{title}</Heading>
+          <span className={styles.faqHeaderDate}>{updateDate}</span>
+        </div>
         <Content>
           <Accordion onToggle={itemToURL}>
             {items.map((item) => (

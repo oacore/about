@@ -18,19 +18,25 @@ const DocumentationPageTemplate = ({ headerAbout, docs }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
   const route = useRouter()
+  const headerHeight = 56
+
   useEffect(() => {
-    const id = route.query?.r
-    if (id) {
-      setTimeout(() => {
-        document.getElementById(id).scrollIntoView({
+    const { hash } = window.location
+    const id = hash.substring(1)
+    const element = document.getElementById(id)
+    setTimeout(() => {
+      if (element) {
+        const rect = element.getBoundingClientRect()
+        window.scrollTo({
+          top: rect.top + window.scrollY - headerHeight,
           behavior: 'smooth',
           block: 'center',
         })
         const n = docs.items.findIndex((item) => item.id === id)
         setHighlight(n)
-      }, 100)
-    }
-  }, [route.query.r])
+      }
+    }, 100)
+  }, [route.asPath])
 
   useEffect(() => {
     const id = route.query?.r

@@ -1,9 +1,7 @@
-import React from 'react'
-import { Button, Icon, Table, TextField } from '@oacore/design/lib/elements'
-import { classNames } from '@oacore/design/lib/utils'
+import React, { useState } from 'react'
+import { Button, Table, TextField } from '@oacore/design/lib/elements'
 
 import styles from './supporters.module.scss'
-import useTable from './hooks/useTable'
 import imagePlaceholder from '../../../public/images/supporters/imagePlaceholder.svg'
 
 import { Page, Markdown } from 'components'
@@ -29,18 +27,22 @@ const Card = ({ plan }) => (
 )
 
 const GovernanceSupportersPageTemplate = ({ members, page }) => {
-  const {
-    handlePaginate,
-    handleSearch,
-    inputValue,
-    itemsList,
-    isNoResults,
-    pagesCount,
-    activePage,
-  } = useTable({ initialData: members })
+  const [searchValue, setSearchValue] = useState('')
+  const [displayedItems, setDisplayedItems] = useState(50)
+  const maxItems = members.length
 
-  const isPrevButtonDisabled = activePage === 1
-  const isNextButtonDisabled = pagesCount === activePage
+  const handleSearch = (event) => {
+    const { value } = event.target
+    setSearchValue(value)
+  }
+
+  const filteredMembers = members.filter((member) =>
+    member.organisation_name.toLowerCase().includes(searchValue.toLowerCase())
+  )
+
+  const sortedMembers = [...filteredMembers].sort((a, b) =>
+    a.organisation_name.localeCompare(b.organisation_name)
+  )
 
   const handleRedirect = (providerId) => {
     const repoId = Array.isArray(providerId) ? providerId[0] : providerId
@@ -121,7 +123,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
           <form>
             <TextField
               className={styles.search}
-              value={inputValue}
+              value={searchValue}
               onChange={handleSearch}
               id="search"
               type="search"
@@ -138,7 +140,7 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
               </Table.Row>
             </Table.Head>
             <Table.Body>
-              {itemsList.map((member) => (
+              {sortedMembers.slice(0, displayedItems).map((member) => (
                 <Table.Row
                   className={styles.tableRow}
                   key={member.organisation_id}
@@ -154,47 +156,32 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
                   <Table.Cell>{member.country}</Table.Cell>
                 </Table.Row>
               ))}
-              {isNoResults && (
+              {filteredMembers.length === 0 && (
                 <Table.Row>
-                  <Table.Cell colSpan={12}>
+                  <Table.Cell colSpan={2}>
                     No results. Please update your query
                   </Table.Cell>
                 </Table.Row>
               )}
             </Table.Body>
-            {pagesCount !== 0 && (
-              <Table.Footer>
-                <Table.Row className={styles.row}>
-                  <Table.Cell colSpan={1000}>
-                    <div className={styles.pagination}>
-                      <Button
-                        disabled={isPrevButtonDisabled}
-                        onClick={() => handlePaginate('prev')}
-                      >
-                        <Icon
-                          src="#chevron-left"
-                          className={classNames.use(styles.icon, {
-                            [styles.iconDisabled]: isPrevButtonDisabled,
-                          })}
-                        />
-                      </Button>
-                      <p>{activePage}</p>
-                      <Button
-                        disabled={isNextButtonDisabled}
-                        onClick={() => handlePaginate('next')}
-                      >
-                        <Icon
-                          src="#chevron-right"
-                          className={classNames.use(styles.icon, {
-                            [styles.iconDisabled]: isNextButtonDisabled,
-                          })}
-                        />
-                      </Button>
-                    </div>
-                  </Table.Cell>
-                </Table.Row>
-              </Table.Footer>
-            )}
+            <Table.Footer>
+              <Table.Row className={styles.paginationRow}>
+                <Table.Cell colSpan={2}>
+                  <p className={styles.paginationText}>
+                    Showing 1 - {Math.min(displayedItems, maxItems)}
+                  </p>
+                  <Button
+                    onClick={() =>
+                      setDisplayedItems((prevCount) => prevCount + 10)
+                    }
+                    variant="outlined"
+                    disabled={displayedItems >= maxItems}
+                  >
+                    Show More
+                  </Button>
+                </Table.Cell>
+              </Table.Row>
+            </Table.Footer>
           </Table>
         </Section>
       </Layout>

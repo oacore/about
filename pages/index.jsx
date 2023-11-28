@@ -3,6 +3,7 @@ import { Carousel, Button, Card } from '@oacore/design/lib'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './index.module.scss'
+import Testimonial from '../components/testimonial'
 
 import {
   Section,
@@ -18,7 +19,7 @@ import {
   Layout,
   SearchForm,
 } from 'design-v2/components'
-import { Page } from 'components'
+import { Markdown, Page } from 'components'
 import page from 'data/home.yml'
 
 const Hero = ({
@@ -203,6 +204,46 @@ const IndexPage = () => {
           </div>
         </Section>
       </Layout>
+      <Section className={styles.partners}>
+        {page.users.map((item) => (
+          <div className={styles.mainItem}>
+            <div className={styles.testimonialWrapper}>
+              <Markdown className={styles.testimonialTitle}>
+                {item.title}
+              </Markdown>
+              <div className={styles.testimonialItem}>
+                <Testimonial
+                  author={item.testimonial.author}
+                  content={item.testimonial.content}
+                  key={item.testimonial.is}
+                  className="card card-body"
+                  roleHighlite
+                />
+              </div>
+            </div>
+            <section className={styles.carouselWrapper}>
+              <div className={styles.carouselItems}>
+                {item.userList.items.map((slide) => (
+                  <img
+                    className={classNames.use(styles.carouselItem, {
+                      [styles.carouselItemUnset]: slide.full,
+                      [styles.background]: slide.background,
+                    })}
+                    src={slide.img}
+                    alt="logo"
+                    key={slide.alt}
+                  />
+                ))}
+              </div>
+              <div className={styles.linkWrapper}>
+                <a className={styles.link} href={item.userList.action.url}>
+                  {item.userList.action.caption}
+                </a>
+              </div>
+            </section>
+          </div>
+        ))}
+      </Section>
     </Page>
   )
 }

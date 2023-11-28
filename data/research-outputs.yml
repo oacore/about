@@ -4,756 +4,964 @@ description: Writing about CORE? Discover our research outputs and cite our work
 
 image: /images/research-outputs
 
+links:
+  content:
+    - title:  CORE reference articles
+      href: our-vision
+    - title:  CORE aggregation approaches and infrastructure
+      href: aggregation-approaches-and-infrastructure
+    - title:  Selected AI/ML papers
+      href: ai-ml-papers
+    - title:  CORE Recommender
+      href: recommender
+    - title:  CORE repositories dashboard
+      href: repositories-dashboard
+    - title:  CORE and download statistics
+      href: download-statistics
+    - title:  Supporting research assessment and evaluation
+      href: supporting-research-assessment-and-evaluation
+  more: Find more our research outputs at [Big Scientific Data and Text Analytics group website.](http://bsdtag.kmi.open.ac.uk)
+  moreAction:
+    title: find more
+    link: http://bsdtag.kmi.open.ac.uk
+
 sections:
--
-  id: our-vision
-  title: CORE vision and mission
-  caption: Vision and mission
-  papers:
+  - id: our-vision
+    title: CORE vision and mission
+    subTitle: If you use CORE in your work, we kindly ask you to cite one of our reference publications.
+    caption: Vision and mission
+    papers:
+      - id: oro35755
+        type: article
+        volume: ''
+        number: ''
+        title: |
+          CORE: A Global Aggregation Service for Open Access Papers
+        author:
+          - Petr Knoth
+          - Drahomira Herrmannova
+          - Matteo Cancellieri
+          - Lucas Anastasiou
+          - Nancy Pontika
+          - Samuel Pearce
+          - Bikash Gyawali
+          - David Pride
+        year: 2023
+        journal: In Nature Scientific Data 10, 366 (2023)
+        keywords:
+          - digital libraries
+          - open access
+          - technical infrastructure
+          - applications of OA
+          - reuse of OA content
+        abstract: |
+          This paper introduces CORE, a widely used scholarly service,
+          which provides access to the world’s largest collection of open
+          access research publications, acquired from a global network of
+          repositories and journals. CORE was created with the goal of
+          enabling text and data mining of scientific literature and thus
+          supporting scientific discovery, but it is now used in a wide
+          range of use cases within higher education, industry,
+          not-for-profit organisations, as well as by the general public.
+          Through the provided services, CORE powers innovative use cases,
+          such as plagiarism detection, in market-leading third-party
+          organisations. CORE has played a pivotal role in the global move
+          towards universal open access by making scientific knowledge more
+          easily and freely discoverable. In this paper, we describe CORE’s
+          continuously growing dataset and the motivation behind its
+          creation, present the challenges associated with systematically
+          gathering research papers from thousands of data providers
+          worldwide at scale, and introduce the novel solutions that were
+          developed to overcome these challenges. The paper then provides
+          an in-depth discussion of the services and tools built on top of
+          the aggregated data and finally examines several use cases that
+          have leveraged the CORE dataset and services.
+        description: |
+          This paper introduces CORE, describes CORE’s continuously growing dataset and the motivation behind its creation, presents the challenges associated with systematically gathering research papers from thousands of data providers worldwide at scale and outlines the solutions developed to overcome these challenges. It provides an in-depth discussion of the services and tools built on top of the indexed content and finally examines several use cases that have leveraged the CORE dataset and services.
+        url: https://www.nature.com/articles/s41597-023-02208-w
+        citations:
+          text: >
+            Knoth, P., Herrmannova, D., Cancellieri, M. et al. CORE: A Global Aggregation Service for Open Access Papers. Nature Scientific Data 10, 366 (2023). https://doi.org/10.1038/s41597-023-02208-w
+          bibtex: |
+            @article{Knoth2023-zi,
+              title  = {CORE: A global aggregation service for open access papers},
+              author = {Knoth, Petr and Herrmannova, Drahomira and Cancellieri, Matteo
+              and Anastasiou, Lucas and Pontika, Nancy and Pearce, Samuel and
+              Gyawali, Bikash and Pride, David},
+              abstract = {This paper introduces CORE, a widely used scholarly service,
+              which provides access to the world’s largest collection of open
+              access research publications, acquired from a global network of
+              repositories and journals. CORE was created with the goal of
+              enabling text and data mining of scientific literature and thus
+              supporting scientific discovery, but it is now used in a wide
+              range of use cases within higher education, industry,
+              not-for-profit organisations, as well as by the general public.
+              Through the provided services, CORE powers innovative use cases,
+              such as plagiarism detection, in market-leading third-party
+              organisations. CORE has played a pivotal role in the global move
+              towards universal open access by making scientific knowledge more
+              easily and freely discoverable. In this paper, we describe CORE’s
+              continuously growing dataset and the motivation behind its
+              creation, present the challenges associated with systematically
+              gathering research papers from thousands of data providers
+              worldwide at scale, and introduce the novel solutions that were
+              developed to overcome these challenges. The paper then provides
+              an in-depth discussion of the services and tools built on top of
+              the aggregated data and finally examines several use cases that
+              have leveraged the CORE dataset and services.},
+              journal = {Nature Scientific Data},
+              volume = 10,
+              number = 1,
+              pages  = 366,
+              month  = jun,
+              year   = 2023,
+              language = {en}
+            }
+      - id: oro35755
+        type: article
+        volume: 18
+        number: 11/12
+        title: |
+          CORE: three access levels to underpin open access
+        author:
+          - Petr Knoth
+          - Zdenek Zdrahal
+        year: 2012
+        journal: D-Lib Magazine
+        keywords:
+          - digital libraries
+          - open access
+          - technical infrastructure
+          - applications of OA
+          - reuse of OA content
+        abstract: |
+          The last 10 years have seen a massive increase in the amount of
+          Open Access publications in journals and institutional repositories.
+          The open availability of large volumes of state-of-the-art knowledge
+          online has the potential to provide huge savings and benefits in many
+          fields. However, in order to fully leverage this knowledge, it is
+          necessary to develop systems that (a) make it easy for users to discover
+          and access this knowledge at the level of individual resources,
+          (b) explore and analyse this knowledge at the level of collections of
+          resources and (c) provide infrastructure and access to raw data in order
+          to lower the barriers to the research and development of systems and
+          services on top of this knowledge. In this paper, we argue why these
+          requirements should be satisfied and show that current systems do not
+          meet them. Consequently, we present the CORE (COnnecting REpositories)
+          system, a large-scale Open Access aggregation, outlining its existing
+          functionality and discussing the future technical development.
+          We demonstrate how the system addresses the above needs and how it can
+          be applied to the benefit of the whole ecosystem that includes
+          institutional repositories, individuals, researchers, developers,
+          funding bodies and governments
+        description: |
+          Sets the vision for creating the CORE service, developing global-wide
+          content aggregation of all open access research literature (on top of
+          OAI-PMH protocol for metadata harvesting and other protocols).
+          It sets the mission to develop the three access levels (access at the
+          granularity of papers; analytical access; access to raw data) via CORE.
+        url: http://oro.open.ac.uk/35755/
+        citations:
+          text: >
+            Knoth, P., & Zdrahal, Z. (2012). CORE: three access levels to underpin open access. D-Lib Magazine, 18(11/12). Retrieved from http://oro.open.ac.uk/35755/
+          bibtex: |
+            @article{oro35755,
+                  volume = {18},
+                  number = {11/12},
+                   title = {CORE: three access levels to underpin open access},
+                  author = {Petr Knoth and Zdenek Zdrahal},
+                    year = {2012},
+                 journal = {D-Lib Magazine},
+                keywords = {digital libraries; open access; technical infrastructure; applications of OA; reuse of OA content; CORE},
+                     url = {http://oro.open.ac.uk/35755/},
+                abstract = {The last 10 years have seen a massive increase in the amount of Open Access publications in journals and institutional repositories. The open availability of large volumes of state-of-the-art knowledge online has the potential to provide huge savings and benefits in many fields. However, in order to fully leverage this knowledge, it is necessary to develop systems that (a) make it easy for users to discover and access this knowledge at the level of individual resources, (b) explore and analyse this knowledge at the level of collections of resources and (c) provide infrastructure and access to raw data in order to lower the barriers to the research and development of systems and services on top of this knowledge. In this paper, we argue why these requirements should be satisfied and show that current systems do not meet them. Consequently, we present the CORE (COnnecting REpositories) system, a large-scale Open Access aggregation, outlining its existing functionality and discussing the future technical development. We demonstrate how the system addresses the above needs and how it can be applied to the benefit of the whole ecosystem that includes institutional repositories, individuals, researchers, developers, funding bodies and governments.}
+            }
+  - id: aggregation-approaches-and-infrastructure
+    title: CORE aggregation approaches and infrastructure
+    caption: Aggregation approaches and infrastructure
+    papers:
+      - type: inproceedings
+        id: oro37824
+        booktitle: Open Repositories 2013
+        title: |
+          From open access metadata to open access content:
+          two principles for increased visibility of open access content
+        author:
+          - Petr Knoth
+        year: 2013
+        keywords:
+          - open access
+          - aggregation systems
+          - institutional repositories
+          - open repositories
+        url: http://oro.open.ac.uk/37824/
+        abstract: |
+          An essential goal of the open access (OA) movement is free availability
+          of research outputs on the Internet. One of the recommended ways to
+          achieve this is through open access repositories (BOAI, 2002).
+          Given the growing number of repositories and the significant proportion
+          of research outputs already available as OA (Laakso \& Bjork, 2012),
+          it might come as a surprise that OA content is not necessarily easily
+          discoverable on the Internet (Morrisson, 2012; Konkiel, 2012),
+          more precisely, it is available, but often difficult to find. If OA
+          content in repositories cannot be discovered, there is little incentive
+          to make it available on the Internet in the first place. Therefore, not
+          trying hard enough to increase the visibility of OA content would be
+          a lost opportunity for achieving the main OA goals, including also the
+          reuse potential of OA content. In this paper, we build on our experience
+          in finding and aggregating open access content (not just metadata) from
+          repositories, discussing the main issues and summarizing the lessons
+          learned into two principles that, if adopted, will dramatically increase
+          the discoverability of OA content on the Internet and will improve the
+          possibilities of OA content reuse.
+        description: |
+          This paper describes the two principles that should be followed
+          to ensure that content can be properly harvested from repositories.
+          This paper could be of great interest to repository managers.
+        citations:
+          text: >
+            Knoth, P. (2013). From open access metadata to open access content: two principles for increased visibility of open access content. In Open Repositories 2013. Retrieved from http://oro.open.ac.uk/37824/
+          bibtex: |
+            @inproceedings{oro37824,
+               booktitle = {Open Repositories 2013},
+                   title = {From open access metadata to open access content: two principles for increased visibility of open access content},
+                  author = {Petr Knoth},
+                    year = {2013},
+                keywords = {open access; aggregation systems; institutional repositories; open repositories; CORE},
+                     url = {http://oro.open.ac.uk/37824/},
+                abstract = {An essential goal of the open access (OA) movement is free availability of research outputs on the Internet. One of the recommended ways to achieve this is through open access repositories (BOAI, 2002). Given the growing number of repositories and the significant proportion of research outputs already available as OA (Laakso \& Bjork, 2012), it might come as a surprise that OA content is not necessarily easily discoverable on the Internet (Morrisson, 2012; Konkiel, 2012), more precisely, it is available, but often difficult to find. If OA content in repositories cannot be discovered, there is little incentive to make it available on the Internet in the first place. Therefore, not trying hard enough to increase the visibility of OA content would be a lost opportunity for achieving the main OA goals, including also the reuse potential of OA content. In this paper, we build on our experience in finding and aggregating open access content (not just metadata) from repositories, discussing the main issues and summarizing the lessons learned into two principles that, if adopted, will dramatically increase the discoverability of OA content on the Internet and will improve the possibilities of OA content reuse.}
+            }
+      - type: inproceedings
+        id: oro37823
+        booktitle: |
+          2nd International Workshop on Mining Scientific Publications (WOSP 2013)
+        title: |
+          CORE: aggregation use cases for open access
+        author:
+          - Petr Knoth
+          - Zdenek Zdrahal
+        year: 2013
+        note: |
+          Held in conjuction with Joint Conference on Digital Libraries (JCDL 2013)
+        url: http://oro.open.ac.uk/37823/
+        abstract: |
+          The push for free online availability of research outputs promoted
+          by the Open Access (OA) movement is undoubtedly transforming the
+          publishing industry. However, the mere availability of research
+          outputs is insufficient. To exploit the full potential of OA,
+          it must be possible to search, discover, mine, analyse, etc.
+          this content. To achieve this, it is essential to improve the existing
+          OA technical infrastructure to effectively support these
+          functionalities. Many of the vital benefits of OA are expected to come
+          with the ability to reuse OA content in unanticipated ways. Access to
+          the OA content must therefore be flexible, yet practical, content-based
+          and not just metadata based. In this demonstration, we present the
+          CORE system, which aggregates millions of OA resources from hundreds
+          of OA repositories and journals. We discuss the use cases
+          aggregationsshould support and demonstrate how the CORE system addresses
+          them, including searching, discovering, mining and analyzing content.
+          We also show how aggregated OA content can be reused to build new
+          applications on top of CORE?sfunctionality
+        description: |
+          This paper describes the use cases that must be supported
+          by open access aggregators, it establishes the CORE use case and
+          demonstrates the benefits of open access content aggregators.
+        citations:
+          text: >
+            Knoth, P., & Zdrahal, Z. (2013). CORE: aggregation use cases for open access. In 2nd International Workshop on Mining Scientific Publications (WOSP 2013). Retrieved from http://oro.open.ac.uk/37823/
+          bibtex: |
+            @inproceedings{oro37823,
+               booktitle = {2nd International Workshop on Mining Scientific Publications (WOSP 2013)},
+                   title = {CORE: aggregation use cases for open access},
+                  author = {Petr Knoth and Zdenek Zdrahal},
+                    year = {2013},
+                    note = {Held in conjuction with Joint Conference on Digital Libraries (JCDL 2013)},
+                keywords = {CORE},
+                     url = {http://oro.open.ac.uk/37823/},
+                abstract = {The push for free online availability of research outputs promoted by the Open Access (OA) movement is undoubtedly transforming the publishing industry. However, the mere availability of research outputs is insufficient. To exploit the full potential of OA, it must be possible to search, discover, mine, analyse, etc.  this content. To achieve this, it is essential to improve the existing OA technical infrastructure to effectively support these functionalities. Many of the vital benefits of OA are expected to come with the ability to reuse OA content in unanticipated ways. Access to the OA content must therefore be flexible, yet practical,  content-based and not just metadata based. In this demonstration, we present the CORE system, which aggregates millions of OA resources from hundreds of OA repositories and journals. We discuss the use cases aggregationsshould support and demonstrate how the CORE system addresses them, including searching, discovering, mining and analyzing content. We also show how aggregated OA content can be reused to build new applications on top of CORE?sfunctionality.}
+            }
+      - type: inproceedings
+        id: oro46870
+        booktitle: INTEROP2016
+        editor:
+          - Richard Eckart de Castilho
+          - Sophia Ananiadou
+          - Thomas Margoni
+          - Wim Peters
+          - Stelios Piperidis
+        month: May
+        title: |
+          Aggregating Research Papers from Publishers? Systems to Support Text
+          and Data Mining: Deliberate Lack of Interoperability or Not?
+        author:
+          - Petr Knoth
+          - Nancy Pontika
+        year: 2016
+        keywords: Interoperability; publishers; standardisation
+        url: http://oro.open.ac.uk/46870/
+        abstract: |
+          In the current technology dominated world, interoperability
+          of systems managed by different organisations is an essential property
+          enabling the provision of services at a global scale.
+          In the Text and Data Mining field (TDM), interoperability of
+          systems offering access to text corpora offers the opportunity of
+          increasing the uptake and impact of TDM applications. The global corpus
+          of all research papers, i.e. the collection of human knowledge so large
+          no one can ever read in their lifetime, represents one of the most
+          exciting opportunities for TDM. Although the Open Access movement,
+          which has been advocating for free availability and reuse rights to
+          TDM from research papers, has achieved some major successes on the
+          legal front, the technical interoperability of systems offering free
+          access to research papers continues to be a challenge.
+          COnnecting REpositories (CORE) (Knoth and Zdrahal, 2012) aggregates
+          the world?s open access full-text scientific manuscripts from
+          repositories, journals and publisher  systems. One of the main goals of
+          CORE is to harmonise and pre-process these data to lower the barrier for
+          TDM. In this paper, we report on the preliminary results of
+          an interoperability survey of systems provided by journal publishers,
+          both open access and toll access. This helps us to assess the current
+          level of systems? interoperability and suggest ways forward
+        description: |
+          This paper describes the technical challenges relating to machine
+          interfaces, the interoperability issues on obtaining open access
+          content and the complications of achieving a harmonisation across
+          repositories’ and publishers’ systems.
+        citations:
+          text: >
+            Knoth, P., & Pontika, N. (2016). Aggregating Research Papers from Publishers? Systems to Support Text and Data Mining: Deliberate Lack of Interoperability or Not? In R. E. de Castilho, S. Ananiadou, T. Margoni, W. Peters, & S. Piperidis (Eds.), INTEROP2016. Retrieved from http://oro.open.ac.uk/46870/
+          bibtex: |
+            @inproceedings{oro46870,
+               booktitle = {INTEROP2016},
+                  editor = {Richard Eckart de Castilho and Sophia Ananiadou and Thomas Margoni and Wim Peters and Stelios Piperidis},
+                   month = {May},
+                   title = {Aggregating Research Papers from Publishers? Systems to Support Text and Data Mining: Deliberate Lack of Interoperability or Not?},
+                  author = {Petr Knoth and Nancy Pontika},
+                    year = {2016},
+                keywords = {Interoperability; publishers; standardisation; CORE},
+                     url = {http://oro.open.ac.uk/46870/},
+                abstract = {In the current technology dominated world, interoperability of systems managed by different organisations is an essential property enabling the provision of services at a global scale. In the Text and Data Mining field (TDM), interoperability of systems offering access to text corpora offers the opportunity of increasing the uptake and impact of TDM applications. The global corpus of all research papers, i.e. the collection of human knowledge so large no one can ever read in their lifetime, represents one of the most exciting opportunities for TDM. Although the Open Access movement, which has been advocating for free availability and reuse rights to TDM from research papers, has achieved some major successes on the legal front, the technical interoperability of systems offering free access to research papers continues to be a challenge. COnnecting REpositories (CORE) (Knoth and Zdrahal, 2012) aggregates the world?s open access full-text scientific manuscripts from repositories, journals and publisher  systems. One of the main goals of CORE is to harmonise and pre-process these data to lower the barrier for TDM. In this paper, we report on the preliminary results of an interoperability survey of systems provided by journal publishers, both open access and toll access. This helps us to assess the current level of systems? interoperability and suggest ways forward.}
+            }
+      - type: inproceedings
+        id: oro32560
+        booktitle: CERN Workshop on Innovations in Scholarly Communication (OAI7)
+        title: |
+          CORE: connecting repositories in the open access domain
+        author:
+          - Petr Knoth
+          - Zdenek Zdrahal
+        year: 2011
+        note: |
+          Poster Session ID: 53
+        url: http://oro.open.ac.uk/32560/
+        abstract: |
+          This submission reports on the results of the ongoing JISC-funded
+          project CORE (COnnecting REpositories) which aims to facilitate
+          the access and navigation across relevant scientific papers stored
+          in Open Access repositories. This is being achieved by harvesting
+          metadata and full-text content from diverse Open Access repositories,
+          applying text mining techniques to discover semantic relations between
+          the articles and representing and exposing these relations
+          as Linked Data. The information about associations between articles
+          will be made publicly available to enable the emergence of a wide range
+          of applications that can exploit the provided data. Within this project,
+          we will demonstrate the usability of the CORE system on two use-cases:
+          (1) Improving the accessibility of content and the navigation
+          capabilities for digital library users,
+          (2) Enabling more ubiquitous access to digital content through
+          smart phones and tablet devices
+        citations:
+          text: >
+            Knoth, P., & Zdrahal, Z. (2011). CORE: connecting repositories in the open access domain. In CERN Workshop on Innovations in Scholarly Communication (OAI7). Retrieved from http://oro.open.ac.uk/32560/
+          bibtex: |
+            @inproceedings{oro32560,
+               booktitle = {CERN Workshop on Innovations in Scholarly Communication (OAI7)},
+                   title = {CORE: connecting repositories in the open access domain},
+                  author = {Petr Knoth and Zdenek Zdrahal},
+                    year = {2011},
+                    note = {Poster Session ID: 53},
+                keywords = {CORE},
+                     url = {http://oro.open.ac.uk/32560/},
+                abstract = {This submission reports on the results of the ongoing JISC-funded project CORE (COnnecting REpositories) which aims to facilitate the access and navigation across relevant scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from diverse Open Access repositories, applying text mining techniques to discover semantic relations between the articles and representing and exposing these relations as Linked Data. The information about associations between articles will be made publicly available to enable the emergence of a wide range of applications that can exploit the provided data. Within this project, we will demonstrate the usability of the CORE system on two use-cases: (1) Improving the accessibility of content and the navigation capabilities for digital library users, (2) Enabling more ubiquitous access to digital content through smart phones and tablet devices.}
+            }
+      - type: inproceedings
+        id: oro32180
+        booktitle: Research and Advanced Technology for Digital Libraries
+        volume: 6966
+        title: |
+          Connecting repositories in the open access domain using
+          text mining and semantic data
+        author:
+          - Petr Knoth
+          - Vojtech Robotka
+          - Zdenek Zdrahal
+        year: 2011
+        pages: 483--487
+        note: |
+          Published in Lecture Notes in Computer Science,
+          Volume 6966/2011, ISBN 978-3-642-24468-1,
+          pp. 483-487.
+        keywords:
+          - digital library federations
+          - automatic link generation
+          - text mining
+          - semantic similarity
+          - content harvesting
+          - mobile devices
+        url: http://oro.open.ac.uk/32180/
+        abstract: |
+          This paper presents CORE (COnnecting REpositories), a system that aims to
+          facilitate the access and navigation across scientific papers stored in
+          Open Access repositories. This is being achieved by harvesting metadata and
+          full-text content from Open Access repositories, by applying text mining
+          techniques to discover semanticly related articles and by representing and
+          exposing these relations as Linked Data. The information about associations
+          between articles expressed in an interoperable format will enable
+          the emergence of a wide range of applications. The potential of CORE can
+          be demonstrated on two use-cases: (1) Improving the the navigation
+          capabilities of digital libraries by the means of a CORE pluging, (2)
+          Providing access to digital content from smart phones and tablet devices
+          by the means of the CORE Mobile application
+        description: |
+          This paper describes the CORE system in its early stages with a focus on
+          the original idea of the CORE recommender.
+        citations:
+          text: >
+            Knoth, P., Robotka, V., & Zdrahal, Z. (2011). Connecting repositories in the open access domain using text mining and semantic data. In Research and Advanced Technology for Digital Libraries (Vol. 6966, pp. 483–487). Retrieved from http://oro.open.ac.uk/32180/
+          bibtex: |
+            @inproceedings{oro32180,
+               booktitle = {Research and Advanced Technology for Digital Libraries},
+                  volume = {6966},
+                   title = {Connecting repositories in the open access domain using text mining and semantic data},
+                  author = {Petr Knoth and Vojtech Robotka and Zdenek Zdrahal},
+                    year = {2011},
+                   pages = {483--487},
+                    note = {Published in Lecture Notes in Computer Science, Volume 6966/2011, ISBN 978-3-642-24468-1, pp. 483-487.},
+                keywords = {digital library federations; automatic link generation; text mining; semantic similarity; content harvesting; mobile devices; CORE},
+                     url = {http://oro.open.ac.uk/32180/},
+                abstract = {This paper presents CORE (COnnecting REpositories), a system that aims to facilitate the access and navigation across scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from Open Access repositories, by applying text mining techniques to discover semanticly related articles and by representing and exposing these relations as Linked Data. The information about associations between articles expressed in an interoperable format will enable the emergence of a wide range of applications. The potential of CORE can be demonstrated on two use-cases: (1) Improving the the navigation capabilities of digital libraries by the means of a CORE pluging, (2) Providing access to digital content from smart phones and tablet devices by the means of the CORE Mobile application.}
+            }
+
+  - id: ai-ml-papers
+    title: AI/ML papers
+    caption: AI/ML papers
+    papers:
+      - type: inproceedings
+        id: oro37824
+        booktitle: arXiv preprint arXiv:2307.04683, (2023)
+        title: |
+          CORE-GPT: Combining Open Access research and large language models for credible, trustworthy question answering
+        author:
+          - D. Pride, M. Cancellieri, P. Knoth
+        year: 2023
+        keywords:
+          - AI
+          - ML
+          - papers
+        url: https://arxiv.org/abs/2307.04683
+        abstract: |
+          In this paper, we present CORE-GPT, a novel question-answering platform that combines GPT-based language models and more than 32 million full-text open access scientific articles from CORE. We first demonstrate that GPT3.5 and GPT4 cannot be relied upon to provide references or citations for generated text. We then introduce CORE-GPT which delivers evidence-based answers to questions, along with citations and links to the cited papers, greatly increasing the trustworthiness of the answers and reducing the risk of hallucinations. CORE-GPT's performance was evaluated on a dataset of 100 questions covering the top 20 scientific domains in CORE, resulting in 100 answers and links to 500 relevant articles. The quality of the provided answers and relevance of the links were assessed by two annotators. Our results demonstrate that CORE-GPT can produce comprehensive and trustworthy answers across the majority of scientific domains, complete with links to genuine, relevant scientific articles.
+        description: |
+          In this paper, we present CORE-GPT, a novel question-answering platform that combines GPT-based language models and more than 32 million full-text open access scientific articles from CORE. We first demonstrate that GPT3.5 and GPT4 cannot be relied upon to provide references or citations for generated text. We then introduce CORE-GPT which delivers evidence-based answers to questions, along with citations and links to the cited papers, greatly increasing the trustworthiness of the answers and reducing the risk of hallucinations. CORE-GPT's performance was evaluated on a dataset of 100 questions covering the top 20 scientific domains in CORE, resulting in 100 answers and links to 500 relevant articles. The quality of the provided answers and relevance of the links were assessed by two annotators. Our results demonstrate that CORE-GPT can produce comprehensive and trustworthy answers across the majority of scientific domains, complete with links to genuine, relevant scientific articles.
+        citations:
+          text: >
+            Pride, David, Matteo Cancellieri, and Petr Knoth. "CORE-GPT: Combining Open Access research and large language models for credible, trustworthy question answering." arXiv preprint arXiv:2307.04683 (2023).
+          bibtex: |
+            @article{pride2023core,
+              title={CORE-GPT: Combining Open Access research and large language models for credible, trustworthy question answering},
+              author={Pride, David and Cancellieri, Matteo and Knoth, Petr},
+              journal={arXiv preprint arXiv:2307.04683},
+              year={2023}
+            }
+      - type: inproceedings
+        id: oro37823
+        booktitle: |
+          Quantitative Science Studies 2023/5/1.
+        title: |
+          Predicting article quality scores with machine learning: The UK Research Excellence Framework
+        author:
+          PMike Thelwall, Kayvan Kousha, Paul Wilson, Meiko Makita, Mahshid Abdoli, Emma Stuart, Jonathan Levitt, Petr Knoth, Matteo Cancellieri
+        year: 2023
+        url: https://direct.mit.edu/qss/article/4/2/547/115675
+        abstract: |
+          National research evaluation initiatives and incentive schemes choose between simplistic quantitative indicators and time-consuming peer/expert review, sometimes supported by bibliometrics. Here we assess whether machine learning could provide a third alternative, estimating article quality using more multiple bibliometric and metadata inputs. We investigated this using provisional three-level REF2021 peer review scores for 84,966 articles submitted to the U.K. Research Excellence Framework 2021, matching a Scopus record 2014–18 and with a substantial abstract. We found that accuracy is highest in the medical and physical sciences Units of Assessment (UoAs) and economics, reaching 42% above the baseline (72% overall) in the best case. This is based on 1,000 bibliometric inputs and half of the articles used for training in each UoA. Prediction accuracies above the baseline for the social science, mathematics, engineering, arts, and humanities UoAs were much lower or close to zero. The Random Forest Classifier (standard or ordinal) and Extreme Gradient Boosting Classifier algorithms performed best from the 32 tested. Accuracy was lower if UoAs were merged or replaced by Scopus broad categories. We increased accuracy with an active learning strategy and by selecting articles with higher prediction probabilities, but this substantially reduced the number of scores predicted.
+        description: |
+          National research evaluation initiatives and incentive schemes choose between simplistic quantitative indicators and time-consuming peer/expert review, sometimes supported by bibliometrics. Here we assess whether machine learning could provide a third alternative, estimating article quality using more multiple bibliometric and metadata inputs. We investigated this using provisional three-level REF2021 peer review scores for 84,966 articles submitted to the U.K. Research Excellence Framework 2021, matching a Scopus record 2014–18 and with a substantial abstract. We found that accuracy is highest in the medical and physical sciences Units of Assessment (UoAs) and economics, reaching 42% above the baseline (72% overall) in the best case. This is based on 1,000 bibliometric inputs and half of the articles used for training in each UoA. Prediction accuracies above the baseline for the social science, mathematics, engineering, arts, and humanities UoAs were much lower or close to zero. The Random Forest Classifier (standard or ordinal) and Extreme Gradient Boosting Classifier algorithms performed best from the 32 tested. Accuracy was lower if UoAs were merged or replaced by Scopus broad categories. We increased accuracy with an active learning strategy and by selecting articles with higher prediction probabilities, but this substantially reduced the number of scores predicted.
+        citations:
+          text: >
+            Thelwall, M., Kousha, K., Wilson, P., Makita, M., Abdoli, M., Stuart, E., Levitt, J., Knoth, P. and Cancellieri, M., 2023. Predicting article quality scores with machine learning: The UK Research Excellence Framework. Quantitative Science Studies, 4(2), pp.547-573.
+          bibtex: |
+            @article{thelwall2023predicting,
+              title={Predicting article quality scores with machine learning: The UK Research Excellence Framework},
+              author={Thelwall, Mike and Kousha, Kayvan and Wilson, Paul and Makita, Meiko and Abdoli, Mahshid and Stuart, Emma and Levitt, Jonathan and Knoth, Petr and Cancellieri, Matteo},
+              journal={Quantitative Science Studies},
+              volume={4},
+              number={2},
+              pages={547--573},
+              year={2023},
+              publisher={MIT Press}
+            }
+      - type: inproceedings
+        id: oro46870
+        booktitle: Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing
+        title: |
+          Dynamic Context Extraction for Citation Classification
+        author:
+          - Suchetha Nambanoor Kunnath, David Pride, Petr Knoth. 2022/11.F
+        year: 2022
+        url: https://aclanthology.org/2022.aacl-main.41/
+        abstract: |
+          We investigate the effect of varying citation context window sizes on model performance in citation intent classification. Prior studies have been limited to the application of fixed-size contiguous citation contexts or the use of manually curated citation contexts. We introduce a new automated unsupervised approach for the selection of a dynamic-size and potentially non-contiguous citation context, which utilises the transformer-based document representations and embedding similarities. Our experiments show that the addition of non-contiguous citing sentences improves performance beyond previous results. Evaluating on the (1) domain-specific (ACL-ARC) and (2) the multi-disciplinary (SDP-ACT) dataset demonstrates that the inclusion of additional context beyond the citing sentence significantly improves the citation classification model’s performance, irrespective of the dataset’s domain. 
+        description: |
+          We investigate the effect of varying citation context window sizes on model performance in citation intent classification. Prior studies have been limited to the application of fixed-size contiguous citation contexts or the use of manually curated citation contexts. We introduce a new automated unsupervised approach for the selection of a dynamic-size and potentially non-contiguous citation context, which utilises the transformer-based document representations and embedding similarities. Our experiments show that the addition of non-contiguous citing sentences improves performance beyond previous results. Evaluating on the (1) domain-specific (ACL-ARC) and (2) the multi-disciplinary (SDP-ACT) dataset demonstrates that the inclusion of additional context beyond the citing sentence significantly improves the citation classification model’s performance, irrespective of the dataset’s domain. 
+        citations:
+          text: >
+            Kunnath, Suchetha Nambanoor, David Pride, and Petr Knoth. "Dynamic Context Extraction for Citation Classification." Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing. 2022.
+          bibtex: |
+            @inproceedings{kunnath2022dynamic,
+              title={Dynamic Context Extraction for Citation Classification},
+              author={Kunnath, Suchetha Nambanoor and Pride, David and Knoth, Petr},
+              booktitle={Proceedings of the 2nd Conference of the Asia-Pacific Chapter of the Association for Computational Linguistics and the 12th International Joint Conference on Natural Language Processing},
+              pages={539--549},
+              year={2022}
+            }
+      - type: inproceedings
+        id: oro32560
+        booktitle: Proceedings of the Third Workshop on Scholarly Document Processing 2022/10.
+        title: |
+          Benchmark for research theme classification of scholarly documents
+        author:
+          - Óscar E Mendoza, Wojciech Kusa, Alaa El-Ebshihy, Ronin Wu, David Pride, Petr Knoth, Drahomira Herrmannova, Florina Piroi, Gabriella Pasi, Allan Hanbury.
+        year: 2022
+        url: https://aclanthology.org/2022.sdp-1.31/
+        abstract: |
+          We present a new gold-standard dataset and a benchmark for the Research Theme Identification task, a sub-task of the Scholarly Knowledge Graph Generation shared task, at the 3rd Workshop on Scholarly Document Processing. The objective of the shared task was to label given research papers with research themes from a total of 36 themes. The benchmark was compiled using data drawn from the largest overall assessment of university research output ever undertaken globally (the Research Excellence Framework-2014). We provide a performance comparison of a transformer-based ensemble, which obtains multiple predictions for a research paper, given its multiple textual fields (eg title, abstract, reference), with traditional machine learning models. The ensemble involves enriching the initial data with additional information from open-access digital libraries and Argumentative Zoning techniques (CITATION). It uses a weighted sum aggregation for the multiple predictions to obtain a final single prediction for the given research paper.
+        description: |
+          We present a new gold-standard dataset and a benchmark for the Research Theme Identification task, a sub-task of the Scholarly Knowledge Graph Generation shared task, at the 3rd Workshop on Scholarly Document Processing. The objective of the shared task was to label given research papers with research themes from a total of 36 themes. The benchmark was compiled using data drawn from the largest overall assessment of university research output ever undertaken globally (the Research Excellence Framework-2014). We provide a performance comparison of a transformer-based ensemble, which obtains multiple predictions for a research paper, given its multiple textual fields (eg title, abstract, reference), with traditional machine learning models. The ensemble involves enriching the initial data with additional information from open-access digital libraries and Argumentative Zoning techniques (CITATION). It uses a weighted sum aggregation for the multiple predictions to obtain a final single prediction for the given research paper.
+        citations:
+          text: >
+            Mendoza, Óscar E., Wojciech Kusa, Alaa El-Ebshihy, Ronin Wu, David Pride, Petr Knoth, Drahomira Herrmannova, Florina Piroi, Gabriella Pasi, and Allan Hanbury. "Benchmark for research theme classification of scholarly documents." In Proceedings of the Third Workshop on Scholarly Document Processing, pp. 253-262. 2022.
+          bibtex: |
+            @inproceedings{mendoza2022benchmark,
+              title={Benchmark for research theme classification of scholarly documents},
+              author={Mendoza, {\'O}scar E and Kusa, Wojciech and El-Ebshihy, Alaa and Wu, Ronin and Pride, David and Knoth, Petr and Herrmannova, Drahomira and Piroi, Florina and Pasi, Gabriella and Hanbury, Allan},
+              booktitle={Proceedings of the Third Workshop on Scholarly Document Processing},
+              pages={253--262},
+              year={2022}
+            }
   -
-    id: oro35755
-    type: article
-    volume: 18
-    number: 11/12
-    title: |
-      CORE: three access levels to underpin open access
-    author:
-      - Petr Knoth
-      - Zdenek Zdrahal
-    year: 2012
-    journal: D-Lib Magazine
-    keywords:
-      - digital libraries
-      - open access
-      - technical infrastructure
-      - applications of OA
-      - reuse of OA content
-    abstract: |
-      The last 10 years have seen a massive increase in the amount of
-      Open Access publications in journals and institutional repositories.
-      The open availability of large volumes of state-of-the-art knowledge
-      online has the potential to provide huge savings and benefits in many
-      fields. However, in order to fully leverage this knowledge, it is
-      necessary to develop systems that (a) make it easy for users to discover
-      and access this knowledge at the level of individual resources,
-      (b) explore and analyse this knowledge at the level of collections of
-      resources and (c) provide infrastructure and access to raw data in order
-      to lower the barriers to the research and development of systems and
-      services on top of this knowledge. In this paper, we argue why these
-      requirements should be satisfied and show that current systems do not
-      meet them. Consequently, we present the CORE (COnnecting REpositories)
-      system, a large-scale Open Access aggregation, outlining its existing
-      functionality and discussing the future technical development.
-      We demonstrate how the system addresses the above needs and how it can
-      be applied to the benefit of the whole ecosystem that includes
-      institutional repositories, individuals, researchers, developers,
-      funding bodies and governments
-    description: |
-      Sets the vision for creating the CORE service, developing global-wide
-      content aggregation of all open access research literature (on top of
-      OAI-PMH protocol for metadata harvesting and other protocols).
-      It sets the mission to develop the three access levels (access at the
-      granularity of papers; analytical access; access to raw data) via CORE.
-    url: http://oro.open.ac.uk/35755/
-    citations:
-      text: >
-        Knoth, P., & Zdrahal, Z. (2012). CORE: three access levels to underpin open access. D-Lib Magazine, 18(11/12). Retrieved from http://oro.open.ac.uk/35755/
-      bibtex: |
-        @article{oro35755,
-              volume = {18},
-              number = {11/12},
-               title = {CORE: three access levels to underpin open access},
-              author = {Petr Knoth and Zdenek Zdrahal},
-                year = {2012},
-             journal = {D-Lib Magazine},
-            keywords = {digital libraries; open access; technical infrastructure; applications of OA; reuse of OA content; CORE},
-                 url = {http://oro.open.ac.uk/35755/},
-            abstract = {The last 10 years have seen a massive increase in the amount of Open Access publications in journals and institutional repositories. The open availability of large volumes of state-of-the-art knowledge online has the potential to provide huge savings and benefits in many fields. However, in order to fully leverage this knowledge, it is necessary to develop systems that (a) make it easy for users to discover and access this knowledge at the level of individual resources, (b) explore and analyse this knowledge at the level of collections of resources and (c) provide infrastructure and access to raw data in order to lower the barriers to the research and development of systems and services on top of this knowledge. In this paper, we argue why these requirements should be satisfied and show that current systems do not meet them. Consequently, we present the CORE (COnnecting REpositories) system, a large-scale Open Access aggregation, outlining its existing functionality and discussing the future technical development. We demonstrate how the system addresses the above needs and how it can be applied to the benefit of the whole ecosystem that includes institutional repositories, individuals, researchers, developers, funding bodies and governments.}
-        }
--
-  id: aggregation-approaches-and-infrastructure
-  title: CORE aggregation approaches and infrastructure
-  caption: Aggregation approaches and infrastructure
-  papers:
+    id: recommender
+    title: CORE Recommender
+    caption: CORE Recommender
+    papers:
+    -
+      type: inproceedings
+      id: oro49366
+      booktitle: Open Repositories 2017
+      month: June
+      title: Towards effective research recommender systems for repositories
+      author:
+        - Petr Knoth
+        - Lucas Anastasiou
+        - Aristotelis Charalampous
+        - Matteo Cancellieri
+        - Samuel Pearce
+        - Nancy Pontika
+        - Vaclav Bayer
+      year: 2017
+      keywords:
+        - repositories
+        - recommender
+        - recommendation systems
+      url: http://oro.open.ac.uk/49366/
+      abstract: |
+        In this paper, we argue why and how the integration of recommender
+        systems for research can enhance the functionality and user experience
+        in repositories. We present the latest technical innovations in the
+        CORE Recommender, which provides research article recommendations across
+        the global network of repositories and journals. The CORE Recommender
+        has been recently redeveloped and released into production in the CORE
+        system and has also been deployed in several third-party repositories.
+        We explain the design choices of this unique system and the evaluation
+        processes we have in place to continue raising the quality of
+        the provided recommendations. By drawing on our experience, we discuss
+        the main challenges in offering a state-of-the-art recommender solution
+        for repositories. We highlight two of the key limitations of
+        the current repository infrastructure with respect to developing
+        research recommender systems: 1) the lack of a standardised protocol
+        and capabilities for exposing anonymised user-interaction logs, which
+        represent critically important input data for recommender systems based
+        on collaborative filtering and 2) the lack of a voluntary global
+        sign-on capability in repositories, which would enable the creation of
+        personalised recommendation and notification solutions based on past
+        user interactions
+      description: |
+        In this paper, we argue why and how the integration of
+        recommender systems for research can enhance the functionality and
+        user experience in repositories.
+      citations:
+        text: >
+          Knoth, P., Anastasiou, L., Charalampous, A., Cancellieri, M., Pearce, S., Pontika, N., & Bayer, V. (2017). Towards effective research recommender systems for repositories. In Open Repositories 2017. Retrieved from http://oro.open.ac.uk/49366/
+        bibtex: |
+          @inproceedings{oro49366,
+             booktitle = {Open Repositories 2017},
+                 month = {June},
+                 title = {Towards effective research recommender systems for repositories},
+                author = {Petr Knoth and Lucas Anastasiou and Aristotelis Charalampous and Matteo Cancellieri and Samuel Pearce and Nancy Pontika and Vaclav Bayer},
+                  year = {2017},
+              keywords = {repositories; recommender; recommendation systems; CORE},
+                   url = {http://oro.open.ac.uk/49366/},
+              abstract = {In this paper, we argue why and how the integration of recommender systems for research can enhance the functionality and user experience in repositories. We present the latest technical innovations in the CORE Recommender, which provides research article recommendations across the global network of repositories and journals. The CORE Recommender has been recently redeveloped and released into production in the CORE system and has also been deployed in several third-party repositories. We explain the design choices of this unique system and the evaluation processes we have in place to continue raising the quality of the provided recommendations. By drawing on our experience, we discuss the main challenges in offering a state-of-the-art recommender solution for repositories. We highlight two of the key limitations of the current repository infrastructure with respect to developing research recommender systems: 1) the lack of a standardised protocol and capabilities for exposing anonymised user-interaction logs, which represent critically important input data for recommender systems based on collaborative filtering and 2) the lack of a voluntary global sign-on capability in repositories, which would enable the creation of personalised recommendation and notification solutions based on past user interactions.}
+          }
+    -
+      type: inproceedings
+      id: oro22933
+      booktitle: Computational Linguistics (COLING 2010)
+      month: August
+      title: |
+        Automatic generation of inter-passage links based on semantic similarity
+      author:
+        - Petr Knoth
+        - Jakub Novotny
+        - Zdenek Zdrahal
+      year: 2010
+      pages: 590--598
+      keywords:
+        - automatic link generation
+        - information retrieval
+        - semantic similarity
+        - wikipedia
+      url: http://oro.open.ac.uk/22933/
+      abstract: |
+        This paper investigates the use and the prediction potential of
+        semantic similarity measures for automatic generation of links across
+        different documents and passages. First, the correlation between the way
+        people link content and the results produced by standard semantic
+        similarity measures is investigated. The relation between semantic
+        similarity and the length of the documents is then also analysed.
+        Based on these findings a new method for link generation is formulated
+        and tested
+      description: |
+        This paper describes the algorithm that was used in the original version
+        of the CORE recommender.
+      citations:
+        text: >
+          Knoth, P., Novotny, J., & Zdrahal, Z. (2010). Automatic generation of inter-passage links based on semantic similarity. In Computational Linguistics (COLING 2010) (pp. 590–598). Retrieved from http://oro.open.ac.uk/22933/
+        bibtex: |
+          @inproceedings{oro22933,
+             booktitle = {Computational Linguistics (COLING 2010)},
+                 month = {August},
+                 title = {Automatic generation of inter-passage links based on semantic similarity},
+                author = {Petr Knoth and Jakub Novotny and Zdenek Zdrahal},
+                  year = {2010},
+                 pages = {590--598},
+              keywords = {automatic link generation; information retrieval; semantic similarity; wikipedia; CORE},
+                   url = {http://oro.open.ac.uk/22933/},
+              abstract = {This paper investigates the use and the prediction potential of semantic similarity measures for automatic generation of links across different documents and passages. First, the correlation between the way people link content and the results produced by standard semantic similarity measures is investigated. The relation between semantic similarity and the length of the documents is then also analysed. Based on these findings a new method for link generation is formulated and tested.}
+          }
   -
-    type: inproceedings
-    id: oro37824
-    booktitle: Open Repositories 2013
-    title: |
-      From open access metadata to open access content:
-      two principles for increased visibility of open access content
-    author:
-      - Petr Knoth
-    year: 2013
-    keywords:
-      - open access
-      - aggregation systems
-      - institutional repositories
-      - open repositories
-    url: http://oro.open.ac.uk/37824/
-    abstract: |
-      An essential goal of the open access (OA) movement is free availability
-      of research outputs on the Internet. One of the recommended ways to
-      achieve this is through open access repositories (BOAI, 2002).
-      Given the growing number of repositories and the significant proportion
-      of research outputs already available as OA (Laakso \& Bjork, 2012),
-      it might come as a surprise that OA content is not necessarily easily
-      discoverable on the Internet (Morrisson, 2012; Konkiel, 2012),
-      more precisely, it is available, but often difficult to find. If OA
-      content in repositories cannot be discovered, there is little incentive
-      to make it available on the Internet in the first place. Therefore, not
-      trying hard enough to increase the visibility of OA content would be
-      a lost opportunity for achieving the main OA goals, including also the
-      reuse potential of OA content. In this paper, we build on our experience
-      in finding and aggregating open access content (not just metadata) from
-      repositories, discussing the main issues and summarizing the lessons
-      learned into two principles that, if adopted, will dramatically increase
-      the discoverability of OA content on the Internet and will improve the
-      possibilities of OA content reuse.
-    description: |
-      This paper describes the two principles that should be followed
-      to ensure that content can be properly harvested from repositories.
-      This paper could be of great interest to repository managers.
-    citations:
-      text: >
-        Knoth, P. (2013). From open access metadata to open access content: two principles for increased visibility of open access content. In Open Repositories 2013. Retrieved from http://oro.open.ac.uk/37824/
-      bibtex: |
-        @inproceedings{oro37824,
-           booktitle = {Open Repositories 2013},
-               title = {From open access metadata to open access content: two principles for increased visibility of open access content},
-              author = {Petr Knoth},
-                year = {2013},
-            keywords = {open access; aggregation systems; institutional repositories; open repositories; CORE},
-                 url = {http://oro.open.ac.uk/37824/},
-            abstract = {An essential goal of the open access (OA) movement is free availability of research outputs on the Internet. One of the recommended ways to achieve this is through open access repositories (BOAI, 2002). Given the growing number of repositories and the significant proportion of research outputs already available as OA (Laakso \& Bjork, 2012), it might come as a surprise that OA content is not necessarily easily discoverable on the Internet (Morrisson, 2012; Konkiel, 2012), more precisely, it is available, but often difficult to find. If OA content in repositories cannot be discovered, there is little incentive to make it available on the Internet in the first place. Therefore, not trying hard enough to increase the visibility of OA content would be a lost opportunity for achieving the main OA goals, including also the reuse potential of OA content. In this paper, we build on our experience in finding and aggregating open access content (not just metadata) from repositories, discussing the main issues and summarizing the lessons learned into two principles that, if adopted, will dramatically increase the discoverability of OA content on the Internet and will improve the possibilities of OA content reuse.}
-        }
+    id: repositories-dashboard
+    title: CORE repositories dashboard
+    caption: Repositories dashboard
+    papers:
+    -
+      type: article
+      id: oro45935
+      volume: 25
+      number: 4
+      month: April
+      author:
+        - Nancy Pontika
+        - Petr Knoth
+        - Matteo Cancellieri
+        - Samuel Pearce
+      title: |
+        Developing Infrastructure to Support Closer Collaboration
+        of Aggregators with Open Repositories
+      journal: LIBER Quarterly
+      pages: 172--188
+      year: 2016
+      keywords:
+        - scholarly Communication
+        - open Access
+        - repositories
+        - harvesting
+      url: http://oro.open.ac.uk/45935/
+      abstract: |
+        The amount of open access content stored in repositories has increased
+        dramatically, which has created new technical and organisational
+        challenges for bringing this content together.
+        The COnnecting REpositories (CORE) project has been dealing with these
+        challenges by aggregating and enriching content from hundreds of open
+        access repositories, increasing the discoverability and reusability of
+        millions of open access manuscripts. As repository managers and library
+        directors often wish to know the details of the content harvested from
+        their repositories and keep a certain level of control over it, CORE is
+        now facing the challenge of how to enable content providers to manage
+        their content in the aggregation and control the harvesting process.
+        In order to improve the quality and transparency of the aggregation
+        process and create a two-way collaboration between the CORE project and
+        the content providers, we propose the CORE Dashboard
+      description: |
+        This paper presents the CORE Repositories Dashboard, a tool designed
+        primarily for repository managers. It describes how the Dashboard
+        improves the quality of the harvested papers, advances the collaboration
+        between the repository managers and CORE, enables a straightforward
+        management of their collections and enhances the transparency of
+        the harvested content.
+      citations:
+        text: >
+          Pontika, N., Knoth, P., Cancellieri, M., & Pearce, S. (2016). Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories. LIBER Quarterly, 25(4), 172–188. Retrieved from http://oro.open.ac.uk/45935/
+        bibtex: |
+          @article{oro45935,
+                volume = {25},
+                number = {4},
+                 month = {April},
+                author = {Nancy Pontika and Petr Knoth and Matteo Cancellieri and Samuel Pearce},
+                 title = {Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories},
+               journal = {LIBER Quarterly},
+                 pages = {172--188},
+                  year = {2016},
+              keywords = {Scholarly Communication; Open Access; Repositories; Harvesting: CORE},
+                   url = {http://oro.open.ac.uk/45935/},
+              abstract = {The amount of open access content stored in repositories has increased dramatically, which has created new technical and organisational challenges for bringing this content together. The COnnecting REpositories (CORE) project has been dealing with these challenges by aggregating and enriching content from hundreds of open access repositories, increasing the discoverability and reusability of millions of open access manuscripts. As repository managers and library directors often wish to know the details of the content harvested from their repositories and keep a certain level of control over it, CORE is now facing the challenge of how to enable content providers to manage their content in the aggregation and control the harvesting process. In order to improve the quality and transparency of the aggregation process and create a two-way collaboration between the CORE project and the content providers, we propose the CORE Dashboard.}
+          }
   -
-    type: inproceedings
-    id: oro37823
-    booktitle: |
-      2nd International Workshop on Mining Scientific Publications (WOSP 2013)
-    title: |
-      CORE: aggregation use cases for open access
-    author:
-      - Petr Knoth
-      - Zdenek Zdrahal
-    year: 2013
-    note: |
-      Held in conjuction with Joint Conference on Digital Libraries (JCDL 2013)
-    url: http://oro.open.ac.uk/37823/
-    abstract: |
-      The push for free online availability of research outputs promoted
-      by the Open Access (OA) movement is undoubtedly transforming the
-      publishing industry. However, the mere availability of research
-      outputs is insufficient. To exploit the full potential of OA,
-      it must be possible to search, discover, mine, analyse, etc.
-      this content. To achieve this, it is essential to improve the existing
-      OA technical infrastructure to effectively support these
-      functionalities. Many of the vital benefits of OA are expected to come
-      with the ability to reuse OA content in unanticipated ways. Access to
-      the OA content must therefore be flexible, yet practical, content-based
-      and not just metadata based. In this demonstration, we present the
-      CORE system, which aggregates millions of OA resources from hundreds
-      of OA repositories and journals. We discuss the use cases
-      aggregationsshould support and demonstrate how the CORE system addresses
-      them, including searching, discovering, mining and analyzing content.
-      We also show how aggregated OA content can be reused to build new
-      applications on top of CORE?sfunctionality
-    description: |
-      This paper describes the use cases that must be supported
-      by open access aggregators, it establishes the CORE use case and
-      demonstrates the benefits of open access content aggregators.
-    citations:
-      text: >
-        Knoth, P., & Zdrahal, Z. (2013). CORE: aggregation use cases for open access. In 2nd International Workshop on Mining Scientific Publications (WOSP 2013). Retrieved from http://oro.open.ac.uk/37823/
-      bibtex: |
-        @inproceedings{oro37823,
-           booktitle = {2nd International Workshop on Mining Scientific Publications (WOSP 2013)},
-               title = {CORE: aggregation use cases for open access},
-              author = {Petr Knoth and Zdenek Zdrahal},
-                year = {2013},
-                note = {Held in conjuction with Joint Conference on Digital Libraries (JCDL 2013)},
-            keywords = {CORE},
-                 url = {http://oro.open.ac.uk/37823/},
-            abstract = {The push for free online availability of research outputs promoted by the Open Access (OA) movement is undoubtedly transforming the publishing industry. However, the mere availability of research outputs is insufficient. To exploit the full potential of OA, it must be possible to search, discover, mine, analyse, etc.  this content. To achieve this, it is essential to improve the existing OA technical infrastructure to effectively support these functionalities. Many of the vital benefits of OA are expected to come with the ability to reuse OA content in unanticipated ways. Access to the OA content must therefore be flexible, yet practical,  content-based and not just metadata based. In this demonstration, we present the CORE system, which aggregates millions of OA resources from hundreds of OA repositories and journals. We discuss the use cases aggregationsshould support and demonstrate how the CORE system addresses them, including searching, discovering, mining and analyzing content. We also show how aggregated OA content can be reused to build new applications on top of CORE?sfunctionality.}
-        }
+    id: download-statistics
+    title: CORE and download statistics
+    caption: Download statistics
+    papers:
+    -
+      type: misc
+      id: oro47805
+      author:
+        - Samuel Pearce
+        - Nancy Pontika
+      title: |
+        Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard
+      year: 2016
+      note: |
+        Poster presented at the Open Repositories 2016
+      doi: https://doi.org/10.6084/m9.figshare.3407548.v3
+      url: http://oro.open.ac.uk/47805/
+      description: |
+        This poster presents the integration of the IRUS-UK service with the
+        CORE Repositories Dashboard tool, which enables repository managers
+        access reliable download statistics of the full-text papers
+        harvested by CORE.
+      citations:
+        text: >
+          Pearce, S., & Pontika, N. (2016). Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard.
+        bibtex: |
+          @misc{oro47805,
+                author = {Samuel Pearce and Nancy Pontika},
+                 title = {Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard},
+                  year = {2016},
+                  note = {Poster presented at the Open Repositories 2016}
+          }
+    -
+      type: inproceedings
+      id: oro41678
+      booktitle: Open Repositories 2014 (OR2014)
+      title: |
+        My repository is being aggregated: a blessing or a curse?
+      author:
+        - Petr Knoth
+        - Lucas Anastasiou
+        - Samuel Pearce
+      year: 2014
+      keywords:
+        - usage statistics
+        - aggregations
+        - open access
+      url: http://oro.open.ac.uk/41678/
+      abstract: |
+        Usage statistics are frequently used by repositories to justify their
+        value to the management who decide about the funding to support the
+        repository infrastructure. Another reason for collecting usage statistics
+        at repositories is the increased use of webometrics in the process of
+        assessing the impact of publications and researchers.
+        Consequently, one of the worries repositories sometimes have about their
+        content being aggregated is that they feel aggregations have a detrimental
+        effect on the accuracy of statistics they collect. They believe that this
+        potential decrease in reported usage can negatively influence the funding
+        provided by their own institutions. This raises the fundamental question
+        of whether repositories should allow aggregators to harvest their metadata
+        and content. In this paper, we discuss the benefits of allowing content
+        aggregations harvest repository content and investigate how to overcome
+        the drawbacks
+      description: |
+        This paper describes the collaboration between aggregators and
+        repositories in terms of sharing download usage statistics.
+      citations:
+        text: >
+          Knoth, P., Anastasiou, L., & Pearce, S. (2014). My repository is being aggregated: a blessing or a curse? In Open Repositories 2014 (OR2014). Retrieved from http://oro.open.ac.uk/41678/
+        bibtex: |
+          @inproceedings{oro41678,
+             booktitle = {Open Repositories 2014 (OR2014)},
+                 title = {My repository is being aggregated: a blessing or a curse?},
+                author = {Petr Knoth and Lucas Anastasiou and Samuel Pearce},
+                  year = {2014},
+              keywords = {usage statistics; aggregations; open access; CORE},
+                   url = {http://oro.open.ac.uk/41678/},
+              abstract = {Usage statistics are frequently used by repositories to justify their value to the management who decide about the funding to support the repository infrastructure. Another reason for collecting usage statistics at repositories is the increased use of webometrics in the process of assessing the impact of publications and researchers. Consequently, one of the worries repositories sometimes have about their content being aggregated is that they feel aggregations have a detrimental effect on the accuracy of statistics they collect. They believe that this potential decrease in reported usage can negatively influence the funding provided by their own institutions. This raises the fundamental question of whether repositories should allow aggregators to harvest their metadata and content. In this paper, we discuss the benefits of allowing content aggregations harvest repository content and investigate how to overcome the drawbacks.}
+          }
   -
-    type: inproceedings
-    id: oro46870
-    booktitle: INTEROP2016
-    editor:
-      - Richard Eckart de Castilho
-      - Sophia Ananiadou
-      - Thomas Margoni
-      - Wim Peters
-      - Stelios Piperidis
-    month: May
-    title: |
-      Aggregating Research Papers from Publishers? Systems to Support Text
-      and Data Mining: Deliberate Lack of Interoperability or Not?
-    author:
-      - Petr Knoth
-      - Nancy Pontika
-    year: 2016
-    keywords: Interoperability; publishers; standardisation
-    url: http://oro.open.ac.uk/46870/
-    abstract: |
-      In the current technology dominated world, interoperability
-      of systems managed by different organisations is an essential property
-      enabling the provision of services at a global scale.
-      In the Text and Data Mining field (TDM), interoperability of
-      systems offering access to text corpora offers the opportunity of
-      increasing the uptake and impact of TDM applications. The global corpus
-      of all research papers, i.e. the collection of human knowledge so large
-      no one can ever read in their lifetime, represents one of the most
-      exciting opportunities for TDM. Although the Open Access movement,
-      which has been advocating for free availability and reuse rights to
-      TDM from research papers, has achieved some major successes on the
-      legal front, the technical interoperability of systems offering free
-      access to research papers continues to be a challenge.
-      COnnecting REpositories (CORE) (Knoth and Zdrahal, 2012) aggregates
-      the world?s open access full-text scientific manuscripts from
-      repositories, journals and publisher  systems. One of the main goals of
-      CORE is to harmonise and pre-process these data to lower the barrier for
-      TDM. In this paper, we report on the preliminary results of
-      an interoperability survey of systems provided by journal publishers,
-      both open access and toll access. This helps us to assess the current
-      level of systems? interoperability and suggest ways forward
-    description: |
-      This paper describes the technical challenges relating to machine
-      interfaces, the interoperability issues on obtaining open access
-      content and the complications of achieving a harmonisation across
-      repositories’ and publishers’ systems.
-    citations:
-      text: >
-        Knoth, P., & Pontika, N. (2016). Aggregating Research Papers from Publishers? Systems to Support Text and Data Mining: Deliberate Lack of Interoperability or Not? In R. E. de Castilho, S. Ananiadou, T. Margoni, W. Peters, & S. Piperidis (Eds.), INTEROP2016. Retrieved from http://oro.open.ac.uk/46870/
-      bibtex: |
-        @inproceedings{oro46870,
-           booktitle = {INTEROP2016},
-              editor = {Richard Eckart de Castilho and Sophia Ananiadou and Thomas Margoni and Wim Peters and Stelios Piperidis},
-               month = {May},
-               title = {Aggregating Research Papers from Publishers? Systems to Support Text and Data Mining: Deliberate Lack of Interoperability or Not?},
-              author = {Petr Knoth and Nancy Pontika},
-                year = {2016},
-            keywords = {Interoperability; publishers; standardisation; CORE},
-                 url = {http://oro.open.ac.uk/46870/},
-            abstract = {In the current technology dominated world, interoperability of systems managed by different organisations is an essential property enabling the provision of services at a global scale. In the Text and Data Mining field (TDM), interoperability of systems offering access to text corpora offers the opportunity of increasing the uptake and impact of TDM applications. The global corpus of all research papers, i.e. the collection of human knowledge so large no one can ever read in their lifetime, represents one of the most exciting opportunities for TDM. Although the Open Access movement, which has been advocating for free availability and reuse rights to TDM from research papers, has achieved some major successes on the legal front, the technical interoperability of systems offering free access to research papers continues to be a challenge. COnnecting REpositories (CORE) (Knoth and Zdrahal, 2012) aggregates the world?s open access full-text scientific manuscripts from repositories, journals and publisher  systems. One of the main goals of CORE is to harmonise and pre-process these data to lower the barrier for TDM. In this paper, we report on the preliminary results of an interoperability survey of systems provided by journal publishers, both open access and toll access. This helps us to assess the current level of systems? interoperability and suggest ways forward.}
-        }
-  -
-    type: inproceedings
-    id: oro32560
-    booktitle: CERN Workshop on Innovations in Scholarly Communication (OAI7)
-    title: |
-      CORE: connecting repositories in the open access domain
-    author:
-      - Petr Knoth
-      - Zdenek Zdrahal
-    year: 2011
-    note: |
-      Poster Session ID: 53
-    url: http://oro.open.ac.uk/32560/
-    abstract: |
-      This submission reports on the results of the ongoing JISC-funded
-      project CORE (COnnecting REpositories) which aims to facilitate
-      the access and navigation across relevant scientific papers stored
-      in Open Access repositories. This is being achieved by harvesting
-      metadata and full-text content from diverse Open Access repositories,
-      applying text mining techniques to discover semantic relations between
-      the articles and representing and exposing these relations
-      as Linked Data. The information about associations between articles
-      will be made publicly available to enable the emergence of a wide range
-      of applications that can exploit the provided data. Within this project,
-      we will demonstrate the usability of the CORE system on two use-cases:
-      (1) Improving the accessibility of content and the navigation
-      capabilities for digital library users,
-      (2) Enabling more ubiquitous access to digital content through
-      smart phones and tablet devices
-    citations:
-      text: >
-        Knoth, P., & Zdrahal, Z. (2011). CORE: connecting repositories in the open access domain. In CERN Workshop on Innovations in Scholarly Communication (OAI7). Retrieved from http://oro.open.ac.uk/32560/
-      bibtex: |
-        @inproceedings{oro32560,
-           booktitle = {CERN Workshop on Innovations in Scholarly Communication (OAI7)},
-               title = {CORE: connecting repositories in the open access domain},
-              author = {Petr Knoth and Zdenek Zdrahal},
-                year = {2011},
-                note = {Poster Session ID: 53},
-            keywords = {CORE},
-                 url = {http://oro.open.ac.uk/32560/},
-            abstract = {This submission reports on the results of the ongoing JISC-funded project CORE (COnnecting REpositories) which aims to facilitate the access and navigation across relevant scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from diverse Open Access repositories, applying text mining techniques to discover semantic relations between the articles and representing and exposing these relations as Linked Data. The information about associations between articles will be made publicly available to enable the emergence of a wide range of applications that can exploit the provided data. Within this project, we will demonstrate the usability of the CORE system on two use-cases: (1) Improving the accessibility of content and the navigation capabilities for digital library users, (2) Enabling more ubiquitous access to digital content through smart phones and tablet devices.}
-        }
-  -
-    type: inproceedings
-    id: oro32180
-    booktitle: Research and Advanced Technology for Digital Libraries
-    volume: 6966
-    title: |
-      Connecting repositories in the open access domain using
-      text mining and semantic data
-    author:
-      - Petr Knoth
-      - Vojtech Robotka
-      - Zdenek Zdrahal
-    year: 2011
-    pages: 483--487
-    note: |
-      Published in Lecture Notes in Computer Science,
-      Volume 6966/2011, ISBN 978-3-642-24468-1,
-      pp. 483-487.
-    keywords:
-      - digital library federations
-      - automatic link generation
-      - text mining
-      - semantic similarity
-      - content harvesting
-      - mobile devices
-    url: http://oro.open.ac.uk/32180/
-    abstract: |
-      This paper presents CORE (COnnecting REpositories), a system that aims to
-      facilitate the access and navigation across scientific papers stored in
-      Open Access repositories. This is being achieved by harvesting metadata and
-      full-text content from Open Access repositories, by applying text mining
-      techniques to discover semanticly related articles and by representing and
-      exposing these relations as Linked Data. The information about associations
-      between articles expressed in an interoperable format will enable
-      the emergence of a wide range of applications. The potential of CORE can
-      be demonstrated on two use-cases: (1) Improving the the navigation
-      capabilities of digital libraries by the means of a CORE pluging, (2)
-      Providing access to digital content from smart phones and tablet devices
-      by the means of the CORE Mobile application
-    description: |
-      This paper describes the CORE system in its early stages with a focus on
-      the original idea of the CORE recommender.
-    citations:
-      text: >
-        Knoth, P., Robotka, V., & Zdrahal, Z. (2011). Connecting repositories in the open access domain using text mining and semantic data. In Research and Advanced Technology for Digital Libraries (Vol. 6966, pp. 483–487). Retrieved from http://oro.open.ac.uk/32180/
-      bibtex: |
-        @inproceedings{oro32180,
-           booktitle = {Research and Advanced Technology for Digital Libraries},
-              volume = {6966},
-               title = {Connecting repositories in the open access domain using text mining and semantic data},
-              author = {Petr Knoth and Vojtech Robotka and Zdenek Zdrahal},
-                year = {2011},
-               pages = {483--487},
-                note = {Published in Lecture Notes in Computer Science, Volume 6966/2011, ISBN 978-3-642-24468-1, pp. 483-487.},
-            keywords = {digital library federations; automatic link generation; text mining; semantic similarity; content harvesting; mobile devices; CORE},
-                 url = {http://oro.open.ac.uk/32180/},
-            abstract = {This paper presents CORE (COnnecting REpositories), a system that aims to facilitate the access and navigation across scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from Open Access repositories, by applying text mining techniques to discover semanticly related articles and by representing and exposing these relations as Linked Data. The information about associations between articles expressed in an interoperable format will enable the emergence of a wide range of applications. The potential of CORE can be demonstrated on two use-cases: (1) Improving the the navigation capabilities of digital libraries by the means of a CORE pluging, (2) Providing access to digital content from smart phones and tablet devices by the means of the CORE Mobile application.}
-        }
--
-  id: recommender
-  title: CORE Recommender
-  caption: CORE Recommender
-  papers:
-  -
-    type: inproceedings
-    id: oro49366
-    booktitle: Open Repositories 2017
-    month: June
-    title: Towards effective research recommender systems for repositories
-    author:
-      - Petr Knoth
-      - Lucas Anastasiou
-      - Aristotelis Charalampous
-      - Matteo Cancellieri
-      - Samuel Pearce
-      - Nancy Pontika
-      - Vaclav Bayer
-    year: 2017
-    keywords:
-      - repositories
-      - recommender
-      - recommendation systems
-    url: http://oro.open.ac.uk/49366/
-    abstract: |
-      In this paper, we argue why and how the integration of recommender
-      systems for research can enhance the functionality and user experience
-      in repositories. We present the latest technical innovations in the
-      CORE Recommender, which provides research article recommendations across
-      the global network of repositories and journals. The CORE Recommender
-      has been recently redeveloped and released into production in the CORE
-      system and has also been deployed in several third-party repositories.
-      We explain the design choices of this unique system and the evaluation
-      processes we have in place to continue raising the quality of
-      the provided recommendations. By drawing on our experience, we discuss
-      the main challenges in offering a state-of-the-art recommender solution
-      for repositories. We highlight two of the key limitations of
-      the current repository infrastructure with respect to developing
-      research recommender systems: 1) the lack of a standardised protocol
-      and capabilities for exposing anonymised user-interaction logs, which
-      represent critically important input data for recommender systems based
-      on collaborative filtering and 2) the lack of a voluntary global
-      sign-on capability in repositories, which would enable the creation of
-      personalised recommendation and notification solutions based on past
-      user interactions
-    description: |
-      In this paper, we argue why and how the integration of
-      recommender systems for research can enhance the functionality and
-      user experience in repositories.
-    citations:
-      text: >
-        Knoth, P., Anastasiou, L., Charalampous, A., Cancellieri, M., Pearce, S., Pontika, N., & Bayer, V. (2017). Towards effective research recommender systems for repositories. In Open Repositories 2017. Retrieved from http://oro.open.ac.uk/49366/
-      bibtex: |
-        @inproceedings{oro49366,
-           booktitle = {Open Repositories 2017},
-               month = {June},
-               title = {Towards effective research recommender systems for repositories},
-              author = {Petr Knoth and Lucas Anastasiou and Aristotelis Charalampous and Matteo Cancellieri and Samuel Pearce and Nancy Pontika and Vaclav Bayer},
-                year = {2017},
-            keywords = {repositories; recommender; recommendation systems; CORE},
-                 url = {http://oro.open.ac.uk/49366/},
-            abstract = {In this paper, we argue why and how the integration of recommender systems for research can enhance the functionality and user experience in repositories. We present the latest technical innovations in the CORE Recommender, which provides research article recommendations across the global network of repositories and journals. The CORE Recommender has been recently redeveloped and released into production in the CORE system and has also been deployed in several third-party repositories. We explain the design choices of this unique system and the evaluation processes we have in place to continue raising the quality of the provided recommendations. By drawing on our experience, we discuss the main challenges in offering a state-of-the-art recommender solution for repositories. We highlight two of the key limitations of the current repository infrastructure with respect to developing research recommender systems: 1) the lack of a standardised protocol and capabilities for exposing anonymised user-interaction logs, which represent critically important input data for recommender systems based on collaborative filtering and 2) the lack of a voluntary global sign-on capability in repositories, which would enable the creation of personalised recommendation and notification solutions based on past user interactions.}
-        }
-  -
-    type: inproceedings
-    id: oro22933
-    booktitle: Computational Linguistics (COLING 2010)
-    month: August
-    title: |
-      Automatic generation of inter-passage links based on semantic similarity
-    author:
-      - Petr Knoth
-      - Jakub Novotny
-      - Zdenek Zdrahal
-    year: 2010
-    pages: 590--598
-    keywords:
-      - automatic link generation
-      - information retrieval
-      - semantic similarity
-      - wikipedia
-    url: http://oro.open.ac.uk/22933/
-    abstract: |
-      This paper investigates the use and the prediction potential of
-      semantic similarity measures for automatic generation of links across
-      different documents and passages. First, the correlation between the way
-      people link content and the results produced by standard semantic
-      similarity measures is investigated. The relation between semantic
-      similarity and the length of the documents is then also analysed.
-      Based on these findings a new method for link generation is formulated
-      and tested
-    description: |
-      This paper describes the algorithm that was used in the original version
-      of the CORE recommender.
-    citations:
-      text: >
-        Knoth, P., Novotny, J., & Zdrahal, Z. (2010). Automatic generation of inter-passage links based on semantic similarity. In Computational Linguistics (COLING 2010) (pp. 590–598). Retrieved from http://oro.open.ac.uk/22933/
-      bibtex: |
-        @inproceedings{oro22933,
-           booktitle = {Computational Linguistics (COLING 2010)},
-               month = {August},
-               title = {Automatic generation of inter-passage links based on semantic similarity},
-              author = {Petr Knoth and Jakub Novotny and Zdenek Zdrahal},
-                year = {2010},
-               pages = {590--598},
-            keywords = {automatic link generation; information retrieval; semantic similarity; wikipedia; CORE},
-                 url = {http://oro.open.ac.uk/22933/},
-            abstract = {This paper investigates the use and the prediction potential of semantic similarity measures for automatic generation of links across different documents and passages. First, the correlation between the way people link content and the results produced by standard semantic similarity measures is investigated. The relation between semantic similarity and the length of the documents is then also analysed. Based on these findings a new method for link generation is formulated and tested.}
-        }
--
-  id: repositories-dashboard
-  title: CORE repositories dashboard
-  caption: Repositories dashboard
-  papers:
-  -
-    type: article
-    id: oro45935
-    volume: 25
-    number: 4
-    month: April
-    author:
-      - Nancy Pontika
-      - Petr Knoth
-      - Matteo Cancellieri
-      - Samuel Pearce
-    title: |
-      Developing Infrastructure to Support Closer Collaboration
-      of Aggregators with Open Repositories
-    journal: LIBER Quarterly
-    pages: 172--188
-    year: 2016
-    keywords:
-      - scholarly Communication
-      - open Access
-      - repositories
-      - harvesting
-    url: http://oro.open.ac.uk/45935/
-    abstract: |
-      The amount of open access content stored in repositories has increased
-      dramatically, which has created new technical and organisational
-      challenges for bringing this content together.
-      The COnnecting REpositories (CORE) project has been dealing with these
-      challenges by aggregating and enriching content from hundreds of open
-      access repositories, increasing the discoverability and reusability of
-      millions of open access manuscripts. As repository managers and library
-      directors often wish to know the details of the content harvested from
-      their repositories and keep a certain level of control over it, CORE is
-      now facing the challenge of how to enable content providers to manage
-      their content in the aggregation and control the harvesting process.
-      In order to improve the quality and transparency of the aggregation
-      process and create a two-way collaboration between the CORE project and
-      the content providers, we propose the CORE Dashboard
-    description: |
-      This paper presents the CORE Repositories Dashboard, a tool designed
-      primarily for repository managers. It describes how the Dashboard
-      improves the quality of the harvested papers, advances the collaboration
-      between the repository managers and CORE, enables a straightforward
-      management of their collections and enhances the transparency of
-      the harvested content.
-    citations:
-      text: >
-        Pontika, N., Knoth, P., Cancellieri, M., & Pearce, S. (2016). Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories. LIBER Quarterly, 25(4), 172–188. Retrieved from http://oro.open.ac.uk/45935/
-      bibtex: |
-        @article{oro45935,
-              volume = {25},
-              number = {4},
-               month = {April},
-              author = {Nancy Pontika and Petr Knoth and Matteo Cancellieri and Samuel Pearce},
-               title = {Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories},
-             journal = {LIBER Quarterly},
-               pages = {172--188},
-                year = {2016},
-            keywords = {Scholarly Communication; Open Access; Repositories; Harvesting: CORE},
-                 url = {http://oro.open.ac.uk/45935/},
-            abstract = {The amount of open access content stored in repositories has increased dramatically, which has created new technical and organisational challenges for bringing this content together. The COnnecting REpositories (CORE) project has been dealing with these challenges by aggregating and enriching content from hundreds of open access repositories, increasing the discoverability and reusability of millions of open access manuscripts. As repository managers and library directors often wish to know the details of the content harvested from their repositories and keep a certain level of control over it, CORE is now facing the challenge of how to enable content providers to manage their content in the aggregation and control the harvesting process. In order to improve the quality and transparency of the aggregation process and create a two-way collaboration between the CORE project and the content providers, we propose the CORE Dashboard.}
-        }
--
-  id: download-statistics
-  title: CORE and download statistics
-  caption: Download statistics
-  papers:
-  -
-    type: misc
-    id: oro47805
-    author:
-      - Samuel Pearce
-      - Nancy Pontika
-    title: |
-      Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard
-    year: 2016
-    note: |
-      Poster presented at the Open Repositories 2016
-    doi: https://doi.org/10.6084/m9.figshare.3407548.v3
-    url: http://oro.open.ac.uk/47805/
-    description: |
-      This poster presents the integration of the IRUS-UK service with the
-      CORE Repositories Dashboard tool, which enables repository managers
-      access reliable download statistics of the full-text papers
-      harvested by CORE.
-    citations:
-      text: >
-        Pearce, S., & Pontika, N. (2016). Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard.
-      bibtex: |
-        @misc{oro47805,
-              author = {Samuel Pearce and Nancy Pontika},
-               title = {Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard},
-                year = {2016},
-                note = {Poster presented at the Open Repositories 2016}
-        }
-  -
-    type: inproceedings
-    id: oro41678
-    booktitle: Open Repositories 2014 (OR2014)
-    title: |
-      My repository is being aggregated: a blessing or a curse?
-    author:
-      - Petr Knoth
-      - Lucas Anastasiou
-      - Samuel Pearce
-    year: 2014
-    keywords:
-      - usage statistics
-      - aggregations
-      - open access
-    url: http://oro.open.ac.uk/41678/
-    abstract: |
-      Usage statistics are frequently used by repositories to justify their
-      value to the management who decide about the funding to support the
-      repository infrastructure. Another reason for collecting usage statistics
-      at repositories is the increased use of webometrics in the process of
-      assessing the impact of publications and researchers.
-      Consequently, one of the worries repositories sometimes have about their
-      content being aggregated is that they feel aggregations have a detrimental
-      effect on the accuracy of statistics they collect. They believe that this
-      potential decrease in reported usage can negatively influence the funding
-      provided by their own institutions. This raises the fundamental question
-      of whether repositories should allow aggregators to harvest their metadata
-      and content. In this paper, we discuss the benefits of allowing content
-      aggregations harvest repository content and investigate how to overcome
-      the drawbacks
-    description: |
-      This paper describes the collaboration between aggregators and
-      repositories in terms of sharing download usage statistics.
-    citations:
-      text: >
-        Knoth, P., Anastasiou, L., & Pearce, S. (2014). My repository is being aggregated: a blessing or a curse? In Open Repositories 2014 (OR2014). Retrieved from http://oro.open.ac.uk/41678/
-      bibtex: |
-        @inproceedings{oro41678,
-           booktitle = {Open Repositories 2014 (OR2014)},
-               title = {My repository is being aggregated: a blessing or a curse?},
-              author = {Petr Knoth and Lucas Anastasiou and Samuel Pearce},
-                year = {2014},
-            keywords = {usage statistics; aggregations; open access; CORE},
-                 url = {http://oro.open.ac.uk/41678/},
-            abstract = {Usage statistics are frequently used by repositories to justify their value to the management who decide about the funding to support the repository infrastructure. Another reason for collecting usage statistics at repositories is the increased use of webometrics in the process of assessing the impact of publications and researchers. Consequently, one of the worries repositories sometimes have about their content being aggregated is that they feel aggregations have a detrimental effect on the accuracy of statistics they collect. They believe that this potential decrease in reported usage can negatively influence the funding provided by their own institutions. This raises the fundamental question of whether repositories should allow aggregators to harvest their metadata and content. In this paper, we discuss the benefits of allowing content aggregations harvest repository content and investigate how to overcome the drawbacks.}
-        }
--
-  id: supporting-research-assessment-and-evaluation
-  title: Supporting research assessment and evaluation
-  caption: Supporting research assessment and evaluation
-  papers:
-  -
-    type: inproceedings
-    id: oro70520
-    booktitle: >
-      Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020
-    title: |
-      An Authoritative Approach to Citation Classification
-    author:
-      - David Pride
-      - Petr Knoth
-    year: 2020
-    keywords:
-      - usage statistics
-    url: http://oro.open.ac.uk/70520/
-    abstract: |
-      The ability to understand not only that a piece of research has been
-      cited, but why it has been cited has wide-ranging applications
-      in the areas of research evaluation, in tracking the dissemination
-      of new ideas and in better understanding research impact.
-      There have been several studies that have collated datasets of citations
-      annotated according to type using a class schema. These have favoured
-      annotation by independent annotators and the datasets produced have been
-      fairly small. We argue that authors themselves are in a primary position
-      to answer the question of why something was cited. No previous study has,
-      to our knowledge, undertaken such a large-scale survey of authors
-      to ascertain their own personal rea- sons for citation. In this work,
-      we introduce a new methodology for annotating citations and a significant
-      new dataset of 11,233 citations annotated by 883 authors.
-      This is the largest dataset of its type compiled to date, the first
-      truly multi-disciplinary dataset and the only dataset annotated
-      by authors. We also demonstrate the scalability of our data collection
-      approach and perform a compari- son between this new dataset and those
-      gathered by two previous studies.
-    description: |
-      The paper introduces the new multi-disciplinary ACT dataset, which is
-      currently the largest of its kind, annotated by the authors themselves.
-    citations:
-      text: >
-        Pride, D., & Knoth, P. (2020). An Authoritative Approach to Citation Classification. Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020. doi:10.1145/3383583.3398617
-      bibtex: |
-        @inproceedings{oro70520,
-          doi = {10.1145/3383583.3398617},
-          url = {http://oro.open.ac.uk/70520/},
-          year = 2020,
-          month = {aug},
-          publisher = {{ACM}},
-          author = {David Pride and Petr Knoth},
-          title = {An Authoritative Approach to Citation Classification},
-          booktitle = {Proceedings of the {ACM}/{IEEE} Joint Conference on Digital Libraries in 2020}
-        }
-  -
-    type: inproceedings
-    id: oro60670
-    booktitle: 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL)
-    title: |
-      ACT: An Annotation Platform for Citation Typing at Scale
-    author:
-      - David Pride
-      - Petr Knoth
-      - Jozef Harag
-    year: 2019
-    keywords:
-      - usage statistics
-    url: http://oro.open.ac.uk/60670/
-    abstract: |
-      In this paper we introduce the Academic Citation Typing (ACT) Platform,
-      a highly scalable online tool that takes as its input any full text
-      research paper and which then enables rapid annotation and classification
-      of in-text citations according to purpose and in uence.
-      In contrast to previous work, we employ first authors as annotators.
-      Our evaluation shows that these authors are able to quickly classify
-      the citations within their own papers. Over 200 authors have thus
-      far annotated their papers using the ACT platform.
-      This approach has already enabled the collection of the largest dataset
-      of citations annotated according to their purposes and influence on the
-      citing paper. Furthermore, this process is ongoing and the dataset will
-      continue to expand following this initial phase.
-    description: |
-      This paper describes the online tool for annotating citations in
-      a research paper based on their purpose. Citations are also annotated
-      based on how influential it is for research assessment.
-    citations:
-      text: >
-        Pride, D., Knoth, P., & Harag, J. (2019). ACT: An Annotation Platform for Citation Typing at Scale. 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL). doi:10.1109/jcdl.2019.00055
-      bibtex: |
-        @inproceedings{oro60670,
-          doi = {10.1109/jcdl.2019.00055},
-          url = {http://oro.open.ac.uk/60670/},
-          year = 2019,
-          month = {jun},
-          publisher = {{IEEE}},
-          author = {David Pride and Petr Knoth and Jozef Harag},
-          title = {{ACT}: An Annotation Platform for Citation Typing at Scale},
-          booktitle = {2019 {ACM}/{IEEE} Joint Conference on Digital Libraries ({JCDL})}
-        }
-  -
-    type: inproceedings
-    id: oro73290
-    booktitle: >
-      Proceedings of the 8th International Workshop on Mining Scientific
-      Publications
-    title: |
-      Overview of the 2020 WOSP 3C Citation Context Classification Task
-    author:
-      - Suchetha N. Kunnath
-      - David Pride
-      - Bikash Gyawali
-      - Petr Knoth
-    year: 2019
-    keywords:
-      - usage statistics
-    url: http://oro.open.ac.uk/73290/
-    abstract: |
-      The 3C Citation Context Classification task is the first shared task
-      addressing citation context classification. The two subtasks, A and B,
-      associated with this shared task, involves the classification of citations
-      based on their purpose and influence, respectively. Both tasks use
-      a portion of the new ACT dataset, developed by the researchers
-      at The Open University, UK. The tasks were hosted on Kaggle,
-      and the participated systems were evaluated using the macro f-score.
-      Three teams participated in subtask A and four teams participated
-      in subtask B. The best performing systems obtained an overall score
-      of 0.2056 for subtask A and 0.5556 for subtask B, outperforming the
-      simple majority class baseline models, which scored 0.11489 and 0.32249,
-      respectively. In this paper we provide a report specifying
-      the shared task, the dataset used, a short description
-      of the participating systems and the final results obtained
-      by the teams based on the evaluation criteria. The shared task
-      has been organised as part of the 8th International Workshop
-      on Mining Scientific Publications (WOSP 2020) workshop.
-    description: |
-      The overview paper highlights findings from the first edition of the
-      3C Citation Context Classification task, organised as part of
-      the workshop, WOSP 2020.
-    citations:
-      text: >
-        Kunnath, Suchetha N.; Pride, David; Gyawali, Bikash and Knoth, Petr (2020). Overview of the 2020 WOSP 3C Citation Context Classification Task. In: Proceedings of the 8th International Workshop on Mining Scientific Publications, Association for Computational Linguistics pp. 75–83.
-      bibtex: |
-        @inproceedings{oro73290,
-          title = "Overview of the 2020 {WOSP} 3{C} Citation Context Classification Task",
-          author = "Kunnath, Suchetha Nambanoor  and
-            Pride, David  and
-            Gyawali, Bikash  and
-            Knoth, Petr",
-          booktitle = "Proceedings of the 8th International Workshop on Mining Scientific Publications",
-          month = "05 " # aug,
-          year = "2020",
-          address = "Wuhan, China",
-          publisher = "Association for Computational Linguistics",
-          url = "https://www.aclweb.org/anthology/2020.wosp-1.12",
-          pages = "75--83",
-        }
+    id: supporting-research-assessment-and-evaluation
+    title: Supporting research assessment and evaluation
+    caption: Supporting research assessment and evaluation
+    papers:
+    -
+      type: inproceedings
+      id: oro70520
+      booktitle: >
+        Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020
+      title: |
+        An Authoritative Approach to Citation Classification
+      author:
+        - David Pride
+        - Petr Knoth
+      year: 2020
+      keywords:
+        - usage statistics
+      url: http://oro.open.ac.uk/70520/
+      abstract: |
+        The ability to understand not only that a piece of research has been
+        cited, but why it has been cited has wide-ranging applications
+        in the areas of research evaluation, in tracking the dissemination
+        of new ideas and in better understanding research impact.
+        There have been several studies that have collated datasets of citations
+        annotated according to type using a class schema. These have favoured
+        annotation by independent annotators and the datasets produced have been
+        fairly small. We argue that authors themselves are in a primary position
+        to answer the question of why something was cited. No previous study has,
+        to our knowledge, undertaken such a large-scale survey of authors
+        to ascertain their own personal rea- sons for citation. In this work,
+        we introduce a new methodology for annotating citations and a significant
+        new dataset of 11,233 citations annotated by 883 authors.
+        This is the largest dataset of its type compiled to date, the first
+        truly multi-disciplinary dataset and the only dataset annotated
+        by authors. We also demonstrate the scalability of our data collection
+        approach and perform a compari- son between this new dataset and those
+        gathered by two previous studies.
+      description: |
+        The paper introduces the new multi-disciplinary ACT dataset, which is
+        currently the largest of its kind, annotated by the authors themselves.
+      citations:
+        text: >
+          Pride, D., & Knoth, P. (2020). An Authoritative Approach to Citation Classification. Proceedings of the ACM/IEEE Joint Conference on Digital Libraries in 2020. doi:10.1145/3383583.3398617
+        bibtex: |
+          @inproceedings{oro70520,
+            doi = {10.1145/3383583.3398617},
+            url = {http://oro.open.ac.uk/70520/},
+            year = 2020,
+            month = {aug},
+            publisher = {{ACM}},
+            author = {David Pride and Petr Knoth},
+            title = {An Authoritative Approach to Citation Classification},
+            booktitle = {Proceedings of the {ACM}/{IEEE} Joint Conference on Digital Libraries in 2020}
+          }
+    -
+      type: inproceedings
+      id: oro60670
+      booktitle: 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL)
+      title: |
+        ACT: An Annotation Platform for Citation Typing at Scale
+      author:
+        - David Pride
+        - Petr Knoth
+        - Jozef Harag
+      year: 2019
+      keywords:
+        - usage statistics
+      url: http://oro.open.ac.uk/60670/
+      abstract: |
+        In this paper we introduce the Academic Citation Typing (ACT) Platform,
+        a highly scalable online tool that takes as its input any full text
+        research paper and which then enables rapid annotation and classification
+        of in-text citations according to purpose and in uence.
+        In contrast to previous work, we employ first authors as annotators.
+        Our evaluation shows that these authors are able to quickly classify
+        the citations within their own papers. Over 200 authors have thus
+        far annotated their papers using the ACT platform.
+        This approach has already enabled the collection of the largest dataset
+        of citations annotated according to their purposes and influence on the
+        citing paper. Furthermore, this process is ongoing and the dataset will
+        continue to expand following this initial phase.
+      description: |
+        This paper describes the online tool for annotating citations in
+        a research paper based on their purpose. Citations are also annotated
+        based on how influential it is for research assessment.
+      citations:
+        text: >
+          Pride, D., Knoth, P., & Harag, J. (2019). ACT: An Annotation Platform for Citation Typing at Scale. 2019 ACM/IEEE Joint Conference on Digital Libraries (JCDL). doi:10.1109/jcdl.2019.00055
+        bibtex: |
+          @inproceedings{oro60670,
+            doi = {10.1109/jcdl.2019.00055},
+            url = {http://oro.open.ac.uk/60670/},
+            year = 2019,
+            month = {jun},
+            publisher = {{IEEE}},
+            author = {David Pride and Petr Knoth and Jozef Harag},
+            title = {{ACT}: An Annotation Platform for Citation Typing at Scale},
+            booktitle = {2019 {ACM}/{IEEE} Joint Conference on Digital Libraries ({JCDL})}
+          }
+    -
+      type: inproceedings
+      id: oro73290
+      booktitle: >
+        Proceedings of the 8th International Workshop on Mining Scientific
+        Publications
+      title: |
+        Overview of the 2020 WOSP 3C Citation Context Classification Task
+      author:
+        - Suchetha N. Kunnath
+        - David Pride
+        - Bikash Gyawali
+        - Petr Knoth
+      year: 2019
+      keywords:
+        - usage statistics
+      url: http://oro.open.ac.uk/73290/
+      abstract: |
+        The 3C Citation Context Classification task is the first shared task
+        addressing citation context classification. The two subtasks, A and B,
+        associated with this shared task, involves the classification of citations
+        based on their purpose and influence, respectively. Both tasks use
+        a portion of the new ACT dataset, developed by the researchers
+        at The Open University, UK. The tasks were hosted on Kaggle,
+        and the participated systems were evaluated using the macro f-score.
+        Three teams participated in subtask A and four teams participated
+        in subtask B. The best performing systems obtained an overall score
+        of 0.2056 for subtask A and 0.5556 for subtask B, outperforming the
+        simple majority class baseline models, which scored 0.11489 and 0.32249,
+        respectively. In this paper we provide a report specifying
+        the shared task, the dataset used, a short description
+        of the participating systems and the final results obtained
+        by the teams based on the evaluation criteria. The shared task
+        has been organised as part of the 8th International Workshop
+        on Mining Scientific Publications (WOSP 2020) workshop.
+      description: |
+        The overview paper highlights findings from the first edition of the
+        3C Citation Context Classification task, organised as part of
+        the workshop, WOSP 2020.
+      citations:
+        text: >
+          Kunnath, Suchetha N.; Pride, David; Gyawali, Bikash and Knoth, Petr (2020). Overview of the 2020 WOSP 3C Citation Context Classification Task. In: Proceedings of the 8th International Workshop on Mining Scientific Publications, Association for Computational Linguistics pp. 75–83.
+        bibtex: |
+          @inproceedings{oro73290,
+            title = "Overview of the 2020 {WOSP} 3{C} Citation Context Classification Task",
+            author = "Kunnath, Suchetha Nambanoor  and
+              Pride, David  and
+              Gyawali, Bikash  and
+              Knoth, Petr",
+            booktitle = "Proceedings of the 8th International Workshop on Mining Scientific Publications",
+            month = "05 " # aug,
+            year = "2020",
+            address = "Wuhan, China",
+            publisher = "Association for Computational Linguistics",
+            url = "https://www.aclweb.org/anthology/2020.wosp-1.12",
+            pages = "75--83",
+          }
 
 footer: |
   Find more our research outputs at [Big Scientific Data and Text Analytics

@@ -138,7 +138,7 @@ related-services:
     -
       title: CORE Search
       picture: /images/services/search.svg
-      url: search
+      url: /
     -
       title: CORE Repository Dashboard
       picture: /images/services/repository-dashboard.svg

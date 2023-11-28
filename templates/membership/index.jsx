@@ -24,7 +24,14 @@ const DetailsBox = ({
     {/* eslint-disable-next-line max-len */}
     {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */}
     <div className={styles.title} onClick={() => handleToggle(advantageId)}>
-      <Markdown>{title}</Markdown>
+      <div
+        className={classNames.use({
+          [styles.wrapper]: advantageId === 25,
+        })}
+      >
+        <Markdown>{title}</Markdown>
+        {advantageId === 25 && <span className={styles.soon}>coming soon</span>}
+      </div>
     </div>
     {active === advantageId && (
       <Markdown className={styles.description}>{description}</Markdown>
@@ -106,7 +113,7 @@ const Card = ({ plan }) => {
   )
 }
 
-const MembershipPageTemplate = ({ data }) => {
+const MembershipPageTemplate = ({ data, members }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(false)
 
   const handleContentOpen = (condition) => {
@@ -196,7 +203,9 @@ const MembershipPageTemplate = ({ data }) => {
           ))}
         </Carousel>
         <div className={styles.linkWrapper}>
-          <a href={data.carousel.action.url}>{data.carousel.action.caption}</a>
+          <a href={data.carousel.action.url}>
+            See all {members.length} CORE members
+          </a>
         </div>
       </section>
       <DetailsTable
@@ -215,11 +224,15 @@ const MembershipPageTemplate = ({ data }) => {
         <div className={styles.cards}>
           {data.support.cards.map((card) => (
             <div key={card.title} className={styles.card}>
-              <img
-                src={card.img}
-                alt={card.title}
-                className={styles.cardImage}
-              />
+              {card.img ? (
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className={styles.cardImage}
+                />
+              ) : (
+                <div className={styles.cardCount}>{members.length}</div>
+              )}
               <h5 className={styles.cardTitle}>{card.title}</h5>
               <p className={styles.cardCaption}>{card.caption}</p>
             </div>

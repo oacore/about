@@ -18,6 +18,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+    flex: unset;
+  }
 }
 
 .header {
@@ -43,6 +47,9 @@
       &:first-child {
         margin-bottom: 5px;
       }
+    }
+    @media (max-width: $breakpoint-lg) {
+      margin-left: 1.5rem;
     }
   }
 }

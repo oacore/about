@@ -105,3 +105,19 @@ related-services:
     - title: CORE Discovery
       picture: /images/services/discovery.svg
       url: discovery
+
+fastsyncLogos:
+  items:
+    - img: /images/logos/turnitin.svg
+      alt: "turnitin"
+    - img: /images/logos/grammarly.svg
+      alt: "grammarly"
+    - img: /images/logos/naver.svg
+      alt: "naver"
+    - img: /images/logos/cypris.svg
+      alt: "cypris"
+    - img: /images/logos/ontochemIt.png
+      alt: "ontochem"
+  action:
+    caption: Show all
+    url: '/about/endorsements'

@@ -107,6 +107,11 @@ $breakpoint-lg: 1415px;
     }
 
     .box {
+      .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       .title {
         display: block;
         cursor: pointer;
@@ -127,6 +132,21 @@ $breakpoint-lg: 1415px;
         margin-left: 1rem;
         background-color: var(--gray-100);
         padding: 5px 10px;
+      }
+      .soon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        width: max-content;
+        height: 22px;
+        margin-left: 6px;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        color: #fff;
+        background: #8bc34a;
+        border-radius: 2px;
       }
     }
   }
@@ -263,6 +283,24 @@ $breakpoint-lg: 1415px;
     display: block;
     margin-bottom: 1rem;
   }
+
+  &-count {
+    display: flex;
+    width: 99px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    color: #b75400;
+    margin-bottom: 1rem;
+  }
+
   &-title {
     display: inline-block;
     padding-top: 0.3rem;

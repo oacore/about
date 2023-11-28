@@ -9,7 +9,7 @@
   background: #b75400;
   border-radius: 2px;
   padding: 15px 10px;
-  height: 54px;
+  min-height: 54px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -25,12 +25,4 @@
       transition: 0.3s ease-out;
     }
   }
-}
-
-.toggle-content {
-  margin-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
 }
