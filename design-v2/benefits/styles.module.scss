@@ -229,7 +229,8 @@ $spacer: 1.5rem;
 
 .join-core {
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
+  gap: 3rem;
   flex-wrap: wrap;
   align-items: center;
   .add-data-provider-text {
@@ -239,6 +240,19 @@ $spacer: 1.5rem;
     text-align: left;
     font-size: 1rem;
     font-weight: 400;
+    width: 60%;
+    .benefits-description {
+      color: #666;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+    }
+    .benefits-join {
+      margin-top: 34px;
+      &:hover {
+        color: #fff;
+      }
+    }
   }
   .img-block {
     text-align: right;
@@ -293,10 +307,6 @@ $spacer: 1.5rem;
       color: var(--primary);
     }
   }
-}
-
-.button-custom {
-  margin-top: 1.5rem;
 }
 
 .content {
@@ -362,5 +372,69 @@ $spacer: 1.5rem;
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
+  }
+}
+
+.modal-form {
+  .sub-desc {
+    margin: 4px 0 24px;
+    color: #424242;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  .text-field {
+    margin-top: 24px;
+  }
+
+  .oai-url {
+    margin-bottom: 4px;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+
+    button:last-child {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.modal-step-form {
+  width: 480px;
+  .step-header {
+    color: #212121;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .step-description {
+    margin: 16px 0 24px;
+    color: #212121;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 20px;
+    letter-spacing: 0.009px;
+  }
+
+  .step-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 24px 0 36px;
+    img {
+      width: 270px;
+      height: 215px;
+    }
+  }
+
+  .step-button {
+    display: flex;
+    justify-content: flex-end;
   }
 }

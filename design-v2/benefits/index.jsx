@@ -9,6 +9,8 @@ import { Layout, Section } from '../components'
 // TODO: REPLACE OLD COMPONENT
 import JoinForm from './joinForm'
 import GratitudeModal from './GratitudeModal'
+// TODO: REPLACE OLD COMPONENT
+import BenefitsForm from './benefitsForm'
 
 import { Accordion, Content, Markdown } from 'components'
 import benefitsData from 'data/benefits.yml'
@@ -57,9 +59,14 @@ const BenefitsPageTemplate = () => {
   const [showAll, setShowAll] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [showGratitudeModal, setGratitudeModal] = useState(false)
+  const [modalActive, setModalActive] = useState(false)
 
   const toggleShowAll = () => {
     setShowAll((prev) => !prev)
+  }
+
+  const toggleModal = () => {
+    setModalActive(true)
   }
 
   const itemsToShow = showAll
@@ -168,12 +175,6 @@ const BenefitsPageTemplate = () => {
       <Section id="join-core" caption="join-core" className={styles.joinCore}>
         <div className={styles.formBlock}>
           <div id="add-new-data-provider" className={styles.addDataProvider}>
-            <p className={styles.addDataProviderText}>
-              {benefitsData.join.title}
-            </p>
-            <Button onClick={() => setShowModal(true)} variant="contained">
-              JOIN NOW
-            </Button>
             <JoinForm
               visibleModal={showModal}
               setGratitudeModal={setGratitudeModal}
@@ -183,6 +184,19 @@ const BenefitsPageTemplate = () => {
               showGratitudeModal={showGratitudeModal}
               setGratitudeModal={setGratitudeModal}
             />
+            <h5>{benefitsData.join.title}</h5>
+            <Markdown className={styles.benefitsDescription}>
+              {benefitsData.join.description}
+            </Markdown>
+            <Button
+              className={styles.benefitsJoin}
+              variant="contained"
+              tag="a"
+              onClick={toggleModal}
+            >
+              {benefitsData.join.action}
+            </Button>
+            {/* <AddDataProviderForm /> */}
           </div>
         </div>
         <div className={styles.imgBlock}>
@@ -193,6 +207,7 @@ const BenefitsPageTemplate = () => {
           />
         </div>
       </Section>
+      {modalActive && <BenefitsForm setModalActive={setModalActive} />}
       <Section id="services">
         <div className={styles.serviceWrapper}>
           {benefitsData.services.map((service) => (
