@@ -13,7 +13,6 @@ import {
   JoinItem,
   TestimonialList,
   TestimonialItem,
-  TestimonialCard,
   ServicesList,
   ServiceItem,
   Layout,
@@ -86,19 +85,6 @@ const Hero = ({
       />
     </div>
   </div>
-)
-
-const PartnerProjectsList = () => (
-  <ul className={styles.sectionPartnersList}>
-    {page.partnerProjects.children.map(({ logo }, index) => (
-      <TestimonialCard
-        // eslint-disable-next-line react/no-array-index-key
-        key={index}
-        imgUrl={logo}
-        className={styles.sectionPartnersListItem}
-      />
-    ))}
-  </ul>
 )
 
 const IndexPage = () => {
@@ -187,19 +173,6 @@ const IndexPage = () => {
           <div className={styles.actionButton}>
             <Button variant="contained" tag="a" href={page.services.action}>
               {page.services.actionLabel}
-            </Button>
-          </div>
-        </Section>
-        <Section className={styles.sectionPartners}>
-          <h3 className={styles.title}>{page.partnerProjects.title}</h3>
-          <PartnerProjectsList />
-          <div className={styles.actionButton}>
-            <Button
-              variant="outlined"
-              tag="a"
-              href={page.partnerProjects.action}
-            >
-              {page.partnerProjects.actionLabel}
             </Button>
           </div>
         </Section>

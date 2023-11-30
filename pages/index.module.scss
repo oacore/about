@@ -217,7 +217,7 @@
     display: flex;
     justify-content: space-between;
     gap: 35px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     .testimonial-item {
       width: 75%;
     }
@@ -229,8 +229,12 @@
       font-weight: 500;
       line-height: 130%;
       cursor: unset;
-      &:hover {
+      a {
         text-decoration: none;
+        color: #b75400;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
   }
