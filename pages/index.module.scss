@@ -60,6 +60,7 @@
     }
   }
   &-services {
+    padding: var(--page-padding-y) 0 0 0;
     .action-button {
       margin-top: 4rem;
     }
@@ -213,6 +214,9 @@
   background: #f5f5f5;
   padding: var(--page-padding-y) var(--page-padding-x);
   margin: 34px 0;
+  &:first-child {
+    margin-top: 4px;
+  }
   .testimonial-wrapper {
     display: flex;
     justify-content: space-between;
@@ -226,7 +230,7 @@
       color: #212121;
       font-size: 32px;
       font-style: normal;
-      font-weight: 500;
+      font-weight: 700;
       line-height: 130%;
       cursor: unset;
       a {
@@ -269,4 +273,8 @@
       padding: 8px 16px;
     }
   }
+}
+
+.partners-wrapper {
+  padding: 0;
 }
