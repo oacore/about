@@ -177,7 +177,7 @@ const IndexPage = () => {
           </div>
         </Section>
       </Layout>
-      <Section className={styles.partners}>
+      <Section className={styles.partnersWrapper}>
         {page.users.map((item) => (
           <div className={styles.mainItem}>
             <div className={styles.testimonialWrapper}>
