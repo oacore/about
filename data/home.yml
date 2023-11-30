@@ -132,7 +132,7 @@ partnerProjects:
     - logo: /images/partners/ukcorr.png
 users:
   - title: |
-      **Companies** using CORE
+      [Companies](/about/endorsements#enterprise-companies) using CORE
     testimonial:
         id: gareth-malcolm
         content: |
@@ -156,9 +156,9 @@ users:
           alt: "naver"
       action:
         caption: Show all
-        url: '/about/endorsements'
+        url: '/about/endorsements#enterprise-companies'
   - title: |
-      **Academic** institution using CORE
+      [Academic](/about/endorsements#academic-institutions) institution using CORE
     testimonial:
         id: kathleen-shearer
         content: |
@@ -183,9 +183,9 @@ users:
           full: true
       action:
         caption: Show all
-        url: '/about/endorsements'
+        url: '/about/endorsements#academic-institutions'
   - title: |
-      **Partner** projects
+      [Partner](/about/endorsements#partner-projects) projects
     testimonial:
         id: ben-johnson
         content: |
@@ -214,7 +214,7 @@ users:
           background: true
       action:
         caption: Show all
-        url: '/about/endorsements'
+        url: '/about/endorsements#partner-projects'
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research
