@@ -1,0 +1,68 @@
+navItems:
+  - item: |
+      **1. Who this document is for**
+    href: '#usage'
+  - item: |
+      **2. Terminology**
+    href: "#terminology"
+  - item: |
+      **3. Requirements and guidelines for indexing repository content**
+    href: "#guideline"
+  - item: 3.1 Repository configuration
+    href: "#configuration"
+  - item: 3.1.1 Ensuring your repository is visible via OAI-PMH (Required)
+    href: "#oai-pmh"
+  - item: 3.1.2 Data providers considering registration with CORE
+    href: "#registration"
+  - item: Data providers registering with CORE
+    href: "#processing"
+    hidden: true
+  - item: Data providers already registered in CORE
+    href: "#already"
+    hidden: true
+  - item: 3.1.3 Use of OAI-PMH sets (Required)
+    href: "#oai-pmh-usage"
+  - item: 3.1.4 OAI identifiers (Required)
+    href: "#oai-identifier"
+  - item: 3.1.5 Access for machine agents - (Required)
+    href: "#machine-agents"
+  - item: 3.1.6 Repository registration in open registries (Recommended)
+    href: "#open-registries"
+  - item: 3.1.7 Meta-tags (Recommended)
+    href: "#meta-tags"
+  - item: 3.2 Metadata Configuration
+    href: "#meta-configuration"
+  - item: 3.2.1 Supported application profiles (Required)
+    href: "#supported-application"
+  - item: i. Dublin Core / Extended Dublin Core (Minimum)
+    href: "#dublin-core"
+  - item: ii. OpenAIRE Guidelines (Supported)
+    href: "#openaire"
+  - item: iii. RIOXX v3 (Recommended)
+    href: "#rioxx"
+  - item: 3.3 Full text configuration	10
+    href: "#text-configuration"
+  - item: 3.3.1 Supported full-text formats (Required)	10
+    href: "#full-text"
+  - item: 3.3.2 Same-domain policy for hosting full texts (Required)	10
+    href: "#same-domain"
+  - item: 3.3.3 Linking to the full text of an article
+    href: "#linking-full-text"
+  - item: i. Direct link to the full text (Recommended)
+    href: "#Direct-full-text"
+  - item: ii. Indirect link to the full text (Supported)
+    href: "#indirect-link"
+  - item: 3.3.4 FAIR Signposting (Recommended)
+    href: "#fair-signposting"
+  - item: |
+      **4. Registering a data provider with CORE**
+    href: "#data-provider"
+  - item: 4.1 Submitting the data provider OAI base URL (Required)
+    href: "#oai-base"
+  - item: 4.2 Indexing the data provider’s content
+    href: "#indexing"
+  - item: 4.3 Claiming access to the CORE Dashboard (Recommended)
+    href: "#dashboard"
+  - item: |
+      **5. Further reading**
+    href: "#reading"

@@ -27,7 +27,7 @@ content:
     id: 1
     title: CORE Repository Dashboard
     descriptionCardCard: |
-      [Monitor, manage and access](~services/repository-dashboard) statistics about how your  metadata are exposed across the open access research network. [read more](~membership-documentation#dashboard)
+      [Monitor, manage and access](~services/repository-dashboard) statistics about how your  metadata are exposed across the open access research network. [read more](~documentations#dashboard)
     descriptionCardTable: |
       Monitor, manage and access statistics about how your  metadata are exposed across the open access research network.
     plans: [Starting, Supporting, Sustaining]
@@ -35,7 +35,7 @@ content:
     id: 2
     title: CORE Discovery
     descriptionCardCard: |
-      Benefit from our [plugin](~services/discovery) which turns metadata only pages in repositories to pages with full text links, whenever an open access version of the document is available anywhere across the open research network. [read more](~membership-documentation#discovery)
+      Benefit from our [plugin](~services/discovery) which turns metadata only pages in repositories to pages with full text links, whenever an open access version of the document is available anywhere across the open research network. [read more](~documentations#discovery)
     descriptionCardTable: |
       Benefit from our plugin which turns metadata only pages in repositories to pages with full text links, whenever an open access version of the document is available anywhere across the open research network.
     plans: [Starting, Supporting, Sustaining]
@@ -43,7 +43,7 @@ content:
     id: 3
     title: CORE Search
     descriptionCardCard: |
-      Your organisation's research visible and discoverable by over 30 million monthly active users who rely on CORE. [read more](~membership-documentation#search)
+      Your organisation's research visible and discoverable by over 30 million monthly active users who rely on CORE. [read more](~documentations#search)
     descriptionCardTable: |
       Your organisation's research visible and discoverable by over 30 million monthly active users who rely on CORE.
     plans: [Starting, Supporting, Sustaining]
@@ -51,7 +51,7 @@ content:
     id: 4
     title: CORE Recommender
     descriptionCardCard: |
-      Install our [recommender plugin](~services/recommender) to  help your users find related content within your own repository and from across the global open research network. [read more](~membership-documentation#recommender)
+      Install our [recommender plugin](~services/recommender) to  help your users find related content within your own repository and from across the global open research network. [read more](~documentations#recommender)
     descriptionCardTable: |
       Install our recommender plugin to  help your users find related content within your own repository and from across the global open research network.
     plans: [Starting, Supporting, Sustaining]
@@ -59,7 +59,7 @@ content:
     id: 5
     title: General support
     descriptionCardCard: |
-      Our enthusiastic open access team ready to answer general queries about CORE. [read more](~membership-documentation#general-support)
+      Our enthusiastic open access team ready to answer general queries about CORE. [read more](~documentations#general-support)
     descriptionCardTable: |
       Our enthusiastic open access team ready to answer general queries about CORE.
     plans: [Starting, Supporting, Sustaining]
@@ -67,7 +67,7 @@ content:
     id: 6
     title: Download statistics
     descriptionCardCard: |
-      Access statistics about how many times papers from your organisation were downloaded (from CORE and directly from your repository - IRUS tracker integration required for the latter). [read more](~membership-documentation#download-statistics)
+      Access statistics about how many times papers from your organisation were downloaded (from CORE and directly from your repository - IRUS tracker integration required for the latter). [read more](~documentations#download-statistics)
     descriptionCardTable: |
       Access statistics about how many times papers from your organisation were downloaded (from CORE and directly from your repository - IRUS tracker integration required for the latter).
     plans: [Starting, Supporting, Sustaining]
@@ -81,7 +81,7 @@ content:
        &ndash; Recommended across the repositories network
 
     descriptionCardCard: |-
-      &ndash; Increases the discoverability of your content. Open access full texts from your repository promoted to PubMed Central via their Link Out service. [read more](~membership-documentation#repository-discovery-boost)
+      &ndash; Increases the discoverability of your content. Open access full texts from your repository promoted to PubMed Central via their Link Out service. [read more](~documentations#repository-discovery-boost)
     descriptionCardTable: |-
       &ndash; Increases the discoverability of your content. Open access full texts from your repository promoted to PubMed Central via their Link Out service.
     plans: [Starting, Supporting, Sustaining]
@@ -89,7 +89,7 @@ content:
     title: Get your OAI identifiers resolved to your repository
     id: 8
     descriptionCardCard: |
-      Make [OAI identifiers](https://oai.core.ac.uk) originating from your repository resolve directly to your repository in the OAI Resolver. [read more](~membership-documentation#OAI-identifiers)
+      Make [OAI identifiers](https://oai.core.ac.uk) originating from your repository resolve directly to your repository in the OAI Resolver. [read more](~documentations#OAI-identifiers)
     descriptionCardTable: |
       Make OAI identifiers originating from your repository resolve directly to your repository in the OAI Resolver.
     plans: [ Starting, Supporting, Sustaining ]
@@ -97,7 +97,7 @@ content:
     id: 9
     title: Logos for your papers
     descriptionCardCard: |
-      Associate your research papers in CORE with your official organisational logo. This will be visible in CORE Search, CORE Recommender, CORE Discovery and from across the CORE Portal. Your logo can be uploaded from the CORE Repository Dashboard. [read more](~membership-documentation#logos-papers)
+      Associate your research papers in CORE with your official organisational logo. This will be visible in CORE Search, CORE Recommender, CORE Discovery and from across the CORE Portal. Your logo can be uploaded from the CORE Repository Dashboard. [read more](~documentations#logos-papers)
     descriptionCardTable: |
       Associate your research papers in CORE with your official organisational logo. This will be visible in CORE Search, CORE Recommender, CORE Discovery and from across the CORE Portal. Your logo can be uploaded from the CORE Repository Dashboard.
     plans: [Supporting, Sustaining]
@@ -105,7 +105,7 @@ content:
     id: 10
     title: Logo banner
     descriptionCardCard: |
-      We highly value the generous support of our Supporting and Sustaining members. We proudly display banners acknowledging your sponsorship and support to the open access and open science mission. [read more](~membership-documentation#logo-banner)
+      We highly value the generous support of our Supporting and Sustaining members. We proudly display banners acknowledging your sponsorship and support to the open access and open science mission. [read more](~documentations#logo-banner)
     descriptionCardTable: |
       We highly value the generous support of our Supporting and Sustaining members. We proudly display banners acknowledging your sponsorship and support to the open access and open science mission.
     plans: [Supporting, Sustaining]
@@ -113,7 +113,7 @@ content:
     id: 11
     title: Personalised banner
     descriptionCardCard: |
-      Promote your research conferences, events, academic jobs and other mission-aligned communications on the CORE website. [read more](~membership-documentation#personalised-banner)
+      Promote your research conferences, events, academic jobs and other mission-aligned communications on the CORE website. [read more](~documentations#personalised-banner)
     descriptionCardTable: |
       Promote your research conferences, events, academic jobs and other mission-aligned communications on the CORE website.
     plans: [Sustaining]
@@ -121,7 +121,7 @@ content:
     id: 12
     title: Board of Supporters (1 vote)
     descriptionCardCard: |
-      Help shape our development roadmap by having a say on our [Board of Supporters](~governance/supporters). [read more](~membership-documentation#board-supporters)
+      Help shape our development roadmap by having a say on our [Board of Supporters](~governance/supporters). [read more](~documentations#board-supporters)
     descriptionCardTable: |
       Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
@@ -129,7 +129,7 @@ content:
     id: 13
     title: Board of Supporters (2 votes)
     descriptionCardCard: |
-      Help shape our development roadmap by having a say on our Board of Supporters. [read more](~membership-documentation#board-supporters)
+      Help shape our development roadmap by having a say on our Board of Supporters. [read more](~documentations#board-supporters)
     descriptionCardTable: |
       Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
@@ -137,7 +137,7 @@ content:
     id: 14
     title: Board of Supporters
     descriptionCardCard: |
-      Help shape our development roadmap by having a say on our [Board of Supporters](~governance/supporters). [read more](~membership-documentation#board-supporters)
+      Help shape our development roadmap by having a say on our [Board of Supporters](~governance/supporters). [read more](~documentations#board-supporters)
     descriptionCardTable: |
       Help shape our development roadmap by having a say on our Board of Supporters.
     plans: [Supporting, Sustaining]
@@ -150,7 +150,7 @@ content:
     id: 15
     title: Technical support (≤5)
     descriptionCardCard: |
-      Guaranteed technical support of up to 5 technical queries per year. [read more](~membership-documentation#technical-support)
+      Guaranteed technical support of up to 5 technical queries per year. [read more](~documentations#technical-support)
     descriptionCardTable: |
       Guaranteed technical support of up to 5 technical queries per year.
     plans: [Supporting, Sustaining]
@@ -158,7 +158,7 @@ content:
     id: 16
     title: Unlimited and prioritised support
     descriptionCardCard: |
-      Get unlimited technical support and your questions prioritised on top to get your answers sooner. [read more](~membership-documentation#unlimited-support)
+      Get unlimited technical support and your questions prioritised on top to get your answers sooner. [read more](~documentations#unlimited-support)
     descriptionCardTable: |
       Get unlimited technical support and your questions prioritised on top to get your answers sooner.
     plans: [Sustaining]
@@ -166,7 +166,7 @@ content:
     id: 17
     title: CORE OA Compliance dashboard
     descriptionCardCard: |
-      Tools for Open Access compliance monitoring and metadata enrichments. [read more](/membership-documentation#compliance-dashboard)
+      Tools for Open Access compliance monitoring and metadata enrichments. [read more](/documentations#compliance-dashboard)
     descriptionCardTable: |
       Tools for Open Access compliance monitoring and metadata enrichments.
     plans: [Sustaining]
@@ -174,7 +174,7 @@ content:
     id: 18
     title: АPI use for your university
     descriptionCardCard: |
-      Use of the [CORE API](~services/api) for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs. [read more](~membership-documentation#АPI-organisation)
+      Use of the [CORE API](~services/api) for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs. [read more](~documentations#АPI-organisation)
     descriptionCardTable: |
       Use of the CORE API for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs.
     plans: [Supporting, Sustaining]
@@ -182,7 +182,7 @@ content:
     id: 19
     title: Dataset use for your university
     descriptionCardCard: |
-      Use of the [CORE Dataset](~services/dataset) for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs. [read more](~membership-documentation#dataset-university)
+      Use of the [CORE Dataset](~services/dataset) for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs. [read more](~documentations#dataset-university)
     descriptionCardTable: |
       Use of the CORE Dataset for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs.
     plans: [Sustaining]
@@ -190,7 +190,7 @@ content:
     id: 20
     title: Repository health check
     descriptionCardCard: |
-      Possibility of a data-driven metadata quality assessment consultation for your institution. We assess current level of metadata quality (including in relation to FAIRness) and provide guidance on how to improve it. (1 consultation per year included). [read more](~membership-documentation#repository-health-check)
+      Possibility of a data-driven metadata quality assessment consultation for your institution. We assess current level of metadata quality (including in relation to FAIRness) and provide guidance on how to improve it. (1 consultation per year included). [read more](~documentations#repository-health-check)
     descriptionCardTable: |
       Possibility of a data-driven metadata quality assessment consultation for your institution. We assess current level of metadata quality (including in relation to FAIRness) and provide guidance on how to improve it. (1 consultation per year included).
     plans: [Sustaining]
@@ -198,7 +198,7 @@ content:
     id: 21
     title: Promoted / spotlight / featured articles
     descriptionCardCard: |
-      When research papers from your organisation would appear on pages 2-4 of CORE Search results, your paper gets promoted to the front of the first page and is highlighted as a featured article. [read more](~membership-documentation#promoted-articles)
+      When research papers from your organisation would appear on pages 2-4 of CORE Search results, your paper gets promoted to the front of the first page and is highlighted as a featured article. [read more](~documentations#promoted-articles)
     descriptionCardTable: |
       When research papers from your organisation would appear on pages 2-4 of CORE Search results, your paper gets promoted to the front of the first page and is highlighted as a featured article.
     plans: [Sustaining]
@@ -206,7 +206,7 @@ content:
     id: 22
     title: Hosted or interview style blog post on mission-aligned activities
     descriptionCardCard: |
-      We are keen to provide a hosted or interview style blog post about open access, open science and other relevant mission-oriented activities your organisation is conducting on the CORE blog. (T&Cs apply) [read more](~membership-documentation#hosted-activities)
+      We are keen to provide a hosted or interview style blog post about open access, open science and other relevant mission-oriented activities your organisation is conducting on the CORE blog. (T&Cs apply) [read more](~documentations#hosted-activities)
     descriptionCardTable: |
       We are keen to provide a hosted or interview style blog post about open access, open science and other relevant mission-oriented activities your organisation is conducting on the CORE blog. (T&Cs apply)
     plans: [Sustaining]
@@ -214,7 +214,7 @@ content:
     id: 23
     title: RIOXX metadata validator
     descriptionCardCard: |
-      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX, a widely used metadata standard for repositories. [read more](~membership-documentation#rioxx-validator)
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX, a widely used metadata standard for repositories. [read more](~documentations#rioxx-validator)
     descriptionCardTable: |
       Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The RIOXX metadata validator is a tool that helps you validate compliance of individual metadata records with RIOXX , a widely used metadata standard for repositories.
     plans: [Starting, Supporting, Sustaining]
@@ -222,7 +222,7 @@ content:
     id: 24
     title: Versions and duplicates detection
     descriptionCardCard: |
-      Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean. [read more](~membership-documentation#versions-duplicates)
+      Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean. [read more](~documentations#versions-duplicates)
     descriptionCardTable: |
       Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean.
     plans: [Supporting, Sustaining]
@@ -230,7 +230,7 @@ content:
     id: 25
     title: Monitor RIOXX compliance
     descriptionCardCard: |
-      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR. [read more](~membership-documentation#rioxx-compliance)
+      Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR. [read more](~documentations#rioxx-compliance)
     descriptionCardTable: |
       Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR.
     plans: [Supporting, Sustaining]
@@ -246,7 +246,7 @@ plans:
       content: Organisations who want to be widely recognised for their open research. In addition to all the STARTING benefits, this membership also comes with extra visibility for your organisation in the OA network, additional technical support, [CORE API](~services/api) access for your researchers, and a seat on our [Board of Supporters](~governance/supporters).
     - title: |
         SUSTAINING for:
-      content: Organisations who want to be seen as open research champions. In addition to all the SUPPORTING benefits, this membership comes with additional tools to help stay compliant with [OA policies](/membership-documentation/?r=compliance-dashboard) and FAIR, unlimited technical support, [CORE Dataset](https://core.ac.uk/services/dataset) access for your researchers for text and data mining, and two seats on our Board of Supporters
+      content: Organisations who want to be seen as open research champions. In addition to all the SUPPORTING benefits, this membership comes with additional tools to help stay compliant with [OA policies](/documentations/?r=compliance-dashboard) and FAIR, unlimited technical support, [CORE Dataset](https://core.ac.uk/services/dataset) access for your researchers for text and data mining, and two seats on our Board of Supporters
   cards:
     - title: Starting
       caption: Free
@@ -345,7 +345,7 @@ how-it-works:
       active: Comparison table
   - action:
       caption: Access documentation
-      url: /membership-documentation
+      url: /documentations
 
 comparison-table:
   title: Features’ details and comparison
@@ -633,3 +633,9 @@ navItems:
     href: "#hosted-activities"
   - item: CORE badges
     href: "#core-badges"
+
+documentationSwitcher:
+  - title: CORE Data Provider’s Guide
+    description: In this documentation you can find all detailed information about becoming CORE data provider.
+  - title: Membership documentation
+    description: In this documentation you can find an instuction about how to interact with all features of CORE Memberships.
