@@ -636,6 +636,6 @@ navItems:
 
 documentationSwitcher:
   - title: CORE Data Provider’s Guide
-    description: In this documentation you can find all detailed information about becoming CORE data provider.
+    description: These guidelines aim to assist institutions and repository managers in configuring their repositories in way that enables CORE to correctly index them.
   - title: Membership Documentation
-    description: In this documentation you can find an instruction about how to interact with all features of CORE Memberships.
+    description: This documentation explains how to use all features and benefits of CORE Membership.
