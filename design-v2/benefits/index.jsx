@@ -159,6 +159,11 @@ const BenefitsPageTemplate = () => {
             </div>
           ))}
         </div>
+        <div className={styles.docsBtn}>
+          <Button href={benefitsData?.HowTo.action?.url} variant="outlined">
+            {benefitsData.HowTo.action.title}
+          </Button>
+        </div>
       </Section>
       <Section id="join-core" caption="join-core" className={styles.joinCore}>
         <div className={styles.formBlock}>

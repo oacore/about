@@ -180,6 +180,9 @@ HowTo:
       titlePicture: /images/benefits/join-circle.svg
       description: Become a Supporting or Sustaining [member](/membership) to receive even more benefits.
       picture: /images/benefits/join-arrow.svg
+  action:
+      title: Data provider’s guide
+      url: /documentations
 
 join:
   title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
