@@ -637,5 +637,5 @@ navItems:
 documentationSwitcher:
   - title: CORE Data Provider’s Guide
     description: In this documentation you can find all detailed information about becoming CORE data provider.
-  - title: Membership documentation
-    description: In this documentation you can find an instuction about how to interact with all features of CORE Memberships.
+  - title: Membership Documentation
+    description: In this documentation you can find an instruction about how to interact with all features of CORE Memberships.

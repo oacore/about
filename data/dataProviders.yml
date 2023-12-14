@@ -40,11 +40,11 @@ navItems:
     href: "#openaire"
   - item: iii. RIOXX v3 (Recommended)
     href: "#rioxx"
-  - item: 3.3 Full text configuration	10
+  - item: 3.3 Full text configuration
     href: "#text-configuration"
-  - item: 3.3.1 Supported full-text formats (Required)	10
+  - item: 3.3.1 Supported full-text formats (Required)
     href: "#full-text"
-  - item: 3.3.2 Same-domain policy for hosting full texts (Required)	10
+  - item: 3.3.2 Same-domain policy for hosting full texts (Required)
     href: "#same-domain"
   - item: 3.3.3 Linking to the full text of an article
     href: "#linking-full-text"
