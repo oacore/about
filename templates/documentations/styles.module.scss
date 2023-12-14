@@ -1,9 +1,13 @@
+.docs-layout {
+  padding: 9px var(--page-padding-x);
+}
+
 .documentation-wrapper {
   margin: 15px 0;
 }
 
 .documentation-inner-wrapper {
-  width: calc(100vw - 370px);
+  width: calc(100% - 370px);
   overflow-y: scroll;
 }
 
@@ -37,6 +41,7 @@
   border-bottom: 2px dashed #eee;
   p {
     margin-top: 24px;
+    line-height: 24px;
   }
 }
 
