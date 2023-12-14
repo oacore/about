@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 import Markdown from '../../components/markdown'
 import { Layout } from '../../design-v2/components'
 import textData from '../../data/membership.yml'
+import styles from './styles.module.scss'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
@@ -47,12 +48,13 @@ const DocumentationPageTemplate = ({ headerAbout, docs }) => {
       setNavActiveIndex(n)
     }
   }, [])
+
   return (
-    <Layout>
+    <Layout className={styles.docsLayout}>
       <DocumentationMembership
         headerTitle={headerAbout.header.title}
         headerCaption={<Markdown>{headerAbout.header.caption}</Markdown>}
-        docs={docs}
+        docs={docs?.items}
         highlight={highlight}
         setHighlight={setHighlight}
         nav={
