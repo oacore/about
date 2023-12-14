@@ -5,7 +5,6 @@ import {
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
-import Markdown from '../../components/markdown'
 import { Layout } from '../../design-v2/components'
 import textData from '../../data/membership.yml'
 import styles from './styles.module.scss'
@@ -15,7 +14,7 @@ function normalizeHref(str) {
   return test.replace('_', '-')
 }
 
-const DocumentationPageTemplate = ({ headerAbout, docs }) => {
+const DocumentationPageTemplate = ({ docs }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
   const route = useRouter()
@@ -52,8 +51,6 @@ const DocumentationPageTemplate = ({ headerAbout, docs }) => {
   return (
     <Layout className={styles.docsLayout}>
       <DocumentationMembership
-        headerTitle={headerAbout.header.title}
-        headerCaption={<Markdown>{headerAbout.header.caption}</Markdown>}
         docs={docs?.items}
         highlight={highlight}
         setHighlight={setHighlight}
