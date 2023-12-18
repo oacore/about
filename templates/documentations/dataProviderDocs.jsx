@@ -13,7 +13,7 @@ function normalizeHref(str) {
   const test = str.replace('#', '')
   return test.replace('_', '-')
 }
-const DataProviderDocs = ({ items }) => {
+const DataProviderDocs = ({ dataProviderDocs }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
   const route = useRouter()
@@ -31,7 +31,7 @@ const DataProviderDocs = ({ items }) => {
           behavior: 'smooth',
           block: 'center',
         })
-        const n = items?.items?.findIndex((item) => item.id === id)
+        const n = dataProviderDocs?.items?.findIndex((item) => item.id === id)
         setHighlight(n)
       }
     }, 100)
@@ -50,7 +50,7 @@ const DataProviderDocs = ({ items }) => {
   return (
     <Layout className={styles.docsLayout}>
       <DocumentationMembership
-        docs={items}
+        docs={dataProviderDocs?.items}
         highlight={highlight}
         setHighlight={setHighlight}
         imageSource
