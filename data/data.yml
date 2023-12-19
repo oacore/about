@@ -5,27 +5,17 @@ description:
 
 headline: Data, data, data
 tagline: |
-  Our dataset is *huge*, *global*, and [*widely used*](~about/endorsements).
+  CORE provides a comprehensive bibliographic database of the world’s scholarly literature. Our dataset is *huge*, *global*, and [*widely used*](~about/endorsements).
 
 sections:
   - title: |
-      CORE is a collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable
-      research papers
+      CORE is a comprehensive collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable scholarly resources
     content: |
-      CORE is the most comprehensive aggregator harvesting from institutional,
-      subject and preprint repositories as well as gold and hybrid open access
-      journals.
+      CORE indexes metadata and content from a wide range of data providers including institutional, subject and preprint repositories as well as journals.
     link:
       caption: Learn more about the nature of our dataset
       url: services#access-to-raw-data
     image: /images/illustrations/file-searching-amico.svg
-  - title: |
-      CORE provides access to an estimated  <mark>{{openAccessLinksCount}}</mark>
-      free to read full text research papers with <mark>{{fullTextCount}}</mark>&nbsp;full texts hosted directly by CORE
-    content: |
-      It's the biggest collection of open access full texts,
-      making it an unparalleled research tool.
-    image: /images/illustrations/analysis-amico.svg
   - title: |
       You can access the data programmatically and do exciting and powerful things with it
     link:
@@ -41,6 +31,21 @@ sections:
       - type: CORE FastSync
         link: services/fastsync
         image: /images/coreFastSync.svg
+  - title: |
+      CORE provides access to an estimated  <mark>{{openAccessLinksCount}}</mark>
+      free to read full text research papers with <mark>{{fullTextCount}}</mark>&nbsp;full texts hosted directly by CORE
+    content: |
+      It's the biggest collection of open access full texts,
+      making it an unparalleled research tool.
+    image: /images/illustrations/analysis-amico.svg
+  - title: |
+      Aspiring for completeness
+    content: |
+      While other bibliographic databases only include scholarly works with registered DOIs, CORE is able to find and index in addition scholarly works without them. In fact, about half of CORE’s works do not have a DOI. Those works are missing in most other scholarly databases, making CORE truly unique and a necessity for any service that cannot afford to omit important studies.
+    link:
+      caption: Learn more about the nature of our dataset
+      url: services#access-to-raw-data
+    image: /images/illustrations/chart.svg
   - title: |
       We're truly global, aggregating from
       <mark>{{repositoriesCount}}</mark>&nbsp;data providers,

@@ -118,13 +118,14 @@ const IndexPage = () => {
           <h2 hidden={page.features.hidden}>{page.features.title}</h2>
           <KeyFeatureList>
             {page.features.children.map(
-              ({ title, description, picture, status, url }) => (
+              ({ title, description, picture, status, url, titleUrl }) => (
                 <KeyFeature
                   title={title}
                   status={status}
                   icon={picture}
                   key={title}
                   url={url}
+                  titleUrl={titleUrl}
                 >
                   {description}
                 </KeyFeature>
@@ -144,6 +145,18 @@ const IndexPage = () => {
               />
             ))}
           </JoinList>
+        </Section>
+        <Section className={styles.sectionOai} useFullPageWidth>
+          <div className={styles.innerOai}>
+            <img className={styles.img} src={page.oai.image} alt="logo" />
+            <h3 className={styles.title}>{page.oai.title}</h3>
+            <Markdown className={styles.description}>
+              {page.oai.description}
+            </Markdown>
+            <Button variant="contained" tag="a" href={page.oai.action.url}>
+              {page.oai.action.title}
+            </Button>
+          </div>
         </Section>
         <Section className={styles.sectionTestimonial}>
           <div className={styles.center}>
