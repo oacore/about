@@ -3,9 +3,9 @@ import { classNames } from '@oacore/design/lib/utils'
 import { useRouter } from 'next/router'
 
 import styles from './index.module.scss'
+import retrieveContent from '../content'
 
 import { Accordion, Content, Markdown, Page, Section } from 'components'
-import faqData from 'data/faq.yml'
 
 const itemToURL = (id) => {
   const url = new URL(window.location)
@@ -111,15 +111,32 @@ const FAQsSection = ({
   )
 }
 
-const FAQsPage = () => (
-  <Page
-    title={faqData.title}
-    description={faqData.description}
-    keywords={faqData.keywords}
-    nav
-  >
-    <h1>{faqData.title}</h1>
-    {faqData.sections.map((section) => (
+const getSections = async ({ ref } = {}) => {
+  const content = await retrieveContent('faqs', {
+    ref,
+    transform: 'object',
+  })
+  return content
+}
+
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const sections = await getSections({ ref })
+  const data = {
+    ...sections,
+  }
+
+  return {
+    props: {
+      data,
+    },
+  }
+}
+
+const FAQsPage = ({ data }) => (
+  <Page title={data.faqs.title} description={data.faqs.description} nav>
+    <h1>{data.faqs.title}</h1>
+    {data.faqs.sections.map((section) => (
       <FAQsSection key={section.id} {...section} />
     ))}
   </Page>

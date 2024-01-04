@@ -9,7 +9,6 @@ import { Layout, Section } from '../components'
 // TODO: REPLACE OLD COMPONENT
 import { Accordion, Content, Markdown } from 'components'
 import benefitsData from 'data/benefits.yml'
-import faqData from 'data/faq.yml'
 import { patchStats } from 'components/utils'
 
 const itemToURL = (id) => {
@@ -50,16 +49,15 @@ const JoinSectionItem = ({ title, picture, description, additional }) => {
   )
 }
 
-const BenefitsPageTemplate = () => {
+const BenefitsPageTemplate = ({ data }) => {
   const [showAll, setShowAll] = useState(false)
-
   const toggleShowAll = () => {
     setShowAll((prev) => !prev)
   }
 
   const itemsToShow = showAll
-    ? faqData.sections[0].items
-    : faqData.sections[0].items.slice(0, 3)
+    ? data.faqs.sections[0].items
+    : data.faqs.sections[0].items.slice(0, 3)
 
   return (
     <Layout>
