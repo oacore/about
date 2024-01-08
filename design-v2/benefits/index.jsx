@@ -158,7 +158,7 @@ const BenefitsPageTemplate = ({ data }) => {
           ))}
         </div>
         <div className={styles.docsBtn}>
-          <Button href={benefitsData?.HowTo.action?.url} variant="outlined">
+          <Button href={benefitsData?.HowTo.action?.url} variant="contained">
             {benefitsData.HowTo.action.title}
           </Button>
         </div>
