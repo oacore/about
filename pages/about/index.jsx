@@ -163,22 +163,26 @@ const AboutPage = ({ data }) => {
             <Markdown>
               {patchStats(data.howItWorks.body, data.statistics)}
             </Markdown>
+            <ButtonToolbar className={styles.howButtonWrapper}>
+              <Button
+                variant="contained"
+                color="primary"
+                outline
+                href="benefits"
+              >
+                {data.howItWorks.actionLabels.primary}
+              </Button>
+
+              <Button color="link" href="data-providers">
+                {data.howItWorks.actionLabels.secondary}
+              </Button>
+            </ButtonToolbar>
           </Col>
 
           <Col xs="12" md="6">
             <RepositoriesMap />
           </Col>
         </Row>
-
-        <ButtonToolbar align="center" className="flex-row-reverse">
-          <Button color="primary" outline href="benefits">
-            {data.howItWorks.actionLabels.primary}
-          </Button>
-
-          <Button color="link" href="data-providers">
-            {data.howItWorks.actionLabels.secondary}
-          </Button>
-        </ButtonToolbar>
       </Section>
       <RelatedContentSection
         id="communities"
