@@ -1,0 +1,71 @@
+@import 'design-v2/variables';
+
+.spacer {
+  height: 24px;
+}
+
+.service-main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .service-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2.5rem 0;
+    padding: 0 calc(50vw - 60rem / 2);
+    .service {
+      flex: 1;
+      padding: 1.5rem;
+      background: #f5f5f5;
+      border-radius: 2px;
+
+      @media (max-width: $breakpoint-sm) {
+        flex: auto;
+      }
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+
+      .headerWrapper {
+        display: flex;
+        align-items: center;
+        .title-picture {
+          margin-right: 10px;
+          width: 70px;
+          height: 46px;
+        }
+      }
+
+      .service-title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 32px;
+        color: #212121;
+      }
+
+      .service-description {
+        margin: 18px 0 34px 0;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 24px;
+        color: #212121;
+        min-height: 75px;
+        height: max-content;
+      }
+
+      &-title {
+        color: var(--primary);
+      }
+    }
+  }
+  @media (max-width: 990px) {
+    padding: 0 16px;
+  }
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
