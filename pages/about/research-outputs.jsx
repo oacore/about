@@ -211,6 +211,7 @@ class ResearchOutputsPage extends Component {
                 tag="a"
                 variant="contained"
                 href={page.links.moreAction.link}
+                target="_blank"
               >
                 {page.links.moreAction.title}
               </Button>

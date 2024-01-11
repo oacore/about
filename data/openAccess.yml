@@ -1,0 +1,13 @@
+services:
+  - title: Become a CORE data provider
+    picture: /images/services/membership.svg
+    description: Join the data providers community and facilitate access of your scientific research outputs to everyone in the world.
+    action:
+      - title: Find out more
+        url: benefits
+  - title: CORE Data provider’s guide
+    picture: /images/services/guide.svg
+    description: The guide aims to assist institutions and repository managers in configuring their repositories in way that enables CORE to correctly index them.
+    action:
+      - title: Find out more
+        url: documentations
