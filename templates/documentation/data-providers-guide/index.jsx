@@ -4,10 +4,12 @@ import {
   DocumentationMembershipNav,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
+import { Button } from '@oacore/design/lib/elements'
 
-import { Layout } from '../../design-v2/components'
-import textData from '../../data/dataProviders.yml'
+import { Layout } from '../../../design-v2/components'
+import textData from '../../../data/dataProviders.yml'
 import styles from './styles.module.scss'
+import text from '../../../data/membership.yml'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
@@ -47,8 +49,36 @@ const DataProviderDocs = ({ dataProviderDocs }) => {
     }
   }, [])
 
+  const handleButtonClick = () => {
+    route.push('membership-documentation')
+  }
+
   return (
     <Layout className={styles.docsLayout}>
+      <div className={styles.tabWrapper}>
+        <div className={styles.btnWrapper}>
+          <Button className={styles.activeTab}>
+            <div>
+              <h5 className={styles.tabHeader}>
+                {text.documentationSwitcher[0].title}
+              </h5>
+              <p className={styles.tabDescription}>
+                {text.documentationSwitcher[0].description}
+              </p>
+            </div>
+          </Button>
+          <Button className={styles.tab} onClick={handleButtonClick}>
+            <div>
+              <h5 className={styles.tabHeader}>
+                {text.documentationSwitcher[1].title}
+              </h5>
+              <p className={styles.tabDescription}>
+                {text.documentationSwitcher[1].description}
+              </p>
+            </div>
+          </Button>
+        </div>
+      </div>
       <DocumentationMembership
         docs={dataProviderDocs?.items}
         highlight={highlight}
