@@ -182,7 +182,7 @@ HowTo:
       picture: /images/benefits/join-arrow.svg
   action:
       title: Data provider’s guide
-      url: /data-providers-guide
+      url: /documentation/data-providers-guide
 
 join:
   title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
