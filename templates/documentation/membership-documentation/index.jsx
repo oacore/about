@@ -4,10 +4,11 @@ import {
   DocumentationMembershipNav,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
+import { Button } from '@oacore/design/lib/elements'
 
-import { Layout } from '../../design-v2/components'
-import textData from '../../data/membership.yml'
+import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
+import text from '../../../data/membership.yml'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
@@ -41,15 +42,43 @@ const DocumentationPageTemplate = ({ docs }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      const n = textData.navItems.findIndex(
+      const n = text.navItems.findIndex(
         (item) => normalizeHref(item.href) === id
       )
       setNavActiveIndex(n)
     }
   }, [])
 
+  const handleButtonClick = () => {
+    route.push('data-providers-guide')
+  }
+
   return (
     <Layout className={styles.docsLayout}>
+      <div className={styles.tabWrapper}>
+        <div className={styles.btnWrapper}>
+          <Button className={styles.tab} onClick={handleButtonClick}>
+            <div>
+              <h5 className={styles.tabHeader}>
+                {text.documentationSwitcher[0].title}
+              </h5>
+              <p className={styles.tabDescription}>
+                {text.documentationSwitcher[0].description}
+              </p>
+            </div>
+          </Button>
+          <Button className={styles.activeTab}>
+            <div>
+              <h5 className={styles.tabHeader}>
+                {text.documentationSwitcher[1].title}
+              </h5>
+              <p className={styles.tabDescription}>
+                {text.documentationSwitcher[1].description}
+              </p>
+            </div>
+          </Button>
+        </div>
+      </div>
       <DocumentationMembership
         docs={docs?.items}
         highlight={highlight}
@@ -58,7 +87,7 @@ const DocumentationPageTemplate = ({ docs }) => {
           <DocumentationMembershipNav
             activeIndex={navActiveIndex}
             setNavActiveIndex={setNavActiveIndex}
-            textData={textData}
+            textData={text}
             setHighlight={setHighlight}
           />
         }

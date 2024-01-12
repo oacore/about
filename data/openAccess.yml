@@ -10,4 +10,4 @@ services:
     description: The guide aims to assist institutions and repository managers in configuring their repositories in way that enables CORE to correctly index them.
     action:
       - title: Find out more
-        url: documentations
+        url: data-providers-guide
