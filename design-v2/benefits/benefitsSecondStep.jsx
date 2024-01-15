@@ -25,7 +25,7 @@ const BenefitsStep = ({
       hideManually
       className={styles.modalStepForm}
     >
-      <h5 className={styles.stepHeader}>{benefitsData.secondStep.title}</h5>
+      <h5 className={styles.stepHeader}>{subTitle}</h5>
       <div className={styles.stepImage}>
         <img
           src={benefitsData.secondStep.picture}
@@ -33,7 +33,6 @@ const BenefitsStep = ({
           className={styles.image}
         />
       </div>
-      <span className={styles.stepHeader}>{subTitle}</span>
       <Markdown className={styles.stepDescription}>{description}</Markdown>
       <div className={styles.stepButton}>
         <Button onClick={test} color="primary" outline>

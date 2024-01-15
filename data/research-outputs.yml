@@ -20,10 +20,10 @@ links:
       href: download-statistics
     - title:  Supporting research assessment and evaluation
       href: supporting-research-assessment-and-evaluation
-  more: Find more our research outputs at [Big Scientific Data and Text Analytics group website.](http://bsdtag.kmi.open.ac.uk)
+  more: Find more our research outputs at [Big Scientific Data and Text Analytics group website.](http://bsdtag.kmi.open.ac.uk#publications)
   moreAction:
     title: find more
-    link: http://bsdtag.kmi.open.ac.uk
+    link: http://bsdtag.kmi.open.ac.uk#publications
 
 sections:
   - id: our-vision
@@ -965,8 +965,8 @@ sections:
 
 footer: |
   Find more our research outputs at [Big Scientific Data and Text Analytics
-  group website](http://bsdtag.kmi.open.ac.uk).
+  group website](http://bsdtag.kmi.open.ac.uk#publications).
 
 action:
   text: Find more
-  href: http://bsdtag.kmi.open.ac.uk
+  href: http://bsdtag.kmi.open.ac.uk#publications

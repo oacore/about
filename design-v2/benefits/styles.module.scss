@@ -227,6 +227,12 @@ $spacer: 1.5rem;
   }
 }
 
+.docs-btn {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px 16px 0 0;
+}
+
 .join-core {
   display: flex;
   //justify-content: space-between;

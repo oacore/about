@@ -180,10 +180,13 @@ HowTo:
       titlePicture: /images/benefits/join-circle.svg
       description: Become a Supporting or Sustaining [member](/membership) to receive even more benefits.
       picture: /images/benefits/join-arrow.svg
+  action:
+      title: Data provider’s guide
+      url: /documentation/data-providers-guide
 
 join:
   title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
-  description: We have created a [data provider’s]() guide describing best practices of how to expose metadata to CORE. This guide serves as a reference to our data providers.
+  description: We have created a [data provider’s](documentation/data-providers-guide) guide describing best practices of how to expose metadata to CORE. This guide serves as a reference to our data providers.
   picture: /images/benefits/join-core.svg
   action: join
   subOai: If you don’t know the OAI base URL of the data provider, insert the URL of it and we will try to find it.
@@ -216,7 +219,7 @@ secondStep:
   member:
     subTitle: This data provider already exist
     description: |
-      You can find data provider’s content at [core.ac.uk/search?q=repository:id={{dataProvider.id}}](). Also here you can find [{{dataProvider.id}}]() profile page on the CORE website.
+      You can find data provider’s content at **core.ac.uk/search?q=repository:id={{dataProvider.id}}**. Also here you can find data provider **{{https://core.ac.uk/data-providers/??}}** profile page on the CORE website.
 
       **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more]().
   newMember:
@@ -230,6 +233,6 @@ secondStep:
     description: |
       Please check that given OAI based URL is **correct.**
 
-      Example: -https://oro.open.ac.uk/cgi/oai2-
+      Example: **https://oro.open.ac.uk/cgi/oai2**
 
       If you believe that your OAI is correct, [contact us](/about#contact) to add it manually.

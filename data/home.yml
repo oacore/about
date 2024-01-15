@@ -15,26 +15,22 @@ slides:
       statisticLabel: statistic
       statisticAction: /data
       statisticActionLabel: see our data statistic
-    - title: Resolve OAI identifier
-      description: |
-        OAIs are unique identifiers used by repositories.
-        As opposed to DOIs, they are minted in a distributed way and cost-free.
-        Our service allows you to resolve an OAI in the same way as you would resolve a DOI.
-      image: /images/heros/oai.svg
-      label: OAI
-      action: http://oai.core.ac.uk
-      actionLabel: Resolve
+    - title: A comprehensive bibliographic database of the world’s scholarly literature
+      image: /images/heros/database.svg
+      label: Explore CORE data
+      action: /data
+      actionLabel: Explore CORE data
 search-placeholder: Search {{totalArticlesCount}} papers from around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   hidden: true
   children:
-    - title: Global aggregator
-      description: We serve the global network of open access [repositories and journals](~benefits)
+    - title: Indexing the world’s repositories
+      description: We serve the global network of [repositories and journals](~benefits)
       picture: /images/features/globe.svg
       url: /benefits
-    - title: Harmonised data access
-      description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
+    - title: Comprehensive data coverage
+      description: We provide both metadata and [full text](/data) access to our [comprehensive collection](/data) through our APIs and Datasets
       picture: /images/features/gears.svg
       status: data
       url: /data
@@ -46,6 +42,7 @@ features:
       description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~about/research-outputs/#ai-ml-papers)
       picture: /images/features/neural.svg
       url: /governance/supporters
+      titleUrl: /about/research-outputs
 
 join:
   title: Join CORE
@@ -60,6 +57,16 @@ join:
     - caption: Explore our services
       url: /services
       picture: /images/join/server.svg
+oai:
+  image: /images/heros/oai.svg
+  title: Cost-free PIDs for your repository
+  description: |
+    OAI identifiers are unique identifiers minted cost-free by repositories. Ensure that your repository is correctly configured, enabling the [CORE OAI Resolver](https://oai.core.ac.uk) to redirect your identifiers to your repository landing pages.
+
+    OAI IDs provide a cost-free option for assigning Persistent Identifiers (PIDs) to your repository records. [Learn more.](/documentation/oai-resolver)
+  action:
+    title: Try our OAI resolver
+    url: https://oai.core.ac.uk
 testimonials:
   title: Who we serve?
   subtitle: 20 million monthly active users
@@ -132,7 +139,7 @@ partnerProjects:
     - logo: /images/partners/ukcorr.png
 users:
   - title: |
-      **Companies** using CORE
+      [Companies](/about/endorsements#enterprise-companies) using CORE
     testimonial:
         id: gareth-malcolm
         content: |
@@ -156,9 +163,9 @@ users:
           alt: "naver"
       action:
         caption: Show all
-        url: '/about/endorsements'
+        url: '/about/endorsements#enterprise-companies'
   - title: |
-      **Academic** institution using CORE
+      [Academic](/about/endorsements#academic-institutions) institution using CORE
     testimonial:
         id: kathleen-shearer
         content: |
@@ -183,9 +190,9 @@ users:
           full: true
       action:
         caption: Show all
-        url: '/about/endorsements'
+        url: '/about/endorsements#academic-institutions'
   - title: |
-      **Partner** projects
+      [Partner](/about/endorsements#partner-projects) projects
     testimonial:
         id: ben-johnson
         content: |
@@ -214,7 +221,7 @@ users:
           background: true
       action:
         caption: Show all
-        url: '/about/endorsements'
+        url: '/about/endorsements#partner-projects'
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research

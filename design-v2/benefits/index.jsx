@@ -14,7 +14,6 @@ import BenefitsForm from './benefitsForm'
 
 import { Accordion, Content, Markdown } from 'components'
 import benefitsData from 'data/benefits.yml'
-import faqData from 'data/faq.yml'
 import { patchStats } from 'components/utils'
 
 const itemToURL = (id) => {
@@ -55,7 +54,7 @@ const JoinSectionItem = ({ title, picture, description, additional }) => {
   )
 }
 
-const BenefitsPageTemplate = () => {
+const BenefitsPageTemplate = ({ data }) => {
   const [showAll, setShowAll] = useState(false)
   const [showModal, setShowModal] = useState(false)
   const [showGratitudeModal, setGratitudeModal] = useState(false)
@@ -70,8 +69,8 @@ const BenefitsPageTemplate = () => {
   }
 
   const itemsToShow = showAll
-    ? faqData.sections[0].items
-    : faqData.sections[0].items.slice(0, 3)
+    ? data.faqs.sections[0].items
+    : data.faqs.sections[0].items.slice(0, 3)
 
   return (
     <Layout>
@@ -170,6 +169,11 @@ const BenefitsPageTemplate = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className={styles.docsBtn}>
+          <Button href={benefitsData?.HowTo.action?.url} variant="contained">
+            {benefitsData.HowTo.action.title}
+          </Button>
         </div>
       </Section>
       <Section id="join-core" caption="join-core" className={styles.joinCore}>

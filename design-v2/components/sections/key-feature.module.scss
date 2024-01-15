@@ -44,3 +44,11 @@
     text-transform: capitalize;
   }
 }
+
+.unset-link {
+  color: #212121;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

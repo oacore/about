@@ -13,31 +13,28 @@ header:
 
 content:
   - &website
-    title: Acknowledgement on the CORE sponsors webpage with a hyperlink to the sponsor’s website
+    title: Listing of the sponsor on the CORE donors page together with their sponsorship level.
     plans: [Strategic partner, Platinum, Gold, Silver, Bronze]
   - &logo
-    title: Logo banner integrated in CORE Search
+    title: Acknowledgement of the sponsor’s generous support and their sponsorship level in CORE Search
     plans: [Strategic partner, Platinum, Gold, Silver]
   - &baner
-    title: Personalised banners for research events within CORE
+    title: Acknowledgement of support in a CORE communication and/or promotion material
     plans: [Strategic partner, Platinum, Gold]
   - &acknowledgement
-    title: Acknowledgement in our communication and promotion materials
-    plans: [Strategic partner, Platinum, Gold]
-  - &blog
     title: Invited post on CORE blog*
     plans: [Strategic partner, Platinum]
-  - &presentation
+  - &blog
     title: Acknowledgement in presentations delivered by the CORE team
     plans: [Strategic partner, Platinum]
   - &sponsor
     title: Listing as a key sponsor on the CORE homepage
     plans: [Strategic partner, Platinum]
   - &partner
-    title: Listing as a strategic partner on the CORE homepage and within the CORE footer of every CORE page right next to The Open University logo
+    title: Listing as a strategic partner within the CORE footer of every CORE page right next to The Open University logo
     plans: [Strategic partner]
   - &paper
-    title: Acknowledgement of support provided in relevant research papers produced by the CORE team
+    title: Acknowledgement of financial support provided in relevant research papers produced by the CORE team
     plans: [Strategic partner]
 
 features:
@@ -108,7 +105,6 @@ comparison-table:
     - *baner
     - *acknowledgement
     - *blog
-    - *presentation
     - *sponsor
     - *partner
     - *paper

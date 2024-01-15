@@ -13,7 +13,6 @@ import {
   JoinItem,
   TestimonialList,
   TestimonialItem,
-  TestimonialCard,
   ServicesList,
   ServiceItem,
   Layout,
@@ -88,19 +87,6 @@ const Hero = ({
   </div>
 )
 
-const PartnerProjectsList = () => (
-  <ul className={styles.sectionPartnersList}>
-    {page.partnerProjects.children.map(({ logo }, index) => (
-      <TestimonialCard
-        // eslint-disable-next-line react/no-array-index-key
-        key={index}
-        imgUrl={logo}
-        className={styles.sectionPartnersListItem}
-      />
-    ))}
-  </ul>
-)
-
 const IndexPage = () => {
   const [searchValue, setSearchValue] = useState('')
 
@@ -132,13 +118,14 @@ const IndexPage = () => {
           <h2 hidden={page.features.hidden}>{page.features.title}</h2>
           <KeyFeatureList>
             {page.features.children.map(
-              ({ title, description, picture, status, url }) => (
+              ({ title, description, picture, status, url, titleUrl }) => (
                 <KeyFeature
                   title={title}
                   status={status}
                   icon={picture}
                   key={title}
                   url={url}
+                  titleUrl={titleUrl}
                 >
                   {description}
                 </KeyFeature>
@@ -158,6 +145,18 @@ const IndexPage = () => {
               />
             ))}
           </JoinList>
+        </Section>
+        <Section className={styles.sectionOai} useFullPageWidth>
+          <div className={styles.innerOai}>
+            <img className={styles.img} src={page.oai.image} alt="logo" />
+            <h3 className={styles.title}>{page.oai.title}</h3>
+            <Markdown className={styles.description}>
+              {page.oai.description}
+            </Markdown>
+            <Button variant="contained" tag="a" href={page.oai.action.url}>
+              {page.oai.action.title}
+            </Button>
+          </div>
         </Section>
         <Section className={styles.sectionTestimonial}>
           <div className={styles.center}>
@@ -190,21 +189,8 @@ const IndexPage = () => {
             </Button>
           </div>
         </Section>
-        <Section className={styles.sectionPartners}>
-          <h3 className={styles.title}>{page.partnerProjects.title}</h3>
-          <PartnerProjectsList />
-          <div className={styles.actionButton}>
-            <Button
-              variant="outlined"
-              tag="a"
-              href={page.partnerProjects.action}
-            >
-              {page.partnerProjects.actionLabel}
-            </Button>
-          </div>
-        </Section>
       </Layout>
-      <Section className={styles.partners}>
+      <Section className={styles.partnersWrapper}>
         {page.users.map((item) => (
           <div className={styles.mainItem}>
             <div className={styles.testimonialWrapper}>

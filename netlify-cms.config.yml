@@ -1274,3 +1274,153 @@ collections:
               widget: text
               label: Description dashboard
               hint: Description for Dashboard
+
+- name: docs-dataProvider
+
+  media_folder: '/images/docs-membership'
+
+  create: false
+  delete: false
+
+  label: 📘 Data Provider’s Guide
+  label_singular: section
+  description: >
+    CORE Data Provider’s Guide
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  docs-dataProvider/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: Provider documentation
+      label: Provider Documentation
+      file: docs-dataProvider/dataProviderDocs.yml
+      fields:
+        - name: items
+          widget: list
+          label: Items
+          allow_add: true
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: ID
+              hint: id of the block. Must match anchor link url
+            - name: title
+              widget: string
+              label: Title
+              hint: Title of the links block
+            - name: images
+              widget: list
+              label: Images list
+              hint: Images bottom description.
+              allow_add: true
+              fields:
+                - name: file
+                  widget: image
+                  label: File
+                  hint: Image in description
+            - name: descriptionAbout
+              widget: text
+              label: Description about
+              hint: Description for About
+            - name: subTitle
+              widget: string
+              label: subTitle
+              hint: subTitle of the images
+            - name: subDescription
+              widget: text
+              label: Sub Description dashboard
+              hint: Sub Description for Dashboard
+
+- name: FAQs
+
+  create: false
+  delete: false
+
+  label: 📚 FAQs
+  label_singular: FAQs
+  files:
+    - name: faqs
+      label: ℹ️ Metadata (title, description, headline)
+      file:  faqs/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: FAQs
+      label: FAQs
+      file: faqs/faqs.yml
+      fields:
+        - name: items
+          widget: list
+          label: Items
+          allow_add: true
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: ID
+              hint: id of the block. Must match anchor link url
+            - name: title
+              widget: string
+              label: Title
+              hint: Title of the links block
+            - name: updateDate
+              widget: string
+              label: Title
+              hint: Update date of block
+            - name: sections
+              widget: object
+              label: Sections
+              hint: Section dividers
+              allow_add: true
+              fields:
+                - name: id
+                  label: ID
+                  widget: string
+                  hint: id of subItems, some might not have it
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: Title of subItems, some might not have it
+                - name: items
+                  label: items
+                  widget: object
+                  fields:
+                    - question: question
+                      widget: text
+                      label: question
+                      hint: question we asked
+                    - name: answer
+                      widget: text
+                      label: answer
+                      hint: answer we got
+                    - name: slug
+                      widget: text
+                      label: slug
+                      hint: hint for us
