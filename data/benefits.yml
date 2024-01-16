@@ -221,7 +221,7 @@ secondStep:
     description: |
       You can find data provider’s content at **core.ac.uk/search?q=repository:id={{dataProvider.id}}**. Also here you can find data provider **{{https://core.ac.uk/data-providers/??}}** profile page on the CORE website.
 
-      **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more]().
+      **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more](documentation/data-providers-guide#indexing).
   newMember:
     subTitle: Thank you for registering a new data provider
     description: |
