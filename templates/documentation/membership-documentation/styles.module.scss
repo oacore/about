@@ -1,5 +1,29 @@
 .docs-layout {
   padding: 9px var(--page-padding-x);
+  .nav-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: 2px solid #b75400;
+    .nav-title {
+      display: flex;
+      align-items: center;
+      padding: 6px 24px 6px 56px;
+      background: #b75400;
+      width: 450px;
+      min-height: 54px;
+      color: #fff;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: 0.036px;
+    }
+    .select-wrapper {
+      width: 100%;
+      background: #fff;
+    }
+  }
 }
 
 .documentation-wrapper {

@@ -4,11 +4,11 @@ import {
   DocumentationMembershipNav,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
-import { Button } from '@oacore/design/lib/elements'
 
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
+import DocumentSelect from '../../../components/docs-select'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
@@ -18,6 +18,9 @@ function normalizeHref(str) {
 const DocumentationPageTemplate = ({ docs }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
+  const [selectedOption, setSelectedOption] = useState(
+    text.documentationSwitcher[1].title
+  )
   const route = useRouter()
   const headerHeight = 56
 
@@ -53,30 +56,23 @@ const DocumentationPageTemplate = ({ docs }) => {
     route.push('data-providers-guide')
   }
 
+  const handleSelectChange = (option) => {
+    setSelectedOption(option)
+    if (option === 'CORE Data Provider’s Guide') handleButtonClick()
+  }
+
   return (
     <Layout className={styles.docsLayout}>
-      <div className={styles.tabWrapper}>
-        <div className={styles.btnWrapper}>
-          <Button className={styles.tab} onClick={handleButtonClick}>
-            <div>
-              <h5 className={styles.tabHeader}>
-                {text.documentationSwitcher[0].title}
-              </h5>
-              <p className={styles.tabDescription}>
-                {text.documentationSwitcher[0].description}
-              </p>
-            </div>
-          </Button>
-          <Button className={styles.activeTab}>
-            <div>
-              <h5 className={styles.tabHeader}>
-                {text.documentationSwitcher[1].title}
-              </h5>
-              <p className={styles.tabDescription}>
-                {text.documentationSwitcher[1].description}
-              </p>
-            </div>
-          </Button>
+      <div className={styles.navWrapper}>
+        <div className={styles.navTitle}>
+          <span>CORE DOCUMENTATION:</span>
+        </div>
+        <div className={styles.selectWrapper}>
+          <DocumentSelect
+            list={['CORE Data Provider’s Guide', 'Membership documentation']}
+            handleSelect={handleSelectChange}
+            selectedOption={selectedOption}
+          />
         </div>
       </div>
       <DocumentationMembership

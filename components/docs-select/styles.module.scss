@@ -1,0 +1,35 @@
+.document-select {
+  position: relative;
+}
+
+.document-select-label {
+  color: #212121;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.036px;
+  padding: 0 30px;
+}
+
+.arrow {
+  margin-left: 30px;
+}
+
+.document-dropdown {
+  width: 100%;
+  position: absolute;
+  top: 45px;
+  background: #fff;
+  border-radius: 0 0 2px 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.document-item {
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.document-item:hover {
+  background: #eee;
+}
