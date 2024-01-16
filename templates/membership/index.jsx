@@ -244,7 +244,8 @@ const MembershipPageTemplate = ({ data, members }) => {
         <div className={styles.cardsWrapper}>
           {data.materials.cards.map((card) => (
             <article className={styles.materialsCard} key={card.image}>
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+              {/* eslint-disable-next-line max-len */}
+              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/control-has-associated-label */}
               <a
                 target={card.action.target}
                 href={!card.video ? card.action.url : null}
