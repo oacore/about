@@ -186,7 +186,18 @@ HowTo:
 
 join:
   title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
+  description: We have created a [data provider’s](documentation/data-providers-guide) guide describing best practices of how to expose metadata to CORE. This guide serves as a reference to our data providers.
   picture: /images/benefits/join-core.svg
+  action: join
+  subOai: If you don’t know the OAI base URL of the data provider, insert the URL of it and we will try to find it.
+
+joinModal:
+  title: Tell us about yourself
+  oaiMessage: If you don’t know the OAI base URL of the data provider, insert the URL of it and we will try to find it.
+  description: |
+    We will review your request to add this data provider to CORE. If this request is successful, we will index the content from this data provider and notify you. This can take up to three weeks depending on the size of the data provider and our workload.
+
+    Once completed, if you are an authorised representative of this data provider, we encourage you to become a [CORE Member]() and obtain access to the [CORE Dashboard]().
 
 services:
   - title: CORE Membership
@@ -201,3 +212,27 @@ services:
     action:
       - title: Find out more
         url: services/repository-dashboard
+
+secondStep:
+  title: New data provider registration
+  picture: /images/benefits/join-core.svg
+  member:
+    subTitle: This data provider already exist
+    description: |
+      You can find data provider’s content at **core.ac.uk/search?q=repository:id={{dataProvider.id}}**. Also here you can find data provider **{{https://core.ac.uk/data-providers/??}}** profile page on the CORE website.
+
+      **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more](documentation/data-providers-guide#indexing).
+  newMember:
+    subTitle: Thank you for registering a new data provider
+    description: |
+      We will review your request to add this data provider to CORE. If this request is successful, we will index the content from this data provider and send you an email when completed. This can take up to **three weeks** depending on the size of the data provider and our workload.
+
+      Once completed, if you are an authorised representative of this data provider, we encourage you to become a [CORE Member](/membership) and obtain access to the [CORE Dashboard](/services/repository-dashboard).
+  issue:
+    subTitle: OAI is not found
+    description: |
+      Please check that given OAI based URL is **correct.**
+
+      Example: **https://oro.open.ac.uk/cgi/oai2**
+
+      If you believe that your OAI is correct, [contact us](/about#contact) to add it manually.
