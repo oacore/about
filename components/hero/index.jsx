@@ -22,6 +22,7 @@ const HeroSection = ({
     tag={tag}
     {...passProps}
   >
+    {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
     <a href="/history" className={stylesHistory.linkLogo}>
       <Logo text={title} className={stylesHistory.heroLogo} tag="h1" />
     </a>
