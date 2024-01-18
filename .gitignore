@@ -8,3 +8,4 @@ out
 /public/netlify-cms.config.*
 *.cache
 .DS_Store
+report.*.json
