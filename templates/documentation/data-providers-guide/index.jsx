@@ -4,12 +4,12 @@ import {
   DocumentationMembershipNav,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
-import { Button } from '@oacore/design/lib/elements'
 
 import { Layout } from '../../../design-v2/components'
 import textData from '../../../data/dataProviders.yml'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
+import DocumentSelect from '../../../components/docs-select'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
@@ -18,6 +18,9 @@ function normalizeHref(str) {
 const DataProviderDocs = ({ dataProviderDocs }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
+  const [selectedOption, setSelectedOption] = useState(
+    text.documentationSwitcher[0].title
+  )
   const route = useRouter()
   const headerHeight = 56
 
@@ -52,48 +55,48 @@ const DataProviderDocs = ({ dataProviderDocs }) => {
   const handleButtonClick = () => {
     route.push('membership-documentation')
   }
+  const handleSelectChange = (option) => {
+    setSelectedOption(option)
+    if (option === 'Membership Documentation') handleButtonClick()
+  }
 
   return (
-    <Layout className={styles.docsLayout}>
-      <div className={styles.tabWrapper}>
-        <div className={styles.btnWrapper}>
-          <Button className={styles.activeTab}>
-            <div>
-              <h5 className={styles.tabHeader}>
-                {text.documentationSwitcher[0].title}
-              </h5>
-              <p className={styles.tabDescription}>
-                {text.documentationSwitcher[0].description}
-              </p>
-            </div>
-          </Button>
-          <Button className={styles.tab} onClick={handleButtonClick}>
-            <div>
-              <h5 className={styles.tabHeader}>
-                {text.documentationSwitcher[1].title}
-              </h5>
-              <p className={styles.tabDescription}>
-                {text.documentationSwitcher[1].description}
-              </p>
-            </div>
-          </Button>
+    <div>
+      <div className={styles.navWrapper}>
+        <div className={styles.navTitle}>
+          <span>CORE DOCUMENTATION:</span>
+        </div>
+        <div className={styles.selectWrapper}>
+          <DocumentSelect
+            list={[
+              text.documentationSwitcher[0].title,
+              text.documentationSwitcher[1].title,
+            ]}
+            handleSelect={handleSelectChange}
+            selectedOption={selectedOption}
+          />
         </div>
       </div>
-      <DocumentationMembership
-        docs={dataProviderDocs?.items}
-        highlight={highlight}
-        setHighlight={setHighlight}
-        imageSource
-        nav={
-          <DocumentationMembershipNav
-            activeIndex={navActiveIndex}
-            setNavActiveIndex={setNavActiveIndex}
-            textData={textData}
-            setHighlight={setHighlight}
-          />
-        }
-      />
-    </Layout>
+      <Layout className={styles.docsLayout}>
+        <DocumentationMembership
+          docs={dataProviderDocs?.items}
+          highlight={highlight}
+          setHighlight={setHighlight}
+          imageSource
+          docsTitle={text.documentationSwitcher[0].title}
+          mulltyDocs
+          nav={
+            <DocumentationMembershipNav
+              activeIndex={navActiveIndex}
+              setNavActiveIndex={setNavActiveIndex}
+              textData={textData}
+              setHighlight={setHighlight}
+              mulltyDocs
+            />
+          }
+        />
+      </Layout>
+    </div>
   )
 }
 
