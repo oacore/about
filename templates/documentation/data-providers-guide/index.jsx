@@ -57,38 +57,46 @@ const DataProviderDocs = ({ dataProviderDocs }) => {
   }
   const handleSelectChange = (option) => {
     setSelectedOption(option)
-    if (option === 'Membership documentation') handleButtonClick()
+    if (option === 'Membership Documentation') handleButtonClick()
   }
 
   return (
-    <Layout className={styles.docsLayout}>
+    <div>
       <div className={styles.navWrapper}>
         <div className={styles.navTitle}>
           <span>CORE DOCUMENTATION:</span>
         </div>
         <div className={styles.selectWrapper}>
           <DocumentSelect
-            list={['CORE Data Provider’s Guide', 'Membership documentation']}
+            list={[
+              text.documentationSwitcher[0].title,
+              text.documentationSwitcher[1].title,
+            ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
           />
         </div>
       </div>
-      <DocumentationMembership
-        docs={dataProviderDocs?.items}
-        highlight={highlight}
-        setHighlight={setHighlight}
-        imageSource
-        nav={
-          <DocumentationMembershipNav
-            activeIndex={navActiveIndex}
-            setNavActiveIndex={setNavActiveIndex}
-            textData={textData}
-            setHighlight={setHighlight}
-          />
-        }
-      />
-    </Layout>
+      <Layout className={styles.docsLayout}>
+        <DocumentationMembership
+          docs={dataProviderDocs?.items}
+          highlight={highlight}
+          setHighlight={setHighlight}
+          imageSource
+          docsTitle={text.documentationSwitcher[0].title}
+          mulltyDocs
+          nav={
+            <DocumentationMembershipNav
+              activeIndex={navActiveIndex}
+              setNavActiveIndex={setNavActiveIndex}
+              textData={textData}
+              setHighlight={setHighlight}
+              mulltyDocs
+            />
+          }
+        />
+      </Layout>
+    </div>
   )
 }
 
