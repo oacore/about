@@ -8,6 +8,7 @@ import benefitsData from 'data/benefits.yml'
 
 const BenefitsStep = ({
   subTitle,
+  picture,
   description,
   setModalContent,
   setFormSubmitted,
@@ -26,13 +27,17 @@ const BenefitsStep = ({
       className={styles.modalStepForm}
     >
       <h5 className={styles.stepHeader}>{subTitle}</h5>
-      <div className={styles.stepImage}>
-        <img
-          src={benefitsData.secondStep.picture}
-          alt={benefitsData.secondStep.title}
-          className={styles.image}
-        />
-      </div>
+      {picture ? (
+        <div className={styles.stepImage}>
+          <img
+            src={picture}
+            alt={benefitsData.secondStep.title}
+            className={styles.image}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
       <Markdown className={styles.stepDescription}>{description}</Markdown>
       <div className={styles.stepButton}>
         <Button onClick={test} color="primary" outline>
