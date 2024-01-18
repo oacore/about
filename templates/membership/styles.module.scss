@@ -6,6 +6,14 @@ $breakpoint-sm: 800px;
 $breakpoint-md: 1130px;
 $breakpoint-lg: 1415px;
 
+.layout-wrapper {
+  padding: var(--page-padding-y) var(--page-padding-x) 0 var(--page-padding-x);
+}
+
+.layout-mini-wrapper {
+  padding: 0 var(--page-padding-x) var(--page-padding-y) var(--page-padding-x);
+}
+
 .nav-wrapper {
   display: flex;
   gap: 24px;
@@ -444,5 +452,78 @@ $breakpoint-lg: 1415px;
 .slick-slide {
   div {
     margin: 0 20px;
+  }
+}
+
+.institution-benefit-wrapper {
+  background: #f5f5f5;
+  .institution-benefit-inner-wrapper {
+    padding: var(--page-padding-y) var(--page-padding-x);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+}
+
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 50%;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #212121;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 78px;
+  .main-title {
+    font-weight: 700;
+  }
+  a {
+    color: #b75400;
+  }
+}
+
+.item-main-wrapper {
+  flex: 0 0 50%;
+  box-sizing: border-box;
+  background: #fff;
+  .item-wrapper {
+    padding: 16px;
+    .item-title {
+      color: #000;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: 0.036px;
+    }
+    .item-description {
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.026px;
+    }
+  }
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+    .user-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .user-img {
+        margin-right: 14px;
+      }
+      .user {
+        margin-bottom: 6px;
+      }
+    }
   }
 }
