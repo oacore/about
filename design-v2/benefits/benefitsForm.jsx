@@ -82,8 +82,8 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
   useEffect(() => {
     if (
       (dataProvidersResponse.error &&
-        dataProvidersResponse.error.length > 1 &&
-        dataProvidersResponse.existingDataProviders &&
+        dataProvidersResponse.error.length >= 1 &&
+        !dataProvidersResponse.existingDataProviders &&
         dataProvidersResponse.existingDataProviders.length === 0) ||
       dataProvidersResponse?.error?.status === 500
     ) {
@@ -99,18 +99,18 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
       )
     } else if (
       (dataProvidersResponse.existingDataProviders &&
-        dataProvidersResponse.existingDataProviders.length > 1) ||
+        dataProvidersResponse.existingDataProviders.length >= 1) ||
       dataProvidersResponse?.error?.status === 409
     ) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
           subTitle={benefitsData.secondStep.member.subTitle}
-          description={`You can find data provider’s content at [https://core.ac.uk/search?q=dataProviders:{{ data_provider_id }}](https://core.ac.uk/search?q=dataProviders:${
+          description={`You can find data provider’s content at [CORE search](https://core.ac.uk/search?q=dataProviders:${
             getId || GetParsedId
-          }). Also here you can find data provider [{{https://core.ac.uk/data-providers/??}}](https://core.ac.uk/data-providers/${
+          }). Also here you can find data provider [data provider profile](https://core.ac.uk/data-providers/${
             getId || GetParsedId
-          }) profile page on the CORE website.<br/><br/>
+          }) page on the CORE website.<br/><br/>
           **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more](documentation/data-providers-guide#indexing).
           `}
           setModalContent={setModalContent}
@@ -118,12 +118,7 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
           onCloseModal={onCloseModal}
         />
       )
-    } else if (
-      (dataProvidersResponse.error &&
-        dataProvidersResponse.error.length === 0) ||
-      (dataProvidersResponse.length >= 1 &&
-        !dataProvidersResponse?.error?.status)
-    ) {
+    } else if (dataProvidersResponse.id) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
@@ -136,7 +131,11 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
         />
       )
     }
-  }, [dataProvidersResponse, dataProvidersResponse?.error?.status])
+  }, [
+    dataProvidersResponse?.id,
+    dataProvidersResponse?.existingDataProviders,
+    dataProvidersResponse?.error?.status,
+  ])
 
   return (
     <>
