@@ -106,9 +106,9 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
       setModalContent(
         <BenefitsStep
           subTitle={benefitsData.secondStep.member.subTitle}
-          description={`You can find data provider’s content at [CORE search](https://core.ac.uk/search?q=dataProviders:${
+          description={`You can find data provider’s content at [CORE search](search?q=dataProviders:${
             getId || GetParsedId
-          }). Also here you can find data provider [data provider profile](https://core.ac.uk/data-providers/${
+          }). Also here you can find data provider [data provider profile](data-providers/${
             getId || GetParsedId
           }) page on the CORE website.<br/><br/>
           **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more](documentation/data-providers-guide#indexing).

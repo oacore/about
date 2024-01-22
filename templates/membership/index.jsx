@@ -241,7 +241,7 @@ const MembershipPageTemplate = ({ data, members }) => {
           </div>
         </Section>
       </div>
-      <Section id="institution-benefit">
+      <Section id="member-experiences">
         <div className={styles.institutionBenefitWrapper}>
           <div className={styles.institutionBenefitInnerWrapper}>
             <div className={styles.titleWrapper}>
