@@ -1412,7 +1412,7 @@ collections:
                   label: items
                   widget: object
                   fields:
-                    - question: question
+                    - name: question
                       widget: text
                       label: question
                       hint: question we asked
