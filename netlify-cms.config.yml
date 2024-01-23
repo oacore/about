@@ -1396,7 +1396,7 @@ collections:
               hint: Title of the links block
             - name: updateDate
               widget: string
-              label: Title
+              label: Date
               hint: Update date of block
             - name: sections
               widget: object
@@ -1408,10 +1408,12 @@ collections:
                   label: ID
                   widget: string
                   hint: id of subItems, some might not have it
+                  required: false
                 - name: title
                   widget: string
                   label: Title
                   hint: Title of subItems, some might not have it
+                  required: false
                 - name: items
                   label: items
                   widget: object
