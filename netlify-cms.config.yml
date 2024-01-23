@@ -1319,6 +1319,7 @@ collections:
               widget: string
               label: ID
               hint: id of the block. Must match anchor link url
+              required: false
             - name: title
               widget: string
               label: Title
@@ -1337,14 +1338,17 @@ collections:
               widget: text
               label: Description about
               hint: Description for About
+              required: false
             - name: subTitle
               widget: string
               label: subTitle
               hint: subTitle of the images
+              required: false
             - name: subDescription
               widget: text
               label: Sub Description dashboard
               hint: Sub Description for Dashboard
+              required: false
 
 - name: FAQs
 
