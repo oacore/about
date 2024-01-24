@@ -64,7 +64,7 @@ navItems:
   - item: 4.3 Claiming access to the CORE Dashboard (Recommended)
     href: "#dashboard"
   - item: |
-      **5. How does CORE process data supplied by Data Providers **
+      **5. How does CORE process data supplied by Data Providers**
     href: "#process"
   - item: |
       **6. Further reading**
