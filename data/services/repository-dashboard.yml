@@ -29,7 +29,7 @@ features:
 -
   title: Managing content
   description: |
-   Monitor repository harvesting and health; manage access to documents from your repository in CORE and see your download stats.
+   Monitor repository indexing and health. Manage access to documents from your repository in CORE and see your download stats.
 -
   title: Register your OAI identifiers
   description: |
@@ -124,8 +124,8 @@ what-is-included:
   content: |
     The dashboard provides you with:
 
-    * Access control for the content harvested from your system.
-    * Harvesting / reharvesting controls.
+    * Access control for the content indexed from your system.
+    * Indexing / reindexing controls.
     * Finding versions and near-duplicate records in your repository.
     * Content and download statistics.
     * Register your repository OAI Prefix, to make your OAI identifiers resolve directly to your system.
