@@ -7,6 +7,8 @@ headerLink:
     href: '#documentation'
   - link: Membership materials
     href: '#membership-materials'
+  - link: Member experiences
+    href: '#member-experiences'
 
 header:
   title: CORE Membership for data providers
@@ -392,6 +394,18 @@ support:
       img: /images/membership/sustaining.svg
     - title: CORE Members
       caption: Have already become part of the CORE open access community.
+
+institutionBenefit:
+  title: Find out how other institutions [benefited](documentation/membership-documentation) from CORE Membership
+  item:
+    - title: University of Chicago adopts CORE’s article deduplication tool
+      description: We do not have a duplicate check built into our repository, so CORE’s duplicate check is immensely helpful. While other repositories might already have duplicate checks, I don’t know about their usage of ML to find duplicates. Based on my experience, I would guess that it isn’t as accurate if it relies primarily on exact matches. CORE’s duplicate check displays the “confidence” it has that a record is duplicated in the repository, which is also helpful when determining the final decision on whether a duplicate record...
+      user: Kirsten Vallee
+      position: Repository Services Manager at The University of Chicago
+      img: /images/membership/chicago.svg
+      action:
+        title: read more
+        url: https://blog.core.ac.uk/2024/01/18/university-of-chicago-adopts-cores-article-deduplication-tool/
 
 materials:
   title: Membership materials

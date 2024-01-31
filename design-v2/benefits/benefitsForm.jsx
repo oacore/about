@@ -66,8 +66,27 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
 
   const message = generateFormMessage({ dataProvidersResponse })
 
+  const getId = dataProvidersResponse?.existingDataProviders
+    ?.filter((item) => item.enabled === true)
+    ?.map((item) => item.id)
+    ?.join(', ')
+
+  const errorMessage = dataProvidersResponse?.error?.data?.message || '{}'
+  const getParsedData = JSON.parse(errorMessage)
+
+  const GetParsedId = getParsedData?.existingDataProviders
+    ?.filter((item) => item.enabled === true)
+    ?.map((item) => item.id)
+    ?.join(', ')
+
   useEffect(() => {
-    if (dataProvidersResponse?.error?.status === 500) {
+    if (
+      (dataProvidersResponse.error &&
+        dataProvidersResponse.error.length >= 1 &&
+        !dataProvidersResponse.existingDataProviders &&
+        dataProvidersResponse.existingDataProviders.length === 0) ||
+      dataProvidersResponse?.error?.status === 500
+    ) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
@@ -78,30 +97,45 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
           onCloseModal={onCloseModal}
         />
       )
-    } else if (dataProvidersResponse?.error?.status === 409) {
+    } else if (
+      (dataProvidersResponse.existingDataProviders &&
+        dataProvidersResponse.existingDataProviders.length >= 1) ||
+      dataProvidersResponse?.error?.status === 409
+    ) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
           subTitle={benefitsData.secondStep.member.subTitle}
-          description={benefitsData.secondStep.member.description}
+          description={`You can find data provider’s content at [CORE search](search?q=dataProviders:${
+            getId || GetParsedId
+          }). Also here you can find data provider [data provider profile](data-providers/${
+            getId || GetParsedId
+          }) page on the CORE website.<br/><br/>
+          **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more](documentation/data-providers-guide#indexing).
+          `}
           setModalContent={setModalContent}
           setFormSubmitted={setFormSubmitted}
           onCloseModal={onCloseModal}
         />
       )
-    } else if (dataProvidersResponse?.error?.status === 200) {
+    } else if (dataProvidersResponse.id) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
           subTitle={benefitsData.secondStep.newMember.subTitle}
           description={benefitsData.secondStep.newMember.description}
+          picture={benefitsData.secondStep.newMember.picture}
           setModalContent={setModalContent}
           setFormSubmitted={setFormSubmitted}
           onCloseModal={onCloseModal}
         />
       )
     }
-  }, [dataProvidersResponse?.error?.status])
+  }, [
+    dataProvidersResponse?.id,
+    dataProvidersResponse?.existingDataProviders,
+    dataProvidersResponse?.error?.status,
+  ])
 
   return (
     <>
@@ -121,7 +155,6 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
               label="OAI base URL"
               placeholder="For example, http://example.com/cgi/oai2"
               value={uri}
-              helper={isIsDataProviderAddActive && message.helper}
               variant={
                 (isIsDataProviderAddActive && message.variant) || 'normal'
               }

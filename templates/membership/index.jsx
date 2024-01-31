@@ -11,7 +11,7 @@ import carouselArrowRight from '../../public/images/membership/carouselArrowRigh
 import carouselArrowLeft from '../../public/images/membership/carouselArrowLeft.svg'
 
 import { Markdown } from 'components'
-import { Layout, Section, Video } from 'design-v2/components'
+import { Section, Video } from 'design-v2/components'
 
 const DetailsBox = ({
   title,
@@ -123,163 +123,198 @@ const MembershipPageTemplate = ({ data, members }) => {
   }
 
   return (
-    <Layout>
-      <div className={styles.navWrapper}>
-        {data.headerLink.map((item) => (
-          <a className={styles.linkItem} href={item.href} key={item.link}>
-            {item.link}
-          </a>
-        ))}
-      </div>
-      <Section id="metadata" className={styles.header}>
-        <div>
-          <h2 className={styles.title}>{data.header.title}</h2>
-          <Markdown className={styles.description}>
-            {data.header.description}
+    <div>
+      <div className={styles.layoutWrapper}>
+        <div className={styles.navWrapper}>
+          {data.headerLink.map((item) => (
+            <a className={styles.linkItem} href={item.href} key={item.link}>
+              {item.link}
+            </a>
+          ))}
+        </div>
+        <Section id="metadata" className={styles.header}>
+          <div>
+            <h2 className={styles.title}>{data.header.title}</h2>
+            <Markdown className={styles.description}>
+              {data.header.description}
+            </Markdown>
+            <div className={styles.buttonGroup}>
+              {data.header.actions.map((action) => (
+                <Button
+                  href={action.url}
+                  target={action.target}
+                  variant={action.variant}
+                  key={action.caption}
+                  download={action.download}
+                >
+                  {action.caption}
+                </Button>
+              ))}
+            </div>
+          </div>
+          <div className={styles.logoContainer}>
+            <img src={data.header.logo} alt="logo" />
+          </div>
+        </Section>
+        <Section id="membership-levels" className={styles.plans}>
+          <h4>{data.plans.title}</h4>
+          <div className={styles.plansWrapper}>
+            {data.plans.cardsDescription.map((plan) => (
+              <CardDescription key={plan.title} plan={plan} />
+            ))}
+          </div>
+          <div className={styles.plansWrapper}>
+            {data.plans.cards.map((plan) => (
+              <Card key={plan.title} plan={plan} />
+            ))}
+          </div>
+        </Section>
+        <section className={styles.carouselWrapper}>
+          <Carousel
+            draggable
+            slidesToShow={5}
+            infinite
+            autoplay={false}
+            prevArrow={
+              <div>
+                <img
+                  className={styles.arrowLeft}
+                  src={carouselArrowLeft}
+                  alt="carouselArrowLeft"
+                />
+              </div>
+            }
+            nextArrow={
+              <div>
+                <img
+                  className={styles.arrowRight}
+                  src={carouselArrowRight}
+                  alt="carouselArrowRight"
+                />
+              </div>
+            }
+          >
+            {data.carousel.items.map((slide) => (
+              <img
+                className={styles.carouselItem}
+                src={slide.img}
+                alt="logo"
+                key={slide.alt}
+              />
+            ))}
+          </Carousel>
+          <div className={styles.linkWrapper}>
+            <a href={data.carousel.action.url}>
+              See all {members.length} CORE members
+            </a>
+          </div>
+        </section>
+        <DetailsTable
+          howItWorksOption
+          data={{
+            box: data.box,
+            howItWorks: data.howItWorks,
+            comparisonTable: data.comparisonTable,
+          }}
+        />
+        <Section id="support">
+          <h4>{data.support.title}</h4>
+          <Markdown className={styles.supportText}>
+            {data.support.description}
           </Markdown>
-          <div className={styles.buttonGroup}>
-            {data.header.actions.map((action) => (
-              <Button
-                href={action.url}
-                target={action.target}
-                variant={action.variant}
-                key={action.caption}
-                download={action.download}
-              >
-                {action.caption}
-              </Button>
+          <div className={styles.cards}>
+            {data.support.cards.map((card) => (
+              <div key={card.title} className={styles.card}>
+                {card.img ? (
+                  <img
+                    src={card.img}
+                    alt={card.title}
+                    className={styles.cardImage}
+                  />
+                ) : (
+                  <div className={styles.cardCount}>{members.length}</div>
+                )}
+                <h5 className={styles.cardTitle}>{card.title}</h5>
+                <p className={styles.cardCaption}>{card.caption}</p>
+              </div>
+            ))}
+          </div>
+        </Section>
+      </div>
+      <Section id="member-experiences">
+        <div className={styles.institutionBenefitWrapper}>
+          <div className={styles.institutionBenefitInnerWrapper}>
+            <div className={styles.titleWrapper}>
+              <Markdown className={styles.mainTitle}>
+                {data.institutionBenefit.title}
+              </Markdown>
+            </div>
+            {data.institutionBenefit.item.map((repo) => (
+              <div className={styles.itemMainWrapper}>
+                <div className={styles.itemWrapper}>
+                  <h5 className={styles.itemTitle}>{repo.title}</h5>
+                  <p className={styles.itemDescription}>{repo.description}</p>
+                </div>
+                <div className={styles.footer}>
+                  <div className={styles.userWrapper}>
+                    <img className={styles.userImg} src={repo.img} alt="" />
+                    <div>
+                      <h6 className={styles.user}>{repo.user}</h6>
+                      <span className={styles.position}>{repo.position}</span>
+                    </div>
+                  </div>
+                  <Button target="blank" href={repo.action.url}>
+                    {repo.action.title}
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-        <div className={styles.logoContainer}>
-          <img src={data.header.logo} alt="logo" />
-        </div>
       </Section>
-      <Section id="membership-levels" className={styles.plans}>
-        <h4>{data.plans.title}</h4>
-        <div className={styles.plansWrapper}>
-          {data.plans.cardsDescription.map((plan) => (
-            <CardDescription key={plan.title} plan={plan} />
-          ))}
-        </div>
-        <div className={styles.plansWrapper}>
-          {data.plans.cards.map((plan) => (
-            <Card key={plan.title} plan={plan} />
-          ))}
-        </div>
-      </Section>
-      <section className={styles.carouselWrapper}>
-        <Carousel
-          draggable
-          slidesToShow={5}
-          infinite
-          autoplay={false}
-          prevArrow={
-            <div>
-              <img
-                className={styles.arrowLeft}
-                src={carouselArrowLeft}
-                alt="carouselArrowLeft"
-              />
-            </div>
-          }
-          nextArrow={
-            <div>
-              <img
-                className={styles.arrowRight}
-                src={carouselArrowRight}
-                alt="carouselArrowRight"
-              />
-            </div>
-          }
-        >
-          {data.carousel.items.map((slide) => (
-            <img
-              className={styles.carouselItem}
-              src={slide.img}
-              alt="logo"
-              key={slide.alt}
-            />
-          ))}
-        </Carousel>
-        <div className={styles.linkWrapper}>
-          <a href={data.carousel.action.url}>
-            See all {members.length} CORE members
-          </a>
-        </div>
-      </section>
-      <DetailsTable
-        howItWorksOption
-        data={{
-          box: data.box,
-          howItWorks: data.howItWorks,
-          comparisonTable: data.comparisonTable,
-        }}
-      />
-      <Section id="support">
-        <h4>{data.support.title}</h4>
-        <Markdown className={styles.supportText}>
-          {data.support.description}
-        </Markdown>
-        <div className={styles.cards}>
-          {data.support.cards.map((card) => (
-            <div key={card.title} className={styles.card}>
-              {card.img ? (
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className={styles.cardImage}
-                />
-              ) : (
-                <div className={styles.cardCount}>{members.length}</div>
-              )}
-              <h5 className={styles.cardTitle}>{card.title}</h5>
-              <p className={styles.cardCaption}>{card.caption}</p>
-            </div>
-          ))}
-        </div>
-      </Section>
-      <Section id="membership-materials">
-        <h4>{data.materials.title}</h4>
-        <div className={styles.cardsWrapper}>
-          {data.materials.cards.map((card) => (
-            <article className={styles.materialsCard} key={card.image}>
-              {/* eslint-disable-next-line max-len */}
-              {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/control-has-associated-label */}
-              <a
-                target={card.action.target}
-                href={!card.video ? card.action.url : null}
-                onClick={handleContentOpen(card.video)}
-              >
-                <img
-                  src={card.image}
-                  className={styles.materialsImage}
-                  alt=""
-                />
-              </a>
-              <div className={styles.buttonWrapper}>
-                <Button
-                  className={styles.materialButton}
-                  variant="outlined"
-                  href={!card.video ? card.action.url : null}
+      <div className={styles.layoutMiniWrapper}>
+        <Section id="membership-materials">
+          <h4>{data.materials.title}</h4>
+          <div className={styles.cardsWrapper}>
+            {data.materials.cards.map((card) => (
+              <article className={styles.materialsCard} key={card.image}>
+                {/* eslint-disable-next-line max-len */}
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/control-has-associated-label */}
+                <a
                   target={card.action.target}
+                  href={!card.video ? card.action.url : null}
                   onClick={handleContentOpen(card.video)}
                 >
-                  {card.action.caption}
-                </Button>
-              </div>
-              {card.video && (
-                <Video
-                  visibleModal={visibleVideo}
-                  closeModal={() => setVisibleVideo(false)}
-                  video={card.video}
-                />
-              )}
-            </article>
-          ))}
-        </div>
-      </Section>
-    </Layout>
+                  <img
+                    src={card.image}
+                    className={styles.materialsImage}
+                    alt=""
+                  />
+                </a>
+                <div className={styles.buttonWrapper}>
+                  <Button
+                    className={styles.materialButton}
+                    variant="outlined"
+                    href={!card.video ? card.action.url : null}
+                    target={card.action.target}
+                    onClick={handleContentOpen(card.video)}
+                  >
+                    {card.action.caption}
+                  </Button>
+                </div>
+                {card.video && (
+                  <Video
+                    visibleModal={visibleVideo}
+                    closeModal={() => setVisibleVideo(false)}
+                    video={card.video}
+                  />
+                )}
+              </article>
+            ))}
+          </div>
+        </Section>
+      </div>
+    </div>
   )
 }
 export default MembershipPageTemplate
