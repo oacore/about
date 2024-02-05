@@ -92,6 +92,31 @@
   }
 }
 
+.posi-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 36px;
+  .sub-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0.024px;
+  }
+  .divider {
+    margin: 0 10px;
+    font-weight: 800;
+  }
+  img {
+    margin-right: 10px;
+  }
+}
+
 .section {
   &-oai {
     background-color: var(--gray-200);
@@ -120,7 +145,7 @@
 }
 
 .title {
-  margin-bottom: 3rem;
+  margin-bottom: 20px;
 }
 
 .statistic-label {
