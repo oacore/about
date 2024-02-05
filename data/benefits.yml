@@ -65,9 +65,9 @@ sections:
      your staff.
 
      A study of 21 UK institutions carried out in 2019 showed that
-     when a repository is harvested by CORE, the number of content
+     when a repository is indexed by CORE, the number of content
      downloads increases by 15% on average and up to 32% if the
-     repository is well configured for harvesting.
+     repository is well configured for indexing.
     additional:
       Info: With millions of monthly active users, it matters to become a data provider and show to the world that your content is indexed.
       picture: /images/benefits/indexed-by-core.svg
@@ -77,7 +77,7 @@ sections:
     title: Make your papers uniquelly identifiable and resolvable with PIDs
     picture: /images/logo/OAI-resolver.png
     description: |
-      Identifiers of metadata records harvested by CORE are
+      Identifiers of metadata records indexed by CORE are
       automatically registered as globally unique persistent
       identifiers (PIDs). CORE uses for this purpose
       [OAI identifiers](/documentation/oai-resolver)
