@@ -7,6 +7,8 @@ headerLink:
     href: '#join'
   - link: How to join
     href: '#how-to-join'
+  - link: Data providers guide
+    href: '#how-to-join'
   - link: FAQs
     href: '#join-faq'
 
@@ -22,23 +24,13 @@ banner:
        url: /data-providers
        text: LIST  OF DATA PROVIDERS
        link: true
-  velcro:
-    blocks:
-      -
-        id: content-visibility
-        title: Increase your content’s discoverability
-        description: Further disseminate your content, increase the number of users who read it and download it, and boost your outputs’ visibility and impact
-        picture: /images/benefits/icons/discoverability.svg
-      -
-        id: content-machine-readable
-        title: Make your papers uniquelly identifiable and resolvable with PIDs
-        description: Freely register your OAI identifiers of papers and make them globally resolvable to your system.
-        picture: /images/benefits/icons/readable.svg
-      -
-        id: open-access-network
-        title: Assess and contribute to Open Access compliance and FAIRness
-        description: Monitor funder open access policies compliance rates and gain an insight of your contribution to the global open access growth
-        picture: /images/benefits/icons/network.svg
+  guideline:
+        title: Data Provider’s Guide
+        picture: /images/data-provider.svg
+        description: This guide explains to repository managers how to configure their systems for successful indexing by CORE.
+        action:
+            title: Go to the guide
+            url: documentation/data-providers-guide
 
 sections:
   title: Why join the data providers community?
