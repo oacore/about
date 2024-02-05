@@ -46,6 +46,8 @@ features:
 
 join:
   title: Join CORE
+  subTitle: An open scholarly infrastructure for researchers by researchers
+  subPart: Committed to the [POSI](https://openscholarlyinfrastructure.org/posse/)
   children:
     - caption: Become a data provider
       action: '/benefits'
