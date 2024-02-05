@@ -100,26 +100,31 @@ const BenefitsPageTemplate = ({ data }) => {
             </Button>
           ))}
         </div>
-        <div className={styles.columnVelcro}>
-          <div className={styles.velcroWrap}>
-            <div className={styles.velcro}>
-              {benefitsData.banner.velcro.blocks.map((velcroGroup) => (
-                <a href={`#${velcroGroup.id}`} key={velcroGroup.id}>
-                  <img
-                    src={velcroGroup.picture}
-                    alt={velcroGroup.title}
-                    className={styles.velcroPicture}
-                  />
-                  <div className={styles.velcroTextBlock}>
-                    <span className={styles.velcroTitle}>
-                      {velcroGroup.title}
-                    </span>
-                    <span className={styles.velcroDescription}>
-                      {velcroGroup.description}
-                    </span>
-                  </div>
-                </a>
-              ))}
+        <div className={styles.sectionService}>
+          <div className={styles.sectionItem}>
+            <div className={styles.header}>
+              <img
+                className={styles.titlePicture}
+                src={benefitsData.banner.guideline.picture}
+                alt={benefitsData.banner.guideline.title}
+              />
+              <span className={styles.serviceTitle}>
+                {benefitsData.banner.guideline.title}
+              </span>
+            </div>
+            <div>
+              <Markdown className={styles.serviceDescription}>
+                {benefitsData.banner.guideline.description}
+              </Markdown>
+              <div className={styles.btnPlacement}>
+                <Button
+                  variant="outlined"
+                  href={benefitsData.banner.guideline.action.url}
+                  target="_blank"
+                >
+                  {benefitsData.banner.guideline.action.title}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
