@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Carousel, Button, Card } from '@oacore/design/lib'
 import { classNames } from '@oacore/design/lib/utils'
 
+import posi from '../public/images/posi.svg'
 import styles from './index.module.scss'
 import Testimonial from '../components/testimonial'
 
@@ -135,6 +136,14 @@ const IndexPage = () => {
         </Section>
         <Section className={styles.sectionJoin} useFullPageWidth>
           <h3 className={styles.title}>{page.join.title}</h3>
+          <div className={styles.posiTitleWrapper}>
+            <img src={posi} alt="posi" />
+            <div className={styles.subTitle}>
+              {page.join.subTitle}
+              <span className={styles.divider}>|</span>
+              <Markdown>{page.join.subPart}</Markdown>
+            </div>
+          </div>
           <JoinList className={styles.sectionJoinList}>
             {page.join.children.map(({ caption, url, picture }) => (
               <JoinItem
