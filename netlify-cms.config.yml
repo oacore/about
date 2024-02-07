@@ -1304,7 +1304,7 @@ collections:
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
-    - name: Provider documentation
+    - name: provider-documentation
       label: Provider Documentation
       file: docs-dataProvider/dataProviderDocs.yml
       fields:
