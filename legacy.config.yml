@@ -3,3 +3,7 @@ redirects:
   source: /documentation/discovery/plugin
   destination: /documentation/discovery-plugin
   permanent: true
+-
+  source: /documentations
+  destination: /documentation/membership-documentation
+  permanent: true
