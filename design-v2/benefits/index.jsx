@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
-import { classNames } from '@oacore/design/lib/utils'
+import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 // eslint-disable-next-line import/order
@@ -59,6 +59,7 @@ const BenefitsPageTemplate = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
   const [showGratitudeModal, setGratitudeModal] = useState(false)
   const [modalActive, setModalActive] = useState(false)
+  const router = useRouter()
 
   const toggleShowAll = () => {
     setShowAll((prev) => !prev)
@@ -67,6 +68,10 @@ const BenefitsPageTemplate = ({ data }) => {
   const toggleModal = () => {
     setModalActive(true)
   }
+
+  useEffect(() => {
+    if (router.asPath.includes('#join-core')) toggleModal()
+  }, [router.asPath])
 
   const itemsToShow = showAll
     ? data.faqs.sections[0].items
@@ -87,18 +92,25 @@ const BenefitsPageTemplate = ({ data }) => {
           <div className={styles.description}>
             {benefitsData.banner.description}
           </div>
-          {benefitsData.banner.actions.links.map(({ url, text, link }) => (
+          <>
             <Button
-              variant={link ? 'text' : 'contained'}
-              href={link ? url : `#${url}`}
-              key={text}
-              className={classNames.use(styles.button, {
-                [styles.buttonLink]: link,
-              })}
+              variant="contained"
+              onClick={toggleModal}
+              href={`#${benefitsData.banner.actions.links.form.url}`}
+              key={benefitsData.banner.actions.links.form.text}
+              className={styles.button}
             >
-              {text}
+              {benefitsData.banner.actions.links.form.text}
             </Button>
-          ))}
+            <Button
+              variant="text"
+              href={benefitsData.banner.actions.links.Link.url}
+              key={benefitsData.banner.actions.links.Link.text}
+              className={styles.buttonLink}
+            >
+              {benefitsData.banner.actions.links.Link.text}
+            </Button>
+          </>
         </div>
         <div className={styles.sectionService}>
           <div className={styles.sectionItem}>

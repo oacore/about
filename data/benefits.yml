@@ -17,10 +17,10 @@ banner:
   description: Facilitate access of your scientific research outputs to everyone in the world
   actions:
     links:
-      -
+      form:
        url: join-core
        text: Join NOW
-      -
+      Link:
        url: /data-providers
        text: LIST  OF DATA PROVIDERS
        link: true
