@@ -9,6 +9,7 @@ import DetailsTable from './details-table'
 import listIcon from '../../public/images/membership/listIcon.svg'
 import carouselArrowRight from '../../public/images/membership/carouselArrowRight.svg'
 import carouselArrowLeft from '../../public/images/membership/carouselArrowLeft.svg'
+import { excludedIds } from '../governance/supporters'
 
 import { Markdown } from 'components'
 import { Section, Video } from 'design-v2/components'
@@ -122,6 +123,10 @@ const MembershipPageTemplate = ({ data, members }) => {
     return null
   }
 
+  const filteredMembers = members.filter(
+    (member) => !excludedIds.includes(member.repo_id)
+  )
+
   return (
     <div>
       <div className={styles.layoutWrapper}>
@@ -205,7 +210,7 @@ const MembershipPageTemplate = ({ data, members }) => {
           </Carousel>
           <div className={styles.linkWrapper}>
             <a href={data.carousel.action.url}>
-              See all {members.length} CORE members
+              See all {filteredMembers.length} CORE members
             </a>
           </div>
         </section>
@@ -232,7 +237,9 @@ const MembershipPageTemplate = ({ data, members }) => {
                     className={styles.cardImage}
                   />
                 ) : (
-                  <div className={styles.cardCount}>{members.length}</div>
+                  <div className={styles.cardCount}>
+                    {filteredMembers.length}
+                  </div>
                 )}
                 <h5 className={styles.cardTitle}>{card.title}</h5>
                 <p className={styles.cardCaption}>{card.caption}</p>
