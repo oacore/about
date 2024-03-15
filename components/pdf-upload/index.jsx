@@ -1,76 +1,87 @@
-import React, { useState } from 'react'
-import { Button } from '@oacore/design'
+import React, { useState, useRef, useEffect } from 'react'
+import { router } from 'next/client'
+import { Card } from '@oacore/design'
 
-import text from '../../data/retention.yml'
-import uploadSvg from '../../public/images/logos/upload.svg'
+import DefaultUploadView from './defaultUpload'
+import FormatUploadIssue from './formatUpload'
+import SizeUploadIssue from './sizeUploadIssue'
 import styles from './styles.module.scss'
+import UploadSuccess from './uploadSuccess'
+import UploadFail from './uploadFail'
 
-const FileUpload = () => {
-  const [fileError, setFileError] = useState('')
-  const [uploadedFileName, setUploadedFileName] = useState('')
+const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
+  const uploadRef = useRef(null)
+  const providerId = router.query['data-provider-id']
 
-  const handleDragOver = (event) => {
-    event.preventDefault()
-  }
+  const [currentView, setCurrentView] = useState('default')
 
   const handleClick = () => {
-    document.getElementById('fileInput').click()
+    uploadRef.current.click()
   }
 
+  useEffect(() => {
+    if (uploadResults.rightsRetentionSentence) setCurrentView('success')
+    if (
+      !uploadResults.rightsRetentionSentence &&
+      uploadResults.confidence === 0
+    )
+      setCurrentView('fail')
+  }, [uploadResults])
   const handleFileChange = (event) => {
-    event.preventDefault()
     const file = event.target.files[0]
-
-    if (file) {
-      if (file.size > 10 * 1024 * 1024)
-        setFileError('File size is too big (max 10MB).')
-      else if (!file.type.includes('pdf'))
-        setFileError('Invalid file format. Please upload a PDF file.')
-      else {
-        setFileError('')
-        setUploadedFileName(file.name)
-        // Perform  file upload logic here
-        // eslint-disable-next-line no-console
-        console.log('File uploaded successfully:', file)
-      }
+    uploadPdf(file, providerId)
+    if (file.size > 10 * 1024 * 1024) {
+      setCurrentView('sizeIssue')
+      return
     }
+    if (file.type !== 'application/pdf') setCurrentView('formatIssue')
   }
 
   return (
-    <div className={styles.uploadWrapper}>
-      <h3 className={styles.uploadTitle}>{text.upload.default.title}</h3>
-      {/* eslint-disable-next-line max-len */}
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-      <div
-        className={styles.innerWrapper}
-        onDragOver={handleDragOver}
-        onDrop={handleFileChange}
-        onClick={handleClick}
-      >
-        <img
-          src={uploadSvg}
-          alt="Upload Icon"
-          style={{ width: '50px', height: '50px', marginBottom: '10px' }}
-        />
-        <p className={styles.innerTitle}>{text.upload.default.subTitle}</p>
-        <input
-          type="file"
-          id="fileInput"
-          accept=".pdf"
-          style={{ display: 'none' }}
-          onChange={handleFileChange}
-        />
-        <p className={styles.connector}>- OR -</p>
-        <Button variant="contained">{text.upload.default.action.title}</Button>
-        <p style={{ color: 'red' }}>{fileError}</p>
-        {uploadedFileName && <p>Uploaded File: {uploadedFileName}</p>}
+    <Card className={styles.cardWrapperBig} tag="section" title="Your Title">
+      <div className={styles.headerWrapper}>
+        <Card.Title className={styles.cardTitle} tag="h2">
+          Your Title
+        </Card.Title>
       </div>
-      <div className={styles.uploadFooter}>
-        <span className={styles.footerText}>{text.upload.subInfo.format}</span>
-        <span className={styles.footerText}>{text.upload.subInfo.size}</span>
-      </div>
-    </div>
+      {currentView === 'default' && (
+        <DefaultUploadView
+          uploadRef={uploadRef}
+          handleFileChange={handleFileChange}
+          handleClick={handleClick}
+        />
+      )}
+      {currentView === 'sizeIssue' && (
+        <SizeUploadIssue
+          uploadRef={uploadRef}
+          handleClick={handleClick}
+          handleFileChange={handleFileChange}
+        />
+      )}
+      {currentView === 'formatIssue' && (
+        <FormatUploadIssue
+          uploadRef={uploadRef}
+          handleClick={handleClick}
+          handleFileChange={handleFileChange}
+        />
+      )}
+      {currentView === 'success' && (
+        <UploadSuccess
+          uploadRef={uploadRef}
+          handleClick={handleClick}
+          handleFileChange={handleFileChange}
+          uploadResults={uploadResults}
+        />
+      )}
+      {currentView === 'fail' && (
+        <UploadFail
+          uploadRef={uploadRef}
+          handleClick={handleClick}
+          handleFileChange={handleFileChange}
+          uploadResults={uploadResults}
+        />
+      )}
+    </Card>
   )
 }
-
-export default FileUpload
+export default RrsCheckCard

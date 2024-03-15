@@ -21,6 +21,8 @@ upload:
       title: Upload new file
   noSupport:
     title: This format is not supported
+    sizeTitle: File is too big
+    action: Upload new file
   subInfo:
     format: |
      Supported formats: pdf, doc

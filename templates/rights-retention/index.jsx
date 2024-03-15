@@ -1,17 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 
-import retention from '../../data/retention.yml'
 import { Layout, Section } from '../../design-v2/components'
 import styles from './styles.module.scss'
 import { Markdown } from '../../components'
-import PDFUploadComponent from '../../components/pdf-upload'
+import FileUpload from '../../components/pdf-upload'
 
 const RightsRetentionPageTemplate = ({ data }) => {
-  const handleFileUpload = (file) => {
-    // eslint-disable-next-line no-console
-    console.log('File uploaded:', file)
+  const [uloadResult, setUploadResult] = useState('')
+  const uploadPdf = async (file, dataProviderId) => {
+    try {
+      const url = `https://api-dev.core.ac.uk/internal/data-providers/rights-retention-upload-file`
+      const fd = new FormData()
+      fd.set('file', file)
+      fd.set('dataProviderId', dataProviderId)
+
+      const response = await fetch(url, {
+        method: 'POST',
+        credentials: 'same-origin',
+        body: fd,
+      })
+
+      if (!response.ok) throw new Error('Network response was not ok')
+
+      const result = await response.json()
+      setUploadResult(result)
+    } catch (error) {
+      console.error(error)
+    }
   }
+
   return (
     <Layout className={styles.sponsorshipMainWrapper}>
       <Section id="header" className={styles.header}>
@@ -24,10 +42,7 @@ const RightsRetentionPageTemplate = ({ data }) => {
         </div>
         <div className={styles.logoContainer} />
       </Section>
-      <PDFUploadComponent
-        title={retention.upload.default.title}
-        onFileUpload={handleFileUpload}
-      />
+      <FileUpload uploadPdf={uploadPdf} uploadResults={uloadResult} />
       <Section id="purpose" className={styles.howItWorks}>
         <div className={styles.imageWrapper}>
           <img src={data.purpose?.image} alt={data.howItWorks?.title} />
