@@ -64,7 +64,7 @@ main:
         [Documentation and access to previous datasets](~documentation/dataset).
     - title: How often is the CORE dataset updated?
       content: |
-        We aim to generate a new public dataset at least once a year. If you need a more recent dataset, please get in touch with us as we might be able to arrange it.
+        Older dumps of the CORE Dataset are free and ODC-By licensed. Organisations that register for the CORE Dataset can purchase a licence for the more recent datasets. Sustaining Members receive access to the most recent datasets as a free member benefit.
   note: If you use CORE in your work, we kindly request you to cite one of our publications.
   action:
     title: cite publication
