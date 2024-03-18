@@ -73,6 +73,9 @@ main:
       We will ask you for your circumstances during the registration process
       and we might contact you afterwards to clarify any points and assess your eligibility
       for a free licence. If your circumstances change, you need to let us know about it.
+  - title: Rate limits
+    content: |
+      CORE API is free and does not require registration, subject to our [rate limits](https://api.core.ac.uk/docs/v3#section/Rate-limits). However, organisations that register get a faster rate that is typically not free. For [Supporting and Sustaining Members](/membership), the faster rate comes as a free member benefit.
   note: If you use CORE in your work, we kindly request you to cite one of our publications.
   action:
     title: cite publication
