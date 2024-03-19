@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { router } from 'next/client'
-import { Card } from '@oacore/design'
+import { useRouter } from 'next/router'
 
 import DefaultUploadView from './defaultUpload'
 import FormatUploadIssue from './formatUpload'
@@ -9,14 +8,20 @@ import styles from './styles.module.scss'
 import UploadSuccess from './uploadSuccess'
 import UploadFail from './uploadFail'
 
-const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
+const RrsCheckCard = ({ uploadPdf, uploadResults, rrsPdfLoading }) => {
   const uploadRef = useRef(null)
+  const [fileName, setFileName] = useState('')
+  const router = useRouter()
   const providerId = router.query['data-provider-id']
 
   const [currentView, setCurrentView] = useState('default')
 
   const handleClick = () => {
     uploadRef.current.click()
+  }
+
+  const handleDragOver = (event) => {
+    event.preventDefault()
   }
 
   useEffect(() => {
@@ -27,28 +32,52 @@ const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
     )
       setCurrentView('fail')
   }, [uploadResults])
+
   const handleFileChange = (event) => {
-    const file = event.target.files[0]
-    uploadPdf(file, providerId)
-    if (file.size > 10 * 1024 * 1024) {
-      setCurrentView('sizeIssue')
-      return
+    event.preventDefault()
+    if (rrsPdfLoading) return
+
+    let file
+    const { files } = event.dataTransfer || event.target
+
+    if (files && files.length) {
+      // eslint-disable-next-line prefer-destructuring
+      file = files[0]
+      uploadPdf(file, providerId)
+      setFileName(file.name)
+      if (file.size > 10 * 1024 * 1024) {
+        setCurrentView('sizeIssue')
+        return
+      }
+      const fileType = file.type
+      if (
+        !(
+          fileType === 'application/pdf' ||
+          fileType === 'application/msword' ||
+          fileType ===
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        )
+      ) {
+        setCurrentView('formatIssue')
+        return
+      }
     }
-    if (file.type !== 'application/pdf') setCurrentView('formatIssue')
+    event.stopPropagation()
   }
 
   return (
-    <Card className={styles.cardWrapperBig} tag="section" title="Your Title">
-      <div className={styles.headerWrapper}>
-        <Card.Title className={styles.cardTitle} tag="h2">
-          Your Title
-        </Card.Title>
-      </div>
+    <div
+      onDragOver={handleDragOver}
+      onDrop={handleFileChange}
+      className={styles.cardWrapperBig}
+    >
       {currentView === 'default' && (
         <DefaultUploadView
           uploadRef={uploadRef}
           handleFileChange={handleFileChange}
           handleClick={handleClick}
+          rrsPdfLoading={rrsPdfLoading}
+          fileName={fileName}
         />
       )}
       {currentView === 'sizeIssue' && (
@@ -56,6 +85,8 @@ const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
           uploadRef={uploadRef}
           handleClick={handleClick}
           handleFileChange={handleFileChange}
+          rrsPdfLoading={rrsPdfLoading}
+          fileName={fileName}
         />
       )}
       {currentView === 'formatIssue' && (
@@ -63,6 +94,8 @@ const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
           uploadRef={uploadRef}
           handleClick={handleClick}
           handleFileChange={handleFileChange}
+          rrsPdfLoading={rrsPdfLoading}
+          fileName={fileName}
         />
       )}
       {currentView === 'success' && (
@@ -71,6 +104,8 @@ const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
           handleClick={handleClick}
           handleFileChange={handleFileChange}
           uploadResults={uploadResults}
+          rrsPdfLoading={rrsPdfLoading}
+          fileName={fileName}
         />
       )}
       {currentView === 'fail' && (
@@ -79,9 +114,11 @@ const RrsCheckCard = ({ uploadPdf, uploadResults }) => {
           handleClick={handleClick}
           handleFileChange={handleFileChange}
           uploadResults={uploadResults}
+          rrsPdfLoading={rrsPdfLoading}
+          fileName={fileName}
         />
       )}
-    </Card>
+    </div>
   )
 }
 export default RrsCheckCard

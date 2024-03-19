@@ -12,16 +12,19 @@ upload:
   success:
     title: RRS found
     description: "For the purposes of open access, the author has applied a Creative Commons Attribution (CC BY) licence to any Author Accepted Manuscript version arising from this submission."
+    image: /images/success.svg
     action:
       title: Upload new file
   fail:
     title: RRS doesn’t found
     description: RRS doesn’t found in this paper.
+    image: /images/fail.svg
     action:
       title: Upload new file
   noSupport:
     title: This format is not supported
     sizeTitle: File is too big
+    image: /images/fail.svg
     action: Upload new file
   subInfo:
     format: |

@@ -3,10 +3,28 @@
   background: #fff;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.15);
   padding: 16px 26px;
+  .success-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .title-wrapper {
     display: flex;
     align-items: center;
     gap: 6px;
+  }
+  .status-type {
+    border-radius: 2px;
+    background: #fef5ef;
+    display: flex;
+    width: max-content;
+    height: 28px;
+    padding: 4px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
   }
   .upload-title {
     color: #212121;
@@ -27,6 +45,26 @@
     padding: 22px;
     cursor: pointer;
     margin: 8px 0;
+    .spinner-wrapper {
+      width: 54px;
+      height: 54px;
+      margin-top: 20px;
+      .spinner {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .file-name {
+      margin-top: 16px;
+      color: #212121;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      letter-spacing: 0.024px;
+      margin-bottom: 20px;
+    }
     .inner-title {
       color: #212121;
       text-align: center;
@@ -59,8 +97,20 @@
       line-height: 130%;
       letter-spacing: 0.009px;
     }
+    .upload-description {
+      color: #212121;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      letter-spacing: 0.009px;
+    }
   }
   .upload-issue-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .upload-footer-button {
     display: flex;
     justify-content: flex-end;
   }

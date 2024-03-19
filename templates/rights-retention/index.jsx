@@ -8,9 +8,14 @@ import FileUpload from '../../components/pdf-upload'
 
 const RightsRetentionPageTemplate = ({ data }) => {
   const [uloadResult, setUploadResult] = useState('')
+  const [rrsPdfLoading, setRrsPdfLoading] = useState(false)
   const uploadPdf = async (file, dataProviderId) => {
+    setRrsPdfLoading(true)
     try {
-      const url = `https://api-dev.core.ac.uk/internal/data-providers/rights-retention-upload-file`
+      const url = new URL(
+        '/internal/data-providers/rights-retention-upload-file',
+        process.env.API_URL
+      )
       const fd = new FormData()
       fd.set('file', file)
       fd.set('dataProviderId', dataProviderId)
@@ -27,6 +32,8 @@ const RightsRetentionPageTemplate = ({ data }) => {
       setUploadResult(result)
     } catch (error) {
       console.error(error)
+    } finally {
+      setRrsPdfLoading(false)
     }
   }
 
@@ -42,7 +49,11 @@ const RightsRetentionPageTemplate = ({ data }) => {
         </div>
         <div className={styles.logoContainer} />
       </Section>
-      <FileUpload uploadPdf={uploadPdf} uploadResults={uloadResult} />
+      <FileUpload
+        rrsPdfLoading={rrsPdfLoading}
+        uploadPdf={uploadPdf}
+        uploadResults={uloadResult}
+      />
       <Section id="purpose" className={styles.howItWorks}>
         <div className={styles.imageWrapper}>
           <img src={data.purpose?.image} alt={data.howItWorks?.title} />
@@ -56,7 +67,11 @@ const RightsRetentionPageTemplate = ({ data }) => {
         <div className={styles.serviceWrapper}>
           <div className={styles.mainTitleWrapper}>
             <h3 className={styles.title}>{data.becomeMember?.title}</h3>
-            <Button variant="contained">
+            <Button
+              href={data.becomeMember?.action.url}
+              target="_blank"
+              variant="contained"
+            >
               {data.becomeMember?.action.title}
             </Button>
           </div>
