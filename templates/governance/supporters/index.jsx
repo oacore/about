@@ -26,18 +26,26 @@ const Card = ({ plan }) => (
   </article>
 )
 
+export const excludedIds = [
+  3463, 183, 2145, 1248, 660, 222, 14373, 3559, 21117, 292, 14567, 2812, 196,
+  3581, 197, 12800, 14335, 1249, 2313, 21853, 15201, 1012, 158,
+]
+
 const GovernanceSupportersPageTemplate = ({ members, page }) => {
   const [searchValue, setSearchValue] = useState('')
-  const [displayedItems, setDisplayedItems] = useState(50)
-  const maxItems = members.length
+  const [displayedItems, setDisplayedItems] = useState(30)
 
   const handleSearch = (event) => {
     const { value } = event.target
     setSearchValue(value)
   }
 
-  const filteredMembers = members.filter((member) =>
-    member.organisation_name.toLowerCase().includes(searchValue.toLowerCase())
+  const filteredMembers = members.filter(
+    (member) =>
+      member.organisation_name
+        .toLowerCase()
+        .includes(searchValue.toLowerCase()) &&
+      !excludedIds.includes(member.repo_id)
   )
 
   const sortedMembers = [...filteredMembers].sort((a, b) =>
@@ -168,14 +176,17 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
               <Table.Row className={styles.paginationRow}>
                 <Table.Cell colSpan={2}>
                   <p className={styles.paginationText}>
-                    Showing 1 - {Math.min(displayedItems, maxItems)}
+                    Showing 1 -{' '}
+                    {Math.min(displayedItems, filteredMembers.length)}
                   </p>
                   <Button
                     onClick={() =>
-                      setDisplayedItems((prevCount) => prevCount + 10)
+                      setDisplayedItems((prevCount) =>
+                        Math.min(prevCount + 10, filteredMembers.length)
+                      )
                     }
                     variant="outlined"
-                    disabled={displayedItems >= maxItems}
+                    disabled={displayedItems >= filteredMembers.length}
                   >
                     Show More
                   </Button>

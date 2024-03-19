@@ -9,9 +9,9 @@ sections:
     caption: Joining CORE
     items:
       - slug: is-my-repository-or-journal-harvested-by-CORE
-        question: Is my repository or journal harvested by CORE?
+        question: Is my repository or journal indexed by CORE?
         answer: |
-          To check whether your repository or journal is harvested
+          To check whether your repository or journal is indexed
           by CORE, go to our data providers [list](/data-providers).
       - slug: how-do-I-register-my-repository-or-journal-with-CORE?
         question: |
@@ -25,7 +25,7 @@ sections:
           If your repository or journal has not been registered
           yet use [the form](~register-data-provider) to add it.
       - slug: where-are-the-repositories-harvested-by-CORE-located
-        question: Where are the repositories harvested by CORE located?
+        question: Where are the repositories indexed by CORE located?
         answer: |
           CORE is an international service and harvests repositories from
           various locations around the world. This information is displayed in
@@ -520,6 +520,11 @@ sections:
           We will ask you for your circumstances during the registration process and we might
           contact you afterwards to clarify any points and assess your eligibility for a free licence.
           If your circumstances change, please let us know.
+      - slug: rate-limits
+        question: |
+          Rate limits
+        answer: |
+          CORE API is free and does not require registration, subject to our [rate limits](https://api.core.ac.uk/docs/v3#section/Rate-limits). However, organisations that register get a faster rate that is typically not free. For [Supporting and Sustaining Members](/membership), the faster rate comes as a free member benefit.
       - slug: can-I-use-the-CORE-dataset-for-commercial-purposes
         question: |
           Can I use the CORE dataset for commercial purposes?

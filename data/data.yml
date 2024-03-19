@@ -55,7 +55,7 @@ sections:
     content: |
       And we're used by every country in the world.
     link:
-      caption: Learn about how we harvest data or become a data provider
+      caption: Learn about how we index data or become a data provider
       url: about#how-it-works
     image: /images/illustrations/online-world.svg
 
