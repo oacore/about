@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {
   DocumentationMembership,
   DocumentationMembershipNav,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
-import { Layout } from '../../../design-v2/components'
+import { Layout, Video } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
 import DocumentSelect from '../../../components/docs-select'
@@ -21,6 +21,11 @@ const DocumentationPageTemplate = ({ docs }) => {
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[1].title
   )
+  const [visibleVideo, setVisibleVideo] = React.useState(null)
+
+  const handleContentOpen = useCallback((condition) => {
+    if (condition) setVisibleVideo(condition)
+  }, [])
   const route = useRouter()
   const headerHeight = 56
 
@@ -81,6 +86,7 @@ const DocumentationPageTemplate = ({ docs }) => {
       <Layout className={styles.docsLayout}>
         <DocumentationMembership
           docs={docs?.items}
+          handleContentOpen={handleContentOpen}
           highlight={highlight}
           setHighlight={setHighlight}
           docsTitle={text.documentationSwitcher[1].title}
@@ -95,6 +101,13 @@ const DocumentationPageTemplate = ({ docs }) => {
             />
           }
         />
+        {visibleVideo && (
+          <Video
+            visibleModal={visibleVideo}
+            closeModal={() => setVisibleVideo(false)}
+            video={visibleVideo}
+          />
+        )}
       </Layout>
     </div>
   )

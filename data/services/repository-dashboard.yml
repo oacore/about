@@ -123,18 +123,109 @@ what-is-included:
   title:  What’s included
   content: |
     The dashboard provides you with:
-
-    * Access control for the content indexed from your system.
-    * Indexing / reindexing controls.
-    * Finding versions and near-duplicate records in your repository.
-    * Content and download statistics.
-    * Register your repository OAI Prefix, to make your OAI identifiers resolve directly to your system.
-    * Information about detected technical issues and suggestions for improving harvesting efficiency.
-    * Tailored suggestions for metadata quality improvements to make your repository FAIRer.
-    * Metadata quality assessment according to the Research Outputs Metadata Schema (RIOXX).
-    * Check compliance with open access policies.
-    * Show the logos of your institution in CORE search and across the CORE ecosystem.
+  list:
+    - item: |
+         Access control for the content indexed from your system.
+    - item: |
+         Indexing / reindexing controls.
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - item: |
+         Finding versions and near-duplicate records in your repository.
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - item: |
+         Content and download statistics.
+    - item:  |
+         Register your repository OAI Prefix, to make your OAI identifiers resolve directly to your system.
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - item: |
+         Information about detected technical issues and suggestions for improving harvesting efficiency.
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - item: |
+         Tailored suggestions for metadata quality improvements to make your repository FAIRer.
+    - item: |
+         Metadata quality assessment according to the Research Outputs Metadata Schema (RIOXX).
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - item: |
+         Check compliance with open access policies.
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - item: |
+         Show the logos of your institution in CORE search and across the CORE ecosystem.
+      video:
+        image: /images/tutorial.svg
+        src: https://youtube.com/embed/-gFYNg_8ySQ
   image: /images/services/delivery.svg
+
+materials:
+  title: Dashboard features overview
+  cards:
+    - image: /images/membership/videoPreview.svg
+      key: access
+      title: How to access the CORE dashboard
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: duplicates
+      title: Checking duplicates in your repository
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: oa
+      title: Using CORE to check OA compliance
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: oai
+      title: OAI resolver - setup
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: logo
+      title: How to upload your logo to articles appearing in CORE
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: ror
+      title: Setting your repository in the Dashboard - ROR ID set up
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: notifications
+      title: Setting up notifications
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
+    - image: /images/membership/videoPreview.svg
+      key: repository
+      title: Using CORE to check your repository
+      action:
+        caption: Watch video
+      video:
+        src: https://youtube.com/embed/-gFYNg_8ySQ
 
 additional:
   title: Register for the CORE Dashboard
