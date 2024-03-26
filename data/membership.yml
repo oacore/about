@@ -33,6 +33,9 @@ content:
     descriptionCardTable: |
       Monitor, manage and access statistics about how your  metadata are exposed across the open access research network.
     plans: [Starting, Supporting, Sustaining]
+    video:
+      image: /images/tutorial.svg
+      src: https://www.youtube.com/embed/nxAbFFSqddQ
   - &discovery
     id: 2
     title: CORE Discovery
@@ -95,6 +98,9 @@ content:
     descriptionCardTable: |
       Make OAI identifiers originating from your repository resolve directly to your repository in the OAI Resolver.
     plans: [ Starting, Supporting, Sustaining ]
+#    video:
+#      image: /images/tutorial.svg
+#      src: https://youtube.com/embed/-gFYNg_8ySQ
   - &logos
     id: 9
     title: Logos for your papers
@@ -103,6 +109,9 @@ content:
     descriptionCardTable: |
       Associate your research papers in CORE with your official organisational logo. This will be visible in CORE Search, CORE Recommender, CORE Discovery and from across the CORE Portal. Your logo can be uploaded from the CORE Repository Dashboard.
     plans: [Supporting, Sustaining]
+    video:
+      image: /images/tutorial.svg
+      src: https://www.youtube.com/embed/qcQP3ZWMP30
   - &logo-banner
     id: 10
     title: Logo banner
@@ -172,6 +181,9 @@ content:
     descriptionCardTable: |
       Tools for Open Access compliance monitoring and metadata enrichments.
     plans: [Sustaining]
+    video:
+      image: /images/tutorial.svg
+      src: https://www.youtube.com/embed/X-A64CoTtcE
   - &api
     id: 18
     title: АPI use for your university
@@ -180,6 +192,9 @@ content:
     descriptionCardTable: |
       Use of the CORE API for your organisation, including for non-research purposes (except for  commercial purposes), subject to our T&Cs.
     plans: [Supporting, Sustaining]
+    video:
+      image: /images/tutorial.svg
+      src: https://www.youtube.com/embed/cC-S8Vlrkus
   - &dataset
     id: 19
     title: Dataset use for your university
@@ -228,6 +243,9 @@ content:
     descriptionCardTable: |
       Our technology searches your repository to identify different versions of your articles and potential duplicates within your repository. This can help you in managing and curating your repository content. We periodically detect near-duplicate records and versions and allow you to compare them side by side. This can help you improve your repository metadata and keep the repository clean.
     plans: [Supporting, Sustaining]
+    video:
+      image: /images/tutorial.svg
+      src: https://www.youtube.com/embed/56KqdNtq_1A
   - &rioxCompliance
     id: 25
     title: Monitor RIOXX compliance
@@ -410,23 +428,90 @@ institutionBenefit:
 materials:
   title: Membership materials
   cards:
-    - image: /images/membership/video.svg
+    - image: /images/membership/videoPreview.svg
+      key: introducing
+      title: Introducing core
       action:
         caption: Watch video
       video:
         src: https://youtube.com/embed/-gFYNg_8ySQ
-    - image: /images/membership/presentation.svg
+    - image: /images/pdfView.svg
+      key: intro
+      title: CORE Membership Introduction
       action:
         caption: Open presentation
         url: /resources/core-member-benefits-presentation.pdf
         target: _blank
-    - image: /images/membership/flyer.svg
+    - image: /images/pdfView.svg
+      key: overview
+      title: CORE Membership benefits overview
       action:
         caption: Open flyer
         url: /resources/CORE-Flyer-2023.pdf
         target: _blank
-
-
+    - image: /images/membership/videoPreview.svg
+      key: access
+      title: How to access the CORE dashboard
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/nxAbFFSqddQ
+    - image: /images/membership/videoPreview.svg
+      key: duplicates
+      title: Checking duplicates in your repository
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/56KqdNtq_1A
+    - image: /images/membership/videoPreview.svg
+      key: oa
+      title: Using CORE to check OA compliance
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/X-A64CoTtcE
+    - image: /images/membership/videoPreview.svg
+      key: oai
+      title: How to become a data provider
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/dBa_FGL6ppo
+    - image: /images/membership/videoPreview.svg
+      key: logo
+      title: How to upload your logo to articles appearing in CORE
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/qcQP3ZWMP30
+    - image: /images/membership/videoPreview.svg
+      key: ror
+      title: Setting your repository in the Dashboard - ROR ID set up
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/aT1CORAmv-0
+    - image: /images/membership/videoPreview.svg
+      key: notifications
+      title: Setting up notifications
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/Ezgckn-4B1Q
+    - image: /images/membership/videoPreview.svg
+      key: repository
+      title: Using CORE to check your repository
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/YyZ_MXLKcRs
+    - image: /images/membership/videoPreview.svg
+      key: api
+      title: Registering for the CORE API
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/cC-S8Vlrkus
 
 fee:
   title: Membership fee for <span>{{planName}}</span> members*
@@ -653,3 +738,5 @@ documentationSwitcher:
     description: These guidelines aim to assist institutions and repository managers in configuring their repositories in way that enables CORE to correctly index them.
   - title: Membership Documentation
     description: This documentation explains how to use all features and benefits of CORE Membership.
+
+videlogo: /images/tutorialActive.svg
