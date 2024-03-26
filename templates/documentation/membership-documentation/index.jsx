@@ -91,6 +91,7 @@ const DocumentationPageTemplate = ({ docs }) => {
           setHighlight={setHighlight}
           docsTitle={text.documentationSwitcher[1].title}
           mulltyDocs
+          videoIcon={text.videlogo}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}

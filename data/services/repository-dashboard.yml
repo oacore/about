@@ -128,43 +128,37 @@ what-is-included:
          Access control for the content indexed from your system.
     - item: |
          Indexing / reindexing controls.
-      video:
-        image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
     - item: |
          Finding versions and near-duplicate records in your repository.
       video:
         image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/56KqdNtq_1A
     - item: |
          Content and download statistics.
     - item:  |
          Register your repository OAI Prefix, to make your OAI identifiers resolve directly to your system.
-      video:
-        image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+#      video:
+#        image: /images/tutorial.svg
+#        src: https://www.youtube.com/watch?v=X-A64CoTtcE
     - item: |
          Information about detected technical issues and suggestions for improving harvesting efficiency.
       video:
         image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/YyZ_MXLKcRs
     - item: |
          Tailored suggestions for metadata quality improvements to make your repository FAIRer.
     - item: |
          Metadata quality assessment according to the Research Outputs Metadata Schema (RIOXX).
-      video:
-        image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
     - item: |
          Check compliance with open access policies.
       video:
         image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/X-A64CoTtcE
     - item: |
          Show the logos of your institution in CORE search and across the CORE ecosystem.
       video:
         image: /images/tutorial.svg
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/qcQP3ZWMP30
   image: /images/services/delivery.svg
 
 materials:
@@ -176,56 +170,49 @@ materials:
       action:
         caption: Watch video
       video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/nxAbFFSqddQ
     - image: /images/membership/videoPreview.svg
       key: duplicates
       title: Checking duplicates in your repository
       action:
         caption: Watch video
       video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/56KqdNtq_1A
     - image: /images/membership/videoPreview.svg
       key: oa
       title: Using CORE to check OA compliance
       action:
         caption: Watch video
       video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
-    - image: /images/membership/videoPreview.svg
-      key: oai
-      title: OAI resolver - setup
-      action:
-        caption: Watch video
-      video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
-    - image: /images/membership/videoPreview.svg
-      key: logo
-      title: How to upload your logo to articles appearing in CORE
-      action:
-        caption: Watch video
-      video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
-    - image: /images/membership/videoPreview.svg
-      key: ror
-      title: Setting your repository in the Dashboard - ROR ID set up
-      action:
-        caption: Watch video
-      video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/X-A64CoTtcE
     - image: /images/membership/videoPreview.svg
       key: notifications
       title: Setting up notifications
       action:
         caption: Watch video
       video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/Ezgckn-4B1Q
     - image: /images/membership/videoPreview.svg
-      key: repository
+      key: logo
       title: Using CORE to check your repository
       action:
         caption: Watch video
       video:
-        src: https://youtube.com/embed/-gFYNg_8ySQ
+        src: https://www.youtube.com/embed/YyZ_MXLKcRs
+    - image: /images/membership/videoPreview.svg
+      key: ror
+      title: Setting your repository in the Dashboard - ROR ID set up
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/aT1CORAmv-0
+    - image: /images/membership/videoPreview.svg
+      key: repository
+      title: How to upload your logo to articles appearing in CORE
+      action:
+        caption: Watch video
+      video:
+        src: https://www.youtube.com/embed/qcQP3ZWMP30
 
 additional:
   title: Register for the CORE Dashboard
