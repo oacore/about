@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { Carousel } from '@oacore/design/lib'
 import Parser from 'html-react-parser'
@@ -20,6 +20,9 @@ const DetailsBox = ({
   advantageId,
   handleToggle,
   active,
+  videoIcon,
+  video,
+  handleContentOpen,
 }) => (
   <div className={styles.box}>
     {/* eslint-disable-next-line max-len */}
@@ -30,7 +33,17 @@ const DetailsBox = ({
           [styles.wrapper]: advantageId === 25,
         })}
       >
-        <Markdown>{title}</Markdown>
+        <div className={styles.listTitleWrapper}>
+          <Markdown className={styles.listTitle}>{title}</Markdown>
+          {/* eslint-disable-next-line max-len */}
+          {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+          <img
+            onClick={() => handleContentOpen(video)}
+            className={styles.videoIcon}
+            src={videoIcon}
+            alt=""
+          />
+        </div>
         {advantageId === 25 && <span className={styles.soon}>coming soon</span>}
       </div>
     </div>
@@ -47,7 +60,7 @@ const CardDescription = ({ plan }) => (
   </article>
 )
 
-const Card = ({ plan }) => {
+const Card = ({ plan, handleContentOpen }) => {
   const [active, setActive] = useState(null)
 
   const handleToggle = React.useCallback(
@@ -89,7 +102,10 @@ const Card = ({ plan }) => {
                   handleToggle={() => handleToggle(advantage.id)}
                   advantageId={advantage.id}
                   title={advantage.title}
+                  video={advantage.video}
+                  videoIcon={advantage.video?.image}
                   description={advantage.descriptionCardCard}
+                  handleContentOpen={handleContentOpen}
                 />
               </li>
             </div>
@@ -115,13 +131,11 @@ const Card = ({ plan }) => {
 }
 
 const MembershipPageTemplate = ({ data, members }) => {
-  const [visibleVideo, setVisibleVideo] = React.useState(false)
+  const [visibleVideo, setVisibleVideo] = React.useState(null)
 
-  const handleContentOpen = (condition) => {
-    if (condition) return () => setVisibleVideo(true)
-
-    return null
-  }
+  const handleContentOpen = useCallback((condition) => {
+    if (condition) setVisibleVideo(condition)
+  }, [])
 
   const filteredMembers = members.filter(
     (member) => !excludedIds.includes(member.repo_id)
@@ -170,7 +184,11 @@ const MembershipPageTemplate = ({ data, members }) => {
           </div>
           <div className={styles.plansWrapper}>
             {data.plans.cards.map((plan) => (
-              <Card key={plan.title} plan={plan} />
+              <Card
+                handleContentOpen={handleContentOpen}
+                key={plan.title}
+                plan={plan}
+              />
             ))}
           </div>
         </Section>
@@ -284,19 +302,18 @@ const MembershipPageTemplate = ({ data, members }) => {
           <h4>{data.materials.title}</h4>
           <div className={styles.cardsWrapper}>
             {data.materials.cards.map((card) => (
-              <article className={styles.materialsCard} key={card.image}>
-                {/* eslint-disable-next-line max-len */}
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/control-has-associated-label */}
+              <article className={styles.materialsCard} key={card.key}>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a
+                  onClick={() => handleContentOpen(card.video)}
                   target={card.action.target}
                   href={!card.video ? card.action.url : null}
-                  onClick={handleContentOpen(card.video)}
+                  className={styles.materialWrapper}
                 >
-                  <img
-                    src={card.image}
-                    className={styles.materialsImage}
-                    alt=""
-                  />
+                  <div className={styles.materialInnerWrapper}>
+                    <img src={card.image} alt="" />
+                    <div className={styles.materialTitle}>{card.title}</div>
+                  </div>
                 </a>
                 <div className={styles.buttonWrapper}>
                   <Button
@@ -304,20 +321,20 @@ const MembershipPageTemplate = ({ data, members }) => {
                     variant="outlined"
                     href={!card.video ? card.action.url : null}
                     target={card.action.target}
-                    onClick={handleContentOpen(card.video)}
+                    onClick={() => handleContentOpen(card.video)}
                   >
                     {card.action.caption}
                   </Button>
                 </div>
-                {card.video && (
-                  <Video
-                    visibleModal={visibleVideo}
-                    closeModal={() => setVisibleVideo(false)}
-                    video={card.video}
-                  />
-                )}
               </article>
             ))}
+            {visibleVideo && (
+              <Video
+                visibleModal={visibleVideo}
+                closeModal={() => setVisibleVideo(false)}
+                video={visibleVideo}
+              />
+            )}
           </div>
         </Section>
       </div>

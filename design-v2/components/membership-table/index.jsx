@@ -83,7 +83,6 @@ const MembershipTable = observe(
             </Markdown>
           </td>
           {row.prices.map(({ type: priceType, original, discount }) => (
-            // eslint-disable-next-line jsx-a11y/control-has-associated-label
             <td
               key={`${priceType}-${original}`}
               className={classNames.use(styles.cell, styles.cellPrices, {
