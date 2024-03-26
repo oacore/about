@@ -22,7 +22,7 @@ const EndorsementsPage = () => (
     <Layout>
       <h1>{title}</h1>
 
-      {Object.entries(sections).map(
+      {Object.entries(sections)?.map(
         ([key, { testimonials, organizations, caption, ...section }]) => (
           <EndorsementsSection
             key={key}

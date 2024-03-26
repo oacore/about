@@ -192,7 +192,7 @@ class ResearchOutputsPage extends Component {
           </div>
           <div className={styles.sectionWrapper}>
             <ul className={styles.redirectWrapper}>
-              {page.links.content.map((item) => (
+              {page.links.content?.map((item) => (
                 <li className={styles.redirectLink}>
                   {/* eslint-disable-next-line max-len */}
                   {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
@@ -218,7 +218,7 @@ class ResearchOutputsPage extends Component {
             </div>
           </div>
         </Section>
-        {page.sections.map((section, index) => (
+        {page.sections?.map((section, index) => (
           <ResearchOutputsSection
             key={section.id}
             index={index}

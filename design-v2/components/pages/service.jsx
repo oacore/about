@@ -341,7 +341,7 @@ const ServicePage = observe(
                 <h3>{whatIsIncluded.title}</h3>
                 <Markdown>{whatIsIncluded.content}</Markdown>
                 <ul className={styles.listItem}>
-                  {whatIsIncluded.list.map((item) => (
+                  {whatIsIncluded?.list?.map((item) => (
                     <div className={styles.listTitleWrapper}>
                       <li>{item.item}</li>
                       {/* eslint-disable-next-line max-len */}
