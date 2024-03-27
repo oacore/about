@@ -430,7 +430,7 @@ materials:
   cards:
     - image: /images/membership/videoPreview.svg
       key: introducing
-      title: Introducing core
+      title: Introducing CORE
       action:
         caption: Watch video
       video:
