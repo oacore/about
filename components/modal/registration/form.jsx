@@ -82,15 +82,15 @@ const ModalForm = observe(() => {
     if (organisationName)
       registration.setData({ organisation: organisationName })
 
-    if (regEmail) registration.setData({ email: regEmail })
     if (libraryEmail) registration.setData({ libraryEmail })
 
     if (description) registration.setData({ description })
 
-    if (firstName && lastName && countryName.id) {
+    if (firstName && lastName && countryName.id && regEmail) {
       registration.setData({
         firstName,
         lastName,
+        email: regEmail,
         country: countryName.id,
         paidAccess: selectedOption === 'all',
       })
