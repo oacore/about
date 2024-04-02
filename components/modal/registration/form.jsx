@@ -16,8 +16,9 @@ import CustomRadio from '../../radio-button'
 
 import { useStore, observe } from 'store'
 
-const ModalForm = observe((emailFill) => {
+const ModalForm = observe(() => {
   const router = useRouter()
+  const { registration } = useStore()
   const {
     value: firstName,
     bind: bindFirstName,
@@ -44,13 +45,16 @@ const ModalForm = observe((emailFill) => {
   } = useInput('organisationName', true)
 
   const {
+    value: regEmail,
+    element: elemRegEmail,
+    bind: bindRegEmail,
+  } = useInput('regEmail', false, registration.data.email)
+
+  const {
     value: libraryEmail,
     element: elemLibraryEmail,
     bind: bindLibraryEmail,
   } = useInput('libraryEmail')
-
-  const [email, setEmail] = useState(emailFill.emailFill)
-  const { registration } = useStore()
 
   const [selectedOption, setSelectedOption] = useState('')
   const handleRadioSelect = (id) => {
@@ -82,12 +86,12 @@ const ModalForm = observe((emailFill) => {
 
     if (description) registration.setData({ description })
 
-    if (firstName && lastName && countryName.id && email) {
+    if (firstName && lastName && countryName.id && regEmail) {
       registration.setData({
         firstName,
         lastName,
+        email: regEmail,
         country: countryName.id,
-        email,
         paidAccess: selectedOption === 'all',
       })
       registration.setIsModalFormActive(false)
@@ -196,13 +200,12 @@ const ModalForm = observe((emailFill) => {
         </div>
         <>
           <TextField
-            id={emailFill.emailFill}
-            name={emailFill.emailFill}
-            label="Email"
+            id={elemRegEmail}
+            name={elemRegEmail}
+            label="Email ff"
             placeholder="john.doe@mail.com"
             required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            {...bindRegEmail}
           />
           <div className={styles.institutionSubtitle}>
             {registration.data.accountType === 'enterprise'
@@ -241,7 +244,6 @@ const ModalForm = observe((emailFill) => {
             name={elemLibraryEmail}
             label="Could you please provide us with the email for your library contact?"
             placeholder="john.doe@mail.com"
-            defaultValue={emailFill.emailFill}
             type="email"
             {...bindLibraryEmail}
           />
