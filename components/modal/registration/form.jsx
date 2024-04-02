@@ -244,7 +244,6 @@ const ModalForm = observe(() => {
             name={elemLibraryEmail}
             label="Could you please provide us with the email for your library contact?"
             placeholder="john.doe@mail.com"
-            // defaultValue={emailFill.emailFill}
             type="email"
             {...bindLibraryEmail}
           />
