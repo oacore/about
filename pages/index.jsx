@@ -97,6 +97,7 @@ const IndexPage = () => {
       description={page.description}
       keywords={page.keywords}
       className={styles.page}
+      key={page.title.replace(/\s/g, '')}
     >
       <Layout>
         <Carousel

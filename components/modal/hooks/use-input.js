@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
-const useInput = (element, fetchSuggestions = false) => {
-  const [value, setValue] = useState('')
+const useInput = (element, fetchSuggestions = false, defaultValue = '') => {
+  const [value, setValue] = useState(defaultValue)
   const [suggestions, setSuggestions] = useState([])
 
   useEffect(() => {
