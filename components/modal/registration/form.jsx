@@ -202,7 +202,7 @@ const ModalForm = observe(() => {
           <TextField
             id={elemRegEmail}
             name={elemRegEmail}
-            label="Email ff"
+            label="Email"
             placeholder="john.doe@mail.com"
             required
             {...bindRegEmail}
