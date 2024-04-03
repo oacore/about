@@ -1,6 +1,6 @@
 header:
-  title: Rights retention statement checker
-  description: RRS checker is a easy way to find a Rights retention statement in specific paper. You need to download file with your outputs in the form and wait for results.
+  title: Rights Retention Strategy statement identification demo
+  description: RRS checker provides an easy way to find Rights Retention Strategy statements in papers. You can test it by uploading a paper (PDF) below.
   subTitle: DEMO
 
 upload:

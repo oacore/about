@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { useRouter } from 'next/router'
 
 import DefaultUploadView from './defaultUpload'
 import FormatUploadIssue from './formatUpload'
@@ -11,8 +10,6 @@ import UploadFail from './uploadFail'
 const RrsCheckCard = ({ uploadPdf, uploadResults, rrsPdfLoading }) => {
   const uploadRef = useRef(null)
   const [fileName, setFileName] = useState('')
-  const router = useRouter()
-  const providerId = router.query['data-provider-id']
 
   const [currentView, setCurrentView] = useState('default')
 
@@ -43,7 +40,7 @@ const RrsCheckCard = ({ uploadPdf, uploadResults, rrsPdfLoading }) => {
     if (files && files.length) {
       // eslint-disable-next-line prefer-destructuring
       file = files[0]
-      uploadPdf(file, providerId)
+      uploadPdf(file, 1)
       setFileName(file.name)
       if (file.size > 10 * 1024 * 1024) {
         setCurrentView('sizeIssue')

@@ -4,8 +4,11 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: space-between;
+  .card-wrapper {
+    width: 70%;
+  }
   .description {
-    max-width: 50ch;
+    max-width: 70ch;
     font-size: 1.3rem;
     color: var(--gray-700);
     margin-bottom: 3rem;

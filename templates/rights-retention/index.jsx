@@ -40,14 +40,13 @@ const RightsRetentionPageTemplate = ({ data }) => {
   return (
     <Layout className={styles.sponsorshipMainWrapper}>
       <Section id="header" className={styles.header}>
-        <div>
+        <div className={styles.cardWrapper}>
           <span className={styles.demo}>{data.header.subTitle}</span>
           <h2 className={styles.title}>{data.header.title}</h2>
           <Markdown className={styles.description}>
             {data.header.description}
           </Markdown>
         </div>
-        <div className={styles.logoContainer} />
       </Section>
       <FileUpload
         rrsPdfLoading={rrsPdfLoading}
