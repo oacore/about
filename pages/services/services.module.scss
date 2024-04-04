@@ -28,6 +28,7 @@
   }
   &-video-img {
     margin-right: 1rem;
+    position: relative;
     &:hover,
     &:focus {
       --button-overlay: none;
@@ -36,6 +37,28 @@
     img {
       width: 100%;
       height: auto;
+    }
+    .pulse {
+      position: absolute;
+      top: 18%;
+      left: 22%;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: rgba(255, 0, 0, 0.5);
+      animation: pulse 2s infinite;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
     }
   }
   &-title {
