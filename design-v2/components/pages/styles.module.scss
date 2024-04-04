@@ -4,6 +4,14 @@ $spacer: 1.4rem;
 $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
 $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 $support-card-width: 21.5rem;
+.unset-bottom {
+  padding-bottom: 0;
+}
+
+.unset-top {
+  padding-top: 0;
+}
+
 .servicePage {
   .features {
     display: flex;

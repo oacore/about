@@ -10,6 +10,7 @@ import { Layout, Section } from '../layout'
 import Hero from '../hero'
 // eslint-disable-next-line import/no-cycle
 import { Video } from '../index'
+import ExperiencesCard from '../../../components/experiences-card/experiencesCard'
 
 import api from 'data/services/api.yml'
 import dataset from 'data/services/dataset.yml'
@@ -102,6 +103,7 @@ const ServicePage = observe(
     actionButton,
     keywords,
     whatIsIncluded, // @optional
+    institutionBenefit, // @optional
     statistics, // @optional
     main, // @optional
     benefits, // @optional
@@ -146,7 +148,7 @@ const ServicePage = observe(
         keywords={keywords}
         className={styles.servicePage}
       >
-        <Layout>
+        <Layout className={styles.unsetBottom}>
           <Hero
             actionButton={actionButton}
             hideButtons={hideButtons}
@@ -368,6 +370,14 @@ const ServicePage = observe(
               <img src={whatIsIncluded.image} alt={whatIsIncluded.title} />
             </Section>
           )}
+        </Layout>
+        {institutionBenefit && (
+          <ExperiencesCard
+            title={institutionBenefit.title}
+            data={institutionBenefit.item}
+          />
+        )}
+        <Layout className={styles.unsetTop}>
           {materials && (
             <div className={styles.layoutMiniWrapper}>
               <Section id="membership-materials">

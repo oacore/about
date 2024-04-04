@@ -10,6 +10,7 @@ import listIcon from '../../public/images/membership/listIcon.svg'
 import carouselArrowRight from '../../public/images/membership/carouselArrowRight.svg'
 import carouselArrowLeft from '../../public/images/membership/carouselArrowLeft.svg'
 import { excludedIds } from '../governance/supporters'
+import ExperiencesCard from '../../components/experiences-card/experiencesCard'
 
 import { Markdown } from 'components'
 import { Section, Video } from 'design-v2/components'
@@ -266,37 +267,10 @@ const MembershipPageTemplate = ({ data, members }) => {
           </div>
         </Section>
       </div>
-      <Section id="member-experiences">
-        <div className={styles.institutionBenefitWrapper}>
-          <div className={styles.institutionBenefitInnerWrapper}>
-            <div className={styles.titleWrapper}>
-              <Markdown className={styles.mainTitle}>
-                {data.institutionBenefit.title}
-              </Markdown>
-            </div>
-            {data.institutionBenefit.item.map((repo) => (
-              <div className={styles.itemMainWrapper}>
-                <div className={styles.itemWrapper}>
-                  <h5 className={styles.itemTitle}>{repo.title}</h5>
-                  <p className={styles.itemDescription}>{repo.description}</p>
-                </div>
-                <div className={styles.footer}>
-                  <div className={styles.userWrapper}>
-                    <img className={styles.userImg} src={repo.img} alt="" />
-                    <div>
-                      <h6 className={styles.user}>{repo.user}</h6>
-                      <span className={styles.position}>{repo.position}</span>
-                    </div>
-                  </div>
-                  <Button target="blank" href={repo.action.url}>
-                    {repo.action.title}
-                  </Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <ExperiencesCard
+        title={data.institutionBenefit.title}
+        data={data.institutionBenefit.item}
+      />
       <div className={styles.layoutMiniWrapper}>
         <Section id="membership-materials">
           <h4>{data.materials.title}</h4>
