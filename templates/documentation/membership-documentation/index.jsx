@@ -26,6 +26,7 @@ const DocumentationPageTemplate = ({ docs }) => {
   const handleContentOpen = useCallback((condition) => {
     if (condition) setVisibleVideo(condition)
   }, [])
+
   const route = useRouter()
   const headerHeight = 56
 

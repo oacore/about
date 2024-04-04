@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" fill="none">
+<rect width="34" height="34" fill="#F5F5F5"/>
+<g id="Drag and drop" filter="url(#filter0_d_322_3315)">
+<rect x="-26" y="-16" width="1200" height="278" rx="2" fill="white"/>
+<g id="Header" clip-path="url(#clip0_322_3315)">
+<g id="Frame 74">
+<g id="Group 74">
+<g id="Frame 74_2">
+<g id="Done">
+<rect width="34" height="34" rx="2" fill="#8BC34A" fill-opacity="0.1"/>
+<path id="Vector" d="M13.9999 21.2L9.7999 17L8.3999 18.4L13.9999 24L25.9999 12L24.5999 10.6L13.9999 21.2Z" fill="#8BC34A"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_322_3315" x="-30" y="-18" width="1208" height="286" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="2"/>
+<feGaussianBlur stdDeviation="2"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_322_3315"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_322_3315" result="shape"/>
+</filter>
+<clipPath id="clip0_322_3315">
+<rect width="1200" height="246" fill="white" transform="translate(-26)"/>
+</clipPath>
+</defs>
+</svg>
