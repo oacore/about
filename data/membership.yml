@@ -13,7 +13,7 @@ headerLink:
 header:
   title: CORE Membership for data providers
   extra: Coming soon
-  description: CORE is a mission-driven not-for-profit endeavour and a signatory of the Principle of Open Scholarly Infrastructure [(POSI)](https://openscholarlyinfrastructure.org/posse/) and we rely on the generous support of our members to support and sustain the service.
+  description: CORE is a mission-driven and not-for-profit endeavour and we rely on the generous support of our members to support and sustain the service.  Find out how CORE Membership has[ helped other institutions.](https://core.ac.uk/membership#member-experiences)
   logo: /images/membership/international-cooperation.svg
   actions:
     - caption: Choose your membership
@@ -236,6 +236,14 @@ content:
     descriptionCardTable: |
       Aligning with established metadata practices is key for the interoperability of your repository with external systems and for meeting FAIR principles. Funders increasingly mandate the use of established metadata profiles. The Monitor RIOXX Compliance feature constantly monitors metadata records in your repository, helping you to keep your repository FAIR.
     plans: [Supporting, Sustaining]
+  - &rrs
+    id: 26
+    title: Rights Retention Strategy (RRS) Identification
+    descriptionCardCard: |
+      CORE provides functionality to automatically identify papers with Rights Retention Strategy statements in your repository by means of testing if the rights retention statement is present in the paper’s full text. This can be used to reduce time of repository staff in reviewing access rights and improve repository metadata. [Rights Retention Strategy statement identification demo.](~rights-retention)
+    descriptionCardTable: |
+      CORE provides functionality to automatically identify papers with Rights Retention Strategy statements in your repository by means of testing if the rights retention statement is present in the paper’s full text. This can be used to reduce time of repository staff in reviewing access rights and improve repository metadata. [ Rights Retention Strategy statement identification demo.](~rights-retention)
+    plans: [Supporting, Sustaining]
 
 plans:
   title: CORE Membership levels
@@ -245,7 +253,7 @@ plans:
       content: Organisations who want to get their content indexed in CORE and benefit from increased discoverability (in search, [Recommender](~services/recommender),  [Discovery](~services/discovery) and PMC) and persistent identification (via [OAI Resolver](https://oai.core.ac.uk)), while staying in control of how their content is exposed using the [CORE  Dashboard](~services/repository-dashboard).
     - title: |
         SUPPORTING for:
-      content: Organisations who want to be widely recognised for their open research. In addition to all the STARTING benefits, this membership also comes with extra visibility for your organisation in the OA network, additional technical support, [CORE API](~services/api) access for your researchers, and a seat on our [Board of Supporters](~governance/supporters).
+      content: Organisations who want to be widely recognised for their open research. In addition to all the STARTING benefits, this membership also comes with our versions and [near-duplicates detection](https://core.ac.uk/documentation/membership-documentation#versions-duplicates) tool, extra visibility for your organisation in the OA network, technical support, [CORE API](~services/api) access for your institution and researchers, and a seat on our [Board of Supporters](~governance/supporters).
     - title: |
         SUSTAINING for:
       content: Organisations who want to be seen as open research champions. In addition to all the SUPPORTING benefits, this membership comes with additional tools to help stay compliant with [OA policies](/documentation/membership-documentation/?r=compliance-dashboard) and FAIR, unlimited technical support, [CORE Dataset](https://core.ac.uk/services/dataset) access for your researchers for text and data mining, and two seats on our Board of Supporters
@@ -276,6 +284,7 @@ plans:
         caption: PLUS
       advantages:
         - *versions
+        - *rrs
         - *api
         - *tech-support
         - *logos
@@ -367,6 +376,7 @@ comparison-table:
     - *discovery-boost
     - *riox
     - *versions
+    - *rrs
     - *rioxCompliance
     - *logos
     - *logo-banner
