@@ -112,6 +112,18 @@ what-is-included:
     If you use CORE in your work, we kindly request you to [cite one of our publications.](/about/research-outputs)
   image: /images/services/delivery.svg
 
+institutionBenefit:
+  title: Find out how other institutions [benefited](documentation/membership-documentation) from CORE API
+  item:
+    - title: How the Oxford University Research Archive (ORA) uses the CORE API
+      description: CORE harvests and aggregates information of research papers collected from institutional and subject repositories, and open access and hybrid journals, and makes the content available via an API. The CORE API offers a wealth of metadata and full text content from its many data providers. For ORA (Oxford University Research Archive), the use of the CORE API offers an opportunity to enhance workflows and streamline the process of reviewing and curating articles for inclusion in the repository...
+      user: Jason Partridge
+      position: Open Access Service Manager at the Bodleian Libraries, University of Oxford.
+      img: /images/ora.svg
+      action:
+        title: read more
+        url: https://blog.core.ac.uk/2024/03/05/how-the-oxford-university-research-archive-ora-uses-the-core-api/
+
 stats:
   items:
     - title: more than

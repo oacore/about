@@ -434,6 +434,22 @@ institutionBenefit:
       action:
         title: read more
         url: https://blog.core.ac.uk/2024/01/18/university-of-chicago-adopts-cores-article-deduplication-tool/
+    - title: How the Oxford University Research Archive (ORA) uses the CORE API
+      description: CORE harvests and aggregates information of research papers collected from institutional and subject repositories, and open access and hybrid journals, and makes the content available via an API. The CORE API offers a wealth of metadata and full text content from its many data providers. For ORA (Oxford University Research Archive), the use of the CORE API offers an opportunity to enhance workflows and streamline the process of reviewing and curating articles for inclusion in the repository...
+      user: Jason Partridge
+      position: Open Access Service Manager at the Bodleian Libraries, University of Oxford.
+      img: /images/ora.svg
+      action:
+        title: read more
+        url: https://blog.core.ac.uk/2024/03/05/how-the-oxford-university-research-archive-ora-uses-the-core-api/
+    - title: How the CORE Metadata Validator supports integration of Rioxx v3 in DSpace
+      description: With the rollout of the Rioxx V3 metadata schema, repositories can benefit from far richer metadata for their articles. Since the release of the updated schema, The University of Cambridge has been working to develop an implementation of a RIOXX v3 for DSpace-based repositories which will greatly simplify the adoption of this metadata schema. The implementation process and verification of the metadata has been supported by the CORE Rioxx v3 validator available in the CORE Dashboard...
+      user: Dr Agustina Martinez-Garcia
+      position: Open Research Systems Manager at University of Cambridge and the Open Research Systems
+      img: /images/cambridge.svg
+      action:
+        title: read more
+        url: https://blog.core.ac.uk/2024/02/22/rioxx-v3-0-integration-for-dspace-repositories/
 
 materials:
   title: Membership materials
