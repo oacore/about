@@ -42,7 +42,7 @@ form:
       type: caption
       options:
           - name: Register repository
-            action: '/benefits'
+            action: '/benefits#join-core'
           - name: Contact us
             action: '/about#contact'
     - label: Add

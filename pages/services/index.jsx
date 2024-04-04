@@ -46,6 +46,7 @@ const FeaturesSection = ({ id, description, title, video, features }) => {
             type="button"
             onClick={() => setVisibleVideo(true)}
           >
+            <div className={styles.pulse} />
             <img src="/images/services/video_placeholder.svg" alt="video" />
           </button>
         )}

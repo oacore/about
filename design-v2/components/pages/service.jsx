@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { Card, Form, TextField } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 import { Button } from '@oacore/design/lib/elements'
@@ -8,6 +8,8 @@ import { Popover } from '@oacore/design/lib/modules'
 import styles from './styles.module.scss'
 import { Layout, Section } from '../layout'
 import Hero from '../hero'
+// eslint-disable-next-line import/no-cycle
+import { Video } from '../index'
 
 import api from 'data/services/api.yml'
 import dataset from 'data/services/dataset.yml'
@@ -106,6 +108,7 @@ const ServicePage = observe(
     contact, // @optional
     stats, // @optional
     additional, // @optional
+    materials, // @optional
     testimonials, // @optional
     form, // @optional
     apilogos, // @optional
@@ -114,6 +117,8 @@ const ServicePage = observe(
     relatedServices,
     hideButtons = false, // @optional
   }) => {
+    const [visibleVideo, setVisibleVideo] = useState(false)
+
     const { registration } = useStore()
     const {
       value: email,
@@ -129,6 +134,10 @@ const ServicePage = observe(
       registration.setData({ productType, email })
       registration.setIsModalFormActive(true)
     }
+
+    const handleContentOpen = useCallback((condition) => {
+      if (condition) setVisibleVideo(condition)
+    }, [])
 
     return (
       <Page
@@ -331,6 +340,21 @@ const ServicePage = observe(
               <div className={styles.section}>
                 <h3>{whatIsIncluded.title}</h3>
                 <Markdown>{whatIsIncluded.content}</Markdown>
+                <ul className={styles.listItem}>
+                  {whatIsIncluded?.list?.map((item) => (
+                    <div className={styles.listTitleWrapper}>
+                      <li>{item.item}</li>
+                      {/* eslint-disable-next-line max-len */}
+                      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                      <img
+                        onClick={() => handleContentOpen(item?.video)}
+                        className={styles.videoIcon}
+                        src={item?.video?.image}
+                        alt=""
+                      />
+                    </div>
+                  ))}
+                </ul>
                 {whatIsIncluded.action && (
                   <Button
                     className={styles.contactBtn}
@@ -343,6 +367,51 @@ const ServicePage = observe(
               </div>
               <img src={whatIsIncluded.image} alt={whatIsIncluded.title} />
             </Section>
+          )}
+          {materials && (
+            <div className={styles.layoutMiniWrapper}>
+              <Section id="membership-materials">
+                <h4>{materials.title}</h4>
+                <div className={styles.cardsWrapper}>
+                  {materials.cards.map((card) => (
+                    <article className={styles.materialsCard} key={card.key}>
+                      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                      <a
+                        target={card.action.target}
+                        href={!card.video ? card.action.url : null}
+                        onClick={() => handleContentOpen(card.video)}
+                        className={styles.materialWrapper}
+                      >
+                        <div className={styles.materialInnerWrapper}>
+                          <img src={card.image} alt="" />
+                          <div className={styles.materialTitle}>
+                            {card.title}
+                          </div>
+                        </div>
+                      </a>
+                      <div className={styles.buttonWrapper}>
+                        <Button
+                          className={styles.materialButton}
+                          variant="outlined"
+                          href={!card.video ? card.action.url : null}
+                          target={card.action.target}
+                          onClick={() => handleContentOpen(card.video)}
+                        >
+                          {card.action.caption}
+                        </Button>
+                      </div>
+                    </article>
+                  ))}
+                  {visibleVideo && (
+                    <Video
+                      visibleModal={visibleVideo}
+                      closeModal={() => setVisibleVideo(false)}
+                      video={visibleVideo}
+                    />
+                  )}
+                </div>
+              </Section>
+            </div>
           )}
           {statistics && stats && (
             <>
