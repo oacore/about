@@ -45,7 +45,7 @@ $breakpoint-lg: 1415px;
       padding: 16px;
       .item-title {
         color: #000;
-        font-size: 24px;
+        font-size: 20px;
         font-style: normal;
         font-weight: 700;
         line-height: 32px;
@@ -68,13 +68,20 @@ $breakpoint-lg: 1415px;
       border-top: 1px solid #e0e0e0;
       .user-wrapper {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
+        width: 70%;
         .user-img {
           margin-right: 14px;
         }
         .user {
           margin-bottom: 6px;
+        }
+        .position {
+          color: #666;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: 0.048px;
         }
       }
     }
