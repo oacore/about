@@ -23,7 +23,7 @@ const ExperiencesCard = ({ title, data }) => (
                 <img className={styles.userImg} src={repo.img} alt="" />
                 <div>
                   <h6 className={styles.user}>{repo.user}</h6>
-                  <span className={styles.position}>{repo.position}</span>
+                  <p className={styles.position}>{repo.position}</p>
                 </div>
               </div>
               <Button target="blank" href={repo.action.url}>
