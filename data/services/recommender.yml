@@ -119,13 +119,13 @@ additional:
       works in our [research](~research-outputs) section.
   actions:
       -
-        url: https://dashboard.core.ac.uk/login
+        url: /services/repository-dashboard
         caption: Install via Repository Dashboard
         hint: For those who are CORE Data Providers
         primary: true
       -
-        url: /recommender/register
-        caption: Install via registration page
+        url: /about#contact
+        caption: Contact us to install
         hint: For those who are not CORE Data Providers
 
 related-services:
