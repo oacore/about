@@ -137,6 +137,10 @@ $grid-responsive-for-items: repeat(auto-fit, minmax(500px, 1fr));
         }
       }
     }
+    .member-column {
+      color: var(--primary);
+      text-transform: capitalize;
+    }
     td {
       @media (max-width: $breakpoint-sm) {
         padding: 8px;
