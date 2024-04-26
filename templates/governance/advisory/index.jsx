@@ -5,18 +5,17 @@ import styles from './advisory.module.scss'
 
 import { Page } from 'components'
 import { Hero, Layout, Section } from 'design-v2/components'
-import data from 'data/advisory.yml'
 
-const Advisory = () => (
+const Advisory = ({ meta, advisory }) => (
   <Page>
-    <Layout title={data.header.title} description={data.header.tagline}>
+    <Layout title={meta.title} description={meta.tagline}>
       <Hero
-        image={data.header.image}
-        title={data.header.title}
-        description={data.header.description}
+        image={advisory.header.image}
+        title={meta.title}
+        description={advisory.header.description}
       />
       <Section className={styles.supporters}>
-        <h3>{data.table.title}</h3>
+        <h3>{advisory.table.title}</h3>
         <Table>
           <Table.Head>
             <Table.Row>
@@ -26,7 +25,7 @@ const Advisory = () => (
             </Table.Row>
           </Table.Head>
           <Table.Body>
-            {data.table.data.map((member) => (
+            {advisory.table.data.map((member) => (
               <Table.Row key={member.name}>
                 <Table.Cell>{member.name}</Table.Cell>
                 <div className={styles.organisationWrapper}>
