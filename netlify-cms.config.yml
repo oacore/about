@@ -638,7 +638,6 @@ collections:
 
   preview_path: api/preview?page=history&ref=cms/history/{{slug}}
 
-
 - name: docs
 
   folder: docs
@@ -1430,3 +1429,58 @@ collections:
                       widget: text
                       label: slug
                       hint: hint for us
+
+- name: advisory-board
+
+  media_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🎓 Advisory Board
+  label_singular: member
+  description: >
+    Advisory Board members and their details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  advisory/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: description
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appears in results. Important
+            to have good performance in search engines.
+    - name: members
+      label: Advisory Board Members
+      file: advisory-board/advisory.yml
+      fields:
+        - name: data
+          widget: list
+          label: Members
+          allow_add: true
+          fields:
+            - name: name
+              widget: string
+              label: Name
+            - name: image
+              widget: file
+              label: Image
+              hint: Member's image
+            - name: organisation
+              widget: string
+              label: Organisation
+              hint: Member's organisation
+            - name: country
+              widget: string
+              label: Country
+              hint: Member's country
