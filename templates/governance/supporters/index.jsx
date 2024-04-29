@@ -40,17 +40,37 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
     setSearchValue(value)
   }
 
-  const filteredMembers = members.filter(
-    (member) =>
-      member.organisation_name
-        .toLowerCase()
-        .includes(searchValue.toLowerCase()) &&
-      !excludedIds.includes(member.repo_id)
+  const filteredMembers = members.filter((member) =>
+    member.organisation_name.toLowerCase().includes(searchValue.toLowerCase())
   )
 
   const sortedMembers = [...filteredMembers].sort((a, b) =>
     a.organisation_name.localeCompare(b.organisation_name)
   )
+
+  const renderBillingType = (member) => {
+    if (
+      excludedIds.includes(member.repo_id) ||
+      (Array.isArray(member.repo_id) &&
+        member.repo_id.some((id) => excludedIds.includes(id)))
+    ) {
+      return (
+        <a
+          target="_blank"
+          href="https://sparcopen.org/our-work/us-repository-network/discovery-pilot-project/"
+          rel="noreferrer"
+        >
+          USRN Partner
+        </a>
+      )
+    }
+
+    return (
+      <a target="_blank" href="https://core.ac.uk/membership" rel="noreferrer">
+        {member.billing_type} Member
+      </a>
+    )
+  }
 
   const handleRedirect = (providerId) => {
     const repoId = Array.isArray(providerId) ? providerId[0] : providerId
@@ -145,6 +165,7 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
               <Table.Row>
                 <Table.HeadCell>Organisation name</Table.HeadCell>
                 <Table.HeadCell>Country</Table.HeadCell>
+                <Table.HeadCell>Membership status</Table.HeadCell>
               </Table.Row>
             </Table.Head>
             <Table.Body>
@@ -162,6 +183,9 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
                     </Table.Cell>
                   </div>
                   <Table.Cell>{member.country}</Table.Cell>
+                  <Table.Cell className={styles.memberColumn}>
+                    {renderBillingType(member)}
+                  </Table.Cell>
                 </Table.Row>
               ))}
               {filteredMembers.length === 0 && (
@@ -174,7 +198,7 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
             </Table.Body>
             <Table.Footer>
               <Table.Row className={styles.paginationRow}>
-                <Table.Cell colSpan={2}>
+                <Table.Cell colSpan={3}>
                   <p className={styles.paginationText}>
                     Showing 1 -{' '}
                     {Math.min(displayedItems, filteredMembers.length)}
