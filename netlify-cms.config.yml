@@ -1438,7 +1438,7 @@ collections:
   delete: false
 
   label: 🎓 Advisory Board
-  label_singular: member
+  label_singular: section
   description: >
     Advisory Board members and their details.
 
@@ -1462,7 +1462,7 @@ collections:
             to have good performance in search engines.
     - name: members
       label: Advisory Board Members
-      file: advisory-board/advisory.yml
+      file: advisory/advisory.yml
       fields:
         - name: data
           widget: list
