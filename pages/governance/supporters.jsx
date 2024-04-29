@@ -15,7 +15,7 @@ const setAssetsUrl = (object) =>
   })
 
 const getSections = async ({ ref } = {}) => {
-  const content = await retrieveContent('board-supporters ', {
+  const content = await retrieveContent('board-supporters', {
     ref,
     transform: 'object',
   })
