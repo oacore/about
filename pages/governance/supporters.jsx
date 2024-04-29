@@ -2,17 +2,39 @@ import React from 'react'
 
 import GovernanceSupportersPageTemplate from '../../templates/governance/supporters'
 
+import retrieveContent from 'content'
 import { countries } from 'data/countries.yml'
 import apiRequest from 'api'
-import page from 'data/community/supporters.yml'
 
-const GovernanceSupportersPage = ({ members }) => (
-  <GovernanceSupportersPageTemplate members={members} page={page} />
-)
+const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-export async function getStaticProps() {
-  const { data } = await apiRequest('/members')
-  const members = data.map((item) => {
+const setAssetsUrl = (object) =>
+  Object.entries(object).forEach(([key, value]) => {
+    if (typeof value === 'string' && value.includes('/images'))
+      object[key] = ASSETS_BASE_URL + value
+  })
+
+const getSections = async ({ ref } = {}) => {
+  const content = await retrieveContent('board-supporters ', {
+    ref,
+    transform: 'object',
+  })
+
+  Object.values(content).forEach((section) => {
+    setAssetsUrl(section)
+    if (section.box) setAssetsUrl(section.box)
+  })
+
+  return content
+}
+
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const sections = await getSections({ ref })
+  const data = { ...sections }
+
+  const { data: apiData } = await apiRequest('/members')
+  const members = apiData.map((item) => {
     if (item.country_code) {
       item.country = countries.find(
         (country) =>
@@ -31,9 +53,12 @@ export async function getStaticProps() {
 
   return {
     props: {
+      data,
       members: filtered,
     },
   }
 }
-
+const GovernanceSupportersPage = ({ members, data }) => (
+  <GovernanceSupportersPageTemplate members={members} {...data} />
+)
 export default GovernanceSupportersPage
