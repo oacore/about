@@ -31,7 +31,7 @@ export const excludedIds = [
   3581, 197, 12800, 14335, 1249, 2313, 21853, 15201, 1012, 158,
 ]
 
-const GovernanceSupportersPageTemplate = ({ members, page }) => {
+const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
   const [searchValue, setSearchValue] = useState('')
   const [displayedItems, setDisplayedItems] = useState(30)
 
@@ -79,29 +79,29 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
   }
 
   return (
-    <Page title={page.title} description={page.tagline}>
+    <Page title={meta.title} description={meta.tagline}>
       <Layout className={styles.container}>
         <div className={styles.navWrapper}>
-          {page.headerLink.map((item) => (
+          {supporters.headerLink.map((item) => (
             <a className={styles.linkItem} href={item.href}>
               {item.link}
             </a>
           ))}
         </div>
         <Hero
-          id={page.header.id}
-          image={page.header.image}
-          title={page.title}
-          description={page.description}
-          caption={page.tagline}
-          actions={page.actions}
+          id={supporters.header.id}
+          image={supporters.header.image}
+          title={supporters.title}
+          description={supporters.description}
+          caption={supporters.tagline}
+          actions={supporters.actions}
           reverse
           spacing
         />
         <Section id="our-principles" className={styles.ourPrinciples}>
-          <h4>{page.ourPrinciples.title}</h4>
+          <h4>{supporters.ourPrinciples.title}</h4>
           <div className={styles.principlesWrapper}>
-            {page.ourPrinciples.cardsDescription.map((plan) => (
+            {supporters.ourPrinciples.cardsDescription.map((plan) => (
               <CardDescription key={plan.title} plan={plan} />
             ))}
           </div>
@@ -110,24 +110,24 @@ const GovernanceSupportersPageTemplate = ({ members, page }) => {
           <div className={styles.imageWrapper}>
             <img
               className={styles.image}
-              src={page.principles.image}
+              src={supporters.principles.image}
               alt="support"
             />
           </div>
           <article className={styles.content}>
-            <Markdown>{page.principles.description}</Markdown>
+            <Markdown>{supporters.principles.description}</Markdown>
           </article>
         </Section>
         <Section id="how-it-works" className={styles.howItWorks}>
-          <h4>{page.howItWorks.title}</h4>
+          <h4>{supporters.howItWorks.title}</h4>
           <div className={styles.howItWorksWrapper}>
-            {page.howItWorks.services.map((plan) => (
+            {supporters.howItWorks.services.map((plan) => (
               <Card key={plan.title} plan={plan} />
             ))}
           </div>
         </Section>
-        <Section id={page.supporters.id} className={styles.supporters}>
-          <h3>{page.supporters.title}</h3>
+        <Section id={supporters.supporters.id} className={styles.supporters}>
+          <h3>{supporters.supporters.title}</h3>
           <form>
             <TextField
               className={styles.search}
