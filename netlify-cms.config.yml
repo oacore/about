@@ -1484,3 +1484,151 @@ collections:
               widget: string
               label: Country
               hint: Member's country
+
+- name: board-of-supporters
+
+  media_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🛡️ Board of Supporters
+  label_singular: supporter
+  description: >
+    Board of Supporters details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  board-supporters/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Tagline
+          hint: Tagline of the page, displayed below the title.
+        - name: description
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appears in results. Important
+            to have good performance in search engines.
+    - name: supporters
+      label: Board of Supporters
+      file: board-supporters/supporters.yml
+      fields:
+        - name: headerLink
+          label: Header Links
+          widget: list
+          allow_add: true
+          fields:
+            - name: link
+              label: Link
+              widget: string
+            - name: href
+              label: Href
+              widget: string
+        - name: title
+          widget: string
+          label: Title
+          hint: Title of the section
+        - name: tagline
+          widget: text
+          label: Tagline
+          hint: Tagline of the section
+        - name: description
+          widget: text
+          label: Description
+          hint: Description of the section
+        - name: actions
+          label: Actions
+          widget: list
+          allow_add: true
+          fields:
+            - name: caption
+              label: Caption
+              widget: string
+            - name: url
+              label: URL
+              widget: string
+            - name: variant
+              label: Variant
+              widget: string
+            - name: target
+              label: Target
+              widget: string
+        - name: our-principles
+          label: Our Principles
+          widget: object
+          fields:
+            - name: title
+              label: Title
+              widget: string
+            - name: cardsDescription
+              label: Cards Description
+              widget: list
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: content
+                  label: Content
+                  widget: text
+        - name: principles
+          label: Principles
+          widget: object
+          fields:
+            - name: image
+              label: Image
+              widget: image
+            - name: description
+              label: Description
+              widget: text
+        - name: how-it-works
+          label: How It Works
+          widget: object
+          fields:
+            - name: title
+              label: Title
+              widget: string
+            - name: services
+              label: Services
+              widget: list
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: image
+                  label: Image
+                  widget: image
+                - name: description
+                  label: Description
+                  widget: text
+        - name: header
+          label: Header
+          widget: object
+          fields:
+            - name: id
+              label: ID
+              widget: string
+            - name: image
+              label: Image
+              widget: image
+        - name: supporters
+          label: Membership List
+          widget: object
+          fields:
+            - name: id
+              label: ID
+              widget: string
+            - name: title
+              label: Title
+              widget: string
