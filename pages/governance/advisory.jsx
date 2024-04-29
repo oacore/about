@@ -20,7 +20,7 @@ const getSections = async ({ ref } = {}) => {
 
   Object.values(content).forEach((section) => {
     setAssetsUrl(section)
-    if (section.box) setAssetsUrl(section.box)
+    if (section.table) setAssetsUrl(section.table)
   })
 
   return content

@@ -15,14 +15,14 @@ const setAssetsUrl = (object) =>
   })
 
 const getSections = async ({ ref } = {}) => {
-  const content = await retrieveContent('board-supporters ', {
+  const content = await retrieveContent('board-supporters', {
     ref,
     transform: 'object',
   })
 
   Object.values(content).forEach((section) => {
     setAssetsUrl(section)
-    if (section.box) setAssetsUrl(section.box)
+    if (section.items) setAssetsUrl(section.items)
   })
 
   return content

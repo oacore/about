@@ -102,26 +102,26 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
     <Page title={meta.title} description={meta.tagline}>
       <Layout className={styles.container}>
         <div className={styles.navWrapper}>
-          {supporters.headerLink.map((item) => (
+          {supporters.items.headerLink.map((item) => (
             <a className={styles.linkItem} href={item.href}>
               {item.link}
             </a>
           ))}
         </div>
         <Hero
-          id={supporters.header.id}
-          image={supporters.header.image}
-          title={supporters.title}
-          description={supporters.description}
-          caption={supporters.tagline}
-          actions={supporters.actions}
+          id={supporters.items.header.id}
+          image={supporters.items.header.image}
+          title={supporters.items.title}
+          description={supporters.items.description}
+          caption={supporters.items.tagline}
+          actions={supporters.items.actions}
           reverse
           spacing
         />
         <Section id="our-principles" className={styles.ourPrinciples}>
-          <h4>{supporters.ourPrinciples.title}</h4>
+          <h4>{supporters.items.ourPrinciples.title}</h4>
           <div className={styles.principlesWrapper}>
-            {supporters.ourPrinciples.cardsDescription.map((plan) => (
+            {supporters.items.ourPrinciples.cardsDescription.map((plan) => (
               <CardDescription key={plan.title} plan={plan} />
             ))}
           </div>
@@ -130,24 +130,27 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => {
           <div className={styles.imageWrapper}>
             <img
               className={styles.image}
-              src={supporters.principles.image}
+              src={supporters.items.principles.image}
               alt="support"
             />
           </div>
           <article className={styles.content}>
-            <Markdown>{supporters.principles.description}</Markdown>
+            <Markdown>{supporters.items.principles.description}</Markdown>
           </article>
         </Section>
         <Section id="how-it-works" className={styles.howItWorks}>
-          <h4>{supporters.howItWorks.title}</h4>
+          <h4>{supporters.items.howItWorks.title}</h4>
           <div className={styles.howItWorksWrapper}>
-            {supporters.howItWorks.services.map((plan) => (
+            {supporters.items.howItWorks.services.map((plan) => (
               <Card key={plan.title} plan={plan} />
             ))}
           </div>
         </Section>
-        <Section id={supporters.supporters.id} className={styles.supporters}>
-          <h3>{supporters.supporters.title}</h3>
+        <Section
+          id={supporters.items.supporters.id}
+          className={styles.supporters}
+        >
+          <h3>{supporters.items.supporters.title}</h3>
           <form>
             <TextField
               className={styles.search}
