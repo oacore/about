@@ -1465,7 +1465,7 @@ collections:
       file: advisory/advisory.yml
       fields:
         - name: table
-          widget: list
+          widget: object
           label: Table
           allow_add: true
           hint: >
@@ -1530,7 +1530,7 @@ collections:
       file: board-supporters/supporters.yml
       fields:
         - name: items
-          widget: list
+          widget: object
           label: Items
           allow_add: true
           hint: >
