@@ -1453,13 +1453,41 @@ collections:
           hint: >
             Displayed in the browser as a tab name and in Google, when
             the page appears in the search results.
-        - name: description
+        - name: tagline
           widget: text
           label: Description
           hint: >
             Description of the page, not visible on the page but will be shown
-            in search engines when the page appears in results. Important
+            in search engines when the page appers in results. Important
             to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: advisory/header.yml
+      fields:
+        - name: title
+          widget: string
+          hint: >
+            The title of the page. Displayed on the page below header.
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
     - name: members
       label: Advisory Board Members
       file: advisory/advisory.yml

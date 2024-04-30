@@ -6,13 +6,13 @@ import styles from './advisory.module.scss'
 import { Page } from 'components'
 import { Hero, Layout, Section } from 'design-v2/components'
 
-const Advisory = ({ meta, advisory }) => (
+const Advisory = ({ meta, header, advisory }) => (
   <Page>
     <Layout title={meta.title} description={meta.tagline}>
       <Hero
-        image={advisory.header.image}
-        title={meta.title}
-        description={advisory.header.description}
+        image={header.header.image}
+        title={header.header.title}
+        description={header.header.description}
       />
       <Section className={styles.supporters}>
         <h3>{advisory.table.title}</h3>
