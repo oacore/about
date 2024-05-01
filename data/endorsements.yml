@@ -871,6 +871,9 @@ sections:
       title: Companies who work with us
       items:
         - *gramarly
+        - *naver
+        - *nvidia
+        - *caktus
         - *cypris
         - *cactus
         - *academia
@@ -892,9 +895,6 @@ sections:
         - *intoolab
         - *anthropic
         - *audemicr
-        - *caktus
-        - *nvidia
-        - *naver
         - *naverTest
         - *lean-library
         - *tech-dico
