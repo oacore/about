@@ -338,36 +338,56 @@ collections:
           in search engines when the page appers in results. Important
           to have good performance in search engines.
    - name: header
-     label: Header(title,description,image)
+     label: Header (title, description, headline)
      file: consultancy/header.yml
      fields:
-     - name: title
-       widget: string
-       hint: >
-         The title of the page. Displayed on the page below header.
-     - name: description
-       widget: text
-       label: Description
-       hint: >
-          Description. Near the page title.
-     - name: icon
-       widget: file
-       label: Icon near title
-       hint: >
-          Icon near title. Optional.
-       optional: true
-     - name: image
-       widget: file
-       label: Image
-       hint: Image on the right side on the top of the page.
-     - name: actions
-       widget: list
-       label: Actions
-       allow_add: true
-       fields:
-        - { label: Caption, name: caption, widget: string, hint: Caption of the button }
-        - { label: Variant, name: variant, widget: string, hint: You can make button filled or outlined. For filled use - contained, optional: true, default: outilned }
-        - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true}
+       - name: header
+         widget: object
+         label: Header
+         hint: >
+           Anchor links to the page content. Must to equal block name.
+         fields:
+           - name: id
+             widget: string
+             label: Id
+             hint: >
+               Page Id
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               The title of the page. Displayed on the page below header.
+           - name: description
+             widget: text
+             label: Description
+             hint: >
+               Description of the page.
+           - name: icon
+             widget: file
+             label: Icon
+             hint: icon next to title.
+           - name: image
+             widget: file
+             label: Image
+             hint: Image on the right side.
+           - name: actions
+             label: Actions
+             widget: list
+             allow_add: true
+             fields:
+               - name: caption
+                 label: Caption
+                 widget: string
+               - name: variant
+                 label: Variant
+                 widget: string
+               - name: url
+                 label: URL
+                 widget: string
+               - name: target
+                 label: Target
+                 widget: string
+                 required: false
    - name: features
      label: Features
      file: consultancy/features.yml
@@ -382,36 +402,64 @@ collections:
         - { label: Title, name: title, widget: string, hint: Title of the feature card }
         - { label: Description, name: description, widget: string, hint: Description of the feature card }
    - name: how-it-works
-     label: How it works
+     label: how it works features
      file: consultancy/how-it-works.yml
      fields:
-     - name: title
-       widget: string
-       label: Title
-     - name: description
-       widget: string
-       label: Description
-     - name: image
-       widget: file
-       label: Image
-       hint: Image on the right side on the top of the page.
+       - name: how-it-works
+         widget: object
+         label: how it works
+         allow_add: true
+         hint: >
+           how it works section
+         fields:
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               Displayed in the browser as a title.
+           - name: description
+             widget: string
+             label: Description
+             hint: >
+               Displayed in the browser as a card description.
+           - name: image
+             widget: file
+             label: Image
+             hint: Image on the right side.
    - name: benefits
-     label: Our benefits
+     label: benefits
      file: consultancy/benefits.yml
      fields:
-      - name: title
-        widget: string
-        label: Title
-      - name: benefits
-        widget: list
-        min: 1
-        max: 6
-        label: Actions
-        allow_add: true
-        fields:
-        - { label: Title, name: title, widget: string, hint: Title of the benefit card }
-        - { label: Description, name: description, widget: string, hint: Description of the benefit card }
-        - { label: Icon, name: icon, widget: file, hint: Icon on the left side }
+       - name: benefits
+         widget: object
+         label: benefits
+         allow_add: true
+         hint: >
+           benefits cards
+         fields:
+           - name: title
+             widget: string
+             label: title
+             hint: >
+               cards title
+           - name: items
+             widget: list
+             label: Items
+             hint: >
+               Card items
+             fields:
+               - name: description
+                 widget: string
+                 label: description
+                 hint: description of cards
+               - name: title
+                 widget: string
+                 label: Title
+                 hint: title of card
+               - name: icon
+                 widget: file
+                 label: Icon
+                 hint: icon next to title.
    - name: contact
      label: Contact us
      file: consultancy/contact.yml
@@ -3397,30 +3445,18 @@ collections:
               hint: >
                 Card items
               fields:
-                - name: title
-                  widget: string
-                  label: Title
-                  hint: title of card
                 - name: description
                   widget: string
                   label: description
                   hint: description of cards
-            - name: note
-              widget: string
-              label: note
-              hint: >
-                Note under dropdowns.
-            - name: action
-              label: Action
-              widget: object
-              allow_add: true
-              fields:
                 - name: title
-                  label: Title
                   widget: string
-                - name: url
-                  label: URL
+                  label: Title
+                  hint: title of card
+                - name: icon
                   widget: file
+                  label: Icon
+                  hint: icon next to title.
     - name: stats
       label: stats
       file: discovery/stats.yml
