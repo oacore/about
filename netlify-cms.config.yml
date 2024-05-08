@@ -389,18 +389,26 @@ collections:
                  widget: string
                  required: false
    - name: features
-     label: Features
+     label: CORE API features
      file: consultancy/features.yml
      fields:
-      - name: features
-        widget: list
-        min: 1
-        max: 4
-        label: Actions
-        allow_add: true
-        fields:
-        - { label: Title, name: title, widget: string, hint: Title of the feature card }
-        - { label: Description, name: description, widget: string, hint: Description of the feature card }
+       - name: features
+         widget: list
+         label: Features
+         allow_add: true
+         hint: >
+           Features list data
+         fields:
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               Displayed in the browser as a card title.
+           - name: description
+             widget: string
+             label: Description
+             hint: >
+               Displayed in the browser as a card description.
    - name: how-it-works
      label: how it works features
      file: consultancy/how-it-works.yml
