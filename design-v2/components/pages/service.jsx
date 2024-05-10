@@ -12,9 +12,6 @@ import Hero from '../hero'
 import { Video } from '../index'
 import ExperiencesCard from '../../../components/experiences-card/experiencesCard'
 
-import api from 'data/services/api.yml'
-import dataset from 'data/services/dataset.yml'
-import fastsync from 'data/services/fastsync.yml'
 import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
@@ -93,30 +90,27 @@ const Benefit = ({ title, icon, description }) => (
 
 const ServicePage = observe(
   ({
-    id,
-    title,
-    tagline,
-    header,
     features,
+    header,
     howItWorks,
+    logos,
+    main, // @optional
+    meta,
+    moreAboutUs, // @optional
+    register, // @optional
+    relatedServices,
+    stats, // @optional
+    testimonials, // @optional
+    whatIsIncluded, // @optional
+    additional, // @optional
+    benefits, // @optional
+    tutorials, // @optional
     howItWorksDescription,
+    id,
     actionButton,
     keywords,
-    whatIsIncluded, // @optional
-    institutionBenefit, // @optional
     statistics, // @optional
-    main, // @optional
-    benefits, // @optional
     contact, // @optional
-    stats, // @optional
-    additional, // @optional
-    materials, // @optional
-    testimonials, // @optional
-    form, // @optional
-    apilogos, // @optional
-    datasetLogos, // @optional
-    fastsyncLogos, // @optional
-    relatedServices,
     hideButtons = false, // @optional
   }) => {
     const [visibleVideo, setVisibleVideo] = useState(false)
@@ -143,8 +137,8 @@ const ServicePage = observe(
 
     return (
       <Page
-        title={title}
-        description={tagline}
+        title={meta.title}
+        description={meta.tagline}
         keywords={keywords}
         className={styles.servicePage}
       >
@@ -152,22 +146,26 @@ const ServicePage = observe(
           <Hero
             actionButton={actionButton}
             hideButtons={hideButtons}
-            {...header}
+            {...header.header}
           />
           <Section id="features" className={styles.features}>
-            {features.map((item) => (
+            {features.features.map((item) => (
               <Feature key={item.title} {...item} />
             ))}
           </Section>
           <Section id="how-it-works" className={styles.howItWorks}>
             <div className={styles.imageWrapper}>
-              <img src={howItWorks.image} alt={howItWorks.title} />
+              <img
+                src={howItWorks.howItWorks.image}
+                alt={howItWorks.howItWorks.title}
+              />
             </div>
             <article className={styles.content}>
-              <h3>{howItWorks.title}</h3>
-              <Markdown>{howItWorks.description}</Markdown>
-              {howItWorks.action && Array.isArray(howItWorks.action)
-                ? howItWorks.action.map((item) => (
+              <h3>{howItWorks.howItWorks.title}</h3>
+              <Markdown>{howItWorks.howItWorks.description}</Markdown>
+              {howItWorks.howItWorks.action &&
+              Array.isArray(howItWorks.howItWorks.action)
+                ? howItWorks.howItWorks.action.map((item) => (
                     <Button
                       href={item.url}
                       target={item.target}
@@ -179,13 +177,15 @@ const ServicePage = observe(
                       {item.title}
                     </Button>
                   ))
-                : howItWorks.action && (
+                : howItWorks.howItWorks.action && (
                     <Button
                       className={styles.button}
-                      href={howItWorks.action.url}
-                      variant={howItWorks.action.variant || 'contained'}
+                      href={howItWorks.howItWorks.action.url}
+                      variant={
+                        howItWorks.howItWorks.action.variant || 'contained'
+                      }
                     >
-                      {howItWorks.action.title}
+                      {howItWorks.howItWorks.action.title}
                     </Button>
                   )}
             </article>
@@ -193,36 +193,43 @@ const ServicePage = observe(
           {howItWorksDescription && (
             <Section id="testimonial" className={styles.main}>
               <div className={styles.mainDescription}>
-                {howItWorksDescription.description}
+                {howItWorksDescription.howItWorksDescription.description}
               </div>
               <div>
-                {howItWorksDescription.main.items.map((item) => (
-                  <Collapsed
-                    key={item.title}
-                    id={`${id}-details`}
-                    title={item.title}
-                  >
-                    <Markdown>{item.content}</Markdown>
-                  </Collapsed>
-                ))}
+                {howItWorksDescription.howItWorksDescription.main.items.map(
+                  (item) => (
+                    <Collapsed
+                      key={item.title}
+                      id={`${id}-details`}
+                      title={item.title}
+                    >
+                      <Markdown>{item.content}</Markdown>
+                    </Collapsed>
+                  )
+                )}
                 <Markdown className={styles.mainNote}>
-                  {howItWorksDescription.main.note}
+                  {howItWorksDescription.howItWorksDescription.main.note}
                 </Markdown>
                 <Button
                   className={styles.action}
                   variant="outlined"
-                  href={howItWorksDescription.main.action.url}
+                  href={
+                    howItWorksDescription.howItWorksDescription.main.action.url
+                  }
                 >
-                  {howItWorksDescription.main.action.title}
+                  {
+                    howItWorksDescription.howItWorksDescription.main.action
+                      .title
+                  }
                 </Button>
               </div>
             </Section>
           )}
           {benefits && (
             <Section id="benefits">
-              <h3>{benefits.title}</h3>
+              <h3>{benefits.benefits.title}</h3>
               <div className={styles.benefits}>
-                {benefits.items.map((benefit) => (
+                {benefits.benefits.items.map((benefit) => (
                   <Benefit key={benefit.title} {...benefit} />
                 ))}
               </div>
@@ -248,12 +255,12 @@ const ServicePage = observe(
           )}
           {testimonials && (
             <Section id="testimonial" className={styles.main}>
-              {testimonials.map((testimonial) => (
+              {testimonials.testimonials.map((testimonial) => (
                 <Testimonial key={testimonial.author.name} {...testimonial} />
               ))}
               {main && (
                 <div>
-                  {main.items.map((item) => (
+                  {main.main.items.map((item) => (
                     <Collapsed
                       key={item.title}
                       id={`${id}-details`}
@@ -262,22 +269,22 @@ const ServicePage = observe(
                       <Markdown>{item.content}</Markdown>
                     </Collapsed>
                   ))}
-                  <Markdown className={styles.note}>{main.note}</Markdown>
+                  <Markdown className={styles.note}>{main.main.note}</Markdown>
                   <Button
                     className={styles.action}
                     variant="outlined"
-                    href={main.action.url}
+                    href={main.main.action.url}
                   >
-                    {main.action.title}
+                    {main.main.action.title}
                   </Button>
                 </div>
               )}
             </Section>
           )}
-          {apilogos && (
+          {logos && (
             <section className={styles.carouselWrapper}>
               <div className={styles.carouselItems}>
-                {api.apilogos.items.map((slide) => (
+                {logos.logos.items.map((slide) => (
                   <img
                     className={styles.apiCarouselItem}
                     src={slide.img}
@@ -287,52 +294,8 @@ const ServicePage = observe(
                 ))}
               </div>
               <div className={styles.linkWrapper}>
-                <a className={styles.link} href={api.apilogos.action.url}>
-                  {api.apilogos.action.caption}
-                </a>
-              </div>
-            </section>
-          )}
-          {datasetLogos && (
-            <section className={styles.carouselWrapper}>
-              <div className={styles.carouselItems}>
-                {dataset.datasetLogos.items.map((slide) => (
-                  <img
-                    className={styles.dataCarouselItem}
-                    src={slide.img}
-                    alt="logo"
-                    key={slide.alt}
-                  />
-                ))}
-              </div>
-              <div className={styles.linkWrapper}>
-                <a
-                  className={styles.link}
-                  href={dataset.datasetLogos.action.url}
-                >
-                  {dataset.datasetLogos.action.caption}
-                </a>
-              </div>
-            </section>
-          )}
-          {fastsyncLogos && (
-            <section className={styles.carouselWrapper}>
-              <div className={styles.carouselItems}>
-                {fastsync.fastsyncLogos.items.map((slide) => (
-                  <img
-                    className={styles.fastCarouselItem}
-                    src={slide.img}
-                    alt="logo"
-                    key={slide.alt}
-                  />
-                ))}
-              </div>
-              <div className={styles.linkWrapper}>
-                <a
-                  className={styles.link}
-                  href={fastsync.fastsyncLogos.action.url}
-                >
-                  {fastsync.fastsyncLogos.action.caption}
+                <a className={styles.link} href={logos.logos.action.url}>
+                  {logos.logos.action.caption}
                 </a>
               </div>
             </section>
@@ -340,10 +303,10 @@ const ServicePage = observe(
           {whatIsIncluded && (
             <Section id="what-is-included" className={styles.whatIsIncluded}>
               <div className={styles.section}>
-                <h3>{whatIsIncluded.title}</h3>
-                <Markdown>{whatIsIncluded.content}</Markdown>
+                <h3>{whatIsIncluded.whatIsIncluded.title}</h3>
+                <Markdown>{whatIsIncluded.whatIsIncluded.content}</Markdown>
                 <ul className={styles.listItem}>
-                  {whatIsIncluded?.list?.map((item) => (
+                  {whatIsIncluded.whatIsIncluded?.list?.map((item) => (
                     <div className={styles.listTitleWrapper}>
                       <li>{item.item}</li>
                       {/* eslint-disable-next-line max-len */}
@@ -357,33 +320,36 @@ const ServicePage = observe(
                     </div>
                   ))}
                 </ul>
-                {whatIsIncluded.action && (
+                {whatIsIncluded.whatIsIncluded.action && (
                   <Button
                     className={styles.contactBtn}
                     variant="contained"
-                    href={whatIsIncluded.action.url}
+                    href={whatIsIncluded.whatIsIncluded.action.url}
                   >
-                    {whatIsIncluded.action.caption}
+                    {whatIsIncluded.whatIsIncluded.action.caption}
                   </Button>
                 )}
               </div>
-              <img src={whatIsIncluded.image} alt={whatIsIncluded.title} />
+              <img
+                src={whatIsIncluded.whatIsIncluded.image}
+                alt={whatIsIncluded.whatIsIncluded.title}
+              />
             </Section>
           )}
         </Layout>
-        {institutionBenefit && (
+        {moreAboutUs && (
           <ExperiencesCard
-            title={institutionBenefit.title}
-            data={institutionBenefit.item}
+            title={moreAboutUs.institutionBenefit.title}
+            data={moreAboutUs.institutionBenefit.item}
           />
         )}
         <Layout className={styles.unsetTop}>
-          {materials && (
+          {tutorials && (
             <div className={styles.layoutMiniWrapper}>
               <Section id="membership-materials">
-                <h4>{materials.title}</h4>
+                <h4>{tutorials.materials.title}</h4>
                 <div className={styles.cardsWrapper}>
-                  {materials.cards.map((card) => (
+                  {tutorials.materials.cards.map((card) => (
                     <article className={styles.materialsCard} key={card.key}>
                       {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                       <a
@@ -426,7 +392,7 @@ const ServicePage = observe(
           {statistics && stats && (
             <>
               <Section id="statistics" className={styles.statistics}>
-                {stats.items.map((stat) => (
+                {stats.stats.items.map((stat) => (
                   <StatisticBox
                     key={`${stat.caption}-${stat.count}`}
                     title={stat.title}
@@ -434,26 +400,26 @@ const ServicePage = observe(
                     url={stat?.url}
                     badge={stat?.badge}
                     tag={stat.url ? 'a' : 'div'}
-                    count={patchStats(stat.count, statistics)}
+                    count={patchStats(stat.count, statistics.statistics)}
                   />
                 ))}
               </Section>
-              {stats.action && (
+              {stats.stats.action && (
                 <Button
                   className={styles.statsButton}
-                  href={stats.action.url}
-                  variant={stats.action.variant || 'contained'}
+                  href={stats.stats.action.url}
+                  variant={stats.stats.action.variant || 'contained'}
                 >
-                  {stats.action.title}
+                  {stats.stats.action.title}
                 </Button>
               )}
             </>
           )}
-          {form && (
+          {register && (
             <Section id="form">
-              <h3>{form.title}</h3>
+              <h3>{register.form.title}</h3>
               <Card variant="outlined" className={styles.form}>
-                <p className={styles.caption}>{form.subtitle}</p>
+                <p className={styles.caption}>{register.form.subtitle}</p>
                 <Form onSubmit={onHandleSubmit}>
                   <TextField
                     id={elemEmail}
@@ -463,7 +429,7 @@ const ServicePage = observe(
                     placeholder="e.g. john.doe@ac.uk"
                     type="email"
                     required
-                    helper={form.helper}
+                    helper={register.form.helper}
                     className={styles.textfield}
                     {...bindEmail}
                   />
@@ -472,11 +438,11 @@ const ServicePage = observe(
                     variant="contained"
                     className={styles.button}
                   >
-                    {form.action}
+                    {register.form.action}
                   </Button>
                 </Form>
               </Card>
-              <Markdown className={styles.note}>{form.note}</Markdown>
+              <Markdown className={styles.note}>{register.form.note}</Markdown>
               <RegistrationModals />
             </Section>
           )}
@@ -484,15 +450,19 @@ const ServicePage = observe(
             <Section
               id="additional"
               className={classNames.use(styles.additional, {
-                [styles.additionalReverse]: additional.id === 'discovery',
+                [styles.additionalReverse]:
+                  additional.additional.id === 'discovery',
               })}
             >
-              <img src={additional.image} alt={additional.title} />
+              <img
+                src={additional.additional.image}
+                alt={additional.additional.title}
+              />
               <div className={styles.section}>
-                <h3>{additional.title}</h3>
-                <Markdown>{additional.content}</Markdown>
+                <h3>{additional.additional.title}</h3>
+                <Markdown>{additional.additional.content}</Markdown>
                 <div className={styles.group}>
-                  {additional.actions.map((action) => (
+                  {additional.additional.actions.map((action) => (
                     <Popover
                       key={action.caption}
                       placement="bottom"
@@ -513,9 +483,9 @@ const ServicePage = observe(
           )}
           {relatedServices && (
             <Section id="related-services">
-              <h3>{relatedServices.title}</h3>
+              <h3>{relatedServices.relatedServices.title}</h3>
               <div className={styles.services}>
-                {relatedServices.services?.map((service) => (
+                {relatedServices.relatedServices.services?.map((service) => (
                   <RelatedService key={service.title} {...service} />
                 ))}
               </div>
