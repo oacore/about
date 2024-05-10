@@ -357,11 +357,6 @@ collections:
              label: Title
              hint: >
                The title of the page. Displayed on the page below header.
-           - name: description
-             widget: text
-             label: Description
-             hint: >
-               Description of the page.
            - name: icon
              widget: file
              label: Icon
@@ -370,6 +365,11 @@ collections:
              widget: file
              label: Image
              hint: Image on the right side.
+           - name: description
+             widget: text
+             label: Description
+             hint: >
+               Description of the page.
            - name: actions
              label: Actions
              widget: list
@@ -512,25 +512,31 @@ collections:
               - {label: Name, name: name, widget: string}
               - {label: Role, name: role, widget: string}
               - {label: Avatar, name: picture, widget: file, hint: Small image in circle }
-
    - name: related-services
-     label: Related Services
+     label: CORE related services
      file: consultancy/related-services.yml
      fields:
-      - name: title
-        widget: string
-        label: Title
-        hint: Title of the section
-      - name: related-services
-        widget: list
-        min: 1
-        max: 4
-        label: Services
-        allow_add: true
-        fields:
-        - {label: Title, name: title, widget: string, hint: Service name}
-        - {label: Href (url), name: url, widget: string, hint: Link to the service. Example-fastsync}
-        - {label: Picture, name: picture, widget: file, hint: Logo of the service }
+       - name: related-services
+         widget: list
+         label: related services
+         allow_add: true
+         hint: >
+           Services list data
+         fields:
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               Displayed in the browser as a card title.
+           - name: picture
+             widget: file
+             label: picture
+             hint: card picture
+           - name: url
+             widget: string
+             label: url
+             hint: >
+               Redirect url
 
 - name: team
 
