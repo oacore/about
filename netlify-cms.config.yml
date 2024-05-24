@@ -1818,7 +1818,7 @@ collections:
                   widget: string
                 - name: url
                   label: URL
-                  widget: string
+                  widget: file
                 - name: target
                   label: Target
                   widget: string
