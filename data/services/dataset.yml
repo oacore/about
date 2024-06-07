@@ -1,6 +1,10 @@
 stats:
   items:
     - count: 2023
+      id: 2023
     - count: 2022
+      id: 2022
     - count: 2021
+      id: 2021
     - count: 2020
+      id: 2020
