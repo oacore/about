@@ -1,5 +1,6 @@
 import React from 'react'
 
+import statistics from 'data/services/dataset.yml'
 import { ServicePage } from 'design-v2/components'
 import retrieveContent from 'content'
 
@@ -19,7 +20,7 @@ const getSections = async ({ ref } = {}) => {
 
   setAssetsUrl(page)
 
-  return page
+  return { ...page, statistics }
 }
 
 export async function getStaticProps({ previewData }) {
