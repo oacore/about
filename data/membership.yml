@@ -730,6 +730,8 @@ navItems:
     href: "#rioxx-validator"
   - item: Versions and duplicates detection
     href: "#versions-duplicates"
+  - item: Rights Retention Strategy (RRS) Identification
+    href: "#rrs-identification"
   - item: Monitor RIOXX compliance
     href: "#rioxx-compliance"
   - item: Logos for your papers
