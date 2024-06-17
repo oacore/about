@@ -6,7 +6,6 @@ import {
 import { useRouter } from 'next/router'
 
 import { Layout } from '../../../design-v2/components'
-import textData from '../../../data/dataProviders.yml'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
 import DocumentSelect from '../../../components/docs-select'
@@ -15,7 +14,7 @@ function normalizeHref(str) {
   const test = str.replace('#', '')
   return test.replace('_', '-')
 }
-const DataProviderDocs = ({ dataProviderDocs }) => {
+const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
@@ -45,7 +44,7 @@ const DataProviderDocs = ({ dataProviderDocs }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      const n = textData.navItems.findIndex(
+      const n = navigation.navItems.findIndex(
         (item) => normalizeHref(item.href) === id
       )
       setNavActiveIndex(n)
@@ -89,7 +88,7 @@ const DataProviderDocs = ({ dataProviderDocs }) => {
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}
               setNavActiveIndex={setNavActiveIndex}
-              textData={textData}
+              textData={navigation}
               setHighlight={setHighlight}
               mulltyDocs
             />

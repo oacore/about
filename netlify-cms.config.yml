@@ -1277,6 +1277,25 @@ collections:
             }
     - name: documentation
       label: Documentation
+      file: docs-membership/navigation.yml
+      fields:
+        - name: navItems
+          widget: list
+          label: navItems
+          allow_add: true
+          hint: >
+            Anchor links to the page content.
+          fields:
+            - name: item
+              widget: string
+              label: item
+              hint: Navigation link
+            - name: href
+              widget: string
+              label: href
+              hint: Link id to the specific block
+    - name: documentation
+      label: Documentation
       file: docs-membership/docs.yml
       fields:
         - name: items
@@ -1365,6 +1384,25 @@ collections:
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
+    - name: documentation
+      label: Documentation
+      file: docs-dataProvider/navigation.yml
+      fields:
+        - name: navItems
+          widget: list
+          label: navItems
+          allow_add: true
+          hint: >
+            Anchor links to the page content.
+          fields:
+            - name: item
+              widget: string
+              label: item
+              hint: Navigation link
+            - name: href
+              widget: string
+              label: href
+              hint: Link id to the specific block
     - name: provider-documentation
       label: Provider Documentation
       file: docs-dataProvider/dataProviderDocs.yml
