@@ -1208,7 +1208,7 @@ collections:
   files:
     - name: meta
       label: ℹ️ Metadata (title, description, headline)
-      file:  docs-membership/meta.yml
+      file: docs-membership/meta.yml
       fields:
         - name: title
           widget: string
@@ -1275,8 +1275,8 @@ collections:
               label: Caption,
               hint: Caption
             }
-    - name: documentation
-      label: Documentation
+    - name: navigation
+      label: Documentation Navigation
       file: docs-membership/navigation.yml
       fields:
         - name: navItems
@@ -1355,6 +1355,7 @@ collections:
               label: Description dashboard
               hint: Description for Dashboard
 
+
 - name: docs-data-provider
 
   media_folder: '/images/docs-membership'
@@ -1369,7 +1370,7 @@ collections:
   files:
     - name: meta
       label: ℹ️ Metadata (title, description, headline)
-      file:  docs-dataProvider/meta.yml
+      file: docs-dataProvider/meta.yml
       fields:
         - name: title
           widget: string
@@ -1384,8 +1385,8 @@ collections:
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
-    - name: documentation
-      label: Documentation
+    - name: navigation
+      label: Documentation Navigation
       file: docs-dataProvider/navigation.yml
       fields:
         - name: navItems
