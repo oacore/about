@@ -15,7 +15,7 @@ function normalizeHref(str) {
   return test.replace('_', '-')
 }
 
-const DocumentationPageTemplate = ({ docs }) => {
+const DocumentationPageTemplate = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
@@ -51,7 +51,7 @@ const DocumentationPageTemplate = ({ docs }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      const n = text.navItems.findIndex(
+      const n = navigation.navItems.findIndex(
         (item) => normalizeHref(item.href) === id
       )
       setNavActiveIndex(n)
@@ -97,7 +97,7 @@ const DocumentationPageTemplate = ({ docs }) => {
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}
               setNavActiveIndex={setNavActiveIndex}
-              textData={text}
+              textData={navigation}
               setHighlight={setHighlight}
               mulltyDocs
             />
