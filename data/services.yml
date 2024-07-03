@@ -127,6 +127,49 @@ sections:
     action:
       caption: Learn more
       url: services/discovery
+  - id: search
+    title: Search
+    short-description: Researchers engine
+    logo: /images/services/search.svg
+    description: |
+      CORE Search is the engine that researchers, scholars, and others turn to for open access papers from around the world and for staying up to date on the latest scientific literature.
+    recommender:
+      - title: General public
+      - title: Researchers
+      - title: Academic institutions
+    action:
+      caption: Go to search
+      url: search/?q=
+-
+  id: managing-content
+  title: Managing content
+  features:
+    -
+      id: core-membership
+      title: CORE Membership
+      logo: /images/services/membership.svg
+      short-description: Contribute to help us build a better open research ecosystem for everyone
+      description: |
+        By being a member, you contribute to help us build a better, fairer, more equitable open research ecosystem for everyone. CORE Membership comes with a range of tools and benefits including technical support, compliance checking, and participation in our community governance.
+      recommender:
+        -
+          title: Academic institutions
+      action:
+        caption: Learn more
+        url: membership
+    - id: repository-dashboard
+      title: Repository Dashboard
+      logo: /images/services/repository-dashboard.svg
+      short-description: Monitor and improve your repository output
+      description: |
+        A service for our data providers.
+        It provides an online interface offering valuable technical information and statistics.
+      recommender:
+        - title: Academic institutions
+        - title: Funders
+      action:
+        caption: Learn more
+        url: services/repository-dashboard
 -
   id: oai-identifies
   title: OAI identifiers
@@ -150,26 +193,6 @@ sections:
     action:
       caption: Learn more
       url: documentation/oai-resolver
--
-  id: managing-content
-  title: Managing content
-  features:
-  -
-    id: repository-dashboard
-    title: Repository Dashboard
-    logo: /images/services/repository-dashboard.svg
-    short-description: Monitor and improve your repository output
-    description: |
-     A service for our data providers.
-     It provides an online interface offering valuable technical information and statistics.
-    recommender:
-    -
-      title: Academic institutions
-    -
-      title: Funders
-    action:
-      caption: Learn more
-      url: services/repository-dashboard
 -
   id: contracts
   title: Bespoke contracts
