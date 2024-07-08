@@ -1354,7 +1354,28 @@ collections:
               widget: text
               label: Description dashboard
               hint: Description for Dashboard
-
+            - name: redirect
+              widget: object
+              label: Redirect
+              hint: Redirect title, link
+              allow_add: true
+              required: false
+              fields:
+                - name: link
+                  label: link
+                  widget: string
+                  hint: redirect url
+                  required: false
+                - name: text
+                  widget: string
+                  label: Text
+                  hint: redirect title
+                  required: false
+                - name: image
+                  widget: string
+                  label: image
+                  hint: redirect icon
+                  required: false
 
 - name: docs-data-provider
 
