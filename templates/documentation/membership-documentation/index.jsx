@@ -93,6 +93,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
           docsTitle={text.documentationSwitcher[1].title}
           mulltyDocs
           videoIcon={text.videlogo}
+          redirectLink={text.redirectLink}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}
