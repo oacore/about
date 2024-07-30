@@ -2,7 +2,6 @@ import React from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
 
-import membershipData from '../../data/membership.yml'
 import styles from './styles.module.scss'
 import { Markdown } from '../../components'
 import stylesMT from '../../design-v2/components/membership-table/styles.module.scss'
@@ -16,9 +15,9 @@ const Feature = ({ title, description }) => (
   </div>
 )
 
-const renderHeaders = () => (
+const renderHeaders = (data) => (
   <tr>
-    {membershipData.discount.table.headers.map((header) => (
+    {data.discount.discount.table.headers.map((header) => (
       <th
         key={header.name}
         className={classNames.use(stylesMT.header, stylesMT.boldText500)}
@@ -29,8 +28,8 @@ const renderHeaders = () => (
   </tr>
 )
 
-const renderDiscountsRows = () =>
-  membershipData.discount.table.rows.map((row) => (
+const renderDiscountsRows = (data) =>
+  data.discount.discount.table.rows.map((row) => (
     <tr key={row.title}>
       <td key={row.period} className={stylesMT.cell} role="gridcell">
         {row.period}
@@ -45,16 +44,16 @@ const renderDiscountsRows = () =>
     </tr>
   ))
 
-const SponsorshipPageTemplate = ({ data }) => (
+const SponsorshipPageTemplate = ({ data, membership }) => (
   <Layout className={styles.sponsorshipMainWrapper}>
     <Section id="metadata" className={styles.header}>
       <div>
-        <h2 className={styles.title}>{data.header.title}</h2>
+        <h2 className={styles.title}>{data.header.header.title}</h2>
         <Markdown className={styles.description}>
-          {data.header.description}
+          {data.header.header.description}
         </Markdown>
         <div className={styles.buttonGroup}>
-          {data.header.actions.map((action) => (
+          {data.header.header.actions.map((action) => (
             <Button
               href={action.url}
               target={action.target}
@@ -68,13 +67,13 @@ const SponsorshipPageTemplate = ({ data }) => (
         </div>
       </div>
       <div className={styles.logoContainer}>
-        <img src={data.header.logo} alt="logo" />
+        <img src={data.header.header.logo} alt="logo" />
       </div>
     </Section>
     <Section id="features" className={styles.featuresWrapper}>
-      <h3 className={styles.featuresTitle}>{data.features.title}</h3>
+      <h3 className={styles.featuresTitle}>{data.features.features.title}</h3>
       <div className={styles.features}>
-        {data.features.services.map((item) => (
+        {data.features.features.services.map((item) => (
           <Feature key={item.title} {...item} />
         ))}
       </div>
@@ -82,15 +81,18 @@ const SponsorshipPageTemplate = ({ data }) => (
     <Section id="how-to-sponsor">
       <div className={styles.howToSponsor}>
         <div className={styles.imageWrapper}>
-          <img src={data.howToSponsor.image} alt={data.howToSponsor.title} />
+          <img
+            src={data.howToSponsor.howToSponsor.image}
+            alt={data.howToSponsor.howToSponsor.title}
+          />
         </div>
         <article className={styles.content}>
-          <h3>{data.howToSponsor.title}</h3>
-          <Markdown>{data.howToSponsor.description}</Markdown>
+          <h3>{data.howToSponsor.howToSponsor.title}</h3>
+          <Markdown>{data.howToSponsor.howToSponsor.description}</Markdown>
         </article>
       </div>
       <div className={styles.itemGroup}>
-        {data.howToSponsor.types.map((type) => (
+        {data.howToSponsor.howToSponsor.types.map((type) => (
           <div key={type.title} className={styles.groupItem}>
             {type.title}
           </div>
@@ -100,43 +102,48 @@ const SponsorshipPageTemplate = ({ data }) => (
     <Section id="comparison-table">
       <MembershipTable
         className={styles.table}
-        textData={data.comparisonTable}
+        textData={data.table.table.comparisonTable}
         type="details"
         headerAlignment
       />
-      <span className={styles.warning}>{data.comparisonTable.warning}</span>
+      <span className={styles.warning}>
+        {data.table.table.comparisonTable.warning}
+      </span>
     </Section>
     <Section id="discount" className={styles.discountSection}>
       <div className={stylesMT.tableCaption}>
-        {membershipData.discount.title}{' '}
+        {data.discount.discount.title}{' '}
       </div>
       <table className={classNames.use(stylesMT.table)} role="grid">
-        <thead className={stylesMT.head}>{renderHeaders()}</thead>
-        <tbody>{renderDiscountsRows()}</tbody>
+        <thead className={stylesMT.head}>{renderHeaders(data)}</thead>
+        <tbody>{renderDiscountsRows(data)}</tbody>
       </table>
 
       <Markdown className={styles.feeSectionNoteSecond}>
-        {membershipData.fee.noteSecond}
+        {membership.fee.fee.noteSecond}
       </Markdown>
     </Section>
     <Section id="contact-us" className={styles.howToContact}>
       <div>
         <article className={styles.content}>
-          <h3>{data.contactUs.title}</h3>
+          <h3>{data.contact.contactUs.title}</h3>
           <div className={styles.contactWrapper}>
-            <Markdown>{data.contactUs.description}</Markdown>
+            <Markdown>{data.contact.contactUs.description}</Markdown>
             <Button
               className={styles.contactBtn}
               variant="contained"
-              href={data.contactUs.action.url}
+              href={data.contact.contactUs.action.url}
             >
-              {data.contactUs.action.title}
+              {data.contact.contactUs.action.title}
             </Button>
           </div>
         </article>
       </div>
       <div className={styles.imageWrapper}>
-        <img src={data.contactUs.image} alt={data.contactUs.title} />
+        <img
+          src={data.contact.contactUs.image}
+          alt={data.contact.contactUs.title}
+        />
       </div>
     </Section>
   </Layout>

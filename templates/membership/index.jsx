@@ -141,7 +141,7 @@ const MembershipPageTemplate = ({ data, members }) => {
     <div>
       <div className={styles.layoutWrapper}>
         <div className={styles.navWrapper}>
-          {data.headerLink.map((item) => (
+          {data.headerLink.headerLink.map((item) => (
             <a className={styles.linkItem} href={item.href} key={item.link}>
               {item.link}
             </a>
@@ -149,12 +149,12 @@ const MembershipPageTemplate = ({ data, members }) => {
         </div>
         <Section id="metadata" className={styles.header}>
           <div>
-            <h2 className={styles.title}>{data.header.title}</h2>
+            <h2 className={styles.title}>{data.header.header.title}</h2>
             <Markdown className={styles.description}>
-              {data.header.description}
+              {data.header.header.description}
             </Markdown>
             <div className={styles.buttonGroup}>
-              {data.header.actions.map((action) => (
+              {data.header.header.actions.map((action) => (
                 <Button
                   href={action.url}
                   target={action.target}
@@ -168,18 +168,18 @@ const MembershipPageTemplate = ({ data, members }) => {
             </div>
           </div>
           <div className={styles.logoContainer}>
-            <img src={data.header.logo} alt="logo" />
+            <img src={data.header.header.logo} alt="logo" />
           </div>
         </Section>
         <Section id="membership-levels" className={styles.plans}>
-          <h4>{data.plans.title}</h4>
+          <h4>{data.plan.table.plans.title}</h4>
           <div className={styles.plansWrapper}>
-            {data.plans.cardsDescription.map((plan) => (
+            {data.plan.table.plans.cardsDescription.map((plan) => (
               <CardDescription key={plan.title} plan={plan} />
             ))}
           </div>
           <div className={styles.plansWrapper}>
-            {data.plans.cards.map((plan) => (
+            {data.plan.table.plans.cards.map((plan) => (
               <Card
                 handleContentOpen={handleContentOpen}
                 key={plan.title}
@@ -213,7 +213,7 @@ const MembershipPageTemplate = ({ data, members }) => {
               </div>
             }
           >
-            {data.carousel.items.map((slide) => (
+            {data.carousel.carousel.items.map((slide) => (
               <img
                 className={styles.carouselItem}
                 src={slide.img}
@@ -223,7 +223,7 @@ const MembershipPageTemplate = ({ data, members }) => {
             ))}
           </Carousel>
           <div className={styles.linkWrapper}>
-            <a href={data.carousel.action.url}>
+            <a href={data.carousel.carousel.action.url}>
               See all {members.length} CORE members
             </a>
           </div>
@@ -231,18 +231,18 @@ const MembershipPageTemplate = ({ data, members }) => {
         <DetailsTable
           howItWorksOption
           data={{
-            box: data.box,
-            howItWorks: data.howItWorks,
-            comparisonTable: data.comparisonTable,
+            box: data.box.box,
+            howItWorks: data.howItWorks.howItWorks,
+            comparisonTable: data.plan.table.comparisonTable,
           }}
         />
         <Section id="support">
-          <h4>{data.support.title}</h4>
+          <h4>{data.support.support.title}</h4>
           <Markdown className={styles.supportText}>
-            {data.support.description}
+            {data.support.support.description}
           </Markdown>
           <div className={styles.cards}>
-            {data.support.cards.map((card) => (
+            {data.support.support.cards.map((card) => (
               <div key={card.title} className={styles.card}>
                 {card.img ? (
                   <img
@@ -261,14 +261,14 @@ const MembershipPageTemplate = ({ data, members }) => {
         </Section>
       </div>
       <ExperiencesCard
-        title={data.institutionBenefit.title}
-        data={data.institutionBenefit.item}
+        title={data.benefits.institutionBenefit.title}
+        data={data.benefits.institutionBenefit.item}
       />
       <div className={styles.layoutMiniWrapper}>
         <Section id="membership-materials">
-          <h4>{data.materials.title}</h4>
+          <h4>{data.materials.materials.title}</h4>
           <div className={styles.cardsWrapper}>
-            {data.materials.cards.map((card) => (
+            {data.materials.materials.cards.map((card) => (
               <article className={styles.materialsCard} key={card.key}>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a
