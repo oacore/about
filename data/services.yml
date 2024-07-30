@@ -1,16 +1,3 @@
-title: CORE Services
-description: |
- We deliver services for a wide range of audiences,
- including researchers, libraries, universities, innovative
- companies and funders. Process and analyse the largest structured
- collection of open research with their full texts, manage your research
- papers, make them more discoverable, and comply with funder mandates.
- All this you can do with CORE Services.
-hero: /images/heros/services.svg
-headline:
-  - Learn more about our
-  - powerful services
-
 sections:
 -
   id: access-to-raw-data

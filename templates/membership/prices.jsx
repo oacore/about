@@ -77,7 +77,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
         <Markdown className={styles.feeSectionNote}>
           {data.header.note}
         </Markdown>
-        <div className={stylesMT.tableCaption}>{data.discount.title} </div>
+        <div className={stylesMT.tableCaption}>{data.discount.title}</div>
         <table className={classNames.use(stylesMT.table)} role="grid">
           <thead className={stylesMT.head}>{renderHeaders()}</thead>
           <tbody>{renderDiscountsRows()}</tbody>

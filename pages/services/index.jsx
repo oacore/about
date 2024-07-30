@@ -5,8 +5,40 @@ import { classNames } from '@oacore/design/lib/utils'
 import styles from './services.module.scss'
 
 import { Page } from 'components'
-import servicesData from 'data/services.yml'
 import { Layout, Section, Video, Hero } from 'design-v2/components'
+import retrieveContent from 'content'
+
+const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
+
+const setAssetsUrl = (object) => {
+  Object.entries(object).forEach(([key, value]) => {
+    if (typeof value === 'string' && value.includes('/images'))
+      object[key] = ASSETS_BASE_URL + value
+    else if (typeof value === 'object') setAssetsUrl(value) // Recursively process nested objects
+  })
+}
+
+const getSections = async ({ ref } = {}) => {
+  const page = await retrieveContent('services', {
+    ref,
+    transform: 'object',
+  })
+
+  setAssetsUrl(page)
+
+  return page
+}
+
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const page = await getSections({ ref })
+
+  return {
+    props: {
+      page,
+    },
+  }
+}
 
 const FeatureBox = ({ iconSrc, title, description, recommender, action }) => (
   <Card variant="pure" className={styles.card}>
@@ -78,21 +110,21 @@ const FeaturesSection = ({ id, description, title, video, features }) => {
   )
 }
 
-const ServicesPage = () => (
+const ServicesPage = ({ page }) => (
   <Page
-    title={servicesData.title}
-    description={servicesData.description}
-    keywords={servicesData.keywords}
+    title={page.header.header.title}
+    description={page.header.header.description}
+    // keywords={servicesData.keywords}
     nav
   >
     <Layout>
       <Hero
-        image={servicesData.hero}
-        title={servicesData.title}
-        description={servicesData.description}
+        image={page.header.header.hero}
+        title={page.header.header.title}
+        description={page.header.header.description}
       />
       <div className={styles.wrapper}>
-        {servicesData.sections.map((item) => (
+        {page.services.sections.map((item) => (
           <FeaturesSection
             key={item.id}
             id={item.id}
