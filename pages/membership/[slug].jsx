@@ -7,9 +7,12 @@ import retrieveContent from 'content'
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
 const setAssetsUrl = (object) => {
+  if (object === null || typeof object !== 'object') return
+
   Object.entries(object).forEach(([key, value]) => {
     if (typeof value === 'string' && value.includes('/images'))
       object[key] = ASSETS_BASE_URL + value
+    else if (Array.isArray(value)) value.forEach((item) => setAssetsUrl(item))
     else if (typeof value === 'object') setAssetsUrl(value)
   })
 }
@@ -42,6 +45,7 @@ export async function getStaticProps({ params, previewData }) {
     header: {
       title: page.header.header.title,
       description: page.fee.fee.description[slug],
+      subDescription: page.fee.fee.subDescription[slug],
       note: page.fee.fee.note[slug],
     },
     fee: {
