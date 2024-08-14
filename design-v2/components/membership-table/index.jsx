@@ -79,10 +79,12 @@ const MembershipTable = observe(
       textData.rows.map((row) => (
         <tr key={row.title}>
           <td className={styles.cellPricesFirst} align="center">
-            <Markdown>{row.title}</Markdown>
-            <Markdown className={styles.cellPricesFirstCaption}>
-              {row.caption}
-            </Markdown>
+            {row.title && <Markdown>{row.title}</Markdown>}
+            {row.caption && (
+              <Markdown className={styles.cellPricesFirstCaption}>
+                {row.caption}
+              </Markdown>
+            )}
           </td>
           {row.prices.map(({ type: priceType, original, deal, discount }) => (
             <td

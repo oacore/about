@@ -28,8 +28,8 @@ const getSections = async ({ ref } = {}) => {
     transform: 'object',
   })
 
-  setAssetsUrl(page)
-  setAssetsUrl(sponsorship)
+  if (page) setAssetsUrl(page)
+  if (sponsorship) setAssetsUrl(sponsorship)
 
   return { page, sponsorship }
 }

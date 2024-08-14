@@ -40,21 +40,21 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
     </tr>
   )
 
-  const renderDiscountsRows = () =>
-    data.discount.table.rows.map((row) => (
-      <tr key={row.title}>
-        <td key={row.period} className={stylesMT.cell} role="gridcell">
-          {row.period}
-        </td>
-        <td
-          key={row.discount}
-          className={classNames.use(stylesMT.cell, stylesMT.boldText700)}
-          role="gridcell"
-        >
-          {row.discount}
-        </td>
-      </tr>
-    ))
+  // const renderDiscountsRows = () =>
+  //   data.discount.table.rows.map((row) => (
+  //     <tr key={row.title}>
+  //       <td key={row.period} className={stylesMT.cell} role="gridcell">
+  //         {row.period}
+  //       </td>
+  //       <td
+  //         key={row.discount}
+  //         className={classNames.use(stylesMT.cell, stylesMT.boldText700)}
+  //         role="gridcell"
+  //       >
+  //         {row.discount}
+  //       </td>
+  //     </tr>
+  //   ))
 
   return (
     <Layout>
@@ -83,7 +83,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
         <div className={stylesMT.tableCaption}>{data.discount.title}</div>
         <table className={classNames.use(stylesMT.table)} role="grid">
           <thead className={stylesMT.head}>{renderHeaders()}</thead>
-          <tbody>{renderDiscountsRows()}</tbody>
+          {/* <tbody>{renderDiscountsRows()}</tbody> */}
         </table>
 
         <Markdown
