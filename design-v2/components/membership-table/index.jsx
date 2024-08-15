@@ -86,27 +86,30 @@ const MembershipTable = observe(
               </Markdown>
             )}
           </td>
-          {row.prices.map(({ type: priceType, original, deal, discount }) => (
-            <td
-              key={`${priceType}-${original}`}
-              className={classNames.use(styles.cell, styles.cellPrices, {
-                [styles.cellPricesActive]:
-                  (membership.data.price === discount ||
-                    membership.data.price === original) &&
-                  membership.data.size === row.title,
-              })}
-              role="gridcell"
-              onClick={() =>
-                onSelectActivePlan(discount || original, row.title)
-              }
-            >
-              {deal ? (
-                <div className={styles.periodDeal}>{deal}</div>
-              ) : (
-                <Price className={styles.price} price={original} />
-              )}
-            </td>
-          ))}
+          {row.prices.map(
+            ({ type: priceType, original, deal, discount, indicator }) => (
+              <td
+                key={`${priceType}-${original}`}
+                className={classNames.use(styles.cell, styles.cellPrices, {
+                  [styles.indicatorColor]: indicator,
+                  [styles.cellPricesActive]:
+                    (membership.data.price === discount ||
+                      membership.data.price === original) &&
+                    membership.data.size === row.title,
+                })}
+                role="gridcell"
+                onClick={() =>
+                  onSelectActivePlan(discount || original, row.title)
+                }
+              >
+                {deal ? (
+                  <div className={styles.periodDeal}>{deal}</div>
+                ) : (
+                  <Price className={styles.price} price={original} />
+                )}
+              </td>
+            )
+          )}
         </tr>
       ))
 
