@@ -14,7 +14,8 @@ const Price = ({ tag: Tag = 'span', price, className }) => (
       currency: 'GBP',
       minimumSignificantDigits: 1,
       maximumSignificantDigits: 4,
-    }).format(price)}
+    }).format(price)}{' '}
+    p.a
   </Tag>
 )
 
@@ -29,9 +30,10 @@ const MembershipTable = observe(
 
     const renderHeaders = () => (
       <tr>
-        {textData.headers.map((header) => (
+        {textData.headers.map((header, index) => (
           <th
             key={header.name}
+            colSpan={index !== 0 ? 2 : 1}
             className={classNames.use(styles.header, {
               [styles.headerActive]:
                 membership.data.planName === header.name.toLowerCase(),
@@ -77,12 +79,14 @@ const MembershipTable = observe(
       textData.rows.map((row) => (
         <tr key={row.title}>
           <td className={styles.cellPricesFirst} align="center">
-            <Markdown>{row.title}</Markdown>
-            <Markdown className={styles.cellPricesFirstCaption}>
-              {row.caption}
-            </Markdown>
+            {row.title && <Markdown>{row.title}</Markdown>}
+            {row.caption && (
+              <Markdown className={styles.cellPricesFirstCaption}>
+                {row.caption}
+              </Markdown>
+            )}
           </td>
-          {row.prices.map(({ type: priceType, original, discount }) => (
+          {row.prices.map(({ type: priceType, original, deal, discount }) => (
             <td
               key={`${priceType}-${original}`}
               className={classNames.use(styles.cell, styles.cellPrices, {
@@ -96,7 +100,11 @@ const MembershipTable = observe(
                 onSelectActivePlan(discount || original, row.title)
               }
             >
-              <Price className={styles.price} price={original} />
+              {deal ? (
+                <div className={styles.periodDeal}>{deal}</div>
+              ) : (
+                <Price className={styles.price} price={original} />
+              )}
             </td>
           ))}
         </tr>

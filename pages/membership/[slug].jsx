@@ -42,6 +42,7 @@ export async function getStaticProps({ params, previewData }) {
     header: {
       title: page.header.header.title,
       description: page.fee.fee.description[slug],
+      subDescription: page.fee.fee.subDescription[slug],
       note: page.fee.fee.note[slug],
     },
     fee: {

@@ -64,6 +64,9 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
           {data.header.description}
         </Markdown>
       </Section>
+      <Markdown className={styles.subDescription}>
+        {data.header.subDescription}
+      </Markdown>
       <Section id="fee" className={styles.feeSection}>
         <MembershipTable
           textData={{
