@@ -18,6 +18,32 @@ $card-header-color: #fef5ef;
   }
 }
 
+.table {
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 20px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+  @media (max-width: 576px) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    display: block;
+    white-space: nowrap;
+  }
+}
+
 .table-caption {
   min-height: 1rem;
   text-align: center;
@@ -97,9 +123,6 @@ $card-header-color: #fef5ef;
   font-weight: 400;
   text-align: center;
   background-color: #fae2d2;
-  @media (max-width: $breakpoint-sm) {
-    padding: 2px;
-  }
   &-active {
     background-color: #fae2d2;
   }
@@ -139,7 +162,7 @@ $card-header-color: #fef5ef;
     font-size: 21px;
     font-weight: 500;
     @media (max-width: $breakpoint-sm) {
-      font-size: 10px;
+      font-size: 15px;
     }
     a {
       color: var(--black);
