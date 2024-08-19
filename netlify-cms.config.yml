@@ -546,6 +546,7 @@ collections:
   format: yaml-frontmatter
 
   media_folder: '/images/team'
+  public_folder: '/images/team'
 
   create: true
   delete: false
@@ -610,6 +611,7 @@ collections:
   format: yaml-frontmatter
 
   media_folder: '/images/history'
+  public_folder: '/images/history'
 
   create: true
   delete: true
@@ -973,6 +975,7 @@ collections:
   format: yaml-frontmatter
 
   media_folder: '/images/quote'
+  public_folder: '/images/quote'
 
   create: true
   delete: true
@@ -1007,6 +1010,7 @@ collections:
 - name: dataset
 
   media_folder: '/images/dataset'
+  public_folder: '/images/dataset'
 
   create: false
   delete: false
@@ -1198,6 +1202,7 @@ collections:
 - name: docs-membership
 
   media_folder: '/images/docs-membership'
+  public_folder: '/images/docs-membership'
 
   create: false
   delete: false
@@ -1381,6 +1386,7 @@ collections:
 - name: docs-data-provider
 
   media_folder: '/images/docs-membership'
+  public_folder: '/images/docs-membership'
 
   create: false
   delete: false
@@ -1556,6 +1562,7 @@ collections:
 - name: advisory-board
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -1652,6 +1659,7 @@ collections:
 - name: board-of-supporters
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -1800,6 +1808,7 @@ collections:
 - name: api
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -2256,6 +2265,7 @@ collections:
 - name: datasets
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -2656,6 +2666,7 @@ collections:
 - name: fastsync
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -2995,6 +3006,7 @@ collections:
 - name: recomender
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -3299,6 +3311,7 @@ collections:
 - name: discovery
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -3643,6 +3656,7 @@ collections:
 - name: dashboard
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -4315,6 +4329,7 @@ collections:
 - name: membership
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
@@ -4857,6 +4872,7 @@ collections:
 - name: services
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
