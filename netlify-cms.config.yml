@@ -21,7 +21,7 @@ backend:
   squash_merges: true
 
 media_folder: images
-public_folder: ''
+public_folder: images
 
 publish_mode: editorial_workflow
 
@@ -310,6 +310,7 @@ collections:
 - name: consultancy
 
   media_folder: '/images/consultancy'
+  public_folder: '/images/consultancy'
 
   create: false
   delete: false
@@ -4040,6 +4041,7 @@ collections:
 - name: sponsorship
 
   media_folder: '/images'
+  public_folder: '/images'
 
   create: false
   delete: false
