@@ -22,6 +22,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     text.documentationSwitcher[1].title
   )
   const [visibleVideo, setVisibleVideo] = React.useState(null)
+  const [showNavigator, setShowNavigator] = useState(false)
 
   const handleContentOpen = useCallback((condition) => {
     if (condition) setVisibleVideo(condition)
@@ -67,6 +68,25 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     if (option === 'CORE Data Provider’s Guide') handleButtonClick()
   }
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) setShowNavigator(true)
+      else setShowNavigator(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -94,6 +114,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
           mulltyDocs
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
+          showNavigator={showNavigator}
+          handleScrollToTop={handleScrollToTop}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}

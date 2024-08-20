@@ -1,5 +1,9 @@
+@import 'design-v2/_variables.scss';
 .docs-layout {
   padding: 0 16px 0 16px;
+  @media (max-width: $breakpoint-md) {
+    margin-top: 100px;
+  }
 }
 
 .nav-wrapper {
@@ -20,10 +24,25 @@
     font-weight: 500;
     line-height: 130%;
     letter-spacing: 0.036px;
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      font-size: 16px;
+    }
   }
   .select-wrapper {
     width: 100%;
     background: #fff;
+    @media (max-width: $breakpoint-md) {
+      width: 100%;
+      font-size: 16px;
+    }
+  }
+  @media (max-width: $breakpoint-md) {
+    flex-wrap: wrap;
+    position: fixed;
+    top: 52px;
+    left: 0;
+    z-index: 1000;
   }
 }
 
