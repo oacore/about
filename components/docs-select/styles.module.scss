@@ -1,3 +1,4 @@
+@import 'design-v2/_variables.scss';
 .document-select {
   position: relative;
 }
@@ -10,6 +11,12 @@
   line-height: 130%;
   letter-spacing: 0.036px;
   padding: 0 35px;
+  @media (max-width: $breakpoint-md) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 35px;
+  }
 }
 
 .arrow {

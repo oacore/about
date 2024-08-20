@@ -20,6 +20,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[0].title
   )
+  const [showNavigator, setShowNavigator] = useState(false)
+
   const route = useRouter()
   const headerHeight = 56
 
@@ -59,6 +61,25 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     if (option === 'Membership Documentation') handleButtonClick()
   }
 
+  const handleScrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) setShowNavigator(true)
+      else setShowNavigator(false)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -84,6 +105,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
           imageSource
           docsTitle={text.documentationSwitcher[0].title}
           mulltyDocs
+          showNavigator={showNavigator}
+          handleScrollToTop={handleScrollToTop}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}
