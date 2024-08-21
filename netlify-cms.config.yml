@@ -4132,6 +4132,8 @@ collections:
                 - name: url
                   label: URL
                   widget: file
+                  media_folder: 'public/resources'
+                  public_folder: '/resources'
                 - name: target
                   label: Target
                   widget: string
@@ -4420,6 +4422,8 @@ collections:
                 - name: url
                   label: URL
                   widget: file
+                  media_folder: 'public/resources'
+                  public_folder: 'public/resources'
                 - name: target
                   label: Target
                   widget: string
