@@ -4132,8 +4132,8 @@ collections:
                 - name: url
                   label: URL
                   widget: file
-                  media_folder: 'public/resources'
-                  public_folder: '/resources'
+                  media_folder: '/images'
+                  public_folder: '/images'
                   extensions: ['pdf']
                 - name: target
                   label: Target
@@ -4423,8 +4423,8 @@ collections:
                 - name: url
                   label: URL
                   widget: file
-                  media_folder: 'public/resources'
-                  public_folder: 'public/resources'
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
                   extensions: ['pdf']
                 - name: target
                   label: Target
