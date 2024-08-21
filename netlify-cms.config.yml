@@ -4134,6 +4134,7 @@ collections:
                   widget: file
                   media_folder: 'public/resources'
                   public_folder: '/resources'
+                  extensions: ['pdf']
                 - name: target
                   label: Target
                   widget: string
@@ -4424,6 +4425,7 @@ collections:
                   widget: file
                   media_folder: 'public/resources'
                   public_folder: 'public/resources'
+                  extensions: ['pdf']
                 - name: target
                   label: Target
                   widget: string
