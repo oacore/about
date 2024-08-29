@@ -5,19 +5,19 @@ import React from 'react'
 
 const searchUrlFor = (id) => `https://core.ac.uk/search?q=repositories.id:(${id})`
 
-const HARVESTED_BY_CORE = 'https://core.ac.uk/faq#harvested-by-CORE-snippet'
+const HARVESTED_BY_CORE = 'https://core.ac.uk/faq#indexed-by-CORE-snippet'
 const SUPPORT_EMAIL_URL = 'mailto:t%68%65t%65am%40core%2e%61c%2eu%6b'
 const SUPPORT_EMAIL = decodeURIComponent(
   SUPPORT_EMAIL_URL.slice('mailto:'.length)
 )
 
 const generateFormMessage = ({ dataProvidersResponse }) => {
-  if (dataProvidersResponse.error && 
-    dataProvidersResponse.error.length > 1 && 
-    dataProvidersResponse.existingDataProviders && 
+  if (dataProvidersResponse.error &&
+    dataProvidersResponse.error.length > 1 &&
+    dataProvidersResponse.existingDataProviders &&
     dataProvidersResponse.existingDataProviders.length === 0) {
     console.log('DataProvider error')  // debug
-      
+
       return {
       helper: (
         <>
@@ -30,19 +30,19 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
     }
   }
 
-  if (dataProvidersResponse.error && 
+  if (dataProvidersResponse.error &&
     dataProvidersResponse.error.length === 0) {
     console.log('DataProvider is added') // debug
 
     return {
       helper: (
         <>
-          We found {dataProvidersResponse.name} under the entered address 
-          and added it to our data provider collection. 
+          We found {dataProvidersResponse.name} under the entered address
+          and added it to our data provider collection.
           As soon as we approve adding, we will start
-          harvesting. Join the community and add a{' '}
-          <Link href={HARVESTED_BY_CORE} title="Harvested by CORE Logo">
-            harvested by CORE
+          indexing. Join the community and add a{' '}
+          <Link href={HARVESTED_BY_CORE} title="Indexed by CORE Logo">
+            indexed by CORE
           </Link>{' '}
           badge on your website.
         </>
@@ -51,7 +51,7 @@ const generateFormMessage = ({ dataProvidersResponse }) => {
     }
   }
 
-  if (dataProvidersResponse.existingDataProviders && 
+  if (dataProvidersResponse.existingDataProviders &&
     dataProvidersResponse.existingDataProviders.length > 1) {
       const row = dataProvidersResponse.existingDataProviders
     console.log('DataProvider is exist') // debug
