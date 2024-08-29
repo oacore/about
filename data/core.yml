@@ -39,7 +39,7 @@ footer_design2:
       menu:
         - title: Data providers
           path: ~services/repository-dashboard
-        - title: Harvested content
+        - title: indexed content
           path: ~services/dataset
     - title-block: Support
       menu:

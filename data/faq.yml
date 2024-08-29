@@ -8,7 +8,7 @@ sections:
     updateDate: Last updated 24.08.2023
     caption: Joining CORE
     items:
-      - slug: is-my-repository-or-journal-harvested-by-CORE
+      - slug: is-my-repository-or-journal-indexed-by-CORE
         question: Is my repository or journal indexed by CORE?
         answer: |
           To check whether your repository or journal is indexed
@@ -24,10 +24,10 @@ sections:
           some authoritative registry, you don't need to do anything.
           If your repository or journal has not been registered
           yet use [the form](~register-data-provider) to add it.
-      - slug: where-are-the-repositories-harvested-by-CORE-located
+      - slug: where-are-the-repositories-indexed-by-CORE-located
         question: Where are the repositories indexed by CORE located?
         answer: |
-          CORE is an international service and harvests repositories from
+          CORE is an international service and indexes repositories from
           various locations around the world. This information is displayed in
           a map at our [data providers page](/data-providers).
       - slug: I-would-like-to-include-them-in-CORE
@@ -35,19 +35,19 @@ sections:
           I am an author of scientific papers and I would like to include
           them in CORE.
         answer: |
-          CORE is a harvesting service and is not similar to research
+          CORE is a indexing service and is not similar to research
           networking sites, e.g. ResearchGate or Academia.edu, where authors
           can deposit papers, so please do not email us the full text of your
           papers. If you have deposited your articles in a repository
           [let us know](~contact) the name of the repository.
-          There are chances that we harvest it already and if we don’t we could
-          start harvesting it.
-      - slug: core-harvests-from-doaj
+          There are chances that we index it already and if we don’t we could
+          start indexing it.
+      - slug: core-indexes-from-doaj
         question: |
-          CORE harvests from DOAJ but I cannot find my journal which is already
+          CORE indexes from DOAJ but I cannot find my journal which is already
           registered in DOAJ.
         answer: |
-          CORE harvests DOAJ as a single entry, which means that each journal
+          CORE indexes DOAJ as a single entry, which means that each journal
           title does not appear separately in CORE. If you wish to have a
           separate entry for your journal in CORE, do [send us](~contact) the
           journal's OAI base URL and we will create a new entry.
@@ -60,48 +60,48 @@ sections:
     - id: general-aggregation
       title: General
       items:
-        - slug: how-often-does-CORE-harvest-the-repositories
+        - slug: how-often-does-CORE-index-the-repositories
           question: |
-            How often does CORE harvest the repositories?
+            How often does CORE index the repositories?
           answer: |
-            CORE does not harvest all the repositories that exist in our
-            database with the same frequency. Repositories are harvested
+            CORE does not index all the repositories that exist in our
+            database with the same frequency. Repositories are indexed
             as frequently as our HW infrastructure allows.
-            The specific time of harvesting for a repository is determined
+            The specific time of indexing for a repository is determined
             by the CORE Scheduler. The CORE Scheduler is a software component
-            that ensures that our harvesting cluster of machines is close to
+            that ensures that our indexing cluster of machines is close to
             fully utilised 24/7 for 365 days every year. As soon as some
             resource is freed, the CORE Scheduler decides which repository
-            needs to be harvested based on several criteria. These criteria
+            needs to be indexed based on several criteria. These criteria
             include, but are not limited to, the previous time of the repository
-            being harvested, the size of the repository,
-            the location of the repository, the repository's harvesting
-            performance and information about potential previous harvesting
+            being indexed, the size of the repository,
+            the location of the repository, the repository's indexing
+            performance and information about potential previous indexing
             errors. We review the functionality of the scheduler on a regular
-            basis to ensure that its decisions on what to harvest next maximise
+            basis to ensure that its decisions on what to index next maximise
             the number of ingested documents over a unit of time.
 
             If you have a question regarding a specific
             repository do [get in touch](~contact) with us.
-        - slug: when-will-the-harvesting-process-of-my-repository-be-completed
+        - slug: when-will-the-indexing-process-of-my-repository-be-completed
           question: |
-            When will the harvesting process of my repository be completed?
+            When will the indexing process of my repository be completed?
           answer: |
             Depending on the size of the repository and the existing traffic
-            in CORE's servers, the harvesting can last from a couple of hours
+            in CORE's servers, the indexing can last from a couple of hours
             to a couple of weeks. If we experience any technical issues
             during that period, we will get in touch.
         - slug: what-types-of-scientific-outputs-does-CORE-provide
           question: |
             What types of scientific outputs does CORE provide?
           answer: |
-            CORE harvests all metadata records in a repository, but it is in
-            position to harvest full text records in PDF only. We are working
+            CORE indexes all metadata records in a repository, but it is in
+            position to index full text records in PDF only. We are working
             though to include other file types, such as HTML webpages, images etc.
-        - slug: can-my-repository-be-harvested-by-CORE
+        - slug: can-my-repository-be-indexed-by-CORE
           question: |
             My repository has plenty of metadata records, but not all of them
-            have an open access full text. Can my repository be harvested by CORE?
+            have an open access full text. Can my repository be indexed by CORE?
           answer: |
             Yes it can, provided that the repository offers its content as
             [Open Access](~mission).
@@ -122,13 +122,13 @@ sections:
             CORE works at the level of repositories and cannot update specific
             records. You can upload the new record into your institutional
             repository or journal and CORE will synchronise it at the next
-            scheduled re-harvesting.
+            scheduled re-indexing.
         - slug: there-are-many-new-records-in-my-repository
           question: |
             There are many new records in my repository. Do I need to notify CORE?
           answer: |
-            No, CORE follows an automated re-harvesting process and your repository
-            will be re-harvested at the next automated re-harvesting.
+            No, CORE follows an automated re-indexing process and your repository
+            will be re-indexed at the next automated re-indexing.
         - slug: core-vs-google-scholar
           question: |
             How is CORE different from Google Scholar?
@@ -138,7 +138,7 @@ sections:
             More specifically:
             - Google Scholar crawls and indexes research papers that can be
               found on the web and links to the original source, while CORE
-              harvests and caches the full text.
+              indexes and caches the full text.
             - Google Scholar limits its access only at the
               [granularity level](http://www.dlib.org/dlib/november12/knoth/11knoth.html),
               i.e. its search engine, whereas CORE is in position to extend access
@@ -156,7 +156,7 @@ sections:
             I do not see the “Download” button in the CORE display page.
             How can I access the full text?
           answer: |
-            CORE harvests content that is available open access elsewhere,
+            CORE indexes content that is available open access elsewhere,
             i.e. repositories and open access journals. When the “Download”
             button is missing, it means that the full text is not available
             from the hosting service, CORE does not have it and displays only the metadata of
@@ -167,13 +167,13 @@ sections:
           question: |
             The metadata in the CORE display page are wrong. How can I have them corrected?
           answer: |
-            CORE does not create the metadata, but rather harvests
+            CORE does not create the metadata, but rather indexes
             them from its content providers. If the metadata are wrong
             then contact the repository or journal where you had originally
             deposited or published your content.
-        - slug: can-CORE-offer-any-statistics-about-the-content-it-harvests
+        - slug: can-CORE-offer-any-statistics-about-the-content-it-indexes
           question: |
-            Can CORE offer any statistics about the content it harvests?
+            Can CORE offer any statistics about the content it indexes?
           answer: |
             CORE can offer repository or journal full text download statistics per month via the
             [CORE Repository Dashboard](~services/repository-dashboard) but is not in position
@@ -183,7 +183,7 @@ sections:
           question: |
             Are the research papers offered by CORE peer-reviewed?
           answer: |
-            Yes it does. CORE harvests content from repositories and journals. The first
+            Yes it does. CORE indexes content from repositories and journals. The first
             do not perform peer review of the deposited content but the latter
             do. In some occassions the content deposited in a repository is already
             published in a journal and is peer-reviewed. In addition, repositories may contain
@@ -195,8 +195,8 @@ sections:
             CORE has created definitions with regards to the statistics it provided to OpenDOAR.
 
             **Metadata:** The total number of metadata records with a unique OAI identifier provided
-            by the repository as this appears in the application profile which CORE harvest -
-            if CORE harvests from the RIOXX endpoint, CORE will provide RIOXX counts instead of Dublin Core counts.
+            by the repository as this appears in the application profile which CORE index -
+            if CORE indexes from the RIOXX endpoint, CORE will provide RIOXX counts instead of Dublin Core counts.
 
             **Full text:** Count of metadata records - as above - with a least one attachment
             provided by the repository being a pdf file, which a) is publicly downloadable
@@ -219,7 +219,7 @@ sections:
         - slug: my-repository-contains-a-mix-of-oa-and-non-oa-papers
           question: |
             My repository contains a mix of OA and non-OA papers.
-            Can I ask CORE to limit harvesting only to OA papers?
+            Can I ask CORE to limit indexing only to OA papers?
           answer: |
             Yes, this is possible.
             Please contact us and we will enable this for your repository.
@@ -241,7 +241,7 @@ sections:
           answer: |
             OAI base URL looks similar to `http://journaldomain.com/cgi/oai2` or
             `http://journaldomain.com/oai/request` when homepage URL is
-            `http://journaldomain.com`. CORE cannot harvest the
+            `http://journaldomain.com`. CORE cannot index the
             journal’s/repository’s content via its webpage URL.
             If you are not sure whether your journal/repository has an OAI base
             URL, [contact our team](~contact) and we will provide
@@ -277,13 +277,13 @@ sections:
             An OAI identifier is registered but does not resolve.
           answer: |
             Reasons:<br>
-            -The item has not been harvested by CORE yet <br/>
+            -The item has not been indexed by CORE yet <br/>
             -The repository is not yet registered as a CORE data provider. Become a <a href='https://core.ac.uk/benefits' target='_blank'>provider</a>
-        - slug: how-difficult-is-it-to-satisfy-the-CORE-harvesting-recommendations
+        - slug: how-difficult-is-it-to-satisfy-the-CORE-indexing-recommendations
           question: |
-            How difficult is it to satisfy the CORE harvesting recommendations?
+            How difficult is it to satisfy the CORE indexing recommendations?
           answer: |
-            We would expect that harvesting could take from one hour to a
+            We would expect that indexing could take from one hour to a
             couple of days for a typical repository. In some repository
             systems, such as EPrints, most of these recommendations are
             followed by default. Find more details [how it
@@ -303,9 +303,9 @@ sections:
             Can CORE just index our content, but not store it on its servers?
           answer: |
             To provide its service, it is essential for CORE to be able to store
-            a cached copy of the harvested content. This is needed to verify open
+            a cached copy of the indexed content. This is needed to verify open
             access sources, offer analytical services, support text and data mining,
-            recommendation tools, etc. By cashing a copy of the harvested
+            recommendation tools, etc. By cashing a copy of the indexed
             resource, CORE is not different from many commercial and
             non-commercial, academic and non-academic, search engines including
             Google or CiteSeerX.
@@ -314,26 +314,26 @@ sections:
             this approach is available in the “[CORE: Three Access Levels to
             Underpin Open Access](http://www.dlib.org/dlib/november12/knoth/11knoth.html)”
             article.
-        - slug:  how-can-my-repository-opt-out-from-being-harvested-by-CORE
+        - slug:  how-can-my-repository-opt-out-from-being-indexed-by-CORE
           question: |
-            How can my repository opt out from being harvested by CORE?
+            How can my repository opt out from being indexed by CORE?
           answer: |
             CORE uses information from various registries, such as
             [OpenDOAR](http://opendoar.org/), to include new repositories,
             journals and archives into CORE. If the circumstances have changed in
-            your repository, you can restrict harvesting and crawling activities
+            your repository, you can restrict indexing and crawling activities
             by modifying your rules in your “robots.txt” file by using the
             [Standard for Robots Exclusion](http://www.robotstxt.org/orig.html).
             This will also guarantee the content cannot be cached by search
-            engines and harvesting systems. In addition, you could withdraw your
+            engines and indexing systems. In addition, you could withdraw your
             repository from all open access registries lists; when this takes
             place, please [notify us](~contact).
     - id: removing-full-text-or-metadata
       title: Removing full text or metadata
       items:
-        - slug: how-does-CORE-ensure-that-the-harvested-content-is-Open-Access
+        - slug: how-does-CORE-ensure-that-the-indexed-content-is-Open-Access
           question: |
-            How does CORE ensure that the harvested content is Open Access?
+            How does CORE ensure that the indexed content is Open Access?
           answer: |
             CORE aggregates content from repositories registered in
             [OpenDOAR](http://www.opendoar.org), journals registered
@@ -352,13 +352,13 @@ sections:
             copyright in this domain is to give authors control over the
             integrity of their work and the right to be properly acknowledged
             and cited."_
-        - slug: CORE-harvests-copyrighted-material-from-my-repository
+        - slug: CORE-indexes-copyrighted-material-from-my-repository
           question: |
-            CORE harvests copyrighted material from my repository
+            CORE indexes copyrighted material from my repository
           answer: |
             CORE’s system is fully automated and relies on data made available
             in a machine readable form. If your repository hosts full text with
-            a restrictive license that prohibits harvesting, this needs to be
+            a restrictive license that prohibits indexing, this needs to be
             properly communicated in a machine readable form. All non open
             access items should be blocked in the robots.txt file. If this
             information is provided in the metadata for each record and CORE
@@ -366,7 +366,7 @@ sections:
         - slug: retrieve-license-information
           question: |
             How can I retrieve the license information (CC-BY, CC-BY-NC, etc.)
-            from the harvested outputs?
+            from the indexed outputs?
           answer: |
             An output's license is not consistently exposed by content providers in a
             machine readable form. In some circumstances it may be possible to extract
@@ -418,7 +418,7 @@ sections:
         question: |
           What is membership of CORE?
         answer: |
-          We founded CORE to provide free harvesting, and discovery for institutions. Initially, we were funded to provide these tools, but much of our funding ended in July 2023. As a result, we have created a membership model, with both free and paid membership. Our founding goal remains as before: we harvest any institutional repository. If you register as a starting member, you can see a freely available dashboard that shows useful information about your repository. We have added optional paid tools that assist in analytics and compliance.
+          We founded CORE to provide free indexing, and discovery for institutions. Initially, we were funded to provide these tools, but much of our funding ended in July 2023. As a result, we have created a membership model, with both free and paid membership. Our founding goal remains as before: we index any institutional repository. If you register as a starting member, you can see a freely available dashboard that shows useful information about your repository. We have added optional paid tools that assist in analytics and compliance.
       - slug: is-CORE-paid-membership-worth-it
         question: |
           Is CORE paid membership worth it?
@@ -438,7 +438,7 @@ sections:
         question: |
           Do I need to be a member of CORE to use the Recommender tool?
         answer: |
-          Both the Recommender and the Discovery tools are free of charge for any institution that provides their data for harvesting. They are both benefits of the free starting membership.
+          Both the Recommender and the Discovery tools are free of charge for any institution that provides their data for indexing. They are both benefits of the free starting membership.
       - slug: why-do-we-need-compliance-tools
         question: |
           We don’t use our repository to track compliance, so why do we need compliance tools?
@@ -453,12 +453,12 @@ sections:
         question: |
           What is the CORE dashboard?
         answer: |
-          For any institution, we provide a dashboard that enables them to see their repository from the outside - the way that any external service sees them. We give you statistics about the number of items harvested, how many of them are full text, and the proportion of content that has a DOI identifier. The dashboard is free to access for any institution who signs up for free starting membership.
+          For any institution, we provide a dashboard that enables them to see their repository from the outside - the way that any external service sees them. We give you statistics about the number of items indexed, how many of them are full text, and the proportion of content that has a DOI identifier. The dashboard is free to access for any institution who signs up for free starting membership.
       - slug: why-can’t-I-see-my-dashboard
         question: |
           Why can’t I see my dashboard?
         answer: |
-          You can only see the dashboard for your organisation if you have signed up as a member. Becoming a starting member is free of charge for any institution that provides content for CORE to harvest. Simply contact the administrator at [XX@core.ac.uk]() to be sent an invitation to open an account.
+          You can only see the dashboard for your organisation if you have signed up as a member. Becoming a starting member is free of charge for any institution that provides content for CORE to index. Simply contact the administrator at [XX@core.ac.uk]() to be sent an invitation to open an account.
       - slug: how-does-CORE-help-my-institution-with-compliance
         question: |
           How does CORE help my institution with compliance?
@@ -467,7 +467,7 @@ sections:
 
           This introduces a reporting requirement for any institution that wants to be compliant with funder mandates: it is necessary to demonstrate that articles are compliant, that is, available open access and deposited within the correct time frame.
 
-          For every institutional repository where CORE harvests content, we try to assist you with compliance, identifying the date of deposit wherever possible, as well as the date of publication.
+          For every institutional repository where CORE indexes content, we try to assist you with compliance, identifying the date of deposit wherever possible, as well as the date of publication.
       - slug: how-can-I-track-the-date-of-deposit-for-my-content
         question: |
           How can I track the date of deposit for my content?
@@ -477,7 +477,7 @@ sections:
         question: |
           I have a CRIS system, so why do I need CORE?
         answer: |
-          Simply put, any CRIS system (Current Research Information System) works for an individual institution. Although it can often show compliance for papers within that institution, a CRIS system (or an individual repository) cannot find duplicate copies of articles that were deposited in another institution, for example if a paper has a co-author from Sheffield when the main author is based at Leeds. CORE is unique in harvesting repositories from around the world, and can identify duplicate copies of papers. As a result, CORE and CRIS systems are complements, not substitutes, for each other.
+          Simply put, any CRIS system (Current Research Information System) works for an individual institution. Although it can often show compliance for papers within that institution, a CRIS system (or an individual repository) cannot find duplicate copies of articles that were deposited in another institution, for example if a paper has a co-author from Sheffield when the main author is based at Leeds. CORE is unique in indexing repositories from around the world, and can identify duplicate copies of papers. As a result, CORE and CRIS systems are complements, not substitutes, for each other.
   - id: services
     title: CORE services
     updateDate: Last updated 24.08.2023
@@ -616,7 +616,7 @@ sections:
         answer: |
           Access the [CORE’s flyer](/resources/CORE-Flyer-2023.pdf)
           in our resources.
-      - slug: harvested-by-CORE-snippet
+      - slug: indexed-by-CORE-snippet
         question: |
           How can I embed the CORE badge on my website?
         badge:
@@ -675,7 +675,7 @@ sections:
       - slug: metadata-record-with-a-full-text-PDF-does-not-appear-in-CORE
         question: |
           A metadata record with a full text PDF does not appear in CORE from my
-          own repository but it has been harvested from another repository. What
+          own repository but it has been indexed from another repository. What
           if the record was not deposited on time at the other repository. Will
           this have an impact with regards to the REF2021 compliance?
         answer: |
@@ -689,13 +689,13 @@ sections:
           understand that the motivation is to mark outputs as non-compliant
           only in cases where there is clear evidence that they are truly
           non-compliant.
-      - slug: CORE-harvests-full-text-PDFs-only
+      - slug: CORE-indexes-full-text-PDFs-only
         question: |
-          CORE harvests full text PDFs only. Does this mean that outputs with
+          CORE indexes full text PDFs only. Does this mean that outputs with
           full text in other formats, e.g. word documents or text files, will
           not be considered as REF2021 compliant outputs?
         answer: |
-          CORE harvests both metadata and full texts, currently only in PDF
+          CORE indexes both metadata and full texts, currently only in PDF
           format but we will include support for other formats in the future.
           While the presence of the full text is preferred, CORE has all
           information necessary to support the REF2021 audit as long as the
@@ -713,7 +713,7 @@ sections:
           as the repository. The date you see in the CORE API is the date the
           document was last seen in your repository and imported to CORE. The
           date exposed in the CORE Repositories Dashboard uses instead a new
-          harvesting system that reads the “deposited date” exposed by your
+          indexing system that reads the “deposited date” exposed by your
           own repository system.
       - slug: how-can-I-see-the-deposit-date-from-my-repository
         question: |
