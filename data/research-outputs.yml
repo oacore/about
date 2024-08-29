@@ -157,7 +157,7 @@ sections:
         description: |
           Sets the vision for creating the CORE service, developing global-wide
           content aggregation of all open access research literature (on top of
-          OAI-PMH protocol for metadata harvesting and other protocols).
+          OAI-PMH protocol for metadata indexing and other protocols).
           It sets the mission to develop the three access levels (access at the
           granularity of papers; analytical access; access to raw data) via CORE.
         url: http://oro.open.ac.uk/35755/
@@ -216,7 +216,7 @@ sections:
           possibilities of OA content reuse.
         description: |
           This paper describes the two principles that should be followed
-          to ensure that content can be properly harvested from repositories.
+          to ensure that content can be properly indexed from repositories.
           This paper could be of great interest to repository managers.
         citations:
           text: >
@@ -357,7 +357,7 @@ sections:
           This submission reports on the results of the ongoing JISC-funded
           project CORE (COnnecting REpositories) which aims to facilitate
           the access and navigation across relevant scientific papers stored
-          in Open Access repositories. This is being achieved by harvesting
+          in Open Access repositories. This is being achieved by indexing
           metadata and full-text content from diverse Open Access repositories,
           applying text mining techniques to discover semantic relations between
           the articles and representing and exposing these relations
@@ -381,7 +381,7 @@ sections:
                     note = {Poster Session ID: 53},
                 keywords = {CORE},
                      url = {http://oro.open.ac.uk/32560/},
-                abstract = {This submission reports on the results of the ongoing JISC-funded project CORE (COnnecting REpositories) which aims to facilitate the access and navigation across relevant scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from diverse Open Access repositories, applying text mining techniques to discover semantic relations between the articles and representing and exposing these relations as Linked Data. The information about associations between articles will be made publicly available to enable the emergence of a wide range of applications that can exploit the provided data. Within this project, we will demonstrate the usability of the CORE system on two use-cases: (1) Improving the accessibility of content and the navigation capabilities for digital library users, (2) Enabling more ubiquitous access to digital content through smart phones and tablet devices.}
+                abstract = {This submission reports on the results of the ongoing JISC-funded project CORE (COnnecting REpositories) which aims to facilitate the access and navigation across relevant scientific papers stored in Open Access repositories. This is being achieved by indexing metadata and full-text content from diverse Open Access repositories, applying text mining techniques to discover semantic relations between the articles and representing and exposing these relations as Linked Data. The information about associations between articles will be made publicly available to enable the emergence of a wide range of applications that can exploit the provided data. Within this project, we will demonstrate the usability of the CORE system on two use-cases: (1) Improving the accessibility of content and the navigation capabilities for digital library users, (2) Enabling more ubiquitous access to digital content through smart phones and tablet devices.}
             }
       - type: inproceedings
         id: oro32180
@@ -405,13 +405,13 @@ sections:
           - automatic link generation
           - text mining
           - semantic similarity
-          - content harvesting
+          - content indexing
           - mobile devices
         url: http://oro.open.ac.uk/32180/
         abstract: |
           This paper presents CORE (COnnecting REpositories), a system that aims to
           facilitate the access and navigation across scientific papers stored in
-          Open Access repositories. This is being achieved by harvesting metadata and
+          Open Access repositories. This is being achieved by indexing metadata and
           full-text content from Open Access repositories, by applying text mining
           techniques to discover semanticly related articles and by representing and
           exposing these relations as Linked Data. The information about associations
@@ -436,9 +436,9 @@ sections:
                     year = {2011},
                    pages = {483--487},
                     note = {Published in Lecture Notes in Computer Science, Volume 6966/2011, ISBN 978-3-642-24468-1, pp. 483-487.},
-                keywords = {digital library federations; automatic link generation; text mining; semantic similarity; content harvesting; mobile devices; CORE},
+                keywords = {digital library federations; automatic link generation; text mining; semantic similarity; content indexing; mobile devices; CORE},
                      url = {http://oro.open.ac.uk/32180/},
-                abstract = {This paper presents CORE (COnnecting REpositories), a system that aims to facilitate the access and navigation across scientific papers stored in Open Access repositories. This is being achieved by harvesting metadata and full-text content from Open Access repositories, by applying text mining techniques to discover semanticly related articles and by representing and exposing these relations as Linked Data. The information about associations between articles expressed in an interoperable format will enable the emergence of a wide range of applications. The potential of CORE can be demonstrated on two use-cases: (1) Improving the the navigation capabilities of digital libraries by the means of a CORE pluging, (2) Providing access to digital content from smart phones and tablet devices by the means of the CORE Mobile application.}
+                abstract = {This paper presents CORE (COnnecting REpositories), a system that aims to facilitate the access and navigation across scientific papers stored in Open Access repositories. This is being achieved by indexing metadata and full-text content from Open Access repositories, by applying text mining techniques to discover semanticly related articles and by representing and exposing these relations as Linked Data. The information about associations between articles expressed in an interoperable format will enable the emergence of a wide range of applications. The potential of CORE can be demonstrated on two use-cases: (1) Improving the the navigation capabilities of digital libraries by the means of a CORE pluging, (2) Providing access to digital content from smart phones and tablet devices by the means of the CORE Mobile application.}
             }
 
   - id: ai-ml-papers
@@ -684,7 +684,7 @@ sections:
         - scholarly Communication
         - open Access
         - repositories
-        - harvesting
+        - indexing
       url: http://oro.open.ac.uk/45935/
       abstract: |
         The amount of open access content stored in repositories has increased
@@ -694,20 +694,20 @@ sections:
         challenges by aggregating and enriching content from hundreds of open
         access repositories, increasing the discoverability and reusability of
         millions of open access manuscripts. As repository managers and library
-        directors often wish to know the details of the content harvested from
+        directors often wish to know the details of the content indexed from
         their repositories and keep a certain level of control over it, CORE is
         now facing the challenge of how to enable content providers to manage
-        their content in the aggregation and control the harvesting process.
+        their content in the aggregation and control the indexing process.
         In order to improve the quality and transparency of the aggregation
         process and create a two-way collaboration between the CORE project and
         the content providers, we propose the CORE Dashboard
       description: |
         This paper presents the CORE Repositories Dashboard, a tool designed
         primarily for repository managers. It describes how the Dashboard
-        improves the quality of the harvested papers, advances the collaboration
+        improves the quality of the indexed papers, advances the collaboration
         between the repository managers and CORE, enables a straightforward
         management of their collections and enhances the transparency of
-        the harvested content.
+        the indexed content.
       citations:
         text: >
           Pontika, N., Knoth, P., Cancellieri, M., & Pearce, S. (2016). Developing Infrastructure to Support Closer Collaboration of Aggregators with Open Repositories. LIBER Quarterly, 25(4), 172–188. Retrieved from http://oro.open.ac.uk/45935/
@@ -721,9 +721,9 @@ sections:
                journal = {LIBER Quarterly},
                  pages = {172--188},
                   year = {2016},
-              keywords = {Scholarly Communication; Open Access; Repositories; Harvesting: CORE},
+              keywords = {Scholarly Communication; Open Access; Repositories; indexing: CORE},
                    url = {http://oro.open.ac.uk/45935/},
-              abstract = {The amount of open access content stored in repositories has increased dramatically, which has created new technical and organisational challenges for bringing this content together. The COnnecting REpositories (CORE) project has been dealing with these challenges by aggregating and enriching content from hundreds of open access repositories, increasing the discoverability and reusability of millions of open access manuscripts. As repository managers and library directors often wish to know the details of the content harvested from their repositories and keep a certain level of control over it, CORE is now facing the challenge of how to enable content providers to manage their content in the aggregation and control the harvesting process. In order to improve the quality and transparency of the aggregation process and create a two-way collaboration between the CORE project and the content providers, we propose the CORE Dashboard.}
+              abstract = {The amount of open access content stored in repositories has increased dramatically, which has created new technical and organisational challenges for bringing this content together. The COnnecting REpositories (CORE) project has been dealing with these challenges by aggregating and enriching content from hundreds of open access repositories, increasing the discoverability and reusability of millions of open access manuscripts. As repository managers and library directors often wish to know the details of the content indexed from their repositories and keep a certain level of control over it, CORE is now facing the challenge of how to enable content providers to manage their content in the aggregation and control the indexing process. In order to improve the quality and transparency of the aggregation process and create a two-way collaboration between the CORE project and the content providers, we propose the CORE Dashboard.}
           }
   -
     id: download-statistics
@@ -747,7 +747,7 @@ sections:
         This poster presents the integration of the IRUS-UK service with the
         CORE Repositories Dashboard tool, which enables repository managers
         access reliable download statistics of the full-text papers
-        harvested by CORE.
+        indexed by CORE.
       citations:
         text: >
           Pearce, S., & Pontika, N. (2016). Integration of the IRUS-UK Statistics in the CORE Repositories Dashboard.
@@ -785,9 +785,9 @@ sections:
         effect on the accuracy of statistics they collect. They believe that this
         potential decrease in reported usage can negatively influence the funding
         provided by their own institutions. This raises the fundamental question
-        of whether repositories should allow aggregators to harvest their metadata
+        of whether repositories should allow aggregators to index their metadata
         and content. In this paper, we discuss the benefits of allowing content
-        aggregations harvest repository content and investigate how to overcome
+        aggregations index repository content and investigate how to overcome
         the drawbacks
       description: |
         This paper describes the collaboration between aggregators and
@@ -803,7 +803,7 @@ sections:
                   year = {2014},
               keywords = {usage statistics; aggregations; open access; CORE},
                    url = {http://oro.open.ac.uk/41678/},
-              abstract = {Usage statistics are frequently used by repositories to justify their value to the management who decide about the funding to support the repository infrastructure. Another reason for collecting usage statistics at repositories is the increased use of webometrics in the process of assessing the impact of publications and researchers. Consequently, one of the worries repositories sometimes have about their content being aggregated is that they feel aggregations have a detrimental effect on the accuracy of statistics they collect. They believe that this potential decrease in reported usage can negatively influence the funding provided by their own institutions. This raises the fundamental question of whether repositories should allow aggregators to harvest their metadata and content. In this paper, we discuss the benefits of allowing content aggregations harvest repository content and investigate how to overcome the drawbacks.}
+              abstract = {Usage statistics are frequently used by repositories to justify their value to the management who decide about the funding to support the repository infrastructure. Another reason for collecting usage statistics at repositories is the increased use of webometrics in the process of assessing the impact of publications and researchers. Consequently, one of the worries repositories sometimes have about their content being aggregated is that they feel aggregations have a detrimental effect on the accuracy of statistics they collect. They believe that this potential decrease in reported usage can negatively influence the funding provided by their own institutions. This raises the fundamental question of whether repositories should allow aggregators to index their metadata and content. In this paper, we discuss the benefits of allowing content aggregations index repository content and investigate how to overcome the drawbacks.}
           }
   -
     id: supporting-research-assessment-and-evaluation

@@ -111,7 +111,7 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
           }). Also here you can find data provider [data provider profile](data-providers/${
             getId || GetParsedId
           }) page on the CORE website.<br/><br/>
-          **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until harvesting will be completed. [Find out more](documentation/data-providers-guide#indexing).
+          **Please note**, that if you have submitted this repository recently it may not appear on the search results. Please wait until indexing will be completed. [Find out more](documentation/data-providers-guide#indexing).
           `}
           setModalContent={setModalContent}
           setFormSubmitted={setFormSubmitted}
