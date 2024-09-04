@@ -1889,6 +1889,9 @@ collections:
                 - name: url
                   label: URL
                   widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
                 - name: target
                   label: Target
                   widget: string
@@ -2345,7 +2348,10 @@ collections:
                   widget: string
                 - name: url
                   label: URL
-                  widget: string
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
                 - name: target
                   label: Target
                   widget: string
@@ -2746,7 +2752,10 @@ collections:
                   widget: string
                 - name: url
                   label: URL
-                  widget: string
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
                 - name: target
                   label: Target
                   widget: string
@@ -3086,7 +3095,10 @@ collections:
                   widget: string
                 - name: url
                   label: URL
-                  widget: string
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
                 - name: target
                   label: Target
                   widget: string
@@ -3392,7 +3404,10 @@ collections:
                   widget: string
                 - name: url
                   label: URL
-                  widget: string
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
                 - name: target
                   label: Target
                   widget: string
@@ -4723,6 +4738,9 @@ collections:
                       widget: string
                       label: URL
                       required: false
+                      media_folder: '/images/pdfs'
+                      public_folder: '/images/pdfs'
+                      extensions: [ 'pdf' ]
                     - name: target
                       widget: string
                       label: Target

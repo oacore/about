@@ -20,7 +20,7 @@ const Price = ({ tag: Tag = 'span', price, className }) => (
 )
 
 const MembershipTable = observe(
-  ({ className, headerAlignment, textData, type = 'details' }) => {
+  ({ className, headerAlignment, textData, renderSpan, type = 'details' }) => {
     const headerNames = textData.headers.map((header) => header.name).slice(1)
     const { membership } = useStore()
 
@@ -33,7 +33,7 @@ const MembershipTable = observe(
         {textData.headers.map((header, index) => (
           <th
             key={header.name}
-            colSpan={index !== 0 ? 2 : 1}
+            colSpan={index !== 0 && renderSpan ? 2 : 1}
             className={classNames.use(styles.header, {
               [styles.headerActive]:
                 membership.data.planName === header.name.toLowerCase(),
