@@ -4735,7 +4735,7 @@ collections:
                       widget: string
                       label: Caption
                     - name: url
-                      widget: string
+                      widget: file
                       label: URL
                       required: false
                       media_folder: '/images/pdfs'
