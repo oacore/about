@@ -78,6 +78,7 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
           }}
           type="prices"
           className={styles.feeSectionTable}
+          renderSpan
         />
         <Markdown className={styles.feeSectionNote}>
           {data.header.note}
