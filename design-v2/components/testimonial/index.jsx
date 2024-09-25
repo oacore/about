@@ -3,7 +3,7 @@ import classNames from '@oacore/design/lib/utils/class-names'
 
 import styles from './testimonial-card.module.scss'
 
-const ReadMore = ({ children, textMaxLength }) => {
+export const ReadMore = ({ children, textMaxLength, renderBreak }) => {
   const text = children
   const [isReadMore, setIsReadMore] = React.useState(true)
   const toggleReadMore = () => {
@@ -12,10 +12,13 @@ const ReadMore = ({ children, textMaxLength }) => {
   return (
     <p className={styles.citation}>
       “{isReadMore ? `${text.slice(0, textMaxLength)}...` : text}”
+      {renderBreak && <br />}
       <span
         onClick={toggleReadMore}
         role="presentation"
-        className={styles.readMore}
+        className={classNames.use(styles.readMore, {
+          [styles.renderBreak]: renderBreak,
+        })}
       >
         {isReadMore ? ' Show more' : ' Show less'}
       </span>
