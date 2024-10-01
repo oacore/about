@@ -4748,10 +4748,12 @@ collections:
                 - name: video
                   widget: object
                   label: Video
+                  required: false
                   fields:
                     - name: src
                       widget: string
                       label: Source
+                      required: false
     - name: box
       label: Box
       file: membership/box.yml
