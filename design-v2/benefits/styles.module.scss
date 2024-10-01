@@ -387,6 +387,14 @@ $spacer: 1.5rem;
       margin-left: 1rem;
     }
   }
+
+  .spin-loader {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    border: 0.2em solid currentcolor;
+    border-right-color: transparent;
+  }
 }
 
 .modal-step-form {

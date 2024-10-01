@@ -191,10 +191,7 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
                 cancel
               </Button>
               {isLoading ? (
-                <Spinner
-                  color="primary"
-                  className={styles.repositoriesMapSpinner}
-                />
+                <Spinner color="primary" className={styles.spinLoader} />
               ) : (
                 <Button
                   className={styles.buttonCustom}
