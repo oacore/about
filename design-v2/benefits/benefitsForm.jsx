@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Button, Modal, TextField } from '@oacore/design/lib'
+import { Spinner } from 'reactstrap'
 
 import styles from './styles.module.scss'
 import generateFormMessage from '../../templates/data-providers/utils/generate-form-message'
@@ -42,6 +43,7 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
   const [dataProvidersResponse, setDataProvidersResponse] = useState([])
   const [modalContent, setModalContent] = useState(null)
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     value: uri,
@@ -58,10 +60,20 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
   const onCloseModal = () => {
     setModalActive(false)
   }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
-
+    setIsLoading(true)
     if (onSubmit) await onSubmit(event)
+    await checkDataProviders({
+      params: {
+        uri,
+        email,
+        setIsDataProviderAddActive,
+        setDataProvidersResponse,
+      },
+    })
+    setIsLoading(false)
   }
 
   const message = generateFormMessage({ dataProvidersResponse })
@@ -178,23 +190,20 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
               <Button variant="text" onClick={onCloseModal}>
                 cancel
               </Button>
-              <Button
-                className={styles.buttonCustom}
-                type="submit"
-                variant="contained"
-                onClick={() => {
-                  checkDataProviders({
-                    params: {
-                      uri,
-                      email,
-                      setIsDataProviderAddActive,
-                      setDataProvidersResponse,
-                    },
-                  })
-                }}
-              >
-                Submit
-              </Button>
+              {isLoading ? (
+                <Spinner
+                  color="primary"
+                  className={styles.repositoriesMapSpinner}
+                />
+              ) : (
+                <Button
+                  className={styles.buttonCustom}
+                  type="submit"
+                  variant="contained"
+                >
+                  Submit
+                </Button>
+              )}
             </div>
           </form>
         </Modal>
