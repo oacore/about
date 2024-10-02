@@ -209,7 +209,17 @@ const AboutPage = ({ data }) => {
       >
         <ServiceGroups className="text-left" items={servicesData.sections} />
       </RelatedContentSection>
-
+      <RelatedContentSection
+        id="research-outputs"
+        caption="Research"
+        data={{
+          ...data.research,
+          action: {
+            label: data.research.actionLabel,
+            href: '/about/research-outputs',
+          },
+        }}
+      />
       <Section id="team" caption={data.team.shortTitle}>
         <h2>{data.team.title}</h2>
         <Row className="list-unstyled" tag="ul">
@@ -244,17 +254,6 @@ const AboutPage = ({ data }) => {
           </ul>
         </Content>
       </Section>
-
-      <RelatedContentSection
-        id="research-outputs"
-        data={{
-          ...data.research,
-          action: {
-            label: data.research.actionLabel,
-            href: '/about/research-outputs',
-          },
-        }}
-      />
 
       <Section id="resources" caption={data.resources.shortTitle}>
         <h2>{data.resources.title}</h2>
