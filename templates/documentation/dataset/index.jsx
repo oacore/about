@@ -109,22 +109,20 @@ const DatasetPageTemplate = ({
           <Markdown>{datasetLatest.box.text}</Markdown>
         </div>
       </DatasetSection>
-      {additionalDatasets.items.map((dataset) => (
-        <DatasetSection
-          key={dataset.id}
-          title={dataset.title}
-          id={dataset.id}
-          accentColor={setDatasetAccentColor(dataset.id)}
-        >
-          {dataset.boxes.map((box) => (
-            <DatasetCard
-              key={`${box.title}-${box.caption}`}
-              {...box}
-              accentColor={setDatasetAccentColor(dataset.id)}
-            />
-          ))}
-        </DatasetSection>
-      ))}
+      <DatasetSection
+        key={additionalDatasets.items[1].id}
+        title={additionalDatasets.items[1].title}
+        id={additionalDatasets.items[1].id}
+        accentColor={setDatasetAccentColor(additionalDatasets.items[1].id)}
+      >
+        {additionalDatasets.items[1].boxes.map((box) => (
+          <DatasetCard
+            key={`${box.title}-${box.caption}`}
+            {...box}
+            accentColor={setDatasetAccentColor(additionalDatasets.items[1].id)}
+          />
+        ))}
+      </DatasetSection>
       <Section id="structures">
         <h4>{structures.title}</h4>
         {structures.items.map((structure) => (
@@ -142,6 +140,20 @@ const DatasetPageTemplate = ({
           </Collapsed>
         ))}
       </Section>
+      <DatasetSection
+        key={additionalDatasets.items[0].id}
+        title={additionalDatasets.items[0].title}
+        id={additionalDatasets.items[0].id}
+        accentColor={setDatasetAccentColor(additionalDatasets.items[0].id)}
+      >
+        {additionalDatasets.items[0].boxes.map((box) => (
+          <DatasetCard
+            key={`${box.title}-${box.caption}`}
+            {...box}
+            accentColor={setDatasetAccentColor(additionalDatasets.items[0].id)}
+          />
+        ))}
+      </DatasetSection>
     </Layout>
   </Page>
 )
