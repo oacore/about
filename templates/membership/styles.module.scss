@@ -14,6 +14,10 @@ $breakpoint-lg: 1415px;
   padding: 0 var(--page-padding-x) var(--page-padding-y) var(--page-padding-x);
 }
 
+.table-wrapper {
+  padding: 0 var(--page-padding-x) var(--page-padding-y) var(--page-padding-x);
+}
+
 .nav-wrapper {
   display: flex;
   gap: 24px;

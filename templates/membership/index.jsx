@@ -10,6 +10,8 @@ import listIcon from '../../public/images/membership/listIcon.svg'
 import carouselArrowRight from '../../public/images/membership/carouselArrowRight.svg'
 import carouselArrowLeft from '../../public/images/membership/carouselArrowLeft.svg'
 import ExperiencesCard from '../../components/experiences-card/experiencesCard'
+import MembershipTable from '../../components/membership-table/membershipTable'
+import { excludedIds } from '../governance/supporters'
 
 import { Markdown } from 'components'
 import { Section, Video } from 'design-v2/components'
@@ -130,12 +132,41 @@ const Card = ({ plan, handleContentOpen }) => {
   )
 }
 
-const MembershipPageTemplate = ({ data, members }) => {
+const MembershipPageTemplate = ({ data, members, allMembers }) => {
   const [visibleVideo, setVisibleVideo] = React.useState(null)
 
   const handleContentOpen = useCallback((condition) => {
     if (condition) setVisibleVideo(condition)
   }, [])
+
+  const customSort = (a, b) => {
+    const getBillingType = (member) => {
+      if (
+        excludedIds.includes(member.repo_id) ||
+        (Array.isArray(member.repo_id) &&
+          member.repo_id.some((id) => excludedIds.includes(id)))
+      )
+        return 'USRN Partner'
+
+      return `${member.billing_type} Member`
+    }
+
+    const order = [
+      'sustaining Member',
+      'supporting Member',
+      'USRN Partner',
+      'starting Member',
+    ]
+    const aType = getBillingType(a)
+    const bType = getBillingType(b)
+    const aIndex = order.indexOf(aType)
+    const bIndex = order.indexOf(bType)
+
+    if (aIndex === bIndex)
+      return a.organisation_name.localeCompare(b.organisation_name)
+
+    return aIndex - bIndex
+  }
 
   return (
     <div>
@@ -304,6 +335,14 @@ const MembershipPageTemplate = ({ data, members }) => {
             )}
           </div>
         </Section>
+      </div>
+      <div className={styles.tableWrapper} id="member-list">
+        <MembershipTable
+          title="List of members"
+          members={allMembers}
+          excludedIds={excludedIds}
+          customSort={customSort}
+        />
       </div>
     </div>
   )
