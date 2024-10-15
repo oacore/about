@@ -336,7 +336,7 @@ const MembershipPageTemplate = ({ data, members, allMembers }) => {
           </div>
         </Section>
       </div>
-      <div className={styles.tableWrapper}>
+      <div className={styles.tableWrapper} id="member-list">
         <MembershipTable
           title="List of members"
           members={allMembers}
