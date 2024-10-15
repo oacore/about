@@ -28,12 +28,16 @@ const getSections = async ({ ref } = {}) => {
   return page
 }
 
-const MembershipPage = ({ members, page }) => (
+const MembershipPage = ({ members, page, allMembers }) => (
   <Page
     title={page.header.header.title}
     description={page.header.header.description}
   >
-    <MembershipPageTemplate members={members} data={page} />
+    <MembershipPageTemplate
+      members={members}
+      allMembers={allMembers}
+      data={page}
+    />
   </Page>
 )
 
@@ -48,7 +52,8 @@ export async function getStaticProps({ previewData }) {
         (country) =>
           country.code.toLowerCase() === item.country_code.toLowerCase()
       )?.name
-    } else item.country = ''
+    }
+    if (!item.country) item.country = ''
 
     return item
   })
@@ -56,6 +61,13 @@ export async function getStaticProps({ previewData }) {
   const filteredMembers = members.filter(
     (member) =>
       member.billing_type !== 'starting' &&
+      member.organisation_name &&
+      !member.organisation_name.toLowerCase().includes('test')
+  )
+
+  const allMembers = members.filter(
+    (member) =>
+      member.organisation_name &&
       !member.organisation_name.toLowerCase().includes('test')
   )
 
@@ -63,6 +75,7 @@ export async function getStaticProps({ previewData }) {
     props: {
       page,
       members: filteredMembers,
+      allMembers,
     },
   }
 }

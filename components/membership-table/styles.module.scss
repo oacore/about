@@ -1,0 +1,86 @@
+@import 'design-v2/variables';
+$grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
+$grid-responsive-for-items: repeat(auto-fit, minmax(500px, 1fr));
+
+.search {
+  margin: 1rem 0;
+}
+
+.supporters {
+  .table-row {
+    cursor: pointer;
+    .organisation-wrapper {
+      display: flex;
+      align-items: center;
+      padding-left: 8px;
+      .logo-wrapper {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: 2px solid #b75400;
+        padding: 4px;
+        margin: 5px 0;
+        .repository-logo {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          box-shadow: inset 0px 0px 2px rgba(0, 0, 0, 0.1),
+            inset 0px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+        @media (max-width: $breakpoint-sm) {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      td {
+        @media (max-width: $breakpoint-sm) {
+          padding: 8px;
+        }
+      }
+    }
+    .member-column {
+      color: var(--primary);
+      text-transform: capitalize;
+    }
+    td {
+      @media (max-width: $breakpoint-sm) {
+        padding: 8px;
+      }
+    }
+    &:hover {
+      background: #eee;
+      transition: 0.5s all ease-in-out;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.row {
+  border-bottom: none;
+}
+
+.pagination-row {
+  text-align: right;
+  border-bottom: none;
+  .pagination-text {
+    display: inline-block;
+    margin-right: 32px;
+    margin-top: 32px;
+  }
+}
+
+.icon {
+  color: var(--gray-700);
+}
+.icon-disabled {
+  color: var(--gray-300);
+}
