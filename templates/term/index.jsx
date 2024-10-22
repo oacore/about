@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '@oacore/design/lib/elements'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 import { Layout, Section } from '../../design-v2/components'
@@ -30,25 +31,19 @@ const TermsPageTemplate = ({ data }) => (
     </Section>
     <div className={styles.contentWrapper}>
       <div className={styles.contentItem}>
-        {data.main[0].mainItems.map((mainItem) => (
+        {data.main.map((mainItem) => (
           <div key={mainItem.title} className={styles.item}>
-            <h2 className={styles.mainTitle}>{mainItem.title}</h2>
+            <h2
+              className={classNames.use(styles.mainTitle, {
+                [styles.subTitle]: mainItem.subtitle,
+              })}
+            >
+              {mainItem.title}
+            </h2>
             <Markdown>{mainItem.content}</Markdown>
           </div>
         ))}
       </div>
-      <div className={styles.contentItem}>
-        {data.main[1].mainItems.map((mainItem) => (
-          <div key={mainItem.title} className={styles.item}>
-            <h2 className={styles.mainTitle}>{mainItem.title}</h2>
-            <Markdown>{mainItem.content}</Markdown>
-          </div>
-        ))}
-      </div>
-    </div>
-    <div className={styles.additionalItem} id="disclaimer">
-      <h2 className={styles.mainTitle}>{data.additional.title}</h2>
-      <Markdown>{data.additional.content}</Markdown>
     </div>
   </Layout>
 )
