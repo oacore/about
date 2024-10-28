@@ -2098,7 +2098,7 @@ collections:
               hint: >
                 Displayed in the browser as a card title.
             - name: content
-              widget: string
+              widget: markdown
               label: content
               hint: >
                 Displayed in the browser as a card content.
@@ -2558,7 +2558,7 @@ collections:
               hint: >
                 Displayed in the browser as a card title.
             - name: content
-              widget: string
+              widget: markdown
               label: content
               hint: >
                 Displayed in the browser as a card content.
@@ -2962,7 +2962,7 @@ collections:
               hint: >
                 Displayed in the browser as a card title.
             - name: content
-              widget: string
+              widget: markdown
               label: content
               hint: >
                 Displayed in the browser as a card content.
@@ -3241,7 +3241,7 @@ collections:
               hint: >
                 Displayed in the browser as a card title.
             - name: content
-              widget: string
+              widget: markdown
               label: content
               hint: >
                 Displayed in the browser as a card content.
@@ -3913,7 +3913,7 @@ collections:
               hint: >
                 Displayed in the browser as a card title.
             - name: content
-              widget: string
+              widget: markdown
               label: content
               hint: >
                 Displayed in the browser as a card content.
