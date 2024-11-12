@@ -46,12 +46,13 @@ const DatasetPageTemplate = ({
   meta,
   header,
   instruction,
+  latestInstruction,
   datasetLatest,
   additionalDatasets,
   structures,
 }) => (
   <Page title={meta.title} description={meta.tagline}>
-    <Layout>
+    <Layout className={styles.datasetWrapper}>
       <Section id="header">
         <h2>{header.title}</h2>
         <div className={styles.headerContent}>
@@ -59,24 +60,6 @@ const DatasetPageTemplate = ({
           <img src={header.image} alt={header.title} />
         </div>
         <Markdown className={styles.headerCaption}>{header.caption}</Markdown>
-      </Section>
-      <Section
-        id={instruction.id}
-        useFullPageWidth
-        className={styles.instruction}
-      >
-        <h4>{instruction.title}</h4>
-        <div className={styles.instructionContent}>
-          <div>
-            <Markdown>{instruction.recommended}</Markdown>
-          </div>
-          <div className={styles.instructionReminder}>
-            <h5>{instruction.reminder.title}</h5>
-            <Markdown className={styles.instructionReminderText}>
-              {instruction.reminder.description}
-            </Markdown>
-          </div>
-        </div>
       </Section>
       <DatasetSection
         title={datasetLatest.title}
@@ -109,6 +92,23 @@ const DatasetPageTemplate = ({
           <Markdown>{datasetLatest.box.text}</Markdown>
         </div>
       </DatasetSection>
+      <Section id={latestInstruction.id} className={styles.instruction}>
+        <h4>{latestInstruction.title}</h4>
+        <div className={styles.instructionContent}>
+          <div>
+            <Markdown>{latestInstruction.recommended}</Markdown>
+          </div>
+          <div className={styles.instructionReminder}>
+            <Markdown>{latestInstruction.reminder.title}</Markdown>
+            <Markdown className={styles.instructionReminderText}>
+              {latestInstruction.reminder.descriptions.option}
+            </Markdown>
+            <Markdown className={styles.instructionReminderText}>
+              {latestInstruction.reminder.descriptions.option2}
+            </Markdown>
+          </div>
+        </div>
+      </Section>
       <DatasetSection
         key={additionalDatasets.items[1].id}
         title={additionalDatasets.items[1].title}
@@ -123,6 +123,20 @@ const DatasetPageTemplate = ({
           />
         ))}
       </DatasetSection>
+      <Section id={instruction.id} className={styles.instruction}>
+        <h4>{instruction.title}</h4>
+        <div className={styles.instructionContent}>
+          <div>
+            <Markdown>{instruction.recommended}</Markdown>
+          </div>
+          <div className={styles.instructionReminder}>
+            <h5>{instruction.reminder.title}</h5>
+            <Markdown className={styles.instructionReminderText}>
+              {instruction.reminder.description}
+            </Markdown>
+          </div>
+        </div>
+      </Section>
       <Section id="structures">
         <h4>{structures.title}</h4>
         {structures.items.map((structure) => (
