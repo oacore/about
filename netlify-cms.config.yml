@@ -1105,6 +1105,43 @@ collections:
           widget: markdown,
           label: Reminder description
          }
+   - name: latest
+     label: latest Download instruction
+     file: dataset/latestInstruction.yml
+     fields:
+       - name: title
+         widget: string
+         label: Title
+       - name: id
+         widget: string
+         label: id
+         hint: id of the block. Must match anchor link url
+       - name: recommended
+         widget: markdown
+         label: Our recommendation
+       - name: reminder
+         widget: object
+         fields:
+           - {
+             name: title,
+             widget: markdown,
+             label: Reminder title
+           }
+           - {
+             name: description,
+             widget: object,
+             fields:
+               - {
+                 name: option,
+                 widget: markdown,
+                 label: option
+               }
+               - {
+                 name: option2,
+                 widget: markdown,
+                 label: option2
+               }
+           }
    - name: datasetLatest
      label: Latest dataset
      file: dataset/datasetLatest.yml
