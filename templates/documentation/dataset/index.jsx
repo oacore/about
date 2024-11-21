@@ -99,12 +99,9 @@ const DatasetPageTemplate = ({
             <Markdown>{latestInstruction.recommended}</Markdown>
           </div>
           <div className={styles.instructionReminder}>
-            <Markdown>{latestInstruction.reminder.title}</Markdown>
+            <h5>{latestInstruction.reminder.title}</h5>
             <Markdown className={styles.instructionReminderText}>
-              {latestInstruction.reminder.descriptions.option}
-            </Markdown>
-            <Markdown className={styles.instructionReminderText}>
-              {latestInstruction.reminder.descriptions.option2}
+              {latestInstruction.reminder.description}
             </Markdown>
           </div>
         </div>
