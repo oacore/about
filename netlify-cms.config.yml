@@ -1122,12 +1122,16 @@ collections:
        - name: reminder
          widget: object
          fields:
-           - { name: title, widget: markdown, label: Reminder title }
-           - name: description
-             widget: object
-             fields:
-               - { label: option, name: option, widget: markdown }
-               - { label: option2, name: option2, widget: markdown }
+           - {
+             name: title,
+             widget: string,
+             label: Reminder title
+           }
+           - {
+             name: description,
+             widget: markdown,
+             label: Reminder description
+           }
    - name: datasetLatest
      label: Latest dataset
      file: dataset/datasetLatest.yml
