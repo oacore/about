@@ -514,11 +514,16 @@ organizations:
   name: Interac
   url: https://www.interac.ca/en
   logo: interac.png
-- &gramarly
-  id: gramarly
-  name: Gramarly
-  url: https://app.grammarly.com/
-  logo: grammarly.png
+#- &gramarly
+#  id: gramarly
+#  name: Gramarly
+#  url: https://app.grammarly.com/
+#  logo: grammarly.png
+- &tech-dico
+  id: tech-dico
+  name: TechDico
+  url: https://www.techdico.com/
+  logo: logo_TechDico.png
 - &ezassi
   id: ezassi
   name: Ezassi
@@ -870,7 +875,8 @@ sections:
     organizations:
       title: Companies who work with us
       items:
-        - *gramarly
+#        - *gramarly
+        - *tech-dico
         - *naver
         - *nvidia
         - *caktus
@@ -897,7 +903,6 @@ sections:
         - *audemicr
         - *naverTest
         - *lean-library
-        - *tech-dico
         - *oxisco
         - *consensus
         - *flowcite

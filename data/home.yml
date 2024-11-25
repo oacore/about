@@ -157,8 +157,10 @@ users:
           alt: "nvidia"
         - img: /images/logos/anthropic.svg
           alt: "anthropic"
-        - img: /images/logos/grammarly.svg
-          alt: "grammarly"
+        - img: /images/logos/logo_TechDico.png
+          alt: "TechDico"
+#        - img: /images/logos/grammarly.svg
+#          alt: "grammarly"
         - img: /images/logos/lean.svg
           alt: "lean"
         - img: /images/logos/naver.svg
