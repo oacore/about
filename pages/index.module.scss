@@ -305,13 +305,20 @@
     display: flex;
     justify-content: space-between;
     gap: 35px;
+    align-items: center;
+  }
+  .carousel-item-wrapper {
+    border: 1px solid #b75400;
+    background: #fff;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .carousel-item {
-    border: 1px solid #b75400;
     width: 212px;
-    height: 104px;
+    max-height: 104px;
     padding: 16px;
-    background: #fff;
   }
   .carousel-item-unset {
     padding: 0;
