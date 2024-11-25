@@ -514,11 +514,6 @@ organizations:
   name: Interac
   url: https://www.interac.ca/en
   logo: interac.png
-- &gramarly
-  id: gramarly
-  name: Gramarly
-  url: https://app.grammarly.com/
-  logo: grammarly.png
 - &ezassi
   id: ezassi
   name: Ezassi
@@ -870,7 +865,6 @@ sections:
     organizations:
       title: Companies who work with us
       items:
-        - *gramarly
         - *naver
         - *nvidia
         - *caktus
