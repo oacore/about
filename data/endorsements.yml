@@ -407,7 +407,7 @@ organizations:
   id: tech-dico
   name: TechDico
   url: https://www.techdico.com/
-  logo: logo_TechDico.png
+  logo: techDico.png
   testimonial: *Philippe-Régall
 - &oxisco
   id: oxisco
@@ -523,7 +523,7 @@ organizations:
   id: tech-dico
   name: TechDico
   url: https://www.techdico.com/
-  logo: logo_TechDico.png
+  logo: techDico.png
 - &ezassi
   id: ezassi
   name: Ezassi
