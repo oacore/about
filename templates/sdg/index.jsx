@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { Layout, Section } from '../../design-v2/components'
 import styles from './styles.module.scss'
-import { Markdown } from '../../components'
+import { Markdown, Video } from '../../components'
 import FileUpload from '../../components/pdf-upload'
 
 const SdgPageTemplate = ({ data }) => {
@@ -11,10 +11,7 @@ const SdgPageTemplate = ({ data }) => {
   const uploadPdf = async (file, dataProviderId) => {
     setRrsPdfLoading(true)
     try {
-      const url = new URL(
-        '/internal/data-providers/rights-retention-upload-file',
-        process.env.API_URL
-      )
+      const url = new URL('/internal/sdg-upload-file', process.env.API_URL)
       const fd = new FormData()
       fd.set('file', file)
       fd.set('dataProviderId', dataProviderId)
@@ -64,6 +61,11 @@ const SdgPageTemplate = ({ data }) => {
           <Markdown>{data.purpose?.description}</Markdown>
         </article>
       </Section>
+      <Video
+        src="https://www.youtube.com/embed/-gFYNg_8ySQ"
+        title="test"
+        tag="p"
+      />
     </Layout>
   )
 }
