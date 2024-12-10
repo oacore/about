@@ -43,6 +43,7 @@ const RrsCheckCard = ({
 
   const handleFileChange = (event) => {
     event.preventDefault()
+    event.stopPropagation()
     if (rrsPdfLoading) return
 
     let file
@@ -65,12 +66,9 @@ const RrsCheckCard = ({
           fileType ===
             'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
         )
-      ) {
+      )
         setCurrentView('formatIssue')
-        return
-      }
     }
-    event.stopPropagation()
   }
 
   return (
