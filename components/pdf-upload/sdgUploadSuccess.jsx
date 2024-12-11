@@ -40,19 +40,24 @@ const SdgUploadSuccess = ({
       <div className={styles.innerIssueWrapper}>
         <div className={styles.sdgWrapper}>
           {text.upload.sdgSuccess.description}
-          {uploadResults.map((item) => {
-            const sdgType = sdgTypes.find(
-              (type) => type.id === item.predictions
-            )
-            return (
-              <div className={styles.sdgItem} key={item.predictions}>
-                <div className={styles.imgWrapper}>
-                  <img src={sdgType.icon} alt={sdgType.title} />
+          <div className={styles.innerSdgWrapper}>
+            {uploadResults.map((item) => {
+              const sdgType = sdgTypes.find(
+                (type) => type.id === item.predictions
+              )
+              return (
+                <div className={styles.sdgItem} key={item.predictions}>
+                  <div className={styles.imgWrapper}>
+                    <img src={sdgType.icon} alt={sdgType.title} />
+                  </div>
+                  <div className={styles.scoreText}>
+                    {item.confidence_score}
+                  </div>
+                  <div className={styles.subText}>(confidence)</div>
                 </div>
-                <div>{item.confidence_score}</div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
         </div>
         <input
           ref={uploadRef}

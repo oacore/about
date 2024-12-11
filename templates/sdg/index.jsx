@@ -191,8 +191,8 @@ const SdgPageTemplate = ({ data }) => {
         </article>
       </Section>
       <Video
-        src="https://www.youtube.com/embed/-gFYNg_8ySQ"
-        title="test"
+        src="https://www.youtube.com/embed/_r16dXOGdWA"
+        title="sdg labels"
         tag="p"
       />
     </Layout>

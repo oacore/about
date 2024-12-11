@@ -86,7 +86,7 @@
   }
   .inner-issue-wrapper {
     background: #f5f5f5;
-    height: 162px;
+    height: 185px;
     padding: 16px;
     margin: 8px 0;
     .inner-issue-title {
@@ -131,18 +131,40 @@
 
 .sdg-wrapper {
   display: flex;
-  gap: 16px;
-  align-items: center;
+  gap: 14px;
+  flex-direction: column;
+  .inner-sdg-wrapper {
+    display: flex;
+    gap: 16px;
+  }
   .sdg-item {
     display: flex;
     align-items: center;
-    gap: 16px;
+    flex-direction: column;
+    .score-text {
+      color: #212121;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.024px;
+    }
+    .sub-text {
+      color: #212121;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.018px;
+      margin-top: 4px;
+    }
   }
 }
 
 .img-wrapper {
-  width: 32px;
-  height: 32px;
+  width: 74px;
+  height: 74px;
+  margin-bottom: 10px;
   img {
     width: 100%;
     height: 100%;
