@@ -33,6 +33,23 @@ upload:
       Maximum  size: 10MB
 
 
+  sdgSuccess:
+    title: SDG labels found
+    description: "Found SDG labels:"
+    image: /images/success.svg
+    action:
+      title: Upload new file
+  sdgFail:
+    title: SDG labels not found
+    description: SDG labels not found in this paper.
+    image: /images/fail.svg
+    action:
+      title: Upload new file
+  sdgDefault:
+    title: Identify SDG in your paper
+    subTitle: Drag and drop your file here
+    action:
+      title: Browse files
 purpose:
   title: Why it’s important
   image: /images/services/work.svg
