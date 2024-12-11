@@ -9,7 +9,7 @@ import FileUpload from '../../components/pdf-upload'
 const RightsRetentionPageTemplate = ({ data }) => {
   const [uloadResult, setUploadResult] = useState('')
   const [rrsPdfLoading, setRrsPdfLoading] = useState(false)
-  const uploadPdf = async (file, dataProviderId) => {
+  const uploadPdf = async (file) => {
     setRrsPdfLoading(true)
     try {
       const url = new URL(
@@ -18,7 +18,6 @@ const RightsRetentionPageTemplate = ({ data }) => {
       )
       const fd = new FormData()
       fd.set('file', file)
-      fd.set('dataProviderId', dataProviderId)
 
       const response = await fetch(url, {
         method: 'POST',
