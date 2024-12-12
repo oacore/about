@@ -1,7 +1,7 @@
 header:
-  title: Classification of research papers according to United Nations Sustainable Development Goals
+  title: Classification of research papers according to the United Nations Sustainable Development Goals
   image: /images/services/goals.svg
-  description: The Sustainable Development Goals or Global Goals are a collection of 17 interlinked global goals designed to be a "blueprint to achieve a better and more sustainable future for all". The SDGs were set up in 2015 by the United Nations General Assembly and are intended to be achieved by 2030.
+  description: The Sustainable Development Goals or Global Goals are a collection of 17 interlinked global goals, designed to be a “blueprint to achieve a better and more sustainable future for all”. The SDGs were set up in 2015 by the United Nations General Assembly, and are intended to be achieved by 2030.
   subTitle: CORE labs
 
 upload:
@@ -35,9 +35,9 @@ upload:
 
 
 purpose:
-  title: How it work
+  title: How it works
   image: /images/services/openUniversity.svg
   description: |
     The new CORE SDG Dashboard module allows institutions to gain rapid insights into the current mapping of their research outputs to the 17 UN SDG goals, significantly reducing the manual effort required to map research outputs to global sustainability objectives.
 
-    On the video below you can see how SDG insights tab in the CORE dashboard works (using the example of Open Research Online Repository (Open University).
+    On the video below, you can see how SDG insights tab in the CORE dashboard works, using the example of Open Research Online (The Open University repository).
