@@ -5,18 +5,14 @@ description: |
   to build search engines of research content, detect plagiarism
   and develop repository services.
 testimonials:
-- &kuansan-wang
-  id: kuansan-wang
+- &burton-davis
+  id: burton-davis
   content: |
-    Microsoft partnered with CORE to link documents in the Microsoft
-    Academic Graph with open access articles in CORE, as the datasets
-    complement each other. The outcome is the world’s largest scholarly
-    graph with both bibliographic information, including citations,
-    and full texts of academic papers for machine processing.
+    Microsoft is committed to increasing open access to scientific knowledge to help further research and fuel breakthroughs to address society's greatest challenges, such as improving healthcare and the sustainability of our planet. We are proud to support CORE's important work of making more scientific scholarly content openly available, helping foster innovation, including the responsible development of Al.
   author:
-    name: Kuansan Wang
-    role: Managing Director, MSR Outreach Academic Services
-    picture: /images/people/kuansanwang.jpg
+    name: Burton Davis
+    role: Vice President and Deputy General Counsel, at Microsoft
+    picture: /images/people/burtonDavis.png
 - &jon-tennant
   id: jon-tennant
   content: |
@@ -504,11 +500,16 @@ organizations:
   name: Academia
   url: https://www.academia.edu/
   logo: academia.svg
-- &cactus
-  id: cactus
-  name: Cactus
-  url: https://cactusglobal.com/
-  logo: cactus.png
+#- &cactus
+#  id: cactus
+#  name: Cactus
+#  url: https://cactusglobal.com/
+#  logo: microsoft_logo.png
+- &microsoftLogo
+  id: microsoft
+  name: Microsoft
+  url: https://www.microsoft.com/en-us/
+  logo: microsoft_logo.png
 - &interac
   id: interac
   name: Interac
@@ -567,7 +568,7 @@ organizations:
   id: microsoft
   name: Microsoft
   logo: microsoft.svg
-  testimonial: *kuansan-wang
+  testimonial: *burton-davis
 - &mooc
   id: mooc
   name: Open Science MOOC
@@ -588,10 +589,14 @@ organizations:
   name: Research England
   logo: research-england.png
   testimonial: *ben-johnson
-- &oacg
-  id: oacg
-  name: Open Access Co-ordination Group
-  logo: universities-uk.svg
+#- &oacg
+#  id: oacg
+#  name: Open Access Co-ordination Group
+#  logo: universities-uk.svg
+- &ukcorr
+  id: ukcorr
+  name: UKCORR
+  logo: UKCORR_logo.png
   # testimonial: *michael-jubb
 - &openaire
   id: openaire
@@ -881,7 +886,8 @@ sections:
         - *nvidia
         - *caktus
         - *cypris
-        - *cactus
+#        - *cactus
+        - *microsoftLogo
         - *academia
         - *ezassi
         - *turnitin
@@ -993,7 +999,8 @@ sections:
         - *iris-ai-second
         - *mooc
         - *openaire
-        - *oacg
+        - *ukcorr
+#        - *oacg
         - *research-england
         - *metadata2020
         - *oab
