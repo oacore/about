@@ -366,15 +366,28 @@ $support-card-width: 21.5rem;
     justify-content: space-between;
     gap: 35px;
   }
-  .api-carousel-item {
+  .carousel-item-wrapper {
     border: 1px solid #b75400;
-    min-width: 212px;
+    background: #fff;
     height: 104px;
-    padding: 16px;
-    &:first-child {
-      padding: 28px;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+  .carousel-item {
+    width: 212px;
+    max-height: 104px;
+    padding: 16px;
+  }
+
+  .carousel-item-unset {
+    padding: 0;
+  }
+
+  .background {
+    background: #e85e13;
+  }
+
   .data-carousel-item {
     border: 1px solid #b75400;
     min-width: 212px;
