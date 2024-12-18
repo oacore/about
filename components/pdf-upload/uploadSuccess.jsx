@@ -45,7 +45,7 @@ const UploadSuccess = ({
           ref={uploadRef}
           type="file"
           id="fileInput"
-          accept="application/pdf"
+          accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           onChange={handleFileChange}
           className={styles.display}
           hidden
