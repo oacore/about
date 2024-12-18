@@ -285,12 +285,17 @@ const ServicePage = observe(
             <section className={styles.carouselWrapper}>
               <div className={styles.carouselItems}>
                 {logos.logos.items.map((slide) => (
-                  <img
-                    className={styles.apiCarouselItem}
-                    src={slide.img}
-                    alt="logo"
-                    key={slide.alt}
-                  />
+                  <div className={styles.carouselItemWrapper}>
+                    <img
+                      className={classNames.use(styles.carouselItem, {
+                        [styles.carouselItemUnset]: slide.full,
+                        [styles.background]: slide.background,
+                      })}
+                      src={slide.img}
+                      alt="logo"
+                      key={slide.alt}
+                    />
+                  </div>
                 ))}
               </div>
               <div className={styles.linkWrapper}>
