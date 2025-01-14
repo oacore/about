@@ -96,6 +96,14 @@ testimonials:
     name: Nicola Dowson
     role: Library Services Manager at Open University
     picture: /images/people/dowson.jpeg
+- &kathleen-shearer
+  id: kathleen-shearer
+  content: |
+    *CORE has significantly assisted the academic institutions participating in our global network with their key mission, which is their scientific content exposure. In addition, CORE has helped our content administrators to showcase the real benefits of repositories via its added value services.*
+  author:
+    name: Kathleen Shearer
+    role: Executive Director of the Confederation of Open Access Repositories (COAR)
+    picture: /images/people/kathleen.svg
 - &yvonne-budden
   id: yvonne-budden
   content: |
@@ -686,6 +694,11 @@ organizations:
   name: Open University
   logo: open-university.png
   testimonial: *nicola-dowson
+- &ouKathleen
+  id: oukathleen
+  name: Open University
+  logo: open-university.png
+  testimonial: *kathleen-shearer
 # recom-used-in:
 - &clok
   name: CLoK
@@ -891,7 +904,6 @@ sections:
         - *academia
         - *ezassi
         - *turnitin
-        - *ontochem
         - *innovationengineering
         - *uprightproject
         - *allanswers
@@ -905,7 +917,6 @@ sections:
         - *macmicro
         - *scilit
         - *intoolab
-        - *anthropic
         - *audemicr
         - *naverTest
         - *lean-library
@@ -932,6 +943,7 @@ sections:
     organizations:
       title: Institutions who work with us
       items:
+          - *ouKathleen
           - *ou
           - *stgeorgs
           - *aru
