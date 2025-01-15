@@ -57,10 +57,20 @@ const RrsCheckCard = ({
         return
       }
       const fileType = file.type
-      if (fileType !== 'application/pdf') {
+      if (sdgTypes) {
+        if (fileType !== 'application/pdf') {
+          setCurrentView('formatIssue')
+          return
+        }
+      } else if (
+        !(
+          fileType === 'application/pdf' ||
+          fileType === 'application/msword' ||
+          fileType ===
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        )
+      )
         setCurrentView('formatIssue')
-        return
-      }
       uploadPdf(file)
       setFileName(file.name)
     }
