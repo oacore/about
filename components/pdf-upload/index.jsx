@@ -21,7 +21,7 @@ const RrsCheckCard = ({
   const router = useRouter()
 
   const handleClick = () => {
-    uploadRef.current.click()
+    if (!rrsPdfLoading) uploadRef.current.click()
   }
 
   const handleDragOver = (event) => {
@@ -52,22 +52,17 @@ const RrsCheckCard = ({
     if (files && files.length) {
       // eslint-disable-next-line prefer-destructuring
       file = files[0]
-      uploadPdf(file)
-      setFileName(file.name)
       if (file.size > 10 * 1024 * 1024) {
         setCurrentView('sizeIssue')
         return
       }
       const fileType = file.type
-      if (
-        !(
-          fileType === 'application/pdf' ||
-          fileType === 'application/msword' ||
-          fileType ===
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-        )
-      )
+      if (fileType !== 'application/pdf') {
         setCurrentView('formatIssue')
+        return
+      }
+      uploadPdf(file)
+      setFileName(file.name)
     }
   }
 

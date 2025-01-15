@@ -6,6 +6,7 @@ import { useRouter } from 'next/router'
 import text from '../../data/retention.yml'
 import uploadSvg from '../../public/images/logos/upload.svg'
 import styles from './styles.module.scss'
+import sdgText from '../../data/sdg.yml'
 
 const DefaultUploadView = ({
   handleClick,
@@ -59,7 +60,11 @@ const DefaultUploadView = ({
         </div>
       )}
       <div className={styles.uploadFooter}>
-        <span className={styles.footerText}>{text.upload.subInfo.format}</span>
+        <span className={styles.footerText}>
+          {router.pathname.includes('sdg')
+            ? sdgText.upload.subInfo.format
+            : text.upload.subInfo.format}
+        </span>
         <span className={styles.footerText}>{text.upload.subInfo.size}</span>
       </div>
     </div>
