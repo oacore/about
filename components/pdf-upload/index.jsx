@@ -21,7 +21,7 @@ const RrsCheckCard = ({
   const router = useRouter()
 
   const handleClick = () => {
-    if (!rrsPdfLoading) uploadRef.current.click()
+    if (!rrsPdfLoading && uploadRef.current) uploadRef.current.click()
   }
 
   const handleDragOver = (event) => {
@@ -29,15 +29,17 @@ const RrsCheckCard = ({
   }
 
   useEffect(() => {
+    if (!uploadResults) return
+
     const results = Array.isArray(uploadResults) ? uploadResults : []
     if (results.some((result) => result.predictions)) setCurrentView('success')
-    if (uploadResults.rightsRetentionSentence) setCurrentView('success')
-    if (
+    else if (uploadResults.rightsRetentionSentence) setCurrentView('success')
+    else if (
       !uploadResults.rightsRetentionSentence &&
       uploadResults.confidence === 0
     )
       setCurrentView('fail')
-    if (results.some((result) => result.predictions === null))
+    else if (results.some((result) => result.predictions === null))
       setCurrentView('fail')
   }, [uploadResults])
 
@@ -57,20 +59,10 @@ const RrsCheckCard = ({
         return
       }
       const fileType = file.type
-      if (sdgTypes) {
-        if (fileType !== 'application/pdf') {
-          setCurrentView('formatIssue')
-          return
-        }
-      } else if (
-        !(
-          fileType === 'application/pdf' ||
-          fileType === 'application/msword' ||
-          fileType ===
-            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-        )
-      )
+      if (fileType !== 'application/pdf') {
         setCurrentView('formatIssue')
+        return
+      }
       uploadPdf(file)
       setFileName(file.name)
     }
