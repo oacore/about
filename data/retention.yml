@@ -28,7 +28,7 @@ upload:
     action: Upload new file
   subInfo:
     format: |
-     Supported formats: pdf, doc
+     Supported formats: pdf
     size: |
       Maximum  size: 10MB
 
