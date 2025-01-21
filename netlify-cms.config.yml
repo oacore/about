@@ -2698,8 +2698,8 @@ collections:
 
 - name: fastsync
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
