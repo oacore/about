@@ -1685,8 +1685,8 @@ collections:
 
 - name: board-of-supporters
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/community'
+  public_folder: '/images/community'
 
   create: false
   delete: false
