@@ -96,6 +96,14 @@ testimonials:
     name: Nicola Dowson
     role: Library Services Manager at Open University
     picture: /images/people/dowson.jpeg
+- &kathleen-shearer
+  id: kathleen-shearer
+  content: |
+    *CORE has significantly assisted the academic institutions participating in our global network with their key mission, which is their scientific content exposure. In addition, CORE has helped our content administrators to showcase the real benefits of repositories via its added value services.*
+  author:
+    name: Kathleen Shearer
+    role: Executive Director of the Confederation of Open Access Repositories (COAR)
+    picture: /images/people/kathleen.svg
 - &yvonne-budden
   id: yvonne-budden
   content: |
@@ -510,6 +518,26 @@ organizations:
   name: Microsoft
   url: https://www.microsoft.com/en-us/
   logo: microsoft_logo.png
+- &lean
+  id: lean
+  name: Lean
+  url: https://www.leanlibrary.com/
+  logo: lean.svg
+- &ontochemLogo
+  id: ontochem
+  name: Ontochem
+  url: https://www.leanlibrary.com/
+  logo: ontochem.png
+- &turnitinLogo
+  id: turnitin
+  name: Turnitin
+  url: https://www.turnitin.com/
+  logo: turnitin.svg
+- &meta
+  id: meta
+  name: Meta
+  url: https://about.meta.com/
+  logo: meta.png
 - &interac
   id: interac
   name: Interac
@@ -686,6 +714,11 @@ organizations:
   name: Open University
   logo: open-university.png
   testimonial: *nicola-dowson
+- &ouKathleen
+  id: oukathleen
+  name: Open University
+  logo: open-university.png
+  testimonial: *kathleen-shearer
 # recom-used-in:
 - &clok
   name: CLoK
@@ -881,17 +914,21 @@ sections:
       title: Companies who work with us
       items:
 #        - *gramarly
+        - *ontochemLogo
+        - *anthropic
+        - *microsoftLogo
+        - *lean
+        - *turnitinLogo
+        - *nvidia
+        - *meta
         - *tech-dico
         - *naver
-        - *nvidia
         - *caktus
         - *cypris
 #        - *cactus
-        - *microsoftLogo
         - *academia
         - *ezassi
         - *turnitin
-        - *ontochem
         - *innovationengineering
         - *uprightproject
         - *allanswers
@@ -905,10 +942,8 @@ sections:
         - *macmicro
         - *scilit
         - *intoolab
-        - *anthropic
         - *audemicr
         - *naverTest
-        - *lean-library
         - *oxisco
         - *consensus
         - *flowcite
@@ -932,6 +967,7 @@ sections:
     organizations:
       title: Institutions who work with us
       items:
+          - *ouKathleen
           - *ou
           - *stgeorgs
           - *aru
