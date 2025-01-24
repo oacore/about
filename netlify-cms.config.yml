@@ -1685,8 +1685,8 @@ collections:
 
 - name: board-of-supporters
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/community'
+  public_folder: '/images/community'
 
   create: false
   delete: false
@@ -1834,8 +1834,8 @@ collections:
 
 - name: api
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -2294,8 +2294,8 @@ collections:
 
 - name: datasets
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -2698,8 +2698,8 @@ collections:
 
 - name: fastsync
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -3041,8 +3041,8 @@ collections:
 
 - name: recomender
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -3349,8 +3349,8 @@ collections:
 
 - name: discovery
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -3697,8 +3697,8 @@ collections:
 
 - name: dashboard
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false

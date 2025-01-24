@@ -8,11 +8,13 @@ import apiRequest from 'api'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-const setAssetsUrl = (object) =>
+const setAssetsUrl = (object) => {
   Object.entries(object).forEach(([key, value]) => {
     if (typeof value === 'string' && value.includes('/images'))
       object[key] = ASSETS_BASE_URL + value
+    else if (typeof value === 'object') setAssetsUrl(value) // Recursively process nested objects
   })
+}
 
 const getSections = async ({ ref } = {}) => {
   const content = await retrieveContent('board-supporters', {
@@ -20,10 +22,7 @@ const getSections = async ({ ref } = {}) => {
     transform: 'object',
   })
 
-  Object.values(content).forEach((section) => {
-    setAssetsUrl(section)
-    if (section.items) setAssetsUrl(section.items)
-  })
+  setAssetsUrl(content)
 
   return content
 }

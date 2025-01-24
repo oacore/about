@@ -4,6 +4,7 @@ import { ProgressSpinner } from '@oacore/design/lib/elements'
 import { useRouter } from 'next/router'
 
 import text from '../../data/retention.yml'
+import sdgText from '../../data/sdg.yml'
 import styles from './styles.module.scss'
 
 const FormatUploadIssue = ({
@@ -42,7 +43,9 @@ const FormatUploadIssue = ({
       ) : (
         <div className={styles.innerIssueWrapper}>
           <span className={styles.innerIssueTitle}>
-            {text.upload.subInfo.format}
+            {router.pathname.includes('sdg')
+              ? sdgText.upload.subInfo.format
+              : text.upload.subInfo.format}
           </span>
           <input
             ref={uploadRef}
