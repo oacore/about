@@ -153,18 +153,18 @@ users:
           picture: /images/people/Gareth_Malcolm.jpeg
     userList:
       items:
-        - img: /images/logos/nvidia.svg
-          alt: "nvidia"
-        - img: /images/logos/anthropic.svg
-          alt: "anthropic"
-        - img: /images/logos/logo_TechDico.png
-          alt: "TechDico"
+        - img: /images/logos/turnitin.svg
+          alt: "turnitin"
+        - img: /images/logos/microsoft.svg
+          alt: "microsoft"
 #        - img: /images/logos/grammarly.svg
 #          alt: "grammarly"
+        - img: /images/logos/anthropic.svg
+          alt: "anthropic"
         - img: /images/logos/lean.svg
           alt: "lean"
-        - img: /images/logos/naver.svg
-          alt: "naver"
+        - img: /images/logos/nvidia.svg
+          alt: "nvidia"
       action:
         caption: Show all
         url: '/about/endorsements#enterprise-companies'
@@ -200,15 +200,11 @@ users:
     testimonial:
         id: ben-johnson
         content: |
-          *Aggregation plays an increasingly essential role in maximising the
-          long-term benefits of open access, helping to turn the promise of a
-          'research commons' into a reality. The aggregation services that CORE
-          provides therefore make a very valuable contribution to the evolving
-          open access environment in the UK.*
+          *Microsoft is committed to increasing open access to scientific knowledge to help further research and fuel breakthroughs to address society’s greatest challenges, such as improving healthcare and the sustainability of our planet. We are proud to support CORE’s important work [as part of Microsoft’s [Open Data campaign](https://www.microsoft.com/en-us/corporate-responsibility/open-data)] of making more scientific scholarly content openly available, helping foster innovation, including the responsible development of Al. [[read more ](https://www.open.ac.uk/blogs/news/science-mct/core-receives-funding-for-five-years-from-microsofts-open-data-initiative-to-increase-access-to-open-scientific-research/) about Microsoft’s support for CORE].*
         author:
-          name: Ben Johnson
-          role: Research Policy Adviser
-          picture: /images/people/johnson.jpg
+          name: Burton Davis
+          role: Vice President and Deputy General Counsel, at Microsoft
+          picture: /images/people/burtonDavis.png
     userList:
       items:
         - img: /images/logos/coar.svg
@@ -218,8 +214,8 @@ users:
           full: true
         - img: /images/logos/researchInovation.svg
           alt: "researchInovation"
-        - img: /images/logos/losAlamos.svg
-          alt: "losAlamos"
+        - img: /images/logos/microsoft.svg
+          alt: "microsoft"
         - img: /images/logos/jisc.svg
           alt: "jisc"
           background: true
