@@ -5033,3 +5033,82 @@ collections:
                     - name: url
                       widget: string
                       label: URL
+
+- name: CORE Labs
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🧪 CORE Labs
+  label_singular: section
+  description: >
+    Core services and details.
+
+  files:
+    - name: meta
+      label: Meta
+      file: coreLabs/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: ID
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: string
+          label: Tagline
+    - name: header
+      label: Header
+      file: coreLabs/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: hero
+              widget: string
+              label: Hero
+    - name: features
+      label: Features
+      file: coreLabs/services.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          fields:
+            - name: id
+              widget: string
+              label: ID
+            - name: title
+              widget: string
+              label: Title
+            - name: logo
+              widget: string
+              label: Logo
+            - name: tag
+              widget: string
+              label: Tag
+            - name: description
+              widget: markdown
+              label: Description
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: url
+                  widget: string
+                  label: URL
+
