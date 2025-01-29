@@ -1,0 +1,128 @@
+.wrapper {
+  padding-bottom: 4rem;
+}
+
+.section {
+  &-container {
+    padding: 1rem 0 !important;
+    &-inline {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: stretch;
+      max-width: 25.35rem;
+
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    &:after {
+      border-bottom: 3px dashed var(--gray-300);
+      content: '';
+      flex: 1;
+    }
+  }
+  &-video-img {
+    margin-right: 1rem;
+    position: relative;
+    &:hover,
+    &:focus {
+      --button-overlay: none;
+      --button-focus-ring: none;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .pulse {
+      position: absolute;
+      top: 18%;
+      left: 22%;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: rgba(255, 0, 0, 0.5);
+      animation: pulse 2s infinite;
+      z-index: -1;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+  }
+  &-title {
+    display: block;
+    margin-right: 1rem;
+    font-weight: 600;
+  }
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-gap: 1rem;
+
+  .card {
+    padding: 2rem;
+    background-color: var(--gray-100);
+    display: flex;
+    flex-direction: column;
+    min-height: 29rem;
+    .header-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tag {
+      padding: 3px 7px;
+      border-radius: 2px;
+      background: #8bc34a;
+      color: #fff;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.026px;
+    }
+    .description {
+      color: #000;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.026px;
+    }
+    .button {
+      text-transform: initial;
+    }
+    &-logo {
+      width: 96px;
+      height: 63px;
+      margin-bottom: 1rem;
+    }
+    &-title {
+      font-weight: 500;
+    }
+    &-footer {
+      height: 100%;
+      align-items: flex-start;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      &-caption {
+        margin-bottom: 1rem;
+        color: var(--gray-500);
+      }
+    }
+  }
+}
