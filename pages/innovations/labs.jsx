@@ -74,6 +74,7 @@ const LabsPage = ({ page }) => (
         image={page.header.header.hero}
         title={page.header.header.title}
         description={page.header.header.description}
+        className={styles.labHero}
       />
       <div className={styles.features}>
         {page.services.features &&
