@@ -69,19 +69,24 @@
 }
 .features {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  }
 
   .card {
     padding: 2rem;
     background-color: var(--gray-100);
     display: flex;
     flex-direction: column;
-    min-height: 29rem;
+    min-height: 20rem;
     .header-wrapper {
       display: flex;
-      justify-content: space-between;
+      gap: 10px;
       align-items: center;
+      margin-bottom: 22px;
     }
     .tag {
       padding: 3px 7px;
@@ -124,5 +129,13 @@
         color: var(--gray-500);
       }
     }
+  }
+}
+
+.lab-hero {
+  div:nth-child(2) {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
