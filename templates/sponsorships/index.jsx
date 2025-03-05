@@ -70,6 +70,21 @@ const SponsorshipPageTemplate = ({ data, membership }) => (
         <img src={data.header.header.logo} alt="logo" />
       </div>
     </Section>
+    <Section className={styles.logoMainWrapper} id="member-logos">
+      <div className={styles.logoCards}>
+        {data.logos.logos.items.map((item) => (
+          <div
+            className={styles.logoItemWrapper}
+            style={{ background: item.background }}
+          >
+            <div className={styles.logoLabel}>{item.label}</div>
+            <div className={styles.logoItem}>
+              <img src={item.img} alt="logo" key={item.alt} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
     <Section id="features" className={styles.featuresWrapper}>
       <h3 className={styles.featuresTitle}>{data.features.features.title}</h3>
       <div className={styles.features}>
