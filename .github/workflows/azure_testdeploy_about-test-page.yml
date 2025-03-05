@@ -4,7 +4,7 @@
 name: Build and deploy Node.js app to Azure Web App - about-test-page
 
 env:
-  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
 on:
   push:
