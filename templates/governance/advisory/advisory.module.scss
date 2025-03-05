@@ -1,0 +1,27 @@
+@import 'design-v2/variables';
+.organisation-wrapper {
+  display: flex;
+  align-items: center;
+  .logo-wrapper {
+    width: 42px;
+    height: 42px;
+    padding: 4px;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.supporters {
+  @media (max-width: $breakpoint-sm) {
+    td {
+      font-size: 10px;
+    }
+    th {
+      button {
+        font-size: 10px;
+      }
+    }
+  }
+}

@@ -26,6 +26,8 @@ class Registration {
 
   isLoading = false
 
+  responseData = null
+
   error = null
 
   constructor() {
@@ -81,7 +83,10 @@ class Registration {
     this.setIsLoading(true)
     try {
       const response = await registerKey(this.data)
-      if (response.status === 200) this.setIsModalSuccessActive(true)
+      if (response.status === 200) {
+        this.responseData = response.data
+        this.setIsModalSuccessActive(true)
+      }
     } catch (error) {
       this.setIsModalErrorActive(true)
     } finally {

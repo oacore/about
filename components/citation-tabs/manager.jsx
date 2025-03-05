@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Nav, NavItem, NavLink, TabContent } from 'reactstrap'
 import { bind } from 'decko'
+import { classNames } from '@oacore/design/lib/utils'
 
+import styles from './citation-tabs.module.scss'
 import CitationTab from './tab'
 
 class CitationTabManager extends Component {
@@ -62,15 +64,18 @@ class CitationTabManager extends Component {
   render() {
     const { children } = this.props
     const { activeTabId, navItems } = this.state
+
     return (
       <>
-        <Nav tabs>
+        <Nav className={styles.navItems} tabs>
           {navItems.map(({ id, name }) => (
-            <NavItem key={id}>
+            <NavItem className={styles.navItem} key={id}>
               <NavLink
                 href={`#${id}`}
-                active={activeTabId === id}
                 onClick={this.toggleTab}
+                className={classNames.use(styles.navLink, {
+                  [styles.activeLink]: activeTabId === id,
+                })}
               >
                 {name}
               </NavLink>

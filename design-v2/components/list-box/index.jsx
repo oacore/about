@@ -7,7 +7,12 @@ const ListBox = ({ list, className }) => (
   <ul className={classNames.use(styles.list).join(className)}>
     {list.map((item) => (
       <li className={styles.item} key={item.name}>
-        <a href={item.action} className={styles.link}>
+        <a
+          target="_blank"
+          href={item.action}
+          className={styles.link}
+          rel="noreferrer"
+        >
           {item.name}
         </a>
       </li>

@@ -14,6 +14,7 @@ const KeyFeature = ({
   url,
   status,
   className = '',
+  titleUrl,
   tag: Tag = 'div',
   ...restProps
 } = {}) => {
@@ -36,7 +37,13 @@ const KeyFeature = ({
         />
       </a>
       <Card.Title tag="h6" className={styles.keyFeatureTitle}>
-        {title}
+        {titleUrl ? (
+          <a className={styles.unsetLink} href={titleUrl}>
+            {title}
+          </a>
+        ) : (
+          title
+        )}
       </Card.Title>
       <Markdown className={styles.keyFeatureText}>{children}</Markdown>
     </Card>

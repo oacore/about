@@ -5,18 +5,14 @@ description: |
   to build search engines of research content, detect plagiarism
   and develop repository services.
 testimonials:
-- &kuansan-wang
-  id: kuansan-wang
+- &burton-davis
+  id: burton-davis
   content: |
-    Microsoft partnered with CORE to link documents in the Microsoft
-    Academic Graph with open access articles in CORE, as the datasets
-    complement each other. The outcome is the world’s largest scholarly
-    graph with both bibliographic information, including citations,
-    and full texts of academic papers for machine processing.
+    Microsoft is committed to increasing open access to scientific knowledge to help further research and fuel breakthroughs to address society's greatest challenges, such as improving healthcare and the sustainability of our planet. We are proud to support CORE's important work of making more scientific scholarly content openly available, helping foster innovation, including the responsible development of Al.
   author:
-    name: Kuansan Wang
-    role: Managing Director, MSR Outreach Academic Services
-    picture: /images/people/kuansanwang.jpg
+    name: Burton Davis
+    role: Vice President and Deputy General Counsel, at Microsoft
+    picture: /images/people/burtonDavis.png
 - &jon-tennant
   id: jon-tennant
   content: |
@@ -100,6 +96,14 @@ testimonials:
     name: Nicola Dowson
     role: Library Services Manager at Open University
     picture: /images/people/dowson.jpeg
+- &kathleen-shearer
+  id: kathleen-shearer
+  content: |
+    *CORE has significantly assisted the academic institutions participating in our global network with their key mission, which is their scientific content exposure. In addition, CORE has helped our content administrators to showcase the real benefits of repositories via its added value services.*
+  author:
+    name: Kathleen Shearer
+    role: Executive Director of the Confederation of Open Access Repositories (COAR)
+    picture: /images/people/kathleen.svg
 - &yvonne-budden
   id: yvonne-budden
   content: |
@@ -379,7 +383,7 @@ testimonials:
   api: true
 organizations:
 # companies
-- &naver
+- &naverTest
   id: naver
   name: Naver
   url: https://www.naver.com
@@ -439,6 +443,15 @@ organizations:
   url: https://ropensci.org
   logo: ropensci.svg
   #testimonial: *scott-chamberlain
+- &naver
+  id: naver
+  name: Naver
+  url: https://www.naver.com
+  logo: naver.svg
+- &nvidia
+  id: nvidia
+  name: Nvidia
+  logo: nvidia.png
 - &wheesbee
   id: wheesbee
   name: Wheesbee
@@ -457,13 +470,6 @@ organizations:
   # logo: companies/rygbee-logo.jpg
   logo: raxter.svg
   # testimonial: *sourish-dasgupta
-- &ritc
-  id: ritc
-  name: Ritc
-  url: http://www.macmicro.com
-  # logo: companies/ritc-logo.png
-  logo: macmicro.png # ???
-  # testimonial: *colin-goldberg
 - &4science
   id: 4science
   name: 4Science
@@ -479,6 +485,18 @@ organizations:
   name: Intoolab
   url: http://www.intoolab.com/
   logo: intoolab.png
+- &anthropic
+  id: anthropic
+  name: Anthropic
+  logo: Anthropic_logo.svg
+- &audemicr
+  id: audemicr
+  name: Audemicr
+  logo: Audemicr_logo.svg
+- &caktus
+  id: caktus
+  name: Caktus
+  logo: Caktus_logo.svg
 - &cypris
   id: cypris
   name: Cypris
@@ -490,16 +508,51 @@ organizations:
   name: Academia
   url: https://www.academia.edu/
   logo: academia.svg
-- &cactus
-  id: cactus
-  name: Cactus
-  url: https://cactusglobal.com/
-  logo: cactus.png
+#- &cactus
+#  id: cactus
+#  name: Cactus
+#  url: https://cactusglobal.com/
+#  logo: microsoft_logo.png
+- &microsoftLogo
+  id: microsoft
+  name: Microsoft
+  url: https://www.microsoft.com/en-us/
+  logo: microsoft_logo.png
+- &lean
+  id: lean
+  name: Lean
+  url: https://www.leanlibrary.com/
+  logo: lean.svg
+- &ontochemLogo
+  id: ontochem
+  name: Ontochem
+  url: https://www.leanlibrary.com/
+  logo: ontochem.png
+- &turnitinLogo
+  id: turnitin
+  name: Turnitin
+  url: https://www.turnitin.com/
+  logo: turnitin.svg
+- &meta
+  id: meta
+  name: Meta
+  url: https://about.meta.com/
+  logo: meta.png
 - &interac
   id: interac
   name: Interac
   url: https://www.interac.ca/en
   logo: interac.png
+#- &gramarly
+#  id: gramarly
+#  name: Gramarly
+#  url: https://app.grammarly.com/
+#  logo: grammarly.png
+- &tech-dico
+  id: tech-dico
+  name: TechDico
+  url: https://www.techdico.com/
+  logo: logo_TechDico.png
 - &ezassi
   id: ezassi
   name: Ezassi
@@ -543,7 +596,7 @@ organizations:
   id: microsoft
   name: Microsoft
   logo: microsoft.svg
-  testimonial: *kuansan-wang
+  testimonial: *burton-davis
 - &mooc
   id: mooc
   name: Open Science MOOC
@@ -564,10 +617,14 @@ organizations:
   name: Research England
   logo: research-england.png
   testimonial: *ben-johnson
-- &oacg
-  id: oacg
-  name: Open Access Co-ordination Group
-  logo: universities-uk.svg
+#- &oacg
+#  id: oacg
+#  name: Open Access Co-ordination Group
+#  logo: universities-uk.svg
+- &ukcorr
+  id: ukcorr
+  name: UKCORR
+  logo: UKCORR_logo.png
   # testimonial: *michael-jubb
 - &openaire
   id: openaire
@@ -655,8 +712,13 @@ organizations:
 - &ou
   id: ou
   name: Open University
-  logo: ou.png
+  logo: open-university.png
   testimonial: *nicola-dowson
+- &ouKathleen
+  id: oukathleen
+  name: Open University
+  logo: open-university.png
+  testimonial: *kathleen-shearer
 # recom-used-in:
 - &clok
   name: CLoK
@@ -715,7 +777,7 @@ organizations:
   name: Open Research Online
   description: The Open University
   url: http://oro.open.ac.uk
-  logo: ou.png
+  logo: open-university.png
 - &apollo
   name: Apollo
   description: University of Cambridge
@@ -851,12 +913,22 @@ sections:
     organizations:
       title: Companies who work with us
       items:
+#        - *gramarly
+        - *ontochemLogo
+        - *anthropic
+        - *microsoftLogo
+        - *lean
+        - *turnitinLogo
+        - *nvidia
+        - *meta
+        - *tech-dico
+        - *naver
+        - *caktus
         - *cypris
-        - *cactus
+#        - *cactus
         - *academia
         - *ezassi
         - *turnitin
-        - *ontochem
         - *innovationengineering
         - *uprightproject
         - *allanswers
@@ -865,13 +937,16 @@ sections:
         - *wheesbee
         - *iris-ai
         - *rygbee
-        - *ritc
         - *4science
         - *interac
-        - *unsilo
         - *macmicro
         - *scilit
         - *intoolab
+        - *audemicr
+        - *naverTest
+        - *oxisco
+        - *consensus
+        - *flowcite
     testimonials:
       title: What companies say about us
       items:
@@ -892,6 +967,7 @@ sections:
     organizations:
       title: Institutions who work with us
       items:
+          - *ouKathleen
           - *ou
           - *stgeorgs
           - *aru
@@ -959,22 +1035,18 @@ sections:
         - *iris-ai-second
         - *mooc
         - *openaire
-        - *oacg
+        - *ukcorr
+#        - *oacg
         - *research-england
         - *metadata2020
         - *oab
         - *doaj
         - *okm
-        - *lean-library
         - *foster
         - *orcid
         - *rioxx
         - *opendoar
         - *irus
-        - *tech-dico
-        - *oxisco
-        - *consensus
-        - *flowcite
         - *coar
         - *bl
         - *access-my-research

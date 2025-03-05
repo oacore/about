@@ -5,7 +5,7 @@ slides:
   children:
     - title: The world’s largest collection of open access research papers
       image: /images/heros/community.svg
-      label: community
+      label: governance
       action: Search
     - title: Machine access to our vast unique full text corpus
       image: /images/heros/homeServices.svg
@@ -15,26 +15,22 @@ slides:
       statisticLabel: statistic
       statisticAction: /data
       statisticActionLabel: see our data statistic
-    - title: Resolve OAI identifier
-      description: |
-        OAIs are unique identifiers used by repositories.
-        As opposed to DOIs, they are minted in a distributed way and cost-free.
-        Our service allows you to resolve an OAI in the same way as you would resolve a DOI.
-      image: /images/heros/oai.svg
-      label: OAI
-      action: http://oai.core.ac.uk
-      actionLabel: Resolve
-search-placeholder: Search {{totalArticlesCount}} from papers around the world
+    - title: A comprehensive bibliographic database of the world’s scholarly literature
+      image: /images/heros/database.svg
+      label: Explore CORE data
+      action: /data
+      actionLabel: Explore CORE data
+search-placeholder: Search {{totalArticlesCount}} papers from around the world
 features:
   title: CORE features # the text is hidden, used for SEO and screen readers
   hidden: true
   children:
-    - title: Global aggregator
-      description: We serve the global network of open access [repositories and journals](~benefits)
+    - title: Indexing the world’s repositories
+      description: We serve the global network of [repositories and journals](~benefits)
       picture: /images/features/globe.svg
       url: /benefits
-    - title: Harmonised data access
-      description: We provide seamless access to content and [data](~data), through our unique [APIs](~services/api) and [Datasets](~services/dataset)
+    - title: Comprehensive data coverage
+      description: We provide both metadata and [full text](/data) access to our [comprehensive collection](/data) through our APIs and Datasets
       picture: /images/features/gears.svg
       status: data
       url: /data
@@ -43,16 +39,16 @@ features:
       picture: /images/features/building.svg
       url: /services
     - title: Cutting-edge solutions
-      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~community/research)
+      description: We [research](~about/research-outputs) and develop innovative data-driven and [AI solutions](~about/research-outputs/#ai-ml-papers)
       picture: /images/features/neural.svg
-      url: /community/supporters
+      url: /governance/supporters
+      titleUrl: /about/research-outputs
 
 join:
   title: Join CORE
+  subTitle: An open scholarly infrastructure for researchers by researchers
+  subPart: Committed to the [POSI](https://openscholarlyinfrastructure.org/posse/)
   children:
-    - caption: Explore our services
-      url: /services
-      picture: /images/join/server.svg
     - caption: Become a data provider
       action: '/benefits'
       url: /benefits
@@ -60,6 +56,19 @@ join:
     - caption: Become a member
       url: /membership
       picture: /images/join/membership.svg
+    - caption: Explore our services
+      url: /services
+      picture: /images/join/server.svg
+oai:
+  image: /images/heros/oai.svg
+  title: Cost-free PIDs for your repository
+  description: |
+    OAI identifiers are unique identifiers minted cost-free by repositories. Ensure that your repository is correctly configured, enabling the [CORE OAI Resolver](https://oai.core.ac.uk) to redirect your identifiers to your repository landing pages.
+
+    OAI IDs provide a cost-free option for assigning Persistent Identifiers (PIDs) to your repository records. [Learn more.](/documentation/oai-resolver)
+  action:
+    title: Try our OAI resolver
+    url: https://oai.core.ac.uk
 testimonials:
   title: Who we serve?
   subtitle: 20 million monthly active users
@@ -130,6 +139,89 @@ partnerProjects:
     #   author: Gareth Malcolm, Content Partner Manager at Turnitin
     - logo: /images/partners/ukri.png
     - logo: /images/partners/ukcorr.png
+users:
+  - title: |
+      [Companies](/about/endorsements#enterprise-companies) using CORE
+    testimonial:
+        id: gareth-malcolm
+        content: |
+          *Our partnership with CORE will provide Turnitin with vast amounts of metadata and full
+          texts that we can utilise in our plagiarism detection software.*
+        author:
+          name: Gareth Malcolm
+          role: Content Partner Manager at Turnitin
+          picture: /images/people/Gareth_Malcolm.jpeg
+    userList:
+      items:
+        - img: /images/logos/turnitin.svg
+          alt: "turnitin"
+        - img: /images/logos/microsoft.svg
+          alt: "microsoft"
+#        - img: /images/logos/grammarly.svg
+#          alt: "grammarly"
+        - img: /images/logos/anthropic.svg
+          alt: "anthropic"
+        - img: /images/logos/lean.svg
+          alt: "lean"
+        - img: /images/logos/nvidia.svg
+          alt: "nvidia"
+      action:
+        caption: Show all
+        url: '/about/endorsements#enterprise-companies'
+  - title: |
+      [Academic](/about/endorsements#academic-institutions) institution using CORE
+    testimonial:
+        id: kathleen-shearer
+        content: |
+          *CORE has significantly assisted the academic institutions participating in our global network with their key mission, which is their scientific content exposure. In addition, CORE has helped our content administrators to showcase the real benefits of repositories via its added value services.*
+        author:
+          name: Kathleen Shearer
+          role: Executive Director of the Confederation of Open Access Repositories (COAR)
+          picture: /images/people/kathleen.svg
+    userList:
+      items:
+        - img: /images/membership/cambridge.svg
+          alt: "cambridge"
+        - img: /images/membership/oxford.svg
+          alt: "oxford"
+          full: true
+        - img: /images/logos/chica.svg
+          alt: "chica"
+        - img: /images/logos/stAndrews.svg
+          alt: "andrews"
+        - img: /images/logos/imperial.svg
+          alt: "imperial"
+          full: true
+      action:
+        caption: Show all
+        url: '/about/endorsements#academic-institutions'
+  - title: |
+      [Partner](/about/endorsements#partner-projects) projects
+    testimonial:
+        id: ben-johnson
+        content: |
+          *Microsoft is committed to increasing open access to scientific knowledge to help further research and fuel breakthroughs to address society’s greatest challenges, such as improving healthcare and the sustainability of our planet. We are proud to support CORE’s important work [as part of Microsoft’s [Open Data campaign](https://www.microsoft.com/en-us/corporate-responsibility/open-data)] of making more scientific scholarly content openly available, helping foster innovation, including the responsible development of Al. [[read more ](https://www.open.ac.uk/blogs/news/science-mct/core-receives-funding-for-five-years-from-microsofts-open-data-initiative-to-increase-access-to-open-scientific-research/) about Microsoft’s support for CORE].*
+        author:
+          name: Burton Davis
+          role: Vice President and Deputy General Counsel, at Microsoft
+          picture: /images/people/burtonDavis.png
+    userList:
+      items:
+        - img: /images/logos/coar.svg
+          alt: "coar"
+        - img: /images/logos/sparc.png
+          alt: "sparc"
+          full: true
+        - img: /images/logos/researchInovation.svg
+          alt: "researchInovation"
+        - img: /images/logos/microsoft.svg
+          alt: "microsoft"
+        - img: /images/logos/jisc.svg
+          alt: "jisc"
+          background: true
+      action:
+        caption: Show all
+        url: '/about/endorsements#partner-projects'
 
 covid-19-notice: |
   Stay up to date with the latest Open Access research

@@ -1,6 +1,11 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 .reference-title {
   font-style: italic;
   font-weight: $font-weight-bold;
+}
+
+.card-info {
+  display: flex;
+  flex-direction: column;
 }

@@ -10,14 +10,26 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 
-const Checkbox = ({ id, labelText, setCheckbox, className }) => {
-  const [isChecked, setIsChecked] = useState(false)
+const Checkbox = ({
+  id,
+  labelText,
+  setCheckbox,
+  className,
+  value = false,
+  isDisabled = false,
+}) => {
+  const [isChecked, setIsChecked] = useState(value)
   const checkboxAnimationRef = useSpringRef()
   const checkboxAnimationStyle = useSpring({
     backgroundColor: isChecked ? '#b75400' : '#fff',
     borderColor: isChecked ? '#b75400' : '#757575',
     config: config.gentle,
     ref: checkboxAnimationRef,
+  })
+
+  const checkedboxtyle = useSpring({
+    backgroundColor: '#757575',
+    borderColor: '#757575',
   })
 
   const [checkmarkLength, setCheckmarkLength] = useState(null)
@@ -42,6 +54,7 @@ const Checkbox = ({ id, labelText, setCheckbox, className }) => {
       <input
         id={id}
         type="checkbox"
+        disabled={isDisabled}
         onChange={() => {
           setIsChecked(!isChecked)
           setCheckbox(!isChecked)
@@ -49,7 +62,7 @@ const Checkbox = ({ id, labelText, setCheckbox, className }) => {
         className={styles.disabled}
       />
       <animated.svg
-        style={checkboxAnimationStyle}
+        style={isDisabled ? checkedboxtyle : checkboxAnimationStyle}
         className={styles.checkbox}
         aria-hidden="true"
         viewBox="0 0 15 11"

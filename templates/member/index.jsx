@@ -1,4 +1,5 @@
 import React from 'react'
+import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 import PaymentDefailsForm from './form'
@@ -18,7 +19,11 @@ const PaymentPageTemplate = observe(({ textData, planName }) => {
       <Markdown className={styles.title}>
         {patchStats(title, membership.data)}
       </Markdown>
-      <Markdown className={styles.caption}>{caption}</Markdown>
+      <Markdown
+        className={classNames.use(styles.caption).join(styles.textCenter)}
+      >
+        {caption}
+      </Markdown>
       <Section id={form.id} className={styles.formSection}>
         <PaymentDefailsForm form={form} />
       </Section>

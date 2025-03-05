@@ -7,6 +7,8 @@ headerLink:
     href: '#join'
   - link: How to join
     href: '#how-to-join'
+  - link: Data providers guide
+    href: '#how-to-join'
   - link: FAQs
     href: '#join-faq'
 
@@ -15,30 +17,20 @@ banner:
   description: Facilitate access of your scientific research outputs to everyone in the world
   actions:
     links:
-      -
+      form:
        url: join-core
        text: Join NOW
-      -
+      Link:
        url: /data-providers
        text: LIST  OF DATA PROVIDERS
        link: true
-  velcro:
-    blocks:
-      -
-        id: content-visibility
-        title: Increase your content’s discoverability
-        description: Further disseminate your content, increase the number of users who read it and download it, and boost your outputs’ visibility and impact
-        picture: /images/benefits/icons/discoverability.svg
-      -
-        id: content-machine-readable
-        title: Make your papers uniquelly identifiable and resolvable with PIDs
-        description: Freely register your OAI identifiers of papers and make them globally resolvable to your system.
-        picture: /images/benefits/icons/readable.svg
-      -
-        id: open-access-network
-        title: Assess and contribute to Open Access compliance and FAIRness
-        description: Monitor funder open access policies compliance rates and gain an insight of your contribution to the global open access growth
-        picture: /images/benefits/icons/network.svg
+  guideline:
+        title: Data Provider’s Guide
+        picture: /images/data-provider.svg
+        description: This guide explains to repository managers how to configure their systems for successful indexing by CORE.
+        action:
+            title: Go to the guide
+            url: documentation/data-providers-guide
 
 sections:
   title: Why join the data providers community?
@@ -65,18 +57,19 @@ sections:
      your staff.
 
      A study of 21 UK institutions carried out in 2019 showed that
-     when a repository is harvested by CORE, the number of content
+     when a repository is indexed by CORE, the number of content
      downloads increases by 15% on average and up to 32% if the
-     repository is well configured for harvesting.
+     repository is well configured for indexing.
     additional:
       Info: With millions of monthly active users, it matters to become a data provider and show to the world that your content is indexed.
       picture: /images/benefits/indexed-by-core.svg
+      href: '#badges'
   -
     id: papers-unique
     title: Make your papers uniquelly identifiable and resolvable with PIDs
     picture: /images/logo/OAI-resolver.png
     description: |
-      Identifiers of metadata records harvested by CORE are
+      Identifiers of metadata records indexed by CORE are
       automatically registered as globally unique persistent
       identifiers (PIDs). CORE uses for this purpose
       [OAI identifiers](/documentation/oai-resolver)
@@ -179,10 +172,24 @@ HowTo:
       titlePicture: /images/benefits/join-circle.svg
       description: Become a Supporting or Sustaining [member](/membership) to receive even more benefits.
       picture: /images/benefits/join-arrow.svg
+  action:
+      title: Data provider’s guide
+      url: /documentation/data-providers-guide
 
 join:
   title: Join CORE as a data provider and contribute to the creation of a mutually beneficial ecosystem.
+  description: We have created a [data provider’s](documentation/data-providers-guide) guide describing best practices of how to expose metadata to CORE. This guide serves as a reference to our data providers.
   picture: /images/benefits/join-core.svg
+  action: join now
+  subOai: If you don’t know the OAI base URL of the data provider, insert the URL of it and we will try to find it.
+
+joinModal:
+  title: Tell us about yourself
+  oaiMessage: If you don’t know the OAI base URL of the data provider, insert the URL of it and we will try to find it.
+  description: |
+    We will review your request to add this data provider to CORE. If this request is successful, we will index the content from this data provider and notify you. This can take up to three weeks depending on the size of the data provider and our workload.
+
+    Once completed, if you are an authorised representative of this data provider, we encourage you to become a [CORE Member]() and obtain access to the [CORE Dashboard]().
 
 services:
   - title: CORE Membership
@@ -197,3 +204,23 @@ services:
     action:
       - title: Find out more
         url: services/repository-dashboard
+
+secondStep:
+  title: New data provider registration
+  member:
+    subTitle: This data provider already exist
+  newMember:
+    subTitle: Thank you for registering a new data provider
+    picture: /images/benefits/join-core.svg
+    description: |
+      We will review your request to add this data provider to CORE. If this request is successful, we will index the content from this data provider and send you an email when completed. This can take up to **three weeks** depending on the size of the data provider and our workload.
+
+      Once completed, if you are an authorised representative of this data provider, we encourage you to become a [CORE Member](/membership) and obtain access to the [CORE Dashboard](/services/repository-dashboard).
+  issue:
+    subTitle: OAI is not found
+    description: |
+      Please check that given OAI based URL is [correct.](documentation/data-providers-guide#oai-pmh)
+
+      Example: [https://oro.open.ac.uk/cgi/oai2](https://oro.open.ac.uk/cgi/oai2)
+
+      If you believe that your OAI is correct, [contact us](/about#contact) to add it manually.

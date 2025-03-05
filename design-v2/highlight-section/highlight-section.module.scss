@@ -9,7 +9,7 @@
     margin-right: 0;
   }
 
-  &:nth-child(3) {
+  &:nth-child(4) {
     flex-direction: row-reverse;
     .text-container {
       margin-left: 0;
@@ -17,7 +17,15 @@
     }
   }
 
-  &:nth-child(4) {
+  &:nth-child(6) {
+    flex-direction: row-reverse;
+    .text-container {
+      margin-left: 0;
+      margin-right: 4rem;
+    }
+  }
+
+  &:nth-child(3) {
     background: #f5f5f5;
     padding: 54px 0;
     position: relative;

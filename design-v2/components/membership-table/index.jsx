@@ -14,12 +14,13 @@ const Price = ({ tag: Tag = 'span', price, className }) => (
       currency: 'GBP',
       minimumSignificantDigits: 1,
       maximumSignificantDigits: 4,
-    }).format(price)}
+    }).format(price)}{' '}
+    p.a
   </Tag>
 )
 
 const MembershipTable = observe(
-  ({ className, headerAlignment, textData, type = 'details' }) => {
+  ({ className, headerAlignment, textData, renderSpan, type = 'details' }) => {
     const headerNames = textData.headers.map((header) => header.name).slice(1)
     const { membership } = useStore()
 
@@ -29,9 +30,10 @@ const MembershipTable = observe(
 
     const renderHeaders = () => (
       <tr>
-        {textData.headers.map((header, i) => (
+        {textData.headers.map((header, index) => (
           <th
             key={header.name}
+            colSpan={index !== 0 && renderSpan ? 2 : 1}
             className={classNames.use(styles.header, {
               [styles.headerActive]:
                 membership.data.planName === header.name.toLowerCase(),
@@ -46,14 +48,11 @@ const MembershipTable = observe(
               {header.name}
             </Markdown>
             {header.defaultText && (
-              <a href={header.url}>
-                <Markdown
-                  className={classNames.use(styles.headerText, {
-                    [styles.headerUnderline]: i === 1,
-                  })}
-                >
+              <a className={styles.headerTextWrapper} href={header.url}>
+                <Markdown className={styles.headerText}>
                   {header.defaultText}
                 </Markdown>
+                <span className={styles.headerStatus}>{header.status}</span>
               </a>
             )}
             {header.caption && (
@@ -80,28 +79,37 @@ const MembershipTable = observe(
       textData.rows.map((row) => (
         <tr key={row.title}>
           <td className={styles.cellPricesFirst} align="center">
-            <Markdown>{row.title}</Markdown>
-            <Markdown className={styles.cellPricesFirstCaption}>
-              {row.caption}
-            </Markdown>
+            {row.title && <Markdown>{row.title}</Markdown>}
+            {row.caption && (
+              <Markdown className={styles.cellPricesFirstCaption}>
+                {row.caption}
+              </Markdown>
+            )}
           </td>
-          {row.prices.map(({ type: priceType, original, discount }) => (
-            <td
-              key={`${priceType}-${original}`}
-              className={classNames.use(styles.cell, styles.cellPrices, {
-                [styles.cellPricesActive]:
-                  (membership.data.price === discount ||
-                    membership.data.price === original) &&
-                  membership.data.size === row.title,
-              })}
-              role="gridcell"
-              onClick={() =>
-                onSelectActivePlan(discount || original, row.title)
-              }
-            >
-              <Price className={styles.price} price={original} />
-            </td>
-          ))}
+          {row.prices.map(
+            ({ type: priceType, original, deal, discount, indicator }) => (
+              <td
+                key={`${priceType}-${original}`}
+                className={classNames.use(styles.cell, styles.cellPrices, {
+                  [styles.indicatorColor]: indicator,
+                  [styles.cellPricesActive]:
+                    (membership.data.price === discount ||
+                      membership.data.price === original) &&
+                    membership.data.size === row.title,
+                })}
+                role="gridcell"
+                onClick={() =>
+                  onSelectActivePlan(discount || original, row.title)
+                }
+              >
+                {deal ? (
+                  <div className={styles.periodDeal}>{deal}</div>
+                ) : (
+                  <Price className={styles.price} price={original} />
+                )}
+              </td>
+            )
+          )}
         </tr>
       ))
 
@@ -120,10 +128,30 @@ const MembershipTable = observe(
             >
               {row.title}
             </Markdown>
+            {/* eslint-disable-next-line no-nested-ternary */}
             {row.descriptionCardTable ? (
-              <Markdown className={styles.cellDescription}>
-                {row.descriptionCardTable}
-              </Markdown>
+              row.id !== 23 ? (
+                <Markdown className={styles.cellDescription}>
+                  {row.descriptionCardTable}
+                </Markdown>
+              ) : (
+                <div className={styles.cellRedirect}>
+                  Aligning with established metadata practices is key for the
+                  interoperability of your repository with external systems and
+                  for meeting FAIR principles. Funders increasingly mandate the
+                  use of established metadata profiles. The RIOXX metadata
+                  validator is a tool that helps you validate compliance of
+                  individual metadata records with a{' '}
+                  <a
+                    rel="nofollow noreferrer"
+                    target="_blank"
+                    href="https://www.rioxx.net/profiles/"
+                  >
+                    RIOXX
+                  </a>{' '}
+                  , a widely used metadata standard for repositories.
+                </div>
+              )
             ) : (
               <></>
             )}
@@ -158,6 +186,7 @@ const MembershipTable = observe(
             [styles.alignLeft]: headerAlignment,
           })}
         >{`<div class="${styles.lowerCase}">${textData.title}</div>`}</Markdown>
+        <div className={styles.titleBorder} />
         <table
           className={classNames.use(styles.table, {
             [styles.fixed]: type === 'prices',

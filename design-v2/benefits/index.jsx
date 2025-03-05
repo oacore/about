@@ -1,15 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
-import { classNames } from '@oacore/design/lib/utils'
+import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
-import AddDataProviderForm from './form'
+// eslint-disable-next-line import/order
 import { Layout, Section } from '../components'
 
 // TODO: REPLACE OLD COMPONENT
+import JoinForm from './joinForm'
+import GratitudeModal from './GratitudeModal'
+// TODO: REPLACE OLD COMPONENT
+import BenefitsForm from './benefitsForm'
+
 import { Accordion, Content, Markdown } from 'components'
 import benefitsData from 'data/benefits.yml'
-import faqData from 'data/faq.yml'
 import { patchStats } from 'components/utils'
 
 const itemToURL = (id) => {
@@ -18,41 +22,60 @@ const itemToURL = (id) => {
   window.history.replaceState({}, null, url.toString())
 }
 
-const JoinSectionItem = ({ title, picture, description, additional }) => (
-  <div key={title} className={styles.services}>
-    {picture && (
-      <figure>
-        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-        <img
-          className={styles.image}
-          src={picture}
-          alt={`${title}'s picture`}
-        />
-      </figure>
-    )}
-    <div className={styles.content}>
-      <h5>{title}</h5>
-      <Markdown>{description}</Markdown>
-      {additional && (
-        <div className={styles.infoWrapper}>
-          <span className={styles.info}>{additional.Info}</span>
-          <img src={additional.picture} alt={additional.Info} />
-        </div>
+const JoinSectionItem = ({ title, picture, description, additional }) => {
+  const navigateToPage = () => {
+    window.location = `faq/${additional.href}`
+  }
+  return (
+    <div key={title} className={styles.services}>
+      {picture && (
+        <figure>
+          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+          <img
+            className={styles.image}
+            src={picture}
+            alt={`${title}'s picture`}
+          />
+        </figure>
       )}
+      <div className={styles.content}>
+        <h5>{title}</h5>
+        <Markdown>{description}</Markdown>
+        {additional && (
+          <div className={styles.infoWrapper}>
+            <span className={styles.info}>{additional.Info}</span>
+            <Button onClick={navigateToPage}>
+              <img src={additional.picture} alt={additional.Info} />
+            </Button>
+          </div>
+        )}
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
-const BenefitsPageTemplate = () => {
+const BenefitsPageTemplate = ({ data }) => {
   const [showAll, setShowAll] = useState(false)
+  const [showModal, setShowModal] = useState(false)
+  const [showGratitudeModal, setGratitudeModal] = useState(false)
+  const [modalActive, setModalActive] = useState(false)
+  const router = useRouter()
 
   const toggleShowAll = () => {
     setShowAll((prev) => !prev)
   }
 
+  const toggleModal = () => {
+    setModalActive(true)
+  }
+
+  useEffect(() => {
+    if (router.asPath.includes('#join-core')) toggleModal()
+  }, [router.asPath])
+
   const itemsToShow = showAll
-    ? faqData.sections[0].items
-    : faqData.sections[0].items.slice(0, 3)
+    ? data.faqs.sections[0].items
+    : data.faqs.sections[0].items.slice(0, 3)
 
   return (
     <Layout>
@@ -69,39 +92,51 @@ const BenefitsPageTemplate = () => {
           <div className={styles.description}>
             {benefitsData.banner.description}
           </div>
-          {benefitsData.banner.actions.links.map(({ url, text, link }) => (
+          <>
             <Button
-              variant={link ? 'text' : 'contained'}
-              href={link ? url : `#${url}`}
-              key={text}
-              className={classNames.use(styles.button, {
-                [styles.buttonLink]: link,
-              })}
+              variant="contained"
+              onClick={toggleModal}
+              href={`#${benefitsData.banner.actions.links.form.url}`}
+              key={benefitsData.banner.actions.links.form.text}
+              className={styles.button}
             >
-              {text}
+              {benefitsData.banner.actions.links.form.text}
             </Button>
-          ))}
+            <Button
+              variant="text"
+              href={benefitsData.banner.actions.links.Link.url}
+              key={benefitsData.banner.actions.links.Link.text}
+              className={styles.buttonLink}
+            >
+              {benefitsData.banner.actions.links.Link.text}
+            </Button>
+          </>
         </div>
-        <div className={styles.columnVelcro}>
-          <div className={styles.velcroWrap}>
-            <div className={styles.velcro}>
-              {benefitsData.banner.velcro.blocks.map((velcroGroup) => (
-                <a href={`#${velcroGroup.id}`} key={velcroGroup.id}>
-                  <img
-                    src={velcroGroup.picture}
-                    alt={velcroGroup.title}
-                    className={styles.velcroPicture}
-                  />
-                  <div className={styles.velcroTextBlock}>
-                    <span className={styles.velcroTitle}>
-                      {velcroGroup.title}
-                    </span>
-                    <span className={styles.velcroDescription}>
-                      {velcroGroup.description}
-                    </span>
-                  </div>
-                </a>
-              ))}
+        <div className={styles.sectionService}>
+          <div className={styles.sectionItem}>
+            <div className={styles.header}>
+              <img
+                className={styles.titlePicture}
+                src={benefitsData.banner.guideline.picture}
+                alt={benefitsData.banner.guideline.title}
+              />
+              <span className={styles.serviceTitle}>
+                {benefitsData.banner.guideline.title}
+              </span>
+            </div>
+            <div>
+              <Markdown className={styles.serviceDescription}>
+                {benefitsData.banner.guideline.description}
+              </Markdown>
+              <div className={styles.btnPlacement}>
+                <Button
+                  variant="outlined"
+                  href={benefitsData.banner.guideline.action.url}
+                  target="_blank"
+                >
+                  {benefitsData.banner.guideline.action.title}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -152,14 +187,37 @@ const BenefitsPageTemplate = () => {
             </div>
           ))}
         </div>
+        <div className={styles.docsBtn}>
+          <Button href={benefitsData?.HowTo.action?.url} variant="contained">
+            {benefitsData.HowTo.action.title}
+          </Button>
+        </div>
       </Section>
       <Section id="join-core" caption="join-core" className={styles.joinCore}>
         <div className={styles.formBlock}>
           <div id="add-new-data-provider" className={styles.addDataProvider}>
-            <p className={styles.addDataProviderText}>
-              {benefitsData.join.title}
-            </p>
-            <AddDataProviderForm />
+            <JoinForm
+              visibleModal={showModal}
+              setGratitudeModal={setGratitudeModal}
+              closeModal={() => setShowModal(false)}
+            />
+            <GratitudeModal
+              showGratitudeModal={showGratitudeModal}
+              setGratitudeModal={setGratitudeModal}
+            />
+            <h5>{benefitsData.join.title}</h5>
+            <Markdown className={styles.benefitsDescription}>
+              {benefitsData.join.description}
+            </Markdown>
+            <Button
+              className={styles.benefitsJoin}
+              variant="contained"
+              tag="a"
+              onClick={toggleModal}
+            >
+              {benefitsData.join.action}
+            </Button>
+            {/* <AddDataProviderForm /> */}
           </div>
         </div>
         <div className={styles.imgBlock}>
@@ -170,6 +228,7 @@ const BenefitsPageTemplate = () => {
           />
         </div>
       </Section>
+      {modalActive && <BenefitsForm setModalActive={setModalActive} />}
       <Section id="services">
         <div className={styles.serviceWrapper}>
           {benefitsData.services.map((service) => (

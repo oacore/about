@@ -46,12 +46,13 @@ const DatasetPageTemplate = ({
   meta,
   header,
   instruction,
+  latestInstruction,
   datasetLatest,
   additionalDatasets,
   structures,
 }) => (
   <Page title={meta.title} description={meta.tagline}>
-    <Layout>
+    <Layout className={styles.datasetWrapper}>
       <Section id="header">
         <h2>{header.title}</h2>
         <div className={styles.headerContent}>
@@ -59,24 +60,6 @@ const DatasetPageTemplate = ({
           <img src={header.image} alt={header.title} />
         </div>
         <Markdown className={styles.headerCaption}>{header.caption}</Markdown>
-      </Section>
-      <Section
-        id={instruction.id}
-        useFullPageWidth
-        className={styles.instruction}
-      >
-        <h4>{instruction.title}</h4>
-        <div className={styles.instructionContent}>
-          <div>
-            <Markdown>{instruction.recommended}</Markdown>
-          </div>
-          <div className={styles.instructionReminder}>
-            <h5>{instruction.reminder.title}</h5>
-            <Markdown className={styles.instructionReminderText}>
-              {instruction.reminder.description}
-            </Markdown>
-          </div>
-        </div>
       </Section>
       <DatasetSection
         title={datasetLatest.title}
@@ -109,22 +92,48 @@ const DatasetPageTemplate = ({
           <Markdown>{datasetLatest.box.text}</Markdown>
         </div>
       </DatasetSection>
-      {additionalDatasets.items.map((dataset) => (
-        <DatasetSection
-          key={dataset.id}
-          title={dataset.title}
-          id={dataset.id}
-          accentColor={setDatasetAccentColor(dataset.id)}
-        >
-          {dataset.boxes.map((box) => (
-            <DatasetCard
-              key={`${box.title}-${box.caption}`}
-              {...box}
-              accentColor={setDatasetAccentColor(dataset.id)}
-            />
-          ))}
-        </DatasetSection>
-      ))}
+      <Section id={latestInstruction.id} className={styles.instruction}>
+        <h4>{latestInstruction.title}</h4>
+        <div className={styles.instructionContent}>
+          <div>
+            <Markdown>{latestInstruction.recommended}</Markdown>
+          </div>
+          <div className={styles.instructionReminder}>
+            <h5>{latestInstruction.reminder.title}</h5>
+            <Markdown className={styles.instructionReminderText}>
+              {latestInstruction.reminder.description}
+            </Markdown>
+          </div>
+        </div>
+      </Section>
+      <DatasetSection
+        key={additionalDatasets.items[1].id}
+        title={additionalDatasets.items[1].title}
+        id={additionalDatasets.items[1].id}
+        accentColor={setDatasetAccentColor(additionalDatasets.items[1].id)}
+      >
+        {additionalDatasets.items[1].boxes.map((box) => (
+          <DatasetCard
+            key={`${box.title}-${box.caption}`}
+            {...box}
+            accentColor={setDatasetAccentColor(additionalDatasets.items[1].id)}
+          />
+        ))}
+      </DatasetSection>
+      <Section id={instruction.id} className={styles.instruction}>
+        <h4>{instruction.title}</h4>
+        <div className={styles.instructionContent}>
+          <div>
+            <Markdown>{instruction.recommended}</Markdown>
+          </div>
+          <div className={styles.instructionReminder}>
+            <h5>{instruction.reminder.title}</h5>
+            <Markdown className={styles.instructionReminderText}>
+              {instruction.reminder.description}
+            </Markdown>
+          </div>
+        </div>
+      </Section>
       <Section id="structures">
         <h4>{structures.title}</h4>
         {structures.items.map((structure) => (
@@ -142,6 +151,20 @@ const DatasetPageTemplate = ({
           </Collapsed>
         ))}
       </Section>
+      <DatasetSection
+        key={additionalDatasets.items[0].id}
+        title={additionalDatasets.items[0].title}
+        id={additionalDatasets.items[0].id}
+        accentColor={setDatasetAccentColor(additionalDatasets.items[0].id)}
+      >
+        {additionalDatasets.items[0].boxes.map((box) => (
+          <DatasetCard
+            key={`${box.title}-${box.caption}`}
+            {...box}
+            accentColor={setDatasetAccentColor(additionalDatasets.items[0].id)}
+          />
+        ))}
+      </DatasetSection>
     </Layout>
   </Page>
 )

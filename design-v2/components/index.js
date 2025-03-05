@@ -9,4 +9,5 @@ export { default as MembershipTable } from './membership-table'
 export { default as ListBox } from './list-box'
 export { default as TextBox } from './text-box'
 export { default as ErrorTemplate } from './error'
+// eslint-disable-next-line import/no-cycle
 export { default as ServicePage } from './pages'

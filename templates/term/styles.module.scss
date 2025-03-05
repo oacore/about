@@ -21,10 +21,8 @@
 }
 .content-wrapper {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap-reverse;
   .content-item {
-    width: 48%;
+    width: 100%;
     .item {
       margin-bottom: 44px;
       ul {
@@ -40,6 +38,10 @@
         font-size: 24px;
         line-height: 24px;
         color: #212121;
+      }
+      .sub-title {
+        font-weight: 600;
+        font-size: 20px;
       }
     }
     @media (max-width: $breakpoint-sm) {

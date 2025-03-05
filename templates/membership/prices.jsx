@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react'
 import { Button } from '@oacore/design/lib/elements'
-import { classNames } from '@oacore/design/lib/utils'
 import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
 
-import stylesMT from 'design-v2/components/membership-table/styles.module.scss'
 import { Markdown } from 'components'
 import { patchStats } from 'components/utils'
 import { Layout, MembershipTable, Section } from 'design-v2/components'
@@ -27,34 +25,38 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
     // router.push(`/member/${data.planName}`)
   }
 
-  const renderHeaders = () => (
-    <tr>
-      {data.discount.table.headers.map((header) => (
-        <th
-          key={header.name}
-          className={classNames.use(stylesMT.header, stylesMT.boldText500)}
-        >
-          <Markdown className={stylesMT.headerTitle}>{header.name}</Markdown>
-        </th>
-      ))}
-    </tr>
-  )
+  // *** MIGHT NEED IN FUTURE *** //
 
-  const renderDiscountsRows = () =>
-    data.discount.table.rows.map((row) => (
-      <tr key={row.title}>
-        <td key={row.period} className={stylesMT.cell} role="gridcell">
-          {row.period}
-        </td>
-        <td
-          key={row.discount}
-          className={classNames.use(stylesMT.cell, stylesMT.boldText700)}
-          role="gridcell"
-        >
-          {row.discount}
-        </td>
-      </tr>
-    ))
+  // const renderHeaders = () => (
+  //   <tr>
+  //     {data.discount.table.headers.map((header) => (
+  //       <th
+  //         key={header.name}
+  //         className={classNames.use(stylesMT.header, stylesMT.boldText500)}
+  //       >
+  //         <Markdown className={stylesMT.headerTitle}>{header.name}</Markdown>
+  //       </th>
+  //     ))}
+  //   </tr>
+  // )
+
+  // *** MIGHT NEED IN FUTURE *** //
+
+  // const renderDiscountsRows = () =>
+  //   data.discount.table.rows.map((row) => (
+  //     <tr key={row.title}>
+  //       <td key={row.period} className={stylesMT.cell} role="gridcell">
+  //         {row.period}
+  //       </td>
+  //       <td
+  //         key={row.discount}
+  //         className={classNames.use(stylesMT.cell, stylesMT.boldText700)}
+  //         role="gridcell"
+  //       >
+  //         {row.discount}
+  //       </td>
+  //     </tr>
+  //   ))
 
   return (
     <Layout>
@@ -64,6 +66,9 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
           {data.header.description}
         </Markdown>
       </Section>
+      <Markdown className={styles.subDescription}>
+        {data.header.subDescription}
+      </Markdown>
       <Section id="fee" className={styles.feeSection}>
         <MembershipTable
           textData={{
@@ -73,24 +78,28 @@ const MembershipPricesPageTemplate = observe(({ data }) => {
           }}
           type="prices"
           className={styles.feeSectionTable}
+          renderSpan
         />
         <Markdown className={styles.feeSectionNote}>
           {data.header.note}
         </Markdown>
-        <div className={stylesMT.tableCaption}>{data.discount.title} </div>
-        <table className={classNames.use(stylesMT.table)} role="grid">
-          <thead className={stylesMT.head}>{renderHeaders()}</thead>
-          <tbody>{renderDiscountsRows()}</tbody>
-        </table>
+        {/** ** MIGHT NEED IN FUTURE *** */}
 
-        <Markdown
-          className={classNames.use(
-            styles.feeSectionNote,
-            styles.feeSectionNoteSecond
-          )}
-        >
-          {data.fee.noteSecond}
-        </Markdown>
+        {/* eslint-disable-next-line max-len */}
+        {/* <div className={stylesMT.tableCaption}>{data.discount.title}</div> */}
+        {/* <table className={classNames.use(stylesMT.table)} role="grid"> */}
+        {/* <thead className={stylesMT.head}>{renderHeaders()}</thead> */}
+        {/* <tbody>{renderDiscountsRows()}</tbody> */}
+        {/* </table> */}
+
+        {/* <Markdown */}
+        {/*  className={classNames.use( */}
+        {/*    styles.feeSectionNote, */}
+        {/*    styles.feeSectionNoteSecond */}
+        {/*  )} */}
+        {/* > */}
+        {/*  {data.fee.noteSecond} */}
+        {/* </Markdown> */}
         <Button
           type="button"
           variant="contained"

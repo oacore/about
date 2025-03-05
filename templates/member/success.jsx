@@ -25,12 +25,12 @@ const PaymentSuccessPageTemplate = ({
         src={textData.image.url}
         alt={textData.title}
       />
-
       {textData.requestStatus &&
         textData.requestStatus.hasAccount &&
         membership.typeRepository === TYPE_REPO_HAS_ACCOUNT && (
           <VerifyRegisteredTemplate
             item={textData.requestStatus.hasAccount}
+            repoName={membership.repoName}
             emailAdministrator={membership.emailDashboard}
             handleSubmitStarting={handleSubmitStarting}
           />

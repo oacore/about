@@ -1,4 +1,4 @@
-@import "components/bootstrap/core";
+@import 'components/bootstrap/core';
 
 $citation-control-height: 8 * $spacer;
 
@@ -19,4 +19,26 @@ $citation-control-height: 8 * $spacer;
 .citation-tab-spinner {
   display: block;
   margin: 0 auto;
+}
+
+.nav-items {
+  border-bottom: unset;
+}
+
+.nav-item {
+  .nav-link {
+    border: 1px solid #e0e0e0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    &:active,
+    &:focus {
+      background: #e0e0e0;
+      border-bottom: 2px solid #b75400;
+    }
+  }
+  .active-link {
+    background: #e0e0e0;
+    border-bottom: 2px solid #b75400;
+  }
 }

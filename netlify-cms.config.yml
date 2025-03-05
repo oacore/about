@@ -21,7 +21,7 @@ backend:
   squash_merges: true
 
 media_folder: images
-public_folder: ''
+public_folder: images
 
 publish_mode: editorial_workflow
 
@@ -310,6 +310,7 @@ collections:
 - name: consultancy
 
   media_folder: '/images/consultancy'
+  public_folder: '/images/consultancy'
 
   create: false
   delete: false
@@ -338,80 +339,136 @@ collections:
           in search engines when the page appers in results. Important
           to have good performance in search engines.
    - name: header
-     label: Header(title,description,image)
+     label: Header (title, description, headline)
      file: consultancy/header.yml
      fields:
-     - name: title
-       widget: string
-       hint: >
-         The title of the page. Displayed on the page below header.
-     - name: description
-       widget: text
-       label: Description
-       hint: >
-          Description. Near the page title.
-     - name: icon
-       widget: file
-       label: Icon near title
-       hint: >
-          Icon near title. Optional.
-       optional: true
-     - name: image
-       widget: file
-       label: Image
-       hint: Image on the right side on the top of the page.
-     - name: actions
-       widget: list
-       label: Actions
-       allow_add: true
-       fields:
-        - { label: Caption, name: caption, widget: string, hint: Caption of the button }
-        - { label: Variant, name: variant, widget: string, hint: You can make button filled or outlined. For filled use - contained, optional: true, default: outilned }
-        - { label: Action, name: url, widget: string, hint: Button action. (url) , optional: true}
+       - name: header
+         widget: object
+         label: Header
+         hint: >
+           Anchor links to the page content. Must to equal block name.
+         fields:
+           - name: id
+             widget: string
+             label: Id
+             hint: >
+               Page Id
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               The title of the page. Displayed on the page below header.
+           - name: icon
+             widget: file
+             label: Icon
+             hint: icon next to title.
+           - name: image
+             widget: file
+             label: Image
+             hint: Image on the right side.
+           - name: description
+             widget: text
+             label: Description
+             hint: >
+               Description of the page.
+           - name: actions
+             label: Actions
+             widget: list
+             allow_add: true
+             fields:
+               - name: caption
+                 label: Caption
+                 widget: string
+               - name: variant
+                 label: Variant
+                 widget: string
+               - name: url
+                 label: URL
+                 widget: string
+               - name: target
+                 label: Target
+                 widget: string
+                 required: false
    - name: features
-     label: Features
+     label: CORE API features
      file: consultancy/features.yml
      fields:
-      - name: features
-        widget: list
-        min: 1
-        max: 4
-        label: Actions
-        allow_add: true
-        fields:
-        - { label: Title, name: title, widget: string, hint: Title of the feature card }
-        - { label: Description, name: description, widget: string, hint: Description of the feature card }
+       - name: features
+         widget: list
+         label: Features
+         allow_add: true
+         hint: >
+           Features list data
+         fields:
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               Displayed in the browser as a card title.
+           - name: description
+             widget: string
+             label: Description
+             hint: >
+               Displayed in the browser as a card description.
    - name: how-it-works
-     label: How it works
+     label: how it works features
      file: consultancy/how-it-works.yml
      fields:
-     - name: title
-       widget: string
-       label: Title
-     - name: description
-       widget: string
-       label: Description
-     - name: image
-       widget: file
-       label: Image
-       hint: Image on the right side on the top of the page.
+       - name: how-it-works
+         widget: object
+         label: how it works
+         allow_add: true
+         hint: >
+           how it works section
+         fields:
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               Displayed in the browser as a title.
+           - name: description
+             widget: string
+             label: Description
+             hint: >
+               Displayed in the browser as a card description.
+           - name: image
+             widget: file
+             label: Image
+             hint: Image on the right side.
    - name: benefits
-     label: Our benefits
+     label: benefits
      file: consultancy/benefits.yml
      fields:
-      - name: title
-        widget: string
-        label: Title
-      - name: benefits
-        widget: list
-        min: 1
-        max: 6
-        label: Actions
-        allow_add: true
-        fields:
-        - { label: Title, name: title, widget: string, hint: Title of the benefit card }
-        - { label: Description, name: description, widget: string, hint: Description of the benefit card }
-        - { label: Icon, name: icon, widget: file, hint: Icon on the left side }
+       - name: benefits
+         widget: object
+         label: benefits
+         allow_add: true
+         hint: >
+           benefits cards
+         fields:
+           - name: title
+             widget: string
+             label: title
+             hint: >
+               cards title
+           - name: items
+             widget: list
+             label: Items
+             hint: >
+               Card items
+             fields:
+               - name: description
+                 widget: string
+                 label: description
+                 hint: description of cards
+               - name: title
+                 widget: string
+                 label: Title
+                 hint: title of card
+               - name: icon
+                 widget: file
+                 label: Icon
+                 hint: icon next to title.
    - name: contact
      label: Contact us
      file: consultancy/contact.yml
@@ -456,25 +513,31 @@ collections:
               - {label: Name, name: name, widget: string}
               - {label: Role, name: role, widget: string}
               - {label: Avatar, name: picture, widget: file, hint: Small image in circle }
-
    - name: related-services
-     label: Related Services
+     label: CORE related services
      file: consultancy/related-services.yml
      fields:
-      - name: title
-        widget: string
-        label: Title
-        hint: Title of the section
-      - name: related-services
-        widget: list
-        min: 1
-        max: 4
-        label: Services
-        allow_add: true
-        fields:
-        - {label: Title, name: title, widget: string, hint: Service name}
-        - {label: Href (url), name: url, widget: string, hint: Link to the service. Example-fastsync}
-        - {label: Picture, name: picture, widget: file, hint: Logo of the service }
+       - name: related-services
+         widget: list
+         label: related services
+         allow_add: true
+         hint: >
+           Services list data
+         fields:
+           - name: title
+             widget: string
+             label: Title
+             hint: >
+               Displayed in the browser as a card title.
+           - name: picture
+             widget: file
+             label: picture
+             hint: card picture
+           - name: url
+             widget: string
+             label: url
+             hint: >
+               Redirect url
 
 - name: team
 
@@ -483,6 +546,7 @@ collections:
   format: yaml-frontmatter
 
   media_folder: '/images/team'
+  public_folder: '/images/team'
 
   create: true
   delete: false
@@ -547,6 +611,7 @@ collections:
   format: yaml-frontmatter
 
   media_folder: '/images/history'
+  public_folder: '/images/history'
 
   create: true
   delete: true
@@ -637,7 +702,6 @@ collections:
   sortable_fields: [date, title]
 
   preview_path: api/preview?page=history&ref=cms/history/{{slug}}
-
 
 - name: docs
 
@@ -902,7 +966,7 @@ collections:
           A button caption, intended to call the user view the target page.
   slug: '{{filename}}'
 
-  preview_path: api/preview?page=about&ref=cms/community/{{slug}}
+  preview_path: api/preview?page=about&ref=cms/governance/{{slug}}
 
 - name: quote
 
@@ -911,6 +975,7 @@ collections:
   format: yaml-frontmatter
 
   media_folder: '/images/quote'
+  public_folder: '/images/quote'
 
   create: true
   delete: true
@@ -945,6 +1010,7 @@ collections:
 - name: dataset
 
   media_folder: '/images/dataset'
+  public_folder: '/images/dataset'
 
   create: false
   delete: false
@@ -1039,6 +1105,33 @@ collections:
           widget: markdown,
           label: Reminder description
          }
+   - name: latest
+     label: latest Download instruction
+     file: dataset/latestInstruction.yml
+     fields:
+       - name: title
+         widget: string
+         label: Title
+       - name: id
+         widget: string
+         label: id
+         hint: id of the block. Must match anchor link url
+       - name: recommended
+         widget: markdown
+         label: Our recommendation
+       - name: reminder
+         widget: object
+         fields:
+           - {
+             name: title,
+             widget: string,
+             label: Reminder title
+           }
+           - {
+             name: description,
+             widget: markdown,
+             label: Reminder description
+           }
    - name: datasetLatest
      label: Latest dataset
      file: dataset/datasetLatest.yml
@@ -1136,6 +1229,7 @@ collections:
 - name: docs-membership
 
   media_folder: '/images/docs-membership'
+  public_folder: '/images/docs-membership'
 
   create: false
   delete: false
@@ -1147,7 +1241,7 @@ collections:
   files:
     - name: meta
       label: ℹ️ Metadata (title, description, headline)
-      file:  docs-membership/meta.yml
+      file: docs-membership/meta.yml
       fields:
         - name: title
           widget: string
@@ -1214,6 +1308,25 @@ collections:
               label: Caption,
               hint: Caption
             }
+    - name: navigation
+      label: Documentation Navigation
+      file: docs-membership/navigation.yml
+      fields:
+        - name: navItems
+          widget: list
+          label: navItems
+          allow_add: true
+          hint: >
+            Anchor links to the page content.
+          fields:
+            - name: item
+              widget: string
+              label: item
+              hint: Navigation link
+            - name: href
+              widget: string
+              label: href
+              hint: Link id to the specific block
     - name: documentation
       label: Documentation
       file: docs-membership/docs.yml
@@ -1274,3 +1387,3728 @@ collections:
               widget: text
               label: Description dashboard
               hint: Description for Dashboard
+            - name: redirect
+              widget: object
+              label: Redirect
+              hint: Redirect title, link
+              allow_add: true
+              required: false
+              fields:
+                - name: link
+                  label: link
+                  widget: string
+                  hint: redirect url
+                  required: false
+                - name: text
+                  widget: string
+                  label: Text
+                  hint: redirect title
+                  required: false
+                - name: image
+                  widget: string
+                  label: image
+                  hint: redirect icon
+                  required: false
+
+- name: docs-data-provider
+
+  media_folder: '/images/docs-membership'
+  public_folder: '/images/docs-membership'
+
+  create: false
+  delete: false
+
+  label: 📘 Data Provider’s Guide
+  label_singular: section
+  description: >
+    CORE Data Provider’s Guide
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file: docs-dataProvider/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: navigation
+      label: Documentation Navigation
+      file: docs-dataProvider/navigation.yml
+      fields:
+        - name: navItems
+          widget: list
+          label: navItems
+          allow_add: true
+          hint: >
+            Anchor links to the page content.
+          fields:
+            - name: item
+              widget: string
+              label: item
+              hint: Navigation link
+            - name: href
+              widget: string
+              label: href
+              hint: Link id to the specific block
+    - name: provider-documentation
+      label: Provider Documentation
+      file: docs-dataProvider/dataProviderDocs.yml
+      fields:
+        - name: items
+          widget: list
+          label: Items
+          allow_add: true
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: ID
+              hint: id of the block. Must match anchor link url
+              required: false
+            - name: title
+              widget: string
+              label: Title
+              hint: Title of the links block
+            - name: images
+              widget: list
+              label: Images list
+              hint: Images bottom description.
+              allow_add: true
+              fields:
+                - name: file
+                  widget: image
+                  label: File
+                  hint: Image in description
+            - name: descriptionAbout
+              widget: text
+              label: Description about
+              hint: Description for About
+              required: false
+            - name: subTitle
+              widget: string
+              label: subTitle
+              hint: subTitle of the images
+              required: false
+            - name: subDescription
+              widget: text
+              label: Sub Description dashboard
+              hint: Sub Description for Dashboard
+              required: false
+
+- name: FAQs
+
+  create: false
+  delete: false
+
+  label: 📚 FAQs
+  label_singular: FAQs
+  files:
+    - name: faqs
+      label: ℹ️ Metadata (title, description, headline)
+      file:  faqs/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: FAQs
+      label: FAQs
+      file: faqs/faqs.yml
+      fields:
+        - name: items
+          widget: list
+          label: Items
+          allow_add: true
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: ID
+              hint: id of the block. Must match anchor link url
+            - name: title
+              widget: string
+              label: Title
+              hint: Title of the links block
+            - name: updateDate
+              widget: string
+              label: Date
+              hint: Update date of block
+            - name: sections
+              widget: object
+              label: Sections
+              hint: Section dividers
+              allow_add: true
+              fields:
+                - name: id
+                  label: ID
+                  widget: string
+                  hint: id of subItems, some might not have it
+                  required: false
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: Title of subItems, some might not have it
+                  required: false
+                - name: items
+                  label: items
+                  widget: object
+                  fields:
+                    - name: question
+                      widget: text
+                      label: question
+                      hint: question we asked
+                    - name: answer
+                      widget: text
+                      label: answer
+                      hint: answer we got
+                    - name: slug
+                      widget: text
+                      label: slug
+                      hint: hint for us
+
+- name: advisory-board
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🎓 Advisory Board
+  label_singular: section
+  description: >
+    Advisory Board members and their details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  advisory/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: advisory/header.yml
+      fields:
+        - name: title
+          widget: string
+          hint: >
+            The title of the page. Displayed on the page below header.
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+    - name: members
+      label: Advisory Board Members
+      file: advisory/advisory.yml
+      fields:
+        - name: table
+          widget: object
+          label: Table
+          allow_add: true
+          hint: >
+            Table list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a tab name and in Google, when
+                the page appears in the search results.
+            - name: data
+              widget: list
+              label: Members
+              allow_add: true
+              fields:
+                - name: name
+                  widget: string
+                  label: Name
+                - name: image
+                  widget: file
+                  label: Image
+                  hint: Member's image
+                - name: organisation
+                  widget: string
+                  label: Organisation
+                  hint: Member's organisation
+                - name: country
+                  widget: string
+                  label: Country
+                  hint: Member's country
+
+- name: board-of-supporters
+
+  media_folder: '/images/community'
+  public_folder: '/images/community'
+
+  create: false
+  delete: false
+
+  label: 🛡️ Board of Supporters
+  label_singular: supporter
+  description: >
+    Board of Supporters details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  board-supporters/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Tagline
+          hint: Tagline of the page, displayed below the title.
+    - name: supporters
+      label: Board of Supporters
+      file: board-supporters/supporters.yml
+      fields:
+        - name: items
+          widget: object
+          label: Items
+          allow_add: true
+          hint: >
+            items fields wrapper
+          fields:
+            - name: headerLink
+              label: Header Links
+              widget: list
+              allow_add: true
+              fields:
+                - name: link
+                  label: Link
+                  widget: string
+                - name: href
+                  label: Href
+                  widget: string
+            - name: title
+              widget: string
+              label: Title
+              hint: Title of the section
+            - name: tagline
+              widget: text
+              label: Tagline
+              hint: Tagline of the section
+            - name: description
+              widget: text
+              label: Description
+              hint: Description of the section
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: target
+                  label: Target
+                  widget: string
+            - name: our-principles
+              label: Our Principles
+              widget: object
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: cardsDescription
+                  label: Cards Description
+                  widget: list
+                  allow_add: true
+                  fields:
+                    - name: title
+                      label: Title
+                      widget: string
+                    - name: content
+                      label: Content
+                      widget: text
+            - name: principles
+              label: Principles
+              widget: object
+              fields:
+                - name: image
+                  label: Image
+                  widget: image
+                - name: description
+                  label: Description
+                  widget: text
+            - name: how-it-works
+              label: How It Works
+              widget: object
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: services
+                  label: Services
+                  widget: list
+                  allow_add: true
+                  fields:
+                    - name: title
+                      label: Title
+                      widget: string
+                    - name: image
+                      label: Image
+                      widget: image
+                    - name: description
+                      label: Description
+                      widget: text
+            - name: header
+              label: Header
+              widget: object
+              fields:
+                - name: id
+                  label: ID
+                  widget: string
+                - name: image
+                  label: Image
+                  widget: image
+            - name: supporters
+              label: Membership List
+              widget: object
+              fields:
+                - name: id
+                  label: ID
+                  widget: string
+                - name: title
+                  label: Title
+                  widget: string
+
+- name: api
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: ⚙️ Core api
+  label_singular: section
+  description: >
+    Core api and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  api/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: api/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: icon
+              widget: file
+              label: Icon
+              hint: icon next to title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: features
+      label: CORE API features
+      file: api/features.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          allow_add: true
+          hint: >
+            Features list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: how-it-works
+      label: how it works features
+      file: api/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+            - name: action
+              label: Action
+              widget: list
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+    - name: testimonials
+      label: Testimonials
+      file: api/testimonials.yml
+      fields:
+        - name: testimonials
+          widget: object
+          label: Testimonials
+          hint: >
+            User testimonials.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: content
+              widget: string
+              label: Content
+              hint: >
+                Users thoughts.
+            - name: author
+              label: Author
+              widget: object
+              allow_add: true
+              fields:
+                - name: name
+                  label: Name
+                  widget: string
+                - name: role
+                  label: Role
+                  widget: string
+                - name: picture
+                  label: Picture
+                  widget: string
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                - name: variant
+                  label: Variant
+                  widget: string
+    - name: main
+      label: Main testimonials dropdown
+      file: api/main.yml
+      fields:
+        - name: main
+          widget: object
+          label: main
+          allow_add: true
+          hint: >
+            Main testimonials dropdown.
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of dropdown
+                - name: content
+                  widget: string
+                  label: Content
+                  hint: description of dropdown
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                Note under dropdowns.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: logos
+      label: Logos
+      file: api/logos.yml
+      fields:
+        - name: logos
+          widget: object
+          label: Logos
+          allow_add: true
+          hint: >
+            Logos under testimonials
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a logo list.
+              fields:
+                - name: img
+                  widget: file
+                  label: img
+                  hint: logo img
+                - name: alt
+                  widget: string
+                  label: alt
+                  hint: alt if img is not shown
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: what-is-included
+      label: What is included
+      file: api/what-is-included.yml
+      fields:
+        - name: what-is-included
+          widget: object
+          label: What is included
+          allow_add: true
+          hint: >
+            What is included list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: content
+              widget: markdown
+              label: content
+              hint: >
+                Displayed in the browser as a card content.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+    - name: institutionBenefit
+      label: institution benefit
+      file: api/more-about-us.yml
+      fields:
+        - name: institutionBenefit
+          widget: object
+          label: institution benefit
+          allow_add: true
+          hint: >
+            institution benefit list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: item
+              label: item
+              widget: list
+              fields:
+                - name: title
+                  widget: text
+                  label: Title
+                  hint: title
+                - name: description
+                  widget: text
+                  label: Description
+                  hint: description
+                - name: user
+                  widget: text
+                  label: User
+                  hint: user name
+                - name: position
+                  widget: text
+                  label: Position
+                  hint: user position
+                - name: img
+                  widget: file
+                  label: img
+                  hint: user img
+                - name: action
+                  label: Action
+                  widget: object
+                  allow_add: true
+                  fields:
+                    - name: title
+                      label: Title
+                      widget: string
+                    - name: url
+                      label: URL
+                      widget: file
+    - name: stats
+      label: stats
+      file: api/stats.yml
+      fields:
+        - name: stats
+          widget: object
+          label: Stats
+          allow_add: true
+          hint: >
+            User stats
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a stats list.
+              fields:
+                - name: title
+                  widget: string
+                  label: title
+                  hint: title name
+                - name: count
+                  widget: string
+                  label: count
+                  hint: count number
+                - name: caption
+                  widget: string
+                  label: caption
+                  hint: caption name
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                - name: variant
+                  label: variant
+                  widget: string
+    - name: form
+      label: form
+      file: api/register.yml
+      fields:
+        - name: form
+          widget: object
+          label: form
+          allow_add: true
+          hint: >
+            api register form
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Form title.
+            - name: subtitle
+              widget: string
+              label: subtitle
+              hint: >
+                Form subtitle.
+            - name: helper
+              widget: string
+              label: helper
+              hint: >
+                form helper
+            - name: action
+              widget: string
+              label: action
+              hint: >
+                form button
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                form note
+    - name: related-services
+      label: CORE related services
+      file: api/related-services.yml
+      fields:
+        - name: related-services
+          widget: list
+          label: related services
+          allow_add: true
+          hint: >
+            Services list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: picture
+              widget: file
+              label: picture
+              hint: card picture
+            - name: url
+              widget: string
+              label: url
+              hint: >
+                Redirect url
+
+
+
+
+- name: datasets
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: ᯤ Core datasets
+  label_singular: section
+  description: >
+    Core datasets and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  datasets/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: datasets/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: icon
+              widget: file
+              label: Icon
+              hint: icon next to title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: features
+      label: CORE datasets features
+      file: datasets/features.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          allow_add: true
+          hint: >
+            Features list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: how-it-works
+      label: how it works features
+      file: datasets/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+            - name: action
+              label: Action
+              widget: list
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+    - name: testimonials
+      label: Testimonials
+      file: datasets/testimonials.yml
+      fields:
+        - name: testimonials
+          widget: object
+          label: Testimonials
+          hint: >
+            User testimonials.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: content
+              widget: string
+              label: Content
+              hint: >
+                Users thoughts.
+            - name: author
+              label: Author
+              widget: object
+              allow_add: true
+              fields:
+                - name: name
+                  label: Name
+                  widget: string
+                - name: role
+                  label: Role
+                  widget: string
+                - name: picture
+                  label: Picture
+                  widget: string
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                - name: variant
+                  label: Variant
+                  widget: string
+    - name: main
+      label: Main testimonials dropdown
+      file: datasets/main.yml
+      fields:
+        - name: main
+          widget: object
+          label: main
+          allow_add: true
+          hint: >
+            Main testimonials dropdown.
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of dropdown
+                - name: content
+                  widget: string
+                  label: Content
+                  hint: description of dropdown
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                Note under dropdowns.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: logos
+      label: Logos
+      file: datasets/logos.yml
+      fields:
+        - name: logos
+          widget: object
+          label: Logos
+          allow_add: true
+          hint: >
+            Logos under testimonials
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a logo list.
+              fields:
+                - name: img
+                  widget: file
+                  label: img
+                  hint: logo img
+                - name: alt
+                  widget: string
+                  label: alt
+                  hint: alt if img is not shown
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: what-is-included
+      label: What is included
+      file: datasets/what-is-included.yml
+      fields:
+        - name: what-is-included
+          widget: object
+          label: What is included
+          allow_add: true
+          hint: >
+            What is included list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: content
+              widget: markdown
+              label: content
+              hint: >
+                Displayed in the browser as a card content.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+    - name: stats
+      label: stats
+      file: datasets/stats.yml
+      fields:
+        - name: stats
+          widget: object
+          label: Stats
+          allow_add: true
+          hint: >
+            User stats
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a stats list.
+              fields:
+                - name: title
+                  widget: string
+                  label: title
+                  hint: title name
+                - name: count
+                  widget: string
+                  label: count
+                  hint: count number
+                - name: caption
+                  widget: string
+                  label: caption
+                  hint: caption name
+                - name: badge
+                  widget: string
+                  label: badge
+                  hint: badge name
+                  required: false
+                - name: url
+                  widget: string
+                  label: url
+                  hint: url name
+    - name: form
+      label: form
+      file: datasets/register.yml
+      fields:
+        - name: form
+          widget: object
+          label: form
+          allow_add: true
+          hint: >
+            api register form
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Form title.
+            - name: subtitle
+              widget: string
+              label: subtitle
+              hint: >
+                Form subtitle.
+            - name: helper
+              widget: string
+              label: helper
+              hint: >
+                form helper
+            - name: action
+              widget: string
+              label: action
+              hint: >
+                form button
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                form note
+    - name: related-services
+      label: CORE related services
+      file: datasets/related-services.yml
+      fields:
+        - name: related-services
+          widget: list
+          label: related services
+          allow_add: true
+          hint: >
+            Services list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: picture
+              widget: file
+              label: picture
+              hint: card picture
+            - name: url
+              widget: string
+              label: url
+              hint: >
+                Redirect url
+
+
+
+
+- name: fastsync
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: ♻ Core fastsync
+  label_singular: section
+  description: >
+    Core fastsync and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  fastsync/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: fastsync/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: icon
+              widget: file
+              label: Icon
+              hint: icon next to title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: features
+      label: CORE fastsync features
+      file: fastsync/features.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          allow_add: true
+          hint: >
+            Features list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: how-it-works
+      label: how it works features
+      file: fastsync/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+    - name: testimonials
+      label: Testimonials
+      file: fastsync/testimonials.yml
+      fields:
+        - name: testimonials
+          widget: object
+          label: Testimonials
+          hint: >
+            User testimonials.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: content
+              widget: string
+              label: Content
+              hint: >
+                Users thoughts.
+            - name: author
+              label: Author
+              widget: object
+              allow_add: true
+              fields:
+                - name: name
+                  label: Name
+                  widget: string
+                - name: role
+                  label: Role
+                  widget: string
+                - name: picture
+                  label: Picture
+                  widget: string
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                - name: variant
+                  label: Variant
+                  widget: string
+    - name: main
+      label: Main testimonials dropdown
+      file: fastsync/main.yml
+      fields:
+        - name: main
+          widget: object
+          label: main
+          allow_add: true
+          hint: >
+            Main testimonials dropdown.
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of dropdown
+                - name: content
+                  widget: string
+                  label: Content
+                  hint: description of dropdown
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                Note under dropdowns.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: logos
+      label: Logos
+      file: fastsync/logos.yml
+      fields:
+        - name: logos
+          widget: object
+          label: Logos
+          allow_add: true
+          hint: >
+            Logos under testimonials
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a logo list.
+              fields:
+                - name: img
+                  widget: file
+                  label: img
+                  hint: logo img
+                - name: alt
+                  widget: string
+                  label: alt
+                  hint: alt if img is not shown
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: what-is-included
+      label: What is included
+      file: fastsync/what-is-included.yml
+      fields:
+        - name: what-is-included
+          widget: object
+          label: What is included
+          allow_add: true
+          hint: >
+            What is included list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: content
+              widget: markdown
+              label: content
+              hint: >
+                Displayed in the browser as a card content.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: caption
+                  label: caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+    - name: related-services
+      label: CORE related services
+      file: fastsync/related-services.yml
+      fields:
+        - name: related-services
+          widget: list
+          label: related services
+          allow_add: true
+          hint: >
+            Services list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: picture
+              widget: file
+              label: picture
+              hint: card picture
+            - name: url
+              widget: string
+              label: url
+              hint: >
+                Redirect url
+
+
+
+- name: recomender
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: 📤 Core recomender
+  label_singular: section
+  description: >
+    Core recomender and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  recomender/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: recomender/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: icon
+              widget: file
+              label: Icon
+              hint: icon next to title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: recomender
+      label: CORE recomender features
+      file: recomender/features.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          allow_add: true
+          hint: >
+            Features list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: how-it-works
+      label: how it works features
+      file: recomender/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: testimonials
+      label: Testimonials
+      file: recomender/testimonials.yml
+      fields:
+        - name: testimonials
+          widget: object
+          label: Testimonials
+          hint: >
+            User testimonials.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: content
+              widget: string
+              label: Content
+              hint: >
+                Users thoughts.
+            - name: author
+              label: Author
+              widget: object
+              allow_add: true
+              fields:
+                - name: name
+                  label: Name
+                  widget: string
+                - name: role
+                  label: Role
+                  widget: string
+                - name: picture
+                  label: Picture
+                  widget: string
+    - name: main
+      label: Main testimonials dropdown
+      file: recomender/main.yml
+      fields:
+        - name: main
+          widget: object
+          label: main
+          allow_add: true
+          hint: >
+            Main testimonials dropdown.
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of dropdown
+                - name: content
+                  widget: string
+                  label: Content
+                  hint: description of dropdown
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                Note under dropdowns.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: what-is-included
+      label: What is included
+      file: recomender/what-is-included.yml
+      fields:
+        - name: what-is-included
+          widget: object
+          label: What is included
+          allow_add: true
+          hint: >
+            What is included list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: content
+              widget: markdown
+              label: content
+              hint: >
+                Displayed in the browser as a card content.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+    - name: additional
+      label: additional
+      file: recomender/additional.yml
+      fields:
+        - name: additional
+          widget: object
+          label: additional
+          allow_add: true
+          hint: >
+            additional section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: content
+              widget: string
+              label: content
+              hint: >
+                Displayed in the browser as a card description.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: url
+                  label: URL
+                  widget: string
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: hint
+                  label: hint
+                  widget: string
+                - name: primary
+                  label: primary
+                  widget: string
+                  required: false
+    - name: related-services
+      label: CORE related services
+      file: recomender/related-services.yml
+      fields:
+        - name: related-services
+          widget: list
+          label: related services
+          allow_add: true
+          hint: >
+            Services list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: picture
+              widget: file
+              label: picture
+              hint: card picture
+            - name: url
+              widget: string
+              label: url
+              hint: >
+                Redirect url
+
+
+
+- name: discovery
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: 🔍 Core discovery
+  label_singular: section
+  description: >
+    Core discovery and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  discovery/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: discovery/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: icon
+              widget: file
+              label: Icon
+              hint: icon next to title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: actionButton
+              widget: object
+              label: actionButton
+              hint: >
+                Action button on description.
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: [ 'pdf' ]
+                - name: target
+                  label: Target
+                  widget: string
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: discovery
+      label: CORE discovery features
+      file: discovery/features.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          allow_add: true
+          hint: >
+            Features list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: how-it-works
+      label: how it works features
+      file: discovery/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+    - name: how-it-works-description
+      label: how it works description
+      file: discovery/how-it-works-description.yml
+      fields:
+        - name: how-it-works-description
+          widget: object
+          label: how-it-works-description
+          allow_add: true
+          hint: >
+            Main testimonials dropdown.
+          fields:
+            - name: description
+              widget: string
+              label: description
+              hint: >
+                how it works description
+            - name: main
+              widget: object
+              label: main
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: items
+                  widget: list
+                  label: items
+                  hint: title of dropdown
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                      hint: title of dropdown
+                    - name: content
+                      widget: string
+                      label: Content
+                      hint: description of dropdown
+                - name: note
+                  widget: string
+                  label: note
+                  hint: >
+                    Note under dropdowns.
+                - name: action
+                  label: Action
+                  widget: object
+                  allow_add: true
+                  fields:
+                    - name: title
+                      label: Title
+                      widget: string
+                    - name: url
+                      label: URL
+                      widget: file
+    - name: benefits
+      label: benefits
+      file: discovery/benefits.yml
+      fields:
+        - name: benefits
+          widget: object
+          label: benefits
+          allow_add: true
+          hint: >
+            benefits cards
+          fields:
+            - name: title
+              widget: string
+              label: title
+              hint: >
+                cards title
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Card items
+              fields:
+                - name: description
+                  widget: string
+                  label: description
+                  hint: description of cards
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of card
+                - name: icon
+                  widget: file
+                  label: Icon
+                  hint: icon next to title.
+    - name: stats
+      label: stats
+      file: discovery/stats.yml
+      fields:
+        - name: stats
+          widget: object
+          label: Stats
+          allow_add: true
+          hint: >
+            User stats
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a stats list.
+              fields:
+                - name: title
+                  widget: string
+                  label: title
+                  hint: title name
+                - name: count
+                  widget: string
+                  label: count
+                  hint: count number
+                - name: caption
+                  widget: string
+                  label: caption
+                  hint: caption name
+    - name: additional
+      label: additional
+      file: discovery/additional.yml
+      fields:
+        - name: additional
+          widget: object
+          label: additional
+          allow_add: true
+          hint: >
+            additional section
+          fields:
+            - name: id
+              widget: string
+              label: id
+              hint: >
+                id.
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: content
+              widget: string
+              label: content
+              hint: >
+                Displayed in the browser as a card description.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: url
+                  label: URL
+                  widget: string
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: hint
+                  label: hint
+                  widget: string
+                - name: primary
+                  label: primary
+                  widget: string
+                  required: false
+                - name: target
+                  label: target
+                  widget: string
+                  required: false
+    - name: related-services
+      label: CORE related services
+      file: discovery/related-services.yml
+      fields:
+        - name: related-services
+          widget: list
+          label: related services
+          allow_add: true
+          hint: >
+            Services list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: picture
+              widget: file
+              label: picture
+              hint: card picture
+            - name: url
+              widget: string
+              label: url
+              hint: >
+                Redirect url
+
+
+- name: dashboard
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: 📊 Core dashboard
+  label_singular: section
+  description: >
+    Core dashboard and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  dashboard/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: dashboard/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: icon
+              widget: file
+              label: Icon
+              hint: icon next to title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: dashboard
+      label: CORE dashboard features
+      file: dashboard/features.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          allow_add: true
+          hint: >
+            Features list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+
+    - name: how-it-works
+      label: how it works features
+      file: dashboard/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+            - name: action
+              label: Action
+              widget: list
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: testimonials
+      label: Testimonials
+      file: dashboard/testimonials.yml
+      fields:
+        - name: testimonials
+          widget: object
+          label: Testimonials
+          hint: >
+            User testimonials.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: content
+              widget: string
+              label: Content
+              hint: >
+                Users thoughts.
+            - name: author
+              label: Author
+              widget: object
+              allow_add: true
+              fields:
+                - name: name
+                  label: Name
+                  widget: string
+                - name: role
+                  label: Role
+                  widget: string
+                - name: picture
+                  label: Picture
+                  widget: string
+    - name: main
+      label: Main testimonials dropdown
+      file: dashboard/main.yml
+      fields:
+        - name: main
+          widget: object
+          label: main
+          allow_add: true
+          hint: >
+            Main testimonials dropdown.
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of dropdown
+                - name: content
+                  widget: string
+                  label: Content
+                  hint: description of dropdown
+            - name: note
+              widget: string
+              label: note
+              hint: >
+                Note under dropdowns.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+    - name: what-is-included
+      label: What is included
+      file: dashboard/what-is-included.yml
+      fields:
+        - name: what-is-included
+          widget: object
+          label: What is included
+          allow_add: true
+          hint: >
+            What is included list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: content
+              widget: markdown
+              label: content
+              hint: >
+                Displayed in the browser as a card content.
+            - name: list
+              widget: list
+              label: list
+              hint: >
+                list of included items
+              fields:
+                - name: item
+                  widget: string
+                  label: item
+                  hint: item title
+                - name: video
+                  widget: object
+                  label: video
+                  hint: video
+                  required: false
+                  fields:
+                    - name: image
+                      widget: file
+                      label: image
+                      hint: video tutorial icon
+                    - name: src
+                      widget: string
+                      label: src
+                      hint: video src
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+    - name: materials
+      label: materials
+      file: dashboard/tutorials.yml
+      fields:
+        - name: materials
+          widget: object
+          label: materials
+          allow_add: true
+          hint: >
+            materials cards
+          fields:
+            - name: title
+              widget: string
+              label: title
+              hint: >
+                cards title
+            - name: cards
+              widget: list
+              label: cards
+              hint: >
+                Card items
+              fields:
+                - name: image
+                  widget: file
+                  label: image
+                  hint: image of card
+                - name: key
+                  widget: string
+                  label: key
+                  hint: key of cards
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of card
+                - name: action
+                  widget: object
+                  label: action
+                  hint: action of cards
+                  fields:
+                    - name: caption
+                      widget: string
+                      label: caption
+                      hint: caption of card
+                - name: video
+                  widget: object
+                  label: video
+                  hint: video of cards
+                  fields:
+                    - name: src
+                      widget: string
+                      label: src
+                      hint: src of video
+    - name: additional
+      label: additional
+      file: dashboard/additional.yml
+      fields:
+        - name: additional
+          widget: object
+          label: additional
+          allow_add: true
+          hint: >
+            additional section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: content
+              widget: string
+              label: content
+              hint: >
+                Displayed in the browser as a card description.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+                - name: hint
+                  label: hint
+                  widget: string
+                - name: primary
+                  label: primary
+                  widget: string
+                  required: false
+    - name: related-services
+      label: CORE related services
+      file: dashboard/related-services.yml
+      fields:
+        - name: related-services
+          widget: list
+          label: related services
+          allow_add: true
+          hint: >
+            Services list data
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a card title.
+            - name: picture
+              widget: file
+              label: picture
+              hint: card picture
+            - name: url
+              widget: string
+              label: url
+              hint: >
+                Redirect url
+
+
+- name: sponsorship
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🤝️ Core sponsorship
+  label_singular: section
+  description: >
+    Core sponsorship and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file:  sponsorship/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appers in results. Important
+            to have good performance in search engines.
+    - name: header
+      label: Header (title, description, headline)
+      file: sponsorship/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must to equal block name.
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: logo
+              widget: file
+              label: logo
+              hint: logo on the right side.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: ['pdf']
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: features
+      label: how it works features
+      file: sponsorship/features.yml
+      fields:
+        - name: features
+          widget: object
+          label: features
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: services
+              label: Services
+              widget: list
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: description
+                  label: description
+                  widget: string
+    - name: how-to-sponsor
+      label: how to sponsor features
+      file: sponsorship/how-to-sponsor.yml
+      fields:
+        - name: how-to-sponsor
+          widget: object
+          label: how to sponsor
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+            - name: action
+              label: Action
+              widget: object
+              allow_add: true
+              fields:
+                - name: title
+                  label: title
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: string
+            - name: types
+              widget: list
+              label: types
+              hint: >
+                Displayed in the browser as a dropdown list.
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  hint: title of types
+    - name: table
+      label: Sponsorship table
+      file: sponsorship/table.yml
+      fields:
+        - name: table
+          widget: object
+          label: Table
+          fields:
+            - name: content
+              widget: list
+              label: Content
+              allow_add: true
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: plans
+                  widget: list
+                  label: Plans
+                  allow_add: true
+            - name: comparison-table
+              widget: object
+              label: Comparison Table
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: headers
+                  widget: list
+                  label: Headers
+                  fields:
+                    - name: name
+                      widget: string
+                      label: Name
+                    - name: defaultText
+                      widget: string
+                      label: Default Text
+                    - name: status
+                      widget: string
+                      label: Status
+                - name: rows
+                  widget: list
+                  label: Rows
+                  allow_add: true
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: plans
+                      widget: list
+                      label: Plans
+                - name: warning
+                  widget: string
+                  label: Warning
+    - name: discount
+      label: Discount
+      file: sponsorship/discount.yml
+      fields:
+        - name: discount
+          widget: object
+          label: Discount
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: table
+              widget: object
+              label: Table
+              fields:
+                - name: headers
+                  widget: list
+                  label: Headers
+                  fields:
+                    - name: name
+                      widget: string
+                      label: Name
+                - name: rows
+                  widget: list
+                  label: Rows
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: period
+                      widget: string
+                      label: Period
+                    - name: discount
+                      widget: string
+                      label: Discount
+    - name: contact-us
+      label: Contact Us
+      file: sponsorship/contact.yml
+      fields:
+        - name: contact-us
+          widget: object
+          label: Contact Us
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: image
+              widget: string
+              label: Image
+            - name: description
+              widget: markdown
+              label: Description
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: url
+                  widget: string
+                  label: URL
+
+- name: membership
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 👥 Core Membership
+  label_singular: section
+  description: >
+    Core sponsorship and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file: membership/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Tagline
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appears in results. Important
+            to have good performance in search engines.
+    - name: header-link
+      label: Header Link
+      file: membership/header-link.yml
+      fields:
+        - name: headerLink
+          widget: list
+          label: Header Link
+          fields:
+            - name: link
+              widget: string
+              label: Link
+            - name: href
+              widget: string
+              label: Href
+    - name: header
+      label: Header (title, description, headline)
+      file: membership/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          hint: >
+            Anchor links to the page content. Must equal block name.
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: extra
+              widget: string
+              label: Extra
+              hint: >
+                Page extra
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description of the page.
+            - name: logo
+              widget: file
+              label: Logo
+              hint: Logo on the right side.
+            - name: actions
+              label: Actions
+              widget: list
+              allow_add: true
+              fields:
+                - name: caption
+                  label: Caption
+                  widget: string
+                - name: variant
+                  label: Variant
+                  widget: string
+                - name: url
+                  label: URL
+                  widget: file
+                  media_folder: '/images/pdfs'
+                  public_folder: '/images/pdfs'
+                  extensions: ['pdf']
+                - name: target
+                  label: Target
+                  widget: string
+                  required: false
+    - name: plan
+      label: Plan
+      file: membership/plan.yml
+      fields:
+        - name: table
+          widget: object
+          label: Table
+          fields:
+            - name: content
+              widget: list
+              label: Content
+              fields:
+                - name: id
+                  widget: string
+                  label: ID
+                - name: title
+                  widget: string
+                  label: Title
+                - name: descriptionCardCard
+                  widget: markdown
+                  label: Description Card Card
+                - name: descriptionCardTable
+                  widget: markdown
+                  label: Description Card Table
+                - name: plans
+                  widget: list
+                  label: Plans
+                - name: video
+                  widget: object
+                  label: Video
+                  required: false
+                  fields:
+                    - name: image
+                      widget: string
+                      label: Image
+                    - name: src
+                      widget: string
+                      label: Source
+            - name: plans
+              widget: object
+              label: Plans
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: cardsDescription
+                  widget: list
+                  label: Cards Description
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: content
+                      widget: markdown
+                      label: Content
+                - name: cards
+                  widget: list
+                  label: Cards
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: caption
+                      widget: string
+                      label: Caption
+                    - name: advantages
+                      widget: list
+                      label: Advantages
+                      fields:
+                        - name: id
+                          widget: number
+                          label: ID
+                        - name: title
+                          widget: string
+                          label: Title
+                        - name: descriptionCardCard
+                          widget: markdown
+                          label: Description Card Card
+                        - name: descriptionCardTable
+                          widget: markdown
+                          label: Description Card Table
+                        - name: plans
+                          widget: list
+                          label: Plans
+                        - name: video
+                          widget: object
+                          label: Video
+                          fields:
+                            - name: image
+                              widget: string
+                              label: Image
+                            - name: src
+                              widget: string
+                              label: Source
+                    - name: action
+                      widget: object
+                      label: Action
+                      fields:
+                        - name: title
+                          widget: string
+                          label: Title
+                        - name: url
+                          widget: string
+                          label: URL
+            - name: comparison-table
+              label: Comparison Table
+              file: membership/comparison-table.yml
+              fields:
+                - name: title
+                  label: Title
+                  widget: string
+                - name: headers
+                  label: Headers
+                  widget: list
+                  fields:
+                    - name: name
+                      widget: string
+                      label: Name
+                - name: rows
+                  label: Rows
+                  widget: list
+    - name: carousel
+      label: Carousel
+      file: membership/carousel.yml
+      fields:
+        - name: carousel
+          widget: object
+          label: Carousel
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              fields:
+                - name: img
+                  widget: string
+                  label: Image
+                - name: alt
+                  widget: string
+                  label: Alt
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: url
+                  widget: string
+                  label: URL
+    - name: how-it-works
+      label: How It Works
+      file: membership/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: How It Works
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: image
+              widget: string
+              label: Image
+            - name: description
+              widget: markdown
+              label: Description
+            - name: actions
+              widget: list
+              label: Actions
+              fields:
+                - name: action
+                  widget: object
+                  label: Action
+                  fields:
+                    - name: default
+                      widget: string
+                      label: Default
+                      required: false
+                    - name: active
+                      widget: string
+                      label: Active
+                      required: false
+                    - name: caption
+                      widget: string
+                      label: Caption
+                      required: false
+                    - name: url
+                      widget: string
+                      label: URL
+                      required: false
+    - name: support
+      label: Support
+      file: membership/support.yml
+      fields:
+        - name: support
+          widget: object
+          label: Support
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: cards
+              widget: list
+              label: Cards
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: img
+                  widget: string
+                  label: Image
+                  required: false
+    - name: benefits
+      label: Benefits
+      file: membership/benefits.yml
+      fields:
+        - name: institutionBenefit
+          widget: object
+          label: Institution Benefit
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: item
+              widget: list
+              label: Item
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: description
+                  widget: markdown
+                  label: Description
+                - name: user
+                  widget: string
+                  label: User
+                - name: position
+                  widget: string
+                  label: Position
+                - name: img
+                  widget: string
+                  label: Image
+                - name: action
+                  widget: object
+                  label: Action
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: url
+                      widget: string
+                      label: URL
+    - name: materials
+      label: Materials
+      file: membership/materials.yml
+      fields:
+        - name: materials
+          widget: object
+          label: Materials
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: cards
+              widget: list
+              label: Cards
+              fields:
+                - name: image
+                  widget: string
+                  label: Image
+                - name: key
+                  widget: string
+                  label: Key
+                - name: title
+                  widget: string
+                  label: Title
+                - name: action
+                  widget: object
+                  label: Action
+                  fields:
+                    - name: caption
+                      widget: string
+                      label: Caption
+                    - name: url
+                      widget: file
+                      label: URL
+                      required: false
+                      media_folder: '/images/pdfs'
+                      public_folder: '/images/pdfs'
+                      extensions: [ 'pdf' ]
+                    - name: target
+                      widget: string
+                      label: Target
+                      required: false
+                - name: video
+                  widget: object
+                  label: Video
+                  required: false
+                  fields:
+                    - name: src
+                      widget: string
+                      label: Source
+                      required: false
+    - name: box
+      label: Box
+      file: membership/box.yml
+      fields:
+        - name: box
+          widget: object
+          label: Box
+          fields:
+            - name: description
+              widget: string
+              label: Description
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: default
+                  widget: string
+                  label: Default
+                - name: active
+                  widget: string
+                  label: Active
+    - name: fee
+      label: Fee
+      file: membership/fee.yml
+      fields:
+        - name: fee
+          widget: object
+          label: Fee
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: caption
+              widget: string
+              label: Caption
+            - name: description
+              widget: object
+              label: Description
+              fields:
+                - name: supporting
+                  widget: markdown
+                  label: Supporting
+                - name: sustaining
+                  widget: markdown
+                  label: Sustaining
+            - name: note
+              widget: object
+              label: Note
+              fields:
+                - name: supporting
+                  widget: markdown
+                  label: Supporting
+                - name: sustaining
+                  widget: markdown
+                  label: Sustaining
+            - name: noteSecond
+              widget: markdown
+              label: Note Second
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: url
+                  widget: string
+                  label: URL
+                - name: google-form
+                  widget: string
+                  label: Google Form
+            - name: table
+              widget: object
+              label: Table
+              fields:
+                - name: headers
+                  widget: list
+                  label: Headers
+                  fields:
+                    - name: name
+                      widget: string
+                      label: Name
+                    - name: type
+                      widget: string
+                      label: Type
+                      required: false
+                - name: supporting
+                  widget: object
+                  label: Supporting
+                  fields:
+                    - name: rows
+                      widget: list
+                      label: Rows
+                      fields:
+                        - name: title
+                          widget: string
+                          label: Title
+                        - name: caption
+                          widget: string
+                          label: Caption
+                        - name: prices
+                          widget: list
+                          label: Prices
+                          fields:
+                            - name: type
+                              widget: string
+                              label: Type
+                            - name: original
+                              widget: number
+                              label: Original
+                            - name: discount
+                              widget: number
+                              label: Discount
+                - name: sustaining
+                  widget: object
+                  label: Sustaining
+                  fields:
+                    - name: rows
+                      widget: list
+                      label: Rows
+                      fields:
+                        - name: title
+                          widget: string
+                          label: Title
+                        - name: caption
+                          widget: string
+                          label: Caption
+                        - name: prices
+                          widget: list
+                          label: Prices
+                          fields:
+                            - name: type
+                              widget: string
+                              label: Type
+                            - name: original
+                              widget: number
+                              label: Original
+                            - name: discount
+                              widget: number
+                              label: Discount
+
+- name: services
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 👨‍🔧 Core services
+  label_singular: section
+  description: >
+    Core sponsorship and details.
+
+  files:
+    - name: meta
+      label: Meta
+      file: services/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: ID
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: string
+          label: Tagline
+    - name: header
+      label: Header
+      file: services/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: hero
+              widget: string
+              label: Hero
+            - name: headline
+              widget: list
+              label: Headline
+    - name: services
+      label: Services
+      file: services/services.yml
+      fields:
+        - name: sections
+          widget: list
+          label: Sections
+          fields:
+            - name: id
+              widget: string
+              label: ID
+            - name: title
+              widget: string
+              label: Title
+            - name: video
+              widget: object
+              label: Video
+              required: false
+              fields:
+                - name: src
+                  widget: string
+                  label: Source
+                - name: title
+                  widget: string
+                  label: Title
+                - name: description
+                  widget: markdown
+                  label: Description
+            - name: features
+              widget: list
+              label: Features
+              fields:
+                - name: id
+                  widget: string
+                  label: ID
+                - name: title
+                  widget: string
+                  label: Title
+                - name: logo
+                  widget: string
+                  label: Logo
+                - name: short-description
+                  widget: string
+                  label: Short Description
+                - name: description
+                  widget: markdown
+                  label: Description
+                - name: recommender
+                  widget: list
+                  label: Recommender
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                - name: action
+                  widget: object
+                  label: Action
+                  fields:
+                    - name: caption
+                      widget: string
+                      label: Caption
+                    - name: url
+                      widget: string
+                      label: URL
+
+- name: CORE Labs
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🧪 CORE Labs
+  label_singular: section
+  description: >
+    Core services and details.
+
+  files:
+    - name: meta
+      label: Meta
+      file: coreLabs/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: ID
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: string
+          label: Tagline
+    - name: header
+      label: Header
+      file: coreLabs/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: hero
+              widget: string
+              label: Hero
+    - name: features
+      label: Features
+      file: coreLabs/services.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          fields:
+            - name: id
+              widget: string
+              label: ID
+            - name: title
+              widget: string
+              label: Title
+            - name: logo
+              widget: string
+              label: Logo
+            - name: tag
+              widget: string
+              label: Tag
+            - name: description
+              widget: markdown
+              label: Description
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: url
+                  widget: string
+                  label: URL
+

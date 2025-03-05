@@ -81,6 +81,9 @@ const PaymentDefailsForm = observe(({ form }) => {
     formValues.price = membershipPrice.data.price
     formValues.priceCalculated = membershipPrice.data.priceCalculated
 
+    const selectRepo = e.target['select-repository']
+    formValues.repoName = selectRepo.value
+
     membership.setData({
       ...formValues,
       repository,
@@ -227,6 +230,11 @@ const PaymentDefailsForm = observe(({ form }) => {
                 required={!field.optional}
                 onChange={handleInputChange}
               />
+              {field.appendTextBottom && (
+                <span className={styles.inputAppendBottom}>
+                  {field.appendTextBottom}
+                </span>
+              )}
             </div>
           )
         }
@@ -325,6 +333,7 @@ const PaymentDefailsForm = observe(({ form }) => {
             type={input.type}
             options={input.options}
             loading={dataProviders.isLoading}
+            inputLimit={3}
             setFormValue={handleSelectChange}
             onDelete={input.id !== initRepositorySelect.id && onDeleteInput}
             required={!input.optional ?? true}

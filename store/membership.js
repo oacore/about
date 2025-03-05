@@ -17,6 +17,7 @@ class Membership {
     size: '',
     transactionToken: 'TOKEN',
     transactionDescription: 'description',
+    repoName: '',
   }
 
   constructor() {
@@ -81,6 +82,7 @@ class Membership {
       priceCalculated: 0,
       planName: '',
       discount: 0,
+      repoName: '',
     }
   }
 }

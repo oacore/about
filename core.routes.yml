@@ -24,7 +24,7 @@ browse: /browse
 search: /search
 
 community:
-  pattern: /community
+  pattern: /governance
   children:
     research: ./research
     supporters: ./supporters
@@ -54,7 +54,6 @@ services:
     recommender: ./recommender
     connector: ./connector
     repository-dashboard: ./repository-dashboard
-    repository-edition: ./repository-edition
     analytics-dashboard: ./analytics-dashboard
     fast-sync: ./fastsync
     fastsync: ./fastsync
@@ -196,4 +195,4 @@ static: /
 images: /images
 documents: /documents
 ref-audit: /ref-audit
-advantages-of-being-harvested: /advantages-of-being-harvested
+how-core-supports-open-access: /how-core-supports-open-access

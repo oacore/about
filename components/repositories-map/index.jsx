@@ -11,6 +11,7 @@ import styles from './repositories-map.module.scss'
 const normalize = (string) =>
   string.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
 
+// eslint-disable-next-line no-unused-vars
 const fetchRepositories = (url) =>
   fetch(url)
     .then((res) => {
@@ -61,8 +62,9 @@ class RepositoriesMap extends Component {
       scrollWheelZoom: false,
     })
 
-    const { endpoint } = this.props
-    const repositories = await fetchRepositories(endpoint)
+    const { formap } = (await import('data/history.yml')).default
+    const { data } = formap
+    const repositories = data
 
     const markerIcon = L.icon({
       iconUrl: markerUrl,
@@ -85,7 +87,11 @@ class RepositoriesMap extends Component {
           dataProviderLocation.longitude != null &&
           name
       )
-      .forEach(({ name, dataProviderLocation }) => {
+      .forEach((item, index) => {
+        // Too long map load
+        if (index > 500) return
+        const { name, dataProviderLocation } = item
+
         const marker = L.marker(
           new L.LatLng(
             dataProviderLocation.latitude,

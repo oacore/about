@@ -1,10 +1,12 @@
 import React, { useCallback } from 'react'
 import { Header, Footer } from '@oacore/design'
+import { useRouter } from 'next/router'
 
 import Head from './head'
 import SkipToContent from '../skip-to-content'
 
 const Layout = ({ title, description, children, onNavigate }) => {
+  const router = useRouter()
   const handleHeaderClick = useCallback(
     (event) => {
       const linkElement = event.target.closest('a')
@@ -22,8 +24,10 @@ const Layout = ({ title, description, children, onNavigate }) => {
       <SkipToContent path="#content" caption="Skip to main content" />
       <Header id="header" onClick={handleHeaderClick} />
       <div id="content">{children}</div>
-
-      <Footer />
+      {!(
+        router.pathname.includes('membership-documentation') ||
+        router.pathname.includes('data-providers-guide')
+      ) && <Footer />}
     </>
   )
 }

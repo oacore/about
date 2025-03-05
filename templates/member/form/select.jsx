@@ -12,6 +12,7 @@ const Select = ({
   label,
   options,
   loading,
+  inputLimit = 0,
   setFormValue,
   onDelete,
   required = true,
@@ -58,11 +59,12 @@ const Select = ({
         required={required}
         disabled={disabled}
       >
+        {/* eslint-disable-next-line no-nested-ternary */}
         {loading ? (
           <DesignSelect.Option className={styles.option} id="loader">
             <ProgressSpinner />
           </DesignSelect.Option>
-        ) : (
+        ) : value.length > inputLimit ? (
           items.map((el) => (
             <DesignSelect.Option
               className={styles.option}
@@ -75,6 +77,8 @@ const Select = ({
               {el.name}
             </DesignSelect.Option>
           ))
+        ) : (
+          <></>
         )}
       </DesignSelect>
       {onDelete && (

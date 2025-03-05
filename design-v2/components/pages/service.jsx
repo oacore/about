@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useState } from 'react'
 import { Card, Form, TextField } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 import { Button } from '@oacore/design/lib/elements'
@@ -8,6 +8,9 @@ import { Popover } from '@oacore/design/lib/modules'
 import styles from './styles.module.scss'
 import { Layout, Section } from '../layout'
 import Hero from '../hero'
+// eslint-disable-next-line import/no-cycle
+import { Video } from '../index'
+import ExperiencesCard from '../../../components/experiences-card/experiencesCard'
 
 import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
@@ -87,25 +90,31 @@ const Benefit = ({ title, icon, description }) => (
 
 const ServicePage = observe(
   ({
-    id,
-    title,
-    tagline,
-    header,
     features,
+    header,
     howItWorks,
-    keywords,
-    whatIsIncluded, // @optional
-    statistics, // @optional
+    logos,
     main, // @optional
-    benefits, // @optional
-    contact, // @optional
-    stats, // @optional
-    additional, // @optional
-    testimonials, // @optional
-    form, // @optional
+    meta,
+    moreAboutUs, // @optional
+    register, // @optional
     relatedServices,
+    stats, // @optional
+    testimonials, // @optional
+    whatIsIncluded, // @optional
+    additional, // @optional
+    benefits, // @optional
+    tutorials, // @optional
+    howItWorksDescription,
+    id,
+    actionButton,
+    keywords,
+    statistics, // @optional
+    contact, // @optional
     hideButtons = false, // @optional
   }) => {
+    const [visibleVideo, setVisibleVideo] = useState(false)
+
     const { registration } = useStore()
     const {
       value: email,
@@ -122,29 +131,41 @@ const ServicePage = observe(
       registration.setIsModalFormActive(true)
     }
 
+    const handleContentOpen = useCallback((condition) => {
+      if (condition) setVisibleVideo(condition)
+    }, [])
+
     return (
       <Page
-        title={title}
-        description={tagline}
+        title={meta.title}
+        description={meta.tagline}
         keywords={keywords}
         className={styles.servicePage}
       >
-        <Layout>
-          <Hero {...header} hideButtons={hideButtons} />
+        <Layout className={styles.unsetBottom}>
+          <Hero
+            actionButton={actionButton}
+            hideButtons={hideButtons}
+            {...header.header}
+          />
           <Section id="features" className={styles.features}>
-            {features.map((item) => (
+            {features.features.map((item) => (
               <Feature key={item.title} {...item} />
             ))}
           </Section>
           <Section id="how-it-works" className={styles.howItWorks}>
             <div className={styles.imageWrapper}>
-              <img src={howItWorks.image} alt={howItWorks.title} />
+              <img
+                src={howItWorks.howItWorks.image}
+                alt={howItWorks.howItWorks.title}
+              />
             </div>
             <article className={styles.content}>
-              <h3>{howItWorks.title}</h3>
-              <Markdown>{howItWorks.description}</Markdown>
-              {howItWorks.action && Array.isArray(howItWorks.action)
-                ? howItWorks.action.map((item) => (
+              <h3>{howItWorks.howItWorks.title}</h3>
+              <Markdown>{howItWorks.howItWorks.description}</Markdown>
+              {howItWorks.howItWorks.action &&
+              Array.isArray(howItWorks.howItWorks.action)
+                ? howItWorks.howItWorks.action.map((item) => (
                     <Button
                       href={item.url}
                       target={item.target}
@@ -156,22 +177,59 @@ const ServicePage = observe(
                       {item.title}
                     </Button>
                   ))
-                : howItWorks.action && (
+                : howItWorks.howItWorks.action && (
                     <Button
                       className={styles.button}
-                      href={howItWorks.action.url}
-                      variant={howItWorks.action.variant || 'contained'}
+                      href={howItWorks.howItWorks.action.url}
+                      variant={
+                        howItWorks.howItWorks.action.variant || 'contained'
+                      }
                     >
-                      {howItWorks.action.title}
+                      {howItWorks.howItWorks.action.title}
                     </Button>
                   )}
             </article>
           </Section>
+          {howItWorksDescription && (
+            <Section id="testimonial" className={styles.main}>
+              <div className={styles.mainDescription}>
+                {howItWorksDescription.howItWorksDescription.description}
+              </div>
+              <div>
+                {howItWorksDescription.howItWorksDescription.main.items.map(
+                  (item) => (
+                    <Collapsed
+                      key={item.title}
+                      id={`${id}-details`}
+                      title={item.title}
+                    >
+                      <Markdown>{item.content}</Markdown>
+                    </Collapsed>
+                  )
+                )}
+                <Markdown className={styles.mainNote}>
+                  {howItWorksDescription.howItWorksDescription.main.note}
+                </Markdown>
+                <Button
+                  className={styles.action}
+                  variant="outlined"
+                  href={
+                    howItWorksDescription.howItWorksDescription.main.action.url
+                  }
+                >
+                  {
+                    howItWorksDescription.howItWorksDescription.main.action
+                      .title
+                  }
+                </Button>
+              </div>
+            </Section>
+          )}
           {benefits && (
             <Section id="benefits">
-              <h3>{benefits.title}</h3>
+              <h3>{benefits.benefits.title}</h3>
               <div className={styles.benefits}>
-                {benefits.items.map((benefit) => (
+                {benefits.benefits.items.map((benefit) => (
                   <Benefit key={benefit.title} {...benefit} />
                 ))}
               </div>
@@ -197,12 +255,12 @@ const ServicePage = observe(
           )}
           {testimonials && (
             <Section id="testimonial" className={styles.main}>
-              {testimonials.map((testimonial) => (
+              {testimonials.testimonials.map((testimonial) => (
                 <Testimonial key={testimonial.author.name} {...testimonial} />
               ))}
               {main && (
                 <div>
-                  {main.items.map((item) => (
+                  {main.main.items.map((item) => (
                     <Collapsed
                       key={item.title}
                       id={`${id}-details`}
@@ -211,40 +269,135 @@ const ServicePage = observe(
                       <Markdown>{item.content}</Markdown>
                     </Collapsed>
                   ))}
-                  <Markdown className={styles.note}>{main.note}</Markdown>
+                  <Markdown className={styles.note}>{main.main.note}</Markdown>
                   <Button
                     className={styles.action}
                     variant="outlined"
-                    href={main.action.url}
+                    href={main.main.action.url}
                   >
-                    {main.action.title}
+                    {main.main.action.title}
                   </Button>
                 </div>
               )}
             </Section>
           )}
+          {logos && (
+            <section className={styles.carouselWrapper}>
+              <div className={styles.carouselItems}>
+                {logos.logos.items.map((slide) => (
+                  <div className={styles.carouselItemWrapper}>
+                    <img
+                      className={classNames.use(styles.carouselItem, {
+                        [styles.carouselItemUnset]: slide.full,
+                        [styles.background]: slide.background,
+                      })}
+                      src={slide.img}
+                      alt="logo"
+                      key={slide.alt}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className={styles.linkWrapper}>
+                <a className={styles.link} href={logos.logos.action.url}>
+                  {logos.logos.action.caption}
+                </a>
+              </div>
+            </section>
+          )}
           {whatIsIncluded && (
             <Section id="what-is-included" className={styles.whatIsIncluded}>
               <div className={styles.section}>
-                <h3>{whatIsIncluded.title}</h3>
-                <Markdown>{whatIsIncluded.content}</Markdown>
-                {whatIsIncluded.action && (
+                <h3>{whatIsIncluded.whatIsIncluded.title}</h3>
+                <Markdown>{whatIsIncluded.whatIsIncluded.content}</Markdown>
+                <ul className={styles.listItem}>
+                  {whatIsIncluded.whatIsIncluded?.list?.map((item) => (
+                    <div className={styles.listTitleWrapper}>
+                      <li>{item.item}</li>
+                      {/* eslint-disable-next-line max-len */}
+                      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+                      <img
+                        onClick={() => handleContentOpen(item?.video)}
+                        className={styles.videoIcon}
+                        src={item?.video?.image}
+                        alt=""
+                      />
+                    </div>
+                  ))}
+                </ul>
+                {whatIsIncluded.whatIsIncluded.action && (
                   <Button
                     className={styles.contactBtn}
                     variant="contained"
-                    href={whatIsIncluded.action.url}
+                    href={whatIsIncluded.whatIsIncluded.action.url}
                   >
-                    {whatIsIncluded.action.caption}
+                    {whatIsIncluded.whatIsIncluded.action.caption}
                   </Button>
                 )}
               </div>
-              <img src={whatIsIncluded.image} alt={whatIsIncluded.title} />
+              <img
+                src={whatIsIncluded.whatIsIncluded.image}
+                alt={whatIsIncluded.whatIsIncluded.title}
+              />
             </Section>
+          )}
+        </Layout>
+        {moreAboutUs && (
+          <ExperiencesCard
+            title={moreAboutUs.institutionBenefit.title}
+            data={moreAboutUs.institutionBenefit.item}
+          />
+        )}
+        <Layout className={styles.unsetTop}>
+          {tutorials && (
+            <div className={styles.layoutMiniWrapper}>
+              <Section id="membership-materials">
+                <h4>{tutorials.materials.title}</h4>
+                <div className={styles.cardsWrapper}>
+                  {tutorials.materials.cards.map((card) => (
+                    <article className={styles.materialsCard} key={card.key}>
+                      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                      <a
+                        target={card.action.target}
+                        href={!card.video ? card.action.url : null}
+                        onClick={() => handleContentOpen(card.video)}
+                        className={styles.materialWrapper}
+                      >
+                        <div className={styles.materialInnerWrapper}>
+                          <img src={card.image} alt="" />
+                          <div className={styles.materialTitle}>
+                            {card.title}
+                          </div>
+                        </div>
+                      </a>
+                      <div className={styles.buttonWrapper}>
+                        <Button
+                          className={styles.materialButton}
+                          variant="outlined"
+                          href={!card.video ? card.action.url : null}
+                          target={card.action.target}
+                          onClick={() => handleContentOpen(card.video)}
+                        >
+                          {card.action.caption}
+                        </Button>
+                      </div>
+                    </article>
+                  ))}
+                  {visibleVideo && (
+                    <Video
+                      visibleModal={visibleVideo}
+                      closeModal={() => setVisibleVideo(false)}
+                      video={visibleVideo}
+                    />
+                  )}
+                </div>
+              </Section>
+            </div>
           )}
           {statistics && stats && (
             <>
               <Section id="statistics" className={styles.statistics}>
-                {stats.items.map((stat) => (
+                {stats.stats.items.map((stat) => (
                   <StatisticBox
                     key={`${stat.caption}-${stat.count}`}
                     title={stat.title}
@@ -252,26 +405,26 @@ const ServicePage = observe(
                     url={stat?.url}
                     badge={stat?.badge}
                     tag={stat.url ? 'a' : 'div'}
-                    count={patchStats(stat.count, statistics)}
+                    count={patchStats(stat.count, statistics.statistics)}
                   />
                 ))}
               </Section>
-              {stats.action && (
+              {stats.stats.action && (
                 <Button
                   className={styles.statsButton}
-                  href={stats.action.url}
-                  variant={stats.action.variant || 'contained'}
+                  href={stats.stats.action.url}
+                  variant={stats.stats.action.variant || 'contained'}
                 >
-                  {stats.action.title}
+                  {stats.stats.action.title}
                 </Button>
               )}
             </>
           )}
-          {form && (
+          {register && (
             <Section id="form">
-              <h3>{form.title}</h3>
+              <h3>{register.form.title}</h3>
               <Card variant="outlined" className={styles.form}>
-                <p className={styles.caption}>{form.subtitle}</p>
+                <p className={styles.caption}>{register.form.subtitle}</p>
                 <Form onSubmit={onHandleSubmit}>
                   <TextField
                     id={elemEmail}
@@ -281,7 +434,7 @@ const ServicePage = observe(
                     placeholder="e.g. john.doe@ac.uk"
                     type="email"
                     required
-                    helper={form.helper}
+                    helper={register.form.helper}
                     className={styles.textfield}
                     {...bindEmail}
                   />
@@ -290,22 +443,31 @@ const ServicePage = observe(
                     variant="contained"
                     className={styles.button}
                   >
-                    {form.action}
+                    {register.form.action}
                   </Button>
                 </Form>
               </Card>
-              <Markdown className={styles.note}>{form.note}</Markdown>
+              <Markdown className={styles.note}>{register.form.note}</Markdown>
               <RegistrationModals />
             </Section>
           )}
           {additional && (
-            <Section id="additional" className={styles.additional}>
-              <img src={additional.image} alt={additional.title} />
+            <Section
+              id="additional"
+              className={classNames.use(styles.additional, {
+                [styles.additionalReverse]:
+                  additional.additional.id === 'discovery',
+              })}
+            >
+              <img
+                src={additional.additional.image}
+                alt={additional.additional.title}
+              />
               <div className={styles.section}>
-                <h3>{additional.title}</h3>
-                <Markdown>{additional.content}</Markdown>
+                <h3>{additional.additional.title}</h3>
+                <Markdown>{additional.additional.content}</Markdown>
                 <div className={styles.group}>
-                  {additional.actions.map((action) => (
+                  {additional.additional.actions.map((action) => (
                     <Popover
                       key={action.caption}
                       placement="bottom"
@@ -326,9 +488,9 @@ const ServicePage = observe(
           )}
           {relatedServices && (
             <Section id="related-services">
-              <h3>{relatedServices.title}</h3>
+              <h3>{relatedServices.relatedServices.title}</h3>
               <div className={styles.services}>
-                {relatedServices.services?.map((service) => (
+                {relatedServices.relatedServices.services?.map((service) => (
                   <RelatedService key={service.title} {...service} />
                 ))}
               </div>

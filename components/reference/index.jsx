@@ -24,42 +24,35 @@ const Reference = ({
   journal,
   volume,
   number,
+  description,
   className = '',
   tag: Tag = 'p',
   ...restProps
 }) => {
   const partials = [
-    <span key="author">
-      {formatNameList(Array.isArray(author) ? author : [author])}
-    </span>,
-    year && <span key="year">({year})</span>,
-    url ? (
-      <a key="title" href={url} className={styles.referenceTitle}>
-        {title.trim()}
-      </a>
-    ) : (
-      <span key="title" className={styles.referenceTitle}>
-        {title}
+    <div className={styles.cardInfo}>
+      <span key="author">
+        {formatNameList(Array.isArray(author) ? author : [author])}
       </span>
-    ),
-    booktitle && (
-      <span key="book">
-        In{' '}
-        {editor &&
-          `${formatNameList(
-            Array.isArray(editor) ? editor : [editor]
-          )} (Eds.) `}
-        {booktitle}
-      </span>
-    ),
-    journal && (
-      <span key="journal">
-        {journal}
-        {(volume || number) && ', '}
-        {volume && volume}
-        {number && ` (${number})`}
-      </span>
-    ),
+      {booktitle && (
+        <span key="book">
+          In{' '}
+          {editor &&
+            `${formatNameList(
+              Array.isArray(editor) ? editor : [editor]
+            )} (Eds.) `}
+          {booktitle}
+        </span>
+      )}
+      {journal && (
+        <span key="journal">
+          {journal}
+          {(volume || number) && ', '}
+          {volume && volume}
+          {number && ` (${number})`}
+        </span>
+      )}
+    </div>,
   ]
     .filter((item) => item)
     .reduce((result, item, i, array) => {

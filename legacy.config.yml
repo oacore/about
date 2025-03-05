@@ -3,3 +3,15 @@ redirects:
   source: /documentation/discovery/plugin
   destination: /documentation/discovery-plugin
   permanent: true
+-
+  source: /documentations
+  destination: /documentation/membership-documentation
+  permanent: true
+-
+  source: /membership-documentation
+  destination: /documentation/membership-documentation
+  permanent: true
+-
+  source: /services/repository-edition
+  destination: /
+  permanent: true

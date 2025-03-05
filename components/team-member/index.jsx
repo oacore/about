@@ -9,6 +9,7 @@ import {
 } from 'reactstrap'
 
 import styles from './team-member.module.scss'
+import { ReadMore } from '../../design-v2/components/testimonial'
 
 const TeamMember = ({
   className = '',
@@ -28,7 +29,13 @@ const TeamMember = ({
       {role && (
         <CardSubtitle className={styles.teamMemberRole}>{role}</CardSubtitle>
       )}
-      {description && <CardText>{description}</CardText>}
+      {description && description.length > 110 ? (
+        <ReadMore renderBreak textMaxLength={110}>
+          {description}
+        </ReadMore>
+      ) : (
+        <CardText>{description}</CardText>
+      )}
       {children}
     </CardBody>
   </Card>
