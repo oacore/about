@@ -4181,6 +4181,39 @@ collections:
                   label: Target
                   widget: string
                   required: false
+    - name: logos
+      label: Logos
+      file: sponsorship/logos.yml
+      fields:
+        - name: logos
+          widget: object
+          label: Logos
+          allow_add: true
+          hint: >
+            Logos under header
+          fields:
+            - name: items
+              widget: list
+              label: Items
+              hint: >
+                Displayed in the browser as a logo list.
+              fields:
+                - name: img
+                  widget: file
+                  label: img
+                  hint: logo img
+                - name: alt
+                  widget: string
+                  label: alt
+                  hint: alt if img is not shown
+                - name: label
+                  widget: string
+                  label: label
+                  hint:  img label
+                - name: background
+                  widget: string
+                  label: background
+                  hint: background of the img
     - name: features
       label: how it works features
       file: sponsorship/features.yml
