@@ -71,6 +71,7 @@ const SponsorshipPageTemplate = ({ data, membership }) => (
       </div>
     </Section>
     <Section className={styles.logoMainWrapper} id="member-logos">
+      <h1 className={styles.membersTitle}>Our sponsors</h1>
       <div className={styles.logoCards}>
         {data.logos.logos.items.map((item) => (
           <div

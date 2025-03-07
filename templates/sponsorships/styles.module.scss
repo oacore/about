@@ -146,6 +146,14 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
 
 .logo-main-wrapper {
   padding: 10px 0;
+  .members-title {
+    color: #212121;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    margin-bottom: 34px;
+  }
   .logo-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(377px, 1fr));
