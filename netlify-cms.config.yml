@@ -4540,9 +4540,11 @@ collections:
                     - name: image
                       widget: string
                       label: Image
+                      required: false
                     - name: src
                       widget: string
                       label: Source
+                      required: false
             - name: plans
               widget: object
               label: Plans
