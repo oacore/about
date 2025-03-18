@@ -9,7 +9,7 @@ env:
 on:
   push:
     branches:
-      - azure_testdeploy
+      - azure_about
   workflow_dispatch:
 
 jobs:
