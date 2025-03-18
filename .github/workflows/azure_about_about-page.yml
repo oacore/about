@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - about-test-page
+name: Build and deploy Node.js app to Azure Web App - about-page
 
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -66,7 +66,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'about-test-page'
+          app-name: 'about-page'
           slot-name: 'Production'
           package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_37D03F66ECA140D591287FDE327B4C98 }}
