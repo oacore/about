@@ -60,13 +60,7 @@ jobs:
 
       - name: Unzip artifact for deployment
         run: unzip release.zip
-      
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_AA32B81A75534F42AC7089A7D5F86EC1 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_0A3183C231204F0F8FC7703BD2EF1E91 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_650F2660917F46BF949874CFCF80A325 }}
+    
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
@@ -75,3 +69,4 @@ jobs:
           app-name: 'about-test-page'
           slot-name: 'Production'
           package: .
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_37D03F66ECA140D591287FDE327B4C98 }}
