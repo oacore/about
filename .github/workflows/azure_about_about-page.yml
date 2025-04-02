@@ -11,11 +11,6 @@ on:
     branches:
       - azure_about
   workflow_dispatch:
-      inputs:
-        environment:
-          description: 'Deployment environment'
-          required: false
-          default: 'production'
 
 jobs:
   build:
