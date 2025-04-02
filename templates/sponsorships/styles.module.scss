@@ -156,7 +156,7 @@ $grid-responsive-for-cards: repeat(auto-fit, minmax(200px, 1fr));
   }
   .logo-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(377px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
     grid-gap: 35px;
     .logo-item-wrapper {
       min-height: 104px;
