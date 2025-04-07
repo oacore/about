@@ -50,6 +50,7 @@ upload:
     subTitle: Drag and drop your file here
     action:
       title: Browse files
+
 purpose:
   title: Why it’s important
   image: /images/services/work.svg
