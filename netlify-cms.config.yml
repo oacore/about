@@ -5149,8 +5149,8 @@ collections:
 
 - name: Rrs upload
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -5341,8 +5341,8 @@ collections:
 
 - name: Sdg upload
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
@@ -5502,8 +5502,8 @@ collections:
 
 - name: Das upload
 
-  media_folder: '/images'
-  public_folder: '/images'
+  media_folder: '/images/services'
+  public_folder: '/images/services'
 
   create: false
   delete: false
