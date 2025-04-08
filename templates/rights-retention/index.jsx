@@ -51,6 +51,7 @@ const RightsRetentionPageTemplate = ({ data }) => {
         rrsPdfLoading={rrsPdfLoading}
         uploadPdf={uploadPdf}
         uploadResults={uloadResult}
+        data={data.upload.upload}
       />
       <Section id="purpose" className={styles.howItWorks}>
         <div className={styles.imageWrapper}>

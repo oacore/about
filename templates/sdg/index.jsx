@@ -184,6 +184,7 @@ const SdgPageTemplate = ({ data }) => {
         uploadPdf={uploadPdf}
         uploadResults={uloadResult}
         sdgTypes={sdgTypes}
+        data={data.upload.upload}
       />
       <Section id="purpose" className={styles.howItWorks}>
         <div className={styles.imageWrapper}>
