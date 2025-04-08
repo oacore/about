@@ -40,10 +40,10 @@ const DataAvailabilityPageTemplate = ({ data }) => {
     <Layout className={styles.sponsorshipMainWrapper}>
       <Section id="header" className={styles.header}>
         <div className={styles.cardWrapper}>
-          <span className={styles.demo}>{data.header.subTitle}</span>
-          <h2 className={styles.title}>{data.header.title}</h2>
+          <span className={styles.demo}>{data.header.header.subTitle}</span>
+          <h2 className={styles.title}>{data.header.header.title}</h2>
           <Markdown className={styles.description}>
-            {data.header.description}
+            {data.header.header.description}
           </Markdown>
         </div>
       </Section>
@@ -54,39 +54,42 @@ const DataAvailabilityPageTemplate = ({ data }) => {
       />
       <Section id="purpose" className={styles.howItWorks}>
         <div className={styles.imageWrapper}>
-          <img src={data.purpose?.image} alt={data.howItWorks?.title} />
+          <img
+            src={data.howItWorks.howItWorks?.image}
+            alt={data.howItWorks.howItWorks?.title}
+          />
         </div>
         <article className={styles.content}>
-          <h3>{data.purpose?.title}</h3>
-          <Markdown>{data.purpose?.description}</Markdown>
+          <h3>{data.howItWorks.howItWorks?.title}</h3>
+          <Markdown>{data.howItWorks.howItWorks?.description}</Markdown>
         </article>
       </Section>
       <Section id="member">
         <div className={styles.serviceWrapper}>
           <div className={styles.mainTitleWrapper}>
-            <h3 className={styles.title}>{data.becomeMember?.title}</h3>
+            <h3 className={styles.title}>{data.member.becomeMember?.title}</h3>
             <Button
-              href={data.becomeMember?.action.url}
+              href={data.member.becomeMember?.action.url}
               target="_blank"
               variant="contained"
             >
-              {data.becomeMember?.action.title}
+              {data.member.becomeMember?.action.title}
             </Button>
           </div>
           <div className={styles.service}>
             <div className={styles.headerWrapper}>
               <img
                 className={styles.titlePicture}
-                src={data.becomeMember.services[0].picture}
-                alt={data.becomeMember.services[0].title}
+                src={data.member.becomeMember.services.picture}
+                alt={data.member.becomeMember.services.title}
               />
               <span className={styles.serviceTitle}>
-                {data.becomeMember.services[0].title}
+                {data.member.becomeMember.services.title}
               </span>
             </div>
             <div>
               <Markdown className={styles.serviceDescription}>
-                {data.becomeMember.services[0].description}
+                {data.member.becomeMember.services.description}
               </Markdown>
             </div>
           </div>

@@ -5128,7 +5128,7 @@ collections:
               widget: string
               label: Title
             - name: logo
-              widget: string
+              widget: file
               label: Logo
             - name: tag
               widget: string
