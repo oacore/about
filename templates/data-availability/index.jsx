@@ -6,14 +6,14 @@ import styles from './styles.module.scss'
 import { Markdown } from '../../components'
 import FileUpload from '../../components/pdf-upload'
 
-const RightsRetentionPageTemplate = ({ data }) => {
+const DataAvailabilityPageTemplate = ({ data }) => {
   const [uloadResult, setUploadResult] = useState('')
   const [rrsPdfLoading, setRrsPdfLoading] = useState(false)
   const uploadPdf = async (file) => {
     setRrsPdfLoading(true)
     try {
       const url = new URL(
-        '/internal/data-providers/rights-retention-upload-file',
+        '/internal/data-providers/data-access-upload-file',
         process.env.API_URL
       )
       const fd = new FormData()
@@ -100,4 +100,4 @@ const RightsRetentionPageTemplate = ({ data }) => {
   )
 }
 
-export default RightsRetentionPageTemplate
+export default DataAvailabilityPageTemplate

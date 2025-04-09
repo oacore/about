@@ -1,12 +1,26 @@
 import React from 'react'
 
-import textData from '../../data/sdg.yml'
 import { Page } from '../../components'
 import SdgPageTemplate from '../../templates/sdg'
+import { getSections } from '../../hooks/retriveContent'
 
-const SdgPage = () => (
-  <Page title={textData.header.title} description={textData.header.description}>
-    <SdgPageTemplate data={textData} />
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const page = await getSections('sdg', { ref })
+
+  return {
+    props: {
+      page,
+    },
+  }
+}
+
+const SdgPage = ({ page }) => (
+  <Page
+    title={page.header.header.title}
+    description={page.header.header.description}
+  >
+    <SdgPageTemplate data={page} />
   </Page>
 )
 
