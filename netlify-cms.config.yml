@@ -4594,13 +4594,16 @@ collections:
                         - name: video
                           widget: object
                           label: Video
+                          required: false
                           fields:
                             - name: image
                               widget: string
                               label: Image
+                              required: false
                             - name: src
                               widget: string
                               label: Source
+                              required: false
                     - name: action
                       widget: object
                       label: Action
@@ -4643,9 +4646,11 @@ collections:
                 - name: img
                   widget: string
                   label: Image
+                  required: false
                 - name: alt
                   widget: string
                   label: Alt
+                  required: false
             - name: action
               widget: object
               label: Action
