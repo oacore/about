@@ -3,35 +3,14 @@ import { Card, Button } from '@oacore/design/lib/elements'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './services.module.scss'
+import { getSections } from '../../hooks/retriveContent'
 
 import { Page } from 'components'
 import { Layout, Section, Video, Hero } from 'design-v2/components'
-import retrieveContent from 'content'
-
-const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
-
-const setAssetsUrl = (object) => {
-  Object.entries(object).forEach(([key, value]) => {
-    if (typeof value === 'string' && value.includes('/images'))
-      object[key] = ASSETS_BASE_URL + value
-    else if (typeof value === 'object') setAssetsUrl(value) // Recursively process nested objects
-  })
-}
-
-const getSections = async ({ ref } = {}) => {
-  const page = await retrieveContent('services', {
-    ref,
-    transform: 'object',
-  })
-
-  setAssetsUrl(page)
-
-  return page
-}
 
 export async function getStaticProps({ previewData }) {
   const ref = previewData?.ref
-  const page = await getSections({ ref })
+  const page = await getSections('services', { ref })
 
   return {
     props: {
