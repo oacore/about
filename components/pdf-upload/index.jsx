@@ -9,11 +9,12 @@ import UploadSuccess from './uploadSuccess'
 import UploadFail from './uploadFail'
 import SdgUploadSuccess from './sdgUploadSuccess'
 
-const RrsCheckCard = ({
+const FileUpload = ({
   uploadPdf,
   uploadResults,
   rrsPdfLoading,
   sdgTypes,
+  data,
 }) => {
   const uploadRef = useRef(null)
   const [fileName, setFileName] = useState('')
@@ -33,7 +34,11 @@ const RrsCheckCard = ({
 
     const results = Array.isArray(uploadResults) ? uploadResults : []
     if (results.some((result) => result.predictions)) setCurrentView('success')
-    else if (uploadResults.rightsRetentionSentence) setCurrentView('success')
+    else if (
+      uploadResults.rightsRetentionSentence ||
+      uploadResults.dataAccessSentence
+    )
+      setCurrentView('success')
     else if (
       !uploadResults.rightsRetentionSentence &&
       uploadResults.confidence === 0
@@ -81,6 +86,7 @@ const RrsCheckCard = ({
           handleClick={handleClick}
           rrsPdfLoading={rrsPdfLoading}
           fileName={fileName}
+          data={data}
         />
       )}
       {currentView === 'sizeIssue' && (
@@ -90,6 +96,7 @@ const RrsCheckCard = ({
           handleFileChange={handleFileChange}
           rrsPdfLoading={rrsPdfLoading}
           fileName={fileName}
+          data={data}
         />
       )}
       {currentView === 'formatIssue' && (
@@ -99,6 +106,7 @@ const RrsCheckCard = ({
           handleFileChange={handleFileChange}
           rrsPdfLoading={rrsPdfLoading}
           fileName={fileName}
+          data={data}
         />
       )}
       {currentView === 'success' && (
@@ -112,6 +120,7 @@ const RrsCheckCard = ({
               rrsPdfLoading={rrsPdfLoading}
               fileName={fileName}
               sdgTypes={sdgTypes}
+              data={data}
             />
           ) : (
             <UploadSuccess
@@ -121,6 +130,7 @@ const RrsCheckCard = ({
               uploadResults={uploadResults}
               rrsPdfLoading={rrsPdfLoading}
               fileName={fileName}
+              data={data}
             />
           )}
         </>
@@ -132,9 +142,10 @@ const RrsCheckCard = ({
           handleFileChange={handleFileChange}
           rrsPdfLoading={rrsPdfLoading}
           fileName={fileName}
+          data={data}
         />
       )}
     </div>
   )
 }
-export default RrsCheckCard
+export default FileUpload

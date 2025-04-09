@@ -1,32 +1,11 @@
 import React from 'react'
 
 import apiRequest from '../../api'
+import { getSections } from '../../hooks/retriveContent'
 
 import { Page } from 'components'
 import { countries } from 'data/countries.yml'
 import MembershipPageTemplate from 'templates/membership'
-import retrieveContent from 'content'
-
-const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
-
-const setAssetsUrl = (object) => {
-  Object.entries(object).forEach(([key, value]) => {
-    if (typeof value === 'string' && value.includes('/images'))
-      object[key] = ASSETS_BASE_URL + value
-    else if (typeof value === 'object') setAssetsUrl(value) // Recursively process nested objects
-  })
-}
-
-const getSections = async ({ ref } = {}) => {
-  const page = await retrieveContent('membership', {
-    ref,
-    transform: 'object',
-  })
-
-  setAssetsUrl(page)
-
-  return page
-}
 
 const MembershipPage = ({ members, page, allMembers }) => (
   <Page
@@ -43,7 +22,7 @@ const MembershipPage = ({ members, page, allMembers }) => (
 
 export async function getStaticProps({ previewData }) {
   const ref = previewData?.ref
-  const page = await getSections({ ref })
+  const page = await getSections('membership', { ref })
 
   const { data } = await apiRequest('/members')
   const members = data.map((item) => {
