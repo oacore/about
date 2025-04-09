@@ -2,7 +2,6 @@ import React from 'react'
 import { Button } from '@oacore/design'
 import { ProgressSpinner } from '@oacore/design/lib/elements'
 
-import text from '../../data/retention.yml'
 import styles from './styles.module.scss'
 
 const SdgUploadSuccess = ({
@@ -13,21 +12,20 @@ const SdgUploadSuccess = ({
   rrsPdfLoading,
   fileName,
   sdgTypes,
+  data,
 }) => (
   <div className={styles.uploadWrapper}>
     {!rrsPdfLoading ? (
       <>
         <div className={styles.successWrapper}>
           <div className={styles.titleWrapper}>
-            <img src={text.upload.success.image} alt="issueSvg" />
-            <h3 className={styles.uploadTitle}>
-              {text.upload.sdgSuccess.title}
-            </h3>
+            <img src={data.success.image} alt="issueSvg" />
+            <h3 className={styles.uploadTitle}>{data.success.title}</h3>
           </div>
         </div>
       </>
     ) : (
-      <h3 className={styles.uploadTitle}>{text.upload.sdgDefault.title}</h3>
+      <h3 className={styles.uploadTitle}>{data.default.title}</h3>
     )}
     {rrsPdfLoading ? (
       <div className={styles.innerWrapper}>
@@ -39,7 +37,7 @@ const SdgUploadSuccess = ({
     ) : (
       <div className={styles.innerIssueWrapper}>
         <div className={styles.sdgWrapper}>
-          {text.upload.sdgSuccess.description}
+          {data.success.description}
           <div className={styles.innerSdgWrapper}>
             {uploadResults.map((item) => {
               const sdgType = sdgTypes.find(
@@ -76,7 +74,7 @@ const SdgUploadSuccess = ({
         onClick={handleClick}
         variant="contained"
       >
-        {text.upload.success.action.title}
+        {data.success.action.title}
       </Button>
     </div>
   </div>

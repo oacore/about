@@ -5128,7 +5128,7 @@ collections:
               widget: string
               label: Title
             - name: logo
-              widget: string
+              widget: file
               label: Logo
             - name: tag
               widget: string
@@ -5147,3 +5147,547 @@ collections:
                   widget: string
                   label: URL
 
+- name: Rrs upload
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: 📤 RRS identification
+  label_singular: section
+  description: >
+    Find Rights Retention Strategy statements in papers.
+
+  files:
+    - name: meta
+      label: Meta
+      file: rrs/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: ID
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: string
+          label: Tagline
+    - name: header
+      label: Header
+      file: rrs/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: subTitle
+              widget: string
+              label: SubTitle
+    - name: upload
+      label: Upload
+      file: rrs/upload.yml
+      fields:
+        - name: default
+          widget: object
+          label: Default
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: subTitle
+              widget: string
+              label: SubTitle
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: success
+          widget: object
+          label: Success
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: fail
+          widget: object
+          label: Fail
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: noSupport
+          widget: object
+          label: No Support
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: sizeTitle
+              widget: string
+              label: Size Title
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: string
+              label: Action
+        - name: subInfo
+          widget: object
+          label: Sub Info
+          fields:
+            - name: format
+              widget: text
+              label: Format
+            - name: size
+              widget: text
+              label: Size
+    - name: how-it-works
+      label: how it works features
+      file: rrs/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+
+    - name: member
+      label: Member
+      file: rrs/member.yml
+      fields:
+        - name: become-member
+          widget: object
+          label: Become Member
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: url
+                  widget: string
+                  label: URL
+            - name: services
+              widget: object
+              label: Services
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: picture
+                  widget: file
+                  label: Picture
+                - name: description
+                  widget: markdown
+                  label: Description
+
+- name: Sdg upload
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: ⬇️ SDG identification
+  label_singular: section
+  description: >
+    Sustainable Development Goals
+
+  files:
+    - name: meta
+      label: Meta
+      file: sdg/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: ID
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: string
+          label: Tagline
+    - name: header
+      label: Header
+      file: sdg/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: image
+              widget: file
+              label: Image
+            - name: description
+              widget: markdown
+              label: Description
+            - name: subTitle
+              widget: string
+              label: SubTitle
+    - name: upload
+      label: Upload
+      file: sdg/upload.yml
+      fields:
+        - name: default
+          widget: object
+          label: Default
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: subTitle
+              widget: string
+              label: SubTitle
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: success
+          widget: object
+          label: Success
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: fail
+          widget: object
+          label: Fail
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: noSupport
+          widget: object
+          label: No Support
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: sizeTitle
+              widget: string
+              label: Size Title
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: string
+              label: Action
+        - name: subInfo
+          widget: object
+          label: Sub Info
+          fields:
+            - name: format
+              widget: text
+              label: Format
+            - name: size
+              widget: text
+              label: Size
+    - name: how-it-works
+      label: how it works features
+      file: sdg/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+
+
+- name: Das upload
+
+  media_folder: '/images/services'
+  public_folder: '/images/services'
+
+  create: false
+  delete: false
+
+  label: 📁 DAS identification
+  label_singular: section
+  description: >
+    Automatically identify whether a research paper includes a Data Availability Statement.
+
+  files:
+    - name: meta
+      label: Meta
+      file: das/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: ID
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: string
+          label: Tagline
+    - name: header
+      label: Header
+      file: das/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: subTitle
+              widget: string
+              label: SubTitle
+    - name: upload
+      label: Upload
+      file: das/upload.yml
+      fields:
+        - name: default
+          widget: object
+          label: Default
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: subTitle
+              widget: string
+              label: SubTitle
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: success
+          widget: object
+          label: Success
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: fail
+          widget: object
+          label: Fail
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+        - name: noSupport
+          widget: object
+          label: No Support
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: sizeTitle
+              widget: string
+              label: Size Title
+            - name: image
+              widget: file
+              label: Image
+            - name: action
+              widget: string
+              label: Action
+        - name: subInfo
+          widget: object
+          label: Sub Info
+          fields:
+            - name: format
+              widget: text
+              label: Format
+            - name: size
+              widget: text
+              label: Size
+    - name: how-it-works
+      label: how it works features
+      file: das/how-it-works.yml
+      fields:
+        - name: how-it-works
+          widget: object
+          label: how it works
+          allow_add: true
+          hint: >
+            how it works section
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Displayed in the browser as a title.
+            - name: image
+              widget: file
+              label: Image
+              hint: Image on the right side.
+            - name: description
+              widget: string
+              label: Description
+              hint: >
+                Displayed in the browser as a card description.
+
+    - name: member
+      label: Member
+      file: das/member.yml
+      fields:
+        - name: become-member
+          widget: object
+          label: Become Member
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: action
+              widget: object
+              label: Action
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: url
+                  widget: string
+                  label: URL
+            - name: services
+              widget: object
+              label: Services
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: picture
+                  widget: file
+                  label: Picture
+                - name: description
+                  widget: markdown
+                  label: Description

@@ -165,14 +165,18 @@ const SdgPageTemplate = ({ data }) => {
     <Layout className={styles.sponsorshipMainWrapper}>
       <Section id="header" className={styles.header}>
         <div className={styles.cardWrapper}>
-          <span className={styles.demo}>{data.header.subTitle}</span>
-          <h2 className={styles.title}>{data.header.title}</h2>
+          <span className={styles.demo}>{data.header.header.subTitle}</span>
+          <h2 className={styles.title}>{data.header.header.title}</h2>
           <Markdown className={styles.description}>
-            {data.header.description}
+            {data.header.header.description}
           </Markdown>
         </div>
         <div className={styles.imgWrapper}>
-          <img className={styles.logo} src={data.header.image} alt="logo" />
+          <img
+            className={styles.logo}
+            src={data.header.header.image}
+            alt="logo"
+          />
         </div>
       </Section>
       <FileUpload
@@ -180,14 +184,18 @@ const SdgPageTemplate = ({ data }) => {
         uploadPdf={uploadPdf}
         uploadResults={uloadResult}
         sdgTypes={sdgTypes}
+        data={data.upload.upload}
       />
       <Section id="purpose" className={styles.howItWorks}>
         <div className={styles.imageWrapper}>
-          <img src={data.purpose?.image} alt={data.howItWorks?.title} />
+          <img
+            src={data.howItWorks.howItWorks?.image}
+            alt={data.howItWorks.howItWorks?.title}
+          />
         </div>
         <article className={styles.content}>
-          <h3>{data.purpose?.title}</h3>
-          <Markdown>{data.purpose?.description}</Markdown>
+          <h3>{data.howItWorks.howItWorks?.title}</h3>
+          <Markdown>{data.howItWorks.howItWorks?.description}</Markdown>
         </article>
       </Section>
       <Video
