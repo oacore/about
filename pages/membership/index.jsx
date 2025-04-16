@@ -37,18 +37,20 @@ export async function getStaticProps({ previewData }) {
     return item
   })
 
-  const filteredMembers = members.filter(
-    (member) =>
-      member.billing_type !== 'starting' &&
-      member.organisation_name &&
-      !member.organisation_name.toLowerCase().includes('test')
-  )
+  const filteredMembers = members.filter((member) => {
+    const orgName = member?.organisation_name?.toLowerCase() || ''
+    return (
+      member?.billing_type !== 'starting' &&
+      orgName &&
+      !orgName.includes('test') &&
+      !orgName.includes('demo')
+    )
+  })
 
-  const allMembers = members.filter(
-    (member) =>
-      member.organisation_name &&
-      !member.organisation_name.toLowerCase().includes('test')
-  )
+  const allMembers = members.filter((member) => {
+    const orgName = member.organisation_name?.toLowerCase() || ''
+    return !orgName.includes('test') && !orgName.includes('demo')
+  })
 
   return {
     props: {
