@@ -15,7 +15,7 @@ const MembershipTable = ({ title, members, excludedIds, customSort }) => {
   }
 
   const filteredMembers = members.filter((member) =>
-    member.organisation_name.toLowerCase().includes(searchValue.toLowerCase())
+    member?.organisation_name?.toLowerCase().includes(searchValue.toLowerCase())
   )
 
   const sortedMembers = customSort
