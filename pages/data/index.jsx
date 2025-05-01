@@ -21,41 +21,65 @@ const DataPage = () => (
         <Markdown>{datasetData.tagline}</Markdown>
       </div>
 
-      {datasetData.sections.map(({ title, content, link, image, data }) => (
-        <HighlightSection image={image} action={link?.url} key={title}>
-          <div
-            className={classNames.use({
-              [styles.centering]: data,
-            })}
-          >
-            <h3
+      {datasetData.sections.map(
+        ({ title, content, link, image, data, stats, subTitle }) => (
+          <HighlightSection image={image} action={link?.url} key={title}>
+            <div
               className={classNames.use({
-                [styles.textCenter]: data,
+                [styles.centering]: data,
               })}
             >
-              <Markdown>{patchStats(title, datasetData.statistics)}</Markdown>
-            </h3>
-            {data && (
-              <div className={styles.dataItemWrapper}>
-                {data.map((item) => (
-                  <div className={styles.dataItem}>
-                    <img src={item.image} alt={item.type} />
-                    <a className={styles.itemLink} href={item.link}>
-                      {item.type}
-                    </a>
-                  </div>
-                ))}
-              </div>
-            )}
-            <Markdown>{patchStats(content, datasetData.statistics)}</Markdown>
-            {link && (
-              <Button outline href={link?.url} color="primary">
-                {link?.caption}
-              </Button>
-            )}
-          </div>
-        </HighlightSection>
-      ))}
+              <h3
+                className={classNames.use({
+                  [styles.textCenter]: data,
+                })}
+              >
+                <Markdown>{patchStats(title, datasetData.statistics)}</Markdown>
+              </h3>
+              {data && (
+                <div className={styles.dataItemWrapper}>
+                  {data.map((item) => (
+                    <div className={styles.dataItem}>
+                      <img src={item.image} alt={item.type} />
+                      <a className={styles.itemLink} href={item.link}>
+                        {item.type}
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              )}
+              {content && (
+                <Markdown>
+                  {patchStats(content, datasetData.statistics)}
+                </Markdown>
+              )}
+              {stats && (
+                <div className={styles.statWrapper}>
+                  <ul className={styles.statList}>
+                    {stats.map((item, index) => (
+                      // eslint-disable-next-line react/no-array-index-key
+                      <li className={styles.statListItems} key={index}>
+                        <div>
+                          <Markdown className={styles.statCount}>
+                            {patchStats(item.title, datasetData.statistics)}
+                          </Markdown>
+                          {item.description}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className={styles.subTitle}>{subTitle}</span>
+                </div>
+              )}
+              {link && (
+                <Button outline href={link?.url} color="primary">
+                  {link?.caption}
+                </Button>
+              )}
+            </div>
+          </HighlightSection>
+        )
+      )}
       <Markdown>{datasetData.disclaimer}</Markdown>
     </Layout>
   </Page>

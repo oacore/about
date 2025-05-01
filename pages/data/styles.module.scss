@@ -3,6 +3,48 @@
   margin-bottom: 50px;
 }
 
+.stat-list li {
+  display: list-item;
+  margin-bottom: 8px;
+  list-style: none;
+  padding-left: 25px;
+  position: relative;
+
+  &::before {
+    content: '•';
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 5px;
+    font-size: 34px;
+    line-height: 1;
+  }
+
+  > div {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .stat-count {
+    font-size: 34px;
+  }
+}
+
+.stat-wrapper {
+  margin-bottom: 24px;
+  color: #212121;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  ul.a {
+    list-style-type: circle;
+  }
+}
+
+.stat-list-items {
+  list-style-type: circle;
+}
+
 .centering {
   text-align: center;
   .text-center {
