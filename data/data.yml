@@ -49,6 +49,20 @@ sections:
       url: services#access-to-raw-data
     image: /images/illustrations/chart.svg
   - title: |
+      CORE provides access to:
+    stats:
+    - title: <mark>{{totalArticlesCount}}</mark>&nbsp;
+      description: metadata records of scholarly resources,
+    - title: <mark>{{totalWorksCount}}</mark>&nbsp;
+      description: unique deduplicated research works,
+    - title: <mark>100M+</mark>&nbsp;
+      description: abstracts,
+    subTitle: more than any other scholarly database.
+    link:
+      caption: Learn more about the nature of our dataset
+      url: https://core.ac.uk/services#access-to-raw-data
+    image: /images/illustrations/access.svg
+  - title: |
       We're truly global, aggregating from
       <mark>{{repositoriesCount}}</mark>&nbsp;data providers,
       in more than 150 countries.

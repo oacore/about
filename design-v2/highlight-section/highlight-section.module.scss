@@ -23,6 +23,9 @@
       margin-left: 0;
       margin-right: 4rem;
     }
+    @include media-breakpoint-down('sm') {
+      flex-direction: unset;
+    }
   }
 
   &:nth-child(3) {
@@ -62,6 +65,9 @@
     height: auto;
     margin-right: 4rem;
 
+    @media (max-width: 992px) {
+      max-width: 400px;
+    }
     @include media-breakpoint-down('sm') {
       width: 100%;
     }
