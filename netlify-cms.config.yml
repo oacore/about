@@ -1586,6 +1586,92 @@ collections:
                       label: slug
                       hint: hint for us
 
+- name: governance
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 🏛️ Governance
+  label_singular: section
+  description: >
+    Governance structure and details.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description, headline)
+      file: governance/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: text
+          label: Tagline
+    - name: header
+      label: Header (title, description, image)
+      file: governance/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: id
+              widget: string
+              label: Id
+              hint: >
+                Page Id
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                The title of the page. Displayed on the page below header.
+            - name: image
+              widget: string
+              label: file
+              hint: Image on the right side.
+            - name: description
+              widget: markdown
+              label: Description
+              hint: >
+                Description of the page.
+    - name: connections
+      label: Governance Connections
+      file: governance/connections.yml
+      fields:
+        - name: connections
+          widget: list
+          label: Connections
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+        - name: connectionsImage
+          widget: file
+          label: Connections Image
+    - name: services
+      label: Governance Services
+      file: governance/services.yml
+      fields:
+        - name: features
+          widget: list
+          label: Features
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: url
+              widget: string
+              label: URL
+
 - name: advisory-board
 
   media_folder: '/images'
@@ -1831,6 +1917,206 @@ collections:
                 - name: title
                   label: Title
                   widget: string
+
+- name: research-outputs
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 📑 Research outputs
+  label_singular: section
+  description: >
+    Discover our research outputs and cite our work.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (id, title, tagline)
+      file: research-outputs/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: text
+          label: Tagline
+    - name: header
+      label: Header (title, description, image, links)
+      file: research-outputs/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: id
+              widget: string
+              label: Id
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: links
+              widget: object
+              label: Links
+              fields:
+                - name: content
+                  widget: list
+                  label: Content
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: href
+                      widget: string
+                      label: Href
+                - name: more
+                  widget: markdown
+                  label: More
+                - name: moreAction
+                  widget: object
+                  label: More Action
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: link
+                      widget: string
+                      label: Link
+    - name: sections
+      label: Sections (papers by topic)
+      file: research-outputs/sections.yml
+      fields:
+        - name: sections
+          widget: list
+          label: Sections
+          fields:
+            - name: id
+              widget: string
+              label: Id
+            - name: title
+              widget: string
+              label: Title
+            - name: subTitle
+              widget: string
+              label: SubTitle
+              required: false
+            - name: caption
+              widget: string
+              label: Caption
+              required: false
+            - name: papers
+              widget: list
+              label: Papers
+              fields:
+                - name: id
+                  widget: string
+                  label: Id
+                  required: false
+                - name: type
+                  widget: string
+                  label: Type
+                  required: false
+                - name: volume
+                  widget: string
+                  label: Volume
+                  required: false
+                - name: number
+                  widget: string
+                  label: Number
+                  required: false
+                - name: booktitle
+                  widget: string
+                  label: Booktitle
+                  required: false
+                - name: editor
+                  widget: list
+                  label: Editor
+                  required: false
+                - name: month
+                  widget: string
+                  label: Month
+                  required: false
+                - name: title
+                  widget: text
+                  label: Title
+                - name: author
+                  widget: list
+                  label: Author(s)
+                - name: year
+                  widget: string
+                  label: Year
+                - name: journal
+                  widget: string
+                  label: Journal
+                  required: false
+                - name: keywords
+                  widget: list
+                  label: Keywords
+                  required: false
+                - name: abstract
+                  widget: text
+                  label: Abstract
+                  required: false
+                - name: description
+                  widget: text
+                  label: Description
+                  required: false
+                - name: url
+                  widget: string
+                  label: URL
+                  required: false
+                - name: citations
+                  widget: object
+                  label: Citations
+                  required: false
+                  fields:
+                    - name: text
+                      widget: text
+                      label: Citation Text
+                      required: false
+                    - name: bibtex
+                      widget: text
+                      label: BibTeX
+                      required: false
+                - name: pages
+                  widget: string
+                  label: Pages
+                  required: false
+                - name: note
+                  widget: string
+                  label: Note
+                  required: false
+                - name: doi
+                  widget: string
+                  label: DOI
+                  required: false
+    - name: footer
+      label: Footer
+      file: research-outputs/footer.yml
+      fields:
+        - name: footer
+          widget: markdown
+          label: Footer
+        - name: action
+          widget: object
+          label: Action
+          fields:
+            - name: text
+              widget: string
+              label: Text
+            - name: href
+              widget: string
+              label: Href
 
 - name: api
 

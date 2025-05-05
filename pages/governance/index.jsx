@@ -1,28 +1,46 @@
 import React from 'react'
 
 import styles from './community.module.scss'
+import { getSections } from '../../hooks/retriveContent'
 
 import { Page, Button, Markdown } from 'components'
-import page from 'data/community/home.yml'
 import { Layout, Hero, Section } from 'design-v2/components'
 
-const GovernancePage = () => (
-  <Page title={page.title} description={page.description}>
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const page = await getSections('governance', { ref })
+
+  return {
+    props: {
+      page,
+    },
+  }
+}
+
+const GovernancePage = ({ page }) => (
+  <Page
+    title={page.header.header.title}
+    description={page.header.header.description}
+  >
     <Layout className={styles.container}>
       <Hero
-        id={page.header.id}
-        image={page.header.image}
-        title={page.title}
-        description={page.description}
-        caption={page.header.caption}
+        id={page.header.header.id}
+        image={page.header.header.image}
+        title={page.header.header.title}
+        description={page.header.header.description}
+        caption={page.header.header.caption}
         borderBottom
       />
       <Section className={styles.header}>
         <div>
-          <img className={styles.logo} src={page.connectionsImage} alt="logo" />
+          <img
+            className={styles.logo}
+            src={page.connections.connectionsImage}
+            alt="logo"
+          />
         </div>
         <div className={styles.content}>
-          {page.connections.map((item) => (
+          {page.connections.connections.map((item) => (
             <>
               <h5 className={styles.governanceType}>{item.title}</h5>
               <Markdown>{item.description}</Markdown>
@@ -31,7 +49,7 @@ const GovernancePage = () => (
         </div>
       </Section>
       <Section className={styles.group}>
-        {page.actions.map((action) => (
+        {page.services.features.map((action) => (
           <Button
             key={action.title}
             href={action.url}
