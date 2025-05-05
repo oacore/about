@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { useRef, useState } from 'react'
 import { Card } from 'reactstrap'
-import { bind } from 'decko'
 import { classNames } from '@oacore/design/lib/utils'
 import { Button } from '@oacore/design/lib/elements'
 
@@ -8,11 +7,11 @@ import styles from './about.module.scss'
 import bsdtag from '../../public/images/bsdtag.svg'
 import coreLogo from '../../public/images/core-logo-circle.svg'
 import { Layout } from '../../design-v2/components'
+import { getSections } from '../../hooks/retriveContent'
 
 import { Content, Reference, Section } from 'components'
 import Markdown from 'components/markdown'
 import CitationsModal from 'components/citations-modal'
-import page from 'data/research-outputs.yml'
 
 const ResearchPaperCard = ({
   id,
@@ -145,20 +144,25 @@ const ResearchOutputsSection = ({
   </Section>
 )
 
-class ResearchOutputsPage extends Component {
-  state = {
-    isCitationsModalOpen: false,
-    activePaper: null,
-  }
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const page = await getSections('research-outputs', { ref })
 
-  constructor(props) {
-    super(props)
-    this.headerHeight = 50
+  return {
+    props: {
+      page,
+    },
   }
+}
 
-  handleScroll = (id) => {
+const ResearchOutputsPage = ({ page }) => {
+  const [isCitationsModalOpen, setIsCitationsModalOpen] = useState(false)
+  const [activePaper, setActivePaper] = useState(null)
+  const headerHeight = useRef(50)
+
+  const handleScroll = (id) => {
     const element = document.getElementById(id)
-    const offset = this.headerHeight
+    const offset = headerHeight.current
 
     if (element) {
       const position = element.offsetTop - offset
@@ -169,78 +173,73 @@ class ResearchOutputsPage extends Component {
     }
   }
 
-  @bind
-  toggleCitationsModal(event, paper) {
-    this.setState(({ isCitationsModalOpen, activePaper }) => ({
-      isCitationsModalOpen: !isCitationsModalOpen,
-      activePaper: paper || activePaper,
-    }))
+  const toggleCitationsModal = (event, paper) => {
+    setIsCitationsModalOpen((prev) => !prev)
+    setActivePaper((prev) => paper || prev)
   }
 
-  render() {
-    const { isCitationsModalOpen, activePaper } = this.state
-
-    return (
-      <Layout>
-        <Section className={styles.header}>
-          <div className={styles.innerWrapper}>
-            <h1 className={styles.title}>{page.title}</h1>
-            <Markdown className={styles.description}>
-              {page.description}
+  return (
+    <Layout>
+      <Section className={styles.header}>
+        <div className={styles.innerWrapper}>
+          <h1 className={styles.title}>{page.header.header.title}</h1>
+          <Markdown className={styles.description}>
+            {page.header.header.description}
+          </Markdown>
+          <img className={styles.headerImage} src={bsdtag} alt="bsdtag" />
+        </div>
+        <div className={styles.sectionWrapper}>
+          <ul className={styles.redirectWrapper}>
+            {page.header.header.links?.content?.map((item) => (
+              <li className={styles.redirectLink} key={item.href}>
+                {/* eslint-disable-next-line max-len */}
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+                <a onClick={() => handleScroll(item.href)}>{item.title}</a>
+              </li>
+            ))}
+          </ul>
+          <div className={styles.redirectButtonWrapper}>
+            <Markdown className={styles.redirectLinks}>
+              {page.header.header.links?.more}
             </Markdown>
-            <img className={styles.headerImage} src={bsdtag} alt="bsdtag" />
+            <Button
+              className={styles.redirectButton}
+              tag="a"
+              variant="contained"
+              href={page.header.header.links?.moreAction.link}
+              target="_blank"
+            >
+              {page.header.header.links?.moreAction.title}
+            </Button>
           </div>
-          <div className={styles.sectionWrapper}>
-            <ul className={styles.redirectWrapper}>
-              {page.links.content?.map((item) => (
-                <li className={styles.redirectLink}>
-                  {/* eslint-disable-next-line max-len */}
-                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-                  <a onClick={() => this.handleScroll(item.href)}>
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <div className={styles.redirectButtonWrapper}>
-              <Markdown className={styles.redirectLinks}>
-                {page.links.more}
-              </Markdown>
-              <Button
-                className={styles.redirectButton}
-                tag="a"
-                variant="contained"
-                href={page.links.moreAction.link}
-                target="_blank"
-              >
-                {page.links.moreAction.title}
-              </Button>
-            </div>
-          </div>
-        </Section>
-        {page.sections?.map((section, index) => (
-          <ResearchOutputsSection
-            key={section.id}
-            index={index}
-            id={section.id}
-            caption={section.caption || section.title}
-            title={section.title}
-            subTitle={section.subTitle}
-            papers={section.papers}
-            onPaperCite={this.toggleCitationsModal}
-            isCitationsModalOpen={isCitationsModalOpen}
-            activePaper={activePaper}
-          />
-        ))}
-        <Content className={styles.footerWrapper}>
-          <Markdown className={styles.footerText}>{page.footer}</Markdown>
-          <Button href={page.action.href} variant="contained" target="_blank">
-            {page.action.text}
-          </Button>
-        </Content>
-      </Layout>
-    )
-  }
+        </div>
+      </Section>
+      {page.sections.sections?.map((section, index) => (
+        <ResearchOutputsSection
+          key={section.id}
+          index={index}
+          id={section.id}
+          caption={section.caption || section.title}
+          title={section.title}
+          subTitle={section.subTitle}
+          papers={section.papers}
+          onPaperCite={toggleCitationsModal}
+          isCitationsModalOpen={isCitationsModalOpen}
+          activePaper={activePaper}
+        />
+      ))}
+      <Content className={styles.footerWrapper}>
+        <Markdown className={styles.footerText}>{page.footer.footer}</Markdown>
+        <Button
+          href={page.footer.action.href}
+          variant="contained"
+          target="_blank"
+        >
+          {page.footer.action.text}
+        </Button>
+      </Content>
+    </Layout>
+  )
 }
 
 export default ResearchOutputsPage
