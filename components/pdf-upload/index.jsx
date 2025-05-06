@@ -36,7 +36,7 @@ const FileUpload = ({
     if (results.some((result) => result.predictions)) setCurrentView('success')
     else if (
       uploadResults.rightsRetentionSentence ||
-      uploadResults.dataAccessSentence
+      (uploadResults.dataAccessSentence && uploadResults.confidence !== 0)
     )
       setCurrentView('success')
     else if (
