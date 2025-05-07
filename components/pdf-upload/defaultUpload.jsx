@@ -42,11 +42,7 @@ const DefaultUploadView = ({
           hidden
         />
         <p className={styles.connector}>- OR -</p>
-        <Button
-          disabled={rrsPdfLoading}
-          onClick={handleClick}
-          variant="contained"
-        >
+        <Button disabled={rrsPdfLoading} variant="contained">
           {data.default.action.title}
         </Button>
       </div>

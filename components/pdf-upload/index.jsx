@@ -25,10 +25,6 @@ const FileUpload = ({
     if (!rrsPdfLoading && uploadRef.current) uploadRef.current.click()
   }
 
-  const handleDragOver = (event) => {
-    event.preventDefault()
-  }
-
   useEffect(() => {
     if (!uploadResults) return
 
@@ -48,17 +44,18 @@ const FileUpload = ({
       setCurrentView('fail')
   }, [uploadResults])
 
+  const handleDragOver = (event) => {
+    event.preventDefault()
+  }
+
   const handleFileChange = (event) => {
     event.preventDefault()
-    event.stopPropagation()
     if (rrsPdfLoading) return
 
-    let file
     const { files } = event.dataTransfer || event.target
 
     if (files && files.length) {
-      // eslint-disable-next-line prefer-destructuring
-      file = files[0]
+      const file = files[0]
       if (file.size > 10 * 1024 * 1024) {
         setCurrentView('sizeIssue')
         return
@@ -68,9 +65,10 @@ const FileUpload = ({
         setCurrentView('formatIssue')
         return
       }
-      uploadPdf(file)
       setFileName(file.name)
+      uploadPdf(file)
     }
+    event.stopPropagation()
   }
 
   return (
