@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { bind } from 'decko'
+import React, { useRef } from 'react'
 
 import styles from './styles.module.scss'
 import { Button } from './elements'
@@ -10,12 +9,11 @@ const citationTitles = {
   bibtex: 'BibTeX',
 }
 
-class CitationsModal extends Component {
-  containerElement = null
+const CitationsModal = ({ id, citations, onCite, ...restProps }) => {
+  const containerRef = useRef(null)
 
-  @bind
-  handleCiteClick() {
-    const controlElement = this.containerElement.querySelector(
+  const handleCiteClick = () => {
+    const controlElement = containerRef.current?.querySelector(
       '.tab-pane.active textarea'
     )
     if (!controlElement) {
@@ -26,42 +24,32 @@ class CitationsModal extends Component {
     controlElement.focus()
     controlElement.select()
     document.execCommand('copy')
-    const { onCite } = this.props
     if (onCite) onCite(controlElement.value)
   }
 
-  render() {
-    const { id, citations, isOpen, onCite, onToggle, ...restProps } = this.props
-    return (
-      <div
-        id={id}
-        ref={(element) => {
-          this.containerElement = element
-        }}
-        {...restProps}
-      >
-        <div className="sr-only">Cite the work</div>
-        <div>
-          <CitationTabManager>
-            {Object.entries(citationTitles).map(([type, tabTitle]) => (
-              <CitationTab
-                key={type}
-                id={`${id}-${type}`}
-                type={type}
-                title={tabTitle}
-                content={citations[type]}
-              />
-            ))}
-          </CitationTabManager>
-          <div className={styles.actionBtn}>
-            <Button color="primary" outline onClick={this.handleCiteClick}>
-              Copy to clipboard
-            </Button>
-          </div>
+  return (
+    <div id={id} ref={containerRef} {...restProps}>
+      <div className="sr-only">Cite the work</div>
+      <div>
+        <CitationTabManager>
+          {Object.entries(citationTitles).map(([type, tabTitle]) => (
+            <CitationTab
+              key={type}
+              id={`${id}-${type}`}
+              type={type}
+              title={tabTitle}
+              content={citations[type]}
+            />
+          ))}
+        </CitationTabManager>
+        <div className={styles.actionBtn}>
+          <Button color="primary" outline onClick={handleCiteClick}>
+            Copy to clipboard
+          </Button>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default CitationsModal
