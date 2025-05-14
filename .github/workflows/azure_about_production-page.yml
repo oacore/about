@@ -24,6 +24,8 @@ jobs:
           node-version: '16.x'
 
       - name: npm install, build, and test
+        env:
+            GA_CODE: ${{ secrets.GA_CODE }}
         run: |
           npm install --legacy-peer-deps  
           npm run build --if-present
