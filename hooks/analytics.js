@@ -25,7 +25,7 @@ export const useAnalytics = (options) => {
   )
 
   useEffect(() => {
-    if (analyticsAllowed && process.env.NODE_ENV === 'production') {
+    if (analyticsAllowed && (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development')) {
       // Initialise production Google Analytics
       ReactGA.initialize(process.env.GA_CODE)
     } else if (analyticsAllowed) {
