@@ -25,7 +25,7 @@ export const useAnalytics = (options) => {
   )
 
   useEffect(() => {
-    if (analyticsAllowed && (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'azure')) {
+    if (analyticsAllowed && process.env.NODE_ENV === 'production') {
       // Initialise production Google Analytics
       ReactGA.initialize(process.env.GA_CODE)
     } else if (analyticsAllowed) {
@@ -33,10 +33,16 @@ export const useAnalytics = (options) => {
         // We want to have logging in the development environment
         // eslint-disable-next-line no-console
         console.log(`ga(${JSON.stringify(args).slice(1, -1)})`)
-    } else {
+    } else if (
+      process.env.NODE_ENV === 'azure' ||
+      process.env.NODE_ENV === 'development'
+    )
+      ReactGA.initialize('G-2ZWQFDN91Z')
+    else {
       // Disable Google Analytics
       window.ga = null
     }
+
 
     // Reporting first page view manually because the event doesn't fire
     reportPageview(router.asPath, title)
