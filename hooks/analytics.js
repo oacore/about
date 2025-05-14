@@ -12,7 +12,7 @@ export const useAnalytics = (options) => {
     (url, title, hitType = 'pageview') => {
       const pathName =
         window.location.pathname === '/'
-          ? 'core.ac.uk'
+          ? 'about-page-gfe8anguaqgefxd8.uksouth-01.azurewebsites.net'
           : window.location.pathname
 
       ReactGA.send({
