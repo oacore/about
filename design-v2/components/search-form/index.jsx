@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React from 'react'
 import { Button, Select } from '@oacore/design/lib'
+import LogRocket from 'logrocket'
 
 import styles from './styles.module.scss'
 
@@ -16,12 +17,18 @@ const SearchForm = ({ setSearchValue, searchValue }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    LogRocket.track('search-submitted', { query: searchValue })
     router.push(`search?q=${searchValue}`)
   }
 
   const handleOnChange = () => {
     router.push(`search?q=${searchValue}`)
   }
+
+  const handleButtonClick = () => {
+    LogRocket.track('search-button-clicked', { query: searchValue })
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <Select
@@ -46,7 +53,7 @@ const SearchForm = ({ setSearchValue, searchValue }) => {
                   </Select.Option>
                 ))} */}
       </Select>
-      <Button variant="contained" type="submit">
+      <Button variant="contained" type="submit" onClick={handleButtonClick}>
         Search
       </Button>
     </form>
