@@ -12,7 +12,7 @@ import Main from 'main'
 const App = ({ Component, pageProps }) => {
   const store = useInitStore()
 
-  LogRocket.init('cab1al/about-repo')
+  if (process.env.NODE_ENV === 'production') LogRocket.init('cab1al/about-repo')
 
   return (
     <StoreProvider store={store}>
