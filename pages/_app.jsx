@@ -1,14 +1,19 @@
 import React from 'react'
-import { DesignProvider, CookiesProvider } from '@oacore/design'
+import { CookiesProvider, DesignProvider } from '@oacore/design'
 import '@oacore/design/lib/index.css'
+import LogRocket from 'logrocket'
 
-import { useInitStore, StoreProvider } from '../store'
+import { StoreProvider, useInitStore } from '../store'
+
 import 'components/index.scss'
 
 import Main from 'main'
 
 const App = ({ Component, pageProps }) => {
   const store = useInitStore()
+
+  if (process.env.NODE_ENV === 'production') LogRocket.init('cab1al/about-repo')
+
   return (
     <StoreProvider store={store}>
       <CookiesProvider>
