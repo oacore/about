@@ -14,7 +14,7 @@ const Video = ({ video, visibleModal, closeModal }) =>
         className={styles.video}
         src={video.src}
         title={video.title}
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
     </Modal>
