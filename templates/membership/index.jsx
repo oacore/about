@@ -3,7 +3,6 @@ import { Button } from '@oacore/design/lib/elements'
 import { Carousel } from '@oacore/design/lib'
 import Parser from 'html-react-parser'
 import classNames from '@oacore/design/lib/utils/class-names'
-import LogRocket from 'logrocket'
 
 import styles from './styles.module.scss'
 import DetailsTable from './details-table'
@@ -119,18 +118,7 @@ const Card = ({ plan, handleContentOpen }) => {
             [styles.placement]: !plan.subscribe,
           })}
         >
-          <Button
-            id="core-members"
-            variant="contained"
-            href={plan.action.url}
-            onClick={() => {
-              if (plan.action.title === 'Become a member') {
-                LogRocket.track('become-member-button-clicked', {
-                  planTitle: plan.title,
-                })
-              }
-            }}
-          >
+          <Button id="core-members" variant="contained" href={plan.action.url}>
             {plan.action.title}
           </Button>
         </div>
