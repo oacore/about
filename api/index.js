@@ -1,5 +1,3 @@
-import LogRocket from 'logrocket'
-
 import NetworkError from './errors'
 
 // Environment variables are replaced in the bundle using the `DefinePlugin`
@@ -105,10 +103,7 @@ const executeRequest = ({ url, ...options }) =>
     .then(processStatus)
     .then(
       (response) => processBody(response, { ...options }),
-      (error) => {
-        LogRocket.captureException(error)
-        return processError(error, { ...options })
-      }
+      (error) => processError(error, { ...options })
     )
 
 const performRequest = (url, options) => {
