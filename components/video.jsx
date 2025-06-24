@@ -6,7 +6,7 @@ const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
       className="embed-responsive-object"
       src={src}
       title={title}
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allow="picture-in-picture"
       allowFullScreen
     />
   </Tag>
