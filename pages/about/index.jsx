@@ -67,7 +67,6 @@ const RelatedContentSection = ({
         <Button
           className={styles.relatedExtraButton}
           color="primary"
-          outline
           href={data.extraAction.href}
         >
           {data.extraAction.label}

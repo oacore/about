@@ -11,5 +11,4 @@ const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
     />
   </Tag>
 )
-
 export default Video
