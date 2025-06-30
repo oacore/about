@@ -6,10 +6,9 @@ const Video = ({ src, title, className = '', tag: Tag = 'div' }) => (
       className="embed-responsive-object"
       src={src}
       title={title}
-      allow="picture-in-picture"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
   </Tag>
 )
-
 export default Video
