@@ -1,16 +1,17 @@
-name: Container deploy
+name: containerapp deploy azure
 
 on:
   push:
     branches:
-      - container_deploy
+      - containerapp_deploy
   workflow_dispatch:
 
 env:
   ACR_NAME: corefrontend
-  IMAGE_NAME: about
+  IMAGE_NAME: about 
   RESOURCE_GROUP: test-rg
-  WEBAPP_NAME: about-core-container
+  CONTAINERAPP_NAME: core-containerapp-about 
+
 
 permissions:
   id-token: write
@@ -43,14 +44,15 @@ jobs:
       - name: Docker Build and Tag
         run: |
           docker build \
-            --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest \
             .
+
       - name: Docker Push
         run: |
           docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
           docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
+
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
@@ -66,23 +68,10 @@ jobs:
       - name: Set image tag from build job
         run: echo "TAG=${{ needs.build-and-push.outputs.tag }}" >> $GITHUB_ENV
 
-      - name: Set app settings (API_KEY & NPM_TOKEN)
+      - name: Deploy to Azure Container App
         run: |
-          az webapp config appsettings set \
-            --name ${{ env.WEBAPP_NAME }} \
+          az containerapp update \
+            --name ${{ env.CONTAINERAPP_NAME }} \
             --resource-group ${{ env.RESOURCE_GROUP }} \
-            --settings \
-              NPM_TOKEN=${{ secrets.NPM_TOKEN }}
-              
-      - name: Deploy Docker image to Azure Web App
-        run: |
-          az webapp config container set \
-            --name ${{ env.WEBAPP_NAME }} \
-            --resource-group ${{ env.RESOURCE_GROUP }} \
-            --docker-custom-image-name ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ env.TAG }} \
-            --docker-registry-server-url https://${{ env.ACR_NAME }}.azurecr.io
-      - name: Restart Web App
-        run: |
-          az webapp restart \
-            --name ${{ env.WEBAPP_NAME }} \
-            --resource-group ${{ env.RESOURCE_GROUP }}
+            --image ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ env.TAG }} \
+            --container-name ${{ env.IMAGE_NAME }}
