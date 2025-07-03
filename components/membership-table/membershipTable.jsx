@@ -75,7 +75,7 @@ const MembershipTable = ({ title, members, excludedIds, customSort }) => {
   }
 
   return (
-    <Section className={styles.supporters}>
+    <Section id="membership-list" className={styles.supporters}>
       <h3>{title}</h3>
       <form>
         <TextField
