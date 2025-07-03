@@ -9,7 +9,9 @@ ARG NPM_TOKEN
 WORKDIR /app
 
 # Configure GitHub Packages auth (do NOT commit this)
-RUN echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" > .npmrc
+RUN printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" > .npmrc \
+  && printf "@oacore:registry=https://npm.pkg.github.com/\n"   >> .npmrc \
+  && printf "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
 
 # Install dependencies
 COPY package*.json .npmrc ./
