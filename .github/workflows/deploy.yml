@@ -10,7 +10,9 @@ env:
   ACR_NAME: corefrontend
   IMAGE_NAME: about 
   RESOURCE_GROUP: test-rg
-  CONTAINERAPP_NAME: core-containerapp-about 
+  CONTAINERAPP_NAME: core-containerapp-about
+  NPM_TOKEN: ${{ secrets.NPM1_TOKEN }}
+  API_KEY: ${{ secrets.API_KEY }}
 
 
 permissions:
