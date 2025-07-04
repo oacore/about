@@ -7,9 +7,9 @@ ARG NPM_TOKEN
 # Set working directory
 WORKDIR /app
 
-RUN printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}\n" > .npmrc \
-  && printf "@oacore:registry=https://npm.pkg.github.com/\n"   >> .npmrc \
-  && printf "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}\n" >> .npmrc
+RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc \
+ && echo "@oacore:registry=https://npm.pkg.github.com/" >> ~/.npmrc \
+ && echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
 
 # Set npm token for public npm registry
 #RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
