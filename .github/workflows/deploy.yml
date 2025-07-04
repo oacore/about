@@ -4,16 +4,20 @@ on:
   push:
     branches:
       - containerapp_deploy
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 env:
   ACR_NAME: corefrontend
-  IMAGE_NAME: about 
+  IMAGE_NAME: search
   RESOURCE_GROUP: test-rg
   CONTAINERAPP_NAME: core-containerapp-about
+  CONTAINER_PORT: 80
   NPM_TOKEN: ${{ secrets.NPM1_TOKEN }}
   API_KEY: ${{ secrets.API_KEY }}
-
+  GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+  GA_CODE: ${{ secrets.GA_MEASUREMENT_ID }}
+  NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+  NEXT_PUBLIC_GA_CODE: ${{ secrets.GA_MEASUREMENT_ID }}
 
 permissions:
   id-token: write
@@ -51,12 +55,10 @@ jobs:
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest \
             .
-
       - name: Docker Push
         run: |
           docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.vars.outputs.tag }}
           docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
-
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
@@ -65,9 +67,9 @@ jobs:
       - name: Azure Login
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+            client-id: ${{ secrets.AZURE_CLIENT_ID }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
       - name: Set image tag from build job
         run: echo "TAG=${{ needs.build-and-push.outputs.tag }}" >> $GITHUB_ENV
