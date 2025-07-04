@@ -1,18 +1,12 @@
 # Stage 1: Build stage
 FROM node:16 AS builder
 
-# Accept tokens as build args
-ARG NPM_TOKEN
-
 # Set working directory
 WORKDIR /app
 
-RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc \
- && echo "@oacore:registry=https://npm.pkg.github.com/" >> ~/.npmrc \
- && echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
-
-# Set npm token for public npm registry
-#RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > .npmrc
+# Securely mount .npmrc via Docker secret (from GitHub Actions)
+RUN --mount=type=secret,id=npmrc cp /run/secrets/npmrc ~/.npmrc \
+ && echo "@oacore:registry=https://npm.pkg.github.com/" >> ~/.npmrc
 
 # Copy only dependency-related files first
 COPY package*.json ./
