@@ -44,7 +44,7 @@ jobs:
       - name: Docker Build
         run: |
           docker build \
-            --build-arg NPM_TOKEN=${{ secrets.NPM1_TOKEN }} \
+            --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.set_tag.outputs.tag }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest .
 
