@@ -8,14 +8,10 @@ on:
 
 env:
   ACR_NAME: corefrontend
-  IMAGE_NAME: search
+  IMAGE_NAME: about
   RESOURCE_GROUP: test-rg
   CONTAINERAPP_NAME: core-containerapp-about
   CONTAINER_PORT: 80
-  GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
-  GA_CODE: ${{ secrets.GA_MEASUREMENT_ID }}
-  NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
-  NEXT_PUBLIC_GA_CODE: ${{ secrets.GA_MEASUREMENT_ID }}
 
 permissions:
   id-token: write
@@ -42,19 +38,13 @@ jobs:
         id: set_tag
         run: echo "tag=$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
 
-      - name: Create temporary .npmrc
-        run: |
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM1_TOKEN }}" > .npmrc
-          echo "@oacore:registry=https://npm.pkg.github.com/" >> .npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.NPM1_TOKEN }}" >> .npmrc
-
-      - name: ACR Login
+      - name: Docker ACR Login
         run: az acr login --name ${{ env.ACR_NAME }}
 
-      - name: Docker Build and Tag
+      - name: Docker Build
         run: |
           docker build \
-            --secret id=npmrc,src=.npmrc \
+            --build-arg NPM_TOKEN=${{ secrets.NPM1_TOKEN }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.set_tag.outputs.tag }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest .
 
