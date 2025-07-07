@@ -1,42 +1,49 @@
-# Stage 1: Build stage
-FROM node:16 AS builder
+# Stage 1: Build
+FROM node:18 AS builder
+
+# Accept NPM token for private packages
+ARG NPM_TOKEN
 
 # Set working directory
 WORKDIR /app
 
-# Securely mount .npmrc via Docker secret (from GitHub Actions)
-RUN --mount=type=secret,id=npmrc cp /run/secrets/npmrc ~/.npmrc \
- && echo "@oacore:registry=https://npm.pkg.github.com/" >> ~/.npmrc
+# Configure private access to GitHub Packages and NPM
+RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc \
+ && echo "@oacore:registry=https://npm.pkg.github.com/" >> ~/.npmrc \
+ && echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
 
-# Copy only dependency-related files first
+# Copy dependency declarations
 COPY package*.json ./
 
 # Install dependencies
 RUN npm ci --legacy-peer-deps
 
-# Copy full source code
+# Copy the entire project
 COPY . .
 
-# Build the Next.js app
+# Increase memory & fix OpenSSL issue
+ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
+
+# Run build (fail if broken)
 RUN npm run build
 
-# Stage 2: Runtime stage
-FROM node:16-alpine
+# Stage 2: Runtime
+FROM node:18-alpine
 
-# Add dumb-init for proper signal handling
+# Install dumb-init for signal handling
 RUN apk add --no-cache dumb-init
 
 # Set working directory
 WORKDIR /app
 
-# Copy built app from builder stage
+# Copy built app from previous stage
 COPY --from=builder /app /app
 
-# Expose app port
+# Expose the app port
 EXPOSE 8080
 
-# Use dumb-init as entrypoint
+# Entry point using dumb-init
 ENTRYPOINT ["dumb-init", "--"]
 
-# Start the Next.js server
+# Start Next.js in production mode
 CMD ["node_modules/next/dist/bin/next", "start", "-p", "8080"]
