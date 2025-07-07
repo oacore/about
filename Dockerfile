@@ -8,9 +8,9 @@ ARG NPM_TOKEN
 WORKDIR /app
 
 # Configure private access to GitHub Packages and NPM
-RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc \
- && echo "@oacore:registry=https://npm.pkg.github.com/" >> ~/.npmrc \
- && echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > /root/.npmrc \
+ && echo "@oacore:registry=https://npm.pkg.github.com/" >> /root/.npmrc \
+ && echo "//npm.pkg.github.com/:_authToken=${NPM_TOKEN}" >> /root/.npmrc
 
 # Copy dependency declarations
 COPY package*.json ./
