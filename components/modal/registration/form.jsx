@@ -113,6 +113,20 @@ const ModalForm = observe(() => {
       <div className={styles.modalFormTextBordered}>
         <Markdown>{findText('box')}</Markdown>
       </div>
+      {registration.data.accountType === 'institution' && (
+        <div className={styles.typeMainWrapper}>
+          <div className={styles.typeWrapper}>
+            <div className={styles.titleWrapper}>
+              <span className={styles.title}>{text.membershipType.title}</span>
+            </div>
+            <Markdown className={styles.typeText}>
+              {router.pathname.includes('api')
+                ? text.membershipType.typeText
+                : text.membershipType.typeTextChecked}
+            </Markdown>
+          </div>
+        </div>
+      )}
       <Form onSubmit={onHandleSubmit}>
         {router.pathname.includes('dataset') && (
           <div className={styles.radioItemsWrapper}>
@@ -158,7 +172,7 @@ const ModalForm = observe(() => {
                       className={styles.popover}
                       placement="top"
                       content={
-                        <Markdown>
+                        <Markdown className={styles.popoverContent}>
                           {registration.data.accountType === 'enterprise'
                             ? text.options.all.info
                             : text.options.all.susInfo}
@@ -222,22 +236,6 @@ const ModalForm = observe(() => {
           />
         )}
         <CountrySelect onChange={countryOnChange} />
-        {registration.data.accountType === 'institution' && (
-          <div className={styles.typeMainWrapper}>
-            <div className={styles.typeWrapper}>
-              <div className={styles.titleWrapper}>
-                <span className={styles.title}>
-                  {text.membershipType.title}
-                </span>
-              </div>
-              <Markdown className={styles.typeText}>
-                {router.pathname.includes('api')
-                  ? text.membershipType.typeText
-                  : text.membershipType.typeTextChecked}
-              </Markdown>
-            </div>
-          </div>
-        )}
         {registration.data.accountType === 'institution' && (
           <TextField
             id={elemLibraryEmail}
