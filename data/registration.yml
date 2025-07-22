@@ -125,7 +125,7 @@ membershipType:
 
       Don’t worry, you can still use the API, while we are discussing the CORE membership for your institution.
 
-      **If your institution is a member** you don’t need to fill up the fields bellow.
+      **If your institution is a [member](/governance/supporters#membership-list)** you don’t need to provide us with the email for your library contact in the field below.
     typeTextChecked: |
       Our ODC-By datasets are free for everyone. Additionally, our [Sustaining](/membership) members can download all of the CORE Datasets.
 
@@ -133,7 +133,7 @@ membershipType:
 
       Don’t worry, you can still download our ODC-by datasets, while we are discussing the CORE membership for your institution.
 
-      **If your institution is a member** you don’t need to fill up the fields bellow and you can instantly access all the datasets.
+      **If your institution is a member** you don’t need to provide us with the email for your library contact in the field below.
 
 terms: |
   I agree to the CORE [Terms and Conditions](/terms) and [privacy notice](/privacy). The T&Cs and
@@ -153,7 +153,7 @@ options:
       * Dataset 2018
       * Dataset 2017
     info: We will contact you after registration to arrange a quote.
-    susInfo: We will contact you after registration to discuss access. Sustaining members have free access.
+    susInfo: Only Sustaining Members receive access to all datasets. Following registration, you can contact us to become a Sustaining Member to receive access.
   only:
     label: Only ODC-By licensed datasets
     id: few

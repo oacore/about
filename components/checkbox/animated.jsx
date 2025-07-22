@@ -79,7 +79,11 @@ const Checkbox = ({
           strokeDashoffset={checkmarkAnimationStyle.x}
         />
       </animated.svg>
-      <div className={classNames.use(styles.label).join(className)}>
+      <div
+        className={classNames
+          .use(styles.label, { [styles.labelBold]: value })
+          .join(className)}
+      >
         {labelText}
       </div>
     </label>
