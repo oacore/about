@@ -28,7 +28,13 @@ const ModalConditions = observe(() => {
   return (
     <Modal hideManually aria-label="conditions-modal">
       <h6>Just one more thing!</h6>
-      <Markdown>{text.terms}</Markdown>
+      <Checkbox
+        value
+        isDisabled
+        id="agreeNewsletter"
+        labelText={<Markdown>{text.terms}</Markdown>}
+        setCheckbox={setIsAgreeNewsletter}
+      />
       {registration.data.accountType !== 'personal' && (
         <Checkbox
           value
