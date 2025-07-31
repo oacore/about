@@ -117,7 +117,12 @@ const AboutPage = ({ data }) => {
       nav
     >
       <h1>{data.meta.headline}</h1>
-      <Section tag="div" id="mission" caption={data.mission.shortTitle}>
+      <Section
+        tag="div"
+        id="mission"
+        caption={data.mission.shortTitle}
+        className={styles.missionSection}
+      >
         <Row>
           <Col xs="12" md="7" lg="8" tag="section">
             <h2>{data.core.title}</h2>
@@ -154,7 +159,7 @@ const AboutPage = ({ data }) => {
         </Row>
       </Section>
 
-      <Section id="timeline">
+      <Section id="timeline" className={styles.timelineSection}>
         {/* eslint-disable-next-line max-len */}
         {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
         <img

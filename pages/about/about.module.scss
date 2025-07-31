@@ -354,7 +354,12 @@
   margin-top: 1.5rem;
 }
 
+.timeline-section {
+  padding-top: unset;
+}
+
 .timeline-img {
+  cursor: pointer;
   width: 100%;
   height: auto;
   max-width: 100%;
