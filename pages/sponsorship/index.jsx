@@ -11,7 +11,7 @@ const setAssetsUrl = (object) => {
   Object.entries(object).forEach(([key, value]) => {
     if (typeof value === 'string' && value.includes('/images'))
       object[key] = ASSETS_BASE_URL + value
-    else if (typeof value === 'object') setAssetsUrl(value) // Recursively process nested objects
+    else if (typeof value === 'object') setAssetsUrl(value)
   })
 }
 
