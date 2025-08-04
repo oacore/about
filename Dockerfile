@@ -4,11 +4,9 @@ FROM node:18 AS builder
 # Accept NPM token for private packages
 ARG NPM_TOKEN
 
-ARG GA_MEASUREMENT_ID
-ARG GA_TRACKING_CODE
-
-ENV GA_MEASUREMENT_ID=$GA_MEASUREMENT_ID
-ENV GA_TRACKING_CODE=$GA_TRACKING_CODE
+# Optional: Accept GA vars if absolutely needed at build time (usually unnecessary)
+# ARG GA_MEASUREMENT_ID
+# ARG GA_TRACKING_CODE
 
 # Set working directory
 WORKDIR /app
@@ -27,8 +25,9 @@ RUN npm ci --legacy-peer-deps
 # Copy the entire project
 COPY . .
 
-# Increase memory & fix OpenSSL issue
-ENV NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
+# Set environment for production build
+ENV NODE_ENV=production \
+    NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
 # Run build (fail if broken)
 RUN npm run build
@@ -44,6 +43,9 @@ WORKDIR /app
 
 # Copy built app from previous stage
 COPY --from=builder /app /app
+
+# Set NODE_ENV for runtime
+ENV NODE_ENV=production
 
 # Expose the app port
 EXPOSE 8080
