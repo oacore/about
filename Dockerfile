@@ -4,6 +4,12 @@ FROM node:18 AS builder
 # Accept NPM token for private packages
 ARG NPM_TOKEN
 
+ARG GA_MEASUREMENT_ID
+ARG GA_TRACKING_CODE
+
+ENV GA_MEASUREMENT_ID=$GA_MEASUREMENT_ID
+ENV GA_TRACKING_CODE=$GA_TRACKING_CODE
+
 # Set working directory
 WORKDIR /app
 
