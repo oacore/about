@@ -12,6 +12,8 @@ env:
   RESOURCE_GROUP: test-rg
   CONTAINERAPP_NAME: core-containerapp-about
   CONTAINER_PORT: 80
+  GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
+  GA_TRACKING_CODE: ${{ secrets.GA_TRACKING_CODE }}
 
 permissions:
   id-token: write
@@ -44,6 +46,8 @@ jobs:
       - name: Docker Build
         run: |
           docker build \
+            --build-arg GA_MEASUREMENT_ID=$GA_MEASUREMENT_ID \
+            --build-arg GA_TRACKING_CODE=$GA_TRACKING_CODE \
             --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.set_tag.outputs.tag }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest .
