@@ -80,4 +80,5 @@ jobs:
             --resource-group ${{ env.RESOURCE_GROUP }} \
             --image ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ env.TAG }} \
             --container-name ${{ env.IMAGE_NAME }} \
-            --container-port ${{ env.PORT }}
+            --set configuration.ingress.targetPort=${{ env.PORT }}
+#            --container-port ${{ env.PORT }}
