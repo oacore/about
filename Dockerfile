@@ -27,7 +27,7 @@ RUN npm ci --legacy-peer-deps
 COPY . .
 
 # Set environment for production build
-ENV NODE_ENV=${NODE_ENV} \
+ENV NODE_ENV=$NODE_ENV \
     NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
 # Run build (fail if broken)
@@ -46,7 +46,7 @@ WORKDIR /app
 COPY --from=builder /app /app
 
 # Set NODE_ENV for runtime
-ENV NODE_ENV=${NODE_ENV}
+ENV NODE_ENV=$NODE_ENV
 
 # Expose the app port
 EXPOSE 8080
