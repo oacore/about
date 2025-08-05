@@ -4,13 +4,13 @@ on:
   push:
     branches:
       - containerapp_deploy
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 env:
   ACR_NAME: corefrontend
   IMAGE_NAME: about
-  RESOURCE_GROUP: test-rg
-  CONTAINERAPP_NAME: core-containerapp-about
+  RESOURCE_GROUP: core-frontend
+  CONTAINERAPP_NAME: core-frontend-about
   CONTAINER_PORT: 80
   GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
   GA_TRACKING_CODE: ${{ secrets.GA_TRACKING_CODE }}
