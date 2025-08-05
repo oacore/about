@@ -3,7 +3,6 @@ FROM node:18 AS builder
 
 # Accept NPM token for private packages
 ARG NPM_TOKEN
-ARG NODE_ENV
 
 # Optional: Accept GA vars if absolutely needed at build time (usually unnecessary)
 # ARG GA_MEASUREMENT_ID
@@ -27,6 +26,7 @@ RUN npm ci --legacy-peer-deps
 COPY . .
 
 # Set environment for production build
+ARG NODE_ENV
 ENV NODE_ENV=$NODE_ENV \
     NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
@@ -46,6 +46,7 @@ WORKDIR /app
 COPY --from=builder /app /app
 
 # Set NODE_ENV for runtime
+ARG NODE_ENV
 ENV NODE_ENV=$NODE_ENV
 
 # Expose the app port
