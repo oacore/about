@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Modal, Form, TextField, Button, Popover } from '@oacore/design/lib'
+import { Modal, Form, TextField, Button } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 
-import questionInfo from '../../../public/images/logos/questionInfo.svg'
+// import questionInfo from '../../../public/images/logos/questionInfo.svg'
 import styles from './styles.module.scss'
 import ProfileSelect from './profile-select'
 import CountrySelect from './country-select'
@@ -12,7 +12,7 @@ import Markdown from '../../markdown'
 import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
 import DropdownInput from './institution-select'
-import CustomRadio from '../../radio-button'
+// import CustomRadio from '../../radio-button'
 
 import { useStore, observe } from 'store'
 
@@ -57,9 +57,9 @@ const ModalForm = observe(() => {
   } = useInput('libraryEmail')
 
   const [selectedOption, setSelectedOption] = useState('')
-  const handleRadioSelect = (id) => {
-    setSelectedOption(id)
-  }
+  // const handleRadioSelect = (id) => {
+  //   setSelectedOption(id)
+  // }
 
   const { value: countryName, onChange: countryOnChange } =
     useSelect('countryName')
@@ -131,59 +131,65 @@ const ModalForm = observe(() => {
         {router.pathname.includes('dataset') && (
           <div className={styles.radioItemsWrapper}>
             <h6 className={styles.radioItemsTitle}>
-              Choose the datasets you wish to get access to
+              {/* TODO temp remove */}
+              {/* Choose the datasets you wish to get access to */}
+              Included datasets
             </h6>
             <div className={styles.radioItemsInnerWrapper}>
-              <div className={styles.radioItem}>
-                <div className={styles.radioTitleWrapper}>
-                  <CustomRadio
-                    id={text.options.only.id}
-                    label={text.options.only.label}
-                    checked={selectedOption === text.options.only.id}
-                    onChange={() => handleRadioSelect(text.options.only.id)}
-                  />
-                  <Popover
-                    className={styles.popover}
-                    placement="top"
-                    content={text.options.only.info}
-                  >
-                    <Button>
-                      <img src={questionInfo} alt="questionInfo" />
-                    </Button>
-                  </Popover>
-                </div>
-                <Markdown className={styles.radioDescription}>
-                  {text.options.only.description}
-                </Markdown>
-              </div>
+              {/* TODO temp remove */}
+              {/* <div className={styles.radioItem}> */}
+              {/*  <div className={styles.radioTitleWrapper}> */}
+              {/*    <CustomRadio */}
+              {/*      id={text.options.only.id} */}
+              {/*      label={text.options.only.label} */}
+              {/*      checked={selectedOption === text.options.only.id} */}
+              {/* eslint-disable-next-line max-len */}
+              {/*      onChange={() => handleRadioSelect(text.options.only.id)} */}
+              {/*    /> */}
+              {/*    <Popover */}
+              {/*      className={styles.popover} */}
+              {/*      placement="top" */}
+              {/*      content={text.options.only.info} */}
+              {/*    > */}
+              {/*      <Button> */}
+              {/*        <img src={questionInfo} alt="questionInfo" /> */}
+              {/*      </Button> */}
+              {/*    </Popover> */}
+              {/*  </div> */}
+              {/*  <Markdown className={styles.radioDescription}> */}
+              {/*    {text.options.only.description} */}
+              {/*  </Markdown> */}
+              {/* </div> */}
               {registration.data.accountType === 'personal' && (
                 <div className={styles.none}>{text.options.none}</div>
               )}
               {registration.data.accountType !== 'personal' && (
                 <div className={styles.radioItem}>
-                  <div className={styles.radioTitleWrapper}>
-                    <CustomRadio
-                      id={text.options.all.id}
-                      label={text.options.all.label}
-                      checked={selectedOption === text.options.all.id}
-                      onChange={() => handleRadioSelect(text.options.all.id)}
-                    />
-                    <Popover
-                      className={styles.popover}
-                      placement="top"
-                      content={
-                        <Markdown className={styles.popoverContent}>
-                          {registration.data.accountType === 'enterprise'
-                            ? text.options.all.info
-                            : text.options.all.susInfo}
-                        </Markdown>
-                      }
-                    >
-                      <Button>
-                        <img src={questionInfo} alt="questionInfo" />
-                      </Button>
-                    </Popover>
-                  </div>
+                  {/* TODO temp remove */}
+                  {/* <div className={styles.radioTitleWrapper}> */}
+                  {/*  <CustomRadio */}
+                  {/*    id={text.options.all.id} */}
+                  {/*    label={text.options.all.label} */}
+                  {/*    checked={selectedOption === text.options.all.id} */}
+                  {/* eslint-disable-next-line max-len */}
+                  {/*    onChange={() => handleRadioSelect(text.options.all.id)} */}
+                  {/*  /> */}
+                  {/*  <Popover */}
+                  {/*    className={styles.popover} */}
+                  {/*    placement="top" */}
+                  {/*    content={ */}
+                  {/*      <Markdown className={styles.popoverContent}> */}
+                  {/*        {registration.data.accountType === 'enterprise' */}
+                  {/*          ? text.options.all.info */}
+                  {/*          : text.options.all.susInfo} */}
+                  {/*      </Markdown> */}
+                  {/*    } */}
+                  {/*  > */}
+                  {/*    <Button> */}
+                  {/*      <img src={questionInfo} alt="questionInfo" /> */}
+                  {/*    </Button> */}
+                  {/*  </Popover> */}
+                  {/* </div> */}
                   <Markdown className={styles.radioDescription}>
                     {text.options.all.description}
                   </Markdown>

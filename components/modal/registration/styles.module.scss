@@ -103,7 +103,8 @@
   &-items {
     display: flex;
     align-items: center;
-    justify-content: center;
+    //TODO temp remove
+    //justify-content: center;
 
     @include media-breakpoint-down('sm') {
       flex-wrap: wrap;
