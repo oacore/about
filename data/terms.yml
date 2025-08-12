@@ -1,17 +1,26 @@
 header:
   title: Terms & Conditions
-  description: This page sets the Terms & Conditions under which [CORE data*](~terms#disclaimer) <br> can be used by others.
   actions:
     - caption: Download pdf
       url: /resources/core-terms-conditions.pdf
       variant: contained
       target: _blank
+links:
+  content:
+    - title:  ODC-By licenced datasets
+      href: odc-licence
+    - title:  Other datasets and the API
+      href: other
+    - title:  Disclaimer
+      href: disclaimer
 main:
   - title: 1. ODC-By licenced datasets
+    id: odc-licence
     content: |
       * You can use these datasets for any commercial or non-commercial purposes in line with the **ODC-By licence**.
       * You need to acknowledge the use of CORE as [described](https://core.ac.uk/acknowledge).
   - title: 2. Other datasets and the API
+    id: other
     content: |
       While you need to obtain a licence to use other CORE datasets as well as the CORE API, many of our users are eligible for a free licence.
 
@@ -52,8 +61,13 @@ main:
       You authorise us to use the logo of your organisation and/or project on our website and to mention our support to you in public communication.
 
       We reserve the right to withdraw our approval for use of CORE data at any time by giving you a **30-day** notice.
-  - title: Disclaimer
+  - title: 3. Disclaimer
+    id: disclaimer
     content: |
-      The term (*)**CORE data** refers to a database created by indexing and processing information publicly available on the Internet. Every effort has been made to ensure this dataset contains open access content only. We have included content only from repositories and journals that are listed in registries where the condition for inclusion is the provision of content under an open access compatible license. However, as metadata are often inconsistent, license information is often not machine readable and, from time to time, repositories leak information that is not open access, we cannot take any responsibility for the licences of the individual content in the dataset. It is therefore up to the user of this dataset to ensure that the way in which they use the dataset does not breach copyright of any third party. The dataset is in no way intended for the purposes of reading the original publications, but for machine processing only. <br>
+      The term (*)**CORE data** refers to a database created by indexing and processing information publicly available on the Internet. This database has been created for the purposes of machine processing, such as text and data mining, of scholarly information.
 
-      Additionally, while CORE retains no copyright in any of the works in the database, we reserve the sui generis database rights. This is due to the substantial investment in obtaining, processing and serving the aggregated data to the relevant communities of interest.
+      Where this database contains original works, such as full texts of research papers, in a machine readable form, every effort has been made to ensure that these works have been made available as open access. In sourcing this information, we rely on information provided by scholarly article and repository registries as well as information from the sources themselves to identify open access content. In collecting and curating the database, we had lawful access to all materials which were publicly available without circumventing any technical measures, including access control mechanisms or instructions such as those expressed in robots.txt files. However, as metadata are often inconsistent, licence information is often not machine-readable and, from time to time, repositories leak information that is not open access, CORE does not accept any responsibility or liability for the use of the database. The database is provided on an “as is” and “as available” basis.
+
+      It is therefore up to the user to ensure that the way in which they use CORE data does not breach the rights of third parties. The dataset is in no way intended for the purposes of reading the original publications, but for machine processing only. By accessing or using CORE data, you agree to comply with all applicable laws and regulations in your jurisdiction, including but not limited to copyright law, data protection law, and other relevant legal requirements. You must not use the dataset for any unlawful purpose, including, without limitation, infringement of copyright, violation of privacy rights, harassment, defamation, or any activity prohibited by applicable legislation in the jurisdiction in which you access or use the dataset. The licence also does not authorise reproduction, distribution, or other uses of the underlying works beyond what is permitted by law.
+
+       While CORE retains no copyright in any of the underlying works in the database, we reserve the sui generis database rights. Additionally unauthorised extraction, scraping, or acquisition of CORE data through channels not intended for its distribution constitutes a violation of CORE’s licence and is strictly prohibited. This is due to the substantial investment and costs in obtaining, processing, transforming and serving the data to the relevant communities of interest. Where CORE licenses CORE data, such licence applies only to the sui generis database rights and information created by CORE, such as CORE generated metadata, and does not convey or grant any rights in the underlying works contained within the database.
