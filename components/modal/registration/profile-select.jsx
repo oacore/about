@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Icon } from '@oacore/design/lib'
 import classNames from '@oacore/design/lib/utils/class-names'
+import { useRouter } from 'next/router'
 
 import styles from './styles.module.scss'
 
@@ -28,12 +29,22 @@ const PROFILES = [
 ]
 
 const ProfileSelect = observe(() => {
+  const router = useRouter()
   const { registration } = useStore()
+
+  // TODO temp remove
+  // Filter out 'personal' profile if URL contains 'dataset' but not 'api'
+  const shouldHidePersonal =
+    router.pathname.includes('dataset') && !router.pathname.includes('api')
+  const filteredProfiles = shouldHidePersonal
+    ? PROFILES.filter((profile) => profile.value !== 'personal')
+    : PROFILES
+
   return (
     <fieldset className={styles.profiles}>
       <legend className={styles.profilesTitle}>Profile</legend>
       <div className={styles.profilesItems}>
-        {PROFILES.map(({ value, label, id, iconSrc }) => (
+        {filteredProfiles.map(({ value, label, id, iconSrc }) => (
           <Card
             variant="outlined"
             className={classNames.use(styles.profilesItem, {

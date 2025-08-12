@@ -8,7 +8,9 @@ class Registration {
     lastName: '',
     organisation: '',
     country: '',
-    accountType: 'personal',
+    //  TODO temp remove
+    // accountType: 'personal',
+    accountType: 'institution',
     email: '',
     productType: '',
     agreeNewsletter: false,
@@ -100,7 +102,9 @@ class Registration {
       lastName: '',
       organisation: '',
       country: '',
-      accountType: 'personal',
+      //  TODO temp remove
+      // accountType: 'personal',
+      accountType: 'institution',
       email: '',
       productType: '',
       agreeNewsletter: false,
