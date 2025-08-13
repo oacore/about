@@ -111,7 +111,7 @@
     }
   }
   &-item {
-    flex-basis: 33%;
+    flex-basis: 50%;
     min-width: auto;
     margin: 0 0.2rem;
     text-transform: capitalize;
@@ -126,6 +126,7 @@
     &-text {
       display: flex;
       align-items: flex-end;
+      justify-content: center;
       span {
         margin-left: 1rem;
       }
