@@ -67,10 +67,12 @@ const DropdownInput = ({
               key={index}
               className={styles.dropdownOption}
               onClick={() =>
-                handleOptionClick(`${suggestion.name}  (${suggestion.id})`)
+                handleOptionClick(
+                  `${suggestion.names[0].value}  (${suggestion.id})`
+                )
               }
             >
-              {suggestion.name}
+              {suggestion.names[0].value}
             </div>
           ))}
         </div>
