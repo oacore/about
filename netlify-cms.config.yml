@@ -5200,6 +5200,7 @@ collections:
                     - name: rows
                       widget: list
                       label: Rows
+                      required: false
                       fields:
                         - name: title
                           widget: string
@@ -5227,6 +5228,7 @@ collections:
                     - name: rows
                       widget: list
                       label: Rows
+                      required: false
                       fields:
                         - name: title
                           widget: string
