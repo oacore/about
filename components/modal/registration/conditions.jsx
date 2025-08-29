@@ -35,20 +35,18 @@ const ModalConditions = observe(() => {
         labelText={<Markdown>{text.terms}</Markdown>}
         setCheckbox={setIsAgreeNewsletter}
       />
-      {registration.data.accountType !== 'personal' && (
-        <Checkbox
-          value
-          isDisabled
-          id="agreeNewsletter"
-          labelText={
-            router.pathname.includes('api')
-              ? ` I authorise CORE to send me information about the CORE API
+      <Checkbox
+        value
+        isDisabled
+        id="agreeNewsletter"
+        labelText={
+          router.pathname.includes('api')
+            ? ` I authorise CORE to send me information about the CORE API
               (required).`
-              : ` I authorise CORE to send me information about the CORE Dataset (required).`
-          }
-          setCheckbox={setIsAgreeNewsletter}
-        />
-      )}
+            : ` I authorise CORE to send me information about the CORE Dataset (required).`
+        }
+        setCheckbox={setIsAgreeNewsletter}
+      />
       <Checkbox
         id="agreeNewsletter"
         labelText={

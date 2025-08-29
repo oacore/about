@@ -146,6 +146,13 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.035px;
+  ul {
+    margin-left: 1.5rem;
+    li {
+      line-height: 1.5rem;
+      list-style-type: disc;
+    }
+  }
 }
 
 .radio-items-wrapper {
@@ -183,6 +190,14 @@
     justify-content: center;
     align-items: center;
     width: 40%;
+  }
+}
+
+.checkbox-wrapper {
+  margin-bottom: 30px;
+  margin-top: -20px;
+  p {
+    font-size: 14px;
   }
 }
 

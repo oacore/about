@@ -98,7 +98,12 @@ sections:
   -
     id: api-personal
     text: |
-      For members of the general public accessing CORE data for personal use only.
+      For members of the By registering as a personal user, you certify that:
+      * You will only use CORE in your own personal capacity for the purposes of your own study or research.
+      * The results of your work will not contribute to the effort of any private or public organisation.
+      * Your work is not funded by any organisations, for instance, it is not conducted as part of a research grant or funded or financially supported by anyone.
+      * Your use of the CORE API will not develop any publicly facing service or a service that supports a third-party organisation.
+      * You understand the rate limits for personal use and will not take any action to circumvent them, for instance by registering multiple accounts or by any other means.  public accessing CORE data for personal use only.
     modal-content: >-
       Thank you for registering with CORE API.
       We have sent access instructions to <span> {{email}}</span>. Please check your email and spam folder.
@@ -139,6 +144,9 @@ terms: |
   I agree to the CORE [Terms and Conditions](/terms) and [privacy notice](/privacy). The T&Cs and
   privacy notice are designed to inform you of your rights and obligations
   when using the CORE service.
+
+personalConditions: You have read and will comply with all applicable legislation and [CORE’s Terms & Conditions](/terms).
+personalTerms: You certify that failure to provide accurate information or letting us know if your use case no longer satisfies the above conditions is considered a violation of [CORE’s Terms of Use](/terms) and that there might be consequences arising from such unauthorised use.
 
 options:
   all:
