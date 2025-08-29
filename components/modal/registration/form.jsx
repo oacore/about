@@ -13,6 +13,7 @@ import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
 import DropdownInput from './institution-select'
 // import CustomRadio from '../../radio-button'
+import { Checkbox } from '../../checkbox'
 
 import { useStore, observe } from 'store'
 
@@ -57,6 +58,8 @@ const ModalForm = observe(() => {
   } = useInput('libraryEmail')
 
   const [selectedOption, setSelectedOption] = useState('')
+  const [conditionsAccepted, setConditionsAccepted] = useState(false)
+  const [termsAccepted, setTermsAccepted] = useState(false)
   // const handleRadioSelect = (id) => {
   //   setSelectedOption(id)
   // }
@@ -77,7 +80,14 @@ const ModalForm = observe(() => {
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
 
-    if (description.trim().split(/\s+/).length > 150) return
+    if (description.trim().length < 150) return
+
+    if (
+      registration.data.accountType === 'personal' &&
+      !conditionsAccepted &&
+      !termsAccepted
+    )
+      return
 
     if (organisationName)
       registration.setData({ organisation: organisationName })
@@ -198,6 +208,26 @@ const ModalForm = observe(() => {
             </div>
           </div>
         )}
+        {registration.data.accountType === 'personal' && (
+          <div className={styles.checkboxWrapper}>
+            <div>
+              <Checkbox
+                id="conditions"
+                labelText={<Markdown>{text.personalConditions}</Markdown>}
+                value={conditionsAccepted}
+                setCheckbox={setConditionsAccepted}
+              />
+            </div>
+            <div>
+              <Checkbox
+                id="terms"
+                labelText={<Markdown>{text.personalTerms}</Markdown>}
+                value={termsAccepted}
+                setCheckbox={setTermsAccepted}
+              />
+            </div>
+          </div>
+        )}
         <div className={styles.inputGroup}>
           <TextField
             id={elemFirstName}
@@ -227,11 +257,12 @@ const ModalForm = observe(() => {
             required
             {...bindRegEmail}
           />
-          <div className={styles.institutionSubtitle}>
-            {registration.data.accountType === 'enterprise'
-              ? 'The supplied email address must correspond to the organization that you select.'
-              : 'The supplied email address must correspond to the institution that you select.'}
-          </div>
+          {registration.data.accountType === 'enterprise' && (
+            <div className={styles.institutionSubtitle}>
+              The supplied email address must correspond to the organization
+              that you select.
+            </div>
+          )}
         </>
         {registration.data.accountType !== 'personal' && (
           <DropdownInput
@@ -264,18 +295,28 @@ const ModalForm = observe(() => {
             required
             {...bindDescription}
           />
-          {description.trim().split(/\s+/).length > 150 && (
+          {description.trim().length < 150 && description.trim() && (
             <div style={{ color: 'red' }}>
-              Word count exceeds the limit (150 words)
+              Please provide at least 150 symbols. Current symbol count:{' '}
+              {description.trim().length}
             </div>
           )}
-          <span className={styles.wordCount}>Max 150 words.</span>
+          <span className={styles.wordCount}>Min 150 symbols.</span>
         </div>
         <div className={styles.buttonGroup}>
           <Button variant="text" onClick={onCloseModal}>
             cancel
           </Button>
-          <Button type="submit" variant="contained">
+          <Button
+            type="submit"
+            variant="contained"
+            disabled={
+              registration.data.accountType === 'personal' &&
+              (description.trim().length < 150 ||
+                !conditionsAccepted ||
+                !termsAccepted)
+            }
+          >
             continue
           </Button>
         </div>
