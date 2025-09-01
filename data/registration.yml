@@ -145,8 +145,12 @@ terms: |
   privacy notice are designed to inform you of your rights and obligations
   when using the CORE service.
 
-personalConditions: You have read and will comply with all applicable legislation and [CORE’s Terms & Conditions](/terms).
-personalTerms: You certify that failure to provide accurate information or letting us know if your use case no longer satisfies the above conditions is considered a violation of [CORE’s Terms of Use](/terms) and that there might be consequences arising from such unauthorised use.
+personalConditions:
+  title: You have read and will comply with all applicable legislation and [CORE’s Terms & Conditions](/terms).
+  version: V1
+personalTerms:
+  title: You certify that failure to provide accurate information or letting us know if your use case no longer satisfies the above conditions is considered a violation of [CORE’s Terms of Use](/terms) and that there might be consequences arising from such unauthorised use.
+  version: V1
 
 options:
   all:

@@ -97,13 +97,22 @@ const ModalForm = observe(() => {
     if (description) registration.setData({ description })
 
     if (firstName && lastName && countryName.id && regEmail) {
-      registration.setData({
+      const registrationData = {
         firstName,
         lastName,
         email: regEmail,
         country: countryName.id,
         paidAccess: selectedOption === 'all',
-      })
+      }
+
+      // Add new properties for personal accounts
+      if (registration.data.accountType === 'personal') {
+        registrationData.timestamp = new Date().toISOString()
+        registrationData.termsId = text.personalConditions.version
+        registrationData.agreedToNewTerms = true
+      }
+
+      registration.setData(registrationData)
       registration.setIsModalFormActive(false)
       registration.setIsModalConditionsActive(true)
     }
@@ -209,11 +218,14 @@ const ModalForm = observe(() => {
           </div>
         )}
         {registration.data.accountType === 'personal' && (
-          <div className={styles.checkboxWrapper}>
+          <div
+            id={text.personalConditions.version}
+            className={styles.checkboxWrapper}
+          >
             <div>
               <Checkbox
                 id="conditions"
-                labelText={<Markdown>{text.personalConditions}</Markdown>}
+                labelText={<Markdown>{text.personalConditions.title}</Markdown>}
                 value={conditionsAccepted}
                 setCheckbox={setConditionsAccepted}
               />
@@ -221,7 +233,7 @@ const ModalForm = observe(() => {
             <div>
               <Checkbox
                 id="terms"
-                labelText={<Markdown>{text.personalTerms}</Markdown>}
+                labelText={<Markdown>{text.personalTerms.title}</Markdown>}
                 value={termsAccepted}
                 setCheckbox={setTermsAccepted}
               />

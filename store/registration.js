@@ -14,6 +14,10 @@ class Registration {
     email: '',
     productType: '',
     agreeNewsletter: false,
+    // Add these new properties with default values
+    timestamp: '',
+    termsId: '',
+    agreedToNewTerms: false,
   }
 
   isModalFormActive = false
@@ -108,6 +112,10 @@ class Registration {
       email: '',
       productType: '',
       agreeNewsletter: false,
+      // Reset the new properties too
+      timestamp: '',
+      termsId: '',
+      agreedToNewTerms: false,
     }
     this.isModalFormActive = false
     this.isModalConditionsActive = false
