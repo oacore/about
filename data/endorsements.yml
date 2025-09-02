@@ -13,6 +13,14 @@ testimonials:
     name: Burton Davis
     role: Vice President and Deputy General Counsel, at Microsoft
     picture: /images/people/burtonDavis.png
+- &eric-lubeek
+  id: eric_lubeek
+  content: |
+    We welcome the opportunity to expand our relationship with CORE and support their vital work in making open access research more discoverable and accessible. This partnership reflects our commitment to strengthening the global infrastructure that libraries and researchers depend on.
+  author:
+    name: Eric van Lubeek
+    role: Managing Director, EMEA & APAC, OCLC
+    picture: /images/people/eric_lubeek.png
 - &jon-tennant
   id: jon-tennant
   content: |
@@ -597,6 +605,11 @@ organizations:
   name: Microsoft
   logo: microsoft.svg
   testimonial: *burton-davis
+- &oclc
+  id: oclc
+  name: Oclc
+  logo: oclc.png
+  testimonial: *eric-lubeek
 - &mooc
   id: mooc
   name: Open Science MOOC
@@ -1032,6 +1045,7 @@ sections:
       title: Our partners
       items:
         - *microsoft
+        - *oclc
         - *iris-ai-second
         - *mooc
         - *openaire
