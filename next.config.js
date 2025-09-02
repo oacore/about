@@ -20,7 +20,7 @@ const readLegacyConfig = async (filepath = './legacy.config.yml') => {
 const isProd = process.env.NODE_ENV === 'production'
 const nextConfig = {
   env: Object.assign(envConfig, {
-    GA_CODE: process.env.GA_CODE,
+    GA_CODE: process.env.GA_CODE??"GA",
     GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   }),
   assetPrefix: '',
