@@ -5205,22 +5205,28 @@ collections:
                         - name: title
                           widget: string
                           label: Title
+                          required: false
                         - name: caption
                           widget: string
                           label: Caption
+                          required: false
                         - name: prices
                           widget: list
                           label: Prices
+                          required: false
                           fields:
                             - name: type
                               widget: string
                               label: Type
+                              required: false
                             - name: original
                               widget: number
                               label: Original
+                              required: false
                             - name: discount
                               widget: number
                               label: Discount
+                              required: false
                 - name: sustaining
                   widget: object
                   label: Sustaining
@@ -5233,22 +5239,28 @@ collections:
                         - name: title
                           widget: string
                           label: Title
+                          required: false
                         - name: caption
                           widget: string
                           label: Caption
+                          required: false
                         - name: prices
                           widget: list
                           label: Prices
+                          required: false
                           fields:
                             - name: type
                               widget: string
                               label: Type
+                              required: false
                             - name: original
                               widget: number
                               label: Original
+                              required: false
                             - name: discount
                               widget: number
                               label: Discount
+                              required: false
 
 - name: services
 
