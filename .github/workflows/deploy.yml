@@ -11,7 +11,6 @@ env:
   IMAGE_NAME: core-frontend-about
   RESOURCE_GROUP: core-frontend
   CONTAINERAPP_NAME: core-frontend-about
-  GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
   GA_TRACKING_CODE: ${{ secrets.GA_TRACKING_CODE }}
   PORT: 8080
 
@@ -46,8 +45,7 @@ jobs:
       - name: Docker Build
         run: |
           docker build \
-            --build-arg GA_MEASUREMENT_ID=$GA_MEASUREMENT_ID \
-            --build-arg GA_TRACKING_CODE=$GA_TRACKING_CODE \
+            --build-arg GA_CODE=$GA_TRACKING_CODE \
             --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             --build-arg NODE_ENV=${{ secrets.NODE_ENV }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.set_tag.outputs.tag }} \
