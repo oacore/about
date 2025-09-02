@@ -26,7 +26,7 @@ features:
   hidden: true
   children:
     - title: Indexing the world’s repositories
-      description: We serve the global network of [repositories and journals](~benefits)
+      description: We are a not-for-profit [community-governed](/governance) open scholarly infrastructure serving the global network of [repositories and journals](/benefits)
       picture: /images/features/globe.svg
       url: /benefits
     - title: Comprehensive data coverage
