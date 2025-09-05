@@ -107,7 +107,7 @@ const ModalForm = observe(() => {
 
       // Add new properties for personal accounts
       if (registration.data.accountType === 'personal') {
-        registrationData.timestamp = new Date().toISOString()
+        registrationData.dateRequest = new Date().toISOString()
         registrationData.termsId = text.personalConditions.version
         registrationData.agreedToNewTerms = true
       }
