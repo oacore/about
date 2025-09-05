@@ -7,6 +7,9 @@ ARG NPM_TOKEN
 # Optional: Accept GA vars if absolutely needed at build time (usually unnecessary)
 # ARG GA_MEASUREMENT_ID
 # ARG GA_TRACKING_CODE
+ARG GA_TRACKING_CODE
+ENV GA_TRACKING_CODE=$GA_TRACKING_CODE
+ENV NEXT_PUBLIC_GA_MEASUREMENT_ID=$GA_TRACKING_CODE
 
 # Set working directory
 WORKDIR /app
