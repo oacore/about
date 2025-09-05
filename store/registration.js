@@ -15,7 +15,7 @@ class Registration {
     productType: '',
     agreeNewsletter: false,
     // Add these new properties with default values
-    timestamp: '',
+    dateRequest: '',
     termsId: '',
     agreedToNewTerms: false,
   }
@@ -113,7 +113,7 @@ class Registration {
       productType: '',
       agreeNewsletter: false,
       // Reset the new properties too
-      timestamp: '',
+      dateRequest: '',
       termsId: '',
       agreedToNewTerms: false,
     }
