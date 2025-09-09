@@ -30,6 +30,9 @@ ARG NODE_ENV
 ENV NODE_ENV=$NODE_ENV \
     NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
+# Copy the entire project
+COPY . .
+
 # Run build (fail if broken)
 RUN npm run build
 
