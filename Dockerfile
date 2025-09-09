@@ -25,6 +25,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci --legacy-peer-deps
 
+# Run build (fail if broken)
+RUN npm run build
+
 # Copy the entire project
 COPY . .
 
@@ -32,9 +35,6 @@ COPY . .
 ARG NODE_ENV
 ENV NODE_ENV=$NODE_ENV \
     NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
-
-# Run build (fail if broken)
-RUN npm run build
 
 # Stage 2: Runtime
 FROM node:18-alpine
