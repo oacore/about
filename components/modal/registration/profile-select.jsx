@@ -10,21 +10,21 @@ import { useStore, observe } from 'store'
 const PROFILES = [
   {
     id: 1,
-    label: 'personal',
-    value: 'personal',
-    iconSrc: '#account',
-  },
-  {
-    id: 2,
     label: 'academic',
     value: 'institution',
     iconSrc: '#office-building',
   },
   {
-    id: 3,
+    id: 2,
     label: 'non-academic',
     value: 'enterprise',
     iconSrc: '#domain',
+  },
+  {
+    id: 3,
+    label: 'personal',
+    value: 'personal',
+    iconSrc: '#account',
   },
 ]
 
