@@ -25,16 +25,16 @@ COPY package*.json ./
 # Install dependencies
 RUN npm ci --legacy-peer-deps
 
+# Set environment for production build
+ARG NODE_ENV
+ENV NODE_ENV=$NODE_ENV \
+    NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
+
 # Run build (fail if broken)
 RUN npm run build
 
 # Copy the entire project
 COPY . .
-
-# Set environment for production build
-ARG NODE_ENV
-ENV NODE_ENV=$NODE_ENV \
-    NODE_OPTIONS="--openssl-legacy-provider --max-old-space-size=4096"
 
 # Stage 2: Runtime
 FROM node:18-alpine
