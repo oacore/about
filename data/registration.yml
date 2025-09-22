@@ -56,6 +56,8 @@ sections:
       your email and spam folder.
   -
     id: api-enterprise
+    rate: |
+      **Rate limit**: Up to about 200k tokens per day by default or talk to us for more.
     text: |
       For organisations and professionals developing innovative products, services, or software using CORE data.
     box:
@@ -74,6 +76,8 @@ sections:
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>.
   -
     id: api-institution
+    rate: |
+      **Rate limit**: Up to about 200k tokens per day.
     text: |
       For users affiliated with an academic institution (e.g. researchers, students, library staff, research managers) to conduct research and data analyses, but not for the development of tools that can be used outside of the organisation.
 
@@ -97,6 +101,8 @@ sections:
 
   -
     id: api-personal
+    rate: |
+      **Rate limit**: 1,000 tokens per day.
     text: |
       By registering as a personal user, you certify that:
       * You will only use CORE in your own personal capacity for the purposes of your own study or research.
