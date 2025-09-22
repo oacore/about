@@ -139,6 +139,20 @@
   }
 }
 
+.rate-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 2px;
+  background: #fef5ef;
+  color: #424242;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.035px;
+  margin-top: 8px;
+}
+
 .modal-form-text {
   color: #424242;
   font-size: 14px;
