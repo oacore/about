@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from '@oacore/design/lib/elements'
 
 import styles from './supporters.module.scss'
 import MembershipTable from '../../../components/membership-table/membershipTable'
@@ -30,7 +31,12 @@ export const excludedIds = [
   3581, 197, 12800, 14335, 1249, 2313, 21853, 15201, 1012, 158,
 ]
 
-const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => (
+const GovernanceSupportersPageTemplate = ({
+  meta,
+  supporters,
+  members,
+  communityNewsletters,
+}) => (
   <Page title={meta.title} description={meta.tagline}>
     <Layout className={styles.container}>
       <div className={styles.navWrapper}>
@@ -75,6 +81,36 @@ const GovernanceSupportersPageTemplate = ({ meta, supporters, members }) => (
         <div className={styles.howItWorksWrapper}>
           {supporters.items.howItWorks.services.map((plan) => (
             <Card key={plan.title} plan={plan} />
+          ))}
+        </div>
+      </Section>
+      <Section id="community-newsletters">
+        <h4>{communityNewsletters.materials.title}</h4>
+        <div className={styles.cardsWrapper}>
+          {communityNewsletters.materials.cards.map((card) => (
+            <article className={styles.materialsCard} key={card.key}>
+              <a
+                target="_blank"
+                href={card.action.url}
+                className={styles.materialWrapper}
+                rel="noreferrer"
+              >
+                <div className={styles.materialInnerWrapper}>
+                  <img src={card.image} alt="" />
+                  <div className={styles.materialTitle}>{card.title}</div>
+                </div>
+              </a>
+              <div className={styles.buttonWrapper}>
+                <Button
+                  className={styles.materialButton}
+                  variant="outlined"
+                  href={card.action.url}
+                  target="_blank"
+                >
+                  {card.action.caption}
+                </Button>
+              </div>
+            </article>
           ))}
         </div>
       </Section>

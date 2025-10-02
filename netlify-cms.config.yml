@@ -1917,6 +1917,48 @@ collections:
                 - name: title
                   label: Title
                   widget: string
+    - name: materials
+      label: Materials
+      file: board-supporters/communityNewsletters.yml
+      fields:
+        - name: materials
+          widget: object
+          label: Materials
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: cards
+              widget: list
+              label: Cards
+              fields:
+                - name: image
+                  widget: string
+                  label: Image
+                - name: key
+                  widget: string
+                  label: Key
+                - name: title
+                  widget: string
+                  label: Title
+                - name: action
+                  widget: object
+                  label: Action
+                  fields:
+                    - name: caption
+                      widget: string
+                      label: Caption
+                    - name: url
+                      widget: file
+                      label: URL
+                      required: false
+                      media_folder: '/images/pdfs'
+                      public_folder: '/images/pdfs'
+                      extensions: [ 'pdf' ]
+                    - name: target
+                      widget: string
+                      label: Target
+                      required: false
 
 - name: research-outputs
 
