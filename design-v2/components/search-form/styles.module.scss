@@ -4,3 +4,11 @@
     color: var(--gray-700);
   }
 }
+
+.spin-loader {
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  border: 0.2em solid currentcolor;
+  border-right-color: transparent;
+}
