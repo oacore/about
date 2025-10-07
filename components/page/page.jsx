@@ -9,11 +9,19 @@ const Page = ({
   keywords,
   children,
   fullHeight,
+  className,
+  style,
   ...articleProps
 }) => (
   <>
     <Head title={title} description={description} keywords={keywords} />
-    <Article tag="main" fullHeight={fullHeight} {...articleProps}>
+    <Article
+      tag="main"
+      fullHeight={fullHeight}
+      className={className}
+      style={style}
+      {...articleProps}
+    >
       {children}
     </Article>
   </>
