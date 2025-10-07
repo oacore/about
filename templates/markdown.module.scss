@@ -1,0 +1,11 @@
+.privacy,
+.acknowledge,
+.accessibility {
+  padding: var(--page-padding-y) var(--page-padding-x);
+}
+
+.privacy h1,
+.acknowledge h1,
+.accessibility h1 {
+  margin-bottom: 20px;
+}
