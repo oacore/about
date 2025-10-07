@@ -843,6 +843,77 @@ collections:
 
   preview_path: api/preview?page={{slug}}&ref=cms/pages/{{slug}}
 
+- name: terms-conditions
+
+  create: false
+  delete: false
+
+  label: 📋 Terms & Conditions
+  label_singular: section
+  description: >
+    CORE terms and conditions content.
+  files:
+    - name: terms-conditions
+      label: 📋 Terms & Conditions
+      file: terms-conditions/terms-conditions.yml
+      fields:
+        - name: header
+          label: 📄 Header
+          widget: object
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Main title displayed on the page
+            - name: actions
+              label: Actions
+              widget: list
+              fields:
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: url
+                  widget: string
+                  label: URL
+                - name: variant
+                  widget: string
+                  label: Variant
+                - name: target
+                  widget: string
+                  label: Target
+        - name: links
+          label: 🔗 Navigation Links
+          widget: object
+          fields:
+            - name: content
+              label: Content Links
+              widget: list
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: href
+                  widget: string
+                  label: Href
+        - name: main
+          label: 📝 Main Content
+          widget: list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: id
+              widget: string
+              label: ID
+            - name: subtitle
+              widget: string
+              label: Subtitle
+              required: false
+            - name: content
+              widget: markdown
+              buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+              label: Content
 
 - name: community
 
