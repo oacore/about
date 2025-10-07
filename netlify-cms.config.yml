@@ -906,6 +906,7 @@ collections:
             - name: id
               widget: string
               label: ID
+              required: false
             - name: subtitle
               widget: string
               label: Subtitle
