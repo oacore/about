@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import {
   DocumentationMembership,
   DocumentationMembershipNav,
+  Video,
+  DocumentSelect,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
-import DocumentSelect from '../../../components/docs-select'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
@@ -21,6 +22,11 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     text.documentationSwitcher[0].title
   )
   const [showNavigator, setShowNavigator] = useState(false)
+  const [visibleVideo, setVisibleVideo] = useState(null)
+
+  const handleContentOpen = useCallback((condition) => {
+    if (condition) setVisibleVideo(condition)
+  }, [])
 
   const route = useRouter()
   const headerHeight = 56
@@ -100,13 +106,16 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
       <Layout className={styles.docsLayout}>
         <DocumentationMembership
           docs={dataProviderDocs?.items}
+          tutorial={dataProviderDocs?.tutorial}
           highlight={highlight}
           setHighlight={setHighlight}
           imageSource
           docsTitle={text.documentationSwitcher[0].title}
           mulltyDocs
+          tutorialIcon={text.tutorialIcon}
           showNavigator={showNavigator}
           handleScrollToTop={handleScrollToTop}
+          handleContentOpen={handleContentOpen}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}
@@ -117,6 +126,13 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
             />
           }
         />
+        {visibleVideo && (
+          <Video
+            visibleModal={visibleVideo}
+            closeModal={() => setVisibleVideo(false)}
+            video={visibleVideo}
+          />
+        )}
       </Layout>
     </div>
   )

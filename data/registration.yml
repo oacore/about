@@ -56,6 +56,8 @@ sections:
       your email and spam folder.
   -
     id: api-enterprise
+    rate: |
+      **Rate limit**: Up to about 200k tokens per day by default or talk to us for more.
     text: |
       For organisations and professionals developing innovative products, services, or software using CORE data.
     box:
@@ -74,6 +76,8 @@ sections:
       Our team will be in touch with further details as soon as possible. Any questions contact <span>theteam@core.ac.uk.</span>.
   -
     id: api-institution
+    rate: |
+      **Rate limit**: Up to about 200k tokens per day.
     text: |
       For users affiliated with an academic institution (e.g. researchers, students, library staff, research managers) to conduct research and data analyses, but not for the development of tools that can be used outside of the organisation.
 
@@ -97,8 +101,15 @@ sections:
 
   -
     id: api-personal
+    rate: |
+      **Rate limit**: 1,000 tokens per day.
     text: |
-      For members of the general public accessing CORE data for personal use only.
+      By registering as a personal user, you certify that:
+      * You will only use CORE in your own personal capacity for the purposes of your own study or research.
+      * The results of your work will not contribute to the effort of any private or public organisation.
+      * Your work is not funded by any organisations, for instance, it is not conducted as part of a research grant or funded or financially supported by anyone.
+      * Your use of the CORE API will not develop any publicly facing service or a service that supports a third-party organisation.
+      * You understand the rate limits for personal use and will not take any action to circumvent them, for instance by registering multiple accounts or by any other means.  public accessing CORE data for personal use only.
     modal-content: >-
       Thank you for registering with CORE API.
       We have sent access instructions to <span> {{email}}</span>. Please check your email and spam folder.
@@ -125,7 +136,7 @@ membershipType:
 
       Don’t worry, you can still use the API, while we are discussing the CORE membership for your institution.
 
-      **If your institution is a member** you don’t need to fill up the fields bellow.
+      **If your institution is a [member](/governance/supporters#membership-list)** you don’t need to provide us with the email for your library contact in the field below.
     typeTextChecked: |
       Our ODC-By datasets are free for everyone. Additionally, our [Sustaining](/membership) members can download all of the CORE Datasets.
 
@@ -133,12 +144,19 @@ membershipType:
 
       Don’t worry, you can still download our ODC-by datasets, while we are discussing the CORE membership for your institution.
 
-      **If your institution is a member** you don’t need to fill up the fields bellow and you can instantly access all the datasets.
+      **If your institution is a member** you don’t need to provide us with the email for your library contact in the field below.
 
 terms: |
   I agree to the CORE [Terms and Conditions](/terms) and [privacy notice](/privacy). The T&Cs and
   privacy notice are designed to inform you of your rights and obligations
   when using the CORE service.
+
+personalConditions:
+  title: You have read and will comply with all applicable legislation and [CORE’s Terms & Conditions](/terms).
+  version: V1
+personalTerms:
+  title: You certify that failure to provide accurate information or letting us know if your use case no longer satisfies the above conditions is considered a violation of [CORE’s Terms of Use](/terms) and that there might be consequences arising from such unauthorised use.
+  version: V1
 
 options:
   all:
@@ -153,7 +171,7 @@ options:
       * Dataset 2018
       * Dataset 2017
     info: We will contact you after registration to arrange a quote.
-    susInfo: We will contact you after registration to discuss access. Sustaining members have free access.
+    susInfo: Only Sustaining Members receive access to all datasets. Following registration, you can contact us to become a Sustaining Member to receive access.
   only:
     label: Only ODC-By licensed datasets
     id: few

@@ -11,6 +11,7 @@ import {
 import { classNames } from '@oacore/design/lib/utils'
 import { Button } from '@oacore/design'
 
+import timeline from '../../public/images/timeline.png'
 import styles from './about.module.scss'
 
 import {
@@ -67,7 +68,6 @@ const RelatedContentSection = ({
         <Button
           className={styles.relatedExtraButton}
           color="primary"
-          outline
           href={data.extraAction.href}
         >
           {data.extraAction.label}
@@ -79,6 +79,7 @@ const RelatedContentSection = ({
 
 const AboutPage = ({ data }) => {
   const [showModal, setShowModal] = useState(false)
+  const [showTimelineModal, setShowTimelineModal] = useState(false)
 
   const handleCloseModal = () => {
     setShowModal(false)
@@ -88,10 +89,18 @@ const AboutPage = ({ data }) => {
     setShowModal(true)
   }
 
+  const handleCloseTimelineModal = () => {
+    setShowTimelineModal(false)
+  }
+
+  const handleOpenTimelineModal = () => {
+    setShowTimelineModal(true)
+  }
+
   useEffect(() => {
-    if (showModal) document.body.style.overflow = 'hidden'
+    if (showModal || showTimelineModal) document.body.style.overflow = 'hidden'
     else document.body.style.overflow = 'visible'
-  }, [showModal])
+  }, [showModal, showTimelineModal])
 
   const badges = data.documentation?.docs.items.find(
     (badge) => badge.id === 'core-badges'
@@ -108,7 +117,12 @@ const AboutPage = ({ data }) => {
       nav
     >
       <h1>{data.meta.headline}</h1>
-      <Section tag="div" id="mission" caption={data.mission.shortTitle}>
+      <Section
+        tag="div"
+        id="mission"
+        caption={data.mission.shortTitle}
+        className={styles.missionSection}
+      >
         <Row>
           <Col xs="12" md="7" lg="8" tag="section">
             <h2>{data.core.title}</h2>
@@ -143,6 +157,18 @@ const AboutPage = ({ data }) => {
             </ButtonToolbar>
           </Col>
         </Row>
+      </Section>
+
+      <Section id="timeline" className={styles.timelineSection}>
+        {/* eslint-disable-next-line max-len */}
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-noninteractive-element-interactions */}
+        <img
+          className={styles.timelineImg}
+          src={timeline}
+          alt=""
+          onClick={handleOpenTimelineModal}
+          style={{ cursor: 'pointer' }}
+        />
       </Section>
 
       <RelatedContentSection
@@ -372,6 +398,26 @@ const AboutPage = ({ data }) => {
               </>
               <div className={styles.buttonWrapper}>
                 <Button onClick={handleCloseModal}>close</Button>
+              </div>
+            </div>
+          </div>
+        )}
+        {showTimelineModal && (
+          // eslint-disable-next-line max-len
+          // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
+          <div className={styles.overlay} onClick={handleCloseTimelineModal}>
+            {/* eslint-disable-next-line max-len */}
+            {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
+            <div
+              className={styles.timelineModal}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className={styles.timelineModalContent}>
+                <img
+                  className={styles.timelineModalImg}
+                  src={timeline}
+                  alt="Timeline"
+                />
               </div>
             </div>
           </div>

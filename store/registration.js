@@ -8,10 +8,16 @@ class Registration {
     lastName: '',
     organisation: '',
     country: '',
-    accountType: 'personal',
+    //  TODO temp remove
+    // accountType: 'personal',
+    accountType: 'institution',
     email: '',
     productType: '',
     agreeNewsletter: false,
+    // Add these new properties with default values
+    dateRequest: '',
+    termsId: '',
+    agreedToNewTerms: false,
   }
 
   isModalFormActive = false
@@ -100,10 +106,16 @@ class Registration {
       lastName: '',
       organisation: '',
       country: '',
-      accountType: 'personal',
+      //  TODO temp remove
+      // accountType: 'personal',
+      accountType: 'institution',
       email: '',
       productType: '',
       agreeNewsletter: false,
+      // Reset the new properties too
+      dateRequest: '',
+      termsId: '',
+      agreedToNewTerms: false,
     }
     this.isModalFormActive = false
     this.isModalConditionsActive = false

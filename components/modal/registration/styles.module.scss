@@ -103,14 +103,15 @@
   &-items {
     display: flex;
     align-items: center;
-    justify-content: center;
+    //TODO temp remove
+    //justify-content: center;
 
     @include media-breakpoint-down('sm') {
       flex-wrap: wrap;
     }
   }
   &-item {
-    flex-basis: 33%;
+    flex-basis: 50%;
     min-width: auto;
     margin: 0 0.2rem;
     text-transform: capitalize;
@@ -125,6 +126,7 @@
     &-text {
       display: flex;
       align-items: flex-end;
+      justify-content: center;
       span {
         margin-left: 1rem;
       }
@@ -137,6 +139,20 @@
   }
 }
 
+.rate-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  border-radius: 2px;
+  background: #fef5ef;
+  color: #424242;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.035px;
+  margin-top: 8px;
+}
+
 .modal-form-text {
   color: #424242;
   font-size: 14px;
@@ -144,6 +160,13 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.035px;
+  ul {
+    margin-left: 1.5rem;
+    li {
+      line-height: 1.5rem;
+      list-style-type: disc;
+    }
+  }
 }
 
 .radio-items-wrapper {
@@ -182,6 +205,18 @@
     align-items: center;
     width: 40%;
   }
+}
+
+.checkbox-wrapper {
+  margin-bottom: 30px;
+  margin-top: -20px;
+  p {
+    font-size: 14px;
+  }
+}
+
+.popover-content {
+  max-width: 215px;
 }
 
 .radio-items-title {

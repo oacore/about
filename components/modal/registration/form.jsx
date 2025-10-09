@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Modal, Form, TextField, Button, Popover } from '@oacore/design/lib'
+import { Modal, Form, TextField, Button } from '@oacore/design/lib'
 import { useRouter } from 'next/router'
 
-import questionInfo from '../../../public/images/logos/questionInfo.svg'
+// import questionInfo from '../../../public/images/logos/questionInfo.svg'
 import styles from './styles.module.scss'
 import ProfileSelect from './profile-select'
 import CountrySelect from './country-select'
@@ -12,7 +12,8 @@ import Markdown from '../../markdown'
 import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
 import DropdownInput from './institution-select'
-import CustomRadio from '../../radio-button'
+// import CustomRadio from '../../radio-button'
+import { Checkbox } from '../../checkbox'
 
 import { useStore, observe } from 'store'
 
@@ -57,9 +58,11 @@ const ModalForm = observe(() => {
   } = useInput('libraryEmail')
 
   const [selectedOption, setSelectedOption] = useState('')
-  const handleRadioSelect = (id) => {
-    setSelectedOption(id)
-  }
+  const [conditionsAccepted, setConditionsAccepted] = useState(false)
+  const [termsAccepted, setTermsAccepted] = useState(false)
+  // const handleRadioSelect = (id) => {
+  //   setSelectedOption(id)
+  // }
 
   const { value: countryName, onChange: countryOnChange } =
     useSelect('countryName')
@@ -77,7 +80,14 @@ const ModalForm = observe(() => {
   const onHandleSubmit = (evt) => {
     evt.preventDefault()
 
-    if (description.trim().split(/\s+/).length > 150) return
+    if (description.trim().length < 150) return
+
+    if (
+      registration.data.accountType === 'personal' &&
+      !conditionsAccepted &&
+      !termsAccepted
+    )
+      return
 
     if (organisationName)
       registration.setData({ organisation: organisationName })
@@ -87,13 +97,22 @@ const ModalForm = observe(() => {
     if (description) registration.setData({ description })
 
     if (firstName && lastName && countryName.id && regEmail) {
-      registration.setData({
+      const registrationData = {
         firstName,
         lastName,
         email: regEmail,
         country: countryName.id,
         paidAccess: selectedOption === 'all',
-      })
+      }
+
+      // Add new properties for personal accounts
+      if (registration.data.accountType === 'personal') {
+        registrationData.dateRequest = new Date().toISOString()
+        registrationData.termsId = text.personalConditions.version
+        registrationData.agreedToNewTerms = true
+      }
+
+      registration.setData(registrationData)
       registration.setIsModalFormActive(false)
       registration.setIsModalConditionsActive(true)
     }
@@ -107,74 +126,122 @@ const ModalForm = observe(() => {
     >
       <h6>Tell us about yourself</h6>
       <ProfileSelect />
+      {router.pathname.includes('api') && (
+        <div className={styles.rateWrapper}>
+          <Markdown>{findText('rate')}</Markdown>
+        </div>
+      )}
       <div className={styles.modalFormText}>
         <Markdown>{findText('text')}</Markdown>
       </div>
       <div className={styles.modalFormTextBordered}>
         <Markdown>{findText('box')}</Markdown>
       </div>
+      {registration.data.accountType === 'institution' && (
+        <div className={styles.typeMainWrapper}>
+          <div className={styles.typeWrapper}>
+            <div className={styles.titleWrapper}>
+              <span className={styles.title}>{text.membershipType.title}</span>
+            </div>
+            <Markdown className={styles.typeText}>
+              {router.pathname.includes('api')
+                ? text.membershipType.typeText
+                : text.membershipType.typeTextChecked}
+            </Markdown>
+          </div>
+        </div>
+      )}
       <Form onSubmit={onHandleSubmit}>
         {router.pathname.includes('dataset') && (
           <div className={styles.radioItemsWrapper}>
             <h6 className={styles.radioItemsTitle}>
-              Choose the datasets you wish to get access to
+              {/* TODO temp remove */}
+              {/* Choose the datasets you wish to get access to */}
+              Included datasets
             </h6>
             <div className={styles.radioItemsInnerWrapper}>
-              <div className={styles.radioItem}>
-                <div className={styles.radioTitleWrapper}>
-                  <CustomRadio
-                    id={text.options.only.id}
-                    label={text.options.only.label}
-                    checked={selectedOption === text.options.only.id}
-                    onChange={() => handleRadioSelect(text.options.only.id)}
-                  />
-                  <Popover
-                    className={styles.popover}
-                    placement="top"
-                    content={text.options.only.info}
-                  >
-                    <Button>
-                      <img src={questionInfo} alt="questionInfo" />
-                    </Button>
-                  </Popover>
-                </div>
-                <Markdown className={styles.radioDescription}>
-                  {text.options.only.description}
-                </Markdown>
-              </div>
+              {/* TODO temp remove */}
+              {/* <div className={styles.radioItem}> */}
+              {/*  <div className={styles.radioTitleWrapper}> */}
+              {/*    <CustomRadio */}
+              {/*      id={text.options.only.id} */}
+              {/*      label={text.options.only.label} */}
+              {/*      checked={selectedOption === text.options.only.id} */}
+              {/* eslint-disable-next-line max-len */}
+              {/*      onChange={() => handleRadioSelect(text.options.only.id)} */}
+              {/*    /> */}
+              {/*    <Popover */}
+              {/*      className={styles.popover} */}
+              {/*      placement="top" */}
+              {/*      content={text.options.only.info} */}
+              {/*    > */}
+              {/*      <Button> */}
+              {/*        <img src={questionInfo} alt="questionInfo" /> */}
+              {/*      </Button> */}
+              {/*    </Popover> */}
+              {/*  </div> */}
+              {/*  <Markdown className={styles.radioDescription}> */}
+              {/*    {text.options.only.description} */}
+              {/*  </Markdown> */}
+              {/* </div> */}
               {registration.data.accountType === 'personal' && (
                 <div className={styles.none}>{text.options.none}</div>
               )}
               {registration.data.accountType !== 'personal' && (
                 <div className={styles.radioItem}>
-                  <div className={styles.radioTitleWrapper}>
-                    <CustomRadio
-                      id={text.options.all.id}
-                      label={text.options.all.label}
-                      checked={selectedOption === text.options.all.id}
-                      onChange={() => handleRadioSelect(text.options.all.id)}
-                    />
-                    <Popover
-                      className={styles.popover}
-                      placement="top"
-                      content={
-                        <Markdown>
-                          {registration.data.accountType === 'enterprise'
-                            ? text.options.all.info
-                            : text.options.all.susInfo}
-                        </Markdown>
-                      }
-                    >
-                      <Button>
-                        <img src={questionInfo} alt="questionInfo" />
-                      </Button>
-                    </Popover>
-                  </div>
+                  {/* TODO temp remove */}
+                  {/* <div className={styles.radioTitleWrapper}> */}
+                  {/*  <CustomRadio */}
+                  {/*    id={text.options.all.id} */}
+                  {/*    label={text.options.all.label} */}
+                  {/*    checked={selectedOption === text.options.all.id} */}
+                  {/* eslint-disable-next-line max-len */}
+                  {/*    onChange={() => handleRadioSelect(text.options.all.id)} */}
+                  {/*  /> */}
+                  {/*  <Popover */}
+                  {/*    className={styles.popover} */}
+                  {/*    placement="top" */}
+                  {/*    content={ */}
+                  {/*      <Markdown className={styles.popoverContent}> */}
+                  {/*        {registration.data.accountType === 'enterprise' */}
+                  {/*          ? text.options.all.info */}
+                  {/*          : text.options.all.susInfo} */}
+                  {/*      </Markdown> */}
+                  {/*    } */}
+                  {/*  > */}
+                  {/*    <Button> */}
+                  {/*      <img src={questionInfo} alt="questionInfo" /> */}
+                  {/*    </Button> */}
+                  {/*  </Popover> */}
+                  {/* </div> */}
                   <Markdown className={styles.radioDescription}>
                     {text.options.all.description}
                   </Markdown>
                 </div>
               )}
+            </div>
+          </div>
+        )}
+        {registration.data.accountType === 'personal' && (
+          <div
+            id={text.personalConditions.version}
+            className={styles.checkboxWrapper}
+          >
+            <div>
+              <Checkbox
+                id="conditions"
+                labelText={<Markdown>{text.personalConditions.title}</Markdown>}
+                value={conditionsAccepted}
+                setCheckbox={setConditionsAccepted}
+              />
+            </div>
+            <div>
+              <Checkbox
+                id="terms"
+                labelText={<Markdown>{text.personalTerms.title}</Markdown>}
+                value={termsAccepted}
+                setCheckbox={setTermsAccepted}
+              />
             </div>
           </div>
         )}
@@ -207,11 +274,12 @@ const ModalForm = observe(() => {
             required
             {...bindRegEmail}
           />
-          <div className={styles.institutionSubtitle}>
-            {registration.data.accountType === 'enterprise'
-              ? 'The supplied email address must correspond to the organization that you select.'
-              : 'The supplied email address must correspond to the institution that you select.'}
-          </div>
+          {registration.data.accountType === 'enterprise' && (
+            <div className={styles.institutionSubtitle}>
+              The supplied email address must correspond to the organization
+              that you select.
+            </div>
+          )}
         </>
         {registration.data.accountType !== 'personal' && (
           <DropdownInput
@@ -222,22 +290,6 @@ const ModalForm = observe(() => {
           />
         )}
         <CountrySelect onChange={countryOnChange} />
-        {registration.data.accountType === 'institution' && (
-          <div className={styles.typeMainWrapper}>
-            <div className={styles.typeWrapper}>
-              <div className={styles.titleWrapper}>
-                <span className={styles.title}>
-                  {text.membershipType.title}
-                </span>
-              </div>
-              <Markdown className={styles.typeText}>
-                {router.pathname.includes('api')
-                  ? text.membershipType.typeText
-                  : text.membershipType.typeTextChecked}
-              </Markdown>
-            </div>
-          </div>
-        )}
         {registration.data.accountType === 'institution' && (
           <TextField
             id={elemLibraryEmail}
@@ -260,18 +312,28 @@ const ModalForm = observe(() => {
             required
             {...bindDescription}
           />
-          {description.trim().split(/\s+/).length > 150 && (
+          {description.trim().length < 150 && description.trim() && (
             <div style={{ color: 'red' }}>
-              Word count exceeds the limit (150 words)
+              Please provide at least 150 symbols. Current symbol count:{' '}
+              {description.trim().length}
             </div>
           )}
-          <span className={styles.wordCount}>Max 150 words.</span>
+          <span className={styles.wordCount}>Min 150 symbols.</span>
         </div>
         <div className={styles.buttonGroup}>
           <Button variant="text" onClick={onCloseModal}>
             cancel
           </Button>
-          <Button type="submit" variant="contained">
+          <Button
+            type="submit"
+            variant="contained"
+            disabled={
+              registration.data.accountType === 'personal' &&
+              (description.trim().length < 150 ||
+                !conditionsAccepted ||
+                !termsAccepted)
+            }
+          >
             continue
           </Button>
         </div>

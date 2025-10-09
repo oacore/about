@@ -843,6 +843,78 @@ collections:
 
   preview_path: api/preview?page={{slug}}&ref=cms/pages/{{slug}}
 
+- name: terms-conditions
+
+  create: false
+  delete: false
+
+  label: 📋 Terms & Conditions
+  label_singular: section
+  description: >
+    CORE terms and conditions content.
+  files:
+    - name: terms-conditions
+      label: 📋 Terms & Conditions
+      file: terms-conditions/terms-conditions.yml
+      fields:
+        - name: header
+          label: 📄 Header
+          widget: object
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Main title displayed on the page
+            - name: actions
+              label: Actions
+              widget: list
+              fields:
+                - name: caption
+                  widget: string
+                  label: Caption
+                - name: url
+                  widget: string
+                  label: URL
+                - name: variant
+                  widget: string
+                  label: Variant
+                - name: target
+                  widget: string
+                  label: Target
+        - name: links
+          label: 🔗 Navigation Links
+          widget: object
+          fields:
+            - name: content
+              label: Content Links
+              widget: list
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: href
+                  widget: string
+                  label: Href
+        - name: main
+          label: 📝 Main Content
+          widget: list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: id
+              widget: string
+              label: ID
+              required: false
+            - name: subtitle
+              widget: string
+              label: Subtitle
+              required: false
+            - name: content
+              widget: markdown
+              buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+              label: Content
 
 - name: community
 
@@ -1917,6 +1989,248 @@ collections:
                 - name: title
                   label: Title
                   widget: string
+    - name: materials
+      label: Materials
+      file: board-supporters/communityNewsletters.yml
+      fields:
+        - name: materials
+          widget: object
+          label: Materials
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: cards
+              widget: list
+              label: Cards
+              fields:
+                - name: image
+                  widget: string
+                  label: Image
+                - name: key
+                  widget: string
+                  label: Key
+                - name: title
+                  widget: string
+                  label: Title
+                - name: action
+                  widget: object
+                  label: Action
+                  fields:
+                    - name: caption
+                      widget: string
+                      label: Caption
+                    - name: url
+                      widget: file
+                      label: URL
+                      required: false
+                      media_folder: '/images/pdfs'
+                      public_folder: '/images/pdfs'
+                      extensions: [ 'pdf' ]
+                    - name: target
+                      widget: string
+                      label: Target
+                      required: false
+
+- name: research-outputs
+
+  media_folder: '/images'
+  public_folder: '/images'
+
+  create: false
+  delete: false
+
+  label: 📑 Research outputs
+  label_singular: section
+  description: >
+    Discover our research outputs and cite our work.
+
+  files:
+    - name: meta
+      label: ℹ️ Metadata (id, title, tagline)
+      file: research-outputs/meta.yml
+      fields:
+        - name: id
+          widget: string
+          label: Id
+        - name: title
+          widget: string
+          label: Title
+        - name: tagline
+          widget: text
+          label: Tagline
+    - name: header
+      label: Header (title, description, image, links)
+      file: research-outputs/header.yml
+      fields:
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - name: id
+              widget: string
+              label: Id
+            - name: title
+              widget: string
+              label: Title
+            - name: description
+              widget: markdown
+              label: Description
+            - name: image
+              widget: file
+              label: Image
+            - name: links
+              widget: object
+              label: Links
+              fields:
+                - name: content
+                  widget: list
+                  label: Content
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: href
+                      widget: string
+                      label: Href
+                - name: more
+                  widget: markdown
+                  label: More
+                - name: moreAction
+                  widget: object
+                  label: More Action
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                    - name: link
+                      widget: string
+                      label: Link
+    - name: sections
+      label: Sections (papers by topic)
+      file: research-outputs/sections.yml
+      fields:
+        - name: sections
+          widget: list
+          label: Sections
+          fields:
+            - name: id
+              widget: string
+              label: Id
+            - name: title
+              widget: string
+              label: Title
+            - name: subTitle
+              widget: string
+              label: SubTitle
+              required: false
+            - name: caption
+              widget: string
+              label: Caption
+              required: false
+            - name: papers
+              widget: list
+              label: Papers
+              fields:
+                - name: id
+                  widget: string
+                  label: Id
+                  required: false
+                - name: type
+                  widget: string
+                  label: Type
+                  required: false
+                - name: volume
+                  widget: string
+                  label: Volume
+                  required: false
+                - name: number
+                  widget: string
+                  label: Number
+                  required: false
+                - name: booktitle
+                  widget: string
+                  label: Booktitle
+                  required: false
+                - name: editor
+                  widget: list
+                  label: Editor
+                  required: false
+                - name: month
+                  widget: string
+                  label: Month
+                  required: false
+                - name: title
+                  widget: text
+                  label: Title
+                - name: author
+                  widget: list
+                  label: Author(s)
+                - name: year
+                  widget: string
+                  label: Year
+                - name: journal
+                  widget: string
+                  label: Journal
+                  required: false
+                - name: keywords
+                  widget: list
+                  label: Keywords
+                  required: false
+                - name: abstract
+                  widget: text
+                  label: Abstract
+                  required: false
+                - name: description
+                  widget: text
+                  label: Description
+                  required: false
+                - name: url
+                  widget: string
+                  label: URL
+                  required: false
+                - name: citations
+                  widget: object
+                  label: Citations
+                  required: false
+                  fields:
+                    - name: text
+                      widget: text
+                      label: Citation Text
+                      required: false
+                    - name: bibtex
+                      widget: text
+                      label: BibTeX
+                      required: false
+                - name: pages
+                  widget: string
+                  label: Pages
+                  required: false
+                - name: note
+                  widget: string
+                  label: Note
+                  required: false
+                - name: doi
+                  widget: string
+                  label: DOI
+                  required: false
+    - name: footer
+      label: Footer
+      file: research-outputs/footer.yml
+      fields:
+        - name: footer
+          widget: markdown
+          label: Footer
+        - name: action
+          widget: object
+          label: Action
+          fields:
+            - name: text
+              widget: string
+              label: Text
+            - name: href
+              widget: string
+              label: Href
 
 - name: research-outputs
 
@@ -5200,26 +5514,33 @@ collections:
                     - name: rows
                       widget: list
                       label: Rows
+                      required: false
                       fields:
                         - name: title
                           widget: string
                           label: Title
+                          required: false
                         - name: caption
                           widget: string
                           label: Caption
+                          required: false
                         - name: prices
                           widget: list
                           label: Prices
+                          required: false
                           fields:
                             - name: type
                               widget: string
                               label: Type
+                              required: false
                             - name: original
                               widget: number
                               label: Original
+                              required: false
                             - name: discount
                               widget: number
                               label: Discount
+                              required: false
                 - name: sustaining
                   widget: object
                   label: Sustaining
@@ -5227,26 +5548,33 @@ collections:
                     - name: rows
                       widget: list
                       label: Rows
+                      required: false
                       fields:
                         - name: title
                           widget: string
                           label: Title
+                          required: false
                         - name: caption
                           widget: string
                           label: Caption
+                          required: false
                         - name: prices
                           widget: list
                           label: Prices
+                          required: false
                           fields:
                             - name: type
                               widget: string
                               label: Type
+                              required: false
                             - name: original
                               widget: number
                               label: Original
+                              required: false
                             - name: discount
                               widget: number
                               label: Discount
+                              required: false
 
 - name: services
 

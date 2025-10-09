@@ -28,6 +28,14 @@
   display: grid;
 }
 
+.label-bold {
+  color: #212121;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0.026px;
+}
+
 .disabled {
   display: none;
 }
