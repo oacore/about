@@ -318,8 +318,28 @@
     gap: 35px;
     margin-bottom: 32px;
 
+    @media (max-width: $breakpoint-lg) {
+      gap: 25px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      gap: 16px;
+    }
+
     .testimonial-item {
       width: 75%;
+      flex: 1;
+
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        order: 2;
+      }
     }
 
     .testimonial-title {
@@ -330,6 +350,22 @@
       font-weight: 700;
       line-height: 130%;
       cursor: unset;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 28px;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        order: 1;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 20px;
+        line-height: 1.2;
+      }
 
       a {
         text-decoration: none;
