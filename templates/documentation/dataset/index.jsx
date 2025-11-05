@@ -12,18 +12,60 @@ import {
   DatasetCard,
 } from 'design-v2/components'
 
-const HeaderMenu = ({ links }) => (
-  <nav className={styles.headerNav}>
-    <h5>{links.title}</h5>
-    <ul className={styles.headerList}>
-      {links.items.map((item) => (
-        <li key={item.label} className={styles.headerNavItem}>
-          <a href={`#${item.link}`}>{item.label}</a>
-        </li>
-      ))}
-    </ul>
-  </nav>
-)
+const HeaderMenu = ({ links }) => {
+  const headerHeight = 55
+  const collapsedIds = [
+    'dataset2017pre',
+    'dataset2017',
+    'dataset2018',
+    'Currentdataset',
+  ]
+
+  const handleScroll = (id) => {
+    const element = document.getElementById(id)
+    if (!element) return
+
+    // If it's a Collapsed section, open it first
+    if (collapsedIds.includes(id)) {
+      const accordionLink = element.querySelector('a[href*="#"]')
+      if (accordionLink && !element.classList.contains('active'))
+        accordionLink.click()
+    }
+
+    // Scroll with offset
+    setTimeout(
+      () => {
+        const position = element.offsetTop - headerHeight
+        window.scrollTo({
+          top: position,
+          behavior: 'smooth',
+        })
+      },
+      collapsedIds.includes(id) ? 100 : 0
+    )
+  }
+
+  return (
+    <nav className={styles.headerNav}>
+      <h5>{links.title}</h5>
+      <ul className={styles.headerList}>
+        {links.items.map((item) => (
+          <li key={item.label} className={styles.headerNavItem}>
+            <a
+              href={`#${item.link}`}
+              onClick={(e) => {
+                e.preventDefault()
+                handleScroll(item.link)
+              }}
+            >
+              {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
 
 const setDatasetAccentColor = (id) => {
   let color = ''
