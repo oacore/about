@@ -4,9 +4,11 @@
   &-item {
     display: flex;
     margin-top: 24px;
+
     @media (max-width: $breakpoint-sm) {
       flex-wrap: wrap-reverse;
     }
+
     &-description {
       font-size: 1.2rem;
       margin: 2rem 0;
@@ -17,33 +19,40 @@
 
     &-card {
       flex: 1;
+
       @media (max-width: $breakpoint-sm) {
         flex: auto;
       }
     }
+
     &-img {
       &-container {
         flex: 1;
         display: flex;
         justify-content: flex-end;
         margin-top: 20px;
+
         @media (max-width: $breakpoint-sm) {
           flex: auto;
           justify-content: center;
         }
       }
+
       width: 100%;
       height: auto;
       max-height: 20rem;
+
       &-big {
         margin-top: 1rem;
         max-height: fit-content;
       }
     }
   }
+
   &-title {
     line-height: 1.5;
     user-select: text;
+
     @media (max-width: $breakpoint-sm) {
       font-size: 2rem;
       line-height: 1.3;
@@ -54,19 +63,24 @@
 .section {
   &-join {
     background-color: var(--gray-200);
+
     div {
       padding: unset;
     }
+
     &-list {
       padding: 0 var(--page-padding-x) !important;
     }
   }
+
   &-services {
     padding: var(--page-padding-y) 0 0 0;
+
     .action-button {
       margin-top: 4rem;
     }
   }
+
   &-partners {
     &-list {
       display: flex;
@@ -79,10 +93,12 @@
       &-item {
         flex-basis: 30%;
         text-align: center;
+
         @media (max-width: $breakpoint-sm) {
           flex-basis: 100%;
           margin-bottom: 1rem;
         }
+
         img {
           max-width: 100%;
           height: auto;
@@ -97,6 +113,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 36px;
+
   .sub-title {
     display: flex;
     align-items: center;
@@ -108,10 +125,12 @@
     line-height: 130%;
     letter-spacing: 0.024px;
   }
+
   .divider {
     margin: 0 10px;
     font-weight: 800;
   }
+
   img {
     margin-right: 10px;
   }
@@ -122,20 +141,25 @@
     background-color: var(--gray-200);
     margin-top: 78px;
     margin-bottom: 30px;
+
     div {
       padding: unset;
     }
+
     &-list {
       padding: 0 var(--page-padding-x) !important;
     }
+
     .inner-oai {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
       .title {
         margin-bottom: 0;
       }
+
       .description {
         text-align: center;
         margin: 14px 0;
@@ -157,6 +181,7 @@
   align-items: center;
   text-align: center;
   flex-direction: column;
+
   .subtitle {
     padding: 2px 14px;
     height: 28px;
@@ -170,6 +195,7 @@
     width: max-content;
     margin-bottom: 2.5rem;
   }
+
   .title {
     margin-bottom: 1rem;
   }
@@ -178,6 +204,7 @@
 .title,
 .action-button {
   text-align: center;
+
   a {
     padding: 0.5rem 3rem !important;
   }
@@ -191,6 +218,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   .faq-header-date {
     color: #9e9e9e;
     font-size: 16px;
@@ -204,45 +232,55 @@
 
 .badge-main-wrapper {
   padding-top: 0;
+
   .badge-title {
     font-style: normal;
     font-weight: 900;
     font-size: 20px;
     color: #212121;
   }
+
   .badge-container {
     display: flex;
     gap: 2rem;
+
     .badge-description {
       margin-top: 1rem;
       margin-left: 1rem;
       line-height: 1.5rem;
       color: var(--gray-900);
+
       .badgeWrapper {
         margin-top: 32px;
+
         .card-wrapper {
           display: flex;
           align-items: center;
           justify-content: center;
           min-height: 90px;
           margin-bottom: 24px;
+
           .img-wrapper {
             display: flex;
             justify-content: flex-end;
             width: 45%;
             padding-right: 24px;
+
             .image {
               width: 100%;
               object-fit: contain;
             }
+
             .badge-image {
               width: max-content;
               height: 40px;
             }
+
             .badge-image-height {
               height: 90px;
             }
           }
+
           .text-alignment {
             display: flex;
             align-items: center;
@@ -251,6 +289,7 @@
             height: 40px;
             padding-left: 24px;
             border-left: 1px dashed #9e9e9e;
+
             .text {
               font-size: 16px;
               font-style: normal;
@@ -268,17 +307,41 @@
   background: #f5f5f5;
   padding: var(--page-padding-y) var(--page-padding-x);
   margin: 34px 0;
+
   &:first-child {
     margin-top: 4px;
   }
+
   .testimonial-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 35px;
     margin-bottom: 32px;
+
+    @media (max-width: $breakpoint-lg) {
+      gap: 25px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      gap: 16px;
+    }
+
     .testimonial-item {
       width: 75%;
+      flex: 1;
+
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        order: 2;
+      }
     }
+
     .testimonial-title {
       width: 25%;
       color: #212121;
@@ -287,9 +350,27 @@
       font-weight: 700;
       line-height: 130%;
       cursor: unset;
+
+      @media (max-width: $breakpoint-lg) {
+        font-size: 28px;
+      }
+
+      @media (max-width: $breakpoint-md) {
+        width: 100%;
+        order: 1;
+        font-size: 24px;
+        text-align: center;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 20px;
+        line-height: 1.2;
+      }
+
       a {
         text-decoration: none;
         color: #b75400;
+
         &:hover {
           text-decoration: none;
         }
@@ -301,12 +382,30 @@
 .carousel-wrapper {
   display: flex;
   flex-direction: column;
+
   .carousel-items {
     display: flex;
     justify-content: space-between;
     gap: 35px;
-    align-items: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-lg) {
+      gap: 20px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      gap: 10px;
+    }
   }
+
   .carousel-item-wrapper {
     border: 1px solid #b75400;
     background: #fff;
@@ -314,22 +413,59 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  .carousel-item {
+    align-items: center;
+    flex: 0 0 auto;
     width: 212px;
-    max-height: 104px;
-    padding: 16px;
+
+    @media (max-width: $breakpoint-lg) {
+      flex: 0 0 calc(50% - 10px);
+      width: auto;
+      min-width: 180px;
+    }
+
+    @media (max-width: $breakpoint-md) {
+      flex: 0 0 calc(33.333% - 10px);
+      min-width: 150px;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      flex: 0 0 100%;
+      width: 100%;
+      max-width: 300px;
+    }
   }
+
+  .carousel-item {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    padding: 16px;
+    object-fit: contain;
+    display: block;
+
+    @media (max-width: $breakpoint-sm) {
+      padding: 12px;
+    }
+  }
+
   .carousel-item-unset {
     padding: 0;
   }
+
   .background {
     background: #e85e13;
   }
+
   .link-wrapper {
     display: flex;
     justify-content: flex-end;
     margin-top: 24px;
+
+    @media (max-width: $breakpoint-sm) {
+      justify-content: center;
+    }
+
     .link {
       padding: 8px 16px;
     }
