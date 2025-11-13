@@ -1,18 +1,18 @@
-name: deploy azure
+name: staging deploy azure
 
 on:
-  schedule:
-    - cron: "0 1 * * *"
+  # schedule:
+  #   - cron: "0 1 * * *"
   push:
     branches:
-      - containerapp_deploy
+      - stage
   workflow_dispatch:
 
 env:
   ACR_NAME: corecontainers
-  IMAGE_NAME: core-frontend-about
-  RESOURCE_GROUP: core-frontend
-  CONTAINERAPP_NAME: core-frontend-about
+  IMAGE_NAME: core-frontend-stage-about
+  RESOURCE_GROUP: core-frontend-stage
+  CONTAINERAPP_NAME: core-frontend-stage-about
   GA_CODE: ${{ secrets.GA_CODE }}
   NODE_ENV: production
   PORT: 8080
@@ -54,12 +54,10 @@ jobs:
             --build-arg API_KEY=${{ secrets.API_KEY }}\
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.set_tag.outputs.tag }} \
             -t ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest .
-
       - name: Docker Push
         run: |
           docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ steps.set_tag.outputs.tag }}
           docker push ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:latest
-
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
