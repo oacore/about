@@ -1,16 +1,18 @@
-name: staging deploy azure
+name: deploy azure
 
 on:
+  schedule:
+    - cron: "0 1 * * *"
   push:
     branches:
-      - stage
+      - containerapp_deploy
   workflow_dispatch:
 
 env:
   ACR_NAME: corecontainers
-  IMAGE_NAME: core-frontend-stage-about
-  RESOURCE_GROUP: core-frontend-stage
-  CONTAINERAPP_NAME: core-frontend-stage-about
+  IMAGE_NAME: core-frontend-about
+  RESOURCE_GROUP: core-frontend
+  CONTAINERAPP_NAME: core-frontend-about
   GA_CODE: ${{ secrets.GA_CODE }}
   NODE_ENV: production
   PORT: 8080
