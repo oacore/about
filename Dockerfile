@@ -19,14 +19,12 @@ WORKDIR /app
 
 ENV NODE_OPTIONS="--max_old_space_size=32000 --openssl-legacy-provider"
 
-# Copy source code
+COPY package.json package-lock.json ./
+
+RUN npm ci --include=dev
+
 COPY . .
 
-# Install dependencies
-RUN npm install \
-    && npm ci --include=dev
-
-# Build the app in production mode
 RUN npm run build
 
 EXPOSE 8080
