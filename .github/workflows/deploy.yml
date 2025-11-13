@@ -1,6 +1,8 @@
 name: containerapp deploy azure
 
 on:
+  schedule:
+    - cron: "0 1 * * *"
   push:
     branches:
       - containerapp_deploy
