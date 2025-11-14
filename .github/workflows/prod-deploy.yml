@@ -1,4 +1,4 @@
-name: deploy azure
+name: prod deploy azure
 
 on:
   schedule:
