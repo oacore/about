@@ -87,31 +87,34 @@ const GovernanceSupportersPageTemplate = ({
       <Section id="community-newsletters">
         <h4>{communityNewsletters.materials.title}</h4>
         <div className={styles.cardsWrapper}>
-          {communityNewsletters.materials.cards.map((card) => (
-            <article className={styles.materialsCard} key={card.key}>
-              <a
-                target="_blank"
-                href={card.action.url}
-                className={styles.materialWrapper}
-                rel="noreferrer"
-              >
-                <div className={styles.materialInnerWrapper}>
-                  <img src={card.image} alt="" />
-                  <div className={styles.materialTitle}>{card.title}</div>
-                </div>
-              </a>
-              <div className={styles.buttonWrapper}>
-                <Button
-                  className={styles.materialButton}
-                  variant="outlined"
-                  href={card.action.url}
+          {communityNewsletters.materials.cards
+            .slice()
+            .reverse()
+            .map((card) => (
+              <article className={styles.materialsCard} key={card.key}>
+                <a
                   target="_blank"
+                  href={card.action.url}
+                  className={styles.materialWrapper}
+                  rel="noreferrer"
                 >
-                  {card.action.caption}
-                </Button>
-              </div>
-            </article>
-          ))}
+                  <div className={styles.materialInnerWrapper}>
+                    <img src={card.image} alt="" />
+                    <div className={styles.materialTitle}>{card.title}</div>
+                  </div>
+                </a>
+                <div className={styles.buttonWrapper}>
+                  <Button
+                    className={styles.materialButton}
+                    variant="outlined"
+                    href={card.action.url}
+                    target="_blank"
+                  >
+                    {card.action.caption}
+                  </Button>
+                </div>
+              </article>
+            ))}
         </div>
       </Section>
       <MembershipTable

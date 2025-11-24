@@ -299,33 +299,36 @@ const MembershipPageTemplate = ({ data, members, allMembers }) => {
         <Section id="membership-materials">
           <h4>{data.materials.materials.title}</h4>
           <div className={styles.cardsWrapper}>
-            {data.materials.materials.cards.map((card) => (
-              <article className={styles.materialsCard} key={card.key}>
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a
-                  onClick={() => handleContentOpen(card.video)}
-                  target={card.action.target}
-                  href={!card.video ? card.action.url : null}
-                  className={styles.materialWrapper}
-                >
-                  <div className={styles.materialInnerWrapper}>
-                    <img src={card.image} alt="" />
-                    <div className={styles.materialTitle}>{card.title}</div>
-                  </div>
-                </a>
-                <div className={styles.buttonWrapper}>
-                  <Button
-                    className={styles.materialButton}
-                    variant="outlined"
-                    href={!card.video ? card.action.url : null}
-                    target={card.action.target}
+            {data.materials.materials.cards
+              .slice()
+              .reverse()
+              .map((card) => (
+                <article className={styles.materialsCard} key={card.key}>
+                  {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                  <a
                     onClick={() => handleContentOpen(card.video)}
+                    target={card.action.target}
+                    href={!card.video ? card.action.url : null}
+                    className={styles.materialWrapper}
                   >
-                    {card.action.caption}
-                  </Button>
-                </div>
-              </article>
-            ))}
+                    <div className={styles.materialInnerWrapper}>
+                      <img src={card.image} alt="" />
+                      <div className={styles.materialTitle}>{card.title}</div>
+                    </div>
+                  </a>
+                  <div className={styles.buttonWrapper}>
+                    <Button
+                      className={styles.materialButton}
+                      variant="outlined"
+                      href={!card.video ? card.action.url : null}
+                      target={card.action.target}
+                      onClick={() => handleContentOpen(card.video)}
+                    >
+                      {card.action.caption}
+                    </Button>
+                  </div>
+                </article>
+              ))}
             {visibleVideo && (
               <Video
                 visibleModal={visibleVideo}
