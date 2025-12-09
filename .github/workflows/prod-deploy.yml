@@ -1,8 +1,6 @@
 name: prod deploy azure
 
 on:
-  schedule:
-    - cron: "0 1 * * *"
   push:
     branches:
       - containerapp_deploy
@@ -24,6 +22,7 @@ permissions:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+    environment: azure
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
 
@@ -63,6 +62,7 @@ jobs:
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
+    environment: azure
     env:
       TAG: ${{ needs.build-and-push.outputs.tag }}
 

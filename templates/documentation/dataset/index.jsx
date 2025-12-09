@@ -25,6 +25,8 @@ const HeaderMenu = ({ links }) => {
     const element = document.getElementById(id)
     if (!element) return
 
+    window.history.pushState(null, '', `#${id}`)
+
     // If it's a Collapsed section, open it first
     if (collapsedIds.includes(id)) {
       const accordionLink = element.querySelector('a[href*="#"]')
