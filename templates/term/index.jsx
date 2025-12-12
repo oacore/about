@@ -12,6 +12,8 @@ const TermsPageTemplate = ({ data }) => {
     const offset = headerHeight.current
 
     if (element) {
+      window.history.pushState(null, '', `#${id}`)
+
       const position = element.offsetTop - offset
       window.scrollTo({
         top: position,
