@@ -109,6 +109,12 @@ testimonials:
       citation: |
         Aggregation plays an increasingly essential role in maximising the long-term benefits of open access, helping to turn the promise of a 'research commons' into a reality. The aggregation services that CORE provides therefore make a very valuable contribution to the evolving open access environment in the UK.
       author: Ben Johnson, Research Policy Adviser at Research England
+characteristics:
+  title: CORE’s Distinctive Characteristics
+  short-title: Distinctive Characteristics
+  description: CORE is an open scholarly infrastructure service aligned with the Principles of Open Scholarly Infrastructure (POSI). Beyond this shared foundation, CORE is defined by a set of distinctive characteristics that shape how it is built, governed, and operated.
+  action: go to the CHARACTERISTICS
+  href: /distinctive-characteristics
 services:
   title: Our services
   actionLabel: Learn more
