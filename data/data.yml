@@ -9,6 +9,7 @@ tagline: |
 
   Our dataset is *huge*, *global*, and [*widely used*](~about/endorsements).
 
+
 sections:
   - title: |
       CORE is a comprehensive collection of <mark>{{totalArticlesCount}}</mark>&nbsp;searchable scholarly resources
@@ -75,3 +76,11 @@ sections:
 
 disclaimer: |
    **Disclaimer:** The exact statistics might differ based on the used CORE service (Search, API, Dataset, FastSync). This is due to the application of different data quality filtering mechanisms across these services.
+
+guideline:
+       title: CORE’s Distinctive Characteristics
+       picture: /images/data-provider.svg
+       description: The foundational characteristics guiding our data services.
+       action:
+           title: Go to the characteristics
+           url: /distinctive-characteristics

@@ -50,13 +50,18 @@ const RelatedContentSection = ({
       <img className={styles['related-icon']} src={data.iconUrl} alt="" />
     )}
     <h2>{data.title}</h2>
-    {children || <Markdown>{data.body}</Markdown>}
+    {children || <Markdown>{data.description || data.body}</Markdown>}
     {renderImage && data.iconUrl && (
       <div className={styles.governanceImageWrapper}>
         <img className={styles.governanceImage} src={data.iconUrl} alt="" />
       </div>
     )}
     <p>
+      {data.urlRedirect && (
+        <Button color="primary" variant="contained" href={data.href}>
+          {data.urlRedirect}
+        </Button>
+      )}
       <Button
         color="primary"
         variant={renderImage ? 'contained' : 'text'}
@@ -128,13 +133,6 @@ const AboutPage = ({ data }) => {
             <h2>{data.core.title}</h2>
 
             <Markdown className="mb-4">{data.core.description}</Markdown>
-            <h2>{data.mission.title}</h2>
-            <Video
-              src={data.mission.video.src}
-              title={data.mission.video.title}
-              tag="p"
-            />
-            <Markdown className={styles.mission}>{data.mission.body}</Markdown>
           </Col>
           <Col
             xs="12"
@@ -155,6 +153,27 @@ const AboutPage = ({ data }) => {
                 {data.blog.actionLabel}
               </Button>
             </ButtonToolbar>
+          </Col>
+        </Row>
+        <RelatedContentSection
+          id="characteristics"
+          data={{
+            ...data.characteristics,
+            action: {
+              label: data.characteristics.actionLabel,
+              href: '/distinctive-characteristics',
+            },
+          }}
+        />
+        <Row>
+          <Col xs="12" md="7" lg="8" tag="section">
+            <h2>{data.mission.title}</h2>
+            <Video
+              src={data.mission.video.src}
+              title={data.mission.video.title}
+              tag="p"
+            />
+            <Markdown className={styles.mission}>{data.mission.body}</Markdown>
           </Col>
         </Row>
       </Section>
