@@ -84,11 +84,11 @@ Also, this projects uses images hosted directly from
 
 ## Thanks ❤️
 
+
 We support Open Access and Open Source. Many open-source and 
 non-open-source projects help us to deliver our products in great quality.
 
 We give thanks to:
-
 [
   ![BrowserStack](docs/images/browserstack-logo.svg)
 ](https://browserstack.com)
