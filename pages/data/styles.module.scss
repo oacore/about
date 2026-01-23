@@ -1,6 +1,63 @@
+@import 'design-v2/variables';
+
 .header-text {
-  text-align: center;
-  margin-bottom: 50px;
+  width: 54%;
+  text-align: left;
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+  }
+}
+
+.section-banner {
+  padding: 0 0 116px 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+  gap: 10px;
+}
+
+.section-service {
+  width: 45%;
+  margin-top: 5px;
+  .section-item {
+    padding: 24px 26px;
+    border-radius: 2px;
+    background: var(--Gray-100, #f5f5f5);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 2px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  }
+  .service-title {
+    color: #212121;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    margin-left: 10px;
+  }
+  .service-description {
+    color: #212121;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.026px;
+    margin: 14px 0 10px 0;
+  }
+  .btn-placement {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+  }
+  @media (max-width: $breakpoint-sm) {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 .stat-list li {

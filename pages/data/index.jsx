@@ -16,9 +16,39 @@ const DataPage = () => (
     keywords={datasetData.keywords}
   >
     <Layout>
-      <div className={styles.headerText}>
-        <h1>{datasetData.headline}</h1>
-        <Markdown>{datasetData.tagline}</Markdown>
+      <div className={styles.sectionBanner}>
+        <div className={styles.headerText}>
+          <h1>{datasetData.headline}</h1>
+          <Markdown>{datasetData.tagline}</Markdown>
+        </div>
+        <div className={styles.sectionService}>
+          <div className={styles.sectionItem}>
+            <div className={styles.header}>
+              <img
+                className={styles.titlePicture}
+                src={datasetData.guideline.picture}
+                alt={datasetData.guideline.title}
+              />
+              <span className={styles.serviceTitle}>
+                {datasetData.guideline.title}
+              </span>
+            </div>
+            <div>
+              <Markdown className={styles.serviceDescription}>
+                {datasetData.guideline.description}
+              </Markdown>
+              <div className={styles.btnPlacement}>
+                <Button
+                  variant="outlined"
+                  href={datasetData.guideline.action.url}
+                  target="_blank"
+                >
+                  {datasetData.guideline.action.title}
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {datasetData.sections.map(

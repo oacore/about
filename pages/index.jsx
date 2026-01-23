@@ -3,6 +3,7 @@ import { Carousel, Button, Card } from '@oacore/design/lib'
 import { classNames } from '@oacore/design/lib/utils'
 
 import posi from '../public/images/posi.svg'
+import char from '../public/images/characteristics.svg'
 import styles from './index.module.scss'
 import Testimonial from '../components/testimonial'
 
@@ -184,6 +185,24 @@ const IndexPage = () => {
             <Button variant="contained" tag="a" href={page.testimonials.action}>
               {page.testimonials.actionLabel}
             </Button>
+          </div>
+        </Section>
+        <Section className={styles.sectionOai} useFullPageWidth>
+          <div className={styles.innerOai}>
+            <img className={styles.charImg} src={char} alt="" />
+            <h3 className={styles.title}>{page.characteristics.title}</h3>
+            <Markdown className={styles.description}>
+              {page.characteristics.description}
+            </Markdown>
+            <p>
+              <Button
+                color="primary"
+                variant="contained"
+                href={page.characteristics.href}
+              >
+                {page.characteristics.action}
+              </Button>
+            </p>
           </div>
         </Section>
         <Section className={styles.sectionServices}>
