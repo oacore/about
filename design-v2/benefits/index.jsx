@@ -92,9 +92,6 @@ const BenefitsPageTemplate = ({ data }) => {
           <div className={styles.description}>
             {benefitsData.banner.description}
           </div>
-          <Markdown className={styles.linker}>
-            {benefitsData.banner.link}
-          </Markdown>
           <>
             <Button
               variant="contained"

@@ -80,7 +80,7 @@ disclaimer: |
 guideline:
        title: CORE’s Distinctive Characteristics
        picture: /images/data-provider.svg
-       description: The main operational approaches and core rules guiding our provision of data services and necessary for CORE to function effectively.
+       description: The foundational characteristics guiding our data services.
        action:
            title: Go to the characteristics
            url: /distinctive-characteristics

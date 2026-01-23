@@ -1,7 +1,7 @@
 @import 'design-v2/variables';
 
 .header-text {
-  width: 58%;
+  width: 54%;
   text-align: left;
   @media (max-width: $breakpoint-sm) {
     width: 100%;
@@ -20,7 +20,7 @@
 }
 
 .section-service {
-  width: 40%;
+  width: 45%;
   margin-top: 5px;
   .section-item {
     padding: 24px 26px;

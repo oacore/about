@@ -155,12 +155,17 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      padding: 0 20px;
 
       .title {
         margin-bottom: 0;
       }
 
+      .char-img {
+        margin-bottom: 16px;
+      }
       .description {
+        width: 50%;
         text-align: center;
         margin: 14px 0;
       }

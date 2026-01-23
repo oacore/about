@@ -57,6 +57,11 @@ const RelatedContentSection = ({
       </div>
     )}
     <p>
+      {data.urlRedirect && (
+        <Button color="primary" variant="contained" href={data.href}>
+          {data.urlRedirect}
+        </Button>
+      )}
       <Button
         color="primary"
         variant={renderImage ? 'contained' : 'text'}

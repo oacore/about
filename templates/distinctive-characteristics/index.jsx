@@ -44,8 +44,8 @@ const DistinctiveCharacteristicsTemplate = ({ data }) => {
                       />
                     ) : (
                       <img
-                        className={styles.communityImg}
-                        src="/images/community/research/collaboration.svg"
+                        className={styles.connectImg}
+                        src="/images/join/characteristics.svg"
                         alt={section.title}
                       />
                     )}
@@ -78,7 +78,10 @@ const DistinctiveCharacteristicsTemplate = ({ data }) => {
       </div>
       <div className={styles.posiSection}>
         <div className={styles.posiHeader}>
-          <h3 className={styles.posiTitle}>{posi.title}</h3>
+          <div className={styles.posiInner}>
+            <h3 className={styles.posiTitle}>{posi.title}</h3>
+            <Markdown className={styles.posiSubtitle}>{posi.subTitle}</Markdown>
+          </div>
           <img src="/images/posiBig.svg" alt="posi" />
         </div>
         {posi.description && Array.isArray(posi.description) && (
