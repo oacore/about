@@ -29,6 +29,8 @@ env:
   STAGING_RESOURCE_GROUP: core-frontend-stage
   STAGING_APP_NAME: core-frontend-about-stage
 
+  GA_CODE: ${{ secrets.GA_CODE }}
+  NODE_ENV: production
   PORT: 8080
 
 permissions:
