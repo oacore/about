@@ -180,5 +180,5 @@ error:
       url: "/membership"
       variant: contained
     - caption: contact us
-      url: "/contact"
+      url: "/about#contact"
       variant: outlined
