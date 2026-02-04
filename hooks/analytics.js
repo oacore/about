@@ -12,7 +12,7 @@ export const useAnalytics = (options) => {
     (url, title, hitType = 'pageview') => {
       const pathName =
         window.location.pathname === '/'
-          ? 'core.ac.uk'
+          ? 'about-core-container-e2cxc9hzbfdjcgar.uksouth-01.azurewebsites.net'
           : window.location.pathname
 
       ReactGA.send({
@@ -33,10 +33,16 @@ export const useAnalytics = (options) => {
         // We want to have logging in the development environment
         // eslint-disable-next-line no-console
         console.log(`ga(${JSON.stringify(args).slice(1, -1)})`)
-    } else {
+    } else if (
+      process.env.NODE_ENV === 'azure' ||
+      process.env.NODE_ENV === 'development'
+    )
+      ReactGA.initialize('G-2ZWQFDN91Z')
+    else {
       // Disable Google Analytics
       window.ga = null
     }
+
 
     // Reporting first page view manually because the event doesn't fire
     reportPageview(router.asPath, title)
