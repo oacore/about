@@ -647,7 +647,7 @@ sections:
         answer: |
           Visit our [research page](~research-outputs).
 
-  - id: ref-audit
+  - id: ref
     title: CORE guidance on REF2021 Audit
     updateDate: Last updated 24.08.2023
     caption: REF2021 Audit
@@ -670,7 +670,7 @@ sections:
           deposit date?
         answer: |
           CORE captures data as explained in the [CORE
-          recommendations](/ref-audit). By following our recommendations CORE
+          recommendations](/ref). By following our recommendations CORE
           should have the same deposit dates as the repository.
       - slug: metadata-record-with-a-full-text-PDF-does-not-appear-in-CORE
         question: |
@@ -701,7 +701,7 @@ sections:
           information necessary to support the REF2021 audit as long as the
           metadata of your outputs are in CORE. To minimise the possibility of
           some of your outputs not being captured by CORE, please follow the
-          [CORE recommendations](/ref-audit).
+          [CORE recommendations](/ref).
       - slug: when-I-log-into-the-CORE-Repository-Dashboard
         question: |
           When I log into the CORE Repository Dashboard in the “Content” tab I
@@ -740,7 +740,7 @@ sections:
           How does CORE know the date that the full text was attached?
         answer: |
           CORE captures data as explained in the
-          [CORE recommendations](/ref-audit).
+          [CORE recommendations](/ref).
       - slug: how-does-CORE-know-that-the-version-of-the-deposited-full-text
         question: |
           How does CORE know that the version of the deposited full text is the
