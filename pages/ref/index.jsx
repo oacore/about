@@ -5,11 +5,13 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import { getSections } from '../../hooks/retriveContent'
 import styles from '../about/about.module.scss'
+import benefitsStyles from '../../design-v2/benefits/styles.module.scss'
 import Markdown from '../../components/markdown'
 import ref from '../../public/images/ref.svg'
 import { Content, Section } from '../../components'
 import { Layout } from '../../design-v2/components'
 import coreLogo from '../../public/images/core-logo-circle.svg'
+import benefitsData from '../../data/benefits.yml'
 
 const ResearchPaperCard = ({
   id,
@@ -396,6 +398,32 @@ const RefOutputsPage = ({ page }) => {
           items={section.items}
         />
       ))}
+      <Section id="services" className={benefitsStyles.servicesSection}>
+        <div className={benefitsStyles.serviceWrapper}>
+          {benefitsData.services.map((service) => (
+            <div className={benefitsStyles.service}>
+              <div className={benefitsStyles.headerWrapper}>
+                <img
+                  className={benefitsStyles.titlePicture}
+                  src={service.picture}
+                  alt={service.title}
+                />
+                <span className={benefitsStyles.serviceTitle}>
+                  {service.title}
+                </span>
+              </div>
+              <div>
+                <Markdown className={benefitsStyles.serviceDescription}>
+                  {service.description}
+                </Markdown>
+                <Button variant="outlined" href={service.action[0].url}>
+                  {service.action[0].title}
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
       <Content className={styles.footerWrapper}>
         <Markdown className={styles.footerText}>{page.footer.footer}</Markdown>
         <Button

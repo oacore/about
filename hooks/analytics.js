@@ -43,7 +43,6 @@ export const useAnalytics = (options) => {
       window.ga = null
     }
 
-
     // Reporting first page view manually because the event doesn't fire
     reportPageview(router.asPath, title)
 
