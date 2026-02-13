@@ -29,6 +29,7 @@ const nextConfig = {
     unoptimized: true,
   },
   dynamicAssetPrefix: true,
+  turbopack: {},
   webpack: (config) => {
     const originalEntry = config.entry
     config.entry = async () => {
