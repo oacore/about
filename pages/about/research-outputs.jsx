@@ -157,7 +157,7 @@ export async function getStaticProps({ previewData }) {
 
 const ResearchOutputsPage = ({ page }) => {
   const [isCitationsModalOpen, setIsCitationsModalOpen] = useState(false)
-  const [activePaper, setActivePaper] = useState(null)
+  const [activePaper, setActivePaper] = useState(true)
   const headerHeight = useRef(50)
 
   const handleScroll = (id) => {
@@ -180,7 +180,9 @@ const ResearchOutputsPage = ({ page }) => {
 
   return (
     <Layout>
-      <Section className={styles.header}>
+      <Section
+        className={classNames.use(styles.header, styles.headerStyleWrapper)}
+      >
         <div className={styles.innerWrapper}>
           <h1 className={styles.title}>{page.header.header.title}</h1>
           <Markdown className={styles.description}>

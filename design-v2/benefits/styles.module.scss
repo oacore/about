@@ -245,6 +245,10 @@ $spacer: 1.5rem;
   }
 }
 
+.servicesSection {
+  grid-template-columns: unset;
+}
+
 .service-wrapper {
   display: flex;
   flex-wrap: wrap;
