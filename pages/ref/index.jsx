@@ -37,7 +37,6 @@ const ResearchPaperCard = ({
   subHeaderContent,
   images,
   items,
-  subTitle,
   caption,
   ...cardProps
 }) => {
@@ -195,7 +194,6 @@ const ResearchOutputsSection = ({
   id,
   title,
   papers,
-  subTitle,
   caption,
   // New section data structure
   content,
@@ -232,9 +230,6 @@ const ResearchOutputsSection = ({
             {title}
           </div>
         )}
-        {subTitle && (
-          <div className={styles.togglePanelSubTitle}>{subTitle}</div>
-        )}
         {hasSectionContent && (
           <div className={styles.toggleContent}>
             <ResearchPaperCard
@@ -247,7 +242,6 @@ const ResearchOutputsSection = ({
               subHeaderContent={subHeaderContent}
               images={images}
               items={items}
-              subTitle={subTitle}
               caption={caption}
               papersLength
               className="mb-3"
@@ -386,7 +380,6 @@ const RefOutputsPage = ({ page }) => {
           id={section.id}
           caption={section.caption || section.title}
           title={section.title}
-          subTitle={section.subTitle}
           papers={section.papers}
           content={section.content}
           content2={section.content2}

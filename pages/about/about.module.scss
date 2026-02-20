@@ -566,6 +566,13 @@
 
       .card-content {
         margin: 18px 0;
+        ul {
+          margin-left: 1.5rem;
+          li {
+            line-height: 1.5rem;
+            list-style-type: disc;
+          }
+        }
 
         @media (max-width: $breakpoint-sm) {
           margin: 12px 0;
