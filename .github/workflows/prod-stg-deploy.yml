@@ -205,3 +205,4 @@ jobs:
             --image ${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }}:${{ env.TAG }} \
             --container-name ${{ steps.target.outputs.APP }} \
             --set configuration.ingress.targetPort=${{ env.PORT }}
+            
