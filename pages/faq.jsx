@@ -4,8 +4,9 @@ import { useRouter } from 'next/router'
 
 import styles from './index.module.scss'
 import retrieveContent from '../content'
+import guideIcon from '../public/images/data-provider.svg'
 
-import { Accordion, Content, Markdown, Page, Section } from 'components'
+import { Accordion, Button, Content, Markdown, Page, Section } from 'components'
 
 const itemToURL = (id) => {
   const url = new URL(window.location)
@@ -21,6 +22,7 @@ const FAQsSection = ({
   sections = [],
   caption = title,
   level = 2,
+  guideline,
 }) => {
   const Heading = `h${level}`
   const [isMounted, setIsMounted] = useState(false)
@@ -50,6 +52,35 @@ const FAQsSection = ({
           <Heading>{title}</Heading>
           <span className={styles.faqHeaderDate}>{updateDate}</span>
         </div>
+        {guideline && (
+          <div className={styles.sectionService}>
+            <div className={styles.sectionItem}>
+              <div className={styles.header}>
+                <img
+                  className={styles.titlePicture}
+                  src={guideIcon}
+                  alt={guideline.title}
+                />
+                <span className={styles.serviceTitle}>{guideline.title}</span>
+              </div>
+              <div>
+                <Markdown className={styles.serviceDescription}>
+                  {guideline.description}
+                </Markdown>
+                <div className={styles.btnPlacement}>
+                  <Button
+                    outline
+                    color="primary"
+                    href={guideline.action.url}
+                    target="_blank"
+                  >
+                    {guideline.action.title}
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
         <Content>
           <Accordion onToggle={itemToURL}>
             {items.map((item) => (

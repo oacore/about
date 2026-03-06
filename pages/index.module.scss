@@ -235,6 +235,51 @@
   }
 }
 
+.section-service {
+  margin: 1.5rem 0;
+
+  .section-item {
+    padding: 24px 26px;
+    border-radius: 2px;
+    background: var(--Gray-100, #f5f5f5);
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 2px 1px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
+  }
+
+  .service-title {
+    color: #212121;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    margin-left: 10px;
+  }
+
+  .service-description {
+    color: #212121;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.026px;
+    margin: 14px 0 10px 0;
+  }
+
+  .btn-placement {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .title-picture {
+    margin-right: 14px;
+  }
+}
+
 .badge-main-wrapper {
   padding-top: 0;
 
