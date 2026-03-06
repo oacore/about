@@ -2,47 +2,18 @@ import React from 'react'
 
 import MembershipPricesPageTemplate from 'templates/membership/prices'
 import { Page } from 'components'
-import retrieveContent from 'content'
-
-const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
-
-const setAssetsUrl = (object) => {
-  Object.entries(object).forEach(([key, value]) => {
-    if (typeof value === 'string' && value.includes('/images'))
-      object[key] = ASSETS_BASE_URL + value
-    else if (typeof value === 'object') setAssetsUrl(value)
-  })
-}
-
-const getSections = async ({ ref } = {}) => {
-  const page = await retrieveContent('membership', {
-    ref,
-    transform: 'object',
-  })
-
-  const sponsorship = await retrieveContent('sponsorship', {
-    ref,
-    transform: 'object',
-  })
-
-  setAssetsUrl(page)
-  setAssetsUrl(sponsorship)
-
-  return { page, sponsorship }
-}
-
-export const slugs = ['supporting', 'sustaining']
+import { getMembershipSections, membershipSlugs } from 'hooks/retriveContent'
 
 export async function getStaticProps({ params, previewData }) {
   const { slug } = params
   const ref = previewData?.ref
-  const { page, sponsorship } = await getSections({ ref })
+  const { page, sponsorship } = await getMembershipSections({ ref })
 
   const data = {
     header: {
       title: page.header.header.title,
       description: page.fee.fee.description[slug],
-      subDescription: page.fee.fee.subDescription[slug],
+      subDescription: page.fee.fee.subDescription?.[slug],
       note: page.fee.fee.note[slug],
     },
     fee: {
@@ -69,7 +40,7 @@ export async function getStaticProps({ params, previewData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = slugs.map((slug) => ({
+  const paths = membershipSlugs.map((slug) => ({
     params: { slug },
   }))
 
