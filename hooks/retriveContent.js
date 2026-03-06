@@ -20,3 +20,12 @@ export const getSections = async (contentType, { ref } = {}) => {
 
   return page
 }
+
+export const membershipSlugs = ['supporting', 'sustaining']
+
+export const getMembershipSections = async ({ ref } = {}) => {
+  const page = await getSections('membership', { ref })
+  const sponsorship = await getSections('sponsorship', { ref })
+
+  return { page, sponsorship }
+}
