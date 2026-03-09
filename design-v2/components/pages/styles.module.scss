@@ -8,6 +8,17 @@ $support-card-width: 21.5rem;
   padding-bottom: 0;
 }
 
+.nav-wrapper {
+  display: flex;
+  gap: 24px;
+  .link-item {
+    color: #666666;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
 .unset-top {
   padding-top: 0;
 }

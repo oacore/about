@@ -16,7 +16,7 @@ import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
 import Page from 'components/page'
-import { Markdown } from 'components'
+import { Accordion, Content, Markdown } from 'components'
 import { useInput } from 'hooks'
 import { observe, useStore } from 'store'
 
@@ -101,6 +101,8 @@ const ServicePage = observe(
     relatedServices,
     stats, // @optional
     testimonials, // @optional
+    headerLink, // @optional
+    faqs, // @optional
     whatIsIncluded, // @optional
     additional, // @optional
     benefits, // @optional
@@ -124,11 +126,16 @@ const ServicePage = observe(
 
     const router = useRouter()
     const productType = router?.route?.match(/(?:dataset|api)/s)?.join('')
-
     const onHandleSubmit = (e) => {
       e.preventDefault()
       registration.setData({ productType, email })
       registration.setIsModalFormActive(true)
+    }
+
+    const itemToURL = () => {
+      const url = new URL(window.location)
+      url.hash = id ? `#${id}` : ''
+      window.history.replaceState({}, null, url.toString())
     }
 
     const handleContentOpen = useCallback((condition) => {
@@ -143,6 +150,15 @@ const ServicePage = observe(
         className={styles.servicePage}
       >
         <Layout className={styles.unsetBottom}>
+          {headerLink && (
+            <div className={styles.navWrapper}>
+              {headerLink.headerLink.map((item) => (
+                <a className={styles.linkItem} href={item.href} key={item.link}>
+                  {item.link}
+                </a>
+              ))}
+            </div>
+          )}
           <Hero
             actionButton={actionButton}
             hideButtons={hideButtons}
@@ -484,6 +500,19 @@ const ServicePage = observe(
                   ))}
                 </div>
               </div>
+            </Section>
+          )}
+          {faqs && (
+            <Section id="join-faq">
+              <Content>
+                <Accordion onToggle={itemToURL}>
+                  {faqs.sections.items.map(({ slug, question, answer }) => (
+                    <Accordion.Item id={slug} title={question} key={slug}>
+                      <Markdown>{answer}</Markdown>
+                    </Accordion.Item>
+                  ))}
+                </Accordion>
+              </Content>
             </Section>
           )}
           {relatedServices && (
