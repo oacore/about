@@ -117,6 +117,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
           redirectLink={text?.redirectLink}
           showNavigator={showNavigator}
           handleScrollToTop={handleScrollToTop}
+          tutorial={docs?.tutorial}
+          tutorialIcon={text.tutorialIcon}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}

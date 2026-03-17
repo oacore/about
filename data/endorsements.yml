@@ -536,6 +536,18 @@ organizations:
   name: Ontochem
   url: https://www.leanlibrary.com/
   logo: ontochem.png
+- &gptzeroogo
+  id: GPTZERO
+  name: GPTZERO
+  url: https://gptzero.me/
+  logo: GPTZERO_LOGO.png
+  full: true
+- &sandboxLogo
+  id: SANDBOXAQ
+  name: SANDBOXAQ
+  url: https://www.sandboxaq.com
+  logo: SANDBOXAQ_LOGO.png
+  full: true
 - &turnitinLogo
   id: turnitin
   name: Turnitin
@@ -1035,6 +1047,8 @@ sections:
       title: Companies who work with us
       items:
 #        - *gramarly
+        - *gptzeroogo
+        - *sandboxLogo
         - *ontochemLogo
         - *anthropic
         - *microsoftLogo
