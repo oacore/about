@@ -702,7 +702,6 @@ organizations:
   id: bath
   name: University of Bath
   logo: BATH.svg
-
 - &birmingham
   id: birmingham
   name: University of Birmingham
@@ -822,11 +821,15 @@ organizations:
   name: LA Referencia
   logo: laref.png
   testimonial: *alberto-cabezas
-- &brunel-uni
+- &brunel
   id: brunel_uni
   name: Brunel University
   logo: Brunel.svg
   testimonial: *david-walters
+- &brunel-uni
+  id: brunel_uni
+  name: Brunel University
+  logo: Brunel.svg
 - &ou
   id: ou
   name: Open University
@@ -1091,6 +1094,7 @@ sections:
         - *birmingham
         - *bradford
         - *bristol
+        - *brunel
         - *brunel-uni
         - *cambridge_member
         - *cardiff
@@ -1118,6 +1122,8 @@ sections:
         - *kings
     testimonials:
       title: What institutions say about us
+      items:
+        - *david-walters
 
   partners:
     id: partner-projects
