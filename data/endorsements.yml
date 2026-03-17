@@ -1116,6 +1116,8 @@ sections:
         - *white-rose
         - *buckingham
         - *kings
+    testimonials:
+      title: What institutions say about us
 
   partners:
     id: partner-projects
