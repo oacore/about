@@ -1088,13 +1088,18 @@ sections:
     organizations:
       title: Institutions who work with us
       items:
+        - *ouKathleen
+        - *ou
+        - *adri
+        - *brunel
+        - *laref
+        - *lbu
         - *aru
         - *ual
         - *bath
         - *birmingham
         - *bradford
         - *bristol
-        - *brunel
         - *brunel-uni
         - *cambridge_member
         - *cardiff
