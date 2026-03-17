@@ -706,10 +706,12 @@ organizations:
   id: aru
   name: Anglia Ruskin University
   logo: aru.svg
+  full: true
 - &ual
   id: ual
   name: University of the Arts London
   logo: UAL.svg
+  full: true
 - &bath
   id: bath
   name: University of Bath
@@ -746,6 +748,8 @@ organizations:
   id: glasgow
   name: University of Glasgow
   logo: glasgow.svg
+  full: true
+
 - &greenwich
   id: greenwich
   name: University of Greenwich
@@ -754,10 +758,13 @@ organizations:
   id: hull
   name: University of Hull
   logo: hull.svg
+  full: true
 - &imperial
   id: imperial
   name: Imperial College London
   logo: imperial-college.svg
+  full: true
+
 - &lancaster
   id: lancaster
   name: Lancaster University
@@ -774,6 +781,8 @@ organizations:
   id: oxford
   name: University of Oxford
   logo: Oxford.svg
+  full: true
+
 - &reading
   id: reading
   name: University of Reading
@@ -786,10 +795,14 @@ organizations:
   id: queen-mary
   name: Queen Mary University of London
   logo: queen-marry.svg
+  full: true
+
 - &strathclyde_member
   id: strathclyde-member
   name: University of Strathclyde
   logo: Strathclyde.svg
+  full: true
+
 - &tib
   id: tib
   name: TIB
@@ -802,6 +815,8 @@ organizations:
   id: white-rose
   name: White Rose University Consortium
   logo: white-rose.svg
+  full: true
+
 - &buckingham
   id: buckingham
   name: Buckinghamshire New University
@@ -842,6 +857,8 @@ organizations:
   id: brunel_uni
   name: Brunel University
   logo: Brunel.svg
+  full: true
+
 - &ou
   id: ou
   name: Open University
@@ -1102,12 +1119,6 @@ sections:
     organizations:
       title: Institutions who work with us
       items:
-        - *ouKathleen
-        - *ou
-        - *adri
-        - *brunel
-        - *laref
-        - *lbu
         - *aru
         - *ual
         - *bath
@@ -1139,6 +1150,12 @@ sections:
         - *white-rose
         - *buckingham
         - *kings
+        - *ouKathleen
+        - *ou
+        - *adri
+        - *brunel
+        - *laref
+        - *lbu
     testimonials:
       title: What institutions say about us
       items:
