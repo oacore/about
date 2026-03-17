@@ -698,14 +698,19 @@ organizations:
   logo: metadata2020.svg
 
 # institutions
+- &exeter
+  id: exeter
+  name: University of Exeter
+  logo: exeter.svg
+  full: true
 - &stgeorgs
   id: stgeorgs
   name: St. George's, University of London
-  logo: stgeorg.png
+  logo: st-georges.svg
 - &aru
   id: aru
   name: Anglia Ruskin University
-  logo: aru.svg
+  logo: ARU.svg
   full: true
 - &ual
   id: ual
@@ -1140,15 +1145,16 @@ sections:
         - *oxford
         - *reading
         - *trent
-        - *st-andrews
         - *queen-mary
         - *stgeorgs
+        - *city
         - *sussex
         - *strathclyde_member
         - *tib
         - *tu-wien
         - *white-rose
         - *buckingham
+        - *exeter
         - *kings
         - *ouKathleen
         - *ou
