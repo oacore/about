@@ -694,6 +694,111 @@ organizations:
   id: aru
   name: Anglia Ruskin University
   logo: aru.svg
+- &ual
+  id: ual
+  name: University of the Arts London
+  logo: UAL.svg
+- &bath
+  id: bath
+  name: University of Bath
+  logo: BATH.svg
+
+- &birmingham
+  id: birmingham
+  name: University of Birmingham
+  logo: BIRMINGHAM.svg
+- &bradford
+  id: bradford
+  name: University of Bradford
+  logo: Bradford.svg
+- &bristol
+  id: bristol
+  name: University of Bristol
+  logo: Bristol.svg
+- &cambridge_member
+  id: cambridge-member
+  name: University of Cambridge
+  logo: cambridge.svg
+- &cardiff
+  id: cardiff
+  name: Cardiff University
+  logo: cardif.svg
+- &chicago
+  id: chicago
+  name: University of Chicago
+  logo: chicago.svg
+- &durham
+  id: durham
+  name: Durham University
+  logo: durham.svg
+- &glasgow
+  id: glasgow
+  name: University of Glasgow
+  logo: glasgow.svg
+- &greenwich
+  id: greenwich
+  name: University of Greenwich
+  logo: greenwich.svg
+- &hull
+  id: hull
+  name: University of Hull
+  logo: hull.svg
+- &imperial
+  id: imperial
+  name: Imperial College London
+  logo: imperial-college.svg
+- &lancaster
+  id: lancaster
+  name: Lancaster University
+  logo: Lancaster.svg
+- &manchester-metropolitan
+  id: manchester-metropolitan
+  name: Manchester Metropolitan University
+  logo: manchester-metropolian.svg
+- &nottingham
+  id: nottingham
+  name: University of Nottingham
+  logo: nottingham.svg
+- &oxford
+  id: oxford
+  name: University of Oxford
+  logo: Oxford.svg
+- &reading
+  id: reading
+  name: University of Reading
+  logo: reading.svg
+- &st-andrews
+  id: st-andrews
+  name: University of St Andrews
+  logo: st-andrews.svg
+- &queen-mary
+  id: queen-mary
+  name: Queen Mary University of London
+  logo: queen-marry.svg
+- &strathclyde_member
+  id: strathclyde-member
+  name: University of Strathclyde
+  logo: Strathclyde.svg
+- &tib
+  id: tib
+  name: TIB
+  logo: TIB.svg
+- &tu-wien
+  id: tu-wien
+  name: TU Wien
+  logo: tu-wien.svg
+- &white-rose
+  id: white-rose
+  name: White Rose University Consortium
+  logo: white-rose.svg
+- &buckingham
+  id: buckingham
+  name: Buckinghamshire New University
+  logo: buckinghamshire.svg
+- &kings
+  id: kings
+  name: King's College London
+  logo: kings_college_london.svg
 - &sussex
   id: sussex
   name: University of Sussex
@@ -717,10 +822,10 @@ organizations:
   name: LA Referencia
   logo: laref.png
   testimonial: *alberto-cabezas
-- &brunel
-  id: brunel
+- &brunel-uni
+  id: brunel_uni
   name: Brunel University
-  logo: brunel.png
+  logo: Brunel.svg
   testimonial: *david-walters
 - &ou
   id: ou
@@ -980,54 +1085,38 @@ sections:
     organizations:
       title: Institutions who work with us
       items:
-          - *ouKathleen
-          - *ou
-          - *stgeorgs
-          - *aru
-          - *sussex
-          - *trent
-          - *adri
-          - *apollo
-          - *aston
-          - *asu
-          - *brunel
-          - *chichester
-          - *city
-          - *clok
-          - *concordia
-          - *dspace
-          - *foster
-          - *gloucestershire
-          - *hsu
-          - *huddersfield
-          - *ihs-vienna
-          - *iiasa
-          - *laref
-          - *lbu
-          - *ljmu
-          - *middlesex
-          - *nslg
-          - *nulan
-          - *oro
-          - *ray
-          - *regensburg
-          - *ricerca
-          - *rsvpu
-          - *salford
-          - *stirling
-          - *strathprints
-          - *trieste
-          - *tsu
-          - *uol
-          - *urfu
-          - *uwl
-          - *victoria
-          - *wr-leeds
-          - *wr-sheffield
-          - *wr-york
-          - *zurich
-    testimonials:
-      title: What institutions say about us
+        - *aru
+        - *ual
+        - *bath
+        - *birmingham
+        - *bradford
+        - *bristol
+        - *brunel-uni
+        - *cambridge_member
+        - *cardiff
+        - *chicago
+        - *durham
+        - *glasgow
+        - *greenwich
+        - *hull
+        - *imperial
+        - *lancaster
+        - *manchester-metropolitan
+        - *nottingham
+        - *oxford
+        - *reading
+        - *trent
+        - *st-andrews
+        - *queen-mary
+        - *stgeorgs
+        - *sussex
+        - *strathclyde_member
+        - *tib
+        - *tu-wien
+        - *white-rose
+        - *buckingham
+        - *kings
+
   partners:
     id: partner-projects
     title: Partner projects
