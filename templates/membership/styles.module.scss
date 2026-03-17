@@ -446,6 +446,46 @@ $breakpoint-lg: 1415px;
   &-table {
     margin-bottom: 2rem;
   }
+  &-warning {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    background-color: #fef9e7;
+    border-radius: 4px;
+  }
+
+  &-warning-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: #e6a800;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-warning-content {
+    flex: 1;
+    color: #212121;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.0016em;
+
+    p {
+      margin: 0 0 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  }
   &-note {
     margin-bottom: 2rem;
     color: var(--gray-800);

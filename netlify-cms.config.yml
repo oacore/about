@@ -5256,6 +5256,10 @@ collections:
             - name: caption
               widget: string
               label: Caption
+            - name: warning
+              widget: markdown
+              label: Warning
+              required: false
             - name: description
               widget: object
               label: Description
@@ -5279,6 +5283,10 @@ collections:
             - name: noteSecond
               widget: markdown
               label: Note Second
+            - name: subNote
+              widget: markdown
+              label: Sub Note
+              required: false
             - name: action
               widget: object
               label: Action
@@ -5341,6 +5349,40 @@ collections:
                               widget: number
                               label: Discount
                               required: false
+                            - name: deal
+                              widget: string
+                              label: Deal
+                              required: false
+                            - name: indicator
+                              widget: boolean
+                              label: Indicator
+                              required: false
+                    - name: subRows
+                      widget: list
+                      label: Sub Rows
+                      required: false
+                      fields:
+                        - name: title
+                          widget: string
+                          label: Title
+                          required: false
+                        - name: caption
+                          widget: string
+                          label: Caption
+                          required: false
+                        - name: prices
+                          widget: list
+                          label: Prices
+                          required: false
+                          fields:
+                            - name: type
+                              widget: string
+                              label: Type
+                              required: false
+                            - name: original
+                              widget: number
+                              label: Original
+                              required: false
                 - name: sustaining
                   widget: object
                   label: Sustaining
@@ -5374,6 +5416,40 @@ collections:
                             - name: discount
                               widget: number
                               label: Discount
+                              required: false
+                            - name: deal
+                              widget: string
+                              label: Deal
+                              required: false
+                            - name: indicator
+                              widget: boolean
+                              label: Indicator
+                              required: false
+                    - name: subRows
+                      widget: list
+                      label: Sub Rows
+                      required: false
+                      fields:
+                        - name: title
+                          widget: string
+                          label: Title
+                          required: false
+                        - name: caption
+                          widget: string
+                          label: Caption
+                          required: false
+                        - name: prices
+                          widget: list
+                          label: Prices
+                          required: false
+                          fields:
+                            - name: type
+                              widget: string
+                              label: Type
+                              required: false
+                            - name: original
+                              widget: number
+                              label: Original
                               required: false
 
 - name: services
