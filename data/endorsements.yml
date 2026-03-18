@@ -540,13 +540,13 @@ organizations:
   id: GPTZERO
   name: GPTZERO
   url: https://gptzero.me/
-  logo: GPTZERO_LOGO.png
+  logo: gptzero.svg
   full: true
 - &sandboxLogo
   id: SANDBOXAQ
   name: SANDBOXAQ
   url: https://www.sandboxaq.com
-  logo: SANDBOXAQ_LOGO.png
+  logo: sandbox.svg
   full: true
 - &turnitinLogo
   id: turnitin
