@@ -77,7 +77,13 @@ const List = ({ organizations }) => {
       <div className={styles.testimonialSectionOrganizations}>
         {rest.map((org) => (
           <Col xs="6" sm="4" lg="2">
-            <Logo key={org.id} {...org} />
+            <Logo
+              className={classNames.use({
+                [styles.carouselItemUnset]: org.full,
+              })}
+              key={org.id}
+              {...org}
+            />
           </Col>
         ))}
       </div>
