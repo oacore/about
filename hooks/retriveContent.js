@@ -3,6 +3,8 @@ import retrieveContent from 'content'
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
 export const setAssetsUrl = (object) => {
+  // TODO REMOVE WHEN UNCOMENT ACTIONS
+  if (object == null) return
   Object.entries(object).forEach(([key, value]) => {
     if (typeof value === 'string' && value.includes('/images'))
       object[key] = ASSETS_BASE_URL + value

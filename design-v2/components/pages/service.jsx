@@ -107,6 +107,8 @@ const ServicePage = observe(
     additional, // @optional
     benefits, // @optional
     tutorials, // @optional
+    certificates, // @optional
+    applicationProcess, // @optional
     howItWorksDescription,
     id,
     actionButton,
@@ -158,6 +160,10 @@ const ServicePage = observe(
                 </a>
               ))}
             </div>
+          )}
+          {/* TODO temp label */}
+          {header.header.label && (
+            <div className={styles.headerLabel}>{header.header.label}</div>
           )}
           <Hero
             actionButton={actionButton}
@@ -241,12 +247,49 @@ const ServicePage = observe(
               </div>
             </Section>
           )}
+          {certificates && (
+            <Section className={styles.certificateItemWrapper}>
+              {certificates?.certificates.map((item) => (
+                <div
+                  key={item.title}
+                  id="type"
+                  className={styles.certificateItem}
+                >
+                  <img
+                    alt={item.title}
+                    className={styles.icon}
+                    src={item.picture}
+                  />
+                  <h4 className={styles.title}>{item.title}</h4>
+                  <p className={styles.subtitle}>{item.description}</p>
+                </div>
+              ))}
+            </Section>
+          )}
           {benefits && (
             <Section id="benefits">
               <h3>{benefits.benefits.title}</h3>
               <div className={styles.benefits}>
                 {benefits.benefits.items.map((benefit) => (
                   <Benefit key={benefit.title} {...benefit} />
+                ))}
+              </div>
+            </Section>
+          )}
+          {applicationProcess && (
+            <Section className={styles.howSection}>
+              <h2 className={styles.howSectionTitle}>
+                {applicationProcess.applicationProcess.title}
+              </h2>
+              <div className={styles.howSectionInnerWrapper}>
+                {applicationProcess?.applicationProcess.steps.map((item) => (
+                  <div key={item.step} className={styles.howSectionItem}>
+                    <div className={styles.step}>{item.step}</div>
+                    <div>
+                      <h5 className={styles.stepTitle}>{item.title}</h5>
+                      <p className={styles.stepDes}>{item.description}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </Section>
