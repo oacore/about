@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@oacore/design": "5.0.63",
-    "@octokit/rest": "^22.0.1",
+    "@octokit/rest": "^18.5.0",
     "bootstrap": "^4.5.3",
     "camelize": "^1.0.0",
     "core-js": "^3.7.0",
