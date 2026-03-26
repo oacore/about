@@ -1649,6 +1649,7 @@ collections:
                 - name: title
                   widget: string
                   label: Title
+                  required: false
                 - name: picture
                   widget: string
                   label: Picture path
@@ -1657,16 +1658,20 @@ collections:
                 - name: description
                   widget: text
                   label: Description
+                  required: false
                 - name: action
                   widget: object
                   label: Action button
+                  required: false
                   fields:
                     - name: title
                       widget: string
                       label: Button label
+                      required: false
                     - name: url
                       widget: string
                       label: URL or path
+                      required: false
             - name: items
               widget: list
               label: Questions & answers
