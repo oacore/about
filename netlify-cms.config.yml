@@ -1592,12 +1592,14 @@ collections:
         - name: title
           widget: string
           label: Title
+          required: false
           hint: >
             Displayed in the browser as a tab name and in Google, when
             the page appears in the search results.
         - name: tagline
           widget: text
           label: Description
+          required: false
           hint: >
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
@@ -1609,15 +1611,18 @@ collections:
         - name: title
           widget: string
           label: Title
+          required: false
           hint: Page title (H1 and meta).
         - name: description
           widget: text
           label: Description
+          required: false
           hint: >
             Short description for SEO; also used as page meta description.
         - name: sections
           widget: list
           label: Sections
+          required: false
           summary: "{{fields.title}}"
           hint: >
             Top-level FAQ blocks. Use “Subsections” for nested groups
@@ -1626,10 +1631,12 @@ collections:
             - name: id
               widget: string
               label: Section ID
+              required: false
               hint: Anchor id (e.g. joining-core, Indexing).
             - name: title
               widget: string
               label: Title
+              required: false
             - name: updateDate
               widget: string
               label: Update date
@@ -1681,10 +1688,12 @@ collections:
                 - name: slug
                   widget: string
                   label: Slug
+                  required: false
                   hint: URL fragment for this FAQ (e.g. cite-CORE).
                 - name: question
                   widget: text
                   label: Question
+                  required: false
                 - name: answer
                   widget: markdown
                   label: Answer
@@ -1698,6 +1707,7 @@ collections:
                     - name: title
                       widget: string
                       label: Title
+                      required: false
                     - name: id
                       widget: string
                       label: Badge id
@@ -1705,13 +1715,16 @@ collections:
                     - name: description
                       widget: text
                       label: Description
+                      required: false
                     - name: images
                       widget: list
                       label: Images
+                      required: false
                       fields:
                         - name: file
                           widget: string
                           label: Image path
+                          required: false
                         - name: source
                           widget: string
                           label: Example HTML
@@ -1727,9 +1740,11 @@ collections:
                 - name: id
                   widget: string
                   label: Subsection ID
+                  required: false
                 - name: title
                   widget: string
                   label: Title
+                  required: false
                 - name: updateDate
                   widget: string
                   label: Update date
@@ -1741,14 +1756,17 @@ collections:
                 - name: items
                   widget: list
                   label: Questions & answers
+                  required: false
                   summary: "{{fields.slug}}"
                   fields:
                     - name: slug
                       widget: string
                       label: Slug
+                      required: false
                     - name: question
                       widget: text
                       label: Question
+                      required: false
                     - name: answer
                       widget: markdown
                       label: Answer
@@ -1761,19 +1779,23 @@ collections:
                         - name: title
                           widget: string
                           label: Title
+                          required: false
                         - name: id
                           widget: string
                           required: false
                         - name: description
                           widget: text
                           label: Description
+                          required: false
                         - name: images
                           widget: list
                           label: Images
+                          required: false
                           fields:
                             - name: file
                               widget: string
                               label: Image path
+                              required: false
                             - name: source
                               widget: string
                               required: false
