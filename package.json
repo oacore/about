@@ -41,7 +41,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
-    "@oacore/design": "latest",
+    "@oacore/design": "5.0.63",
     "@octokit/rest": "^22.0.1",
     "bootstrap": "^4.5.3",
     "camelize": "^1.0.0",
