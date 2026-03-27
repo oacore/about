@@ -2,6 +2,7 @@ import { basename, extname } from 'path'
 
 import yaml from 'js-yaml'
 import extractFrontMatter from 'front-matter'
+// eslint-disable-next-line import/no-unresolved
 import { Octokit } from '@octokit/rest'
 import camelize from 'camelize'
 
