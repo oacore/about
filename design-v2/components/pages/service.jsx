@@ -16,7 +16,7 @@ import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
 import Page from 'components/page'
-import { Markdown } from 'components'
+import { Accordion, Content, Markdown } from 'components'
 import { useInput } from 'hooks'
 import { observe, useStore } from 'store'
 
@@ -101,10 +101,14 @@ const ServicePage = observe(
     relatedServices,
     stats, // @optional
     testimonials, // @optional
+    headerLink, // @optional
+    faqs, // @optional
     whatIsIncluded, // @optional
     additional, // @optional
     benefits, // @optional
     tutorials, // @optional
+    certificates, // @optional
+    applicationProcess, // @optional
     howItWorksDescription,
     id,
     actionButton,
@@ -124,11 +128,16 @@ const ServicePage = observe(
 
     const router = useRouter()
     const productType = router?.route?.match(/(?:dataset|api)/s)?.join('')
-
     const onHandleSubmit = (e) => {
       e.preventDefault()
       registration.setData({ productType, email })
       registration.setIsModalFormActive(true)
+    }
+
+    const itemToURL = () => {
+      const url = new URL(window.location)
+      url.hash = id ? `#${id}` : ''
+      window.history.replaceState({}, null, url.toString())
     }
 
     const handleContentOpen = useCallback((condition) => {
@@ -143,6 +152,19 @@ const ServicePage = observe(
         className={styles.servicePage}
       >
         <Layout className={styles.unsetBottom}>
+          {headerLink && (
+            <div className={styles.navWrapper}>
+              {headerLink.headerLink.map((item) => (
+                <a className={styles.linkItem} href={item.href} key={item.link}>
+                  {item.link}
+                </a>
+              ))}
+            </div>
+          )}
+          {/* TODO temp label */}
+          {header.header.label && (
+            <div className={styles.headerLabel}>{header.header.label}</div>
+          )}
           <Hero
             actionButton={actionButton}
             hideButtons={hideButtons}
@@ -225,12 +247,49 @@ const ServicePage = observe(
               </div>
             </Section>
           )}
+          {certificates && (
+            <Section className={styles.certificateItemWrapper}>
+              {certificates?.certificates.map((item) => (
+                <div
+                  key={item.title}
+                  id="type"
+                  className={styles.certificateItem}
+                >
+                  <img
+                    alt={item.title}
+                    className={styles.icon}
+                    src={item.picture}
+                  />
+                  <h4 className={styles.title}>{item.title}</h4>
+                  <p className={styles.subtitle}>{item.description}</p>
+                </div>
+              ))}
+            </Section>
+          )}
           {benefits && (
             <Section id="benefits">
               <h3>{benefits.benefits.title}</h3>
               <div className={styles.benefits}>
                 {benefits.benefits.items.map((benefit) => (
                   <Benefit key={benefit.title} {...benefit} />
+                ))}
+              </div>
+            </Section>
+          )}
+          {applicationProcess && (
+            <Section className={styles.howSection}>
+              <h2 className={styles.howSectionTitle}>
+                {applicationProcess.applicationProcess.title}
+              </h2>
+              <div className={styles.howSectionInnerWrapper}>
+                {applicationProcess?.applicationProcess.steps.map((item) => (
+                  <div key={item.step} className={styles.howSectionItem}>
+                    <div className={styles.step}>{item.step}</div>
+                    <div>
+                      <h5 className={styles.stepTitle}>{item.title}</h5>
+                      <p className={styles.stepDes}>{item.description}</p>
+                    </div>
+                  </div>
                 ))}
               </div>
             </Section>
@@ -484,6 +543,19 @@ const ServicePage = observe(
                   ))}
                 </div>
               </div>
+            </Section>
+          )}
+          {faqs && (
+            <Section id="join-faq">
+              <Content>
+                <Accordion onToggle={itemToURL}>
+                  {faqs.sections.items.map(({ slug, question, answer }) => (
+                    <Accordion.Item id={slug} title={question} key={slug}>
+                      <Markdown>{answer}</Markdown>
+                    </Accordion.Item>
+                  ))}
+                </Accordion>
+              </Content>
             </Section>
           )}
           {relatedServices && (
