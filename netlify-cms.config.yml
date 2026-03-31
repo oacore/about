@@ -1585,78 +1585,220 @@ collections:
   label: 📚 FAQs
   label_singular: FAQs
   files:
-    - name: faqs
+    - name: meta
       label: ℹ️ Metadata (title, description, headline)
-      file:  faqs/meta.yml
+      file: faqs/meta.yml
       fields:
         - name: title
           widget: string
           label: Title
+          required: false
           hint: >
             Displayed in the browser as a tab name and in Google, when
             the page appears in the search results.
         - name: tagline
           widget: text
           label: Description
+          required: false
           hint: >
             Description of the page, not visible on the page but will be shown
             in search engines when the page appers in results. Important
             to have good performance in search engines.
-    - name: FAQs
-      label: FAQs
+    - name: faqs
+      label: FAQ content (title, sections & Q&A)
       file: faqs/faqs.yml
       fields:
-        - name: items
-          widget: list
-          label: Items
-          allow_add: true
+        - name: title
+          widget: string
+          label: Title
+          required: false
+          hint: Page title (H1 and meta).
+        - name: description
+          widget: text
+          label: Description
+          required: false
           hint: >
-            Anchor links to the page content. Must to equal block name.
+            Short description for SEO; also used as page meta description.
+        - name: sections
+          widget: list
+          label: Sections
+          required: false
+          summary: "{{fields.title}}"
+          hint: >
+            Top-level FAQ blocks. Use “Subsections” for nested groups
+            (e.g. Indexing → General, Technical).
           fields:
             - name: id
               widget: string
-              label: ID
-              hint: id of the block. Must match anchor link url
+              label: Section ID
+              required: false
+              hint: Anchor id (e.g. joining-core, Indexing).
             - name: title
               widget: string
               label: Title
-              hint: Title of the links block
+              required: false
             - name: updateDate
               widget: string
-              label: Date
-              hint: Update date of block
-            - name: sections
+              label: Update date
+              required: false
+              hint: e.g. Last updated 22.02.2024
+            - name: caption
+              widget: string
+              label: Caption
+              required: false
+              hint: Short nav label
+            - name: guideline
               widget: object
-              label: Sections
-              hint: Section dividers
-              allow_add: true
+              label: Guideline callout
+              required: false
+              collapsed: true
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                  required: false
+                - name: picture
+                  widget: string
+                  label: Picture path
+                  required: false
+                  hint: e.g. /images/guideFile.svg
+                - name: description
+                  widget: text
+                  label: Description
+                  required: false
+                - name: action
+                  widget: object
+                  label: Action button
+                  required: false
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Button label
+                      required: false
+                    - name: url
+                      widget: string
+                      label: URL or path
+                      required: false
+            - name: items
+              widget: list
+              label: Questions & answers
+              required: false
+              summary: "{{fields.slug}}"
+              fields:
+                - name: slug
+                  widget: string
+                  label: Slug
+                  required: false
+                  hint: URL fragment for this FAQ (e.g. cite-CORE).
+                - name: question
+                  widget: text
+                  label: Question
+                  required: false
+                - name: answer
+                  widget: markdown
+                  label: Answer
+                  required: false
+                  hint: Markdown; omit if this entry uses a badge block only.
+                - name: badge
+                  widget: list
+                  label: Badge block (indexed-by-CORE-snippet style)
+                  required: false
+                  fields:
+                    - name: title
+                      widget: string
+                      label: Title
+                      required: false
+                    - name: id
+                      widget: string
+                      label: Badge id
+                      required: false
+                    - name: description
+                      widget: text
+                      label: Description
+                      required: false
+                    - name: images
+                      widget: list
+                      label: Images
+                      required: false
+                      fields:
+                        - name: file
+                          widget: string
+                          label: Image path
+                          required: false
+                        - name: source
+                          widget: string
+                          label: Example HTML
+                          required: false
+            - name: sections
+              widget: list
+              label: Subsections
+              required: false
+              summary: "{{fields.title}}"
+              hint: >
+                Nested sections (e.g. General, Technical, Removing full text…).
               fields:
                 - name: id
-                  label: ID
                   widget: string
-                  hint: id of subItems, some might not have it
+                  label: Subsection ID
                   required: false
                 - name: title
                   widget: string
                   label: Title
-                  hint: Title of subItems, some might not have it
+                  required: false
+                - name: updateDate
+                  widget: string
+                  label: Update date
+                  required: false
+                - name: caption
+                  widget: string
+                  label: Caption
                   required: false
                 - name: items
-                  label: items
-                  widget: object
+                  widget: list
+                  label: Questions & answers
+                  required: false
+                  summary: "{{fields.slug}}"
                   fields:
+                    - name: slug
+                      widget: string
+                      label: Slug
+                      required: false
                     - name: question
                       widget: text
-                      label: question
-                      hint: question we asked
+                      label: Question
+                      required: false
                     - name: answer
-                      widget: text
-                      label: answer
-                      hint: answer we got
-                    - name: slug
-                      widget: text
-                      label: slug
-                      hint: hint for us
+                      widget: markdown
+                      label: Answer
+                      required: false
+                    - name: badge
+                      widget: list
+                      label: Badge block
+                      required: false
+                      fields:
+                        - name: title
+                          widget: string
+                          label: Title
+                          required: false
+                        - name: id
+                          widget: string
+                          required: false
+                        - name: description
+                          widget: text
+                          label: Description
+                          required: false
+                        - name: images
+                          widget: list
+                          label: Images
+                          required: false
+                          fields:
+                            - name: file
+                              widget: string
+                              label: Image path
+                              required: false
+                            - name: source
+                              widget: string
+                              required: false
 
 - name: governance
 
