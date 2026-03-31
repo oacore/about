@@ -12,12 +12,14 @@ import Hero from '../hero'
 import { Video } from '../index'
 import ExperiencesCard from '../../../components/experiences-card/experiencesCard'
 
-import { Video as VideoEmbed, Accordion, Content, Markdown } from 'components'
+import { Video as VideoEmbed, Markdown } from 'components'
 import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
 import Page from 'components/page'
 import { useInput } from 'hooks'
+// TODO
+// import { Accordion, Content } from 'components'
 import { observe, useStore } from 'store'
 
 const Feature = ({ title, description }) => (
@@ -102,7 +104,8 @@ const ServicePage = observe(
     stats, // @optional
     testimonials, // @optional
     headerLink, // @optional
-    faqs, // @optional
+    // TODO TEMP HIDE
+    // faqs, // @optional
     whatIsIncluded, // @optional
     additional, // @optional
     benefits, // @optional
@@ -134,11 +137,12 @@ const ServicePage = observe(
       registration.setIsModalFormActive(true)
     }
 
-    const itemToURL = () => {
-      const url = new URL(window.location)
-      url.hash = id ? `#${id}` : ''
-      window.history.replaceState({}, null, url.toString())
-    }
+    // TODO TEMP HIDE
+    // const itemToURL = () => {
+    //   const url = new URL(window.location)
+    //   url.hash = id ? `#${id}` : ''
+    //   window.history.replaceState({}, null, url.toString())
+    // }
 
     const handleContentOpen = useCallback((condition) => {
       if (condition) setVisibleVideo(condition)
@@ -553,19 +557,22 @@ const ServicePage = observe(
               </div>
             </Section>
           )}
-          {faqs && (
-            <Section id="join-faq">
-              <Content>
-                <Accordion onToggle={itemToURL}>
-                  {faqs.sections.items.map(({ slug, question, answer }) => (
-                    <Accordion.Item id={slug} title={question} key={slug}>
-                      <Markdown>{answer}</Markdown>
-                    </Accordion.Item>
-                  ))}
-                </Accordion>
-              </Content>
-            </Section>
-          )}
+          {/* TODO TEMP HIDE */}
+          {/* {faqs && ( */}
+          {/*  <Section id="join-faq"> */}
+          {/*    <Content> */}
+          {/*      <Accordion onToggle={itemToURL}> */}
+          {/* eslint-disable-next-line max-len */}
+          {/*        {faqs.sections.items.map(({ slug, question, answer }) => ( */}
+          {/* eslint-disable-next-line max-len */}
+          {/*          <Accordion.Item id={slug} title={question} key={slug}> */}
+          {/*            <Markdown>{answer}</Markdown> */}
+          {/*          </Accordion.Item> */}
+          {/*        ))} */}
+          {/*      </Accordion> */}
+          {/*    </Content> */}
+          {/*  </Section> */}
+          {/* )} */}
           {relatedServices && (
             <Section id="related-services">
               <h3>{relatedServices.relatedServices.title}</h3>
