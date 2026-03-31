@@ -12,11 +12,11 @@ import Hero from '../hero'
 import { Video } from '../index'
 import ExperiencesCard from '../../../components/experiences-card/experiencesCard'
 
+import { Video as VideoEmbed, Markdown } from 'components'
 import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
 import Page from 'components/page'
-import { Markdown } from 'components'
 import { useInput } from 'hooks'
 import { observe, useStore } from 'store'
 
@@ -155,12 +155,24 @@ const ServicePage = observe(
           </Section>
           <Section id="how-it-works" className={styles.howItWorks}>
             <div className={styles.imageWrapper}>
-              <img
-                src={howItWorks.howItWorks.image}
-                alt={howItWorks.howItWorks.title}
-              />
+              {howItWorks.howItWorks.image ? (
+                <img
+                  src={howItWorks.howItWorks.image}
+                  alt={howItWorks.howItWorks.title}
+                />
+              ) : (
+                <VideoEmbed
+                  src={howItWorks.howItWorks.video.src}
+                  title={howItWorks.howItWorks.video.title}
+                  tag="p"
+                />
+              )}
             </div>
-            <article className={styles.content}>
+            <article
+              className={classNames.use(styles.content, {
+                [styles.videoTutorial]: !howItWorks.howItWorks.image,
+              })}
+            >
               <h3>{howItWorks.howItWorks.title}</h3>
               <Markdown>{howItWorks.howItWorks.description}</Markdown>
               {howItWorks.howItWorks.action &&
