@@ -132,6 +132,14 @@ services:
       subtitle: Manage how your research content is exposed to the world.
       imgUrl: /images/services/time-management.svg
       action: /services#managing-content
+ref:
+  image: /images/heros/ref.svg
+  title: How we support Open Access
+  description: |
+    CORE has stood at the forefront of the open access movement, not as a passive service, but as an active builder of open scholarly infrastructure that enables research ideas to be Findable, Accessible, Interoperable and Reusable (FAIR) in a free, visible, and inclusive manner. We don’t just support open access. We are open access.
+  action:
+    title: CORE Recommendations for REF2029
+    url: https://core.ac.uk/ref
 partnerProjects:
   title: Partner projects
   actionLabel: Show all

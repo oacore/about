@@ -165,7 +165,7 @@ const AboutPage = ({ data }) => {
             },
           }}
         />
-        <Row>
+        <Row className={styles.spacingB}>
           <Col xs="12" md="7" lg="8" tag="section">
             <h2>{data.mission.title}</h2>
             <Video
@@ -174,6 +174,23 @@ const AboutPage = ({ data }) => {
               tag="p"
             />
             <Markdown className={styles.mission}>{data.mission.body}</Markdown>
+          </Col>
+        </Row>
+        <RelatedContentSection
+          id="fair"
+          data={{
+            ...data.fair,
+            action: {
+              href: '/ref',
+            },
+          }}
+        />
+        <Row className={styles.spacingT}>
+          <Col xs="12" md="7" lg="8" tag="section">
+            <h2>{data.yearsActive.title}</h2>
+            <Markdown className={styles.mission}>
+              {data.yearsActive.description}
+            </Markdown>
           </Col>
         </Row>
       </Section>

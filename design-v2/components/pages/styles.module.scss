@@ -78,6 +78,7 @@ $support-card-width: 21.5rem;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
+    gap: var(--spacer);
 
     @media (max-width: $breakpoint-md) {
       grid-template-columns: 1fr;
