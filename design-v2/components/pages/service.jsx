@@ -168,11 +168,7 @@ const ServicePage = observe(
                 />
               )}
             </div>
-            <article
-              className={classNames.use(styles.content, {
-                [styles.videoTutorial]: !howItWorks.howItWorks.image,
-              })}
-            >
+            <article className={styles.content}>
               <h3>{howItWorks.howItWorks.title}</h3>
               <Markdown>{howItWorks.howItWorks.description}</Markdown>
               {howItWorks.howItWorks.action &&

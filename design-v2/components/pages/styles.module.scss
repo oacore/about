@@ -49,6 +49,7 @@ $support-card-width: 21.5rem;
     display: grid;
     grid-template-columns: $grid-responsive-for-sections;
     align-items: center;
+    gap: var(--spacer);
 
     .content {
       .button {
@@ -57,10 +58,6 @@ $support-card-width: 21.5rem;
         margin-right: 10px;
       }
     }
-  }
-
-  .video-tutorial {
-    margin-left: 20px;
   }
 
   .testimonial {
