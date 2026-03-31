@@ -218,6 +218,18 @@ const IndexPage = () => {
             </Button>
           </div>
         </Section>
+        <Section className={styles.sectionOai} useFullPageWidth>
+          <div className={styles.innerOai}>
+            <img className={styles.img} src={page.ref.image} alt="logo" />
+            <h3 className={styles.title}>{page.ref.title}</h3>
+            <Markdown className={styles.description}>
+              {page.ref.description}
+            </Markdown>
+            <Button variant="contained" tag="a" href={page.ref.action.url}>
+              {page.ref.action.title}
+            </Button>
+          </div>
+        </Section>
       </Layout>
       <Section className={styles.partnersWrapper}>
         {page.users.map((item) => (

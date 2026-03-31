@@ -81,6 +81,41 @@ collections:
         label: Description
         hint: >
           Section description
+    - name: characteristics
+      label: ✨ Distinctive Characteristics
+      file: about/characteristics.yml
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: Section title
+      - name: short-title
+        widget: string
+        label: Short title
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: icon-url
+        widget: string
+        label: Icon URL
+        hint: >
+          Path to the decorative icon (relative to the content repository),
+          e.g. images/icons/characteristics.svg
+      - name: description
+        widget: text
+        label: Description
+        hint: Section description text
+      - name: urlRedirect
+        widget: string
+        label: Primary call to action (button text)
+        hint: >
+          Text for the primary button (e.g. “go to the CHARACTERISTICS”).
+          Leave empty to hide the primary button.
+      - name: href
+        widget: string
+        label: Primary link (href)
+        hint: >
+          Destination URL for the primary button (e.g. /distinctive-characteristics).
     - name: mission
       label: 👁 Mission
       file: about/mission.md
@@ -117,6 +152,57 @@ collections:
       - name: body
         widget: markdown
         label: Content
+        buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+
+    - name: fair
+      label: 📖 How we support Open Access (FAIR)
+      file: about/fair.yml
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: Section title
+      - name: short-title
+        widget: string
+        label: Short title
+        hint: >
+          Identifies the section in the page navigation bar.
+          If empty, the section won't appear in the page navigation.
+      - name: icon-url
+        widget: string
+        label: Icon URL
+        hint: >
+          Path to the decorative icon (relative to the content repository),
+          e.g. images/icons/fair.svg
+      - name: description
+        widget: text
+        label: Description
+        hint: Section description text
+      - name: urlRedirect
+        widget: string
+        label: Primary call to action (button text)
+        hint: >
+          Text for the primary button (e.g. “CORE Recommendations for REF2029”).
+          Leave empty to hide the primary button.
+      - name: href
+        widget: string
+        label: Primary link (href)
+        hint: >
+          Destination URL for the primary button (e.g. /ref).
+
+    - name: yearsActive
+      label: 🎂 15 years of CORE
+      file: about/yearsActive.yml
+      fields:
+      - name: title
+        widget: string
+        label: Title
+        hint: Section title (e.g. “15 years of CORE”).
+      - name: description
+        widget: markdown
+        label: Description
+        hint: >
+          Milestone narrative: multiple paragraphs, emphasis, and links as needed.
         buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
 
     - name: blog
