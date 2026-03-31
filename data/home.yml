@@ -134,9 +134,9 @@ services:
       action: /services#managing-content
 ref:
   image: /images/heros/ref.svg
-  title: How we support Open Access
+  title: Guidance for Open Access compliance monitoring in REF 2029
   description: |
-    CORE has stood at the forefront of the open access movement, not as a passive service, but as an active builder of open scholarly infrastructure that enables research ideas to be Findable, Accessible, Interoperable and Reusable (FAIR) in a free, visible, and inclusive manner. We don’t just support open access. We are open access.
+    This document provides UK Higher Education Institutions with best practice technical guidelines for exposing repository metadata to support open access compliance monitoring with respect to the UK REF 2029 OA policy.
   action:
     title: CORE Recommendations for REF2029
     url: https://core.ac.uk/ref
