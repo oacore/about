@@ -51,7 +51,7 @@ const ModalConditions = observe(() => {
         id="agreeNewsletter"
         labelText={
           router.pathname.includes('api')
-            ? ` I want to receive information about the CORE API and related CORE products and services. You may unsubscribe at any time.`
+            ? ` I wish to receive information about related CORE products and services. You may unsubscribe at any time.`
             : ` I want to receive information about the CORE Dataset and related CORE products and services. You may unsubscribe at any time.`
         }
         setCheckbox={setIsAgreeNewsletter}
