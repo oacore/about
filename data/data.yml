@@ -56,7 +56,7 @@ sections:
       description: metadata records of scholarly resources,
     - title: <mark>{{totalWorksCount}}</mark>&nbsp;
       description: unique deduplicated research works,
-    - title: <mark>100M+</mark>&nbsp;
+    - title: <mark>214M+</mark>&nbsp;
       description: abstracts,
     subTitle: more than any other scholarly database.
     link:
