@@ -140,7 +140,7 @@
 }
 
 .rate-wrapper {
-  display: flex;
+  display: flow;
   align-items: center;
   padding: 10px 16px;
   border-radius: 2px;
@@ -429,4 +429,9 @@
     letter-spacing: 0.026px;
     margin-left: 16px;
   }
+}
+
+.sub-label {
+  font-size: 14px;
+  margin-bottom: 15px;
 }
