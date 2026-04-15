@@ -129,6 +129,7 @@ const ModalForm = observe(() => {
       {router.pathname.includes('api') && (
         <div className={styles.rateWrapper}>
           <Markdown>{findText('rate')}</Markdown>
+          <Markdown>{findText('rate2')}</Markdown>
         </div>
       )}
       <div className={styles.modalFormText}>

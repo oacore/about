@@ -53,6 +53,11 @@ const DropdownInput = ({
         required
         onChange={handleInputChange}
       />
+      <p className={styles.subLabel}>
+        The supplied email address must correspond to the institution that you
+        select to comply with our Terms of Use. Otherwise, your API key may be
+        disabled.
+      </p>
       {isOpen && (
         <div
           className={`${styles.dropdownOptions} ${
