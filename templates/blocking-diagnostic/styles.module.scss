@@ -1,0 +1,109 @@
+@import '../../design-v2/variables';
+
+.diagnostic-header {
+  max-width: min(820px, 100%);
+}
+
+.overline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  width: max-content;
+  height: 22px;
+  margin-left: 6px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  color: #fff;
+  background: #8bc34a;
+  border-radius: 2px;
+}
+
+.card {
+  border-radius: 2px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  display: flex;
+  padding: 36px;
+  gap: 14px;
+  width: 100%;
+  margin: 34px 0;
+  .card-form {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    padding: 1.25rem;
+  }
+}
+
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 1rem 1.25rem;
+
+  @media (min-width: $breakpoint-md) {
+    gap: 4px;
+  }
+}
+
+.textfield {
+  flex: 1 1 18rem;
+  min-width: min(100%, 18rem);
+
+  input {
+    border-radius: 2px;
+    border: 1px solid var(--Outline, #e0e0e0);
+    background: var(--Surface, #fff);
+  }
+  label {
+    color: #666 !important;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    letter-spacing: 0.01px;
+    background: #fff !important;
+  }
+}
+
+.submit {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  display: flex;
+  width: max-content;
+  padding: 8px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  height: 48px;
+  margin-bottom: 0;
+  text-transform: capitalize;
+}
+
+.errorMessage {
+  margin: 1rem 0 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--danger, #c92a2a);
+}
+
+.result {
+  display: block;
+  margin-top: 1.5rem;
+  max-width: 100%;
+}
+
+.resultPre {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  overflow: auto;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  background: var(--gray-50, #f8f9fa);
+  border: 1px solid var(--gray-200, #dee2e6);
+  border-radius: 6px;
+}

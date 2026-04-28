@@ -58,6 +58,7 @@ services:
     fast-sync: ./fastsync
     fastsync: ./fastsync
     discovery: ./discovery
+    blocking-diagnostic: ./blocking-diagnostic
     search: /search
 
     fast: ./fastsync

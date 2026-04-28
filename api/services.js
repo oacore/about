@@ -46,3 +46,15 @@ export const getMembershipPrice = async (body) => {
 
   return response
 }
+
+export const postDataProviderHealthCheck = async (body) => {
+  const url = new URL('/v3/data-providers/health-check', process.env.API_URL)
+    .href
+
+  const response = await apiRequest(url, {
+    body,
+    method: 'POST',
+  })
+
+  return response
+}

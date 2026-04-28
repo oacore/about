@@ -1,0 +1,28 @@
+meta:
+  title: CORE Blocking Detection Tool
+  description: Check whether your open access repository is blocking CORE from indexing content. Enter your repository URL, OAI-PMH base URL, or domain name.
+  keywords: CORE, OAI-PMH, repository, open access, indexing, diagnostic, crawler
+
+section:
+  caption: blocking-diagnostic
+
+header:
+  overline: Diagnostic
+  title: CORE Blocking Detection Tool
+  description: |
+    Check whether your open access repository is blocking CORE from
+    indexing content. Enter your repository URL, OAI-PMH base URL, or
+    domain name below.
+
+form:
+  id: blocking-diagnostic-form
+  repositoryUrl:
+    label: Repository URL
+    placeholder: https://oro.open.ac.uk/cgi/oai2
+    inputId: blocking-diagnostic-repository-url
+  submitLabel: Run Diagnostic
+  submittingLabel: Running…
+
+errors:
+  requiredUrl: Enter a repository URL, OAI-PMH base URL, or domain name.
+  generic: Something went wrong. Please try again.
