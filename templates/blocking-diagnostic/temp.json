@@ -1,0 +1,41 @@
+{
+  "base_url": "https://export.arxiv.org/oai2",
+  //  Detection of Blocking Headers/Redirects
+  "identify_machine": {
+    "url": "https://export.arxiv.org/oai2?verb=Identify",
+    "status_code": 200,
+    "success": true,
+    "blocked": false,
+    "cloudflare_detected": false,
+    "oai_error": null,
+    "preview": "\n\n    2026-04-21T07:18:42Z\n                http://oaipmh.arxiv.org/oai\n\n\n    \n        arXiv\n        https://oaipmh.arxiv.org/oai\n        2.0\n        help@arxiv.org\n        2005-09-16\n        persistent\n        YYYY-MM-DD\n            \n        \n            \n                Author self-archived e-prints\n            \n            \n                Metadata harvesting permitted through OAI interface\n                https://info.arxiv.org/help/oa/metadataPolicy.html\n            \n            \n           "
+  },
+  "identify_browser": {
+    "url": "https://export.arxiv.org/oai2?verb=Identify",
+    "status_code": 200,
+    "success": true,
+    "blocked": false,
+    "cloudflare_detected": false,
+    "oai_error": null,
+    "preview": "\n\n    2026-04-21T07:18:42Z\n                http://oaipmh.arxiv.org/oai\n\n\n    \n        arXiv\n        https://oaipmh.arxiv.org/oai\n        2.0\n        help@arxiv.org\n        2005-09-16\n        persistent\n        YYYY-MM-DD\n            \n        \n            \n                Author self-archived e-prints\n            \n            \n                Metadata harvesting permitted through OAI interface\n                https://info.arxiv.org/help/oa/metadataPolicy.html\n            \n            \n           "
+  },
+  //  OAI-PMH Base URL Check
+  "list_records_machine": {
+    "url": "https://export.arxiv.org/oai2?verb=ListRecords\u0026metadataPrefix=oai_dc",
+    "status_code": 200,
+    "success": true,
+    "blocked": false,
+    "cloudflare_detected": false,
+    "oai_error": null,
+    "preview": "\n\n    2026-04-28T09:16:16Z\n                http://oaipmh.arxiv.org/oai\n\n\n    \n                    \n                \n        oai:arXiv.org:adap-org/9710003\n        2005-09-17\n            physics:nlin:AO\n    \n\n            \n                        \n        TRANSIMS traffic flow characteristics\n            Nagel, Kai\n            Stretz, Paula\n            Pieck, Martin\n            Donnelly, Rick\n            Barrett, Christopher L.\n            Adaptation and Self-Organizing Systems\n              Knowl"
+  },
+  "list_records_browser": {
+    "url": "https://export.arxiv.org/oai2?verb=ListRecords\u0026metadataPrefix=oai_dc",
+    "status_code": 200,
+    "success": true,
+    "blocked": false,
+    "cloudflare_detected": false,
+    "oai_error": null,
+    "preview": "\n\n    2026-04-28T09:16:16Z\n                http://oaipmh.arxiv.org/oai\n\n\n    \n                    \n                \n        oai:arXiv.org:adap-org/9710003\n        2005-09-17\n            physics:nlin:AO\n    \n\n            \n                        \n        TRANSIMS traffic flow characteristics\n            Nagel, Kai\n            Stretz, Paula\n            Pieck, Martin\n            Donnelly, Rick\n            Barrett, Christopher L.\n            Adaptation and Self-Organizing Systems\n              Knowl"
+  }
+}

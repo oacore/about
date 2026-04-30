@@ -26,3 +26,175 @@ form:
 errors:
   requiredUrl: Enter a repository URL, OAI-PMH base URL, or domain name.
   generic: Something went wrong. Please try again.
+
+# Copy options from design (Frame 1196-4 success, 1196-5/6 error summaries, 1196-7 full matrix).
+results:
+  overall:
+    success:
+      title: Repository is accessible to CORE
+      summary: Your repository can be successfully indexed by CORE. Some warnings may require attention.
+    warning:
+      title: Repository is accessible to CORE with warnings
+      summary: Your repository can be indexed by CORE, but some checks need attention before full coverage is assured.
+    error:
+      title: Repository isn't accessible to CORE
+      summary: Your repository cannot be successfully indexed by CORE. Some warnings may require attention.
+  helpLabels:
+    whatIsChecks: What is checks
+    recommendation: Recommendation
+  groups:
+    crucial: Crucial Checks
+    highPriority: High Priority Checks
+    thorough: Thorough Tests
+
+checks:
+  oaiPmh:
+    group: crucial
+    label: OAI-PMH Interface
+    success:
+      title: OAI-PMH interface is accessible.
+      details: Successfully verified Identify and ListRecords verbs
+      info: |
+        Verify that the OAI-PMH interface is actually enabled in the underlying repository software. Test if it is reachable via a standard web
+        browser. If it is, check if IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and explicitly
+        allowlist CORE's user agent or IPs.
+    warning:
+      title: OAI-PMH interface may be unstable.
+      details: Identify and ListRecords verbs were not fully verified.
+      recommendation: |
+        Verify that the OAI-PMH interface is actually enabled in the underlying repository software. Test if it is reachable via a standard web
+        browser. If it is, check if IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and explicitly
+        allowlist CORE's user agent or IPs.
+    error:
+      title: OAI-PMH interface isn't accessible.
+      details: Identify and ListRecords verbs weren't successfully verified
+      recommendation: |
+        Verify that the OAI-PMH interface is actually enabled in the underlying repository software. Test if it is reachable via a standard web
+        browser. If it is, check if IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and explicitly
+        allowlist CORE's user agent or IPs.
+
+  blockingHeaders:
+    group: crucial
+    label: Detection of Blocking Headers/Redirects
+    success:
+      title: No blocking engine detected.
+      details: No redirects to Cloudflare or other blocking services
+      info: |
+        Check the settings of your hosting provider or Content Delivery Network (CDN). Disable features that indiscriminately block bots (e.g.,
+        Cloudflare's "Block AI Training Bots") or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages.
+    warning:
+      title: Possible blocking or redirect chain detected.
+      details: Some responses suggest bot mitigation or redirects worth reviewing.
+      recommendation: |
+        Check the settings of your hosting provider or Content Delivery Network (CDN). Disable features that indiscriminately block bots (e.g.,
+        Cloudflare's "Block AI Training Bots") or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages.
+    error:
+      title: Blocking engine detected.
+      details: Redirects to Cloudflare or other blocking services found
+      recommendation: |
+        Check the settings of your hosting provider or Content Delivery Network (CDN). Disable features that indiscriminately block bots (e.g.,
+        Cloudflare's "Block AI Training Bots") or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages.
+
+  pdfAccess:
+    group: highPriority
+    label: PDF Access
+    success:
+      title: PDFs is accessible.
+      details: PDF endpoints are open for automated requests
+      info: |
+        Review application-level and server-level security settings to ensure direct file access to full-text documents is not restricted. Ensure
+        trusted automated crawlers (like CORE) are whitelisted to bypass anti-bot protections for PDF directories.
+    warning:
+      title: PDF access is inconsistent for automated clients.
+      details: Some PDF endpoints may block or throttle automated requests.
+      recommendation: |
+        Review application-level and server-level security settings to ensure direct file access to full-text documents is not restricted. Ensure
+        trusted automated crawlers (like CORE) are whitelisted to bypass anti-bot protections for PDF directories.
+    error:
+      title: PDFs may be restricted for bots
+      details: Some PDF endpoints return 403 for automated requests
+      recommendation: |
+        Review application-level and server-level security settings to ensure direct file access to full-text documents is not restricted. Ensure
+        trusted automated crawlers (like CORE) are whitelisted to bypass anti-bot protections for PDF directories.
+
+  splashPage:
+    group: highPriority
+    label: Splash Page Access
+    success:
+      title: Landing pages is accessible for machine agents.
+      details: Splash pages accessible to good bots
+      info: |
+        Ensure that bot filtering tools or firewalls are not intercepting landing page requests with CAPTCHAs, which appear as normal pages but
+        cannot be processed by machines. Whitelist the "core" user agent to bypass these challenges.
+    warning:
+      title: Landing pages may be partially blocked for machine agents.
+      details: Some splash pages did not respond reliably for automated clients.
+      recommendation: |
+        Ensure that bot filtering tools or firewalls are not intercepting landing page requests with CAPTCHAs, which appear as normal pages but
+        cannot be processed by machines. Whitelist the "core" user agent to bypass these challenges.
+    error:
+      title: Landing pages is not accessible for machine agents.
+      details: Splash pages is not accessible to good bots
+      recommendation: |
+        Ensure that bot filtering tools or firewalls are not intercepting landing page requests with CAPTCHAs, which appear as normal pages but
+        cannot be processed by machines. Whitelist the "core" user agent to bypass these challenges.
+
+  robotsCrawlDelay:
+    group: highPriority
+    label: Robots.txt - Crawl Delays
+    success:
+      title: No crawl-delay found.
+      details: No crawl-delay found.
+      info: |
+        Remove the Crawl-delay directive for the core agent. Delays of even 10 seconds can make it impossible for indexing services to harvest
+        repositories with tens of thousands of records within a reasonable timeframe.
+    warning:
+      title: Crawl delay may be too high for CORE.
+      details: A crawl-delay is present and may slow harvesting substantially.
+      recommendation: |
+        Remove the Crawl-delay directive for the core agent. Delays of even 10 seconds can make it impossible for indexing services to harvest
+        repositories with tens of thousands of records within a reasonable timeframe.
+    error:
+      title: Crawl delay specified for CORE.
+      details: "Crawl-delay: 10 seconds found in robots.txt"
+      recommendation: |
+        Remove the Crawl-delay directive for the core agent. Delays of even 10 seconds can make it impossible for indexing services to harvest
+        repositories with tens of thousands of records within a reasonable timeframe.
+
+  robotsEssentialParts:
+    group: highPriority
+    label: Robots.txt - Essential Parts
+    success:
+      title: PDFs not restricted in robots.txt
+      details: PDFs not restricted in robots.txt
+      info: |
+        Modify the robots.txt rules to explicitly allow the core agent to crawl all essential directories, ensuring both landing pages and the paths
+        where full-text files are hosted are accessible.
+    warning:
+      title: Some essential paths may be restricted in robots.txt.
+      details: Review rules for PDFs and landing pages for the core agent.
+      recommendation: |
+        Modify the robots.txt rules to explicitly allow the core agent to crawl all essential directories, ensuring both landing pages and the paths
+        where full-text files are hosted are accessible.
+    error:
+      title: PDFs restricted in robots.txt
+      details: PDFs restricted in robots.txt
+      recommendation: |
+        Modify the robots.txt rules to explicitly allow the core agent to crawl all essential directories, ensuring both landing pages and the paths
+        where full-text files are hosted are accessible.
+
+  behaviorFiltering:
+    group: thorough
+    label: Behavior Filtering
+    success:
+      title: Passed volume query test
+      details: No rate-limiting detected
+      info: ""
+    warning:
+      title: Volume query test completed with concerns.
+      details: Elevated latency or partial throttling may be present.
+      recommendation: ""
+    error:
+      title: Volume query test failed.
+      details: Rate-limiting detected
+      recommendation: ""
