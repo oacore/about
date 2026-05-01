@@ -1,7 +1,19 @@
 @import 'design-v2/variables';
+
+.accent-title {
+  color: #b75400;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0.042px;
+}
+
 .organisation-wrapper {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
+
   .logo-wrapper {
     width: 42px;
     height: 42px;
@@ -15,10 +27,30 @@
 }
 
 .supporters {
+  thead th {
+    .accent-title {
+      font-weight: 700;
+    }
+  }
+  thead td {
+    .accent-title {
+      font-weight: 500;
+    }
+  }
+  thead th:last-child,
+  tbody td:last-child {
+    max-width: 20rem;
+    line-height: 1.45;
+    white-space: pre-line;
+    vertical-align: top;
+    word-wrap: break-word;
+  }
+
   @media (max-width: $breakpoint-sm) {
     td {
       font-size: 10px;
     }
+
     th {
       button {
         font-size: 10px;
