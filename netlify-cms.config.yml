@@ -2056,10 +2056,14 @@ collections:
                 - name: name
                   widget: string
                   label: Name
+                - name: role
+                  widget: string
+                  label: Title / Role
+                  hint: Member's role or title
                 - name: image
                   widget: file
                   label: Image
-                  hint: Member's image
+                  hint: Organisation logo shown next to organisation name
                 - name: organisation
                   widget: string
                   label: Organisation
@@ -2068,6 +2072,10 @@ collections:
                   widget: string
                   label: Country
                   hint: Member's country
+                - name: contribution
+                  widget: text
+                  label: Advisory Contribution
+                  hint: Brief description of how the member contributes to the advisory board
 
 - name: board-of-supporters
 
