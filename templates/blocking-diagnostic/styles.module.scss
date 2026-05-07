@@ -22,7 +22,6 @@
 
 .card {
   border-radius: 2px;
-  border: 1px solid #e0e0e0;
   background: #fff;
   display: flex;
   padding: 36px;
@@ -94,8 +93,6 @@
 }
 
 $result-border: #e0e0e0;
-$core-green: #8bc34a;
-$core-orange: #b75400;
 
 .result {
   display: block;
@@ -182,12 +179,6 @@ $core-orange: #b75400;
   gap: 14px;
 }
 
-.formLoadingStatus {
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid #e0e0e0;
-}
-
 .spinner {
   flex-shrink: 0;
 }
@@ -227,18 +218,6 @@ $core-orange: #b75400;
   }
 }
 
-//.resultsCheckPass {
-//  border-color: #dcedc8;
-//  border-left: 4px solid $core-green;
-//  background: #fafdf7;
-//}
-//
-//.resultsCheckFail {
-//  border-color: #f0c4c4;
-//  border-left: 4px solid #c62828;
-//  background: #fffbfb;
-//}
-
 .resultsCheckInner {
   border: 1px solid #e0e0e0;
   background: #fafafa;
@@ -249,7 +228,6 @@ $core-orange: #b75400;
 .resultsCheckDetails {
   margin: 0;
   padding: 0;
-  border: 1px solid #e0e0e0;
   border-radius: 2px;
   overflow: hidden;
   background: #fafafa;
@@ -335,10 +313,6 @@ $core-orange: #b75400;
   line-height: 130%;
   /* 20.8px */
   letter-spacing: 0.026px;
-}
-
-.resultsCheckFail .resultsCheckTitle {
-  color: #b71c1c;
 }
 
 .results-details-text-header {
