@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
+import { ProgressSpinner } from '@oacore/design/lib/elements'
 
 import DiagnosticHeader from './components/diagnostic-header'
+import DiagnosticResults from './components/diagnostic-results'
 import DiagnosticRepositoryForm from './components/diagnostic-repository-form'
+import mapHealthCheckPayload from './map-health-check'
 import styles from './styles.module.scss'
 
 import { postDataProviderHealthCheck } from 'api/services'
@@ -68,11 +71,25 @@ const BlockingDiagnosticPageTemplate = ({ data }) => {
           isSubmitting={isSubmitting}
           errorMessage={errorMessage}
         />
+        {isSubmitting ? (
+          <div className={styles.resultsBody} role="status" aria-live="polite">
+            <div className={styles.spinWrapper}>
+              <ProgressSpinner className={styles.spinner} />
+              <div className={styles.spinText}>
+                <p>Running diagnostic checks...</p>
+                <span>This may take approximately 10 seconds.</span>
+              </div>
+            </div>
+          </div>
+        ) : null}
         {result != null && (
           <output className={styles.result} aria-live="polite">
-            <pre className={styles.resultPre}>
-              {JSON.stringify(result, null, 2)}
-            </pre>
+            <DiagnosticResults
+              resultsConfig={data.results}
+              checks={data.checks}
+              checksConfig={data.checks.item ?? data.checks}
+              states={mapHealthCheckPayload(result)}
+            />
           </output>
         )}
       </Section>
