@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-frontend-about
+  namespace: core-frontend
+  labels:
+    app: core-frontend-about
+spec:
+  replicas: 2
+  revisionHistoryLimit: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: core-frontend-about
+  template:
+    metadata:
+      labels:
+        app: core-frontend-about
+    spec:
+      nodeSelector:
+        agentpool: userpool
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: core-frontend-about
+                topologyKey: kubernetes.io/hostname
+      containers:
+        - name: core-frontend-about
+          image: ${IMAGE}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              cpu: 1000m
+              memory: 1000Mi
