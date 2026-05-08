@@ -15,7 +15,7 @@ const production = {
 const env = { local, development, production }
 const config = {
   ...env.production,
-  ...env[NODE_ENV],
+  ...env[APP_ENV],
 }
 
 module.exports = config
