@@ -15,6 +15,8 @@ ENV GA_CODE=$GA_CODE
 ARG API_KEY
 ENV API_KEY=$API_KEY
 
+ARG BUILD_ENV=development
+
 WORKDIR /app
 
 ENV NODE_OPTIONS="--max_old_space_size=32000 --openssl-legacy-provider"
@@ -25,6 +27,8 @@ COPY . .
 # Install dependencies
 RUN npm install \
     && npm ci --include=dev
+
+RUN if [ "$NODE_ENV" = "development" ]; then cp .env.development .env.production.local; fi
 
 # Build the app in production mode
 RUN npm run build
