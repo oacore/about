@@ -7,6 +7,9 @@ ENV NODE_ENV=$NODE_ENV
 ARG NPM_TOKEN
 ENV NPM_TOKEN=$NPM_TOKEN
 
+ARG APP_ENV=development
+ENV APP_ENV=$APP_ENV
+
 #GA_CODE
 ARG GA_CODE
 ENV GA_CODE=$GA_CODE
@@ -27,8 +30,6 @@ COPY . .
 # Install dependencies
 RUN npm install \
     && npm ci --include=dev
-
-RUN if [ "$NODE_ENV" = "development" ]; then cp .env.development .env.production.local; fi
 
 # Build the app in production mode
 RUN npm run build
