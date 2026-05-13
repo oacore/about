@@ -4,6 +4,10 @@ import ReactGA from 'react-ga4'
 import { useCookie } from '@oacore/design'
 
 export const useAnalytics = (options) => {
+  // eslint-disable-next-line no-console
+  console.log('init useAnalytics')
+  const PLAUSIBLE_DOMAIN =
+    'core-frontend-stage-about.thankfulplant-67ea1df5.uksouth.azurecontainerapps.io'
   const title = options
   const analyticsAllowed = useCookie('analytics_cookies_allowed')
   const router = useRouter()
@@ -20,6 +24,38 @@ export const useAnalytics = (options) => {
         page: url,
         title: typeof title === 'string' ? title : pathName,
       })
+      // eslint-disable-next-line no-console
+      console.log('init useAnalytics plausible')
+      // eslint-disable-next-line import/no-extraneous-dependencies
+      import('@plausible-analytics/tracker')
+        .then(({ init }) => {
+          // eslint-disable-next-line no-console
+          console.log('Init plausible-analytics/tracker')
+          init({
+            domain: PLAUSIBLE_DOMAIN,
+            endpoint: 'https://tracker.core.ac.uk/api/event',
+            outboundLinks: true,
+            fileDownloads: true,
+            formSubmissions: true,
+            autoCapturePageviews: false,
+          })
+          // eslint-disable-next-line no-console
+          console.log(
+            'Plausible initialized, window.plausible:',
+            !!window.plausible
+          )
+          if (window.plausible) {
+            window.plausible('pageview')
+            // eslint-disable-next-line no-console
+            console.log('Plausible page view sent')
+          }
+        })
+        .catch((error) => {
+          // eslint-disable-next-line no-console
+          console.log('Error plausible-analytics/tracker')
+          // eslint-disable-next-line no-console
+          console.log(error)
+        })
     },
     []
   )

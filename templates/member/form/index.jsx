@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Form, TextField } from '@oacore/design/lib/elements/forms'
 import classNames from '@oacore/design/lib/utils/class-names'
 import { Button } from '@oacore/design/lib/elements'
+// eslint-disable-next-line import/no-unresolved
 import { useOutsideClick } from '@oacore/design/lib/hooks'
 import Parser from 'html-react-parser'
 
