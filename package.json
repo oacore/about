@@ -84,11 +84,11 @@
     "test-local": "npm run test-dev -- --exclude-external",
     "test-staging": "blc https://${CORE_STAGING_AREA}core.ac.uk -ro --exclude='/browse' --exclude='/search' --exclude='/public'",
     "test": "npm run test-dev",
-    "dev": "next",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
     "prebuild": "cp netlify-cms.admin.html public/edit.html && cp netlify-cms.config.yml public/",
-    "build": "node ./node_modules/.bin/design build icons && next build",
+    "build": "node ./node_modules/.bin/design build icons && NODE_OPTIONS=--openssl-legacy-provider next build",
     "preexport": "npm run build",
-    "export": "next export",
-    "start": "if [ \"$NODE_ENV\" = 'production' ]; then next start; else next; fi"
+    "export": "NODE_OPTIONS=--openssl-legacy-provider next export",
+    "start": "export NODE_OPTIONS=--openssl-legacy-provider && if [ \"$NODE_ENV\" = 'production' ]; then next start; else next; fi"
   }
 }
