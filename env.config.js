@@ -1,4 +1,4 @@
-const NODE_ENV = process.env.NODE_ENV || 'development'
+const APP_ENV = process.env.APP_ENV || 'development'
 
 const local = {
   API_URL: 'http://127.0.0.1:8000/internal',
@@ -15,7 +15,7 @@ const production = {
 const env = { local, development, production }
 const config = {
   ...env.production,
-  ...env[NODE_ENV],
+  ...env[APP_ENV],
 }
 
 module.exports = config

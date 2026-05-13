@@ -1,0 +1,180 @@
+meta:
+  title:  Repository Indexability Diagnostics
+  description: This tool will run basic diagnostic tests against your repository to find out if it is not blocking indexing systems.
+  keywords: CORE, OAI-PMH, repository, open access, indexing, diagnostic, crawler
+
+section:
+  caption: blocking-diagnostic
+
+header:
+  overline: Diagnostic
+  title: Repository Indexability Diagnostics
+  description: |
+    This tool will run basic diagnostic tests against your repository to find out if it is not blocking indexing systems.
+
+    Enter your repository URL, OAI-PMH base URL.
+
+form:
+  id: blocking-diagnostic-form
+  repositoryUrl:
+    label: Repository URL
+    placeholder: https://oro.open.ac.uk/cgi/oai2
+    inputId: blocking-diagnostic-repository-url
+  submitLabel: Run Diagnostic
+  submittingLabel: Checking…
+
+errors:
+  requiredUrl: Enter a repository URL, OAI-PMH base URL, or domain name.
+  generic: Something went wrong. Please try again.
+
+# Copy options from design (Frame 1196-4 success, 1196-5/6 error summaries, 1196-7 full matrix).
+results:
+  overall:
+    success:
+      title: All diagnostic tests passed successfully.
+      summary: Congratulations, your repository passed all diagnostic tests which suggests that it can be indexed by CORE. However, note that the tests are not fully comprehensive and there may be, in some situations additional barriers to indexing. We recommend that you monitor the indexing in the [CORE Dashboard](/services/repository-dashboard) > Indexing tab, which provides a more comprehensive log from indexing attempts.
+    warning:
+      title: Repository isn’t accessible to CORE
+      summary: Your repository cannot be successfully indexed by CORE. Some warnings may require attention.
+    error:
+      title: Repository isn't accessible to CORE
+      summary: Your repository cannot be successfully indexed by CORE. Some warnings may require attention.
+  helpLabels:
+    whatIsChecks: What is tested
+    recommendation: Recommendation
+
+checks:
+    title: Diagnostic Tests
+    item:
+      oaiPmh:
+        label: OAI-PMH Interface
+        success:
+          title: OAI-PMH interface is accessible.
+          details: Successfully verified Identify and ListRecords verbs
+          info: |
+            We test whether the OAI-PMH interface is actually enabled in the underlying repository software and if it is reachable via a standard web browser. We also check whether IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and verify that CORE's user agent or IPs are explicitly allowlisted. For details check the Ensuring your repository is visible via [OAI-PMH section](/documentation/data-providers-guide#oai-pmh) in the CORE Data Providers guide.
+        error:
+          title: OAI-PMH interface isn’t accessible.
+          details: Identify and ListRecords verbs weren’t successfully verified
+          info: |
+            Verify that the OAI-PMH interface is actually enabled in the underlying repository software. Test if it is reachable via a standard web browser. If it is, check if IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and explicitely allowlist CORE's user agent or IPs.  For details check the Ensuring your repository is visible via [OAI-PMH section](/documentation/data-providers-guide#oai-pmh) in the CORE Data Providers guide. You can still apply bot traffic mitigation to the other endpoints, if you have access, you should allow machine access to your repository.
+
+      oaiPmh_ua:
+        label: OAI-PMH Interface using the CORE Headers
+        success:
+          title: OAI-PMH interface is accessible.
+          details: Successfully verified Identify and ListRecords verbs
+          info: |
+            We test whether the OAI-PMH interface is actually enabled in the underlying repository software and if it is reachable via a standard web browser. We also check whether IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and verify that CORE's user agent or IPs are explicitly allowlisted. For details check the Ensuring your repository is visible via [OAI-PMH section](/documentation/data-providers-guide#oai-pmh) in the CORE Data Providers guide.
+        error:
+          title: OAI-PMH interface isn’t accessible.
+          details: Identify and ListRecords verbs weren’t successfully verified
+          info: |
+            Verify that the OAI-PMH interface is actually enabled in the underlying repository software. Test if it is reachable via a standard web browser. If it is, check if IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and explicitely allowlist CORE's user agent or IPs.  For details check the Ensuring your repository is visible via [OAI-PMH section](/documentation/data-providers-guide#oai-pmh) in the CORE Data Providers guide. You can still apply bot traffic mitigation to the other endpoints, if you have access, you should allow machine access to your repository.
+
+      blockingHeaders:
+        label: Detection of Blocking Headers/Redirects
+        success:
+          title: No blocking engine detected.
+          details: No redirects to Cloudflare or other blocking services
+          info: |
+            We check the settings of your hosting provider or Content Delivery Network (CDN) and check if features that indiscriminately block bots (e.g., Cloudflare's "Block AI Training Bots") or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages are disabled. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) and [Supporting machine access](/documentation/data-providers-guide#supporting-machine-access) sections in the CORE Data Providers guide.
+        error:
+          title: Blocking engine detected.
+          details: Redirects to Cloudflare or other blocking services found
+          info: |
+            Check the settings of your hosting provider or Content Delivery Network (CDN). Disable features that indiscriminately block bots (e.g., Cloudflare's "Block AI Training Bots") for your OAI-PMH endpoint or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) and [Supporting machine access](/documentation/data-providers-guide#supporting-machine-access) sections in the CORE Data Providers guide.
+
+
+      blockingHeaders_ua:
+        label: Detection of Blocking Headers/Redirect using the CORE Headers
+        success:
+          title: No blocking engine detected.
+          details: No redirects to Cloudflare or other blocking services
+          info: |
+            We check the settings of your hosting provider or Content Delivery Network (CDN) and check if features that indiscriminately block bots (e.g., Cloudflare's "Block AI Training Bots") or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages are disabled. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) and [Supporting machine access](/documentation/data-providers-guide#supporting-machine-access) sections in the CORE Data Providers guide.
+        error:
+          title: Blocking engine detected.
+          details: Redirects to Cloudflare or other blocking services found
+          info: |
+            Check the settings of your hosting provider or Content Delivery Network (CDN). Disable features that indiscriminately block bots (e.g., Cloudflare's "Block AI Training Bots") for your OAI-PMH endpoint or whitelist CORE in your bot mitigation service so it is not intercepted by challenge pages. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) and [Supporting machine access](/documentation/data-providers-guide#supporting-machine-access) sections in the CORE Data Providers guide.
+
+
+#      pdfAccess:
+#        label: PDF Access
+#        success:
+#          title: PDFs is accessible.
+#          details: PDF endpoints are open for automated requests
+#          info: |
+#            We test whether application-level and server-level security settings restrict direct file access to full-text documents. We check that trusted automated crawlers (like CORE) are explicitly whitelisted to bypass anti-bot protections for PDF directories. For details check [Full text configuration](/documentation/data-providers-guide#text-configuration) sections in the CORE Data Providers guide.
+#        error:
+#          title: PDFs may be restricted for bots
+#          details: Some PDF endpoints return 403 for automated requests
+#          info: |
+#            Review application-level and server-level security settings to ensure direct file access to full-text documents is not restricted. Ensure trusted automated crawlers (like CORE) are whitelisted to bypass anti-bot protections for PDF directories. For details check [Full text configuration](/documentation/data-providers-guide#text-configuration) sections in the CORE Data Providers guide.
+#
+#      splashPage:
+#        label: Splash Page Access
+#        success:
+#          title: Landing pages is accessible for machine agents.
+#          details: Splash pages accessible to good bots
+#          info: |
+#            We test whether bot filtering tools or firewalls are intercepting landing page requests with CAPTCHAs, which appear as normal pages but cannot be processed by machines. We verify that the "core" user agent is whitelisted to bypass these challenges
+#        error:
+#          title: Landing pages is not accessible for machine agents.
+#          details: Splash pages is not accessible to good bots
+#          info: |
+#            Ensure that bot filtering tools or firewalls are not intercepting landing page requests with CAPTCHAs, which appear as normal pages but cannot be processed by machines. Whitelist the "core" user agent to bypass these challenges.
+
+      robotsDisallow:
+        label: Robots.txt - Disallow directives
+        success:
+          title: No disallow directives found.
+          details: Robots.txt file does not contain disallow directives specifically blocking CORE.
+          info: |
+            We test whether the robots.txt file contains any Disallow directives that block the core agent (or a wildcard * that inadvertently includes it), to ensure it is explicitly permitted to crawl the site. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) section in the CORE Data Providers guide.
+        error:
+          title: Disallow directives found.
+          details: |
+            Robots.txt file contain disallow directives specifically blocking CORE.
+          info: |
+            Edit the robots.txt file to remove any Disallow directives targeting the core agent (or a wildcard * that inadvertently includes it), ensuring it is explicitly permitted to crawl the site. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) section in the CORE Data Providers guide.
+
+      robotsCrawlDelay:
+        label: Robots.txt - Crawl Delays
+        success:
+          title: No crawl-delay found.
+          details: No crawl-delay found.
+          info: |
+            We test that no Crawl-delay directive is specified for the core agent. Delays of even 10 seconds can make it impossible for indexing services to harvest repositories with tens of thousands of records within a reasonable timeframe. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) section in the CORE Data Providers guide.
+        error:
+          title: Crawl delay specified for CORE.
+          details: |
+            Crawl-delay: 10 seconds found in robots.txt
+          info: |
+            Remove the Crawl-delay directive for the core agent. Delays of even 10 seconds can make it impossible for indexing services to harvest repositories with tens of thousands of records within a reasonable timeframe. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) section in the CORE Data Providers guide.
+
+      robotsEssentialParts:
+        label: Robots.txt - Essential Parts
+        success:
+          title: PDFs not restricted in robots.txt
+          details: PDFs not restricted in robots.txt
+          info: |
+            We test that the robots.txt rules explicitly allow the core agent to crawl all essential directories, ensuring both landing pages and the paths where full-text files are hosted are accessible. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) section in the CORE Data Providers guide.
+        error:
+          title: PDFs restricted in robots.txt
+          details: PDFs restricted in robots.txt
+          recommendation: |
+            Modify the robots.txt rules to explicitly allow the core agent to crawl all essential directories, ensuring both landing pages and the paths where full-text files are hosted are accessible. For details check [Access for machine agents](/documentation/data-providers-guide#machine-agents) section in the CORE Data Providers guide.
+
+#      behaviorFiltering:
+#        label: Behavior Filtering
+#        success:
+#          title: Passed volume query test
+#          details: No rate-limiting detected
+#          info: We test whether rate-limiting or behavior-based filtering rules on the server incorrectly penalize or blacklist legitimate bulk harvesters like CORE as malicious bots during prolonged or intensive indexing runs. We verify that these services are explicitly whitelisted so they are not blocked.
+#        error:
+#          title: Volume query test failed.
+#          details: Rate-limiting detected
+#          info: Adjust rate-limiting or behavior-based filtering rules on the server. Ensure that legitimate bulk harvesters like CORE are explicitly whitelisted so they are not incorrectly penalized or blacklisted as malicious bots during prolonged or intensive indexing runs.
+
