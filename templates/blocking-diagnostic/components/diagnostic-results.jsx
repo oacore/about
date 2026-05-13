@@ -5,12 +5,21 @@ import successIcon from '../../../public/images/icons/success.svg'
 import errorIcon from '../../../public/images/icons/error.svg'
 import dropdown from '../../../public/images/icons/dropdownArrow.svg'
 import info from '../../../public/images/icons/infoGreen.svg'
+import infoWarning from '../../../public/images/icons/infoWarning.svg'
+import warningY from '../../../public/images/icons/warningY.svg'
 import warning from '../../../public/images/icons/warningRed.svg'
 import styles from '../styles.module.scss'
 import { Markdown } from '../../../components'
 import { diagnosticCheckIds } from '../map-health-check'
 
-function CheckRow({ checkDef, passed, helpLabels }) {
+/** Failed robots.txt checks use warning styling (not error/red). */
+const HELP_WRAPPER_WARNING_WHEN_FAILED = new Set([
+  'robotsDisallow',
+  'robotsCrawlDelay',
+  'robotsEssentialParts',
+])
+
+function CheckRow({ checkId, checkDef, passed, helpLabels }) {
   if (!checkDef) return null
 
   const copy = passed ? checkDef.success : checkDef.error
@@ -24,20 +33,31 @@ function CheckRow({ checkDef, passed, helpLabels }) {
     </>
   )
 
+  const failedAsWarning =
+    !passed && HELP_WRAPPER_WARNING_WHEN_FAILED.has(checkId)
+
   return (
     <li className={styles.resultsCheck}>
       {hasBody ? (
         <details
           className={classNames.use(styles.resultsCheckDetails, {
-            [styles.resultsCheckDetailsError]: !passed,
+            [styles.resultsCheckDetailsError]: !passed && !failedAsWarning,
+            [styles.resultsCheckDetailsWarning]: failedAsWarning,
           })}
         >
           <summary
             className={classNames.use(styles.resultsCheckSummary, {
-              [styles.resultsCheckSummaryError]: !passed,
+              [styles.resultsCheckSummaryError]: !passed && !failedAsWarning,
+              [styles.resultsBannerWarning]: failedAsWarning,
             })}
           >
-            <img src={passed ? successIcon : errorIcon} alt="passed" />
+            <img
+              src={
+                // eslint-disable-next-line no-nested-ternary
+                passed ? successIcon : failedAsWarning ? warningY : errorIcon
+              }
+              alt="passed"
+            />
             <span className={styles.resultsCheckSummaryMain}>{header}</span>
             <span className={styles.resultsCheckChevron} aria-hidden>
               <img src={dropdown} alt="dropdown" />
@@ -51,10 +71,15 @@ function CheckRow({ checkDef, passed, helpLabels }) {
             {helpText?.trim() ? (
               <div
                 className={classNames.use(styles.resultsHelpWrapper, {
-                  [styles.resultsHelpWrapperError]: !passed,
+                  [styles.resultsHelpWrapperError]: !passed && !failedAsWarning,
+                  [styles.resultsHelpWrapperWarning]: failedAsWarning,
                 })}
               >
-                <img src={passed ? info : warning} alt="passed" />
+                <img
+                  // eslint-disable-next-line no-nested-ternary
+                  src={passed ? info : failedAsWarning ? infoWarning : warning}
+                  alt="passed"
+                />
                 <div>
                   <p className={styles.resultsHelpLabel}>
                     {passed
@@ -110,6 +135,7 @@ export default function DiagnosticResults({
           {diagnosticCheckIds.map((id) => (
             <CheckRow
               key={id}
+              checkId={id}
               checkDef={checksConfig[id]}
               passed={states[id]}
               helpLabels={resultsConfig.helpLabels}

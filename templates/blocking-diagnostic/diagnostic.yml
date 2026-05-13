@@ -12,7 +12,7 @@ header:
   description: |
     This tool will run basic diagnostic tests against your repository to find out if it is not blocking indexing systems.
 
-    Enter your repository URL, OAI-PMH base URL, or domain name below.
+    Enter your repository URL, OAI-PMH base URL.
 
 form:
   id: blocking-diagnostic-form
@@ -40,7 +40,7 @@ results:
       title: Repository isn't accessible to CORE
       summary: Your repository cannot be successfully indexed by CORE. Some warnings may require attention.
   helpLabels:
-    whatIsChecks: What is checks
+    whatIsChecks: What is tested
     recommendation: Recommendation
 
 checks:
@@ -60,7 +60,7 @@ checks:
             Verify that the OAI-PMH interface is actually enabled in the underlying repository software. Test if it is reachable via a standard web browser. If it is, check if IP-based controls, rate limiting, or Web Application Firewalls (WAF) are blocking machine access, and explicitely allowlist CORE's user agent or IPs.  For details check the Ensuring your repository is visible via [OAI-PMH section](/documentation/data-providers-guide#oai-pmh) in the CORE Data Providers guide. You can still apply bot traffic mitigation to the other endpoints, if you have access, you should allow machine access to your repository.
 
       oaiPmh_ua:
-        label: OAI-PMH Interface_ua
+        label: OAI-PMH Interface using the CORE Headers
         success:
           title: OAI-PMH interface is accessible.
           details: Successfully verified Identify and ListRecords verbs
@@ -87,7 +87,7 @@ checks:
 
 
       blockingHeaders_ua:
-        label: Detection of Blocking Headers/Redirects_ua
+        label: Detection of Blocking Headers/Redirect using the CORE Headers
         success:
           title: No blocking engine detected.
           details: No redirects to Cloudflare or other blocking services

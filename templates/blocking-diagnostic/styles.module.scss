@@ -101,7 +101,6 @@ $result-border: #e0e0e0;
 
 /* Outermost panel: matches form Card (neutral border, no state tint). */
 .results-root {
-  background: #fff;
   overflow: hidden;
 }
 
@@ -159,6 +158,7 @@ $result-border: #e0e0e0;
   border-radius: 2px;
   border: 1px solid #e0e0e0;
   margin: 34px 0;
+
   .body-title {
     color: #212121;
     font-size: 20px;
@@ -188,12 +188,14 @@ $result-border: #e0e0e0;
   flex-direction: column;
   font-size: 16px;
   font-style: normal;
-  line-height: 130%; /* 20.8px */
+  line-height: 130%;
   letter-spacing: 0.01px;
+
   p {
     font-weight: 500;
     color: #212121;
   }
+
   span {
     font-weight: 400;
     color: #666;
@@ -237,6 +239,10 @@ $result-border: #e0e0e0;
   border: 1px solid #c62828;
 }
 
+.resultsCheckDetailsWarning {
+  border: 1px solid #c6a700;
+}
+
 .resultsCheckSummary {
   display: flex;
   align-items: flex-start;
@@ -261,6 +267,10 @@ $result-border: #e0e0e0;
   background: #ffcccc;
 }
 
+.resultsBannerWarning {
+  background: #fdf4cd;
+}
+
 .resultsCheckSummaryMain {
   display: flex;
   flex-direction: column;
@@ -279,6 +289,10 @@ $result-border: #e0e0e0;
 
 .resultsCheckDetails[open] .resultsCheckSummaryError {
   border-bottom: 1px solid #c62828;
+}
+
+.resultsCheckDetails[open] .resultsBannerWarning {
+  border-bottom: 1px solid #c6a700;
 }
 
 .resultsDetailsPanel {
@@ -351,6 +365,11 @@ $result-border: #e0e0e0;
   background: #fcc;
 }
 
+.resultsHelpWrapperWarning {
+  border: 1px solid #c6a700;
+  background: #fdf4cd;
+}
+
 .resultsHelpLabel {
   color: #212121;
   font-size: 16px;
@@ -372,4 +391,8 @@ $result-border: #e0e0e0;
   line-height: 130%;
   /* 20.8px */
   letter-spacing: 0.026px;
+}
+
+.blocking-layout {
+  background: #f5f5f5;
 }

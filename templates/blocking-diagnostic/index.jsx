@@ -54,7 +54,7 @@ const BlockingDiagnosticPageTemplate = ({ data }) => {
   }
 
   return (
-    <Layout>
+    <Layout className={styles.blockingLayout}>
       <Section className={styles.section} caption={data.section.caption}>
         <DiagnosticHeader {...data.header} />
         <DiagnosticRepositoryForm
