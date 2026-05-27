@@ -62,6 +62,18 @@ jobs:
             --admin \
             --overwrite-existing
 
+      - name: Sync secrets to AKS
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          GA_TRACKING_CODE: ${{ secrets.GA_TRACKING_CODE }}
+        run: |
+          kubectl create secret generic core-frontend-about-secrets \
+            --namespace core-frontend \
+            --from-literal=NPM_TOKEN="${{ env.NPM_TOKEN }}" \
+            --from-literal=GA_CODE="${{ secrets.GA_CODE }}" \
+            --from-literal=API_KEY="${{ secrets.API_KEY }}" \
+            --dry-run=client -o yaml | kubectl apply -f -
+
       - name: Apply Service and HTTPRoute
         run: |
           kubectl apply -f kube/service.yaml
