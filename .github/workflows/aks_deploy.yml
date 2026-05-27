@@ -72,7 +72,7 @@ jobs:
             --namespace core-frontend \
             --from-literal=NPM_TOKEN="${{ env.NPM_TOKEN }}" \
             --from-literal=GA_CODE="${{ secrets.GA_CODE }}" \
-            --from-literal=API_KEY="${{ secrets.API_KEY }}" \.
+            --from-literal=API_KEY="${{ secrets.API_KEY }}" \
             --dry-run=client -o yaml | kubectl apply -f -
 
       - name: Apply Service and HTTPRoute
