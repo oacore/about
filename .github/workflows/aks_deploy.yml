@@ -52,6 +52,7 @@ jobs:
             --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
+            --build-arg APP_ENV=production \
             -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
