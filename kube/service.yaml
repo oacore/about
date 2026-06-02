@@ -7,6 +7,10 @@ metadata:
     app: core-frontend-about
 spec:
   type: ClusterIP
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 600
   selector:
     app: core-frontend-about
   ports:
