@@ -15,6 +15,9 @@ spec:
         - path:
             type: PathPrefix
             value: /
+      timeouts:
+        request: 30s
+        backendRequest: 15s
       backendRefs:
         - name: core-frontend-about
           port: 80
