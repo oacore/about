@@ -34,12 +34,19 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
+          startupProbe:
+            httpGet:
+              path: /
+              port: http
+            failureThreshold: 30
+            periodSeconds: 5
           readinessProbe:
             httpGet:
               path: /
               port: http
             initialDelaySeconds: 5
             periodSeconds: 10
+            timeoutSeconds: 3
             failureThreshold: 3
           livenessProbe:
             httpGet:
@@ -47,6 +54,7 @@ spec:
               port: http
             initialDelaySeconds: 15
             periodSeconds: 20
+            timeoutSeconds: 5
             failureThreshold: 3
           lifecycle:
             preStop:
@@ -54,8 +62,8 @@ spec:
                 command: ["/bin/sh", "-c", "sleep 5"]
           resources:
             requests:
-              cpu: 250m
-              memory: 256Mi
+              cpu: 500m
+              memory: 512Mi
             limits:
-              cpu: 2000m
-              memory: 2000Mi
+              cpu: 1500m
+              memory: 1Gi
