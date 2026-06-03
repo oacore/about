@@ -11,7 +11,7 @@ spec:
   strategy:
     type: RollingUpdate
     rollingUpdate:
-      maxSurge: 1
+      maxSurge: 2                    
       maxUnavailable: 0
   selector:
     matchLabels:
@@ -23,6 +23,7 @@ spec:
     spec:
       nodeSelector:
         agentpool: userpool
+      terminationGracePeriodSeconds: 60   
       containers:
         - name: core-frontend-about
           image: ${IMAGE}
@@ -40,30 +41,31 @@ spec:
               port: http
             failureThreshold: 30
             periodSeconds: 5
+            timeoutSeconds: 10             
           readinessProbe:
             httpGet:
               path: /
               port: http
             initialDelaySeconds: 5
             periodSeconds: 10
-            timeoutSeconds: 3
-            failureThreshold: 3
+            timeoutSeconds: 10           
+            failureThreshold: 5           
           livenessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 15
-            periodSeconds: 20
-            timeoutSeconds: 5
-            failureThreshold: 3
+            initialDelaySeconds: 30         
+            periodSeconds: 60            
+            timeoutSeconds: 30        
+            failureThreshold: 6       
           lifecycle:
             preStop:
               exec:
-                command: ["/bin/sh", "-c", "sleep 5"]
+                command: ["/bin/sh", "-c", "sleep 10"]  
           resources:
             requests:
-              cpu: 500m
-              memory: 512Mi
+              cpu: 1000m              
+              memory: 768Mi           
             limits:
               cpu: 1500m
               memory: 2Gi

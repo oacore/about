@@ -9,20 +9,34 @@ spec:
     kind: Deployment
     name: core-frontend-about
   minReplicas: 2
-  maxReplicas: 6
+  maxReplicas: 12                     
   metrics:
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 70
+          averageUtilization: 60        
+    - type: Resource                      
+      resource:
+        name: memory
+        target:
+          type: Utilization
+          averageUtilization: 80
   behavior:
     scaleUp:
-      stabilizationWindowSeconds: 60
+      stabilizationWindowSeconds: 0        
       policies:
         - type: Pods
-          value: 2
-          periodSeconds: 60
+          value: 4                   
+          periodSeconds: 15
+        - type: Percent
+          value: 100                     
+          periodSeconds: 15
+      selectPolicy: Max                   
     scaleDown:
-      stabilizationWindowSeconds: 300
+      stabilizationWindowSeconds: 300      
+      policies:
+        - type: Pods
+          value: 1
+          periodSeconds: 120          
