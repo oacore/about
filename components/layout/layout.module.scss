@@ -1,0 +1,10 @@
+.stickyTop {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+.stickyTop > header {
+  position: relative;
+  top: unset;
+}

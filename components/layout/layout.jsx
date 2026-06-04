@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 
 import Head from './head'
 import SkipToContent from '../skip-to-content'
+import MaintenanceBanner from '../maintenance-banner'
+import layoutStyles from './layout.module.scss'
 
 const Layout = ({ title, description, children, onNavigate }) => {
   const router = useRouter()
@@ -22,7 +24,11 @@ const Layout = ({ title, description, children, onNavigate }) => {
     <>
       <Head title={title} description={description} />
       <SkipToContent path="#content" caption="Skip to main content" />
-      <Header id="header" onClick={handleHeaderClick} />
+      <div className={layoutStyles.stickyTop}>
+        <Header id="header" onClick={handleHeaderClick} />
+        {/* TODO temp baner when we are doing some maintenance */}
+        <MaintenanceBanner />
+      </div>
       <div id="content">{children}</div>
       {!(
         router.pathname.includes('membership-documentation') ||
