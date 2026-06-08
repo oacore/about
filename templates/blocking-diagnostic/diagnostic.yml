@@ -12,7 +12,7 @@ header:
   description: |
     This tool will run basic diagnostic tests against your repository to find out if it is not blocking indexing systems.
 
-    Enter your repository URL, OAI-PMH base URL.
+    Enter your repository OAI-PMH base URL.
 
 form:
   id: blocking-diagnostic-form
@@ -24,7 +24,7 @@ form:
   submittingLabel: Checking…
 
 errors:
-  requiredUrl: Enter a repository URL, OAI-PMH base URL, or domain name.
+  requiredUrl: Enter a repository OAI-PMH base URL.
   generic: Something went wrong. Please try again.
 
 # Copy options from design (Frame 1196-4 success, 1196-5/6 error summaries, 1196-7 full matrix).
