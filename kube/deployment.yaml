@@ -30,7 +30,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
             - name: NODE_OPTIONS
-              value: "--max-old-space-size=512" 
+              value: "--max-old-space-size=1024" 
           envFrom:
             - secretRef:
                 name: core-frontend-about-secrets
@@ -71,4 +71,4 @@ spec:
               memory: 768Mi 
             limits:
               cpu: 1500m
-              memory: 1Gi  
+              memory: 1536Mi
