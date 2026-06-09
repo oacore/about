@@ -27,7 +27,7 @@ RUN npm install \
     && npm ci --include=dev
 
 RUN --mount=type=secret,id=github_token \
-    GITHUB_TOKEN="$(cat /run/secrets/github_token)" npm run build
+    GITHUB_TOKEN="$(cat /run/secrets/github_token 2>/dev/null || true)" npm run build
 
 EXPOSE 8080
 CMD ["node_modules/next/dist/bin/next", "start", "-p", "8080"]
