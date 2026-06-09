@@ -3,6 +3,8 @@ name: AKS deployment - core-frontend-about
 on:
   push:
     branches: [aks]
+  schedule:
+    - cron: '0 3 * * *'
   workflow_dispatch:
 
 env:
