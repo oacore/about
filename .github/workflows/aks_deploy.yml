@@ -47,6 +47,8 @@ jobs:
         uses: docker/setup-buildx-action@v3
 
       - name: Docker build and push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           docker buildx build \
             --platform linux/arm64 \
@@ -55,6 +57,7 @@ jobs:
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
             --build-arg APP_ENV=production \
+            --secret id=github_token,env=GITHUB_TOKEN \
             -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
