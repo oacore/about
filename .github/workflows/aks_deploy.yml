@@ -2,7 +2,7 @@ name: AKS deployment - core-frontend-about
 
 on:
   push:
-    branches: [aks]
+    branches: [main]
   schedule:
     - cron: '0 3 * * *'
   workflow_dispatch:
