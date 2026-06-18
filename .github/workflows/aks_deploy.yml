@@ -1,4 +1,4 @@
-name: AKS deployment - core-frontend-about
+name: AKS prod
 
 on:
   push:
