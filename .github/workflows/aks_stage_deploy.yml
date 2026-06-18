@@ -73,7 +73,7 @@ jobs:
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           kubectl create secret generic core-frontend-about-secrets \
-            --namespace core-frontend \
+            --namespace core-frontend-stage \
             --from-literal=NPM_TOKEN="${{ env.NPM_TOKEN }}" \
             --from-literal=GA_CODE="${{ secrets.GA_CODE }}" \
             --from-literal=API_KEY="${{ secrets.API_KEY }}" \

@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: core-frontend-about
-  namespace: core-frontend
+  namespace: core-frontend-stage
   labels:
     app: core-frontend-about
 spec:
