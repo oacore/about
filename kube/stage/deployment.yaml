@@ -1,0 +1,74 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-frontend-about
+  namespace: core-frontend
+  labels:
+    app: core-frontend-about
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: core-frontend-about
+  template:
+    metadata:
+      labels:
+        app: core-frontend-about
+    spec:
+      nodeSelector:
+        agentpool: userpool
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: core-frontend-about
+          image: ${IMAGE}
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: NODE_OPTIONS
+              value: "--max-old-space-size=2048" 
+          envFrom:
+            - secretRef:
+                name: core-frontend-about-secrets
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          startupProbe:
+            httpGet:
+              path: /
+              port: http
+            failureThreshold: 30
+            periodSeconds: 5
+            timeoutSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 10
+            failureThreshold: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+            initialDelaySeconds: 30
+            periodSeconds: 60
+            timeoutSeconds: 30
+            failureThreshold: 6
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/sh", "-c", "sleep 10"]
+          resources:
+            requests:
+              cpu: 200m  
+              memory: 1Gi
+            limits:
+              cpu: 1500m
+              memory: 2560Mi
