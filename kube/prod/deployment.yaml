@@ -67,7 +67,7 @@ spec:
                 command: ["/bin/sh", "-c", "sleep 10"]
           resources:
             requests:
-              cpu: 50m
+              cpu: 100m
               memory: 1700Mi
             limits:
               cpu: 1500m
