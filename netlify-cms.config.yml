@@ -1002,6 +1002,69 @@ collections:
               buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
               label: Content
 
+- name: gep
+
+  create: false
+  delete: false
+
+  label: 📋 GEP
+  label_singular: section
+  description: >
+    GEP page content.
+  preview_path: api/preview?page=gep&ref=cms/gep/{{slug}}
+  files:
+    - name: gep
+      label: 📋 GEP
+      file: gep/gep.yml
+      fields:
+        - name: header
+          label: 📄 Header
+          widget: object
+          fields:
+            - name: title
+              widget: string
+              label: Title
+              hint: >
+                Main title displayed on the page
+            - name: description
+              widget: text
+              label: Description
+              hint: >
+                Description displayed below the title on the page
+        - name: links
+          label: 🔗 Navigation Links
+          widget: object
+          fields:
+            - name: content
+              label: Content Links
+              widget: list
+              fields:
+                - name: title
+                  widget: string
+                  label: Title
+                - name: href
+                  widget: string
+                  label: Href
+        - name: main
+          label: 📝 Main Content
+          widget: list
+          fields:
+            - name: title
+              widget: string
+              label: Title
+            - name: id
+              widget: string
+              label: ID
+              required: false
+            - name: subtitle
+              widget: string
+              label: Subtitle
+              required: false
+            - name: content
+              widget: markdown
+              buttons: [bold, italic, link, quote, bulleted-list, numbered-list]
+              label: Content
+
 - name: community
 
   create: false
