@@ -7,6 +7,7 @@ import { Markdown } from '../../components'
 
 const GepPageTemplate = ({ data }) => {
   const headerHeight = useRef(55)
+
   const handleScroll = (id) => {
     const element = document.getElementById(id)
     const offset = headerHeight.current
