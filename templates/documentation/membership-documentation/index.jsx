@@ -1,24 +1,18 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import {
-  DocumentationMembership,
-  DocumentationMembershipNav,
-  Video,
-  DocumentSelect,
-} from '@oacore/design/lib/modules'
+import { Video, DocumentSelect } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
-
-function normalizeHref(str) {
-  const test = str.replace('#', '')
-  return test.replace('_', '-')
-}
+import DocumentationMembershipNav, {
+  findNavHrefById,
+} from '../docsComponents/documentation-membership-nav'
+import DocumentationMembership from '../docsComponents/documentation-membership'
 
 const DocumentationPageTemplate = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
-  const [navActiveIndex, setNavActiveIndex] = useState(null)
+  const [navActiveHref, setNavActiveHref] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[1].title
   )
@@ -46,6 +40,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
         })
         const n = docs.items.findIndex((item) => item.id === id)
         setHighlight(n)
+        if (hash) setNavActiveHref(hash)
       }
     }, 100)
   }, [route.asPath])
@@ -53,20 +48,16 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      const n = navigation.navItems.findIndex(
-        (item) => normalizeHref(item.href) === id
-      )
-      setNavActiveIndex(n)
+      const href = findNavHrefById(navigation.navItems, id)
+      if (href) setNavActiveHref(href)
     }
   }, [])
 
-  const handleButtonClick = () => {
-    route.push('data-providers-guide')
-  }
-
   const handleSelectChange = (option) => {
     setSelectedOption(option)
-    if (option === 'CORE Data Provider’s Guide') handleButtonClick()
+    if (option === 'CORE Data Provider’s Guide')
+      route.push('data-providers-guide')
+    if (option === 'CORE API Documentation') route.push('api-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -88,6 +79,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     }
   }, [])
 
+  /* TODO unccoment */
+
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -99,6 +92,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
+              // text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -121,10 +115,11 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
           tutorialIcon={text.tutorialIcon}
           nav={
             <DocumentationMembershipNav
-              activeIndex={navActiveIndex}
-              setNavActiveIndex={setNavActiveIndex}
+              activeHref={navActiveHref}
+              setNavActiveHref={setNavActiveHref}
               textData={navigation}
               setHighlight={setHighlight}
+              docItems={docs?.items}
               mulltyDocs
             />
           }
