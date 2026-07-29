@@ -45,7 +45,10 @@ export async function getStaticProps({ previewData }) {
 }
 
 const DocumentationPage = ({ data }) => (
-  <Page title={data.meta.title} description={data.meta.description}>
+  <Page
+    title={data.meta.title}
+    description={data.meta.description || data.meta.tagline}
+  >
     <ApiDocumentationPageTemplate {...data} />
   </Page>
 )

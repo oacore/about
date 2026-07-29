@@ -53,13 +53,11 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     }
   }, [])
 
-  const handleButtonClick = () => {
-    route.push('data-providers-guide')
-  }
-
   const handleSelectChange = (option) => {
     setSelectedOption(option)
-    if (option === 'CORE Data Provider’s Guide') handleButtonClick()
+    if (option === 'CORE Data Provider’s Guide')
+      route.push('data-providers-guide')
+    if (option === 'CORE API Documentation') route.push('api-documentation')
   }
 
   const handleScrollToTop = () => {

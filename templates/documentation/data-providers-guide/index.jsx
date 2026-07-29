@@ -53,12 +53,11 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     }
   }, [])
 
-  const handleButtonClick = () => {
-    route.push('membership-documentation')
-  }
   const handleSelectChange = (option) => {
     setSelectedOption(option)
-    if (option === 'Membership Documentation') handleButtonClick()
+    if (option === 'Membership Documentation')
+      route.push('membership-documentation')
+    if (option === 'CORE API Documentation') route.push('api-documentation')
   }
 
   const handleScrollToTop = () => {

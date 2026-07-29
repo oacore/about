@@ -1726,6 +1726,195 @@ collections:
               hint: Sub Description for Dashboard
               required: false
 
+- name: docs-graph
+
+  media_folder: '/images/docs-graph'
+  public_folder: '/images/docs-graph'
+
+  create: false
+  delete: false
+
+  preview_path: api/preview?page=documentation/api-documentation&ref=cms/docs-graph/{{slug}}
+
+  label: 📘 CORE Graph API Documentation
+  label_singular: section
+  description: >
+    CORE Graph metadata schema and Graph API documentation
+  files:
+    - name: meta
+      label: ℹ️ Metadata (title, description)
+      file: docs-graph/meta.yml
+      fields:
+        - name: title
+          widget: string
+          label: Title
+          hint: >
+            Displayed in the browser as a tab name and in Google, when
+            the page appears in the search results.
+        - name: tagline
+          widget: text
+          label: Description
+          hint: >
+            Description of the page, not visible on the page but will be shown
+            in search engines when the page appears in results.
+    - name: headerAbout
+      label: Header (title, description)
+      file: docs-graph/headerAbout.yml
+      fields:
+        - name: title
+          widget: string
+          hint: >
+            The title of the page. Displayed on the page below header.
+        - name: header
+          widget: object
+          label: Header
+          fields:
+            - {
+              name: title,
+              widget: string,
+              label: Title,
+              hint: Title of the links block
+            }
+            - {
+              name: caption,
+              widget: text,
+              label: Caption,
+              hint: Caption
+            }
+    - name: navigation
+      label: Documentation Navigation
+      file: docs-graph/navigation.yml
+      fields:
+        - name: navItems
+          widget: list
+          label: Navigation items
+          allow_add: true
+          summary: '{{fields.item}}'
+          fields: &graphNavItem
+            - name: item
+              widget: string
+              label: Item
+              hint: Navigation label
+            - name: href
+              widget: string
+              label: Href
+              required: false
+              hint: Anchor link, e.g. #authorships-api-introduction
+            - name: hidden
+              widget: boolean
+              label: Hidden
+              required: false
+              default: false
+            - name: children
+              widget: list
+              label: Sub-items
+              required: false
+              summary: '{{fields.item}}'
+              fields: *graphNavItem
+    - name: documentation
+      label: Documentation
+      file: docs-graph/docs.yml
+      fields:
+        - name: items
+          widget: list
+          label: Items
+          allow_add: true
+          summary: '{{fields.title}}'
+          hint: >
+            Documentation sections. Each section must have a unique id
+            matching navigation href anchors.
+          fields:
+            - name: id
+              widget: string
+              label: ID
+              hint: id of the block. Must match anchor link url
+            - name: title
+              widget: string
+              label: Title
+              hint: Section title
+            - name: descriptionAbout
+              widget: markdown
+              label: Description
+              required: false
+              hint: >
+                Markdown content for the section. Supports paragraphs, lists,
+                markdown tables, and fenced code blocks (```json, ```bash).
+                Leave empty when using Content blocks below.
+            - name: contentBlocks
+              widget: list
+              label: Content blocks
+              required: false
+              hint: >
+                Optional structured content sections. When provided, these
+                replace Description above. Use Text, Table, or Code block types.
+              types:
+                - label: Text
+                  name: text
+                  widget: object
+                  fields:
+                    - name: body
+                      widget: markdown
+                      label: Text
+                - label: Table
+                  name: table
+                  widget: object
+                  fields:
+                    - name: markdown
+                      widget: markdown
+                      label: Table
+                      hint: >
+                        Markdown table, e.g.
+                        | Column | Value |
+                        | --- | --- |
+                        | id | 123 |
+                - label: Code
+                  name: code
+                  widget: object
+                  fields:
+                    - name: language
+                      widget: select
+                      label: Language
+                      default: ''
+                      options:
+                        - { label: Plain text, value: '' }
+                        - { label: JSON, value: json }
+                        - { label: Bash, value: bash }
+                    - name: body
+                      widget: text
+                      label: Code
+            - name: images
+              widget: list
+              label: Images list
+              required: false
+              allow_add: true
+              fields:
+                - name: file
+                  widget: image
+                  label: File
+                  hint: Image in description
+                - name: source
+                  widget: string
+                  label: Source caption
+                  required: false
+            - name: subTitle
+              widget: markdown
+              label: Sub title
+              required: false
+            - name: subDescription
+              widget: markdown
+              label: Sub description
+              required: false
+            - name: divider
+              widget: boolean
+              label: Show divider
+              required: false
+              default: false
+            - name: border
+              widget: boolean
+              label: Border sub description
+              required: false
+              default: false
+
 - name: FAQs
 
   create: false

@@ -2,7 +2,9 @@ import React from 'react'
 import { classNames } from '@oacore/design/lib/utils'
 import { Icon } from '@oacore/design/lib'
 
-import DocumentationMarkdown from './documentation-markdown'
+import DocumentationMarkdown, {
+  getItemDescription,
+} from './documentation-markdown'
 import styles from './styles.module.scss'
 
 const DocumentationMembership = ({
@@ -122,7 +124,7 @@ const DocumentationMembership = ({
                 )}
               </div>
               <DocumentationMarkdown className={styles.documentationContent}>
-                {item.descriptionAbout}
+                {getItemDescription(item)}
               </DocumentationMarkdown>
               <div>
                 {item?.images?.map((img, i) => (

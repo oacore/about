@@ -129,6 +129,28 @@ const documentationMarkdownRenderers = {
 
 const documentationMarkdownPlugins = [remarkGfm]
 
+export const contentBlocksToMarkdown = (blocks = []) =>
+  blocks
+    .map((block) => {
+      if (block.type === 'text') return block.body || ''
+      if (block.type === 'table') return block.markdown || ''
+      if (block.type === 'code') {
+        const language = block.language || ''
+        return `\`\`\`${language}\n${block.body || ''}\n\`\`\``
+      }
+
+      return ''
+    })
+    .filter(Boolean)
+    .join('\n\n')
+
+export const getItemDescription = (item) => {
+  if (item.contentBlocks?.length)
+    return contentBlocksToMarkdown(item.contentBlocks)
+
+  return item.descriptionAbout
+}
+
 const DocumentationMarkdown = ({ children, className, ...props }) => (
   <ReactMarkdown
     plugins={documentationMarkdownPlugins}
