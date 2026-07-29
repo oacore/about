@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   DocumentationMembership,
   DocumentationMembershipNav,
-  Video,
   DocumentSelect,
 } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
@@ -15,18 +14,14 @@ function normalizeHref(str) {
   const test = str.replace('#', '')
   return test.replace('_', '-')
 }
-const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
+
+const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveIndex, setNavActiveIndex] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
-    text.documentationSwitcher[0].title
+    text.documentationSwitcher[2].title
   )
   const [showNavigator, setShowNavigator] = useState(false)
-  const [visibleVideo, setVisibleVideo] = useState(null)
-
-  const handleContentOpen = useCallback((condition) => {
-    if (condition) setVisibleVideo(condition)
-  }, [])
 
   const route = useRouter()
   const headerHeight = 56
@@ -43,7 +38,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
           behavior: 'smooth',
           block: 'center',
         })
-        const n = dataProviderDocs?.items?.findIndex((item) => item.id === id)
+        const n = docs.items.findIndex((item) => item.id === id)
         setHighlight(n)
       }
     }, 100)
@@ -60,11 +55,12 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
   }, [])
 
   const handleButtonClick = () => {
-    route.push('membership-documentation')
+    route.push('data-providers-guide')
   }
+
   const handleSelectChange = (option) => {
     setSelectedOption(option)
-    if (option === 'Membership Documentation') handleButtonClick()
+    if (option === 'CORE Data Provider’s Guide') handleButtonClick()
   }
 
   const handleScrollToTop = () => {
@@ -106,17 +102,17 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
       </div>
       <Layout className={styles.docsLayout}>
         <DocumentationMembership
-          docs={dataProviderDocs?.items}
-          tutorial={dataProviderDocs?.tutorial}
+          docs={docs?.items}
           highlight={highlight}
           setHighlight={setHighlight}
-          imageSource
-          docsTitle={text.documentationSwitcher[0].title}
+          docsTitle={text.documentationSwitcher[1].title}
           mulltyDocs
-          tutorialIcon={text.tutorialIcon}
+          videoIcon={text.videlogo}
+          redirectLink={text?.redirectLink}
           showNavigator={showNavigator}
           handleScrollToTop={handleScrollToTop}
-          handleContentOpen={handleContentOpen}
+          tutorial={docs?.tutorial}
+          tutorialIcon={text.tutorialIcon}
           nav={
             <DocumentationMembershipNav
               activeIndex={navActiveIndex}
@@ -127,16 +123,9 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
             />
           }
         />
-        {visibleVideo && (
-          <Video
-            visibleModal={visibleVideo}
-            closeModal={() => setVisibleVideo(false)}
-            video={visibleVideo}
-          />
-        )}
       </Layout>
     </div>
   )
 }
 
-export default DataProviderDocs
+export default ApiDocumentationPageTemplate

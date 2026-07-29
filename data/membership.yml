@@ -3,6 +3,8 @@ documentationSwitcher:
     description: These guidelines aim to assist institutions and repository managers in configuring their repositories in way that enables CORE to correctly index them.
   - title: Membership Documentation
     description: This documentation explains how to use all features and benefits of CORE Membership.
+  - title: CORE API Documentation
+    description: This documentation explains how to use all features and benefits of CORE API.
 
 videlogo: /images/tutorialActive.svg
 tutorialIcon: /images/video.svg
