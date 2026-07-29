@@ -1,15 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import {
-  DocumentationMembership,
-  DocumentationMembershipNav,
-  Video,
-  DocumentSelect,
-} from '@oacore/design/lib/modules'
+import { Video, DocumentSelect } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
+import DocumentationMembershipNav from '../docsComponents/documentation-membership-nav'
+import DocumentationMembership from '../docsComponents/documentation-membership'
 
 function normalizeHref(str) {
   const test = str.replace('#', '')
