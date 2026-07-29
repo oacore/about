@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { DocumentSelect } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
@@ -10,10 +10,16 @@ import DocumentationMembershipNav, {
   findNavHrefById,
 } from '../docsComponents/documentation-membership-nav'
 
+const flattenDocItems = (items = []) =>
+  items.flatMap((group) => group.children ?? [])
+
 const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
+  const docItems = useMemo(() => flattenDocItems(docs?.items), [docs?.items])
   const [highlight, setHighlight] = useState()
   const [navActiveHref, setNavActiveHref] = useState(null)
-  const [selectedOption, setSelectedOption] = useState('CORE API Documentation')
+  const [selectedOption, setSelectedOption] = useState(
+    text.documentationSwitcher[2].title
+  )
   const [showNavigator, setShowNavigator] = useState(false)
 
   const route = useRouter()
@@ -31,12 +37,12 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           behavior: 'smooth',
           block: 'center',
         })
-        const n = docs.items.findIndex((item) => item.id === id)
+        const n = docItems.findIndex((item) => item.id === id)
         setHighlight(n)
         if (hash) setNavActiveHref(hash)
       }
     }, 100)
-  }, [route.asPath])
+  }, [route.asPath, docItems])
 
   useEffect(() => {
     const id = route.query?.r
@@ -73,8 +79,6 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
     }
   }, [])
 
-  /* TODO unccoment */
-
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -86,7 +90,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              // text.documentationSwitcher[2].title,
+              text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -95,7 +99,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
       </div>
       <Layout className={styles.docsLayout}>
         <DocumentationMembership
-          docs={docs?.items}
+          docs={docItems}
           highlight={highlight}
           setHighlight={setHighlight}
           docsTitle="CORE API Documentation"
@@ -112,7 +116,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
               setNavActiveHref={setNavActiveHref}
               textData={navigation}
               setHighlight={setHighlight}
-              docItems={docs?.items}
+              docItems={docItems}
               mulltyDocs
             />
           }
