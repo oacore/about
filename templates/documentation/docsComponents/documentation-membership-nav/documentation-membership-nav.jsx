@@ -5,6 +5,8 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 
+/* TODO replace with design */
+
 function normalizeHref(str) {
   return str.replace('#', '').replace('_', '-')
 }

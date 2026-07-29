@@ -4,6 +4,8 @@ import remarkGfm from 'remark-gfm'
 
 import styles from './styles.module.scss'
 
+/* TODO replace with design */
+
 const getNodeText = (node) => {
   if (typeof node === 'string' || typeof node === 'number') return String(node)
   if (Array.isArray(node)) return node.map(getNodeText).join('')

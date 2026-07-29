@@ -7,6 +7,8 @@ import DocumentationMarkdown, {
 } from './documentation-markdown'
 import styles from './styles.module.scss'
 
+/* TODO replace with design */
+
 const DocumentationMembership = ({
   headerTitle,
   headerCaption,
