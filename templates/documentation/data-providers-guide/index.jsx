@@ -79,6 +79,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     }
   }, [])
 
+  /* TODO unccoment */
+
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -90,7 +92,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              text.documentationSwitcher[2].title,
+              // text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}

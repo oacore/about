@@ -13,9 +13,7 @@ import DocumentationMembershipNav, {
 const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveHref, setNavActiveHref] = useState(null)
-  const [selectedOption, setSelectedOption] = useState(
-    text.documentationSwitcher[2].title
-  )
+  const [selectedOption, setSelectedOption] = useState('CORE API Documentation')
   const [showNavigator, setShowNavigator] = useState(false)
 
   const route = useRouter()
@@ -75,6 +73,8 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
     }
   }, [])
 
+  /* TODO unccoment */
+
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -86,7 +86,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              text.documentationSwitcher[2].title,
+              // text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -98,7 +98,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           docs={docs?.items}
           highlight={highlight}
           setHighlight={setHighlight}
-          docsTitle={text.documentationSwitcher[2].title}
+          docsTitle="CORE API Documentation"
           mulltyDocs
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
