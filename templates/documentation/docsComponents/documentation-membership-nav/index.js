@@ -1,1 +1,1 @@
-export default from './documentation-membership-nav'
+export { default, findNavHrefById } from './documentation-membership-nav'

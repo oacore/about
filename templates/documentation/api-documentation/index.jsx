@@ -6,16 +6,13 @@ import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
 import DocumentationMembership from '../docsComponents/documentation-membership'
-import DocumentationMembershipNav from '../docsComponents/documentation-membership-nav'
-
-function normalizeHref(str) {
-  const test = str.replace('#', '')
-  return test.replace('_', '-')
-}
+import DocumentationMembershipNav, {
+  findNavHrefById,
+} from '../docsComponents/documentation-membership-nav'
 
 const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
-  const [navActiveIndex, setNavActiveIndex] = useState(null)
+  const [navActiveHref, setNavActiveHref] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[2].title
   )
@@ -38,6 +35,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
         })
         const n = docs.items.findIndex((item) => item.id === id)
         setHighlight(n)
+        if (hash) setNavActiveHref(hash)
       }
     }, 100)
   }, [route.asPath])
@@ -45,10 +43,8 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      const n = navigation.navItems.findIndex(
-        (item) => normalizeHref(item.href) === id
-      )
-      setNavActiveIndex(n)
+      const href = findNavHrefById(navigation.navItems, id)
+      if (href) setNavActiveHref(href)
     }
   }, [])
 
@@ -103,7 +99,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           docs={docs?.items}
           highlight={highlight}
           setHighlight={setHighlight}
-          docsTitle={text.documentationSwitcher[1].title}
+          docsTitle={text.documentationSwitcher[2].title}
           mulltyDocs
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
@@ -113,10 +109,11 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           tutorialIcon={text.tutorialIcon}
           nav={
             <DocumentationMembershipNav
-              activeIndex={navActiveIndex}
-              setNavActiveIndex={setNavActiveIndex}
+              activeHref={navActiveHref}
+              setNavActiveHref={setNavActiveHref}
               textData={navigation}
               setHighlight={setHighlight}
+              docItems={docs?.items}
               mulltyDocs
             />
           }

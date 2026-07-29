@@ -62,8 +62,16 @@
   background: #e0e0e0;
 }
 
-.hidden-item {
-  display: none;
+@for $level from 1 through 5 {
+  .sider-item-level-#{$level} {
+    padding-left: 16px + ($level * 16px);
+  }
+}
+
+.sider-group-item {
+  font-weight: 600;
+  color: #212121;
+  cursor: default;
 }
 
 .logo {

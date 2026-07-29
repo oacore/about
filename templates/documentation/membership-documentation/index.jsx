@@ -5,17 +5,14 @@ import { useRouter } from 'next/router'
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
-import DocumentationMembershipNav from '../docsComponents/documentation-membership-nav'
+import DocumentationMembershipNav, {
+  findNavHrefById,
+} from '../docsComponents/documentation-membership-nav'
 import DocumentationMembership from '../docsComponents/documentation-membership'
-
-function normalizeHref(str) {
-  const test = str.replace('#', '')
-  return test.replace('_', '-')
-}
 
 const DocumentationPageTemplate = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
-  const [navActiveIndex, setNavActiveIndex] = useState(null)
+  const [navActiveHref, setNavActiveHref] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[1].title
   )
@@ -43,6 +40,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
         })
         const n = docs.items.findIndex((item) => item.id === id)
         setHighlight(n)
+        if (hash) setNavActiveHref(hash)
       }
     }, 100)
   }, [route.asPath])
@@ -50,10 +48,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
   useEffect(() => {
     const id = route.query?.r
     if (id) {
-      const n = navigation.navItems.findIndex(
-        (item) => normalizeHref(item.href) === id
-      )
-      setNavActiveIndex(n)
+      const href = findNavHrefById(navigation.navItems, id)
+      if (href) setNavActiveHref(href)
     }
   }, [])
 
@@ -119,10 +115,11 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
           tutorialIcon={text.tutorialIcon}
           nav={
             <DocumentationMembershipNav
-              activeIndex={navActiveIndex}
-              setNavActiveIndex={setNavActiveIndex}
+              activeHref={navActiveHref}
+              setNavActiveHref={setNavActiveHref}
               textData={navigation}
               setHighlight={setHighlight}
+              docItems={docs?.items}
               mulltyDocs
             />
           }
