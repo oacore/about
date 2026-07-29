@@ -1790,7 +1790,7 @@ collections:
           label: Navigation items
           allow_add: true
           summary: '{{fields.item}}'
-          fields: &graphNavItem
+          fields:
             - name: item
               widget: string
               label: Item
@@ -1810,7 +1810,41 @@ collections:
               label: Sub-items
               required: false
               summary: '{{fields.item}}'
-              fields: *graphNavItem
+              fields:
+                - name: item
+                  widget: string
+                  label: Item
+                  hint: Navigation label
+                - name: href
+                  widget: string
+                  label: Href
+                  required: false
+                  hint: Anchor link, e.g. #authorships-api-introduction
+                - name: hidden
+                  widget: boolean
+                  label: Hidden
+                  required: false
+                  default: false
+                - name: children
+                  widget: list
+                  label: Sub-items
+                  required: false
+                  summary: '{{fields.item}}'
+                  fields:
+                    - name: item
+                      widget: string
+                      label: Item
+                      hint: Navigation label
+                    - name: href
+                      widget: string
+                      label: Href
+                      required: false
+                      hint: Anchor link, e.g. #authorships-api-introduction
+                    - name: hidden
+                      widget: boolean
+                      label: Hidden
+                      required: false
+                      default: false
     - name: documentation
       label: Documentation
       file: docs-graph/docs.yml
