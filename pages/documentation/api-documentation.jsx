@@ -7,15 +7,21 @@ import retrieveContent from 'content'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-const setAssetsUrl = (object) =>
-  Object.entries(object).forEach(([, value]) => {
-    delete value.membership
-    if (value.images) {
-      Object.entries(value.images).forEach(([, item]) => {
-        item.file = ASSETS_BASE_URL + item.file
+const setAssetsUrl = (items) =>
+  items.forEach((item) => {
+    delete item.membership
+    if (item.images) {
+      item.images.forEach((img) => {
+        img.file = ASSETS_BASE_URL + img.file
       })
     }
+    if (item.children?.length) setAssetsUrl(item.children)
   })
+
+const flattenDocItems = (items) =>
+  items?.flatMap((entry) =>
+    entry.children?.length ? entry.children : [entry]
+  ) ?? []
 
 const getSections = async ({ ref } = {}) => {
   const content = await retrieveContent('docs-graph', {
@@ -25,7 +31,10 @@ const getSections = async ({ ref } = {}) => {
 
   delete content.headerDashboard
   Object.values(content).forEach((section) => {
-    if (section.items) setAssetsUrl(section.items)
+    if (section.items) {
+      setAssetsUrl(section.items)
+      section.items = flattenDocItems(section.items)
+    }
   })
   return content
 }
