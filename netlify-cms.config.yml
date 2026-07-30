@@ -1785,16 +1785,29 @@ collections:
       label: Documentation Navigation
       file: docs-graph/navigation.yml
       fields:
+        - name: navTitle
+          widget: string
+          label: Navigation title
+          hint: >
+            Title shown above the sidebar outline and in the documentation
+            content header (e.g. CORE Graph API Documentation).
         - name: navItems
           widget: list
           label: Navigation items
           allow_add: true
           summary: '{{fields.item}}'
+          hint: >
+            Three-level outline: top-level sections (Overview, Entities,
+            Search), entity or topic names under each section, then anchor
+            links under documented entities (e.g. Authorships, Citations).
+            Use markdown headings in docs.yml for deeper sub-sections.
           fields:
             - name: item
               widget: string
               label: Item
-              hint: Navigation label
+              hint: >
+                Top-level section label (e.g. Overview, Entities, Search).
+                Leave href empty for group headings.
             - name: href
               widget: string
               label: Href
@@ -1814,7 +1827,9 @@ collections:
                 - name: item
                   widget: string
                   label: Item
-                  hint: Navigation label
+                  hint: >
+                    Entity or topic label (e.g. Works, Authorships, Citations).
+                    Leave href empty unless linking directly to a section.
                 - name: href
                   widget: string
                   label: Href
@@ -1827,14 +1842,17 @@ collections:
                   default: false
                 - name: children
                   widget: list
-                  label: Sub-items
+                  label: Section links
                   required: false
                   summary: '{{fields.item}}'
+                  hint: >
+                    Anchor links for documented entity sections. Each href must
+                    match a section id in docs.yml.
                   fields:
                     - name: item
                       widget: string
                       label: Item
-                      hint: Navigation label
+                      hint: Section label shown in the sidebar
                     - name: href
                       widget: string
                       label: Href
@@ -1855,21 +1873,25 @@ collections:
           allow_add: true
           summary: '{{fields.item}}'
           hint: >
-            Top-level groups linked to navigation items (e.g. Authorships,
-            Citations). Each group contains documentation sections.
+            One group per documented entity under Entities in navigation.yml
+            (e.g. Authorships, Citations). Each group contains the sections
+            linked from that entity's sidebar outline.
           fields:
             - name: item
               widget: string
-              label: Navigation item
-              hint: Must match the top-level item in navigation.yml
+              label: Entity name
+              hint: >
+                Must match the entity label under Entities in navigation.yml
+                (e.g. Authorships, Citations).
             - name: children
               widget: list
               label: Sections
               allow_add: true
               summary: '{{fields.title}}'
               hint: >
-                Documentation sections. Each section must have a unique id
-                matching navigation href anchors.
+                Documentation sections. Each section id must match a navigation
+                href anchor. Use markdown headings inside Description for
+                nested sub-sections that no longer appear in the sidebar.
               fields:
                 - name: id
                   widget: string
@@ -1885,8 +1907,10 @@ collections:
                   required: false
                   hint: >
                     Markdown content for the section. Supports paragraphs, lists,
-                    markdown tables, and fenced code blocks (```json, ```bash).
-                    Leave empty when using Content blocks below.
+                    headings (##, ###), markdown tables, and fenced code blocks
+                    (```json, ```bash). Use headings for sub-sections that are
+                    no longer separate navigation items. Leave empty when using
+                    Content blocks below.
                 - name: contentBlocks
                   widget: list
                   label: Content blocks

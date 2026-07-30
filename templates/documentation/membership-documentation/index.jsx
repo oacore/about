@@ -57,7 +57,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     setSelectedOption(option)
     if (option === 'CORE Data Provider’s Guide')
       route.push('data-providers-guide')
-    if (option === 'CORE API Documentation') route.push('api-documentation')
+    if (option === 'CORE Graph API Documentation')
+      route.push('api-documentation')
   }
 
   const handleScrollToTop = () => {

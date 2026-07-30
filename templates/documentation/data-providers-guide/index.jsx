@@ -57,7 +57,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     setSelectedOption(option)
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
-    if (option === 'CORE API Documentation') route.push('api-documentation')
+    if (option === 'CORE Graph API Documentation')
+      route.push('api-documentation')
   }
 
   const handleScrollToTop = () => {

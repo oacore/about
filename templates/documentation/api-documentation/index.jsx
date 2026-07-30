@@ -102,7 +102,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           docs={docItems}
           highlight={highlight}
           setHighlight={setHighlight}
-          docsTitle="CORE API Documentation"
+          docsTitle={navigation?.navTitle || 'CORE Graph API Documentation'}
           mulltyDocs
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
