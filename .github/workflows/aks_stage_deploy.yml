@@ -5,7 +5,7 @@ on:
     branches: [stage]
   workflow_dispatch:
   repository_dispatch:
-    types: [trigger-stage-deploy]
+    types: [CONTENT-repo:cross-repo trigger deployment stage]
 
 env:
   ACR_NAME: corecontainers
