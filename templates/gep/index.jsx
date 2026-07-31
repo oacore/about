@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
 import { classNames } from '@oacore/design/lib/utils'
 
-import styles from './styles.module.scss'
+import styles from '../term/styles.module.scss'
 import { Layout, Section } from '../../design-v2/components'
 import { Markdown } from '../../components'
 
-const TermsPageTemplate = ({ data }) => {
+const GepPageTemplate = ({ data }) => {
   const headerHeight = useRef(55)
 
   const handleScroll = (id) => {
@@ -25,22 +25,14 @@ const TermsPageTemplate = ({ data }) => {
 
   return (
     <Layout>
-      <Section id="termsPage" className={styles.header}>
+      <Section id="gepPage" className={styles.header}>
         <div className={styles.headerLeft}>
           <h2 className={styles.title}>{data.header.title}</h2>
-          <div className={styles.description}>
-            This page sets the Terms & Conditions under which{' '}
-            {/* eslint-disable-next-line max-len */}
-            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-            <a
-              className={styles.linker}
-              onClick={() => handleScroll('disclaimer')}
-            >
-              CORE data*
-            </a>{' '}
-            can be <br />
-            used by others.
-          </div>
+          {data.header.description && (
+            <Markdown className={styles.description}>
+              {data.header.description}
+            </Markdown>
+          )}
         </div>
         <div className={styles.sectionWrapper}>
           <ul className={styles.redirectWrapper}>
@@ -73,4 +65,4 @@ const TermsPageTemplate = ({ data }) => {
     </Layout>
   )
 }
-export default TermsPageTemplate
+export default GepPageTemplate

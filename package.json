@@ -67,6 +67,7 @@
     "react-dom": "^17.0.1",
     "react-ga4": "^2.1.0",
     "react-markdown": "^5.0.3",
+    "remark-gfm": "^1.0.0",
     "react-slick": "^0.29.0",
     "react-spring": "^9.4.3",
     "reactstrap": "^8.7.1",
