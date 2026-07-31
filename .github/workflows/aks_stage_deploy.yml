@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: stage
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || 'stage' }}
 
       - name: Azure Login
         uses: azure/login@v2
