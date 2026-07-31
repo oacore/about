@@ -4,6 +4,8 @@ on:
   push:
     branches: [stage]
   workflow_dispatch:
+  repository_dispatch:
+    types: [trigger-stage-deploy]
 
 env:
   ACR_NAME: corecontainers
@@ -24,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: stage
 
       - name: Azure Login
         uses: azure/login@v2
