@@ -64,6 +64,7 @@ jobs:
             --secret id=github_token,env=GITHUB_TOKEN \
             --cache-from type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache \
             --cache-to type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache,mode=max \
+            -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
         run: |
