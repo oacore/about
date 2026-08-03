@@ -26,8 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-#        with:
-#          ref: stage
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || 'stage' }}
 
       - name: Azure Login
         uses: azure/login@v2
@@ -39,7 +39,8 @@ jobs:
       - name: Set image reference
         id: image
         run: |
-          TAG=$(echo ${{ github.sha }} | cut -c1-7)
+          # TAG=$(echo ${{ github.sha }} | cut -c1-7)
+          TAG=$(git rev-parse --short HEAD)
           echo "ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:$TAG" >> $GITHUB_OUTPUT
 
       - name: Docker ACR Login
@@ -59,8 +60,10 @@ jobs:
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
             --build-arg APP_ENV=production \
+            --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
-            -t ${{ steps.image.outputs.ref }} .
+            --cache-from type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache \
+            --cache-to type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache,mode=max \
 
       - name: Get AKS credentials
         run: |
@@ -72,8 +75,8 @@ jobs:
 
       - name: Sync secrets to AKS
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
-          GA_CODE: ${{ secrets.GA_CODE }} 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GA_CODE: ${{ secrets.GA_CODE }}
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           kubectl create secret generic core-frontend-about-secrets \
@@ -87,7 +90,7 @@ jobs:
         run: |
           kubectl apply -f kube/stage/service.yaml
           kubectl apply -f kube/stage/httproute.yaml
-      
+
       - name: Deploy to AKS
         run: |
           export IMAGE="${{ steps.image.outputs.ref }}"

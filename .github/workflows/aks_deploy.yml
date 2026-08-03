@@ -59,7 +59,10 @@ jobs:
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
             --build-arg APP_ENV=production \
+            --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
+            --cache-from type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache \
+            --cache-to type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache,mode=max \
             -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
@@ -72,8 +75,8 @@ jobs:
 
       - name: Sync secrets to AKS
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
-          GA_CODE: ${{ secrets.GA_CODE }} 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GA_CODE: ${{ secrets.GA_CODE }}
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           kubectl create secret generic core-frontend-about-secrets \

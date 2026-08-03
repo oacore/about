@@ -21,11 +21,13 @@ WORKDIR /app
 
 ENV NODE_OPTIONS="--max_old_space_size=32000 --openssl-legacy-provider"
 
-COPY . .
-
+COPY package.json package-lock.json ./
 RUN npm install \
     && npm ci --include=dev
 
+COPY . .
+
+ARG CACHE_BUST=1
 RUN --mount=type=secret,id=github_token \
     GITHUB_TOKEN="$(cat /run/secrets/github_token 2>/dev/null || true)" npm run build
 
