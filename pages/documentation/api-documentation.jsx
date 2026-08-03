@@ -45,13 +45,17 @@ export async function getStaticProps({ previewData }) {
   }
 }
 
-const DocumentationPage = ({ data }) => (
-  <Page
-    title={data.meta.title}
-    description={data.meta.description || data.meta.tagline}
-  >
-    <ApiDocumentationPageTemplate {...data} />
-  </Page>
-)
+const DocumentationPage = ({ data }) => {
+  // eslint-disable-next-line no-console
+  console.log(data, 'data')
+  return (
+    <Page
+      title={data.meta.title}
+      description={data.meta.description || data.meta.tagline}
+    >
+      <ApiDocumentationPageTemplate {...data} />
+    </Page>
+  )
+}
 
 export default DocumentationPage
