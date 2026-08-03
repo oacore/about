@@ -39,7 +39,9 @@ jobs:
       - name: Set image reference
         id: image
         run: |
-          TAG=$(echo ${{ github.sha }} | cut -c1-7)
+          # TAG=$(echo ${{ github.sha }} | cut -c1-7)
+          TAG="$(git rev-parse --short HEAD)-${{ github.run_id }}"
+          echo ${TAG}
           echo "ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:$TAG" >> $GITHUB_OUTPUT
 
       - name: Docker ACR Login
@@ -59,7 +61,10 @@ jobs:
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
             --build-arg APP_ENV=production \
+            --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
+            --cache-from type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache \
+            --cache-to type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache,mode=max \
             -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
