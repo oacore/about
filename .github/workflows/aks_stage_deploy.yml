@@ -40,7 +40,7 @@ jobs:
         id: image
         run: |
           # TAG=$(echo ${{ github.sha }} | cut -c1-7)
-          TAG=$(git rev-parse --short HEAD)
+          TAG="$(git rev-parse --short HEAD)-${{ github.run_id }}"
           echo "ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:$TAG" >> $GITHUB_OUTPUT
 
       - name: Docker ACR Login
