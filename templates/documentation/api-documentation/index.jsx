@@ -11,7 +11,10 @@ import DocumentationMembershipNav, {
 } from '../docsComponents/documentation-membership-nav'
 
 const flattenDocItems = (items = []) =>
-  items.flatMap((group) => group.children ?? [])
+  items
+    .flatMap((node) => [node, ...flattenDocItems(node.children ?? [])])
+    .filter(({ id }) => id)
+    .map((node) => ({ ...node, id: node.id.replace(/^#/, '') }))
 
 const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   const docItems = useMemo(() => flattenDocItems(docs?.items), [docs?.items])
