@@ -1874,9 +1874,9 @@ collections:
             summary: '{{fields.item}}'
             hint: >
               Top-level groups matching navigation.yml: Overview, Entities, and
-              Search. Overview and Search contain sections directly; Entities
-              contains entity sub-groups (Works, Authorships, etc.), each with
-              its own sections.
+              Search. Each group contains a flat list of documentation sections.
+              Entity grouping (Works, Authorships, etc.) lives in navigation.yml
+              only; docs.yml lists all entity sections sequentially under Entities.
             fields:
               - name: item
                 widget: string
@@ -1886,215 +1886,100 @@ collections:
                   match navigation.yml.
               - name: children
                 widget: list
-                label: Sub-items
-                label_singular: Sub-item
+                label: Sections
+                label_singular: Section
                 allow_add: true
+                summary: '{{fields.title || fields.id}}'
                 hint: >
-                  Under Overview or Search, add Section entries. Under Entities,
-                  add Entity group entries (each with nested Sections).
-                types:
-                  - label: Entity group
-                    name: entityGroup
-                    widget: object
-                    summary: '{{fields.item}}'
+                  Flat list of documentation sections for this group. Each section
+                  id must match a navigation href anchor (e.g. works-api-introduction,
+                  core-graph-data-model).
+                fields:
+                  - name: id
+                    widget: string
+                    label: Section ID
+                    hint: Anchor id without # (e.g. works-api-introduction)
+                  - name: title
+                    widget: string
+                    label: Title
+                    hint: Section title
+                  - name: descriptionAbout
+                    widget: markdown
+                    label: Description
+                    required: false
                     hint: >
-                      Entity under Entities (e.g. Works, Authorships). Add nested
-                      Sections inside each entity group.
-                    fields:
-                      - name: item
-                        widget: string
-                        label: Entity name
-                        hint: >
-                          Entity label under Entities (e.g. Works, Authorships).
-                      - name: children
-                        widget: list
-                        label: Sections
-                        label_singular: Section
-                        required: false
-                        allow_add: true
-                        summary: '{{fields.title || fields.id}}'
-                        hint: >
-                          Documentation sections for this entity. Each section id
-                          must match a navigation href anchor.
-                        fields:
-                          - name: id
-                            widget: string
-                            label: Section ID
-                            hint: Anchor id without # (e.g. works-api-introduction)
-                          - name: title
-                            widget: string
-                            label: Title
-                            hint: Section title
-                          - name: descriptionAbout
-                            widget: markdown
-                            label: Description
-                            required: false
-                            hint: >
-                              Markdown content for the section. Supports paragraphs,
-                              lists, headings (##, ###), markdown tables, and fenced
-                              code blocks (```json, ```bash).
-                          - name: contentBlocks
-                            widget: list
-                            label: Content blocks
-                            required: false
-                            hint: >
-                              Optional structured content sections. When provided,
-                              these replace Description above.
-                            types:
-                              - label: Text
-                                name: text
-                                widget: object
-                                fields:
-                                  - name: body
-                                    widget: markdown
-                                    label: Text
-                              - label: Table
-                                name: table
-                                widget: object
-                                fields:
-                                  - name: markdown
-                                    widget: markdown
-                                    label: Table
-                              - label: Code
-                                name: code
-                                widget: object
-                                fields:
-                                  - name: language
-                                    widget: select
-                                    label: Language
-                                    default: ''
-                                    options:
-                                      - { label: Plain text, value: '' }
-                                      - { label: JSON, value: json }
-                                      - { label: Bash, value: bash }
-                                  - name: body
-                                    widget: text
-                                    label: Code
-                          - name: images
-                            widget: list
-                            label: Images list
-                            required: false
-                            allow_add: true
-                            fields:
-                              - name: file
-                                widget: image
-                                label: File
-                                hint: Image in description
-                              - name: source
-                                widget: string
-                                label: Source caption
-                                required: false
-                          - name: subTitle
-                            widget: markdown
-                            label: Sub title
-                            required: false
-                          - name: subDescription
-                            widget: markdown
-                            label: Sub description
-                            required: false
-                          - name: divider
-                            widget: boolean
-                            label: Show divider
-                            required: false
-                            default: false
-                          - name: border
-                            widget: boolean
-                            label: Border sub description
-                            required: false
-                            default: false
-                  - label: Section
-                    name: section
-                    widget: object
-                    summary: '{{fields.title || fields.id}}'
+                      Markdown content for the section. Supports paragraphs,
+                      lists, headings (##, ###), markdown tables, and fenced
+                      code blocks (```json, ```bash).
+                  - name: contentBlocks
+                    widget: list
+                    label: Content blocks
+                    required: false
                     hint: >
-                      Direct section under Overview or Search (Section ID, Title,
-                      and Description).
-                    fields:
-                      - name: id
-                        widget: string
-                        label: Section ID
-                        hint: Anchor id without # (e.g. core-graph-data-model)
-                      - name: title
-                        widget: string
-                        label: Title
-                        hint: Section title
-                      - name: descriptionAbout
-                        widget: markdown
-                        label: Description
-                        required: false
-                        hint: >
-                          Markdown content for the section. Supports paragraphs,
-                          lists, headings (##, ###), markdown tables, and fenced
-                          code blocks (```json, ```bash).
-                      - name: contentBlocks
-                        widget: list
-                        label: Content blocks
-                        required: false
-                        hint: >
-                          Optional structured content sections. When provided,
-                          these replace Description above.
-                        types:
-                          - label: Text
-                            name: text
-                            widget: object
-                            fields:
-                              - name: body
-                                widget: markdown
-                                label: Text
-                          - label: Table
-                            name: table
-                            widget: object
-                            fields:
-                              - name: markdown
-                                widget: markdown
-                                label: Table
-                          - label: Code
-                            name: code
-                            widget: object
-                            fields:
-                              - name: language
-                                widget: select
-                                label: Language
-                                default: ''
-                                options:
-                                  - { label: Plain text, value: '' }
-                                  - { label: JSON, value: json }
-                                  - { label: Bash, value: bash }
-                              - name: body
-                                widget: text
-                                label: Code
-                      - name: images
-                        widget: list
-                        label: Images list
-                        required: false
-                        allow_add: true
+                      Optional structured content sections. When provided,
+                      these replace Description above.
+                    types:
+                      - label: Text
+                        name: text
+                        widget: object
                         fields:
-                          - name: file
-                            widget: image
-                            label: File
-                            hint: Image in description
-                          - name: source
-                            widget: string
-                            label: Source caption
-                            required: false
-                      - name: subTitle
-                        widget: markdown
-                        label: Sub title
+                          - name: body
+                            widget: markdown
+                            label: Text
+                      - label: Table
+                        name: table
+                        widget: object
+                        fields:
+                          - name: markdown
+                            widget: markdown
+                            label: Table
+                      - label: Code
+                        name: code
+                        widget: object
+                        fields:
+                          - name: language
+                            widget: select
+                            label: Language
+                            default: ''
+                            options:
+                              - { label: Plain text, value: '' }
+                              - { label: JSON, value: json }
+                              - { label: Bash, value: bash }
+                          - name: body
+                            widget: text
+                            label: Code
+                  - name: images
+                    widget: list
+                    label: Images list
+                    required: false
+                    allow_add: true
+                    fields:
+                      - name: file
+                        widget: image
+                        label: File
+                        hint: Image in description
+                      - name: source
+                        widget: string
+                        label: Source caption
                         required: false
-                      - name: subDescription
-                        widget: markdown
-                        label: Sub description
-                        required: false
-                      - name: divider
-                        widget: boolean
-                        label: Show divider
-                        required: false
-                        default: false
-                      - name: border
-                        widget: boolean
-                        label: Border sub description
-                        required: false
-                        default: false
+                  - name: subTitle
+                    widget: markdown
+                    label: Sub title
+                    required: false
+                  - name: subDescription
+                    widget: markdown
+                    label: Sub description
+                    required: false
+                  - name: divider
+                    widget: boolean
+                    label: Show divider
+                    required: false
+                    default: false
+                  - name: border
+                    widget: boolean
+                    label: Border sub description
+                    required: false
+                    default: false
 
   - name: FAQs
 
