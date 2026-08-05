@@ -101,6 +101,11 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
         </div>
       </div>
       <Layout className={styles.docsLayout}>
+        {/*
+          TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done.
+        */}
         <DocumentationMembership
           docs={docItems}
           highlight={highlight}

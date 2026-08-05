@@ -5,7 +5,9 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 
-/* TODO replace with design */
+/* TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done. */
 
 function normalizeHref(str) {
   return str.replace('#', '').replace('_', '-')
