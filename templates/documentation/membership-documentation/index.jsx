@@ -81,6 +81,9 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
 
   /* TODO unccoment */
 
+  // eslint-disable-next-line no-console
+  console.log('trigger')
+
   return (
     <div>
       <div className={styles.navWrapper}>
