@@ -1907,16 +1907,17 @@ collections:
                       Journals, Institutions, Authorships, Affiliations, Authors,
                       Citations). Leave empty for sections that sit directly under
                       the top-level group.
-                  - name: children
+                  - name: sections
                     widget: list
                     label: Sections
                     label_singular: Section
                     allow_add: true
                     summary: '{{fields.title || fields.id}}'
                     hint: >
-                      Documentation sections for this sub-group. Each section
-                      id must match a navigation href anchor (e.g.
-                      works-api-introduction, core-graph-data-model).
+                      Documentation sections for this sub-group. Saved as
+                      sections in docs.yml. Each section id must match a
+                      navigation href anchor (e.g. works-api-introduction,
+                      core-graph-data-model).
                     fields:
                       - name: id
                         widget: string
