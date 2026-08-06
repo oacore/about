@@ -77,8 +77,8 @@ jobs:
 
       - name: Sync secrets to AKS
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
-          GA_CODE: ${{ secrets.GA_CODE }} 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GA_CODE: ${{ secrets.GA_CODE }}
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           kubectl create secret generic core-frontend-about-secrets \
@@ -92,7 +92,7 @@ jobs:
         run: |
           kubectl apply -f kube/stage/service.yaml
           kubectl apply -f kube/stage/httproute.yaml
-      
+
       - name: Deploy to AKS
         run: |
           export IMAGE="${{ steps.image.outputs.ref }}"
