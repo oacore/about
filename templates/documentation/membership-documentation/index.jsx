@@ -80,6 +80,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     }
   }, [])
 
+  /* TODO unccoment */
+
   return (
     <div>
       <div className={styles.navWrapper}>
