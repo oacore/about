@@ -9,12 +9,7 @@ import DocumentationMembership from '../docsComponents/documentation-membership'
 import DocumentationMembershipNav, {
   findNavHrefById,
 } from '../docsComponents/documentation-membership-nav'
-
-const flattenDocItems = (items = []) =>
-  items
-    .flatMap((node) => [node, ...flattenDocItems(node.children ?? [])])
-    .filter(({ id }) => id)
-    .map((node) => ({ ...node, id: node.id.replace(/^#/, '') }))
+import flattenDocItems from '../docsComponents/flatten-doc-items'
 
 const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   const docItems = useMemo(() => flattenDocItems(docs?.items), [docs?.items])
