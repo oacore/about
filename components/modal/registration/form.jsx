@@ -64,14 +64,13 @@ const ModalForm = observe(() => {
   const [termsAccepted, setTermsAccepted] = useState(false)
 
   const isInstitution = registration.data.accountType === 'institution'
-  // eslint-disable-next-line max-len
   const organisationDomains = useOrganisationDomains(
     organisationName,
     isInstitution
   )
   const institutionEmailError =
     isInstitution && regEmail
-      ? validateInstitutionEmail(regEmail, organisationDomains) || ''
+      ? validateInstitutionEmail(regEmail, organisationDomains)
       : ''
   // const handleRadioSelect = (id) => {
   //   setSelectedOption(id)
@@ -95,11 +94,7 @@ const ModalForm = observe(() => {
 
     if (description.trim().length < 150) return
 
-    if (
-      isInstitution &&
-      validateInstitutionEmail(regEmail, organisationDomains)
-    )
-      return
+    if (isInstitution && institutionEmailError) return
 
     if (
       registration.data.accountType === 'personal' &&

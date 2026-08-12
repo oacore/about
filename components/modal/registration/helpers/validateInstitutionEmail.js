@@ -1,42 +1,48 @@
-const ROR_ID_PATTERN = /\((https:\/\/ror\.org\/[^)]+)\)$/
+const ROR_ID = /\((https:\/\/ror\.org\/[^)]+)\)$/
 
 export const INSTITUTION_EMAIL_ERROR =
   'The email address you provided must belong to the institution you selected. Please use an institutional email address associated with this organisation.'
 
 export const extractRorId = (organisationName) =>
-  organisationName.match(ROR_ID_PATTERN)?.[1] || null
+  organisationName.trim().match(ROR_ID)?.[1] ?? null
 
-export const getOrganisationDomains = (organisation) => {
-  if (!organisation) return []
-
-  if (organisation.domains?.length)
+const parseDomains = (organisation) => {
+  if (organisation?.domains?.length)
     return organisation.domains.map((domain) => domain.toLowerCase())
 
   return [
     ...new Set(
-      (organisation.links || [])
+      (organisation?.links ?? [])
         .filter((link) => link.type === 'website' && link.value)
-        .map((link) => {
+        .flatMap((link) => {
           try {
-            return new URL(link.value).hostname
-              .toLowerCase()
-              .replace(/^www\./, '')
+            return [
+              new URL(link.value).hostname.replace(/^www\./i, '').toLowerCase(),
+            ]
           } catch {
-            return null
+            return []
           }
         })
-        .filter(Boolean)
     ),
   ]
 }
 
+export const fetchOrganisationDomains = async (rorId) => {
+  const response = await fetch(
+    `https://api.ror.org/organizations/${encodeURIComponent(rorId)}`
+  )
+
+  if (!response.ok) throw new Error(`ROR API error: ${response.status}`)
+
+  return parseDomains(await response.json())
+}
+
 export const validateInstitutionEmail = (email, allowedDomains) => {
-  if (!allowedDomains?.length) return null
+  if (!allowedDomains.length) return ''
 
   const domain = email.trim().toLowerCase().split('@')[1]
 
-  if (!domain || !allowedDomains.includes(domain))
-    return INSTITUTION_EMAIL_ERROR
-
-  return null
+  return domain && allowedDomains.includes(domain)
+    ? ''
+    : INSTITUTION_EMAIL_ERROR
 }
