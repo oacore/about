@@ -17,8 +17,12 @@ const DropdownInput = ({
     setIsOpen(true)
   }
 
-  const handleOptionClick = (value) => {
-    bindOrganisationName.onChange({ target: { value } })
+  const handleOptionClick = (suggestion) => {
+    bindOrganisationName.onChange({
+      target: {
+        value: `${suggestion.names[0].value}  (${suggestion.id})`,
+      },
+    })
     setIsOpen(false)
   }
 
@@ -71,11 +75,7 @@ const DropdownInput = ({
               /* eslint-disable-next-line react/no-array-index-key */
               key={index}
               className={styles.dropdownOption}
-              onClick={() =>
-                handleOptionClick(
-                  `${suggestion.names[0].value}  (${suggestion.id})`
-                )
-              }
+              onClick={() => handleOptionClick(suggestion)}
             >
               {suggestion.names[0].value}
             </div>
