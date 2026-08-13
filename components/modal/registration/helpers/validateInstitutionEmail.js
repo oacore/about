@@ -1,7 +1,7 @@
 const ROR_ID = /\((https:\/\/ror\.org\/[^)]+)\)$/
 
 export const INSTITUTION_EMAIL_ERROR =
-  'The email address you provided must belong to the institution you selected. Please use an institutional email address associated with this organisation.'
+  'The email address you provided must belong to the institution you selected. Please use an institutional email address associated with this organisation. There might be legitimate reason for having a different email from your institution, if this is the case please contact us to request institutional access'
 
 export const extractRorId = (organisationName) =>
   organisationName.trim().match(ROR_ID)?.[1] ?? null

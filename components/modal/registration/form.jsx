@@ -290,7 +290,7 @@ const ModalForm = observe(() => {
             {...bindRegEmail}
           />
           {isInstitution && institutionEmailError && (
-            <div style={{ color: 'red' }}>{institutionEmailError}</div>
+            <div className={styles.emailWarning}>{institutionEmailError}</div>
           )}
           {registration.data.accountType === 'enterprise' && (
             <div className={styles.institutionSubtitle}>
