@@ -16,6 +16,26 @@
       }
     }
 
+    .emailFieldError {
+      --form-control-color: var(--danger-dark);
+      --form-label-color: var(--danger-dark);
+      --form-control-background-color: var(--danger-light-background);
+
+      input {
+        border: 1px solid var(--danger-dark);
+        color: var(--danger-dark);
+        background: var(--danger-light-background);
+
+        &:focus {
+          border: 1px solid var(--danger-dark);
+        }
+      }
+
+      label {
+        color: var(--danger-dark);
+      }
+    }
+
     textarea {
       border: 1px solid var(--gray-300);
 

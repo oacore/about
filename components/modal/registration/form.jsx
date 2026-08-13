@@ -286,6 +286,11 @@ const ModalForm = observe(() => {
             name={elemRegEmail}
             label="Email"
             placeholder="john.doe@mail.com"
+            className={
+              isInstitution && institutionEmailError
+                ? styles.emailFieldError
+                : undefined
+            }
             required
             {...bindRegEmail}
           />
