@@ -3,6 +3,11 @@ import { TextField } from '@oacore/design'
 
 import styles from './styles.module.scss'
 
+const getRorDisplayName = ({ names = [] }) =>
+  names.find(({ types }) => types?.includes('ror_display'))?.value ??
+  names[0]?.value ??
+  ''
+
 const DropdownInput = ({
   elemOrganisationName,
   bindOrganisationName,
@@ -17,8 +22,12 @@ const DropdownInput = ({
     setIsOpen(true)
   }
 
-  const handleOptionClick = (value) => {
-    bindOrganisationName.onChange({ target: { value } })
+  const handleOptionClick = (suggestion) => {
+    bindOrganisationName.onChange({
+      target: {
+        value: `${getRorDisplayName(suggestion)}  (${suggestion.id})`,
+      },
+    })
     setIsOpen(false)
   }
 
@@ -71,13 +80,9 @@ const DropdownInput = ({
               /* eslint-disable-next-line react/no-array-index-key */
               key={index}
               className={styles.dropdownOption}
-              onClick={() =>
-                handleOptionClick(
-                  `${suggestion.names[0].value}  (${suggestion.id})`
-                )
-              }
+              onClick={() => handleOptionClick(suggestion)}
             >
-              {suggestion.names[0].value}
+              {getRorDisplayName(suggestion)}
             </div>
           ))}
         </div>

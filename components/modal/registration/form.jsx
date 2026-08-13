@@ -8,10 +8,12 @@ import ProfileSelect from './profile-select'
 import CountrySelect from './country-select'
 import useSelect from '../../../hooks/use-select'
 import useInput from '../hooks/use-input'
+import useOrganisationDomains from '../hooks/use-organisation-domains'
 import Markdown from '../../markdown'
 import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
 import DropdownInput from './institution-select'
+import { validateInstitutionEmail } from './helpers/validateInstitutionEmail'
 // import CustomRadio from '../../radio-button'
 import { Checkbox } from '../../checkbox'
 
@@ -60,6 +62,16 @@ const ModalForm = observe(() => {
   const [selectedOption, setSelectedOption] = useState('')
   const [conditionsAccepted, setConditionsAccepted] = useState(false)
   const [termsAccepted, setTermsAccepted] = useState(false)
+
+  const isInstitution = registration.data.accountType === 'institution'
+  const organisationDomains = useOrganisationDomains(
+    organisationName,
+    isInstitution
+  )
+  const institutionEmailError =
+    isInstitution && regEmail
+      ? validateInstitutionEmail(regEmail, organisationDomains)
+      : ''
   // const handleRadioSelect = (id) => {
   //   setSelectedOption(id)
   // }
@@ -81,6 +93,8 @@ const ModalForm = observe(() => {
     evt.preventDefault()
 
     if (description.trim().length < 150) return
+
+    if (isInstitution && institutionEmailError) return
 
     if (
       registration.data.accountType === 'personal' &&
@@ -272,9 +286,17 @@ const ModalForm = observe(() => {
             name={elemRegEmail}
             label="Email"
             placeholder="john.doe@mail.com"
+            className={
+              isInstitution && institutionEmailError
+                ? styles.emailFieldError
+                : undefined
+            }
             required
             {...bindRegEmail}
           />
+          {isInstitution && institutionEmailError && (
+            <div className={styles.emailWarning}>{institutionEmailError}</div>
+          )}
           {registration.data.accountType === 'enterprise' && (
             <div className={styles.institutionSubtitle}>
               The supplied email address must correspond to the organization
@@ -329,10 +351,12 @@ const ModalForm = observe(() => {
             type="submit"
             variant="contained"
             disabled={
-              registration.data.accountType === 'personal' &&
-              (description.trim().length < 150 ||
-                !conditionsAccepted ||
-                !termsAccepted)
+              (registration.data.accountType === 'personal' &&
+                (description.trim().length < 150 ||
+                  !conditionsAccepted ||
+                  !termsAccepted)) ||
+              (registration.data.accountType === 'institution' &&
+                !!institutionEmailError)
             }
           >
             continue
