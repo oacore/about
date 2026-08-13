@@ -8,6 +8,10 @@ const development = {
   API_URL: 'https://api-dev.core.ac.uk/internal',
 }
 
+const staging = {
+  API_URL: 'https://api-stg.core.ac.uk/internal',
+}
+
 const production = {
   API_URL: 'https://api.core.ac.uk/internal',
 }

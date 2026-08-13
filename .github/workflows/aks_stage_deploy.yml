@@ -60,7 +60,7 @@ jobs:
             --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
-            --build-arg APP_ENV=production \
+            --build-arg APP_ENV=staging \
             --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
             --cache-from type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache \
