@@ -6,23 +6,29 @@ export const INSTITUTION_EMAIL_ERROR =
 export const extractRorId = (organisationName) =>
   organisationName.trim().match(ROR_ID)?.[1] ?? null
 
+const extractHostname = (url) => {
+  try {
+    return new URL(url).hostname.replace(/^www\./i, '').toLowerCase()
+  } catch {
+    return null
+  }
+}
+
 const parseDomains = (organisation) => {
-  if (organisation?.domains?.length)
-    return organisation.domains.map((domain) => domain.toLowerCase())
+  if (!organisation) return []
+
+  const fromDomains = (organisation.domains ?? [])
+    .map((domain) => domain?.trim().toLowerCase())
+    .filter(Boolean)
+
+  if (fromDomains.length) return fromDomains
 
   return [
     ...new Set(
-      (organisation?.links ?? [])
+      (organisation.links ?? [])
         .filter((link) => link.type === 'website' && link.value)
-        .flatMap((link) => {
-          try {
-            return [
-              new URL(link.value).hostname.replace(/^www\./i, '').toLowerCase(),
-            ]
-          } catch {
-            return []
-          }
-        })
+        .map((link) => extractHostname(link.value))
+        .filter(Boolean)
     ),
   ]
 }
