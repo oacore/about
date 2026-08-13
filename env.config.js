@@ -16,7 +16,7 @@ const production = {
   API_URL: 'https://api.core.ac.uk/internal',
 }
 
-const env = { local, development, production }
+const env = { local, development, staging, production }
 const config = {
   ...env.production,
   ...env[APP_ENV],
