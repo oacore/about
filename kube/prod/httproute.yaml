@@ -46,7 +46,7 @@ spec:
       filters:
         - type: URLRewrite
           urlRewrite:
-            hostname: fileserver-az.core.ac.uk/download
+            hostname: fileserver-az.core.ac.uk
       backendRefs:
         - name: azure-func-backend
           port: 443
@@ -68,7 +68,7 @@ metadata:
   namespace: core-frontend
 spec:
   type: ExternalName
-  externalName: fileserver-az.core.ac.uk/download
+  externalName: fileserver-az.core.ac.uk
   ports:
     - port: 443
 ---
@@ -83,5 +83,5 @@ spec:
       kind: Service
       name: azure-func-backend
   validation:
-    hostname: fileserver-az.core.ac.uk/download
+    hostname: fileserver-az.core.ac.uk
     wellKnownCACertificates: System
