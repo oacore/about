@@ -8,11 +8,15 @@ const development = {
   API_URL: 'https://api-dev.core.ac.uk/internal',
 }
 
+const staging = {
+  API_URL: 'https://api-stg.core.ac.uk/internal',
+}
+
 const production = {
   API_URL: 'https://api.core.ac.uk/internal',
 }
 
-const env = { local, development, production }
+const env = { local, development, staging, production }
 const config = {
   ...env.production,
   ...env[APP_ENV],

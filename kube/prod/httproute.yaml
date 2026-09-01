@@ -1,3 +1,28 @@
+# apiVersion: gateway.networking.k8s.io/v1
+# kind: HTTPRoute
+# metadata:
+#   name: core-frontend-about
+#   namespace: core-frontend
+# spec:
+#   parentRefs:
+#     - name: public-gateway
+#       namespace: gateway-system
+#   hostnames:
+#     - core.preferans.uk
+#     - core.ac.uk
+#   rules:
+#     - matches:
+#         - path:
+#             type: PathPrefix
+#             value: /
+#       timeouts:
+#         request: 30s
+#         backendRequest: 15s
+#       backendRefs:
+#         - name: core-frontend-about
+#           port: 80
+
+
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
@@ -14,6 +39,20 @@ spec:
     - matches:
         - path:
             type: PathPrefix
+            value: /download
+      timeouts:
+        request: 30s
+        backendRequest: 30s
+      filters:
+        - type: URLRewrite
+          urlRewrite:
+            hostname: fileserver-az.core.ac.uk
+      backendRefs:
+        - name: azure-func-backend
+          port: 443
+    - matches:
+        - path:
+            type: PathPrefix
             value: /
       timeouts:
         request: 30s
@@ -21,3 +60,28 @@ spec:
       backendRefs:
         - name: core-frontend-about
           port: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-func-backend
+  namespace: core-frontend
+spec:
+  type: ExternalName
+  externalName: fileserver-az.core.ac.uk
+  ports:
+    - port: 443
+---
+apiVersion: gateway.networking.k8s.io/v1alpha3
+kind: BackendTLSPolicy
+metadata:
+  name: azure-func-tls
+  namespace: core-frontend
+spec:
+  targetRefs:
+    - group: ""
+      kind: Service
+      name: azure-func-backend
+  validation:
+    hostname: fileserver-az.core.ac.uk
+    wellKnownCACertificates: System
