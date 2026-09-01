@@ -44,7 +44,14 @@ const loadTurnstileScript = () => {
   return scriptPromise
 }
 
-const Turnstile = ({ onSuccess, onExpire, onError, className, theme }) => {
+const Turnstile = ({
+  onSuccess,
+  onExpire,
+  onError,
+  className,
+  theme,
+  action,
+}) => {
   const containerRef = useRef(null)
   const widgetIdRef = useRef(null)
   const onSuccessRef = useRef(onSuccess)
@@ -62,7 +69,7 @@ const Turnstile = ({ onSuccess, onExpire, onError, className, theme }) => {
       if (cancelled || !containerRef.current || !window.turnstile) return
       if (widgetIdRef.current != null) return
 
-      widgetIdRef.current = window.turnstile.render(containerRef.current, {
+      const options = {
         'sitekey': SITE_KEY,
         'theme': theme || 'light',
         'callback': (token) => {
@@ -74,7 +81,13 @@ const Turnstile = ({ onSuccess, onExpire, onError, className, theme }) => {
         'error-callback': () => {
           if (onErrorRef.current) onErrorRef.current()
         },
-      })
+      }
+      if (action) options.action = action
+
+      widgetIdRef.current = window.turnstile.render(
+        containerRef.current,
+        options
+      )
     }
 
     loadTurnstileScript()
@@ -91,7 +104,7 @@ const Turnstile = ({ onSuccess, onExpire, onError, className, theme }) => {
         widgetIdRef.current = null
       }
     }
-  }, [theme])
+  }, [theme, action])
 
   return <div ref={containerRef} className={className} />
 }

@@ -87,6 +87,11 @@ class Registration {
   }
 
   async registerSubmit() {
+    if (!this.data.turnstileToken) {
+      this.setIsModalErrorActive(true)
+      return
+    }
+
     this.setIsLoading(true)
     try {
       const response = await registerKey(this.data)

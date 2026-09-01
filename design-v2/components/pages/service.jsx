@@ -17,7 +17,6 @@ import { patchStats } from 'components/utils'
 import Collapsed from 'components/collapsed'
 import RegistrationModals from 'components/modal/registration'
 import Page from 'components/page'
-import Turnstile from 'components/turnstile'
 import { useInput } from 'hooks'
 // TODO
 // import { Accordion, Content } from 'components'
@@ -129,14 +128,12 @@ const ServicePage = observe(
       element: elemEmail,
       bind: bindEmail,
     } = useInput('', 'email')
-    const [turnstileToken, setTurnstileToken] = useState('')
 
     const router = useRouter()
     const productType = router?.route?.match(/(?:dataset|api)/s)?.join('')
     const onHandleSubmit = (e) => {
       e.preventDefault()
-      if (!turnstileToken) return
-      registration.setData({ productType, email, turnstileToken })
+      registration.setData({ productType, email })
       registration.setIsModalFormActive(true)
     }
 
@@ -512,17 +509,10 @@ const ServicePage = observe(
                     className={styles.textfield}
                     {...bindEmail}
                   />
-                  <Turnstile
-                    className={styles.turnstile}
-                    onSuccess={setTurnstileToken}
-                    onExpire={() => setTurnstileToken('')}
-                    onError={() => setTurnstileToken('')}
-                  />
                   <Button
                     type="submit"
                     variant="contained"
                     className={styles.button}
-                    disabled={!turnstileToken}
                   >
                     {register.form.action}
                   </Button>
