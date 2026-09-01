@@ -18,6 +18,7 @@ class Registration {
     dateRequest: '',
     termsId: '',
     agreedToNewTerms: false,
+    turnstileToken: '',
   }
 
   isModalFormActive = false
@@ -116,6 +117,7 @@ class Registration {
       dateRequest: '',
       termsId: '',
       agreedToNewTerms: false,
+      turnstileToken: '',
     }
     this.isModalFormActive = false
     this.isModalConditionsActive = false
