@@ -874,6 +874,11 @@ organizations:
   name: Open University
   logo: open-university.png
   testimonial: *kathleen-shearer
+- &tu_delft
+  id: tu_delft
+  name: TU Delft
+  logo: tu_delft.png
+  full: true
 # recom-used-in:
 - &clok
   name: CLoK
@@ -1162,6 +1167,7 @@ sections:
         - *brunel
         - *laref
         - *lbu
+        - *tu_delft
     testimonials:
       title: What institutions say about us
       items:
