@@ -20,6 +20,7 @@ const env = { local, development, staging, production }
 const config = {
   ...env.production,
   ...env[APP_ENV],
+  TURNSTILE_SITE_KEY: '0x4AAAAAAEj6LygmXhYG-SkW',
 }
 
 module.exports = config
