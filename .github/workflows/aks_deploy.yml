@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+#        with:
+#          ref: main
 
       - name: Azure Login
         uses: azure/login@v2
@@ -73,8 +75,8 @@ jobs:
 
       - name: Sync secrets to AKS
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }} 
-          GA_CODE: ${{ secrets.GA_CODE }} 
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GA_CODE: ${{ secrets.GA_CODE }}
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           kubectl create secret generic core-frontend-about-secrets \
