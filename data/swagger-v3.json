@@ -1,0 +1,2114 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CORE API",
+    "description": "\n# Welcome!\nYou can use the CORE API to access the resources harvested and enriched by CORE. If you encounter any problems with the API, please <a href='https://core.ac.uk/contact'>report them to us</a>.\n### How to cite the CORE API in your work\n<blockquote> <b><a style='color:black; text-decoration:underline;' href='https://www.nature.com/articles/s41597-023-02208-w'>CORE: A Global Aggregation Service for Open Access Papers</a></b> <br/> <i> Knoth, P., Herrmannova, D., Cancellieri, M. et al. CORE: A Global Aggregation Service for Open Access Papers. Nature Scientific Data 10, 366 (2023). https://doi.org/10.1038/s41597-023-02208-w</i> </blockquote>\n<blockquote> <b><a style='color:black; text-decoration:underline;' href='http://oro.open.ac.uk/35755/'>CORE: three access levels to underpin open access</a></b> <br/> <i> Knoth, P., & Zdrahal, Z. (2012). CORE: three access levels to underpin open access. D-Lib Magazine, 18(11/12). Retrieved from http://oro.open.ac.uk/35755/</i> </blockquote>\n<button style='padding:.5rem; border:3px solid #b75400;background-color:transparent;'> <a href='https://core.ac.uk/about/research-outputs'>  SEE MORE </a> </button>\n\n\n<a id='quick_start'></a>\n# Quick start examples\nYou can look at a webinar describing all the APIv3 features with a live example   <a href='https://blog.core.ac.uk/2022/01/19/access-the-worlds-research-outputs-through-the-core-api/'>on our blog.</a> The following is a list of links to simple examples on how to use the features of the CORE API.  This list is constantly evolving. If you would like to contribute or suggest any change,<a href='https://core.ac.uk/contact'>contact us</a>. <ul> <li><a href='https://github.com/oacore/apiv3-webinar'> Did research stop during COVID?</a> The Notebook, also used throughout the webinar showcases most of the features of the API and  how to use them to generate meaningful visualisations. </li> <li><a href='https://colab.research.google.com/drive/1_bjqDQhqj7AnSfoCAXDCMOnGZLPQWKfu?usp=sharing'>Download all the identifiers from a Data Provider</a> Python notebook using the scan and scroll search to generate a dataset containing all the identifiers for the records of a data provider.</li> <li><a href='https://colab.research.google.com/drive/10dmk7D9oA8xDQrNyh2o91eUu60a-Q7LW?usp=sharing'>Compare Journals and Data Providers</a> Python notebook that downloads a list of Journals and compare them with the list of Data Providers in CORE.</li> </ul> ",
+    "termsOfService": "https://core.ac.uk/terms",
+    "contact": {
+      "name": "CORE API support",
+      "url": "https://core.ac.uk/contact",
+      "email": "theteam@core.ac.uk"
+    },
+    "license": {
+      "name": "CORE terms",
+      "url": "https://core.ac.uk/terms"
+    },
+    "version": "3.0.0"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Live server."
+    }
+  ],
+  "paths": {
+    "/v3/data-providers/{identifier}": {
+      "get": {
+        "tags": ["Data Providers"],
+        "summary": "Get a single data provider",
+        "description": "Get a single data provider of CORE using the data provider id. [Here](https://core.ac.uk/data-providers) \n        you can see our data providers. If you add the prefix `opendoar`. You can also fetch data providers using the OpenDOARId. \n        The API endpoint retrieves detailed metadata for a single data provider in CORE. <br/><br/>\n        <b>API Endpoint</b><br/>\n        <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/data-providers/{identifier}</code></pre>\n        where the <b>{identifier}</b> represents the data-provider id.<br/><br/>\n        Example GET request - <span class='link'>https://api.core.ac.uk/v3/data-providers/92</span><br/>\n        Example GET request By OpenDOAR ID - <span class='link'>https://api.core.ac.uk/v3/data-providers/opendoar:1334</span>",
+        "operationId": "get_dataproviders_by_identifier",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "`<DataProviderID>` or `opendoar:<OpenDOARId>`",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataProvider"
+                },
+                "example": {
+                  "id": 86,
+                  "openDoarId": 300,
+                  "name": "Open Research Online",
+                  "email": "library-research-support@open.ac.uk",
+                  "uri": null,
+                  "oaiPmhUrl": "https://oro.open.ac.uk/cgi/oai2",
+                  "homepageUrl": "https://oro.open.ac.uk",
+                  "source": null,
+                  "software": "eprints",
+                  "metadataFormat": "rioxx",
+                  "createdDate": "2011-05-06T10:11:21+00:00",
+                  "location": {
+                    "countryCode": "gb",
+                    "latitude": 52.0333,
+                    "longitude": -0.7
+                  },
+                  "logo": "https://localhost:8000/data-providers/86/logo",
+                  "type": "REPOSITORY",
+                  "stats": null,
+                  "rorId": "https://ror.org/05mzfcs16",
+                  "institutionName": "The Open University",
+                  "aliases": ["cy: Y Brifysgol Agored", "OU"],
+                  "otherIdentifiers": {
+                    "GRID": {
+                      "preferred": "grid.10837.3d",
+                      "all": "grid.10837.3d"
+                    },
+                    "ISNI": {
+                      "all": "0000 0000 9606 9301"
+                    },
+                    "FundRef": {
+                      "preferred": 100008509,
+                      "all": "100008509;501100006627;501100000605"
+                    },
+                    "Wikidata": {
+                      "all": "Q2413375"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any data provider in CORE."
+          }
+        }
+      }
+    },
+    "/v3/data-providers/{identifier}/stats": {
+      "get": {
+        "tags": ["Data Providers"],
+        "summary": "Get statistics about a data provider",
+        "description": "Get the aggregated data behind a Data Provider.<br/><br/>\n                    <b>API Endpoint</b><br/>\n                    <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/data-providers/{identifier}/stats</code></pre>\n                    where the <b>{identifier}</b> represents the data-provider id. The statistics reflect the overall volume \n                    and status of content contributed by the data provider.<br/><br/>\n                    Example Request - <span class='link'>https://api.core.ac.uk/v3/data-providers/122/stats</span>\n\n",
+        "operationId": "get_dataprovidersby_identifier_stats",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Data Provider ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns the rewards of an user",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataProviderStats"
+                },
+                "example": {
+                  "id": 86,
+                  "countMetadata": 47000,
+                  "countFulltext": 16795,
+                  "history": null
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any output in CORE."
+          }
+        }
+      },
+      "post": {
+        "tags": ["Data Providers"],
+        "summary": "Statistics with options. OpenDOAR",
+        "description": "Get the aggregated data behind a Data Provider and his history",
+        "operationId": "post_dataprovidersby_identifier_stats_history",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Data Provider ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DataProvidersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataProviderStats"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any output in CORE."
+          }
+        }
+      }
+    },
+    "/v3/data-providers/{identifier}/outputs": {
+      "get": {
+        "tags": ["Data Providers"],
+        "summary": "Search outputs",
+        "description": "Search through the outputs harvested from this data provider. \n        The simple search is great for most of the queries but is limited to 10,000 items. \n        See the section [Querying large datasets](#query_large) to overcome this limit.",
+        "operationId": "get_dataprovidersoutputs_search_get",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Data Provider ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "The query see the [Query section](#query_language) on how to build a search query.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": ""
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The starting point in your search.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "default": "0"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The way you want to sort the results. Recommended values are 'recency' and 'relevance'",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "default": "relevance"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The size of your search, maximum size is 100 outputs per request.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "default": "10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contains the outputs from the data provider matching the search query.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                },
+                "example": {
+                  "totalHits": 10733,
+                  "limit": 1,
+                  "offset": 0,
+                  "results": [],
+                  "tooks": null,
+                  "esTook": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/discover": {
+      "post": {
+        "tags": ["Discovery"],
+        "summary": "Discover full texts links.",
+        "description": "This endpoint allows you to find links to full texts based on a DOI. \n        The system will search through the CORE data and other external sources to provide you the best match.",
+        "operationId": "post_discovery",
+        "requestBody": {
+          "description": "Discovery parameters",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DiscoveryParameters"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DiscoveryResponse"
+                },
+                "example": {
+                  "fullTextLink": "...",
+                  "source": "..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/labs/expert-finder": {
+      "post": {
+        "tags": ["Expert Finder"],
+        "summary": "Expert finder",
+        "description": "Expert finder",
+        "operationId": "post_expert_finder_post",
+        "requestBody": {
+          "description": "Recommendation parameters.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommenderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "404": {
+            "description": "The parameters don't match any Expert finder."
+          }
+        }
+      }
+    },
+    "/v3/journals/{identifier}/stats": {
+      "get": {
+        "tags": ["Journals"],
+        "summary": "Statistics",
+        "description": "Get the aggregated data for the corresponding Journal. This data matches the data coming from the associated Data Provider.",
+        "operationId": "get_journalsjournals_by_identifier_stats",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Journal ID use `issn:` for ISSNs.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "[A-Za-z]+:.+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JournalStats"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any Journal in CORE."
+          }
+        }
+      }
+    },
+    "/v3/journals/{identifier}": {
+      "get": {
+        "tags": ["Journals"],
+        "summary": "Get the Journal by identifier",
+        "description": "Get a single journal based on its identifier in CORE. You can use the prefix `issn:` to search by ISSN. \n     CORE journal data comes from multiple sources including members of the Directory of Open Access Journals (DOAJ) \n     and Open Journal System repositories. We also aggregate open access content directly from publishers via our own custom solutions.",
+        "operationId": "get_journalsjournals_by_identifier",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Journal id in CORE. Use `issn:ISSN` to search by ISSN instead of the CORE identifier.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "[A-Za-z]+:.+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Journal"
+                },
+                "example": {
+                  "identifiers": [
+                    "oai:doaj.org/journal:fc6f85dc44ed458b983814eb3628da53",
+                    "issn:1179-1497",
+                    "url:http://doaj.org/toc/fc6f85dc44ed458b983814eb3628da53"
+                  ],
+                  "language": "English",
+                  "publisher": "Dove Medical Press",
+                  "subjects": [
+                    "neuropsychiatry",
+                    "behavioral complications",
+                    "HIV research",
+                    "AIDS research",
+                    "pathology",
+                    "LCC:Neurosciences. Biological psychiatry. Neuropsychiatry",
+                    "LCC:RC321-571",
+                    "LCC:Internal medicine",
+                    "LCC:RC31-1245",
+                    "LCC:Medicine",
+                    "LCC:R"
+                  ],
+                  "dataProviderId": "645",
+                  "title": "Neurobehavioral HIV Medicine"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any Journal in CORE."
+          }
+        }
+      }
+    },
+    "/v3/outputs/{identifier}": {
+      "get": {
+        "tags": ["Outputs"],
+        "summary": "Get a single Output",
+        "description": "The API endpoint retrieves a single Output from the CORE database using its unique identifier.<br/><br/>\n            <b>API Endpoint</b><br/>\n            <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/outputs/{identifier}</code></pre>\n            where <b>{identifier}</b> corresponds to the CORE ID of the output.<br/><br/>\n            Example GET Request - <span class='link'>https://api.core.ac.uk/v3/outputs/80549003</span>\n            ",
+        "operationId": "get_outputs_by_identifier",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The CORE ID of the output.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Output"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any output in CORE."
+          }
+        }
+      }
+    },
+    "/v3/outputs/{identifier}/stats": {
+      "get": {
+        "tags": ["Outputs"],
+        "summary": "Get statistics about an output",
+        "description": "This API endpoint retrieves statistical and date-related metadata associated with a specific output. \n        It includes information such as the published date, deposited date, updated date, accepted date and created date.<br/><br/>\n        <b>API Endpoint</b><br/>\n        <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/outputs/{identifier}/stats</code></pre>\n            where <b>{identifier}</b> is the CORE ID of the output.<br/><br/>\n            Example GET Request - <span class='link'>https://api.core.ac.uk/v3/outputs/80549003/stats</span>",
+        "operationId": "get_outputsoutputs_by_identifier_stats",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The CORE ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The dates and all the numbers that CORE has about this output.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OutputStats"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any output in CORE."
+          }
+        }
+      }
+    },
+    "/v3/outputs/{identifier}/download": {
+      "get": {
+        "tags": ["Outputs"],
+        "summary": "Download output file",
+        "description": "The API endpoint allows you to download the binary file (e.g., PDF) associated with a specific output in the CORE repository.<br/><br/>\n            <b>API Endpoint</b><br/>\n            <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/outputs/{identifier}/download</code></pre>\n            where <b>{identifier}</b> is the CORE ID of the output.<br/><br/>\n            Example GET Request - <span class='link'>https://api.core.ac.uk/v3/outputs/80549003/download</span><br/>\n            More details regarding the PDF download policy is available <a href='#operation/PDFDownloadPolicy'>here</a>",
+        "operationId": "get_outputsoutputs_entities_download",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "path",
+            "description": "The format of the download. Currently only PDF is supported.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["tei", "pdf", "txt", "raw"]
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A PDF file.",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "example": "...%PDF%..."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/outputs/{identifier}/raw": {
+      "get": {
+        "tags": ["Outputs"],
+        "summary": "Download raw XML record for an output",
+        "description": "The API endpoint retrieves the raw XML metadata record associated with a specific output.<br/><br/>\n            <b>API Endpoint</b><br/>\n            <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/outputs/{identifier}/raw</code></pre>\n            where <b>{identifier}</b> is the CORE ID of the output.<br/><br/>\n            Example GET Request - <span class='link'>https://api.core.ac.uk/v3/outputs/80549003/raw</span>",
+        "operationId": "get_outputsoutputs_entities_download_raw",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A XML file.",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "example": "...<records>..."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/outputs/{identifier}/history": {
+      "get": {
+        "tags": ["Outputs"],
+        "summary": "Historical data for an output",
+        "description": "The API endpoint retrieves the historical OAI-PMH XML records for a specific output. \n                    This includes all available versions of the metadata for that output since the beginning of CORE harvesting.<br/><br/>\n                    <b>API Endpoint</b><br/>\n                    <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/outputs/{identifier}/history</code></pre>\n                    where <b>{identifier}</b> is the CORE ID of the output.<br/><br/>\n                    Example GET Request - <span class='link'>https://api.core.ac.uk/v3/outputs/80549003/history</span>",
+        "operationId": "get_outputsoutputs_entities_download_history",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A map with data and xml record.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Output"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any output in CORE."
+          }
+        }
+      }
+    },
+    "/v3/recommend": {
+      "post": {
+        "tags": ["Recommender"],
+        "summary": "Recommend.",
+        "description": "Recommends records in the CORE collection related to the input. \n        You can request recommendations for a specific CORE record using the `core:` \n        prefix or by passing any identifier. You can also request recommendations based on a more generic text entry. \n        The more information you send to the recommender engine the more accurate the recommendation will be.",
+        "operationId": "post_recommender",
+        "requestBody": {
+          "description": "Recommendation parameters.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecommenderRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Output"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "example": "Service unavailable..."
+                      }
+                    },
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/search/{entityType}/": {
+      "get": {
+        "tags": ["Search"],
+        "summary": "Search through all CORE entities",
+        "description": "The CORE API search allows you to perform comprehensive searches across multiple entities, \n            including <b>works</b>, <b>outputs</b>, <b>data-providers</b>, and <b>journals</b>.",
+        "operationId": "get_globalall_entities_search",
+        "parameters": [
+          {
+            "name": "entityType",
+            "in": "path",
+            "description": "Type of the entity",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["works", "outputs", "data-providers", "journals"]
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Search query (use specific fields like doi, title, authors, etc.)",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "The offset from the result set where you want the result to start. Needed for pagination.",
+            "schema": {
+              "type": "integer",
+              "default": 0
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "The maximum size of your search results. The result set may be smaller than the limit.",
+            "schema": {
+              "type": "integer",
+              "default": 10
+            }
+          },
+          {
+            "name": "stats",
+            "in": "query",
+            "description": "If set to true the search results will include statistics related to the entity. This property has an impact on the response speed.",
+            "schema": {
+              "type": "bool",
+              "default": false
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contains the entities matching the search query.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/search/{entityType}": {
+      "post": {
+        "tags": ["Search"],
+        "summary": "Search through all CORE entities using HTTP Post",
+        "description": "The CORE API also supports searching entities using POST requests, which allows complex queries to be \n        passed in the JSON request body. This is functionally equivalent to using the GET search endpoint but is especially \n        useful for more advanced use cases, such as:<ul><li>Long or complex query strings that exceed URL length limits</li>\n        <li>Automated systems and UI integrations that build dynamic queries</li>\n        <li>Filtering with precise, structured JSON payloads</li>\n        </ul><b>API Endpoint</b>\n        <pre class='preCode'>\n<code class='codePython'>POST https://api.core.ac.uk/v3/search/<b>{entityType}</b></code>\n</pre>Replace <b>{entityType}</b> with one of the supported entities.<br/>",
+        "operationId": "post_globalall_entities_search_post",
+        "parameters": [
+          {
+            "name": "entityType",
+            "in": "path",
+            "description": "Type of the entity",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["works", "outputs", "data-providers", "journals"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search parameters in JSON format.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": ["q"],
+                "properties": {
+                  "q": {
+                    "description": "Search query (use specific fields like doi, title, authors, etc.)",
+                    "type": "string",
+                    "example": "machine learning"
+                  },
+                  "offset": {
+                    "description": "Offset for pagination.",
+                    "type": "integer",
+                    "default": 0,
+                    "example": 0
+                  },
+                  "limit": {
+                    "description": "Maximum number of results to return.",
+                    "type": "integer",
+                    "default": 10,
+                    "example": 10
+                  },
+                  "stats": {
+                    "description": "Include search statistics (can slow down the response).",
+                    "type": "boolean",
+                    "default": false,
+                    "example": false
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contains the entities matching the search query.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/search/{entityType}/aggregate": {
+      "post": {
+        "tags": ["Search"],
+        "summary": "Aggregate CORE entities based on a search query",
+        "description": "The CORE API provides an aggregation feature to summarise and group search results based on specific fields. \n        Aggregation queries differ from normal search queries as they provide summarised counts instead of detailed \n        individual document records. To get the details of records, please check the CORE API Query Language page.<br/>\n        <b>Aggregation Endpoint Structure</b>\n<pre class='preCode'>\n<code class='codePython'>POST   https://api.core.ac.uk/v3/search/<b>{entityType}</b>/aggregate</code>\n</pre>Replace <b>{entityType}</b> with one of the supported entities.<br/>",
+        "operationId": "post_globalall_entities_search_aggregate",
+        "parameters": [
+          {
+            "name": "entityType",
+            "in": "path",
+            "description": "Type of the entity",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["works", "outputs", "data-providers", "journals"]
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Search parameters in JSON format.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchParameters"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Contains the entities matching the search query.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/works/{identifier}/outputs": {
+      "get": {
+        "tags": ["Works"],
+        "summary": "Get outputs related to Work",
+        "description": "The API endpoint retrieves the list of Outputs associated with a specific Work. Each output represents \n        an individual version or source-specific instance of the Work, typically harvested from repositories, \n        journals, or other data providers. <br/><br/>\n        <b>API Endpoint</b><br/>\n        <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/works/{identifier}/outputs</code></pre>\n        where the <b>{identifier}</b> corresponds to the work ID.<br/><br/>\n        Example GET request - <span class='link'>https://api.core.ac.uk/v3/works/58/outputs</span><br/>\n        Sample source code for retrieving outputs related to a specific work is as follows: \n        <pre class='preCode'><code class='codePython'>def get_outputs_by_work_id(work_id: str):\n    url = f\"https://api.core.ac.uk/v3/works/{work_id}/outputs\"\n    headers = {\"Authorization\": f\"Bearer {apikey}\"}\n    params = {\"limit\": 10, \"offset\": 0}\n    try:\n        response = requests.get(url, headers=headers, params=params)\n        if response.status_code == 200:\n            return response.json()\n        else:\n            print(f\"Error {response.status_code}: {response.text}\")\n            return None\n    except requests.exceptions.RequestException as e:\n        print(f\"Request failed: {e}\")\n        return None\n</code></pre>",
+        "operationId": "get_worksworks_by_identifier_outputs",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Work ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "(\\d+|\\w+:\\d+|\\w+:\\d+.\\d+|\\w+:[a-z0-9.]+:\\d+|\\d+.\\d+\\/\\d+)"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Output"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any work in CORE."
+          }
+        }
+      }
+    },
+    "/v3/works/{identifier}/stats": {
+      "get": {
+        "tags": ["Works"],
+        "summary": "Get statistics about Work",
+        "description": "The API endpoint retrieves key lifecycle dates for a specific Work, such as when it was deposited, accepted, published, and last updated.<br/><br/>\n<b>API Endpoint</b><br/>\n        <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/works/{identifier}/stats</code></pre>\n        where the <b>{identifier}</b> corresponds to the work ID.<br/><br/>\n        Example Request - <span class='link'>https://api.core.ac.uk/v3/works/267312/stats</span>",
+        "operationId": "get_worksworks_by_identifier_stats",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Work ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "(\\d+|\\w+:\\d+|\\w+:\\d+.\\d+|\\w+:[a-z0-9.]+:\\d+|\\d+.\\d+\\/.*)"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WorkStats"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any Work in CORE."
+          }
+        }
+      }
+    },
+    "/v3/works/tei/{identifier}": {
+      "get": {
+        "tags": ["Works"],
+        "summary": "Download the parsed Work - TEI file",
+        "description": "Download the structured data for the pdf file associated with the work.<br/><br/>\n        <b>API Endpoint</b><br/>\n        <pre class='preCode'><code class='codePython'>https://api.core.ac.uk/v3/works/tei/{identifier}</code></pre>\n        where the <b>{identifier}</b> corresponds to the work ID.<br/><br/>\n        Example Request -  <span class='link'>https://api.core.ac.uk/v3/works/tei/127610059</span> will download the work with ID 127610059.",
+        "operationId": "get_worksworks_entities_download_tei",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "(\\d+|\\w+:\\d+|\\w+:\\d+.\\d+|\\w+:[a-z0-9.]+:\\d+|\\d+.\\d+\\/.*)"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The file to download.",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "example": "...<tei>..."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/works/{identifier}/download": {
+      "get": {
+        "tags": ["Works"],
+        "summary": "Download the Work file",
+        "description": "Download the binary file associated with the work.<br/><br/>\n                <b>API Endpoint</b><br/>\n                <pre class='preCode'><code class='codePython'>https://api.core.ac.uk/v3/works/{identifier}/download</code></pre>\n                where the <b>{identifier}</b> corresponds to the work ID.<br/><br/>\n                Example Request -  <span class='link'>https://api.core.ac.uk/v3/works/127610059/download</span> will download the work with ID 127610059 as a TEI file.",
+        "operationId": "get_worksworks_entities_download",
+        "parameters": [
+          {
+            "name": "accept",
+            "in": "header",
+            "description": "Possible format it will go in the accept header, if empty will return the PDF file.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["application/pdf", "application/msword"]
+            }
+          },
+          {
+            "name": "format",
+            "in": "path",
+            "description": "The format of the download. Currently only PDF is supported.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["tei", "pdf", "txt", "raw"]
+            }
+          },
+          {
+            "name": "identifier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The file to download.",
+            "content": {
+              "application/pdf": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                },
+                "example": "...%PDF%..."
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v3/works/{identifier}": {
+      "get": {
+        "tags": ["Works"],
+        "summary": "Get single Work",
+        "description": "The API endpoint retrieves a single Work from the CORE database using its unique identifier.<br/><br/>\n        <b>API Endpoint</b><br/>\n        <pre class='preCode'><code class='codePython'>GET https://api.core.ac.uk/v3/works/{identifier}</code></pre>\n        where the <b>{identifier}</b> corresponds to the work ID.<br/><br/>\n        Example GET request - <span class='link'>https://api.core.ac.uk/v3/works/267312</span>\n        ",
+        "operationId": "get_worksworks_by_identifier",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The Work ID",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "(\\d+|\\w+:\\d+|\\w+:\\d+.\\d+|\\w+:[a-z0-9.]+:\\d+|\\d+.\\d+\\/.*)"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Work"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The identifier doesn't match any work in CORE."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "DataProvider": {
+        "required": [
+          "id",
+          "open_doar_id",
+          "ror_id",
+          "name",
+          "institution_name",
+          "aliases",
+          "other_identifiers",
+          "email",
+          "uri",
+          "oai_pmh_url",
+          "homepage_url",
+          "source",
+          "software",
+          "metadata_format",
+          "type",
+          "created_date",
+          "location",
+          "logo",
+          "stats"
+        ],
+        "properties": {
+          "id": {
+            "description": "Data provider ID in CORE",
+            "type": "integer"
+          },
+          "open_doar_id": {
+            "description": "Data provider ID in OpenDOAR",
+            "type": "integer"
+          },
+          "ror_id": {
+            "description": "Institution ID in ROR",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the data provider, usually coming from the OAI-PMH Identify verb.",
+            "type": "string"
+          },
+          "institution_name": {
+            "description": "Name of the organisation running the data provider, usually coming from the ROR data.",
+            "type": "string"
+          },
+          "aliases": {
+            "description": "Name of the organisation running the data provider, usually coming from the ROR data.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "other_identifiers": {
+            "description": "Name of the organisation running the data provider, usually coming from the ROR data.",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "email": {
+            "description": "Email of the data provider.",
+            "type": "string"
+          },
+          "uri": {
+            "description": "Base URL of the data provider, usually coming from the OAI-PMH Identify verb.",
+            "type": "string"
+          },
+          "oai_pmh_url": {
+            "description": "URL for the OAI-PMH endpoint",
+            "type": "string"
+          },
+          "homepage_url": {
+            "description": "Homepage for the data provider.",
+            "type": "string"
+          },
+          "source": {
+            "description": "Source protocol for the data provider.",
+            "type": "string"
+          },
+          "software": {
+            "description": "Software type of the data provider. Most common software types are DSpace and EPrints",
+            "type": "string"
+          },
+          "metadata_format": {
+            "description": "Format of the metadata hosted. Most common is oai_dc and RIOXX.",
+            "type": "string"
+          },
+          "type": {
+            "description": "Flag to identify the data provider's type, JOURNAL|CUSTOM|REPOSITORY",
+            "type": "string"
+          },
+          "created_date": {
+            "description": "Date of creation of the data provider in CORE.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "location": {
+            "$ref": "#/components/schemas/DataProviderLocation"
+          },
+          "logo": {
+            "description": "The base64 of the data provider logo.",
+            "type": "string"
+          },
+          "stats": {
+            "$ref": "#/components/schemas/DataProviderStats"
+          }
+        },
+        "type": "object"
+      },
+      "DataProviderStats": {
+        "required": [
+          "id",
+          "count_metadata",
+          "count_fulltext",
+          "history",
+          "source_stats",
+          "last_seen",
+          "set"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "count_metadata": {
+            "description": "Number of metadata records",
+            "type": "string"
+          },
+          "count_fulltext": {
+            "description": "Number of records for which CORE has a fulltext.",
+            "type": "string"
+          },
+          "history": {
+            "description": "Historical data of harvest for the data provider.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "source_stats": {
+            "description": "Source statistic",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "last_seen": {
+            "description": "Harvest times statistic",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "set": {
+            "description": "Harvest set",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "type": "object"
+      },
+      "DataProvidersRequest": {
+        "required": [
+          "identifier",
+          "deposit_history",
+          "raw_stats",
+          "set",
+          "refresh"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer"
+          },
+          "deposit_history": {
+            "type": "boolean"
+          },
+          "raw_stats": {
+            "type": "boolean"
+          },
+          "set": {
+            "type": "string"
+          },
+          "refresh": {
+            "type": "boolean"
+          }
+        },
+        "type": "object"
+      },
+      "SearchResponse": {
+        "title": "Search Response",
+        "description": "Response wrapper for search",
+        "required": ["total_hits", "limit", "offset", "results", "search_id"],
+        "properties": {
+          "total_hits": {
+            "description": "Total hit matching the search query.",
+            "type": "integer"
+          },
+          "limit": {
+            "description": "Size of the response, coming from the search parameters.",
+            "type": "integer"
+          },
+          "offset": {
+            "description": "Offset of the response, coming from the search parameters.",
+            "type": "integer"
+          },
+          "results": {
+            "description": "Search results",
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "tooks": {
+            "description": "List of times needed for debugging",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "default": []
+          },
+          "search_id": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "DiscoveryParameters": {
+        "required": [
+          "doi",
+          "title",
+          "year",
+          "eprints_id",
+          "plugin_id",
+          "referrer"
+        ],
+        "properties": {
+          "doi": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "year": {
+            "type": "integer"
+          },
+          "eprints_id": {
+            "type": "string"
+          },
+          "plugin_id": {
+            "type": "string"
+          },
+          "referrer": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "DiscoveryResponse": {
+        "required": ["full_text_link", "source"],
+        "properties": {
+          "full_text_link": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "RecommenderRequest": {
+        "required": [
+          "text",
+          "limit",
+          "identifier",
+          "abstract",
+          "authors",
+          "title",
+          "result_type"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "string"
+          },
+          "identifier": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "title": {
+            "type": "string"
+          },
+          "result_type": {
+            "type": "string"
+          },
+          "data_provider_id": {
+            "type": "integer",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "JournalStats": {
+        "required": [
+          "identifier",
+          "count_metadata",
+          "count_fulltext",
+          "doi_count"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer"
+          },
+          "count_metadata": {
+            "description": "Number of metadata records available in CORE",
+            "type": "string"
+          },
+          "count_fulltext": {
+            "description": "Number of records for which CORE has a fulltext for the journal.",
+            "type": "string"
+          },
+          "doi_count": {
+            "description": "",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Journal": {
+        "required": [
+          "identifiers",
+          "language",
+          "publisher",
+          "subjects",
+          "data_provider_id",
+          "title"
+        ],
+        "properties": {
+          "identifiers": {
+            "description": "Identifiers for the Journal, usually ISSN.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "language": {
+            "description": "Language for the journal, specified by the Journal Metadata.",
+            "type": "string"
+          },
+          "publisher": {
+            "description": "Publisher for the journal, specified by the Journal Metadata.",
+            "type": "string"
+          },
+          "subjects": {
+            "description": "Subjects for the journal, specified by the Journal Metadata.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "data_provider_id": {
+            "description": "Id of the matching data provider harvested by CORE.",
+            "type": "integer"
+          },
+          "title": {
+            "description": "Title of journal.",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Output": {
+        "title": "Output",
+        "description": "This is the entity representing the elements aggregated from our Data Providers.",
+        "required": [
+          "accepted_date",
+          "authors",
+          "contributors",
+          "created_date",
+          "data_provider",
+          "deposited_date",
+          "abstract",
+          "document_type",
+          "versions",
+          "doi",
+          "oai",
+          "download_url",
+          "full_text",
+          "id",
+          "identifiers",
+          "title",
+          "language",
+          "published_date",
+          "publisher",
+          "references",
+          "source_fulltext_urls",
+          "updated_date",
+          "year_published",
+          "links",
+          "tags",
+          "set_specs",
+          "fulltext_status",
+          "subjects",
+          "deleted",
+          "journals",
+          "repositories",
+          "repository_document",
+          "urls",
+          "license",
+          "disabled",
+          "last_update",
+          "sdg"
+        ],
+        "properties": {
+          "accepted_date": {
+            "description": "The date when the work was first accepted.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "authors": {
+            "description": "Authors of the paper.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contributors": {
+            "description": "Contributors usually from dc.contributors.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_date": {
+            "description": "First time the item was created in CORE.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "data_provider": {
+            "description": "The data provider URL that has an instance of this article.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deposited_date": {
+            "description": "First time the work was deposited in the institutional repository.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "abstract": {
+            "description": "The abstract of the work.",
+            "type": "string"
+          },
+          "document_type": {
+            "description": "The type of output, it can be presentation/research/thesis.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "versions": {
+            "description": "The version of the output. Based on the COAR version vocabulary.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "doi": {
+            "description": "The Digital Object Identifier of an output.",
+            "type": "string"
+          },
+          "oai": {
+            "type": "string"
+          },
+          "download_url": {
+            "description": "The URL from where you can download the full text of the work.",
+            "type": "string"
+          },
+          "full_text": {
+            "description": "It is a plain text extraction of the full text document.",
+            "type": "string"
+          },
+          "id": {
+            "description": "The unique identifier of an output in CORE.",
+            "type": "integer"
+          },
+          "identifiers": {
+            "description": "The list of different URLs that identify the output in the institutional repository. Usually coming from dc.identifier.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Identifier"
+            }
+          },
+          "title": {
+            "description": "The title for the work.",
+            "type": "string"
+          },
+          "language": {
+            "description": "The language used for the work.",
+            "type": "object"
+          },
+          "published_date": {
+            "description": "The date the article was first published.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "publisher": {
+            "description": "The publisher of the work.",
+            "type": "object"
+          },
+          "references": {
+            "description": "The works referenced in this work.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Reference"
+            }
+          },
+          "source_fulltext_urls": {
+            "description": "A list of all the URLs where this document can be downloaded from.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "updated_date": {
+            "description": "The last time this work was updated.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "year_published": {
+            "description": "The year on which this work was published.",
+            "type": "string"
+          },
+          "links": {
+            "description": "Links available for the output",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tags": {
+            "description": "Tags helpful to classify the output coming from dc.subjects and dc.type",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "set_specs": {
+            "description": "Set specifications for the outpts",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fulltext_status": {
+            "description": "",
+            "type": "string"
+          },
+          "subjects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deleted": {
+            "description": "",
+            "type": "string"
+          },
+          "journals": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "repositories": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "repository_document": {
+            "type": "object"
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "license": {
+            "type": "string"
+          },
+          "orcids": {
+            "type": "array",
+            "items": {},
+            "nullable": true
+          },
+          "disabled": {
+            "type": "integer"
+          },
+          "last_update": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sdg": {
+            "description": "UN Sustainable Development Goals (SDG)  associated with the Output.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "type": "object"
+      },
+      "OutputStats": {
+        "title": "Output Stats model",
+        "description": "Output Stats model",
+        "required": [
+          "id",
+          "deposited_date",
+          "published_date",
+          "updated_date",
+          "accepted_date",
+          "created_date"
+        ],
+        "properties": {
+          "id": {
+            "description": "The unique identifier of the output instance in CORE.",
+            "type": "integer"
+          },
+          "deposited_date": {
+            "description": "First time the work was deposited in the institutional repository.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "published_date": {
+            "description": "The date the article was first published.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_date": {
+            "description": "The last time this output was updated.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "accepted_date": {
+            "description": "The date when the output was first accepted.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "created_date": {
+            "description": "The date when the output was first created in CORE.",
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "type": "object"
+      },
+      "SearchParameters": {
+        "title": "Search Parameters",
+        "description": "Generic parameters for search",
+        "required": ["entity_type", "raw_stats", "exclude", "accept", "filter"],
+        "properties": {
+          "q": {
+            "type": "string",
+            "nullable": true
+          },
+          "offset": {
+            "type": "integer",
+            "nullable": true
+          },
+          "limit": {
+            "type": "integer",
+            "nullable": true
+          },
+          "entity_id": {
+            "type": "string",
+            "nullable": true
+          },
+          "entity_type": {
+            "type": "string"
+          },
+          "search_fields": {
+            "type": "string",
+            "nullable": true
+          },
+          "stats": {
+            "description": "If set to true the search results will include statistics related to the entity. This property has an impact on the response speed.",
+            "type": "bool",
+            "default": true
+          },
+          "raw_stats": {
+            "description": "If set to true the search results will include statistics related to the raw datasource of the entity if available. This property has an impact on the response speed.",
+            "type": "bool"
+          },
+          "exclude": {
+            "description": "Fields to exclude from the response.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "sort": {
+            "description": "Fields to sort the results by. `FIELD_NAME:asc|desc`",
+            "type": "string",
+            "default": []
+          },
+          "accept": {
+            "description": "Download CSV file. `text\\/csv`",
+            "type": "string"
+          },
+          "measure": {
+            "type": "boolean",
+            "default": false
+          },
+          "filter": {
+            "title": "Parameter for Azure SearchAI",
+            "type": "array",
+            "items": {}
+          }
+        },
+        "type": "object"
+      },
+      "WorkStats": {
+        "title": "Work Stats model",
+        "description": "Work Stats model",
+        "required": [
+          "id",
+          "deposited_date",
+          "published_date",
+          "updated_date",
+          "accepted_date"
+        ],
+        "properties": {
+          "id": {
+            "description": "The unique identifier of a work in CORE.",
+            "type": "integer"
+          },
+          "deposited_date": {
+            "description": "First time the work was deposited in an institutional repository.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "published_date": {
+            "description": "The date the article was first published.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "updated_date": {
+            "description": "The last time this work was updated.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "accepted_date": {
+            "description": "The date when the work was first accepted.",
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "type": "object"
+      },
+      "Work": {
+        "title": "Work",
+        "description": "It represents the concept of a Research Work. A research work is unique and it might be composed by the metadata of many Outputs coming from different Data Providers.",
+        "required": [
+          "accepted_date",
+          "arxiv_id",
+          "authors",
+          "citation_count",
+          "contributors",
+          "outputs",
+          "created_date",
+          "data_providers",
+          "deposited_date",
+          "abstract",
+          "document_type",
+          "doi",
+          "download_url",
+          "field_of_study",
+          "full_text",
+          "id",
+          "identifiers",
+          "title",
+          "language",
+          "mag_id",
+          "oai_ids",
+          "published_date",
+          "publisher",
+          "pubmed_id",
+          "references",
+          "source_fulltext_urls",
+          "journals",
+          "updated_date",
+          "year_published",
+          "links"
+        ],
+        "properties": {
+          "accepted_date": {
+            "description": "The date when the work was first accepted.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "arxiv_id": {
+            "description": "ArXiv ID of the preprint of this work.",
+            "type": "string"
+          },
+          "authors": {
+            "description": "Authors of the paper.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "citation_count": {
+            "description": "Count of citations, this data is an enrichment coming from Microsoft Academic Graph.",
+            "type": "integer"
+          },
+          "contributors": {
+            "description": "Contributors to the work.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "outputs": {
+            "description": "List of Outputs matching all the instances of the work in CORE repositories.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_date": {
+            "description": "First time the item was created in the dataset.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "data_providers": {
+            "description": "List of data providers URLs that have an instance of this article.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "deposited_date": {
+            "description": "First time the work was deposited in an institutional repository.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "abstract": {
+            "description": "The abstract of the work.",
+            "type": "string"
+          },
+          "document_type": {
+            "description": "The type of work, it can be presentation/research/thesis.",
+            "type": "string"
+          },
+          "doi": {
+            "description": "The Digital Object Identifier of a work. This is unique across the dataset.",
+            "type": "string"
+          },
+          "download_url": {
+            "description": "The URL from where you can download the full text of the work.",
+            "type": "string"
+          },
+          "field_of_study": {
+            "description": "This identify the field of study of a work. It is based on a Microsoft Academic Graph classification.",
+            "type": "string"
+          },
+          "full_text": {
+            "description": "It is a plain text extraction of the full text document.",
+            "type": "string"
+          },
+          "id": {
+            "description": "The unique identifier of a work in CORE.",
+            "type": "integer"
+          },
+          "identifiers": {
+            "description": "The list of different URLs that identify the work in different systems and data providers.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Identifier"
+            }
+          },
+          "title": {
+            "description": "The title for the work.",
+            "type": "string"
+          },
+          "language": {
+            "description": "The language used for the work.",
+            "type": "object"
+          },
+          "mag_id": {
+            "description": "The Identifier of the work in Microsoft Academic Graph",
+            "type": "string"
+          },
+          "oai_ids": {
+            "description": "The OAI-PMH identifiers for the work in the different data providers.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "published_date": {
+            "description": "The date the article was first published.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "publisher": {
+            "description": "The publisher of the work.",
+            "type": "object"
+          },
+          "pubmed_id": {
+            "description": "The identifier of the work in PubMed Central.",
+            "type": "object"
+          },
+          "references": {
+            "description": "The works referenced in this work.",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Reference"
+            }
+          },
+          "source_fulltext_urls": {
+            "description": "A list of all the URLs where this document can be downloaded from.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "journals": {
+            "description": "The list of Journals that host this work with their identifiers (ISSN or others).",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/JournalAsField"
+            }
+          },
+          "updated_date": {
+            "description": "The last time this work was updated.",
+            "type": "string",
+            "format": "date-time"
+          },
+          "year_published": {
+            "description": "The year on which this work was published.",
+            "type": "integer"
+          },
+          "links": {
+            "description": "Links available for the work",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "type": "object"
+      },
+      "DataProviderLocation": {
+        "required": ["country_code", "latitude", "longitude"],
+        "properties": {
+          "country_code": {
+            "type": "string"
+          },
+          "latitude": {
+            "type": "number",
+            "format": "float"
+          },
+          "longitude": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "type": "object"
+      },
+      "Identifier": {
+        "title": "Identifier model",
+        "description": "A description Object containing any Identifier supported by CORE.",
+        "required": ["identifier", "type"],
+        "properties": {
+          "identifier": {
+            "description": "The identifier, it can be a URL or a string.\n     * The type will specify which schema and provider is supported",
+            "type": "string"
+          },
+          "type": {
+            "description": "The identifier type. It could be OAI-PMH, DOI, ARXIVID, MAG, PUBMED.\n     * Any identifier that can be used to identify a work or an instance of a work.",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "Reference": {
+        "title": "Reference model",
+        "description": "An object describing a reference in a work to another work.",
+        "required": ["authors", "cites", "date", "doi", "id", "raw", "title"],
+        "properties": {
+          "authors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cites": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          },
+          "doi": {
+            "type": "string"
+          },
+          "id": {
+            "type": "integer"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
+      "JournalAsField": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "identifiers": {
+            "type": "array",
+            "items": {},
+            "nullable": true
+          }
+        },
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "Query": {
+        "type": "apiKey",
+        "description": "You can use the API key as a parameter in your requests. Please do not disclose your API key. It is for your use only. <a href='https://core.ac.uk/services/api#form'>Request an API key here</a>",
+        "name": "api_key",
+        "in": "query"
+      },
+      "Header": {
+        "type": "apiKey",
+        "description": "You can also embed the API Key in the header. This keeps the authorisation separated from the requests parameters. <a href='https://core.ac.uk/services/api#form'>Request an API key here</a>",
+        "name": "Authorization: Bearer [API_KEY]",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "api_key_query": []
+    },
+    {
+      "api_key_header": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Data Providers"
+    },
+    {
+      "name": "Discovery"
+    },
+    {
+      "name": "Expert Finder"
+    },
+    {
+      "name": "Journals"
+    },
+    {
+      "name": "Outputs"
+    },
+    {
+      "name": "Recommender"
+    },
+    {
+      "name": "Search"
+    },
+    {
+      "name": "Works"
+    }
+  ]
+}
