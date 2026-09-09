@@ -9,6 +9,7 @@ import CountrySelect from './country-select'
 import useSelect from '../../../hooks/use-select'
 import useInput from '../hooks/use-input'
 import useOrganisationDomains from '../hooks/use-organisation-domains'
+import useUniversityDomains from '../hooks/use-university-domains'
 import Markdown from '../../markdown'
 import findText from './helpers/findText'
 import text from '../../../data/registration.yml'
@@ -68,10 +69,16 @@ const ModalForm = observe(() => {
     organisationName,
     isInstitution
   )
+  const universityDomains = useUniversityDomains(isInstitution)
   const institutionEmailError =
     isInstitution && regEmail
-      ? validateInstitutionEmail(regEmail, organisationDomains)
+      ? validateInstitutionEmail(
+          regEmail,
+          organisationDomains,
+          universityDomains
+        )
       : ''
+  const isUniversityDomainsLoading = isInstitution && universityDomains === null
   // const handleRadioSelect = (id) => {
   //   setSelectedOption(id)
   // }
@@ -94,7 +101,8 @@ const ModalForm = observe(() => {
 
     if (description.trim().length < 150) return
 
-    if (isInstitution && institutionEmailError) return
+    if (isInstitution && (institutionEmailError || isUniversityDomainsLoading))
+      return
 
     if (
       registration.data.accountType === 'personal' &&
@@ -355,8 +363,8 @@ const ModalForm = observe(() => {
                 (description.trim().length < 150 ||
                   !conditionsAccepted ||
                   !termsAccepted)) ||
-              (registration.data.accountType === 'institution' &&
-                !!institutionEmailError)
+              (isInstitution &&
+                (!!institutionEmailError || isUniversityDomainsLoading))
             }
           >
             continue

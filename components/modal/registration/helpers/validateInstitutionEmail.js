@@ -3,6 +3,29 @@ const ROR_ID = /\((https:\/\/ror\.org\/[^)]+)\)$/
 export const INSTITUTION_EMAIL_ERROR =
   'The email address you provided must belong to the institution you selected. Please use an institutional email address associated with this organisation. There might be legitimate reason for having a different email from your institution, if this is the case please contact us to request institutional access'
 
+let universityDomainsCache = null
+let universityDomainsPromise = null
+
+export const getUniversityDomains = () => {
+  if (universityDomainsCache) return Promise.resolve(universityDomainsCache)
+
+  if (!universityDomainsPromise) {
+    universityDomainsPromise = import('data/uni.json').then(
+      ({ default: universities }) => {
+        universityDomainsCache = new Set(
+          universities.flatMap(({ domains = [] }) =>
+            domains.map((domain) => domain.trim().toLowerCase()).filter(Boolean)
+          )
+        )
+
+        return universityDomainsCache
+      }
+    )
+  }
+
+  return universityDomainsPromise
+}
+
 export const extractRorId = (organisationName) =>
   organisationName.trim().match(ROR_ID)?.[1] ?? null
 
@@ -43,12 +66,20 @@ export const fetchOrganisationDomains = async (rorId) => {
   return parseDomains(await response.json())
 }
 
-export const validateInstitutionEmail = (email, allowedDomains) => {
-  if (!allowedDomains.length) return ''
-
+export const validateInstitutionEmail = (
+  email,
+  allowedDomains,
+  universityDomains
+) => {
   const domain = email.trim().toLowerCase().split('@')[1]
 
-  return domain && allowedDomains.includes(domain)
-    ? ''
-    : INSTITUTION_EMAIL_ERROR
+  if (!domain) return INSTITUTION_EMAIL_ERROR
+
+  if (universityDomains?.has(domain)) return ''
+
+  if (allowedDomains.includes(domain)) return ''
+
+  if (universityDomains === null) return ''
+
+  return INSTITUTION_EMAIL_ERROR
 }
