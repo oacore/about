@@ -2,6 +2,7 @@
 node_modules
 .next
 .idea
+.npmrc
 out
 /public/edit*
 /public/netlify-cms.config.*
