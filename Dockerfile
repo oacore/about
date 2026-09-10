@@ -7,7 +7,7 @@ WORKDIR /app
 ENV NODE_OPTIONS="--max_old_space_size=32000 --openssl-legacy-provider"
 
 COPY .npmrc.dist .npmrc
-COPY package.json package-lock.json .npmrc design.config.js ./
+COPY package.json package-lock.json design.config.js ./
 RUN npm install \
     && npm ci --include=dev
 
