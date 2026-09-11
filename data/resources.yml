@@ -51,7 +51,7 @@ resources:
   id: presentation
   name: Membership presentation
   type: pdf
-  url: /resources/core-member-benefits-presentation.pdf
+  url: /resources/CORE-Membership-introduction-website.pdf
   picture: presentation.svg
 -
   id: Badges
