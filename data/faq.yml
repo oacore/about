@@ -471,7 +471,7 @@ sections:
         question: |
           Why can’t I see my dashboard?
         answer: |
-          You can only see the dashboard for your organisation if you have signed up as a member. Becoming a starting member is free of charge for any institution that provides content for CORE to index. Simply contact the administrator at [XX@core.science]() to be sent an invitation to open an account.
+          You can only see the dashboard for your organisation if you have signed up as a member. Becoming a starting member is free of charge for any institution that provides content for CORE to index. Simply contact the administrator at [theteam@core.science]() to be sent an invitation to open an account.
       - slug: how-does-CORE-help-my-institution-with-compliance
         question: |
           How does CORE help my institution with compliance?
