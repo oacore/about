@@ -3,7 +3,7 @@ resources:
 - id: logo
   name: Logo
   type: png
-  url: /resources/core-logo.png
+  url: /resources/coreLogo.png
   picture: logo.png
 -
   id: brochure
