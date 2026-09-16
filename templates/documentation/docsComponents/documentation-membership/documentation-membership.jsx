@@ -7,7 +7,9 @@ import DocumentationMarkdown, {
 } from './documentation-markdown'
 import styles from './styles.module.scss'
 
-/* TODO replace with design */
+/* TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done. */
 
 const DocumentationMembership = ({
   headerTitle,
