@@ -14,6 +14,8 @@ const repo = {
   repo: 'content',
 }
 
+const DEFAULT_CONTENT_REF = process.env.CONTENT_REPO_REF || undefined
+
 const parseId = (fileName) => basename(fileName, extname(fileName))
 const parseFormat = (fileName) =>
   ({
@@ -60,7 +62,7 @@ const parseData = (entries) =>
       // Due to CMS preference of having `---` before and after actual content
       // we load multiple documents safely but take into account only
       // the first one
-      const [data] = yaml.loadAll(content)
+      const [data] = yaml.safeLoadAll(content)
       return [id, data]
     }
 
@@ -108,7 +110,10 @@ const transformData = (
   return processedEntries
 }
 
-const retrieveContent = (path, { ref, transform = 'auto', key } = {}) =>
+const retrieveContent = (
+  path,
+  { ref = DEFAULT_CONTENT_REF, transform = 'auto', key } = {}
+) =>
   octokit.repos
     .getContent({ ...repo, path, ref })
     .then(({ data }) =>

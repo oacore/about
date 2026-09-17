@@ -4,6 +4,11 @@ on:
   push:
     branches: [stage]
   workflow_dispatch:
+    inputs:
+      content_repo_ref:
+        description: 'oacore/content branch, tag or SHA to build from (blank = default branch)'
+        required: false
+        default: ''
   repository_dispatch:
     types: [CONTENT-repo:cross-repo trigger deployment stage]
 
@@ -61,6 +66,7 @@ jobs:
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
             --build-arg API_KEY=${{ secrets.API_KEY }} \
             --build-arg APP_ENV=staging \
+            --build-arg CONTENT_REPO_REF=${{ github.event.inputs.content_repo_ref }} \
             --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
             --cache-from type=registry,ref=${{ env.ACR_NAME }}.azurecr.io/aks-${{ env.IMAGE_NAME }}:buildcache \
