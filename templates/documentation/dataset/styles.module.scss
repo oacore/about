@@ -104,5 +104,44 @@ $primary-color: #b75400;
     h5 {
       margin-top: calc(var(--spacer) * 2);
     }
+
+    table {
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    th,
+    td {
+      overflow-wrap: anywhere;
+    }
+
+    table:has(tr > :nth-child(2):last-child) {
+      th:first-child,
+      td:first-child {
+        width: 26%;
+      }
+    }
+
+    table:has(tr > :nth-child(4):last-child) {
+      th:nth-child(1),
+      td:nth-child(1) {
+        width: 16%;
+      }
+
+      th:nth-child(2),
+      td:nth-child(2) {
+        width: 10%;
+      }
+
+      th:nth-child(3),
+      td:nth-child(3) {
+        width: 32%;
+      }
+
+      th:nth-child(4),
+      td:nth-child(4) {
+        width: 42%;
+      }
+    }
   }
 }
