@@ -139,7 +139,7 @@ const DatasetPageTemplate = ({
       <Section id={latestInstruction.id} className={styles.instruction}>
         <h4>{latestInstruction.title}</h4>
         <div className={styles.instructionContent}>
-          <div>
+          <div className={styles.instructionRecommended}>
             <Markdown>{latestInstruction.recommended}</Markdown>
           </div>
           <div className={styles.instructionReminder}>
