@@ -42,20 +42,17 @@ $card-base-padding: 1rem 0.8rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   gap: 1.65rem;
-
-  > *:first-child .card {
-    min-height: 15rem;
-  }
-
-  > *:nth-child(2) .card {
-    min-height: 18rem;
-  }
 }
 
 .card {
   position: relative;
   padding: 0;
   min-width: auto;
+  min-height: 18rem;
+
+  &-compact {
+    min-height: 15rem;
+  }
 
   &-title {
     padding: $card-base-padding;
@@ -101,9 +98,15 @@ $card-base-padding: 1rem 0.8rem;
   }
 }
 
+.note-wrapper {
+  padding: 28px 0;
+}
+
 .note {
-  margin: 1rem 0;
   font-size: 0.9rem;
+  :nth-child(1) {
+    margin-bottom: 2px;
+  }
 
   &.green {
     a {

@@ -160,6 +160,7 @@ const DatasetPageTemplate = ({
           <DatasetCard
             key={`${box.title}-${box.caption}`}
             {...box}
+            compact
             accentColor={setDatasetAccentColor(additionalDatasets.items[1].id)}
           />
         ))}

@@ -15,12 +15,15 @@ const DatasetCard = ({
   note,
   action,
   accentColor,
+  compact,
 }) => {
   const addAccentColor = (baseClassName) =>
     classNames.use(baseClassName, styles[accentColor])
   return (
     <article>
-      <Card className={styles.card}>
+      <Card
+        className={classNames.use(styles.card, compact && styles.cardCompact)}
+      >
         <Card.Title tag="h6" className={addAccentColor(styles.cardTitle)}>
           {title}
         </Card.Title>
@@ -39,8 +42,10 @@ const DatasetCard = ({
         </div>
         <Markdown className={styles.cardFooter}>{footer}</Markdown>
       </Card>
-      <Markdown className={addAccentColor(styles.note)}>{license}</Markdown>
-      <Markdown className={addAccentColor(styles.note)}>{note}</Markdown>
+      <div className={styles.noteWrapper}>
+        <Markdown className={addAccentColor(styles.note)}>{license}</Markdown>
+        <Markdown className={addAccentColor(styles.note)}>{note}</Markdown>
+      </div>
       <Button
         variant="outlined"
         className={addAccentColor(styles.button)}
