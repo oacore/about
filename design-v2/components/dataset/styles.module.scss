@@ -9,11 +9,11 @@ $card-base-padding: 1rem 0.8rem;
 }
 
 @mixin accentColor($colorName) {
-  @if $colorName == blue {
+  @if $colorName ==blue {
     color: $blue-color;
   }
 
-  @if $colorName == green {
+  @if $colorName ==green {
     color: darken($green-color, 10%);
   }
 }
@@ -23,12 +23,15 @@ $card-base-padding: 1rem 0.8rem;
     color: var(--white);
     padding: 0.2rem 0.5rem;
     font-weight: 500;
+
     &.primary {
       background-color: $primary-color;
     }
+
     &.blue {
       background-color: $blue-color;
     }
+
     &.green {
       background-color: $green-color;
     }
@@ -39,38 +42,55 @@ $card-base-padding: 1rem 0.8rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
   gap: 1.65rem;
+
+  > *:first-child .card {
+    min-height: 15rem;
+  }
+
+  > *:nth-child(2) .card {
+    min-height: 18rem;
+  }
 }
+
 .card {
   position: relative;
   padding: 0;
   min-width: auto;
-  min-height: 18rem;
+
   &-title {
     padding: $card-base-padding;
+
     &.green {
       background-color: lightenColor($green-color, 40%);
     }
+
     &.blue {
       background-color: lightenColor($blue-color, 50%);
     }
   }
+
   &-content {
     padding: $card-base-padding;
     font-weight: 500;
   }
+
   &-sizes {
     color: var(--gray-600);
+
     .count {
       font-weight: 600;
       line-height: 2;
+
       &.green {
         @include accentColor(green);
       }
+
       &.blue {
         @include accentColor(blue);
       }
     }
   }
+
   &-footer {
     width: 100%;
     position: absolute;
@@ -82,8 +102,9 @@ $card-base-padding: 1rem 0.8rem;
 }
 
 .note {
-  margin: var(--spacer) 0;
+  margin: 1rem 0;
   font-size: 0.9rem;
+
   &.green {
     a {
       color: darken($green-color, 10%);
@@ -100,9 +121,11 @@ $card-base-padding: 1rem 0.8rem;
 .button {
   color: var(--white) !important;
   text-decoration: underline;
+
   &.green {
     background-color: $green-color;
   }
+
   &.blue {
     background-color: $blue-color;
   }
