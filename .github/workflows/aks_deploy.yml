@@ -86,6 +86,7 @@ jobs:
         run: |
           kubectl apply -f kube/prod/service.yaml
           kubectl apply -f kube/prod/httproute.yaml
+          kubectl apply -f kube/prod/httproute-download.yaml
           kubectl apply -f kube/prod/hpa.yaml
           kubectl apply -f kube/prod/pdb.yaml
 
