@@ -5,7 +5,9 @@ import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
 
-/* TODO replace with design */
+/* TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done. */
 
 function normalizeHref(str) {
   return str.replace('#', '').replace('_', '-')
@@ -27,7 +29,7 @@ export function findNavHrefById(items, id) {
 const getNavItems = (textData) =>
   Array.isArray(textData.navItems)
     ? textData.navItems
-    : Object.values(textData.navItems)
+    : Object.values(textData.navItems ?? {})
 
 const DocumentationMembershipNav = ({
   textData,
@@ -68,12 +70,15 @@ const DocumentationMembershipNav = ({
   }
 
   const renderNavItems = (items, level = 0) =>
-    items.flatMap((item, index) => {
+    (items ?? []).filter(Boolean).flatMap((item, index) => {
+      if (!item.item && !item.href)
+        return item.children?.length ? renderNavItems(item.children, level) : []
+
       const hasHref = Boolean(item.href)
       const isActive = !activeHref
         ? localActiveHref === item.href
         : activeHref === item.href
-      const key = `${level}-${index}-${item.item}`
+      const key = `${level}-${index}-${item.href ?? item.item}`
 
       const navItem = (
         // eslint-disable-next-line max-len
@@ -94,12 +99,10 @@ const DocumentationMembershipNav = ({
           <ReactMarkdown className={styles.siderItemLink}>
             {item.item}
           </ReactMarkdown>
-          {hasHref && isActive ? (
+          {hasHref && isActive && (
             <span className={styles.logo}>
               <Icon src="#active-arrow" />
             </span>
-          ) : (
-            ''
           )}
         </li>
       )
