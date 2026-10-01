@@ -11,6 +11,14 @@
     width: 50%;
     gap: 16px;
   }
+  @media (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    .header-left,
+    .section-wrapper {
+      width: 100%;
+    }
+  }
   .redirect-button-wrapper {
     display: flex;
     flex-direction: row;
