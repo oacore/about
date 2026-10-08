@@ -65,7 +65,7 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
     event.preventDefault()
     setIsLoading(true)
     if (onSubmit) await onSubmit(event)
-    await checkDataProviders({
+    const registered = await checkDataProviders({
       params: {
         uri,
         email,
@@ -73,6 +73,19 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
         setDataProvidersResponse,
       },
     })
+    if (registered === true) {
+      setFormSubmitted(true)
+      setModalContent(
+        <BenefitsStep
+          subTitle={benefitsData.secondStep.newMember.subTitle}
+          description={benefitsData.secondStep.newMember.description}
+          picture={benefitsData.secondStep.newMember.picture}
+          setModalContent={setModalContent}
+          setFormSubmitted={setFormSubmitted}
+          onCloseModal={onCloseModal}
+        />
+      )
+    }
     setIsLoading(false)
   }
 
@@ -83,8 +96,13 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
     ?.map((item) => item.id)
     ?.join(', ')
 
-  const errorMessage = dataProvidersResponse?.error?.data?.message || '{}'
-  const getParsedData = JSON.parse(errorMessage)
+  let getParsedData = {}
+  try {
+    const errorMessage = dataProvidersResponse?.error?.data?.message || '{}'
+    getParsedData = JSON.parse(errorMessage)
+  } catch (parseError) {
+    getParsedData = {}
+  }
 
   const GetParsedId = getParsedData?.existingDataProviders
     ?.filter((item) => item.enabled === true)
@@ -92,13 +110,18 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
     ?.join(', ')
 
   useEffect(() => {
-    if (
-      (dataProvidersResponse.error &&
-        dataProvidersResponse.error.length >= 1 &&
-        !dataProvidersResponse.existingDataProviders &&
-        dataProvidersResponse.existingDataProviders.length === 0) ||
-      dataProvidersResponse?.error?.status === 500
-    ) {
+    const responseError = dataProvidersResponse?.error
+    const existingProviders = dataProvidersResponse?.existingDataProviders
+    const status = responseError?.status
+    const hasExistingProviders =
+      Array.isArray(existingProviders) && existingProviders.length >= 1
+    const isOaiNotFound =
+      responseError &&
+      responseError.length >= 1 &&
+      Array.isArray(existingProviders) &&
+      existingProviders.length === 0
+
+    if (isOaiNotFound || status === 500) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
@@ -109,11 +132,7 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
           onCloseModal={onCloseModal}
         />
       )
-    } else if (
-      (dataProvidersResponse.existingDataProviders &&
-        dataProvidersResponse.existingDataProviders.length >= 1) ||
-      dataProvidersResponse?.error?.status === 409
-    ) {
+    } else if (hasExistingProviders || status === 409) {
       setFormSubmitted(true)
       setModalContent(
         <BenefitsStep
@@ -130,24 +149,8 @@ const BenefitsForm = React.forwardRef(({ onSubmit, setModalActive }, ref) => {
           onCloseModal={onCloseModal}
         />
       )
-    } else if (dataProvidersResponse.id) {
-      setFormSubmitted(true)
-      setModalContent(
-        <BenefitsStep
-          subTitle={benefitsData.secondStep.newMember.subTitle}
-          description={benefitsData.secondStep.newMember.description}
-          picture={benefitsData.secondStep.newMember.picture}
-          setModalContent={setModalContent}
-          setFormSubmitted={setFormSubmitted}
-          onCloseModal={onCloseModal}
-        />
-      )
     }
-  }, [
-    dataProvidersResponse?.id,
-    dataProvidersResponse?.existingDataProviders,
-    dataProvidersResponse?.error?.status,
-  ])
+  }, [dataProvidersResponse])
 
   return (
     <>
