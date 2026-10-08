@@ -11,7 +11,7 @@ import DocumentationMembershipNav, {
 } from '../docsComponents/documentation-membership-nav'
 import flattenDocItems from '../docsComponents/flatten-doc-items'
 
-const API_DOCS_URL = '/api-docs-v3.html'
+const API_DOCS_URL = '/api-docs-v4.html'
 const API_DOCS_MAIN_MARKER = '<main class="content">'
 
 const extractApiReferenceHtml = (html) => {

@@ -5,8 +5,8 @@ const http = require('http')
 const https = require('https')
 const path = require('path')
 
-const DEFAULT_URL = 'https://api.core.ac.uk/swagger-v3.json'
-const DEFAULT_OUTPUT = path.join(__dirname, '..', 'data', 'swagger-v3.json')
+const DEFAULT_URL = 'https://api-dev.core.ac.uk/swagger-v4.json'
+const DEFAULT_OUTPUT = path.join(__dirname, '..', 'data', 'swagger-v4.json')
 
 const args = process.argv.slice(2)
 
