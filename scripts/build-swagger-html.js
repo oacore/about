@@ -653,10 +653,7 @@ const html = `<!doctype html>
       }
 
       .endpoint-chevron {
-        margin-left: auto;
-        color: #fff;
-        font-size: 22px;
-        line-height: 1;
+        display: none;
       }
 
       .location {
@@ -697,7 +694,6 @@ const html = `<!doctype html>
       td code {
         padding: 1px 4px;
         border-radius: 2px;
-        background: var(--code);
       }
 
       .table-wrap {
@@ -825,11 +821,12 @@ const html = `<!doctype html>
       }
 
       .sample-actions {
-        display: flex;
-        justify-content: flex-end;
-        gap: 24px;
-        padding: 18px 0 4px;
-        color: #bdbdbd;
+        display: none;
+        /*display: flex;*/
+        /*justify-content: flex-end;*/
+        /*gap: 24px;*/
+        /*padding: 18px 0 4px;*/
+        /*color: #bdbdbd;*/
       }
 
       .sample-code {
