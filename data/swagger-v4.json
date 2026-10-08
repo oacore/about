@@ -1,0 +1,1452 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CORE API",
+    "description": "\n# Welcome!\nYou can use the CORE API to access the resources harvested and enriched by CORE. If you encounter any problems with the API, please <a href='https://core.ac.uk/contact'>report them to us</a>.\n### How to cite the CORE API in your work\n<blockquote> <b><a style='color:black; text-decoration:underline;' href='https://www.nature.com/articles/s41597-023-02208-w'>CORE: A Global Aggregation Service for Open Access Papers</a></b> <br/> <i> Knoth, P., Herrmannova, D., Cancellieri, M. et al. CORE: A Global Aggregation Service for Open Access Papers. Nature Scientific Data 10, 366 (2023). https://doi.org/10.1038/s41597-023-02208-w</i> </blockquote>\n<blockquote> <b><a style='color:black; text-decoration:underline;' href='http://oro.open.ac.uk/35755/'>CORE: three access levels to underpin open access</a></b> <br/> <i> Knoth, P., & Zdrahal, Z. (2012). CORE: three access levels to underpin open access. D-Lib Magazine, 18(11/12). Retrieved from http://oro.open.ac.uk/35755/</i> </blockquote>\n<button style='padding:.5rem; border:3px solid #b75400;background-color:transparent;'> <a href='https://core.ac.uk/about/research-outputs'>  SEE MORE </a> </button>\n\n\n<a id='quick_start'></a>\n# Quick start examples\nYou can look at a webinar describing all the APIv3 features with a live example   <a href='https://blog.core.ac.uk/2022/01/19/access-the-worlds-research-outputs-through-the-core-api/'>on our blog.</a> The following is a list of links to simple examples on how to use the features of the CORE API.  This list is constantly evolving. If you would like to contribute or suggest any change,<a href='https://core.ac.uk/contact'>contact us</a>. <ul> <li><a href='https://github.com/oacore/apiv3-webinar'> Did research stop during COVID?</a> The Notebook, also used throughout the webinar showcases most of the features of the API and  how to use them to generate meaningful visualisations. </li> <li><a href='https://colab.research.google.com/drive/1_bjqDQhqj7AnSfoCAXDCMOnGZLPQWKfu?usp=sharing'>Download all the identifiers from a Data Provider</a> Python notebook using the scan and scroll search to generate a dataset containing all the identifiers for the records of a data provider.</li> <li><a href='https://colab.research.google.com/drive/10dmk7D9oA8xDQrNyh2o91eUu60a-Q7LW?usp=sharing'>Compare Journals and Data Providers</a> Python notebook that downloads a list of Journals and compare them with the list of Data Providers in CORE.</li> </ul> ",
+    "termsOfService": "https://core.ac.uk/terms",
+    "contact": {
+      "name": "CORE API support",
+      "url": "https://core.ac.uk/contact",
+      "email": "theteam@core.science"
+    },
+    "license": {
+      "name": "CORE terms",
+      "url": "https://core.ac.uk/terms"
+    },
+    "version": "3.0.0"
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Live server."
+    }
+  ],
+  "paths": {
+    "/v4/affiliations/{affiliationId}": {
+      "get": {
+        "tags": ["Affiliations"],
+        "summary": "Get a single Affiliation",
+        "description": "Retrieves a single Affiliation record using its unique CORE Affiliation identifier.",
+        "operationId": "get_v4_affiliations_by_identifier",
+        "parameters": [
+          {
+            "name": "affiliationId",
+            "in": "path",
+            "description": "Unique CORE identifier of the Affiliation record.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Comma-separated list of top-level Affiliation fields to return. Available fields: affiliationId, authorId, rawAffiliation, department, institutionId, institutionName, isCurrent, startDate, endDate, evidenceWorkIds, externalIds, address, url, createdDate, updatedDate.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Affiliation record was retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AffiliationResponseDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter or unsupported field name."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Affiliation record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/affiliations/{affiliationId}/authorships": {
+      "get": {
+        "tags": ["Affiliations"],
+        "summary": "Get Affiliation Authorships",
+        "description": "Retrieves Authorship records associated with the Affiliation.",
+        "operationId": "get_v4_affiliations_authorships_by_identifier",
+        "parameters": [
+          {
+            "name": "affiliationId",
+            "in": "path",
+            "description": "Unique CORE identifier of the Affiliation record.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to calculate the total number of matching Authorships.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Authorship records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of Authorship records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Affiliation Authorship records were retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "totalHits": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AuthorshipResponseDTO"
+                      }
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Affiliation record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/search/affiliations": {
+      "get": {
+        "tags": ["Affiliations"],
+        "summary": "Search Affiliations",
+        "description": "Search Affiliation records using URL query parameters.",
+        "operationId": "get_v4_search_affiliations_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "CORE query expression. Supports free-text search, \n                field lookup, Boolean operators, grouping, range queries, and existence queries.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "*"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Comma-separated ordering directives in field:direction format.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in each result.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facets",
+            "in": "query",
+            "description": "Comma-separated list of facetable fields.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to include the total number of matching Affiliation records.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Affiliation records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of matching Affiliation records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Affiliation search was completed successfully."
+          },
+          "400": {
+            "description": "The request contains an invalid query, \n                unsupported field, invalid facet, or invalid response-control parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Affiliations"],
+        "summary": "Search Affiliations",
+        "description": "Search Affiliation records using a JSON request body.",
+        "operationId": "post_v4_search_affiliations_post",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "q": {
+                    "type": "string",
+                    "default": "*"
+                  },
+                  "orderby": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "select": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "facets": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "count": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "default": 10
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "default": 0
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The Affiliation search was completed successfully."
+          },
+          "400": {
+            "description": "The request contains an invalid query, \n                unsupported field, invalid facet, or invalid response-control parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "413": {
+            "description": "The POST request body exceeds the permitted size."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/authorships/{identifier}": {
+      "get": {
+        "tags": ["Authorships"],
+        "summary": "Get a single Authorship",
+        "description": "",
+        "operationId": "get_v4_authorships_by_identifier",
+        "parameters": [
+          {
+            "name": "identifier",
+            "in": "path",
+            "description": "The CORE Authorship ID.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "\\w+"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Optional comma-separated list of response fields to include. \n                Available fields: authorshipId, workId, authorId, rawName, sequence, rank, \n                isFirstNamedAuthor, isCorresponding, sourceOutputIds, createdDate, updatedDate.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Authorship record was retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthorshipResponseDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter or unsupported field name."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Authorship record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/authorships/{authorshipId}/affiliations": {
+      "get": {
+        "tags": ["Authorships"],
+        "summary": "Get Authorship Affiliations",
+        "description": "Retrieves Affiliation records associated with the Authorship.",
+        "operationId": "get_v4_authorships_affiliations_by_identifier",
+        "parameters": [
+          {
+            "name": "authorshipId",
+            "in": "path",
+            "description": "The CORE Authorship ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to calculate the total number of matching Affiliations.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Affiliation records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of Affiliation records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Authorship Affiliation records were retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "totalHits": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AffiliationResponseDTO"
+                      }
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Authorship record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/search/authorships": {
+      "get": {
+        "tags": ["Authorships"],
+        "summary": "Search Authorships",
+        "description": "Search Authorship records using URL query parameters.",
+        "operationId": "get_v4_search_authorships_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "CORE query expression. Supports free-text search, field lookup, \n                Boolean operators, grouping, range queries, and existence queries.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "*"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Comma-separated ordering directives in field:direction format.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in each result.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facets",
+            "in": "query",
+            "description": "Comma-separated list of facetable fields.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to include the total number of matching Authorship records.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Authorship records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of matching Authorship records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Authorship search was completed successfully."
+          },
+          "400": {
+            "description": "The request contains an invalid query, \n                unsupported field, invalid facet, or invalid result-control parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Authorships"],
+        "summary": "Search Authorships",
+        "description": "Search Authorship records using a JSON request body.",
+        "operationId": "post_v4_search_authorships_post",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "q": {
+                    "type": "string",
+                    "default": "*"
+                  },
+                  "orderby": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "select": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "facets": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "count": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "default": 10
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "default": 0
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The Authorship search was completed successfully."
+          },
+          "400": {
+            "description": "The request contains an invalid query, \n                unsupported field, invalid facet, or invalid result-control parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "413": {
+            "description": "The POST request body exceeds the permitted size."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/institutions/{institutionId}": {
+      "get": {
+        "tags": ["Institutions"],
+        "summary": "Get a single Institution",
+        "description": "",
+        "operationId": "get_v4_institutions_by_identifier",
+        "parameters": [
+          {
+            "name": "institutionId",
+            "in": "path",
+            "description": "The CORE Institution ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Optional comma-separated list of response fields to include. Available fields: institutionId, rorId, openalexId, displayName, acronym, countryCode, countryName, city, websiteUrl, domains, types, status, establishedYear.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Institution record was retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstitutionResponseDTO"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter or unsupported field name."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Institution record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/institutions/{institutionId}/affiliations": {
+      "get": {
+        "tags": ["Institutions"],
+        "summary": "Get Institution Affiliations",
+        "description": "Retrieves Affiliation records whose institutionId matches the Institution.",
+        "operationId": "get_v4_institutions_affiliations_by_identifier",
+        "parameters": [
+          {
+            "name": "institutionId",
+            "in": "path",
+            "description": "The CORE Institution ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Field and direction to order by, for example startDate:asc.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "startDate:asc"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to calculate the total number of matching Affiliations.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Affiliation records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of Affiliation records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Institution Affiliation records were retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "totalHits": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/AffiliationResponseDTO"
+                      }
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Institution record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/institutions/{institutionId}/dataProviders": {
+      "get": {
+        "tags": ["Institutions"],
+        "summary": "Get Institution Data Providers",
+        "description": "Retrieves complete CORE Data Provider records associated with the Institution.",
+        "operationId": "get_v4_institutions_data_providers_by_identifier",
+        "parameters": [
+          {
+            "name": "institutionId",
+            "in": "path",
+            "description": "The CORE Institution ID.",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "pattern": "\\d+"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to calculate the total number of matching Data Providers.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Data Provider records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of Data Provider records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Institution Data Provider records were retrieved successfully.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "totalHits": {
+                      "type": "integer",
+                      "example": 1
+                    },
+                    "results": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/InstitutionDataProviderResponseDTO"
+                      }
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "The request contains an invalid parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "404": {
+            "description": "No Institution record was found for the supplied identifier."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    },
+    "/v4/search/institutions": {
+      "get": {
+        "tags": ["Institutions"],
+        "summary": "Search Institutions",
+        "description": "Search Institution records using URL query parameters.",
+        "operationId": "get_v4_search_institutions_get",
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "CORE query expression. Supports textual search, field lookup, Boolean operators, grouping, range queries, and existence queries.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "*"
+            }
+          },
+          {
+            "name": "orderby",
+            "in": "query",
+            "description": "Comma-separated ordering directives in field:direction format.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "select",
+            "in": "query",
+            "description": "Comma-separated list of fields to include in each result.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "facets",
+            "in": "query",
+            "description": "Comma-separated list of facetable fields.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Whether to include the total number of matching Institution records.",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "Maximum number of Institution records to return.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 10,
+              "minimum": 0
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Number of matching Institution records to skip.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 0,
+              "minimum": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The Institution search was completed successfully."
+          },
+          "400": {
+            "description": "The request contains an invalid query, unsupported field, invalid facet, or invalid response-control parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      },
+      "post": {
+        "tags": ["Institutions"],
+        "summary": "Search Institutions",
+        "description": "Search Institution records using a JSON request body.",
+        "operationId": "post_v4_search_institutions_post",
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "q": {
+                    "type": "string",
+                    "default": "*"
+                  },
+                  "orderby": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "select": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "facets": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "count": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "limit": {
+                    "type": "integer",
+                    "default": 10
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "default": 0
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The Institution search was completed successfully."
+          },
+          "400": {
+            "description": "The request contains an invalid query, unsupported field, invalid facet, or invalid response-control parameter."
+          },
+          "401": {
+            "description": "Authentication credentials are missing or invalid."
+          },
+          "413": {
+            "description": "The POST request body exceeds the permitted size."
+          },
+          "429": {
+            "description": "The API request limit has been exceeded."
+          },
+          "500": {
+            "description": "An unexpected server error occurred."
+          }
+        },
+        "security": [
+          {
+            "Bearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AffiliationResponseDTO": {
+        "properties": {
+          "affiliationId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "authorId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "rawAffiliation": {
+            "type": "string",
+            "nullable": true
+          },
+          "department": {
+            "type": "string",
+            "nullable": true
+          },
+          "institutionId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "institutionName": {
+            "type": "string",
+            "nullable": true
+          },
+          "isCurrent": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "startDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "endDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "evidenceWorkIds": {
+            "default": [],
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "nullable": true
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "nullable": true
+                }
+              }
+            ]
+          },
+          "externalIds": {
+            "default": [],
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "nullable": true
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "nullable": true
+                }
+              }
+            ]
+          },
+          "address": {
+            "nullable": true,
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "nullable": true
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "nullable": true
+                }
+              }
+            ]
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedDate": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "AuthorshipResponseDTO": {
+        "properties": {
+          "authorshipId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "workId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "authorId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "rawName": {
+            "type": "string",
+            "nullable": true
+          },
+          "sequence": {
+            "type": "string",
+            "nullable": true
+          },
+          "rank": {
+            "type": "integer",
+            "nullable": true
+          },
+          "isFirstNamedAuthor": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "isCorresponding": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "sourceOutputIds": {
+            "default": [],
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "nullable": true
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "nullable": true
+                }
+              }
+            ]
+          },
+          "createdDate": {
+            "type": "string",
+            "nullable": true
+          },
+          "updatedDate": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "InstitutionResponseDTO": {
+        "properties": {
+          "institutionId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "rorId": {
+            "type": "string",
+            "nullable": true
+          },
+          "openalexId": {
+            "type": "string",
+            "nullable": true
+          },
+          "displayName": {
+            "type": "string",
+            "nullable": true
+          },
+          "acronym": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "countryName": {
+            "type": "string",
+            "nullable": true
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          },
+          "websiteUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "domains": {
+            "default": [],
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "nullable": true
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "nullable": true
+                }
+              }
+            ]
+          },
+          "types": {
+            "default": [],
+            "oneOf": [
+              {
+                "type": "array",
+                "items": {
+                  "nullable": true
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": {
+                  "nullable": true
+                }
+              }
+            ]
+          },
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "establishedYear": {
+            "type": "integer",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      },
+      "InstitutionDataProviderResponseDTO": {
+        "properties": {
+          "dataProviderId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "homepageUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "oaiPmhUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "institutionId": {
+            "type": "integer",
+            "nullable": true
+          }
+        },
+        "type": "object"
+      }
+    },
+    "securitySchemes": {
+      "Query": {
+        "type": "apiKey",
+        "description": "You can use the API key as a parameter in your requests. Please do not disclose your API key. It is for your use only. <a href='https://core.ac.uk/services/api#form'>Request an API key here</a>",
+        "name": "api_key",
+        "in": "query"
+      },
+      "Header": {
+        "type": "apiKey",
+        "description": "You can also embed the API Key in the header. This keeps the authorisation separated from the requests parameters. <a href='https://core.ac.uk/services/api#form'>Request an API key here</a>",
+        "name": "Authorization: Bearer [API_KEY]",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "api_key_query": []
+    },
+    {
+      "api_key_header": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Affiliations"
+    },
+    {
+      "name": "Authorships"
+    },
+    {
+      "name": "Institutions"
+    }
+  ]
+}

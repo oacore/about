@@ -78,6 +78,8 @@
     "yaml-import-loader": "^1.3.6"
   },
   "scripts": {
+    "check:swagger-json": "node scripts/check-swagger-json.js",
+    "build:swagger-html": "node scripts/build-swagger-html.js",
     "lint": "run-p lint:*",
     "lint:json": "prettier --ignore-path .gitignore --check '**/*.json'",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx .",
