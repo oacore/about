@@ -580,8 +580,7 @@ const html = `<!doctype html>
       }
 
       .intro {
-        padding-bottom: 24px;
-        border-bottom: 2px solid var(--core-orange);
+        display: none;
       }
 
       h1 {
