@@ -871,8 +871,8 @@ organizations:
   testimonial: *nicola-dowson
 - &ouKathleen
   id: oukathleen
-  name: Open University
-  logo: open-university.png
+  name: coar
+  logo: coar.svg
   testimonial: *kathleen-shearer
 - &tu_delft
   id: tu_delft
