@@ -57,7 +57,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     setSelectedOption(option)
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
-    if (option === 'CORE API Documentation') route.push('api-documentation')
+    if (option === 'CORE Graph API Documentation')
+      route.push('api-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -79,8 +80,6 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     }
   }, [])
 
-  /* TODO unccoment */
-
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -92,7 +91,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              // text.documentationSwitcher[2].title,
+              text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -100,6 +99,11 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
         </div>
       </div>
       <Layout className={styles.docsLayout}>
+        {/*
+          TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done.
+        */}
         <DocumentationMembership
           docs={dataProviderDocs?.items}
           tutorial={dataProviderDocs?.tutorial}

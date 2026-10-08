@@ -1,0 +1,57 @@
+import React from 'react'
+
+import { Page } from '../../components'
+import ApiDocumentationPageTemplate from '../../templates/documentation/api-documentation'
+
+import retrieveContent from 'content'
+
+const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
+
+const setAssetsUrl = (items) =>
+  items.forEach((value) => {
+    delete value.membership
+    if (value.images) {
+      value.images.forEach((item) => {
+        item.file = ASSETS_BASE_URL + item.file
+      })
+    }
+    if (value.children) setAssetsUrl(value.children)
+  })
+
+const getSections = async ({ ref } = {}) => {
+  const content = await retrieveContent('docs-graph', {
+    ref,
+    transform: 'object',
+  })
+
+  delete content.headerDashboard
+  Object.values(content).forEach((section) => {
+    if (section.items) setAssetsUrl(section.items)
+  })
+  return content
+}
+
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const sections = await getSections({ ref })
+  const data = {
+    ...sections,
+  }
+
+  return {
+    props: {
+      data,
+    },
+  }
+}
+
+const DocumentationPage = ({ data }) => (
+  <Page
+    title={data.meta.title}
+    description={data.meta.description || data.meta.tagline}
+  >
+    <ApiDocumentationPageTemplate {...data} />
+  </Page>
+)
+
+export default DocumentationPage
