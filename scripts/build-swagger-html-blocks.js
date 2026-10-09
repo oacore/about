@@ -5,7 +5,12 @@ const fs = require('fs')
 const path = require('path')
 
 const SWAGGER_PATH = path.join(__dirname, '..', 'data', 'swagger-v4.json')
-const OUTPUT_PATH = path.join(__dirname, '..', 'public', 'api-docs-v4.html')
+const OUTPUT_DIR = path.join(__dirname, '..', 'public/api-swagger')
+const TAG_OUTPUTS = [
+  ['Affiliations', 'api-docs-v4-affiliations.html'],
+  ['Authorships', 'api-docs-v4-authorships.html'],
+  ['Institutions', 'api-docs-v4-institutions.html'],
+]
 const HTTP_METHODS = [
   'get',
   'post',
@@ -428,9 +433,7 @@ const groups = operations.reduce((result, operation) => {
   return result
 }, new Map())
 
-const renderedGroups = Array.from(groups.entries())
-  .map(
-    ([tag, tagOperations]) => `
+const renderGroup = ([tag, tagOperations]) => `
       <section class="tag-section" id="${slugify(tag)}">
         <h2>${escapeHtml(tag)}</h2>
         ${tagOperations
@@ -459,27 +462,26 @@ const renderedGroups = Array.from(groups.entries())
           .join('')}
       </section>
     `
-  )
-  .join('')
 
-const nav = Array.from(groups.entries())
-  .map(
-    ([tag, tagOperations]) => `
+const renderGroups = (groupEntries) => groupEntries.map(renderGroup).join('')
+
+const renderNav = (groupEntries) =>
+  groupEntries
+    .map(
+      ([tag, tagOperations]) => `
       <li>
         <a href="#${slugify(tag)}">${escapeHtml(tag)}</a>
         <small>${tagOperations.length}</small>
       </li>`
-  )
-  .join('')
+    )
+    .join('')
 
-const html = `<!doctype html>
+const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>${escapeHtml(
-      spec.info && spec.info.title
-    )} endpoint reference</title>
+    <title>${escapeHtml(pageTitle)} endpoint reference</title>
     <style>
       :root {
         --core-orange: #b75400;
@@ -909,10 +911,8 @@ const html = `<!doctype html>
       </aside>
       <main class="content">
         <section class="intro">
-          <h1>${escapeHtml(
-            spec.info && spec.info.title
-          )} endpoint reference</h1>
-          <p class="muted">Generated from <code>data/swagger-v3.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
+          <h1>${escapeHtml(pageTitle)} endpoint reference</h1>
+          <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
         ${renderedGroups}
       </main>
@@ -921,7 +921,22 @@ const html = `<!doctype html>
 </html>
 `
 
-fs.mkdirSync(path.dirname(OUTPUT_PATH), { recursive: true })
-fs.writeFileSync(OUTPUT_PATH, html)
+fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 
-console.log(`Swagger HTML documentation written to ${OUTPUT_PATH}`)
+TAG_OUTPUTS.forEach(([tag, filename]) => {
+  const tagOperations = groups.get(tag)
+  if (!tagOperations) {
+    throw new Error(`Swagger tag not found: ${tag}`)
+  }
+
+  const outputPath = path.join(OUTPUT_DIR, filename)
+  const groupEntries = [[tag, tagOperations]]
+  const title = `${spec.info && spec.info.title} ${tag}`
+
+  fs.writeFileSync(
+    outputPath,
+    renderHtml(title, renderNav(groupEntries), renderGroups(groupEntries))
+  )
+
+  console.log(`Swagger HTML documentation written to ${outputPath}`)
+})
