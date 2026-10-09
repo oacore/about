@@ -80,6 +80,7 @@
   "scripts": {
     "check:swagger-json": "node scripts/check-swagger-json.js",
     "build:swagger-html": "node scripts/build-swagger-html.js",
+    "build:swagger-html-blocks": "node scripts/build-swagger-html-blocks.js",
     "lint": "run-p lint:*",
     "lint:json": "prettier --ignore-path .gitignore --check '**/*.json'",
     "lint:js": "eslint --ignore-path .gitignore --ext .js,.jsx .",
