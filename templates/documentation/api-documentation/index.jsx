@@ -11,29 +11,14 @@ import DocumentationMembershipNav, {
 } from '../docsComponents/documentation-membership-nav'
 import flattenDocItems from '../docsComponents/flatten-doc-items'
 
-const API_DOCS_URL = '/api-docs-v4.html'
-const API_DOCS_MAIN_MARKER = '<main class="content">'
-const API_REFERENCE_HASH_TAGS = ['authorships', 'affiliations', 'institutions']
+const API_DOCS_MAIN_MARKER = '<main class="content-swagger">'
+const AFFILIATION_REFERENCE_URL =
+  '/api-swagger/get-v4-affiliations-affiliationid.html'
+const AFFILIATION_ENDPOINT_MARKER = `##### API endpoint
 
-const getApiReferenceTagId = (hash = '') => {
-  const id = hash.replace(/^#/, '')
-
-  return API_REFERENCE_HASH_TAGS.find((tag) => id.startsWith(`${tag}-`))
-}
-
-const scrollApiReferenceToTag = (frame, tagId) => {
-  if (!frame || !tagId) return
-
-  const doc = frame.contentDocument || frame.contentWindow?.document
-  const target = doc?.querySelector(`.content #${tagId}`)
-
-  if (!target) return
-
-  frame.contentWindow?.scrollTo({
-    top: target.offsetTop,
-    behavior: 'smooth',
-  })
-}
+\`\`\`
+GET https://api.core.ac.uk/v4/affiliations/{affiliationId}
+\`\`\``
 
 const extractApiReferenceHtml = (html) => {
   const swaggerStyles = html.match(/<style>([\s\S]*?)<\/style>/)?.[1]
@@ -60,9 +45,9 @@ const extractApiReferenceHtml = (html) => {
         background: #fff;
       }
 
-      .content {
+      .content-swagger {
         width: 100%;
-        padding: 24px;
+        padding: 0;
       }
 
       .intro {
@@ -93,31 +78,32 @@ const extractApiReferenceHtml = (html) => {
     </style>
   </head>
   <body>
-    <main class="content">
+    <main class="content-swagger">
       ${content}
     </main>
   </body>
 </html>`
 }
 
-const ApiReferenceColumn = ({ activeTagId }) => {
+const InlineApiReference = ({ url, title }) => {
   const [html, setHtml] = useState(null)
+  const [height, setHeight] = useState(640)
   const frameRef = useRef(null)
 
-  useEffect(() => {
-    const scrollTimer = window.setTimeout(() => {
-      scrollApiReferenceToTag(frameRef.current, activeTagId)
-    }, 100)
+  const updateHeight = () => {
+    const doc =
+      frameRef.current?.contentDocument ||
+      frameRef.current?.contentWindow?.document
 
-    return () => {
-      window.clearTimeout(scrollTimer)
-    }
-  }, [activeTagId, html])
+    if (!doc?.body) return
+
+    setHeight(doc.body.scrollHeight)
+  }
 
   useEffect(() => {
     let cancelled = false
 
-    fetch(API_DOCS_URL)
+    fetch(url)
       .then((response) => response.text())
       .then((content) => {
         if (!cancelled) setHtml(extractApiReferenceHtml(content))
@@ -129,15 +115,16 @@ const ApiReferenceColumn = ({ activeTagId }) => {
     return () => {
       cancelled = true
     }
-  }, [])
+  }, [url])
 
   return (
     <iframe
       ref={frameRef}
-      className={styles.apiReferenceFrame}
-      onLoad={() => scrollApiReferenceToTag(frameRef.current, activeTagId)}
+      className={styles.inlineApiReferenceFrame}
+      onLoad={updateHeight}
       srcDoc={html || ''}
-      title="CORE API endpoint reference"
+      style={{ height }}
+      title={title}
     />
   )
 }
@@ -145,7 +132,6 @@ const ApiReferenceColumn = ({ activeTagId }) => {
 const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
   const docItems = useMemo(() => flattenDocItems(docs?.items), [docs?.items])
   const [highlight, setHighlight] = useState()
-  const [activeApiReferenceTagId, setActiveApiReferenceTagId] = useState()
   const [navActiveHref, setNavActiveHref] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[2].title
@@ -159,7 +145,6 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
     const handleHashChange = () => {
       const { hash } = window.location
       const id = hash.substring(1)
-      setActiveApiReferenceTagId(getApiReferenceTagId(hash))
       const element = document.getElementById(id)
       setTimeout(() => {
         if (element) {
@@ -255,9 +240,17 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           handleScrollToTop={handleScrollToTop}
           tutorial={docs?.tutorial}
           tutorialIcon={text.tutorialIcon}
-          sideColumn={
-            <ApiReferenceColumn activeTagId={activeApiReferenceTagId} />
-          }
+          descriptionAddons={{
+            'affiliations-api-affiliations-endpoints': {
+              afterText: AFFILIATION_ENDPOINT_MARKER,
+              render: () => (
+                <InlineApiReference
+                  title="CORE API GET /v4/affiliations/{affiliationId} endpoint reference"
+                  url={AFFILIATION_REFERENCE_URL}
+                />
+              ),
+            },
+          }}
           nav={
             <DocumentationMembershipNav
               activeHref={navActiveHref}

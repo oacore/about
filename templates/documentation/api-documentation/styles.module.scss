@@ -6,10 +6,11 @@
   }
 }
 
-.api-reference-frame {
+.inline-api-reference-frame {
   display: block;
   width: 100%;
-  height: 100%;
+  min-height: 640px;
+  margin: 24px 0;
   border: 0;
 }
 

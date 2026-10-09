@@ -587,7 +587,7 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
         color: var(--muted);
       }
 
-      .content {
+      .content-swagger {
         width: min(100%, 1120px);
         padding: 40px 32px 80px;
       }
@@ -890,8 +890,8 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
           border-bottom: 1px solid var(--line);
         }
 
-        .content {
-          padding: 28px 16px 56px;
+        .content-swagger {
+          padding: 0;
         }
 
         h1 {
@@ -910,7 +910,7 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
     </style>
   </head>
   <body>
-      <main class="content">
+      <main class="content-swagger">
         <section class="intro">
           <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
@@ -924,9 +924,7 @@ fs.mkdirSync(OUTPUT_DIR, { recursive: true })
 
 TAG_OUTPUTS.forEach(([tag, filename]) => {
   const tagOperations = groups.get(tag)
-  if (!tagOperations) {
-    throw new Error(`Swagger tag not found: ${tag}`)
-  }
+  if (!tagOperations) throw new Error(`Swagger tag not found: ${tag}`)
 
   const outputPath = path.join(OUTPUT_DIR, filename)
   const groupEntries = [[tag, tagOperations]]
