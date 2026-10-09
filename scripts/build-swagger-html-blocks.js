@@ -912,22 +912,12 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
     </style>
   </head>
   <body>
-    <div class="page">
-      <aside class="sidebar">
-        <img src="images/logo/core-logo-fullsize.png" alt="CORE" class="brand">
-        <h2>Endpoints</h2>
-        <nav>
-          <ul>${nav}</ul>
-        </nav>
-      </aside>
       <main class="content">
         <section class="intro">
-          <h1>${escapeHtml(pageTitle)} endpoint reference</h1>
           <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
         ${renderedGroups}
       </main>
-    </div>
   </body>
 </html>
 `
