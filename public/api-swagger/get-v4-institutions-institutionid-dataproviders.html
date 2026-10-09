@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CORE API GET /v4/institutions/{institutionId}/dataProviders endpoint reference</title>
+    <style>
+      :root {
+        --core-orange: #b75400;
+        --ink: #212121;
+        --muted: #666;
+        --line: #e6e6e6;
+        --soft: #f7f7f7;
+        --code: #f4f2ef;
+        --panel: #414141;
+        --panel-dark: #202020;
+        --panel-mid: #2c2c2c;
+        --panel-line: #585858;
+        --panel-text: #f2f2f2;
+        --sample-blue: #0276a6;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: var(--ink);
+        font: 16px/1.5 Arial, Helvetica, sans-serif;
+        background: #fff;
+      }
+
+      a {
+        color: var(--core-orange);
+      }
+
+      code,
+      pre {
+        font-family: "Roboto Mono", "SFMono-Regular", Consolas, monospace;
+      }
+
+      pre {
+        overflow-x: auto;
+        padding: 16px;
+        border: 1px solid var(--line);
+        background: var(--code);
+      }
+
+      code {
+        overflow-wrap: anywhere;
+      }
+
+      .page {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        min-height: 100vh;
+      }
+
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        padding: 24px;
+        overflow-y: auto;
+        border-right: 1px solid var(--line);
+        background: var(--soft);
+      }
+
+      .brand {
+        display: block;
+        width: 128px;
+        height: auto;
+        margin-bottom: 28px;
+      }
+
+      .sidebar h2 {
+        margin: 0 0 16px;
+        font-size: 18px;
+      }
+
+      .sidebar ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+
+      .sidebar li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .sidebar small {
+        color: var(--muted);
+      }
+
+      .content {
+        width: min(100%, 1120px);
+        padding: 40px 32px 80px;
+      }
+
+      .intro {
+        display: none;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 36px;
+        line-height: 1.15;
+      }
+
+      h2 {
+        margin: 48px 0 20px;
+        font-size: 28px;
+        line-height: 1.2;
+      }
+
+      h3 {
+        margin: 16px 0 12px;
+        font-size: 22px;
+      }
+
+      h4 {
+        margin: 24px 0 10px;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+
+      .endpoint {
+        margin: 24px 0 32px;
+        padding: 0 0 28px;
+        color: var(--panel-text);
+        background: var(--panel);
+        border: 1px solid #333;
+      }
+
+      .endpoint-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        max-width: 100%;
+        margin: 0;
+        padding: 12px 20px;
+        background: var(--panel-dark);
+        box-shadow: 0 0 0 1px #111;
+      }
+
+      .method,
+      .location {
+        flex: 0 0 auto;
+        padding: 2px 8px;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        border-radius: 2px;
+        background: var(--core-orange);
+      }
+
+      .method {
+        min-width: 54px;
+        padding: 5px 10px;
+        text-align: center;
+        background: var(--sample-blue);
+      }
+
+      .method-post {
+        background: var(--sample-blue);
+      }
+
+      .endpoint-header code {
+        color: #fff;
+        background: transparent;
+      }
+
+      .endpoint-chevron {
+        display: none;
+      }
+
+      .location {
+        color: var(--core-orange);
+        background: #fae2d2;
+      }
+
+      .endpoint > h3,
+      .endpoint > h4,
+      .endpoint > .description,
+      .endpoint > .table-wrap,
+      .endpoint > details,
+      .sample-section {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      .endpoint > h3 {
+        color: #fff;
+      }
+
+      .description {
+        max-width: 880px;
+        color: #eee;
+      }
+
+      .description a,
+      .description .link {
+        color: #f4b27b;
+        overflow-wrap: anywhere;
+      }
+
+      .description b {
+        color: #fff;
+      }
+
+      .description code,
+      td code {
+        padding: 1px 4px;
+        border-radius: 2px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--panel-line);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 720px;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+      }
+
+      th {
+        color: #fff;
+        background: var(--panel-mid);
+        font-size: 14px;
+      }
+
+      td {
+        border-color: var(--panel-line);
+      }
+
+      .field-meta,
+      .meta-item {
+        display: block;
+      }
+
+      .field-meta {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
+      details {
+        margin-top: 18px;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .responses {
+        margin-top: 10px;
+        border: 1px solid var(--panel-line);
+      }
+
+      .response-row {
+        display: grid;
+        grid-template-columns: 80px minmax(0, 1fr) minmax(0, 220px);
+        gap: 12px;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--panel-line);
+      }
+
+      .response-row:last-child {
+        border-bottom: 0;
+      }
+
+      .response-row small {
+        color: #ccc;
+      }
+
+      .sample-section {
+        margin-top: 28px;
+      }
+
+      .sample-section h4 {
+        margin: 0 0 18px;
+        color: #fff;
+        font-size: 20px;
+        line-height: 1.2;
+        text-transform: none;
+      }
+
+      .sample-tab,
+      .status-tab {
+        min-width: 98px;
+        height: 34px;
+        margin: 0 0 6px;
+        color: var(--ink);
+        font: 700 14px/1 Arial, Helvetica, sans-serif;
+        background: #fff;
+        border: 1px solid #bdbdbd;
+        border-radius: 4px;
+      }
+
+      .status-tab {
+        color: #4f9a10;
+      }
+
+      .sample-block {
+        max-width: 920px;
+        padding: 20px;
+        background: var(--panel-dark);
+      }
+
+      .content-type {
+        padding: 10px 14px 14px;
+        background: var(--panel-mid);
+      }
+
+      .content-type strong {
+        display: block;
+        margin-bottom: 6px;
+        color: #bdbdbd;
+        font-size: 12px;
+      }
+
+      .content-type span {
+        color: #fff;
+      }
+
+      .sample-actions {
+        display: none;
+        /*display: flex;*/
+        /*justify-content: flex-end;*/
+        /*gap: 24px;*/
+        /*padding: 18px 0 4px;*/
+        /*color: #bdbdbd;*/
+      }
+
+      .sample-code {
+        min-height: 84px;
+        margin: 0;
+        padding: 0;
+        color: #eee;
+        white-space: pre;
+        border: 0;
+        background: transparent;
+      }
+
+      .json-key {
+        color: #f5f5f5;
+      }
+
+      .json-string {
+        color: #7ee08f;
+      }
+
+      .json-number {
+        color: #72a8ff;
+      }
+
+      .json-boolean {
+        color: #ff5252;
+      }
+
+      .json-null {
+        color: #b8758d;
+      }
+
+      .sample-empty {
+        max-width: 920px;
+        margin: 0;
+        padding: 16px 20px;
+        color: #ccc;
+        background: var(--panel-dark);
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          display: block;
+        }
+
+        .sidebar {
+          position: static;
+          height: auto;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .content {
+          padding: 28px 16px 56px;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+
+        .endpoint-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .response-row {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <aside class="sidebar">
+        <img src="images/logo/core-logo-fullsize.png" alt="CORE" class="brand">
+        <h2>Endpoints</h2>
+        <nav>
+          <ul>
+      <li>
+        <a href="#get_v4_institutions_data_providers_by_identifier">GET /v4/institutions/{institutionId}/dataProviders</a>
+        <small>Institutions</small>
+      </li></ul>
+        </nav>
+      </aside>
+      <main class="content">
+        <section class="intro">
+          <h1>CORE API GET /v4/institutions/{institutionId}/dataProviders endpoint reference</h1>
+          <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
+        </section>
+        
+      <section class="tag-section" id="institutions">
+        <h2>Institutions</h2>
+        
+              <article class="endpoint" id="get_v4_institutions_data_providers_by_identifier">
+                <header class="endpoint-header">
+                  <span class="method method-get">GET</span>
+                  <code>/v4/institutions/{institutionId}/dataProviders</code>
+                  <span class="endpoint-chevron">&#8964;</span>
+                </header>
+                <h3>Get Institution Data Providers</h3>
+                <div class="description">Retrieves complete CORE Data Provider records associated with the Institution.</div>
+                <h4>Arguments</h4>
+                
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>In</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+                <tr>
+                  <td><code>institutionId</code></td>
+                  <td><span class="location">path</span></td>
+                  <td><code>integer</code></td>
+                  <td>Yes</td>
+                  <td>
+                    The CORE Institution ID.
+                    <span class="field-meta">
+                      
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>count</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>boolean</code></td>
+                  <td>No</td>
+                  <td>
+                    Whether to calculate the total number of matching Data Providers.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> false</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>limit</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>integer</code></td>
+                  <td>No</td>
+                  <td>
+                    Maximum number of Data Provider records to return.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> 10</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>offset</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>integer</code></td>
+                  <td>No</td>
+                  <td>
+                    Number of Data Provider records to skip.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> 0</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+        </tbody>
+      </table>
+    </div>
+                
+    <section class="sample-section">
+      <h4>Request samples</h4>
+      <button class="sample-tab" type="button">Payload</button>
+      <p class="sample-empty">No request body.</p>
+    </section>
+                
+    <section class="sample-section">
+      <h4>Response samples</h4>
+      
+                  <button class="status-tab" type="button">200</button>
+                  
+  <div class="sample-block">
+    <div class="content-type">
+      <strong>Content type</strong>
+      <span>application/json</span>
+    </div>
+    <div class="sample-actions" aria-hidden="true">
+      <span>Copy</span>
+      <span>Expand all</span>
+      <span>Collapse all</span>
+    </div>
+    <pre class="sample-code"><code>{
+  <span class="json-key">"totalHits"</span>: <span class="json-number">1</span>,
+  <span class="json-key">"results"</span>: [
+    {
+      <span class="json-key">"dataProviderId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"name"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"type"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"homepageUrl"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"oaiPmhUrl"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"institutionId"</span>: <span class="json-number">0</span>
+    }
+  ]
+}</code></pre>
+  </div>
+                
+    </section>
+                
+    <details>
+      <summary>Responses</summary>
+      <div class="responses">
+        
+              <div class="response-row">
+                <code>200</code>
+                <span>The Institution Data Provider records were retrieved successfully.</span>
+                <small>object</small>
+              </div>
+              <div class="response-row">
+                <code>400</code>
+                <span>The request contains an invalid parameter.</span>
+                
+              </div>
+              <div class="response-row">
+                <code>401</code>
+                <span>Authentication credentials are missing or invalid.</span>
+                
+              </div>
+              <div class="response-row">
+                <code>404</code>
+                <span>No Institution record was found for the supplied identifier.</span>
+                
+              </div>
+              <div class="response-row">
+                <code>429</code>
+                <span>The API request limit has been exceeded.</span>
+                
+              </div>
+              <div class="response-row">
+                <code>500</code>
+                <span>An unexpected server error occurred.</span>
+                
+              </div>
+      </div>
+    </details>
+              </article>
+            
+      </section>
+    
+      </main>
+    </div>
+  </body>
+</html>

@@ -43,6 +43,11 @@ const slugify = (value = '') =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '')
 
+const endpointFilename = (operation) =>
+  `${slugify(
+    `${operation.method}-${operation.path.replace(/[{}]/g, '')}`
+  )}.html`
+
 const formatInline = (value = '') =>
   escapeHtml(value)
     .replace(
@@ -433,17 +438,12 @@ const groups = operations.reduce((result, operation) => {
   return result
 }, new Map())
 
-const renderGroup = ([tag, tagOperations]) => `
-      <section class="tag-section" id="${slugify(tag)}">
-        <h2>${escapeHtml(tag)}</h2>
-        ${tagOperations
-          .map(
-            (operation) => `
+const renderOperation = (operation) => `
               <article class="endpoint" id="${escapeHtml(operation.id)}">
                 <header class="endpoint-header">
                   <span class="method method-${operation.method.toLowerCase()}">${
-              operation.method
-            }</span>
+  operation.method
+}</span>
                   <code>${escapeHtml(operation.path)}</code>
                   <span class="endpoint-chevron">&#8964;</span>
                 </header>
@@ -458,8 +458,11 @@ const renderGroup = ([tag, tagOperations]) => `
                 ${renderResponses(operation.responses)}
               </article>
             `
-          )
-          .join('')}
+
+const renderGroup = ([tag, tagOperations]) => `
+      <section class="tag-section" id="${slugify(tag)}">
+        <h2>${escapeHtml(tag)}</h2>
+        ${tagOperations.map(renderOperation).join('')}
       </section>
     `
 
@@ -475,6 +478,14 @@ const renderNav = (groupEntries) =>
       </li>`
     )
     .join('')
+
+const renderEndpointNav = (operation) => `
+      <li>
+        <a href="#${escapeHtml(operation.id)}">${escapeHtml(
+  operation.method
+)} ${escapeHtml(operation.path)}</a>
+        <small>${escapeHtml(operation.tag)}</small>
+      </li>`
 
 const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
 <html lang="en">
@@ -939,4 +950,28 @@ TAG_OUTPUTS.forEach(([tag, filename]) => {
   )
 
   console.log(`Swagger HTML documentation written to ${outputPath}`)
+
+  tagOperations.forEach((operation) => {
+    const endpointOutputPath = path.join(
+      OUTPUT_DIR,
+      endpointFilename(operation)
+    )
+    const endpointTitle = `${spec.info && spec.info.title} ${
+      operation.method
+    } ${operation.path}`
+    const endpointGroupEntries = [[tag, [operation]]]
+
+    fs.writeFileSync(
+      endpointOutputPath,
+      renderHtml(
+        endpointTitle,
+        renderEndpointNav(operation),
+        renderGroups(endpointGroupEntries)
+      )
+    )
+
+    console.log(
+      `Swagger endpoint HTML documentation written to ${endpointOutputPath}`
+    )
+  })
 })
