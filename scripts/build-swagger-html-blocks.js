@@ -618,6 +618,9 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
         font-size: 16px;
         text-transform: uppercase;
       }
+      .tag-section h2 {
+        display: none;
+      }
 
       .endpoint {
         margin: 24px 0 32px;
@@ -835,11 +838,6 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
 
       .sample-actions {
         display: none;
-        /*display: flex;*/
-        /*justify-content: flex-end;*/
-        /*gap: 24px;*/
-        /*padding: 18px 0 4px;*/
-        /*color: #bdbdbd;*/
       }
 
       .sample-code {
