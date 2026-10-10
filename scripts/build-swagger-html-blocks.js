@@ -592,6 +592,10 @@ const renderHtml = (pageTitle, nav, renderedGroups) => `<!doctype html>
         padding: 40px 32px 80px;
       }
 
+      .endpoint td:first-child{
+        width: 15%;
+      }
+
       .intro {
         display: none;
       }
