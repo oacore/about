@@ -19,6 +19,13 @@ const AFFILIATION_ENDPOINT_MARKER = `##### API endpoint
 \`\`\`
 GET https://api.core.ac.uk/v4/affiliations/{affiliationId}
 \`\`\``
+const INSTITUTION_REFERENCE_URL =
+  '/api-swagger/get-v4-institutions-institutionid.html'
+const INSTITUTION_ENDPOINT_MARKER = `##### API endpoint
+
+\`\`\`
+GET https://api.core.ac.uk/v4/institutions/{institutionId}
+\`\`\``
 
 const extractApiReferenceHtml = (html) => {
   const swaggerStyles = html.match(/<style>([\s\S]*?)<\/style>/)?.[1]
@@ -247,6 +254,15 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
                 <InlineApiReference
                   title="CORE API GET /v4/affiliations/{affiliationId} endpoint reference"
                   url={AFFILIATION_REFERENCE_URL}
+                />
+              ),
+            },
+            'institutions-api-institutions-endpoints': {
+              afterText: INSTITUTION_ENDPOINT_MARKER,
+              render: () => (
+                <InlineApiReference
+                  title="CORE API GET /v4/institutions/{institutionId} endpoint reference"
+                  url={INSTITUTION_REFERENCE_URL}
                 />
               ),
             },
