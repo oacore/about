@@ -27,6 +27,7 @@ const DocumentationMembership = ({
   redirectLink,
   showNavigator,
   handleScrollToTop,
+  sideColumn,
 }) => (
   <div
     className={classNames.use(styles.documentationWrapper, {
@@ -40,12 +41,14 @@ const DocumentationMembership = ({
     <div
       className={classNames.use(styles.placement, {
         [styles.placementHeight]: imageSource,
+        [styles.threeColumnPlacement]: sideColumn,
       })}
     >
       {nav}
       <div
         className={classNames.use(styles.documentationInnerWrapper, {
           [styles.innerSpacing]: mulltyDocs,
+          [styles.innerWithSideColumn]: sideColumn,
         })}
       >
         <div className={styles.headerWrapper}>
@@ -185,6 +188,7 @@ const DocumentationMembership = ({
           </>
         ))}
       </div>
+      {sideColumn && <aside className={styles.sideColumn}>{sideColumn}</aside>}
       {showNavigator && (
         // eslint-disable-next-line max-len
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
