@@ -4,8 +4,13 @@
 const fs = require('fs')
 const path = require('path')
 
-const SWAGGER_PATH = path.join(__dirname, '..', 'data', 'swagger-v4.json')
-const OUTPUT_PATH = path.join(__dirname, '..', 'public', 'api-docs-v4.html')
+const SWAGGER_PATH = path.join(__dirname, '..', 'data', 'swagger-graph-v1.json')
+const OUTPUT_PATH = path.join(
+  __dirname,
+  '..',
+  'public',
+  'api-docs-graph-v1.html'
+)
 const HTTP_METHODS = [
   'get',
   'post',
