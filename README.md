@@ -93,3 +93,5 @@ We give thanks to:
   ![BrowserStack](docs/images/browserstack-logo.svg)
 ](https://browserstack.com)
 
+
+export NODE_OPTIONS=--openssl-legacy-provider
