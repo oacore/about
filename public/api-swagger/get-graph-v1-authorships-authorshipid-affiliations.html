@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CORE API GET /v4/institutions/{institutionId}/affiliations endpoint reference</title>
+    <title>CORE API GET /graph/v1/authorships/{authorshipId}/affiliations endpoint reference</title>
     <style>
       :root {
         --core-orange: #b75400;
@@ -430,17 +430,17 @@
           <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
         
-      <section class="tag-section" id="institutions">
-        <h2>Institutions</h2>
+      <section class="tag-section" id="authorships">
+        <h2>Authorships</h2>
         
-              <article class="endpoint" id="get_v4_institutions_affiliations_by_identifier">
+              <article class="endpoint" id="get_graph_v1_authorships_affiliations_by_identifier">
                 <header class="endpoint-header">
                   <span class="method method-get">GET</span>
-                  <code>/v4/institutions/{institutionId}/affiliations</code>
+                  <code>/graph/v1/authorships/{authorshipId}/affiliations</code>
                   <span class="endpoint-chevron">&#8964;</span>
                 </header>
-                <h3>Get Institution Affiliations</h3>
-                <div class="description">Retrieves Affiliation records whose institutionId matches the Institution.</div>
+                <h3>Get Authorship Affiliations</h3>
+                <div class="description">Retrieves Affiliation records associated with the Authorship.</div>
                 <h4>Arguments</h4>
                 
     <div class="table-wrap">
@@ -457,28 +457,14 @@
         <tbody>
           
                 <tr>
-                  <td><code>institutionId</code></td>
+                  <td><code>authorshipId</code></td>
                   <td><span class="location">path</span></td>
                   <td><code>integer</code></td>
                   <td>Yes</td>
                   <td>
-                    The CORE Institution ID.
+                    The CORE Authorship ID.
                     <span class="field-meta">
                       
-                      
-                    </span>
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td><code>orderby</code></td>
-                  <td><span class="location">query</span></td>
-                  <td><code>string</code></td>
-                  <td>No</td>
-                  <td>
-                    Field and direction to order by, for example startDate:asc.
-                    <span class="field-meta">
-                      <span class="meta-item"><strong>Default:</strong> startDate:asc</span>
                       
                     </span>
                   </td>
@@ -583,7 +569,7 @@
         
               <div class="response-row">
                 <code>200</code>
-                <span>The Institution Affiliation records were retrieved successfully.</span>
+                <span>The Authorship Affiliation records were retrieved successfully.</span>
                 <small>object</small>
               </div>
               <div class="response-row">
@@ -598,7 +584,7 @@
               </div>
               <div class="response-row">
                 <code>404</code>
-                <span>No Institution record was found for the supplied identifier.</span>
+                <span>No Authorship record was found for the supplied identifier.</span>
                 
               </div>
               <div class="response-row">

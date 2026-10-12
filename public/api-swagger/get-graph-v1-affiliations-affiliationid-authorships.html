@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CORE API GET /v4/authorships/{identifier} endpoint reference</title>
+    <title>CORE API GET /graph/v1/affiliations/{affiliationId}/authorships endpoint reference</title>
     <style>
       :root {
         --core-orange: #b75400;
@@ -430,17 +430,17 @@
           <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
         
-      <section class="tag-section" id="authorships">
-        <h2>Authorships</h2>
+      <section class="tag-section" id="affiliations">
+        <h2>Affiliations</h2>
         
-              <article class="endpoint" id="get_v4_authorships_by_identifier">
+              <article class="endpoint" id="get_graph_v1_affiliations_authorships_by_identifier">
                 <header class="endpoint-header">
                   <span class="method method-get">GET</span>
-                  <code>/v4/authorships/{identifier}</code>
+                  <code>/graph/v1/affiliations/{affiliationId}/authorships</code>
                   <span class="endpoint-chevron">&#8964;</span>
                 </header>
-                <h3>Get a single Authorship</h3>
-                <div class="description"></div>
+                <h3>Get Affiliation Authorships</h3>
+                <div class="description">Retrieves Authorship records associated with the Affiliation.</div>
                 <h4>Arguments</h4>
                 
     <div class="table-wrap">
@@ -457,12 +457,12 @@
         <tbody>
           
                 <tr>
-                  <td><code>identifier</code></td>
+                  <td><code>affiliationId</code></td>
                   <td><span class="location">path</span></td>
-                  <td><code>string</code></td>
+                  <td><code>integer</code></td>
                   <td>Yes</td>
                   <td>
-                    The CORE Authorship ID.
+                    Unique CORE identifier of the Affiliation record.
                     <span class="field-meta">
                       
                       
@@ -471,16 +471,42 @@
                 </tr>
               
                 <tr>
-                  <td><code>select</code></td>
+                  <td><code>count</code></td>
                   <td><span class="location">query</span></td>
-                  <td><code>string</code></td>
+                  <td><code>boolean</code></td>
                   <td>No</td>
                   <td>
-                    Optional comma-separated list of response fields to include. 
-                Available fields: authorshipId, workId, authorId, rawName, sequence, rank, 
-                isFirstNamedAuthor, isCorresponding, sourceOutputIds, createdDate, updatedDate.
+                    Whether to calculate the total number of matching Authorships.
                     <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> false</span>
                       
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>limit</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>integer</code></td>
+                  <td>No</td>
+                  <td>
+                    Maximum number of Authorship records to return.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> 10</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>offset</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>integer</code></td>
+                  <td>No</td>
+                  <td>
+                    Number of Authorship records to skip.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> 0</span>
                       
                     </span>
                   </td>
@@ -512,17 +538,22 @@
       <span>Collapse all</span>
     </div>
     <pre class="sample-code"><code>{
-  <span class="json-key">"authorshipId"</span>: <span class="json-number">0</span>,
-  <span class="json-key">"workId"</span>: <span class="json-number">0</span>,
-  <span class="json-key">"authorId"</span>: <span class="json-number">0</span>,
-  <span class="json-key">"rawName"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"sequence"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"rank"</span>: <span class="json-number">0</span>,
-  <span class="json-key">"isFirstNamedAuthor"</span>: <span class="json-boolean">false</span>,
-  <span class="json-key">"isCorresponding"</span>: <span class="json-boolean">false</span>,
-  <span class="json-key">"sourceOutputIds"</span>: [],
-  <span class="json-key">"createdDate"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"updatedDate"</span>: <span class="json-string">"string"</span>
+  <span class="json-key">"totalHits"</span>: <span class="json-number">1</span>,
+  <span class="json-key">"results"</span>: [
+    {
+      <span class="json-key">"authorshipId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"workId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"authorId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"rawName"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"sequence"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"rank"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"isFirstNamedAuthor"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"isCorresponding"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"sourceOutputIds"</span>: [],
+      <span class="json-key">"createdDate"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"updatedDate"</span>: <span class="json-string">"string"</span>
+    }
+  ]
 }</code></pre>
   </div>
                 
@@ -534,12 +565,12 @@
         
               <div class="response-row">
                 <code>200</code>
-                <span>The Authorship record was retrieved successfully.</span>
+                <span>The Affiliation Authorship records were retrieved successfully.</span>
                 <small>object</small>
               </div>
               <div class="response-row">
                 <code>400</code>
-                <span>The request contains an invalid parameter or unsupported field name.</span>
+                <span>The request contains an invalid parameter.</span>
                 
               </div>
               <div class="response-row">
@@ -549,7 +580,7 @@
               </div>
               <div class="response-row">
                 <code>404</code>
-                <span>No Authorship record was found for the supplied identifier.</span>
+                <span>No Affiliation record was found for the supplied identifier.</span>
                 
               </div>
               <div class="response-row">

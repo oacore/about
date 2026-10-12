@@ -13,14 +13,14 @@ import flattenDocItems from '../docsComponents/flatten-doc-items'
 
 const API_DOCS_MAIN_MARKER = '<main class="content-swagger">'
 const AFFILIATION_REFERENCE_URL =
-  '/api-swagger/get-v4-affiliations-affiliationid.html'
+  '/api-swagger/get-graph-v1-affiliations-affiliationid.html'
 const AFFILIATION_ENDPOINT_MARKER = `##### API endpoint
 
 \`\`\`
 GET https://api.core.ac.uk/v4/affiliations/{affiliationId}
 \`\`\``
 const INSTITUTION_REFERENCE_URL =
-  '/api-swagger/get-v4-institutions-institutionid.html'
+  '/api-swagger/get-graph-v1-institutions-institutionid.html'
 const INSTITUTION_ENDPOINT_MARKER = `##### API endpoint
 
 \`\`\`

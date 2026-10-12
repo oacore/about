@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CORE API GET /v4/institutions/{institutionId} endpoint reference</title>
+    <title>CORE API GET /graph/v1/search/affiliations endpoint reference</title>
     <style>
       :root {
         --core-orange: #b75400;
@@ -430,17 +430,17 @@
           <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
         
-      <section class="tag-section" id="institutions">
-        <h2>Institutions</h2>
+      <section class="tag-section" id="affiliations">
+        <h2>Affiliations</h2>
         
-              <article class="endpoint" id="get_v4_institutions_by_identifier">
+              <article class="endpoint" id="get_graph_v1_search_affiliations_get">
                 <header class="endpoint-header">
                   <span class="method method-get">GET</span>
-                  <code>/v4/institutions/{institutionId}</code>
+                  <code>/graph/v1/search/affiliations</code>
                   <span class="endpoint-chevron">&#8964;</span>
                 </header>
-                <h3>Get a single Institution</h3>
-                <div class="description"></div>
+                <h3>Search Affiliations</h3>
+                <div class="description">Search Affiliation records using URL query parameters.</div>
                 <h4>Arguments</h4>
                 
     <div class="table-wrap">
@@ -457,12 +457,27 @@
         <tbody>
           
                 <tr>
-                  <td><code>institutionId</code></td>
-                  <td><span class="location">path</span></td>
-                  <td><code>integer</code></td>
-                  <td>Yes</td>
+                  <td><code>q</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>string</code></td>
+                  <td>No</td>
                   <td>
-                    The CORE Institution ID.
+                    CORE query expression. Supports free-text search, 
+                field lookup, Boolean operators, grouping, range queries, and existence queries.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> *</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>orderby</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>string</code></td>
+                  <td>No</td>
+                  <td>
+                    Comma-separated ordering directives in field:direction format.
                     <span class="field-meta">
                       
                       
@@ -476,9 +491,65 @@
                   <td><code>string</code></td>
                   <td>No</td>
                   <td>
-                    Optional comma-separated list of response fields to include. Available fields: institutionId, rorId, openalexId, displayName, acronym, countryCode, countryName, city, websiteUrl, domains, types, status, establishedYear.
+                    Comma-separated list of fields to include in each result.
                     <span class="field-meta">
                       
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>facets</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>string</code></td>
+                  <td>No</td>
+                  <td>
+                    Comma-separated list of facetable fields.
+                    <span class="field-meta">
+                      
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>count</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>boolean</code></td>
+                  <td>No</td>
+                  <td>
+                    Whether to include the total number of matching Affiliation records.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> false</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>limit</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>integer</code></td>
+                  <td>No</td>
+                  <td>
+                    Maximum number of Affiliation records to return.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> 10</span>
+                      
+                    </span>
+                  </td>
+                </tr>
+              
+                <tr>
+                  <td><code>offset</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>integer</code></td>
+                  <td>No</td>
+                  <td>
+                    Number of matching Affiliation records to skip.
+                    <span class="field-meta">
+                      <span class="meta-item"><strong>Default:</strong> 0</span>
                       
                     </span>
                   </td>
@@ -496,36 +567,7 @@
                 
     <section class="sample-section">
       <h4>Response samples</h4>
-      
-                  <button class="status-tab" type="button">200</button>
-                  
-  <div class="sample-block">
-    <div class="content-type">
-      <strong>Content type</strong>
-      <span>application/json</span>
-    </div>
-    <div class="sample-actions" aria-hidden="true">
-      <span>Copy</span>
-      <span>Expand all</span>
-      <span>Collapse all</span>
-    </div>
-    <pre class="sample-code"><code>{
-  <span class="json-key">"institutionId"</span>: <span class="json-number">0</span>,
-  <span class="json-key">"rorId"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"openalexId"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"displayName"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"acronym"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"countryCode"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"countryName"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"city"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"websiteUrl"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"domains"</span>: [],
-  <span class="json-key">"types"</span>: [],
-  <span class="json-key">"status"</span>: <span class="json-string">"string"</span>,
-  <span class="json-key">"establishedYear"</span>: <span class="json-number">0</span>
-}</code></pre>
-  </div>
-                
+      <p class="sample-empty">No response sample.</p>
     </section>
                 
     <details>
@@ -534,22 +576,18 @@
         
               <div class="response-row">
                 <code>200</code>
-                <span>The Institution record was retrieved successfully.</span>
-                <small>object</small>
+                <span>The Affiliation search was completed successfully.</span>
+                
               </div>
               <div class="response-row">
                 <code>400</code>
-                <span>The request contains an invalid parameter or unsupported field name.</span>
+                <span>The request contains an invalid query, 
+                unsupported field, invalid facet, or invalid response-control parameter.</span>
                 
               </div>
               <div class="response-row">
                 <code>401</code>
                 <span>Authentication credentials are missing or invalid.</span>
-                
-              </div>
-              <div class="response-row">
-                <code>404</code>
-                <span>No Institution record was found for the supplied identifier.</span>
                 
               </div>
               <div class="response-row">

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CORE API POST /v4/search/affiliations endpoint reference</title>
+    <title>CORE API GET /graph/v1/institutions/{institutionId}/affiliations endpoint reference</title>
     <style>
       :root {
         --core-orange: #b75400;
@@ -430,17 +430,17 @@
           <p class="muted">Generated from <code>data/swagger-v4.json</code>. Includes endpoint descriptions and arguments from the OpenAPI specification.</p>
         </section>
         
-      <section class="tag-section" id="affiliations">
-        <h2>Affiliations</h2>
+      <section class="tag-section" id="institutions">
+        <h2>Institutions</h2>
         
-              <article class="endpoint" id="post_v4_search_affiliations_post">
+              <article class="endpoint" id="get_graph_v1_institutions_affiliations_by_identifier">
                 <header class="endpoint-header">
-                  <span class="method method-post">POST</span>
-                  <code>/v4/search/affiliations</code>
+                  <span class="method method-get">GET</span>
+                  <code>/graph/v1/institutions/{institutionId}/affiliations</code>
                   <span class="endpoint-chevron">&#8964;</span>
                 </header>
-                <h3>Search Affiliations</h3>
-                <div class="description">Search Affiliation records using a JSON request body.</div>
+                <h3>Get Institution Affiliations</h3>
+                <div class="description">Retrieves Affiliation records whose institutionId matches the Institution.</div>
                 <h4>Arguments</h4>
                 
     <div class="table-wrap">
@@ -457,14 +457,14 @@
         <tbody>
           
                 <tr>
-                  <td><code>q</code></td>
-                  <td><span class="location">body</span></td>
-                  <td><code>string</code></td>
-                  <td>No</td>
+                  <td><code>institutionId</code></td>
+                  <td><span class="location">path</span></td>
+                  <td><code>integer</code></td>
+                  <td>Yes</td>
                   <td>
-                    
+                    The CORE Institution ID.
                     <span class="field-meta">
-                      <span class="meta-item"><strong>Default:</strong> *</span>
+                      
                       
                     </span>
                   </td>
@@ -472,41 +472,13 @@
               
                 <tr>
                   <td><code>orderby</code></td>
-                  <td><span class="location">body</span></td>
-                  <td><code>string[]</code></td>
+                  <td><span class="location">query</span></td>
+                  <td><code>string</code></td>
                   <td>No</td>
                   <td>
-                    
+                    Field and direction to order by, for example startDate:asc.
                     <span class="field-meta">
-                      
-                      
-                    </span>
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td><code>select</code></td>
-                  <td><span class="location">body</span></td>
-                  <td><code>string[]</code></td>
-                  <td>No</td>
-                  <td>
-                    
-                    <span class="field-meta">
-                      
-                      
-                    </span>
-                  </td>
-                </tr>
-              
-                <tr>
-                  <td><code>facets</code></td>
-                  <td><span class="location">body</span></td>
-                  <td><code>string[]</code></td>
-                  <td>No</td>
-                  <td>
-                    
-                    <span class="field-meta">
-                      
+                      <span class="meta-item"><strong>Default:</strong> startDate:asc</span>
                       
                     </span>
                   </td>
@@ -514,11 +486,11 @@
               
                 <tr>
                   <td><code>count</code></td>
-                  <td><span class="location">body</span></td>
+                  <td><span class="location">query</span></td>
                   <td><code>boolean</code></td>
                   <td>No</td>
                   <td>
-                    
+                    Whether to calculate the total number of matching Affiliations.
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> false</span>
                       
@@ -528,11 +500,11 @@
               
                 <tr>
                   <td><code>limit</code></td>
-                  <td><span class="location">body</span></td>
+                  <td><span class="location">query</span></td>
                   <td><code>integer</code></td>
                   <td>No</td>
                   <td>
-                    
+                    Maximum number of Affiliation records to return.
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> 10</span>
                       
@@ -542,11 +514,11 @@
               
                 <tr>
                   <td><code>offset</code></td>
-                  <td><span class="location">body</span></td>
+                  <td><span class="location">query</span></td>
                   <td><code>integer</code></td>
                   <td>No</td>
                   <td>
-                    
+                    Number of Affiliation records to skip.
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> 0</span>
                       
@@ -561,7 +533,14 @@
     <section class="sample-section">
       <h4>Request samples</h4>
       <button class="sample-tab" type="button">Payload</button>
+      <p class="sample-empty">No request body.</p>
+    </section>
+                
+    <section class="sample-section">
+      <h4>Response samples</h4>
       
+                  <button class="status-tab" type="button">200</button>
+                  
   <div class="sample-block">
     <div class="content-type">
       <strong>Content type</strong>
@@ -573,26 +552,29 @@
       <span>Collapse all</span>
     </div>
     <pre class="sample-code"><code>{
-  <span class="json-key">"q"</span>: <span class="json-string">"*"</span>,
-  <span class="json-key">"orderby"</span>: [
-    <span class="json-string">"string"</span>
-  ],
-  <span class="json-key">"select"</span>: [
-    <span class="json-string">"string"</span>
-  ],
-  <span class="json-key">"facets"</span>: [
-    <span class="json-string">"string"</span>
-  ],
-  <span class="json-key">"count"</span>: <span class="json-boolean">false</span>,
-  <span class="json-key">"limit"</span>: <span class="json-number">10</span>,
-  <span class="json-key">"offset"</span>: <span class="json-number">0</span>
+  <span class="json-key">"totalHits"</span>: <span class="json-number">1</span>,
+  <span class="json-key">"results"</span>: [
+    {
+      <span class="json-key">"affiliationId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"authorId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"rawAffiliation"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"department"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"institutionId"</span>: <span class="json-number">0</span>,
+      <span class="json-key">"institutionName"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"isCurrent"</span>: <span class="json-boolean">false</span>,
+      <span class="json-key">"startDate"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"endDate"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"evidenceWorkIds"</span>: [],
+      <span class="json-key">"externalIds"</span>: [],
+      <span class="json-key">"address"</span>: <span class="json-null">null</span>,
+      <span class="json-key">"url"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"createdDate"</span>: <span class="json-string">"string"</span>,
+      <span class="json-key">"updatedDate"</span>: <span class="json-string">"string"</span>
+    }
+  ]
 }</code></pre>
   </div>
-    </section>
                 
-    <section class="sample-section">
-      <h4>Response samples</h4>
-      <p class="sample-empty">No response sample.</p>
     </section>
                 
     <details>
@@ -601,13 +583,12 @@
         
               <div class="response-row">
                 <code>200</code>
-                <span>The Affiliation search was completed successfully.</span>
-                
+                <span>The Institution Affiliation records were retrieved successfully.</span>
+                <small>object</small>
               </div>
               <div class="response-row">
                 <code>400</code>
-                <span>The request contains an invalid query, 
-                unsupported field, invalid facet, or invalid response-control parameter.</span>
+                <span>The request contains an invalid parameter.</span>
                 
               </div>
               <div class="response-row">
@@ -616,8 +597,8 @@
                 
               </div>
               <div class="response-row">
-                <code>413</code>
-                <span>The POST request body exceeds the permitted size.</span>
+                <code>404</code>
+                <span>No Institution record was found for the supplied identifier.</span>
                 
               </div>
               <div class="response-row">

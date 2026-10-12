@@ -22,12 +22,12 @@
     }
   ],
   "paths": {
-    "/v4/affiliations/{affiliationId}": {
+    "/graph/v1/affiliations/{affiliationId}": {
       "get": {
         "tags": ["Affiliations"],
         "summary": "Get a single Affiliation",
         "description": "Retrieves a single Affiliation record using its unique CORE Affiliation identifier.",
-        "operationId": "get_v4_affiliations_by_identifier",
+        "operationId": "get_graph_v1_affiliations_by_identifier",
         "parameters": [
           {
             "name": "affiliationId",
@@ -83,12 +83,12 @@
         ]
       }
     },
-    "/v4/affiliations/{affiliationId}/authorships": {
+    "/graph/v1/affiliations/{affiliationId}/authorships": {
       "get": {
         "tags": ["Affiliations"],
         "summary": "Get Affiliation Authorships",
         "description": "Retrieves Authorship records associated with the Affiliation.",
-        "operationId": "get_v4_affiliations_authorships_by_identifier",
+        "operationId": "get_graph_v1_affiliations_authorships_by_identifier",
         "parameters": [
           {
             "name": "affiliationId",
@@ -179,12 +179,12 @@
         ]
       }
     },
-    "/v4/search/affiliations": {
+    "/graph/v1/search/affiliations": {
       "get": {
         "tags": ["Affiliations"],
         "summary": "Search Affiliations",
         "description": "Search Affiliation records using URL query parameters.",
-        "operationId": "get_v4_search_affiliations_get",
+        "operationId": "get_graph_v1_search_affiliations_get",
         "parameters": [
           {
             "name": "q",
@@ -283,7 +283,7 @@
         "tags": ["Affiliations"],
         "summary": "Search Affiliations",
         "description": "Search Affiliation records using a JSON request body.",
-        "operationId": "post_v4_search_affiliations_post",
+        "operationId": "post_graph_v1_search_affiliations_post",
         "requestBody": {
           "required": false,
           "content": {
@@ -357,12 +357,12 @@
         ]
       }
     },
-    "/v4/authorships/{identifier}": {
+    "/graph/v1/authorships/{identifier}": {
       "get": {
         "tags": ["Authorships"],
         "summary": "Get a single Authorship",
         "description": "",
-        "operationId": "get_v4_authorships_by_identifier",
+        "operationId": "get_graph_v1_authorships_by_identifier",
         "parameters": [
           {
             "name": "identifier",
@@ -418,12 +418,12 @@
         ]
       }
     },
-    "/v4/authorships/{authorshipId}/affiliations": {
+    "/graph/v1/authorships/{authorshipId}/affiliations": {
       "get": {
         "tags": ["Authorships"],
         "summary": "Get Authorship Affiliations",
         "description": "Retrieves Affiliation records associated with the Authorship.",
-        "operationId": "get_v4_authorships_affiliations_by_identifier",
+        "operationId": "get_graph_v1_authorships_affiliations_by_identifier",
         "parameters": [
           {
             "name": "authorshipId",
@@ -514,12 +514,12 @@
         ]
       }
     },
-    "/v4/search/authorships": {
+    "/graph/v1/search/authorships": {
       "get": {
         "tags": ["Authorships"],
         "summary": "Search Authorships",
         "description": "Search Authorship records using URL query parameters.",
-        "operationId": "get_v4_search_authorships_get",
+        "operationId": "get_graph_v1_search_authorships_get",
         "parameters": [
           {
             "name": "q",
@@ -618,7 +618,7 @@
         "tags": ["Authorships"],
         "summary": "Search Authorships",
         "description": "Search Authorship records using a JSON request body.",
-        "operationId": "post_v4_search_authorships_post",
+        "operationId": "post_graph_v1_search_authorships_post",
         "requestBody": {
           "required": false,
           "content": {
@@ -692,12 +692,12 @@
         ]
       }
     },
-    "/v4/institutions/{institutionId}": {
+    "/graph/v1/institutions/{institutionId}": {
       "get": {
         "tags": ["Institutions"],
         "summary": "Get a single Institution",
         "description": "",
-        "operationId": "get_v4_institutions_by_identifier",
+        "operationId": "get_graph_v1_institutions_by_identifier",
         "parameters": [
           {
             "name": "institutionId",
@@ -753,12 +753,12 @@
         ]
       }
     },
-    "/v4/institutions/{institutionId}/affiliations": {
+    "/graph/v1/institutions/{institutionId}/affiliations": {
       "get": {
         "tags": ["Institutions"],
         "summary": "Get Institution Affiliations",
         "description": "Retrieves Affiliation records whose institutionId matches the Institution.",
-        "operationId": "get_v4_institutions_affiliations_by_identifier",
+        "operationId": "get_graph_v1_institutions_affiliations_by_identifier",
         "parameters": [
           {
             "name": "institutionId",
@@ -859,12 +859,12 @@
         ]
       }
     },
-    "/v4/institutions/{institutionId}/dataProviders": {
+    "/graph/v1/institutions/{institutionId}/dataProviders": {
       "get": {
         "tags": ["Institutions"],
         "summary": "Get Institution Data Providers",
         "description": "Retrieves complete CORE Data Provider records associated with the Institution.",
-        "operationId": "get_v4_institutions_data_providers_by_identifier",
+        "operationId": "get_graph_v1_institutions_data_providers_by_identifier",
         "parameters": [
           {
             "name": "institutionId",
@@ -955,12 +955,12 @@
         ]
       }
     },
-    "/v4/search/institutions": {
+    "/graph/v1/search/institutions": {
       "get": {
         "tags": ["Institutions"],
         "summary": "Search Institutions",
         "description": "Search Institution records using URL query parameters.",
-        "operationId": "get_v4_search_institutions_get",
+        "operationId": "get_graph_v1_search_institutions_get",
         "parameters": [
           {
             "name": "q",
@@ -1059,7 +1059,7 @@
         "tags": ["Institutions"],
         "summary": "Search Institutions",
         "description": "Search Institution records using a JSON request body.",
-        "operationId": "post_v4_search_institutions_post",
+        "operationId": "post_graph_v1_search_institutions_post",
         "requestBody": {
           "required": false,
           "content": {

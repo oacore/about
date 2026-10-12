@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CORE API GET /v4/search/authorships endpoint reference</title>
+    <title>CORE API POST /graph/v1/search/authorships endpoint reference</title>
     <style>
       :root {
         --core-orange: #b75400;
@@ -433,14 +433,14 @@
       <section class="tag-section" id="authorships">
         <h2>Authorships</h2>
         
-              <article class="endpoint" id="get_v4_search_authorships_get">
+              <article class="endpoint" id="post_graph_v1_search_authorships_post">
                 <header class="endpoint-header">
-                  <span class="method method-get">GET</span>
-                  <code>/v4/search/authorships</code>
+                  <span class="method method-post">POST</span>
+                  <code>/graph/v1/search/authorships</code>
                   <span class="endpoint-chevron">&#8964;</span>
                 </header>
                 <h3>Search Authorships</h3>
-                <div class="description">Search Authorship records using URL query parameters.</div>
+                <div class="description">Search Authorship records using a JSON request body.</div>
                 <h4>Arguments</h4>
                 
     <div class="table-wrap">
@@ -458,12 +458,11 @@
           
                 <tr>
                   <td><code>q</code></td>
-                  <td><span class="location">query</span></td>
+                  <td><span class="location">body</span></td>
                   <td><code>string</code></td>
                   <td>No</td>
                   <td>
-                    CORE query expression. Supports free-text search, field lookup, 
-                Boolean operators, grouping, range queries, and existence queries.
+                    
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> *</span>
                       
@@ -473,11 +472,11 @@
               
                 <tr>
                   <td><code>orderby</code></td>
-                  <td><span class="location">query</span></td>
-                  <td><code>string</code></td>
+                  <td><span class="location">body</span></td>
+                  <td><code>string[]</code></td>
                   <td>No</td>
                   <td>
-                    Comma-separated ordering directives in field:direction format.
+                    
                     <span class="field-meta">
                       
                       
@@ -487,11 +486,11 @@
               
                 <tr>
                   <td><code>select</code></td>
-                  <td><span class="location">query</span></td>
-                  <td><code>string</code></td>
+                  <td><span class="location">body</span></td>
+                  <td><code>string[]</code></td>
                   <td>No</td>
                   <td>
-                    Comma-separated list of fields to include in each result.
+                    
                     <span class="field-meta">
                       
                       
@@ -501,11 +500,11 @@
               
                 <tr>
                   <td><code>facets</code></td>
-                  <td><span class="location">query</span></td>
-                  <td><code>string</code></td>
+                  <td><span class="location">body</span></td>
+                  <td><code>string[]</code></td>
                   <td>No</td>
                   <td>
-                    Comma-separated list of facetable fields.
+                    
                     <span class="field-meta">
                       
                       
@@ -515,11 +514,11 @@
               
                 <tr>
                   <td><code>count</code></td>
-                  <td><span class="location">query</span></td>
+                  <td><span class="location">body</span></td>
                   <td><code>boolean</code></td>
                   <td>No</td>
                   <td>
-                    Whether to include the total number of matching Authorship records.
+                    
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> false</span>
                       
@@ -529,11 +528,11 @@
               
                 <tr>
                   <td><code>limit</code></td>
-                  <td><span class="location">query</span></td>
+                  <td><span class="location">body</span></td>
                   <td><code>integer</code></td>
                   <td>No</td>
                   <td>
-                    Maximum number of Authorship records to return.
+                    
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> 10</span>
                       
@@ -543,11 +542,11 @@
               
                 <tr>
                   <td><code>offset</code></td>
-                  <td><span class="location">query</span></td>
+                  <td><span class="location">body</span></td>
                   <td><code>integer</code></td>
                   <td>No</td>
                   <td>
-                    Number of matching Authorship records to skip.
+                    
                     <span class="field-meta">
                       <span class="meta-item"><strong>Default:</strong> 0</span>
                       
@@ -562,7 +561,33 @@
     <section class="sample-section">
       <h4>Request samples</h4>
       <button class="sample-tab" type="button">Payload</button>
-      <p class="sample-empty">No request body.</p>
+      
+  <div class="sample-block">
+    <div class="content-type">
+      <strong>Content type</strong>
+      <span>application/json</span>
+    </div>
+    <div class="sample-actions" aria-hidden="true">
+      <span>Copy</span>
+      <span>Expand all</span>
+      <span>Collapse all</span>
+    </div>
+    <pre class="sample-code"><code>{
+  <span class="json-key">"q"</span>: <span class="json-string">"*"</span>,
+  <span class="json-key">"orderby"</span>: [
+    <span class="json-string">"string"</span>
+  ],
+  <span class="json-key">"select"</span>: [
+    <span class="json-string">"string"</span>
+  ],
+  <span class="json-key">"facets"</span>: [
+    <span class="json-string">"string"</span>
+  ],
+  <span class="json-key">"count"</span>: <span class="json-boolean">false</span>,
+  <span class="json-key">"limit"</span>: <span class="json-number">10</span>,
+  <span class="json-key">"offset"</span>: <span class="json-number">0</span>
+}</code></pre>
+  </div>
     </section>
                 
     <section class="sample-section">
@@ -588,6 +613,11 @@
               <div class="response-row">
                 <code>401</code>
                 <span>Authentication credentials are missing or invalid.</span>
+                
+              </div>
+              <div class="response-row">
+                <code>413</code>
+                <span>The POST request body exceeds the permitted size.</span>
                 
               </div>
               <div class="response-row">

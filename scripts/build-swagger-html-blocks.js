@@ -4,7 +4,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const SWAGGER_PATH = path.join(__dirname, '..', 'data', 'swagger-v4.json')
+const SWAGGER_PATH = path.join(__dirname, '..', 'data', 'swagger-graph-v1.json')
 const OUTPUT_DIR = path.join(__dirname, '..', 'public/api-swagger')
 const TAG_OUTPUTS = [
   ['Affiliations', 'api-docs-v4-affiliations.html'],
