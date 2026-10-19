@@ -508,6 +508,12 @@ $support-card-width: 21.5rem;
   }
 }
 
+.how-section-six {
+  .how-section-inner-wrapper {
+    grid-template-rows: repeat(3, auto);
+  }
+}
+
 .contact {
   display: grid;
   gap: 2rem;

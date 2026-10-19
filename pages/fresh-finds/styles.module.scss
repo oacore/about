@@ -1,0 +1,35 @@
+.anchor {
+  scroll-margin-top: 6rem;
+}
+
+.how-it-works {
+  max-width: 72ch;
+}
+
+.flow {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.start {
+  max-width: 40rem;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  .box {
+    padding: 1.5rem;
+    border: 2px solid var(--gray-300);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+}

@@ -59,6 +59,31 @@
   height: auto;
 }
 
+.split {
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 3rem;
+
+  > div:first-child {
+    flex: 1 1 52%;
+    min-width: 0;
+  }
+
+  > div:last-child {
+    flex: 0 1 46%;
+    max-width: 520px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    flex-wrap: wrap;
+
+    > div:last-child {
+      flex-basis: 100%;
+      max-width: 420px;
+    }
+  }
+}
+
 .reverse {
   display: flex;
   flex-direction: column-reverse;
