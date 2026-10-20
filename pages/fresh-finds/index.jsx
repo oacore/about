@@ -7,8 +7,9 @@ import styles from './styles.module.scss'
 import heroStyles from 'design-v2/components/hero/styles.module.scss'
 import serviceStyles from 'design-v2/components/pages/styles.module.scss'
 import { Markdown, Page } from 'components'
+import { patchStats } from 'components/utils'
 import { Hero, Layout, Section } from 'design-v2/components'
-import content from 'data/fresh-finds.yml'
+import { getSections } from 'hooks/retriveContent'
 
 const Feature = ({ title, description }) => (
   <div className={serviceStyles.feature}>
@@ -19,12 +20,12 @@ const Feature = ({ title, description }) => (
 
 const RelatedService = ({ title, picture, url }) => (
   <a className={serviceStyles.service} href={url}>
-    <img className={serviceStyles.image} src={picture} alt="" />
+    <img className={serviceStyles.image} src={picture} alt={title} />
     <Markdown className={serviceStyles.title}>{title}</Markdown>
   </a>
 )
 
-const FreshFindsPage = () => {
+const FreshFindsPage = ({ content, statistics }) => {
   const {
     meta,
     headerLink,
@@ -73,8 +74,13 @@ const FreshFindsPage = () => {
           id="how-it-works"
           className={`${styles.howItWorks} ${styles.anchor}`}
         >
-          <h3>{howItWorks.title}</h3>
-          <Markdown>{howItWorks.description}</Markdown>
+          <div className={styles.imageWrapper}>
+            <img src={howItWorks.image} alt={howItWorks.title} />
+          </div>
+          <article className={styles.content}>
+            <h3>{howItWorks.title}</h3>
+            <Markdown>{howItWorks.description}</Markdown>
+          </article>
         </Section>
         <Section
           id="workflow"
@@ -89,7 +95,15 @@ const FreshFindsPage = () => {
                 <div className={serviceStyles.step}>{item.step}</div>
                 <div>
                   <h5 className={serviceStyles.stepTitle}>{item.title}</h5>
-                  <p className={serviceStyles.stepDes}>{item.description}</p>
+                  <Markdown
+                    renderers={{
+                      paragraph: ({ children }) => (
+                        <p className={serviceStyles.stepDes}>{children}</p>
+                      ),
+                    }}
+                  >
+                    {patchStats(item.description, statistics)}
+                  </Markdown>
                 </div>
               </div>
             ))}
@@ -100,24 +114,31 @@ const FreshFindsPage = () => {
         </Section>
         <Section
           id="how-to-apply"
-          className={`${styles.start} ${styles.anchor}`}
+          className={`${styles.contact} ${styles.anchor}`}
         >
-          <h3>{start.title}</h3>
-          <div className={styles.box}>
-            <p>{start.caption}</p>
-            <div className={styles.actions}>
-              {start.actions.map((action) => (
-                <Button
-                  key={action.caption}
-                  href={action.url}
-                  variant={action.variant}
-                  target={action.target}
-                >
-                  {action.caption}
-                </Button>
-              ))}
+          <div className={styles.content}>
+            <h3>{start.title}</h3>
+            <div className={styles.box}>
+              <Markdown>{start.caption}</Markdown>
+              <div className={styles.contentActions}>
+                {start.actions.map((action) => (
+                  <Button
+                    key={action.caption}
+                    href={action.url}
+                    variant={action.variant}
+                    target={action.target}
+                  >
+                    {action.caption}
+                  </Button>
+                ))}
+              </div>
             </div>
           </div>
+          <img
+            className={classNames.use(styles.banner, styles.image)}
+            src={start.image}
+            alt="Contact"
+          />
         </Section>
         <Section id="related-services">
           <h3>{relatedServices.title}</h3>
@@ -130,6 +151,21 @@ const FreshFindsPage = () => {
       </Layout>
     </Page>
   )
+}
+
+export async function getStaticProps({ previewData }) {
+  const ref = previewData?.ref
+  const [content, core] = await Promise.all([
+    getSections('fresh-finds', { ref }),
+    import('data/core.yml'),
+  ])
+
+  return {
+    props: {
+      content,
+      statistics: core.default.statistics,
+    },
+  }
 }
 
 export default FreshFindsPage
