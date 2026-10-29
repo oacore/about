@@ -57,6 +57,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     setSelectedOption(option)
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
+    if (option === 'FAIR Repository Certification Documentation')
+      route.push('fair-repository-certification')
     if (option === 'CORE API Documentation') route.push('api-documentation')
   }
 
@@ -92,7 +94,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              // text.documentationSwitcher[2].title,
+              text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
