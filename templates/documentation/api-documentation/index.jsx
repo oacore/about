@@ -52,6 +52,8 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
       route.push('data-providers-guide')
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
+    if (option === 'FAIR Repository Certification Documentation')
+      route.push('fair-repository-certification')
   }
 
   const handleScrollToTop = () => {
@@ -86,7 +88,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              // text.documentationSwitcher[2].title,
+              text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
