@@ -430,7 +430,7 @@ $support-card-width: 21.5rem;
   border-radius: 2px;
   background: #b75400;
   display: flex;
-  padding: 56px 46px;
+  padding: 56px 46px !important;
   flex-direction: column;
   align-items: flex-start;
   gap: 48px;
@@ -505,6 +505,12 @@ $support-card-width: 21.5rem;
         letter-spacing: 0.026px;
       }
     }
+  }
+}
+
+.how-section-six {
+  .how-section-inner-wrapper {
+    grid-template-rows: repeat(3, auto);
   }
 }
 
