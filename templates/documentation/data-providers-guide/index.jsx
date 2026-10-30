@@ -59,7 +59,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
       route.push('membership-documentation')
     if (option === 'FAIR Repository Certification Documentation')
       route.push('fair-repository-certification')
-    if (option === 'CORE API Documentation') route.push('api-documentation')
+    if (option === text.documentationSwitcher[3].title)
+      route.push('graph-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -87,7 +88,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     <div>
       <div className={styles.navWrapper}>
         <div className={styles.navTitle}>
-          <span>CORE DOCUMENTATION:</span>
+          <span>CORE DOCUMENTATION</span>
         </div>
         <div className={styles.selectWrapper}>
           <DocumentSelect
@@ -95,6 +96,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
+              text.documentationSwitcher[3].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -102,6 +104,11 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
         </div>
       </div>
       <Layout className={styles.docsLayout}>
+        {/*
+          TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done.
+        */}
         <DocumentationMembership
           docs={dataProviderDocs?.items}
           tutorial={dataProviderDocs?.tutorial}
