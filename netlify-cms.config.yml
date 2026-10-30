@@ -1789,6 +1789,138 @@ collections:
                 hint: Sub Description for Dashboard
                 required: false
 
+  - name: docs-fair
+
+    media_folder: '/images/docs-fair'
+    public_folder: '/images/docs-fair'
+
+    create: false
+    delete: false
+
+    label: 📘 FAIR Repository Certification Documentation
+    label_singular: section
+    description: >
+      FAIR Repository Certification documentation
+    files:
+      - name: meta
+        label: ℹ️ Metadata (title, description)
+        file: docs-fair/meta.yml
+        fields:
+          - name: title
+            widget: string
+            label: Title
+            hint: >
+              Displayed in the browser as a tab name and in Google, when
+              the page appears in the search results.
+          - name: tagline
+            widget: text
+            label: Description
+            hint: >
+              Description of the page, not visible on the page but will be shown
+              in search engines when the page appears in results.
+      - name: header
+        label: Header (title, description)
+        file: docs-fair/header.yml
+        fields:
+          - name: title
+            widget: string
+            hint: >
+              The title of the page. Displayed on the page below header.
+          - name: id
+            widget: string
+            label: ID
+          - name: header
+            widget: object
+            label: Header
+            fields:
+              - {
+                name: title,
+                widget: string,
+                label: Title,
+                hint: Title of the links block
+              }
+              - {
+                name: caption,
+                widget: text,
+                label: Caption,
+                hint: Caption
+              }
+      - name: navigation
+        label: Documentation Navigation
+        file: docs-fair/navigation.yml
+        fields:
+          - name: navItems
+            widget: list
+            label: navItems
+            allow_add: true
+            hint: >
+              Anchor links to the page content.
+            fields:
+              - name: item
+                widget: string
+                label: item
+                hint: Navigation link
+              - name: href
+                widget: string
+                label: href
+                required: false
+                hint: Link id to the specific block
+              - name: children
+                widget: list
+                label: Sub-items
+                required: false
+                fields:
+                  - name: item
+                    widget: string
+                    label: item
+                  - name: href
+                    widget: string
+                    label: href
+                    required: false
+      - name: documentation
+        label: Documentation
+        file: docs-fair/docs.yml
+        fields:
+          - name: items
+            widget: list
+            label: Items
+            allow_add: true
+            hint: >
+              Documentation sections. Each id must match a navigation href.
+            fields:
+              - name: id
+                widget: string
+                label: ID
+                hint: id of the block. Must match anchor link url
+              - name: title
+                widget: string
+                label: Title
+              - name: divider
+                widget: boolean
+                label: Divider
+                required: false
+                default: false
+              - name: images
+                widget: list
+                label: Images list
+                required: false
+                fields:
+                  - name: file
+                    widget: image
+                    label: File
+              - name: descriptionAbout
+                widget: markdown
+                label: Description
+                required: false
+              - name: subTitle
+                widget: string
+                label: subTitle
+                required: false
+              - name: subDescription
+                widget: text
+                label: Sub Description
+                required: false
+
   - name: docs-graph
 
     media_folder: '/images/docs-graph'

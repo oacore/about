@@ -57,6 +57,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     setSelectedOption(option)
     if (option === 'CORE Data Provider’s Guide')
       route.push('data-providers-guide')
+    if (option === 'FAIR Repository Certification Documentation')
+      route.push('fair-repository-certification')
     if (option === 'CORE API Documentation') route.push('api-documentation')
   }
 
@@ -95,7 +97,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              // text.documentationSwitcher[2].title,
+              text.documentationSwitcher[2].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
