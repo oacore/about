@@ -229,10 +229,27 @@
 
 .documentation-item-title {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+  color: #212121;
+}
+
+// Markdown #### and ##### inside section content
+.markdown-heading-4 {
+  margin: 24px 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #212121;
+}
+
+.markdown-heading-5 {
+  margin: 20px 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
   color: #212121;
 }
 
