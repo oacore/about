@@ -20,6 +20,7 @@ const DocumentationMembership = ({
   imageSource,
   docsTitle,
   mulltyDocs,
+  compactImages,
   handleContentOpen,
   videoIcon,
   tutorialIcon,
@@ -31,6 +32,7 @@ const DocumentationMembership = ({
   <div
     className={classNames.use(styles.documentationWrapper, {
       [styles.mulltyWrapper]: mulltyDocs,
+      [styles.compactImages]: compactImages,
     })}
   >
     {headerTitle && (
@@ -127,9 +129,21 @@ const DocumentationMembership = ({
                   </a>
                 )}
               </div>
-              <DocumentationMarkdown className={styles.documentationContent}>
-                {getItemDescription(item)}
-              </DocumentationMarkdown>
+              {item.note && (
+                <DocumentationMarkdown
+                  className={classNames.use(
+                    styles.documentationContent,
+                    styles.note
+                  )}
+                >
+                  {item.note}
+                </DocumentationMarkdown>
+              )}
+              {getItemDescription(item) && (
+                <DocumentationMarkdown className={styles.documentationContent}>
+                  {getItemDescription(item)}
+                </DocumentationMarkdown>
+              )}
               <div>
                 {item?.images?.map((img, i) => (
                   <div className={styles.cardWrapper}>

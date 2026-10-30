@@ -1990,6 +1990,14 @@ collections:
                         widget: string
                         label: Title
                         hint: Section title
+                      - name: note
+                        widget: markdown
+                        label: Note
+                        required: false
+                        hint: >
+                          Highlighted note shown above the description, with a
+                          light yellow background. Use this for under-development
+                          notices.
                       - name: descriptionAbout
                         widget: markdown
                         label: Description

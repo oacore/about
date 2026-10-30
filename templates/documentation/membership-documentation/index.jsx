@@ -86,7 +86,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
     <div>
       <div className={styles.navWrapper}>
         <div className={styles.navTitle}>
-          <span>CORE DOCUMENTATION:</span>
+          <span>CORE DOCUMENTATION</span>
         </div>
         <div className={styles.selectWrapper}>
           <DocumentSelect

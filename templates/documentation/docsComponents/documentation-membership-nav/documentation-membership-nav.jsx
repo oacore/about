@@ -75,9 +75,12 @@ const DocumentationMembershipNav = ({
         return item.children?.length ? renderNavItems(item.children, level) : []
 
       const hasHref = Boolean(item.href)
-      const isActive = !activeHref
-        ? localActiveHref === item.href
-        : activeHref === item.href
+      const sharesHrefWithChild =
+        hasHref && item.children?.some((child) => child?.href === item.href)
+      const isActive =
+        hasHref &&
+        !sharesHrefWithChild &&
+        (!activeHref ? localActiveHref === item.href : activeHref === item.href)
       const key = `${level}-${index}-${item.href ?? item.item}`
 
       const navItem = (
@@ -89,8 +92,9 @@ const DocumentationMembershipNav = ({
             styles[`siderItemLevel${Math.min(level, 5)}`],
             {
               [styles.hiddenItem]: item.hidden,
-              [styles.activeItem]: hasHref && isActive,
+              [styles.activeItem]: isActive,
               [styles.siderGroupItem]: !hasHref,
+              [styles.siderParentItem]: sharesHrefWithChild,
             }
           )}
           key={key}
@@ -99,7 +103,7 @@ const DocumentationMembershipNav = ({
           <ReactMarkdown className={styles.siderItemLink}>
             {item.item}
           </ReactMarkdown>
-          {hasHref && isActive && (
+          {isActive && (
             <span className={styles.logo}>
               <Icon src="#active-arrow" />
             </span>

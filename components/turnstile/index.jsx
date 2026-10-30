@@ -5,7 +5,6 @@ const SCRIPT_SRC =
 
 // Environment variables are replaced in the bundle using DefinePlugin,
 // so destructuring process.env will not work.
-// eslint-disable-next-line prefer-destructuring
 const SITE_KEY = process.env.TURNSTILE_SITE_KEY
 
 let scriptPromise

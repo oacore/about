@@ -7,16 +7,26 @@ import retrieveContent from 'content'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-const setAssetsUrl = (items) =>
-  items.forEach((value) => {
-    delete value.membership
-    if (value.images) {
-      value.images.forEach((item) => {
-        item.file = ASSETS_BASE_URL + item.file
-      })
-    }
-    if (value.children) setAssetsUrl(value.children)
+// Content image paths are stored as /images/... and also embedded in markdown.
+// eslint-disable-next-line max-len
+// Both have to point at the content site, including images nested under sections.
+const toAssetUrl = (value) =>
+  value.replace(/(^|[\s("'=])\/images\//g, `$1${ASSETS_BASE_URL}images/`)
+
+const setAssetsUrl = (value) => {
+  if (Array.isArray(value)) {
+    value.forEach(setAssetsUrl)
+    return
+  }
+  if (!value || typeof value !== 'object') return
+
+  delete value.membership
+  Object.keys(value).forEach((key) => {
+    const child = value[key]
+    if (typeof child === 'string') value[key] = toAssetUrl(child)
+    else setAssetsUrl(child)
   })
+}
 
 const getSections = async ({ ref } = {}) => {
   const content = await retrieveContent('docs-graph', {

@@ -81,7 +81,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
     <div>
       <div className={styles.navWrapper}>
         <div className={styles.navTitle}>
-          <span>CORE DOCUMENTATION:</span>
+          <span>CORE DOCUMENTATION</span>
         </div>
         <div className={styles.selectWrapper}>
           <DocumentSelect
@@ -107,6 +107,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           setHighlight={setHighlight}
           docsTitle={navigation?.navTitle || 'CORE Graph API Documentation'}
           mulltyDocs
+          compactImages
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
           showNavigator={showNavigator}
