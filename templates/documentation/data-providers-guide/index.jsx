@@ -57,8 +57,10 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     setSelectedOption(option)
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
-    if (option === 'CORE Graph API Documentation')
-      route.push('api-documentation')
+    if (option === 'FAIR Repository Certification Documentation')
+      route.push('fair-repository-certification')
+    if (option === text.documentationSwitcher[3].title)
+      route.push('graph-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -80,6 +82,8 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
     }
   }, [])
 
+  /* TODO unccoment */
+
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -92,6 +96,7 @@ const DataProviderDocs = ({ dataProviderDocs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
+              text.documentationSwitcher[3].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}

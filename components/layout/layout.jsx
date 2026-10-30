@@ -34,7 +34,8 @@ const Layout = ({ title, description, children, onNavigate }) => {
       {!(
         router.pathname.includes('membership-documentation') ||
         router.pathname.includes('data-providers-guide') ||
-        router.pathname.includes('api-documentation')
+        router.pathname.includes('fair-repository-certification') ||
+        router.pathname.includes('graph-documentation')
       ) && <Footer />}
     </>
   )

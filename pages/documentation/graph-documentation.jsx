@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Page } from '../../components'
-import ApiDocumentationPageTemplate from '../../templates/documentation/api-documentation'
+import ApiDocumentationPageTemplate from '../../templates/documentation/graph-documentation'
 
 import retrieveContent from 'content'
 

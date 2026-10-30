@@ -1,24 +1,27 @@
-import React, { useEffect, useMemo, useState } from 'react'
-import { DocumentSelect } from '@oacore/design/lib/modules'
+import React, { useCallback, useEffect, useState } from 'react'
+import { Video, DocumentSelect } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
-import DocumentationMembership from '../docsComponents/documentation-membership'
 import DocumentationMembershipNav, {
   findNavHrefById,
 } from '../docsComponents/documentation-membership-nav'
-import flattenDocItems from '../docsComponents/flatten-doc-items'
+import DocumentationMembership from '../docsComponents/documentation-membership'
 
-const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
-  const docItems = useMemo(() => flattenDocItems(docs?.items), [docs?.items])
+const FairRepositoryCertificationDocs = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveHref, setNavActiveHref] = useState(null)
   const [selectedOption, setSelectedOption] = useState(
     text.documentationSwitcher[2].title
   )
+  const [visibleVideo, setVisibleVideo] = useState(null)
   const [showNavigator, setShowNavigator] = useState(false)
+
+  const handleContentOpen = useCallback((condition) => {
+    if (condition) setVisibleVideo(condition)
+  }, [])
 
   const route = useRouter()
   const headerHeight = 56
@@ -35,12 +38,12 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           behavior: 'smooth',
           block: 'center',
         })
-        const n = docItems.findIndex((item) => item.id === id)
+        const n = docs.items.findIndex((item) => item.id === id)
         setHighlight(n)
         if (hash) setNavActiveHref(hash)
       }
     }, 100)
-  }, [route.asPath, docItems])
+  }, [route.asPath])
 
   useEffect(() => {
     const id = route.query?.r
@@ -56,6 +59,8 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
       route.push('data-providers-guide')
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
+    if (option === text.documentationSwitcher[3].title)
+      route.push('graph-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -81,7 +86,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
     <div>
       <div className={styles.navWrapper}>
         <div className={styles.navTitle}>
-          <span>CORE DOCUMENTATION</span>
+          <span>CORE DOCUMENTATION:</span>
         </div>
         <div className={styles.selectWrapper}>
           <DocumentSelect
@@ -89,6 +94,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
+              text.documentationSwitcher[3].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -96,18 +102,13 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
         </div>
       </div>
       <Layout className={styles.docsLayout}>
-        {/*
-          TODO: Using local DocumentationMembership and
-          DocumentationMembershipNav components. Move back to the design system
-          when done.
-        */}
         <DocumentationMembership
-          docs={docItems}
+          docs={docs?.items}
+          handleContentOpen={handleContentOpen}
           highlight={highlight}
           setHighlight={setHighlight}
-          docsTitle={navigation?.navTitle || 'CORE Graph API Documentation'}
+          docsTitle={text.documentationSwitcher[2].title}
           mulltyDocs
-          compactImages
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
           showNavigator={showNavigator}
@@ -120,14 +121,21 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
               setNavActiveHref={setNavActiveHref}
               textData={navigation}
               setHighlight={setHighlight}
-              docItems={docItems}
+              docItems={docs?.items}
               mulltyDocs
             />
           }
         />
+        {visibleVideo && (
+          <Video
+            visibleModal={visibleVideo}
+            closeModal={() => setVisibleVideo(false)}
+            video={visibleVideo}
+          />
+        )}
       </Layout>
     </div>
   )
 }
 
-export default ApiDocumentationPageTemplate
+export default FairRepositoryCertificationDocs
