@@ -1,0 +1,63 @@
+@import 'design-v2/variables';
+$grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
+
+.anchor {
+  scroll-margin-top: 6rem;
+}
+
+.how-it-works {
+  display: grid;
+  grid-template-columns: $grid-responsive-for-sections;
+  align-items: center;
+
+  .content {
+    ul {
+      margin-left: 1.5rem;
+      li {
+        line-height: 2rem;
+        list-style-type: disc;
+      }
+    }
+    .button {
+      float: right;
+      margin-top: 2rem;
+      margin-right: 10px;
+    }
+  }
+}
+
+.flow {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.contact {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: $grid-responsive-for-sections;
+  justify-content: space-between;
+
+  .content {
+    width: 100%;
+    margin-top: auto;
+    flex: 1;
+  }
+
+  .box {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--gray-300);
+  }
+
+  .content-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  .image {
+    margin-left: auto;
+  }
+}
