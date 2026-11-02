@@ -59,7 +59,8 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
       route.push('data-providers-guide')
     if (option === 'FAIR Repository Certification Documentation')
       route.push('fair-repository-certification')
-    if (option === 'CORE API Documentation') route.push('api-documentation')
+    if (option === text.documentationSwitcher[3].title)
+      route.push('graph-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -83,14 +84,11 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
 
   /* TODO unccoment */
 
-  // eslint-disable-next-line no-console
-  console.log('trigger')
-
   return (
     <div>
       <div className={styles.navWrapper}>
         <div className={styles.navTitle}>
-          <span>CORE DOCUMENTATION:</span>
+          <span>CORE DOCUMENTATION</span>
         </div>
         <div className={styles.selectWrapper}>
           <DocumentSelect
@@ -98,6 +96,7 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
+              text.documentationSwitcher[3].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -105,6 +104,11 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
         </div>
       </div>
       <Layout className={styles.docsLayout}>
+        {/*
+          TODO: Using local DocumentationMembership and
+          DocumentationMembershipNav components. Move back to the design system
+          when done.
+        */}
         <DocumentationMembership
           docs={docs?.items}
           handleContentOpen={handleContentOpen}

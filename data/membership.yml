@@ -5,8 +5,8 @@ documentationSwitcher:
     description: This documentation explains how to use all features and benefits of CORE Membership.
   - title: FAIR Repository Certification Documentation
     description: Documentation for CORE FAIR Repository Certification, including certification types, requirements, and how to apply.
-#  - title: CORE API Documentation
-#    description: This documentation explains how to use all features and benefits of CORE API.
+  - title: CORE Graph API Documentation
+    description: Documentation for the CORE Graph metadata schema and Graph API endpoints.
 
 #TODO show
 

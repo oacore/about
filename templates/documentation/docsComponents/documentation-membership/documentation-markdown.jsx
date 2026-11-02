@@ -91,7 +91,18 @@ const annotateDescriptionColumn = (children, descriptionIndex) =>
     )
   })
 
+const headingClassNames = {
+  4: styles.markdownHeading4,
+  5: styles.markdownHeading5,
+}
+
 const documentationMarkdownRenderers = {
+  heading: ({ level, children }) => {
+    const Tag = `h${level}`
+
+    return <Tag className={headingClassNames[level]}>{children}</Tag>
+  },
+
   table: ({ children }) => {
     const descriptionIndex = getDescriptionColumnIndex(children)
     const columnWidths = getColumnWidths(
