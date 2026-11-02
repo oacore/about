@@ -3,6 +3,7 @@
   height: calc(100vh - 146px);
   margin-right: 32px;
   overflow-y: scroll;
+
   @media (max-width: 768px) {
     width: 100%;
     height: max-content;
@@ -41,6 +42,7 @@
   line-height: 24px;
   color: #424242;
   cursor: pointer;
+
   @media (max-width: 768px) {
     padding: 16px;
     font-size: 16px;
@@ -74,6 +76,11 @@
   cursor: default;
 }
 
+.sider-parent-item {
+  font-weight: 600;
+  color: #212121;
+}
+
 .logo {
   width: 20px;
 }
@@ -90,6 +97,7 @@
   line-height: 130%;
   color: #212121;
   letter-spacing: 0.035px;
+
   @media (max-width: 768px) {
     font-size: 16px;
   }

@@ -1,20 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import { DocumentSelect } from '@oacore/design/lib/modules'
+import React, { useCallback, useEffect, useState } from 'react'
+import { Video, DocumentSelect } from '@oacore/design/lib/modules'
 import { useRouter } from 'next/router'
 
 import { Layout } from '../../../design-v2/components'
 import styles from './styles.module.scss'
 import text from '../../../data/membership.yml'
-import DocumentationMembership from '../docsComponents/documentation-membership'
 import DocumentationMembershipNav, {
   findNavHrefById,
 } from '../docsComponents/documentation-membership-nav'
+import DocumentationMembership from '../docsComponents/documentation-membership'
 
-const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
+const FairRepositoryCertificationDocs = ({ docs, navigation }) => {
   const [highlight, setHighlight] = useState()
   const [navActiveHref, setNavActiveHref] = useState(null)
-  const [selectedOption, setSelectedOption] = useState('CORE API Documentation')
+  const [selectedOption, setSelectedOption] = useState(
+    text.documentationSwitcher[2].title
+  )
+  const [visibleVideo, setVisibleVideo] = useState(null)
   const [showNavigator, setShowNavigator] = useState(false)
+
+  const handleContentOpen = useCallback((condition) => {
+    if (condition) setVisibleVideo(condition)
+  }, [])
 
   const route = useRouter()
   const headerHeight = 56
@@ -52,6 +59,8 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
       route.push('data-providers-guide')
     if (option === 'Membership Documentation')
       route.push('membership-documentation')
+    if (option === text.documentationSwitcher[3].title)
+      route.push('graph-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -73,8 +82,6 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
     }
   }, [])
 
-  /* TODO unccoment */
-
   return (
     <div>
       <div className={styles.navWrapper}>
@@ -86,7 +93,8 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
             list={[
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
-              // text.documentationSwitcher[2].title,
+              text.documentationSwitcher[2].title,
+              text.documentationSwitcher[3].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -96,9 +104,10 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
       <Layout className={styles.docsLayout}>
         <DocumentationMembership
           docs={docs?.items}
+          handleContentOpen={handleContentOpen}
           highlight={highlight}
           setHighlight={setHighlight}
-          docsTitle="CORE API Documentation"
+          docsTitle={text.documentationSwitcher[2].title}
           mulltyDocs
           videoIcon={text.videlogo}
           redirectLink={text?.redirectLink}
@@ -117,9 +126,16 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
             />
           }
         />
+        {visibleVideo && (
+          <Video
+            visibleModal={visibleVideo}
+            closeModal={() => setVisibleVideo(false)}
+            video={visibleVideo}
+          />
+        )}
       </Layout>
     </div>
   )
 }
 
-export default ApiDocumentationPageTemplate
+export default FairRepositoryCertificationDocs

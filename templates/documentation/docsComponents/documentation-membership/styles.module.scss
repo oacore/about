@@ -9,8 +9,11 @@
 
 .documentation-inner-wrapper {
   width: calc(100% - 370px);
+  min-width: 0;
   padding-right: 5px;
+  overflow-x: hidden;
   overflow-y: scroll;
+
   @media (max-width: 768px) {
     width: 100%;
   }
@@ -52,6 +55,7 @@
   display: flex;
   justify-content: space-between;
   height: calc(100vh - 146px);
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -71,6 +75,7 @@
 
 .placement-height {
   max-height: 2224px;
+
   @media (max-width: 768px) {
     max-height: unset;
   }
@@ -94,7 +99,29 @@
   line-height: 24px;
 }
 
+// TODO change image size
+.compact-images {
+  .documentation-content img {
+    display: block;
+    width: auto;
+    max-width: 50%;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .card-wrapper > div:not(.img-wrapper) {
+    width: 50%;
+  }
+}
+
 .documentation-content {
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
   p {
     margin: 24px 0;
     line-height: 24px;
@@ -107,6 +134,22 @@
   li {
     line-height: 2rem;
     list-style-type: disc;
+  }
+}
+
+.note {
+  margin: 0 0 24px;
+  padding: 16px 20px;
+  background: #fff8e1;
+  border: 1px solid #ffe082;
+  border-radius: 4px;
+
+  p {
+    margin: 0 0 12px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -186,10 +229,27 @@
 
 .documentation-item-title {
   margin-bottom: 10px;
-  font-size: 18px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
+  color: #212121;
+}
+
+// Markdown #### and ##### inside section content
+.markdown-heading-4 {
+  margin: 24px 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #212121;
+}
+
+.markdown-heading-5 {
+  margin: 20px 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
   color: #212121;
 }
 
@@ -231,6 +291,7 @@
 .sub-title-wrapper {
   display: flex;
   gap: 24px;
+
   @media (max-width: 876px) {
     flex-wrap: wrap;
     gap: 0;
@@ -241,6 +302,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+
   @media (max-width: 876px) {
     flex-wrap: wrap;
   }
@@ -250,10 +312,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media (max-width: 876px) {
     margin-top: 16px;
     margin-left: 8px;
   }
+
   @media (max-width: 780px) {
     justify-content: flex-start;
     width: 100%;
@@ -395,9 +459,11 @@
   letter-spacing: 0.035px;
   cursor: pointer;
   gap: 4px;
+
   @media (max-width: 876px) {
     margin-left: 8px;
   }
+
   @media (max-width: 780px) {
     width: 100%;
     margin-top: 16px;
@@ -418,6 +484,7 @@
   background: #e0e0e0;
   border: 1px solid #b75400;
   border-radius: 2px;
+
   @media (max-width: 768px) {
     display: flex;
   }
