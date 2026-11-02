@@ -91,6 +91,8 @@ register-data-provider: /data-providers?query=&size=10&action=add#add-new-data-p
 
 benefits-of-joining: /benefits
 
+fresh-finds: /fresh-finds
+
 repositories:
   pattern:  /repositories
   controller: CoreWebBundle:Repositories:list

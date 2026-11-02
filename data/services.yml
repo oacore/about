@@ -157,6 +157,18 @@ sections:
       action:
         caption: Learn more
         url: services/repository-dashboard
+    - id: fresh-finds
+      title: FreshFinds
+      logo: /images/freshFinds.svg
+      short-description: Discover and deposit papers by your academics
+      description: |
+        Discover newly published papers authored by your academics that are
+        missing from your repository, and deposit them into your repository.
+      recommender:
+        - title: Academic institutions
+      action:
+        caption: Learn more
+        url: /fresh-finds
 -
   id: oai-identifies
   title: OAI identifiers
