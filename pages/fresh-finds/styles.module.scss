@@ -61,3 +61,37 @@ $grid-responsive-for-sections: repeat(auto-fit, minmax(300px, 1fr));
     margin-left: auto;
   }
 }
+
+.tooltip {
+  max-width: 26rem;
+  text-align: left;
+
+  p {
+    margin-bottom: 0.5rem;
+    color: inherit;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  li {
+    margin-bottom: 0.25rem;
+    color: inherit;
+    list-style: disc;
+  }
+}
+
+.tooltip-trigger {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.15em;
+}
