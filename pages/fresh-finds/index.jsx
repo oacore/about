@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button } from '@oacore/design/lib/elements'
+import { Popover } from '@oacore/design/lib/modules'
 import { classNames } from '@oacore/design/lib/utils'
 
 import styles from './styles.module.scss'
@@ -11,10 +12,44 @@ import { patchStats } from 'components/utils'
 import { Hero, Layout, Section } from 'design-v2/components'
 import { getSections } from 'hooks/retriveContent'
 
-const Feature = ({ title, description }) => (
+const FeatureDescription = ({ description, tooltip, tooltipLabel }) => {
+  if (
+    !tooltip ||
+    !tooltipLabel ||
+    !description ||
+    !description.includes(tooltipLabel)
+  )
+    return <Markdown>{description}</Markdown>
+
+  const [before, after] = description.split(tooltipLabel)
+
+  return (
+    <p>
+      {before}
+      <Popover
+        tag="span"
+        placement="top"
+        interactive
+        className={styles.tooltip}
+        content={<Markdown>{tooltip}</Markdown>}
+      >
+        <button type="button" className={styles.tooltipTrigger}>
+          {tooltipLabel}
+        </button>
+      </Popover>
+      {after}
+    </p>
+  )
+}
+
+const Feature = ({ title, description, tooltip, tooltipLabel }) => (
   <div className={serviceStyles.feature}>
     <h6 className={serviceStyles.featureTitle}>{title}</h6>
-    <Markdown>{description}</Markdown>
+    <FeatureDescription
+      description={description}
+      tooltip={tooltip}
+      tooltipLabel={tooltipLabel}
+    />
   </div>
 )
 
