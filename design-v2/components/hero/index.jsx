@@ -15,6 +15,7 @@ const Hero = ({
   caption,
   actions,
   image,
+  imageAlt,
   className,
   reverse,
   spacing,
@@ -86,7 +87,7 @@ const Hero = ({
       )}
     </div>
     <div>
-      <img className={styles.logo} src={image} alt="logo" />
+      <img className={styles.logo} src={image} alt={imageAlt || 'logo'} />
     </div>
   </Section>
 )
