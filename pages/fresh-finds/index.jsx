@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Button } from '@oacore/design/lib/elements'
 import { Popover } from '@oacore/design/lib/modules'
 import { classNames } from '@oacore/design/lib/utils'
@@ -7,6 +7,8 @@ import styles from './styles.module.scss'
 
 import heroStyles from 'design-v2/components/hero/styles.module.scss'
 import serviceStyles from 'design-v2/components/pages/styles.module.scss'
+import accordionStyles from 'components/accordion/accordion.module.scss'
+import AccordionItem from 'components/accordion/item'
 import { Markdown, Page } from 'components'
 import { patchStats } from 'components/utils'
 import { Hero, Layout, Section } from 'design-v2/components'
@@ -60,6 +62,133 @@ const RelatedService = ({ title, picture, url }) => (
   </a>
 )
 
+const HighlightedTitle = ({ title, highlight, className }) => {
+  if (!highlight || !title?.includes(highlight))
+    return <h2 className={className}>{title}</h2>
+
+  const [before, after] = title.split(highlight)
+
+  return (
+    <h2 className={className}>
+      {before}
+      <span className={styles.highlight}>{highlight}</span>
+      {after}
+    </h2>
+  )
+}
+
+const UseCases = ({ useCases }) => (
+  <section id="use-cases" className={`${styles.useCases} ${styles.anchor}`}>
+    <div className={styles.useCasesInner}>
+      <div className={styles.useCasesTitle}>
+        <HighlightedTitle
+          title={useCases.title}
+          highlight={useCases.highlight}
+        />
+      </div>
+      {useCases.items.map((item) => (
+        <article key={item.title} className={styles.caseCard}>
+          <div className={styles.caseBody}>
+            <h3 className={styles.caseTitle}>{item.title}</h3>
+            <Markdown className={styles.caseDescription}>
+              {item.description}
+            </Markdown>
+          </div>
+          <div className={styles.caseFooter}>
+            <div className={styles.person}>
+              <img className={styles.avatar} src={item.img} alt="" />
+              <div>
+                <h4 className={styles.personName}>{item.user}</h4>
+                <p className={styles.personRole}>{item.position}</p>
+              </div>
+            </div>
+            {item.action && (
+              <Button
+                href={item.action.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.action.title}
+              </Button>
+            )}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+)
+
+const Testimonials = ({ testimonials }) => (
+  <Section id="testimonials" className={styles.anchor}>
+    <h3>{testimonials.title}</h3>
+    <div className={styles.testimonials}>
+      {testimonials.items.map((item) => (
+        <article key={item.name} className={serviceStyles.testimonial}>
+          <div className={serviceStyles.header}>
+            <img
+              src={item.picture}
+              alt={item.name}
+              className={serviceStyles.picture}
+            />
+            <div className={serviceStyles.info}>
+              <Markdown>{item.name}</Markdown>
+              <Markdown className={serviceStyles.infoRole}>
+                {item.role}
+              </Markdown>
+            </div>
+          </div>
+          <Markdown
+            className={classNames.use(styles.content, styles.contentSpace)}
+          >
+            {`“${item.quote.trim()}”`}
+          </Markdown>
+        </article>
+      ))}
+    </div>
+  </Section>
+)
+
+const Faqs = ({ faqs }) => {
+  const [openIds, setOpenIds] = useState([])
+  const allOpen = openIds.length === faqs.items.length
+
+  const toggle = (id) => {
+    setOpenIds((current) =>
+      current.includes(id)
+        ? current.filter((openId) => openId !== id)
+        : [...current, id]
+    )
+  }
+
+  const toggleAll = () => {
+    setOpenIds(allOpen ? [] : faqs.items.map((item) => item.id))
+  }
+
+  return (
+    <Section id="faqs" className={styles.anchor}>
+      <div className={styles.faqHeader}>
+        <h3>{faqs.title}</h3>
+        <button type="button" className={styles.expandAll} onClick={toggleAll}>
+          {allOpen ? faqs.collapseLabel : faqs.expandLabel}
+        </button>
+      </div>
+      <div className={accordionStyles.accordion}>
+        {faqs.items.map((item) => (
+          <AccordionItem
+            key={item.id}
+            id={item.id}
+            title={item.question}
+            isOpen={openIds.includes(item.id)}
+            onToggle={toggle}
+          >
+            <Markdown>{item.answer}</Markdown>
+          </AccordionItem>
+        ))}
+      </div>
+    </Section>
+  )
+}
+
 const FreshFindsPage = ({ content, statistics }) => {
   const {
     meta,
@@ -69,6 +198,9 @@ const FreshFindsPage = ({ content, statistics }) => {
     howItWorks,
     workflow,
     start,
+    useCases,
+    testimonials,
+    faqs,
     relatedServices,
   } = content
 
@@ -79,7 +211,7 @@ const FreshFindsPage = ({ content, statistics }) => {
       className={serviceStyles.servicePage}
     >
       <Layout>
-        <div className={serviceStyles.navWrapper}>
+        <div className={`${serviceStyles.navWrapper} ${styles.nav}`}>
           {headerLink.map((item) => (
             <a
               className={serviceStyles.linkItem}
@@ -98,6 +230,7 @@ const FreshFindsPage = ({ content, statistics }) => {
           description={header.description}
           caption={header.caption}
           image={header.image}
+          imageAlt={header.imageAlt}
           actions={header.actions}
         />
         <Section id="features" className={serviceStyles.features}>
@@ -115,37 +248,53 @@ const FreshFindsPage = ({ content, statistics }) => {
           <article className={styles.content}>
             <h3>{howItWorks.title}</h3>
             <Markdown>{howItWorks.description}</Markdown>
+            {howItWorks.action && (
+              <Button
+                className={styles.button}
+                href={howItWorks.action.url}
+                variant={howItWorks.action.variant || 'contained'}
+              >
+                {howItWorks.action.caption}
+              </Button>
+            )}
           </article>
         </Section>
-        <Section
-          id="workflow"
-          className={classNames
-            .use(serviceStyles.howSection)
-            .join(`${serviceStyles.howSectionSix} ${styles.anchor}`)}
-        >
-          <h2 className={serviceStyles.howSectionTitle}>{workflow.title}</h2>
-          <div className={serviceStyles.howSectionInnerWrapper}>
-            {workflow.steps.map((item) => (
-              <div key={item.step} className={serviceStyles.howSectionItem}>
-                <div className={serviceStyles.step}>{item.step}</div>
-                <div>
-                  <h5 className={serviceStyles.stepTitle}>{item.title}</h5>
-                  <Markdown
-                    renderers={{
-                      paragraph: ({ children }) => (
-                        <p className={serviceStyles.stepDes}>{children}</p>
-                      ),
-                    }}
-                  >
-                    {patchStats(item.description, statistics)}
-                  </Markdown>
-                </div>
+        <Section id="workflow" className={styles.anchor}>
+          <div className={styles.workflowFrame}>
+            <div
+              className={classNames
+                .use(serviceStyles.howSection)
+                .join(
+                  `${serviceStyles.howSectionSix} ${serviceStyles.howSectionJoined}`
+                )}
+            >
+              <h2 className={serviceStyles.howSectionTitle}>
+                {workflow.title}
+              </h2>
+              <div className={serviceStyles.howSectionInnerWrapper}>
+                {workflow.steps.map((item) => (
+                  <div key={item.step} className={serviceStyles.howSectionItem}>
+                    <div className={serviceStyles.step}>{item.step}</div>
+                    <div>
+                      <h5 className={serviceStyles.stepTitle}>{item.title}</h5>
+                      <Markdown
+                        renderers={{
+                          paragraph: ({ children }) => (
+                            <p className={serviceStyles.stepDes}>{children}</p>
+                          ),
+                        }}
+                      >
+                        {patchStats(item.description, statistics)}
+                      </Markdown>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className={styles.flow}>
+              <img src={workflow.image} alt={workflow.imageAlt} />
+            </div>
           </div>
-        </Section>
-        <Section className={styles.flow}>
-          <img src={workflow.image} alt={workflow.imageAlt} />
         </Section>
         <Section
           id="how-to-apply"
@@ -175,6 +324,11 @@ const FreshFindsPage = ({ content, statistics }) => {
             alt="Contact"
           />
         </Section>
+      </Layout>
+      {useCases && <UseCases useCases={useCases} />}
+      <Layout className={serviceStyles.unsetTop}>
+        {testimonials && <Testimonials testimonials={testimonials} />}
+        {faqs && <Faqs faqs={faqs} />}
         <Section id="related-services">
           <h3>{relatedServices.title}</h3>
           <div className={serviceStyles.services}>
