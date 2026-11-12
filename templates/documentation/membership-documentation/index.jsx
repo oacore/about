@@ -59,8 +59,6 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
       route.push('data-providers-guide')
     if (option === 'FAIR Repository Certification Documentation')
       route.push('fair-repository-certification')
-    if (option === text.documentationSwitcher[3].title)
-      route.push('graph-documentation')
   }
 
   const handleScrollToTop = () => {
@@ -96,9 +94,6 @@ const DocumentationPageTemplate = ({ docs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
-              ...(process.env.APP_ENV === 'production'
-                ? []
-                : [text.documentationSwitcher[3].title]),
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
