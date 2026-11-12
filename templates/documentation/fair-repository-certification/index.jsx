@@ -94,7 +94,9 @@ const FairRepositoryCertificationDocs = ({ docs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
-              text.documentationSwitcher[3].title,
+              ...(process.env.APP_ENV === 'production'
+                ? []
+                : [text.documentationSwitcher[3].title]),
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
