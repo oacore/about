@@ -1656,21 +1656,30 @@ collections:
               - name: images
                 widget: list
                 label: Images list
-                hint: Images bottom description.
+                hint: >
+                  Shown after the description. To place a screenshot in the
+                  middle of the text, insert the image in the description
+                  instead.
                 allow_add: true
                 fields:
                   - name: file
                     widget: image
                     label: File
-                    hint: Image in description
+                    hint: Image shown below the description
               - name: descriptionAbout
-                widget: text
+                widget: markdown
                 label: Description about
-                hint: Description for About
+                hint: >
+                  Markdown for the public membership documentation. Leave a
+                  blank line between paragraphs, lists, headings, and images.
+                  A single line break is joined into the same paragraph.
               - name: descriptionDashboard
-                widget: text
+                widget: markdown
                 label: Description dashboard
-                hint: Description for Dashboard
+                hint: >
+                  Markdown for the dashboard documentation. Leave a blank line
+                  between paragraphs, lists, headings, and images. A single
+                  line break is joined into the same paragraph.
               - name: redirect
                 widget: object
                 label: Redirect

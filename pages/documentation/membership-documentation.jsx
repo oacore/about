@@ -7,15 +7,25 @@ import retrieveContent from 'content'
 
 const ASSETS_BASE_URL = 'https://oacore.github.io/content/'
 
-const setAssetsUrl = (object) =>
-  Object.entries(object).forEach(([, value]) => {
-    delete value.membership
-    if (value.images) {
-      Object.entries(value.images).forEach(([, item]) => {
-        item.file = ASSETS_BASE_URL + item.file
-      })
-    }
+// Image paths are stored as /images/... in the images list and inside markdown.
+// Both have to point at the content site.
+const toAssetUrl = (value) =>
+  value.replace(/(^|[\s("'=])\/images\//g, `$1${ASSETS_BASE_URL}images/`)
+
+const setAssetsUrl = (value) => {
+  if (Array.isArray(value)) {
+    value.forEach(setAssetsUrl)
+    return
+  }
+  if (!value || typeof value !== 'object') return
+
+  delete value.membership
+  Object.keys(value).forEach((key) => {
+    const child = value[key]
+    if (typeof child === 'string') value[key] = toAssetUrl(child)
+    else setAssetsUrl(child)
   })
+}
 
 const getSections = async ({ ref } = {}) => {
   const content = await retrieveContent('docs-membership', {
