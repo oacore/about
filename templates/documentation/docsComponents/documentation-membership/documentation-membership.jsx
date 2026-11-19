@@ -40,6 +40,7 @@ const DocumentationMembership = ({
   docs,
   imageSource,
   docsTitle,
+  labels,
   mulltyDocs,
   compactImages,
   handleContentOpen,
@@ -91,6 +92,17 @@ const DocumentationMembership = ({
             </div>
           )}
         </div>
+        {labels?.some((label) => hasText(label?.text)) && (
+          <div className={styles.versionLabels}>
+            {labels.map((label) =>
+              hasText(label?.text) ? (
+                <span className={styles.versionLabel} key={label.text}>
+                  {label.text}
+                </span>
+              ) : null
+            )}
+          </div>
+        )}
         {docs?.map((item, index) => (
           <>
             {item.divider && <div className={styles.divider} />}
