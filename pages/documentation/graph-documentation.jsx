@@ -42,14 +42,15 @@ const getSections = async ({ ref } = {}) => {
 }
 
 export async function getStaticProps({ previewData }) {
-  if (process.env.APP_ENV === 'production') return { notFound: true }
-
   const ref = previewData?.ref
   const sections = await getSections({ ref })
+  const data = {
+    ...sections,
+  }
 
   return {
     props: {
-      data: { ...sections },
+      data,
     },
   }
 }

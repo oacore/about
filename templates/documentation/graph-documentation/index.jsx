@@ -91,6 +91,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
               text.documentationSwitcher[0].title,
               text.documentationSwitcher[1].title,
               text.documentationSwitcher[2].title,
+              text.documentationSwitcher[3].title,
             ]}
             handleSelect={handleSelectChange}
             selectedOption={selectedOption}
@@ -108,6 +109,7 @@ const ApiDocumentationPageTemplate = ({ docs, navigation }) => {
           highlight={highlight}
           setHighlight={setHighlight}
           docsTitle={navigation?.navTitle || 'CORE Graph API Documentation'}
+          labels={docs?.labels}
           mulltyDocs
           compactImages
           videoIcon={text.videlogo}

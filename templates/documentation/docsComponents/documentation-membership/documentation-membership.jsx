@@ -11,6 +11,27 @@ import styles from './styles.module.scss'
           DocumentationMembershipNav components. Move back to the design system
           when done. */
 
+const hasText = (value) => typeof value === 'string' && value.trim().length > 0
+
+const hasItemContent = (item) =>
+  hasText(item.note) ||
+  hasText(getItemDescription(item)) ||
+  hasText(item.subTitle) ||
+  hasText(item.subDescription) ||
+  Boolean(item.images?.some((image) => image?.file)) ||
+  Boolean(item.membershipTypes) ||
+  Boolean(item.redirect?.link || item.redirect?.text)
+
+const titleFontSize = (title) => {
+  const text = String(title ?? '').trim()
+
+  if (/^\d+\.\d+\.\d+\./.test(text)) return '18px'
+  if (/^\d+\.\d+\./.test(text)) return '20px'
+  if (/^\d+\./.test(text)) return '22px'
+
+  return undefined
+}
+
 const DocumentationMembership = ({
   headerTitle,
   headerCaption,
@@ -19,6 +40,7 @@ const DocumentationMembership = ({
   docs,
   imageSource,
   docsTitle,
+  labels,
   mulltyDocs,
   compactImages,
   handleContentOpen,
@@ -70,18 +92,36 @@ const DocumentationMembership = ({
             </div>
           )}
         </div>
+        {labels?.some((label) => hasText(label?.text)) && (
+          <div className={styles.versionLabels}>
+            {labels.map((label) =>
+              hasText(label?.text) ? (
+                <span className={styles.versionLabel} key={label.text}>
+                  {label.text}
+                </span>
+              ) : null
+            )}
+          </div>
+        )}
         {docs?.map((item, index) => (
           <>
             {item.divider && <div className={styles.divider} />}
             <div
               key={item.id}
-              className={styles.documentationItem}
+              className={classNames.use(styles.documentationItem, {
+                [styles.documentationItemTitleOnly]: !hasItemContent(item),
+              })}
               id={item.id}
             >
               <h3
                 className={classNames.use(styles.documentationItemTitle, {
                   [styles.highlighted]: highlight === index,
                 })}
+                style={
+                  titleFontSize(item.title)
+                    ? { fontSize: titleFontSize(item.title) }
+                    : undefined
+                }
               >
                 {item.title}
               </h3>

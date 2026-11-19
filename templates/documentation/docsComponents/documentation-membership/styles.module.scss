@@ -94,6 +94,10 @@
   border-bottom: 2px dashed #eee;
 }
 
+.documentation-item-title-only {
+  border-bottom: none;
+}
+
 .documentation-item p {
   margin: 24px 0;
   line-height: 24px;
@@ -104,14 +108,14 @@
   .documentation-content img {
     display: block;
     width: auto;
-    max-width: 50%;
+    max-width: 70%;
     height: auto;
     margin-right: auto;
     margin-left: auto;
   }
 
   .card-wrapper > div:not(.img-wrapper) {
-    width: 50%;
+    width: 70%;
   }
 }
 
@@ -413,6 +417,25 @@
   margin: 8px 0;
 }
 
+.version-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.version-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #616161;
+  background: #eeeeee;
+  border-radius: 999px;
+}
+
 .header-wrapper {
   display: flex;
   align-items: center;
@@ -421,7 +444,7 @@
 
 .docs-title {
   padding: 0 0 16px;
-  font-size: 22px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;

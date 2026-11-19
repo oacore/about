@@ -2074,6 +2074,20 @@ collections:
         label: Documentation
         file: docs-graph/docs.yml
         fields:
+          - name: labels
+            widget: list
+            label: Labels
+            required: false
+            label_singular: Label
+            summary: '{{fields.text}}'
+            hint: >
+              Badges shown above the documentation. Use this for the version
+              and any other labels, for example Version 1.0.
+            fields:
+              - name: text
+                widget: string
+                label: Label
+                hint: Text shown in the badge, for example Version 1.0
           - name: items
             widget: list
             label: Documentation groups
@@ -2091,6 +2105,16 @@ collections:
                 hint: >
                   Top-level section label (Overview, Entities, or Search). Must
                   match navigation.yml.
+              - name: id
+                widget: string
+                label: Group ID
+                required: false
+                hint: Anchor id without #, for example overview or entities
+              - name: title
+                widget: string
+                label: Title
+                required: false
+                hint: Numbered heading shown on the page, for example 1. Overview
               - name: children
                 widget: list
                 label: Sub-groups
@@ -2111,6 +2135,17 @@ collections:
                       Journals, Institutions, Authorships, Affiliations, Authors,
                       Citations). Leave empty for sections that sit directly under
                       the top-level group.
+                  - name: id
+                    widget: string
+                    label: Sub-group ID
+                    required: false
+                    hint: Anchor id without #, for example works or outputs
+                  - name: title
+                    widget: string
+                    label: Title
+                    required: false
+                    hint: >
+                      Numbered heading shown on the page, for example 2.1. Works
                   - name: sections
                     widget: list
                     label: Sections
