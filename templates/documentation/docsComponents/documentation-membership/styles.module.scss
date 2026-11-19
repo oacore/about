@@ -94,6 +94,10 @@
   border-bottom: 2px dashed #eee;
 }
 
+.documentation-item-title-only {
+  border-bottom: none;
+}
+
 .documentation-item p {
   margin: 24px 0;
   line-height: 24px;
@@ -421,7 +425,7 @@
 
 .docs-title {
   padding: 0 0 16px;
-  font-size: 22px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 700;
   line-height: 130%;
