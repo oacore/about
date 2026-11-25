@@ -24,6 +24,11 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  // Netlify CMS editor for oacore/content (public/edit.html + public/netlify-cms.config.yml),
+  // reachable at /edit as on the old site
+  async rewrites() {
+    return [{ source: '/edit', destination: '/edit.html' }]
+  },
   //TODO  Legacy URLs (old about repo legacy.config.yml)
   async redirects() {
     return [

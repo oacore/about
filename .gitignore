@@ -32,3 +32,6 @@ out
 .env.*
 .env.development
 .env.production
+
+# core-ui checkout used by the Docker build (CI); never commit it
+/core-ui/

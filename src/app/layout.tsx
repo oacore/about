@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
+import { fetchCoreStatistics } from '@/lib/statistics/fetchCoreStatistics'
+import { patchStats } from '@utils/patchStats'
+
 import SiteFrame from './SiteFrame'
 import AppProviders from './providers'
 import '@core/core-ui/styles'
@@ -25,14 +28,27 @@ type RootLayoutProps = {
   children: ReactNode
 }
 
-const RootLayout = ({ children }: RootLayoutProps) => (
-  <html lang="en" suppressHydrationWarning>
-    <body suppressHydrationWarning>
-      <AppProviders>
-        <SiteFrame>{children}</SiteFrame>
-      </AppProviders>
-    </body>
-  </html>
-)
+// Header search placeholder, patched with live statistics like the old site (data/core.yml)
+const SEARCH_PLACEHOLDER = 'Search {{totalArticlesCount}} papers from around the world'
+
+const loadSearchPlaceholder = async (): Promise<string> => {
+  const statistics = await fetchCoreStatistics().catch(() => ({}))
+  // Without statistics, drop the number rather than show a raw {{token}}
+  return patchStats(SEARCH_PLACEHOLDER, statistics).replace(/\s*\{\{\w+\}\}/g, '')
+}
+
+const RootLayout = async ({ children }: RootLayoutProps) => {
+  const searchPlaceholder = await loadSearchPlaceholder()
+
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>
+        <AppProviders>
+          <SiteFrame searchPlaceholder={searchPlaceholder}>{children}</SiteFrame>
+        </AppProviders>
+      </body>
+    </html>
+  )
+}
 
 export default RootLayout

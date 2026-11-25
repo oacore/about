@@ -3,6 +3,7 @@ import { basename, extname } from 'path/posix'
 import { parseAllDocuments } from 'yaml'
 
 import { deepCamelize } from './camelize'
+import { getPreviewRef } from './previewRef'
 
 export type RetrieveContentOptions = {
   ref?: string
@@ -51,8 +52,14 @@ const loadFirstYamlDocument = (content: string): unknown => {
   return docs[0]?.toJS() ?? null
 }
 
-const fetchText = async (url: string): Promise<string> => {
-  const response = await fetch(url, { next: { revalidate: 60 * 60 } })
+type FetchCache = { preview: boolean }
+
+// Published content is cached for an hour; a preview must show the editor's latest commit
+const cacheOptions = ({ preview }: FetchCache): RequestInit =>
+  preview ? { cache: 'no-store' } : { next: { revalidate: 60 * 60 } }
+
+const fetchText = async (url: string, cache: FetchCache): Promise<string> => {
+  const response = await fetch(url, cacheOptions(cache))
 
   if (!response.ok) {
     throw new Error(`Failed to download ${url}: ${response.status} ${response.statusText}`)
@@ -61,7 +68,11 @@ const fetchText = async (url: string): Promise<string> => {
   return response.text()
 }
 
-const listFiles = async (directoryPath: string, ref: string): Promise<string[]> => {
+const listFiles = async (
+  directoryPath: string,
+  ref: string,
+  cache: FetchCache,
+): Promise<string[]> => {
   const repo = getRepo(ref)
   const url = `https://github.com/${repo.owner}/${repo.repo}/tree/${repo.ref}/${directoryPath}`
   const response = await fetch(url, {
@@ -69,7 +80,7 @@ const listFiles = async (directoryPath: string, ref: string): Promise<string[]> 
       Accept: 'application/json',
       'X-Requested-With': 'XMLHttpRequest',
     },
-    next: { revalidate: 60 * 60 },
+    ...cacheOptions(cache),
   })
 
   if (!response.ok) {
@@ -86,15 +97,21 @@ const listFiles = async (directoryPath: string, ref: string): Promise<string[]> 
     .map((item) => item.path as string)
 }
 
-const loadEntries = async (contentPath: string, ref: string): Promise<[string, string][]> => {
+const loadEntries = async (
+  contentPath: string,
+  ref: string,
+  cache: FetchCache,
+): Promise<[string, string][]> => {
   const fileName = contentPath.split('/').pop() ?? contentPath
 
   if (extname(fileName)) {
-    return [[contentPath, await fetchText(rawContentUrl(contentPath, ref))]]
+    return [[contentPath, await fetchText(rawContentUrl(contentPath, ref), cache)]]
   }
 
-  const files = await listFiles(contentPath, ref)
-  const contents = await Promise.all(files.map((filePath) => fetchText(rawContentUrl(filePath, ref))))
+  const files = await listFiles(contentPath, ref, cache)
+  const contents = await Promise.all(
+    files.map((filePath) => fetchText(rawContentUrl(filePath, ref), cache)),
+  )
   return contents.map((body, index) => [files[index], body])
 }
 
@@ -146,12 +163,29 @@ const mergeParsedEntries = (entries: [string, unknown][]): unknown => {
   return deepCamelize(Object.fromEntries(camelEntries)) as Record<string, unknown>
 }
 
+/** True when the branch exists in the content repo (used before enabling a preview). */
+export const contentRefExists = async (ref: string): Promise<boolean> => {
+  const repo = getRepo(ref)
+  const url = `https://github.com/${repo.owner}/${repo.repo}/tree/${repo.ref}`
+
+  try {
+    const response = await fetch(url, { method: 'HEAD', cache: 'no-store' })
+    return response.ok
+  } catch {
+    return false
+  }
+}
+
 const retrieveContent = async (
   contentPath: string,
   { ref }: RetrieveContentOptions = {},
 ): Promise<unknown> => {
-  const contentRef = ref ?? getRepo().ref
-  return mergeParsedEntries(parseData(await loadEntries(contentPath, contentRef)))
+  // CMS preview (draft mode) reads the editor's content branch instead of `main`
+  const previewRef = ref ? undefined : await getPreviewRef()
+  const contentRef = ref ?? previewRef ?? getRepo().ref
+  const cache: FetchCache = { preview: Boolean(previewRef) }
+
+  return mergeParsedEntries(parseData(await loadEntries(contentPath, contentRef, cache)))
 }
 
 export default retrieveContent

@@ -7,11 +7,14 @@ import { Suspense, type ReactNode } from 'react'
 import CookiesPopup from '@components/CookiesPopup/CookiesPopup'
 import { siteConfig } from '@config/site'
 import { useAnalytics } from '@hooks/useAnalytics'
+import { getSearchUrl } from '@utils/resolveHref'
 
 import styles from './SiteFrame.module.css'
 
 type SiteFrameProps = {
   children: ReactNode
+  /** e.g. "Search 452M papers from around the world" (patched on the server). */
+  searchPlaceholder: string
 }
 
 const Analytics = () => {
@@ -28,7 +31,16 @@ const NO_FOOTER_PATHS = [
   'graph-documentation',
 ]
 
-const SiteFrame = ({ children }: SiteFrameProps) => {
+// Header search sends people to CORE Search, like the old site's Header.useSearchBar
+const handleSearch = (query: string) => {
+  const term = query.trim()
+
+  if (term) {
+    window.location.assign(getSearchUrl(term))
+  }
+}
+
+const SiteFrame = ({ children, searchPlaceholder }: SiteFrameProps) => {
   const pathname = usePathname() ?? ''
   const showFooter = !NO_FOOTER_PATHS.some((path) => pathname.includes(path))
 
@@ -40,7 +52,14 @@ const SiteFrame = ({ children }: SiteFrameProps) => {
       <a className={styles.skipLink} href="#content">
         Skip to main content
       </a>
-      <Header />
+      <Header
+        search={{
+          collapsed: true,
+          label: searchPlaceholder,
+          onSearch: handleSearch,
+          placeholder: searchPlaceholder,
+        }}
+      />
       <main className={styles.main} id="content">
         {children}
       </main>
