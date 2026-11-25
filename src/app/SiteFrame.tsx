@@ -1,10 +1,11 @@
 'use client'
 
-import { Footer, Header } from '@core/core-ui'
+import { Footer } from '@core/core-ui'
 import { usePathname } from 'next/navigation'
 import { Suspense, type ReactNode } from 'react'
 
 import CookiesPopup from '@components/CookiesPopup/CookiesPopup'
+import SiteHeader from '@components/SiteHeader/SiteHeader'
 import { siteConfig } from '@config/site'
 import { useAnalytics } from '@hooks/useAnalytics'
 import { getSearchUrl } from '@utils/resolveHref'
@@ -52,14 +53,8 @@ const SiteFrame = ({ children, searchPlaceholder }: SiteFrameProps) => {
       <a className={styles.skipLink} href="#content">
         Skip to main content
       </a>
-      <Header
-        search={{
-          collapsed: true,
-          label: searchPlaceholder,
-          onSearch: handleSearch,
-          placeholder: searchPlaceholder,
-        }}
-      />
+      {/* Design-system header (as on the old site), not core-ui's antd header */}
+      <SiteHeader search={{ onSearch: handleSearch, placeholder: searchPlaceholder }} />
       <main className={styles.main} id="content">
         {children}
       </main>

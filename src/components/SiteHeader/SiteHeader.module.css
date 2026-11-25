@@ -1,0 +1,669 @@
+/*
+ * Ported from the design system header (@oacore/design src/modules/header/styles.css,
+ * elements/app-bar, elements/button) with its variables resolved to the values the old site
+ * rendered. Every element sets what it relies on, so global, core-ui or antd styles do not leak in.
+ * Breakpoint: 768px, as in the design system.
+ */
+
+.container {
+  --header-primary: #b75400;
+  --header-padding: 1rem;
+  --header-text: rgb(0 0 0 / 87%);
+  --header-muted: rgb(0 0 0 / 60%);
+  --header-disabled: rgb(0 0 0 / 38%);
+  --header-hover: rgb(0 0 0 / 4%);
+  --header-focus: rgb(0 0 0 / 12%);
+  --header-elevation:
+    0 2px 4px rgb(0 0 0 / 2%), 0 1px 10px rgb(0 0 0 / 12%), 0 4px 5px rgb(0 0 0 / 14%);
+  --header-font: var(--font-roboto, Roboto), -apple-system, system-ui, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--header-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--header-text);
+  text-align: left;
+  background-color: #fff;
+  box-shadow: var(--header-elevation);
+}
+
+:where(.container) *,
+:where(.container) *::before,
+:where(.container) *::after {
+  box-sizing: border-box;
+}
+
+:where(.container) ul,
+:where(.container) li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:where(.container) li::before {
+  display: block;
+  height: 0;
+}
+
+:where(.container) a {
+  text-decoration: none;
+}
+
+:where(.container) h3 {
+  font-family: inherit;
+}
+
+/* Design system Button reset (text variant) */
+:where(.container) button {
+  display: inline-block;
+  margin: 0;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: none;
+  transition-duration: 150ms;
+  transition-property: color, background, border-color, box-shadow;
+}
+
+:where(.container) button:hover {
+  background-color: var(--header-hover);
+}
+
+:where(.container) button:focus-visible {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgb(183 84 0 / 25%);
+}
+
+:where(.container) svg {
+  display: inline-block;
+  flex: none;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+/* AppBar.Item */
+.appBarItem {
+  display: inline-block;
+  padding: var(--header-padding);
+  color: var(--header-text);
+}
+
+/* Logo */
+.logoContainer {
+  flex: 0 1 auto;
+  min-width: 7rem;
+  max-width: none;
+  max-height: 3rem;
+  margin-right: auto;
+  padding: 0;
+  font-weight: 600;
+}
+
+.logoLink,
+.logoLink:hover,
+.logoLink:focus {
+  color: #000;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 0.5rem;
+  padding-left: 1rem;
+  white-space: nowrap;
+  gap: 10px;
+}
+
+.logoLink:hover,
+.logoLink:focus {
+  background-color: var(--header-hover);
+  outline: none;
+}
+
+.logo {
+  position: relative;
+  min-width: 5.5rem;
+  height: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  margin-top: -0.37rem;
+  margin-bottom: -0.13rem;
+  vertical-align: -0.0625rem;
+}
+
+.separator {
+  display: block;
+  width: 1px;
+  height: 12px;
+  margin-top: 2px;
+  background: #e0e0e0;
+}
+
+.peace {
+  display: flex;
+  width: max-content;
+  margin-top: 2px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  color: #212121;
+  letter-spacing: 0.3px;
+  gap: 3px;
+}
+
+.itemWrapper {
+  display: flex;
+}
+
+.indicator {
+  color: var(--header-primary);
+}
+
+/* Mobile navigation toggle */
+.toggleContainer {
+  display: flex;
+  margin-left: auto;
+}
+
+.container .toggleButton {
+  margin: -1rem;
+  padding: 0.75rem;
+  line-height: 1.5;
+  color: var(--header-muted);
+  border-radius: 0;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin: 0 0 0 auto;
+  padding: 0;
+  transition: 0.15s;
+}
+
+.nav:not(.expanded) {
+  height: 0;
+  visibility: hidden;
+}
+
+.menu {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.container .menuTitle {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: var(--header-padding) calc(var(--header-padding) - 1px);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #000;
+  text-align: left;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  border-radius: 0;
+}
+
+.container .menuTitle::after {
+  position: absolute;
+  top: var(--header-padding);
+  right: var(--header-padding);
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -0.25rem;
+  line-height: 1;
+  vertical-align: middle;
+  content: '';
+  background-color: #424242;
+  clip-path: path('M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z');
+  transition: transform 50ms;
+}
+
+.container .menuTitle[aria-expanded='true'] {
+  color: var(--header-primary);
+}
+
+.container .menuTitle[aria-expanded='true']::after {
+  background-color: var(--header-primary);
+  transform: rotate(180deg);
+}
+
+.menuList {
+  display: none;
+  flex-direction: column;
+  width: max-content;
+}
+
+.menuList.expanded {
+  display: flex;
+}
+
+.group {
+  padding: var(--header-padding);
+}
+
+.group .item {
+  margin-right: calc(-1 * var(--header-padding));
+  margin-left: calc(-1 * var(--header-padding));
+}
+
+.container .groupTitle {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--header-disabled);
+  letter-spacing: 0.01em;
+}
+
+.item {
+  display: block;
+}
+
+.itemLink {
+  display: block;
+  margin: 0;
+  padding: 0.5rem var(--header-padding);
+  line-height: 1;
+  color: var(--header-primary);
+}
+
+.itemLink:hover,
+.itemLink:focus {
+  color: var(--header-primary);
+  text-decoration: none;
+  background-color: var(--header-hover);
+}
+
+.itemLink:focus {
+  background-color: var(--header-focus);
+  outline: 0;
+}
+
+/* Services menu */
+.servicesMenu .group,
+.servicesMenu .item {
+  flex: 1 1 30%;
+}
+
+.servicesOverviewItem .itemLink {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  grid-template-rows: min-content auto;
+  gap: 0 1rem;
+}
+
+.servicesOverviewItem img {
+  display: block;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  width: 100%;
+  height: auto;
+}
+
+.servicesOverviewItem span {
+  display: block;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.servicesOverviewItemLabel {
+  margin-bottom: 0.5rem;
+}
+
+.servicesOverviewItemDescription {
+  font-size: 0.875rem;
+  color: var(--header-muted);
+}
+
+/* Support us menu */
+.communitiesMenu .group,
+.communitiesMenu .item {
+  flex: 1 1 50%;
+}
+
+.communitiesMenu .groupTitle {
+  position: relative;
+  display: block;
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--header-primary);
+  text-align: start;
+}
+
+.communitiesMenu .groupTitle::after {
+  position: absolute;
+  bottom: 0;
+  left: -1rem;
+  width: 120%;
+  content: '';
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.supportMenu,
+.supportMenu .groupList {
+  display: flex;
+  flex-direction: column;
+}
+
+.memberMenuItem,
+.memberMenuItem:hover,
+.memberMenuItem:focus {
+  color: #fff;
+}
+
+.memberMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: max-content;
+  min-width: 225px;
+  height: 68px;
+  margin-top: 1rem;
+  padding: 7px 15px;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  background: var(--header-primary);
+  border: 1px solid transparent;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 15%);
+  transition: background-color 150ms;
+}
+
+.memberMenuItem:hover,
+.memberMenuItem:focus {
+  background: linear-gradient(rgb(0 0 0 / 7%), rgb(0 0 0 / 7%)), var(--header-primary);
+  outline: 0;
+}
+
+.memberMenuText {
+  display: block;
+}
+
+/* About menu */
+.aboutMenu {
+  flex-direction: column;
+}
+
+/* Search */
+.searchBarItem {
+  flex: 1 1 auto;
+  align-self: center;
+  min-width: 200px;
+  margin-right: 0.5rem;
+  padding: 0;
+}
+
+.searchBarItemIcon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.container .searchBarItemIconButton {
+  padding: 0.79rem 1rem;
+  line-height: 1rem;
+  color: #000;
+}
+
+/*
+ * Search field: the design system's "pure" Select. Grey while it is not focused; white with a
+ * shadow, orange underline, orange icon and caret while focused (`.select:focus-within`).
+ */
+.select {
+  --search-background: #eee;
+  --search-icon: #616161;
+
+  position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: calc(0.25rem - 1px) 0 0.25rem;
+  background: transparent;
+}
+
+.select:focus-within {
+  --search-background: #fff;
+  --search-icon: var(--header-primary);
+
+  position: absolute;
+  z-index: 1;
+  top: 0.25rem;
+  right: 0.25rem;
+  bottom: 0.25rem;
+  left: 0.25rem;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  box-shadow:
+    0 2px 16px rgb(0 0 0 / 25%),
+    0 2px 4px rgb(0 0 0 / 5%);
+}
+
+.selectGroup {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  border-bottom: 0;
+}
+
+.select:focus-within .selectGroup {
+  border-bottom: 1px solid var(--header-primary);
+}
+
+.addon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  height: 2.5rem;
+  background: var(--search-background);
+}
+
+.prepend {
+  padding: 7px 11px;
+  color: var(--search-icon);
+  border-radius: 2px 0 0 2px;
+}
+
+.append {
+  min-width: 16px;
+  border-radius: 0 2px 2px 0;
+}
+
+.container .control {
+  flex: 1 1 auto;
+  width: 1rem;
+  min-width: 0;
+  height: 2.5rem;
+  margin: 0;
+  padding: 7px 0;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--header-text);
+  caret-color: var(--header-primary);
+  background: var(--search-background);
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  box-shadow: none;
+  appearance: none;
+}
+
+/* Label over the empty field while it is not focused (design system "pure" Select) */
+.label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  overflow: hidden;
+  margin: 6px 8px;
+  padding: 2px 4px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #757575;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: text;
+  background: var(--search-background);
+  border-radius: 2px;
+}
+
+.select:focus-within .label {
+  display: none;
+}
+
+.control::-webkit-search-cancel-button,
+.control::-webkit-search-decoration {
+  appearance: none;
+}
+
+.container .clearButton {
+  margin: 3.2px;
+  padding: 3.8px 7.8px;
+  line-height: 1;
+  color: #616161;
+  border: 0;
+  border-radius: 32px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .toggleContainer {
+    display: none;
+  }
+
+  .nav,
+  .nav:not(.expanded) {
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    visibility: visible;
+  }
+
+  .container .menuTitle {
+    width: auto;
+  }
+
+  .container .menuTitle::after {
+    position: static;
+    margin-left: 0.25rem;
+  }
+
+  .menuList {
+    position: absolute;
+    z-index: 1;
+    top: 3.3rem;
+    right: 0;
+    width: 12rem;
+    background: #fff;
+    box-shadow: var(--header-elevation);
+  }
+
+  .servicesMenu .menuList {
+    flex-wrap: wrap;
+    width: max-content;
+    min-width: 600px;
+    max-height: 20rem;
+  }
+
+  .servicesOverviewItem .itemLink {
+    display: block;
+  }
+
+  .servicesOverviewItem img {
+    width: 160px;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  .communitiesMenu .menuList {
+    flex-direction: row;
+    width: max-content;
+    min-width: 258px;
+    max-height: 20rem;
+  }
+
+  .communitiesMenu .group:nth-child(1) {
+    border-right: 1px dashed #e0e0e0;
+  }
+
+  .aboutMenu .menuList {
+    flex-direction: row;
+    width: max-content;
+    min-width: 491px;
+    max-height: 20rem;
+    padding: 10px;
+    gap: 24px;
+  }
+
+  .searchBarItem {
+    position: relative;
+  }
+
+  .select,
+  .select:focus-within {
+    position: relative;
+    top: unset;
+    right: unset;
+    bottom: unset;
+    left: unset;
+    max-width: calc((100vw - 2rem) * 0.66667);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 93rem) {
+  .select,
+  .select:focus-within {
+    max-width: calc((100vw - 2rem) * 0.66667 - 7rem + 1rem);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+  .peace,
+  .separator {
+    display: none;
+  }
+
+  .communitiesMenu .group a {
+    display: block;
+  }
+
+  .servicesOverviewItem img {
+    width: 100%;
+  }
+}
+

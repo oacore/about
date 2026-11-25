@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Roboto } from 'next/font/google'
 import type { ReactNode } from 'react'
 
 import { fetchCoreStatistics } from '@/lib/statistics/fetchCoreStatistics'
@@ -29,6 +30,14 @@ type RootLayoutProps = {
 }
 
 // Header search placeholder, patched with live statistics like the old site (data/core.yml)
+// The design-system header uses Roboto (the old site loaded it); self-hosted by next/font at build
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  display: 'swap',
+  variable: '--font-roboto',
+})
+
 const SEARCH_PLACEHOLDER = 'Search {{totalArticlesCount}} papers from around the world'
 
 const loadSearchPlaceholder = async (): Promise<string> => {
@@ -41,7 +50,7 @@ const RootLayout = async ({ children }: RootLayoutProps) => {
   const searchPlaceholder = await loadSearchPlaceholder()
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className={roboto.variable} lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <AppProviders>
           <SiteFrame searchPlaceholder={searchPlaceholder}>{children}</SiteFrame>
