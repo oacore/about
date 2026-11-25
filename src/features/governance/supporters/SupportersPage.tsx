@@ -1,13 +1,12 @@
 'use client'
 
+import { Layout, PageNav, Section } from '@core/core-ui'
 import Image from 'next/image'
 
 import MaterialCards from '@components/MaterialCards'
 import Header from '@components/Header/Header'
 import type { HeaderAction } from '@components/Header/Header'
-import { Layout, Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
-import PageNav from '@components/PageNav'
 import MembershipTable from '@features/membership/MembershipTable'
 import type { CoreMember } from '@features/membership/types'
 import type {

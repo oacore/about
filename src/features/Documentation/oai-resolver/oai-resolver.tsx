@@ -1,15 +1,14 @@
 'use client'
 
+import { Collapsed, Layout, Section } from '@core/core-ui'
 import { Typography } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 
 import oaiResolverLogo from '@/assets/OAI-resolver.png'
 import Block from '@components/Block'
-import Collapsed from '@components/Collapsed/Collapsed'
 import Header from '@components/Header/Header'
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import type {
   OaiResolverDocumentationProps,
   OaiResolverFaqItem,

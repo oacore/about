@@ -1,9 +1,9 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-import { Layout, Section } from '@components/layout'
 import OrganisationsFee from '@features/member/starting/OrganisationsFee'
 import VerifyAnonymous from '@features/member/starting/VerifyAnonymous'
 import VerifyRegistered from '@features/member/starting/VerifyRegistered'

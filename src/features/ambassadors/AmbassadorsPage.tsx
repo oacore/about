@@ -1,5 +1,6 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Button } from 'antd'
 import { useEffect } from 'react'
 import ReactGA from 'react-ga4'
@@ -7,7 +8,6 @@ import ReactGA from 'react-ga4'
 import Markdown from '@components/Markdown/Markdown'
 import ResourcesSection from '@components/ResourcesSection'
 import TeamSection from '@components/TeamSection'
-import { Layout, Section } from '@components/layout'
 import type { OutreachLinkClickHandler } from '@components/outreach-materials'
 import unknownQuestionMark from '@features/ambassadors/assets/unknown-question-mark.svg'
 import {

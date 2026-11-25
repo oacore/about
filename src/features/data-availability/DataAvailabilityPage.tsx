@@ -1,10 +1,10 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import BecomeMemberSection from '@components/BecomeMemberSection'
 import Header from '@components/Header/Header'
 import HowItWorksSection from '@components/HowItWorksSection'
 import { PdfUpload } from '@components/PdfUpload'
-import { Layout, Section } from '@components/layout'
 import type { DataAvailabilityPageData } from '@features/data-availability/types'
 import { usePdfUpload } from '@hooks/usePdfUpload'
 

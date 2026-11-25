@@ -1,5 +1,5 @@
+import type { PageNavSourceLink } from '@core/core-ui'
 import type { HeaderAction } from '@components/Header/Header'
-import type { PageNavSourceLink } from '@components/PageNav/types'
 
 export type FreshFindsAction = {
   caption?: string

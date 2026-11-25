@@ -1,8 +1,7 @@
 'use client'
 
-import Collapsed from '@components/Collapsed/Collapsed'
+import { Collapsed, Section } from '@core/core-ui'
 import Markdown from '@components/Markdown/Markdown'
-import { Section } from '@components/layout'
 import type { AboutContacts } from '@features/about/types'
 
 import styles from './styles.module.css'

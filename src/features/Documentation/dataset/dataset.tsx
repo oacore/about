@@ -1,6 +1,6 @@
 'use client'
 
-import { Layout } from '@components/layout'
+import { Layout } from '@core/core-ui'
 import {
   DatasetGroupSection,
   DatasetHeader,

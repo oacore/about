@@ -1,12 +1,12 @@
 'use client'
 
+import { MODAL_WIDTH, ModalShell } from '@core/core-ui'
 import { Button } from 'antd'
 import Image from 'next/image'
 
 import { useRegistrationStore } from '@stores/registration'
 
 import errorSvg from './images/Error.svg'
-import ModalShell, { MODAL_WIDTH } from '@components/ModalShell'
 import styles from './styles.module.css'
 
 const ModalError = () => {

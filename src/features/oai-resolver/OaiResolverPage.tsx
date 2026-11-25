@@ -1,10 +1,10 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Col, Row, Typography } from 'antd'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Layout, Section } from '@components/layout'
 import StepFlow from '@components/StepFlow'
 import { OAI_RESOLVER_LOGO } from '@features/oai-resolver/constants'
 import type { OaiResolverPageData } from '@features/oai-resolver/types'

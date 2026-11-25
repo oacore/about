@@ -1,11 +1,10 @@
 'use client'
 
+import { useCookie } from '@core/core-ui'
 import { useCallback, useEffect, useRef } from 'react'
 import { usePathname, useSearchParams } from 'next/navigation'
 import Cookies from 'js-cookie'
 import ReactGA from 'react-ga4'
-
-import { useCookie } from '@hooks/use-cookies'
 
 const DEV_MEASUREMENT_ID = 'G-2ZWQFDN91Z'
 const ROOT_PAGE_TITLE = 'about-core-container-e2cxc9hzbfdjcgar.uksouth-01.azurewebsites.net'

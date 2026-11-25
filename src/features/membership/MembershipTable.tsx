@@ -1,5 +1,6 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button, Input, Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import {
@@ -14,7 +15,6 @@ import {
 
 import imagePlaceholder from '@/assets/icons/imagePlaceholder.svg'
 
-import { Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 import {
   isUsrnPartner,

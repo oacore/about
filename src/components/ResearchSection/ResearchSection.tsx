@@ -1,9 +1,8 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import classNames from 'classnames'
 import type { ReactNode } from 'react'
-
-import { Section } from '@components/layout'
 
 import styles from './ResearchSection.module.css'
 

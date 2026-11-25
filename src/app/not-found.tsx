@@ -1,7 +1,6 @@
+import { Layout, Section } from '@core/core-ui'
 import { Button } from 'antd'
 import type { Metadata } from 'next'
-
-import { Layout, Section } from '@components/layout'
 
 import NotFoundTitle from './NotFoundTitle'
 

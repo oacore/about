@@ -1,11 +1,9 @@
 'use client'
 
+import { Section, VideoModal } from '@core/core-ui'
 import { Typography } from 'antd'
 import Image from 'next/image'
 import { useState } from 'react'
-
-import Section from '@components/layout/Section'
-import VideoModal from '@components/VideoModal'
 
 import type { ServiceSection } from '../types'
 

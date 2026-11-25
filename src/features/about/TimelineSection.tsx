@@ -1,10 +1,10 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Modal } from 'antd'
 import Image from 'next/image'
 import { useState } from 'react'
 
-import { Section } from '@components/layout'
 import timeline from './assets/timeline.png'
 
 import styles from './styles.module.css'

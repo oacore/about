@@ -1,5 +1,6 @@
 'use client'
 
+import { Layout, PageNav, Section, VideoModal } from '@core/core-ui'
 import { DownOutlined, PlayCircleOutlined } from '@ant-design/icons'
 import { Button, Card, Tag, Typography } from 'antd'
 import Image from 'next/image'
@@ -8,11 +9,8 @@ import { useCallback, useState } from 'react'
 import MaterialCards from '@components/MaterialCards'
 import ExperiencesCard from '@components/pages/ExperiencesCard'
 import Header from '@components/Header/Header'
-import VideoModal from '@components/VideoModal'
 import MembershipCarousel from '@components/MembershipCarousel/MembershipCarousel'
-import { Layout, Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
-import PageNav from '@components/PageNav'
 import MembershipDetailsTable from '@features/membership/MembershipDetailsTable'
 import MembershipTable from '@features/membership/MembershipTable'
 import type {

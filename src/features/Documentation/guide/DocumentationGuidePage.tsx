@@ -1,5 +1,6 @@
 'use client'
 
+import { Layout, VideoModal, type VideoModalVideo } from '@core/core-ui'
 import { MenuUnfoldOutlined, VideoCameraFilled } from '@ant-design/icons'
 import { Button, Drawer, FloatButton, Layout as AntLayout, Typography } from 'antd'
 import { usePathname, useRouter } from 'next/navigation'
@@ -11,9 +12,6 @@ import {
   type CSSProperties,
   type RefObject,
 } from 'react'
-
-import { Layout } from '@components/layout'
-import VideoModal, { type VideoModalVideo } from '@components/VideoModal'
 
 import DocsNav from './components/DocsNav'
 import DocsSection from './components/DocsSection'

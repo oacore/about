@@ -1,12 +1,11 @@
 'use client'
 
-import { Carousel } from '@core/core-ui'
+import { Carousel, Layout, Section } from '@core/core-ui'
 import { Button, Typography } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { useState, useSyncExternalStore } from 'react'
 
-import { Layout, Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 import SearchForm from '@components/search-form'
 import { AudienceList, JoinList, KeyFeatureList, ServicesList } from '@components/sections'

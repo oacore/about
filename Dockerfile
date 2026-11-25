@@ -6,13 +6,15 @@ RUN corepack enable && corepack prepare pnpm@10.14.0 --activate
 # No git in the image: skip husky's hook install during `pnpm install`
 ENV HUSKY=0
 
+# package.json depends on "file:../@dashboard/core-ui" (the local checkout next to this repo);
+# CI checks core-ui out into ./core-ui and it is placed at that same relative path here
 FROM base AS core-ui
-WORKDIR /core-ui
+WORKDIR /@dashboard/core-ui
 COPY core-ui/ ./
 RUN pnpm install --frozen-lockfile && pnpm run build
 
 FROM base AS app
-COPY --from=core-ui /core-ui /core-ui
+COPY --from=core-ui /@dashboard/core-ui /@dashboard/core-ui
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./

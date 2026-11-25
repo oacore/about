@@ -1,11 +1,10 @@
 'use client'
 
+import { Collapsed, Section } from '@core/core-ui'
 import classNames from 'classnames'
 
-import Collapsed from '@components/Collapsed/Collapsed'
 import GuidelineCard from '@components/GuidelineCard'
 import Markdown from '@components/Markdown/Markdown'
-import { Section } from '@components/layout'
 import FaqBadge from '@features/faq/FaqBadge'
 import type { FaqHeadingLevel, FaqItem, FaqSectionData } from '@features/faq/types'
 import { updateLocationHash } from '@features/faq/utils'

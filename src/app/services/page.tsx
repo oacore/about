@@ -1,8 +1,8 @@
+import { Layout } from '@core/core-ui'
 import type { Metadata } from 'next'
 import { cache } from 'react'
 
 import Header from '@components/Header/Header'
-import Layout from '@components/layout/Layout'
 
 import { loadServicesPage } from './loadServicesPage'
 import ServicesPageContent from './components/ServicesPageContent'

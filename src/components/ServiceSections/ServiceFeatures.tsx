@@ -1,8 +1,7 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import classNames from 'classnames'
-
-import { Section } from '@components/layout'
 
 import FeatureDescription from './FeatureDescription'
 

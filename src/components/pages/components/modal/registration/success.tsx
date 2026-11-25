@@ -1,5 +1,6 @@
 'use client'
 
+import { MODAL_WIDTH, ModalShell } from '@core/core-ui'
 import { Button } from 'antd'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -12,7 +13,6 @@ import { useRegistrationStore } from '@stores/registration'
 
 import emailsSvg from './images/Emails.svg'
 import { useRegistrationAssets } from './registration-assets'
-import ModalShell, { MODAL_WIDTH } from '@components/ModalShell'
 import styles from './styles.module.css'
 
 const ModalSuccess = () => {

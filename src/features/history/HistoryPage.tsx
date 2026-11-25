@@ -1,12 +1,12 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { useEffect } from 'react'
 
 import classNames from 'classnames'
 
 import AnniversaryLogo from '@components/anniversary-logo'
 import HistoryTimeline from '@components/history-timeline'
-import { Layout, Section } from '@components/layout'
 import type { HistoryPageData } from '@features/history/types'
 import { patchStats } from '@utils/patchStats'
 

@@ -1,10 +1,10 @@
 'use client'
 
+import { Layout } from '@core/core-ui'
 import { Button } from 'antd'
 import Image from 'next/image'
 
 import Markdown from '@components/Markdown/Markdown'
-import { Layout } from '@components/layout'
 import type { MemberErrorContent } from '@features/member/types'
 
 import styles from './styles.module.css'

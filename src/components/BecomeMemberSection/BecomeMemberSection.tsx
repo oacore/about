@@ -1,8 +1,8 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button } from 'antd'
 
-import { Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 
 import styles from './BecomeMemberSection.module.css'

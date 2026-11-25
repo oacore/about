@@ -1,11 +1,11 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Card, Col, Row } from 'antd'
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
 
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import type { ResearchJoinCardsDocument, ResearchPageData } from '@features/governance/types'
 
 import {

@@ -1,7 +1,6 @@
 'use client'
 
-import PageNav from '@components/PageNav'
-import { Layout, Section } from '@components/layout'
+import { Layout, PageNav, Section } from '@core/core-ui'
 import type { EndorsementsPageData } from '@features/endorsements/types'
 
 import EndorsementsSection from './EndorsementsSection'

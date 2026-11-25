@@ -1,13 +1,10 @@
 'use client'
 
+import { Layout, PageNav, RepositoriesMap, Section, Video } from '@core/core-ui'
 import { Button, Col, Row } from 'antd'
 
 import Markdown from '@components/Markdown/Markdown'
-import PageNav from '@components/PageNav'
-import RepositoriesMap from '@components/RepositoriesMap/RepositoriesMap'
 import TeamSection from '@components/TeamSection'
-import Video from '@components/Video/Video'
-import { Layout, Section } from '@components/layout'
 import { HOW_IT_WORKS_HREFS, RELATED_HREFS } from '@features/about/constants'
 import type { AboutPageData } from '@features/about/types'
 import { getRelatedActionHref } from '@features/about/utils'
@@ -130,7 +127,7 @@ const AboutPage = ({ data }: AboutPageProps) => {
             </div>
           </Col>
           <Col md={12} xs={24}>
-            <RepositoriesMap />
+            <RepositoriesMap dataUrl="/data/formap.json" />
           </Col>
         </Row>
       </Section>

@@ -1,11 +1,11 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button } from 'antd'
 import { usePathname } from 'next/navigation'
 
 import HowItWorksSection from '@components/HowItWorksSection'
 import Markdown from '@components/Markdown/Markdown'
-import Section from '@components/layout/Section'
 import MembershipTable from '@features/membership/MembershipTable'
 import { useTable } from '@features/membership/hooks/useTable'
 import type { MembershipComparisonTable } from '@features/membership/types'

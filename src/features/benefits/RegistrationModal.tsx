@@ -1,5 +1,6 @@
 'use client'
 
+import { MODAL_WIDTH, ModalShell } from '@core/core-ui'
 import { Button, Form, Input } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
@@ -7,7 +8,6 @@ import { useState } from 'react'
 
 import floating from '@components/FloatingField/FloatingField.module.css'
 import Markdown from '@components/Markdown/Markdown'
-import ModalShell, { MODAL_WIDTH } from '@components/ModalShell'
 import type { BenefitsSecondStep } from '@features/benefits/types'
 import {
   buildExistsDescription,

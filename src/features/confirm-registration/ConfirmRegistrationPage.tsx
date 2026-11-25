@@ -1,9 +1,9 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Button } from 'antd'
 import Image from 'next/image'
 
-import { Layout, Section } from '@components/layout'
 import type { ConfirmRegistrationProduct } from '@features/confirm-registration/types'
 import { getLinkProps, resolveHref } from '@utils/resolveHref'
 

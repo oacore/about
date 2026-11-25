@@ -1,11 +1,11 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button, type ButtonProps } from 'antd'
 import Image from 'next/image'
 import type { ReactNode } from 'react'
 
 import Markdown from '@components/Markdown/Markdown'
-import Section from '@components/layout/Section'
 
 import styles from './Header.module.css'
 

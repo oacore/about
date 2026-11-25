@@ -1,12 +1,12 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button, Col, Row } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { useState } from 'react'
 
 import Markdown from '@components/Markdown/Markdown'
-import { Section } from '@components/layout'
 import Testimonial from '@components/testimonial'
 import type { EndorsementOrganization, EndorsementSection as EndorsementSectionData } from '@features/endorsements/types'
 import {

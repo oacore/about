@@ -1,10 +1,10 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import classNames from 'classnames'
 
 import Markdown from '@components/Markdown/Markdown'
 import HistoryMilestone from '@components/history-milestone'
-import { Section } from '@components/layout'
 import type { HistoryMilestone as HistoryMilestoneData } from '@features/history/types'
 
 import styles from './styles.module.css'

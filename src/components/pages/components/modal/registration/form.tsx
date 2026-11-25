@@ -1,5 +1,6 @@
 'use client'
 
+import { MODAL_WIDTH, ModalShell } from '@core/core-ui'
 import { Button, Checkbox, Form, Input } from 'antd'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -11,7 +12,6 @@ import { useRegistrationStore } from '@stores/registration'
 
 import CountrySelect from './country-select'
 import OrganisationInput from './institution-select'
-import ModalShell, { MODAL_WIDTH } from '@components/ModalShell'
 import ProfileSelect from './profile-select'
 import { useRegistrationAssets } from './registration-assets'
 import styles from './styles.module.css'

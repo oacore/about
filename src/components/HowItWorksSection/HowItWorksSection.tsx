@@ -1,10 +1,10 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import classNames from 'classnames'
 import Image from 'next/image'
 import type { ReactNode } from 'react'
 
-import { Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 
 import styles from './HowItWorksSection.module.css'

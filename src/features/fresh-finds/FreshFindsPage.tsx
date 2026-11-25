@@ -1,14 +1,13 @@
 'use client'
 
+import { Layout, PageNav, Section } from '@core/core-ui'
 import { Button, type ButtonProps } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 
 import ContactSection from '@components/ContactSection'
 import Header from '@components/Header/Header'
-import { Layout, Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
-import PageNav from '@components/PageNav'
 import {
   RelatedServices,
   ServiceFeatures,

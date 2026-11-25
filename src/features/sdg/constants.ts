@@ -1,3 +1,4 @@
+import type { SdgType } from '@core/core-ui'
 import all from '@features/sdg/assets/icons/allSdg.svg'
 import belowWater from '@features/sdg/assets/icons/belowWater.svg'
 import climate from '@features/sdg/assets/icons/climate.svg'
@@ -16,8 +17,6 @@ import peace from '@features/sdg/assets/icons/peace.svg'
 import poverty from '@features/sdg/assets/icons/poverty.svg'
 import production from '@features/sdg/assets/icons/production.svg'
 import water from '@features/sdg/assets/icons/water.svg'
-
-import type { SdgType } from '@components/PdfUpload/types'
 
 export const SDG_TYPES: SdgType[] = [
   { id: 'all', title: 'All', icon: all, color: '#B75400' },

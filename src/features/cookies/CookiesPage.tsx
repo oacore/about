@@ -1,13 +1,11 @@
 'use client'
 
+import { Layout, PageNav, useCookieHandler, useCookieItems } from '@core/core-ui'
 import { Table } from 'antd'
 import { useSyncExternalStore } from 'react'
 import type { ColumnsType } from 'antd/es/table'
 
-import { Layout } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
-import PageNav from '@components/PageNav'
-import { useCookieHandler, useCookieItems } from '@hooks/use-cookies'
 
 import CookiesForm from './CookiesForm'
 import type { CookieListCaptions, CookieListItem, CookiesPageData } from './types'

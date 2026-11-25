@@ -1,10 +1,9 @@
 'use client'
 
+import { Layout, PageNav } from '@core/core-ui'
 import { useEffect } from 'react'
 
 import Header from '@components/Header/Header'
-import { Layout } from '@components/layout'
-import PageNav from '@components/PageNav'
 import FaqSection from '@features/faq/FaqSection'
 import type { FaqPageData } from '@features/faq/types'
 const { Title } = Typography

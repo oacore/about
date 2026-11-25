@@ -18,8 +18,8 @@ importers:
         specifier: ^1.0.3
         version: 1.0.3(antd@5.27.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@core/core-ui':
-        specifier: file:../core-ui
-        version: '@oacore/core-ui@file:../core-ui(@ant-design/icons@5.6.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@types/react@19.1.9)(antd@5.27.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)'
+        specifier: file:../@dashboard/core-ui
+        version: '@oacore/core-ui@file:../@dashboard/core-ui(@ant-design/icons@5.6.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@types/react@19.1.9)(antd@5.27.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(leaflet.markercluster@1.5.3(leaflet@1.9.4))(leaflet@1.9.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)'
       '@octokit/rest':
         specifier: ^22.0.1
         version: 22.0.1
@@ -579,14 +579,21 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@oacore/core-ui@file:../core-ui':
-    resolution: {directory: ../core-ui, type: directory}
+  '@oacore/core-ui@file:../@dashboard/core-ui':
+    resolution: {directory: ../@dashboard/core-ui, type: directory}
     engines: {node: '>=24.14.0', pnpm: '>=10'}
     peerDependencies:
       '@ant-design/icons': ^5.6.1
       antd: ^5.27.6
+      leaflet: ^1.9.4
+      leaflet.markercluster: ^1.5.3
       react: ^19.1.1
       react-dom: ^19.1.1
+    peerDependenciesMeta:
+      leaflet:
+        optional: true
+      leaflet.markercluster:
+        optional: true
 
   '@octokit/auth-token@6.0.0':
     resolution: {integrity: sha512-P4YJBPdPSpWTQ1NU4XYdvHvXJJDxM6YwpS0FZHRgP7YFkdVxsWcpWGy/NVqlAA7PcPCnMacXlRm1y2PFZRWL/w==}
@@ -3687,7 +3694,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@oacore/core-ui@file:../core-ui(@ant-design/icons@5.6.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@types/react@19.1.9)(antd@5.27.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@oacore/core-ui@file:../@dashboard/core-ui(@ant-design/icons@5.6.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@types/react@19.1.9)(antd@5.27.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(leaflet.markercluster@1.5.3(leaflet@1.9.4))(leaflet@1.9.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@ant-design/icons': 5.6.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       antd: 5.27.6(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -3698,6 +3705,9 @@ snapshots:
       react-dom: 19.1.1(react@19.1.1)
       react-markdown: 10.1.0(@types/react@19.1.9)(react@19.1.1)
       rehype-raw: 7.0.0
+    optionalDependencies:
+      leaflet: 1.9.4
+      leaflet.markercluster: 1.5.3(leaflet@1.9.4)
     transitivePeerDependencies:
       - '@types/react'
       - supports-color

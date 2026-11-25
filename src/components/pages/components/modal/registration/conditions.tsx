@@ -1,14 +1,13 @@
 'use client'
 
+import { MODAL_WIDTH, ModalShell, Turnstile } from '@core/core-ui'
 import { Button, Checkbox } from 'antd'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
 import Markdown from '@components/Markdown/Markdown'
-import Turnstile from '@components/turnstile'
 import { useRegistrationStore } from '@stores/registration'
 
-import ModalShell, { MODAL_WIDTH } from '@components/ModalShell'
 import { useRegistrationAssets } from './registration-assets'
 import styles from './styles.module.css'
 

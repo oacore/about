@@ -1,11 +1,11 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import Image from 'next/image'
 
 import Header from '@components/Header/Header'
-import { Layout, Section } from '@components/layout'
 import type { AdvisoryMember, AdvisoryPageData } from '@features/governance/types'
 
 import styles from './styles.module.css'

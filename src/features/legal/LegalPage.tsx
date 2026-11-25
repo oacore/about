@@ -1,12 +1,11 @@
 'use client'
 
+import { Layout, SectionNavLinks } from '@core/core-ui'
 import classNames from 'classnames'
 import type { ReactNode } from 'react'
 
 import Header from '@components/Header/Header'
-import { Layout } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
-import SectionNavLinks from '@components/SectionNavLinks'
 import type { LegalPageData } from '@features/legal/types'
 
 import styles from './LegalPage.module.css'

@@ -1,5 +1,5 @@
+import { Layout } from '@core/core-ui'
 import Markdown from '@components/Markdown/Markdown'
-import Layout from '@components/layout/Layout'
 import ServiceMainWrapper from '@components/ServiceMainWrapper'
 import type { MarkdownPageData } from '@/lib/content/markdownPage'
 

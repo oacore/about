@@ -1,11 +1,9 @@
 'use client'
 
+import { Section, VideoModal, type VideoModalVideo } from '@core/core-ui'
 import { Button } from 'antd'
 import Image from 'next/image'
 import { useState } from 'react'
-
-import { Section } from '@components/layout'
-import VideoModal, { type VideoModalVideo } from '@components/VideoModal'
 
 import styles from './MaterialCards.module.css'
 

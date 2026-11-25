@@ -1,9 +1,8 @@
 'use client'
 
+import { Collapsed, Section } from '@core/core-ui'
 import { useState, useSyncExternalStore } from 'react'
 
-import Collapsed from '@components/Collapsed/Collapsed'
-import { Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 
 import type { FreshFindsContent } from './types'

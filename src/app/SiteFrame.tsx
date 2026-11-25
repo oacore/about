@@ -1,11 +1,10 @@
 'use client'
 
-import { Footer } from '@core/core-ui'
+import { Footer, Header, SiteCookiesPopup } from '@core/core-ui'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Suspense, type ReactNode } from 'react'
 
-import CookiesPopup from '@components/CookiesPopup/CookiesPopup'
-import SiteHeader from '@components/SiteHeader/SiteHeader'
 import { siteConfig } from '@config/site'
 import { useAnalytics } from '@hooks/useAnalytics'
 import { getSearchUrl } from '@utils/resolveHref'
@@ -53,13 +52,17 @@ const SiteFrame = ({ children, searchPlaceholder }: SiteFrameProps) => {
       <a className={styles.skipLink} href="#content">
         Skip to main content
       </a>
-      {/* Design-system header (as on the old site), not core-ui's antd header */}
-      <SiteHeader search={{ onSearch: handleSearch, placeholder: searchPlaceholder }} />
+      {/* core-ui Header: the design-system header of the old site; Next.js Link for internal pages */}
+      <Header
+        linkComponent={Link}
+        pathname={pathname}
+        search={{ onSearch: handleSearch, placeholder: searchPlaceholder }}
+      />
       <main className={styles.main} id="content">
         {children}
       </main>
       {showFooter ? <Footer /> : null}
-      <CookiesPopup />
+      <SiteCookiesPopup hidden={pathname === '/cookies'} linkComponent={Link} />
     </div>
   )
 }

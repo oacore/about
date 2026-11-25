@@ -1,6 +1,6 @@
+import { Layout } from '@core/core-ui'
 import FeatureBox from '@components/FeatureBox'
 import Header from '@components/Header/Header'
-import Layout from '@components/layout/Layout'
 
 import type { LabsPageData } from '@features/labs/types'
 

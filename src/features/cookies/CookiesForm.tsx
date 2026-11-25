@@ -1,11 +1,11 @@
 'use client'
 
+import type { CookieItem } from '@core/core-ui'
 import { Button, Switch } from 'antd'
 import { useState, type MouseEvent } from 'react'
 
 import Markdown from '@components/Markdown/Markdown'
 import getKeyByValue from '@/helpers/getKeyByValue'
-import type { CookieItem } from '@hooks/use-cookies'
 
 import styles from './cookies.module.css'
 

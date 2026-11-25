@@ -57,7 +57,7 @@ export type SdgHowItWorksDocument = {
   howItWorks?: SdgHowItWorksInner
 }
 
-export type { SdgPrediction, SdgType, SdgUploadResponse } from '@components/PdfUpload/types'
+export type { SdgPrediction, SdgType, SdgUploadResponse } from '@core/core-ui'
 
 /** Shape returned by `getSections('sdg')` (matches oacore/content `sdg/` bundle). */
 export type SdgPageData = {

@@ -1,10 +1,10 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { useEffect } from 'react'
 
 import FooterSection from '@components/FooterSection'
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import MemberForm from '@features/member/form/MemberForm'
 import type { MemberPageData } from '@features/member/types'
 import { useMembershipStore } from '@stores/membership'

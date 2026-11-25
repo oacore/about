@@ -1,11 +1,10 @@
 'use client'
 
+import { Layout, Section, SectionNavLinks } from '@core/core-ui'
 import Image from 'next/image'
 import FooterSection from '@components/FooterSection'
 import Header from '@components/Header/Header'
-import { Layout, Section } from '@components/layout'
 import RedirectAction from '@components/RedirectAction'
-import SectionNavLinks from '@components/SectionNavLinks'
 import ServiceMainWrapper from '@components/ServiceMainWrapper'
 import type { RefPageData } from '@features/ref/types'
 import ref from "../../assets/icons/ref.svg"

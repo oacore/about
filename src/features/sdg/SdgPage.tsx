@@ -1,10 +1,9 @@
 'use client'
 
+import { Layout, Section, Video } from '@core/core-ui'
 import Header from '@components/Header/Header'
 import HowItWorksSection from '@components/HowItWorksSection'
 import { PdfUpload } from '@components/PdfUpload'
-import { Video } from '@components/Video'
-import { Layout, Section } from '@components/layout'
 import { SDG_TYPES } from '@features/sdg/constants'
 import type { SdgPageData } from '@features/sdg/types'
 import { usePdfUpload } from '@hooks/usePdfUpload'

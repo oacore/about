@@ -1,16 +1,15 @@
 'use client'
 
+import { Collapsed, Layout, Section } from '@core/core-ui'
 import { Button } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-import Collapsed from '@components/Collapsed/Collapsed'
 import GuidelineCard from '@components/GuidelineCard'
 import Markdown from '@components/Markdown/Markdown'
 import ServiceMainWrapper from '@components/ServiceMainWrapper'
 import StepFlow from '@components/StepFlow'
-import { Layout, Section } from '@components/layout'
 import RegistrationModal from '@features/benefits/RegistrationModal'
 import type {
   BenefitsJoinBlock,

@@ -1,5 +1,6 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Button } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
@@ -7,7 +8,6 @@ import type { ReactNode } from 'react'
 
 import GuidelineCard from '@components/GuidelineCard'
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import type { DataPageData, DataPageSection } from '@features/data/types'
 import { patchStats } from '@utils/patchStats'
 

@@ -1,9 +1,9 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button } from 'antd'
 import classNames from 'classnames'
 
-import { Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 
 import styles from './FooterSection.module.css'

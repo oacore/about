@@ -1,5 +1,6 @@
 'use client'
 
+import { Collapsed, Layout, PageNav, Section, VideoModal } from '@core/core-ui'
 import { Button, Form, Input, Tooltip } from 'antd'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -8,15 +9,12 @@ import {
   PlayCircleOutlined
 } from '@ant-design/icons';
 
-import Collapsed from '@components/Collapsed/Collapsed'
 import ContactSection from '@components/ContactSection'
 import floating from '@components/FloatingField/FloatingField.module.css'
 import Header from '@components/Header/Header'
 import HowItWorksSection from '@components/HowItWorksSection'
-import { Layout, Section } from '@components/layout'
 import MaterialCards from '@components/MaterialCards'
 import Markdown from '@components/Markdown/Markdown'
-import PageNav from '@components/PageNav'
 import {
   RelatedServices,
   ServiceFeatures,
@@ -24,7 +22,6 @@ import {
   ServiceTestimonialCard,
 } from '@components/ServiceSections'
 import RegistrationModals from '@components/pages/components/modal/registration'
-import VideoModal from '@components/VideoModal'
 import { useRegistrationStore } from '@stores/registration'
 import { patchStats } from '@utils/patchStats'
 

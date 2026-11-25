@@ -1,10 +1,10 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Typography } from 'antd'
 import classNames from 'classnames'
 import type { ReactNode } from 'react'
 
-import { Section } from '@components/layout'
 import type { DatasetAccentColor } from '@features/Documentation/dataset/types'
 
 import styles from './styles.module.css'

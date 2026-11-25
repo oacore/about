@@ -1,10 +1,9 @@
 'use client'
 
+import { Collapsed, Section } from '@core/core-ui'
 import { Typography } from 'antd'
 
-import Collapsed from '@components/Collapsed/Collapsed'
 import Markdown from '@components/Markdown/Markdown'
-import { Section } from '@components/layout'
 import type { DatasetStructures as DatasetStructuresData } from '@features/Documentation/dataset/types'
 
 import styles from '../styles.module.css'

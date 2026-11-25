@@ -1,10 +1,10 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Col, Row } from 'antd'
 import Image from 'next/image'
 
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import { POSI_ICON, SECTION_ICONS } from '@features/distinctive-characteristics/constants'
 import type { DistinctiveCharacteristicsPageData } from '@features/distinctive-characteristics/types'
 

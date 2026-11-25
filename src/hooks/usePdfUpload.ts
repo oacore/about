@@ -1,15 +1,16 @@
 'use client'
 
+import type { PdfUploadVariant, SdgUploadResponse, UploadResults } from '@core/core-ui'
 import { useCallback, useMemo, useState } from 'react'
-import type { UploadResults } from '@core/core-ui'
 
 import { API_URL } from '@config/env'
 
-import {
-  PDF_UPLOAD_PATHS,
-  type PdfUploadVariant,
-  type SdgUploadResponse,
-} from '@components/PdfUpload/types'
+// Upload endpoints of the CORE API, per PdfUpload variant
+const PDF_UPLOAD_PATHS = {
+  'rights-retention': '/internal/data-providers/rights-retention-upload-file',
+  'data-availability': '/internal/data-providers/data-access-upload-file',
+  sdg: '/internal/sdg-upload-file',
+} as const satisfies Record<PdfUploadVariant, string>
 
 // API_URL follows APP_ENV (dev/staging/prod), like the old app's process.env.API_URL
 const getUploadUrl = (variant: PdfUploadVariant): string =>

@@ -1,12 +1,12 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { Button } from 'antd'
 import Image from 'next/image'
 import { Fragment } from 'react'
 
 import Header from '@components/Header/Header'
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import type { GovernancePageData } from '@features/governance/types'
 
 import styles from './styles.module.css'

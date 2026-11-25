@@ -1,14 +1,13 @@
 'use client'
 
+import { Layout, SectionNavLinks } from '@core/core-ui'
 import classNames from 'classnames'
 import Image from 'next/image'
 import bsdtag from '@/assets/icons/bsdtag.svg'
 import FooterSection from '@components/FooterSection'
 import Header from '@components/Header/Header'
-import { Layout } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 import RedirectAction from '@components/RedirectAction'
-import SectionNavLinks from '@components/SectionNavLinks'
 import type { ResearchOutputsPageData } from '@features/research-outputs/types'
 
 import ResearchOutputsSection from './ResearchOutputsSection'

@@ -1,7 +1,6 @@
 'use client'
 
-import { useSectionScroll } from '@components/SectionNavLinks'
-
+import { useSectionScroll } from '@core/core-ui'
 import styles from './LegalPage.module.css'
 
 const TermsDescription = () => {

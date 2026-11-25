@@ -1,9 +1,9 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Col, Row } from 'antd'
 import type { ReactNode } from 'react'
 
-import { Section } from '@components/layout'
 import OutreachMaterials, {
   hasResourceAction,
   type OutreachLinkClickHandler,

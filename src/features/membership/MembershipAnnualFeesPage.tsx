@@ -1,8 +1,8 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { InfoCircleFilled } from '@ant-design/icons'
 
-import { Layout, Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 import MembershipTable from '@features/membership/MembershipTable'
 import type { MembershipAnnualFeesPageData } from '@features/membership/types'

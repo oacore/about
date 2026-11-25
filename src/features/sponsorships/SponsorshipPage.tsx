@@ -1,5 +1,6 @@
 'use client'
 
+import { Layout, Section } from '@core/core-ui'
 import { ConfigProvider, Table } from 'antd'
 import type { ColumnsType } from 'antd/es/table'
 import Image from 'next/image'
@@ -7,7 +8,6 @@ import Image from 'next/image'
 import ContactSection from '@components/ContactSection'
 import Header from '@components/Header/Header'
 import Markdown from '@components/Markdown/Markdown'
-import { Layout, Section } from '@components/layout'
 import MembershipTable from '@features/membership/MembershipTable'
 import type {
   SponsorshipDiscount,

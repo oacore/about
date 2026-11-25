@@ -1,10 +1,10 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button, type ButtonProps } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-import { Section } from '@components/layout'
 import Markdown from '@components/Markdown/Markdown'
 
 import styles from './ContactSection.module.css'

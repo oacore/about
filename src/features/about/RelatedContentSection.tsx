@@ -1,12 +1,12 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Button } from 'antd'
 import classNames from 'classnames'
 import Image from 'next/image'
 import type { ReactNode } from 'react'
 
 import Markdown from '@components/Markdown/Markdown'
-import { Section } from '@components/layout'
 import type { AboutAction, AboutRelatedSection } from '@features/about/types'
 import { resolveExternalTarget, resolveHref } from '@features/about/utils'
 

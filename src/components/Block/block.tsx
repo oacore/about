@@ -1,10 +1,9 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Col, Row } from 'antd'
 import classNames from 'classnames'
 import type { ReactNode } from 'react'
-
-import { Section } from '@components/layout'
 
 import styles from './Block.module.css'
 

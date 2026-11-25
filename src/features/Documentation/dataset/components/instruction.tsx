@@ -1,9 +1,9 @@
 'use client'
 
+import { Section } from '@core/core-ui'
 import { Typography } from 'antd'
 
 import Markdown from '@components/Markdown/Markdown'
-import { Section } from '@components/layout'
 import type { DatasetInstruction as DatasetInstructionData } from '@features/Documentation/dataset/types'
 
 import styles from '../styles.module.css'

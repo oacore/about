@@ -1,11 +1,10 @@
 'use client'
 
+import { Section, useSectionScroll } from '@core/core-ui'
 import { Typography } from 'antd'
 import Image from 'next/image'
 
 import Markdown from '@components/Markdown/Markdown'
-import { useSectionScroll } from '@components/SectionNavLinks'
-import { Section } from '@components/layout'
 import type { DatasetHeader as DatasetHeaderData, DatasetHeaderLinks } from '@features/Documentation/dataset/types'
 
 import styles from '../styles.module.css'
