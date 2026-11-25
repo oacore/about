@@ -34,6 +34,8 @@ const HistoryPage = ({ data }: HistoryPageProps) => {
   return (
     <Layout className={styles.page}>
       <Section className={classNames(styles.hero, styles.blobsBackground)} id="history">
+        {/* Page heading for screen readers and search engines, as on the old site */}
+        <h1 className={styles.visuallyHidden}>CORE Genesis</h1>
         <AnniversaryLogo className={styles.heroLogo} />
       </Section>
       <HistoryTimeline className={styles.timeline} intro={intro} milestones={data.milestones} />

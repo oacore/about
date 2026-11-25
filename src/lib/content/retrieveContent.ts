@@ -95,6 +95,9 @@ const listFiles = async (
   return items
     .filter((item) => item.contentType === 'file' && typeof item.path === 'string')
     .map((item) => item.path as string)
+    // Data files only: folders such as `resources/` also hold large PDFs/images (one is 31 MB)
+    // that would otherwise be downloaded and parsed as text on every render
+    .filter((filePath) => parseFormat(filePath) !== undefined)
 }
 
 const loadEntries = async (
