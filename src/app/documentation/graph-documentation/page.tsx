@@ -10,7 +10,7 @@ import { notFound } from 'next/navigation'
  * (The old about repo also returned notFound in production: pages/documentation/graph-documentation.jsx.)
  *
  * Before enabling it:
- * - The guide's DocsSection (src/features/Documentation/guide/components) needs GFM tables,
+ * - The guide's DocsSection (core-ui src/stories/DocumentationGuide/components) needs GFM tables,
  *   fenced code blocks, `note` and `contentBlocks` support: the docs-graph content relies on all of them.
  * - Then uncomment the imports above and the code below, delete the `notFound()` call, and
  *   uncomment the Graph option in src/features/Documentation/guide/constants.ts.
