@@ -1,11 +1,7 @@
-# master -> 2
-node_modules
-.next
-.idea
-.npmrc
-out
-/public/edit*
-/public/netlify-cms.config.*
-*.cache
+# Placeholder until the project's own .gitignore is copied in
+node_modules/
+.next/
 .DS_Store
-report.*.json
+.idea/
+*.tsbuildinfo
+.env*.local
