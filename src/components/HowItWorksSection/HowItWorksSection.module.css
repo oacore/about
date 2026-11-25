@@ -1,0 +1,65 @@
+.section {
+  align-items: center;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.imageWrapper {
+  max-width: 100%;
+  width: 100%;
+}
+
+.imageWrapper img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.content {
+  min-width: 0;
+}
+
+.title {
+  font-size: 34px;
+  margin: 0 0 24px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: flex-end;
+  margin-top: 38px;
+}
+
+@media (max-width: 576px) {
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+  }
+
+  .actions :global(.ant-btn) {
+    width: 100%;
+    height: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}

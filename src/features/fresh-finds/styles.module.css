@@ -1,0 +1,289 @@
+.anchor {
+  scroll-margin-top: 6rem;
+}
+
+.nav {
+  flex-wrap: wrap;
+}
+
+.sectionTitle {
+  font-size: 34px;
+  margin: 0 0 24px;
+}
+
+.contentSpace {
+  margin-top: 24px;
+}
+
+/* Hero: old design-v2 `hero.split` (text ~52%, image ~46% capped at 520px) */
+section.split {
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 3rem;
+}
+
+.split > div:first-child {
+  flex: 1 1 52%;
+  min-width: 0;
+}
+
+.split > div:last-child {
+  flex: 0 1 46%;
+  max-width: 520px;
+  align-self: center;
+}
+
+@media (max-width: 768px) {
+
+  section.split{
+    flex-wrap: wrap;
+  }
+
+
+
+  .split > div:last-child{
+    flex-basis: 100%;
+    max-width: 420px;
+  }
+}
+
+/* How it works */
+.howItWorks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.imageWrapper img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.howItWorks .content ul {
+  margin-left: 1.5rem;
+  padding-left: 0;
+}
+
+.howItWorks .content li {
+  line-height: 2rem;
+  list-style-type: disc;
+}
+
+.howItWorks .content::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.howItWorks .button {
+  float: right;
+  margin-top: 2rem;
+  margin-right: 10px;
+}
+
+@media (max-width: 576px) {
+  .howItWorks .button {
+    float: none;
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+    white-space: normal;
+  }
+}
+
+/* Workflow stat highlights (old site: Bootstrap success green) */
+.workflow mark {
+  padding: 0.2em;
+  background-color: #28a745;
+  color: #000;
+}
+
+/* "Start with FreshFinds" buttons */
+.start :global(.ant-btn) {
+  height: auto !important;
+  padding: 8px !important;
+}
+
+/* Long labels wrap inside the 8px padding instead of running into it */
+.start :global(.ant-btn > span) {
+  min-width: 0;
+  white-space: normal;
+}
+
+.highlight {
+  color: var(--color-primary, #b75400);
+}
+
+/* Use cases (full-bleed grey band) */
+.useCases {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 48px calc(50% - 50vw);
+  background: #f5f5f5;
+}
+
+.useCasesInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  width: 100%;
+  max-width: 1240px;
+  box-sizing: border-box;
+  padding: 48px 16px;
+}
+
+.useCasesTitle {
+  display: flex;
+  flex: 0 0 48%;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #212121;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.useCasesTitle h2 {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.caseCard {
+  flex: 0 0 48%;
+  min-width: 0;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+@media (max-width: 1130px) {
+
+  .useCasesTitle{
+    flex: 0 0 100%;
+    font-size: 36px;
+  }
+
+
+
+  .caseCard{
+    flex: 0 0 100%;
+  }
+}
+
+.caseBody {
+  padding: 16px;
+}
+
+.caseTitle {
+  margin-top: 0;
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.036px;
+}
+
+.caseDescription p {
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.026px;
+}
+
+.caseFooter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.person {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.personName {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.personRole {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.048px;
+}
+
+/* Testimonials */
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  gap: 1.4rem;
+}
+
+@media (max-width: 768px) {
+
+  .testimonials{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FAQs */
+.faqHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 48px;
+}
+
+.faqHeader h3 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.expandAll {
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--color-primary, #b75400);
+  font: inherit;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.faqAnswer ul {
+  padding-left: 1.5rem;
+}
+
+.faqAnswer li {
+  list-style: disc;
+}
+

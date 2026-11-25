@@ -1,0 +1,238 @@
+/* Ant Design Theme Custom Properties */
+:root {
+    /* Primary Colors */
+    --color-primary: #B75400;
+    --color-primary-dark: #812700;
+    --color-primary-light: #ef8237;
+    --color-primary-hover: #D4620A;
+    --color-primary-active: #A04A00;
+    --color-success: #8BC34A;
+    --color-danger: #C62828;
+    --color-warning: #FF9800;
+    --color-info: #2196F3;
+    --color-dark: #000000;
+
+    /* Text Colors */
+    --color-text-primary: #616161;
+    --color-text-secondary: #212121;
+    --color-text-white: #FFFFFF;
+    --color-text-disabled: #9E9E9E;
+    --gray-600: #757575;
+    --gray-300: #e0e0e0;
+
+    /* Background Colors */
+    --color-bg-container: #FFFFFF;
+    --color-bg-elevated: #FFFFFF;
+    --color-bg-layout: #F5F5F5;
+    --color-bg-light: #fef5ef;
+    --color-bg-hover: #F5F5F5;
+    --color-main-bg-layout: #EEEEEE;
+    --success: #8bc34a;
+    --success-light: #bef67a;
+    --success-light-background: #8BC34A1A;
+    --success-dark: #5a9216;
+    --warning: #fdd835;
+    --warning-light: #ffff6b;
+    --warning-faded: #fdf4cd;
+    --warning-dark: #c6a700;
+    --danger: #c62828;
+    --danger-light: #ff5f52;
+    --danger-light-background: #fff2f1;
+    --danger-dark: #8e0000;
+
+    /* Border Colors */
+    --color-border: #E0E0E0;
+    --color-border-secondary: #F0F0F0;
+    --color-border-primary: #B75400;
+
+    /* Button Overlay */
+    --button-overlay: rgba(0, 0, 0, 0.06666666666666667);
+
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    /* Media Query Breakpoints */
+    --breakpoint-xs: 360px;
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1024px;
+    --breakpoint-xxl: 1200px;
+    --breakpoint-xxxl: 1400px;
+
+    /* Border Radius */
+    --border-radius-xs: 2px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 6px;
+    --border-radius-lg: 8px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+    /* Typography */
+    --font-size-sm: 12px;
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-heading5: 20px;
+    --font-weight-heading5: 700;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+    --elevation-00: none;
+    --elevation-01: 0 1px 3px rgba(0, 0, 0, 0.02),
+        0 2px 1px rgba(0, 0, 0, 0.12),
+        0 1px 1px rgba(0, 0, 0, 0.14);
+    --elevation-02: 0 1px 5px rgba(0, 0, 0, 0.02),
+        0 3px 1px rgba(0, 0, 0, 0.12),
+        0 2px 2px rgba(0, 0, 0, 0.14);
+    --elevation-03: 0 1px 8px rgba(0, 0, 0, 0.02),
+        0 3px 3px rgba(0, 0, 0, 0.12),
+        0 3px 4px rgba(0, 0, 0, 0.14);
+    --elevation-04: 0 2px 4px rgba(0, 0, 0, 0.02),
+        0 1px 10px rgba(0, 0, 0, 0.12),
+        0 4px 5px rgba(0, 0, 0, 0.14);
+    --elevation-06: 0 3px 5px rgba(0, 0, 0, 0.02),
+        0 1px 18px rgba(0, 0, 0, 0.12),
+        0 6px 10px rgba(0, 0, 0, 0.14);
+    --elevation-08: 0 5px 5px rgba(0, 0, 0, 0.02),
+        0 3px 14px rgba(0, 0, 0, 0.12),
+        0 8px 10px rgba(0, 0, 0, 0.14);
+    --elevation-09: 0 5px 6px rgba(0, 0, 0, 0.02),
+        0 3px 16px rgba(0, 0, 0, 0.12),
+        0 9px 12px rgba(0, 0, 0, 0.14);
+    --elevation-12: 0 7px 8px rgba(0, 0, 0, 0.02),
+        0 5px 22px rgba(0, 0, 0, 0.12),
+        0 12px 17px rgba(0, 0, 0, 0.14);
+    --elevation-16: 0 8px 10px rgba(0, 0, 0, 0.02),
+        0 6px 30px rgba(0, 0, 0, 0.12),
+        0 16px 24px rgba(0, 0, 0, 0.14);
+    --elevation-24: 0 11px 15px rgba(0, 0, 0, 0.02),
+        0 9px 46px rgba(0, 0, 0, 0.12),
+        0 24px 38px rgba(0, 0, 0, 0.14);
+
+    --component-padding-x: 1rem;
+    --component-padding-y: 1rem;
+    --page-padding-x: 1rem;
+    --page-padding-y: 3rem;
+    --layout-padding: 1rem;
+    --layout-padding-x: calc(50vw - 80rem / 2);
+    --component-border-radius: 2px;
+    --component-overlay-hover: .04;
+    --component-overlay-focus: .12;
+    --component-overlay-press: .1;
+    --component-overlay-drag: .08;
+    --component-overlay-select: .08;
+}
+
+/* Utility classes for quick styling */
+.text-primary {
+    color: var(--color-text-primary) !important;
+}
+
+.text-secondary {
+    color: var(--color-text-secondary) !important;
+}
+
+.text-white {
+    color: var(--color-text-white) !important;
+}
+
+.text-disabled {
+    color: var(--color-text-disabled) !important;
+}
+
+.bg-primary {
+    background-color: var(--color-primary) !important;
+}
+
+.bg-success {
+    background-color: var(--color-success) !important;
+}
+
+.bg-danger {
+    background-color: var(--color-danger) !important;
+}
+
+.border-primary {
+    border-color: var(--color-primary) !important;
+}
+
+.border-default {
+    border-color: var(--color-border) !important;
+}
+
+p {
+    color: #000;
+    text-align: start;
+    margin: 0;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-primary-hover, #d4620a);
+}
+
+a:active {
+    color: var(--color-primary-active, #a04a00);
+}
+
+/*
+ * Typography.Text default: neutral caption/body tint and 16px.
+ * Typed Text (danger, secondary, …) keeps component color tokens.
+ * Skip documentation Outline (`Text` inside `.sider-header`) so core-ui styles apply.
+ */
+:not(.sider-header) > span.ant-typography:not(.ant-typography-secondary):not(.ant-typography-success):not(.ant-typography-warning):not(.ant-typography-danger) {
+    color: var(--color-text-disabled);
+    font-size: var(--font-size-lg);
+}
+
+/*
+ * Typography.Title level={5}
+ * !important: Ant Design injects title margin + weight after global CSS; this is the single override site
+ * so feature cards do not need local .cardTitle !important hacks.
+ */
+.ant-typography-title.ant-typography-h5 {
+    margin-block: 0 !important;
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-heading5);
+    font-weight: var(--font-weight-heading5) !important;
+}
+
+/* Ant Design tooltips */
+.ant-tooltip .ant-tooltip-inner,
+.ant-tooltip .ant-tooltip-container,
+.ant-tooltip .ant-tooltip-unique-container {
+    border-radius: 4px;
+}
+
+.ant-tooltip .tooltip-markdown,
+.ant-tooltip .tooltip-markdown p,
+.ant-tooltip .tooltip-markdown a,
+.ant-tooltip .tooltip-markdown a.markdown-link {
+    color: var(--color-text-white) !important;
+}
+
+.ant-tooltip .tooltip-markdown a,
+.ant-tooltip .tooltip-markdown a.markdown-link {
+    text-decoration: underline;
+}
+
+.ant-tooltip .tooltip-markdown a:hover,
+.ant-tooltip .tooltip-markdown a.markdown-link:hover {
+    opacity: 0.9;
+}
+
+/* Global Button Styles */
+.ant-btn {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: .08rem;
+}

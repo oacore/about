@@ -1,0 +1,58 @@
+.redirectWrapper {
+  background: var(--color-bg-layout, #f5f5f5);
+  gap: 8px;
+  list-style-type: disc;
+  margin: 16px 0;
+  padding: 1rem;
+}
+
+.redirectWrapperDecimal {
+  list-style-type: decimal;
+}
+
+.redirectLink {
+  cursor: pointer;
+  line-height: 2rem;
+  margin-left: 16px;
+  text-decoration-line: underline;
+}
+
+.redirectLinkDecimal {
+  line-height: normal;
+  margin-bottom: 0.75rem;
+  text-decoration-line: none;
+}
+
+.redirectLink a {
+  color: var(--color-text-secondary) !important;
+  cursor: pointer;
+  text-decoration: inherit;
+}
+
+.redirectLinkDecimal a {
+  font-size: 16px !important;
+  text-decoration: underline !important;
+}
+
+.redirectLink a:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .redirectWrapper {
+    margin: 12px 0;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .redirectWrapper {
+    margin: 8px 0;
+    padding: 0.5rem;
+  }
+
+  .redirectLink {
+    line-height: 1.75rem;
+    margin-left: 12px;
+  }
+}

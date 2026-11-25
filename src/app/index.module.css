@@ -1,0 +1,365 @@
+.heroSlide {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.heroCopy {
+  flex: 1;
+  min-width: 0;
+}
+
+.heroTitle {
+  margin: 0 0 8px 0 !important;
+  line-height: 1.3;
+  user-select: text;
+  font-size: 48px;
+}
+
+.heroDescription {
+  max-width: 65ch;
+  margin: 1.5rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.heroMedia {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.sectionTitle {
+  margin: 0 !important;
+  text-align: center;
+  font-size: 34px;
+}
+
+.band {
+  margin-bottom: 78px;
+}
+
+.band,
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+
+.band::before,
+.spotlight::before {
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+  content: '';
+  background: var(--color-main-bg-layout, #eee);
+}
+
+.joinIntro {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 36px 0;
+}
+
+.joinCopy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  line-height: 1.3;
+}
+
+.divider {
+  font-weight: 800;
+}
+
+.joinMarkdown :global(p) {
+  display: inline;
+  margin: 0;
+}
+
+.spotlightInner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center;
+  text-align: center;
+}
+
+/* Long CTA labels (e.g. "CORE recommendations for REF2029") wrap on narrow screens */
+.spotlightInner :global(.ant-btn) {
+  max-width: 100%;
+  height: auto !important;
+  min-height: 32px;
+  white-space: normal;
+}
+
+.spotlightInner :global(.ant-btn > span) {
+  min-width: 0;
+  white-space: normal;
+}
+
+.spotlightImage,
+.characteristicsImage {
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.spotlightCopy {
+  max-width: 42rem;
+}
+
+.spotlightCopy :global(p) {
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.subtitle {
+  width: max-content;
+  max-width: 100%;
+  margin-bottom: 2rem;
+  padding: 2px 14px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  background: var(--color-bg-layout, #f5f5f5);
+  border-radius: 2px;
+}
+
+.centerAction {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.users {
+  padding: 0;
+  margin-top: 96px;
+}
+
+.userGroup {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 34px calc(50% - 50vw);
+  background: #f5f5f5;
+}
+
+.userGroup:first-child {
+  margin-top: 0;
+}
+
+.userGroupInner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1240px;
+  padding: var(--page-padding-y) 0;
+}
+
+.userIntro {
+  display: flex;
+  gap: 35px;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.userTitle {
+  flex: 0 0 25%;
+  width: 25%;
+  color: #212121;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.userTitle :global(p) {
+  margin: 0;
+}
+
+.userTitle :global(a) {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.userQuote {
+  flex: 1;
+  width: 75%;
+  min-width: 0;
+}
+
+/* Same card shape at every size; only the number per row changes (5 / 3 / 2), leftovers centred. */
+.logoList {
+  --logo-cols: 5;
+  --logo-gap: 35px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--logo-gap);
+  justify-content: center;
+}
+
+.logoCard {
+  display: flex;
+  flex: 0 0 calc((100% - (var(--logo-cols) - 1) * var(--logo-gap)) / var(--logo-cols));
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  max-width: 240px;
+  aspect-ratio: 212 / 104;
+  background: #fff;
+  border: 1px solid #b75400;
+}
+
+.logoCardAccent {
+  background: #e85e13;
+}
+
+.logoImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 16px;
+  object-fit: contain;
+}
+
+.logoImageFull {
+  padding: 0;
+}
+
+.logoAction {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.logoLink {
+  padding: 8px 16px;
+  color: var(--color-primary-active) !important;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 1130px) {
+  .userGroupInner {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .userIntro {
+    gap: 25px;
+  }
+
+  .userTitle {
+    font-size: 28px;
+  }
+
+  .logoList {
+    --logo-gap: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .userIntro {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .userTitle,
+  .userQuote {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .userTitle {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .logoList {
+    --logo-cols: 3;
+    --logo-gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSlide {
+    flex-direction: column;
+  }
+
+  .heroMedia {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 1.6rem !important;
+  }
+
+  .userIntro {
+    gap: 16px;
+  }
+
+  .userTitle {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .logoImage {
+    padding: 12px;
+  }
+
+  .logoAction {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .logoList {
+    --logo-cols: 2;
+    --logo-gap: 12px;
+  }
+
+  .logoImage {
+    padding: 10px;
+  }
+}

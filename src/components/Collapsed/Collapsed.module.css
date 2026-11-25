@@ -1,0 +1,77 @@
+.accordionItem {
+  --accordion-title-size: 18px;
+  --accordion-title-weight: 400;
+  --accordion-icon-size: calc(var(--accordion-title-size) + 1rem);
+  --accordion-spacer-left: calc(var(--accordion-icon-size) + var(--component-padding-x, 1rem));
+  --card-border-color: var(--color-border, #e0e0e0);
+  --card-border-width: 1px;
+  --card-spacer-x: var(--component-padding-x, 1rem);
+  --card-spacer-y: var(--component-padding-y, 1rem);
+  cursor: pointer;
+}
+
+.accordionItem+.accordionItem {
+  margin-top: var(--spacing-xs, 8px);
+}
+
+.accordion {
+  background: transparent;
+}
+
+.accordion :global(.ant-collapse-item) {
+  border: solid var(--card-border-color) !important;
+  border-width: var(--card-border-width) 0 !important;
+}
+
+.accordion :global(.ant-collapse-header) {
+  position: relative;
+  align-items: flex-start !important;
+  padding: var(--card-spacer-y) var(--card-spacer-x) var(--spacing-md, 16px) var(--accordion-spacer-left) !important;
+  border-bottom: 0 !important;
+}
+
+.accordion :global(.ant-collapse-content-box) {
+  padding: 0 var(--card-spacer-x) var(--card-spacer-y) var(--accordion-spacer-left) !important;
+  /* Long URLs/identifiers in answers wrap instead of running past the panel on narrow screens */
+  overflow-wrap: anywhere;
+}
+
+.accordionTitle {
+  margin: 0 !important;
+  font-size: var(--accordion-title-size) !important;
+  font-weight: var(--accordion-title-weight) !important;
+  line-height: 1.5;
+  color: var(--color-primary);
+}
+
+.accordionLink {
+  display: inline-block;
+}
+
+.accordionLink::before,
+.accordionLink::after {
+  content: '';
+  position: absolute;
+  top: calc(((2 * var(--card-spacer-y) + var(--accordion-title-size)) - var(--accordion-icon-size)) * 0.5);
+  left: 0;
+  display: block;
+  box-sizing: content-box;
+  margin: var(--card-border-width) 0 0;
+  padding: calc((var(--accordion-icon-size) - var(--accordion-title-size)) * 0.5);
+  width: var(--accordion-title-size);
+  height: var(--accordion-title-size);
+  transform: rotate(180deg);
+}
+
+.accordionLink::before {
+  background-color: var(--color-primary, #b75400);
+}
+
+.accordionLink::after {
+  background: transparent url('../../assets/icons/chevron-top.svg') center / contain no-repeat;
+  transition: transform 0.35s;
+}
+
+.accordion :global(.ant-collapse-item-active) .accordionLink::after {
+  transform: none;
+}

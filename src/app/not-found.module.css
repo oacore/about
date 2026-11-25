@@ -1,0 +1,16 @@
+.notFound {
+  min-height: 50vh;
+}
+
+.title {
+  margin-bottom: 1.5rem;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

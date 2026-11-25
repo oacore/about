@@ -1,0 +1,55 @@
+.serviceWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 40px 34px;
+  background: var(--color-bg-layout);
+  border-radius: 2px;
+}
+
+.mainTitleWrapper {
+  flex: 1;
+}
+
+.title {
+  color: #212121;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin-bottom: 34px;
+}
+
+.service {
+  flex: 1;
+}
+
+.serviceHeaderWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.titlePicture {
+  margin-right: 10px;
+  width: 70px;
+  height: 46px;
+}
+
+.serviceTitle {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 32px;
+  color: #212121;
+}
+
+.serviceDescription {
+  margin: 18px 0 34px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 24px;
+  color: #212121;
+  min-height: 75px;
+  height: max-content;
+}

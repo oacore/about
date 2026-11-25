@@ -1,0 +1,90 @@
+.resolveSection {
+  padding-top: 0;
+}
+
+.formBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 191px;
+}
+
+.oaiResolveForm {
+  width: 100%;
+}
+
+.formTitle {
+  margin-top: 0 !important;
+  margin-bottom: 4.5rem !important;
+  font-size: 44px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+}
+
+.oaiForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.oaiForm span {
+  border-radius: 1px !important;
+}
+
+/* live @oacore Select is 48px tall; antd large input is 40px */
+.input {
+  height: 48px;
+}
+
+.helper {
+  display: block;
+  color: #757575 !important; /* old @oacore form helper colour, also in error state */
+  margin-top: 0.5rem;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.helperLink {
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.helperLink:hover {
+  color: var(--color-primary, #b75400);
+}
+
+.imageCol {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 466px;
+  height: auto;
+}
+
+.documentation {
+  margin-bottom: 0 !important;
+  font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .imageCol {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .formTitle {
+    margin-bottom: 2.5rem !important;
+    font-size: 32px !important;
+  }
+
+}

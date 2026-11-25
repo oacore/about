@@ -1,0 +1,82 @@
+/* Section frame shared by /ref and /about/research-outputs: orange title bar + card grid */
+.section {
+  padding: 0 0 44px;
+  scroll-margin-top: 1rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 54px;
+  padding: 15px 10px;
+  border-radius: 2px;
+  background: #b75400;
+  color: var(--color-text-white, #fff);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.0015em;
+}
+
+.titleStart {
+  justify-content: flex-start;
+  padding: 15px 20px;
+}
+
+.subTitle {
+  margin: 24px 4px 0;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.item {
+  width: 100%;
+}
+
+.itemHalf {
+  width: 48%;
+}
+
+@media (max-width: 944px) {
+  .section {
+    padding: 0 0 24px;
+  }
+
+  .title {
+    height: auto;
+    min-height: 48px;
+    padding: 12px 8px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .subTitle {
+    margin: 16px 4px 0;
+    font-size: 0.95rem;
+  }
+
+  .content {
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  .itemHalf {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .content {
+    gap: 12px;
+    margin-top: 12px;
+  }
+}

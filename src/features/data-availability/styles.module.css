@@ -1,0 +1,33 @@
+.sponsorshipMainWrapper {
+  /* layout wrapper */
+}
+
+.uploadSection {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.howItWorks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+}
+
+.howItWorks :global(article) ul {
+  margin-left: 1.5rem;
+}
+
+.howItWorks :global(article) ul li {
+  line-height: 2rem;
+  list-style-type: disc;
+}
+
+.howItWorks :global(article) :global(.button) {
+  float: right;
+  margin-top: 2rem;
+  margin-right: 10px;
+}
+
+.serviceSection {
+  --color-bg-layout: #f5f5f5;
+}

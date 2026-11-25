@@ -1,0 +1,175 @@
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding-bottom: 20ch;
+}
+
+@media (max-width: 46rem) {
+  .group {
+    padding-bottom: var(--page-padding-y);
+  }
+}
+
+.boardButton:global(.ant-btn) {
+  flex: 1;
+  height: auto !important;
+  padding: 1.3rem !important;
+  font-size: 1.5rem !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+@media (max-width: 46rem) {
+  .boardButton:global(.ant-btn) {
+    width: 100%;
+    flex: unset;
+  }
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+.logoWrap {
+  flex: 1 1 40%;
+  min-width: 0;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  flex: 1 1 50%;
+  flex-direction: column;
+  min-width: 0;
+}
+
+@media (max-width: 576px) {
+  .logoWrap,
+  .content {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+
+.governanceType {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.content :global(ul) {
+  margin: 0 0 16px 0;
+}
+
+.content :global(ul li) {
+  list-style-type: disc;
+}
+
+.content :global(ul li:first-child) {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 80rem) {
+  .content :global(ul) {
+    margin-left: 1.5rem;
+  }
+}
+
+.accentTitle {
+  color: var(--color-primary);
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0.042px;
+}
+
+.organisationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logoWrapper {
+  width: 42px;
+  height: 42px;
+  padding: 4px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.dataTable {
+  margin-top: 1rem;
+}
+
+.supporters :global(.ant-table-thead > tr > th) .accentTitle {
+  font-weight: 700;
+}
+
+.supporters :global(.ant-table-thead > tr > td) .accentTitle {
+  font-weight: 500;
+}
+
+.supporters :global(.ant-table-thead > tr > th:last-child),
+.supporters :global(.ant-table-tbody > tr > td:last-child) {
+  max-width: 20rem;
+  line-height: 1.45;
+  white-space: pre-line;
+  vertical-align: top;
+  word-wrap: break-word;
+}
+
+.advisoryTable :global(.ant-table),
+.advisoryTable :global(.ant-table-container),
+.advisoryTable :global(.ant-table-content > table) {
+  border-color: #bdbdbd;
+}
+
+.advisoryTable :global(.ant-table-cell) {
+  border-color: #bdbdbd !important;
+}
+
+.advisoryTable :global(.ant-table-thead > tr > th) {
+  background: transparent;
+  border-color: #bdbdbd !important;
+  font-weight: 500;
+}
+
+.advisoryTable :global(.ant-table-tbody > tr > td) {
+  border-color: #bdbdbd !important;
+  padding: 16px;
+  vertical-align: middle;
+}
+
+@media (max-width: 46rem) {
+  .supporters :global(.ant-table-tbody > tr > td) {
+    font-size: 10px;
+  }
+
+  .supporters :global(.ant-table-thead > tr > th) :global(button) {
+    font-size: 10px;
+  }
+}

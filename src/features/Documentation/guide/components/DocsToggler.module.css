@@ -1,0 +1,151 @@
+.toggler {
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  border: 2px solid var(--color-primary, #b75400);
+}
+
+.label {
+  display: flex;
+  flex: 0 0 325px;
+  align-items: center;
+  box-sizing: border-box;
+  min-height: 50px;
+  padding: 4px 24px 4px 32px;
+  color: var(--color-text-white, #fff);
+  background: var(--color-primary, #b75400);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: 0.036px;
+}
+
+/* Positioning context for the dropdown, which spans this whole area */
+.selectArea {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  min-width: 0;
+  background: #fff;
+}
+
+/* Sized to its text so the arrow sits right after it, as before */
+.select.select:global(.ant-select) {
+  width: max-content;
+  max-width: 100%;
+  height: 34px;
+  cursor: pointer;
+}
+
+.select.select :global(.ant-select-selector) {
+  padding: 0 0 0 35px !important;
+}
+
+.select.select :global(.ant-select-selection-item) {
+  padding-inline-end: 64px !important;
+  color: #212121;
+  font-size: 18px;
+  /* antd's selected-value weight wins without !important */
+  font-weight: 500 !important;
+  line-height: 34px !important;
+  letter-spacing: 0.036px;
+}
+
+.select.select :global(.ant-select-arrow) {
+  inset-inline-end: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: -17px;
+}
+
+.arrow {
+  display: block;
+  color: var(--color-primary, #b75400);
+}
+
+/* antd fades the value while the list is open; the old switcher kept it as is */
+.select.select:global(.ant-select-open) :global(.ant-select-selection-item) {
+  color: #212121 !important;
+}
+
+/* List of guides: full width of the selector area, flush under the bar */
+.popup.popup:global(.ant-select-dropdown) {
+  top: calc(100% + 2px) !important;
+  left: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0;
+  border-radius: 0 0 2px 2px;
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* antd's option rules go up to five classes deep, so these need !important */
+.popup.popup :global(.ant-select-item) {
+  min-height: 44px !important;
+  padding: 10px 30px !important;
+  border-radius: 0 !important;
+  color: #212121 !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+}
+
+.popup.popup :global(.ant-select-item-option-selected) {
+  background: transparent !important;
+}
+
+.popup.popup :global(.ant-select-item-option-active),
+.popup.popup :global(.ant-select-item):hover {
+  background: #eeeeee !important;
+}
+
+@media (max-width: 992px) {
+  .toggler {
+    flex-direction: column;
+  }
+
+  .label {
+    flex-basis: auto;
+    min-height: 44px;
+  }
+
+  .selectArea {
+    min-height: 46px;
+  }
+}
+
+/* Old mobile switcher: name and arrow spread across the full width */
+@media (max-width: 768px) {
+  .select.select:global(.ant-select) {
+    width: 100%;
+  }
+
+  .select.select :global(.ant-select-arrow) {
+    inset-inline-end: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .label {
+    padding: 4px 16px;
+    font-size: 16px;
+  }
+
+  .select.select :global(.ant-select-selector) {
+    padding-left: 16px !important;
+  }
+
+  .select.select :global(.ant-select-selection-item) {
+    padding-inline-end: 62px !important;
+    font-size: 16px;
+  }
+
+  .popup.popup :global(.ant-select-item) {
+    padding: 10px 16px !important;
+  }
+}

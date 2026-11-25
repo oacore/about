@@ -1,0 +1,146 @@
+.page {
+  padding-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* The shared Layout pads the top by 48px; the switcher sits right under the site header instead */
+.layout.layout > :global(.ant-layout-content) {
+  padding-top: 0;
+}
+
+/* Switcher (+ "Outline" button on small screens) stays under the sticky site header.
+   Full-bleed over the layout's 16px gutters, like the old bar. */
+.sticky {
+  position: sticky;
+  top: 64px;
+  z-index: 10;
+  margin: 0 -16px;
+  background: #fff;
+}
+
+.body.body:global(.ant-layout) {
+  align-items: flex-start;
+  gap: 32px;
+  padding-top: 20px;
+  background: transparent;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Outline follows the reader: sticks under the site header and scrolls on its own */
+.sider.sider:global(.ant-layout-sider) {
+  /* antd's CSS-in-JS sets position: relative with equal specificity, injected later */
+  position: sticky !important;
+  top: calc(64px + var(--docs-sticky-height, 54px) + 20px);
+  height: calc(100vh - 64px - var(--docs-sticky-height, 54px) - 40px);
+  background: transparent;
+}
+
+.sider :global(.ant-layout-sider-children) {
+  height: 100%;
+}
+
+.content.content:global(.ant-layout-content) {
+  min-width: 0;
+  padding-right: 5px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.docsTitle.docsTitle:global(.ant-typography) {
+  margin: 0;
+  padding: 0 0 16px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+/* Old core-ui header video link: tinted block, normal case, camera icon on the right */
+.headerTutorial.headerTutorial:global(.ant-btn) {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-shrink: 1;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  height: auto;
+  min-width: 0;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  color: var(--color-primary, #b75400);
+  background: var(--color-bg-light, #fef5ef);
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 130%;
+  letter-spacing: normal;
+  text-align: left;
+  text-transform: none;
+  white-space: normal;
+}
+
+.headerTutorial.headerTutorial:global(.ant-btn) > span {
+  white-space: normal;
+}
+
+.headerTutorial.headerTutorial:global(.ant-btn):hover {
+  color: var(--color-primary, #b75400) !important;
+  background: var(--color-bg-light, #fef5ef) !important;
+}
+
+.mobileBar {
+  display: none;
+}
+
+.drawer :global(.ant-drawer-body) {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+@media (max-width: 992px) {
+  .sider.sider:global(.ant-layout-sider) {
+    display: none;
+  }
+
+  .mobileBar {
+    display: flex;
+    padding: 8px 16px;
+    background: #fff;
+    box-shadow: 0 1px 0 #eeeeee;
+  }
+}
+
+@media (max-width: 1200px) {
+  .headerTutorial.headerTutorial:global(.ant-btn) {
+    padding: 12px 16px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerTutorial.headerTutorial:global(.ant-btn) {
+    padding: 16px 12px 8px;
+  }
+}
+
+/* Phones: webinar link under the title so the title isn't squeezed mid-word */
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding-bottom: 8px;
+  }
+
+  .headerTutorial.headerTutorial:global(.ant-btn) {
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+}

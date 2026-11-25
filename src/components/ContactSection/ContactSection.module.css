@@ -1,0 +1,73 @@
+.contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 2rem;
+  align-items: end;
+}
+
+.content {
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 24px;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.box {
+  padding: 1rem;
+  border: 2px solid var(--color-border, #e0e0e0);
+  border-radius: 2px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.description :global(p) {
+  margin: 0 0 16px;
+}
+
+.media {
+  display: flex;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Rendered at its width attribute (default 600px), shrinking to the column. */
+.image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .button:global(.ant-btn) {
+    width: 100%;
+    height: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    white-space: normal;
+  }
+
+  .media {
+    justify-content: center;
+  }
+}

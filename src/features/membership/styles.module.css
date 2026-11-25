@@ -1,0 +1,993 @@
+.tableWrapper {
+  padding: 0 var(--page-padding-x, 2rem) var(--page-padding-y, 2rem);
+}
+
+.plans {
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 34px;
+  margin: 0 0 24px 0;
+}
+
+.plansWrapper {
+  display: grid;
+  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.plans > .plansWrapper:first-of-type {
+  margin-bottom: 45px;
+  padding-top: 21px;
+}
+
+.plansWrapper .planCard:global(.ant-card) :global(.ant-card-body) {
+  padding: 0 !important;
+}
+
+.memberDescription {
+  background: #f5f5f5;
+  margin: 0;
+  padding: 16px;
+}
+
+.memberDescriptionTitle {
+  color: #b75400;
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 16px;
+}
+
+.planCard {
+  border: 1px solid var(--gray-200, #e0e0e0);
+  border-top: none;
+}
+
+.planCard :global(.ant-card-body) {
+  padding: 0;
+}
+
+.planHeader {
+  background: #fef5ef;
+  min-height: 6.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.planCardTitle {
+  margin: 0 0 24px 0;
+}
+
+.planHeaderCaption {
+  color: #9e9e9e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planHeader .planHeaderCaption a {
+  color: var(--color-text-disabled);
+  text-decoration: underline;
+}
+
+.planDivider {
+  height: 1.5rem;
+  background-color: var(--color-primary, #9e9e9e);
+  text-decoration: underline;
+}
+
+.planContent {
+  display: flex;
+  flex-direction: column;
+  min-height: 37rem;
+  padding: 2rem;
+}
+
+.planBox {
+  background-color: var(--gray-100, #f5f5f5);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.planBoxTitle {
+  margin-bottom: 0.5rem;
+}
+
+.planBoxCaption p {
+  color: var(--color-primary, #b75400);
+  font-weight: 700;
+}
+
+.planAdvantages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.planAdvantageItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 2;
+  margin-bottom: 0.5rem;
+}
+
+.planAdvantageIcon svg {
+  margin-top: 0.45rem;
+  fill: #BDBDBD;
+}
+
+.planAdvantageBox {
+  flex: 1;
+}
+
+.planAdvantageTitleRow {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.planAdvantageTitleRow:hover {
+  text-decoration: underline;
+}
+
+.planAdvantageTitle p {
+  margin: 0;
+}
+
+.planAdvantageDescription {
+  background-color: var(--gray-100, #f5f5f5);
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0 0;
+  padding: 5px 10px;
+}
+
+.videoIcon svg {
+  color: #bdbdbd;
+  fill: #bdbdbd;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.ant-tag {
+  background: #8bc34a;
+  border: none;
+  color: #fff;
+}
+
+.planAction {
+  margin-top: auto;
+  text-align: center;
+}
+
+.planAction a span {
+  text-decoration: underline;
+}
+
+.planSubscribe {
+  background: #f5f5f5;
+  margin-top: 30px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planSubscribe p {
+  text-align: center;
+}
+
+.planSubscribe p a {
+  text-decoration: underline;
+}
+
+.planSubscribe p a:hover {
+  color: var(--color-primary-active);
+}
+
+@media (max-width: 992px) {
+  .plansWrapper {
+    gap: 1.5rem;
+  }
+
+  .plans > .plansWrapper:first-of-type {
+    margin-bottom: 1.5rem;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .plans {
+    margin-bottom: 2rem;
+  }
+
+  .pageTitle {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .plansWrapper {
+    gap: 1rem;
+  }
+
+  .plans > .plansWrapper:first-of-type {
+    margin-bottom: 1.25rem;
+    padding-top: 0;
+  }
+
+  .memberDescription {
+    padding: 12px;
+  }
+
+  .memberDescriptionTitle {
+    margin-bottom: 12px;
+  }
+
+  .planHeader {
+    min-height: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  .planCardTitle {
+    margin-bottom: 0.75rem;
+  }
+
+  .planContent {
+    min-height: 0;
+    padding: 1.25rem 1rem;
+  }
+
+  .planSubscribe {
+    margin-top: 1.25rem;
+  }
+}
+
+.miniTitle {
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 28px;
+}
+
+
+.supportText {
+  max-width: 80ch;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(21.5rem, 1fr));
+  margin-top: 2rem;
+}
+
+.supportCard {
+  position: relative;
+}
+
+.supportCardImage {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.supportCardCount {
+  align-items: center;
+  border-radius: 2px;
+  color: #b75400;
+  display: flex;
+  font-size: 48px;
+  font-weight: 500;
+  height: 60px;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 99px;
+}
+
+.supportCardTitle {
+  border-top: 2px solid var(--color-primary, #b75400);
+  display: inline-block;
+  padding-top: 5px;
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.supportCardCaption {
+  max-width: 20rem;
+
+  &::before {
+    position: absolute;
+    bottom: -8rem;
+    left: -1rem;
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: url('./assets/line.svg') 0 0 no-repeat;
+  }
+}
+
+.textBox {
+  background: var(--color-bg-layout, #f5f5f5);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.textBoxButton:global(.ant-btn) {
+  max-width: 100%;
+}
+
+@media (max-width: 867px) {
+  .textBox {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .textBoxButton:global(.ant-btn) {
+    height: auto !important;
+    line-height: 1.4;
+    padding-bottom: 8px !important;
+    padding-top: 8px  !important;
+    white-space: normal !important;
+  }
+}
+
+.textBoxDescription {
+  margin-bottom: 1rem;
+  line-height: 2;
+}
+
+.comparisonTable {
+  margin-top: 2rem;
+}
+
+.membershipTable {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.membershipTable :global(.ant-table) {
+  /*border: 1px solid var(--gray-400, #bdbdbd);*/
+  border-radius: 0;
+}
+
+.membershipTable :global(.ant-table-container) {
+  border-inline-start: none;
+  border-top: none;
+}
+
+.membershipTable :global(.ant-table-thead > tr > th) {
+  background-color: #fae2d2 !important;
+  font-weight: inherit;
+  padding: 0.5rem;
+}
+
+.membershipTable :global(.ant-table-thead > tr > th).headerEmpty {
+  background-color: var(--white, #fff) !important;
+}
+
+.membershipTable :global(.ant-table-thead > tr > th::before) {
+  display: none;
+}
+
+.membershipTable :global(.ant-table-tbody > tr > td) {
+  padding: 0;
+  vertical-align: middle;
+}
+
+.membershipTable :global(.ant-table-cell) {
+  border-color: var(--gray-400, #bdbdbd) !important;
+}
+
+.membershipTableFixed :global(.ant-table table) {
+  table-layout: fixed;
+}
+
+.membershipTable :global(.ant-table-body)::-webkit-scrollbar {
+  height: 4px;
+}
+
+.membershipTable :global(.ant-table-body)::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 20px;
+}
+
+.membershipTable :global(.ant-table-body)::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 20px;
+}
+
+.membershipTable :global(.ant-table-body)::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@media (max-width: 576px) {
+  .membershipTable :global(.ant-table-content) {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .membershipTable :global(.ant-table table) {
+    white-space: nowrap;
+  }
+}
+
+.tableCaption {
+  min-height: 1rem;
+  text-align: center;
+  padding: 0.2rem;
+  color: var(--white, #fff);
+  background-color: var(--color-primary, #b75400);
+}
+
+.cell {
+  /*border: 1px solid var(--gray-400, #bdbdbd);*/
+  width: 20ch;
+  text-align: center;
+  position: relative;
+  padding: 1rem 0.5rem;
+}
+
+.caption {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cellDetailsFirst {
+  padding: 0;
+  width: 50ch;
+  /*border: 1px solid var(--gray-400, #bdbdbd);*/
+}
+
+.cellBackGround {
+  background-color: var(--gray-100, #f5f5f5);
+  width: 30ch;
+}
+
+.cellPricesActive,
+.cellPrices:hover {
+  background-color: var(--gray-200, #eeeeee);
+  cursor: pointer;
+}
+
+.cellPricesFirst p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.cellPricesFirst {
+  /*border: 1px solid var(--gray-400, #bdbdbd);*/
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.cellPricesFirstCaption {
+  font-weight: 300;
+}
+
+.cellTitle {
+  padding: 0.5rem;
+  font-weight: 600;
+  background-color: var(--gray-100, #f5f5f5);
+}
+
+@media (max-width: 576px) {
+  .cellTitle {
+    font-size: 10px;
+  }
+}
+
+.cellPadding {
+  padding: 1rem;
+  font-weight: 400;
+}
+
+@media (max-width: 576px) {
+  .cellPadding {
+    padding: 6px;
+    width: 85px;
+  }
+}
+
+.cellDescription {
+  padding: 1.5rem;
+  color: var(--gray-700, #616161);
+}
+
+.cellRedirect {
+  padding: 1.5rem;
+  color: var(--gray-700, #616161);
+}
+
+.indicatorColor {
+  background: #fafafa;
+}
+
+.header {
+  font-weight: 400;
+  text-align: center;
+  background-color: #fae2d2 !important;
+  /*border: 1px solid var(--gray-400, #bdbdbd);*/
+  padding: 0.5rem;
+}
+
+.headerActive {
+  background-color: #fae2d2 !important;
+}
+
+.headerEmpty {
+  background-color: var(--white, #fff) !important;
+}
+
+.headerText {
+  color: var(--color-primary, #b75400);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 576px) {
+  .headerText {
+    font-size: 10px;
+  }
+}
+
+.headerStatus {
+  color: #212121;
+  margin-left: 4px;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.headerTextWrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.headerUnderline {
+  text-decoration: underline;
+}
+
+.headerAction {
+  background-color: var(--white, #fff);
+}
+
+.headerTitle {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.headerTitle a {
+  color: var(--black, #000);
+  text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+  .headerTitle {
+    font-size: 15px;
+  }
+}
+
+.headerTitleDetails {
+  margin-bottom: 1rem;
+}
+
+.headerMeta {
+  display: block;
+  color: var(--color-text-primary, #616161);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.headerMetaPrice {
+  color: var(--color-primary, #b75400);
+}
+
+.headerMetaStatus {
+  color: #212121;
+}
+
+@media (max-width: 576px) {
+  .headerTitleDetails {
+    margin-bottom: 5px;
+  }
+}
+
+.box {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.checked {
+  background-color: #8bc34a;
+}
+
+.checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 8px;
+  width: 8px;
+  height: 17px;
+  border: solid var(--white, #fff);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+@media (max-width: 576px) {
+  .checked {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .checked::after {
+    width: 6px;
+    height: 10px;
+    left: 6px;
+    top: 2px;
+  }
+}
+
+.periodDeal {
+  color: #212121;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.price {
+  display: block;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.priceDiscount {
+  color: var(--color-primary, #b75400);
+}
+
+.uncheked {
+  background-color: rgba(255, 95, 82, 1);
+}
+
+.uncheked::before,
+.uncheked::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  top: 11px;
+}
+
+.uncheked::before {
+  transform: rotate(45deg);
+  left: 2px;
+}
+
+.uncheked::after {
+  transform: rotate(-45deg);
+  right: 2px;
+}
+
+@media (max-width: 576px) {
+  .uncheked {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .uncheked::before,
+  .uncheked::after {
+    width: 10px;
+    height: 2px;
+    top: 7px;
+  }
+
+  .uncheked::before {
+    left: 3px;
+  }
+
+  .uncheked::after {
+    left: 3px;
+  }
+}
+
+.title {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #fef5ef;
+  margin-bottom: 0;
+}
+
+.title span {
+  text-transform: uppercase;
+  color: var(--color-primary, #b75400);
+}
+
+.lowerCase {
+  font-weight: 500;
+  font-size: 32px;
+  text-transform: none;
+  color: var(--gray-900, #212121);
+}
+
+.titleBorder {
+  width: 100%;
+  height: 23px;
+  background: #b75400;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.boldText500 {
+  font-weight: 500;
+}
+
+.boldText700 {
+  font-weight: 700;
+}
+
+.dataTable {
+  margin-top: 1rem;
+}
+
+.searchLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.search {
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
+.supporters .tableRow {
+  cursor: pointer;
+}
+
+.supporters .tableRow:hover :global(.ant-table-cell) {
+  background: #eee;
+  transition: 0.5s all ease-in-out;
+}
+
+.organisationCell {
+  padding: 0 !important;
+}
+
+.organisationWrapper {
+  align-items: center;
+  display: flex;
+  padding-left: 8px;
+}
+
+.logoWrapper {
+  border: 2px solid #b75400;
+  border-radius: 50%;
+  flex-shrink: 0;
+  height: 56px;
+  margin: 5px 12px 5px 0;
+  padding: 4px;
+  width: 56px;
+}
+
+.repositoryLogo {
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.organisationName {
+  color: inherit;
+}
+
+.memberColumn {
+  color: var(--color-primary, #b75400);
+  text-transform: capitalize;
+}
+
+.membersTable :global(.ant-table),
+.membersTable :global(.ant-table-container),
+.membersTable :global(.ant-table-content > table) {
+  border-color: #bdbdbd;
+}
+
+.membersTable :global(.ant-table-cell) {
+  border-color: #bdbdbd !important;
+}
+
+.membersTable :global(.ant-table-thead > tr > th) {
+  background: transparent;
+  border-color: #bdbdbd !important;
+  font-weight: 500;
+}
+
+.membersTable :global(.ant-table-tbody > tr > td) {
+  border-color: #bdbdbd !important;
+  padding: 16px;
+  vertical-align: middle;
+}
+
+.paginationRow {
+  align-items: center;
+  border-bottom: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 32px;
+  text-align: right;
+}
+
+.paginationText {
+  display: inline-block;
+  margin: 0 32px 0 0;
+}
+
+@media (max-width: 576px) {
+  .logoWrapper {
+    height: 40px;
+    width: 40px;
+  }
+
+  .membersTable :global(.ant-table-tbody > tr > td) {
+    padding: 8px;
+  }
+}
+
+.headerPrices {
+  margin: 0 auto;
+  max-width: 100ch;
+  text-align: center;
+}
+
+.pricesTitle {
+  margin: 0 0 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: 48px;
+}
+
+.pricesDescription p {
+  text-align: center;
+  color: var(--color-text-primary, #616161);
+  font-size: 21px;
+}
+
+.subDescription p {
+  color: #212121;
+  font-size: 18px;
+  letter-spacing: 0.029px;
+  line-height: 32px;
+  margin: 0 auto 2rem;
+  max-width: 100ch;
+}
+
+.feeSection {
+  margin: 0 auto;
+  max-width: 120ch;
+}
+
+.feeSection.annualFeesSection {
+  max-width: none;
+}
+
+.annualFeesTable :global(.ant-table table) {
+  table-layout: fixed;
+}
+
+.annualFeesTable :global(.ant-table-thead > tr > th),
+.annualFeesTable :global(.ant-table-tbody > tr > td),
+.annualFeesTable :global(.ant-table-tbody > tr > td).cell {
+  width: 25%;
+}
+
+.annualFeesTable :global(.ant-table-thead > tr > th),
+.annualFeesTable :global(.ant-table-thead > tr > th) p {
+  text-align: center;
+}
+
+.feeSectionTable {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.feeSectionTable :global(.ant-table table) {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.feeSectionTable :global(.ant-table-tbody > tr > td).cell {
+  width: auto;
+}
+
+.feeSectionTable :global(.ant-table-thead > tr > th),
+.feeSectionTable :global(.ant-table-thead > tr > th) p,
+.feeSectionTable .headerTitle,
+.feeSectionTable .headerTitle p {
+  text-align: center;
+}
+
+.feeSectionTable :global(.ant-table-thead > tr > th) {
+  background-color: #fae2d2 !important;
+  color: var(--color-dark);
+}
+
+.feeSectionTable .headerTitle,
+.feeSectionTable .headerTitle a {
+  color: var(--color-dark);
+}
+
+.feeSectionTable .headerTitle,
+.feeSectionTable .headerTitle a:hover {
+  text-decoration: underline;
+}
+
+.feeSectionTableLayout :global(.ant-table-wrapper),
+.feeSectionTableLayout :global(.ant-table),
+.feeSectionTableLayout :global(.ant-table table) {
+  width: 100%;
+}
+
+.feeSectionTableLayout :global(.ant-table-content) {
+  overflow-x: auto;
+}
+
+.feeSectionNote {
+  color: #424242;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.feeActionButton {
+  display: block !important;
+  margin: 0 auto;
+}
+
+.feeSectionWarning {
+  align-items: flex-start;
+  background-color: #fef9e7;
+  border-radius: 4px;
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem 1.25rem;
+}
+
+.feeSectionWarningIcon {
+  color: #c6a700 !important;
+  flex-shrink: 0;
+  font-size: 20px;
+}
+
+.feeSectionWarningContent {
+  flex: 1;
+}
+
+.ant-table-wrapper .ant-table-cell {
+  padding: 0;
+}

@@ -1,0 +1,96 @@
+.container {
+  padding: var(--page-padding-y) calc(var(--page-padding-x) * 1.5) !important;
+}
+
+.container :global(.ant-layout-content) {
+  padding: var(--page-padding-y) calc(var(--page-padding-x) * 1.5);
+}
+
+.title p {
+  text-align: center;
+}
+
+.title > * {
+  font-size: 1.5rem;
+}
+
+.title span {
+  color: var(--color-primary, #b75400);
+  text-transform: uppercase;
+}
+
+.caption p {
+  text-align: center;
+}
+
+.additionalInfo {
+  color: var(--gray-600, #757575);
+}
+
+.additionalInfo span {
+  margin-right: 0.5rem;
+  color: var(--color-primary, #b75400);
+  font-size: 1.5rem;
+}
+
+.formSection {
+  padding-top: 48px;
+}
+
+.success {
+  text-align: center;
+}
+
+.statusTitle {
+  font-size: 48px;
+  margin: 0;
+}
+
+.description {
+  max-width: 80ch;
+  margin: 48px 0 0 0;
+  color: var(--gray-600, #757575);
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.statusDescription p {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.image {
+  margin-top: 2rem;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  text-align: center;
+  gap: 1rem;
+}
+
+.errorImage {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: var(--page-padding-y, 1.5rem);
+}
+
+.errorActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.errorActions :global(.ant-btn) {
+  height: 40px;
+  padding: 8px 16px;
+  font-weight: 500;
+  border-radius: 2px;
+  box-shadow: none;
+}

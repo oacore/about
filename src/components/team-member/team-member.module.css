@@ -1,0 +1,62 @@
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  scroll-margin-top: 24px;
+  border: 1px solid rgb(0 0 0 / 12.5%);
+}
+
+.teamMember:target {
+  border-color: var(--color-primary, #b75400);
+  box-shadow: 0 0 0 4px rgb(183 84 0 / 50%);
+}
+
+.teamMember:global(.ant-card) :global(.ant-card-body) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 0 !important;
+}
+
+.teamMemberPicture {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background: url('./man.svg') no-repeat center / 70% auto;
+}
+
+.teamMemberImage {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.teamMemberBody {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 4px;
+  padding: 20px;
+}
+
+.teamMemberName {
+  margin: 0 !important;
+}
+
+.teamMemberRole {
+  margin: 0 0 8px;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  font-style: italic;
+}
+
+.teamMemberDescription {
+  margin-bottom: 0 !important;
+  font-size: 16px !important;
+}
+
+.teamMemberActions {
+  margin-top: auto;
+  padding-top: 12px;
+}

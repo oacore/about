@@ -1,0 +1,110 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+}
+
+.heading.heading:global(.ant-typography) {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  margin: 0 25px 20px 0;
+  padding-left: 16px;
+  color: #212121;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.035px;
+}
+
+/* The list scrolls on its own; the active link is kept in view as the page scrolls */
+.scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  background: #f5f5f5;
+  scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+.nav .scroll .anchor.anchor:global(.ant-anchor-wrapper) {
+  margin: 0;
+  padding: 0;
+}
+
+.nav .scroll .anchor.anchor :global(.ant-anchor) {
+  padding: 0;
+}
+
+/* antd draws a vertical rail + moving ink; the old nav marked the active item with an arrow */
+/* Pseudo-element outside :global() — inside it the rule is dropped at compile time */
+.nav .scroll .anchor.anchor :global(.ant-anchor)::before,
+.nav .scroll .anchor.anchor :global(.ant-anchor-ink) {
+  /* antd's rail/ink selectors include :not() and win otherwise */
+  display: none !important;
+}
+
+.nav .scroll .anchor.anchor :global(.ant-anchor-link) {
+  padding: 0;
+}
+
+.nav .scroll .anchor.anchor :global(.ant-anchor-link-title) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 16px;
+  overflow: visible;
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: normal;
+  text-overflow: clip;
+}
+
+.nav .scroll .anchor.anchor :global(.ant-anchor-link-title:hover) {
+  color: #000;
+}
+
+.nav .scroll .anchor.anchor :global(.ant-anchor-link-title-active),
+.nav .scroll .anchor.anchor :global(.ant-anchor-link-title-active:hover) {
+  color: var(--color-primary, #b75400);
+  background: #e0e0e0;
+}
+
+/* Nested sections (FAIR / Graph) */
+.nav .scroll .anchor.anchor :global(.ant-anchor-link .ant-anchor-link .ant-anchor-link-title) {
+  padding-left: 32px;
+}
+
+.chapter {
+  color: inherit;
+  font-weight: 600;
+}
+
+.arrow {
+  display: none;
+  flex: 0 0 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav .scroll .anchor.anchor :global(.ant-anchor-link-title-active) .arrow {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .heading.heading:global(.ant-typography) {
+    font-size: 14px;
+  }
+
+  .nav .scroll .anchor.anchor :global(.ant-anchor-link-title) {
+    padding: 16px;
+  }
+}

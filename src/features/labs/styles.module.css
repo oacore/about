@@ -1,0 +1,21 @@
+.wrapper {
+  padding-bottom: 4rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  }
+}
+
+.labHero > div:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

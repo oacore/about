@@ -1,0 +1,31 @@
+.navWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 1.5rem;
+}
+
+.linkItem {
+  color: var(--color-primary, #b75400);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.linkItem:hover,
+.linkItem:focus-visible {
+  color: var(--color-primary-hover, #d4620a);
+  text-decoration: none;
+}
+
+.navWrapper .linkItemMuted,
+.navWrapper .linkItemMuted:hover,
+.navWrapper .linkItemMuted:focus-visible {
+  color: #666;
+}
+
+@media (max-width: 576px) {
+  .navWrapper {
+    gap: 16px;
+    margin-bottom: 1rem;
+  }
+}

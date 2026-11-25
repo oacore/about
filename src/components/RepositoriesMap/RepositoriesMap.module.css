@@ -1,0 +1,44 @@
+/* old components/repositories-map: 2:1 box (square in portrait) with loading overlay */
+.map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding: 0 0 50%;
+}
+
+@media (orientation: portrait) {
+  .map {
+    padding-bottom: 100%;
+  }
+}
+
+.loading::after {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgb(0 0 0 / 25%);
+  content: '';
+  pointer-events: none;
+}
+
+.spinner {
+  position: absolute !important;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.inner {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

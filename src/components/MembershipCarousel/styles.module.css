@@ -1,0 +1,110 @@
+.carouselWrapper {
+  margin: 2rem 0 4rem;
+  position: relative;
+}
+
+.carouselContainer {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carouselContainer :global(.ant-carousel) :global(.slick-slide) {
+  padding: 0 7px;
+}
+
+.carouselContainer :global(.ant-carousel) :global(.slick-list) {
+  margin: 0 -7px;
+}
+
+.compareCardRight {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  padding: 0 7px;
+  width: 100%;
+}
+
+.carouselContainer :global(.slick-slide:first-child) .compareCardRight {
+  padding-left: 14px;
+}
+
+.carouselItem {
+  border: 1px solid #b75400;
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.carouselControls {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 16px;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.carouselArrow {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+
+.carouselArrow img {
+  display: block;
+  height: 36px;
+  width: 80px;
+}
+
+@media (max-width: 576px) {
+  .carouselControls {
+    gap: 8px;
+    margin-top: 12px;
+    padding: 0;
+  }
+
+  .carouselArrow img {
+    height: 18px;
+    width: 40px;
+  }
+}
+
+.carouselIndicators {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+}
+
+.carouselIndicator {
+  background: #d9d9d9;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  height: 3px;
+  padding: 0;
+  transition: background 0.3s, width 0.3s;
+  width: 16px;
+}
+
+.carouselIndicatorActive {
+  background: var(--color-primary);
+  width: 24px;
+}
+
+.linkWrapper {
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.carouselLink {
+  text-decoration: underline;
+}

@@ -1,0 +1,240 @@
+.cardWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  color: var(--color-text-secondary, #212121);
+  text-align: center;
+  font-size: 39.588px;
+  font-weight: 700;
+  line-height: 39.588px;
+}
+
+.description {
+  width: 80%;
+  color: var(--color-text-secondary, #212121);
+  text-align: center;
+  font-size: var(--font-size-lg, 16px);
+  line-height: 130%;
+  letter-spacing: 0.026px;
+}
+
+.description :global(p) {
+  color: inherit;
+  text-align: center;
+}
+
+.sectionsContainer {
+  padding-top: 0;
+}
+
+.section {
+  container-type: inline-size;
+  height: 100%;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 165px;
+  padding: 18px 26px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: var(--color-bg-layout, #f5f5f5);
+}
+
+.sectionHeaderContent {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.imgWrapper {
+  width: 110px;
+  height: 110px;
+  flex-shrink: 0;
+}
+
+.connectImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sectionTitle {
+  margin: 0 0 14px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.sectionDescription {
+  color: var(--color-text-secondary, #212121);
+  font-size: var(--font-size-lg, 16px);
+  line-height: 24px;
+  letter-spacing: 0.026px;
+}
+
+.sectionDescription :global(p) {
+  color: inherit;
+}
+
+.characteristic {
+  margin-bottom: 3rem;
+}
+
+.characteristic:last-child {
+  margin-bottom: 0;
+}
+
+.characteristicTitle {
+  margin: 0 0 10px;
+  color: var(--color-primary, #b75400);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.011px;
+}
+
+.characteristicDescription {
+  color: var(--color-text-secondary, #212121);
+  font-size: var(--font-size-lg, 16px);
+  line-height: 130%;
+  letter-spacing: 0.026px;
+}
+
+.characteristicDescription :global(p) {
+  color: inherit;
+  margin-bottom: 0.75rem;
+}
+
+.characteristicDescription :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.characteristicDescription :global(ul) {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.characteristicDescription :global(li) {
+  list-style-type: disc;
+  margin-bottom: 0.25rem;
+}
+
+.posiSection {
+  margin-top: 4rem;
+  padding-top: 0;
+}
+
+.posiHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 46px;
+  padding: 24px 26px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: var(--color-bg-layout, #f5f5f5);
+}
+
+.posiInner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.posiTitle {
+  margin: 0 0 16px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+.posiSubtitle :global(p) {
+  margin: 0;
+}
+
+.posiImage {
+  flex-shrink: 0;
+}
+
+.posiItems {
+  display: flex;
+  gap: 10px;
+}
+
+.posiItem {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+  border: 2px solid var(--color-bg-layout, #f5f5f5);
+  border-radius: 12px;
+}
+
+.posiItem :global(.markdown),
+.posiItem :global(p) {
+  color: var(--color-primary, #b75400);
+  margin: 0;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 130%;
+}
+
+@container (max-width: 560px) {
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    min-height: 0;
+    padding: 16px;
+  }
+
+  .imgWrapper {
+    height: 72px;
+    order: -1;
+    width: 72px;
+  }
+
+  .sectionTitle {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .sectionDescription {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 32px;
+    line-height: 1.15;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  .posiHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .posiItems {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,207 @@
+/* ---------- shared ---------- */
+
+.outlined,
+.filled {
+  margin-bottom: 16px;
+}
+
+.outlined :global(.ant-form-item-row),
+.filled :global(.ant-form-item-row) {
+  display: block !important;
+  position: relative;
+}
+
+.outlined :global(.ant-form-item-label),
+.filled :global(.ant-form-item-label) {
+  position: absolute !important;
+  top: 0;
+  left: 12px;
+  z-index: 2;
+  display: flex !important;
+  align-items: center;
+  height: 48px;
+  max-width: calc(100% - 24px);
+  padding: 0 !important;
+  overflow: hidden;
+  line-height: 1 !important;
+  pointer-events: none;
+  transition: top 0.15s ease, height 0.15s ease;
+}
+
+.outlined :global(.ant-form-item-label > label),
+.filled :global(.ant-form-item-label > label) {
+  height: auto !important;
+  padding: 0 4px;
+  color: var(--color-primary, #b75400) !important;
+  font-size: 16px !important;
+  white-space: nowrap;
+  transition: font-size 0.15s ease;
+}
+
+.outlined :global(.ant-form-item-label > label::after),
+.filled :global(.ant-form-item-label > label::after) {
+  display: none;
+}
+
+
+.outlined :global(.ant-input)::placeholder {
+  opacity: 0 !important;
+}
+
+.filled :global(.ant-input)::placeholder {
+  opacity: 0 !important;
+}
+
+.outlined:focus-within :global(.ant-input)::placeholder {
+  opacity: 1 !important;
+}
+
+.filled:focus-within :global(.ant-input)::placeholder {
+  opacity: 1 !important;
+}
+
+.outlined :global(.ant-select-selection-placeholder),
+.filled :global(.ant-select-selection-placeholder) {
+  opacity: 0 !important;
+}
+
+.outlined:focus-within :global(.ant-select-selection-placeholder),
+.filled:focus-within :global(.ant-select-selection-placeholder) {
+  opacity: 1 !important;
+}
+
+.outlined :global(.ant-input),
+.filled :global(.ant-input),
+.outlined :global(.ant-select .ant-select-selector),
+.filled :global(.ant-select .ant-select-selector) {
+  min-height: 48px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 16px;
+  border-radius: 2px !important;
+  box-shadow: none !important;
+}
+
+.outlined :global(.ant-input),
+.filled :global(.ant-input) {
+  padding: 12px 15px;
+}
+
+.outlined :global(textarea.ant-input),
+.filled :global(textarea.ant-input) {
+  min-height: 104px;
+  padding-top: 16px;
+}
+
+/* antd fixes .ant-select at 32px; let it grow with the 48px box */
+.outlined :global(.ant-select),
+.filled :global(.ant-select) {
+  width: 100%;
+  height: auto !important;
+  min-height: 48px;
+}
+
+.outlined :global(.ant-select .ant-select-selector),
+.filled :global(.ant-select .ant-select-selector) {
+  display: flex;
+  align-items: center;
+  padding-inline: 15px !important;
+}
+
+.outlined :global(.ant-form-item-explain-error),
+.filled :global(.ant-form-item-explain-error) {
+  color: var(--danger-dark, #8e0000);
+}
+
+/* ---------- outlined (modals): bordered box, label sits on the top border ---------- */
+
+.outlined :global(.ant-input),
+.outlined :global(.ant-select .ant-select-selector) {
+  background: var(--color-bg-container, #fff) !important;
+  border: 1px solid var(--gray-300, #e0e0e0) !important;
+}
+
+.outlined :global(.ant-input:focus),
+.outlined :global(.ant-input-focused),
+.outlined :global(.ant-select-focused .ant-select-selector) {
+  border-color: var(--color-primary, #b75400) !important;
+}
+
+.outlined:focus-within :global(.ant-form-item-label),
+.outlined:has(:global(input.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label),
+.outlined:has(:global(textarea.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label),
+.outlined:has(:global(.ant-select)):not(:has(:global(.ant-select-selection-placeholder))) :global(.ant-form-item-label) {
+  top: -8px;
+  height: 16px;
+}
+
+.outlined:focus-within :global(.ant-form-item-label > label),
+.outlined:has(:global(input.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label > label),
+.outlined:has(:global(textarea.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label > label),
+.outlined:has(:global(.ant-select)):not(:has(:global(.ant-select-selection-placeholder))) :global(.ant-form-item-label > label) {
+  background: var(--color-bg-container, #fff);
+  font-size: 12px !important;
+}
+
+.outlined:global(.ant-form-item-has-error) :global(.ant-input),
+.outlined:global(.ant-form-item-has-error) :global(.ant-select-selector) {
+  color: var(--danger-dark, #8e0000);
+  background: var(--danger-light-background, #fff2f1) !important;
+  border-color: var(--danger-dark, #8e0000) !important;
+}
+
+.outlined:global(.ant-form-item-has-error) :global(.ant-form-item-label > label) {
+  color: var(--danger-dark, #8e0000) !important;
+}
+
+.outlined:global(.ant-form-item-has-error):focus-within :global(.ant-form-item-label > label),
+.outlined:global(.ant-form-item-has-error):has(:global(input.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label > label) {
+  background: var(--danger-light-background, #fff2f1);
+}
+
+/* ---------- filled (page form on grey card): borderless white box, label moves inside ---------- */
+
+.filled :global(.ant-input),
+.filled :global(.ant-select .ant-select-selector) {
+  background: var(--color-bg-container, #fff) !important;
+  border: 1px solid transparent !important;
+}
+
+.filled :global(.ant-input) {
+  padding: 22px 15px 2px;
+  line-height: 22px;
+}
+
+.filled:focus-within :global(.ant-form-item-label),
+.filled:has(:global(input.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label) {
+  top: 5px;
+  height: 14px;
+}
+
+.filled:focus-within :global(.ant-form-item-label > label),
+.filled:has(:global(input.ant-input:not(:placeholder-shown))) :global(.ant-form-item-label > label) {
+  font-size: 12px !important;
+}
+
+.filled:global(.ant-form-item-has-error) :global(.ant-input) {
+  background: var(--danger-light-background, #fff2f1) !important;
+}
+
+.filled:global(.ant-form-item-has-error) :global(.ant-form-item-label > label) {
+  color: var(--danger-dark, #8e0000) !important;
+}
+
+/* Old modal fields: 16px warning text and no dropdown arrow on selects */
+.outlined :global(.ant-form-item-explain) {
+  margin: 4px 0 0;
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.outlined :global(.ant-select-arrow) {
+  display: none !important;
+}
+
+.outlined :global(.ant-select-selection-item),
+.outlined :global(.ant-select-selection-search-input) {
+  font-size: 16px !important;
+}

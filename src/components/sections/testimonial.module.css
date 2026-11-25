@@ -1,0 +1,107 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 32px;
+}
+
+.item {
+  position: relative;
+  max-width: 18rem;
+  padding: 1rem 0;
+}
+
+.item:not(:last-child)::after {
+  position: absolute;
+  top: 1rem;
+  right: 0;
+  display: block;
+  width: 2px;
+  height: 100%;
+  content: '';
+  background: url('./line.svg') 0 0 no-repeat;
+}
+
+.header {
+  height: 8.4rem;
+  margin-bottom: 3.3rem;
+  padding-right: 2rem;
+}
+
+.title {
+  margin: 0 0 1rem;
+  color: #212121;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.description {
+  margin: 0;
+  font-size: 16px;
+}
+
+.logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 4rem;
+  padding-bottom: 0.8rem;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.divider {
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.citation {
+  margin: 0 0 1rem;
+  padding-top: 0.8rem;
+  font-style: italic;
+}
+
+.readMore {
+  margin-left: 0.2rem;
+  padding: 0;
+  color: var(--color-primary);
+  font: inherit;
+  font-style: italic;
+  text-decoration: underline;
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+.author {
+  margin: 0;
+  color: #212121;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.extra {
+  color: var(--gray-600, #757575);
+}
+
+@media (max-width: 80rem) {
+  .list {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .header {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 46rem) {
+  .header {
+    height: auto;
+    margin-bottom: 0.5rem;
+  }
+}
