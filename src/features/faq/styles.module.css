@@ -1,0 +1,164 @@
+.header {
+  align-items: flex-start;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+}
+
+.mainTitle {
+  font-size: 60px;
+}
+
+.headerMeta {
+  margin-bottom: 0;
+}
+
+.faqSection {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.nestedSection {
+  margin-top: 2rem;
+}
+
+.faqHeaderWrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  margin: 48px 0 0 0;
+  color: var(--color-text-secondary, #212121);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.nestedTitle {
+  font-size: 34px
+}
+
+.faqHeaderDate {
+  flex-shrink: 0;
+  color: var(--color-text-disabled, #9e9e9e);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.026px;
+}
+
+.guideline {
+  margin: 1.5rem 0;
+}
+
+.badgeMainWrapper {
+  padding-top: 0;
+}
+
+.badgeTitle {
+  margin: 0;
+  color: var(--color-text-secondary, #212121);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.badgeContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.badgeDescription {
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  color: var(--color-text-secondary, #212121);
+}
+
+.badgeWrapper {
+  margin-top: 32px;
+}
+
+.cardWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+  margin-bottom: 24px;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: flex-end;
+  width: 45%;
+  padding-right: 24px;
+}
+
+.image {
+  width: auto;
+  max-width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+
+.badgeImageHeight {
+  height: 90px;
+}
+
+.textAlignment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 50%;
+  min-height: 40px;
+  padding-left: 24px;
+  border-left: 1px dashed var(--color-text-disabled, #9e9e9e);
+}
+
+.text {
+  color: var(--color-dark, #000);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .faqHeaderWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .nestedTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardWrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .imgWrapper {
+    width: 100%;
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .textAlignment {
+    width: 100%;
+    justify-content: center;
+    padding-left: 0;
+    padding-top: 16px;
+    border-left: 0;
+    border-top: 1px dashed var(--color-text-disabled, #9e9e9e);
+  }
+}

@@ -1,0 +1,561 @@
+.unsetBottom {
+  padding-bottom: 0;
+}
+
+.unsetTop {
+  padding-top: 0;
+}
+
+.headerLabel {
+  margin-top: 16px;
+  width: max-content;
+  border-radius: 2px;
+  background: var(--color-success, #8bc34a);
+  padding: 3px 7px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/*TODO TITLE*/
+.pageTitle {
+  font-size: 34px;
+  margin: 0 0 24px 0;
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.main.testimonials {
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+.note p {
+  margin-top: 1.4rem;
+  text-align: left;
+}
+
+.action {
+  float: right;
+  margin: 1rem 0 0;
+}
+
+@media (max-width: 576px) {
+  .action:global(.ant-btn),
+  .group :global(.ant-btn),
+  .contactBtn:global(.ant-btn) {
+    height: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .action:global(.ant-btn) {
+    float: none;
+    width: 100%;
+  }
+
+  .group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .group>*,
+  .group :global(.ant-btn) {
+    width: 100%;
+  }
+
+  .contactBtn:global(.ant-btn) {
+    width: 100%;
+  }
+}
+
+.mainDescription {
+  color: #212121;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.mainNote {
+  margin-top: 1.4rem;
+}
+
+.certificateItemWrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+@media (max-width: 992px) {
+  .certificateItemWrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .certificateItemWrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+.certificateItem {
+  display: flex;
+  padding: 16px 24px 34px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  border-radius: 6px;
+  background: var(--color-bg-layout, #f5f5f5);
+}
+
+.icon {
+  max-width: 100%;
+  height: auto;
+}
+
+.subtitle {
+  margin: 0;
+  text-align: center;
+}
+
+.whatIsIncluded,
+.additional {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.whatIsIncluded ul,
+.whatIsIncluded li,
+.additional li {
+  line-height: 2rem;
+  list-style-type: disc;
+}
+
+.section {
+  max-width: 95ch;
+}
+
+.contactBtn {
+  margin-top: 2.5rem;
+}
+
+.listTitleWrapper {
+  display: flex;
+  gap: 10px;
+}
+
+.videoIcon {
+  color: #bdbdbd;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.videoIcon svg {
+  fill: #bdbdbd;
+}
+
+.additional {
+  flex-wrap: wrap-reverse;
+}
+
+.additional img {
+  width: 100%;
+  max-width: 36rem;
+  height: auto;
+}
+
+.additional .section {
+  max-width: 65ch;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.group .action {
+  text-transform: none;
+}
+
+.additionalReverse {
+  flex-direction: row-reverse;
+}
+
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.statisticsBox {
+  position: relative;
+  padding: 1rem;
+  border: 1px solid var(--gray-300, #e0e0e0);
+  border-bottom: 1px solid var(--color-primary, #b75400);
+  text-decoration: none;
+  color: inherit;
+}
+
+.statisticsBox .title p {
+  color: var(--color-text-secondary, #212121);
+  font-weight: 300;
+}
+
+.statisticsBox .count p {
+  font-size: 2rem;
+  color: var(--color-primary, #b75400);
+}
+
+.statisticsBox .caption {
+  color: var(--color-text-secondary, #212121);
+}
+
+.badge {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  padding: 0.2rem 0.4rem;
+  color: #fff;
+  background-color: var(--success);
+  border-radius: 0.2rem;
+}
+
+.active {
+  background-color: #fbf6f2 !important;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.statsButton {
+  float: right;
+}
+
+/* Register form: matches the old grey card with a "filled" text field */
+.form {
+  padding: 16px;
+  background-color: var(--color-bg-layout, #f5f5f5);
+  border-radius: 2px;
+}
+
+.form .caption {
+  max-width: 80ch;
+  margin: 0 0 16px;
+  line-height: 2;
+}
+
+.form :global(.ant-form-item) {
+  margin-bottom: 0;
+}
+
+/* helper text under the field ("We will send the key…") */
+.form :global(.ant-form-item-extra) {
+  margin-top: 10px;
+  padding: 0 16px;
+  color: var(--gray-600, #757575);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.form .button {
+  margin-top: 2rem;
+}
+
+.formNote {
+  width: 100%;
+  margin-top: 0.3rem;
+  text-align: right;
+}
+
+/* a global `p { text-align: start }` rule would otherwise win over the wrapper */
+.formNote p {
+  text-align: inherit;
+}
+
+.benefits {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 480px) {
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefit {
+  position: relative;
+  background-color: var(--color-bg-layout, #f5f5f5);
+  display: flex;
+  padding: 0.5rem 1rem;
+}
+
+.benefitIcon {
+  max-height: 4rem;
+  margin-right: 1rem;
+}
+
+.benefitContent {
+  margin: 1rem 0;
+}
+
+.benefit:nth-child(odd)::after {
+  position: absolute;
+  bottom: 0;
+  right: -1rem;
+  content: '';
+  height: 100%;
+  border: 1px dashed var(--gray-300, #e0e0e0);
+}
+
+.carouselWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.carouselItems {
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+@media (max-width: 1240px) {
+  .carouselItems {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .carouselItemWrapper {
+    flex: 0 1 212px;
+    max-width: 212px;
+    width: 100%;
+  }
+
+  .carouselItem {
+    width: 100%;
+  }
+}
+
+.carouselItemWrapper {
+  border: 1px solid var(--color-primary, #b75400);
+  background: #fff;
+  height: 104px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carouselItem {
+  width: 212px;
+  max-height: 104px;
+  padding: 16px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .carouselWrapper {
+    padding-inline: 16px;
+  }
+
+  .carouselItems {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .carouselItemWrapper {
+    flex: 1 1 auto;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.carouselItemUnset {
+  padding: 0;
+}
+
+.background {
+  background: #e85e13;
+}
+
+.linkWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+/*TODO MAX SCREEN*/
+.institutionBenefitWrapper {
+  display: flex;
+  justify-content: center;
+  background: #f5f5f5;
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100vw;
+  margin: 48px calc(50% - 50vw);
+}
+
+.institutionBenefitInnerWrapper {
+  padding: var(--page-padding-y) 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1240px;
+  gap: 36px;
+}
+
+@media (max-width: 1130px) {
+  .institutionBenefitInnerWrapper {
+    padding: var(--page-padding-y) 16px;
+  }
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 48%;
+  box-sizing: border-box;
+  padding: 10px;
+  color: #212121;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 78px;
+}
+
+.cardTitle {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.titleWrapper strong {
+  font-weight: 700;
+}
+
+.titleWrapper a {
+  color: #b75400;
+}
+
+.itemMainWrapper {
+  flex: 0 0 48%;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.itemWrapper {
+  padding: 16px;
+}
+
+.itemTitle {
+  margin: 0;
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+  letter-spacing: 0.036px;
+  margin-bottom: 24px;
+}
+
+.itemDescription {
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.026px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.userWrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 70%;
+}
+
+.userImg {
+  margin-right: 14px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.user {
+  margin-bottom: 6px;
+  color: #000;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.position {
+  color: #666;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.048px;
+}
+
+.footerAction {
+  flex-shrink: 0;
+  color: #b75400;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.08rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.footerAction:hover {
+  color: var(--color-primary-hover, #d4620a);
+}
+
+.footerAction:active {
+  color: var(--color-primary-active, #a04a00);
+}
+
+@media (max-width: 1130px) {
+
+  .titleWrapper,
+  .itemMainWrapper {
+    flex: 0 0 100%;
+  }
+}
+/* Old site floated these buttons right, so the first action sits rightmost on desktop. */
+@media (min-width: 577px) {
+  .howItWorksActions {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+}

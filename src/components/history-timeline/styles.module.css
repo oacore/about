@@ -1,0 +1,92 @@
+.timeline {
+  --column-gap: 2rem;
+  padding-top: 0;
+  padding-right: calc(var(--column-gap) / 2);
+  padding-left: calc(var(--column-gap) / 2);
+}
+
+.timeline > * {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.intro {
+  position: relative;
+  max-width: var(--max-text-width, 70ch);
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid var(--line-color, var(--gray-300, #e0e0e0));
+  border-radius: var(--component-border-radius, 2px);
+  background: var(--color-bg-container, #fff);
+}
+
+.intro :global(p) {
+  margin: 0;
+  color: var(--color-text-secondary, #212121);
+  line-height: 1.6;
+}
+
+.intro :global(p + p) {
+  margin-top: 0.75rem;
+}
+
+.intro::before,
+.timeline > :last-child::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  bottom: calc(var(--circle-size, 1.5rem) / -2);
+  left: calc(50% - var(--circle-size, 1.5rem) / 2);
+  display: block;
+  width: var(--circle-size, 1.5rem);
+  height: var(--circle-size, 1.5rem);
+  border: var(--line-width, 4px) solid var(--line-color, var(--gray-300, #e0e0e0));
+  border-radius: 50%;
+  background: var(--color-bg-container, #fff);
+}
+
+.intro::after,
+.timeline > :last-child::after {
+  content: url('./arrow.svg');
+  position: absolute;
+  z-index: 1;
+  bottom: calc(var(--circle-size, 1.5rem) / -2);
+  left: 50%;
+  display: block;
+  padding: var(--line-width, 4px);
+  background: var(--color-bg-container, #fff);
+  border-radius: 50%;
+  transform: translate(-50%, 100%);
+}
+
+.timeline > :last-child {
+  position: relative;
+  flex-direction: column;
+  max-width: var(--max-text-width, 70ch);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  border: 1px solid var(--line-color, var(--gray-300, #e0e0e0));
+  border-radius: var(--component-border-radius, 2px);
+  background: var(--color-bg-container, #fff);
+  background-image: none;
+}
+
+.timeline > :last-child::before {
+  top: calc(var(--circle-size, 1.5rem) / -2);
+  bottom: unset;
+}
+
+.timeline > :last-child::after {
+  top: calc(var(--circle-size, 1.5rem) / -2);
+  bottom: unset;
+  transform: translate(-50%, -100%) rotate(180deg);
+}
+
+.timeline > :last-child > * {
+  padding-bottom: 0;
+}
+
+.timeline > :last-child > :empty {
+  display: none;
+}

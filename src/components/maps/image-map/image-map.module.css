@@ -1,0 +1,8 @@
+.imageMap {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2000 / 1001;
+  overflow: visible;
+  background: transparent url('./map.svg') no-repeat 50% 50% / 100% auto;
+}

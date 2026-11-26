@@ -1,95 +1,71 @@
-# CORE About
+# React + TypeScript + Vite
 
-Static pages for [CORE](https://core.ac.uk). The project is based on React and
-Next.js.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
+Currently, two official plugins are available:
 
-## Prerequisites
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-1.  **Node.js**: [download from nodejs.org][node-download] or check the
-    [official installation guidelines][node-package-manager-download] if you
-    prefer using a package manager
+## Expanding the ESLint configuration
 
-2.  **NPM**: usually is installed with Node but you can have a look at the
-    [installation guide][npm-install]
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-3.  **NPM_TOKEN**: generate a token with the `package:read` permission at
-    your [GitHub Settings][github-token] and place it into your `.bashrc` or
-    `.zshrc` as follows:
+```js
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-    ```sh
-    export NPM_TOKEN=<your-token-goes-here>
-    ```
+      // Remove tseslint.configs.recommended and replace with this
+      ...tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      ...tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      ...tseslint.configs.stylisticTypeChecked,
 
-    The token is needed to enable NPM to download our scoped `@oacore` 
-    packages, deployed to the GitHub Registry.
-
-
-## Getting started
-
-When you pass all [Prerequisites](#prerequisites) you can `cd` into the
-project directory and start development as follows:
-
-```sh
-npm install
-npm run dev
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-## Design vendor update
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-1. Use Node v.16
-2. Run `npm update @oacore/design`
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-Open [localhost:3000](http://localhost:3000) to see the website.
-
-__Well done! 🎉__
-
-
-## Project structure
-
-The infrastructure and relations between the front-end modules is displayed
-using the following diagram:
-
-![Schema of the CORE front-end infrastructure consisting of 2 library modules
-  and many application modules
-](https://user-images.githubusercontent.com/8440244/112995708-29e46580-9174-11eb-9acc-cd874cd798c3.png)
-
-There is a _Library Layer_ providing all shared components for the
-applications, and an _Application Layer_ which consists of these applications,
-consuming shared components.
-
-Specifically, this projects requires the [@oacore/design][design] package 
-during the installation stage and depends on [oacore/content][content] 
-and our [API][api] at the build stage.
-
-We use [Netlify CMS][netlify-cms] for editing our content. The CMS pushes
-changes to some directories at [oacore/content][content].
-
-Also, this projects uses images hosted directly from
-[oacore.github.io/content](https://oacore.github.io/content) for simplicity.
-
-## Links for help
-
-* [github-token](https://github.com/settings/tokens)
-* [node-download](https://nodejs.org/en/download/)
-* [node-package-manager-download](https://nodejs.org/en/download/package-manager/)
-* [npm-install](https://www.npmjs.com/get-npm)
-* [netlify-cms](https://www.netlifycms.org)
-
-* [design](https://github.com/oacore/design)
-* [content](https://github.com/oacore/content)
-* [edit content](https://core.ac.uk/edit)
-* [api](https://api.core.ac.uk)
-
-
-## Thanks ❤️
-
-
-We support Open Access and Open Source. Many open-source and 
-non-open-source projects help us to deliver our products in great quality.
-
-We give thanks to:
-[
-  ![BrowserStack](docs/images/browserstack-logo.svg)
-](https://browserstack.com)
-
+export default tseslint.config([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+# core-dashboard
+# core-dashboard

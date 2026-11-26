@@ -29,6 +29,8 @@ jobs:
         with:
           ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || 'stage' }}
 
+      # Private dependency: package.json uses "@core/core-ui": "file:../core-ui".
+
       - name: Azure Login
         uses: azure/login@v2
         with:
@@ -53,16 +55,17 @@ jobs:
       - name: Docker build and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Read access to GitHub Packages (@oacore/core-ui)
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           docker buildx build \
             --platform linux/arm64 \
             --push \
-            --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }} \
             --build-arg GA_CODE=${{ secrets.GA_CODE }} \
-            --build-arg API_KEY=${{ secrets.API_KEY }} \
             --build-arg APP_ENV=staging \
             --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
+            --secret id=npm_token,env=NPM_TOKEN \
             -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
@@ -75,15 +78,11 @@ jobs:
 
       - name: Sync secrets to AKS
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GA_CODE: ${{ secrets.GA_CODE }}
-          API_KEY: ${{ secrets.API_KEY }}
         run: |
           kubectl create secret generic core-frontend-about-secrets \
             --namespace core-frontend-stage \
-            --from-literal=NPM_TOKEN="${{ env.NPM_TOKEN }}" \
             --from-literal=GA_CODE="${{ secrets.GA_CODE }}" \
-            --from-literal=API_KEY="${{ secrets.API_KEY }}" \
             --dry-run=client -o yaml | kubectl apply -f -
 
       - name: Apply Service and HTTPRoute

@@ -1,0 +1,316 @@
+.featuresTitle {
+  margin: 0 0 40px;
+  font-size: 34px;
+}
+
+.sectionTitle {
+  margin: 0 0 24px;
+  font-size: 34px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.feature {
+  position: relative;
+  flex: 1;
+  padding: 1rem;
+  background-color: var(--color-bg-layout, #f5f5f5);
+}
+
+.feature:not(:last-child)::after {
+  position: absolute;
+  right: -1rem;
+  bottom: 0;
+  height: 100%;
+  content: '';
+  border: 1px dashed var(--gray-300, #e0e0e0);
+}
+
+.featureTitle {
+  margin: 0 0 16px;
+  color: var(--color-primary, #b75400);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.howToSponsor {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sectionImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  min-width: 0;
+}
+
+.itemGroup {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.groupItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 1rem;
+  color: var(--color-text-white, #fff);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  background-color: var(--color-primary, #b75400);
+}
+
+/* Sections sit inside Layout's own gutter, so drop Section's extra side padding (matches the old site). */
+section.flush {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.table {
+  margin-bottom: 1.5rem;
+}
+
+.table :global(th) {
+  text-align: center;
+}
+
+/* Fit the benefits table to the container: fixed feature column, plan columns share the rest. */
+.table :global(.ant-table-content > table) {
+  width: 100% !important;
+  min-width: 720px !important;
+  table-layout: fixed !important;
+}
+
+.table :global(.ant-table-thead > tr > th:first-child),
+.table :global(.ant-table-tbody > tr > td:first-child) {
+  width: 22%;
+}
+
+.table :global(.ant-table-thead > tr > th) {
+  padding: 16px 8px;
+}
+
+.table :global(.ant-table-thead p) {
+  margin: 0;
+  text-align: center;
+}
+
+.table :global(.ant-table-thead > tr > th) {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.table :global(.ant-table-tbody > tr > td:first-child) {
+  padding: 0 !important;
+}
+
+/* Static comparison table: no row hover, cells keep their own background */
+.table :global(.ant-table-tbody > tr > td),
+.table :global(.ant-table-tbody > tr:hover > td) {
+  background: #fff !important;
+}
+
+.table :global(.ant-table-tbody > tr > td:first-child),
+.table :global(.ant-table-tbody > tr:hover > td:first-child) {
+  background: #f5f5f5 !important;
+}
+
+.table :global(.ant-table-tbody > tr > td:first-child) > * {
+  width: auto !important;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .table :global(.ant-table-content) {
+    overflow-x: auto;
+  }
+
+  .table :global(.ant-table-content > table) {
+    min-width: 720px !important;
+    white-space: normal;
+  }
+
+  .table :global(.ant-table-thead > tr > th:first-child),
+  .table :global(.ant-table-tbody > tr > td:first-child) {
+    position: sticky !important;
+    left: 0;
+    z-index: 2;
+    width: 150px;
+  }
+
+  .table :global(.ant-table-thead > tr > th:first-child) {
+    background-color: #fff !important;
+  }
+
+  .table :global(.ant-table-tbody > tr > td:first-child) {
+    background-color: #f5f5f5;
+  }
+
+  .table :global(.ant-table-tbody > tr > td:first-child) > * {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .table :global(.ant-table-thead [class*='headerTitle']) {
+    font-size: 16px;
+  }
+}
+
+.warning {
+  margin: 0;
+  color: var(--color-text-secondary, #212121);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.0016em;
+}
+
+.discountSection {
+  padding: 6px 0 54px;
+}
+
+.tableCaption {
+  min-height: 1rem;
+  padding: 0.2rem;
+  margin-bottom: 24px;
+  color: var(--color-text-white, #fff);
+  text-align: center;
+  background-color: var(--color-primary, #b75400);
+}
+
+.discountTable:global(.ant-table-wrapper) {
+  margin-bottom: 1.5rem;
+}
+
+.discountTable :global(th) {
+  padding: 0.5rem;
+  font-weight: 500;
+  text-align: center;
+  background-color: #fae2d2 !important;
+}
+
+.discountTable :global(td) {
+  padding: 1rem 0.5rem;
+  text-align: center;
+}
+
+.discountTable :global(td:last-child) {
+  font-weight: 700;
+}
+
+.feeSectionNoteSecond {
+  margin-top: 24px;
+}
+
+.logoMainWrapper {
+  padding: 10px 0;
+}
+
+.membersTitle {
+  margin: 0 0 34px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.logoCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+  grid-gap: 35px;
+}
+
+.logoItemWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 104px;
+  border: 1px solid var(--color-primary, #b75400);
+}
+
+.logoLabel {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  z-index: 1;
+  padding: 4px;
+  color: var(--color-text-white, #fff);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0.048px;
+  background: var(--color-success, #8bc34a);
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.logoImage {
+  width: auto;
+  max-width: 80%;
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .itemGroup {
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .feature {
+    flex: auto;
+  }
+
+  /* Even tiles: two per row, the last one spans the row */
+  .groupItem {
+    flex: 1 1 calc(50% - 0.25rem);
+    font-size: 18px;
+  }
+
+  .feature:not(:last-child)::after {
+    display: none;
+  }
+
+  .howToSponsor {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrapper {
+    max-width: 320px;
+  }
+}

@@ -1,0 +1,161 @@
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--row-gap, 0) var(--column-gap, 2rem);
+}
+
+.switcher>* {
+  flex-grow: 1;
+  flex-basis: calc((var(--break-width, 0) - 100%) * 999);
+}
+
+.container {
+  --break-width: calc(var(--min-text-width, 35ch) * 2 + var(--column-gap, 2rem));
+  --row-gap: 0;
+  position: relative;
+  justify-content: center;
+  padding-top: var(--section-spacer, 3rem);
+  padding-right: calc(var(--column-gap, 2rem) / 2);
+  padding-bottom: calc(var(--section-spacer, 3rem) - 1.5rem);
+  padding-left: calc(var(--column-gap, 2rem) / 2);
+  background-image: linear-gradient(90deg,
+      transparent calc(50% - var(--line-width, 4px) / 2),
+      var(--line-color, var(--gray-300, #e0e0e0)) calc(50% - var(--line-width, 4px) / 2),
+      var(--line-color, var(--gray-300, #e0e0e0)) calc(50% + var(--line-width, 4px) / 2),
+      transparent calc(50% + var(--line-width, 4px) / 2));
+}
+
+.container:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: calc(var(--section-spacer, 3rem) - var(--circle-size, 1.5rem) / 2 + 0.75rem);
+  left: calc(50% - var(--circle-size, 1.5rem) / 2);
+  display: block;
+  width: var(--circle-size, 1.5rem);
+  height: var(--circle-size, 1.5rem);
+  border: var(--line-width, 4px) solid var(--line-color, var(--gray-300, #e0e0e0));
+  border-radius: 50%;
+  background: var(--color-bg-container, #fff);
+}
+
+.imageContainer,
+.contentContainer {
+  max-width: var(--max-text-width, 70ch);
+  padding-bottom: 1.5rem;
+  background: var(--color-bg-container, #fff);
+}
+
+.contentContainer :global(p) {
+  color: var(--color-text-secondary, #212121);
+  line-height: 1.6;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.date {
+  color: var(--color-primary, #b75400);
+  font-size: 0.75em;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+.milestoneTitle {
+  margin: 0.35rem 0 0.75rem;
+  color: var(--color-text-secondary, #212121);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.linkCardAnchor {
+  display: block;
+  max-width: 45ch;
+  margin-top: 1rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.linkCardAnchor:hover,
+.linkCardAnchor:focus-visible {
+  color: inherit;
+}
+
+.linkCard {
+  text-align: left;
+}
+
+.linkCard :global(.ant-card-body) {
+  padding: 12px 16px !important;
+}
+
+.linkTitle {
+  margin: 0 0 0.5rem;
+  color: var(--color-text-secondary, #212121);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.linkDescription {
+  display: -webkit-box;
+  margin: 0 0 0.5rem;
+  overflow: hidden;
+  color: var(--color-text-primary, #616161);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.linkSource {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.35rem;
+  padding-right: 0.25rem;
+  color: var(--color-text-primary, #616161);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.linkSourceIcon {
+  font-size: 0.75rem;
+}
+
+.last {
+  background-image: none;
+}
+
+.last::before {
+  display: none;
+}
+
+.last .contentContainer {
+  max-width: 100%;
+  padding-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .container {
+    background-image: none;
+  }
+
+  .container::before {
+    display: none;
+  }
+
+  .milestoneTitle {
+    font-size: 20px;
+  }
+}

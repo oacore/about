@@ -1,0 +1,63 @@
+/* Doubled class: antd's .ant-col rule is injected later with equal specificity */
+.col.col {
+  display: flex;
+}
+
+/* Steps in a row share a height, so their arrows line up at the bottom */
+.step {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  min-width: 0;
+  padding-bottom: 32px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+  color: var(--color-primary, #b75400);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.description {
+  color: var(--color-text-secondary, #212121);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.description.description p {
+  margin: 0;
+}
+
+/* Orange line ending in an arrowhead; kept inside the column so it never widens the page */
+.arrow {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-primary, #b75400);
+}
+
+.arrow::after {
+  position: absolute;
+  top: -5px;
+  right: -12px;
+  display: block;
+  border: 6px solid transparent;
+  border-left-color: var(--color-primary, #b75400);
+  content: '';
+}
+
+@media (max-width: 576px) {
+  .step {
+    padding-bottom: 28px;
+  }
+}

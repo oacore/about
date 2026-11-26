@@ -1,0 +1,47 @@
+.page {
+  --min-text-width: 35ch;
+  --max-text-width: 70ch;
+  --break-width: calc(var(--min-text-width) * 2 + var(--column-gap));
+  --column-gap: 2rem;
+  --line-width: 4px;
+  --line-color: var(--gray-300, #e0e0e0);
+  --circle-size: 1.5rem;
+  --section-spacer: 3rem;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 0;
+}
+
+.blobsBackground::before {
+  content: '';
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  pointer-events: none;
+  background:
+    no-repeat url('assets/side-curve-left.svg') top left / contain,
+    no-repeat url('assets/side-curve-right.svg') top right / contain;
+}
+
+.heroLogo {
+  margin: 0 auto;
+}
+
+.timeline {
+  padding-top: 0;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

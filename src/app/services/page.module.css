@@ -1,0 +1,209 @@
+.wrapper {
+  padding-bottom: 4rem;
+}
+
+.sectionContainer {
+  padding: 1rem 0 !important;
+}
+
+.sectionContainerInline {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: stretch;
+  max-width: 25.35rem;
+}
+
+.sectionContainerInline:not(:last-child) {
+  margin-right: 1rem;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.sectionHeader::after {
+  margin-bottom: 0.35em;
+  border-bottom: 3px dashed var(--gray-300);
+  content: '';
+  flex: 1;
+}
+
+.sectionVideoImg {
+  position: relative;
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: min(9rem, 100%);
+  margin-right: 1rem;
+  padding: 0;
+  cursor: pointer;
+  border: unset;
+  border-radius: unset;
+  background-color: unset;
+}
+
+.sectionVideoImg:hover,
+.sectionVideoImg:focus {
+  --button-overlay: none;
+  --button-focus-ring: none;
+}
+
+.sectionVideoImg:focus-visible {
+  outline: 2px solid var(--color-primary, #1677ff);
+  outline-offset: 2px;
+}
+
+.sectionVideoInner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 7.875rem;
+  overflow: visible;
+}
+
+.sectionVideoThumb {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.sectionVideoPlay {
+  position: relative;
+  z-index: 1;
+  font-size: 3rem;
+  color: var(--color-primary, #1677ff);
+}
+
+.pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 0, 0.5);
+  transform: translate(-50%, -50%);
+  animation: pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+.sectionTitle {
+  display: block;
+  font-weight: 600;
+  margin-bottom: unset;
+  margin-top: unset;
+  margin-right: 16px;
+}
+
+.sectionHeaderNote {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-height: 29rem;
+  padding: 0;
+  background-color: var(--color-bg-layout, #f5f5f5);
+  border: none;
+}
+
+.card :global(.ant-card-body) {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 29rem;
+  padding: 32px !important;
+  background: var(--color-bg-layout);
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  gap: 0.75rem;
+}
+
+.cardLogo {
+  display: block;
+  width: 96px;
+  height: 63px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.cardTitle {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  font-weight: 700 !important;
+}
+
+.description {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cardFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 100%;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.cardFooterCaption {
+  margin-bottom: 1rem;
+  color: #9e9e9e;
+}
+
+.cardRecommender {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.item {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+  border: 1px solid var(--gray-300);
+  font-size: 16px;
+}
+
+/* Video modal: chromeless like the old @oacore/design modal (antd CSS-in-JS needs !important) */

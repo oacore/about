@@ -1,0 +1,160 @@
+.sectionTitle {
+  color: var(--color-text-white) !important;
+  padding: 0.2rem 0.5rem;
+  font-size: 28px !important;
+  font-weight: 500 !important;
+  scroll-margin-top: 1rem;
+}
+
+.sectionTitle.primary {
+  background-color: var(--color-primary, #b75400);
+}
+
+.sectionTitle.blue {
+  background-color: #2a51aa;
+}
+
+.sectionTitle.green {
+  background-color: var(--color-success, #8bc34a);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min(100%, 300px));
+  gap: 1.65rem;
+}
+
+.list > * {
+  min-width: 0;
+  width: 100%;
+}
+
+.list :global(.ant-card) :global(.ant-card-body) {
+  padding: 0;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  min-height: 18rem;
+}
+
+.card :global(.ant-card-head) {
+  min-height: auto !important;
+  padding: 1rem 0.8rem !important;
+}
+
+.card :global(.ant-card-head-title) {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 700;
+  white-space: normal;
+}
+
+.card :global(.ant-card-body) {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 !important;
+}
+
+@media (max-width: 576px) {
+
+  .list {
+    gap: 1.25rem;
+  }
+}
+
+.card.green :global(.ant-card-head) {
+  background-color: #edf6e2 !important;
+}
+
+.card.blue :global(.ant-card-head) {
+  background-color: #dde5f5 !important;
+}
+
+.cardContent {
+  padding: 1rem 0.8rem;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.cardSizes {
+  color: var(--gray-600, #757575);
+  font-size: 16px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.count {
+  font-weight: 600;
+  line-height: 2;
+}
+
+.count.green {
+  color: #71a336;
+}
+
+.count.blue {
+  color: #2a51aa;
+}
+
+.cardFooter {
+  width: 100%;
+  margin-top: auto;
+  font-size: 0.8rem !important;
+  background-color: var(--color-bg-layout, #f5f5f5);
+  padding: 0.5rem;
+}
+
+.note {
+  margin: 1.5rem 0;
+}
+
+.note,
+.note :global(p) {
+  font-size: 0.9rem !important;
+}
+
+.note.green :global(a) {
+  color: #71a336;
+}
+
+.note.blue :global(a) {
+  color: #2a51aa;
+}
+
+.button {
+  max-width: 100%;
+  height: auto;
+  color: var(--color-text-white) !important;
+  text-decoration: underline !important;
+  text-transform: uppercase;
+  white-space: normal;
+}
+
+.button.green {
+  background-color: var(--color-success, #8bc34a) !important;
+  border-color: var(--color-success, #8bc34a) !important;
+}
+
+.button.green:hover,
+.button.green:focus {
+  background-color: #71a336 !important;
+  border-color: #71a336 !important;
+}
+
+.button.blue {
+  background-color: #2a51aa !important;
+  border-color: #2a51aa !important;
+}
+
+.button.blue:hover,
+.button.blue:focus {
+  background-color: #1f3d82 !important;
+  border-color: #1f3d82 !important;
+}

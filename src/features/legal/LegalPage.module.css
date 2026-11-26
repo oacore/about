@@ -1,0 +1,62 @@
+.header {
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.linker {
+  color: var(--color-primary);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.linker:hover {
+  color: var(--color-primary-hover);
+}
+
+.sectionWrapper {
+  min-width: min(100%, 220px);
+}
+
+.contentWrapper {
+  margin-top: 2rem;
+}
+
+.contentItem {
+  max-width: 100%;
+}
+
+.item {
+  scroll-margin-top: 1rem;
+}
+
+.item:not(:first-child) {
+  margin-top: 44px;
+}
+
+.mainTitle {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 1.5rem;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.subTitle {
+  font-size: 20px;
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 34px;
+  }
+
+  .subTitle {
+    font-size: 28px;
+  }
+}

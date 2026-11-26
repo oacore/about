@@ -1,0 +1,6 @@
+export { default as Pin } from './Pin'
+export { default as ImagePin } from './ImagePin'
+export { default as NumberPin } from './NumberPin'
+export type { PinProps, PinPosition } from './types'
+export type { ImagePinProps } from './ImagePin'
+export type { NumberPinProps } from './NumberPin'

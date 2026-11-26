@@ -1,6 +1,0 @@
-stats:
-  items:
-    - count: "6K"
-    - count: "{{fullTextCount}}"
-    - count: "{{totalArticlesCount}}"
-    - count: "150"

@@ -1,0 +1,316 @@
+.sectionBanner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 24px;
+  border-bottom: 1px solid var(--color-border, #e0e0e0);
+  padding: 24px 0 116px 0;
+}
+
+.bannerCopy {
+  min-width: 0;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 0 0 1.5rem;
+}
+
+.nav a {
+  color: var(--gray-600, #757575) !important;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  color: var(--color-primary, #b75400);
+  text-decoration: underline;
+}
+
+.headline {
+  margin: 0 0 1rem;
+  color: var(--color-text-secondary, #212121);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.bannerDescription {
+  max-width: 35rem;
+  margin: 0;
+  color: var(--color-text-secondary, #212121);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.bannerActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 34px;
+}
+
+.bannerLink:global(.ant-btn) {
+  padding-inline: 8px;
+}
+
+.sectionTitle {
+  margin: 0 0 3rem;
+  color: var(--color-text-secondary, #212121);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.joinList {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.joinBlock {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.joinBlock:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.joinPicture,
+.joinCorePicture {
+  width: min(100%, 420px);
+  height: auto;
+  max-height: 25rem;
+  object-fit: contain;
+}
+
+.joinContent {
+  min-width: 0;
+  flex: 1;
+}
+
+.joinBlockTitle {
+  margin: 0 0 24px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.copy :global(p) {
+  margin: 0 0 16px;
+}
+
+.copy :global(p:last-child) {
+  margin-bottom: 0;
+}
+
+.copy :global(ul) {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.copy :global(li) {
+  margin-bottom: 0.35rem;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 1rem;
+}
+
+.infoText {
+  margin: 0;
+  color: var(--color-text-secondary, #212121);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.badgeLink {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.badgeImage {
+  width: 250px;
+  height: auto;
+}
+
+.statistic {
+  position: relative;
+  isolation: isolate;
+  text-align: center;
+}
+
+.statistic::before {
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  z-index: -1;
+  background: var(--gray-200, #eeeeee);
+  content: '';
+  pointer-events: none;
+}
+
+.statGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 24px;
+}
+
+.statItem {
+  min-width: 140px;
+}
+
+.statTitle {
+  margin: 0 0 8px;
+  color: var(--color-text-secondary, #212121);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.statValue {
+  margin: 0;
+  color: var(--color-text-secondary, #212121);
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.statValue :global(p) {
+  margin: 0;
+}
+
+.statValue :global(mark) {
+  background: transparent;
+  color: inherit;
+}
+
+.howToActions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+}
+
+.joinCore {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.joinCopy {
+  flex: 1 1 58%;
+  min-width: 0;
+}
+
+.joinTitle {
+  margin: 0 0 1rem;
+  color: var(--color-text-secondary, #212121);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.muted {
+  color: var(--gray-600, #757575);
+}
+
+.joinButton {
+  margin-top: 34px;
+}
+
+.showMore {
+  margin-top: 24px;
+}
+
+/* Registration modal: old @oacore/design TextField has an orange border at rest */
+.registrationField :global(input.ant-input) {
+  height: 48px;
+  min-height: 48px;
+}
+
+/* Beats FloatingField's compiled :is() rule; error fields keep their red border */
+.registrationField:not(:global(.ant-form-item-has-error)) :global(input.ant-input) {
+  border-color: var(--color-primary, #b75400) !important;
+}
+
+.registrationHint {
+  margin: -6px 0 24px;
+  color: #424242;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.registrationButtons,
+.resultButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.resultTitle {
+  font-size: 18px;
+}
+
+.resultImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 36px;
+}
+
+.resultPicture {
+  width: 270px;
+  max-width: 100%;
+  height: 215px;
+}
+
+.resultDescription {
+  margin: 16px 0 24px;
+  color: #212121;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.009px;
+}
+
+@media (max-width: 992px) {
+  .sectionBanner,
+  .joinCore,
+  .joinBlock,
+  .joinBlock:nth-child(even) {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .joinList {
+    gap: 3rem;
+  }
+
+  .howToActions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .sectionTitle {
+    margin-bottom: 2rem;
+  }
+
+  .infoRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,158 @@
+.carousel {
+  --indicator-max-width: 2rem;
+  --indicator-height: 0.24rem;
+  --indicator-gap: 0.5rem;
+  --arrow-line-width: 2rem;
+  --arrow-line-height: 0.18rem;
+}
+
+.carousel.ant-carousel .slick-slider {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+.carousel.ant-carousel .slick-dots {
+  top: 0;
+  bottom: auto;
+  justify-content: flex-start;
+  width: fit-content;
+  max-width: 46rem;
+  margin: 0;
+  inset-inline: 1rem auto;
+}
+
+.carousel.ant-carousel .slick-dots li,
+.carousel.ant-carousel .slick-dots li.slick-active {
+  flex: 0 0 var(--indicator-max-width);
+  width: var(--indicator-max-width);
+  max-width: var(--indicator-max-width);
+  height: var(--indicator-height);
+  margin: 0;
+  margin-inline: 0;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.carousel.ant-carousel .slick-dots li:not(:last-child) {
+  margin-inline-end: var(--indicator-gap);
+}
+
+.carousel.ant-carousel .slick-dots li button {
+  width: 100%;
+  height: var(--indicator-height);
+  padding: 0;
+  background-color: var(--color-primary);
+  border: 0;
+  border-radius: 0;
+  opacity: 0.5;
+}
+
+.carousel.ant-carousel .slick-dots li button:hover,
+.carousel.ant-carousel .slick-dots li.slick-active button {
+  background-color: var(--color-primary);
+  opacity: 1;
+}
+
+.carousel.ant-carousel .slick-dots.carousel-indicators li::after,
+.carousel.ant-carousel .slick-dots.carousel-indicators li.slick-active::after {
+  display: none;
+  background: transparent;
+  animation: none;
+  content: none;
+}
+
+.carousel.ant-carousel .slick-arrow {
+  top: auto;
+  bottom: 0;
+  width: 2.5rem;
+  height: 1.25rem;
+  padding: 0;
+  color: var(--color-primary);
+  background: transparent;
+  border: 0;
+  transform: none;
+  opacity: 1;
+}
+
+.carousel.ant-carousel .slick-prev {
+  inset-inline-start: 0;
+}
+
+.carousel.ant-carousel .slick-next {
+  inset-inline-end: 1.5rem;
+}
+
+.carousel.ant-carousel .slick-arrow::after {
+  display: none;
+}
+
+.carousel.ant-carousel .slick-disabled {
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.carousel.ant-carousel .slick-arrow:focus-visible,
+.carousel.ant-carousel .slick-dots li button:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.carousel-arrow-line {
+  position: absolute;
+  top: 50%;
+  width: var(--arrow-line-width);
+  height: var(--arrow-line-height);
+  background-color: var(--color-primary);
+  transform: translateY(-50%);
+}
+
+.carousel-arrow-prev .carousel-arrow-line {
+  left: 0.35rem;
+}
+
+.carousel-arrow-next .carousel-arrow-line {
+  right: 0.35rem;
+}
+
+.carousel-arrow-line::before,
+.carousel-arrow-line::after {
+  position: absolute;
+  width: 0.45rem;
+  height: var(--arrow-line-height);
+  background-color: var(--color-primary);
+  content: '';
+}
+
+.carousel-arrow-prev .carousel-arrow-line::before,
+.carousel-arrow-prev .carousel-arrow-line::after {
+  left: 0;
+}
+
+.carousel-arrow-prev .carousel-arrow-line::before {
+  top: -0.16rem;
+  transform: rotate(-45deg);
+  transform-origin: left center;
+}
+
+.carousel-arrow-prev .carousel-arrow-line::after {
+  top: 0.16rem;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+.carousel-arrow-next .carousel-arrow-line::before,
+.carousel-arrow-next .carousel-arrow-line::after {
+  right: 0;
+}
+
+.carousel-arrow-next .carousel-arrow-line::before {
+  top: -0.16rem;
+  transform: rotate(45deg);
+  transform-origin: right center;
+}
+
+.carousel-arrow-next .carousel-arrow-line::after {
+  top: 0.16rem;
+  transform: rotate(-45deg);
+  transform-origin: right center;
+}

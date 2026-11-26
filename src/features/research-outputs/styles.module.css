@@ -1,0 +1,320 @@
+.header {
+  flex-wrap: wrap;
+  gap: 44px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.headerStyleWrapper {
+  padding-bottom: 3rem;
+}
+
+.innerWrapper {
+  flex: 0 0 45%;
+  min-width: 0;
+}
+
+.title {
+  max-width: 25ch;
+}
+
+.description {
+  color: var(--color-text-primary, #000);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.029px;
+  line-height: 140%;
+  margin-bottom: 3rem;
+  width: 90%;
+}
+
+.description :global(p) {
+  margin-bottom: 0;
+}
+
+.navLinksWrap {
+  flex: 0 0 50%;
+  min-width: 0;
+}
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.headerImage {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+.card {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.card :global(.ant-card-body) {
+  padding: 0 !important;
+}
+
+.cardTitle {
+  align-content: center;
+  background: var(--color-bg-layout, #f5f5f5);
+  color: var(--color-primary);
+  display: flex;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  gap: 0.25rem;
+  height: max-content;
+  line-height: 26px;
+  padding: 10px 14px;
+}
+
+.cardTitleColumn {
+  min-height: 100px;
+}
+
+.referenceTitle {
+  display: block;
+  font-weight: 500;
+}
+
+.cardWrapper {
+  display: flex;
+  gap: 20px;
+  min-width: 0;
+  padding: 14px;
+  width: 100%;
+}
+
+.cardWrapperColumn {
+  flex-direction: column;
+}
+
+.itemWrapper {
+  min-width: 0;
+  width: 50%;
+}
+
+.itemWrapperColumn {
+  width: 100%;
+}
+
+.cardHeader {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  height: max-content;
+  min-width: 0;
+}
+
+.cardHeaderColumn {
+  min-height: 96px;
+}
+
+.cardHeaderHeight {
+  min-height: 120px;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.referenceBlock {
+  margin-bottom: 0;
+  min-width: 0;
+}
+
+.cardInfoDescription {
+  height: max-content;
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.cardInfoDescriptionColumn {
+  min-height: 170px;
+}
+
+.cardWrapperHeight {
+  min-height: 480px;
+}
+
+.urlWrapper {
+  min-width: 0;
+  width: 50%;
+}
+
+.urlWrapperColumn {
+  width: 100%;
+}
+
+.citationTabs :global(.ant-tabs-nav) {
+  margin-bottom: 0;
+}
+
+.citationTabs :global(.ant-tabs-tab) {
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  color: var(--color-primary, #b75400) !important;
+}
+
+.citationTabs :global(.ant-tabs-tab-active) {
+  background: #e0e0e0 !important;
+  border-bottom: 2px solid #b75400;
+  color: var(--color-primary, #b75400)  !important;
+  padding: 8px !important;
+}
+
+.citationTabs :global(.ant-tabs-tab-active .ant-tabs-tab-btn) {
+  color: var(--color-primary, #b75400) !important;
+}
+
+.citationTab {
+  min-height: 8rem;
+  width: 100%;
+}
+
+.citationTabControl:global(.ant-input) {
+  border-color: #bdbdbd !important;
+  background: #eee !important;
+  border-radius: 4px !important;
+  color: var(--color-text-secondary, #212121);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 8rem;
+  padding: 0.375rem 0.75rem;
+  resize: none;
+  width: 100%;
+}
+
+.citationTabControl:global(.ant-input:hover),
+.citationTabControl:global(.ant-input:focus) {
+  border-color: #e0e0e0;
+  box-shadow: none;
+}
+
+.actionBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.actionBtn button {
+  border-radius: 4px !important;
+}
+
+.actionBtn button:hover {
+  background: var(--color-primary, #b75400) !important;
+  color: #fff !important;
+}
+
+.srOnly {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+@media (max-width: 944px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .innerWrapper,
+  .navLinksWrap {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    max-width: none;
+  }
+
+  .description {
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+    max-width: none;
+  }
+
+  .cardTitle {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 8px 10px;
+  }
+
+  .cardTitleColumn {
+    min-height: auto;
+  }
+
+  .cardWrapper,
+  .cardWrapperColumn {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px;
+  }
+
+  .cardHeader,
+  .cardHeaderColumn,
+  .cardHeaderHeight {
+    align-items: flex-start;
+    gap: 12px;
+    height: auto;
+    min-height: 0;
+  }
+
+  .itemWrapper,
+  .itemWrapperColumn,
+  .urlWrapper,
+  .urlWrapperColumn {
+    width: 100%;
+  }
+
+  .referenceBlock {
+    flex: 1 1 auto;
+    overflow-wrap: anywhere;
+  }
+
+  .cardInfoDescription,
+  .cardInfoDescriptionColumn,
+  .cardWrapperHeight {
+    min-height: 0;
+  }
+
+  .citationTabControl:global(.ant-input) {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-bottom: 1rem;
+  }
+
+}

@@ -1,0 +1,35 @@
+.footerWrapper {
+  align-items: center;
+  background: var(--color-bg-layout, #f5f5f5);
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  padding: 24px;
+  width: 100%;
+}
+
+.footerText {
+  margin-bottom: 0;
+}
+
+.footerText :global(p) {
+  margin-bottom: 0;
+}
+
+@media (max-width: 944px) {
+  .footerWrapper {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footerWrapper {
+    padding: 16px 12px;
+  }
+
+  .footerText {
+    font-size: 0.95rem;
+  }
+}

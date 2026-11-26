@@ -1,0 +1,43 @@
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 14.5rem;
+  padding: 1.4rem;
+  background-color: var(--color-main-bg-layout, #eeeeee);
+}
+
+.header {
+  display: flex;
+}
+
+.picture {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  margin-left: 1rem;
+}
+
+.info p {
+  margin-bottom: 0.5rem;
+}
+
+.infoRole {
+  color: var(--color-primary, #b75400);
+}
+
+.quote {
+  flex: 1 1 auto;
+  font-style: italic;
+}
+
+.button {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-top: 2rem;
+}

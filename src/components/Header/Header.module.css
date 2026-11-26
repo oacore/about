@@ -1,0 +1,166 @@
+.header {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.customHeader {
+  border-bottom: 1px dashed var(--color-text-disabled, #9e9e9e);
+  padding: 0 0 24px;
+  margin: var(--spacing-lg, 24px) 0;
+}
+
+.content {
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.spacing {
+  margin-bottom: 2rem;
+}
+
+.icon {
+  width: 4rem;
+  height: 4rem;
+  transform: scale(1.4);
+}
+
+.metaText {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  min-width: 0;
+  gap: 9px;
+}
+
+.demo {
+  align-self: flex-start;
+  border-radius: 2px;
+  background: #8bc34a;
+  padding: 3px 7px;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.026px;
+}
+
+.title {
+  max-width: 100%;
+  margin: 0;
+  overflow-wrap: break-word;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.default {
+  display: flex;
+  flex-direction: column;
+}
+
+.reverse {
+  flex-direction: column-reverse;
+}
+
+.description {
+  max-width: 70ch;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.description :global(:first-child) {
+  margin-top: 0;
+}
+
+.description :global(:last-child) {
+  margin-bottom: 0;
+}
+
+.caption {
+  margin-top: 1.4rem;
+  color: var(--gray-600, #757575);
+}
+
+.reverseStyle {
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+
+.flyerButton {
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.navLinks {
+  width: 40%;
+}
+
+@media (max-width: 596px) {
+  .navLinks {
+    width: 100%;
+  }
+}
+
+.logoWrap {
+  flex-shrink: 0;
+  align-self: flex-start;
+  max-width: min(100%, 420px);
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 576px) {
+  .meta {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.75rem 1rem;
+    margin: 2rem 0;
+  }
+
+  .icon {
+    width: 3rem;
+    height: 3rem;
+    transform: none;
+  }
+
+  .title {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+  }
+
+  .group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .group :global(.ant-btn) {
+    width: 100%;
+    height: auto !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}

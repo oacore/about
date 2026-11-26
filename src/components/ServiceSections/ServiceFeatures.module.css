@@ -1,0 +1,77 @@
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.feature {
+  position: relative;
+  flex: 1;
+  padding: 1rem;
+  background-color: var(--color-bg-layout);
+}
+
+@media (max-width: 480px) {
+  .feature {
+    flex: auto;
+  }
+}
+
+.feature:not(:last-child)::after {
+  position: absolute;
+  right: -1rem;
+  bottom: 0;
+  height: 100%;
+  border: 1px dashed var(--gray-300, #e0e0e0);
+  content: '';
+}
+
+.featureTitle {
+  margin: 0 0 24px 0;
+  color: var(--color-primary, #b75400);
+  font-size: 16px;
+}
+
+.featureText {
+  font-size: 16px;
+}
+
+/* Feature tooltip (old @oacore/design Popover) */
+.tooltipRoot {
+  max-width: 26rem !important;
+}
+
+.tooltip {
+  text-align: left;
+}
+
+.tooltip p {
+  margin: 0 0 0.5rem;
+  color: inherit;
+  font-size: 14px;
+}
+
+.tooltip ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.tooltip li {
+  margin-bottom: 0.25rem;
+  color: inherit;
+  font-size: 14px;
+  list-style: disc;
+}
+
+.tooltipTrigger {
+  display: inline;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 0.15em;
+}
