@@ -6,23 +6,21 @@ RUN corepack enable && corepack prepare pnpm@10.14.0 --activate
 # No git in the image: skip husky's hook install during `pnpm install`
 ENV HUSKY=0
 
-# package.json depends on "file:../@dashboard/core-ui" (the local checkout next to this repo);
-# CI checks core-ui out into ./core-ui and it is placed at that same relative path here
-FROM base AS core-ui
-WORKDIR /@dashboard/core-ui
-COPY core-ui/ ./
-RUN pnpm install --frozen-lockfile && pnpm run build
-
 FROM base AS app
-COPY --from=core-ui /@dashboard/core-ui /@dashboard/core-ui
 WORKDIR /app
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN pnpm install --frozen-lockfile
+# @oacore/core-ui comes from GitHub Packages: the npm_token build secret (NPM_TOKEN in CI) is
+# written to a temporary .npmrc, never to an image layer
+RUN --mount=type=secret,id=npm_token \
+    set -eu; \
+    TOKEN="$(cat /run/secrets/npm_token 2>/dev/null | tr -d '\r\n' || true)"; \
+    test -n "$TOKEN" || { echo "error: build secret npm_token is required for @oacore (GitHub Packages)" >&2; exit 1; }; \
+    printf '%s\n' '@oacore:registry=https://npm.pkg.github.com' "//npm.pkg.github.com/:_authToken=${TOKEN}" > .npmrc; \
+    pnpm install --frozen-lockfile; \
+    rm -f .npmrc
 
 COPY . .
-# The core-ui checkout is only for the stage above
-RUN rm -rf core-ui
 
 #   APP_ENV  -> API host (development: api-dev, staging: api-stg, production: api.core.ac.uk)
 #   GA_CODE  -> Google Analytics id

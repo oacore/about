@@ -15,10 +15,6 @@ export type DocumentationGuidePageProps = Omit<
   'switcher' | 'markdownComponent'
 >
 
-/**
- * core-ui's DocumentationGuidePage with the about site's parts: the switcher opens each guide's
- * own page, and section text uses the site Markdown (resolves `~route` links).
- */
 const DocumentationGuidePage = (props: DocumentationGuidePageProps) => {
   const router = useRouter()
   const pathname = usePathname()
@@ -34,7 +30,13 @@ const DocumentationGuidePage = (props: DocumentationGuidePageProps) => {
     },
   }
 
-  return <CoreDocumentationGuidePage {...props} markdownComponent={Markdown} switcher={switcher} />
+  return (
+    <CoreDocumentationGuidePage
+      {...props}
+      markdownComponent={Markdown}
+      switcher={switcher}
+    />
+  )
 }
 
 export default DocumentationGuidePage

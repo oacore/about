@@ -7,7 +7,3 @@ node_modules
 .DS_Store
 *.tsbuildinfo
 .env*.local
-
-# core-ui checkout (CI): keep the source, never its installs/builds
-core-ui/node_modules
-core-ui/dist

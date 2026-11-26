@@ -30,15 +30,6 @@ jobs:
           ref: ${{ github.event_name == 'workflow_dispatch' && github.ref || 'stage' }}
 
       # Private dependency: package.json uses "@core/core-ui": "file:../core-ui".
-      # Checked out into ./core-ui; the Dockerfile builds it and places it at /core-ui.
-      # CORE_UI_TOKEN: a token with read access to oacore/core-ui.
-      - name: Checkout core-ui
-        uses: actions/checkout@v4
-        with:
-          repository: oacore/core-ui
-          ref: main
-          path: core-ui
-          token: ${{ secrets.CORE_UI_TOKEN }}
 
       - name: Azure Login
         uses: azure/login@v2
@@ -64,6 +55,8 @@ jobs:
       - name: Docker build and push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Read access to GitHub Packages (@oacore/core-ui)
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           docker buildx build \
             --platform linux/arm64 \
@@ -72,6 +65,7 @@ jobs:
             --build-arg APP_ENV=staging \
             --build-arg CACHE_BUST=${{ github.run_id }} \
             --secret id=github_token,env=GITHUB_TOKEN \
+            --secret id=npm_token,env=NPM_TOKEN \
             -t ${{ steps.image.outputs.ref }} .
 
       - name: Get AKS credentials
